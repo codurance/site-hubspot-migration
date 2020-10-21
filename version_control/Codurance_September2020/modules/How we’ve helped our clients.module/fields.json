@@ -1,0 +1,100 @@
+[ {
+  "id" : "96d3c778-1539-331b-40cb-fdddb1021d01",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null
+  }
+}, {
+  "id" : "8cdff945-6c44-3b3f-773c-87ccbf48e9a4",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "1f720d20-e268-95fa-aba0-fc94722dd296",
+  "name" : "text",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "deb3b1b3-d35f-6169-aa1a-a61212e401ab",
+  "name" : "button_type",
+  "label" : "Button Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "Standard", "Standard" ], [ "CTA", "CTA" ] ],
+  "type" : "choice"
+}, {
+  "id" : "1fd0a923-296a-1892-02e9-85dd0d0c7b5b",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "deb3b1b3-d35f-6169-aa1a-a61212e401ab",
+    "controlling_value_regex" : "Standard",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "6e8bc951-27c1-ef56-926d-79f42070d156",
+  "name" : "link_field",
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "deb3b1b3-d35f-6169-aa1a-a61212e401ab",
+    "controlling_value_regex" : "Standard",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "910b6959-0825-5c82-c7e2-c4c93f33c13b",
+  "name" : "cta_field",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "deb3b1b3-d35f-6169-aa1a-a61212e401ab",
+    "controlling_value_regex" : "CTA",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "type" : "cta"
+} ]

@@ -1,0 +1,47 @@
+[ {
+  "id" : "3b1b7faf-4c3b-4d49-288c-19556a6703f1",
+  "name" : "how_we_work_items",
+  "label" : "How we work Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "7b177454-7526-c39c-ddc7-3e8d84779dd3",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "8b9d643f-f4f5-79ad-fb0b-6d71180649f9",
+    "name" : "icon_class",
+    "label" : "Icon Class",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "7b177454-7526-c39c-ddc7-3e8d84779dd3",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "b98a8b76-e67e-c3c2-6218-d35c925c8841",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "type" : "group",
+  "default" : { }
+} ]

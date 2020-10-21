@@ -1,0 +1,402 @@
+.cm-tabber-section {
+  position: relative;
+  background-position: center top;
+}
+.page-location-anchor {
+  position: relative;
+  display: block;
+  top: -50px;
+}
+.cm-tabber-section__intro {
+  position: relative;
+  z-index: 10;
+}
+.section-intro {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.section-intro h2{
+  font-family: proxima-nova;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  margin-top: 0;
+}
+.section-intro p{
+  font-family: proxima-nova;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 33px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.cm-tabber {
+  position: relative;
+  z-index: 1;
+}
+.cm-tabber nav a{
+  display:inline-block;
+}
+.cm-tabber nav a:hover:after,
+.cm-tabber nav a.active:after {
+  background-color: #fb7268;
+  bottom: 0;
+  content: "";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.cm-tabber nav a:not(.active):hover:after {
+  opacity: 0.5;
+}
+.cm-tabber-panel:not(.active) .cm-tabber-panel__inner {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
+.cm-tabber-panel__inner {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.cm-tabber-panel__header {
+  background-color: #0e4072;
+}
+.cm-tabber-panel__subtitle {
+  font-family: proxima-nova;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 33px;
+  margin-bottom: 15px;
+}
+.cm-tabber-panel__main ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+}
+.cm-tabber-panel__main ul li {
+  font-size: 18px;
+  line-height: 28px;
+  font-family: proxima-nova;
+  font-weight: 700;
+  padding: 0 0 5px 30px;
+  position: relative;
+}
+.cm-tabber-panel__main ul li:before {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  content: "";
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 2px;
+  width: 20px;
+}
+.cm-tabber-panel__header h3 {
+  font-family: proxima-nova;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  color: white;
+}
+.cm-tabber-panel__main {
+  background-color: white;
+}
+.cm-tabber-panel__main h4{
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 33px;
+  margin-bottom: 15px; 
+}
+.cm-tabber-panel__main p{ 
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0;
+}
+.cm-tabber-panel__how-wrapper ul li {
+  font-weight: 400;
+  padding-left: 23px;
+}
+.cm-tabber-panel__how-wrapper ul li:before {
+  content: "-";
+  margin-left: 0px;
+  margin-right: 18px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  background-image: none;
+  position: absolute;
+  top: 0;
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 200ms ease-in-out; /* Chrome, Safari, Opera */
+  animation: fadeIn 200ms ease-in-out;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Standard syntax */
+@keyframes fadeIn{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@media (min-width: 768px){
+  .section-intro {
+    text-align: center;
+  }
+  .section-intro h2{
+    margin-bottom: 15px;
+  }
+  .cm-tabber {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 100px;
+  }
+}
+
+@media (min-width: 1024px){  
+  .cm-tabber__panel > .tabmenu {
+    display:none !important;
+  }
+  .cm-tabber__panel{
+    display:none;
+  }
+  .tabber-panel__what-wrapper:after {
+    background-color: #b7b7b7;
+    content: "";
+    height: 90%;
+    left: 65.6%;
+    position: absolute;
+    top: 25px;
+    width: 1px;
+  }
+  .cm-tabber nav{
+    display:flex;
+  }
+  .cm-tabber__panel.active {
+    display:block;
+  }
+  .cm-tabber-panel__main {
+    min-height: 410px;
+  }
+  .cm-tabber-panel__header {
+    background-position: center bottom 20px,center !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% auto,cover !important;
+  }
+  .cm-tabber-panel__inner {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    display: flex;
+    position: relative;
+    width: 100%;
+  }
+  .cm-tabber nav a {
+    background: transparent;
+    border: 0 none;
+    color: #444444;
+    cursor: pointer;
+    flex-basis: 0;
+    flex-grow: 1;
+    font-size: 16px;
+    line-height: 19px;
+    min-height: 60px;
+    padding: 5px 30px;
+    position: relative;
+    text-align: center;
+    text-decoration:none !important;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cm-tabber nav{
+    display: flex;
+  }
+  .cm-tabber-section {
+    padding-top: 150px;
+  }
+  .section-intro {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    width: calc(100% - (50px * 2));
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .cm-tabber-panel__header,
+  .cm-tabber-panel__what-wrapper,
+  .cm-tabber-panel__how-wrapper {
+    flex: 1;
+    background:#fff;
+    padding:30px;
+  }
+  .cm-tabber-panel__what-wrapper:after{
+    background-color: #b7b7b7;
+    content: "";
+    height: 90%;
+    left: 65.6%;
+    position: absolute;
+    top: 25px;
+    width: 1px;
+  }
+}
+
+@media (min-width: 1300px){
+  .cm-tabber-section:after {
+    content: "";
+    background-color: #2b3342;
+    top: 650px;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+  }
+  .cm-tabber-panel__header{
+    padding: 30px;
+  }
+  .cm-tabber-section {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1800px;
+    background-size: 150% auto;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 1299px){
+  .section-intro.cm-tabber-section__intro {
+    max-width: 770px;
+    width: calc(100% - (25px * 2));
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .cm-tabber-section {
+    padding-bottom: 100px;
+    padding-top: 100px;
+  }  
+  .cm-tabber-section {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 1299px) and (min-width: 768px){
+  .cm-tabber-section {
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: 1023px){
+  .cm-tabber__panel{
+    position:relative;
+  }
+  .cm-tabber__panel > .tabmenu {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 48px;
+    text-indent: -99999px;
+  }
+  .cm-tabber__panel:not(.active) .cm-tabber-panel__inner {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+  }
+  .cm-tabber-panel__main p,
+  .cm-tabber-panel__title, .cm-tabber-panel__subtitle,
+  .cm-tabber-panel__list, .cm-tabber-panel__details {
+    max-width: 800px;
+  }
+  .cm-tabber__panel {
+    min-height: 2em;
+    margin-bottom: 10px;
+    display:block !important;
+  }
+  .cm-tabber__panel::before {
+    font-size: 18px;
+    line-height: 28px;
+    font-family: proxima-nova;
+    font-weight: 700;
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 25px auto;
+    content: attr(data-title);
+    cursor: pointer;
+    display: block;
+    padding: 10px 45px 10px 10px;
+  }
+  .cm-tabber{
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .cm-tabber-panel__header {
+    background-image: none !important;
+  }
+  .cm-tabber nav{
+    display: none;
+  }
+  .cm-tabber-panel__header, .cm-tabber-panel__main {
+    padding: 15px 15px 30px;
+  }
+  .cm-tabber-panel__main {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+  .cm-tabber-panel__main ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .cm-tabber-panel__how-wrapper .cm-tabber-panel__main {
+    padding-top: 0;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px){
+  .cm-tabber-section {
+    padding-bottom: 50px;
+    padding-top: 50px;
+  }
+  .section-intro.cm-tabber-section__intro{
+    position: relative;
+    z-index: 10;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+  }
+  .section-intro h2{
+    margin-bottom: 25px;
+  }
+  .cm-tabber {
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

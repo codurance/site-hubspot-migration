@@ -1,0 +1,36 @@
+.custom-interview-process ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+}
+
+.u-icon-v2 {
+    border-width: 1px;
+    border-style: solid;
+}
+.custom-height-25 {
+    height: 25px !important;
+}
+.custom-interview-process ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+.u-info-v9-1::before {
+    position: absolute;
+    top: 111px;
+    left: 17%;
+    width: 66%;
+    border-top: 1px dotted #ddd;
+    content: " ";
+}
+.u-info-v9-1 {
+    position: relative;
+}
+}

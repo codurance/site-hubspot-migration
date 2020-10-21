@@ -1,0 +1,56 @@
+[ {
+  "id" : "14a13547-4635-c2b5-ee2f-1c7ce1aefb15",
+  "name" : "left_image",
+  "label" : "left Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/consultancy-1.jpg",
+    "alt" : "consultancy-1",
+    "width" : 768,
+    "height" : 768,
+    "max_width" : 768,
+    "max_height" : 768
+  }
+}, {
+  "id" : "29b052e6-3551-9b6a-df04-13216cc03f33",
+  "name" : "how_does_it_work_items",
+  "label" : "How does it work items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "60f9a457-d533-da8e-ac98-6ca4b2cb6d89",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "60f9a457-d533-da8e-ac98-6ca4b2cb6d89",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "bfb18da9-da37-5ef9-d541-83b51d8848ba",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "type" : "group",
+  "default" : { }
+} ]

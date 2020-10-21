@@ -1,0 +1,23 @@
+{
+  "name": "site-hubspot-migration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codurance/site-hubspot-migration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codurance/site-hubspot-migration/issues"
+  },
+  "homepage": "https://github.com/codurance/site-hubspot-migration#readme",
+  "dependencies": {
+    "@hubspot/cms-cli": "^2.1.0",
+    "js-yaml": "^3.14.0"
+  }
+}

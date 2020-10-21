@@ -1,0 +1,198 @@
+[ {
+  "id" : "383077e5-b31f-4196-01ac-6edd1c501065",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/software-modernisation-problems-background.jpg",
+    "alt" : "Software modernisation",
+    "width" : 1800,
+    "height" : 890,
+    "max_width" : 1800,
+    "max_height" : 890
+  }
+}, {
+  "id" : "0b4c18f9-8444-0951-3507-8389c6e3d5f9",
+  "name" : "header_content",
+  "label" : "Header Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "cd403e1e-c407-90e1-defa-07ff8cf147d2",
+  "name" : "button_type",
+  "label" : "Button Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "Standard", "Standard" ], [ "CTA", "CTA" ] ],
+  "type" : "choice"
+}, {
+  "id" : "f3af82e7-a76e-4268-f713-b046bc25ff49",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "cd403e1e-c407-90e1-defa-07ff8cf147d2",
+    "controlling_value_regex" : "Standard",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "c1e5c53b-c688-cc82-5053-26fea7953f28",
+  "name" : "link_field",
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "cd403e1e-c407-90e1-defa-07ff8cf147d2",
+    "controlling_value_regex" : "Standard",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "362b09d3-bd5b-8513-ff59-b1dbb6f94e1d",
+  "name" : "cta_field",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "cd403e1e-c407-90e1-defa-07ff8cf147d2",
+    "controlling_value_regex" : "CTA",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "type" : "cta"
+}, {
+  "id" : "0eb3916b-758f-f91a-bc8e-e7a34d19d9cf",
+  "name" : "tabber_item",
+  "label" : "Tabber Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "52b5da10-6839-8f95-211c-0b1d28d9bc4f",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/bg-softmod-tabber-bg.jpg",
+      "alt" : "background",
+      "width" : 600,
+      "height" : 651,
+      "max_width" : 600,
+      "max_height" : 651
+    }
+  }, {
+    "id" : "7240d209-935c-35e3-2e9f-aa109a2eee24",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/tabber-sustainable-change.svg",
+      "alt" : "Tabber Sustainable Change",
+      "width" : 400,
+      "height" : 400,
+      "max_width" : 400,
+      "max_height" : 400
+    }
+  }, {
+    "id" : "a7046e43-349b-d8ba-6153-c96730ccb18b",
+    "name" : "tabber_title",
+    "label" : "Navigation Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "e0a47cc5-e6e4-2e78-35c0-c06f809afe30",
+    "name" : "heading",
+    "label" : "Heading",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "c5549f50-ec39-9d4c-7348-fcff632753ae",
+    "name" : "content",
+    "label" : "Left Column Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  }, {
+    "id" : "d86e9658-b57e-c574-3782-7bdc00ad2848",
+    "name" : "right_column_content",
+    "label" : "Right Column Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "type" : "group",
+  "default" : {
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/bg-softmod-tabber-bg.jpg",
+      "alt" : "background",
+      "width" : 600,
+      "height" : 651,
+      "max_width" : 600,
+      "max_height" : 651
+    },
+    "image_field" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/tabber-sustainable-change.svg",
+      "alt" : "Tabber Sustainable Change",
+      "width" : 400,
+      "height" : 400,
+      "max_width" : 400,
+      "max_height" : 400
+    }
+  }
+} ]

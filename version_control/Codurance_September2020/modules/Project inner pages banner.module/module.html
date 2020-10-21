@@ -1,0 +1,18 @@
+{% if  module.background_image.src %}
+<section class="services-hero height-is-based-on-content" style="background-image:url('{{ module.background_image.src }}')">
+  <div class="container page-center g-z-index-1 g-py-100 text-center">
+    {% if module.heading  %}
+    <h1 class="g-color-white g-font-weight-300 g-letter-spacing-1 g-mb-15">
+      {{ module.heading }}
+    </h1> 
+    {% endif %}
+    {% if module.sub_heading %}
+    <div class="lead g-font-weight-400 g-line-height-2 g-letter-spacing-0_5">
+      <p class="g-color-white mb-0">
+        {{ module.sub_heading }}
+      </p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

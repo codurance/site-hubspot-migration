@@ -1,0 +1,16 @@
+<div class="custom-how-we-work row">
+  {% for item in module.how_we_work_items %}
+  <div class="custom-col-sm-6 custom-col-md-4">
+    <div class="block-centered equalheight" > 
+      <i class="icon-{{ item.icon_class }} icon-color-red no-border"></i> 
+      <h3>
+        {{ item.title }}
+      </h3>
+      <p>
+        {{ item.content }}
+      </p>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>

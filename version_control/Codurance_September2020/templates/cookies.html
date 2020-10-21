@@ -1,0 +1,37 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Cookies Website page
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+
+<div class="custom-body-container body-container-cookie ">
+
+  {% dnd_area "row1" class='custom-events-row1', label='Row1' %}
+  {% dnd_section vertical_alignment='MIDDLE' %}
+
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+
+
+
+
+  {% dnd_area "row2" class='custom-cookie-row2 custom-py-50  custom-section-header-row', label='Row2' %}
+  {% dnd_section vertical_alignment='MIDDLE' %}
+
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+
+
+  {% dnd_area "row3" class='custom-cookie-row3 ', label='Row3' %}
+  {% dnd_section vertical_alignment='MIDDLE' %}
+
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+</div>
+
+
+{% endblock body %}

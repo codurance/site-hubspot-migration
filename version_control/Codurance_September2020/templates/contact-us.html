@@ -1,0 +1,19 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Contact Us Page
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<div class="hs-contact-us-layout">
+  <main class="body-container-wrapper">
+    {% dnd_area "dnd_area1" class='hs-contact-us-section1', label='Section 1' %}
+    {% end_dnd_area %}
+    <div class="hs-get-in-touch-section" id="get-in-touch">
+      {% dnd_area "dnd_area4" class='hs-contact-us-section2', label='Section 2' %}
+      {% end_dnd_area %}  
+    </div>
+  </main>
+</div>
+{% endblock body %}

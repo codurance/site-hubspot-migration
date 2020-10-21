@@ -1,0 +1,39 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Services Inner Page
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<div class="hs-services-inner-layout type1">
+  <div class="banner-section">
+    {% dnd_area "DND_banner" class='banner-area', label='Banner Section' %}
+    {% dnd_section full_width=true %}
+    {% dnd_module path='../modules/Advanced Banner', width=12, offset=0, label="" %}
+    {% end_dnd_module %}
+    {% end_dnd_section %}   
+    {% end_dnd_area %}
+  </div>
+  <main class="body-container-wrapper">
+    {% dnd_area "dnd_area1" class='hs-services-inner-section1', label='Section 1' %}
+    {% end_dnd_area %}
+    {% dnd_area "dnd_area2" class='hs-services-inner-section2', label='Section 2' %}
+    {% end_dnd_area %}
+    {% dnd_area "dnd_area3" class='hs-services-inner-section3', label='Section 3' %}
+    {% end_dnd_area %}
+    {% dnd_area "dnd_area4" class='hs-services-inner-section4', label='Section 4' %}
+    {% end_dnd_area %}
+    <div class="cm-service-inner-bottom-wrap">
+      {% dnd_area "dnd_area5" class='hs-services-inner-section5', label='Section 5' %}
+      {% end_dnd_area %}
+      <div class="hs-services-inner-section7"></div>
+    </div>
+    <div class="hs-get-in-touch-section" id="get-in-touch">
+      {% dnd_area "dnd_area7" class='hs-services-inner-section8', label='Section 6' %}
+      {% end_dnd_area %}  
+    </div>
+
+  </main>
+</div>
+{% endblock body %}

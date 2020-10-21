@@ -1,0 +1,58 @@
+[ {
+  "id" : "c2f27de9-f367-c8f8-99ea-7381c73090e6",
+  "name" : "testimonial_items",
+  "label" : "Testimonial Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "80d513f2-15cd-2183-b3d0-664dd5fa9a91",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "19d5362f-4ccd-7b4e-a138-535834426e94",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null
+    }
+  }, {
+    "id" : "80d513f2-15cd-2183-b3d0-664dd5fa9a91",
+    "name" : "name_",
+    "label" : "Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "604ffcf5-1bb9-d869-1c9f-07e95b0a6112",
+    "name" : "quote",
+    "label" : "Quote",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "type" : "group",
+  "default" : {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null
+    }
+  }
+} ]

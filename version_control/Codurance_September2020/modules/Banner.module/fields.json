@@ -1,0 +1,35 @@
+[ {
+  "id" : "246b8a70-6c9b-d57d-7bba-a7c3bb1e0cb4",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_value_regex" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "responsive" : false,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/bg-pattern.jpg",
+    "alt" : "Banner Image",
+    "height" : 500,
+    "width" : 1200
+  }
+}, {
+  "id" : "1c63a39f-fd3f-0e49-3ace-ba0ba89f264b",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "A Clear and Bold Header"
+} ]

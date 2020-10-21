@@ -1,0 +1,45 @@
+<div class="custom-jetbrains">
+  <div class="container page-center ">
+    <div class="title-v1">
+      {{ module.top_content }}
+    </div>
+    <div class="row">
+      <div class="custom-col-md-6 content-boxes-v3 margin-bottom-40">
+        {% for item in module.left_content %}
+        <div class="clearfix margin-bottom-30"> <i class="icon-custom icon-md rounded-x icon-bg-u fa fa-check"></i> 
+          <div class="content-boxes-in-v3">
+            {{ item.content }}
+          </div>
+        </div>
+        {% endfor %}
+        <div class="row margin-bottom-40 text-center">
+          {% if module.button_type == "std" %}
+          {% set href = module.link_field.url.href %}
+          {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a class="btn-u btn-u-lg" href="{{ href }}{% if module.bookmark_id  %}#{{ module.bookmark_id }} {% endif %}"
+             {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
+             {% if module.link_field.no_follow %}rel="nofollow"{% endif %}
+             >
+            {{ module.text_field }}
+          </a>
+          {% elif module.button_type == "cta" %}
+          {% cta guid="{{ module.cta_field }}" %}
+          {% endif %}
+        </div>
+      </div>
+      <div class="custom-col-md-6">
+        {% if module.image_field.src %}
+        {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+        {% if module.image_field.size_type == 'auto' %}
+        {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+        {% elif module.image_field.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image_field.max_width }}px; max-height: {{ module.image_field.max_height }}px"' %}
+        {% endif %}
+        <img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ sizeAttrs }}>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="cm-service-banner-group">
+  <div class="cm-services-page-intro" style="background-image:url({{ module.background_image.src }})">
+    <div class="cm-services-page-intro__navigation">      
+      {% for item in module.item %}    
+      {% set href = item.link_field.url.href %}
+      {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}      
+      <div class="cm-services-page-intro__icon-container"> 
+        <a class="cm-services-page-intro__navigation-link" href="{{ href }}" {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if item.link_field.no_follow %}rel="nofollow"{% endif %} >
+          <div class="cm-services-page-intro__navigation-icon" style="background-image:url({{ item.icon_background_image.src }})">
+            {{ item.svg_icon }}
+          </div>
+          <h2 class="cm-services-page-intro__navigation-text">{{ item.title }}</h2>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="cm-services-page-intro__text-container">
+    <div class="cm-services-page-intro__text-container-inner">
+      <div class="cm-services-page-intro__title-wrapper">
+        <h1 class="cm-services-page-intro__title">{{ module.left_content }}</h1>
+        <h2 class="cm-services-page-intro__sub-title">{{ module.right_content }}</h2>
+      </div>
+      <div class="cm-services-page-intro__lead-in">
+        {{ module.content }}
+      </div>
+    </div>
+  </div>
+</div>

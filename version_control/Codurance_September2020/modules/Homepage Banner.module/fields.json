@@ -1,0 +1,132 @@
+[ {
+  "id" : "2f054f99-5705-ec98-3e34-c13c6d2d2ab1",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/home-hero-code.jpg",
+    "alt" : "home hero code",
+    "width" : 500,
+    "height" : 550,
+    "max_width" : 500,
+    "max_height" : 550
+  }
+}, {
+  "id" : "60006898-4466-d6d6-3f59-51c3b6cfe730",
+  "name" : "poster_image",
+  "label" : "Poster Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/home-hero.jpg",
+    "alt" : "home-hero",
+    "width" : 1920,
+    "height" : 1080,
+    "max_width" : 1920,
+    "max_height" : 1080
+  }
+}, {
+  "picker" : "file",
+  "id" : "bfb6d10a-0a0c-0ae5-3302-618f1c18ac3c",
+  "name" : "video",
+  "label" : "Video",
+  "required" : false,
+  "locked" : false,
+  "type" : "file",
+  "default" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/Videos/home-hero.mp4"
+}, {
+  "id" : "1c13000c-1ed1-5e5e-2ca3-cec649e3c3ec",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "5946b3a3-adad-eab9-612e-8e970bf1cf9a",
+  "name" : "sub_heading",
+  "label" : "Sub Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "ec601fe6-4026-f533-e39e-b3d7f06af1d0",
+  "name" : "button_type",
+  "label" : "Button Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "Standard", "Standard" ], [ "CTA", "CTA" ] ],
+  "type" : "choice"
+}, {
+  "id" : "f9f3ac53-8379-f03e-a9cb-5438e46ec608",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "ec601fe6-4026-f533-e39e-b3d7f06af1d0",
+    "controlling_value_regex" : "Standard",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "adc0c62c-e7e8-3680-24d4-4ca98a7005bb",
+  "name" : "link_field",
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "ec601fe6-4026-f533-e39e-b3d7f06af1d0",
+    "controlling_value_regex" : "Standard",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "27b95247-1e72-6132-fbef-4a338e727879",
+  "name" : "cta_field",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "ec601fe6-4026-f533-e39e-b3d7f06af1d0",
+    "controlling_value_regex" : "CTA",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "type" : "cta"
+} ]

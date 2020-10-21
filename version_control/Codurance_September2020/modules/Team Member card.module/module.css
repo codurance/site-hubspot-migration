@@ -1,0 +1,211 @@
+.cm-team-member-card-group {
+  margin-top: -50px;
+}
+.cm-team-member-inner {
+  box-shadow: rgba(0,0,0,0.16) 0 0 8px;
+  display: flex;
+  transition: max-height 0.5s ease;
+}
+.cm-team-member-card-group.active .cm-team-member-inner {
+  max-height: 500px;
+}
+.cm-team-member-card-group.active .cm-team-member-content-wrapper::after{
+  opacity:0;
+  visibility:hidden;
+}
+.cm-team-member-instructor-container {
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 25px;
+  text-align: center;
+}
+.cm-team-member-instructor-avatar {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 180px;
+  margin: 15px;
+  width: 164px;
+}
+.cm-team-member-instructor-title {
+  font-size: 15px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-family: proxima-nova;
+  font-weight: 700;
+  color: black;
+  display: block;
+  margin-left: 6px;
+  margin-bottom: 15px;
+}
+.cm-team-member-instructor-name {
+  font-family: proxima-nova;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 33px;
+  line-height: 16px;
+  color: black;
+  display: block;
+  margin-left: 6px;
+}
+.cm-team-member-content-container {
+  align-items: flex-start;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 35px 27px;
+}
+.cm-team-member-content-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+.cm-team-member-read-more-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-family: proxima-nova;
+  font-weight: 700;
+  outline:0 !important;
+}
+.cm-team-member-content {
+  font-size: 21px;
+  line-height: 33px;
+}
+.cm-team-member-read-more-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-family: proxima-nova;
+  font-weight: 700;
+}
+.cm-team-member-read-more-button::after {
+  border-color: #fb7268;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  content: '';
+  display: inline-block;
+  margin: 12px;
+  padding: 4.5px;
+  position: relative;
+  top: 9px;
+  transform: rotate(45deg);
+  transition: transform 0.5s, top 0.5s;
+}
+.cm-team-member-content-wrapper::after {
+  background: linear-gradient(0deg, #fff 0%, rgba(255,255,255,0) 25%);
+  content: '';
+  height: 210px;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 1s;
+}
+.cm-team-member-read-more-button:active{
+  outline:0;
+}
+.cm-team-member-card-group.active button:before {
+  content: "read Less";
+  font-size: 15px;
+}
+.cm-team-member-card-group.active button {
+  font-size: 0;
+  
+}
+.cm-team-member-card-group.active button:after {
+  transform: rotate(225deg);
+  margin-left: -4px;
+  top: 15px;
+}
+
+
+@media (min-width: 1024px) and (min-width: 768px){
+  .training-bio {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (min-width: 768px){
+  .cm-team-member-instructor-container {
+    background-color: #efefef;
+    background-position: top center;
+    background-size: 100% auto;
+  }
+  .training-bio {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+  } 
+  .cm-team-member-inner {
+    max-height: 300px;
+  }
+  .cm-team-member-inner {
+    flex-direction: row;
+  }
+}
+
+
+@media (max-width: 1023px) and (min-width: 768px){
+  .cm-team-member-card-group.active .cm-team-member-inner {
+    max-height: 970px;
+  }
+}
+
+@media (min-width: 1024px){
+  .training-bio {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+
+@media (max-width: 1023px){
+  .accordion .panel{
+    margin-bottom:10px;
+  }
+  .accordion .panel:last-child{
+    margin-bottom:0;
+  }
+  .cm-team-member-card-group {
+    margin-top: 0;
+  }
+}
+
+
+@media (max-width: 767px){
+  .cm-team-member-card-group.active .cm-team-member-inner{
+    max-height: 1825px;
+  }
+  .cm-team-member-instructor-container {
+    align-items: center;
+    background-position: right bottom 88px;
+    background-size: 150% auto;
+  }
+  .cm-team-member-card-group:not(.active) .cm-team-member-content-container {
+    height: 300px;
+  }
+  .cm-team-member-card-group:not(.active) .training-bio__inner {
+    max-height: 590px;
+  }
+  .cm-team-member {
+    padding-left: 0;
+    padding-right: 0;
+    background: #fff;
+  }
+  .cm-team-member-inner {
+    flex-direction: column;
+  }
+}

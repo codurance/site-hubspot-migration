@@ -1,0 +1,210 @@
+[ {
+  "id" : "e3a7147f-f83b-bb48-7cad-e25820ea3a2e",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "STILL HAVE QUESTIONS?"
+}, {
+  "id" : "4b4ac5ea-7d3a-94a9-994e-7b7541ffca14",
+  "name" : "sub_heading",
+  "label" : "Sub Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "If you'd like to know more about Codurance before applying, feel free to drop us a message here. We'll answer your questions but will respect your privacy. Once you're ready to apply, then we can talk further."
+}, {
+  "id" : "2dda9cc9-90fa-661c-fd60-febc5fc72332",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
+    "name" : "button_type",
+    "label" : "Button Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "std", "Standard" ], [ "cta", "CTA" ], [ "lightbox", "Lightbox" ] ],
+    "type" : "choice"
+  }, {
+    "id" : "052e50b3-0160-3bbd-31ff-9286554a34d9",
+    "name" : "link_field",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_value_regex" : "std",
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "efeb4688-d3d0-43fe-6970-387048bfbbab",
+    "name" : "text_field",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_value_regex" : "std|lightbox",
+      "operator" : "MATCHES_REGEX",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Button"
+  }, {
+    "id" : "80208117-bd12-c83a-270d-486291308c62",
+    "name" : "bookmark_id",
+    "label" : "Bookmark id",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_value_regex" : "std|lightbox",
+      "operator" : "MATCHES_REGEX",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "modal6"
+  }, {
+    "id" : "c3a66681-20da-728d-82f7-2d1ddd55dd9e",
+    "name" : "module_setting",
+    "label" : "Button Setting",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "5a245309-4df1-719d-fe19-47672f95b17b",
+      "name" : "custom_class",
+      "label" : "Custom Class",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
+        "controlling_value_regex" : "std",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"
+    } ],
+    "tab" : "CONTENT",
+    "type" : "group",
+    "default" : {
+      "custom_class" : "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"
+    }
+  }, {
+    "id" : "309ecca5-6ddb-05cd-32b4-b504686180bf",
+    "name" : "cta_field",
+    "label" : "CTA",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_value_regex" : "cta",
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "type" : "cta"
+  }, {
+    "id" : "e5f67593-0542-38f0-02c8-74c5c7eeb8f0",
+    "name" : "lightbox",
+    "label" : "Lightbox",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_value_regex" : "lightbox",
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "children" : [ {
+      "id" : "900cfcef-b2b5-8ebe-41e7-8d0e16d95675",
+      "name" : "lightbox_content",
+      "label" : "Lightbox Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "default" : "<h4>Get In Touch</h4>\n<p>Please, contact our offices:</p>\n<ul>\n<li><strong>London</strong>: +44 207 4902967</li>\n<li><strong>Barcelona</strong>: +34 937 82 28 82</li>\n<li><strong>Manchester</strong>: +44 161 302 6795</li>\n</ul>\n<p><!-- Business Hours --></p>\n<p>Use the form below to send us a message or send it directly our email: <a href=\"mailto:hello@codurance.com\" target=\"_blank\" rel=\"noopener noreferrer\">hello@codurance.com</a></p>"
+    }, {
+      "id" : "0079b35f-0a2f-2f1d-9ad8-fddaca98fa50",
+      "name" : "form_field",
+      "label" : "Form",
+      "required" : false,
+      "locked" : false,
+      "type" : "form",
+      "default" : {
+        "response_type" : "inline",
+        "message" : "Thanks for submitting the form."
+      }
+    } ],
+    "tab" : "CONTENT",
+    "type" : "group",
+    "default" : {
+      "lightbox_content" : "<h4>Get In Touch</h4>\n<p>Please, contact our offices:</p>\n<ul>\n<li><strong>London</strong>: +44 207 4902967</li>\n<li><strong>Barcelona</strong>: +34 937 82 28 82</li>\n<li><strong>Manchester</strong>: +44 161 302 6795</li>\n</ul>\n<p><!-- Business Hours --></p>\n<p>Use the form below to send us a message or send it directly our email: <a href=\"mailto:hello@codurance.com\" target=\"_blank\" rel=\"noopener noreferrer\">hello@codurance.com</a></p>",
+      "form_field" : {
+        "response_type" : "inline",
+        "message" : "Thanks for submitting the form."
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "type" : "group",
+  "default" : {
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "text_field" : "Button",
+    "bookmark_id" : "modal6",
+    "module_setting" : {
+      "custom_class" : "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"
+    },
+    "lightbox" : {
+      "lightbox_content" : "<h4>Get In Touch</h4>\n<p>Please, contact our offices:</p>\n<ul>\n<li><strong>London</strong>: +44 207 4902967</li>\n<li><strong>Barcelona</strong>: +34 937 82 28 82</li>\n<li><strong>Manchester</strong>: +44 161 302 6795</li>\n</ul>\n<p><!-- Business Hours --></p>\n<p>Use the form below to send us a message or send it directly our email: <a href=\"mailto:hello@codurance.com\" target=\"_blank\" rel=\"noopener noreferrer\">hello@codurance.com</a></p>",
+      "form_field" : {
+        "response_type" : "inline",
+        "message" : "Thanks for submitting the form."
+      }
+    }
+  }
+} ]

@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "smart_type" : "NOT_SMART",
+  "icon" : "https://cdn2.hubspot.net/hubfs/6326501/boilerplate/Module%20Icons/sitemap-solid.svg",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 35209330111,
+  "label" : "Menu",
+  "is_available_for_new_content" : true
+}

@@ -1,0 +1,26 @@
+<div class="accordion">
+  <div class="container">
+    <div class="panel-group" id="accordion-section">
+      {% for item in module.accordion_item %}
+      <div class="panel panel-default {% if not loop.first %} accordion-close {% endif %}">
+        <a class="panel-heading" href="#accordion-section">
+          <p class="panel-title">
+            <span class="accordion-toggle">{{ item.accordion_title }}</span>
+            <span class="toggle_icon"> <span class="vert_icon"></span><span class="hor_icon"></span></span>
+          </p>
+        </a>
+        {% if item.accordion_content %}
+        <div class="panel-collapse collapse" role="tabpanel"  {% if loop.first %} style="display: block;" {% endif %}>
+          <div class="panel-body">
+            <div class="frame frame-default frame-type-text frame-layout-0">
+              {{ item.accordion_content }}
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+

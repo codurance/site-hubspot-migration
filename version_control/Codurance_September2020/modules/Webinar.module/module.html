@@ -1,0 +1,21 @@
+<div class="cm-service-line__webinar-teaser {{ module.image_alignment|lower }}"> 
+  <div class="cm-webinar-image-position-{{ module.image_alignment|lower }}">
+    <div class="cm-webinar_image" style="background-image: url({{ module.image.src }})"></div>
+    <div class="cm-webinar_content">
+      <h2 class="cm-webinar_content-type">{{ module.category }}</h2>
+      <h3 class="cm-webinar_title">{{ module.heading }}</h3>
+      <p class="cm-webinar_description">{{ module.content }}</p>
+      {% if module.button_type == 'Standard' %}
+      {% set href = module.link_field.url.href %}
+      {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}" class="cta--primary-coral" {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if module.link_field.no_follow %}rel="nofollow"{% endif %}>
+        {{ module.button_text }}
+      </a>
+      {% else %}
+      {% cta guid="{{ module.cta_field }}" %}
+      {% endif %}
+    </div>
+  </div>
+</div>

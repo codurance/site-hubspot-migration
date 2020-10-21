@@ -1,0 +1,311 @@
+/* ******************************************************************************
+*********************************************************************************
+This file contains all the neccessary styles to control how your
+footer looks when it comes to spacing and other general styles.
+*********************************************************************************
+****************************************************************************** */
+
+.footer {
+  background-color: {{ dnd_accent_bg_color }};
+}
+.footer__container {
+  padding:0 15px;
+  margin: 0 auto;
+}
+.hs-footer-top-container {
+  padding-top: 4.28571rem;
+  padding-bottom: 4.28571rem; 
+}
+.hs-footer-top-container h6 {
+  position: relative;
+  margin: 0;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+  width: 100%;
+  display: block;
+  margin-bottom: 1.78571rem;
+}
+.hs-footer-top-container h6 span{
+  top: 1px;
+  display: inline-block;
+  margin: 0;
+  position:relative;
+  padding-bottom: 0.71429rem;
+  border-bottom: 1px solid #555;
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+}
+.footer__copyright {
+  font-family: {{ secondary_font_family }};
+  font-size: .7rem;
+  margin: .5rem 0;
+}
+.hs-footer-bottom-container {
+  padding-top:1.42857rem;
+  padding-bottom:1.42857rem;
+  font-size: 1rem;
+}
+.footer-logo {
+  fill: white;
+  padding-bottom: 17px;
+  margin-top: 2px;
+  width: 125px;
+  margin-bottom: 1rem;
+}
+.cm-footer-useful-links .hs-menu-wrapper > ul{
+  margin:0;
+}
+.cm-footer-useful-links .hs-menu-wrapper > ul > li > a{
+  padding:0;
+  width:100%;
+  display:block;
+  margin: 0;
+  line-height: 1.4;
+  margin-bottom:17.142px;
+  padding-bottom: 0.71429rem;
+  border-bottom: 1px dotted rgba(255,255,255,0.3);
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  cursor:text;
+}
+.cm-footer-useful-links .hs-menu-wrapper > ul > li {
+  width: 100%;
+}
+.cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li {
+  width: 100%;
+  padding-top: 0.71429rem ;
+  padding-bottom: 0.71429rem ;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a {
+  font-size: 1rem;
+  padding-right: 1.42857rem;
+  padding: 0;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
+  position:relative;
+}
+.cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a:hover {
+  text-decoration:underline;
+}
+.cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a:after {
+  right: 5px;
+  content: "\f105";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  top: 50% !important;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-backface-visibility: hidden;
+}
+.cm-footer-contact-us address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+  line-height: 2;
+  margin-top: -0.28571rem;
+}
+.hs-footer-bottom-right ul {
+  text-align: right;
+}
+.hs-footer-bottom-container .page-center {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.hs-footer-bottom-right ul {
+  text-align: right;
+  font-size: 15px;
+}
+.hs-footer-bottom-left {
+  -ms-flex: 0 0 66.666667%;
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.hs-footer-bottom-right {
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  -ms-flex-item-align: center;
+  align-self: center;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.hs-footer-bottom-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.hs-footer-bottom-right ul li {
+  margin-left: 0.71429rem;
+  margin-right: 0.71429rem;
+  display: inline-block;
+  position:relative;
+}
+.hs-footer-bottom-right ul li:first-child {
+  margin-right: 7px;
+}
+footer.footer .hs-rss-byline {
+  opacity: 1;
+  font-size: 0;
+}
+footer.footer .hs-rss-item .hs-rss-author{
+  font-size:12px;
+  font-weight: 400;
+}
+footer.footer .hs-rss-item {
+  border-bottom: rgba(255, 255, 255, 0.1) 1px solid;
+  padding-bottom: 0.71429rem;
+  margin-bottom: 0.71429rem;
+}
+
+.hs-footer-bottom-right ul li:before {
+  content: attr(data-original-title);
+  position: absolute;
+  background: #000;
+  bottom: 100%;
+  left: 50%;
+  right: 0;
+  margin: 0px auto;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: .25rem;
+  width: 77px;
+  text-align: center;
+  display: inline-block;
+  transform: translateX(-50%);
+  transition: all ease .3s;
+  opacity: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  margin-bottom: 6px;
+  font-size: .875rem;
+}
+.hs-footer-bottom-right ul li:after {
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+  margin-left: -3px;
+  content: "";
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+  transition: all ease 0.3s;
+  opacity: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  right: 0;
+  bottom: 100%;
+}
+.hs-footer-bottom-right ul li:hover:before,
+.hs-footer-bottom-right ul li:hover:after {
+  opacity: 1;
+}
+
+
+@media(min-width:768px) and (max-width:992px){
+  .hs-footer-top-container .footer__container .container-fluid > .row-fluid > .span3 {
+    width: 50%;
+    margin-left: 0;
+    float: none;
+    display: inline-block;
+    margin: 0 -2px;
+    vertical-align: top;
+    padding-left: 17px;
+    padding-right: 0;
+    margin-bottom:45.714px;
+  }
+  .hs-footer-top-container  .container-fluid > .row-fluid {
+    margin-left: -15px;
+    margin-right: -15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hs-footer-top-container .container-fluid > .row-fluid > .span3:nth-child(2n+2) {
+    padding-left: 36px;
+  }
+  .hs-footer-top-container {
+    padding-bottom: 22px;
+  }
+  
+}
+
+@media(max-width:767px) {
+  .hs-footer-bottom-left, .hs-footer-bottom-right {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+    text-align: center;
+  }
+  .hs-footer-bottom-right ul {
+    text-align: center;
+  }
+  .hs-footer-bottom-left {
+    margin-bottom: 28px;
+  }
+  .hs-footer-bottom-container {
+    font-size: 16px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+  }
+  .hs-footer-top-container {
+    padding-top: 68px;
+    padding-bottom: 39px;
+  }
+  .hs-footer-top-container .container-fluid > .row-fluid > .span3{
+    margin-bottom:45.714px;
+  }
+  .cm-footer-useful-links .hs-menu-wrapper > ul > li > a,
+  .hs-footer-top-container h6 span {
+    font-size: 16px;
+    padding-bottom: 11px;
+  }
+  .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a{
+    font-size:16px;
+  }
+  .hs-footer-top-container h6 {
+    margin-bottom: 29px;
+  }
+  .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li {
+    padding-top: 11.857px;
+    padding-bottom: 10.857px;
+  }
+  .cm-footer-logo-group p {
+    margin-bottom: 16px;
+  }
+  .hs-footer-bottom-right ul li {
+    margin-left: 12px;
+    margin-right: 11px;
+  }
+  .footer-logo {
+    margin-bottom: 16px;
+  }
+  footer.footer.no-navigation .hs-footer-bottom-left {
+    margin-bottom: 0;
+  }
+
+}

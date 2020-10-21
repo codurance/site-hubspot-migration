@@ -1,0 +1,35 @@
+<!--
+templateType: global_partial
+label: Page Header
+-->
+<header class="header">
+  <div class="cm-header-group">
+    <div class="header__container">
+      <div class="custom-logo">
+        {% set logo_file =  get_asset_url('../../images/logo.svg') %}
+        {% module "header_logo" path="@hubspot/logo", label="Header Logo",link="/", img={src="{{logo_file}}", alt="Codurance", override_inherited_src= true} %}
+        <div class="mobile-logo">
+          {% set mobile_logo =  get_asset_url('../../images/white-logo.svg') %}
+          {% module "mobile_header_logo" path="@hubspot/logo", label="Header Mobile Menu Logo", link="/", img={src="{{mobile_logo}}", alt="Codurance", override_inherited_src= true} %}
+        </div>
+      </div>
+      <div class="custom-menu-primary">
+        <div class="mobile-trigger" aria-controls="website-navigation-menu" aria-expanded="true" aria-label="Toggle navigation">
+          <span></span>
+        </div>
+        {% module "navigation-primary" path="../../modules/menu-section", label="Primary Menu" %}
+      </div>
+      <div class="hs-header-language">
+        <ul> 
+          <li>
+            <span class="active">EN</span> </li>
+          <li>
+            <a href="https://codurance.es/" target="_blank" rel="noopener noreferrer">ES</a> 
+          </li> 
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+

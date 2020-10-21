@@ -1,0 +1,57 @@
+.cm-find-out-more-banner {
+  min-height: 300px;
+  overflow: hidden;
+  max-width: 1300px;
+  margin: auto;
+}
+.cm-find-out-more__image {
+  background-position: center;
+}
+.cm-find-out-more__main {
+  align-items: center;
+  background-color: #fb7268;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  text-align: center;
+}
+.cm-find-out-more__inner {
+  max-width: 500px;
+}
+.cm-find-out-more__title {
+  font-family: proxima-nova;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 33px;
+  color: white;
+  margin: 0 0 10px;
+}
+.cm-find-out-more__description {
+  font-size: 18px;
+  line-height: 28px;
+  font-family: proxima-nova;
+  font-weight: 400;
+  color: white;
+  margin: 0 0 30px;
+}
+
+
+@media (min-width: 1024px){
+  .cm-find-out-more__main {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (min-width: 768px){
+  .cm-find-out-more__main {
+    float: left;
+    width:50%;
+  }
+  .cm-find-out-more__image {
+    background-size: cover;
+    float: left;
+    height: 300px;
+    width: 50%;
+  }
+}

@@ -1,0 +1,1448 @@
+[
+  {
+    "type": "group",
+    "name": "global_colors",
+    "label": "Global colors",
+    "children": [
+      {
+        "type": "color",
+        "name": "primary_color",
+        "label": "Primary color",
+        "default": {
+          "color": "#494a52",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "secondary_color",
+        "label": "Secondary color",
+        "default": {
+          "color": "#F8FAFC",
+          "opacity": 100
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "header",
+    "label": "Website header",
+    "children": [
+      {
+        "type": "color",
+        "name": "background_color",
+        "label": "Background color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "menu_link_color",
+        "label": "Menu link color",
+        "default": {
+          "color":"#404040",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "menu_link_hover_color",
+        "label": "Menu link hover color",
+        "default": {
+          "color":"#fb7268",
+          "opacity": 100
+        }
+      },
+      {
+        "id" : "",
+        "name": "menu_link_hover_background_color",
+        "label": "Menu link hover background color",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 0
+        } 
+      },
+      {
+        "name": "active_menu_link_background_color",
+        "label": "Active menu link background color",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 0 
+        } 
+      },
+      {
+        "name": "active_menu_link_color",
+        "label": "Active menu link color",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color":"#fb7268",
+          "opacity": 100
+        } 
+      },
+      {
+        "name": "active_menu_link_border_color",
+        "label": "Active menu link border color",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color":"#fb7268",
+          "opacity": 100
+        } 
+      },
+      {
+        "name": "child_menu_background_color",
+        "label": "Child menu background color",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 0 
+        } 
+      },
+      {
+        "type": "color",
+        "name": "child_menu_link_color",
+        "label": "Child menu link color",
+        "default": {
+          "color":"#404040",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "child_menu_link_hover_color",
+        "label": "Child menu link hover color",
+        "default": {
+          "color":"#fb7268",
+          "opacity": 100
+        }
+      },
+      {
+        "id" : "",
+        "name": "child_menu_link_hover_background_color",
+        "label": "Child menu link hover background color",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 0 
+        } 
+      },
+      {
+        "id" : "",
+        "name": "active_child_menu_link_color",
+        "label": "Active child menu link color",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#404040",
+          "opacity": 100 
+        } 
+      },
+      {
+        "id" : "",
+        "name": "active_child_menu_link_background_color",
+        "label": "Active child menu link background color",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 0 
+        } 
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "typography",
+    "label": "Typography",
+    "children": [
+      {
+        "type": "group",
+        "name": "body_font",
+        "label": "Body Font",
+        "children": [
+          {
+            "id": "body_text_select",
+            "name": "body_text_select",
+            "label": "Body Font Type",
+            "display": "select",
+            "choices": [
+              [
+                "google",
+                "Google Fonts"
+              ],
+              [
+                "custom",
+                "Custom Font"
+              ]
+            ],
+            "type": "choice",
+            "default": "google"
+          },
+          {
+            "type": "font",
+            "name": "body_font",
+            "label": "Body Font",
+            "visibility": {
+              "controlling_field": "body_text_select",
+              "controlling_value_regex": "google",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": {
+                "styles": true
+              }
+            },
+            "load_external_fonts": true,
+            "default": {
+              "color": "#2b2c2d",
+              "font": "proxima-nova",
+              "size": {
+                "units": "px",
+                "value": 15
+              }
+            }
+          },
+          {
+            "name": "body_text_font",
+            "label": "Body Font Family",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "body_text_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "select",
+            "choices": [
+              [
+                "proxima-nova",
+                "proxima-nova"
+              ]
+            ],
+            "type": "choice",
+            "default": "proxima-nova"
+          },
+          {
+            "name": "body_text_font_size",
+            "label": "Body Font Size",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "body_text_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "default": 18
+          },
+          {
+            "name": "body_text_font_color",
+            "label": "Body Font Color",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "body_text_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "type": "color",
+            "default": {
+              "color": "#1a1a1a",
+              "opacity": 70
+            }
+          },
+          {
+            "name": "body_font_weight",
+            "label": "Body Font Weight",
+            "validation_regex": "",
+            "visibility": {
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "step": 100,
+            "min": 100,
+            "default": 400,
+            "max": 900
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "name": "h1_font",
+        "label": "H1 Font",
+        "children": [
+          {
+            "id": "h1_select",
+            "name": "h1_select",
+            "label": "H1 Font Type",
+            "display": "select",
+            "choices": [
+              [
+                "google",
+                "Google Fonts"
+              ],
+              [
+                "custom",
+                "Custom Font"
+              ]
+            ],
+            "type": "choice",
+            "default": "google"
+          },
+          {
+            "type": "font",
+            "name": "heading_one",
+            "label": "Heading 1",
+            "visibility": {
+              "controlling_field": "h1_select",
+              "controlling_value_regex": "google",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": {
+                "styles": true
+              }
+            },
+            "load_external_fonts": true,
+            "default": {
+              "color": "#2b2c2d",
+              "font": "proxima-nova",
+              "size": {
+                "units": "rem",
+                "value": 2.5
+              }
+            }
+          },
+          {
+            "name": "h1_font_family",
+            "label": "H1 Font Family",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h1_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "select",
+            "choices": [
+              [
+                "proxima-nova",
+                "proxima-nova"
+              ]      
+            ],
+            "type": "choice",
+            "default": "proxima-nova"
+          },
+          {
+            "name": "h1_font_size",
+            "label": "H1 Font Size",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h1_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "default": 2.5
+          },
+          {
+            "name": "h1_font_color",
+            "label": "H1 Font Color",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h1_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "type": "color",
+            "default": {
+              "color": "#2b2c2d",
+              "opacity": 100
+            }
+          },
+          {
+            "name": "h1_font_weight",
+            "label": "H1 Font Weight",
+            "validation_regex": "",
+            "visibility": {
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "step": 100,
+            "min": 100,
+            "default": 500,
+            "max": 900
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "name": "h2_font",
+        "label": "H2 Font",
+        "children": [
+          {
+            "id": "h2_select",
+            "name": "h2_select",
+            "label": "H2 Font Type",
+            "display": "select",
+            "choices": [
+              [
+                "google",
+                "Google Fonts"
+              ],
+              [
+                "custom",
+                "Custom Font"
+              ]
+            ],
+            "type": "choice",
+            "default": "google"
+          },
+          {
+            "type": "font",
+            "name": "heading_two",
+            "label": "Heading 2",
+            "visibility": {
+              "controlling_field": "h2_select",
+              "controlling_value_regex": "google",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": {
+                "styles": true
+              }
+            },
+            "load_external_fonts": true,
+            "default": {
+              "color": "#2b2c2d",
+              "font": "proxima-nova",
+              "size": {
+                "units": "px",
+                "value": 24
+              }
+            }
+          },
+          {
+            "name": "h2_font_family",
+            "label": "H2 Font Family",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h2_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "select",
+            "choices": [
+              [
+                "proxima-nova",
+                "proxima-nova"
+              ]
+            ],
+            "type": "choice",
+            "default": "proxima-nova"
+          },
+          {
+            "name": "h2_font_size",
+            "label": "H2 Font Size",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h2_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "default": 24
+          },
+          {
+            "name": "h2_font_color",
+            "label": "H2 Font Color",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h2_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "type": "color",
+            "default": {
+              "color": "#2b2c2d",
+              "opacity": 100
+            }
+          },
+          {
+            "name": "h2_font_weight",
+            "label": "H2 Font Weight",
+            "validation_regex": "",
+            "visibility": {
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "step": 100,
+            "min": 100,
+            "default": 300,
+            "max": 900
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "name": "h3_font",
+        "label": "H3 Font",
+        "children": [
+          {
+            "id": "h3_select",
+            "name": "h3_select",
+            "label": "H3 Font Type",
+            "display": "select",
+            "choices": [
+              [
+                "google",
+                "Google Fonts"
+              ],
+              [
+                "custom",
+                "Custom Font"
+              ]
+            ],
+            "type": "choice",
+            "default": "google"
+          },
+          {
+            "type": "font",
+            "name": "heading_three",
+            "label": "Heading 3",
+            "visibility": {
+              "controlling_field": "h3_select",
+              "controlling_value_regex": "google",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": {
+                "styles": true
+              }
+            },
+            "load_external_fonts": true,
+            "default": {
+              "color": "#2b2c2d",
+              "font": "proxima-nova",
+              "size": {
+                "units": "rem",
+                "value": 1.75
+              }
+            }
+          },
+          {
+            "name": "h3_font_family",
+            "label": "H3 Font Family",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h3_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "select",
+            "choices": [
+              [
+                "proxima-nova",
+                "proxima-nova"
+              ]
+            ],
+            "type": "choice",
+            "default": "proxima-nova"
+          },
+          {
+            "name": "h3_font_size",
+            "label": "H3 Font Size",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h3_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "default": 1.75
+          },
+          {
+            "name": "h3_font_color",
+            "label": "H3 Font Color",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h3_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "type": "color",
+            "default": {
+              "color": "#2b2c2d",
+              "opacity": 100
+            }
+          },
+          {
+            "name": "h3_font_weight",
+            "label": "H3 Font Weight",
+            "validation_regex": "",
+            "visibility": {
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "step": 100,
+            "min": 100,
+            "default": 400,
+            "max": 900
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "name": "h4_font",
+        "label": "H4 Font",
+        "children": [
+          {
+            "id": "h4_select",
+            "name": "h4_select",
+            "label": "H4 Font Type",
+            "display": "select",
+            "choices": [
+              [
+                "google",
+                "Google Fonts"
+              ],
+              [
+                "custom",
+                "Custom Font"
+              ]
+            ],
+            "type": "choice",
+            "default": "google"
+          },
+          {
+            "type": "font",
+            "name": "heading_four",
+            "label": "Heading 4",
+            "visibility": {
+              "controlling_field": "h4_select",
+              "controlling_value_regex": "google",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": {
+                "styles": true
+              }
+            },
+            "load_external_fonts": true,
+            "default": {
+              "color": "#2b2c2d",
+              "font": "proxima-nova",
+              "size": {
+                "units": "rem",
+                "value": 1.5
+              }
+            }
+          },
+          {
+            "name": "h4_font_family",
+            "label": "Custom Font Family",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h4_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "select",
+            "choices": [
+              [
+                "proxima-nova",
+                "proxima-nova"
+              ]          
+            ],
+            "type": "choice",
+            "default": "proxima-nova"
+          },
+          {
+            "name": "h4_font_size",
+            "label": "H4 Font Size",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h4_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "default": 18
+          },
+          {
+            "name": "h4_font_color",
+            "label": "H4 Font Color",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h4_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "type": "color",
+            "default": {
+              "color": "#2b2c2d",
+              "opacity": 100
+            }
+          },
+          {
+            "name": "h4_font_weight",
+            "label": "H4 Font Weight",
+            "validation_regex": "",
+            "visibility": {
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "step": 100,
+            "min": 100,
+            "default": 500,
+            "max": 900
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "name": "h5_font",
+        "label": "H5 Font",
+        "children": [
+          {
+            "id": "h5_select",
+            "name": "h5_select",
+            "label": "H5 Font Type",
+            "display": "select",
+            "choices": [
+              [
+                "google",
+                "Google Fonts"
+              ],
+              [
+                "custom",
+                "Custom Font"
+              ]
+            ],
+            "type": "choice",
+            "default": "google"
+          },
+          {
+            "type": "font",
+            "name": "heading_five",
+            "label": "Heading 5",
+            "visibility": {
+              "controlling_field": "h5_select",
+              "controlling_value_regex": "google",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": {
+                "styles": true
+              }
+            },
+            "load_external_fonts": true,
+            "default": {
+              "color": "#2b2c2d",
+              "font": "proxima-nova",
+              "size": {
+                "units": "rem",
+                "value": 1.25
+              }
+            }
+          },
+          {
+            "name": "h5_font_family",
+            "label": "Custom Font Family",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h5_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "select",
+            "choices": [
+              [
+                "proxima-nova",
+                "proxima-nova"
+              ]
+            ],
+            "type": "choice",
+            "default": "proxima-nova"
+          },
+          {
+            "name": "h5_font_size",
+            "label": "H5 Font Size",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h5_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "default": 1.25
+          },
+          {
+            "name": "h5_font_color",
+            "label": "H5 Font Color",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h5_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "type": "color",
+            "default": {
+              "color": "#2b2c2d",
+              "opacity": 100
+            }
+          },
+          {
+            "name": "h5_font_weight",
+            "label": "H5 Font Weight",
+            "validation_regex": "",
+            "visibility": {
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "step": 100,
+            "min": 100,
+            "default": 500,
+            "max": 900
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "name": "h6_font",
+        "label": "H6 Font",
+        "children": [
+          {
+            "id": "h6_select",
+            "name": "h6_select",
+            "label": "H6 Font Type",
+            "display": "select",
+            "choices": [
+              [
+                "google",
+                "Google Fonts"
+              ],
+              [
+                "custom",
+                "Custom Font"
+              ]
+            ],
+            "type": "choice",
+            "default": "google"
+          },
+          {
+            "type": "font",
+            "name": "heading_six",
+            "label": "Heading 6",
+            "visibility": {
+              "controlling_field": "h6_select",
+              "controlling_value_regex": "google",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": {
+                "styles": true
+              }
+            },
+            "load_external_fonts": true,
+            "default": {
+              "color": "#2b2c2d",
+              "font": "proxima-nova",
+              "size": {
+                "units": "rem",
+                "value": 1
+              }
+            }
+          },
+          {
+            "name": "h6_font_family",
+            "label": "Custom Font Family",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h6_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "select",
+            "choices": [
+              [
+                "proxima-nova",
+                "proxima-nova"
+              ]
+            ],
+            "type": "choice",
+            "default": "proxima-nova"
+          },
+          {
+            "name": "h6_font_size",
+            "label": "H6 Font Size",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h6_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "default": 1
+          },
+          {
+            "name": "h6_font_color",
+            "label": "H6 Font Color",
+            "validation_regex": "",
+            "visibility": {
+              "controlling_field": "h6_select",
+              "controlling_value_regex": "custom",
+              "operator": "EQUAL",
+              "access": null,
+              "hidden_subfields": null
+            },
+            "type": "color",
+            "default": {
+              "color": "#2b2c2d",
+              "opacity": 100
+            }
+          },
+          {
+            "name": "h6_font_weight",
+            "label": "H6 Font Weight",
+            "validation_regex": "",
+            "visibility": {
+              "access": null,
+              "hidden_subfields": null
+            },
+            "display": "slider",
+            "type": "number",
+            "step": 100,
+            "min": 100,
+            "default": 500,
+            "max": 900
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "name": "link_color",
+        "label": "Link color",
+        "default": {
+          "color": "#fb7268",
+          "opacity": 100
+        },
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "id": "link_opacity",
+        "name": "link_opacity",
+        "label": "Link opacity",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "display": "slider",
+        "step": 1,
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "default": 100
+      },
+      {
+        "type": "color",
+        "name": "link_hover_color",
+        "label": "Link hover color",
+        "default": {
+          "color": "#fb7268",
+          "opacity": 100
+        },
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "buttons",
+    "label": "Buttons",
+    "children": [
+      {
+        "type": "color",
+        "name": "background_color",
+        "label": "Background color",
+        "default": {
+          "color": "#F87267",
+          "opacity": 100
+        }
+      },
+      {
+        "id" : "",
+        "name": "background_hover_color",
+        "label": "Background hover color",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#F87267",
+          "opacity": 100 
+        } 
+      },
+      {
+        "id" : "",
+        "name": "text_hover_color",
+        "label": "Text hover color",
+        "sortable": false,
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100 
+        } 
+      },
+      {
+        "type": "color",
+        "name": "text_color",
+        "label": "Text color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "number",
+        "name": "border_width",
+        "label": "Border width",
+        "display": "slider",
+        "default": 1,
+        "min": 0,
+        "max": 20
+      },
+      {
+        "type": "color",
+        "name": "border_color",
+        "label": "Border color",
+        "default": {
+          "color":"#F87267",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "number",
+        "name": "border_radius",
+        "label": "Corner radius",
+        "display": "slider",
+        "default": 3,
+        "min": 0,
+        "max": 100
+      },
+      {
+        "type": "number",
+        "name": "horizontal_padding",
+        "label": "Horizontal padding",
+        "display": "slider",
+        "default": 24,
+        "min": 0,
+        "max": 100
+      },
+      {
+        "type": "number",
+        "name": "vertical_padding",
+        "label": "Vertical padding",
+        "display": "slider",
+        "default": 12,
+        "min": 0,
+        "max": 100
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "forms",
+    "label": "Forms",
+    "children": [
+      {
+        "type": "color",
+        "name": "header_background_color",
+        "label": "Header background color",
+        "default": {
+          "color":"#FFFFFF",
+          "opacity": 0
+        }
+      },
+      {
+        "type": "color",
+        "name": "header_text_color",
+        "label": "Header text color",
+        "default": {
+          "color":"#40404040",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "label_color",
+        "label": "Label color",
+        "default": {
+          "color":"#404040",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "help_text_color",
+        "label": "Help text color",
+        "default": {
+          "color": "#404040",
+          "opacity": 80
+        }
+      },
+      {
+        "type": "color",
+        "name": "field_input_text_color",
+        "label": "Field input text color",
+        "default": {
+          "color": "#33475b",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "field_input_background_color",
+        "label": "Field input background color",
+        "default": {
+          "color": "#f5f8fa",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "field_border_color",
+        "label": "Field border color",
+        "default": {
+          "color": "#cbd6e2",
+          "opacity": 100
+        }
+      },
+      {
+        "id" : "",
+        "name" : "field_border_radius",
+        "label" : "Field border radius",
+        "sortable" : false,
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "step" : 1,
+        "type" : "number",
+        "min" : 0,
+        "max" : null,
+        "default" : 3 
+      },
+      {
+        "type": "color",
+        "name": "field_focus_border_color",
+        "label": "Field focus border color",        
+        "default": {
+          "color": "#52a8ec",
+          "opacity": 100
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "tables",
+    "label": "Tables",
+    "children": [
+      {
+        "type": "color",
+        "name": "header_background_color",
+        "label": "Header background color",
+        "default": {
+          "color":"#FFFFFF",
+          "opacity": 0
+        }
+      },
+      {
+        "type": "color",
+        "name": "header_text_color",
+        "label": "Header text color",
+        "default": {
+          "color": "#404040",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "body_background_color",
+        "label": "Body background color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "body_text_color",
+        "label": "Body text color",
+        "default": {
+          "color": "#404040",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "footer_background_color",
+        "label": "Footer background color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "footer_text_color",
+        "label": "Footer text color",
+        "default": {
+          "color": "#404040",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "border_color",
+        "label": "Border color",
+        "default": {
+          "color": "#404040",
+          "opacity": 100
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "spacing",
+    "label": "Spacing",
+    "children": [
+      {
+        "type": "number",
+        "name": "vertical_spacing",
+        "label": "Vertical spacing",
+        "display": "slider",
+        "default": 40,
+        "min": 0,
+        "max": 500
+      },
+      {
+        "type": "number",
+        "name": "max_width",
+        "label": "Maximum content width",
+        "display": "slider",
+        "default": 1140,
+        "min": 900,
+        "max": 2500
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "footer",
+    "label": "Footer",
+    "children": [
+      {
+        "type": "color",
+        "name": "background_color",
+        "label": "Background color",
+        "default": {
+          "color": "#000000",
+          "opacity": 90
+        }
+      },
+      {
+        "type": "color",
+        "name": "bottom_background_color",
+        "label": "Bottom background color",
+        "default": {
+          "color": "#111111",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "title_color",
+        "label": "Title color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 80
+        }
+      },
+      {
+        "type": "color",
+        "name": "text_color",
+        "label": "Text color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 80
+        }
+      },
+      {
+        "type": "color",
+        "name": "link_color",
+        "label": "Link color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 80
+        }
+      },
+      {
+        "type": "color",
+        "name": "link_hover_color",
+        "label": "Link hover color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "post_title_link_color",
+        "label": "Post Title link color",
+        "default": {
+          "color": "#ffffff",
+          "opacity": 80
+        }
+      },
+      {
+        "type": "color",
+        "name": "post_title_link_hover_color",
+        "label": "Post Title link hover color",
+        "default": {
+          "color": "#ffffff",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "author_name_color",
+        "label": "Author Name color",
+        "default": {
+          "color": "#ffffff",
+          "opacity": 60
+        }
+      },
+      {
+        "type": "color",
+        "name": "contact_us_link_color",
+        "label": "Contact Us Link color",
+        "default": {
+          "color": "#fb7268",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "contact_us_link_hover_color",
+        "label": "Contact us link hover color",
+        "default": {
+          "color": "#fb7268",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "footer_social_link_color",
+        "label": "Footer social link color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 50
+        }
+      },
+      {
+        "type": "color",
+        "name": "footer_social_link_hover_color",
+        "label": "Footer social link hover color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      }
+    ]
+  }
+]

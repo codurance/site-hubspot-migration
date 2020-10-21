@@ -1,0 +1,22 @@
+<div class="cm-find-out-more-banner">
+  <div class="cm-find-out-more__image" style="background-image: url({{ module.image_field.src }})"></div>
+  <div class="cm-find-out-more__main">
+    <div class="cm-find-out-more__inner">
+      <h3 class="cm-find-out-more__title">{{ module.title }}</h3>
+      <p class="cm-find-out-more__description">{{ module.text }}</p>
+      {% if module.button_type == 'Standard' %}
+      {% set href = module.link_field.url.href %}
+      {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}" class="custom-blue-button" {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if module.link_field.no_follow %}rel="nofollow"{% endif %}>
+        {{ module.button_text }}
+      </a>
+      {% else %}
+      {% cta guid="{{ module.cta_field }}" %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+

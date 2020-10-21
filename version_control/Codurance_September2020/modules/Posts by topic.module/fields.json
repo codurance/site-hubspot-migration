@@ -1,0 +1,28 @@
+[ {
+  "id" : "943c00b7-08a2-7eb7-8c69-5f589189e76c",
+  "name" : "select_blog",
+  "label" : "Select Blog",
+  "required" : false,
+  "locked" : false,
+  "type" : "blog"
+}, {
+  "id" : "e029416b-0fc0-f52a-7904-07d074454f4b",
+  "name" : "select_tag",
+  "label" : "Select Tag",
+  "required" : false,
+  "locked" : false,
+  "tag_value" : "SLUG",
+  "type" : "tag",
+  "default" : "software-modernisation"
+}, {
+  "id" : "0c1eadf6-2370-4e12-6576-50d182e11628",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "View all publications"
+} ]

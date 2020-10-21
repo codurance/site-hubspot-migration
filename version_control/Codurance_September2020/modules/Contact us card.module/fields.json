@@ -1,0 +1,40 @@
+[ {
+  "id" : "9003c1e0-7262-072b-a591-d6da8de3c289",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "ebb5dae9-3603-de02-79e6-8c57f7904bcf",
+  "name" : "address",
+  "label" : "Address",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "02e26d0d-5a26-6c53-a837-c88ad97f1d42",
+  "name" : "map_address",
+  "label" : "Map Address",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "e18b2742-d914-35dc-4f3a-15dfb4b21184",
+  "name" : "zoom",
+  "label" : "Zoom",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 10,
+  "max" : 25,
+  "step" : 1,
+  "type" : "number",
+  "default" : 16
+} ]

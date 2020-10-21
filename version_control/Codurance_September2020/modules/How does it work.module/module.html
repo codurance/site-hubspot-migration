@@ -1,0 +1,23 @@
+<div class="custom-how-does-it-work row bg-color-light">
+  <div class="custom-col-lg-4 nopadding custom-hidden-md-down" style="background-image: url('{{ module.left_image.src }}'); background-size: cover;"></div>
+  <div class="custom-col-lg-8 howworks-boxes-container">
+    <div class="row">
+      {% for item in module.how_does_it_work_items %}
+      <div class="custom-col-lg-6 custom-mb-30 {% if loop.index == 1 %}custom-mt-10{% endif %} {% if loop.index == 2 %}custom-mt-10--lg{% endif %}">
+        <div class="custom-bg-white custom-pa-20 h-90 howworks-box">
+          <div class="media custom-mb-15">
+            <div class="media-body">
+              <h5 class="h5 custom-color-black mb-20">{{ item.title }}</h5> 
+              <p class="custom-color-gray-dark-v4 custom-mb-0">
+                {{ item.content }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+

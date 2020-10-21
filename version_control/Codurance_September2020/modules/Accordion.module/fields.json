@@ -1,0 +1,34 @@
+[ {
+  "id" : "8e455119-d92b-7de6-5963-3ed61d33bb78",
+  "name" : "accordion_item",
+  "label" : "Accordion Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "6ec8f66a-b2a0-fa8b-4397-980c6985f5d1",
+    "name" : "accordion_title",
+    "label" : "Accordion Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "56e9d511-e83b-fa2d-d94d-f2cbf9da6511",
+    "name" : "accordion_content",
+    "label" : "Accordion Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "type" : "group",
+  "default" : { }
+} ]

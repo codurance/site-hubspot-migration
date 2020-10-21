@@ -1,0 +1,18 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+.banner.no-bg-image{
+  background-color:#FE6219;
+}
+.banner .page-center{
+  padding:7.14286rem 15px;
+}
+.banner .banner-content h1 {
+  margin-bottom: 1.07143rem;
+  letter-spacing: 0.07143rem;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 0;
+}

@@ -1,0 +1,87 @@
+<div class="cm-training-card-group desktop">
+  {% for item in module.training_item %}
+  <div class="cm-training-card {% if item.featured %} cm-training-card--featured {% endif %}">
+    <div class="cm-training-card__primary-content" style="background-image: url({{ item.background_image.src }})">
+      {% if item.featured %}
+      <h2 class="cm-training-card__tag">
+        {% if item.trainer_image.src %}
+        {% set sizeAttrs = 'width="{{ item.trainer_image.width }}" height="{{ item.trainer_image.height }}"' %}
+        {% if item.trainer_image.size_type == 'auto' %}
+        {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+        {% elif item.trainer_image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.trainer_image.max_width }}px; max-height: {{ item.trainer_image.max_height }}px"' %}
+        {% endif %}
+        <img class="cm-training-card__avatar" src="{{ item.trainer_image.src }}" alt="{{ item.trainer_image.alt }}" {{ sizeAttrs }}>
+        {% endif %}
+        {{ item.trainer_name }}
+        <span class="cm-training-card__course-length">{{ item.training_duration }}</span>
+      </h2>
+      {% else %}
+      <h3 class="cm-training-card__course-length">{{ item.training_duration }}</h3>
+      {% endif %}      
+      <h3 class="cm-training-card__title">{{ item.title }}</h3>
+    </div>
+    <div class="cm-training-card__secondary-content">
+      <p class="cm-training-card__description">{{ item.content }}</p>
+      {% if item.button_type == 'Standard' %}
+      {% set href = item.link_field.url.href %}
+      {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}" class="cta--primary-coral" {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if item.link_field.no_follow %}rel="nofollow"{% endif %}>
+        {{ item.button_text }}
+      </a>
+      {% else %}
+      {% cta guid="{{ item.cta_field }}" %}
+      {% endif %}      
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<div class="cm-training-card-group mobile-slider">
+  {% for item in module.training_item %}
+  {% if not item.featured %}
+  <div class="cm-training-card-item">
+    <div class="cm-training-card {% if item.featured %} cm-training-card--featured {% endif %}">
+      <div class="cm-training-inner-card matchHeight">
+        <div class="cm-training-card__primary-content" style="background-image: url({{ item.background_image.src }})">
+          {% if item.featured %}
+          <h2 class="cm-training-card__tag">
+            {% if item.trainer_image.src %}
+            {% set sizeAttrs = 'width="{{ item.trainer_image.width }}" height="{{ item.trainer_image.height }}"' %}
+            {% if item.trainer_image.size_type == 'auto' %}
+            {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+            {% elif item.trainer_image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.trainer_image.max_width }}px; max-height: {{ item.trainer_image.max_height }}px"' %}
+            {% endif %}
+            <img class="cm-training-card__avatar" src="{{ item.trainer_image.src }}" alt="{{ item.trainer_image.alt }}" {{ sizeAttrs }}>
+            {% endif %}
+            {{ item.trainer_name }}
+            <span class="cm-training-card__course-length">{{ item.training_duration }}</span>
+          </h2>
+          {% else %}
+          <h3 class="cm-training-card__course-length">{{ item.training_duration }}</h3>
+          {% endif %}      
+          <h3 class="cm-training-card__title">{{ item.title }}</h3>
+        </div>
+        <div class="cm-training-card__secondary-content">
+          <p class="cm-training-card__description">{{ item.content }}</p>
+          {% if item.button_type == 'Standard' %}
+          {% set href = item.link_field.url.href %}
+          {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a href="{{ href }}" class="cta--primary-coral" {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if item.link_field.no_follow %}rel="nofollow"{% endif %}>
+            {{ item.button_text }}
+          </a>
+          {% else %}
+          {% cta guid="{{ item.cta_field }}" %}
+          {% endif %}      
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+

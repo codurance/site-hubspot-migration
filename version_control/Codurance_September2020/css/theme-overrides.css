@@ -1,0 +1,573 @@
+/* ******************************************************************************
+*********************************************************************************
+Use this file to override any of the CSS styles preset in the themed
+stylesheets or you can add your own custom styles.
+*********************************************************************************
+****************************************************************************** */
+
+{## Table of contents
+
+  1. _dnd_areas
+  2. _typography
+  3. _forms
+  4. _tabels
+  5. _header
+  6. _footer
+  7. _blog
+  8. _system_pages
+  9. _modules
+
+##}
+
+{% if theme.typography.body_font.body_text_select == "google" %}{% set body_size = theme.typography.body_font.body_font.size.value %}{% set body_color = theme.typography.body_font.body_font.color %}{% set body_variation = theme.typography.body_font.body_font.variation %}{% set body_font = theme.typography.body_font.body_font.font %}{% else %}{% set body_size = theme.typography.body_font.body_text_font_size %}{% set body_color = theme.typography.body_font.body_text_font_color.color %}{% set body_font = theme.typography.body_font.body_text_font %}{% endif %}
+{% if theme.typography.h1_font.h1_select == "google" %}{% set h1_size = theme.typography.h1_font.heading_one.size.value %}{% set h1_color = theme.typography.h1_font.heading_one.color %}{% set h1_variation = theme.typography.h1_font.heading_one.variation %}{% set h1_font = theme.typography.h1_font.heading_one.font %}{% else %}{% set h1_color = theme.typography.h1_font.h1_font_color.color %}{% set h1_size = theme.typography.h1_font.h1_font_size %}{% set h1_font = theme.typography.h1_font.h1_font_family %}{% endif %}
+{% if theme.typography.h2_font.h2_select == "google" %}{% set h2_size = theme.typography.h2_font.heading_two.size.value %}{% set h2_color = theme.typography.h2_font.heading_two.color %}{% set h2_variation = theme.typography.h2_font.heading_two.variation %}{% set h2_font = theme.typography.h2_font.heading_two.font %}{% else %}{% set h2_color = theme.typography.h2_font.h2_font_color.color %}{% set h2_size = theme.typography.h2_font.h2_font_size %}{% set h2_font = theme.typography.h2_font.h2_font_family %}{% endif %}
+{% if theme.typography.h3_font.h3_select == "google" %}{% set h3_size = theme.typography.h3_font.heading_three.size.value %}{% set h3_color = theme.typography.h3_font.heading_three.color %}{% set h3_variation = theme.typography.h3_font.heading_three.variation %}{% set h3_font = theme.typography.h3_font.heading_three.font %}{% else %}{% set h3_color = theme.typography.h3_font.h3_font_color.color %}{% set h3_size = theme.typography.h3_font.h3_font_size %}{% set h3_font = theme.typography.h3_font.h3_font_family %}{% endif %}
+{% if theme.typography.h4_font.h4_select == "google" %}{% set h4_size = theme.typography.h4_font.heading_four.size.value %}{% set h4_color = theme.typography.h4_font.heading_four.color %}{% set h4_variation = theme.typography.h4_font.heading_four.variation %}{% set h4_font = theme.typography.h4_font.heading_four.font %}{% else %}{% set h4_color = theme.typography.h4_font.h4_font_color.color %}{% set h4_size = theme.typography.h4_font.h4_font_size %}{% set h4_font = theme.typography.h4_font.h4_font_family %}{% endif %}
+{% if theme.typography.h5_font.h5_select == "google" %}{% set h5_size = theme.typography.h5_font.heading_five.size.value %}{% set h5_color = theme.typography.h5_font.heading_five.color %}{% set h5_variation = theme.typography.h5_font.heading_five.variation %}{% set h5_font = theme.typography.h5_font.heading_five.font %}{% else %}{% set h5_color = theme.typography.h5_font.h5_font_color.color %}{% set h5_size = theme.typography.h5_font.h5_font_size %}{% set h5_font = theme.typography.h5_font.h5_font_family %}{% endif %}
+{% if theme.typography.h6_font.h6_select == "google" %}{% set h6_size = theme.typography.h6_font.heading_six.size.value %}{% set h6_color = theme.typography.h6_font.heading_six.color %}{% set h6_variation = theme.typography.h6_font.heading_six.variation %}{% set h6_font = theme.typography.h6_font.heading_six.font %}{% else %}{% set h6_color = theme.typography.h6_font.h6_font_color.color %}{% set h6_size = theme.typography.h6_font.h6_font_size %}{% set h6_font = theme.typography.h6_font.h6_font_family %}{% endif %}
+
+{###########################################################################}
+{##############################   _dnd_areas   #############################}
+{###########################################################################}
+
+.dnd-section > .row-fluid {
+  max-width: {{ theme.spacing.max_width }}px;
+}
+
+.dnd-section {
+  padding-bottom: {{ theme.spacing.vertical_spacing }}px;
+  padding-top: {{ theme.spacing.vertical_spacing }}px;
+}
+
+.body-container__homepage .dnd-section:nth-child(odd) {
+  background-color: {{ theme.global_colors.secondary_color.color }};
+}
+.page-center {
+  max-width: {{ theme.spacing.max_width }}px;
+}
+{###########################################################################}
+{#############################   _typography   #############################}
+{###########################################################################}
+
+body {
+  color: {{ body_color }};
+  font-family: {{ body_font }};
+  font-weight: {{ theme.typography.body_font.body_font_weight }};
+  font-size: {{ body_size }}{% if theme.typography.body_font.uints && theme.typography.body_font.body_text_select == "google" %} %}{{ theme.typography.body_font.body_font.units }}{% else %}px{% endif %};
+}
+
+
+a {
+  color: rgba({{ theme.typography.link_color.color|convert_rgb }}, {{ theme.typography.link_opacity * 0.01 }});
+}
+
+a:hover,
+a:focus {
+  color: rgba({{ theme.typography.link_hover_color.color|convert_rgb }}, {{ theme.typography.link_opacity * 0.01 }});
+}
+
+a:active {
+  color: rgba({{ color_variant(theme.typography.link_color.color, 40)|convert_rgb }}, {{ theme.typography.link_opacity * 0.01 }});
+}
+
+h1 {
+  color: {{ h1_color }};
+  font-family: {{ h1_font }};
+  font-size: {{ h1_size }}rem;
+  font-weight: {{ theme.typography.h1_font.h1_font_weight }};
+}
+
+
+h2 {
+  color: {{ h2_color }};
+  font-family: {{ h2_font }};
+  font-size: {{ h2_size }}px;
+  font-weight: {{ theme.typography.h2_font.h2_font_weight }};
+}
+
+
+h3 {
+  color: {{ h3_color }};
+  font-family: {{ h3_font }};
+  font-size: {{ h3_size }}rem;
+  font-weight: {{ theme.typography.h3_font.h3_font_weight }};
+}
+
+
+
+h4 {
+  color: {{ h4_color }};
+  font-family: {{ h4_font }};
+  font-size: {{ h4_size }}rem;
+  font-weight: {{ theme.typography.h4_font.h4_font_weight }};
+}
+
+
+
+h5 {
+  color: {{ h5_color }};
+  font-family: {{ h5_font }};
+  font-size: {{ h5_size }}rem;
+  font-weight: {{ theme.typography.h5_font.h5_font_weight }};
+}
+
+h6 {
+  color: {{ h6_color }};
+  font-family: {{ h6_font }};
+  font-size: {{ h6_size }}rem;
+  font-weight: {{ theme.typography.h6_font.h6_font_weight }};
+}
+
+blockquote {
+  border-left: 10px solid {{ theme.global_colors.secondary_color.color }};;
+}
+
+{###########################################################################}
+{###############################   _forms    ###############################}
+{###########################################################################}
+
+form,
+.submitted-message {
+  font-family: {{ body_font }};
+  background-color: rgba({{ theme.forms.form_background_color.color|convert_rgb }}, {{ theme.forms.form_background_color.opacity * 0.01 }});
+}
+
+h3.form-title {
+  background-color: rgba({{ theme.forms.header_background_color.color|convert_rgb }}, {{ theme.forms.header_background_color.opacity * 0.01 }});
+  color: rgba({{ theme.forms.header_text_color.color|convert_rgb }}, {{ theme.forms.header_text_color.opacity * 0.01 }});
+}
+
+.hs-button,
+.button--primary {
+  background-color: rgba({{ theme.buttons.background_color.color|convert_rgb }}, {{ theme.buttons.background_color.opacity * 0.01 }});
+  border-color: rgba({{ theme.buttons.border_color.color|convert_rgb }}, {{ theme.buttons.border_color.opacity * 0.01 }});
+  border-radius: {{ theme.buttons.border_radius }}px;
+  border-width: {{ theme.buttons.border_width }}px;
+  color: rgba({{ theme.buttons.text_color.color|convert_rgb }}, {{ theme.buttons.text_color.opacity * 0.01 }});
+  padding-left: {{ theme.buttons.horizontal_padding }}px;
+  padding-right: {{ theme.buttons.horizontal_padding }}px;
+  padding-top: {{ theme.buttons.vertical_padding }}px;
+  padding-bottom: {{ theme.buttons.vertical_padding }}px;
+}
+
+.hs-button:hover,
+.hs-button:focus,
+.button--primary:hover,
+.button--primary:focus {
+  background-color: rgba({{ theme.buttons.background_hover_color.color|convert_rgb }}, {{ theme.buttons.background_hover_color.opacity * 0.01 }});
+  border-color: rgba({{ theme.buttons.background_hover_color.color|convert_rgb }}, {{ theme.buttons.background_hover_color.opacity * 0.01 }});
+  color: rgba({{ theme.buttons.text_hover_color.color|convert_rgb }}, {{ theme.buttons.text_hover_color.opacity * 0.01 }});
+}
+
+.hs-button:active,
+.button--primary:active {
+  background-color: rgba({{ color_variant(theme.buttons.background_color.color, 40)|convert_rgb }}, {{ theme.buttons.background_color.opacity * 0.01 }});
+  border-color: rgba({{ color_variant(theme.buttons.border_color.color, 40)|convert_rgb }}, {{ theme.buttons.border_color.opacity * 0.01 }});
+  color: rgba({{ theme.buttons.text_color.color|convert_rgb }}, {{ theme.buttons.text_color.opacity * 0.01 }});
+}
+
+.hs-form label {
+  color: rgba({{ theme.forms.label_color.color|convert_rgb }}, {{ theme.forms.label_color.opacity * 0.01 }});
+}
+
+.hs-form legend {
+  color: rgba({{ theme.forms.help_text_color.color|convert_rgb }}, {{ theme.forms.help_text_color.opacity * 0.01 }});
+}
+input#hs-pwd-widget-password,
+form input,
+form select,
+form textarea,
+.hs-input {
+  background-color: rgba({{ theme.forms.field_input_background_color.color|convert_rgb }}, {{ theme.forms.field_input_background_color.opacity * 0.01 }});
+  border-color: rgba({{ theme.forms.field_border_color.color|convert_rgb }}, {{ theme.forms.field_border_color.opacity * 0.01 }});
+  color: rgba({{ theme.forms.field_input_text_color.color|convert_rgb }}, {{ theme.forms.field_input_text_color.opacity * 0.01 }});
+  border-radius: {{ theme.forms.field_border_radius }}px;
+}
+input#hs-pwd-widget-password:focus,
+form input:focus,
+form select:focus,
+form textarea:focus,
+.hs-input:focus {
+  border-color: rgba({{ theme.forms.field_focus_border_color.color|convert_rgb }}, {{ theme.forms.field_focus_border_color.opacity * 0.01 }});
+}
+
+.fn-date-picker .pika-table thead th {
+  color: rgba({{ theme.tables.header_text_color.color|convert_rgb }}, {{ theme.buttons.secondary.secondary.text_hover_color.opacity * 0.01 }});
+}
+
+.hs-input:-moz-placeholder,
+.hs-input::-webkit-input-placeholder,
+.hs-field-desc,
+.hs-dateinput:before,
+.hs-richtext {
+  color: {{ body_color }};
+}
+
+.hs-richtext {
+  font-size: {{ body_size }};
+}
+
+.hs-default-font-element,
+.hs-main-font-element {
+  font-family: {{ body_font }};
+}
+
+.fn-date-picker td.is-today .pika-button {
+  color: {{ theme.global_colors.primary_color.color }};
+}
+
+.fn-date-picker td.is-selected .pika-button {
+  background: {{ theme.global_colors.primary_color.color }};
+}
+
+.fn-date-picker td .pika-button:hover {
+  background-color: {{ theme.global_colors.secondary_color.color }} !important;
+}
+
+{###########################################################################}
+{###############################   _tables   ###############################}
+{###########################################################################}
+
+th,
+td {
+  background-color: rgba({{ theme.tables.body_background_color.color|convert_rgb }}, {{ theme.tables.body_background_color.opacity * 0.01 }});
+  border: 1px solid rgba({{ theme.tables.border_color.color|convert_rgb }}, {{ theme.tables.border_color.opacity * 0.01 }});
+  color: rgba({{ theme.tables.body_text_color.color|convert_rgb }}, {{ theme.tables.body_text_color.opacity * 0.01 }});
+}
+
+thead th,
+thead td {
+  background-color: rgba({{ theme.tables.header_background_color.color|convert_rgb }}, {{ theme.tables.header_background_color.opacity * 0.01 }});
+  color: rgba({{ theme.tables.header_text_color.color|convert_rgb }}, {{ theme.tables.header_text_color.opacity * 0.01 }});
+}
+
+tfoot td {
+  background-color: rgba({{ theme.tables.footer_background_color.color|convert_rgb }}, {{ theme.tables.footer_background_color.opacity * 0.01 }});
+  color: rgba({{ theme.tables.footer_text_color.color|convert_rgb }}, {{ theme.tables.footer_text_color.opacity * 0.01 }});
+}
+
+table,
+tbody + tbody {
+  border-color: rgba({{ theme.tables.border_color.color|convert_rgb }}, {{ theme.tables.border_color.opacity * 0.01 }});
+}
+
+{###########################################################################}
+{###############################   _header   ###############################}
+{###########################################################################}
+
+.cm-header-group {
+  background-color: rgba({{ theme.header.background_color.color|convert_rgb }}, {{ theme.header.background_color.opacity * 0.01 }});
+}
+
+.header__container {
+  max-width: {{ theme.spacing.max_width * 1.140 }}px;
+}
+
+
+body .custom-menu-primary a,
+.header__logo .logo-company-name,
+.header__language-switcher-label-current,
+.header__language-switcher .lang_list_class li a {
+  color: rgba({{ theme.header.menu_link_color.color|convert_rgb }}, {{ theme.header.menu_link_color.opacity * 0.01 }});
+}
+
+body .custom-menu-primary .submenu.level-1 > li > a:hover,
+body .custom-menu-primary .submenu.level-1 > li:focus > a,
+.header__language-switcher-label-current:hover,
+.header__language-switcher-label-current:focus,
+.header__language-switcher .lang_list_class li:hover a,
+.header__language-switcher .lang_list_class li a:focus {
+  color: rgba({{ theme.header.menu_link_hover_color.color|convert_rgb }}, {{ theme.header.menu_link_hover_color.opacity * 0.01 }});
+}
+
+body .custom-menu-primary a.active-branch,
+body .header__language-switcher-label-current:active,
+body .header__language-switcher .lang_list_class li a:active,
+.language-switcher ul li a.active-item{
+  color: rgba({{ theme.header.active_menu_link_color.color|convert_rgb }}, {{ theme.header.active_menu_link_color.opacity * 0.01 }});
+}
+
+body .custom-menu-primary .navigation-primary>ul>li>a.menu-link.active-item:after{
+  background-color: rgba({{ theme.header.active_menu_link_border_color.color|convert_rgb }}, {{ theme.header.active_menu_link_border_color.opacity * 0.01 }});
+}
+
+
+
+body .custom-menu-primary .submenu.level-1 > li.active-branch > a,
+body .header__language-switcher-label-current:active,
+body .header__language-switcher .lang_list_class li:active,
+.custom-menu-primary .navigation-primary>ul>li>a.menu-link.active-item{
+  background-color: rgba({{ theme.header.active_menu_link_background_color.color|convert_rgb }}, {{ theme.header.active_menu_link_background_color.opacity * 0.01 }});
+}
+body .custom-menu-primary .submenu.level-1 > li {
+  background-color: rgba({{ theme.header.menu_link_background_color.color|convert_rgb }}, {{ theme.header.menu_link_background_color.opacity * 0.01 }});
+}
+body .custom-menu-primary .submenu.level-1 > li > a:hover,
+body .custom-menu-primary .submenu.level-1 > li > a:focus {
+  background-color: rgba({{ theme.header.menu_link_hover_background_color.color|convert_rgb }}, {{ theme.header.menu_link_hover_background_color.opacity * 0.01 }});
+}
+body .custom-menu-primary .submenu.level-1 > li > a.active-branch {
+  color: rgba({{ theme.header.active_menu_link_color.color|convert_rgb }}, {{ theme.header.active_menu_link_color.opacity * 0.01 }});
+}
+
+body .custom-menu-primary .submenu.level-1 > li > a.active-branch:after {
+  background-color: rgba({{ theme.header.active_menu_link_color.color|convert_rgb }}, {{ theme.header.active_menu_link_color.opacity * 0.01 }});
+}
+body .custom-menu-primary .submenu.level-2 > li > a,
+.language-switcher ul li a{
+  color: rgba({{ theme.header.child_menu_link_color.color|convert_rgb }}, {{ theme.header.child_menu_link_color.opacity * 0.01 }});
+}
+body .cm-header-group.website-header--has-open-submenu:before,
+.language-switcher ul li a{
+  background-color: rgba({{ theme.header.child_menu_background_color.color|convert_rgb }}, {{ theme.header.child_menu_background_color.opacity * 0.01 }});
+}
+body .custom-menu-primary .submenu.level-2 .triangle-container .triangle {
+  background-color: rgba({{ theme.header.child_menu_background_color.color|convert_rgb }}, {{ theme.header.child_menu_background_color.opacity * 0.01 }});
+}
+
+body .custom-menu-primary .submenu.level-2 .menu-item .menu-link:hover,
+body .custom-menu-primary .submenu.level-2 .menu-item .menu-link:focus,
+body .header__language-switcher .lang_list_class li:hover,
+body .custom-menu-primary .submenu.level-2 .triangle-container.level-2.hover .triangle,
+.language-switcher ul li a:hover{
+  background-color: rgba({{ theme.header.child_menu_link_hover_background_color.color|convert_rgb }}, {{ theme.header.child_menu_link_hover_background_color.opacity * 0.01 }});
+  color: rgba({{ theme.header.child_menu_link_hover_color.color|convert_rgb }}, {{ theme.header.child_menu_link_hover_color.opacity * 0.01 }});
+}
+
+body .custom-menu-primary .submenu.level-2 .menu-item .menu-link.active-branch,
+body .custom-menu-primary .submenu.level-2 .menu-item a.menu-link.active-item{
+  color: rgba({{ theme.header.active_child_menu_link_color.color|convert_rgb }}, {{ theme.header.active_child_menu_link_color.opacity * 0.01 }});
+  background-color: rgba({{ theme.header.active_child_menu_link_background_color.color|convert_rgb }}, {{ theme.header.active_child_menu_link_background_color.opacity * 0.01 }});
+}
+
+.header__language-switcher-label-current,
+.header__language-switcher .lang_list_class li a {
+  font-family: {{ body_font }};
+}
+
+.header__language-switcher-label-current:after {
+  border-top-color: rgba({{ theme.header.menu_link_color.color|convert_rgb }}, {{ theme.header.menu_link_color.opacity * 0.01 }});
+}
+
+
+@media(min-width: 1024px) {
+  body .custom-menu-primary nav > ul > li.has-submenu>a[aria-expanded="true"]{
+    color: rgba({{ theme.header.active_menu_link_color.color|convert_rgb }}, {{ theme.header.active_menu_link_color.opacity * 0.01 }});
+  }
+  body .custom-menu-primary nav > ul > li.has-submenu>a[aria-expanded="true"]:after{
+    border-color: rgba({{ theme.header.active_menu_link_color.color|convert_rgb }}, {{ theme.header.active_menu_link_color.opacity * 0.01 }});
+  }
+}
+
+@media(max-width: 767px) {
+  .header__navigation {
+    background-color: rgba({{ theme.header.background_color.color|convert_rgb }}, {{ theme.header.background_color.opacity * 0.01 }});
+  }
+
+  .header__navigation-toggle svg,
+  .menu-arrow svg {
+    fill: rgba({{ theme.header.menu_link_color.color|convert_rgb }}, {{ theme.header.menu_link_color.opacity * 0.01 }});
+  }
+}
+
+{###########################################################################}
+{###############################   _footer   ###############################}
+{###########################################################################}
+
+footer.footer {
+  background-color: rgba({{ theme.footer.background_color.color|convert_rgb }}, {{ theme.footer.background_color.opacity * 0.01 }});
+  color: rgba({{ theme.footer.text_color.color|convert_rgb }}, {{ theme.footer.text_color.opacity * 0.01 }});
+}
+.hs-footer-bottom-container{
+  background-color: rgba({{ theme.footer.bottom_background_color.color|convert_rgb }}, {{ theme.footer.bottom_background_color.opacity * 0.01 }});
+  color: rgba({{ theme.footer.text_color.color|convert_rgb }}, {{ theme.footer.text_color.opacity * 0.01 }});
+}
+.footer__container {
+  max-width: {{ theme.spacing.max_width }}px;
+}
+body .hs-footer-bottom-right ul li a{
+  color: rgba({{ theme.footer.footer_social_link_color.color|convert_rgb }}, {{ theme.footer.footer_social_link_color.opacity * 0.01 }});
+}
+body  .hs-footer-bottom-right ul li a:hover{
+  color: rgba({{ theme.footer.footer_social_link_hover_color.color|convert_rgb }}, {{ theme.footer.footer_social_link_hover_color.opacity * 0.01 }});
+}
+.cm-footer-useful-links .hs-menu-wrapper>ul>li>ul>li> a:hover:after,
+body .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a,
+body footer.footer a{
+  color: rgba({{ theme.footer.link_color.color|convert_rgb }}, {{ theme.footer.link_color.opacity * 0.01 }});
+}
+body .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a:hover,
+body footer.footer a:hover{
+  color: rgba({{ theme.footer.link_hover_color.color|convert_rgb }}, {{ theme.footer.link_hover_color.opacity * 0.01 }});
+}
+body .cm-footer-useful-links .hs-menu-wrapper > ul > li > a,
+body .hs-footer-top-container h6 span{
+  color: rgba({{ theme.footer.title_color.color|convert_rgb }}, {{ theme.footer.title_color.opacity * 0.01 }});
+}
+ 
+body footer.footer .cm-footer-contact-us a{
+  color: rgba({{ theme.footer.contact_us_link_color.color|convert_rgb }}, {{ theme.footer.contact_us_link_color.opacity * 0.01 }});
+}
+body footer.footer .cm-footer-contact-us a:hover{
+  color: rgba({{ theme.footer.contact_us_link_hover_color.color|convert_rgb }}, {{ theme.footer.contact_us_link_hover_color.opacity * 0.01 }});
+}
+body footer.footer .hs-rss-item .hs-rss-author{
+  color: rgba({{ theme.footer.author_name_color.color|convert_rgb }}, {{ theme.footer.author_name_color.opacity * 0.01 }});  
+}
+body footer.footer .hs-rss-item  a.hs-rss-title{
+  color: rgba({{ theme.footer.post_title_link_color.color|convert_rgb }}, {{ theme.footer.post_title_link_color.opacity * 0.01 }});  
+}
+body footer.footer .hs-rss-item  a.hs-rss-title:hover{
+  color: rgba({{ theme.footer.post_title_link_hover_color.color|convert_rgb }}, {{ theme.footer.post_title_link_hover_color.opacity * 0.01 }});  
+}
+
+
+
+{###########################################################################}
+{################################   _blog   ################################}
+{###########################################################################}
+
+.content-wrapper {
+  max-width: {{ theme.spacing.max_width }}px;
+}
+
+.blog-post__date {
+  border-color: {{ body_color }};
+}
+
+.blog-tag-filter__menu-link,
+.blog-post__tag-link,
+.blog-card__tag-link,
+.blog-post__author-name,
+.blog-card__title a {
+  color: {{ body_color }};
+}
+
+.blog-card__tag-link:hover,
+.blog-card__title a:hover,
+.blog-tag-filter__menu-link:hover,
+.blog-post__tag-link:hover,
+.blog-post__author-name:hover,
+.blog-card__tag-link:focus,
+.blog-card__title a:focus,
+.blog-tag-filter__menu-link:focus,
+.blog-post__tag-link:focus,
+.blog-post__author-name:focus {
+  color: {{ color_variant(body_color, -40) }};
+}
+
+.blog-card__tag-link:active,
+.blog-card__title a:active,
+.blog-tag-filter__menu-link:active,
+.blog-post__tag-link:active,
+.blog-post__author-name:active {
+  color: {{ color_variant(body_color, 40) }};
+}
+
+.blog-tag-filter__menu-link--active-item:after {
+  background-color: {{ theme.global_colors.primary_color.color }};
+}
+
+.blog-pagination__link {
+  color: {{ body_color }};
+}
+
+.blog-pagination__link--active:after,
+.blog-pagination__prev-link:after,
+.blog-pagination__next-link:after {
+  background-color: {{ theme.global_colors.primary_color.color }};
+}
+
+.blog-post__title {
+  color: {{ h2_color }};
+  font-family:{{ h2_font }};
+  font-size: {{ h2_size }}px;
+  font-weight: {{ theme.typography.h2_font_weight }};
+}
+
+.blog-post__author {
+  background-color: {{ theme.global_colors.secondary_color.color }};
+}
+
+#comments-listing .comment-reply-to {
+  color: rgba({{ theme.typography.color|convert_rgb }}, {{ theme.typography.opacity * 0.01 }});
+}
+
+#comments-listing .comment-reply-to:hover,
+#comments-listing .comment-reply-to:focus {
+  color: rgba({{ color_variant(theme.typography.color, -40)|convert_rgb }}, {{ theme.typography.opacity * 0.01 }});
+}
+
+#comments-listing .comment-reply-to:active {
+  color: rgba({{ color_variant(theme.typography.color, 40)|convert_rgb }}, {{ theme.typography.opacity * 0.01 }});
+}
+
+{###########################################################################}
+{###########################   _system_pages   #############################}
+{###########################################################################}
+
+
+{###########################################################################}
+{##############################   _modules   ###############################}
+{###########################################################################}
+
+body .icon svg {
+  fill: {{ theme.global_colors.primary_color.color }};
+}
+
+body .tns-nav button.tns-nav-active {
+  background-color: {{ theme.global_colors.primary_color.color }};
+}
+
+body .tns-nav button:hover,
+body .tns-nav button:focus {
+  background-color: {{ theme.global_colors.primary_color.color }};
+}
+
+body .social-links__icon {
+  background-color: {{ theme.global_colors.primary_color.color }};
+}
+
+body .social-links__icon:hover svg,
+body .social-links__icon:focus svg {
+  fill: rgba({{ color_variant(theme.typography.color, -40)|convert_rgb }}, {{ theme.typography.opacity * 0.01 }});
+}
+
+body .social-links__icon:active svg {
+  fill: rgba({{ color_variant(theme.typography.color, 40)|convert_rgb }}, {{ theme.typography.opacity * 0.01 }});
+}
+
+body .team-member__descripxion {
+  background-color: {{ theme.global_colors.secondary_color.color }};
+}
+
+.page-center {
+  max-width: {{ theme.spacing.max_width }}px;
+  margin: 0 auto;
+}
+
+@media(max-width:1200px){
+  .footer__container,
+  .dnd-section > .row-fluid,
+  .page-center {
+    max-width: {{ theme.spacing.max_width/1.1875 }}px;
+  } 
+}
+
+@media(max-width:992px){
+  .footer__container,
+  .dnd-section > .row-fluid,
+  .page-center {
+    max-width: {{ theme.spacing.max_width/1.58334 }}px;
+  } 
+}
+  
+@media(max-width:767px){
+  .footer__container,
+  .dnd-section > .row-fluid,
+  .page-center {
+    max-width: {{ theme.spacing.max_width/2.1112 }}px;
+  } 
+}
+

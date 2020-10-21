@@ -1,0 +1,47 @@
+<div class="cm-client-card-group">
+  <div class="client-image">
+    {% if module.logo.src %}
+    {% set sizeAttrs = 'width="{{ module.logo.width }}" height="{{ module.logo.height }}"' %}
+    {% if module.logo.size_type == 'auto' %}
+    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+    {% elif module.logo.size_type == 'auto_custom_max' %}
+    {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.logo.max_width }}px; max-height: {{ module.logo.max_height }}px"' %}
+    {% endif %}
+    <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" {{ sizeAttrs }}>
+    {% endif %}
+  </div>
+  <div class="client-body">
+    <h2>{{ module.title }}</h2>
+    <ul>
+      {% for item in module.category_item %}
+      {% set href = item.link_field_1.url.href %}
+      {% if item.link_field_1.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <li><i class="icon {{ item.icon_name }}"></i> 
+        <a href="{{ href }}" class="{%if not href %} no-link {% endif %}" {% if item.link_field_1.open_in_new_tab %}target="_blank"{% endif %} {% if item.link_field_1.no_follow %}rel="nofollow"{% endif %}>
+          {{ item.text_field }}
+        </a> 
+      </li>
+      {% endfor %}
+    </ul>
+    <p>{{ module.content }}</p> 
+    <div class="cm-clients-button-group">
+      {% for item in module.button_group %}
+      {% if item.button_type == 'Standard' %}
+      {% set href1 = item.link_field.url.href %}
+      {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href1 = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href1 }}" class="client-project btn btn-more" {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if item.link_field.no_follow %}rel="nofollow"{% endif %}>
+        {{ item.button_text }}
+      </a>
+      {% else %}
+      {% cta guid="{{ item.cta_field }}" %}
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+

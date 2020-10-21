@@ -1,0 +1,48 @@
+<div class="cm-event-card-group">
+  <div class="cm-event-card-top-group">
+    <div class="cm-event-card-left"> 
+      {% if module.image_field.src %}
+      {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+      {% if module.image_field.size_type == 'auto' %}
+      {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+      {% elif module.image_field.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image_field.max_width }}px; max-height: {{ module.image_field.max_height }}px"' %}
+      {% endif %}
+      <img  class="img-fluid" id="author-img" src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ sizeAttrs }}>
+      {% endif %}
+      {% if module.caption %}<h3>{{ module.caption }}</h3>{% endif %}
+    </div>
+    <div class="cm-event-card-right"> 
+      <div class="hs-events-card-desc">
+        <h1>{{ module.heading }}</h1>
+        <ul style="list-style:none;float:none;">
+          <li>{{ module.event_date }}</li>
+          {% if module.event_title %}<li>{{ module.event_title }}</li>{% endif %}
+          <li>Where? </li>
+          <li>{{ module.location }}</li>
+          {% set href = module.link_field.url.href %}
+          {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <li>
+            <a href="{{ href }}" {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if module.link_field.no_follow %}rel="nofollow"{% endif %}>
+              <i class="fa fa-tags"></i><span class="blog-tag-margin"> Find out more </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="cm-event-card-bottom-group">
+    {{ module.content }}
+    <div class="cm-event-card-bottom-inner">
+      <h3>Share:</h3>
+      <ul>
+        <li> <a class="cm-color-facebook--hover" href="http://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url }}&amp;title={{ module.heading }}" target="_blank" rel="noopener noreferrer"> <i class=" u-icon__elem-regular fa fa-facebook"></i> <i class="u-icon__elem-hover fa fa-facebook"></i> </a> </li>
+        <li> <a class="cm-color-twitter--hover" href="https://twitter.com/intent/tweet?text={{ module.heading }}&amp;url={{ content.absolute_url }}&amp;hashtags=" target="_blank" rel="noopener noreferrer"> <i class=" u-icon__elem-regular fa fa-twitter"></i> <i class="u-icon__elem-hover fa fa-twitter"></i> </a> </li>
+        <li> <a class="cm-color-linkedin--hover" href="http://www.linkedin.com/shareArticle?mini=true&amp;title={{ module.heading }}&amp;summary=&amp;url={{ content.absolute_url }}" target="_blank" rel="noopener noreferrer"> <i class=" u-icon__elem-regular fa fa-linkedin"></i> <i class="u-icon__elem-hover fa fa-linkedin"></i> </a> </li>
+        <li> <a class="cm-color-reddit--hover" href="http://www.reddit.com/submit?url={{ content.absolute_url }}&amp;title={{ module.heading }}" target="_blank" rel="noopener noreferrer"> <i class=" u-icon__elem-regular fa fa-reddit"></i> <i class="u-icon__elem-hover fa fa-reddit"></i> </a> </li>
+      </ul>
+    </div>
+  </div>
+</div>

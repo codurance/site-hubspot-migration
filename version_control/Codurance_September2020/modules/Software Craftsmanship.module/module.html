@@ -1,0 +1,21 @@
+<div class="cm-software-crafts-group">
+  <div class="rec-post-inner-item box-shadow matchHeight">
+    {% set href = module.link_field.url.href %}
+    {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+    {% endif %}
+    <a href="{{ href }}"
+       {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
+       {% if module.link_field.no_follow %}rel="nofollow"{% endif %}
+       >
+      <div class="cm-recent-image-wrapper" style="background-image:url({{ module.image_field.src }})"></div>
+      <div class="recent-post-wrapper">
+        <h4 class="rec-post-name">{{ module.heading }}</h4> 
+        <div class="rec-post-body"> 
+          <p>{{ module.content }}</p>
+        </div>              
+        <span class="block-cta">{{ module.button_text }}</span>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+[ {
+  "id" : "be96e43e-4e9a-b299-26b2-c3cd0013cdec",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/training-backgrounds_bg-crafting-code.svg",
+    "alt" : "Training Backgrounds",
+    "width" : 400,
+    "height" : 400,
+    "max_width" : 400,
+    "max_height" : 400
+  }
+}, {
+  "id" : "9f09259e-cbc0-bb5e-97e3-561ba3cf44b8",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/instructor-avatar-sandro.png",
+    "alt" : "Sandro",
+    "width" : 139,
+    "height" : 139,
+    "max_width" : 139,
+    "max_height" : 139
+  }
+}, {
+  "id" : "2ac3ba6d-cfbb-7cf1-b961-e7d484bac839",
+  "name" : "designation",
+  "label" : "Designation",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "COURSE INSTRUCTOR"
+}, {
+  "id" : "86e557bf-39c2-17ab-f32d-aa011aa9ddc5",
+  "name" : "member_name",
+  "label" : "Name",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "3b20b428-f76a-ff77-f657-845f192adb2e",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+} ]

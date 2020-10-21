@@ -1,0 +1,20 @@
+<div class="cm-team-member-card-group" id="team-section">
+  <div class="cm-team-member">
+    <div class="cm-team-member-inner">
+      <div class="cm-team-member-instructor-container" style="background-image: url({{ module.background_image.src }})">
+        <span class="cm-team-member-instructor-avatar" style="background-image: url({{ module.image_field.src }})"></span> 
+        <span class="cm-team-member-instructor-title">{{ module.designation }}</span> 
+        <span class="cm-team-member-instructor-name">{{ module.member_name }}</span> 
+      </div>
+      <div class="cm-team-member-content-container">
+        <div class="cm-team-member-content-wrapper">
+          <div class="cm-team-member-content">
+            {{ module.content }}
+          </div>
+        </div> 
+        <button class="cm-team-member-read-more-button" id="readMore">read more</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,13 @@
+.custom-body-container.custom-body-container-2 .custom-what-about-you h5 {
+    margin-bottom: .5rem;
+}
+
+.custom-container-row.custom-career-row3 .dnd-section>.row-fluid .dnd-row .row-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+.custom-container-row.custom-career-row3 .row-fluid .span4 div {
+    height: 100%;
+}

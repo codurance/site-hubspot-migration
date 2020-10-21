@@ -1,0 +1,421 @@
+.cm-posts-by-topic-group .cm-webinar-image-position-left,
+.cm-posts-by-topic-group .cm-webinar-image-position-right {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  position: relative;
+}
+.cm-posts-by-topic-group .cm-webinar-image-position-left .cm-webinar_image {
+  background-position: left center;
+}
+.cm-posts-by-topic-group .cm-webinar_image {
+  background-color: #aaa;
+  background-size: cover;
+}
+.cm-posts-by-topic-group .cm-webinar_content {
+  background-color: white;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+.cm-posts-by-topic-group .cm-webinar_content-type {
+  font-size: 15px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-family: proxima-nova;
+  font-weight: 700;
+}
+.cm-posts-by-topic-group .cm-webinar_title {
+  font-family: proxima-nova;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+}
+.cm-posts-by-topic-group .cm-webinar_title, .cm-webinar_description {
+  color: #404040;
+}
+.cm-posts-by-topic-group .cm-webinar_description {
+  font-family: proxima-nova;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 33px;
+}
+.cm-service-line__webinar-teaser .cta_button {
+  font-family: proxima-nova;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  background-color: #fb7268;
+  text-decoration: none !important;
+  color: #ffffff;
+}
+.cm-service-line__webinar-teaser .cta_button:hover,
+.cm-service-line__webinar-teaser .cta_button:focus {
+  background-color: #fb8e86;
+  color: #ffffff;
+}
+.cm-how-we-helped-our-clients {
+  box-shadow: 0 1px 3px rgba(255,255,255,0.12), 0 1px 10px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.cm-how-we-helped-our-clients:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.cm-how-we-helped-card-image {
+  background-position: top center;
+  background-size: cover;
+  padding-top: 62%;
+  width: 100%;
+}
+.cm-how-we-helped-card-text-container {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  position: relative;
+}
+.cm-how-we-helped-card-title {
+  font-family: proxima-nova;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 33px;
+}
+.cm-how-we-helped-card-description {
+  font-size: 18px;
+  line-height: 28px;
+  flex-grow: 1;
+}
+.cm-how-we-helped-our-clients .cta_button {
+  font-family: proxima-nova;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  background-color: #fb7268;
+  color: #ffffff;
+  width: 100%;
+  text-decoration: none !important;
+}
+.cm-how-we-helped-our-clients .cta_button:hover,
+.cm-how-we-helped-our-clients .cta_button:focus {
+  background-color: #fb8e86;
+  color: #ffffff;
+}
+.cm-how-we-helped-our-clients .hs-cta-wrapper,
+.cm-how-we-helped-our-clients .hs-cta-wrapper * {
+  box-sizing: border-box !important;
+}
+.cm-posts-by-topic-bottom-group {
+  display: flex;
+  padding: 0 25px;
+  position: relative;
+  z-index: 9;
+}
+.cm-posts-by-topic-bottom-group .cm-how-we-helped-our-clients {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.cm-posts-by-topic-bottom-group .cm-how-we-helped-card-text-container{
+  padding:30px;
+}
+
+
+
+
+@media (min-width: 768px){
+  .cm-how-we-helped-our-clients.mobile {
+    display: none;
+  }
+  .cm-posts-by-topic-top-group .cm-service-line__webinar-teaser {
+    margin-bottom: 70px;
+  }
+  .cm-how-we-helped-our-clients .cta_button{
+    display: inline-block;
+    padding: 10px 25px;
+  }
+  .cm-how-we-helped-our-clients {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .cm-how-we-helped-card-text-container {
+    height: 100%;
+    min-height: 230px;
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-left:after,
+  .cm-posts-by-topic-group .cm-webinar-image-position-right:after{
+    background-color: #fda09b;
+    background-size: cover;
+    content: "";
+    position: absolute;
+  }
+  .cm-service-line__webinar-teaser {
+    margin-bottom: 50px;
+    position:relative;
+    margin-top: 50px;
+  }
+  .cm-posts-by-topic-group .cm-webinar_description {
+    margin: 0 0 25px;
+  }
+  .cm-service-line__webinar-teaser .cta_button {
+    display: inline-block;
+    padding: 10px 25px;
+  }
+  .cm-posts-by-topic-group .cm-webinar_title {
+    margin: 0 0 15px;
+  }
+  .cm-posts-by-topic-group .cm-webinar_content {
+    position: relative;
+    z-index: 20;
+  }
+  .cm-posts-by-topic-group .cm-webinar_image {
+    position: absolute;
+    z-index: 10;
+  }
+  .cm-posts-by-topic-group .cm-webinar_content-type {
+    color: #fb7268;
+    margin: 0 0 30px;
+  }
+  .cm-service-line__webinar-teaser.right {
+    margin-top: 0;
+  }  
+  .cm-compass-teaser {
+    top:0;
+    margin-top: -200px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 1024px){  
+  .cm-posts-by-topic-group .cm-webinar-image-position-left:after,
+  .cm-posts-by-topic-group .cm-webinar-image-position-right:after{
+    bottom: 25px;
+    top: 40px;
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-left:after{
+    left: 100px;
+    right: 50%;
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-right:after {
+    left: 50%;
+    right: 100px;
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-right .cm-webinar_content {
+    margin-right: 43%;
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-right .cm-webinar_image {
+    left: auto;
+    right: 50px;
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-right .cm-webinar_image {
+    background-position: right center;
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-right .cm-webinar_content {
+    margin-right: 43%;
+  }
+  .cm-posts-by-topic-group .cm-webinar_content {
+    box-shadow: rgba(0,0,0,0.16) 0 0 8px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-left .cm-webinar_content {
+    margin-left: 43%;
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-left .cm-webinar_image {
+    left: 50px;
+  }
+  .cm-posts-by-topic-group .cm-webinar_image {
+    bottom: 40px;
+    top: 0;
+    width: calc(57% - 100px);
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-left, .cm-webinar-image-position-right {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 40px;
+  }
+}
+
+
+@media (min-width: 1300px){
+  .cm-how-we-helped-our-clients {
+    flex: 1;
+  }
+}
+
+
+
+@media (max-width: 1299px){
+  .cm-how-we-helped-our-clients {
+    margin-bottom: 40px;
+  }
+  .cm-posts-by-topic-bottom-group {
+    padding: 0 30px;
+  }
+  .cm-posts-by-topic-bottom-group .cm-how-we-helped-our-clients {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 1023px){
+  .cm-posts-by-topic-group .cm-webinar_image {
+    position: absolute;
+    background-color: #aaa;
+    background-size: cover;
+    z-index: 10;
+    bottom: 0;
+    top: 0;
+    width: calc(60% - 50px);
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-left .cm-webinar_content {
+    margin-left: 40%;
+  }
+  .hero-teaser--image-position-left .cm-webinar_image {
+    background-position: left center;
+  }
+  .hero-teaser--image-position-left .cm-webinar_image {
+    left: 25px;
+  }
+  .hero-teaser--image-position-left, 
+  .hero-teaser--image-position-right {
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+  .cm-posts-by-topic-group .cm-webinar_content {
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: 40%;
+    background-color: white;
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+  .cm-service-line__webinar-teaser {
+    padding-left: 25px;
+    padding-right: 50px;
+  }
+  .cm-posts-by-topic-group .cm-webinar_image {
+    bottom: 0;
+    top: 0;
+    width: calc(60% - 5px);
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-left .cm-webinar_image{
+    background-position: left center;
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-left {
+    padding: 40px 0;
+  }
+  .cm-posts-by-topic-bottom-group {
+    padding: 0 12px;
+    flex-wrap: wrap;
+  }
+  .cm-posts-by-topic-bottom-group .cm-how-we-helped-our-clients {
+    width: calc(50% - 28px);
+    margin-left: 14px;
+    margin-right: 14px;
+    
+  }
+ .cm-posts-by-topic-group .cm-webinar_content {
+    margin-left: 0;
+  } 
+  .cm-posts-by-topic-group .cm-service-line__webinar-teaser {
+    padding-left: 17px;
+    padding-right: 28px;
+  }
+}
+
+
+@media (max-width: 767px){
+  .cm-service-line__webinar-teaser {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .cm-posts-by-topic-group .cm-webinar_image {
+    height: 0;
+    padding-top: 63.8888888889%;
+    width: 100%;
+    position: static;
+    z-index: 0;
+  }
+  .cm-posts-by-topic-group .cm-webinar_content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-left .cm-webinar_content {
+    margin-left: 0;
+  }
+  .cm-posts-by-topic-group .cm-webinar_content-type {
+    color: white;
+    right: 20px;    
+    position: absolute;
+    top: 30px;
+  }
+  .cm-posts-by-topic-group .cm-webinar_title {
+    margin: 0 0 20px;
+  }
+  .cm-posts-by-topic-group .cm-webinar-image-position-left {
+    padding: 0;
+  }
+  .cm-posts-by-topic-group .cm-webinar_content{
+    margin-left:0;
+  }
+  .cm-posts-by-topic-group .cm-webinar_description {
+    margin: 0 0 35px;
+  }
+  .cm-service-line__webinar-teaser .cta_button {
+    padding: 10px;
+    display: block;
+  }
+  .cm-how-we-helped-our-clients .cta_button {
+    display: block;
+    padding: 10px;
+    margin-top: 14px;
+  }
+  .cm-how-we-helped-our-clients {
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cm-posts-by-topic-bottom-group {
+    padding:0;
+    flex-wrap: nowrap;
+    max-width: 1610px;
+    width: calc( ( 5 * (100vw - (2 * 30px)) ) + 180px );
+    overflow-x: auto;
+  }
+  .cm-posts-by-topic-inner-wrap{
+    overflow-x: auto;
+  }
+  .cm-posts-by-topic-bottom-group .cm-how-we-helped-our-clients {
+    width: calc(100vw - 60px);
+    margin-bottom: 0;
+    max-width: 370px;
+  }
+  .cm-how-we-helped-our-clients{
+    text-align:left;
+  }
+  .cm-posts-by-topic-bottom-group .cm-how-we-helped-our-clients:first-child {
+    margin-left: 30px;
+  }
+  .cm-posts-by-topic-top-group {
+    display: none;
+  }
+
+}
+
+@media (max-width: 479px){
+  .cm-posts-by-topic-inner-group {
+    width: calc( ( 5 * (100vw - (2 * 30px)) ) + 180px );
+    overflow-x: auto;
+  }
+}  

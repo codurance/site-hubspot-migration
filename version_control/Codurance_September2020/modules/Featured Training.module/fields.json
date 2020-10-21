@@ -1,0 +1,166 @@
+[ {
+  "id" : "6153de93-161d-33a3-f20d-486a1590eb51",
+  "name" : "image",
+  "label" : "Left Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/crafted-code-and-design.jpg",
+    "alt" : "Crafting Code & Crafted Design",
+    "width" : 684,
+    "height" : 524,
+    "max_width" : 684,
+    "max_height" : 524
+  }
+}, {
+  "id" : "fec7f64c-5468-4002-1a8e-a550a84e32e0",
+  "name" : "header_background_image",
+  "label" : "Header Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/training-backgrounds_bg-crafting-code-and-design.svg",
+    "alt" : "Training backgrounds",
+    "width" : 400,
+    "height" : 400,
+    "max_width" : 400,
+    "max_height" : 400
+  }
+}, {
+  "id" : "52fd633a-bee1-de66-8861-77cebd06c8e9",
+  "name" : "trainer_image",
+  "label" : "Trainer Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/sandro_avatar_image.png",
+    "alt" : "Sandro avatar",
+    "width" : 83,
+    "height" : 93,
+    "max_width" : 83,
+    "max_height" : 93
+  }
+}, {
+  "id" : "24d83a5e-5d1a-6b6d-363e-a8ac3c5aa58e",
+  "name" : "member_name",
+  "label" : "Trainer Name",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "SANDRO MANCUSO"
+}, {
+  "id" : "407bcadc-ca61-0c08-cf72-af245caabaf8",
+  "name" : "training_duration",
+  "label" : "Training Duration",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "3 DAYS"
+}, {
+  "id" : "ae7fb708-c2c2-dcf4-dfc4-53e8866c78d9",
+  "name" : "heading",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : ""
+}, {
+  "id" : "f2c4bce5-58ae-51e1-753b-4e56b4fcaf78",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : ""
+}, {
+  "id" : "8e4abc7c-a261-8238-490c-ac7d8eaad019",
+  "name" : "button_type",
+  "label" : "Button Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "Standard", "Standard" ], [ "CTA", "CTA" ] ],
+  "type" : "choice"
+}, {
+  "id" : "2aa88ad5-8703-c050-74da-2360d479b691",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "8e4abc7c-a261-8238-490c-ac7d8eaad019",
+    "controlling_value_regex" : "Standard",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "dc0c2996-fab3-d491-285b-c9154c81367d",
+  "name" : "link_field",
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "8e4abc7c-a261-8238-490c-ac7d8eaad019",
+    "controlling_value_regex" : "Standard",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "ae197ac5-950c-5ddc-ed22-eeee35ccfc29",
+  "name" : "cta_field",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "8e4abc7c-a261-8238-490c-ac7d8eaad019",
+    "controlling_value_regex" : "CTA",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "type" : "cta"
+} ]

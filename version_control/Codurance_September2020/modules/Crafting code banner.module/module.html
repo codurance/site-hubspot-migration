@@ -1,0 +1,31 @@
+<div class="cm-crafting-banner-group {% if not module.image.src %} no-author-section {% endif %}">
+  <div class="cm-crafting-intro-container" style="background-image: url({{ module.banner_image.src }})">
+    <div class="cm-crafting-logo-container">
+      {{ module.logo_svg }}
+    </div>
+    <div class="cm-crafting-intro-container-inner">
+      <h1 class="cm-crafting-course-title">{{ module.title }}</h1>
+      <span class="cm-crafting-course-duration">{{ module.sub_title }}</span>
+    </div>
+  </div>
+  <div class="cm-crafting-details-wrapper {% if not module.image.src %} no-author-section {% endif %}" style="background-image: url({{ module.bottom_section_banner_image.src }})">
+    <div class="cm-crafting-details-wrapper-inner">
+      <div class="cm-crafting-content-container">
+        {% if module.image.src or  module.designation or module.author_name%}
+        <div class="cm-crafting-instructor-wrapper">
+          {% if module.image.src %}<span class="cm-crafting-instructor-avatar" style="background-image: url({{ module.image.src }})"></span>{% endif %}
+          <div class="cm-crafting-instructor-wrapper-inner">
+            <span class="cm-crafting-instructor-title">{{ module.designation }}</span>
+            <span class="cm-crafting-instructor-name">{{ module.author_name }}</span> </div>          
+        </div>
+        {% endif %}
+        <div class="cm-crafting-description-wrapper">
+          <div class="cm-crafting-course-description">
+            {{ module.content }}
+          </div> 
+          <a href="{{ module.bookmark_id }}" class="cta--primary-coral " target=""> {{ module.button_text }}</a>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>

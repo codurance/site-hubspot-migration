@@ -1,0 +1,19 @@
+<div class="cm-testimonials-slider-wrapper" style="background-image:url({{ module.background_image.src }})">
+  <div class="page-center">
+    <div class="cm-testimonials-top-content">
+      {{ module.top_content }}
+    </div>
+    <div class="cm-testimonials-slider-group">
+      {% for item in module.testimonial_item %}
+      <div class="cm-testimonials-slider-item">
+        <div class="cm-testimonials-slider-inner-item matchHeight">
+          <div class="cm-testimonials-slider-item">
+            {{ item.content }}  
+          </div>          
+        </div>
+      </div>  
+      {% endfor %}  
+    </div>  
+  </div>
+</div>
+

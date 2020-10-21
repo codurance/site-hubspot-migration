@@ -1,0 +1,17 @@
+{
+  "global" : false,
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 35348427195,
+  "css_assets" : [ {
+    "url" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/css/custombox.min.css",
+    "autoload" : true,
+    "name" : "custombox.min.css"
+  } ],
+  "js_assets" : [ {
+    "url" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/js/custombox.min.js",
+    "autoload" : true,
+    "name" : "custombox.min.js"
+  } ],
+  "is_available_for_new_content" : true
+}

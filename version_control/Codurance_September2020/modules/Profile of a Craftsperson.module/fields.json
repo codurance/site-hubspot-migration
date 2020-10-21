@@ -1,0 +1,45 @@
+[ {
+  "id" : "d8bdaf76-ea1f-4ef7-2046-0e6860f8e94a",
+  "name" : "slider_items",
+  "label" : "Slider Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "e4865a9f-0de8-9be1-1099-254039318e03",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "e4865a9f-0de8-9be1-1099-254039318e03",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null
+    }
+  }, {
+    "id" : "cde4c413-4e6c-d41d-e730-1ef2f9101d7a",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "type" : "group",
+  "default" : {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null
+    }
+  }
+} ]

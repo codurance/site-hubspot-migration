@@ -1,0 +1,31 @@
+<div class="custom-events-list row blog-boxes margin-bottom-40">
+  {% for item in module.event_items %}
+  <div class="custom-col-md-4 md-margin-bottom-40">
+    <div class="blog-box">
+      {% set href = item.link_field.url.href %}
+      {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}"
+         {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+         {% if item.link_field.no_follow %}rel="nofollow"{% endif %}
+         >
+        {% if item.image_field.src %}
+        {% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
+        {% if item.image_field.size_type == 'auto' %}
+        {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+        {% elif item.image_field.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.image_field.max_width }}px; max-height: {{ item.image_field.max_height }}px"' %}
+        {% endif %}
+        <img src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ sizeAttrs }}>
+        {% endif %}
+      </a>
+      <div class="blog-content">
+    
+      {{ item.content }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+

@@ -1,0 +1,20 @@
+<!--
+templateType: global_partial
+label: Page Header
+-->
+<header class="header no-navigation">
+  <div class="cm-header-group">
+    <div class="header__container">
+      <div class="custom-logo">
+        {% set logo_file =  get_asset_url('../../images/logo.svg') %}
+        {% module "header_logo" path="@hubspot/logo", label="Header Logo",link="/", img={src="{{logo_file}}", alt="Codurance", override_inherited_src= true} %}
+        <div class="mobile-logo">
+          {% set mobile_logo =  get_asset_url('../../images/white-logo.svg') %}
+          {% module "mobile_header_logo" path="@hubspot/logo", label="Header Mobile Menu Logo", link="/", img={src="{{mobile_logo}}", alt="Codurance", override_inherited_src= true} %}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+

@@ -1,0 +1,96 @@
+.cm-client-card-group {
+  display: flex;
+  display: -webkit-flex;
+  position:relative;
+  padding-bottom: 3.57143rem;
+  margin-bottom: 3.57143rem;
+}
+.client-image {
+  margin-right: 3rem;
+  display: block;
+}
+.client-body ul li a.no-link {
+  pointer-events: none;
+  cursor: text;
+}
+.client-image img{
+  min-width:120px;
+  width:120px;
+}
+.client-body h2 {
+  font-weight: 600;
+  color: #000;
+  margin-bottom: .5rem;
+}
+.client-body ul li:not(:first-child) {
+  margin-right: 5px;
+}
+.client-body ul li {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+.client-body ul li,
+.client-body ul li a{
+  color: #999 !important;
+  text-decoration:None !important;
+}
+.client-body ul {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 0;
+  font-size: 0.92857rem;
+  color: #2b2c2d;
+}
+.cm-client-card-group:after {
+  content: "";
+  background: rgba(0,0,0,.1);
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+}
+.client-body i{
+  margin-right: .5rem;
+  font-size: 1.07143rem ;
+  color: #fb7268;
+  vertical-align:middle;    
+}
+.client-body .icon.icon-communication-101:before {
+  content: "\e008";
+  font-family: "communication-48-x-48";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.client-body .icon-education-009:before {
+  content: "y";
+  font-family: "education-48" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@media(max-width:767px){
+  .cm-client-card-group {
+    flex-direction: column;
+  }
+  .client-body h2{
+    display:none;
+  }
+  .client-image {
+    margin-bottom: 10px;
+  }
+}

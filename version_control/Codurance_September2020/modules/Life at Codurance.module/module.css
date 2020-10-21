@@ -1,0 +1,28 @@
+.custom-container-row.custom-career-row5 .row-fluid .span4 {
+  padding: 0;
+  margin-bottom: 2.14286rem;
+  display: flex;
+    flex-wrap: wrap;
+}
+.custom-life-at-condurance figure.custom-overflow-hidden {
+  height: 240px;
+}
+figure.custom-overflow-hidden {
+  margin: 0;
+}
+
+.custom-container-row.custom-career-row5 .dnd-section>.row-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.custom-container-row.custom-career-row5 .dnd-section .row-fluid {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+article.custom-life-at-condurance {
+  height: 100%;
+}
+

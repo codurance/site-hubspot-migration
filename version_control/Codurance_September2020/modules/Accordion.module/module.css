@@ -1,0 +1,126 @@
+.panel-heading {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  position: relative;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  margin-top: 0;
+  text-decoration:none !important;
+  margin-bottom: 1rem;
+  color: #2b2c2d;
+  display:block;
+}
+.panel-heading p {
+  margin: 0;
+}
+.panel-heading:focus,
+.panel-heading:hover{
+  color: #2b2c2d;
+}
+.panel-heading a {
+  font-family: proxima-nova;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  margin-top: 0;
+  text-decoration:none !important;
+  margin-bottom: 1rem;
+  color: #2b2c2d;
+}
+.panel-heading:before, 
+.panel-heading:after {
+  content: "";
+  background-color: #fb7268;
+  content: '';
+  height: 2px;
+  right: 0;
+  position: absolute;
+  top:calc(50% + 2px);
+  width: 25px;
+  transition: transform 500ms ease;
+  transform-origin: center;
+  transform: rotate(-180deg);
+}
+.panel-heading:after {
+  content: "";
+  transform: rotate(-90deg);
+}
+.accordion .panel {
+  border-bottom: 1px solid #b7b7b7;
+}
+.accordion .panel:last-child {
+  border-bottom:0;
+}
+.accordion {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.panel-body p {
+  font-family: proxima-nova;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 33px;
+}
+.panel-body h3 {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 33px;
+  padding-top: 20px;
+}
+.panel-body {
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 33px;
+}
+.accordion .panel .panel-collapse {
+  padding-bottom: 40px;
+}
+.accordion .panel-collapse {
+  display:none;
+}
+.panel:not(.accordion-close) .panel-heading:after {
+  transform: rotate(0);
+}
+.panel:not(.accordion-close) .panel-heading:before {
+  transform: rotate(0);
+}
+
+@media (max-width: 1023px){
+  .accordion{
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .accordion .panel {
+    margin-bottom: 10px;
+  }
+  .accordion .panel:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px){
+  .panel-heading{
+    font-size: 18px;
+    line-height: 28px;
+    font-family: proxima-nova;
+    font-weight: 700;
+  }
+  .accordion {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .panel-body,
+  .panel-body p{
+    font-size: 18px;
+    line-height: 28px;
+    font-family: proxima-nova;
+    font-weight: 400;
+  }
+}
+
+

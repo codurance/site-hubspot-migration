@@ -1,0 +1,50 @@
+[ {
+  "id" : "ecd0bf5b-7f8b-8437-c30e-f45b35f6e2da",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/bg-testimonials.jpg",
+    "alt" : "bg-testimonials",
+    "width" : 1920,
+    "height" : 600,
+    "max_width" : 1920,
+    "max_height" : 600
+  }
+}, {
+  "id" : "4f514ded-d50d-852b-e2b1-ff8bc1acafe0",
+  "name" : "top_content",
+  "label" : "Top Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "f15e321e-0498-0a70-6c9d-91addd3182f3",
+  "name" : "testimonial_item",
+  "label" : "Testimonial Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "2a83adb8-1cd9-adfb-92d0-fad9f9c13daf",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "type" : "group",
+  "default" : { }
+} ]

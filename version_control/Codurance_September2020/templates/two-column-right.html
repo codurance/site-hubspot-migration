@@ -1,0 +1,44 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Two Column Right
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<div class="custom-banner-section banner-section-two-col">
+  {% dnd_area "DND_banner" class='banner-area-two-col', label='Banner Section' %}
+  {% dnd_section full_width=true %}
+  {% dnd_module path='../modules/Project inner pages banner', width=12, offset=0, label="Project inner pages banner" %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}   
+  {% end_dnd_area %}
+</div>
+
+<div class="custom-body-container body-container-two-col">
+  
+  <section class="container page-center g-pt-100 g-pb-70 ">
+  <div class="custom-row">
+    <!--   Main Content -->
+    <div class="custom-col-md-8 g-mb-30">
+      {% dnd_area "main_content" class='custom-two-col-main-content', label='Main Content' %}
+      {% dnd_section vertical_alignment='MIDDLE' %}
+
+      {% end_dnd_section %}
+      {% end_dnd_area %}
+    </div>
+    <!--   Right Sidebar -->
+    <div class="custom-col-md-4 right-sidebar g-mb-30">
+      {% dnd_area "right_sidebar" class='right-sidebar', label='Right Sidebar' %}
+      {% dnd_section vertical_alignment='MIDDLE' %}
+
+      {% end_dnd_section %}
+      {% end_dnd_area %}
+    </div>
+  </div>
+</section>
+  
+</div>
+
+
+{% endblock body %}
