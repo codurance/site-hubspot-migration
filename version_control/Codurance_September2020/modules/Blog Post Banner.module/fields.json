@@ -9,8 +9,8 @@
   },
   {
     "id": "82bf4763-110a-df04-3585-5698c89e4e41",
-    "name": "backround_image",
-    "label": "Backround Image",
+    "name": "background_image",
+    "label": "Background Image",
     "required": false,
     "locked": false,
     "responsive": true,
