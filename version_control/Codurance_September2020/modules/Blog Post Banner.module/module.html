@@ -1,36 +1,31 @@
-{% if module.button_type == "std" or module.button_type == "cta" or module.content or module.backround_image.src  %}
-<div
-  class="in-page-banner page-center in-page-banner--even container section custom-pt-200 custom-pb-100"
-  {% if module.hide_banner %}
-    style="display: none;"
-  {% endif %}
->
-  <div class="in_page_banner__image" style="background-image: url('{{ module.backround_image.src }}'); background-position: center;">&nbsp;</div>
-  <div class="in_page_banner__main">
-    <div class="in_page_banner__inner">
-      {{ module.content }}
+{% if !module.hide_banner %}
+  {% if module.button_type == "std" or module.button_type == "cta" or module.content or module.backround_image.src  %}
 
-      {% if module.button_type == "std" %}
-      {% set href = module.link_field.url.href %}
-      {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-      {% set href = "mailto:" + href %}
-      {% endif %}
-      <a class="{{ module.module_setting.custom_class }}" href="{{ href }}{% if module.bookmark_id  %}#{{ module.bookmark_id }} {% endif %}"
-         {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
-         {% if module.link_field.no_follow %}rel="nofollow"{% endif %}
-         >
-        {{ module.text_field }}
-      </a>
-      {% elif module.button_type == "cta" %}
-      <span class="hubspot-cta--primary-navy">  {% cta guid="{{ module.cta_field }}" %}</span>
-      {% endif %}
+  <div class="in-page-banner page-center in-page-banner--even container section custom-pt-200 custom-pb-100">
+    <div class="in_page_banner__image" style="background-image: url('{{ module.backround_image.src }}'); background-position: center;">&nbsp;</div>
+    <div class="in_page_banner__main">
+      <div class="in_page_banner__inner">
+        {{ module.content }}
 
-
-
+        {% if module.button_type == "std" %}
+          {% set href = module.link_field.url.href %}
+          {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% endif %}
+          <a class="{{ module.module_setting.custom_class }}" href="{{ href }}{% if module.bookmark_id  %}#{{ module.bookmark_id }} {% endif %}"
+            {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
+            {% if module.link_field.no_follow %}rel="nofollow"{% endif %}
+            >
+            {{ module.text_field }}
+          </a>
+        {% elif module.button_type == "cta" %}
+          <span class="hubspot-cta--primary-navy">  {% cta guid="{{ module.cta_field }}" %}</span>
+        {% endif %}
+      </div>
     </div>
   </div>
-</div>
-<div class="custom-pt-50">
+  <div class="custom-pt-50">
+  </div>
 
-</div>
-   {% endif %}
+  {% endif %}
+{% endif %}
