@@ -1,8 +1,8 @@
 {% if !module.hide_banner %}
-  {% if module.button_type == "std" or module.button_type == "cta" or module.content or module.backround_image.src  %}
+  {% if module.button_type == "std" or module.button_type == "cta" or module.content or module.bg_image.src  %}
 
   <div class="in-page-banner page-center in-page-banner--even container section custom-pt-200 custom-pb-100">
-    <div class="in_page_banner__image" style="background-image: url('{{ module.backround_image.src }}'); background-position: center;">&nbsp;</div>
+    <div class="in_page_banner__image" style="background-image: url('{{ module.bg_image.src }}'); background-position: center;">&nbsp;</div>
     <div class="in_page_banner__main">
       <div class="in_page_banner__inner">
         {{ module.content }}

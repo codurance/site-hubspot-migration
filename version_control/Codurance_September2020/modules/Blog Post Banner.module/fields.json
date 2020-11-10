@@ -9,7 +9,7 @@
   },
   {
     "id": "82bf4763-110a-df04-3585-5698c89e4e41",
-    "name": "background_image",
+    "name": "bg_image",
     "label": "Background Image",
     "required": false,
     "locked": false,
