@@ -1,13 +1,13 @@
-.cm-find-out-more-banner {
+.in-page-cta-block-banner {
   min-height: 300px;
   overflow: hidden;
   max-width: 1300px;
   margin: auto;
 }
-.cm-find-out-more__image {
+.in-page-cta-block__image {
   background-position: center;
 }
-.cm-find-out-more__main {
+.in-page-cta-block__main {
   align-items: center;
   background-color: #fb7268;
   display: flex;
@@ -15,10 +15,10 @@
   justify-content: center;
   text-align: center;
 }
-.cm-find-out-more__inner {
+.in-page-cta-block__inner {
   max-width: 500px;
 }
-.cm-find-out-more__title {
+.in-page-cta-block__title {
   font-family: proxima-nova;
   font-weight: 700;
   font-size: 21px;
@@ -26,7 +26,7 @@
   color: white;
   margin: 0 0 10px;
 }
-.cm-find-out-more__description {
+.in-page-cta-block__description {
   font-size: 18px;
   line-height: 28px;
   font-family: proxima-nova;
@@ -37,18 +37,18 @@
 
 
 @media (min-width: 1024px){
-  .cm-find-out-more__main {
+  .in-page-cta-block__main {
     padding-left: 50px;
     padding-right: 50px;
   }
 }
 
 @media (min-width: 768px){
-  .cm-find-out-more__main {
+  .in-page-cta-block__main {
     float: left;
     width:50%;
   }
-  .cm-find-out-more__image {
+  .in-page-cta-block__image {
     background-size: cover;
     float: left;
     height: 300px;
