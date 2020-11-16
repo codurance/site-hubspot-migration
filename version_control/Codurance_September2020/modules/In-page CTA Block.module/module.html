@@ -1,9 +1,9 @@
-<div class="cm-find-out-more-banner">
-  <div class="cm-find-out-more__image" style="background-image: url({{ module.image_field.src }})"></div>
-  <div class="cm-find-out-more__main">
-    <div class="cm-find-out-more__inner">
-      <h3 class="cm-find-out-more__title">{{ module.title }}</h3>
-      <p class="cm-find-out-more__description">{{ module.text }}</p>
+<div class="in-page-cta-block-banner">
+  <div class="in-page-cta-block__image" style="background-image: url({{ module.image_field.src }})"></div>
+  <div class="in-page-cta-block__main">
+    <div class="in-page-cta-block__inner">
+      <h3 class="in-page-cta-block__title">{{ module.title }}</h3>
+      <p class="in-page-cta-block__description">{{ module.text }}</p>
       {% if module.button_type == 'Standard' %}
       {% set href = module.link_field.url.href %}
       {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
