@@ -48,7 +48,7 @@ fonts apppear throughout your site.
 @font-face {
   font-family: "proxima-nova";
   src: url("//use.typekit.net/af/705e94/00000000000000003b9b3062/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),
-    url("//use.typekit.net/af/705e94/00000000000000003b9b3062/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), 
+    url("//use.typekit.net/af/705e94/00000000000000003b9b3062/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),
     url("//use.typekit.net/af/705e94/00000000000000003b9b3062/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
   font-style: normal;
   font-weight: 400;
@@ -57,8 +57,8 @@ fonts apppear throughout your site.
 
 @font-face {
   font-family: "proxima-nova";
-  src: url("//use.typekit.net/af/576d53/00000000000000003b9b3066/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff2"), 
-    url("//use.typekit.net/af/576d53/00000000000000003b9b3066/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff"), 
+  src: url("//use.typekit.net/af/576d53/00000000000000003b9b3066/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff2"),
+    url("//use.typekit.net/af/576d53/00000000000000003b9b3066/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff"),
     url("//use.typekit.net/af/576d53/00000000000000003b9b3066/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("opentype");
   font-style: normal;
   font-weight: 600;
@@ -67,8 +67,8 @@ fonts apppear throughout your site.
 
 @font-face {
   font-family: "proxima-nova";
-  src: url("//use.typekit.net/af/949f99/00000000000000003b9b3068/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"), 
-    url("//use.typekit.net/af/949f99/00000000000000003b9b3068/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"), 
+  src: url("//use.typekit.net/af/949f99/00000000000000003b9b3068/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),
+    url("//use.typekit.net/af/949f99/00000000000000003b9b3068/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),
     url("//use.typekit.net/af/949f99/00000000000000003b9b3068/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
   font-style: normal;
   font-weight: 700;
@@ -89,7 +89,7 @@ fonts apppear throughout your site.
   src: url('//f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/fonts/Simple-Line-Icons.eot');
   src: url('//f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/fonts/Simple-Line-Icons.eot#iefix') format('embedded-opentype'),
     url({{ get_asset_url('../fonts/Simple-Line-Icons.woff2' ) }}) format("woff2"),
-    url({{ get_asset_url('../fonts/Simple-Line-Icons.ttf' ) }}) format("ttf"), 
+    url({{ get_asset_url('../fonts/Simple-Line-Icons.ttf' ) }}) format("ttf"),
     url({{ get_asset_url('../fonts/Simple-Line-Icons.woff' ) }}) format("woff");
   font-weight: normal;
   font-style: normal;
@@ -307,7 +307,6 @@ h6 {
   font-weight: {{ headings_font_weight }};
   font-family: {{ headings_font_family }};
   color: {{ headings_color }};
-  word-break: break-word;
 }
 
 h1 {
