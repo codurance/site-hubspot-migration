@@ -75,6 +75,17 @@
   text-decoration: none;
 }
 
+.pe-event-date-container {
+  display: flex;
+}
+
+.pe-event-date-container p {
+  font-size: 14px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  flex: 0 50%;
+}
+
 .pe-event-text-container a:hover {
   color: #007a8c;
   text-decoration: underline;

@@ -22,9 +22,18 @@
               </div>
               <div class="pe-event-text-container" >
                 <div class="pe-event-text-container-inner">
-                  <p>
-                    {{ row.date|datetimeformat('%e %B %Y') }}
-                  </p>
+                  <div class="pe-event-date-container">
+                    <p>
+                    {{ row.date|datetimeformat('%e') }}
+                    {{ row.date|datetimeformat('%B')|truncate(3, true, '') }}
+                    {{ row.date|datetimeformat('%Y') }}
+                    </p>
+                    <p>
+                      {% if row.internal %}
+                      internal event
+                      {% endif %}
+                    </p>
+                  </div>
                   <h4>
                     {{ row.name }}
                   </h4>

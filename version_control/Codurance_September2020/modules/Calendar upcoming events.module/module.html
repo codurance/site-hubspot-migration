@@ -19,8 +19,11 @@
               </div>
               <div class="up-event-text-container" >
                 <div class="up-event-text-container-inner">
-                  <p>
-                    {{ row.datetime|datetimeformat('%A %e %B %Y | %H:%M') }}
+                  <p style="font-size: 14px;">
+                    {{ row.datetime|datetimeformat('%A')|truncate(4, true, '') }}
+                    {{ row.datetime|datetimeformat('%e') }}
+                    {{ row.datetime|datetimeformat('%B')|truncate(3, true, '') }}
+                    {{ row.datetime|datetimeformat('%Y | %H:%M') }}
                   </p>
                   <h4>
                     {{ row.name }}
