@@ -3383,3 +3383,26 @@ i.icon-bg-u {
   }
 }
 
+/* ---------------------------------- Calendar -------------------------------------- */
+
+{% set overlap = 125 %}
+{% set page_width__desktop = 1200 %}
+
+.calendar-events__heading {
+  font-weight: bold;
+  font-size: 1.867rem;
+  max-width: {{page_width__desktop}}px;
+  margin: 0 auto;
+}
+
+.calendar-events__heading-wrapper {
+  padding-top: 100px;
+  padding-bottom: {{overlap}}px;
+  background-color: pink;  
+}
+
+.calendar-events__events-wrapper {
+  position: relative;
+  top: -{{overlap}}px;
+  padding-top: 44px;
+}
