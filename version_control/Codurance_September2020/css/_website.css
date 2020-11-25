@@ -3401,8 +3401,9 @@ i.icon-bg-u {
 }
 
 .calendar-events__heading {
-  font-weight: bold;
+  color: white;
   font-size: 1.867rem;
+  font-weight: bold;
   margin: 0 auto;
 }
 
