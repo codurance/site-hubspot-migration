@@ -5,7 +5,7 @@
     <div class="up-events-container responsive-page-width">
         <div class="up-events-results">
           {% for row in upcomingEvents %}
-          <div class="up-event-item">
+          <article class="up-event-item">
             <div class="up-event-item-content">
               <div class="up-event-image-container" style="background-image: url({{row.thumbnail.url}})">
                 <div class="up-event-type-text">
@@ -14,12 +14,14 @@
               </div>
               <div class="up-event-text-container" >
                 <div class="up-event-text-container-inner">
-                  <p>
-                    {{ row.datetime|datetimeformat('%A %e %B %Y | %H:%M') }}
-                  </p>
-                  <h4>
-                    {{ row.name }}
-                  </h4>
+                  <header>
+                    <time datetime="{{ row.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}">
+                      {{ row.datetime|datetimeformat('%A %e %B %Y | %H:%M') }}
+                    </time>
+                    <h4>
+                      {{ row.name }}
+                    </h4>
+                  </header>
                   <p>
                     {{ row.description }}
                   </p>
@@ -29,7 +31,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </article>
           {% endfor %}
         </div>
       </div>
