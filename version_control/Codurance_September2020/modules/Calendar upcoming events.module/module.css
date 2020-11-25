@@ -1,9 +1,18 @@
-
 .up-events-container {
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+}
+@media (min-width: 1300px) {
+  .up-events-container {
+    max-width: 1200px;
+  }
+}
+@media (max-width: 1299px) {
+  .up-events-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 
 .up-events-results {

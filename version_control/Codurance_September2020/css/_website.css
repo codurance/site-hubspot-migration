@@ -3386,19 +3386,30 @@ i.icon-bg-u {
 /* ---------------------------------- Calendar -------------------------------------- */
 
 {% set overlap = 125 %}
-{% set page_width__desktop = 1200 %}
+{% set page_width__XL = 1200 %}
+
+@media (min-width: 1300px) {
+  .responsive-page-width {
+    max-width: {{page_width__XL}}px;
+  }
+}
+@media (max-width: 1299px) {
+  .responsive-page-width {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
 
 .calendar-events__heading {
   font-weight: bold;
   font-size: 1.867rem;
-  max-width: {{page_width__desktop}}px;
   margin: 0 auto;
 }
 
 .calendar-events__heading-wrapper {
   padding-top: 100px;
   padding-bottom: {{overlap}}px;
-  background-color: pink;  
+  background-color: pink;
 }
 
 .calendar-events__events-wrapper {
