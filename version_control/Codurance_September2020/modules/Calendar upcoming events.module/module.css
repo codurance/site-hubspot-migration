@@ -99,15 +99,21 @@
 }
 
 .up-event-item__button {
-  background-color: rgba(251,114,104,1.0);
+  background-color: rgba(251,114,104,1);
   border-radius: 3px;
   font-size: 1.2rem;
   font-weight: 700;
   padding: 0.7rem 1rem;
   text-align: center;
 }
+.up-event-item__button:hover {
+  background-color: rgba(251,142,134, 1)
+}
 .up-event-item__button > a {
   color: white;
+}
+.up-event-item__button > a:hover {
+  text-decoration: none;
 }
 
 .up-event-item__image-container {
