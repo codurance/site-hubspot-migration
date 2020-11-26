@@ -129,6 +129,7 @@
 .up-event-item__type-text {
   background-color: white;
   border-radius: 3px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.29);
   color: black;
   left: 10px;
   letter-spacing: 0.02em;
