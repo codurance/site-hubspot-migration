@@ -2,7 +2,7 @@
 
   const MEDIUM_WINDOW_WIDTH = 1023;
   const TRACK = window.document.querySelector('[data-card-track]');
-  let trackHasSetWidth;
+  let trackHasSetWidth, ticking;
 
   init();
 
@@ -20,7 +20,18 @@
   }
 
   function setUpEventListener() {
-    window.addEventListener('resize', sizeTrack);
+    window.addEventListener('resize', handleResize);
+  }
+
+  function handleResize() {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        sizeTrack();
+        ticking = false;
+      });
+
+      ticking = true;
+    }
   }
 
   function sizeTrack() {
