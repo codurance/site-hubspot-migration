@@ -69,6 +69,16 @@
   text-transform: uppercase;
 }
 
+.up-event-item__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.up-event-item__description {
+  font-size: 1rem;
+  color: #595959;
+}
+
 {#
 .up-event-item__text-container h4 {
   font-size: 1.375rem;
