@@ -781,14 +781,11 @@ section.container.blog  .custom-col-lg-9.custom-overflow-y-hidden .row {
   display: block;
   transition: all .3s ease-in-out;
 }
-
-section.container.blog .custom-col-lg-9.custom-overflow-y-hidden {
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-  padding:0;
+@media (min-width: 768px) {
+  section.container.blog .custom-col-lg-9.custom-overflow-y-hidden {
+    padding:0;
+  }
 }
-
 
 .text-right {
   text-align: right!important;
@@ -826,7 +823,7 @@ a.u-icon-v2 {
     overflow: hidden;
     z-index: 2;
 }
-.blog .blog-img { 
+.blog .blog-img {
   margin: 20px 0;
 }
 
