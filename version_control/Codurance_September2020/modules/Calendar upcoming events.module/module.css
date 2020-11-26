@@ -54,7 +54,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 15px;
+  padding: 20px;
 }
 
 .up-event-item__text-container-inner {
@@ -62,8 +62,11 @@
 }
 
 .up-event-item__datetime {
+  display: inline-block;
   font-size: 0.75rem;
   letter-spacing: 0.003rem;
+  padding-bottom: 15px;
+  text-transform: uppercase;
 }
 
 {#
