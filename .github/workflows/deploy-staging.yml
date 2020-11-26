@@ -1,7 +1,7 @@
 on:
-  push:
+  pull_request:
     branches:
-      - staging
+      - master
 jobs:
   deploy:
     runs-on: ubuntu-latest
