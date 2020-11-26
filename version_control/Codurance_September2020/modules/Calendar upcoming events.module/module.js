@@ -1,8 +1,14 @@
 ;(function() {
 
   const MEDIUM_WINDOW_WIDTH = 1023;
-  const TRACK = window.document.querySelector('[data-card-track]');
   let trackHasSetWidth, ticking;
+
+  const SELECTORS = {
+    TRACK: '[data-card-track]',
+    CARDS: '[data-card]'
+  }
+
+  const TRACK = window.document.querySelector(SELECTORS.TRACK);
 
   init();
 
@@ -44,7 +50,7 @@
   }
 
   function addTrackWidth() {
-    const cards = Array.from(window.document.querySelectorAll('[data-card]'));
+    const cards = Array.from(window.document.querySelectorAll(SELECTORS.CARDS));
     const trackPadding = parseFloat(window.getComputedStyle(TRACK).paddingRight);
     const cardWidth = cards[0].getBoundingClientRect().width;
     const cardMargin = parseFloat(window.getComputedStyle(cards[0]).marginRight);
