@@ -1,14 +1,14 @@
 ;(function() {
 
   const MEDIUM_WINDOW_WIDTH = 1023;
+  const TRACK = window.document.querySelector('[data-card-track]');
+  let trackHasSetWidth;
 
-  // if (windowIsLargerThanMedium()) {
-  //   setUpEventListener();
-  // }
+  init();
 
-  if (windowIsMediumOrBelow()) {
-    // removeEventListener()
+  function init() {
     sizeTrack();
+    setUpEventListener();
   }
 
   function windowIsMediumOrBelow() {
@@ -23,16 +23,18 @@
     window.addEventListener('resize', sizeTrack);
   }
 
-  function removeEventListener() {
-    window.removeEventListener('resize', sizeTrack);
+  function sizeTrack() {
+    if (windowIsMediumOrBelow() && !trackHasSetWidth) {
+      addTrackWidth();
+    } else if (windowIsLargerThanMedium() && trackHasSetWidth) {
+      resetTrackWidth();
+    }
+    return;
   }
 
-  function sizeTrack() {
-    const track = window.document.querySelector('[data-card-track]');
+  function addTrackWidth() {
     const cards = Array.from(window.document.querySelectorAll('[data-card]'));
-
-    const trackPadding = parseFloat(window.getComputedStyle(track).paddingRight);
-
+    const trackPadding = parseFloat(window.getComputedStyle(TRACK).paddingRight);
     const cardWidth = cards[0].getBoundingClientRect().width;
     const cardMargin = parseFloat(window.getComputedStyle(cards[0]).marginRight);
 
@@ -42,8 +44,13 @@
     const totalWidthOfTrack = totalWidthOfCards + totalMargin + trackPadding;
 
     if (totalWidthOfTrack) {
-      track.style.width =  totalWidthOfTrack + "px";
+      TRACK.style.width = totalWidthOfTrack + "px";
+      trackHasSetWidth = true;
     }
   }
 
+  function resetTrackWidth() {
+    TRACK.style.removeProperty('width');
+    trackHasSetWidth = false;
+  }
 })();
