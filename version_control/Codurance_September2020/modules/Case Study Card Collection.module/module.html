@@ -1,0 +1,13 @@
+<div class="case-study-card-collection">
+  {% for card in module.case_study_card %}
+    <div class="case-study-card">
+      <div class="case-study-card__image" style="background-image: url({{ card.card_thumbnail.src }});"> </div>
+      <div class="case-study-card__text-container">
+        <h3 class="case-study-card__card-title">{{ card.card_title }}</h3>
+        <p class="case-study-card__card-description">{{ card.card_text }}</p>
+        {% cta guid="{{ card.cta_field }}" %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
