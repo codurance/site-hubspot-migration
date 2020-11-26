@@ -96,16 +96,15 @@ flex-grow: 1;
 }
 
 .up-event-type-text {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  border-color: white;
-  border-radius: 12px;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: black;
   background-color: white;
+  border-radius: 3px;
+  color: black;
+  left: 10px;
+  letter-spacing: 0.02em;
+  padding: 0.05em 0.4em;
+  position: absolute;
   text-transform: uppercase;
+  top: 10px;
 }
 
 .up-register-button a:link {
