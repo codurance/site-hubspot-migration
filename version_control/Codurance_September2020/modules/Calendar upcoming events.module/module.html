@@ -6,16 +6,16 @@
         <div class="up-events-results">
           {% for row in upcomingEvents %}
           <article class="up-event-item">
-            <div class="up-event-item-content">
-              <div class="up-event-image-container" style="background-image: url({{row.thumbnail.url}})">
-                <small class="up-event-type-text">
+            <div class="up-event-item__content">
+              <div class="up-event-item__image-container" style="background-image: url({{row.thumbnail.url}})">
+                <small class="up-event-item__type-text">
                   {{ row.type.name }}
                 </small>
               </div>
-              <div class="up-event-text-container" >
-                <div class="up-event-text-container-inner">
+              <div class="up-event-item__text-container" >
+                <div class="up-event-item__text-container-inner">
                   <header>
-                    <time datetime="{{ row.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}">
+                    <time class="up-event-item__datetime" datetime="{{ row.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}">
                       {{ row.datetime|datetimeformat('%A %e %B %Y | %H:%M') }}
                     </time>
                     <h4>
@@ -26,7 +26,7 @@
                     {{ row.description }}
                   </p>
                 </div>
-                <div class="up-register-button">
+                <div class="up-event-item__button">
                   <a href="{{ row.link }}">Register Attendence</a>
                 </div>
               </div>
