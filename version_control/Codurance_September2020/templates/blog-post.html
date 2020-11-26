@@ -13,11 +13,11 @@ label: Blog Post
     <div class="row d-flex justify-content-center align-content-end flex-wrap">
       <div class="custom-col-lg-7 mt-auto">
         <div class="mb-5 mt-5">
-          <h1 class="custom-color-white custom-font-weight-600 custom-mb-10">{{ content.name }}</h1> 
+          <h1 class="custom-color-white custom-font-weight-600 custom-mb-10">{{ content.name }}</h1>
           <p class="lead text-white custom-font-weight-600"></p>
         </div>
       </div>
-    </div> <span class="custom-text-800 custom-font-size-10 text-white"></span> 
+    </div> <span class="custom-text-800 custom-font-size-10 text-white"></span>
   </div>
 </section>
 <section class="container page-center custom-mt-20">
@@ -31,7 +31,7 @@ label: Blog Post
           <ul class="list-inline custom-font-size-12 mb-0">
             {% for tag in content.tag_list %}
             <li class="list-inline-item custom-mb-10">
-              <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a> 
+              <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
             </li>
             {% endfor %}
           </ul>
@@ -57,7 +57,7 @@ label: Blog Post
             <img class="u-icon-v2 custom-rounded-50 custom-mr-15" src="{{ content.blog_post_author.avatar }}" alt="{{ content.blog_post_author.display_name }}">
             <div class="media-body">
               <h5 class="custom-color-black custom-font-weight-600">{{ content.blog_post_author.display_name }}</h5>
-              <a class="custom-font-weight-600 custom-font-size-12" href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}">See author's bio and posts</a> 
+              <a class="custom-font-weight-600 custom-font-size-12" href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}">See author's bio and posts</a>
             </div>
           </div>
         </div>
@@ -65,21 +65,21 @@ label: Blog Post
         <div class="custom-col custom-my-15 text-center text-md-right">
           <ul class="list-inline my-0">
             <li class="list-inline-item custom-mx-2">
-              <a class="u-icon-v2 custom-rounded-50 custom-color-facebook custom-color-facebook--hover u-icon-slide-up--hover" href="http://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url }}&amp;title={{ page_meta.name }}" target="_blank" rel="noopener noreferrer"> 
-                <i class="fa fa-facebook u-icon__elem-regular"></i> 
-                <i class="fa fa-facebook u-icon__elem-hover"></i> 
+              <a class="u-icon-v2 custom-rounded-50 custom-color-facebook custom-color-facebook--hover u-icon-slide-up--hover" href="http://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url }}&amp;title={{ page_meta.name }}" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-facebook u-icon__elem-regular"></i>
+                <i class="fa fa-facebook u-icon__elem-hover"></i>
               </a>
             </li>
             <li class="list-inline-item custom-mx-2">
-              <a class="u-icon-v2 custom-rounded-50 custom-color-twitter custom-color-twitter--hover u-icon-slide-up--hover" href="https://twitter.com/intent/tweet?text={{ page_meta.name }}&amp;url={{ content.absolute_url }}&amp;hashtags=specialist expertise,metrics,automation,Technical Debt,silos" target="_blank" rel="noopener noreferrer"> <i class="fa fa-twitter u-icon__elem-regular"></i>  <i class="fa fa-twitter u-icon__elem-hover"></i> 
+              <a class="u-icon-v2 custom-rounded-50 custom-color-twitter custom-color-twitter--hover u-icon-slide-up--hover" href="https://twitter.com/intent/tweet?text={{ page_meta.name }}&amp;url={{ content.absolute_url }}&amp;hashtags=specialist expertise,metrics,automation,Technical Debt,silos" target="_blank" rel="noopener noreferrer"> <i class="fa fa-twitter u-icon__elem-regular"></i>  <i class="fa fa-twitter u-icon__elem-hover"></i>
               </a>
             </li>
             <li class="list-inline-item custom-mx-2">
-              <a class="u-icon-v2 custom-rounded-50 custom-color-linkedin custom-color-linkedin--hover u-icon-slide-up--hover" href="http://www.linkedin.com/shareArticle?mini=true&amp;title={{ page_meta.name }}&amp;summary=&amp;url={{ content.absolute_url }}" target="_blank" rel="noopener noreferrer"> <i class="fa fa-linkedin u-icon__elem-regular"></i>  <i class="fa fa-linkedin u-icon__elem-hover"></i> 
+              <a class="u-icon-v2 custom-rounded-50 custom-color-linkedin custom-color-linkedin--hover u-icon-slide-up--hover" href="http://www.linkedin.com/shareArticle?mini=true&amp;title={{ page_meta.name }}&amp;summary=&amp;url={{ content.absolute_url }}" target="_blank" rel="noopener noreferrer"> <i class="fa fa-linkedin u-icon__elem-regular"></i>  <i class="fa fa-linkedin u-icon__elem-hover"></i>
               </a>
             </li>
             <li class="list-inline-item custom-mx-2">
-              <a class="u-icon-v2 custom-rounded-50 custom-color-reddit custom-color-reddit--hover u-icon-slide-up--hover" href="http://www.reddit.com/submit?url={{ content.absolute_url }}&amp;title={{ page_meta.name }}" target="_blank" rel="noopener noreferrer"> <i class="fa fa-reddit u-icon__elem-regular"></i>  <i class="fa fa-reddit u-icon__elem-hover"></i> 
+              <a class="u-icon-v2 custom-rounded-50 custom-color-reddit custom-color-reddit--hover u-icon-slide-up--hover" href="http://www.reddit.com/submit?url={{ content.absolute_url }}&amp;title={{ page_meta.name }}" target="_blank" rel="noopener noreferrer"> <i class="fa fa-reddit u-icon__elem-regular"></i>  <i class="fa fa-reddit u-icon__elem-hover"></i>
               </a>
             </li>
           </ul>
@@ -90,7 +90,7 @@ label: Blog Post
 </section>
 <section class="container page-center custom-pt-15 blog">
   <div class="row justify-content-center">
-    <div class="custom-col-lg-9 custom-overflow-y-hidden">
+    <div class="col-lg-9 custom-overflow-y-hidden">
       {{ content.post_body }}
     </div>
   </div>
@@ -103,7 +103,7 @@ label: Blog Post
 
 <section class="custom-bg-gray-light-v5">
   <div class="container page-center custom-py-50">
-    <h6 class="custom-color-black custom-font-weight-600 text-center text-uppercase mb-5">Related Blogs</h6> 
+    <h6 class="custom-color-black custom-font-weight-600 text-center text-uppercase mb-5">Related Blogs</h6>
     <div class="row mb-5">
 
       {% if content.tag_list %}
@@ -112,7 +112,7 @@ label: Blog Post
         <ul class="list-inline custom-font-size-12 mb-0">
           {% for tag in content.tag_list %}
           <li class="list-inline-item custom-mb-10">
-            <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a> 
+            <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
           </li>
           {% endfor %}
         </ul>
@@ -146,16 +146,16 @@ label: Blog Post
             </ul>
             <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
               <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ post.absolute_url }}">
-                {{ post.name }}</a> 
-            </h5> 
+                {{ post.name }}</a>
+            </h5>
             <p class="custom-color-gray-dark-v4 custom-line-height-1_8 mb-4">
-              {{ post.post_list_content|safe|truncatehtml(150, '..' , false)|striptags  }} 
+              {{ post.post_list_content|safe|truncatehtml(150, '..' , false)|striptags  }}
             </p>
             {% if post.tag_list %}
             <ul class="list-inline custom-font-size-12 mb-0">
               {% for tag in post.tag_list %}
               <li class="list-inline-item custom-mb-10">
-                <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a> 
+                <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
               </li>
               {% endfor %}
             </ul>
@@ -179,9 +179,9 @@ label: Blog Post
   <div class="container page-center">
     <div class="row">
       <div class="custom-col-md-8 text-md-left text-center">
-        <h4 class="my-md-0">Get content like this straight to your inbox!</h4> 
+        <h4 class="my-md-0">Get content like this straight to your inbox!</h4>
       </div>
-      <div class="custom-col-md-4 text-right"> <a class="btn btn-md u-btn-primary btn-codurance-color text-uppercase w-100 custom-width-auto--lg" target="_blank" href="https://mailchi.mp/codurance/newsletter-subscription" rel="noopener noreferrer">Subscribe now!</a> 
+      <div class="custom-col-md-4 text-right"> <a class="btn btn-md u-btn-primary btn-codurance-color text-uppercase w-100 custom-width-auto--lg" target="_blank" href="https://mailchi.mp/codurance/newsletter-subscription" rel="noopener noreferrer">Subscribe now!</a>
       </div>
     </div>
   </div>
@@ -194,7 +194,7 @@ var cookieIframeContainers = document.getElementsByClassName('js-iframe-containe
             const container = cookieIframeContainers[index];
 
             var iframeUrl = container.getAttribute('js-iframe-url');
-            
+
             var iframe = document.createElement("iframe");
             iframe.setAttribute("src", iframeUrl);
             iframe.style.width = '100%';
