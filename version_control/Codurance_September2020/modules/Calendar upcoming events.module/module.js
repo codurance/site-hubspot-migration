@@ -1,14 +1,16 @@
 ;(function() {
 
   const MEDIUM_WINDOW_WIDTH = 1023;
-  let trackHasSetWidth, ticking, mouseStartPosition, mouseEndPosition;
+  let trackHasSetWidth, ticking, mouseStartPosition, mouseEndPosition, cardWindowScrollPosition;
 
   const SELECTORS = {
+    CARD_WINDOW: '[data-card-window]',
     TRACK: '[data-card-track]',
     CARDS: '[data-card]'
   }
 
   const TRACK = window.document.querySelector(SELECTORS.TRACK);
+  const CARD_WINDOW = window.document.querySelector(SELECTORS.CARD_WINDOW);
 
   init();
 
@@ -78,29 +80,30 @@
 
 
   // ----------------------------------------
-  window.addEventListener('mousedown', handleMouseDown);
-  window.addEventListener('mouseup', handleMouseUp);
+  CARD_WINDOW.addEventListener('mousedown', handleMouseDown);
+  CARD_WINDOW.addEventListener('mouseup', handleMouseUp);
 
 
   function handleMouseDown(e) {
-    console.log('mouse x-pos: ', e.clientX);
+    console.log('mouse x-pos: ', e.layerX);
 
     window.addEventListener('mousemove', handleDrag);
 
-    logMouseDown(e.clientX);
+    logMouseDown(e.layerX);
   }
 
   function handleMouseUp(e) {
-    console.log('mouse x-pos: ', e.clientX);
-
-    const mousePositionDifference = calculateMouseDifference(e.clientX);
-
+    console.log('mouse x-pos: ', e.layerX);
     window.removeEventListener('mousemove', handleDrag);
     console.log(`mousePositionDifference: `, mousePositionDifference);
   }
 
   function handleDrag(e) {
     console.log('dragging');
+    const mousePositionDifference = calculateMouseDifference(e.layerX);
+    const newScrollPosition = CARD_WINDOW.scrollLeft + mousePositionDifference;
+
+    CARD_WINDOW.scrollLeft = newScrollPosition;
   }
 
   function logMouseDown(xPosition) {
