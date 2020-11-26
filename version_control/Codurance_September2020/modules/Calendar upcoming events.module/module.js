@@ -1,7 +1,7 @@
 ;(function() {
 
   const MEDIUM_WINDOW_WIDTH = 1023;
-  let trackHasSetWidth, ticking;
+  let trackHasSetWidth, ticking, mouseStartPosition, mouseEndPosition;
 
   const SELECTORS = {
     TRACK: '[data-card-track]',
@@ -69,5 +69,45 @@
   function resetTrackWidth() {
     TRACK.style.removeProperty('width');
     trackHasSetWidth = false;
+  }
+
+
+
+
+
+
+
+  // ----------------------------------------
+  window.addEventListener('mousedown', handleMouseDown);
+  window.addEventListener('mouseup', handleMouseUp);
+
+
+  function handleMouseDown(e) {
+    console.log('mouse x-pos: ', e.clientX);
+
+    window.addEventListener('mousemove', handleDrag);
+
+    logMouseDown(e.clientX);
+  }
+
+  function handleMouseUp(e) {
+    console.log('mouse x-pos: ', e.clientX);
+
+    const mousePositionDifference = calculateMouseDifference(e.clientX);
+
+    window.removeEventListener('mousemove', handleDrag);
+    console.log(`mousePositionDifference: `, mousePositionDifference);
+  }
+
+  function handleDrag(e) {
+    console.log('dragging');
+  }
+
+  function logMouseDown(xPosition) {
+    mouseStartPosition = xPosition;
+  }
+
+  function calculateMouseDifference(endPosition) {
+    return mouseStartPosition - endPosition;
   }
 })();
