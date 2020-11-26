@@ -55,11 +55,12 @@
   .up-event-item {
     max-width: calc(33% - 30px);
   }
+}
+@media (max-width: 1023px) {
   .up-event-item:last-of-type {
     margin-right: 0;
   }
 }
-
 
 .up-event-item__content {
   display: flex;
