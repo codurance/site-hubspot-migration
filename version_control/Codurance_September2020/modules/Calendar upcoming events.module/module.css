@@ -36,6 +36,10 @@
 @media (max-width: 1023px) {
   .up-events-results {
     padding-right: 50px;
+    cursor: grab;
+  }
+  .up-events-results:active {
+    cursor: grabbing;
   }
 }
 
@@ -105,6 +109,7 @@
   font-weight: 700;
   padding: 0.7rem 1rem;
   text-align: center;
+  cursor: pointer;
 }
 .up-event-item__button:hover {
   background-color: rgba(251,142,134, 1)
