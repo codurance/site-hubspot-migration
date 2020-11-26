@@ -3,9 +3,9 @@
     {% set upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
 
     <div class="up-events-container responsive-page-width">
-        <div class="up-events-results">
+        <div class="up-events-results" data-card-track>
           {% for row in upcomingEvents %}
-          <article class="up-event-item">
+          <article class="up-event-item" data-card>
             <div class="up-event-item__content">
               <div class="up-event-item__image-container" style="background-image: url({{row.thumbnail.url}})">
                 <small class="up-event-item__type-text">
