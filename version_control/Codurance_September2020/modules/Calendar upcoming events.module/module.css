@@ -14,7 +14,8 @@
 }
 @media (max-width: 1023px) {
   .up-events-container {
-    overflow-y: hidden;
+    overflow: hidden;
+    user-select: none;
   }
 }
 
