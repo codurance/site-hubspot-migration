@@ -95,21 +95,35 @@
     if (mousePositionDifference <= -100) moveTrackLeft();
   }
 
+  function handleDrag(e) {
+    mousePositionDifference = calculateMouseDifference(e.clientX);
+  }
+
+  function logMouseDown(xPosition) {
+    mouseStartPosition = xPosition;
+  }
+
+  function calculateMouseDifference(endPosition) {
+    return endPosition - mouseStartPosition;
+  }
+
   function moveTrackLeft() {
-    let targetPosition = currentPosition + 1;
     const maxLeft = calculateMaxLeftPosition();
+    const currentLeft = getLeftPosition();
+    if (currentLeft <= maxLeft) return;
+
+    let targetPosition = currentPosition + 1;
     const totalCardWidth = getTotalCardWidth();
     const targetLeft = totalCardWidth * targetPosition * -1;
-    const currentLeft = getLeftPosition();
-    if (currentLeft > maxLeft) {
-      const newLeft = Math.max(targetLeft, maxLeft);
-      TRACK.style.left = `${newLeft}px`;
-      updateCurrentPosition(targetPosition);
-    }
+    const newLeft = Math.max(targetLeft, maxLeft);
+    TRACK.style.left = `${newLeft}px`;
+    updateCurrentPosition(targetPosition);
   }
 
   function moveTrackRight() {
-    let targetPosition = Math.max(currentPosition - 1, 0);
+    if (currentPosition <= 0) return;
+
+    let targetPosition = currentPosition - 1;
     const totalCardWidth = getTotalCardWidth();
     const targetLeft = totalCardWidth * targetPosition * -1;
     const newLeft = Math.min(targetLeft, 0);
@@ -138,17 +152,5 @@
 
   function updateCurrentPosition(position) {
     currentPosition = position;
-  }
-
-  function handleDrag(e) {
-    mousePositionDifference = calculateMouseDifference(e.clientX);
-  }
-
-  function logMouseDown(xPosition) {
-    mouseStartPosition = xPosition;
-  }
-
-  function calculateMouseDifference(endPosition) {
-    return endPosition - mouseStartPosition;
   }
 })();
