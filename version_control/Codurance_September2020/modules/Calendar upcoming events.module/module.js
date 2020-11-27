@@ -99,11 +99,11 @@
   }
 
   function handleDrag(e) {
-    console.log('dragging');
-    const mousePositionDifference = calculateMouseDifference(e.layerX);
-    const newScrollPosition = CARD_WINDOW.scrollLeft + mousePositionDifference;
+    // console.log('dragging');
+    // const mousePositionDifference = calculateMouseDifference(e.layerX);
+    // const newScrollPosition = CARD_WINDOW.scrollLeft + mousePositionDifference;
 
-    CARD_WINDOW.scrollLeft = newScrollPosition;
+    // CARD_WINDOW.scrollLeft = newScrollPosition;
   }
 
   function logMouseDown(xPosition) {
