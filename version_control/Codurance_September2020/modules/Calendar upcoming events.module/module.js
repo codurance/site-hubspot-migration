@@ -91,7 +91,8 @@
 
   function handleMouseUp(e) {
     window.removeEventListener('mousemove', handleDrag);
-    console.log(mousePositionDifference)
+    if (mousePositionDifference >= 100) console.log('swiped right')
+    if (mousePositionDifference <= -100) console.log('swiped left')
   }
 
   function handleDrag(e) {
