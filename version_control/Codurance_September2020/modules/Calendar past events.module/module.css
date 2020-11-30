@@ -67,6 +67,17 @@
   text-decoration: none;
 }
 
+.pe-event-date-container {
+  display: flex;
+}
+
+.pe-event-date-container p {
+  font-size: 14px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  flex: 0 50%;
+}
+
 .pe-event-text-container a:hover {
   color: #007a8c;
   text-decoration: underline;
@@ -137,4 +148,50 @@
 
 .pe-watch-button a:active {
   background-color: red;
+}
+
+.pe-watch-all {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pe-watch-all a:link {
+  background-color: white;
+  color: #f44336;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid #f44336;
+}
+
+.pe-watch-all a:visited {
+  background-color: white;
+  color: #f44336;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  border: 2px solid #f44336;
+}
+
+.pe-watch-all a:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.pe-watch-all a:active {
+  background-color: white;
 }
