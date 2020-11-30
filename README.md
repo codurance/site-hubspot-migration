@@ -49,7 +49,7 @@ Hubspot code is within the version_control folder
 
 When you want to test a change made to any hubspot code you have to upload it to your developer sandbox using Hubspot CLI :
 
-`npx hs upload version_control version_control`
+`hs upload version_control/Codurance_September2020 Codurance_September2020`
 
 You can see your changes if you connect to your sandbox : https://app.hubspot.com/portal-recommend by previewing or creating
 a page using the template you modified  
@@ -59,18 +59,13 @@ The hubspot code is visible in Marketing -> files and templates -> Design tool
 
 ### Staging
 
-The next step is to push changes to staging account to allow sales and marketing people double check the impact made by your changes
+Code is automatically deployed in staging account when a pull request to master is opened
 
-1. `git push origin <your-branch>`
-2. create a merge request to `staging`  
-
-Once the merge request is accepted, a git action is triggered to upload your changes to hubspot staging account  
-
-**TODO** put link of staging account
+[link of staging account](https://app.hubspot.com/dashboard-library/8691204)
 
 ### Go live
 
-Once the changes has been accepted create a merge request to `master`  
+Once pull request is accepted   
 pushing to master triggers a git action that upload changes to the [hubspot production account](https://app.hubspot.com/getting-started/3042464/v3)
 and make the changes live
 
