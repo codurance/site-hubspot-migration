@@ -405,7 +405,7 @@ body .cm-footer-useful-links .hs-menu-wrapper > ul > li > a,
 body .hs-footer-top-container h6 span{
   color: rgba({{ theme.footer.title_color.color|convert_rgb }}, {{ theme.footer.title_color.opacity * 0.01 }});
 }
- 
+
 body footer.footer .cm-footer-contact-us a{
   color: rgba({{ theme.footer.contact_us_link_color.color|convert_rgb }}, {{ theme.footer.contact_us_link_color.opacity * 0.01 }});
 }
@@ -413,13 +413,13 @@ body footer.footer .cm-footer-contact-us a:hover{
   color: rgba({{ theme.footer.contact_us_link_hover_color.color|convert_rgb }}, {{ theme.footer.contact_us_link_hover_color.opacity * 0.01 }});
 }
 body footer.footer .hs-rss-item .hs-rss-author{
-  color: rgba({{ theme.footer.author_name_color.color|convert_rgb }}, {{ theme.footer.author_name_color.opacity * 0.01 }});  
+  color: rgba({{ theme.footer.author_name_color.color|convert_rgb }}, {{ theme.footer.author_name_color.opacity * 0.01 }});
 }
 body footer.footer .hs-rss-item  a.hs-rss-title{
-  color: rgba({{ theme.footer.post_title_link_color.color|convert_rgb }}, {{ theme.footer.post_title_link_color.opacity * 0.01 }});  
+  color: rgba({{ theme.footer.post_title_link_color.color|convert_rgb }}, {{ theme.footer.post_title_link_color.opacity * 0.01 }});
 }
 body footer.footer .hs-rss-item  a.hs-rss-title:hover{
-  color: rgba({{ theme.footer.post_title_link_hover_color.color|convert_rgb }}, {{ theme.footer.post_title_link_hover_color.opacity * 0.01 }});  
+  color: rgba({{ theme.footer.post_title_link_hover_color.color|convert_rgb }}, {{ theme.footer.post_title_link_hover_color.opacity * 0.01 }});
 }
 
 
@@ -552,7 +552,7 @@ body .team-member__descripxion {
   .dnd-section > .row-fluid,
   .page-center {
     max-width: {{ theme.spacing.max_width/1.1875 }}px;
-  } 
+  }
 }
 
 @media(max-width:992px){
@@ -560,14 +560,48 @@ body .team-member__descripxion {
   .dnd-section > .row-fluid,
   .page-center {
     max-width: {{ theme.spacing.max_width/1.58334 }}px;
-  } 
+  }
 }
-  
+
 @media(max-width:767px){
   .footer__container,
   .dnd-section > .row-fluid,
   .page-center {
     max-width: {{ theme.spacing.max_width/2.1112 }}px;
-  } 
+  }
 }
 
+{###########################################################################}
+{##############################   _overrides  ###############################}
+{###########################################################################}
+
+.hide {
+    display: none;
+}
+
+.cm-training-card__secondary-content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 20px 25px 40px;
+    margin-bottom: 25px;
+}
+
+
+.cm-training-card:not(.cm-training-card--featured) .cm-training-card__primary-content {
+    padding-bottom: 16px;
+    padding-top: 25px;
+}
+
+@media (max-width: 767px) {
+  .cm-training-card-group.mobile-slider .cm-training-inner-card {
+      display: flex;
+      flex-direction: column;
+      box-shadow: rgba(0,0,0,0.16) 0 0 8px;
+      width: 100%;
+      margin-left: 0;
+      height: calc(75vh - 60px);
+  }
+}

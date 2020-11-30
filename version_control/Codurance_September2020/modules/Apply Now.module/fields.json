@@ -119,12 +119,14 @@
       "default" : "btn btn-more btn-more-large"
     } ],
     "tab" : "CONTENT",
+    "expanded" : false,
     "type" : "group",
     "default" : {
       "custom_class" : "btn btn-more btn-more-large"
     }
   } ],
   "tab" : "CONTENT",
+  "expanded" : false,
   "type" : "group",
   "default" : {
     "link_field" : {

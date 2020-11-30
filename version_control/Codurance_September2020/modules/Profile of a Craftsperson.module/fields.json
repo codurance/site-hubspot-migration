@@ -34,6 +34,7 @@
     "type" : "richtext"
   } ],
   "tab" : "CONTENT",
+  "expanded" : false,
   "type" : "group",
   "default" : {
     "image_field" : {

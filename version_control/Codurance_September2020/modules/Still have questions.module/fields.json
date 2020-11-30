@@ -121,6 +121,7 @@
       "default" : "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"
     } ],
     "tab" : "CONTENT",
+    "expanded" : false,
     "type" : "group",
     "default" : {
       "custom_class" : "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"
@@ -173,6 +174,7 @@
       }
     } ],
     "tab" : "CONTENT",
+    "expanded" : false,
     "type" : "group",
     "default" : {
       "lightbox_content" : "<h4>Get In Touch</h4>\n<p>Please, contact our offices:</p>\n<ul>\n<li><strong>London</strong>: +44 207 4902967</li>\n<li><strong>Barcelona</strong>: +34 937 82 28 82</li>\n<li><strong>Manchester</strong>: +44 161 302 6795</li>\n</ul>\n<p><!-- Business Hours --></p>\n<p>Use the form below to send us a message or send it directly our email: <a href=\"mailto:hello@codurance.com\" target=\"_blank\" rel=\"noopener noreferrer\">hello@codurance.com</a></p>",
@@ -183,6 +185,7 @@
     }
   } ],
   "tab" : "CONTENT",
+  "expanded" : false,
   "type" : "group",
   "default" : {
     "link_field" : {
