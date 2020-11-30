@@ -4,7 +4,13 @@
 
 <div class="up-events-container responsive-page-width lateral-spacing" data-card-window>
 
-  <h1 class="up-events__heading responsive-page-width">Upcoming events</h1>
+  <div class="up-events__header-wrapper">
+    <h1 class="up-events__heading responsive-page-width">Upcoming events</h1>
+    <div>
+      <button>←</button>
+      <button>→</button>
+    </div>
+  </div>
   <div class="up-events-results" data-card-track>
     {% for row in upcomingEvents %}
     <article class="up-event-item" data-card>

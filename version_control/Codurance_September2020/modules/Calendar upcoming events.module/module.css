@@ -8,8 +8,15 @@
   }
 }
 
+.up-events__header-wrapper {
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+}
+
 .up-events__heading {
   color: white;
+  flex-grow: 1;
   font-size: 1.867rem;
   font-weight: bold;
   margin: 0;
