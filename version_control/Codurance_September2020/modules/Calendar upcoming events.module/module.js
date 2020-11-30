@@ -7,12 +7,18 @@
   const SELECTORS = {
     CARD_WINDOW: '[data-card-window]',
     TRACK: '[data-card-track]',
-    CARDS: '[data-card]'
+    CARDS: '[data-card]',
+    LEFT_BUTTON: '[data-up-events-button-left]',
+    RIGHT_BUTTON: '[data-up-events-button-right]'
   }
 
   const TRACK = window.document.querySelector(SELECTORS.TRACK);
   const CARD_WINDOW = window.document.querySelector(SELECTORS.CARD_WINDOW);
   const CARDS = Array.from(window.document.querySelectorAll(SELECTORS.CARDS));
+  const LEFT_BUTTON = window.document.querySelector(SELECTORS.LEFT_BUTTON);
+  const RIGHT_BUTTON = window.document.querySelector(SELECTORS.RIGHT_BUTTON);
+
+  const MIN_SWIPE_LENGTH = 100;
 
   init();
 
@@ -31,6 +37,10 @@
 
   function setUpEventListener() {
     window.addEventListener('resize', handleResize);
+    CARD_WINDOW.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mouseup', handleMouseUp);
+    LEFT_BUTTON.addEventListener('click', navigateLeft);
+    RIGHT_BUTTON.addEventListener('click', navigateRight);
   }
 
   function handleResize() {
@@ -81,18 +91,17 @@
 
 
   // ----------------------------------------
-  CARD_WINDOW.addEventListener('mousedown', handleMouseDown);
-  window.addEventListener('mouseup', handleMouseUp);
 
   function handleMouseDown(e) {
     window.addEventListener('mousemove', handleDrag);
     logMouseDown(e.clientX);
   }
-
+  
   function handleMouseUp(e) {
     window.removeEventListener('mousemove', handleDrag);
-    if (mousePositionDifference >= 100) moveTrackRight();
-    if (mousePositionDifference <= -100) moveTrackLeft();
+    if (mousePositionDifference >= MIN_SWIPE_LENGTH) navigateLeft();
+    if (mousePositionDifference <= -MIN_SWIPE_LENGTH) navigateRight();
+    resetMousePositionDifference();
   }
 
   function handleDrag(e) {
@@ -107,7 +116,11 @@
     return endPosition - mouseStartPosition;
   }
 
-  function moveTrackLeft() {
+  function resetMousePositionDifference() {
+    mousePositionDifference = 0;
+  }
+
+  function navigateRight() {
     const maxLeft = calculateMaxLeftPosition();
     const currentLeft = getLeftPosition();
     if (currentLeft <= maxLeft) return;
@@ -120,7 +133,7 @@
     updateCurrentPosition(targetPosition);
   }
 
-  function moveTrackRight() {
+  function navigateLeft() {
     if (currentPosition <= 0) return;
 
     let targetPosition = currentPosition - 1;
