@@ -2,6 +2,11 @@
     {% set previousEventsFilter = "&orderBy=-date&limit=4" %}
     {% set previousEvents = hubdb_table_rows(module.hubdb_table, previousEventsFilter) %}
 
+    <div class="up-module-title">
+      <h2>
+      Past Events  
+      </h2>
+    </div>
     <div class="pe-events-container">
         <div class="pe-events-results">
           {% for row in previousEvents %}
