@@ -157,7 +157,7 @@ label: Blog Post
 </section>
 <section class="container page-center custom-pt-15 blog">
   <div class="row justify-content-center">
-    <div class="custom-col-lg-9 custom-overflow-y-hidden">
+    <div class="col-lg-9 custom-overflow-y-hidden">
       {{ content.post_body }}
     </div>
   </div>
@@ -284,7 +284,6 @@ Banner" %}
       const container = cookieIframeContainers[index];
 
       var iframeUrl = container.getAttribute('js-iframe-url');
-
       var iframe = document.createElement('iframe');
       iframe.setAttribute('src', iframeUrl);
       iframe.style.width = '100%';
