@@ -3385,17 +3385,10 @@ i.icon-bg-u {
 
 /* ---------------------------------- Calendar -------------------------------------- */
 
-{% set overlap = 125 %}
-
-.calendar-events__heading {
-  color: white;
-  font-size: 1.867rem;
-  font-weight: bold;
-  margin: 0 auto;
-}
+{% set overlap = 200 %}
 
 .calendar-events__heading-wrapper {
-  padding-top: 100px;
+  padding-top: 70px;
   padding-bottom: {{overlap}}px;
   background-color: pink;
 }
@@ -3403,5 +3396,4 @@ i.icon-bg-u {
 .calendar-events__events-wrapper {
   position: relative;
   top: -{{overlap}}px;
-  padding-top: 44px;
 }

@@ -8,6 +8,14 @@
   }
 }
 
+.up-events__heading {
+  color: white;
+  font-size: 1.867rem;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 44px;
+}
+
 .up-events-results {
   align-items: stretch;
   display: flex;
