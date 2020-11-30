@@ -83,6 +83,7 @@
     }
   } ],
   "tab" : "CONTENT",
+  "expanded" : false,
   "type" : "group",
   "default" : {
     "icon_name" : "icon-communication-101",
@@ -185,6 +186,7 @@
     "type" : "cta"
   } ],
   "tab" : "CONTENT",
+  "expanded" : false,
   "type" : "group",
   "default" : {
     "link_field" : {

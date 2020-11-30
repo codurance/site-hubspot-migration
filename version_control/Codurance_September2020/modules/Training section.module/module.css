@@ -181,4 +181,14 @@
   .cm-training-card-group.desktop {
     margin-bottom: 45px;
   }
+  /* Fixing card height */
+  .cm-training-card-group.mobile-slider .cm-training-inner-card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0,0,0,0.16) 0 0 8px;
+    width: 100%;
+    margin-left: 0;
+    height: calc(75vh - 75px);
+  }
 }
+

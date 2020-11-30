@@ -156,6 +156,7 @@
     "default" : false
   } ],
   "tab" : "CONTENT",
+  "expanded" : false,
   "type" : "group",
   "default" : {
     "background_image" : {

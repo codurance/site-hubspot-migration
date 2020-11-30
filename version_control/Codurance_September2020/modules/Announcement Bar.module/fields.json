@@ -137,6 +137,7 @@
     "default" : "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"
   } ],
   "tab" : "CONTENT",
+  "expanded" : false,
   "type" : "group",
   "default" : {
     "custom_class" : "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"

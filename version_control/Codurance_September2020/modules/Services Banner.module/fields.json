@@ -80,6 +80,7 @@
     }
   } ],
   "tab" : "CONTENT",
+  "expanded" : false,
   "type" : "group",
   "default" : {
     "icon_background_image" : {
