@@ -3386,19 +3386,6 @@ i.icon-bg-u {
 /* ---------------------------------- Calendar -------------------------------------- */
 
 {% set overlap = 125 %}
-{% set page_width__XL = 1200 %}
-
-@media (min-width: 1300px) {
-  .responsive-page-width {
-    max-width: {{page_width__XL}}px;
-  }
-}
-@media (max-width: 1299px) {
-  .responsive-page-width {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-}
 
 .calendar-events__heading {
   color: white;

@@ -1,17 +1,6 @@
 .up-events-container {
   margin: 0 auto;
 }
-@media (min-width: 1300px) {
-  .up-events-container {
-    max-width: 1200px;
-  }
-}
-@media (max-width: 1299px) {
-  .up-events-container {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-}
 @media (max-width: 1023px) {
   .up-events-container {
     overflow: hidden;
