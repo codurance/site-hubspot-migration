@@ -20,7 +20,7 @@
   align-items: stretch;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-left: -15px;
 }
 @media (min-width: 1024px) {
@@ -78,6 +78,7 @@
   flex-direction: column;
   flex-grow: 1;
   padding: 20px;
+  background-color: white;
 }
 
 .up-event-item__text-container-inner {
