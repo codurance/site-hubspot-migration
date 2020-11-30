@@ -141,7 +141,7 @@
       return parseFloat(TRACK.style.left);
     }
 
-    return 0;
+    return parseFloat(window.getComputedStyle(TRACK).getPropertyValue('left'));
   }
 
   function getTotalCardWidth() {
