@@ -39,6 +39,8 @@
     padding-right: 50px;
     cursor: grab;
     position: relative;
+    left: 0px;
+    transition: left 0.3s ease;
   }
   .up-events-results:active {
     cursor: grabbing;
