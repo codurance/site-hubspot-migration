@@ -1,9 +1,11 @@
 [
   {
+    "id": "hide_banner",
     "name": "hide_banner",
     "label": "Hide Banner?",
     "required": false,
     "locked": false,
+    "display": "checkbox",
     "type": "boolean",
     "default": false
   },
@@ -134,6 +136,7 @@
       }
     ],
     "tab": "CONTENT",
+    "expanded": false,
     "type": "group",
     "default": {
       "custom_class": "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"

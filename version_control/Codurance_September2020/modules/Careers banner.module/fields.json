@@ -164,6 +164,7 @@
       "default" : "Note: Links below will open in a new tab."
     } ],
     "tab" : "CONTENT",
+    "expanded" : false,
     "type" : "group",
     "default" : {
       "lightbox_title" : "Current Positions",
@@ -202,12 +203,14 @@
       "default" : "btn btn-more btn-more-large"
     } ],
     "tab" : "CONTENT",
+    "expanded" : false,
     "type" : "group",
     "default" : {
       "custom_class" : "btn btn-more btn-more-large"
     }
   } ],
   "tab" : "CONTENT",
+  "expanded" : false,
   "type" : "group",
   "default" : {
     "link_field" : {

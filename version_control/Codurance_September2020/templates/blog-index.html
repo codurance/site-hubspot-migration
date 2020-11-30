@@ -11,13 +11,18 @@ label: Blog Listing
   <div class="blog-author bg-color-white margin-bottom-30">
     <!--About the author-->
     <div class="row">
+     {% if content.blog_post_author.avatar == NULL || content.blog_post_author.avatar.src == "(unknown)" || content.blog_post_author.avatar == "" %}
+      <div class="custom-col-sm-3 pull-left hide">
+      </div>
+     {% else %}
       <div class="custom-col-sm-3 pull-left">
         <img class="img-fluid" id="author-img" src="{{ blog_author.avatar }}" alt="{{ blog_author.display_name }}">
       </div>
+     {% endif %}                  
       <div class="custom-col-sm-9">
         <div class="blog-author-desc">
           <div class="overflow-h">
-            <h4>{{ blog_author.display_name }}</h4> 
+            <h2>{{ blog_author.display_name }}</h2> 
             {% if blog_author.has_social_profiles %}
             <ul class="list-inline mb-0">
               <li class="list-inline-item custom-mx-2">
@@ -277,16 +282,11 @@ label: Blog Listing
   </div> 
 </div>
 
-
-
-
-
 {% endif %}
 {{ require_js(get_asset_url("../js/imageLoaded.js")) }}
 {{ require_js(get_asset_url("../js/masonary.js")) }}
 
 <script>
-
 
   $(document).on('ready', function () {
 
