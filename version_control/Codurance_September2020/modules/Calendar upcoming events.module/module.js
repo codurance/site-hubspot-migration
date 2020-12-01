@@ -1,7 +1,7 @@
 ; const initialiseUpcomingEvents = () => {
 
   const MEDIUM_WINDOW_WIDTH = 1023;
-  let trackHasSetWidth, ticking, mouseStartPosition, mousePositionDifference, leftStartPosition;
+  let trackHasSetWidth, ticking, mouseStartPosition, mousePositionDifference, leftStartPosition, maxLeft;
   let currentPosition = 0;
 
   const SELECTORS = {
@@ -62,7 +62,6 @@
   function resetCardTrackLeftPosition() {
     if (windowIsMediumOrBelow()) {
       const currentLeft = parseFloat(TRACK.style.left);
-      const maxLeft = calculateMaxLeftPosition();
       TRACK.style.left = Math.max(currentLeft, maxLeft) + 'px';
     }
   }
@@ -70,7 +69,9 @@
   function sizeTrack() {
     if (windowIsMediumOrBelow() && !trackHasSetWidth) {
       addTrackWidth();
+      calculateMaxLeftPosition();
       resetTrackPosition();
+      disableNavButton(LEFT_BUTTON);
     } else if (windowIsLargerThanMedium() && trackHasSetWidth) {
       resetTrackWidth();
     }
@@ -129,8 +130,8 @@
     e.preventDefault();
     mousePositionDifference = calculateMouseDifference(unify(e).clientX);
     let newLeft = leftStartPosition + mousePositionDifference;
-    if (newLeft < calculateMaxLeftPosition()) {
-      newLeft = calculateMaxLeftPosition();
+    if (newLeft < maxLeft) {
+      newLeft = maxLeft;
     }
     if (newLeft > 0) {
       newLeft = 0;
@@ -151,16 +152,20 @@
     mousePositionDifference = 0;
   }
 
-  function navigateRight() {
-    const maxLeft = calculateMaxLeftPosition();
+  function atEndOfTrack() {
     const currentLeft = getLeftPosition();
-    if (currentLeft <= maxLeft) return;
+    return currentLeft <= maxLeft;
+  }
 
-    let targetPosition = currentPosition + 1;
-    const totalCardWidth = getTotalCardWidth();
-    const targetLeft = totalCardWidth * targetPosition * -1;
-    const newLeft = Math.max(targetLeft, maxLeft);
-    navigate(newLeft, targetPosition);
+  function navigateRight() {
+    if (!atEndOfTrack()) {
+      let targetPosition = currentPosition + 1;
+      const totalCardWidth = getTotalCardWidth();
+      const targetLeft = totalCardWidth * targetPosition * -1;
+      const newLeft = Math.max(targetLeft, maxLeft);
+      navigate(newLeft, targetPosition);
+    }
+    return;
   }
 
   function navigateLeft() {
@@ -177,6 +182,12 @@
     addAnimationClass();
     TRACK.style.left = `${leftPos}px`;
     updateCurrentPosition(targetPos);
+    checkButtonState();
+  }
+
+  function checkButtonState() {
+    currentPosition === 0 ? disableNavButton(LEFT_BUTTON) : enableNavButton(LEFT_BUTTON);
+    atEndOfTrack() ? disableNavButton(RIGHT_BUTTON) : enableNavButton(RIGHT_BUTTON);
   }
 
   function addAnimationClass() {
@@ -189,7 +200,7 @@
   }
 
   function calculateMaxLeftPosition() {
-    return Math.min(CARD_WINDOW.clientWidth - TRACK.clientWidth, 0);
+    maxLeft = Math.min(CARD_WINDOW.clientWidth - TRACK.clientWidth, 0);
   }
 
   function getLeftPosition() {
@@ -213,6 +224,14 @@
   function unify(e) {
     return e.changedTouches ? e.changedTouches[0] : e
   };
+
+  function disableNavButton(button) {
+    button.setAttribute('disabled', true);
+  }
+
+  function enableNavButton(button) {
+    button.removeAttribute('disabled');
+  }
 
 };
 
