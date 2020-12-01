@@ -142,7 +142,7 @@ class CardSlider {
   }
   returnToStartPosition() {
     this.addAnimationClass();
-    this.track.style.left = leftStartPosition + 'px';
+    this.track.style.left = this.leftStartPosition + 'px';
   }
 
   handleResize() {
