@@ -135,9 +135,6 @@
     e.preventDefault();
     mousePositionDifference = calculateMouseDifference(unify(e).clientX);
     let newLeft = leftStartPosition + mousePositionDifference;
-    // if (newLeft < maxLeft) {
-    //   newLeft = maxLeft;
-    // }
     TRACK.style.left = newLeft + 'px';
   }
 
