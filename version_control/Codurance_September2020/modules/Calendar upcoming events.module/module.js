@@ -15,6 +15,7 @@
   const TRACK = window.document.querySelector(SELECTORS.TRACK);
   const CARD_WINDOW = window.document.querySelector(SELECTORS.CARD_WINDOW);
   const CARDS = Array.from(window.document.querySelectorAll(SELECTORS.CARDS));
+  const ANIMATING_CLASS = 'animating';
   const LEFT_BUTTON = window.document.querySelector(SELECTORS.LEFT_BUTTON);
   const RIGHT_BUTTON = window.document.querySelector(SELECTORS.RIGHT_BUTTON);
 
@@ -159,8 +160,7 @@
     const totalCardWidth = getTotalCardWidth();
     const targetLeft = totalCardWidth * targetPosition * -1;
     const newLeft = Math.max(targetLeft, maxLeft);
-    TRACK.style.left = `${newLeft}px`;
-    updateCurrentPosition(targetPosition);
+    navigate(newLeft, targetPosition);
   }
 
   function navigateLeft() {
@@ -170,8 +170,22 @@
     const totalCardWidth = getTotalCardWidth();
     const targetLeft = totalCardWidth * targetPosition * -1;
     const newLeft = Math.min(targetLeft, 0);
-    TRACK.style.left = `${newLeft}px`;
-    updateCurrentPosition(targetPosition);
+    navigate(newLeft, targetPosition);
+  }
+
+  function navigate(leftPos, targetPos) {
+    addAnimationClass();
+    TRACK.style.left = `${leftPos}px`;
+    updateCurrentPosition(targetPos);
+  }
+
+  function addAnimationClass() {
+    TRACK.classList.add(ANIMATING_CLASS);
+    TRACK.addEventListener('transitionend', removeAnimationClass);
+  }
+
+  function removeAnimationClass() {
+    TRACK.classList.remove(ANIMATING_CLASS);
   }
 
   function calculateMaxLeftPosition() {
@@ -193,6 +207,7 @@
   }
 
   function updateCurrentPosition(position) {
+
     currentPosition = position;
   }
 

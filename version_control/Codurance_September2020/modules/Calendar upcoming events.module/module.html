@@ -1,21 +1,30 @@
-{% if module.hubdb_table %}
-{% set upcomingEventsFilter = ("&orderBy=datetime" + "&datetime__gt=" + local_dt|unixtimestamp) %}
-{% set upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
+{% if module.hubdb_table %} {% set upcomingEventsFilter = ("&orderBy=datetime" +
+"&datetime__gt=" + local_dt|unixtimestamp) %} {% set upcomingEvents =
+hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
 
-<div class="up-events-container responsive-page-width lateral-spacing" data-card-window>
-
+<div
+  class="up-events-container responsive-page-width lateral-spacing"
+  data-card-window
+>
   <div class="up-events__header-wrapper">
     <h1 class="up-events__heading responsive-page-width">Upcoming events</h1>
     <div>
-      <button class="up-events__nav-button" data-up-events-button-left>←</button>
-      <button class="up-events__nav-button" data-up-events-button-right>→</button>
+      <button class="up-events__nav-button" data-up-events-button-left>
+        ←
+      </button>
+      <button class="up-events__nav-button" data-up-events-button-right>
+        →
+      </button>
     </div>
   </div>
   <div class="up-events-results" data-card-track>
     {% for row in upcomingEvents %}
     <article class="up-event-item" data-card>
       <div class="up-event-item__content">
-        <div class="up-event-item__image-container" style="background-image: url({{row.thumbnail.url}})">
+        <div
+          class="up-event-item__image-container"
+          style="background-image: url({{row.thumbnail.url}})"
+        >
           <small class="up-event-item__type-text">
             {{ row.type.name }}
           </small>
@@ -23,7 +32,10 @@
         <div class="up-event-item__text-container">
           <div class="up-event-item__text-container-inner">
             <header>
-              <time class="up-event-item__datetime" datetime="{{ row.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}">
+              <time
+                class="up-event-item__datetime"
+                datetime="{{ row.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
+              >
                 {{ row.datetime|datetimeformat('%a %e %b %Y | %H:%M') }}
               </time>
               <h4 class="up-event-item__title">
@@ -43,6 +55,5 @@
     {% endfor %}
   </div>
 </div>
-
 
 {% endif %}
