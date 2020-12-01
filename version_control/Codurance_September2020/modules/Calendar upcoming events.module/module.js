@@ -117,13 +117,18 @@
 
     if (mousePositionDifference >= MIN_SWIPE_LENGTH) {
       navigateLeft();
-    }
-
-    if (mousePositionDifference <= -MIN_SWIPE_LENGTH) {
+    } else if (mousePositionDifference <= -MIN_SWIPE_LENGTH) {
       navigateRight();
+    } else {
+      returnToStartPosition();
     }
 
     resetMousePositionDifference();
+  }
+
+  function returnToStartPosition() {
+    addAnimationClass();
+    TRACK.style.left = leftStartPosition + 'px';
   }
 
   function handleDrag(e) {
