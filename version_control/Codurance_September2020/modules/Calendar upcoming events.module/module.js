@@ -1,7 +1,7 @@
 ; const initialiseUpcomingEvents = () => {
 
   const MEDIUM_WINDOW_WIDTH = 1023;
-  let trackHasSetWidth, ticking, mouseStartPosition, mouseEndPosition, cardWindowScrollPosition, mousePositionDifference;
+  let trackHasSetWidth, ticking, mouseStartPosition, mousePositionDifference, leftStartPosition;
   let currentPosition = 0;
 
   const SELECTORS = {
@@ -120,16 +120,26 @@
     if (mousePositionDifference <= -MIN_SWIPE_LENGTH) {
       navigateRight();
     }
-    
+
     resetMousePositionDifference();
   }
 
   function handleDrag(e) {
+    e.preventDefault();
     mousePositionDifference = calculateMouseDifference(unify(e).clientX);
+    let newLeft = leftStartPosition + mousePositionDifference;
+    if (newLeft < calculateMaxLeftPosition()) {
+      newLeft = calculateMaxLeftPosition();
+    }
+    if (newLeft > 0) {
+      newLeft = 0;
+    }
+    TRACK.style.left = newLeft + 'px';
   }
 
   function logMouseDown(xPosition) {
     mouseStartPosition = xPosition;
+    leftStartPosition = parseFloat(TRACK.style.left);
   }
 
   function calculateMouseDifference(endPosition) {
