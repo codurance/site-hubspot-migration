@@ -66,6 +66,7 @@
   function sizeTrack() {
     if (windowIsMediumOrBelow() && !trackHasSetWidth) {
       addTrackWidth();
+      resetTrackPosition();
     } else if (windowIsLargerThanMedium() && trackHasSetWidth) {
       resetTrackWidth();
     }
@@ -86,6 +87,11 @@
       TRACK.style.width = totalWidthOfTrack + "px";
       trackHasSetWidth = true;
     }
+  }
+
+  function resetTrackPosition() {
+    currentPosition = 0;
+    TRACK.style.left = '0px';
   }
 
   function resetTrackWidth() {
