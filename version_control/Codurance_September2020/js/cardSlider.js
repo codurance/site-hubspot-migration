@@ -1,14 +1,13 @@
 class CardSlider {
-  constructor(
-    activationPoint,
-    {
-      cardWindowSelector = '[data-cardslider-window]',
-      trackSelector = '[data-cardslider-track]',
-      cardsSelector = '[data-cardslider-card]',
-      leftButtonSelector = '[data-cardslider-button-left]',
-      rightButtonSelector = '[data-cardslider-button-right]',
-    }
-  ) {
+  constructor({
+    activationPoint = 1023,
+    cardWindowSelector = '[data-cardslider-window]',
+    trackSelector = '[data-cardslider-track]',
+    cardsSelector = '[data-cardslider-card]',
+    leftButtonSelector = '[data-cardslider-button-left]',
+    rightButtonSelector = '[data-cardslider-button-right]',
+    animatingClass = 'animating',
+  }) {
     this.activationPoint = activationPoint;
     this.cardWindow = document.querySelector(cardWindowSelector);
     this.track = document.querySelector(trackSelector);
@@ -17,263 +16,232 @@ class CardSlider {
     );
     this.leftButton = document.querySelector(leftButtonSelector);
     this.rightButton = document.querySelector(rightButtonSelector);
+    this.animatingClass = animatingClass;
+
+    this.trackHasSetWidth = false;
+    this.maxLeft = 0;
+    this.currentPosition = 0;
+    this.ticking = false;
+    this.mouseStartPosition = 0;
+    this.leftStartPosition = 0;
+    this.mousePositionDifference = 0;
+    this.minSwipeThreshold = 50;
 
     this.init();
   }
-
-  trackHasSetWidth = null;
 
   init() {
     this.sizeTrack();
     this.setUpEventListeners();
   }
 
-  windowIsWithinActicationPoint() {
+  windowIsWithinActivationPoint() {
     return window.innerWidth <= this.activationPoint;
   }
-  windowIsOutsideActicationPoint() {
+  windowIsOutsideActivationPoint() {
     return window.innerWidth > this.activationPoint;
   }
 
+  setUpEventListeners() {
+    window.addEventListener('resize', this.handleResize);
+    this.cardWindow.addEventListener('mousedown', e => this.handleMouseDown(e));
+    this.cardWindow.addEventListener('mouseup', e => this.handleMouseUp(e));
+    this.cardWindow.addEventListener('mouseleave', e => this.handleMouseUp(e));
+    this.cardWindow.addEventListener('touchstart', e =>
+      this.handleMouseDown(e)
+    );
+    this.cardWindow.addEventListener('touchend', e => this.handleMouseUp(e));
+    this.leftButton.addEventListener('click', e => this.navigateLeft(e));
+    this.rightButton.addEventListener('click', e => this.navigateRight(e));
+  }
+
   sizeTrack() {
-    if (windowIsWithinActicationPoint() && !trackHasSetWidth) {
-      addTrackWidth();
-      // calculateMaxLeftPosition();
-      // resetTrackPosition();
-      // checkButtonState();
-    } else if (this.windowIsOutsideActicationPoint() && trackHasSetWidth) {
-      // resetTrackWidth();
+    if (this.windowIsWithinActivationPoint() && !this.trackHasSetWidth) {
+      this.addTrackWidth();
+      this.calculateMaxLeftPosition();
+      this.resetTrackPosition();
+      this.checkButtonState();
+    } else if (this.windowIsOutsideActivationPoint() && this.trackHasSetWidth) {
+      this.resetTrackWidth();
     }
     return;
   }
 
   addTrackWidth() {
     const trackPadding = parseFloat(
-      window.getComputedStyle(TRACK).paddingRight
+      window.getComputedStyle(this.track).paddingRight
     );
-    const cardWidth = CARDS[0].getBoundingClientRect().width;
+    const cardWidth = this.cards[0].getBoundingClientRect().width;
     const cardMargin = parseFloat(
-      window.getComputedStyle(CARDS[0]).marginRight
+      window.getComputedStyle(this.cards[0]).marginRight
     );
 
-    const totalWidthOfCards = cardWidth * CARDS.length;
-    const totalMargin = cardMargin * 2 * CARDS.length;
+    const totalWidthOfCards = cardWidth * this.cards.length;
+    const totalMargin = cardMargin * 2 * this.cards.length;
 
     const totalWidthOfTrack = totalWidthOfCards + totalMargin + trackPadding;
 
     if (totalWidthOfTrack) {
-      TRACK.style.width = totalWidthOfTrack + 'px';
-      trackHasSetWidth = true;
+      this.track.style.width = totalWidthOfTrack + 'px';
+      this.trackHasSetWidth = true;
     }
   }
-}
 
-const initialiseUpcomingEvents = () => {
-  const MEDIUM_WINDOW_WIDTH = 1023;
-  let trackHasSetWidth,
-    ticking,
-    mouseStartPosition,
-    mousePositionDifference,
-    leftStartPosition,
-    maxLeft;
-  let currentPosition = 0;
-
-  const TRACK = window.document.querySelector(SELECTORS.TRACK);
-  const CARD_WINDOW = window.document.querySelector(SELECTORS.CARD_WINDOW);
-  const CARDS = Array.from(window.document.querySelectorAll(SELECTORS.CARDS));
-  const ANIMATING_CLASS = 'animating';
-  const LEFT_BUTTON = window.document.querySelector(SELECTORS.LEFT_BUTTON);
-  const RIGHT_BUTTON = window.document.querySelector(SELECTORS.RIGHT_BUTTON);
-
-  const MIN_SWIPE_LENGTH = 50;
-
-  init();
-
-  // function init() {
-  sizeTrack();
-  setUpEventListeners();
-  // }
-
-  function setUpEventListeners() {
-    window.addEventListener('resize', handleResize);
-    CARD_WINDOW.addEventListener('mousedown', handleMouseDown);
-    CARD_WINDOW.addEventListener('mouseup', handleMouseUp);
-    CARD_WINDOW.addEventListener('mouseleave', handleMouseUp);
-    CARD_WINDOW.addEventListener('touchstart', handleMouseDown);
-    CARD_WINDOW.addEventListener('touchend', handleMouseUp);
-    LEFT_BUTTON.addEventListener('click', navigateLeft);
-    RIGHT_BUTTON.addEventListener('click', navigateRight);
+  calculateMaxLeftPosition() {
+    this.maxLeft = Math.min(
+      this.cardWindow.clientWidth - this.track.clientWidth,
+      0
+    );
   }
 
-  function handleResize() {
-    if (!ticking) {
+  resetTrackPosition() {
+    this.currentPosition = 0;
+    this.track.style.left = '0px';
+  }
+
+  checkButtonState() {
+    this.currentPosition === 0
+      ? this.disableNavButton(this.leftButton)
+      : this.enableNavButton(this.leftButton);
+    this.atEndOfTrack()
+      ? this.disableNavButton(this.rightButton)
+      : this.enableNavButton(this.rightButton);
+  }
+
+  disableNavButton(button) {
+    button.setAttribute('disabled', true);
+  }
+  enableNavButton(button) {
+    button.removeAttribute('disabled');
+  }
+
+  atEndOfTrack() {
+    const currentLeft = this.getLeftPosition();
+    return currentLeft <= this.maxLeft;
+  }
+
+  getLeftPosition() {
+    if (this.track.style.left) {
+      return parseFloat(this.track.style.left);
+    }
+    return parseFloat(
+      window.getComputedStyle(this.track).getPropertyValue('left')
+    );
+  }
+
+  resetTrackWidth() {
+    this.track.style.removeProperty('width');
+    this.trackHasSetWidth = false;
+  }
+
+  resetCardTrackLeftPosition() {
+    if (this.windowIsWithinActivationPoint()) {
+      const currentLeft = parseFloat(this.track.style.left);
+      this.track.style.left = Math.max(currentLeft, this.maxLeft) + 'px';
+    }
+  }
+  returnToStartPosition() {
+    this.addAnimationClass();
+    this.track.style.left = leftStartPosition + 'px';
+  }
+
+  handleResize() {
+    if (!this.ticking) {
       window.requestAnimationFrame(function() {
-        sizeTrack();
-        resetCardTrackLeftPosition();
-        ticking = false;
+        this.sizeTrack();
+        this.resetCardTrackLeftPosition();
+        this.ticking = false;
       });
-
-      ticking = true;
+      this.ticking = true;
     }
   }
-
-  function resetCardTrackLeftPosition() {
-    if (windowIsMediumOrBelow()) {
-      const currentLeft = parseFloat(TRACK.style.left);
-      TRACK.style.left = Math.max(currentLeft, maxLeft) + 'px';
-    }
+  handleMouseDown(e) {
+    window.addEventListener('touchmove', e => this.handleDrag(e));
+    window.addEventListener('mousemove', e => this.handleDrag(e));
+    this.logMouseDown(this.unify(e).clientX);
   }
-
-  function resetTrackPosition() {
-    currentPosition = 0;
-    TRACK.style.left = '0px';
-  }
-
-  function resetTrackWidth() {
-    TRACK.style.removeProperty('width');
-    trackHasSetWidth = false;
-  }
-
-  function handleMouseDown(e) {
-    window.addEventListener('touchmove', handleDrag);
-    window.addEventListener('mousemove', handleDrag);
-
-    logMouseDown(unify(e).clientX);
-  }
-
-  function handleMouseUp(e) {
-    window.removeEventListener('touchmove', handleDrag);
-    window.removeEventListener('mousemove', handleDrag);
-
-    if (mousePositionDifference >= MIN_SWIPE_LENGTH) {
-      navigateLeft();
-    } else if (mousePositionDifference <= -MIN_SWIPE_LENGTH) {
-      navigateRight();
+  handleMouseUp(e) {
+    window.removeEventListener('touchmove', e => this.handleDrag(e));
+    window.removeEventListener('mousemove', e => this.handleDrag(e));
+    if (this.mousePositionDifference >= this.minSwipeThreshold) {
+      this.navigateLeft();
+    } else if (this.mousePositionDifference <= -this.minSwipeThreshold) {
+      this.navigateRight();
     } else {
-      returnToStartPosition();
+      this.returnToStartPosition();
     }
-
-    resetMousePositionDifference();
+    this.resetMousePositionDifference();
+  }
+  handleDrag(e) {
+    this.mousePositionDifference = this.calculateMouseDifference(
+      this.unify(e).clientX
+    );
+    let newLeft = this.leftStartPosition + this.mousePositionDifference;
+    this.track.style.left = newLeft + 'px';
   }
 
-  function returnToStartPosition() {
-    addAnimationClass();
-    TRACK.style.left = leftStartPosition + 'px';
+  navigate(leftPos, targetPos) {
+    this.addAnimationClass();
+    this.track.style.left = `${leftPos}px`;
+    this.updateCurrentPosition(targetPos);
+    this.checkButtonState();
   }
-
-  function handleDrag(e) {
-    e.preventDefault();
-    mousePositionDifference = calculateMouseDifference(unify(e).clientX);
-    let newLeft = leftStartPosition + mousePositionDifference;
-    TRACK.style.left = newLeft + 'px';
-  }
-
-  function logMouseDown(xPosition) {
-    mouseStartPosition = xPosition;
-    leftStartPosition = parseFloat(TRACK.style.left);
-  }
-
-  function calculateMouseDifference(endPosition) {
-    return endPosition - mouseStartPosition;
-  }
-
-  function resetMousePositionDifference() {
-    mousePositionDifference = 0;
-  }
-
-  function atEndOfTrack() {
-    const currentLeft = getLeftPosition();
-    return currentLeft <= maxLeft;
-  }
-
-  function navigateRight() {
-    let targetLeft = maxLeft;
-    let targetPosition = currentPosition;
-    if (!atEndOfTrack()) {
-      targetPosition = currentPosition + 1;
-      const totalCardWidth = getTotalCardWidth();
-      targetLeft = totalCardWidth * targetPosition * -1;
-    }
-    const newLeft = Math.max(targetLeft, maxLeft);
-    navigate(newLeft, targetPosition);
-    return;
-  }
-
-  function navigateLeft() {
-    let targetPosition = Math.max(currentPosition - 1, 0);
-    const totalCardWidth = getTotalCardWidth();
+  navigateLeft() {
+    let targetPosition = Math.max(this.currentPosition - 1, 0);
+    const totalCardWidth = this.getTotalCardWidth();
     const targetLeft = totalCardWidth * targetPosition * -1;
     const newLeft = Math.min(targetLeft, 0);
-    navigate(newLeft, targetPosition);
+    this.navigate(newLeft, targetPosition);
   }
-
-  function navigate(leftPos, targetPos) {
-    addAnimationClass();
-    TRACK.style.left = `${leftPos}px`;
-    updateCurrentPosition(targetPos);
-    checkButtonState();
-  }
-
-  function checkButtonState() {
-    currentPosition === 0
-      ? disableNavButton(LEFT_BUTTON)
-      : enableNavButton(LEFT_BUTTON);
-    atEndOfTrack()
-      ? disableNavButton(RIGHT_BUTTON)
-      : enableNavButton(RIGHT_BUTTON);
-  }
-
-  function addAnimationClass() {
-    TRACK.classList.add(ANIMATING_CLASS);
-    TRACK.addEventListener('transitionend', removeAnimationClass);
-  }
-
-  function removeAnimationClass() {
-    TRACK.classList.remove(ANIMATING_CLASS);
-  }
-
-  function calculateMaxLeftPosition() {
-    maxLeft = Math.min(CARD_WINDOW.clientWidth - TRACK.clientWidth, 0);
-  }
-
-  function getLeftPosition() {
-    if (TRACK.style.left) {
-      return parseFloat(TRACK.style.left);
+  navigateRight() {
+    let targetLeft = this.maxLeft;
+    let targetPosition = this.currentPosition;
+    if (!this.atEndOfTrack()) {
+      targetPosition = this.currentPosition + 1;
+      const totalCardWidth = this.getTotalCardWidth();
+      targetLeft = totalCardWidth * targetPosition * -1;
     }
-
-    return parseFloat(window.getComputedStyle(TRACK).getPropertyValue('left'));
+    const newLeft = Math.max(targetLeft, this.maxLeft);
+    this.navigate(newLeft, targetPosition);
   }
 
-  function getTotalCardWidth() {
-    const innerCardWidth = CARDS[0].getBoundingClientRect().width;
-    const cardMarginWidth = parseFloat(
-      window.getComputedStyle(CARDS[0]).marginRight
-    );
-    return innerCardWidth + cardMarginWidth * 2;
+  logMouseDown(xPosition) {
+    this.mouseStartPosition = xPosition;
+    this.leftStartPosition = parseFloat(this.track.style.left);
   }
 
-  function updateCurrentPosition(position) {
-    currentPosition = position;
-  }
-
-  function unify(e) {
+  unify(e) {
     return e.changedTouches ? e.changedTouches[0] : e;
   }
 
-  function disableNavButton(button) {
-    button.setAttribute('disabled', true);
+  addAnimationClass() {
+    this.track.classList.add(this.animatingClass);
+    this.track.addEventListener('transitionend', () =>
+      this.removeAnimationClass()
+    );
   }
 
-  function enableNavButton(button) {
-    button.removeAttribute('disabled');
+  removeAnimationClass() {
+    this.track.classList.remove(this.animatingClass);
   }
-};
 
-window.addEventListener('DOMContentLoaded', initialiseUpcomingEvents);
+  resetMousePositionDifference() {
+    this.mousePositionDifference = 0;
+  }
 
-function test({ arg1, arg2 }) {
-  console.log('arg1', arg1);
-  console.log(`arg2: `, arg2);
+  calculateMouseDifference(endPosition) {
+    return endPosition - this.mouseStartPosition;
+  }
+
+  updateCurrentPosition(position) {
+    this.currentPosition = position;
+  }
+
+  getTotalCardWidth() {
+    const innerCardWidth = this.cards[0].getBoundingClientRect().width;
+    const cardMarginWidth = parseFloat(
+      window.getComputedStyle(this.cards[0]).marginRight
+    );
+    return innerCardWidth + cardMarginWidth * 2;
+  }
 }
-
-test({ arg1: '' });
