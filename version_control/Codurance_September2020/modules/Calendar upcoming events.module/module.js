@@ -71,7 +71,7 @@
       addTrackWidth();
       calculateMaxLeftPosition();
       resetTrackPosition();
-      disableNavButton(LEFT_BUTTON);
+      checkButtonState();
     } else if (windowIsLargerThanMedium() && trackHasSetWidth) {
       resetTrackWidth();
     }
