@@ -26,6 +26,20 @@
   padding-bottom: 44px;
 }
 
+.up-events__nav-button {
+  border: none
+}
+@media (min-width: 1024px) {
+  .up-events__nav-button {
+    display: none
+  }
+}
+@media (max-width: 767px) {
+  .up-events__nav-button {
+    display: none
+  }
+}
+
 .up-events-results {
   align-items: stretch;
   display: flex;
