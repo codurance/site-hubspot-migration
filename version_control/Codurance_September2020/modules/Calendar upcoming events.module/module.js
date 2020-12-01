@@ -207,13 +207,13 @@
   }
 
   function updateCurrentPosition(position) {
-
     currentPosition = position;
   }
 
-  const unify = (e) => {
+  function unify(e) {
     return e.changedTouches ? e.changedTouches[0] : e
   };
+
 };
 
 window.addEventListener('DOMContentLoaded', initialiseUpcomingEvents);
