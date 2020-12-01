@@ -1,4 +1,4 @@
-; (function () {
+; const initialiseUpcomingEvents = () => {
 
   const MEDIUM_WINDOW_WIDTH = 1023;
   let trackHasSetWidth, ticking, mouseStartPosition, mouseEndPosition, cardWindowScrollPosition, mousePositionDifference;
@@ -47,10 +47,19 @@
     if (!ticking) {
       window.requestAnimationFrame(function () {
         sizeTrack();
+        resetCardTrackLeftPosition();
         ticking = false;
       });
 
       ticking = true;
+    }
+  }
+
+  function resetCardTrackLeftPosition() {
+    if (windowIsMediumOrBelow()) {
+      const currentLeft = parseFloat(TRACK.style.left);
+      const maxLeft = calculateMaxLeftPosition();
+      TRACK.style.left = Math.max(currentLeft, maxLeft) + 'px';
     }
   }
 
@@ -165,4 +174,6 @@
   function updateCurrentPosition(position) {
     currentPosition = position;
   }
-})();
+};
+
+window.addEventListener('DOMContentLoaded', initialiseUpcomingEvents);
