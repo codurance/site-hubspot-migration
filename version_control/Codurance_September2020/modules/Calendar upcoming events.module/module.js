@@ -135,12 +135,9 @@
     e.preventDefault();
     mousePositionDifference = calculateMouseDifference(unify(e).clientX);
     let newLeft = leftStartPosition + mousePositionDifference;
-    if (newLeft < maxLeft) {
-      newLeft = maxLeft;
-    }
-    if (newLeft > 0) {
-      newLeft = 0;
-    }
+    // if (newLeft < maxLeft) {
+    //   newLeft = maxLeft;
+    // }
     TRACK.style.left = newLeft + 'px';
   }
 
@@ -163,20 +160,20 @@
   }
 
   function navigateRight() {
+    let targetLeft = maxLeft;
+    let targetPosition = currentPosition;
     if (!atEndOfTrack()) {
-      let targetPosition = currentPosition + 1;
+      targetPosition = currentPosition + 1;
       const totalCardWidth = getTotalCardWidth();
-      const targetLeft = totalCardWidth * targetPosition * -1;
-      const newLeft = Math.max(targetLeft, maxLeft);
-      navigate(newLeft, targetPosition);
+      targetLeft = totalCardWidth * targetPosition * -1;
     }
+    const newLeft = Math.max(targetLeft, maxLeft);
+    navigate(newLeft, targetPosition);
     return;
   }
 
   function navigateLeft() {
-    if (currentPosition <= 0) return;
-
-    let targetPosition = currentPosition - 1;
+    let targetPosition = Math.max(currentPosition - 1, 0);
     const totalCardWidth = getTotalCardWidth();
     const targetLeft = totalCardWidth * targetPosition * -1;
     const newLeft = Math.min(targetLeft, 0);
