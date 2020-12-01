@@ -4,6 +4,9 @@
 @media (max-width: 1023px) {
   .up-events-container {
     overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
   }
 }
