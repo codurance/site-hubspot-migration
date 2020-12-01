@@ -18,13 +18,13 @@
   const LEFT_BUTTON = window.document.querySelector(SELECTORS.LEFT_BUTTON);
   const RIGHT_BUTTON = window.document.querySelector(SELECTORS.RIGHT_BUTTON);
 
-  const MIN_SWIPE_LENGTH = 100;
+  const MIN_SWIPE_LENGTH = 50;
 
   init();
 
   function init() {
     sizeTrack();
-    setUpEventListener();
+    setUpEventListeners();
   }
 
   function windowIsMediumOrBelow() {
@@ -35,10 +35,13 @@
     return window.innerWidth > MEDIUM_WINDOW_WIDTH;
   }
 
-  function setUpEventListener() {
+  function setUpEventListeners() {
     window.addEventListener('resize', handleResize);
     CARD_WINDOW.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
+    CARD_WINDOW.addEventListener('mouseup', handleMouseUp);
+    CARD_WINDOW.addEventListener('mouseleave', handleMouseUp);
+    CARD_WINDOW.addEventListener('touchstart', handleMouseDown);
+    CARD_WINDOW.addEventListener('touchend', handleMouseUp);
     LEFT_BUTTON.addEventListener('click', navigateLeft);
     RIGHT_BUTTON.addEventListener('click', navigateRight);
   }
@@ -99,28 +102,30 @@
     trackHasSetWidth = false;
   }
 
-
-
-
-
-
-
-  // ----------------------------------------
-
   function handleMouseDown(e) {
+    window.addEventListener('touchmove', handleDrag);
     window.addEventListener('mousemove', handleDrag);
-    logMouseDown(e.clientX);
+
+    logMouseDown(unify(e).clientX);
   }
-  
+
   function handleMouseUp(e) {
+    window.removeEventListener('touchmove', handleDrag);
     window.removeEventListener('mousemove', handleDrag);
-    if (mousePositionDifference >= MIN_SWIPE_LENGTH) navigateLeft();
-    if (mousePositionDifference <= -MIN_SWIPE_LENGTH) navigateRight();
+
+    if (mousePositionDifference >= MIN_SWIPE_LENGTH) {
+      navigateLeft();
+    }
+
+    if (mousePositionDifference <= -MIN_SWIPE_LENGTH) {
+      navigateRight();
+    }
+    
     resetMousePositionDifference();
   }
 
   function handleDrag(e) {
-    mousePositionDifference = calculateMouseDifference(e.clientX);
+    mousePositionDifference = calculateMouseDifference(unify(e).clientX);
   }
 
   function logMouseDown(xPosition) {
@@ -180,6 +185,10 @@
   function updateCurrentPosition(position) {
     currentPosition = position;
   }
+
+  const unify = (e) => {
+    return e.changedTouches ? e.changedTouches[0] : e
+  };
 };
 
 window.addEventListener('DOMContentLoaded', initialiseUpcomingEvents);
