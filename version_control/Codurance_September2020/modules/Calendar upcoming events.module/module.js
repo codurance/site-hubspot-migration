@@ -145,8 +145,7 @@
   }
 
   function calculateMaxLeftPosition() {
-    const rightPadding = parseFloat(window.getComputedStyle(TRACK).getPropertyValue('padding-right'));
-    return Math.min(CARD_WINDOW.clientWidth - rightPadding - TRACK.clientWidth, 0);
+    return Math.min(CARD_WINDOW.clientWidth - TRACK.clientWidth, 0);
   }
 
   function getLeftPosition() {
