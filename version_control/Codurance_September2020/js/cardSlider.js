@@ -32,7 +32,17 @@ class CardSlider {
 
   init() {
     this.sizeTrack();
+    this.bindEventListeners();
     this.setUpEventListeners();
+  }
+
+  bindEventListeners() {
+    this.handleMouseDown = this.handleMouseDown.bind(this);
+    this.handleMouseUp = this.handleMouseUp.bind(this);
+    this.handleDrag = this.handleDrag.bind(this);
+    this.handleResize = this.handleResize.bind(this);
+    this.navigateLeft = this.navigateLeft.bind(this);
+    this.navigateRight = this.navigateRight.bind(this);
   }
 
   windowIsWithinActivationPoint() {
@@ -44,15 +54,13 @@ class CardSlider {
 
   setUpEventListeners() {
     window.addEventListener('resize', this.handleResize);
-    this.cardWindow.addEventListener('mousedown', e => this.handleMouseDown(e));
-    this.cardWindow.addEventListener('mouseup', e => this.handleMouseUp(e));
-    this.cardWindow.addEventListener('mouseleave', e => this.handleMouseUp(e));
-    this.cardWindow.addEventListener('touchstart', e =>
-      this.handleMouseDown(e)
-    );
-    this.cardWindow.addEventListener('touchend', e => this.handleMouseUp(e));
-    this.leftButton.addEventListener('click', e => this.navigateLeft(e));
-    this.rightButton.addEventListener('click', e => this.navigateRight(e));
+    this.cardWindow.addEventListener('mousedown', this.handleMouseDown);
+    this.cardWindow.addEventListener('mouseup', this.handleMouseUp);
+    this.cardWindow.addEventListener('mouseleave', this.handleMouseUp);
+    this.cardWindow.addEventListener('touchstart', this.handleMouseDown);
+    this.cardWindow.addEventListener('touchend', this.handleMouseUp);
+    this.leftButton.addEventListener('click', this.navigateLeft);
+    this.rightButton.addEventListener('click', this.navigateRight);
   }
 
   sizeTrack() {
@@ -156,13 +164,13 @@ class CardSlider {
     }
   }
   handleMouseDown(e) {
-    window.addEventListener('touchmove', e => this.handleDrag(e));
-    window.addEventListener('mousemove', e => this.handleDrag(e));
+    window.addEventListener('touchmove', this.handleDrag);
+    window.addEventListener('mousemove', this.handleDrag);
     this.logMouseDown(this.unify(e).clientX);
   }
   handleMouseUp(e) {
-    window.removeEventListener('touchmove', e => this.handleDrag(e));
-    window.removeEventListener('mousemove', e => this.handleDrag(e));
+    window.removeEventListener('touchmove', this.handleDrag);
+    window.removeEventListener('mousemove', this.handleDrag);
     if (this.mousePositionDifference >= this.minSwipeThreshold) {
       this.navigateLeft();
     } else if (this.mousePositionDifference <= -this.minSwipeThreshold) {
