@@ -195,6 +195,7 @@ class CardSlider {
   navigate(leftPos, targetPos) {
     this.addAnimationClass();
     this.track.style.left = `${leftPos}px`;
+    this.leftStartPosition = leftPos;
     this.updateCurrentPosition(targetPos);
     this.checkButtonState();
   }
@@ -219,7 +220,6 @@ class CardSlider {
 
   logMouseDown(xPosition) {
     this.mouseStartPosition = xPosition;
-    this.leftStartPosition = parseFloat(this.track.style.left);
   }
 
   unify(e) {
