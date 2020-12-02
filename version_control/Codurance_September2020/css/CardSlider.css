@@ -139,14 +139,24 @@
   text-align: center;
   cursor: pointer;
 }
-.calendar-event-item__button:hover {
+.calendar-event-item__button:hover,
+.calendar-event-item__button:focus {
   background-color: rgba(251, 142, 134, 1);
 }
 .calendar-event-item__button > a {
   color: white;
 }
-.calendar-event-item__button > a:hover {
+.calendar-event-item__button > a:hover,
+.calendar-event-item__button > a:focus {
   text-decoration: none;
+}
+
+.calendar-event-item__video-link::after {
+  content: ' ▸';
+  font-size: 1.5rem;
+  line-height: 0;
+  top: 0.05rem;
+  position: relative;
 }
 
 .calendar-event-item__image-container {
