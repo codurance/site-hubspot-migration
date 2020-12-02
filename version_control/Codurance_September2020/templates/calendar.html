@@ -2,27 +2,26 @@
     templateType: page
     isAvailableForNewContent: true
 -->
-{% extends "./layouts/base.html" %}
-
-{% block body %}
+{% extends "./layouts/base.html" %} {% block body %}
 
 <main>
   <section class="calendar-events">
-    <div class="calendar-events__heading-wrapper">
-    </div>
+    <div class="calendar-events__heading-wrapper"></div>
     <div class="calendar-events__events-wrapper">
-      {% module "events" path="/version_control/Codurance_September2020/modules/Calendar upcoming events.module"
-        no_wrapper=True %}
+      {% module "events"
+      path="/version_control/Codurance_September2020/modules/Calendar upcoming
+      events.module" no_wrapper=True %}
     </div>
   </section>
 
-  <!-- <section class="calendar-events">
-    <div class="calendar-events__inner">
-      <h2 class="calendar-events__heading">Past events</h2>
-      {% module "past_events" path="/version_control/Codurance_September2020/modules/Calendar past events.module" %}
+  <section class="calendar-events">
+    <div class="calendar-events__heading-wrapper"></div>
+    <div class="calendar-events__events-wrapper">
+      {% module "past_events"
+      path="/version_control/Codurance_September2020/modules/Calendar past
+      events.module" no_wrapper=True %}
     </div>
-  </section> -->
+  </section>
 </main>
-
 
 {% endblock body %}
