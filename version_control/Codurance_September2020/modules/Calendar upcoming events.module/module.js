@@ -1,10 +1,10 @@
 const SELECTORS = {
-  cardWindowSelector: '[data-card-window]',
-  trackSelector: '[data-card-track]',
-  cardsSelector: '[data-card]',
-  leftButtonSelector: '[data-up-events-button-left]',
-  rightButtonSelector: '[data-up-events-button-right]'
-}
+  cardWindowSelector: '[data-upcoming-card-window]',
+  trackSelector: '[data-upcoming-card-track]',
+  cardsSelector: '[data-upcoming-card]',
+  leftButtonSelector: '[data-upcoming-events-button-left]',
+  rightButtonSelector: '[data-upcoming-events-button-right]',
+};
 
 const cardSlider = new CardSlider(SELECTORS);
 

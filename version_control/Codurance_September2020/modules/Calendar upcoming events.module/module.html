@@ -4,7 +4,7 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
 
 <div
   class="calendar-events-item__button responsive-page-width lateral-spacing"
-  data-card-window
+  data-upcoming-card-window
 >
   <div class="calendar-events__header-wrapper">
     <h1 class="calendar-events__heading responsive-page-width">
@@ -14,22 +14,22 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
       <button
         class="calendar-events__nav-button"
         autocomplete="off"
-        data-up-events-button-left
+        data-upcoming-events-button-left
       >
         ←
       </button>
       <button
         class="calendar-events__nav-button"
         autocomplete="off"
-        data-up-events-button-right
+        data-upcoming-events-button-right
       >
         →
       </button>
     </div>
   </div>
-  <div class="calendar-events-results" data-card-track>
+  <div class="calendar-events-results" data-upcoming-card-track>
     {% for event in upcomingEvents %}
-    <article class="calendar-event-item" data-card>
+    <article class="calendar-event-item" data-upcoming-card>
       <div class="calendar-event-item__content">
         <div
           class="calendar-event-item__image-container"
