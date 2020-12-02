@@ -27,7 +27,7 @@ class CardSlider {
     this.mousePositionDifference = 0;
     this.minSwipeThreshold = 50;
 
-    this.init();
+    this.init = this.init.bind(this);
   }
 
   init() {
@@ -159,7 +159,7 @@ class CardSlider {
 
   handleResize() {
     if (!this.ticking) {
-      window.requestAnimationFrame(function() {
+      window.requestAnimationFrame(function () {
         this.sizeTrack();
         this.resetCardTrackLeftPosition();
         this.ticking = false;
