@@ -28,15 +28,15 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
     </div>
   </div>
   <div class="calendar-events-results" data-card-track>
-    {% for row in upcomingEvents %}
+    {% for event in upcomingEvents %}
     <article class="calendar-event-item" data-card>
       <div class="calendar-event-item__content">
         <div
           class="calendar-event-item__image-container"
-          style="background-image: url({{row.thumbnail.url}})"
+          style="background-image: url({{event.thumbnail.url}})"
         >
           <small class="calendar-event-item__type-text">
-            {{ row.type.name }}
+            {{ event.type.name }}
           </small>
         </div>
         <div class="calendar-event-item__text-container">
@@ -44,20 +44,20 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
             <header>
               <time
                 class="calendar-event-item__datetime"
-                datetime="{{ row.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
+                datetime="{{ event.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
               >
-                {{ row.datetime|datetimeformat('%a %e %b %Y | %H:%M') }}
+                {{ event.datetime|datetimeformat('%a %e %b %Y | %H:%M') }}
               </time>
               <h4 class="calendar-event-item__title">
-                {{ row.name }}
+                {{ event.name }}
               </h4>
             </header>
             <p class="calendar-event-item__description">
-              {{ row.description }}
+              {{ event.description }}
             </p>
           </div>
           <div class="calendar-event-item__button">
-            <a href="{{ row.link }}">Register Attendance</a>
+            <a href="{{ event.link }}">Register Attendance</a>
           </div>
         </div>
       </div>
