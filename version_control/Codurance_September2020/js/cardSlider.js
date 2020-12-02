@@ -23,7 +23,7 @@ class CardSlider {
     this.currentPosition = 0;
     this.ticking = false;
     this.mouseStartPosition = 0;
-    this.leftStartPosition = 0;
+    this.onDragStartLeftPosition = 0;
     this.mousePositionDifference = 0;
     this.minSwipeThreshold = 50;
 
@@ -68,10 +68,13 @@ class CardSlider {
   }
 
   sizeTrack() {
-    if (this.windowIsWithinActivationPoint() && !this.trackHasSetWidth) {
-      this.addTrackWidth();
+    if (this.windowIsWithinActivationPoint()) {
+      if (!this.trackHasSetWidth) {
+        this.addTrackWidth();
+        this.resetTrackPosition();
+      }
       this.calculateMaxLeftPosition();
-      this.resetTrackPosition();
+      this.keepTrackLeftWithinMaximum();
       this.checkButtonState();
     } else if (this.windowIsOutsideActivationPoint() && this.trackHasSetWidth) {
       this.resetTrackWidth();
@@ -108,6 +111,7 @@ class CardSlider {
 
   resetTrackPosition() {
     this.currentPosition = 0;
+    this.onDragStartLeftPosition = 0;
     this.track.style.left = '0px';
   }
 
@@ -128,8 +132,7 @@ class CardSlider {
   }
 
   atEndOfTrack() {
-    const currentLeft = this.getLeftPosition();
-    return currentLeft <= this.maxLeft;
+    return this.onDragStartLeftPosition <= this.maxLeft;
   }
 
   getLeftPosition() {
@@ -146,22 +149,19 @@ class CardSlider {
     this.trackHasSetWidth = false;
   }
 
-  resetCardTrackLeftPosition() {
-    if (this.windowIsWithinActivationPoint()) {
-      const currentLeft = parseFloat(this.track.style.left);
-      this.track.style.left = Math.max(currentLeft, this.maxLeft) + 'px';
-    }
+  keepTrackLeftWithinMaximum() {
+    const currentLeft = parseFloat(this.track.style.left);
+    this.track.style.left = Math.max(currentLeft, this.maxLeft) + 'px';
   }
   returnToStartPosition() {
     this.addAnimationClass();
-    this.track.style.left = this.leftStartPosition + 'px';
+    this.track.style.left = this.onDragStartLeftPosition + 'px';
   }
 
   handleResize() {
     if (!this.ticking) {
-      window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(() => {
         this.sizeTrack();
-        this.resetCardTrackLeftPosition();
         this.ticking = false;
       });
       this.ticking = true;
@@ -188,15 +188,15 @@ class CardSlider {
     this.mousePositionDifference = this.calculateMouseDifference(
       this.unify(e).clientX
     );
-    let newLeft = this.leftStartPosition + this.mousePositionDifference;
+    let newLeft = this.onDragStartLeftPosition + this.mousePositionDifference;
     this.track.style.left = newLeft + 'px';
   }
 
   navigate(leftPos, targetPos) {
+    this.updateCurrentPosition(targetPos);
     this.addAnimationClass();
     this.track.style.left = `${leftPos}px`;
-    this.leftStartPosition = leftPos;
-    this.updateCurrentPosition(targetPos);
+    this.onDragStartLeftPosition = leftPos;
     this.checkButtonState();
   }
   navigateLeft() {
