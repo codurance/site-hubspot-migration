@@ -168,15 +168,26 @@
   color: white;
 }
 
-.calendar-event-item__type-text {
+.calendar-event-item__label {
   background-color: white;
   border-radius: 3px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.29);
   color: black;
-  left: 10px;
   letter-spacing: 0.02em;
   padding: 0.05em 0.4em;
   position: absolute;
   text-transform: uppercase;
   top: 10px;
+}
+
+.calendar-event-item__label--type {
+  left: 10px;  
+}
+
+.calendar-event-item__label--duration {
+  right: 10px;
+}
+
+.calendar-event-item__label--duration::before {
+  content: '🕑 '
 }
