@@ -32,6 +32,17 @@ class CardSlider {
 
   init() {
     this.sizeTrack();
+    this.createEventListeners();
+  }
+
+  windowIsWithinActivationPoint() {
+    return window.innerWidth <= this.activationPoint;
+  }
+  windowIsOutsideActivationPoint() {
+    return window.innerWidth > this.activationPoint;
+  }
+
+  createEventListeners() {
     this.bindEventListeners();
     this.setUpEventListeners();
   }
@@ -43,13 +54,6 @@ class CardSlider {
     this.handleResize = this.handleResize.bind(this);
     this.navigateLeft = this.navigateLeft.bind(this);
     this.navigateRight = this.navigateRight.bind(this);
-  }
-
-  windowIsWithinActivationPoint() {
-    return window.innerWidth <= this.activationPoint;
-  }
-  windowIsOutsideActivationPoint() {
-    return window.innerWidth > this.activationPoint;
   }
 
   setUpEventListeners() {
