@@ -70,7 +70,7 @@
   }
 }
 
-.up-event-item {
+.calendar-event-item {
   box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.16);
   -webkit-box-flex: 1;
   flex: 1 1 25%;
@@ -78,28 +78,28 @@
   min-width: 260px;
 }
 @media (min-width: 1300px) {
-  .up-event-item {
+  .calendar-event-item {
     max-width: calc(25% - 30px);
   }
 }
 @media (max-width: 1299px) {
-  .up-event-item {
+  .calendar-event-item {
     max-width: calc(33% - 30px);
   }
 }
 @media (max-width: 1023px) {
-  .up-event-item:last-of-type {
+  .calendar-event-item:last-of-type {
     margin-right: 0;
   }
 }
 
-.up-event-item__content {
+.calendar-event-item__content {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.up-event-item__text-container {
+.calendar-event-item__text-container {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -107,11 +107,11 @@
   background-color: white;
 }
 
-.up-event-item__text-container-inner {
+.calendar-event-item__text-container-inner {
   flex-grow: 1;
 }
 
-.up-event-item__datetime {
+.calendar-event-item__datetime {
   display: inline-block;
   font-size: 0.75rem;
   letter-spacing: 0.003rem;
@@ -119,18 +119,18 @@
   text-transform: uppercase;
 }
 
-.up-event-item__title {
+.calendar-event-item__title {
   font-size: 1.2rem;
   font-weight: 700;
 }
 
-.up-event-item__description {
+.calendar-event-item__description {
   font-size: 1rem;
   color: #595959;
   margin-bottom: 25px;
 }
 
-.up-event-item__button {
+.calendar-event-item__button {
   background-color: rgba(251, 114, 104, 1);
   border-radius: 3px;
   font-size: 1.2rem;
@@ -139,17 +139,17 @@
   text-align: center;
   cursor: pointer;
 }
-.up-event-item__button:hover {
+.calendar-event-item__button:hover {
   background-color: rgba(251, 142, 134, 1);
 }
-.up-event-item__button > a {
+.calendar-event-item__button > a {
   color: white;
 }
-.up-event-item__button > a:hover {
+.calendar-event-item__button > a:hover {
   text-decoration: none;
 }
 
-.up-event-item__image-container {
+.calendar-event-item__image-container {
   position: relative;
   width: 100%;
   height: 155px;
@@ -158,7 +158,7 @@
   color: white;
 }
 
-.up-event-item__type-text {
+.calendar-event-item__type-text {
   background-color: white;
   border-radius: 3px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.29);
