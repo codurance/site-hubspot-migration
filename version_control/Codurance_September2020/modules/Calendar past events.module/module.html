@@ -1,57 +1,76 @@
-{% if module.hubdb_table %}
-    {% set previousEventsFilter = "&orderBy=-date&limit=4" %}
-    {% set previousEvents = hubdb_table_rows(module.hubdb_table, previousEventsFilter) %}
+{% if module.hubdb_table %} {% set previousEventsFilter =
+"&orderBy=-date&limit=4" %} {% set previousEvents =
+hubdb_table_rows(module.hubdb_table, previousEventsFilter) %}
 
-    <div class="up-module-title">
-      <h2>
-      Past Events  
-      </h2>
+<div
+  class="calendar-events-item__button responsive-page-width lateral-spacing"
+  data-card-window
+>
+  <div class="calendar-events__header-wrapper">
+    <h1 class="calendar-events__heading responsive-page-width">
+      Past Events
+    </h1>
+    <div>
+      <button
+        class="calendar-events__nav-button"
+        autocomplete="off"
+        data-up-events-button-left
+      >
+        ←
+      </button>
+      <button
+        class="calendar-events__nav-button"
+        autocomplete="off"
+        data-up-events-button-right
+      >
+        →
+      </button>
     </div>
-    <div class="pe-events-container">
-        <div class="pe-events-results">
-          {% for row in previousEvents %}
-          <div class="pe-event-item">
-            <div class="pe-event-item-content">
-              <div class="pe-event-image-container" style="background-image: url({{row.thumbnail.url}})">
-                <div class="pe-event-type-text">
-                  {{ row.type.name }}
-                </div>
-                <div class="pe-event-duration-text">
-                  {{ row.duration }}
-                </div>
-              </div>
-              <div class="pe-event-text-container" >
-                <div class="pe-event-text-container-inner">
-                  <div class="pe-event-date-container">
-                    <p>
-                    {{ row.date|datetimeformat('%e') }}
-                    {{ row.date|datetimeformat('%B')|truncate(3, true, '') }}
-                    {{ row.date|datetimeformat('%Y') }}
-                    </p>
-                    <p>
-                      {% if row.internal %}
-                      internal event
-                      {% endif %}
-                    </p>
-                  </div>
-                  <h4>
-                    {{ row.name }}
-                  </h4>
-                  <p>
-                    {{ row.description }}
-                  </p>
-                </div>
-                <div class="pe-watch-button">
-                  <a href="{{ row.video }}">Watch on Youtube »</a>
-                </div>
-              </div>
-            </div>
+  </div>
+  <div class="calendar-events-results" data-card-track>
+    {% for row in previousEvents %}
+    <article class="calendar-event-item" data-card>
+      <div class="calendar-event-item__content">
+        <div
+          class="calendar-event-item__image-container"
+          style="background-image: url({{row.thumbnail.url}})"
+        >
+          <small class="calendar-event-item__type-text">
+            {{ row.type.name }}
+          </small>
+        </div>
+        <div class="calendar-event-item__text-container">
+          <div class="calendar-event-item__text-container-inner">
+            <header>
+              <time
+                class="calendar-event-item__datetime"
+                datetime="{{ row.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
+              >
+                {{ row.datetime|datetimeformat('%a %e %b %Y | %H:%M') }}
+              </time>
+              <h4 class="calendar-event-item__title">
+                {{ row.name }}
+              </h4>
+            </header>
+            <p class="calendar-event-item__description">
+              {{ row.description }}
+            </p>
           </div>
-          {% endfor %}
+          <div class="calendar-event-item__button">
+            <a href="{{ row.link }}">Register Attendance</a>
+          </div>
         </div>
       </div>
-      <div class="pe-watch-all">
-          <a class="pe-watch-all-button" href="https://www.youtube.com/c/Codurance/playlists">Watch all on YouTube</a>
-      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+<div class="pe-watch-all">
+  <a
+    class="pe-watch-all-button"
+    href="https://www.youtube.com/c/Codurance/playlists"
+    >Watch all on YouTube</a
+  >
+</div>
 
 {% endif %}
