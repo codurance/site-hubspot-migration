@@ -35,7 +35,7 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
           class="calendar-event-item__image-container"
           style="background-image: url({{event.thumbnail.url}})"
         >
-          <small class="calendar-event-item__type-text">
+          <small class="calendar-event-item__label calendar-event-item__label--type">
             {{ event.type.name }}
           </small>
         </div>
@@ -43,7 +43,7 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
           <div class="calendar-event-item__text-container-inner">
             <header>
               <time
-                class="calendar-event-item__datetime"
+                class="calendar-event-item__metadata"
                 datetime="{{ event.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
               >
                 {{ event.datetime|datetimeformat('%a %e %b %Y | %H:%M') }}
