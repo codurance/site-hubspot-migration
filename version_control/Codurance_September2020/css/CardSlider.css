@@ -177,16 +177,16 @@
 }
 
 .calendar-event-item__video-link::after {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8.209" height="14.414" viewBox="0 0 8.209 14.414"><g transform="translate(7.502 0.707) rotate(90)"><path d="M17917.205-19615.16l6.5,6.5,6.5-6.5" transform="translate(-17917.205 19615.16)" fill="none" stroke="%23ffffff" stroke-linejoin="round" stroke-width="2"/></g></svg>');
-  background-position: center;
-  background-size: cover;
+  border-bottom: 0.533rem solid transparent;
+  border-left: 0.666rem solid white;
+  border-top: 0.533rem solid transparent;
   content: '';
   display: inline-block;
-  height: 10px;
-  margin-left: 5px;
-  transform-origin: center;
-  transform: rotateY(180deg);
-  width: 10px;
+  height: 0;
+  margin-left: 10px;
+  position: relative;
+  top: 0.15rem;
+  width: 0;
 }
 
 .calendar-event-item__image-container {
