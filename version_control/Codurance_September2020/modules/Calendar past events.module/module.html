@@ -1,17 +1,29 @@
-{% if module.hubdb_table %} {% set previousEventsFilter =
-"&orderBy=-date&limit=4" %} {% set previousEvents =
-hubdb_table_rows(module.hubdb_table, previousEventsFilter) %}
+{{ require_css(get_asset_url("../../css/cardSlider.css")) }} {% if
+module.hubdb_table %} {% set previousEventsFilter = "&orderBy=-date&limit=4" %}
+{% set previousEvents = hubdb_table_rows(module.hubdb_table,
+previousEventsFilter) %}
 
-<div class="calendar-events-item__button responsive-page-width lateral-spacing" data-past-card-window>
+<div
+  class="calendar-events-item__button responsive-page-width lateral-spacing"
+  data-past-card-window
+>
   <div class="calendar-events__header-wrapper">
     <h1 class="calendar-events__heading responsive-page-width">
       Past Events
     </h1>
     <div>
-      <button class="calendar-events__nav-button" autocomplete="off" data-past-events-button-left>
+      <button
+        class="calendar-events__nav-button"
+        autocomplete="off"
+        data-past-events-button-left
+      >
         ←
       </button>
-      <button class="calendar-events__nav-button" autocomplete="off" data-past-events-button-right>
+      <button
+        class="calendar-events__nav-button"
+        autocomplete="off"
+        data-past-events-button-right
+      >
         →
       </button>
     </div>
@@ -20,24 +32,36 @@ hubdb_table_rows(module.hubdb_table, previousEventsFilter) %}
     {% for event in previousEvents %}
     <article class="calendar-event-item" data-past-card>
       <div class="calendar-event-item__content">
-        <div class="calendar-event-item__image-container" style="background-image: url({{event.thumbnail.url}})">
-          <small class="calendar-event-item__label calendar-event-item__label--type">
+        <div
+          class="calendar-event-item__image-container"
+          style="background-image: url({{event.thumbnail.url}})"
+        >
+          <small
+            class="calendar-event-item__label calendar-event-item__label--type"
+          >
             {{ event.type.name }}
           </small>
-          <small class="calendar-event-item__label calendar-event-item__label--duration">
+          <small
+            class="calendar-event-item__label calendar-event-item__label--duration"
+          >
             {{ event.duration }}
           </small>
         </div>
         <div class="calendar-event-item__text-container">
           <div class="calendar-event-item__text-container-inner">
             <header class="calendar-event-item__header">
-              <time class="calendar-event-item__metadata" datetime="{{ event.datetime|datetimeformat('%Y-%m-%d') }}">
+              <time
+                class="calendar-event-item__metadata"
+                datetime="{{ event.datetime|datetimeformat('%Y-%m-%d') }}"
+              >
                 {{ event.datetime|datetimeformat('%a %e %b %Y') }}
               </time>
               {% if event.internal %}
-                <small class="calendar-event-item__metadata calendar-event-item__metadata--internal">
-                  Internal Event
-                </small>
+              <small
+                class="calendar-event-item__metadata calendar-event-item__metadata--internal"
+              >
+                Internal Event
+              </small>
               {% endif %}
               <h4 class="calendar-event-item__title">
                 {{ event.name }}
@@ -48,7 +72,9 @@ hubdb_table_rows(module.hubdb_table, previousEventsFilter) %}
             </p>
           </div>
           <div class="calendar-event-item__button">
-            <a class="calendar-event-item__video-link" href="{{ event.video }}">Watch on YouTube</a>
+            <a class="calendar-event-item__video-link" href="{{ event.video }}"
+              >Watch on YouTube</a
+            >
           </div>
         </div>
       </div>
@@ -57,7 +83,11 @@ hubdb_table_rows(module.hubdb_table, previousEventsFilter) %}
   </div>
 </div>
 <div class="pe-watch-all">
-  <a class="pe-watch-all-button" href="https://www.youtube.com/c/Codurance/playlists">Watch all on YouTube</a>
+  <a
+    class="pe-watch-all-button"
+    href="https://www.youtube.com/c/Codurance/playlists"
+    >Watch all on YouTube</a
+  >
 </div>
 
-{% endif %}
+{% endif %} {{ require_js(get_asset_url("../../js/cardSlider.js"), "footer") }}

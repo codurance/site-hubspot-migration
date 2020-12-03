@@ -6,6 +6,9 @@ const SELECTORS = {
   rightButtonSelector: '[data-upcoming-events-button-right]',
 };
 
-const cardSlider = new CardSlider(SELECTORS);
+function init() {
+  const cardSlider = new CardSlider(SELECTORS);
+  cardSlider.init();
+}
 
-window.addEventListener('DOMContentLoaded', cardSlider.init);
+window.addEventListener('DOMContentLoaded', init);
