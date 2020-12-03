@@ -6,7 +6,9 @@
 
 <main>
   <section class="calendar-events">
-    <div class="calendar-events__heading-wrapper"></div>
+    <div
+      class="calendar-events__heading-wrapper calendar-events__heading-wrapper--upcoming-events"
+    ></div>
     <div class="calendar-events__events-wrapper">
       {% module "events"
       path="/version_control/Codurance_September2020/modules/Calendar upcoming
@@ -15,7 +17,9 @@
   </section>
 
   <section class="calendar-events">
-    <div class="calendar-events__heading-wrapper"></div>
+    <div
+      class="calendar-events__heading-wrapper calendar-events__heading-wrapper--past-events"
+    ></div>
     <div class="calendar-events__events-wrapper">
       {% module "past_events"
       path="/version_control/Codurance_September2020/modules/Calendar past
