@@ -36,11 +36,13 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
           class="calendar-event-item__image-container"
           style="background-image: url({{event.thumbnail.url}})"
         >
+          {% if event.type.name %}
           <small
             class="calendar-event-item__label calendar-event-item__label--type"
           >
             {{ event.type.name }}
           </small>
+          {% endif %}
         </div>
         <div class="calendar-event-item__text-container">
           <div class="calendar-event-item__text-container-inner">
