@@ -27,7 +27,23 @@
 }
 
 .calendar-events__nav-button {
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
   border: none;
+  display: inline-flex;
+  height: 35px;
+  justify-content: center;
+  width: 35px;
+}
+.calendar-events__nav-button:first-of-type {
+  margin-right: 20px;
+}
+.calendar-events__nav-button[disabled] > svg path {
+  stroke: #bfbfbf;
+}
+.calendar-events__nav-button > svg {
+  width: 8px;
 }
 @media (min-width: 1024px) {
   .calendar-events__nav-button {
