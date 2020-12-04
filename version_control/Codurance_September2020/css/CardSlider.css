@@ -23,7 +23,7 @@
   font-size: 1.867rem;
   font-weight: bold;
   margin: 0;
-  padding-bottom: 44px;
+  padding-bottom: 85px;
 }
 
 .calendar-events__nav-button {
@@ -66,8 +66,6 @@
 @media (min-width: 1024px) {
   .calendar-events-results {
     flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding-bottom: 32px;
     margin-right: -15px;
   }
 }
