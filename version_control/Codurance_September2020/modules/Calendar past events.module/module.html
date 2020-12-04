@@ -71,49 +71,49 @@ previousEventsFilter) %}
   </div>
   <div class="event-slider-results" data-past-card-track>
     {% for event in previousEvents %}
-    <article class="calendar-event-item" data-past-card>
-      <div class="calendar-event-item__content">
+    <article class="event-slider-item" data-past-card>
+      <div class="event-slider-item__content">
         <div
-          class="calendar-event-item__image-container"
+          class="event-slider-item__image-container"
           style="background-image: url({{event.thumbnail.url}})"
         >
           <small
-            class="calendar-event-item__label calendar-event-item__label--type"
+            class="event-slider-item__label event-slider-item__label--type"
           >
             {{ event.type.name }}
           </small>
           <small
-            class="calendar-event-item__label calendar-event-item__label--duration"
+            class="event-slider-item__label event-slider-item__label--duration"
           >
             {{ event.duration }}
           </small>
         </div>
-        <div class="calendar-event-item__text-container">
-          <div class="calendar-event-item__text-container-inner">
-            <header class="calendar-event-item__header">
+        <div class="event-slider-item__text-container">
+          <div class="event-slider-item__text-container-inner">
+            <header class="event-slider-item__header">
               <time
-                class="calendar-event-item__metadata"
+                class="event-slider-item__metadata"
                 datetime="{{ event.datetime|datetimeformat('%Y-%m-%d') }}"
               >
                 {{ event.datetime|datetimeformat('%a %e %b %Y') }}
               </time>
               {% if event.internal %}
               <small
-                class="calendar-event-item__metadata calendar-event-item__metadata--internal"
+                class="event-slider-item__metadata event-slider-item__metadata--internal"
               >
                 Internal Event
               </small>
               {% endif %}
-              <h4 class="calendar-event-item__title">
+              <h4 class="event-slider-item__title">
                 {{ event.name }}
               </h4>
             </header>
-            <p class="calendar-event-item__description">
+            <p class="event-slider-item__description">
               {{ event.description }}
             </p>
           </div>
-          <div class="calendar-event-item__button">
-            <a class="calendar-event-item__video-link" href="{{ event.video }}"
+          <div class="event-slider-item__button">
+            <a class="event-slider-item__video-link" href="{{ event.video }}"
               >Watch on YouTube</a
             >
           </div>
@@ -125,7 +125,7 @@ previousEventsFilter) %}
 </div>
 <div>
   <a
-    class="calendar-event__watch-all-button"
+    class="event-slider__watch-all-button"
     href="https://www.youtube.com/c/Codurance/playlists"
     >Watch all on YouTube</a
   >

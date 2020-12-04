@@ -71,38 +71,38 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
   </div>
   <div class="event-slider-results" data-upcoming-card-track>
     {% for event in upcomingEvents %}
-    <article class="calendar-event-item" data-upcoming-card>
-      <div class="calendar-event-item__content">
+    <article class="event-slider-item" data-upcoming-card>
+      <div class="event-slider-item__content">
         <div
-          class="calendar-event-item__image-container"
+          class="event-slider-item__image-container"
           style="background-image: url({{event.thumbnail.url}})"
         >
           {% if event.type.name %}
           <small
-            class="calendar-event-item__label calendar-event-item__label--type"
+            class="event-slider-item__label event-slider-item__label--type"
           >
             {{ event.type.name }}
           </small>
           {% endif %}
         </div>
-        <div class="calendar-event-item__text-container">
-          <div class="calendar-event-item__text-container-inner">
+        <div class="event-slider-item__text-container">
+          <div class="event-slider-item__text-container-inner">
             <header>
               <time
-                class="calendar-event-item__metadata"
+                class="event-slider-item__metadata"
                 datetime="{{ event.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
               >
                 {{ event.datetime|datetimeformat('%a %e %b %Y | %H:%M') }}
               </time>
-              <h4 class="calendar-event-item__title">
+              <h4 class="event-slider-item__title">
                 {{ event.name }}
               </h4>
             </header>
-            <p class="calendar-event-item__description">
+            <p class="event-slider-item__description">
               {{ event.description }}
             </p>
           </div>
-          <div class="calendar-event-item__button">
+          <div class="event-slider-item__button">
             <a href="{{ event.link }}" target="_blank">Register Attendance</a>
           </div>
         </div>
