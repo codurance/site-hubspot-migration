@@ -1,8 +1,8 @@
-.calendar-events__event-inner {
+.event-slider__event-inner {
   margin: 0 auto;
 }
 @media (max-width: 1023px) {
-  .calendar-events__event-inner {
+  .event-slider__event-inner {
     overflow: hidden;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -11,13 +11,13 @@
   }
 }
 
-.calendar-events__header-wrapper {
+.event-slider__header-wrapper {
   align-items: baseline;
   display: flex;
   flex-direction: row;
 }
 
-.calendar-events__heading {
+.event-slider__heading {
   color: white;
   flex-grow: 1;
   font-size: 1.867rem;
@@ -26,7 +26,7 @@
   padding-bottom: 85px;
 }
 
-.calendar-events__nav-button {
+.event-slider__nav-button {
   align-items: center;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.16);
   background-color: white;
@@ -37,27 +37,27 @@
   justify-content: center;
   width: 35px;
 }
-.calendar-events__nav-button:first-of-type {
+.event-slider__nav-button:first-of-type {
   margin-right: 20px;
 }
-.calendar-events__nav-button[disabled] > svg path {
+.event-slider__nav-button[disabled] > svg path {
   stroke: #bfbfbf;
 }
-.calendar-events__nav-button > svg {
+.event-slider__nav-button > svg {
   width: 8px;
 }
 @media (min-width: 1024px) {
-  .calendar-events__nav-button {
+  .event-slider__nav-button {
     display: none;
   }
 }
 @media (max-width: 767px) {
-  .calendar-events__nav-button {
+  .event-slider__nav-button {
     display: none;
   }
 }
 
-.calendar-events-results {
+.event-slider-results {
   align-items: stretch;
   display: flex;
   flex-direction: row;
@@ -65,22 +65,22 @@
   margin-left: -15px;
 }
 @media (min-width: 1024px) {
-  .calendar-events-results {
+  .event-slider-results {
     flex-wrap: wrap;
     margin-right: -15px;
   }
 }
 @media (max-width: 1023px) {
-  .calendar-events-results {
+  .event-slider-results {
     padding-right: 50px;
     cursor: grab;
     position: relative;
     left: 0px;
   }
-  .calendar-events-results.animating {
+  .event-slider-results.animating {
     transition: left 0.3s ease;
   }
-  .calendar-events-results:active {
+  .event-slider-results:active {
     cursor: grabbing;
   }
 }

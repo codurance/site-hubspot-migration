@@ -1,19 +1,19 @@
-{{ require_css(get_asset_url("../../css/cardSlider.css")) }} {% if
+{{ require_css(get_asset_url("../../css/event-slider.css")) }} {% if
 module.hubdb_table %} {% set previousEventsFilter = "&orderBy=-date&limit=4" %}
 {% set previousEvents = hubdb_table_rows(module.hubdb_table,
 previousEventsFilter) %}
 
 <div
-  class="calendar-events__event-inner responsive-page-width lateral-spacing"
+  class="event-slider__event-inner responsive-page-width lateral-spacing"
   data-past-card-window
 >
-  <div class="calendar-events__header-wrapper">
-    <h2 class="calendar-events__heading responsive-page-width">
+  <div class="event-slider__header-wrapper">
+    <h2 class="event-slider__heading responsive-page-width">
       Past Events
     </h2>
     <div>
       <button
-        class="calendar-events__nav-button"
+        class="event-slider__nav-button"
         autocomplete="off"
         data-past-events-button-left
       >
@@ -41,7 +41,7 @@ previousEventsFilter) %}
         </svg>
       </button>
       <button
-        class="calendar-events__nav-button"
+        class="event-slider__nav-button"
         autocomplete="off"
         data-past-events-button-right
       >
@@ -69,7 +69,7 @@ previousEventsFilter) %}
       </button>
     </div>
   </div>
-  <div class="calendar-events-results" data-past-card-track>
+  <div class="event-slider-results" data-past-card-track>
     {% for event in previousEvents %}
     <article class="calendar-event-item" data-past-card>
       <div class="calendar-event-item__content">
