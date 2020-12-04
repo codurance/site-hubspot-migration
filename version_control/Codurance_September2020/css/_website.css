@@ -3396,7 +3396,7 @@ i.icon-bg-u {
   background-position: center;
   background-size: cover;
   padding-bottom: {{overlap}}px;
-  padding-top: 70px;
+  padding-top: 100px;
 }
 .calendar-events__heading-wrapper--upcoming-events {
   background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Upcoming%20Events%20Images/upcoming-events-banner.jpg');
@@ -3408,4 +3408,5 @@ i.icon-bg-u {
 .calendar-events__events-wrapper {
   position: relative;
   top: -{{overlap}}px;
+  margin-bottom: -{{overlap - 40}}px;
 }
