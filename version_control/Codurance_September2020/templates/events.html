@@ -1,33 +1,49 @@
 <!--
-templateType: page
-isAvailableForNewContent: true
-label: Events
+    templateType: page
+    isAvailableForNewContent: true
+    label: Events
 -->
 {% extends "./layouts/base.html" %}
 
+<head>
+  <meta charset="utf-8" />
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}" />
+  {{ require_css(get_asset_url("../css/layout.css")) }} {{
+  require_css(get_asset_url("../css/main.css")) }} {{
+  require_css(get_asset_url("../css/event-page.css")) }} {{
+  require_js(get_asset_url("../js/main.js")) }} {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }} {{
+  require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
 {% block body %}
 
+<main>
+  <section class="event-slider">
+    <div
+      class="event-slider__heading-wrapper event-slider__heading-wrapper--upcoming-events"
+    ></div>
+    <div class="event-slider__events-wrapper">
+      {% module "events"
+      path="/version_control/Codurance_September2020/modules/Calendar upcoming
+      events.module" no_wrapper=True %}
+    </div>
+  </section>
 
-<div class="custom-body-container body-container-events ">
-  <div class="container custom-events-main-row content" id="software-creation">  
-    {% dnd_area "row1" class='custom-events-row1', label='Row1' %}
-    {% dnd_section vertical_alignment='MIDDLE' %}
-
-    {% end_dnd_section %}
-    {% end_dnd_area %}
-
-
-
-
-      {% dnd_area "row2" class='custom-events-row2 ', label='Row2' %}
-      {% dnd_section vertical_alignment='MIDDLE' %}
-
-      {% end_dnd_section %}
-      {% end_dnd_area %}
-
-
-  </div>
-</div>
-
+  <section class="event-slider">
+    <div
+      class="event-slider__heading-wrapper event-slider__heading-wrapper--past-events"
+    ></div>
+    <div class="event-slider__events-wrapper">
+      {% module "past_events"
+      path="/version_control/Codurance_September2020/modules/Calendar past
+      events.module" no_wrapper=True %}
+    </div>
+  </section>
+</main>
 
 {% endblock body %}
