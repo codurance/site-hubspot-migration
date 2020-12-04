@@ -3386,6 +3386,10 @@ i.icon-bg-u {
 /* ---------------------------------- Calendar -------------------------------------- */
 
 {% set overlap = 200 %}
+main {
+  margin-bottom: 100px;
+}
+
 .calendar-events {
   max-width: {{ultimate_max_width}}px;
   margin-left: auto;
