@@ -1,8 +1,8 @@
-.calendar-events-item__button {
+.calendar-events__event-inner {
   margin: 0 auto;
 }
 @media (max-width: 1023px) {
-  .calendar-events-item__button {
+  .calendar-events__event-inner {
     overflow: hidden;
     -webkit-user-select: none;
     -moz-user-select: none;

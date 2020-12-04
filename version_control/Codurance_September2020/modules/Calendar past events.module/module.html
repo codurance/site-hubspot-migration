@@ -4,7 +4,7 @@ module.hubdb_table %} {% set previousEventsFilter = "&orderBy=-date&limit=4" %}
 previousEventsFilter) %}
 
 <div
-  class="calendar-events-item__button responsive-page-width lateral-spacing"
+  class="calendar-events__event-inner responsive-page-width lateral-spacing"
   data-past-card-window
 >
   <div class="calendar-events__header-wrapper">
@@ -123,9 +123,9 @@ previousEventsFilter) %}
     {% endfor %}
   </div>
 </div>
-<div class="pe-watch-all">
+<div>
   <a
-    class="pe-watch-all-button"
+    class="calendar-event__watch-all-button"
     href="https://www.youtube.com/c/Codurance/playlists"
     >Watch all on YouTube</a
   >

@@ -4,7 +4,7 @@ module.hubdb_table %} {% set upcomingEventsFilter = ("&orderBy=datetime" +
 upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
 
 <div
-  class="calendar-events-item__button responsive-page-width lateral-spacing"
+  class="calendar-events__event-inner responsive-page-width lateral-spacing"
   data-upcoming-card-window
 >
   <div class="calendar-events__header-wrapper">
