@@ -3382,35 +3382,3 @@ i.icon-bg-u {
     font-size: 2.1rem;
   }
 }
-
-/* ---------------------------------- Calendar -------------------------------------- */
-
-{% set overlap = 200 %}
-main {
-  margin-bottom: 100px;
-}
-
-.event-slider {
-  max-width: {{ultimate_max_width}}px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.event-slider__heading-wrapper {
-  background-position: center;
-  background-size: cover;
-  padding-bottom: {{overlap}}px;
-  padding-top: 100px;
-}
-.event-slider__heading-wrapper--upcoming-events {
-  background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Upcoming%20Events%20Images/upcoming-events-banner.jpg');
-}
-.event-slider__heading-wrapper--past-events {
-  background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Past%20Events%20Images/past%20events.jpg');
-}
-
-.event-slider__events-wrapper {
-  position: relative;
-  top: -{{overlap}}px;
-  margin-bottom: -{{overlap - 40}}px;
-}
