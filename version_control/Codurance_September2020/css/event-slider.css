@@ -261,3 +261,7 @@
   text-align: center;
   text-decoration: none;
 }
+.calendar-event__watch-all-button:hover,
+.calendar-event__watch-all-button:focus {
+  text-decoration: none;
+}
