@@ -125,8 +125,23 @@
 .event-slider-item__text-container-inner {
   flex-grow: 1;
   margin-bottom: 25px;
-  max-height: 14.666rem;
+  max-height: 14.866rem;
   overflow: hidden;
+  position: relative;
+}
+.event-slider-item__text-container-inner::after {
+  content: '';
+  position: absolute;
+  bottom: -0.266rem;
+  right: 0;
+  height: 1.6rem;
+  width: 100%;
+  opacity: ;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  );
 }
 
 .event-slider-item__header {
@@ -170,8 +185,9 @@
 }
 
 .event-slider-item__description {
-  font-size: 1rem;
   color: #595959;
+  font-size: 1rem;
+  line-height: 1.7rem;
 }
 
 .event-slider-item__button {
