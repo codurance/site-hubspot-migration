@@ -247,3 +247,19 @@
   top: 1px;
   width: 10px;
 }
+
+.calendar-event__watch-all-button {
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid #f44336;
+  color: #f44336;
+  display: block;
+  display: inline-block;
+  font-size: 1.066rem;
+  font-weight: bold;
+  margin: 0 auto;
+  max-width: 14rem;
+  padding: 1.066rem 1.6rem;
+  text-align: center;
+  text-decoration: none;
+}
