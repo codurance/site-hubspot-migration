@@ -124,6 +124,9 @@
 
 .event-slider-item__text-container-inner {
   flex-grow: 1;
+  margin-bottom: 25px;
+  max-height: 14.666rem;
+  overflow: hidden;
 }
 
 .event-slider-item__header {
@@ -169,7 +172,6 @@
 .event-slider-item__description {
   font-size: 1rem;
   color: #595959;
-  margin-bottom: 25px;
 }
 
 .event-slider-item__button {
