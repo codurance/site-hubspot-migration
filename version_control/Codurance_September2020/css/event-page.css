@@ -14,8 +14,18 @@ main {
   background-position: center;
   background-size: cover;
   padding-bottom: {{overlap}}px;
-  padding-top: 100px;
 }
+@media (max-width: 767px) {
+  .event-slider__heading-wrapper {
+    padding-top: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .event-slider__heading-wrapper {
+    padding-top: 100px;
+  }
+}
+
 .event-slider__heading-wrapper--upcoming-events {
   background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Upcoming%20Events%20Images/upcoming-events-banner.jpg');
 }
@@ -26,5 +36,21 @@ main {
 .event-slider__events-wrapper {
   position: relative;
   top: -{{overlap}}px;
-  margin-bottom: -{{overlap - 40}}px;
+}
+@media (max-width: 767px) {
+  .event-slider__events-wrapper {
+    margin-bottom: -190px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  {% set bottom_card_spacing = 30 %}
+  .event-slider__events-wrapper {
+    margin-bottom: -{{overlap - bottom_card_spacing}}px;
+  }
+}
+@media (min-width: 1024px) {
+  {% set bottom_card_spacing = 30 %}
+  .event-slider__events-wrapper {
+    margin-bottom: -{{overlap - bottom_card_spacing}}px;
+  }
 }
