@@ -395,7 +395,6 @@ and how they stack. This is based off of the bootstrap system.
 }
 
 {% set page_width__XL = 1300 %}
-{% set ultimate_max_width = 1800 %}
 
 @media (min-width: 1300px) {
   .responsive-page-width {

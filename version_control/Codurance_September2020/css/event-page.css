@@ -1,5 +1,6 @@
-
 {% set overlap = 200 %}
+{% set ultimate_max_width = 1800 %}
+
 main {
   margin-bottom: 100px;
 }
