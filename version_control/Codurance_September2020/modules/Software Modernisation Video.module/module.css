@@ -1,11 +1,7 @@
-.embed-video__wrapper {
+.embed-video {
   text-align: center;
   padding: 160px 10% 100px;
   background-color: #fef0f1;
-}
-
-.embed-video__header-wrapper {
-  margin: 0px 100px;
 }
 
 .embed-video__heading {
@@ -17,7 +13,7 @@
   font-size: 1.4rem;
 }
 
-.embed-video__iframe {
+.embed-video__iframe-wrapper {
   width: 100%;
   height: 550px;
   margin-top: 50px;
