@@ -1,0 +1,29 @@
+.soft-mod-video__wrapper {
+    text-align: center;
+    padding: 160px 10% 100px;
+    background-color: #fef0f1;
+}
+
+.soft-mod-video__header-wrapper {
+    margin: 0px 100px
+}
+
+.soft-mod-video__heading {
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+.soft-mod-video__sub-heading {
+    font-size: 1.4rem;
+}
+
+.soft-mod-video__iframe {
+    width: 100%;
+    height: 550px;
+    margin-top: 50px;
+}
+
+.soft-mod-video__description {
+    font-size: 1.2rem;
+    margin: 50px 100px;
+}
