@@ -1,4 +1,6 @@
 .embed-video {
+  padding-left: 20px;
+  padding-right: 20px;
   text-align: center;
 }
 
@@ -38,6 +40,6 @@
 
 .embed-video__description {
   font-size: 1.2rem;
-  margin: 50px auto;
+  margin: 50px auto 30px;
   max-width: 790px;
 }

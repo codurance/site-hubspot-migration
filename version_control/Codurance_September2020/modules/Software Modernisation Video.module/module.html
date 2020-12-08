@@ -7,4 +7,15 @@
     </div>
   </div>
   <p class="embed-video__description">{{module.description}}</p>
+  {% if module.button_type == 'Standard' %}
+    {% set href = module.link_field.url.href %}
+    {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+    {% endif %}
+      <a href="{{ href }}" class="cta--primary-coral" {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if module.link_field.no_follow %}rel="nofollow"{% endif %}>
+        {{ module.button_text }}
+      </a>
+  {% else %}
+    {% cta guid="{{ module.cta_field }}" %}
+  {% endif %}
 </div>
