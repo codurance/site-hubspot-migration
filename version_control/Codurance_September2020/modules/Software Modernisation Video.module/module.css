@@ -1,25 +1,43 @@
 .embed-video {
   text-align: center;
-  padding: 160px 10% 100px;
-  background-color: #fef0f1;
 }
 
 .embed-video__heading {
-  font-size: 2.3rem;
-  font-weight: bold;
+  font-size: 2.333rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  margin: ;
 }
 
 .embed-video__sub-heading {
   font-size: 1.4rem;
+  margin-bottom: 50px;
 }
 
-.embed-video__iframe-wrapper {
+.embed-video__video {
+  margin: 0 auto;
+  max-width: 992px;
+}
+
+.embed-video__video-inner {
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
   width: 100%;
-  height: 550px;
-  margin-top: 50px;
+}
+
+.embed-video__video-inner > iframe {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .embed-video__description {
   font-size: 1.2rem;
-  margin: 50px 100px;
+  margin: 50px auto;
+  max-width: 790px;
 }

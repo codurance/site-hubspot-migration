@@ -1,42 +1,47 @@
-[ {
-  "id" : "51ad93dd-698a-ecfb-c393-314c033a93b9",
-  "name" : "title",
-  "label" : "Title",
-  "required" : true,
-  "locked" : false,
-  "validation_regex" : "",
-  "placeholder" : "Title",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
-}, {
-  "id" : "703d4a71-7fbc-a7a1-de01-ac2a048fffe3",
-  "name" : "subtitle",
-  "label" : "Subtitle",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "placeholder" : "Subtitle",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
-}, {
-  "id" : "8a77e317-7c48-20b2-abef-54ea6e0a2e27",
-  "name" : "video_embed_code",
-  "label" : "Video Embed Code",
-  "required" : true,
-  "locked" : false,
-  "validation_regex" : "",
-  "placeholder" : "Video embed code",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
-}, {
-  "id" : "a6d76374-9685-9783-15f2-2df34ff9d8ed",
-  "name" : "description",
-  "label" : "Description",
-  "required" : false,
-  "locked" : false,
-  "type" : "richtext",
-  "default" : ""
-} ]
+[
+  {
+    "id": "51ad93dd-698a-ecfb-c393-314c033a93b9",
+    "name": "title",
+    "label": "Title",
+    "required": true,
+    "locked": false,
+    "validation_regex": "",
+    "placeholder": "Title",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text"
+  },
+  {
+    "id": "703d4a71-7fbc-a7a1-de01-ac2a048fffe3",
+    "name": "subtitle",
+    "label": "Subtitle",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "placeholder": "Subtitle",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text"
+  },
+  {
+    "id": "8a77e317-7c48-20b2-abef-54ea6e0a2e27",
+    "name": "video_embed_code",
+    "label": "Video Embed Code",
+    "required": true,
+    "locked": false,
+    "validation_regex": "",
+    "placeholder": "Video embed code",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text"
+  },
+  {
+    "id": "a6d76374-9685-9783-15f2-2df34ff9d8ed",
+    "name": "description",
+    "label": "Description",
+    "required": false,
+    "locked": false,
+    "type": "text",
+    "default": ""
+  }
+]
