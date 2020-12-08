@@ -103,6 +103,10 @@ img{
   max-width: 1800px;
   margin: 0px auto;
 }
+.hs-services-inner-section1 .dnd-section .embed-video {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
 .hs-training-inner-section1 .dnd-section {
   background-color: #efefef;
   padding-top: 100px;
