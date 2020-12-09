@@ -1,0 +1,17 @@
+.embed-video {
+  margin-bottom: 100px;
+}
+@media (min-width: 1024px) {
+.embed-video {
+    margin-top: 140px;
+  }
+}
+@media (max-width: 1023px) {
+.embed-video {
+    margin-top: 100px;
+  }
+}
+
+.cm-tabber-section {
+  padding-top: 100px;
+}

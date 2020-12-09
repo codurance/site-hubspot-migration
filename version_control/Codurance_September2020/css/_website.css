@@ -103,19 +103,6 @@ img{
   max-width: 1800px;
   margin: 0px auto;
 }
-.hs-services-inner-section1 .dnd-section .embed-video {
-  margin-bottom: 100px;
-}
-@media (min-width: 1024) {
-  .hs-services-inner-section1 .dnd-section .embed-video {
-    margin-top: 140px;
-  }
-}
-@media (max-width: 1023) {
-  .hs-services-inner-section1 .dnd-section .embed-video {
-    margin-top: 100px;
-  }
-}
 
 .hs-training-inner-section1 .dnd-section {
   background-color: #efefef;
