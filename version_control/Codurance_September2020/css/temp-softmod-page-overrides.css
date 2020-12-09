@@ -13,5 +13,24 @@
 }
 
 .cm-tabber-section {
+  background-image: none !important;
+  background-color: #2b3342;
   padding-top: 100px;
+}
+@media (max-width: 1299px) and (min-width: 768px) {
+  .cm-tabber-section {
+    padding-bottom: 10px;
+  }
+}
+
+.cm-tabber-section__intro,
+.cm-tabber-section__intro > h2,
+.cm-tabber__large-screen-controls > .tabmenu  {
+  color: white;
+}
+@media (max-width: 1023px) {
+  .cm-tabber__panel::before,
+  .cm-tabber__panel:not(.active)::before {
+    color: white;
+  }
 }
