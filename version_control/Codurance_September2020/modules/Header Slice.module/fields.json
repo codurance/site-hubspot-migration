@@ -73,6 +73,16 @@
       "hidden_subfields" : null
     },
     "type" : "richtext"
+  }, {
+    "id" : "9db088a4-2d09-b89f-ae59-fb2849249034",
+    "name" : "alignment",
+    "label" : "Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "flex-start", "Top" ], [ "center", "Centre" ], [ "flex-end", "Bottom" ] ],
+    "type" : "choice",
+    "default" : "flex-end"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -84,6 +94,7 @@
       "src" : "",
       "alt" : null,
       "loading" : "disabled"
-    }
+    },
+    "alignment" : "flex-end"
   }
 } ]
