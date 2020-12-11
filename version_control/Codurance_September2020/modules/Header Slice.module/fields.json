@@ -1,0 +1,89 @@
+[ {
+  "id" : "e0e5d286-8af5-93d6-dd22-87ae71925619",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "Heading Text Here",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "d1e62581-05bb-9ca5-579e-87b0e5c0c913",
+  "name" : "body_text",
+  "label" : "Body Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "Body Text Here",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "b1b2cd48-eca5-b544-9ea1-121016502acb",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "01aec4b1-3553-0f49-2689-43c0ecb6281a",
+    "name" : "image_type",
+    "label" : "Image Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "linked_image", "Linked Image" ], [ "svg_code", "SVG Code" ] ],
+    "type" : "choice",
+    "default" : "svg_code"
+  }, {
+    "id" : "cd5ff6a3-17f7-6cf6-a7d8-44cf743256a1",
+    "name" : "linked_image",
+    "label" : "Linked Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "01aec4b1-3553-0f49-2689-43c0ecb6281a",
+      "controlling_value_regex" : "linked_image",
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "4607f3e4-2145-17ba-36d2-563ba0acb403",
+    "name" : "svg_code",
+    "label" : "SVG Code",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "01aec4b1-3553-0f49-2689-43c0ecb6281a",
+      "controlling_value_regex" : "svg_code",
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "image_type" : "svg_code",
+    "linked_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
+  }
+} ]
