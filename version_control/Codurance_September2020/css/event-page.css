@@ -1,6 +1,12 @@
 {% set overlap = 200 %}
 {% set ultimate_max_width = 1800 %}
 
+.events-header-slice {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+}
+
 main {
   margin-bottom: 100px;
 }

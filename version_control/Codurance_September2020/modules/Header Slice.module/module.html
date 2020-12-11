@@ -1,10 +1,16 @@
-<h1>{{module.heading}}</h1>
-<p>{{module.body_text}}</p>
+<div class="header-slice">
+  <div class="heading-slice__heading-wrapper">
+    <h1 class="header-slice__heading">{{module.heading}}</h1>
+    <p class="header-slice__body-text">{{module.body_text}}</p>
+  </div>
 
-{% if module.image.image_type == 'linked_image' %}
-  <img src="{{module.image.linked_image.src}}" alt="" />
-{% endif %}
+  <div class="header-slice__image-wrapper">
+    {% if module.image.image_type == 'linked_image' %}
+      <img class="header-slice__linked-image" src="{{module.image.linked_image.src}}" alt="" />
+    {% endif %}
 
-{% if module.image.image_type == 'svg_code' %}
-  {{module.image.svg_code}}
-{% endif %}
+    {% if module.image.image_type == 'svg_code' %}
+      {{module.image.svg_code}}
+    {% endif %}
+  </div>
+</div>
