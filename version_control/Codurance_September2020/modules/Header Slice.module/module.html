@@ -1,0 +1,10 @@
+<h1>{{module.heading}}</h1>
+<p>{{module.body_text}}</p>
+
+{% if module.image.image_type == 'linked_image' %}
+  <img src="{{module.image.linked_image.src}}" alt="" />
+{% endif %}
+
+{% if module.image.image_type == 'svg_code' %}
+  {{module.image.svg_code}}
+{% endif %}
