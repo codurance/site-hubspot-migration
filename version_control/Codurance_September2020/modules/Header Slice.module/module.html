@@ -4,7 +4,7 @@
     <p class="header-slice__body-text">{{module.body_text}}</p>
   </div>
 
-  <div class="header-slice__image-wrapper">
+  <div class="header-slice__image-wrapper" style="align-items: {{module.image.alignment}};">
     {% if module.image.image_type == 'linked_image' %}
       <img class="header-slice__linked-image" src="{{module.image.linked_image.src}}" alt="" />
     {% endif %}

@@ -33,7 +33,6 @@
 }
 
 .header-slice__image-wrapper {
-  align-items: flex-end;
   display: flex;
   flex-direction: row;
   justify-content: center;
