@@ -1,19 +1,19 @@
-{{ require_css(get_asset_url("../../css/event-slider.css")) }} {% if
+{{ require_css(get_asset_url("../../css/card-slider.css")) }} {% if
 module.hubdb_table %} {% set previousEventsFilter = "&orderBy=-date&limit=4" %}
 {% set previousEvents = hubdb_table_rows(module.hubdb_table,
 previousEventsFilter) %}
 
 <div
-  class="event-slider__event-inner responsive-page-width lateral-spacing"
+  class="card-slider__event-inner responsive-page-width lateral-spacing"
   data-past-card-window
 >
-  <div class="event-slider__header-wrapper">
-    <h2 class="event-slider__heading responsive-page-width">
+  <div class="card-slider__header-wrapper">
+    <h2 class="card-slider__heading responsive-page-width">
       Past Events
     </h2>
     <div>
       <button
-        class="event-slider__nav-button"
+        class="card-slider__nav-button"
         autocomplete="off"
         data-past-events-button-left
       >
@@ -41,7 +41,7 @@ previousEventsFilter) %}
         </svg>
       </button>
       <button
-        class="event-slider__nav-button"
+        class="card-slider__nav-button"
         autocomplete="off"
         data-past-events-button-right
       >
@@ -69,51 +69,51 @@ previousEventsFilter) %}
       </button>
     </div>
   </div>
-  <div class="event-slider-results" data-past-card-track>
+  <div class="card-slider-results" data-past-card-track>
     {% for event in previousEvents %}
-    <article class="event-slider-item" data-past-card>
-      <div class="event-slider-item__content">
+    <article class="card-slider-item" data-past-card>
+      <div class="card-slider-item__content">
         <div
-          class="event-slider-item__image-container"
+          class="card-slider-item__image-container"
           style="background-image: url({{event.thumbnail.url}})"
         >
           <small
-            class="event-slider-item__label event-slider-item__label--type"
+            class="card-slider-item__label card-slider-item__label--type"
           >
             {{ event.type.name }}
           </small>
           <small
-            class="event-slider-item__label event-slider-item__label--duration"
+            class="card-slider-item__label card-slider-item__label--duration"
           >
             {{ event.duration }}
           </small>
         </div>
-        <div class="event-slider-item__text-container">
-          <div class="event-slider-item__text-container-inner">
-            <header class="event-slider-item__header">
+        <div class="card-slider-item__text-container">
+          <div class="card-slider-item__text-container-inner">
+            <header class="card-slider-item__header">
               <time
-                class="event-slider-item__metadata"
+                class="card-slider-item__metadata"
                 datetime="{{ event.datetime|datetimeformat('%Y-%m-%d') }}"
               >
                 {{ event.datetime|datetimeformat('%a %e %b %Y') }}
               </time>
               {% if event.internal %}
               <small
-                class="event-slider-item__metadata event-slider-item__metadata--internal"
+                class="card-slider-item__metadata card-slider-item__metadata--internal"
               >
                 Internal Event
               </small>
               {% endif %}
-              <h4 class="event-slider-item__title">
+              <h4 class="card-slider-item__title">
                 {{ event.name }}
               </h4>
             </header>
-            <p class="event-slider-item__description">
+            <p class="card-slider-item__description">
               {{ event.description }}
             </p>
           </div>
-          <div class="event-slider-item__button">
-            <a class="event-slider-item__video-link" href="{{ event.video }}"
+          <div class="card-slider-item__button">
+            <a class="card-slider-item__video-link" href="{{ event.video }}"
               >Watch on YouTube</a
             >
           </div>
@@ -125,7 +125,7 @@ previousEventsFilter) %}
 </div>
 <div>
   <a
-    class="event-slider__watch-all-button"
+    class="card-slider__watch-all-button"
     href="https://www.youtube.com/c/Codurance/playlists"
     >Watch all on YouTube</a
   >

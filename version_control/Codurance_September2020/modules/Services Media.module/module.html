@@ -1,0 +1,122 @@
+{{ require_css(get_asset_url("../../css/card-slider.css")) }} {% if
+module.hubdb_table %} {% set upcomingEventsFilter = ("&orderBy=datetime" +
+"&datetime__gt=" + local_dt|unixtimestamp + "&limit=12") %} {% set
+upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
+
+  <section class="card-slider">
+    <div
+      class="card-slider__heading-wrapper card-slider__heading-wrapper--upcoming-events"
+    ></div>
+    <div class="card-slider__events-wrapper">
+      <div
+  class="card-slider__event-inner responsive-page-width lateral-spacing"
+  data-upcoming-card-window
+>
+  <div class="card-slider__header-wrapper">
+    <h2 class="card-slider__heading responsive-page-width">
+      Upcoming events
+    </h2>
+    <div>
+      <button
+        class="card-slider__nav-button"
+        autocomplete="off"
+        data-upcoming-events-button-left
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 8.209 14.414"
+          style="margin-right: 1px;"
+        >
+          <g
+            id="icon_-_dropdown"
+            data-name="icon - dropdown"
+            transform="translate(7.502 0.707) rotate(90)"
+          >
+            <path
+              id="icon_-_dropdown-2"
+              data-name="icon - dropdown"
+              d="M17917.205-19615.16l6.5,6.5,6.5-6.5"
+              transform="translate(-17917.205 19615.16)"
+              fill="none"
+              stroke="#2b2c2d"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </g>
+        </svg>
+      </button>
+      <button
+        class="card-slider__nav-button card-slider__nav-button"
+        autocomplete="off"
+        data-upcoming-events-button-right
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 8.2 14.4"
+          style="margin-left: 1px;"
+        >
+          <style type="text/css">
+            .st0 {
+              fill: none;
+              stroke: #2b2c2d;
+              stroke-width: 2;
+              stroke-linejoin: round;
+            }
+          </style>
+          <g id="icon_-_dropdown" transform="translate(7.502 0.707) rotate(90)">
+            <path
+              id="icon_-_dropdown-2"
+              class="st0"
+              d="M13,6.8L6.5,0.3L0,6.8"
+            />
+          </g>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="card-slider-results" data-upcoming-card-track>
+    {% for event in upcomingEvents %}
+    <article class="card-slider-item" data-upcoming-card>
+      <div class="card-slider-item__content">
+        <div
+          class="card-slider-item__image-container"
+          style="background-image: url({{event.thumbnail.url}})"
+        >
+          {% if event.type.name %}
+          <small
+            class="card-slider-item__label card-slider-item__label--type"
+          >
+            {{ event.type.name }}
+          </small>
+          {% endif %}
+        </div>
+        <div class="card-slider-item__text-container">
+          <div class="card-slider-item__text-container-inner">
+            <header>
+              <time
+                class="card-slider-item__metadata"
+                datetime="{{ event.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
+              >
+                {{ event.datetime|datetimeformat('%a %e %b %Y | %H:%M') }}
+              </time>
+              <h4 class="card-slider-item__title">
+                {{ event.name }}
+              </h4>
+            </header>
+            <p class="card-slider-item__description">
+              {{ event.description }}
+            </p>
+          </div>
+          <div class="card-slider-item__button">
+            <a href="{{ event.link }}" target="_blank">Register Attendance</a>
+          </div>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+    </div>
+  </section>
+
+{% endif %} {{ require_js(get_asset_url("../../js/cardSlider.js"), "footer") }}
