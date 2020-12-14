@@ -1,7 +1,8 @@
-{{ require_css(get_asset_url("../../css/card-slider.css")) }} {% if
-module.hubdb_table %} {% set upcomingEventsFilter = ("&orderBy=datetime" +
-"&datetime__gt=" + local_dt|unixtimestamp + "&limit=12") %} {% set
-upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
+{{ require_css(get_asset_url("../../css/card-slider.css")) }}
+{% set filter = ("&orderBy=publication_date&limit=12") %} {% set
+media_collection = hubdb_table_rows("services_media", filter) %}
+
+
 
   <section class="card-slider">
     <div
@@ -16,77 +17,25 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
     <h2 class="card-slider__heading responsive-page-width">
       Upcoming events
     </h2>
-    <div>
-      <button
-        class="card-slider__nav-button"
-        autocomplete="off"
-        data-upcoming-events-button-left
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 8.209 14.414"
-          style="margin-right: 1px;"
-        >
-          <g
-            id="icon_-_dropdown"
-            data-name="icon - dropdown"
-            transform="translate(7.502 0.707) rotate(90)"
-          >
-            <path
-              id="icon_-_dropdown-2"
-              data-name="icon - dropdown"
-              d="M17917.205-19615.16l6.5,6.5,6.5-6.5"
-              transform="translate(-17917.205 19615.16)"
-              fill="none"
-              stroke="#2b2c2d"
-              stroke-linejoin="round"
-              stroke-width="2"
-            />
-          </g>
-        </svg>
-      </button>
-      <button
-        class="card-slider__nav-button card-slider__nav-button"
-        autocomplete="off"
-        data-upcoming-events-button-right
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 8.2 14.4"
-          style="margin-left: 1px;"
-        >
-          <style type="text/css">
-            .st0 {
-              fill: none;
-              stroke: #2b2c2d;
-              stroke-width: 2;
-              stroke-linejoin: round;
-            }
-          </style>
-          <g id="icon_-_dropdown" transform="translate(7.502 0.707) rotate(90)">
-            <path
-              id="icon_-_dropdown-2"
-              class="st0"
-              d="M13,6.8L6.5,0.3L0,6.8"
-            />
-          </g>
-        </svg>
-      </button>
-    </div>
   </div>
   <div class="card-slider-results" data-upcoming-card-track>
-    {% for event in upcomingEvents %}
+    {% for media in media_collection %}
     <article class="card-slider-item" data-upcoming-card>
       <div class="card-slider-item__content">
         <div
           class="card-slider-item__image-container"
-          style="background-image: url({{event.thumbnail.url}})"
+          style="background-image: url({{media.thumbnail.url}})"
         >
-          {% if event.type.name %}
+          {% if media.media_type.name %}
           <small
             class="card-slider-item__label card-slider-item__label--type"
           >
-            {{ event.type.name }}
+            {{ media.media_type.name }}
+          </small>
+          <small
+            class="card-slider-item__label card-slider-item__label--duration"
+          >
+            {{ media.duration }}
           </small>
           {% endif %}
         </div>
@@ -95,21 +44,33 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
             <header>
               <time
                 class="card-slider-item__metadata"
-                datetime="{{ event.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
+                datetime="{{ media.publication_date|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
               >
-                {{ event.datetime|datetimeformat('%a %e %b %Y | %H:%M') }}
+                {{ media.publication_date|datetimeformat('%a %e %b %Y | %H:%M') }}
               </time>
               <h4 class="card-slider-item__title">
-                {{ event.name }}
+                {{ media.title }}
               </h4>
             </header>
-            <p class="card-slider-item__description">
-              {{ event.description }}
-            </p>
+            <small class="card-slider-item__description">
+                {% set tag_names = [] %}
+                {% for tag in media.tags %}
+                    {% do tag_names.append(tag.name) %}
+                {% endfor %}
+                {{tag_names|join(' | ')}}
+            </small>
           </div>
-          <div class="card-slider-item__button">
-            <a href="{{ event.link }}" target="_blank">Register Attendance</a>
-          </div>
+          {% if media.media_type.name == 'video' %}
+            <div class="card-slider-item__button">
+                <a class="card-slider-item__video-link" href="{{ event.url }}"
+                >Watch on YouTube</a
+                >
+            </div>
+          {% else %}
+                <div class="card-slider-item__button">
+                    <a href="{{ event.url }}" target="_blank">Learn More</a>
+                </div>
+          {% endif %}
         </div>
       </div>
     </article>
@@ -119,4 +80,4 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
     </div>
   </section>
 
-{% endif %} {{ require_js(get_asset_url("../../js/cardSlider.js"), "footer") }}
+{{ require_js(get_asset_url("../../js/cardSlider.js"), "footer") }}
