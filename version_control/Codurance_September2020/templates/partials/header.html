@@ -20,12 +20,44 @@ label: Page Header
         {% module "navigation-primary" path="../../modules/menu-section", label="Primary Menu" %}
       </div>
       <div class="hs-header-language">
-        <ul> 
+        <ul>
           <li>
-            <span class="active">EN</span> </li>
+            {% set primary_lang = 'en' %}
+            {% set secondary_lang = 'es' %}
+            {% set secondary_lang_path = '/' + secondary_lang + '/' %}
+
+            {% if absolute_url is not string_containing secondary_lang_path %}
+              {% set primary_lang_page_link = '#0' %}
+            {% elif content.translated_content[primary_lang] %}
+              {% set primary_lang_page_link = '/' + content.translated_content[primary_lang].slug %}
+            {% else %}
+              {% set primary_lang_page_link = 'http://codurance.com' %}
+            {% endif %}
+
+            <a
+               href="{{primary_lang_page_link}}"
+               {% if absolute_url is not string_containing secondary_lang_path %}class="active"{% endif %}
+               rel="noopener noreferrer">
+                {{primary_lang|upper}}
+            </a>
+
+
           <li>
-            <a href="https://codurance.es/" target="_blank" rel="noopener noreferrer">ES</a> 
-          </li> 
+            {% if absolute_url is string_containing secondary_lang_path %}
+              {% set secondary_lang_page_link = '#0' %}
+            {% elif content.translated_content[secondary_lang] %}
+              {% set secondary_lang_page_link = '/' + content.translated_content[secondary_lang].slug %}
+            {% else %}
+              {% set secondary_lang_page_link = 'http://codurance.com' + secondary_lang_path %}
+            {% endif %}
+
+            <a
+               href="{{secondary_lang_page_link}}"
+               {% if absolute_url is string_containing secondary_lang_path %}class="active"{% endif %}
+               rel="noopener noreferrer">
+                {{secondary_lang|upper}}
+            </a>
+          </li>
         </ul>
       </div>
     </div>
