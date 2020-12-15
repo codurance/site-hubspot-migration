@@ -1,8 +1,6 @@
 {{ require_css(get_asset_url("../../css/card-slider.css")) }}
-{% set filter = ("&orderBy=publication_date&limit=12") %} {% set
-media_collection = hubdb_table_rows("services_media", filter) %}
-
-
+{% set filter = ("&orderBy=publication_date&limit=12") %}
+{% set media_collection = hubdb_table_rows("services_media", filter) %}
 
   <section class="card-slider">
     <div
@@ -62,7 +60,7 @@ media_collection = hubdb_table_rows("services_media", filter) %}
           </div>
           {% if media.media_type.name == 'video' %}
             <div class="card-slider-item__button">
-                <a class="card-slider-item__video-link" href="{{ event.url }}"
+                <a class="card-slider-item__video-link" target="_blank" href="{{ event.url }}"
                 >Watch on YouTube</a
                 >
             </div>
