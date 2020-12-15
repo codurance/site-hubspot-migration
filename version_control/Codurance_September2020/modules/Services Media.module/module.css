@@ -1,0 +1,23 @@
+.services-media {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-media__heading-wrapper {
+  background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Upcoming%20Events%20Images/upcoming-events-banner.jpg');
+  background-position: top center;
+  background-size: cover;
+  height: 300px;
+  padding-bottom: {{overlap}}px;
+}
+@media (max-width: 767px) {
+  .services-media__heading-wrapper {
+    padding-top: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .services-media__heading-wrapper {
+    padding-top: 100px;
+  }
+}
