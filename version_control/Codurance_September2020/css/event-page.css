@@ -49,13 +49,7 @@ main {
     margin-bottom: -190px;
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
-  {% set bottom_card_spacing = 30 %}
-  .card-slider__events-wrapper {
-    margin-bottom: -{{overlap - bottom_card_spacing}}px;
-  }
-}
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   {% set bottom_card_spacing = 30 %}
   .card-slider__events-wrapper {
     margin-bottom: -{{overlap - bottom_card_spacing}}px;
