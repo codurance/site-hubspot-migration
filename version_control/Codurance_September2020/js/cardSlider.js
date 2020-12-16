@@ -8,14 +8,24 @@ class CardSlider {
     leftButtonSelector = '[data-cardslider-button-left]',
     rightButtonSelector = '[data-cardslider-button-right]',
     animatingClass = 'animating',
+    filters = null
   }) {
     this.activationPoint = activationPoint;
     this.navigationControl = navigationControl;
     this.cardWindow = document.querySelector(cardWindowSelector);
     this.track = document.querySelector(trackSelector);
+    
     this.cards = Array.prototype.slice.call(
       document.querySelectorAll(cardsSelector)
     );
+    if (filters) {
+      filters.forEach(filter => {
+        this[filter + 'Cards'] = Array.prototype.slice.call(
+          document.querySelectorAll("[data-card-type='" + filter + "']")
+        );
+      })
+    }
+
     this.leftButton = document.querySelector(leftButtonSelector);
     this.rightButton = document.querySelector(rightButtonSelector);
     this.animatingClass = animatingClass;
