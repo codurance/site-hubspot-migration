@@ -22,8 +22,8 @@ label: Page Header
       <div class="hs-header-language">
         <ul>
           <li>
-            {% set primary_lang = 'en' %}
-            {% set secondary_lang = 'es' %}
+            {% set primary_lang = 'es' %}
+            {% set secondary_lang = 'en' %}
             {% set secondary_lang_path = '/' + secondary_lang + '/' %}
 
             {% if absolute_url is not string_containing secondary_lang_path %}
@@ -49,7 +49,7 @@ label: Page Header
               {% set secondary_lang_page_link = '/' + content.translated_content[secondary_lang].slug %}
             {% else %}
               {% set message =
-                'Sorry, no Spanish text version available' + '\n\n' + 'Disculpa, la versión en español de este texto no está disponible'
+                "Sorry, no Spanish text version available" + "\\n\\n" + "Disculpa, la versión en español de este texto no está disponible"
               %}
               {% set secondary_lang_page_link = "javascript:onclick=window.alert('" + message + "');" %}
             {% endif %}
