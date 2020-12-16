@@ -1,4 +1,5 @@
 const SELECTORS = {
+  navigationControl: true,
   cardWindowSelector: '[data-upcoming-card-window]',
   trackSelector: '[data-upcoming-card-track]',
   cardsSelector: '[data-upcoming-card]',

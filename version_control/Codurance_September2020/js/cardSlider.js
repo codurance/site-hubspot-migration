@@ -1,6 +1,7 @@
 class CardSlider {
   constructor({
     activationPoint = 1023,
+    navigationControl = true,
     cardWindowSelector = '[data-cardslider-window]',
     trackSelector = '[data-cardslider-track]',
     cardsSelector = '[data-cardslider-card]',
@@ -9,6 +10,7 @@ class CardSlider {
     animatingClass = 'animating',
   }) {
     this.activationPoint = activationPoint;
+    this.navigationControl = navigationControl;
     this.cardWindow = document.querySelector(cardWindowSelector);
     this.track = document.querySelector(trackSelector);
     this.cards = Array.prototype.slice.call(
@@ -63,8 +65,10 @@ class CardSlider {
     this.cardWindow.addEventListener('mouseleave', this.handleMouseUp);
     this.cardWindow.addEventListener('touchstart', this.handleMouseDown);
     this.cardWindow.addEventListener('touchend', this.handleMouseUp);
-    this.leftButton.addEventListener('click', this.navigateLeft);
-    this.rightButton.addEventListener('click', this.navigateRight);
+    if (this.navigationControl) {
+      this.leftButton.addEventListener('click', this.navigateLeft);
+      this.rightButton.addEventListener('click', this.navigateRight);
+    }
   }
 
   sizeTrack() {
@@ -75,7 +79,9 @@ class CardSlider {
       }
       this.calculateMaxLeftPosition();
       this.keepTrackLeftWithinMaximum();
-      this.checkButtonState();
+      if (this.navigationControl) {
+        this.checkButtonState();
+      }
     } else if (this.windowIsOutsideActivationPoint() && this.trackHasSetWidth) {
       this.resetTrackWidth();
     }
@@ -197,7 +203,9 @@ class CardSlider {
     this.addAnimationClass();
     this.track.style.left = `${leftPos}px`;
     this.onDragStartLeftPosition = leftPos;
-    this.checkButtonState();
+    if (this.navigationControl) {
+      this.checkButtonState();
+    }
   }
   navigateLeft() {
     let targetPosition = Math.max(this.currentPosition - 1, 0);
