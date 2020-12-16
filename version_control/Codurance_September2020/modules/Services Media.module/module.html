@@ -57,7 +57,7 @@
                 </small>
               </div>
               {% if media.media_type.name == 'video' %}
-              <div class="card-slider-item__button">
+              <div class="card-slider-item__button card-slider-item__button--solid">
                 <a
                   class="card-slider-item__video-link"
                   target="_blank"
@@ -66,7 +66,7 @@
                 >
               </div>
               {% else %}
-              <div class="card-slider-item__button">
+              <div class="card-slider-item__button card-slider-item__button--outlined">
                 <a href="{{ event.url }}" target="_blank">Learn More</a>
               </div>
               {% endif %}

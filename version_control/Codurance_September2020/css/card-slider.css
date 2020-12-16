@@ -191,7 +191,6 @@
 }
 
 .card-slider-item__button {
-  background-color: rgba(251, 114, 104, 1);
   border-radius: 3px;
   font-size: 1.2rem;
   font-weight: 700;
@@ -199,16 +198,32 @@
   text-align: center;
   cursor: pointer;
 }
-.card-slider-item__button:hover,
-.card-slider-item__button:focus {
-  background-color: rgba(251, 142, 134, 1);
-}
-.card-slider-item__button > a {
-  color: white;
-}
 .card-slider-item__button > a:hover,
 .card-slider-item__button > a:focus {
   text-decoration: none;
+}
+
+.card-slider-item__button--solid {
+  background-color: rgba(251, 114, 104, 1);
+}
+.card-slider-item__button--solid:hover,
+.card-slider-item__button--solid:focus {
+  background-color: rgba(251, 142, 134, 1);
+}
+.card-slider-item__button--solid > a {
+  color: white;
+}
+
+.card-slider-item__button--outlined {
+  background-color: white;
+  border: 1px solid rgba(251, 114, 134, 1);
+}
+.card-slider-item__button--outlined:hover,
+.card-slider-item__button--outlined:focus {
+  border: 1px solid rgba(251, 142, 134, 1);
+}
+.card-slider-item__button--outlined:hover > a {
+  color: rgba(251, 142, 134, 1);
 }
 
 .card-slider-item__video-link::after {
