@@ -8,8 +8,7 @@
   background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Upcoming%20Events%20Images/upcoming-events-banner.jpg');
   background-position: top center;
   background-size: cover;
-  height: 300px;
-  padding-bottom: {{overlap}}px;
+  padding-bottom: 200px;
 }
 @media (max-width: 767px) {
   .services-media__heading-wrapper {
@@ -19,5 +18,20 @@
 @media (min-width: 768px) {
   .services-media__heading-wrapper {
     padding-top: 100px;
+  }
+}
+
+.services-media__card-slider-wrapper {
+  position: relative;
+  top: -200px;
+}
+@media (max-width: 767px) {
+  .services-media__card-slider-wrapper {
+    margin-bottom: -190px;
+  }
+}
+@media (min-width: 768px) {
+  .services-media__card-slider-wrapper {
+    margin-bottom: -170px;
   }
 }
