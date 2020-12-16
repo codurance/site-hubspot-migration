@@ -42,10 +42,9 @@
                 <header>
                   <time
                     class="card-slider-item__metadata"
-                    datetime="{{ media.publication_date|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
+                    datetime="{{ media.publication_date|datetimeformat('%Y-%m-%d') }}"
                   >
-                    {{ media.publication_date|datetimeformat('%a %e %b %Y |
-                    %H:%M') }}
+                    {{ media.publication_date|datetimeformat('%a %e %b %Y') }}
                   </time>
                   <h4 class="card-slider-item__title">
                     {{ media.title }}
