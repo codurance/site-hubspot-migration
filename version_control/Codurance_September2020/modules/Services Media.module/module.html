@@ -15,10 +15,15 @@
         <h2 class="card-slider__heading responsive-page-width">
           Videos and Podcasts
         </h2>
+        <div class="card-slider__filter">
+          <button class="card-slider__filter-button">All</button>
+          <button class="card-slider__filter-button">Videos</button>
+          <button class="card-slider__filter-button">Podcasts</button>
+        </div>
       </div>
       <div class="card-slider-results" data-services-media-card-track>
         {% for media in media_collection %}
-        <article class="card-slider-item" data-services-media-card>
+        <article class="card-slider-item" data-services-media-card data-card-type="{{media.media_type.name}}">
           <div class="card-slider-item__content">
             <div
               class="card-slider-item__image-container"
