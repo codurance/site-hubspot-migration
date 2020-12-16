@@ -12,9 +12,10 @@ class CardSlider {
   }) {
     this.activationPoint = activationPoint;
     this.navigationControl = navigationControl;
+    this.filters = filters;
     this.cardWindow = document.querySelector(cardWindowSelector);
     this.track = document.querySelector(trackSelector);
-    
+
     this.cards = Array.prototype.slice.call(
       document.querySelectorAll(cardsSelector)
     );
@@ -23,6 +24,7 @@ class CardSlider {
         this[filter + 'Cards'] = Array.prototype.slice.call(
           document.querySelectorAll("[data-card-type='" + filter + "']")
         );
+        this[filter + 'FilterButton'] = document.querySelector("[data-card-filter-button='" + filter + "']")
       })
     }
 
@@ -78,6 +80,11 @@ class CardSlider {
     if (this.navigationControl) {
       this.leftButton.addEventListener('click', this.navigateLeft);
       this.rightButton.addEventListener('click', this.navigateRight);
+    }
+    if (this.filters) {
+      this.filters.forEach(filter => {
+        this[filter + 'FilterButton'].addEventListener('click', () => this.filterCardsBy(filter));
+      });
     }
   }
 
@@ -273,5 +280,12 @@ class CardSlider {
       window.getComputedStyle(this.cards[0]).marginRight
     );
     return innerCardWidth + cardMarginWidth * 2;
+  }
+
+  filterCardsBy(value) {
+    // make all of value visible
+    // make all not of value not visible
+    // set this.cards to this[value + 'Cards']
+    // resize
   }
 }
