@@ -48,7 +48,9 @@ label: Page Header
             {% elif content.translated_content[secondary_lang] %}
               {% set secondary_lang_page_link = '/' + content.translated_content[secondary_lang].slug %}
             {% else %}
-              {% set message = 'Sorry, no Spanish text version available' %}
+              {% set message =
+                'Sorry, no Spanish text version available' + '\n\n' + 'Disculpa, la versión en español de este texto no está disponible'
+              %}
               {% set secondary_lang_page_link = "javascript:onclick=window.alert('" + message + "');" %}
             {% endif %}
 
