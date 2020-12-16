@@ -129,7 +129,7 @@
   overflow: hidden;
   position: relative;
 }
-.card-slider-item__text-container-inner::after {
+.card-slider-item__text-container-inner.truncated::after {
   content: '';
   position: absolute;
   bottom: -0.266rem;
