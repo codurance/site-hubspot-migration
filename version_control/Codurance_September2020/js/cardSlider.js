@@ -159,14 +159,18 @@ class CardSlider {
   }
 
   checkCtaState() {
-    const cardCount = this.cards.length;
-    const columns = window.innerWidth < 1300 ? 3 : 4;
-    const bottomRowCount = cardCount % columns;
-    if (bottomRowCount > 0) {
+    if (this.spaceForCta()) {
       this.makeCtaContainerVisible();
     } else {
       this.hideCtaContainer();
     }
+  }
+
+  spaceForCta() {
+    const cardCount = this.cards.length;
+    const columns = window.innerWidth < 1300 ? 3 : 4;
+    const bottomRowCount = cardCount % columns;
+    return bottomRowCount > 0;
   }
 
   makeCtaContainerVisible() {
