@@ -1,5 +1,5 @@
 {{ require_css(get_asset_url("../../css/event-slider.css")) }} {% if
-module.hubdb_table %} {% set previousEventsFilter = "&orderBy=-date&limit=4" %}
+module.hubdb_table %} {% set previousEventsFilter = "&orderBy=-date&limit=8" %}
 {% set previousEvents = hubdb_table_rows(module.hubdb_table,
 previousEventsFilter) %}
 
@@ -121,6 +121,12 @@ previousEventsFilter) %}
       </div>
     </article>
     {% endfor %}
+    <div class="event-slider-newsletter-wrapper">
+      <h4 class="event-slider-newsletter__header">
+        Get content like this straight to your inbox
+      </h4>
+      <a class="event-slider-newsletter__cta">Learn More</a>
+    </div>
   </div>
 </div>
 <div>
