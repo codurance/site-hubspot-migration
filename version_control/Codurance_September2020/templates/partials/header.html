@@ -50,7 +50,7 @@ label: Page Header
             {% elif content.translated_content[secondary_lang] %}
               {% set secondary_lang_page_link = '/' + content.translated_content[secondary_lang].slug %}
             {% elif is_listing_view %}
-              {% set primary_lang_page_link = '/es/publications'%}
+              {% set secondary_lang_page_link = '/es/publications'%}
             {% else %}
               {% set message =
                 "Sorry, no Spanish text version available" + "\\n\\n" + "Disculpa, la versión en español de este texto no está disponible"
