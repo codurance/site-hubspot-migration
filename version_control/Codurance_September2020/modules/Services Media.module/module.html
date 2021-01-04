@@ -1,6 +1,13 @@
 {{ require_css(get_asset_url("../../css/card-slider.css")) }}
 {% set filter = "&orderBy=publication_date&limit=12" %}
 {% set media_collection = hubdb_table_rows("services_media", filter) %}
+{% macro is_less_than_one_week_ago(date)  %}
+  {% set one_week = 1000 * 60 * 60 * 24 * 7 %}
+  {% set one_week_ago = local_dt|unixtimestamp - one_week %}
+  {% if date > one_week_ago %}
+    {{ caller() }}
+  {% endif %}
+{% endmacro %}
 
 <section class="services-media">
   <div
@@ -44,13 +51,20 @@
             </div>
             <div class="card-slider-item__text-container">
               <div class="card-slider-item__text-container-inner">
-                <header>
+                <header class="card-slider-item__header">
                   <time
                     class="card-slider-item__metadata"
                     datetime="{{ media.publication_date|datetimeformat('%Y-%m-%d') }}"
                   >
                     {{ media.publication_date|datetimeformat('%a %e %b %Y') }}
                   </time>
+                  {% call is_less_than_one_week_ago(media.publication_date) %}
+                    <small
+                      class="card-slider-item__metadata card-slider-item__metadata--new"
+                    >
+                      New
+                    </small>
+                  {% endcall %}
                   <h4 class="card-slider-item__title">
                     {{ media.title }}
                   </h4>
