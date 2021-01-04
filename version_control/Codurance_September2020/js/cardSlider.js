@@ -316,7 +316,6 @@ class CardSlider {
   }
 
   filterCardsBy(value) {
-    console.log(value)
     this.cards.forEach(card => {
       if (card.dataset.cardType === value || value === 'all') {
         this.displayCard(card);
