@@ -6,7 +6,8 @@ class CardSlider {
     cardsSelector = '[data-cardslider-card]',
     leftButtonSelector = '[data-cardslider-button-left]',
     rightButtonSelector = '[data-cardslider-button-right]',
-    animatingClass = 'animating',
+    ctaContainerSelector = null,
+    animatingClass = 'animating'
   }) {
     this.activationPoint = activationPoint;
     this.cardWindow = document.querySelector(cardWindowSelector);
@@ -17,6 +18,9 @@ class CardSlider {
     this.leftButton = document.querySelector(leftButtonSelector);
     this.rightButton = document.querySelector(rightButtonSelector);
     this.animatingClass = animatingClass;
+    if (ctaContainerSelector) {
+      this.ctaContainer = document.querySelector(ctaContainerSelector);
+    }
 
     this.trackHasSetWidth = false;
     this.maxLeft = 0;
@@ -76,8 +80,13 @@ class CardSlider {
       this.calculateMaxLeftPosition();
       this.keepTrackLeftWithinMaximum();
       this.checkButtonState();
-    } else if (this.windowIsOutsideActivationPoint() && this.trackHasSetWidth) {
-      this.resetTrackWidth();
+    } else if (this.windowIsOutsideActivationPoint()) {
+      if (this.trackHasSetWidth) {
+        this.resetTrackWidth();
+      }
+      if (this.ctaContainer) {
+        this.checkCtaState();
+      }
     }
     return;
   }
@@ -147,6 +156,29 @@ class CardSlider {
   resetTrackWidth() {
     this.track.style.removeProperty('width');
     this.trackHasSetWidth = false;
+  }
+
+  checkCtaState() {
+    if (this.spaceForCta()) {
+      this.makeCtaContainerVisible();
+    } else {
+      this.hideCtaContainer();
+    }
+  }
+
+  spaceForCta() {
+    const cardCount = this.cards.length;
+    const columns = window.innerWidth < 1300 ? 3 : 4;
+    const bottomRowCount = cardCount % columns;
+    return bottomRowCount > 0;
+  }
+
+  makeCtaContainerVisible() {
+    this.ctaContainer.style.removeProperty('display');
+  }
+
+  hideCtaContainer() {
+    this.ctaContainer.style.display = 'none';
   }
 
   keepTrackLeftWithinMaximum() {
