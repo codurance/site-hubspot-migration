@@ -5,6 +5,7 @@ const SELECTORS = {
   cardsSelector: '[data-past-card]',
   leftButtonSelector: '[data-past-events-button-left]',
   rightButtonSelector: '[data-past-events-button-right]',
+  ctaContainerSelector: '[data-newsletter-cta-container]'
 };
 
 function init() {
