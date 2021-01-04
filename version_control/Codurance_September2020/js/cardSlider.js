@@ -87,8 +87,7 @@ class CardSlider {
     }
     if (this.filterButtons) {
       this.filterButtons.forEach(button => {
-        const type = button.dataset.cardFilterButton
-        button.addEventListener('click', () => this.filterCardsBy(type));
+        button.addEventListener('click', () => this.handleFilterClick(button));
       });
     }
   }
@@ -315,13 +314,17 @@ class CardSlider {
     return innerCardWidth + cardMarginWidth * 2;
   }
 
-  filterCardsBy(value) {
+  handleFilterClick(button) {
+    const type = button.dataset.cardFilterButton
+    this.filterCards(type);
+    this.changeActiveFilterButton(button)
+  }
+
+  filterCards(type) {
     this.cards.forEach(card => {
-      if (card.dataset.cardType === value || value === 'all') {
-        this.displayCard(card);
-      } else {
-        this.hideCard(card);
-      }
+      card.dataset.cardType === type || type === 'all'
+         ? this.displayCard(card)
+         : this.hideCard(card);
     })
   }
 
@@ -331,5 +334,13 @@ class CardSlider {
 
   hideCard(card) {
     card.classList.add('hidden');
+  }
+
+  changeActiveFilterButton(activeButton) {
+    this.filterButtons.forEach(button => {
+      button === activeButton
+        ? button.classList.add('active')
+        : button.classList.remove('active');
+    })
   }
 }
