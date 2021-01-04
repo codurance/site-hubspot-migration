@@ -287,8 +287,8 @@
 
 .event-slider-newsletter__icon {
   background-image: url({{ get_asset_url('../images/icon-newsletter.svg' ) }});
-  margin-bottom: 10px;
   height:70px;
+  margin-bottom: 10px;
   width: 70px;
 }
 
@@ -312,9 +312,9 @@
   background-repeat: no-repeat;
   content: "";
   cursor: pointer;
+  display: inline-block;
   height: 14px;
-  position: absolute;
-  transform: translateX(7px) translateY(9px);
+  transform: translate(7px, 3px);
   width: 17px;
 }
 
