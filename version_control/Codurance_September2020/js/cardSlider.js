@@ -29,8 +29,11 @@ class CardSlider {
       })
     }
 
-    this.leftButton = document.querySelector(leftButtonSelector);
-    this.rightButton = document.querySelector(rightButtonSelector);
+    if (this.navigationControl) {
+      this.leftButton = document.querySelector(leftButtonSelector);
+      this.rightButton = document.querySelector(rightButtonSelector);
+    }
+    
     this.animatingClass = animatingClass;
     if (ctaContainerSelector) {
       this.ctaContainer = document.querySelector(ctaContainerSelector);
@@ -315,9 +318,20 @@ class CardSlider {
   }
 
   filterCardsBy(value) {
-    // make all of value visible
-    // make all not of value not visible
-    // set this.cards to this[value + 'Cards']
-    // resize
+    this.cards.forEach(card => {
+      if (card.dataset.cardType === value || value === 'all') {
+        this.displayCard(card);
+      } else {
+        this.hideCard(card);
+      }
+    })
+  }
+
+  displayCard(card) {
+    card.classList.remove('hidden');
+  }
+
+  hideCard(card) {
+    card.classList.add('hidden');
   }
 }
