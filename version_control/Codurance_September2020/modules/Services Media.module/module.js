@@ -3,7 +3,8 @@ const SELECTORS = {
     cardWindowSelector: '[data-services-media-card-window]',
     trackSelector: '[data-services-media-card-track]',
     cardsSelector: '[data-services-media-card]',
-    filters: ['all', 'podcast', 'video']
+    // filters: ['podcast', 'video']
+    filters: true
   };
   
   function init() {

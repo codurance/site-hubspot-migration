@@ -8,25 +8,22 @@ class CardSlider {
     leftButtonSelector = '[data-cardslider-button-left]',
     rightButtonSelector = '[data-cardslider-button-right]',
     animatingClass = 'animating',
-    filters = null,
+    filters = false,
     ctaContainerSelector = null
   }) {
     this.activationPoint = activationPoint;
     this.navigationControl = navigationControl;
-    this.filters = filters;
     this.cardWindow = document.querySelector(cardWindowSelector);
     this.track = document.querySelector(trackSelector);
-
+    
     this.cards = Array.prototype.slice.call(
       document.querySelectorAll(cardsSelector)
     );
+
     if (filters) {
-      filters.forEach(filter => {
-        this[filter + 'Cards'] = Array.prototype.slice.call(
-          document.querySelectorAll("[data-card-type='" + filter + "']")
-        );
-        this[filter + 'FilterButton'] = document.querySelector("[data-card-filter-button='" + filter + "']")
-      })
+      this.filterButtons = Array.prototype.slice.call(
+        document.querySelectorAll("[data-card-filter-button]")
+      );
     }
 
     if (this.navigationControl) {
@@ -88,9 +85,10 @@ class CardSlider {
       this.leftButton.addEventListener('click', this.navigateLeft);
       this.rightButton.addEventListener('click', this.navigateRight);
     }
-    if (this.filters) {
-      this.filters.forEach(filter => {
-        this[filter + 'FilterButton'].addEventListener('click', () => this.filterCardsBy(filter));
+    if (this.filterButtons) {
+      this.filterButtons.forEach(button => {
+        const type = button.dataset.cardFilterButton
+        button.addEventListener('click', () => this.filterCardsBy(type));
       });
     }
   }
@@ -318,6 +316,7 @@ class CardSlider {
   }
 
   filterCardsBy(value) {
+    console.log(value)
     this.cards.forEach(card => {
       if (card.dataset.cardType === value || value === 'all') {
         this.displayCard(card);
