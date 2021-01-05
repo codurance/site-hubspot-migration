@@ -15,10 +15,15 @@ class CardSlider {
     this.navigationControl = navigationControl;
     this.cardWindow = document.querySelector(cardWindowSelector);
     this.track = document.querySelector(trackSelector);
-    
+
     this.cards = Array.prototype.slice.call(
       document.querySelectorAll(cardsSelector)
     );
+    this.visibleCards = this.cards;
+    this.cardProperties = {
+      width: this.cards[0].getBoundingClientRect().width,
+      margin: parseFloat(window.getComputedStyle(this.cards[0]).marginRight)
+    }
 
     if (filters) {
       this.filterButtons = Array.prototype.slice.call(
@@ -30,11 +35,13 @@ class CardSlider {
       this.leftButton = document.querySelector(leftButtonSelector);
       this.rightButton = document.querySelector(rightButtonSelector);
     }
-    
+
     this.animatingClass = animatingClass;
     if (ctaContainerSelector) {
       this.ctaContainer = document.querySelector(ctaContainerSelector);
     }
+
+
 
     this.trackHasSetWidth = false;
     this.maxLeft = 0;
@@ -95,7 +102,7 @@ class CardSlider {
   sizeTrack() {
     if (this.windowIsWithinActivationPoint()) {
       if (!this.trackHasSetWidth) {
-        this.addTrackWidth();
+        this.updateTrackWidth();
         this.resetTrackPosition();
       }
       this.calculateMaxLeftPosition();
@@ -114,19 +121,19 @@ class CardSlider {
     return;
   }
 
-  addTrackWidth() {
+  updateTrackWidth() {
     const trackPadding = parseFloat(
       window.getComputedStyle(this.track).paddingRight
     );
-    const cardWidth = this.cards[0].getBoundingClientRect().width;
-    const cardMargin = parseFloat(
-      window.getComputedStyle(this.cards[0]).marginRight
-    );
+    const cardWidth = this.cardProperties.width;
 
-    const totalWidthOfCards = cardWidth * this.cards.length;
-    const totalMargin = cardMargin * 2 * this.cards.length;
+    const cardMargin = this.cardProperties.margin;
 
-    const totalWidthOfTrack = totalWidthOfCards + totalMargin + trackPadding;
+    const totalWidthOfVisibleCards = cardWidth * this.visibleCards.length;
+
+    const totalMargin = cardMargin * 2 * this.visibleCards.length;
+
+    const totalWidthOfTrack = totalWidthOfVisibleCards + totalMargin + trackPadding;
 
     if (totalWidthOfTrack) {
       this.track.style.width = totalWidthOfTrack + 'px';
@@ -307,17 +314,21 @@ class CardSlider {
   }
 
   getTotalCardWidth() {
-    const innerCardWidth = this.cards[0].getBoundingClientRect().width;
-    const cardMarginWidth = parseFloat(
-      window.getComputedStyle(this.cards[0]).marginRight
-    );
+    const innerCardWidth = this.cardProperties.width;
+    const cardMarginWidth = this.cardProperties.margin;
     return innerCardWidth + cardMarginWidth * 2;
   }
 
   handleFilterClick(button) {
     const type = button.dataset.cardFilterButton
+
     this.filterCards(type);
-    this.changeActiveFilterButton(button)
+    this.updateVisibleCards();
+    this.updateTrackWidth();
+    this.resetTrackPosition();
+    this.calculateMaxLeftPosition();
+    this.keepTrackLeftWithinMaximum();
+    this.changeActiveFilterButton(button);
   }
 
   filterCards(type) {
@@ -342,5 +353,9 @@ class CardSlider {
         ? button.classList.add('active')
         : button.classList.remove('active');
     })
+  }
+
+  updateVisibleCards() {
+    this.visibleCards = this.cards.filter(card => !card.classList.contains('hidden'));
   }
 }
