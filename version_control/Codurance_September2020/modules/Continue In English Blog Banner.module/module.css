@@ -1,13 +1,27 @@
 .continue-in-english-module {
+  align-items: center;
   background-color: #ffffff;
   box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.09);
-  margin: 30px 0px;
-  padding: 35px 15px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px auto;
+  padding: 30px 30px 0;
   text-align: center;
   width: 100%;
 }
 
-.module-text {
+.continue-in-english-module__text {
   font-size: 15px;
+  margin-bottom: 30px;
+  max-width: 490px;
+  padding-right: 30px;
   text-align: center;
+}
+
+.continue-in-english-module__cta-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }

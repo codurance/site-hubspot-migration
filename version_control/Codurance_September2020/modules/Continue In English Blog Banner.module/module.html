@@ -1,8 +1,10 @@
 {% if module.include %}
-  <div class="continue-in-english-module">
-  <span class="module-text">
+  <div class="continue-in-english-module col-lg-9">
+  <span class="continue-in-english-module__text">
    {{ module.text }}
   </span>
-  {{ module.cta }}
+   <div class="continue-in-english-module__cta-wrapper">
+     {% cta guid="{{ module.cta }}" %}
+    </div>
 </div>
 {% endif %}
