@@ -155,8 +155,8 @@ label: Blog Post
     <div class="col-lg-9 custom-overflow-y-hidden">
       {{ content.post_body }}
     </div>
-    {% module "continue_in_english_banner" path="../modules/Continue In English Blog Banner", label="Include link to EN version?" %}
   </div>
+  {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
   <div class="blog-comments">
     {% module "blog_comments" path="@hubspot/blog_comments", label="Blog
     Comments" %}

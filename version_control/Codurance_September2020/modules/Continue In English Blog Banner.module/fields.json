@@ -1,38 +1,42 @@
 [ {
-  "id" : "bcb8ccaa-c417-ba77-a2d8-09747c3a7296",
+  "id" : "69cc0e7a-3d4e-f3e9-5841-6be9ad598d05",
   "name" : "include",
-  "label" : "Continue to English?",
+  "label" : "Include link to EN version?",
   "required" : false,
-  "locked" : true,
-  "display" : "toggle",
+  "locked" : false,
+  "display" : "checkbox",
   "type" : "boolean",
   "default" : false
 }, {
-  "id" : "daae853f-f4da-9d40-1d32-fde1b8374fc5",
-  "name" : "banner_information",
-  "label" : "Banner Information",
+  "id" : "faf73014-7ef2-d8df-4d9f-15ff63334b70",
+  "name" : "text",
+  "label" : "Text",
   "required" : false,
-  "locked" : true,
-  "children" : [ {
-    "id" : "a270029b-3761-fb15-ff61-48a1cd1fb75c",
-    "name" : "text_field",
-    "label" : "Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
-  }, {
-    "id" : "b0c85006-7811-9c29-435b-b1becd6163b1",
-    "name" : "cta_field",
-    "label" : "CTA",
-    "required" : false,
-    "locked" : false,
-    "type" : "cta"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : { }
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "69cc0e7a-3d4e-f3e9-5841-6be9ad598d05",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Actualmente, las publicaciones de nuestro blog solo están disponibles en Inglés"
+}, {
+  "id" : "4d115f9c-d0e6-cc41-a47e-04048a6fdfcb",
+  "name" : "cta",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "69cc0e7a-3d4e-f3e9-5841-6be9ad598d05",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "type" : "cta"
 } ]

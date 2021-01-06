@@ -1,8 +1,7 @@
 {
   "global" : false,
   "smart_type" : "NOT_SMART",
-  "host_template_types" : [ "BLOG_POST" ],
-  "module_id" : 39966813301,
-  "label" : "Include link to English version?",
+  "host_template_types" : [ "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 39972213387,
   "is_available_for_new_content" : true
 }
