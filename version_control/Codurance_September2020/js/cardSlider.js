@@ -325,6 +325,10 @@ class CardSlider {
     this.filterCards(type);
     this.updateVisibleCards();
     this.changeActiveFilterButton(button);
+    this.updateTrack();
+  }
+
+  updateTrack() {
     if (this.windowIsWithinActivationPoint()) {
       this.updateTrackWidth();
       this.resetTrackPosition();
