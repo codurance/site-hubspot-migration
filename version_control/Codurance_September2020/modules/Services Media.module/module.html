@@ -1,7 +1,7 @@
 {{ require_css(get_asset_url("../../css/card-slider.css")) }}
 {% set filter = "&orderBy=-publication_date&limit=8" %}
 {% if module.service_type %}
-  {% set filter = filter + "&tags__contains=" + module.service_type %}
+  {% set filter = filter + "&tags__icontains=" + module.service_type %}
 {% endif %}
 {% set media_collection = hubdb_table_rows("services_media", filter) %}
 {% macro is_less_than_one_week_ago(date)  %}
