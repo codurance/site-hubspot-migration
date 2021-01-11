@@ -324,11 +324,13 @@ class CardSlider {
 
     this.filterCards(type);
     this.updateVisibleCards();
-    this.updateTrackWidth();
-    this.resetTrackPosition();
-    this.calculateMaxLeftPosition();
-    this.keepTrackLeftWithinMaximum();
     this.changeActiveFilterButton(button);
+    if (this.windowIsWithinActivationPoint()) {
+      this.updateTrackWidth();
+      this.resetTrackPosition();
+      this.calculateMaxLeftPosition();
+      this.keepTrackLeftWithinMaximum();
+    }
   }
 
   filterCards(type) {
