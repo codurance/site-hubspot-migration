@@ -321,11 +321,23 @@ class CardSlider {
 
   handleFilterClick(button) {
     const type = button.dataset.cardFilterButton
-
+    this.changeHeading(type);
     this.filterCards(type);
     this.updateVisibleCards();
     this.changeActiveFilterButton(button);
     this.updateTrack();
+  }
+
+  changeHeading(type) {
+    Array.prototype.slice.call(
+      document.querySelectorAll("[data-card-heading]")
+    ).forEach((heading) => {
+      if (heading.dataset.cardHeading === type) {
+        heading.classList.remove("hidden");
+      }else {
+        heading.classList.add("hidden");
+      }
+    })
   }
 
   updateTrack() {
