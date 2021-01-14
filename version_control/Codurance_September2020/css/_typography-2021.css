@@ -1,11 +1,6 @@
 {% import './utils/_typography-utils.css' as utils %}
 
 :root {
-  --min-font-size: 110%;
-  --max-font-size: 131.3%;
-
-  --type-font-size: 110%;
-
   --font-weight-light: 300;
   --font-weight-welter: 400;
   --font-weight-middle: 600;
@@ -49,6 +44,11 @@
 
   --sejima-font-size: 0.6rem;
   --sejima-line-height: 0.9rem;
+
+  --min-font-size: 110%;
+  --max-font-size: 131.3%;
+
+  --type-font-size: 110%;
 }
 @media (min-width: 37.03em) {
   :root {
