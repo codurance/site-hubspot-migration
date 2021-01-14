@@ -93,7 +93,7 @@ previousEventsFilter) %}
             <header class="event-slider-item__header">
               <time
                 class="event-slider-item__metadata"
-                datetime="{{ event.datetime|datetimeformat('%Y-%m-%d') }}"
+                datetime="{{ event.date|datetimeformat('%Y-%m-%d') }}"
               >
                 {{ event.date|datetimeformat('%a %e %b %Y') }}
               </time>
