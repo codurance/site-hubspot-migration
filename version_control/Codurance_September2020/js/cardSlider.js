@@ -322,6 +322,7 @@ class CardSlider {
   handleFilterClick(button) {
     const type = button.dataset.cardFilterButton
     this.changeHeading(type);
+    this.updateCta(type);
     this.filterCards(type);
     this.updateVisibleCards();
     this.changeActiveFilterButton(button);
@@ -336,6 +337,18 @@ class CardSlider {
         heading.classList.remove("hidden");
       }else {
         heading.classList.add("hidden");
+      }
+    })
+  }
+
+  updateCta(type) {
+    Array.prototype.slice.call(
+      document.querySelectorAll("[data-watch-all-cta]")
+    ).forEach((cta) => {
+      if (cta.dataset.watchAllCta === type) {
+        cta.classList.remove("hidden");
+      }else {
+        cta.classList.add("hidden");
       }
     })
   }
