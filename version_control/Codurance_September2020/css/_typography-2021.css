@@ -45,9 +45,6 @@
   --sejima-font-size: 0.6rem;
   --sejima-line-height: 0.9rem;
 
-  --min-font-size: 110%;
-  --max-font-size: 131.3%;
-
   --type-font-size: 110%;
 }
 @media (min-width: 37.03em) {
@@ -66,8 +63,6 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: proxima-nova, serif;
   font-size: 1rem;
   font-weight: var(--font-weight-light);
