@@ -95,7 +95,7 @@ previousEventsFilter) %}
                 class="event-slider-item__metadata"
                 datetime="{{ event.datetime|datetimeformat('%Y-%m-%d') }}"
               >
-                {{ event.datetime|datetimeformat('%a %e %b %Y') }}
+                {{ event.date|datetimeformat('%a %e %b %Y') }}
               </time>
               {% if event.internal %}
               <small
