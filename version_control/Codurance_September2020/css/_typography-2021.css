@@ -1,10 +1,10 @@
 {% import './utils/_typography-utils.css' as utils %}
 
 :root {
-  --font-weight-light: 300;
-  --font-weight-welter: 400;
-  --font-weight-middle: 600;
-  --font-weight-heavy: 800;
+  --light-font-weight: 300;
+  --welter-font-weight: 400;
+  --middle-font-weight: 600;
+  --heavy-font-weight: 800;
 
   --habib-font-size: 3.095rem;
   --habib-line-height: 3.47619rem;
@@ -65,7 +65,7 @@ html {
 body {
   font-family: proxima-nova, serif;
   font-size: 1rem;
-  font-weight: var(--font-weight-light);
+  font-weight: var(--light-font-weight);
   color: var(--shark);
   line-height: var(--base-line-height);
   text-rendering: optimizeLegibility;
@@ -114,7 +114,7 @@ a, b, i, strong, em, small, code {
 a {
   text-decoration: none;
   color: var(--valencia--dark);
-  font-weight: var(--font-weight-middle);
+  font-weight: var(--middle-font-weight);
 }
 a:hover {
   text-decoration: underline;
@@ -125,7 +125,7 @@ i {
 }
 
 strong {
-  font-weight: var(--font-weight-heavy);
+  font-weight: var(--heavy-font-weight);
 }
 
 sub, sup {

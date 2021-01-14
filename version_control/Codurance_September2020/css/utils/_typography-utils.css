@@ -1,7 +1,7 @@
 {% macro habib() %}
   font-size: var(--habib-font-size);
   line-height: var(--habib-line-height);
-  font-weight: var(--font-weight-heavy);
+  font-weight: var(--heavy-font-weight);
   max-width: var(--habib-max-width);
 {% endmacro %}
 
@@ -13,7 +13,7 @@
 {% macro gaudi() %}
   font-size: var(--gaudi-font-size);
   line-height: var(--gaudi-line-height);
-  font-weight: var(--font-weight-heavy);
+  font-weight: var(--heavy-font-weight);
   max-width: var(--gaudi-max-width);
 {% endmacro %}
 
@@ -25,7 +25,7 @@
 {% macro eames() %}
   font-size: var(--eames-font-size);
   line-height: var(--eames-line-height);
-  font-weight: var(--font-weight-heavy);
+  font-weight: var(--heavy-font-weight);
   max-width: var(--eames-max-width);
 {% endmacro %}
 
@@ -37,7 +37,7 @@
 {% macro dudler() %}
   font-size: var(--dudler-font-size);
   line-height: var(--dudler-line-height);
-  font-weight: var(--font-weight-middle);
+  font-weight: var(--middle-font-weight);
   max-width: var(--dudler-max-width);
 {% endmacro %}
 
@@ -49,7 +49,7 @@
 {% macro freed() %}
   font-size: var(--freed-font-size);
   line-height: var(--freed-line-height);
-  font-weight: var(--font-weight-middle);
+  font-weight: var(--middle-font-weight);
   max-width: var(--freed-max-width);
 {% endmacro %}
 
@@ -79,12 +79,12 @@
 
 {% macro natus() %}
   font-size: var(--natus-font-size);
-  font-weight: var(--font-weight-welter);
+  font-weight: var(--welter-font-weight);
   line-height: var(--natus-line-height);
 {% endmacro %}
 
 {% macro sejima() %}
   font-size: var(--sejima-font-size);
-  font-weight: var(--font-weight-middle);
+  font-weight: var(--middle-font-weight);
   line-height: var(--sejima-line-height);
 {% endmacro %}
