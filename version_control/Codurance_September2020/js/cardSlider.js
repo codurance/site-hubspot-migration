@@ -372,7 +372,7 @@ class CardSlider {
 
   filterCards(type) {
     this.cards.forEach(card => {
-      card.dataset.cardType === type || type === 'all'
+      card.dataset[this.convertDataAttributeToKey(this.cardTypeSelector)] === type || type === 'all'
          ? this.displayCard(card)
          : this.hideCard(card);
     })
