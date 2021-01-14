@@ -4,6 +4,7 @@ const SELECTORS = {
   cardsSelector: '[data-upcoming-card]',
   leftButtonSelector: '[data-upcoming-events-button-left]',
   rightButtonSelector: '[data-upcoming-events-button-right]',
+  ctaContainerSelector: '[data-upcoming-events-newsletter-cta]'
 };
 
 function init() {
