@@ -1,6 +1,6 @@
 {{ require_css(get_asset_url("../../css/event-slider.css")) }} {% if
 module.hubdb_table %} {% set upcomingEventsFilter = ("&orderBy=datetime" +
-"&datetime__gt=" + local_dt|unixtimestamp + "&limit=12") %} {% set
+"&datetime__gt=" + local_dt|unixtimestamp + "&limit=8") %} {% set
 upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
 
 <div
