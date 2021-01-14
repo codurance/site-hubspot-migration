@@ -7,6 +7,10 @@ class CardSlider {
     cardsSelector = '[data-cardslider-card]',
     leftButtonSelector = '[data-cardslider-button-left]',
     rightButtonSelector = '[data-cardslider-button-right]',
+    filterButtonSelector = '[data-card-filter-button]',
+    cardTypeSelector = '[data-card-type]',
+    cardHeadingSelector = '[data-card-heading]',
+    watchAllCtaSelector = '[data-watch-all-cta]',
     animatingClass = 'animating',
     filters = false,
     ctaContainerSelector = null
@@ -27,8 +31,12 @@ class CardSlider {
 
     if (filters) {
       this.filterButtons = Array.prototype.slice.call(
-        document.querySelectorAll("[data-card-filter-button]")
+        document.querySelectorAll(filterButtonSelector)
       );
+      this.filterButtonSelector = filterButtonSelector;
+      this.cardTypeSelector = cardTypeSelector;
+      this.cardHeadingSelector = cardHeadingSelector;
+      this.watchAllCtaSelector = watchAllCtaSelector;
     }
 
     if (this.navigationControl) {
@@ -320,7 +328,7 @@ class CardSlider {
   }
 
   handleFilterClick(button) {
-    const type = button.dataset.cardFilterButton
+    const type = button.dataset[this.convertDataAttributeToKey(this.filterButtonSelector)]
     this.changeHeading(type);
     this.updateCta(type);
     this.filterCards(type);
@@ -331,24 +339,24 @@ class CardSlider {
 
   changeHeading(type) {
     Array.prototype.slice.call(
-      document.querySelectorAll("[data-card-heading]")
+      document.querySelectorAll(this.cardHeadingSelector)
     ).forEach((heading) => {
-      if (heading.dataset.cardHeading === type) {
-        heading.classList.remove("hidden");
+      if (heading.dataset[this.convertDataAttributeToKey(this.cardHeadingSelector)] === type) {
+        heading.classList.remove('hidden');
       }else {
-        heading.classList.add("hidden");
+        heading.classList.add('hidden');
       }
     })
   }
 
   updateCta(type) {
     Array.prototype.slice.call(
-      document.querySelectorAll("[data-watch-all-cta]")
+      document.querySelectorAll(this.watchAllCtaSelector)
     ).forEach((cta) => {
-      if (cta.dataset.watchAllCta === type) {
-        cta.classList.remove("hidden");
+      if (cta.dataset[this.convertDataAttributeToKey(this.watchAllCtaSelector)] === type) {
+        cta.classList.remove('hidden');
       }else {
-        cta.classList.add("hidden");
+        cta.classList.add('hidden');
       }
     })
   }
@@ -388,5 +396,10 @@ class CardSlider {
 
   updateVisibleCards() {
     this.visibleCards = this.cards.filter(card => !card.classList.contains('hidden'));
+  }
+
+  convertDataAttributeToKey(attribute) {
+    return attribute.slice(6,-1).split('-').map((word, index) => 
+      index > 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word).join('');
   }
 }

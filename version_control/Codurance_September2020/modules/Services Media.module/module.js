@@ -3,8 +3,11 @@ const SELECTORS = {
     cardWindowSelector: '[data-services-media-card-window]',
     trackSelector: '[data-services-media-card-track]',
     cardsSelector: '[data-services-media-card]',
-    // filters: ['podcast', 'video']
-    filters: true
+    filters: true,
+    filterButtonSelector: '[data-card-filter-button]',
+    cardTypeSelector: '[data-card-type]',
+    cardHeadingSelector: '[data-card-heading]',
+    watchAllCtaSelector: '[data-watch-all-cta]',
   };
   
   function init() {
