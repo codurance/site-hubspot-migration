@@ -1,3 +1,6 @@
 :root {
   --shark: hsl(240, 3.9%, 20%);
+  --woodsmoke: hsl(240, 3%, 5%);
+  --valencia: hsl(2, 71.7%, 58.4%);
+  --valencia-dark: hsl(2, 71.7%, 53.4%);
 }

@@ -79,3 +79,68 @@ body {
 p, ul, ol, pre, table, blockquote {
   {{ utils.base() }}
 }
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+blockquote {
+  border-left: 5px solid var(--woodsmoke);
+  padding: 0.8em 1.6em;
+  margin: 0;
+  font-size: var(--freed-font-size);
+  line-height: var(--freed-line-height);
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+
+a, b, i, strong, em, small, code {
+  line-height: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--valencia--dark);
+  font-weight: var(--font-weight-middle);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+i {
+  font-style: italic;
+}
+
+strong {
+  font-weight: var(--font-weight-heavy);
+}
+
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
