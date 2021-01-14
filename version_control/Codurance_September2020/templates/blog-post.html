@@ -7,14 +7,9 @@ label: Blog Post
 
 <section
   class="custom-bg-cover custom-bg-size-cover custom-bg-cover--text-overlay custom-pb-30"
-  {%
-  if
-  content.featured_image
-  %}
-  style="background-image: url('{{ content.featured_image }}');"
-  {%
-  endif
-  %}
+  {% if content.featured_image %}
+    style="background-image: url('{{ content.featured_image }}');"
+  {% endif %}
 >
   <div
     class="container page-center text-center custom-pos-rel custom-z-index-1 custom-pt-100 custom-pb-100"
@@ -161,6 +156,7 @@ label: Blog Post
       {{ content.post_body }}
     </div>
   </div>
+  {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
   <div class="blog-comments">
     {% module "blog_comments" path="@hubspot/blog_comments", label="Blog
     Comments" %}
