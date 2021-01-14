@@ -1,0 +1,81 @@
+{% import './utils/_typography-utils.css' as utils %}
+
+:root {
+  --min-font-size: 110%;
+  --max-font-size: 131.3%;
+
+  --type-font-size: 110%;
+
+  --font-weight-light: 300;
+  --font-weight-welter: 400;
+  --font-weight-middle: 600;
+  --font-weight-heavy: 800;
+
+  --habib-font-size: 3.095rem;
+  --habib-line-height: 3.47619rem;
+  --habib-margin: 1.38095476rem;
+  --habib-max-width: 20ch;
+
+  --gaudi-font-size: 2.4285714rem;
+  --gaudi-line-height: 2.7142857rem;
+  --gaudi-margin: 1.3809524rem;
+  --gaudi-max-width: 25ch;
+
+  --eames-font-size: 1.952381rem;
+  --eames-line-height: 2.047619rem;
+  --eames-margin: 1.3809524rem;
+  --eames-max-width: 31ch;
+
+  --dudler-font-size: 1.5714286rem;
+  --dudler-line-height: 2.047619rem;
+  --dudler-margin: 1.3809524rem;
+  --dudler-max-width: 38ch;
+
+  --freed-font-size: 1.2380952rem;
+  --freed-line-height: 1.5714rem;
+  --freed-margin: 1.142857rem;
+  --freed-max-width: 49ch;
+
+  --base-font-size: 1rem;
+  --base-line-height: 1.3809524rem;
+  --base-margin: 1.3809524rem;
+  --base-max-width: 50ch;
+
+  --ponti-font-size: 1rem;
+  --ponti-line-height: 1rem;
+
+  --natus-font-size: 0.8rem;
+  --natus-line-height: 1.095rem;
+
+  --sejima-font-size: 0.6rem;
+  --sejima-line-height: 0.9rem;
+}
+@media (min-width: 37.03em) {
+  :root {
+    --type-font-size: 2.97vw;
+  }
+}
+@media (min-width: 705px) {
+  :root {
+    --type-font-size: 131.3%;
+  }
+}
+
+html {
+  font-size: var(--type-font-size);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: proxima-nova, serif;
+  font-size: 1rem;
+  font-weight: var(--font-weight-light);
+  color: var(--shark);
+  line-height: var(--base-line-height);
+  text-rendering: optimizeLegibility;
+}
+
+p, ul, ol, pre, table, blockquote {
+  {{ utils.base() }}
+}
