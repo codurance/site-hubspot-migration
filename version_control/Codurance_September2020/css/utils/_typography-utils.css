@@ -1,54 +1,72 @@
 {% macro habib() %}
   font-size: var(--habib-font-size);
   line-height: var(--habib-line-height);
-  margin-bottom: var(--habib-margin);
-  margin-top: var(--habib-margin);
   font-weight: var(--font-weight-heavy);
   max-width: var(--habib-max-width);
+{% endmacro %}
+
+{% macro habib_margin() %}
+  margin-bottom: var(--habib-margin);
+  margin-top: var(--habib-margin);
 {% endmacro %}
 
 {% macro gaudi() %}
   font-size: var(--gaudi-font-size);
   line-height: var(--gaudi-line-height);
-  margin-bottom: var(--gaudi-margin);
-  margin-bottom: var(--gaudi-margin);
   font-weight: var(--font-weight-heavy);
   max-width: var(--gaudi-max-width);
+{% endmacro %}
+
+{% macro gaudi_margin() %}
+  margin-bottom: var(--gaudi-margin);
+  margin-bottom: var(--gaudi-margin);
 {% endmacro %}
 
 {% macro eames() %}
   font-size: var(--eames-font-size);
   line-height: var(--eames-line-height);
-  margin-bottom: var(--eames-margin);
-  margin-top: var(--eames-margin);
   font-weight: var(--font-weight-heavy);
   max-width: var(--eames-max-width);
+{% endmacro %}
+
+{% macro eames_margin() %}
+  margin-bottom: var(--eames-margin);
+  margin-top: var(--eames-margin);
 {% endmacro %}
 
 {% macro dudler() %}
   font-size: var(--dudler-font-size);
   line-height: var(--dudler-line-height);
-  margin-bottom: var(--dudler-margin);
-  margin-top: var(--dudler-margin);
   font-weight: var(--font-weight-middle);
   max-width: var(--dudler-max-width);
+{% endmacro %}
+
+{% macro dudler_margin() %}
+  margin-bottom: var(--dudler-margin);
+  margin-top: var(--dudler-margin);
 {% endmacro %}
 
 {% macro freed() %}
   font-size: var(--freed-font-size);
   line-height: var(--freed-line-height);
-  margin-bottom: var(--freed-margin);
-  margin-top: var(--freed-margin);
   font-weight: var(--font-weight-middle);
   max-width: var(--freed-max-width);
+{% endmacro %}
+
+{% macro freed_margin() %}
+  margin-bottom: var(--freed-margin);
+  margin-top: var(--freed-margin);
 {% endmacro %}
 
 {% macro base() %}
   font-size: var(--type-base-font-size);
   line-height: var(--base-line-height);
+  max-width: var(--base-max-width);
+{% endmacro %}
+
+{% macro base_margin() %}
   margin-top: 0;
   margin-bottom: var(--base-margin);
-  max-width: var(--base-max-width);
 {% endmacro %}
 
 {% macro ponti() %}
