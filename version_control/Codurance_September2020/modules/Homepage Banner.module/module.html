@@ -1,5 +1,7 @@
+{{ require_css(get_asset_url("../../css/modules/homepage-banner.css")) }}
+
 <section class="cm-homepage-hero" style="background-image:url({{ module.background_image.src }})">
-  <div class="cm-homepage-hero__video-wrapper"> 
+  <div class="cm-homepage-hero__video-wrapper">
     <video controls="false" playsinline="" autoplay="" muted="" poster="{{ module.poster_image.src }}" loop="" class="cm-homepage-hero__video">
       <source src="{{ module.video }}" type="video/mp4">
       Your browser does not support the video tag.
