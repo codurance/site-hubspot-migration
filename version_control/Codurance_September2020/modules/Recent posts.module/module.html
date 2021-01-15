@@ -1,4 +1,4 @@
-<div class="cm-recent-post-group">
+{% import '../../snippets/button-snippets.html' as snippets %}
   {% if module.heading %}
   <div class="posts-heading">
     {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
@@ -40,9 +40,10 @@
     {% endif %}
     {% endfor %}
   </div>       
-  <div class="cm-recent-posts-button">
-    <a href="{{ blog_all_posts_url(module.select_blog)|replace('all','') }}" class="custom-border-button">
-      {{ module.button_text }}
-    </a>
+    {{snippets.button_secondary(
+        blog_all_posts_url(module.select_blog)|replace('all',''),
+        "",
+        module.button_text
+    )}}
   </div>
 </div>
