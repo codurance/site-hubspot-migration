@@ -15,7 +15,7 @@
   overflow: hidden;
   position: absolute;
   right: 0;
-  top: 0
+  top: 0;
 }
 
 .cm-homepage-hero__video-wrapper::after {
@@ -25,7 +25,7 @@
   left: 0;
   position: absolute;
   right: 0;
-  top: 0
+  top: 0;
 }
 
 {% call utils.small() %}
@@ -44,7 +44,7 @@
     position:absolute;
     top: 0;
     width: auto;
-    z-index: 0
+    z-index: 0;
   }
 {% endcall %}
 
