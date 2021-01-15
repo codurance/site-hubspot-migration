@@ -5,9 +5,7 @@
 <div class="cm-recent-post">
 
   {% if module.heading %}
-    <div class="posts-heading">
-      {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
-    </div>
+    <h2 class="cm-recent-post__heading ">{{ module.heading }}</h2>
   {% endif %}
 
   {% set postToShow = module.number_of_posts %}
