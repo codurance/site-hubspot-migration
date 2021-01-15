@@ -54,7 +54,7 @@
 {% endmacro %}
 
 {% macro base() %}
-  font-size: var(--type-base-font-size);
+  font-size: var(--base-font-size);
   line-height: var(--base-line-height);
 {% endmacro %}
 
