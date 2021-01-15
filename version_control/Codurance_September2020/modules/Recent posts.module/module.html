@@ -1,45 +1,52 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
+
+{{ require_css(get_asset_url("../../css/modules/recent-posts.css")) }}
+
+<div class="cm-recent-post">
+
   {% if module.heading %}
-  <div class="posts-heading">
-    {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
-  </div>
+    <div class="posts-heading">
+      {% if module.heading %}<h2>{{ module.heading }}</h2>{% endif %}
+    </div>
   {% endif %}
-  {% set postToShow = module.number_of_posts %} 
+
+  {% set postToShow = module.number_of_posts %}
   {% set postToShow = postToShow + 1 %}
-  {% set rec_posts = blog_recent_posts( module.select_blog, postToShow) %}  
-  {% set loopLength = postToShow %}      
-  <div class="rec-posts-group clearfix">
+  {% set rec_posts = blog_recent_posts( module.select_blog, postToShow) %}
+  {% set loopLength = postToShow %}
+
+  <div class="cm-recent-post__group">
     {% for rec_post in rec_posts %}
-    {% if content.absolute_url == rec_post.absolute_url %}
-    {% set loopLength = postToShow + 1 %}
-    {% endif %}
-    {% if content.absolute_url != rec_post.absolute_url and loop.index < loopLength %}
-    <div class="rec-post-item">
-      <div class="rec-post-inner-item box-shadow cm-match-Height">
-        <a href="{{ rec_post.absolute_url }}"> 
-          {% if rec_post.featured_image %}        
-          <div class="cm-recent-image-wrapper" style="background-image:url({{ rec_post.featured_image }})"></div>
-          {% endif %}
-          <div class="recent-post-inner-wrapper">
-            <div class="recent-post-wrapper">            
-              <span class="rec-post-date">{{ rec_post.publish_date_local_time.strftime('%d') }} {{ rec_post.publish_date_local_time.strftime('%b') }} {{ rec_post.publish_date_local_time.strftime('%Y') }}  - By {{ rec_post.blog_post_author.display_name }}</span> 
-              {% if rec_post.name %}  
-              <h4 class="rec-post-name">{{ rec_post.name }}</h4> 
-              {% endif %}   
-              {% if rec_post.post_summary %}  
-              <div class="rec-post-body"> 
-                <p>{{ rec_post.post_list_content|safe|striptags|truncatehtml(200, ' ...' , false) }}</p>
-              </div>              
-              {% endif %}
+      {% if content.absolute_url == rec_post.absolute_url %}
+        {% set loopLength = postToShow + 1 %}
+      {% endif %}
+      {% if content.absolute_url != rec_post.absolute_url and loop.index < loopLength %}
+        <div class="cm-recent-post__item">
+          <a class="cm-recent-post__link-container" href="{{ rec_post.absolute_url }}">
+            {% if rec_post.featured_image %}
+            <div class="cm-recent-image-wrapper" style="background-image:url({{ rec_post.featured_image }})"></div>
+            {% endif %}
+            <div class="cm-recent-post__inner">
+              <div class="cm-recent-post__info-wrapper">
+                <small class="cm-recent-post__meta-info">{{ rec_post.publish_date_local_time.strftime('%d') }} {{ rec_post.publish_date_local_time.strftime('%b') }} {{ rec_post.publish_date_local_time.strftime('%Y') }}  - By {{ rec_post.blog_post_author.display_name }}</small>
+                {% if rec_post.name %}
+                <h4 class="cm-recent-post__title">{{ rec_post.name }}</h4>
+                {% endif %}
+                {% if rec_post.post_summary %}
+                <div class="cm-recent-post__body-wrapper">
+                  <p class="cm-recent-post__description">{{ rec_post.post_list_content|safe|striptags|truncatehtml(200, ' ...' , false) }}</p>
+                </div>
+                {% endif %}
+              </div>
+              <span class="cm-recent-post__post-item-button">Learn More</span>
             </div>
-            <span class="block-cta">Learn More</span>
-          </div>
-        </a> 
-      </div>    
-    </div>    
-    {% endif %}
+          </a>
+        </div>
+      {% endif %}
     {% endfor %}
-  </div>       
+  </div>
+
+  <div class="cm-recent-post__button-wrapper">
     {{snippets.button_secondary(
         blog_all_posts_url(module.select_blog)|replace('all',''),
         "",
