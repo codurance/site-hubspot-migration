@@ -66,9 +66,6 @@
 {% macro ponti() %}
   font-size: var(--ponti-font-size);
   line-height: var(--ponti-line-height);
-  font-variant: small-caps;
-  letter-spacing: 0.15rem;
-  text-transform: lowercase;
 {% endmacro %}
 
 {% macro natus() %}
@@ -81,4 +78,10 @@
   font-size: var(--sejima-font-size);
   font-weight: var(--middle-font-weight);
   line-height: var(--sejima-line-height);
+{% endmacro %}
+
+{% macro small_caps() %}
+  font-variant: small-caps;
+  letter-spacing: 0.15rem;
+  text-transform: lowercase;
 {% endmacro %}
