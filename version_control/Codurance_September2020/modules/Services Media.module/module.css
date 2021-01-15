@@ -1,0 +1,39 @@
+.services-media {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-media__heading-wrapper {
+  background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Past%20Events%20Images/past%20events.jpg');
+  background-position: top center;
+  background-size: cover;
+}
+@media (max-width: 767px) {
+  .services-media__heading-wrapper {
+    padding-top: 65px;
+    padding-bottom: 105px;
+  }
+}
+@media (min-width: 768px) {
+  .services-media__heading-wrapper {
+    padding-top: 100px;
+    padding-bottom: 200px;
+  }
+}
+
+.services-media__card-slider-wrapper {
+  position: relative;
+}
+@media (max-width: 767px) {
+  .services-media__card-slider-wrapper {
+    margin-bottom: -190px;
+    top: -114px
+  }
+}
+@media (min-width: 768px) {
+  .services-media__card-slider-wrapper {
+    margin-bottom: -170px;
+    top: -200px;
+  }
+}

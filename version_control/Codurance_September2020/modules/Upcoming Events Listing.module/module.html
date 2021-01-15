@@ -1,19 +1,19 @@
-{{ require_css(get_asset_url("../../css/event-slider.css")) }} {% if
+{{ require_css(get_asset_url("../../css/card-slider.css")) }} {% if
 module.hubdb_table %} {% set upcomingEventsFilter = ("&orderBy=datetime" +
 "&datetime__gt=" + local_dt|unixtimestamp + "&limit=8") %} {% set
 upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
 
 <div
-  class="event-slider__event-inner responsive-page-width lateral-spacing"
+  class="card-slider__event-inner responsive-page-width lateral-spacing"
   data-upcoming-card-window
 >
-  <div class="event-slider__header-wrapper">
-    <h2 class="event-slider__heading responsive-page-width">
+  <div class="card-slider__header-wrapper">
+    <h2 class="card-slider__heading responsive-page-width">
       Upcoming events
     </h2>
     <div>
       <button
-        class="event-slider__nav-button"
+        class="card-slider__nav-button"
         autocomplete="off"
         data-upcoming-events-button-left
       >
@@ -41,7 +41,7 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
         </svg>
       </button>
       <button
-        class="event-slider__nav-button event-slider__nav-button"
+        class="card-slider__nav-button card-slider__nav-button"
         autocomplete="off"
         data-upcoming-events-button-right
       >
@@ -69,53 +69,53 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
       </button>
     </div>
   </div>
-  <div class="event-slider-results" data-upcoming-card-track>
+  <div class="card-slider-results" data-upcoming-card-track>
     {% for event in upcomingEvents %}
-    <article class="event-slider-item" data-upcoming-card>
-      <div class="event-slider-item__content">
+    <article class="card-slider-item" data-upcoming-card>
+      <div class="card-slider-item__content">
         <div
-          class="event-slider-item__image-container"
+          class="card-slider-item__image-container"
           style="background-image: url({{event.thumbnail.url}})"
         >
           {% if event.type.name %}
           <small
-            class="event-slider-item__label event-slider-item__label--type"
+            class="card-slider-item__label card-slider-item__label--type"
           >
             {{ event.type.name }}
           </small>
           {% endif %}
         </div>
-        <div class="event-slider-item__text-container">
-          <div class="event-slider-item__text-container-inner">
+        <div class="card-slider-item__text-container">
+          <div class="card-slider-item__text-container-inner truncated">
             <header>
               <time
-                class="event-slider-item__metadata"
+                class="card-slider-item__metadata"
                 datetime="{{ event.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
               >
                 {{ event.datetime|datetimeformat('%a %e %b %Y | %H:%M') }}
               </time>
-              <h4 class="event-slider-item__title">
+              <h4 class="card-slider-item__title">
                 {{ event.name }}
               </h4>
             </header>
-            <p class="event-slider-item__description">
+            <p class="card-slider-item__description">
               {{ event.description }}
             </p>
           </div>
-          <div class="event-slider-item__button">
+          <div class="card-slider-item__button  card-slider-item__button--solid">
             <a href="{{ event.link }}" target="_blank">Register Attendance</a>
           </div>
         </div>
       </div>
     </article>
     {% endfor %}
-    <div class="event-slider-newsletter-wrapper" style="display: none;" data-upcoming-events-newsletter-cta>
-      <div class="event-slider-newsletter__icon"></div>
-      <h4 class="event-slider-newsletter__header">
-        Hear about more events like these
+    <div class="card-slider-newsletter-wrapper" style="display: none;" data-upcoming-events-newsletter-cta>
+      <div class="card-slider-newsletter__icon"></div>
+      <h4 class="card-slider-newsletter__header">
+        Hear about more of our upcoming events
       </h4>
       <a
-        class="event-slider-newsletter__cta"
+        class="card-slider-newsletter__cta"
         target="_blank"
         href="https://mailchi.mp/codurance/newsletter-subscription"
         >Learn More</a>

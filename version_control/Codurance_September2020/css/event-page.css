@@ -11,53 +11,47 @@ main {
   margin-bottom: 100px;
 }
 
-.event-slider {
+.card-slider {
   max-width: {{ultimate_max_width}}px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.event-slider__heading-wrapper {
+.card-slider__heading-wrapper {
   background-position: top center;
   background-size: cover;
   padding-bottom: {{overlap}}px;
 }
 @media (max-width: 767px) {
-  .event-slider__heading-wrapper {
+  .card-slider__heading-wrapper {
     padding-top: 40px;
   }
 }
 @media (min-width: 768px) {
-  .event-slider__heading-wrapper {
+  .card-slider__heading-wrapper {
     padding-top: 100px;
   }
 }
 
-.event-slider__heading-wrapper--upcoming-events {
+.card-slider__heading-wrapper--upcoming-events {
   background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Upcoming%20Events%20Images/upcoming-events-banner.jpg');
 }
-.event-slider__heading-wrapper--past-events {
+.card-slider__heading-wrapper--past-events {
   background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Past%20Events%20Images/past%20events.jpg');
 }
 
-.event-slider__events-wrapper {
+.card-slider__events-wrapper {
   position: relative;
   top: -{{overlap}}px;
 }
 @media (max-width: 767px) {
-  .event-slider__events-wrapper {
+  .card-slider__events-wrapper {
     margin-bottom: -190px;
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) {
   {% set bottom_card_spacing = 30 %}
-  .event-slider__events-wrapper {
-    margin-bottom: -{{overlap - bottom_card_spacing}}px;
-  }
-}
-@media (min-width: 1024px) {
-  {% set bottom_card_spacing = 30 %}
-  .event-slider__events-wrapper {
+  .card-slider__events-wrapper {
     margin-bottom: -{{overlap - bottom_card_spacing}}px;
   }
 }

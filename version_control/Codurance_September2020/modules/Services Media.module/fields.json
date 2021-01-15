@@ -1,0 +1,10 @@
+[ {
+  "id" : "e1d58c99-e02b-8214-853c-0862095c8049",
+  "name" : "service_type",
+  "label" : "Service Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "Software Modernisation", "Software Modernisation" ], [ "Software Delivery", "Software Delivery" ], [ "Specialist Expertise", "Specialist Expertise" ], [ "Strategic Advice", "Strategic Advice" ] ],
+  "type" : "choice"
+} ]

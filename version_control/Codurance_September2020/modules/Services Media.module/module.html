@@ -1,0 +1,131 @@
+{{ require_css(get_asset_url("../../css/card-slider.css")) }}
+{% set filter = "&orderBy=-publication_date&limit=8" %}
+{% if module.service_type %}
+  {% set filter = filter + "&tags__icontains=" + module.service_type %}
+{% endif %}
+{% set media_collection = hubdb_table_rows("services_media", filter) %}
+{% macro is_less_than_one_week_ago(date)  %}
+  {% set one_week = 1000 * 60 * 60 * 24 * 7 %}
+  {% set one_week_ago = local_dt|unixtimestamp - one_week %}
+  {% if date > one_week_ago %}
+    {{ caller() }}
+  {% endif %}
+{% endmacro %}
+
+<section class="services-media">
+  <div
+    class="services-media__heading-wrapper"
+  ></div>
+  <div class="services-media__card-slider-wrapper">
+    <div
+      class="card-slider__event-inner responsive-page-width lateral-spacing"
+      data-services-media-card-window
+    >
+      <div class="card-slider__header-wrapper">
+        <h2 class="card-slider__heading responsive-page-width" data-card-heading="all">
+          Videos and Podcasts
+        </h2>
+        <h2 class="card-slider__heading responsive-page-width hidden" data-card-heading="video">
+          Videos
+        </h2>
+        <h2 class="card-slider__heading responsive-page-width hidden" data-card-heading="podcast">
+          Podcasts
+        </h2>
+        <div class="card-slider__filter">
+          <button class="card-slider__filter-button active" data-card-filter-button="all" title="All">
+            All
+          </button>
+          <button class="card-slider__filter-button" data-card-filter-button="video" title="Videos">
+            Videos
+          </button>
+          <button class="card-slider__filter-button" data-card-filter-button="podcast" title="Podcasts">
+            Podcasts
+          </button>
+        </div>
+      </div>
+      <div class="card-slider-results" data-services-media-card-track>
+        {% for media in media_collection %}
+        <article class="card-slider-item" data-services-media-card data-card-type="{{media.media_type.name}}">
+          <div class="card-slider-item__content">
+            <div
+              class="card-slider-item__image-container"
+              style="background-image: url({{media.thumbnail.url}})"
+            >
+              {% if media.media_type.name %}
+              <small
+                class="card-slider-item__label card-slider-item__label--type"
+              >
+                {{ media.media_type.name }}
+              </small>
+              <small
+                class="card-slider-item__label card-slider-item__label--duration"
+              >
+                {{ media.duration }}
+              </small>
+              {% endif %}
+            </div>
+            <div class="card-slider-item__text-container">
+              <div class="card-slider-item__text-container-inner">
+                <header class="card-slider-item__header">
+                  <time
+                    class="card-slider-item__metadata"
+                    datetime="{{ media.publication_date|datetimeformat('%Y-%m-%d') }}"
+                  >
+                    {{ media.publication_date|datetimeformat('%a %e %b %Y') }}
+                  </time>
+                  {% call is_less_than_one_week_ago(media.publication_date) %}
+                    <small
+                      class="card-slider-item__metadata card-slider-item__metadata--new"
+                    >
+                      New
+                    </small>
+                  {% endcall %}
+                  <h4 class="card-slider-item__title">
+                    {{ media.title }}
+                  </h4>
+                </header>
+                <small class="card-slider-item__description">
+                  {% set tag_names = [] %} {% for tag in media.tags %} {% do
+                  tag_names.append(tag.name) %} {% endfor %} {{tag_names|join('
+                  | ')}}
+                </small>
+              </div>
+              {% if media.media_type.name == 'video' %}
+              <div class="card-slider-item__button card-slider-item__button--solid">
+                <a
+                  class="card-slider-item__video-link"
+                  target="_blank"
+                  href="{{ event.url }}"
+                  >Watch on YouTube</a
+                >
+              </div>
+              {% else %}
+              <div class="card-slider-item__button card-slider-item__button--outlined">
+                <a href="{{ event.url }}" target="_blank">Learn More</a>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div data-watch-all-cta="video" class="hidden">
+    <a
+      class="card-slider__watch-all-button"
+      href="https://www.youtube.com/c/Codurance/playlists"
+      target="_blank"
+      >View all on YouTube</a
+    >
+  </div>
+  <div data-watch-all-cta="podcast" class="hidden">
+    <a
+      class="card-slider__watch-all-button"
+      href="https://www.codurance.com/publications/tag/podcasts"
+      >View all podcasts</a
+    >
+  </div>
+</section>
+
+{{ require_js(get_asset_url("../../js/cardSlider.js"), "footer") }}

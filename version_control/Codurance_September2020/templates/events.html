@@ -26,21 +26,21 @@
 </section>
 
 <main>
-  <section class="event-slider">
+  <section class="card-slider">
     <div
-      class="event-slider__heading-wrapper event-slider__heading-wrapper--upcoming-events"
+      class="card-slider__heading-wrapper card-slider__heading-wrapper--upcoming-events"
     ></div>
-    <div class="event-slider__events-wrapper">
+    <div class="card-slider__events-wrapper">
       {% module "events" path="../modules/Upcoming Events Listing.module"
       label="Upcoming Events" no_wrapper=True %}
     </div>
   </section>
 
-  <section class="event-slider">
+  <section class="card-slider">
     <div
-      class="event-slider__heading-wrapper event-slider__heading-wrapper--past-events"
+      class="card-slider__heading-wrapper card-slider__heading-wrapper--past-events"
     ></div>
-    <div class="event-slider__events-wrapper">
+    <div class="card-slider__events-wrapper">
       {% module "past_events" path="../modules/Past Events Listing.module"
       label="Past Events" no_wrapper=True %}
     </div>

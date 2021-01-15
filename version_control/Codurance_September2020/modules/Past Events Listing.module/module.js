@@ -1,4 +1,5 @@
 const SELECTORS = {
+  navigationControl: true,
   cardWindowSelector: '[data-past-card-window]',
   trackSelector: '[data-past-card-track]',
   cardsSelector: '[data-past-card]',
