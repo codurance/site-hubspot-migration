@@ -10,7 +10,7 @@
   transition: var(--cta-transition);
 {% endmacro %}
 
-{% macro button_primary(className) %}
+{% macro button_primary(classname) %}
   {{classname}} {
     {{ button() }}
     background: var(--valencia);
@@ -26,7 +26,7 @@
   }
 {% endmacro %}
 
-{% macro button_secondary(className) %}
+{% macro button_secondary(classname) %}
   {{classname}} {
     {{ button() }}
     background: transparent;
