@@ -82,6 +82,6 @@
 
 {% macro small_caps() %}
   font-variant: small-caps;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: lowercase;
 {% endmacro %}
