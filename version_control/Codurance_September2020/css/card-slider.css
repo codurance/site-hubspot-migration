@@ -446,13 +446,13 @@
   border: 2px solid #f44336;
   color: #f44336;
   display: block;
-  font-size: 1.066rem;
+  font-size: 1.2rem;
   font-weight: bold;
   margin: 0 auto;
-  max-width: 14rem;
   padding: 1.066rem 1.6rem;
   text-align: center;
   text-decoration: none;
+  width: max-content;
 }
 .card-slider__watch-all-button:hover,
 .card-slider__watch-all-button:focus {
