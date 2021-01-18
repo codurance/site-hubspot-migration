@@ -1,3 +1,5 @@
+{{ require_css(get_asset_url("../../css/modules/how-we-work.css")) }}
+
 <div class="homepage__cm-how-we-work cm-how-we-work">
   <div class="cm-how-we-work__inner">
     <header class="section-intro cm-how-we-work__intro">
@@ -5,7 +7,7 @@
     </header>
     <div class="cm-how-we-work__details-container">
       {% for item in module.item %}
-      <div class="cm-how-we-work__detail"> 
+      <div class="cm-how-we-work__detail">
         {% if item.image_field.src %}
         {% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
         {% if item.image_field.size_type == 'auto' %}
