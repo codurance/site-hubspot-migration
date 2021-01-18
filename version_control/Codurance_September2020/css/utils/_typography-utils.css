@@ -34,7 +34,6 @@
 {% macro dudler() %}
   font-size: var(--dudler-font-size);
   line-height: var(--dudler-line-height);
-  font-weight: var(--middle-font-weight);
 {% endmacro %}
 
 {% macro dudler_margin() %}

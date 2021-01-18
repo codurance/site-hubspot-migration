@@ -49,32 +49,19 @@
 .hs-home-section6 .dnd-section {
   padding: 0;
 }
-.hs-home-section6 .page-header.section-header h1 {
-  color: rgb(51, 51, 51);
-  font-size: 2.25em;
-  position: relative;
-  padding-bottom: 20px;
-  font-weight: 800;
-  font-style: normal;
-  margin-bottom: 25px;
-  line-height: 1.4;
-}
 
-{% call utils.small() %}
-  .hs-home-section6 .page-header.section-header h1 {
-    font-size: 1.75em;
-    text-align: center;
-    margin-bottom: 24px;
-  }
-{% endcall %}
-
-.hs-home-section6 .page-header.section-header p {
-  font-size: 1.3em;
-  line-height: 1.6;
-  font-weight: 300;
-  margin: 0;
-}
 .hs-home-section6 .page-header.section-header {
   padding-bottom: 22px;
   margin-bottom: 48px;
+}
+
+.hs-home-section6 .page-header.section-header h1 {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+  margin-bottom: var(--dudler-margin);
+  text-align: center;
+}
+
+.hs-home-section6 .page-header.section-header p {
+  {{ utils.base() }}
 }
