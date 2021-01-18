@@ -23,23 +23,23 @@
     >
       <div class="card-slider__header-wrapper">
         <h2 class="card-slider__heading responsive-page-width" data-card-heading="all">
-          Videos and Podcasts
+          {{module.main_heading}}
         </h2>
         <h2 class="card-slider__heading responsive-page-width hidden" data-card-heading="video">
-          Videos
+          {{module.videos.heading}}
         </h2>
         <h2 class="card-slider__heading responsive-page-width hidden" data-card-heading="podcast">
-          Podcasts
+          {{module.podcasts.heading}}
         </h2>
         <div class="card-slider__filter">
-          <button class="card-slider__filter-button active" data-card-filter-button="all" title="All">
-            All
+          <button class="card-slider__filter-button active" data-card-filter-button="all" title="{{module.main_filter_button_text}}">
+            {{module.main_filter_button_text}}
           </button>
-          <button class="card-slider__filter-button" data-card-filter-button="video" title="Videos">
-            Videos
+          <button class="card-slider__filter-button" data-card-filter-button="video" title="{{module.videos.filter_button_text}}">
+            {{module.videos.filter_button_text}}
           </button>
-          <button class="card-slider__filter-button" data-card-filter-button="podcast" title="Podcasts">
-            Podcasts
+          <button class="card-slider__filter-button" data-card-filter-button="podcast" title="{{module.podcasts.filter_button_text}}">
+            {{module.podcasts.filter_button_text}}
           </button>
         </div>
       </div>
@@ -116,14 +116,14 @@
       class="card-slider__watch-all-button"
       href="https://www.youtube.com/c/Codurance/playlists"
       target="_blank"
-      >View all on YouTube</a
+      >{{module.videos.cta_text}}</a
     >
   </div>
   <div data-watch-all-cta="podcast" class="hidden">
     <a
       class="card-slider__watch-all-button"
       href="https://www.codurance.com/publications/tag/podcasts"
-      >View all podcasts</a
+      >{{module.podcasts.cta_text}}</a
     >
   </div>
 </section>
