@@ -1,7 +1,9 @@
+{{ require_css(get_asset_url("../../css/modules/partners-logo.css")) }}
+
 <div class="cm-partners-logo-group">
-  <h2>{{ module.heading }}</h2>
+  <h2 class="cm-partners-logo-group__heading">{{ module.heading }}</h2>
   <div class="cm-partners-logos-inner-group">
-    {% for item in module.logo_item %}    
+    {% for item in module.logo_item %}
     <div class="cm-partners-logos-item">
       {% set href = item.logo_link.url.href %}
       {% if item.logo_link.url.type is equalto "EMAIL_ADDRESS" %}
