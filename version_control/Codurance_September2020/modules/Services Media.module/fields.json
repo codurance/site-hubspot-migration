@@ -7,4 +7,15 @@
   "display" : "select",
   "choices" : [ [ "Software Modernisation", "Software Modernisation" ], [ "Software Delivery", "Software Delivery" ], [ "Specialist Expertise", "Specialist Expertise" ], [ "Strategic Advice", "Strategic Advice" ] ],
   "type" : "choice"
+}, {
+  "id" : "1043274d-cb13-7004-f7d4-f287da9db97a",
+  "name" : "main_heading",
+  "label" : "Main Heading",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Videos and Podcasts"
 } ]
