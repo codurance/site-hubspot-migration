@@ -32,25 +32,7 @@ img{
   padding-top: 10px;
   padding-bottom: 60px;
 }
-.hs-home-section3 .custom-btn {
-  width: auto;
-  text-align: center;
-}
-.hs-home-section3 .custom-btn a {
-  display: inline-block;
-  width: auto !important;
-  text-transform: none !important;
-  font-weight: 600;
-  margin-top: 20px;
-  line-height: 28px;
-  padding: 10px 25px;
-  border: 0;
-}
-.hs-home-section3 .custom-btn a:focus,
-.hs-home-section3 .custom-btn a:hover{
-  background-color: #fb8e86;
-  color: #ffffff;
-}
+
 .hs-home-section5 .dnd-section {
   padding: 0;
 }
@@ -2973,9 +2955,6 @@ i.icon-bg-u {
   .hs-home-section3 .dnd-section {
     padding-bottom: 80px;
   }
-  .hs-home-section3 .custom-btn a {
-    width: 100% !important;
-  }
   .hs-home-section1 .dnd-section{
     padding-bottom: 50px;
     padding-top: 50px;
@@ -2999,9 +2978,6 @@ i.icon-bg-u {
   }
   .hs-home-section2 .dnd-section {
     padding-top: 0;
-  }
-  .hs-home-section3 .custom-btn a{
-    width:100%;
   }
   .hs-website-layout main .dnd-section {
     padding-top: 50px;
