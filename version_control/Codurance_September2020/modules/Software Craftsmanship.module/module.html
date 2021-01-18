@@ -1,21 +1,29 @@
+{{ require_css(get_asset_url("../../css/modules/software-craftsmanship.css")) }}
+
 <div class="cm-software-crafts-group">
-  <div class="rec-post-inner-item box-shadow matchHeight">
-    {% set href = module.link_field.url.href %}
-    {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-    {% set href = "mailto:" + href %}
+  {% for item in module.item %}
+    {% set href = item.link_field.url.href %}
+    {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
     {% endif %}
-    <a href="{{ href }}"
-       {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
-       {% if module.link_field.no_follow %}rel="nofollow"{% endif %}
-       >
-      <div class="cm-recent-image-wrapper" style="background-image:url({{ module.image_field.src }})"></div>
-      <div class="recent-post-wrapper">
-        <h4 class="rec-post-name">{{ module.heading }}</h4> 
-        <div class="rec-post-body"> 
-          <p>{{ module.content }}</p>
-        </div>              
-        <span class="block-cta">{{ module.button_text }}</span>
-      </div>
-    </a>
-  </div>
+
+    <div class="cm-software-crafts__item">
+      <a class="cm-software-crafts__link-container" href="{{ href }}"
+          {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+          {% if item.link_field.no_follow %}rel="nofollow"{% endif %}
+        >
+        <div class="cm-software-crafts__image-wrapper" style="background-image:url({{ item.image_field.src }})"></div>
+        <div class="cm-software-crafts__inner">
+          <div class="cm-software-crafts__info-wrapper">
+            <h4 class="cm-software-crafts__title">{{ item.heading }}</h4>
+            <div class="cm-software-crafts__body-wrapper">
+              <p class="cm-software-crafts__description">{{ item.content }}</p>
+            </div>
+          </div>
+          <span class="cm-software-crafts__button">{{ item.button_text }}</span>
+        </div>
+      </a>
+    </div>
+
+  {% endfor %}
 </div>
