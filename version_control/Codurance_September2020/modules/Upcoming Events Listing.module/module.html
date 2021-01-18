@@ -9,7 +9,7 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
 >
   <div class="card-slider__header-wrapper">
     <h2 class="card-slider__heading responsive-page-width">
-      Upcoming events
+      {{module.heading}}
     </h2>
     <div>
       <button
@@ -112,13 +112,13 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
     <div class="card-slider-newsletter-wrapper" style="display: none;" data-upcoming-events-newsletter-cta>
       <div class="card-slider-newsletter__icon"></div>
       <h4 class="card-slider-newsletter__header">
-        Hear about more of our upcoming events
+        {{module.space_filling_cta_text}}
       </h4>
       <a
         class="card-slider-newsletter__cta"
         target="_blank"
         href="https://mailchi.mp/codurance/newsletter-subscription"
-        >Learn More</a>
+        >{{module.space_filling_cta_button_text}}</a>
     </div>
   </div>
 </div>

@@ -9,7 +9,7 @@ previousEventsFilter) %}
 >
   <div class="card-slider__header-wrapper">
     <h2 class="card-slider__heading responsive-page-width">
-      Recent Events
+      {{module.heading}}
     </h2>
     <div>
       <button
@@ -124,13 +124,13 @@ previousEventsFilter) %}
     <div class="card-slider-newsletter-wrapper" style="display: none;" data-past-events-newsletter-cta>
       <div class="card-slider-newsletter__icon"></div>
       <h4 class="card-slider-newsletter__header">
-        Get content like this straight to your inbox
+        {{module.space_filling_cta_text}}
       </h4>
       <a
         class="card-slider-newsletter__cta"
         target="_blank"
         href="https://mailchi.mp/codurance/newsletter-subscription"
-        >Learn More</a>
+        >{{module.space_filling_cta_button_text}}</a>
     </div>
   </div>
 </div>
@@ -139,7 +139,7 @@ previousEventsFilter) %}
     class="card-slider__watch-all-button"
     href="https://www.youtube.com/c/Codurance/playlists"
     target="_blank"
-    >Watch all on YouTube</a
+    >{{module.watch_all_cta_text}}</a
   >
 </div>
 
