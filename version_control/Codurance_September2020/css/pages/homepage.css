@@ -1,5 +1,24 @@
 {% import '../utils/utils.css' as utils %}
 
+.hs-home-section1 .dnd-section {
+  padding-bottom: 60px;
+  padding-top: 100px;
+}
+
+.hs-home-section4 .dnd-section > .row-fluid,
+.hs-home-section2 .dnd-section > .row-fluid {
+  max-width: 1300px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.hs-home-section3 .dnd-section > .row-fluid {
+  max-width: 1300px;
+}
+.hs-home-section3 .dnd-section {
+  padding-top: 10px;
+  padding-bottom: 60px;
+}
+
 .hs-home-section3 .custom-btn {
   text-align: center;
 }
@@ -8,3 +27,54 @@
     width:100%;
   }
 {% endcall %}
+
+.hs-home-section4 .dnd-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #fafafa;
+}
+
+.hs-home-section5 .dnd-section {
+  padding: 0;
+}
+.hs-home-section5 .dnd-section > .row-fluid {
+  padding: 0;
+  max-width: 100% !important;
+}
+
+.hs-home-section6 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.hs-home-section6 .dnd-section {
+  padding: 0;
+}
+.hs-home-section6 .page-header.section-header h1 {
+  color: rgb(51, 51, 51);
+  font-size: 2.25em;
+  position: relative;
+  padding-bottom: 20px;
+  font-weight: 800;
+  font-style: normal;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+{% call utils.small() %}
+  .hs-home-section6 .page-header.section-header h1 {
+    font-size: 1.75em;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+{% endcall %}
+
+.hs-home-section6 .page-header.section-header p {
+  font-size: 1.3em;
+  line-height: 1.6;
+  font-weight: 300;
+  margin: 0;
+}
+.hs-home-section6 .page-header.section-header {
+  padding-bottom: 22px;
+  margin-bottom: 48px;
+}
