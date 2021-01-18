@@ -15,7 +15,7 @@
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
-  "default" : "Upcoming events"
+  "default" : "Upcoming Events"
 }, {
   "id" : "898cb49a-3b14-3cc2-1126-5b2b1bdd300b",
   "name" : "space_filling_cta_text",
