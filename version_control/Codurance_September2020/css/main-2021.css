@@ -6,3 +6,5 @@
 {% include './_layout-2021.css' %}
 
 {% include './_buttons.css' %}
+
+{% include './_footer.css' %}

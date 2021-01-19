@@ -5,6 +5,8 @@ stylesheets or you can add your own custom styles.
 *********************************************************************************
 ****************************************************************************** */
 
+{% import './utils/utils.css' as utils %}
+
 {## Table of contents
 
   1. _dnd_areas
@@ -110,13 +112,6 @@ h5 {
   font-family: {{ h5_font }};
   font-size: {{ h5_size }}rem;
   font-weight: {{ theme.typography.h5_font.h5_font_weight }};
-}
-
-h6 {
-  color: {{ h6_color }};
-  font-family: {{ h6_font }};
-  font-size: {{ h6_size }}rem;
-  font-weight: {{ theme.typography.h6_font.h6_font_weight }};
 }
 
 blockquote {
@@ -392,34 +387,19 @@ body .hs-footer-bottom-right ul li a{
 body  .hs-footer-bottom-right ul li a:hover{
   color: rgba({{ theme.footer.footer_social_link_hover_color.color|convert_rgb }}, {{ theme.footer.footer_social_link_hover_color.opacity * 0.01 }});
 }
-.cm-footer-useful-links .hs-menu-wrapper>ul>li>ul>li> a:hover:after,
-body .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a,
-body footer.footer a{
+.cm-footer-useful-links .hs-menu-wrapper>ul>li>ul>li> a:hover:after {
   color: rgba({{ theme.footer.link_color.color|convert_rgb }}, {{ theme.footer.link_color.opacity * 0.01 }});
 }
-body .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a:hover,
-body footer.footer a:hover{
-  color: rgba({{ theme.footer.link_hover_color.color|convert_rgb }}, {{ theme.footer.link_hover_color.opacity * 0.01 }});
-}
-body .cm-footer-useful-links .hs-menu-wrapper > ul > li > a,
-body .hs-footer-top-container h6 span{
-  color: rgba({{ theme.footer.title_color.color|convert_rgb }}, {{ theme.footer.title_color.opacity * 0.01 }});
-}
 
-body footer.footer .cm-footer-contact-us a{
-  color: rgba({{ theme.footer.contact_us_link_color.color|convert_rgb }}, {{ theme.footer.contact_us_link_color.opacity * 0.01 }});
-}
-body footer.footer .cm-footer-contact-us a:hover{
-  color: rgba({{ theme.footer.contact_us_link_hover_color.color|convert_rgb }}, {{ theme.footer.contact_us_link_hover_color.opacity * 0.01 }});
-}
 body footer.footer .hs-rss-item .hs-rss-author{
   color: rgba({{ theme.footer.author_name_color.color|convert_rgb }}, {{ theme.footer.author_name_color.opacity * 0.01 }});
 }
 body footer.footer .hs-rss-item  a.hs-rss-title{
-  color: rgba({{ theme.footer.post_title_link_color.color|convert_rgb }}, {{ theme.footer.post_title_link_color.opacity * 0.01 }});
+  {{ utils.natus() }}
+  color: var(--french-gray);
 }
 body footer.footer .hs-rss-item  a.hs-rss-title:hover{
-  color: rgba({{ theme.footer.post_title_link_hover_color.color|convert_rgb }}, {{ theme.footer.post_title_link_hover_color.opacity * 0.01 }});
+  color: var(--athens-gray);
 }
 
 
