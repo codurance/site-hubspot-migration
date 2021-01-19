@@ -251,20 +251,8 @@ tbody + tbody {
 {###############################   _header   ###############################}
 {###########################################################################}
 
-.cm-header-group {
-  background-color: rgba({{ theme.header.background_color.color|convert_rgb }}, {{ theme.header.background_color.opacity * 0.01 }});
-}
-
 .header__container {
   max-width: {{ theme.spacing.max_width * 1.140 }}px;
-}
-
-
-body .custom-menu-primary a,
-.header__logo .logo-company-name,
-.header__language-switcher-label-current,
-.header__language-switcher .lang_list_class li a {
-  color: rgba({{ theme.header.menu_link_color.color|convert_rgb }}, {{ theme.header.menu_link_color.opacity * 0.01 }});
 }
 
 body .custom-menu-primary .submenu.level-1 > li > a:hover,
@@ -334,11 +322,6 @@ body .custom-menu-primary .submenu.level-2 .menu-item .menu-link.active-branch,
 body .custom-menu-primary .submenu.level-2 .menu-item a.menu-link.active-item{
   color: rgba({{ theme.header.active_child_menu_link_color.color|convert_rgb }}, {{ theme.header.active_child_menu_link_color.opacity * 0.01 }});
   background-color: rgba({{ theme.header.active_child_menu_link_background_color.color|convert_rgb }}, {{ theme.header.active_child_menu_link_background_color.opacity * 0.01 }});
-}
-
-.header__language-switcher-label-current,
-.header__language-switcher .lang_list_class li a {
-  font-family: {{ body_font }};
 }
 
 .header__language-switcher-label-current:after {

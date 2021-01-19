@@ -10,12 +10,13 @@ header.header {
   min-height: 90px;
 }
 .cm-header-group {
+  background-color: white;
   left: 0;
   position: fixed;
   top: 0;
+  transition: transform 0.3s ease;
   width: 100%;
   z-index: 100;
-  transition: transform 0.3s ease;
 }
 .custom-logo img {
   max-width: 147px;
@@ -34,7 +35,7 @@ header.header.fixed  .cm-header-group {
   margin: 0 auto;
   padding: 0 10px;
 }
-.mobile-trigger span:before, 
+.mobile-trigger span:before,
 .mobile-trigger span:after {
   content: "";
   height: 1.5px;
@@ -306,10 +307,8 @@ header.header .mobile-logo{
   border: 0 none;
   cursor: pointer;
   display: inline-block;
-  font-family: proxima-nova;
-  font-weight: 600;
   transition: color 0.5s;
-  color: #404040;
+  color: var(--shark);
   padding-left: 0;
   padding-right: 0;
 }
@@ -328,10 +327,12 @@ header.header .mobile-logo{
 .hs-header-language ul .active{
   position: relative;
 }
-.hs-header-language ul:before {
-  content: "";
+.hs-header-language ul::before {
   background-image: url({{ get_asset_url('../images/icon-language.svg' ) }});
+  content: "";
   height: 16px;
+  position: relative;
+  top: 1px;
   width: 16px;
 }
 .hs-header-language ul .active::after {
@@ -395,8 +396,8 @@ header.header .mobile-logo{
     line-height: 23px;
   }
   .header__container {
-    padding-top: 35px;
-    padding-bottom: 29px;
+    padding-bottom: 30px;
+    padding-top: 30px;
   }
   .custom-menu-primary nav {
     margin: 0 30px 0 45px;
