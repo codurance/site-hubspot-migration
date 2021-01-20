@@ -20,25 +20,29 @@
       {% endif %}
       {% if content.absolute_url != rec_post.absolute_url and loop.index < loopLength %}
         <div class="cm-recent-post__item">
-          <a class="cm-recent-post__link-container" href="{{ rec_post.absolute_url }}">
+
             {% if rec_post.featured_image %}
-            <div class="cm-recent-image-wrapper" style="background-image:url({{ rec_post.featured_image }})"></div>
+              <div class="cm-recent-image-wrapper" style="background-image:url({{ rec_post.featured_image }})"></div>
             {% endif %}
             <div class="cm-recent-post__inner">
               <div class="cm-recent-post__info-wrapper">
                 <small class="cm-recent-post__meta-info">{{ rec_post.publish_date_local_time.strftime('%d') }} {{ rec_post.publish_date_local_time.strftime('%b') }} {{ rec_post.publish_date_local_time.strftime('%Y') }}  - By {{ rec_post.blog_post_author.display_name }}</small>
                 {% if rec_post.name %}
-                <h4 class="cm-recent-post__title">{{ rec_post.name }}</h4>
+                  <h4 class="cm-recent-post__title">{{ rec_post.name }}</h4>
                 {% endif %}
                 {% if rec_post.post_summary %}
-                <div class="cm-recent-post__body-wrapper">
-                  <p class="cm-recent-post__description">{{ rec_post.post_list_content|safe|striptags|truncatehtml(200, ' ...' , false) }}</p>
-                </div>
+                  <div class="cm-recent-post__body-wrapper">
+                    <p class="cm-recent-post__description">{{ rec_post.post_list_content|safe|striptags|truncatehtml(200, ' ...' , false) }}</p>
+                  </div>
                 {% endif %}
               </div>
-              <span class="cm-recent-post__post-item-button">Learn More</span>
+              {{snippets.text_cta(
+                url=rec_post.absolute_url,
+                text='Learn More',
+                classnames="cm-recent-post__link"
+              )}}
             </div>
-          </a>
+
         </div>
       {% endif %}
     {% endfor %}
