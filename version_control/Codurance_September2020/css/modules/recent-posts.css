@@ -84,13 +84,14 @@
 .cm-recent-post__meta-info {
   {{ utils.sejima() }}
   {{ utils.small_caps() }}
+  color: var(--mid-gray);
 }
 
 .cm-recent-post__title {
   {{ utils.base() }}
   font-weight: var(--heavy-font-weight);
-  margin-bottom: var(--base-margin);
-  margin-top: calc(var(--base-margin) / 2);
+  margin-bottom: calc(var(--base-margin) / 2);
+  margin-top: var(--base-margin);
 }
 
 .cm-recent-post__description {
