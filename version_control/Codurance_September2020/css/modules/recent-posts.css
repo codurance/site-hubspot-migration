@@ -33,7 +33,6 @@
   color: inherit;
   display: flex;
   flex-direction: column;
-  height: 100%;
   margin-bottom: 1.4rem;
   margin-left: {{ item_margin }}px;
   margin-right: {{ item_margin }}px;
