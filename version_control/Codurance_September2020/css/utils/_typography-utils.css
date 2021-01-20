@@ -80,7 +80,6 @@
 {% endmacro %}
 
 {% macro small_caps() %}
-  font-variant: small-caps;
   letter-spacing: 0.05em;
-  text-transform: lowercase;
+  text-transform: uppercase;
 {% endmacro %}
