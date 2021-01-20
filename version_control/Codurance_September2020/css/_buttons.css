@@ -4,10 +4,10 @@
   --cta-transition: all 0.3s ease;
 }
 
-a.button {
+.button {
   {{ utils.button() }}
 }
 
-{{ utils.button_primary('a.button-primary') }}
+{{ utils.button_primary('.button-primary') }}
 
-{{ utils.button_secondary('a.button-secondary') }}
+{{ utils.button_secondary('.button-secondary') }}
