@@ -69,7 +69,7 @@
 
 .cm-recent-post__info-wrapper {
   flex-grow: 1;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }
 
 .cm-recent-post__meta-info {
@@ -82,7 +82,7 @@
   {{ utils.base() }}
   font-weight: var(--heavy-font-weight);
   margin-bottom: calc(var(--base-margin) / 2);
-  margin-top: var(--base-margin);
+  margin-top: calc(var(--base-margin) / 2);
 }
 
 .cm-recent-post__description {
