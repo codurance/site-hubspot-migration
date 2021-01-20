@@ -1,4 +1,4 @@
-.cm-contact-us-card .cm-heading h2 {
+.cm-contact-us-card .cm-contact-us-card__heading-wrapper h2 {
   margin: 0 0 -2px 0;
   padding-bottom: 5px;
   line-height: 1.4;
@@ -7,7 +7,7 @@
   font-size: 22px;
 }
 
-.cm-contact-us-card .cm-heading {
+.cm-contact-us-card .cm-contact-us-card__heading-wrapper {
   display: block;
   margin: 17px 0 32px 0;
   border-bottom: 1px dotted #e4e9f0;
