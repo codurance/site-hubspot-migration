@@ -42,3 +42,33 @@
     text-decoration: none;
   }
 {% endmacro %}
+
+{% macro text_cta(classname) %}
+  {{classname}} {
+    color: var(--valencia);
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: var(--font-weight-middle);
+    line-height: 1rem;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    transition: var(--cta-transition);
+  }
+
+  {{classname}}:hover {
+    color: var(--valencia--dark);
+    text-decoration: underline;
+  }
+{% endmacro %}
+
+{% macro text_cta_right_arrow(classname) %}
+  {{ text_cta(classname) }}
+
+  {{classname}} i {
+    transform: translate(0.142em, 0.047em);
+    transition: var(--cta-transition);
+  }
+  {{classname}}:hover i {
+    transform: translate(0.238em, 0.047em);
+  }
+{% endmacro %}

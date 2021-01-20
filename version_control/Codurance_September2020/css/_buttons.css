@@ -10,4 +10,14 @@
 
 {{ utils.button_primary('.button-primary') }}
 
+<<<<<<< HEAD
 {{ utils.button_secondary('.button-secondary') }}
+=======
+{{ utils.button_secondary('a.button-secondary') }}
+
+{{ utils.text_cta('.text-cta') }}
+
+{{ utils.text_cta_right_arrow('.text-cta--right-arrow') }}
+
+
+>>>>>>> 45742e2... create new cta type
