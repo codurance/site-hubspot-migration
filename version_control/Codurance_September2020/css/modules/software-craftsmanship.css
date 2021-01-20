@@ -66,11 +66,6 @@
   padding-bottom: 2rem;
 }
 
-.cm-recent-post__meta-info {
-  {{ utils.sejima() }}
-  {{ utils.small_caps() }}
-}
-
 .cm-software-crafts__title {
   {{ utils.base() }}
   font-weight: var(--heavy-font-weight);
