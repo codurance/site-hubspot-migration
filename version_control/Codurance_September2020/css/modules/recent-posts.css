@@ -155,8 +155,3 @@
   transition: all .3s ease;
   width: 25px;
 }
-
-.cm-recent-post__item:hover .cm-recent-post__post-item-button:after {
-  width: 100%;
-  transition: all 0.7s ease;
-}
