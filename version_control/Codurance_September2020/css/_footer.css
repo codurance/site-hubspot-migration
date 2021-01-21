@@ -71,20 +71,17 @@ footer looks when it comes to spacing and other general styles.
 .cm-footer-useful-links .hs-menu-wrapper > ul{
   margin:0;
 }
-.cm-footer-useful-links .hs-menu-wrapper > ul > li > a{
+.cm-footer-useful-links .hs-menu-wrapper > ul > li > a {
+  {{ utils.natus() }}
+  border-bottom: 1px dotted var(--mid-gray);
+  color: var(--athens-gray);
+  cursor:text;
+  display:block;
+  margin-bottom:17.142px;
+  margin: 0;
+  padding-bottom: 0.71429rem;
   padding:0;
   width:100%;
-  display:block;
-  margin: 0;
-  line-height: 1.4;
-  margin-bottom:17.142px;
-  padding-bottom: 0.71429rem;
-  border-bottom: 1px dotted var(--mid-gray);
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--athens-gray);
-  text-transform: uppercase;
-  cursor:text;
 }
 .cm-footer-useful-links .hs-menu-wrapper > ul > li {
   width: 100%;
@@ -99,6 +96,8 @@ footer looks when it comes to spacing and other general styles.
   {{ utils.natus() }}
   color: var(--athens-gray);
   position:relative;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a:hover {
   text-decoration:underline;
