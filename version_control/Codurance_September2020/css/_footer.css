@@ -37,10 +37,12 @@ footer looks when it comes to spacing and other general styles.
   margin-bottom: 1.78571rem;
 }
 .hs-footer-top-container h6 span {
-  {{ utils.natus() }}
   border-bottom: 1px solid var(--mid-gray);
   color: var(--athens-gray);
   display: inline-block;
+  font-size: var(--natus-font-size);
+  font-weight: var(--middle-font-weight);
+  line-height: var(--natus-line-height);
   margin: 0;
   padding-bottom: 0.71429rem;
   position:relative;
@@ -71,11 +73,13 @@ footer looks when it comes to spacing and other general styles.
   margin:0;
 }
 .cm-footer-useful-links .hs-menu-wrapper > ul > li > a {
-  {{ utils.natus() }}
   border-bottom: 1px dotted var(--mid-gray);
   color: var(--athens-gray);
   cursor:text;
   display:block;
+  font-size: var(--natus-font-size);
+  font-weight: var(--middle-font-weight);
+  line-height: var(--natus-line-height);
   margin-bottom: 1.4rem;
   padding-bottom: .71429rem;
   padding-top: 0.21rem;
