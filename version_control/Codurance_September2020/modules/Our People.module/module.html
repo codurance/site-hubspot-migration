@@ -15,15 +15,15 @@
                 <img class="img-fluid" src="{{ row.image.url }}" alt="{{ row.name }}">
               </span>
               {% endif %}
-              <span class="pt-1"> 
+              <span class="pt-1">
                 {% if row.name %}  <div class="team-member-name">{{ row.name }}</div> {% endif %}
                 {% if row.designation %}  <div class="team-member-role">{{ row.designation }}</div> {% endif %}
-              </span> 
+              </span>
             </a>
           </div>
 
           <div data-id="{{ row.name }}" id="team-{{ loop.index }}" class="custom-max-width-800 custom-bg-white custom-overflow-y-auto custom-pa-20" style="display: none;">
-            <button type="button" class="close" onclick="Custombox.modal.close();"> <i class="hs-icon hs-icon-close btn-pointer-cursor"></i> 
+            <button type="button" class="close" onclick="Custombox.modal.close();"> <i class="hs-icon hs-icon-close btn-pointer-cursor"></i>
             </button>
             <div class="custom-pa-20">
               <div class="row">
@@ -46,19 +46,19 @@
                     <ul class="list-inline mb-0">
                       {% if row.github_link %}
                       <li class="list-inline-item custom-mx-2">
-                        <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ row.github_link }}" target="_blank" rel="noopener noreferrer"> <i class="custom-font-size-default custom-line-height-1 u-icon__elem-regular fa fa-github"></i>  <i class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover fa fa-github"></i> 
+                        <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ row.github_link }}" target="_blank" rel="noopener noreferrer"> <i class="custom-font-size-default custom-line-height-1 u-icon__elem-regular fa fa-github"></i>  <i class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover fa fa-github"></i>
                         </a>
                       </li>
                       {% endif %}
                       {% if  row.twitter_link %}
                       <li class="list-inline-item custom-mx-2">
-                        <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ row.twitter_link }}" target="_blank" rel="noopener noreferrer"> <i class="custom-font-size-default custom-line-height-1 u-icon__elem-regular fa fa-twitter"></i>  <i class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i> 
+                        <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ row.twitter_link }}" target="_blank" rel="noopener noreferrer"> <i class="custom-font-size-default custom-line-height-1 u-icon__elem-regular lab la-twitter"></i>  <i class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover lab la-twitter"></i>
                         </a>
                       </li>
                       {% endif %}
                       {% if  row.linkedin_link %}
                       <li class="list-inline-item custom-mx-2">
-                        <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ row.linkedin_link }}" target="_blank" rel="noopener noreferrer"> <i class="custom-font-size-default custom-line-height-1 u-icon__elem-regular fa fa-linkedin"></i>  <i class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover fa fa-linkedin"></i> 
+                        <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ row.linkedin_link }}" target="_blank" rel="noopener noreferrer"> <i class="custom-font-size-default custom-line-height-1 u-icon__elem-regular lab la-linkedin-in"></i>  <i class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover lab la-linkedin-in"></i>
                         </a>
                       </li>
                       {% endif %}
@@ -66,10 +66,10 @@
                     {% endif %}
                   </div>
                   {% if row.designation %}
-                  <h6 class="h6 custom-font-weight-300 custom-mb-10"> 
-                    <i class="icon-badge custom-pos-rel custom-top-1 custom-mr-5 custom-color-gray-dark-v5"></i> 
+                  <h6 class="h6 custom-font-weight-300 custom-mb-10">
+                    <i class="icon-badge custom-pos-rel custom-top-1 custom-mr-5 custom-color-gray-dark-v5"></i>
                     {{ row.designation }}
-                  </h6> 
+                  </h6>
                   {% endif %}
                   <hr class="custom-brd-gray-light-v4 custom-my-20">
                   {{ row.content }}
