@@ -48,7 +48,7 @@
     color: var(--valencia);
     display: inline-block;
     font-size: 1rem;
-    font-weight: var(--font-weight-middle);
+    font-weight: var(--middle-font-weight);
     line-height: 1rem;
     margin: 0.5rem 0;
     text-decoration: none;
