@@ -139,13 +139,15 @@ footer looks when it comes to spacing and other general styles.
 }
 .hs-footer-bottom-left {
   -ms-flex: 0 0 66.666667%;
+  color: var(--french-gray);
   flex: 0 0 66.666667%;
+  font-size: var(--natus-font-size);
   max-width: 66.666667%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
   position: relative;
   width: 100%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
 }
 
 .hs-footer-bottom-right {
@@ -170,6 +172,9 @@ footer looks when it comes to spacing and other general styles.
   margin-right: 0.71429rem;
   display: inline-block;
   position:relative;
+}
+.hs-footer-bottom-right ul li a {
+  color: var(--french-gray);
 }
 .hs-footer-bottom-right ul li:first-child {
   margin-right: 7px;
