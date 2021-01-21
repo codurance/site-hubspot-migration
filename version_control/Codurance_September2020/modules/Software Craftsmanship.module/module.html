@@ -1,28 +1,42 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+
 {{ require_css(get_asset_url("../../css/modules/software-craftsmanship.css")) }}
 
 <div class="cm-software-crafts-group">
   {% for item in module.item %}
-    {% set href = item.link_field.url.href %}
-    {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-      {% set href = "mailto:" + href %}
-    {% endif %}
 
     <div class="cm-software-crafts__item">
-      <a class="cm-software-crafts__link-container" href="{{ href }}"
-          {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
-          {% if item.link_field.no_follow %}rel="nofollow"{% endif %}
-        >
-        <div class="cm-software-crafts__image-wrapper" style="background-image:url({{ item.image_field.src }})"></div>
-        <div class="cm-software-crafts__inner">
-          <div class="cm-software-crafts__info-wrapper">
-            <h4 class="cm-software-crafts__title">{{ item.heading }}</h4>
-            <div class="cm-software-crafts__body-wrapper">
-              <p class="cm-software-crafts__description">{{ item.content }}</p>
-            </div>
+      <div class="cm-software-crafts__image-wrapper" style="background-image:url({{ item.image_field.src }})"></div>
+      <div class="cm-software-crafts__inner">
+        <div class="cm-software-crafts__info-wrapper">
+          <h4 class="cm-software-crafts__title">{{ item.heading }}</h4>
+          <div class="cm-software-crafts__body-wrapper">
+            <p class="cm-software-crafts__description">{{ item.content }}</p>
           </div>
-          <span class="cm-software-crafts__button">{{ item.button_text }}</span>
         </div>
-      </a>
+
+        {% set href = item.link_field.url.href %}
+        {% set target = "" %}
+        {% set rel = "" %}
+        {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% endif %}
+        {% if item.link_field.open_in_new_tab %}
+          {% set target = "_blank" %}
+        {% endif %}
+        {% if item.link_field.no_follow %}
+          {% set rel = "nofollow" %}
+        {% endif %}
+
+        {{snippets.text_cta_right_arrow(
+          url=href,
+          text=item.button_text,
+          classnames="cm-software-crafts__button",
+          target=target,
+          rel=rel
+        )}}
+
+      </div>
     </div>
 
   {% endfor %}
