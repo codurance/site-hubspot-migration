@@ -364,9 +364,7 @@ footer.footer {
 .footer__container {
   max-width: {{ theme.spacing.max_width }}px;
 }
-body .hs-footer-bottom-right ul li a{
-  color: rgba({{ theme.footer.footer_social_link_color.color|convert_rgb }}, {{ theme.footer.footer_social_link_color.opacity * 0.01 }});
-}
+
 body  .hs-footer-bottom-right ul li a:hover{
   color: rgba({{ theme.footer.footer_social_link_hover_color.color|convert_rgb }}, {{ theme.footer.footer_social_link_hover_color.opacity * 0.01 }});
 }
