@@ -63,7 +63,7 @@ html {
 }
 
 body {
-  font-family: proxima-nova, serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 1rem;
   font-weight: var(--light-font-weight);
   color: var(--shark);
