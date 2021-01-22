@@ -1,7 +1,7 @@
 {% macro button() %}
   border-radius: 3px;
   display: inline-block;
-  font-size: var(--natus-font-weight);
+  font-size: var(--natus-font-size);
   font-weight: var(--middle-font-weight);
   line-height: var(--natus-line-height);
   margin: 0.5rem 0;
@@ -47,7 +47,7 @@
   {{classname}} {
     color: var(--valencia);
     display: inline-block;
-    font-size: var(--natus-font-weight);
+    font-size: var(--natus-font-size);
     font-weight: var(--middle-font-weight);
     line-height: var(--natus-line-height);
     margin: 0.5rem 0;
