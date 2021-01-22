@@ -41,7 +41,7 @@ footer looks when it comes to spacing and other general styles.
   color: var(--athens-gray);
   display: inline-block;
   font-size: var(--natus-font-size);
-  font-weight: var(--middle-font-weight);
+  font-weight: var(--heavy-font-weight);
   line-height: var(--natus-line-height);
   margin: 0;
   padding-bottom: 0.71429rem;
@@ -78,7 +78,7 @@ footer looks when it comes to spacing and other general styles.
   cursor:text;
   display:block;
   font-size: var(--natus-font-size);
-  font-weight: var(--middle-font-weight);
+  font-weight: var(--heavy-font-weight);
   line-height: var(--natus-line-height);
   margin-bottom: 1.4rem;
   padding-bottom: .71429rem;

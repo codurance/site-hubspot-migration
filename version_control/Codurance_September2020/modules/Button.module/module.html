@@ -10,9 +10,8 @@
 
     {{
       snippets.button_primary(
-      "{{ href }}{% if module.bookmark_id  %}#{{ module.bookmark_id }} {% endif %}",
-      module.module_setting.custom_class,
-      module.text_field
+      url="{{ href }}{% if module.bookmark_id  %}#{{ module.bookmark_id }} {% endif %}",
+      text=module.text_field
       )
     }}
 
