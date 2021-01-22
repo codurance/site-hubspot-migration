@@ -52,19 +52,6 @@ stylesheets or you can add your own custom styles.
 {#############################   _typography   #############################}
 {###########################################################################}
 
-a {
-  color: rgba({{ theme.typography.link_color.color|convert_rgb }}, {{ theme.typography.link_opacity * 0.01 }});
-}
-
-a:hover,
-a:focus {
-  color: rgba({{ theme.typography.link_hover_color.color|convert_rgb }}, {{ theme.typography.link_opacity * 0.01 }});
-}
-
-a:active {
-  color: rgba({{ color_variant(theme.typography.link_color.color, 40)|convert_rgb }}, {{ theme.typography.link_opacity * 0.01 }});
-}
-
 h1 {
   color: {{ h1_color }};
   font-family: {{ h1_font }};

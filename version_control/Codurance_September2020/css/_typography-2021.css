@@ -116,7 +116,9 @@ a {
   color: var(--valencia--dark);
   font-weight: var(--middle-font-weight);
 }
-a:hover {
+a:hover,
+a:focus,
+a:active, {
   text-decoration: underline;
 }
 
