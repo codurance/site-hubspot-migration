@@ -258,28 +258,7 @@ img{
 .hs-get-in-touch-section {
   background-color: #2b3342;
 }
-.hs-contact-us-section1 .dnd-section{
-  background: #fcf9f1 linear-gradient(90deg, #fcf9f1 52%, #fcf4f4 100%);
-  padding-top: 50px;
-}
-.hs-contact-us-section1 .dnd-section > .row-fluid {
-  max-width: 1300px;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-.hs-contact-us-section1 .dnd-section > .row-fluid > .span4 {
-  margin: 0;
-  max-width: 33.3333%;
-  flex-grow: 1;
-  flex-shrink: 1;
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.hs-contact-us-section1 .dnd-section > .row-fluid {
-  flex-direction: row;
-  max-width: 1340px;
-}
+
 .hs-training-inner-section1 .cm-team-member-card-group{
   padding-left:50px;
   padding-right:50px;
@@ -2487,9 +2466,6 @@ i.icon-bg-u {
     display: inline-block;
     padding: 10px 25px;
   }
-  .hs-contact-us-section1 .dnd-section {
-    padding-bottom: 200px;
-  }
   .cm-testimonials-top-content {
     margin-bottom: 60px;
   }
@@ -2650,10 +2626,6 @@ i.icon-bg-u {
     padding-left: 40px;
     padding-right: 40px;
   }
-  .hs-contact-us-section1 .dnd-section>.row-fluid {
-    padding-left: 30px;
-    padding-right: 50px;
-  }
   .cm-posts-by-topic-group .custom-btn a{
     margin-top: 10px;
   }
@@ -2697,20 +2669,6 @@ i.icon-bg-u {
   .hs-training-inner-section4 .dnd-section > .row-fluid{
     max-width: 770px;
     width: calc(100% - (25px * 2));
-  }
-  .hs-contact-us-section1 .dnd-section > .row-fluid {
-    padding-left: 25px;
-    padding-right: 25px;
-    flex-wrap: wrap;
-  }
-  .hs-contact-us-section1 .dnd-section>.row-fluid > .span4 {
-    max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    margin-bottom: 19px;
-  }
-  .hs-contact-us-section1 .dnd-section {
-    padding-bottom: 180px;
   }
   .hs-training-inner-section1 .cm-team-member-card-group {
     padding-left: 25px;
@@ -3127,10 +3085,6 @@ i.icon-bg-u {
   .hs-training-inner-section4 .dnd-section > .row-fluid {
     max-width: 100%;
     width: 100%;
-  }
-  .hs-contact-us-section1 .dnd-section > .row-fluid {
-    padding-left: 20px;
-    padding-right: 20px;
   }
   .hs-get-in-touch-section .hs_cos_wrapper_type_rich_text p,
   .hs-training-inner-section4 .hs_cos_wrapper_type_rich_text p,
