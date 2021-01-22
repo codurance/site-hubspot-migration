@@ -21,9 +21,3 @@
 .cm-contact-content p {
   {{ utils.natus() }}
 }
-
-{% call utils.small() %}
-  .cm-contact-content p {
-    {{ utils.base() }}
-  }
-{%endcall%}
