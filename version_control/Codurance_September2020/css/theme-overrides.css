@@ -144,10 +144,6 @@ h3.form-title {
   color: rgba({{ theme.buttons.text_color.color|convert_rgb }}, {{ theme.buttons.text_color.opacity * 0.01 }});
 }
 
-.hs-form label {
-  color: rgba({{ theme.forms.label_color.color|convert_rgb }}, {{ theme.forms.label_color.opacity * 0.01 }});
-}
-
 .hs-form legend {
   color: rgba({{ theme.forms.help_text_color.color|convert_rgb }}, {{ theme.forms.help_text_color.opacity * 0.01 }});
 }
