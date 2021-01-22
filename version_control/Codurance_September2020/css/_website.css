@@ -97,7 +97,8 @@ img{
 }
 .hs-training-inner-section4 .hs-richtext p,
 .hs-get-in-touch-section .hs-richtext p {
-  margin: 14px 0px;
+  {{ utils.natus() }}
+  margin: var(--base-margin) 0px;
 }
 .hs-services-inner-section2 .dnd-section .widget-type-rich_text{
   text-align:center;
