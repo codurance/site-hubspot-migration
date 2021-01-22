@@ -81,7 +81,7 @@ footer looks when it comes to spacing and other general styles.
   font-weight: var(--heavy-font-weight);
   line-height: var(--natus-line-height);
   margin-bottom: 1.4rem;
-  padding-bottom: .71429rem;
+  padding-bottom: .8rem;
   padding-top: 0.21rem;
   width:100%;
 }
@@ -192,6 +192,15 @@ footer.footer .hs-rss-item {
   border-bottom: var(--mid-gray) 1px solid;
   padding-bottom: 0.71429rem;
   margin-bottom: 0.71429rem;
+}
+
+footer.footer .hs-rss-item  a.hs-rss-title {
+  {{ utils.natus() }}
+  color: var(--french-gray);
+}
+
+footer.footer .hs-rss-item  a.hs-rss-title:hover {
+  color: var(--athens-gray);
 }
 
 .hs-footer-bottom-right ul li:before {

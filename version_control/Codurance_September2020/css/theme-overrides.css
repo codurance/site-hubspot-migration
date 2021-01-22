@@ -350,22 +350,6 @@ footer.footer {
 body  .hs-footer-bottom-right ul li a:hover{
   color: rgba({{ theme.footer.footer_social_link_hover_color.color|convert_rgb }}, {{ theme.footer.footer_social_link_hover_color.opacity * 0.01 }});
 }
-.cm-footer-useful-links .hs-menu-wrapper>ul>li>ul>li> a:hover:after {
-  color: rgba({{ theme.footer.link_color.color|convert_rgb }}, {{ theme.footer.link_color.opacity * 0.01 }});
-}
-
-body footer.footer .hs-rss-item .hs-rss-author{
-  color: rgba({{ theme.footer.author_name_color.color|convert_rgb }}, {{ theme.footer.author_name_color.opacity * 0.01 }});
-}
-body footer.footer .hs-rss-item  a.hs-rss-title{
-  {{ utils.natus() }}
-  color: var(--french-gray);
-}
-body footer.footer .hs-rss-item  a.hs-rss-title:hover{
-  color: var(--athens-gray);
-}
-
-
 
 {###########################################################################}
 {################################   _blog   ################################}

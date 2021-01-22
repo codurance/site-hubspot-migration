@@ -1,0 +1,121 @@
+{% import '../utils/utils.css' as utils %}
+
+.cm-client-card-group {
+  display: flex;
+  display: -webkit-flex;
+  position: relative;
+  padding-bottom: 3.57143rem;
+  margin-bottom: 3.57143rem;
+  justify-content: center;
+}
+.cm-client-card-logo__container {
+  margin-right: 3rem;
+  display: block;
+}
+.cm-client-card-body__category a.no-link {
+  pointer-events: none;
+  cursor: text;
+}
+.cm-client-card-logo__image {
+  min-width:120px;
+  width:120px;
+}
+.cm-client-card-body__title {
+  {{ utils.freed() }};
+  margin-bottom: .5rem;
+}
+
+.cm-client-card-body__category:not(:first-child) {
+  margin-right: 5px;
+}
+
+.cm-client-card-body__category {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+.cm-client-card-body__category,
+.cm-client-card-body__category a {
+  color: var(--french-gray) !important;
+  text-decoration:None !important;
+}
+
+.cm-client-card-body__categories {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 0;
+  font-size: var(--sejima-font-size);
+  color: var(--athens-gray);
+}
+.cm-client-card-group:after {
+  content: "";
+  background: var(--athens-gray);
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+}
+.cm-client-card-body__description {
+  {{ utils.natus() }}
+  max-width: var(--base-max-width);
+}
+
+{% call utils.small() %}
+  .cm-client-card-body__description {
+    {{ utils.base() }}
+  }
+{% endcall %}
+
+.cm-client-card-body__category-text {
+  {{ utils.sejima() }}
+  color: var(--french-gray);
+}
+
+.cm-client-card-body__button {
+  font-size: var(--natus-font-size);
+  line-height: var(--natus-line-height);
+  margin-top: var(--base-margin);
+}
+.cm-client-card-body__category-icon {
+  margin-right: .5rem;
+  font-size: 0.9rem;
+  color: var(--valencia);
+  vertical-align: middle;
+}
+.cm-client-card-body__category-icon .icon-communication-101:before {
+  content: "\e008";
+  font-family: "communication-48-x-48";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.cm-client-card-body .icon-education-009:before {
+  content: "y";
+  font-family: "education-48" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+{% call utils.small() %}
+  .cm-client-card-group {
+    flex-direction: column;
+  }
+  .cm-client-card-body__title{
+    display: none;
+  }
+  .cm-client-card-logo__image {
+    margin-bottom: 10px;
+  }
+{% endcall %}

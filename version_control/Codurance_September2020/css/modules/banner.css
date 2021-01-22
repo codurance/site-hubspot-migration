@@ -1,0 +1,24 @@
+{% import '../utils/utils.css' as utils %}
+
+.cm-banner {
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.cm-banner .no-bg-image {
+  background-color: var(--valencia);
+}
+
+.cm-banner__content-container  {
+  padding: 6.14286rem 15px;
+}
+
+.cm-banner__title {
+  {{ utils.eames() }}
+  color: white;
+  margin-top: 0;
+  max-width: var(--eames-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -58,31 +58,6 @@ ul.no-list.hs-error-msgs {
   color: #4F7D24;
   padding: .1rem .75rem;
 }
-.hs-search-results {
-  margin-top: 2rem;
-}
-ul.hs-search-results__listing li {
-  margin-bottom: 2rem;
-}
-.hs-search-results__title {
-  font-family: {{ headings_font_family }};
-  font-size: 1.25rem;
-  color: {{ body_color }};
-  text-decoration: underline;
-  margin-bottom: .25rem;
-}
-.hs-search-results__title:hover {
-  text-decoration: none;
-}
-.hs-search-results__description {
-  padding-top: .5rem;
-}
-.hs-search-highlight {
-  font-weight: bold;
-}
-.hs-search-results__pagination a {
-  color: {{ body_color }};
-}
 
 .email-prefs .item.disabled {
   opacity: 0.6;

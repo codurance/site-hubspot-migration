@@ -1,7 +1,15 @@
+{{ require_css(get_asset_url("../../css/modules/banner.css")) }}
+
 {% if module.background_image.src or module.heading %}
-<div class="banner {% if not module.background_image.src%} no-bg-image {% endif %}" style="background-image: url('{{ module.background_image.src }}');">
-  <div class="banner-content page-center">
-    <h1>{{ module.heading }}</h1>
+  <div
+    class="cm-banner
+    {% if not module.background_image.src %}
+      no-bg-image
+    {% endif %}"
+    style="background-image: url('{{ module.background_image.src }}');"
+  >
+    <div class="cm-banner__content-container">
+      <h1 class="cm-banner__title">{{ module.heading }}</h1>
+    </div>
   </div>
-</div>
 {% endif %}
