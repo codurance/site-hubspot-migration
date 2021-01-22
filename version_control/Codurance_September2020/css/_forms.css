@@ -4,6 +4,7 @@ This file contains all the neccessary styles to control how your forms looks
 throughout your site. Styles for form fields, buttons, inputs, etc.
 *********************************************************************************
 ****************************************************************************** */
+{% import './utils/utils.css' as utils %}
 
 form {
   max-width: {{ form_max_width }};
@@ -50,15 +51,12 @@ form {
 
 
 .hs-form label {
+  {{ utils.natus() }}
   display: block;
   float: none;
   width: auto;
   padding-top: 0;
-  font-weight: 500;
-  font-family:arial;
   text-align: left;
-  font-size: 13px;
-  line-height: 20px;
   padding-top: 0;
   margin-bottom: 4px;
 }
