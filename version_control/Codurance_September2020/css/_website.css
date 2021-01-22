@@ -4,7 +4,7 @@ This file contains all the neccessary styles to control how your landing pages
 look if there is anything specific to your landing pages.
 *********************************************************************************
 ****************************************************************************** */
-
+{% import './utils/utils.css' as utils %}
 
 iframe, embed, video{
   max-width:100%;
@@ -44,13 +44,15 @@ img{
   background-color: white;
   padding-bottom: 100px;
 }
-.hs-get-in-touch-section h2,
 .hs-training-inner-section4 h2{
   font-weight: 700;
   font-size: 28px;
   line-height: 38px;
   margin-top: 0;
   margin-bottom: 15px;
+}
+.hs-get-in-touch-section h2 {
+  {{ utils.dudler() }}
 }
 .hs-get-in-touch-section fieldset ,
 .hs-training-inner-section4 fieldset {
@@ -60,7 +62,6 @@ img{
 .hs-training-inner-section4 form {
   padding: 35px 35px 8px;
 }
-.hs-get-in-touch-section .hs_cos_wrapper_type_rich_text p ,
 .hs-training-inner-section4 .hs_cos_wrapper_type_rich_text p {
   font-family: proxima-nova;
   font-weight: 400;
