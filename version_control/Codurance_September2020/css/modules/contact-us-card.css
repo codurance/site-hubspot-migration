@@ -1,14 +1,29 @@
-.cm-contact-us-card .cm-contact-us-card__heading-wrapper h2 {
+{% import '../utils/utils.css' as utils %}
+
+.cm-contact-us-card__heading {
+  {{ utils.base() }}
   margin: 0 0 -2px 0;
-  padding-bottom: 5px;
-  line-height: 1.4;
   display: inline-block;
-  border-bottom: 2px solid #e67e22;
-  font-size: 22px;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid var(--valencia);
 }
 
-.cm-contact-us-card .cm-contact-us-card__heading-wrapper {
+.cm-contact-us-card__heading-wrapper {
+  border-bottom: 1px dotted var(--french-gray);
   display: block;
-  margin: 17px 0 32px 0;
-  border-bottom: 1px dotted #e4e9f0;
+  margin: 0.8rem 0 1rem 0;
 }
+
+.cm-contact-content {
+  margin-bottom: var(--base-margin);
+}
+
+.cm-contact-content p {
+  {{ utils.natus() }}
+}
+
+{% call utils.small() %}
+  .cm-contact-content p {
+    {{ utils.base() }}
+  }
+{%endcall%}
