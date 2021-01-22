@@ -65,3 +65,17 @@ styleshets into just this one in each of themed templates.
 {% include './_blog.css' %}
 {% include './icons.css' %}
 {% include './_system_pages.css' %}
+
+html, body {
+  color: #2b2c2d;
+  font-family: proxima-nova;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+h3 {
+    color: #2b2c2d;
+    font-family: proxima-nova;
+    font-size: 1.75rem;
+    font-weight: 400;
+}

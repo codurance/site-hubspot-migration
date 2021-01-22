@@ -52,14 +52,6 @@ stylesheets or you can add your own custom styles.
 {#############################   _typography   #############################}
 {###########################################################################}
 
-html, body {
-  color: {{ body_color }};
-  font-family: {{ body_font }};
-  font-weight: {{ theme.typography.body_font.body_font_weight }};
-  font-size: {{ body_size }}{% if theme.typography.body_font.uints && theme.typography.body_font.body_text_select == "google" %}{{ theme.typography.body_font.body_font.units }}{% else %}px{% endif %};
-}
-
-
 a {
   color: rgba({{ theme.typography.link_color.color|convert_rgb }}, {{ theme.typography.link_opacity * 0.01 }});
 }
@@ -87,16 +79,6 @@ h2 {
   font-size: {{ h2_size }}px;
   font-weight: {{ theme.typography.h2_font.h2_font_weight }};
 }
-
-
-h3 {
-  color: {{ h3_color }};
-  font-family: {{ h3_font }};
-  font-size: {{ h3_size }}rem;
-  font-weight: {{ theme.typography.h3_font.h3_font_weight }};
-}
-
-
 
 h4 {
   color: {{ h4_color }};
