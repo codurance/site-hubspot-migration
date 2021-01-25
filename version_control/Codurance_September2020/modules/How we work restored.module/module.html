@@ -1,15 +1,15 @@
+{{ require_css(get_asset_url("../../css/modules/how-we-work-restored.css")) }}
+
 <div class="custom-how-we-work">
   {% for item in module.how_we_work_items %}
   <div class="custom-how-we-work__item">
-    <div class="custom-how-we-work__item-inner" >
-      <i class="custom-how-we-work__icon icon-{{ item.icon_class }} icon-color-red no-border"></i>
-      <h3 class="custom-how-we-work__title">
-        {{ item.title }}
-      </h3>
-      <p class="custom-how-we-work__description">
-        {{ item.content }}
-      </p>
-    </div>
+    <i class="custom-how-we-work__icon icon-{{ item.icon_class }}"></i>
+    <h3 class="custom-how-we-work__title">
+      {{ item.title }}
+    </h3>
+    <p class="custom-how-we-work__description">
+      {{ item.content }}
+    </p>
   </div>
   {% endfor %}
 
