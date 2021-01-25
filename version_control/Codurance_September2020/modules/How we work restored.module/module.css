@@ -1,3 +1,7 @@
+.custom-how-we-work__icon {
+  color: var(--persimmon);
+}
+
 .no-border, i.no-border {
     border: none;
 }
@@ -14,11 +18,9 @@ i.icon-color-u, i.icon-color-red, i.icon-color-sea, i.icon-color-dark, i.icon-co
     margin-bottom: 1rem;
 }
 .custom-how-we-work.row .custom-col-sm-6.custom-col-md-4 {
-   
+
 }
-.custom-how-we-work.row {
-    margin-bottom: 40px;
-}
+
 .custom-how-we-work.row .custom-col-sm-6.custom-col-md-4 .block-centered {
     display: block;
     text-align: center;
@@ -26,5 +28,5 @@ i.icon-color-u, i.icon-color-red, i.icon-color-sea, i.icon-color-dark, i.icon-co
     padding: 20px;
     border: 1px solid rgb(221, 221, 221);
    margin: 15px 0;
- 
+
 }
