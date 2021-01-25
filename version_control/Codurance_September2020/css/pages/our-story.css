@@ -9,7 +9,7 @@
 .our-story-body-copy-section .hs_cos_wrapper_type_rich_text h2 {
   {{ utils.base() }}
   {{ utils.base_margin() }}
-  border-bottom: 2px solid var(--valencia);
+  border-bottom: 2px solid var(--persimmon);
   display: inline-block;
   padding-bottom: 10px;
   position: relative;
