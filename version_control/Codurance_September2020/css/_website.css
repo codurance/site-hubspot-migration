@@ -1765,15 +1765,7 @@ i.icon-bg-u {
   width: 100% !important;
   height: 500px !important;
 }
-.custom-our-people-row3 .row-fluid .span8,
-.custom-our-people-row3 .row-fluid .span4{
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin: 0;
-}
+
 .body-container-career .dnd-section {
   padding-bottom: 0;
   padding-top: 0;
@@ -1809,9 +1801,6 @@ i.icon-bg-u {
   left: 0;
 }
 
-.custom-our-people-row1 .banner .banner-content h1 {
-  letter-spacing: 0.07143rem;
-}
 .pt-1, .py-1 {
   padding-top: .25rem!important;
 }
@@ -2027,18 +2016,11 @@ i.icon-bg-u {
   padding-top: 100px;
   padding-bottom: 100px;
 }
-.custom-our-people-row3 .dnd-section,
+
 .body-container-cookie .dnd-section{
   padding: 0;
 }
-.custom-our-people-row3 p {
-  font-size: 1.3em;
-  max-width: 750px;
-  margin: auto;
-}
-.custom-our-people-row3{
-  background-color: rgb(24, 84, 102);
-}
+
 .close {
   float: right;
   font-size: 1.5rem;
@@ -2126,10 +2108,6 @@ i.icon-bg-u {
   content: "\e910";
 }
 
-.custom-our-people-row3 .row-fluid .span8 {
-  -ms-flex-item-align: center!important;
-  align-self: center!important;
-}
 .custom-apply-now p {
   color: #FFF;
   font-size: 1.3em;
@@ -2482,14 +2460,6 @@ i.icon-bg-u {
     width: 33.333333%;
 
   }
-  .custom-our-people-row3 .row-fluid .span8 {
-    width: 75%;
-  }
-  .custom-our-people-row3 .row-fluid .span4 {
-    width: 25%;
-    text-align: right!important;
-  }
-
 }
 
 @media (min-width: 992px) {
@@ -3108,9 +3078,7 @@ i.icon-bg-u {
   .custom-col-width-row.custom-become-a-craftsperson-row4 .dnd-section > .row-fluid .row-fluid > .span12 {
     width: 100%;
   }
-  .custom-our-people-row3 p {
-    margin-bottom: 1.42857rem !important;
-  }
+
   .custom-section {
     padding-top: 50px;
     padding-bottom: 50px;

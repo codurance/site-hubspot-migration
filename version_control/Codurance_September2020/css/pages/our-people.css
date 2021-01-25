@@ -1,4 +1,50 @@
+{% import '../utils/utils.css' as utils %}
+
 .body-container-our-people .dnd-section {
   padding-top: 0;
   padding-bottom: 0;
 }
+
+.our-people-bottom-banner-section .row-fluid .span8,
+.our-people-bottom-banner-section .row-fluid .span4 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0;
+}
+
+.our-people-bottom-banner-section .dnd-section {
+  padding: 0;
+}
+
+.our-people-bottom-banner-section p {
+  font-size: 1.3em;
+  max-width: 750px;
+  margin: auto;
+}
+.our-people-bottom-banner-section {
+  background-color: var(--java);
+}
+
+.our-people-bottom-banner-section .row-fluid .span8 {
+  -ms-flex-item-align: center!important;
+  align-self: center!important;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+  .our-people-bottom-banner-section .row-fluid .span8 {
+    width: 75%;
+  }
+  .our-people-bottom-banner-section .row-fluid .span4 {
+    width: 25%;
+    text-align: right!important;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .our-people-bottom-banner-section p {
+    margin-bottom: 1.42857rem !important;
+  }
+{% endcall %}
