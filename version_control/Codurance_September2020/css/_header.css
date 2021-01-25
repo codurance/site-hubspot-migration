@@ -120,7 +120,7 @@ header.header.fixed  .cm-header-group {
   visibility: hidden;
   opacity: 0;
   font-size: 0.8rem;
-  color: {{ body_color }};
+  color: var(--shark);
   top: 42px;
   left: calc(100% - 24px);
   padding-top: 0;
@@ -178,11 +178,11 @@ header.header.fixed  .cm-header-group {
 }
 
 .header__language-switcher .lang_list_class li a {
-  color: {{ body_color }};
+  color: var(--shark);
 }
 
 .header__language-switcher .lang_list_class li a:hover {
-  color: {{ body_color }};
+  color: var(--shark);
 }
 
 .header__language-switcher--label {
@@ -206,7 +206,7 @@ header.header.fixed  .cm-header-group {
   margin-left: 10px;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
-  border-top: 6px solid {{ body_color }};
+  border-top: 6px solid var(--shark);
 }
 
 

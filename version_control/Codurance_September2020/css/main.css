@@ -11,7 +11,6 @@ styleshets into just this one in each of themed templates.
 {% set base_font_scale = 24 %}
 {% set base_font_size = base_font_scale ~ 'px' %}
 {% set body_font_size = '1rem' %}
-{% set body_color = '#494a52' %}
 {% set link_color = '#0270E0' %}
 {% set secondary_font_family = 'Lato, sans-serif' %}
 

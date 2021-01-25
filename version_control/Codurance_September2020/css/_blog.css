@@ -118,7 +118,7 @@ Also for the post meta infromation like tags, author and published date
   font-family: {{ secondary_font_family }};
 }
 .blog-index__post-content a {
-  color: {{ body_color }};
+  color: var(--shark);
 }
 .blog-index__post img {
   max-width: 100%;
@@ -169,7 +169,7 @@ Also for the post meta infromation like tags, author and published date
   color: #fff !important;
 }
 .blog-header__author-social-links a:hover {
-  background-color: {{ body_color }};
+  background-color: var(--shark);
 }
 .blog-header__author-social-links svg {
   fill: #fff;
@@ -193,7 +193,7 @@ Also for the post meta infromation like tags, author and published date
   margin: 1rem 0;
 }
 .blog-post__meta a {
-  color: {{ body_color }};
+  color: var(--shark);
   text-decoration: underline;
 }
 
@@ -225,7 +225,7 @@ Also for the post meta infromation like tags, author and published date
 .blog-recent-posts__post {
   display: block;
   flex:  0 0 100%;
-  color: {{ body_color }};
+  color: var(--shark);
   padding: 1rem;
 }
 @media screen and (min-width: 768px) {
