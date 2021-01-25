@@ -1421,32 +1421,7 @@ img {
   align-items: center;
   color: #777
 }
-.custom-body-container .h1,
-.custom-body-container .h3,
-.custom-body-container .h4,
-.custom-body-container .h5,
-.custom-body-container .h6,
-.custom-body-container h1,
-.custom-body-container h3,
-.custom-body-container h4,
-.custom-body-container h5,
-.custom-body-container h6 {
-  margin-bottom: .5rem;
-}
 
-.custom-body-container.custom-body-container-2 .h1,
-.custom-body-container.custom-body-container-2 .h3,
-.custom-body-container.custom-body-container-2 .h4,
-.custom-body-container.custom-body-container-2 .h5,
-.custom-body-container.custom-body-container-2 .h6,
-.custom-body-container.custom-body-container-2 h1,
-.custom-body-container.custom-body-container-2 h3,
-.custom-body-container.custom-body-container-2 h4,
-.custom-body-container.custom-body-container-2 h5,
-.custom-body-container.custom-body-container-2 h6 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
 .custom-events-main-row .dnd-section {
   padding: 0;
 }
