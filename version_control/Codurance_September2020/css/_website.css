@@ -1834,8 +1834,7 @@ i.icon-bg-u {
   left: 0;
 }
 
-.custom-our-people-row1 .banner .banner-content h1,
-.custom-our-story-row1 .banner .banner-content h1{
+.custom-our-people-row1 .banner .banner-content h1 {
   letter-spacing: 0.07143rem;
 }
 .pt-1, .py-1 {
@@ -1849,33 +1848,7 @@ i.icon-bg-u {
   padding-bottom: 0;
   padding-top: 0;
 }
-.custom-our-story-row1 .hs_cos_wrapper_type_rich_text {}
 
-.custom-our-story-row2 .hs_cos_wrapper_type_rich_text h2 {
-  display: inline-block;
-  margin: 10px 0 24px 0;
-  /* border-bottom: 1px dotted #e4e9f0; */
-  border-bottom: 2px solid #e67e22;
-  font-size: 22px;
-  /* margin-bottom: -2px; */
-  padding-bottom: 10px;
-  display: inline-block;
-  position: relative;
-  /* overflow: hidden; */
-}
-.custom-our-story-row2 .dnd-row:last-child .hs_cos_wrapper_type_rich_text {
-  margin-bottom: 0;
-}
-.custom-our-story-row2 .hs_cos_wrapper_type_rich_text h2:after {
-  border-bottom: 1px dotted #e4e9f0;
-  content: "";
-  display: block;
-  width: 1000%;
-  margin-bottom: -6px;
-  z-index: -1;
-  position: relative;
-  top: 5px;
-}
 .custom-privacy-policy-row1 .dnd-section>.row-fluid {
   padding: 0;
 }
@@ -1982,11 +1955,6 @@ i.icon-bg-u {
   overflow: hidden;
 }
 
-.custom-our-story-row2 .hs_cos_wrapper_type_rich_text {
-  display: block;
-  overflow: hidden;
-  margin-bottom: 14px;
-}
 .mb-4, .my-4 {
   margin-bottom: 1.5rem!important;
 }
