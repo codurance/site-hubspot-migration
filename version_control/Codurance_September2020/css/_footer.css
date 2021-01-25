@@ -8,6 +8,7 @@ footer looks when it comes to spacing and other general styles.
 
 .footer {
   background-color: var(--woodsmoke);
+  color: var(--athens-gray);
 }
 [class^="cm-footer"] a {
   color: var(--athens-gray);
@@ -21,8 +22,9 @@ footer looks when it comes to spacing and other general styles.
   text-decoration: none;
 }
 .footer__container {
-  padding:0 15px;
   margin: 0 auto;
+  max-width: 1140px;
+  padding:0 15px;
 }
 .hs-footer-top-container {
   padding-top: 4.28571rem;
@@ -58,9 +60,12 @@ footer looks when it comes to spacing and other general styles.
   margin: .5rem 0;
 }
 .hs-footer-bottom-container {
-  padding-top:1.42857rem;
-  padding-bottom:1.42857rem;
+  background-color: var(--woodsmoke);
+  border-top: 1px solid var(--shark);
+  color: var(--french-gray);
   font-size: 1rem;
+  padding-bottom:1.42857rem;
+  padding-top:1.42857rem;
 }
 .footer-logo {
   fill: white;
@@ -174,9 +179,15 @@ footer looks when it comes to spacing and other general styles.
   display: inline-block;
   position:relative;
 }
+
 .hs-footer-bottom-right ul li a {
   color: var(--french-gray);
 }
+
+.hs-footer-bottom-right ul li a:hover {
+  color: white;
+}
+
 .hs-footer-bottom-right ul li:first-child {
   margin-right: 7px;
 }
