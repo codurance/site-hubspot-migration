@@ -144,7 +144,7 @@
 }
 
 .cm-recent-post__post-item-button::after {
-  background: var(--valencia);
+  background: var(--persimmon);
   border-radius: 2px;
   bottom: -2px;
   content: "";

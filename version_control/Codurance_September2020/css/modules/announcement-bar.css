@@ -11,7 +11,7 @@
   width: 100%;
 }
 .announcement-bar__inner a.cta_button {
-  border-bottom: 1px solid var(--valencia);
+  border-bottom: 1px solid var(--persimmon);
   color: white;
   font-size: var(--natus-font-size);
   font-weight: var(--middle-font-weight);

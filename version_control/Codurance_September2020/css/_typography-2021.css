@@ -113,7 +113,7 @@ a, b, i, strong, em, small, code {
 
 a {
   text-decoration: none;
-  color: var(--valencia--dark);
+  color: var(--persimmon--dark);
   font-weight: var(--middle-font-weight);
 }
 a:hover,

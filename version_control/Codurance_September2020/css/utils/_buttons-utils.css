@@ -14,14 +14,14 @@
 {% macro button_primary(classname) %}
   {{classname}} {
     {{ button() }}
-    background: var(--valencia);
-    border: solid 2px var(--valencia);
+    background: var(--persimmon);
+    border: solid 2px var(--persimmon);
     color: white;
   }
 
   {{classname}}:hover {
-    background: var(--valencia--dark);
-    border: solid 2px var(--valencia--dark);
+    background: var(--persimmon--dark);
+    border: solid 2px var(--persimmon--dark);
     color: #FFFFFF;
     text-decoration: none;
   }
@@ -31,13 +31,13 @@
   {{classname}} {
     {{ button() }}
     background: transparent;
-    border: solid 2px var(--valencia);
-    color: var(--valencia);
+    border: solid 2px var(--persimmon);
+    color: var(--persimmon);
   }
 
   {{classname}}:hover {
-    background: var(--valencia--dark);
-    border: solid 2px var(--valencia--dark);
+    background: var(--persimmon--dark);
+    border: solid 2px var(--persimmon--dark);
     color: #FFFFFF;
     text-decoration: none;
   }
@@ -45,7 +45,7 @@
 
 {% macro text_cta(classname) %}
   {{classname}} {
-    color: var(--valencia);
+    color: var(--persimmon);
     display: inline-block;
     font-size: var(--natus-font-size);
     font-weight: var(--middle-font-weight);
@@ -56,7 +56,7 @@
   }
 
   {{classname}}:hover {
-    color: var(--valencia--dark);
+    color: var(--persimmon--dark);
     text-decoration: underline;
   }
 {% endmacro %}

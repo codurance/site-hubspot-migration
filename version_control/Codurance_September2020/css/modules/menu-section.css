@@ -181,7 +181,7 @@
 .custom-menu-primary .submenu.level-2 .menu-item .menu-link.active-item:after,
 .custom-menu-primary .navigation-primary > ul > li > a.menu-link.active-item:after {
   content: "";
-  background-color: var(--valencia);
+  background-color: var(--persimmon);
   content: "";
   height: 2px;
   position: absolute;
@@ -207,7 +207,7 @@
     display: none;
   }
   .custom-menu-primary nav > ul > li.has-submenu>a[aria-expanded="true"]:after{
-    border-color: car(--valencia);
+    border-color: car(--persimmon);
     top: 6px;
     transform: rotate(225deg);
   }
@@ -295,7 +295,7 @@
     color: white;
   }
   .custom-menu-primary nav > ul > li.has-submenu > a:after {
-    border-color: var(--valencia);
+    border-color: var(--persimmon);
     border-width: 0 2px 2px 0;
     transform: rotate(-45deg);
     padding: 4.5px;
@@ -452,7 +452,7 @@
     display: inline-block;
     padding: 4.5px;
     border-style: solid;
-    border-color: var(--valencia);
+    border-color: var(--persimmon);
     border-width: 0 2px 2px 0;
     transform: rotate(135deg);
     position: absolute;
