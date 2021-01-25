@@ -52,19 +52,6 @@ stylesheets or you can add your own custom styles.
 {#############################   _typography   #############################}
 {###########################################################################}
 
-a {
-  color: rgba({{ theme.typography.link_color.color|convert_rgb }}, {{ theme.typography.link_opacity * 0.01 }});
-}
-
-a:hover,
-a:focus {
-  color: rgba({{ theme.typography.link_hover_color.color|convert_rgb }}, {{ theme.typography.link_opacity * 0.01 }});
-}
-
-a:active {
-  color: rgba({{ color_variant(theme.typography.link_color.color, 40)|convert_rgb }}, {{ theme.typography.link_opacity * 0.01 }});
-}
-
 h1 {
   color: {{ h1_color }};
   font-family: {{ h1_font }};
@@ -142,10 +129,6 @@ h3.form-title {
   background-color: rgba({{ color_variant(theme.buttons.background_color.color, 40)|convert_rgb }}, {{ theme.buttons.background_color.opacity * 0.01 }});
   border-color: rgba({{ color_variant(theme.buttons.border_color.color, 40)|convert_rgb }}, {{ theme.buttons.border_color.opacity * 0.01 }});
   color: rgba({{ theme.buttons.text_color.color|convert_rgb }}, {{ theme.buttons.text_color.opacity * 0.01 }});
-}
-
-.hs-form label {
-  color: rgba({{ theme.forms.label_color.color|convert_rgb }}, {{ theme.forms.label_color.opacity * 0.01 }});
 }
 
 .hs-form legend {

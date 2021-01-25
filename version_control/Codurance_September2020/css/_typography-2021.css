@@ -63,7 +63,7 @@ html {
 }
 
 body {
-  font-family: proxima-nova, serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 1rem;
   font-weight: var(--light-font-weight);
   color: var(--shark);
@@ -116,7 +116,9 @@ a {
   color: var(--valencia--dark);
   font-weight: var(--middle-font-weight);
 }
-a:hover {
+a:hover,
+a:focus,
+a:active, {
   text-decoration: underline;
 }
 
