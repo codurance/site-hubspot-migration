@@ -12014,10 +12014,6 @@ Transforms
     cursor: pointer
 }
 
-.custom-body-container .hs-button {
-    background: green !important
-}
-
 .custom-parent:hover .custom-transform-scale-0_8--parent-hover {
   -webkit-transform: scale(0.8);
   -ms-transform: scale(0.8);
