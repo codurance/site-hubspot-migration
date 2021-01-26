@@ -36,10 +36,21 @@
 }
 
 .our-people-bottom-banner-section .widget-span .widget-span {
-  align-items: center;
   display: flex;
   justify-content: center;
 }
+{% call utils.medium_large_and_extra_large() %}
+  .our-people-bottom-banner-section .widget-span .widget-span {
+    align-items: center;
+    flex-direction: row;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .our-people-bottom-banner-section .widget-span .widget-span {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+{% endcall %}
 
 .our-people-bottom-banner-section .row-number-2 {
   margin-right: 4rem;
