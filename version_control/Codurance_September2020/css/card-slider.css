@@ -86,6 +86,7 @@
 }
 @media (max-width: 1023px) {
   .card-slider__translation-info {
+    margin-top: -30px;
   }
 }
 .card-slider__translation-info::before {
