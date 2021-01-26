@@ -8,17 +8,19 @@
     {% for row in table_info %}
 
       <div class="custom-our-people__card">
-        <a href="#team-{{ loop.index }}" data-modal-target="#team-{{ loop.index }}" rel="gallery3" class="fancybox img-hover-v1 team-member custom-color-primary" title="{{ row.name }}" >
-          {% if row.image.url %}
-          <span>
-            <img class="img-fluid" src="{{ row.image.url }}" alt="{{ row.name }}">
-          </span>
-          {% endif %}
-          <span class="pt-1">
-            {% if row.name %}  <div class="team-member-name">{{ row.name }}</div> {% endif %}
-            {% if row.designation %}  <div class="team-member-role">{{ row.designation }}</div> {% endif %}
-          </span>
-        </a>
+        <div class="custom-our-people__card-inner">
+          <a class="custom-our-people__link" href="#team-{{ loop.index }}" data-modal-target="#team-{{ loop.index }}" rel="gallery3" title="{{ row.name }}" >
+            {% if row.image.url %}
+              <img class="custom-our-people__profile-image" src="{{ row.image.url }}" alt="{{ row.name }}">
+            {% endif %}
+            {% if row.name %}
+              <span class="custom-our-people__name">{{ row.name }}</span>
+            {% endif %}
+            {% if row.designation %}
+              <span class="custom-our-people__role">{{ row.designation }}</span>
+            {% endif %}
+          </a>
+        </div>
       </div>
 
       <div data-id="{{ row.name }}" id="team-{{ loop.index }}" class="custom-max-width-800 custom-bg-white custom-overflow-y-auto custom-pa-20" style="display: none;">
