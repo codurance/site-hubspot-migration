@@ -153,7 +153,16 @@ label: Blog Post
 <section class="container page-center custom-pt-15 blog">
   <div class="row justify-content-center">
     <div class="col-lg-9 custom-overflow-y-hidden">
-      {{ content.post_body }}
+      {% set sections = content.post_body|split('</p>', 5) %}
+        {% for section in sections %}
+          {% set index = loop.index %}
+          {% if index == 3%}
+            {% module "blog_email_form" path="../modules/Blog Email Form.module" label="Blog email form slice" no_wrapper=True %}
+      {{ section }}
+          {% else %}
+            {{ section }}
+          {% endif %}
+        {% endfor %}
     </div>
   </div>
   {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
