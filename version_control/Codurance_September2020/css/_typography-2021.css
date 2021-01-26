@@ -118,7 +118,7 @@ a {
 }
 a:hover,
 a:focus,
-a:active, {
+a:active {
   text-decoration: underline;
 }
 
