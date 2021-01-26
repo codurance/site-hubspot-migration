@@ -100,6 +100,7 @@
 }
 .card-slider__translation-info small {
   font-size: 1rem;
+  line-height: 1.1;
 }
 
 .card-slider__filter {
