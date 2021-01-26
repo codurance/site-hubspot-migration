@@ -1,5 +1,10 @@
 {% import '../utils/utils.css' as utils %}
 
+.body-container-our-story .dnd-section {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
 .our-story-body-copy-section .hs_cos_wrapper_type_rich_text {
   display: block;
   overflow: hidden;
