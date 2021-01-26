@@ -153,12 +153,24 @@ label: Blog Post
 <section class="container page-center custom-pt-15 blog">
   <div class="row justify-content-center">
     <div class="col-lg-9 custom-overflow-y-hidden">
-      {% set sections = content.post_body|split('</p>', 5) %}
+
+      {% if content.post_body is string_containing "</p>" %}
+        {% set sections = content.post_body|split('</p>', 5) %}
+      {% else %}
+        {% set sections = content.post_body|split('<!--more-->', 5) %}
+      {% endif %}
+
+      {% set word_count = content.post_body|striptags|wordcount %}
+      {% set half_article_count = word_count / 2 %}
+      {% set current_word_count = 0 %}
+      {% set have_set_cta = false %}
+      {{ word_count }}
         {% for section in sections %}
-          {% set index = loop.index %}
-          {% if index == 3%}
+          {% set current_word_count = current_word_count|add(section|striptags|wordcount) %}
+          {% if current_word_count > half_article_count and have_set_cta is false %}
             {% module "blog_email_form" path="../modules/Blog Email Form.module" label="Blog email form slice" no_wrapper=True %}
-      {{ section }}
+            {{ section }}
+            {% set have_set_cta = true %}
           {% else %}
             {{ section }}
           {% endif %}
