@@ -91,10 +91,10 @@ class CardSlider {
 
   setUpEventListeners() {
     window.addEventListener('resize', this.handleResize);
-    this.cardWindow.addEventListener('mousedown', this.handleMouseDown);
+    this.track.addEventListener('mousedown', this.handleMouseDown);
     this.cardWindow.addEventListener('mouseup', this.handleMouseUp);
     this.cardWindow.addEventListener('mouseleave', this.handleMouseUp);
-    this.cardWindow.addEventListener('touchstart', this.handleMouseDown);
+    this.track.addEventListener('touchstart', this.handleMouseDown);
     this.cardWindow.addEventListener('touchend', this.handleMouseUp);
     if (this.navigationControl) {
       this.leftButton.addEventListener('click', this.navigateLeft);
