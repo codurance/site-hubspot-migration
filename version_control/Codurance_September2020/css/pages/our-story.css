@@ -1,0 +1,44 @@
+{% import '../utils/utils.css' as utils %}
+
+.body-container-our-story .dnd-section {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.our-story-body-copy-section .hs_cos_wrapper_type_rich_text {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.our-story-body-copy-section .hs_cos_wrapper_type_rich_text h2 {
+  {{ utils.base() }}
+  {{ utils.base_margin() }}
+  border-bottom: 2px solid var(--persimmon);
+  display: inline-block;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.our-story-body-copy-section .hs_cos_wrapper_type_rich_text h2:after {
+  border-bottom: 1px dotted var(--french-gray);
+  content: "";
+  display: block;
+  width: 1000%;
+  margin-bottom: -6px;
+  z-index: -1;
+  position: relative;
+  top: 5px;
+}
+
+.our-story-body-copy-section .hs_cos_wrapper_type_rich_text p {
+  {{ utils.natus() }}
+  {{ utils.base_margin() }}
+}
+
+.our-story-body-copy-section .dnd-row:last-child .hs_cos_wrapper_type_rich_text {
+  margin-bottom: 0;
+}
+.our-story-how-we-work-section {
+  margin-top: 3rem;
+}

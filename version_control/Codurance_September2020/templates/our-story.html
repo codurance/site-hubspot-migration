@@ -3,7 +3,30 @@ templateType: page
 isAvailableForNewContent: true
 label: Our Story
 -->
+{% import './refactor/refactored-pages.html' as refactor %}
+
 {% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {% if refactor.refactored_pages is containing content.name|striptags|lower %}
+    {{ require_css(get_asset_url("../css/main-2021.css")) }}
+  {% endif %}
+
+  {{ require_css(get_asset_url("../css/pages/our-story.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
 
 {% block body %}
 
@@ -11,7 +34,7 @@ label: Our Story
 <div class="custom-body-container body-container-our-story ">
 
 
-  {% dnd_area "row1" class='custom-our-story-row1', label='Row1' %}
+  {% dnd_area "row1" class='our-story-header-banner-section', label='Row1' %}
   {% dnd_section vertical_alignment='MIDDLE' %}
 
   {% end_dnd_section %}
@@ -20,14 +43,14 @@ label: Our Story
   <div class="custom-content">
 
 
-    {% dnd_area "row2" class='custom-our-story-row2 ', label='Row2' %}
+    {% dnd_area "row2" class='our-story-body-copy-section', label='Row2' %}
     {% dnd_section vertical_alignment='MIDDLE' %}
 
     {% end_dnd_section %}
     {% end_dnd_area %}
 
 
-    {% dnd_area "row3" class='custom-our-story-row3 ', label='Row3' %}
+    {% dnd_area "row3" class='our-story-how-we-work-section ', label='Row3' %}
     {% dnd_section vertical_alignment='MIDDLE' %}
 
     {% end_dnd_section %}

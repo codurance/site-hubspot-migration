@@ -21,14 +21,6 @@ stylesheets or you can add your own custom styles.
 
 ##}
 
-{% if theme.typography.body_font.body_text_select == "google" %}{% set body_size = theme.typography.body_font.body_font.size.value %}{% set body_color = theme.typography.body_font.body_font.color %}{% set body_variation = theme.typography.body_font.body_font.variation %}{% set body_font = theme.typography.body_font.body_font.font %}{% else %}{% set body_size = theme.typography.body_font.body_text_font_size %}{% set body_color = theme.typography.body_font.body_text_font_color.color %}{% set body_font = theme.typography.body_font.body_text_font %}{% endif %}
-{% if theme.typography.h1_font.h1_select == "google" %}{% set h1_size = theme.typography.h1_font.heading_one.size.value %}{% set h1_color = theme.typography.h1_font.heading_one.color %}{% set h1_variation = theme.typography.h1_font.heading_one.variation %}{% set h1_font = theme.typography.h1_font.heading_one.font %}{% else %}{% set h1_color = theme.typography.h1_font.h1_font_color.color %}{% set h1_size = theme.typography.h1_font.h1_font_size %}{% set h1_font = theme.typography.h1_font.h1_font_family %}{% endif %}
-{% if theme.typography.h2_font.h2_select == "google" %}{% set h2_size = theme.typography.h2_font.heading_two.size.value %}{% set h2_color = theme.typography.h2_font.heading_two.color %}{% set h2_variation = theme.typography.h2_font.heading_two.variation %}{% set h2_font = theme.typography.h2_font.heading_two.font %}{% else %}{% set h2_color = theme.typography.h2_font.h2_font_color.color %}{% set h2_size = theme.typography.h2_font.h2_font_size %}{% set h2_font = theme.typography.h2_font.h2_font_family %}{% endif %}
-{% if theme.typography.h3_font.h3_select == "google" %}{% set h3_size = theme.typography.h3_font.heading_three.size.value %}{% set h3_color = theme.typography.h3_font.heading_three.color %}{% set h3_variation = theme.typography.h3_font.heading_three.variation %}{% set h3_font = theme.typography.h3_font.heading_three.font %}{% else %}{% set h3_color = theme.typography.h3_font.h3_font_color.color %}{% set h3_size = theme.typography.h3_font.h3_font_size %}{% set h3_font = theme.typography.h3_font.h3_font_family %}{% endif %}
-{% if theme.typography.h4_font.h4_select == "google" %}{% set h4_size = theme.typography.h4_font.heading_four.size.value %}{% set h4_color = theme.typography.h4_font.heading_four.color %}{% set h4_variation = theme.typography.h4_font.heading_four.variation %}{% set h4_font = theme.typography.h4_font.heading_four.font %}{% else %}{% set h4_color = theme.typography.h4_font.h4_font_color.color %}{% set h4_size = theme.typography.h4_font.h4_font_size %}{% set h4_font = theme.typography.h4_font.h4_font_family %}{% endif %}
-{% if theme.typography.h5_font.h5_select == "google" %}{% set h5_size = theme.typography.h5_font.heading_five.size.value %}{% set h5_color = theme.typography.h5_font.heading_five.color %}{% set h5_variation = theme.typography.h5_font.heading_five.variation %}{% set h5_font = theme.typography.h5_font.heading_five.font %}{% else %}{% set h5_color = theme.typography.h5_font.h5_font_color.color %}{% set h5_size = theme.typography.h5_font.h5_font_size %}{% set h5_font = theme.typography.h5_font.h5_font_family %}{% endif %}
-{% if theme.typography.h6_font.h6_select == "google" %}{% set h6_size = theme.typography.h6_font.heading_six.size.value %}{% set h6_color = theme.typography.h6_font.heading_six.color %}{% set h6_variation = theme.typography.h6_font.heading_six.variation %}{% set h6_font = theme.typography.h6_font.heading_six.font %}{% else %}{% set h6_color = theme.typography.h6_font.h6_font_color.color %}{% set h6_size = theme.typography.h6_font.h6_font_size %}{% set h6_font = theme.typography.h6_font.h6_font_family %}{% endif %}
-
 {###########################################################################}
 {##############################   _dnd_areas   #############################}
 {###########################################################################}
@@ -47,44 +39,6 @@ stylesheets or you can add your own custom styles.
 }
 .page-center {
   max-width: {{ theme.spacing.max_width }}px;
-}
-{###########################################################################}
-{#############################   _typography   #############################}
-{###########################################################################}
-
-h1 {
-  color: {{ h1_color }};
-  font-family: {{ h1_font }};
-  font-size: {{ h1_size }}rem;
-  font-weight: {{ theme.typography.h1_font.h1_font_weight }};
-}
-
-
-h2 {
-  color: {{ h2_color }};
-  font-family: {{ h2_font }};
-  font-size: {{ h2_size }}px;
-  font-weight: {{ theme.typography.h2_font.h2_font_weight }};
-}
-
-h4 {
-  color: {{ h4_color }};
-  font-family: {{ h4_font }};
-  font-size: {{ h4_size }}rem;
-  font-weight: {{ theme.typography.h4_font.h4_font_weight }};
-}
-
-
-
-h5 {
-  color: {{ h5_color }};
-  font-family: {{ h5_font }};
-  font-size: {{ h5_size }}rem;
-  font-weight: {{ theme.typography.h5_font.h5_font_weight }};
-}
-
-blockquote {
-  border-left: 10px solid {{ theme.global_colors.secondary_color.color }};;
 }
 
 {###########################################################################}
@@ -161,7 +115,7 @@ form textarea:focus,
 .hs-field-desc,
 .hs-dateinput:before,
 .hs-richtext {
-  color: {{ body_color }};
+  color: var(--shark);
 }
 
 .hs-richtext {
@@ -315,26 +269,6 @@ body .custom-menu-primary .submenu.level-2 .menu-item a.menu-link.active-item{
 }
 
 {###########################################################################}
-{###############################   _footer   ###############################}
-{###########################################################################}
-
-footer.footer {
-  background-color: rgba({{ theme.footer.background_color.color|convert_rgb }}, {{ theme.footer.background_color.opacity * 0.01 }});
-  color: rgba({{ theme.footer.text_color.color|convert_rgb }}, {{ theme.footer.text_color.opacity * 0.01 }});
-}
-.hs-footer-bottom-container{
-  background-color: rgba({{ theme.footer.bottom_background_color.color|convert_rgb }}, {{ theme.footer.bottom_background_color.opacity * 0.01 }});
-  color: rgba({{ theme.footer.text_color.color|convert_rgb }}, {{ theme.footer.text_color.opacity * 0.01 }});
-}
-.footer__container {
-  max-width: {{ theme.spacing.max_width }}px;
-}
-
-body  .hs-footer-bottom-right ul li a:hover{
-  color: rgba({{ theme.footer.footer_social_link_hover_color.color|convert_rgb }}, {{ theme.footer.footer_social_link_hover_color.opacity * 0.01 }});
-}
-
-{###########################################################################}
 {################################   _blog   ################################}
 {###########################################################################}
 
@@ -343,7 +277,7 @@ body  .hs-footer-bottom-right ul li a:hover{
 }
 
 .blog-post__date {
-  border-color: {{ body_color }};
+  border-color: var(--shark);
 }
 
 .blog-tag-filter__menu-link,
@@ -351,7 +285,7 @@ body  .hs-footer-bottom-right ul li a:hover{
 .blog-card__tag-link,
 .blog-post__author-name,
 .blog-card__title a {
-  color: {{ body_color }};
+  color: var(--shark);
 }
 
 .blog-card__tag-link:hover,
@@ -364,7 +298,7 @@ body  .hs-footer-bottom-right ul li a:hover{
 .blog-tag-filter__menu-link:focus,
 .blog-post__tag-link:focus,
 .blog-post__author-name:focus {
-  color: {{ color_variant(body_color, -40) }};
+  color: var(--woodsmoke);
 }
 
 .blog-card__tag-link:active,
@@ -372,7 +306,7 @@ body  .hs-footer-bottom-right ul li a:hover{
 .blog-tag-filter__menu-link:active,
 .blog-post__tag-link:active,
 .blog-post__author-name:active {
-  color: {{ color_variant(body_color, 40) }};
+  color: var(--mid-gray);
 }
 
 .blog-tag-filter__menu-link--active-item:after {
@@ -380,7 +314,7 @@ body  .hs-footer-bottom-right ul li a:hover{
 }
 
 .blog-pagination__link {
-  color: {{ body_color }};
+  color: var(--shark);
 }
 
 .blog-pagination__link--active:after,

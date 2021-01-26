@@ -1,15 +1,15 @@
-<div class="custom-how-we-work row">
+{{ require_css(get_asset_url("../../css/modules/how-we-work-restored.css")) }}
+
+<div class="custom-how-we-work">
   {% for item in module.how_we_work_items %}
-  <div class="custom-col-sm-6 custom-col-md-4">
-    <div class="block-centered equalheight" > 
-      <i class="icon-{{ item.icon_class }} icon-color-red no-border"></i> 
-      <h3>
-        {{ item.title }}
-      </h3>
-      <p>
-        {{ item.content }}
-      </p>
-    </div>
+  <div class="custom-how-we-work__item">
+    <i class="custom-how-we-work__icon icon-{{ item.icon_class }}"></i>
+    <h3 class="custom-how-we-work__title">
+      {{ item.title }}
+    </h3>
+    <p class="custom-how-we-work__description">
+      {{ item.content }}
+    </p>
   </div>
   {% endfor %}
 
