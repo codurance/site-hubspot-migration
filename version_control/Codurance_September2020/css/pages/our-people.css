@@ -5,6 +5,11 @@
   padding-bottom: 0;
 }
 
+.body-container-our-people .dnd-section[class*="full-width"] > .row-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .our-people-bottom-banner-section .row-fluid .span8,
 .our-people-bottom-banner-section .row-fluid .span4 {
   position: relative;

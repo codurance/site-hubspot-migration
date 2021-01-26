@@ -23,58 +23,65 @@
         </div>
       </div>
 
-      <div data-id="{{ row.name }}" id="team-{{ loop.index }}" class="custom-max-width-800 custom-bg-white custom-overflow-y-auto custom-pa-20" style="display: none;">
-        <button type="button" class="close" onclick="Custombox.modal.close();"> <i class="hs-icon hs-icon-close btn-pointer-cursor"></i>
+      <div class="custom-our-people__modal custom-our-people-modal" data-id="{{ row.name }}" id="team-{{ loop.index }}" style="display: none;">
+        <button class="custom-our-people-modal__close-button" type="button" onclick="Custombox.modal.close();">
+          <i class="las la-times"></i>
         </button>
-        <div class="custom-pa-20">
-          <div class="row">
-            {% if row.image.url %}
-            <div class=" custom-col-lg-4 custom-mb-40 custom-mb-0--lg">
+        <div class="custom-our-people-modal__inner">
 
-              <div class="u-block-hover custom-pos-rel custom-mb-20">
-                <figure>
-                  <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="{{ row.image.url }}" alt="{{ row.name }}">
-                </figure>
-              </div>
-
+          {% if row.image.url %}
+            <div class="custom-our-people-modal__left-column">
+              <figure class="custom-our-people-modal__image-container">
+                <img class="custom-our-people-modal__image" src="{{ row.image.url }}" alt="{{ row.name }}">
+              </figure>
             </div>
-            {% endif %}
-            <div class=" custom-col-lg-8">
+          {% endif %}
 
-              <div class="d-flex align-items-center justify-content-sm-between custom-mb-5">
-                {% if row.name %}  <h2 class="custom-font-weight-300 custom-mr-10">{{ row.name }}</h2>    {% endif %}
-                {% if row.github_link or row.twitter_link or row.linkedin_link %}
-                <ul class="list-inline mb-0">
+          <div class="custom-our-people-modal__right-column">
+            <div class="custom-our-people-modal__intro-info">
+              {% if row.name %}
+                <h2 class="custom-our-people-modal__name">{{ row.name }}</h2>
+              {% endif %}
+              {% if row.designation %}
+                <h6 class="custom-our-people-modal__job-title">
+                  {{ row.designation }}
+                </h6>
+              {% endif %}
+              {% if row.github_link or row.twitter_link or row.linkedin_link %}
+                <ul class="custom-our-people-modal__social-list">
                   {% if row.github_link %}
-                  <li class="list-inline-item custom-mx-2">
-                    <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ row.github_link }}" target="_blank" rel="noopener noreferrer"> <i class="custom-font-size-default custom-line-height-1 u-icon__elem-regular fa fa-github"></i>  <i class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover fa fa-github"></i>
+                  <li class="custom-our-people-modal__social-item">
+                    <a class="custom-our-people-modal__social-link" href="{{ row.github_link }}" target="_blank" rel="noopener noreferrer">
+                      <i class="custom-our-people-modal__social-icon  lab la-github"></i>
+                      <i class="custom-our-people-modal__social-icon  lab la-github"></i>
                     </a>
                   </li>
                   {% endif %}
                   {% if  row.twitter_link %}
-                  <li class="list-inline-item custom-mx-2">
-                    <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ row.twitter_link }}" target="_blank" rel="noopener noreferrer"> <i class="custom-font-size-default custom-line-height-1 u-icon__elem-regular lab la-twitter"></i>  <i class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover lab la-twitter"></i>
+                  <li class="custom-our-people-modal__social-item">
+                    <a class="custom-our-people-modal__social-link" href="{{ row.twitter_link }}" target="_blank" rel="noopener noreferrer">
+                      <i class="custom-our-people-modal__social-icon  lab la-twitter"></i>
+                      <i class="custom-our-people-modal__social-icon  lab la-twitter"></i>
                     </a>
                   </li>
                   {% endif %}
                   {% if  row.linkedin_link %}
-                  <li class="list-inline-item custom-mx-2">
-                    <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ row.linkedin_link }}" target="_blank" rel="noopener noreferrer"> <i class="custom-font-size-default custom-line-height-1 u-icon__elem-regular lab la-linkedin-in"></i>  <i class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover lab la-linkedin-in"></i>
+                  <li class="custom-our-people-modal__social-item">
+                    <a class="custom-our-people-modal__social-link" href="{{ row.linkedin_link }}" target="_blank" rel="noopener noreferrer">
+                      <i class="custom-our-people-modal__social-icon  lab la-linkedin-in"></i>
+                      <i class="custom-our-people-modal__social-icon  lab la-linkedin-in"></i>
                     </a>
                   </li>
                   {% endif %}
                 </ul>
-                {% endif %}
-              </div>
-              {% if row.designation %}
-              <h6 class="h6 custom-font-weight-300 custom-mb-10">
-                <i class="icon-badge custom-pos-rel custom-top-1 custom-mr-5 custom-color-gray-dark-v5"></i>
-                {{ row.designation }}
-              </h6>
               {% endif %}
-              <hr class="custom-brd-gray-light-v4 custom-my-20">
+            </div>
+
+            <hr class="custom-our-people-modal__rule">
+            <div class="custom-our-people-modal__body-copy">
               {{ row.content }}
             </div>
+
           </div>
         </div>
       </div>
