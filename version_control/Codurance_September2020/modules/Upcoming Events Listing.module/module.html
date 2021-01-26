@@ -68,9 +68,11 @@ upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
         </svg>
       </button>
     </div>
-    <div class="card-slider__translation-info">
-      <small>Nuestros eventos son, en su mayoría, en inglés. Por eso estás viendo sus títulos y descripciones en este idioma.</small>
-    </div>
+    {% if module.translation_information_text %}
+      <div class="card-slider__translation-info">
+        <small>Nuestros eventos son, en su mayoría, en inglés. Por eso estás viendo sus títulos y descripciones en este idioma.</small>
+      </div>
+    {% endif %}
   </div>
   <div class="card-slider-results" data-upcoming-card-track>
     {% for event in upcomingEvents %}

@@ -17,6 +17,15 @@
   "type" : "text",
   "default" : "Upcoming Events"
 }, {
+  "id" : "68cd05f2-138b-2241-0169-db614bd61760",
+  "name" : "translation_information_text",
+  "label" : "Translation Information Text",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
   "id" : "898cb49a-3b14-3cc2-1126-5b2b1bdd300b",
   "name" : "space_filling_cta_text",
   "label" : "Space-filling CTA Text",
