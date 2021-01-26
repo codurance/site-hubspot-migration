@@ -1,0 +1,63 @@
+{% set small_max = 767 %}
+
+{% set medium_min = 768 %}
+{% set medium_max = 1023 %}
+
+{% set large_min = 1024 %}
+{% set large_max = 1299 %}
+
+{% set extra_large_min = 1300 %}
+
+{% macro small() %}
+  @media (max-width: {{small_max}}px) {
+    {{ caller() }}
+  }
+{% endmacro %}
+
+{% macro small_and_medium() %}
+  @media (max-width: {{medium_max}}px) {
+    {{ caller() }}
+  }
+{% endmacro %}
+
+{% macro small_medium_and_large() %}
+  @media (max-width: {{large_max}}px) {
+    {{ caller() }}
+  }
+{% endmacro %}
+
+{% macro medium() %}
+  @media (min-width: {{medium_min}}px) and (max-width: {{medium_max}}px) {
+    {{ caller() }}
+  }
+{% endmacro %}
+
+{% macro medium_and_large() %}
+  @media (min-width: {{medium_min}}px) and (max-width: {{large_max}}px) {
+    {{ caller() }}
+  }
+{% endmacro %}
+
+{% macro medium_large_and_extra_large() %}
+  @media (min-width: {{medium_min}}px) {
+    {{ caller() }}
+  }
+{% endmacro %}
+
+{% macro large() %}
+  @media (min-width: {{large_min}}px) and (max-width: {{large_max}}px) {
+    {{ caller() }}
+  }
+{% endmacro %}
+
+{% macro large_and_extra_large() %}
+  @media (min-width: {{large_min}}px) {
+    {{ caller() }}
+  }
+{% endmacro %}
+
+{% macro extra_large() %}
+  @media (min-width: {{extra_large_min}}px) {
+    {{ caller() }}
+  }
+{% endmacro %}

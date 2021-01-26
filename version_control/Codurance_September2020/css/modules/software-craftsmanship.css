@@ -1,0 +1,146 @@
+{% import '../utils/utils.css' as utils %}
+
+.cm-software-crafts-group {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 2.14286rem;
+}
+
+{% set item_margin = 15 %}
+.cm-software-crafts__item {
+  border-radius: 7px;
+  box-shadow: 0 1px 3px rgba(255,255,255,0.12),0 1px 10px rgba(0,0,0,0.12);
+  margin-bottom: 1.4rem;
+  margin-left: {{ item_margin }}px;
+  margin-right: {{ item_margin }}px;
+  overflow: hidden;
+  transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
+
+}
+{% call utils.large_and_extra_large() %}
+.cm-software-crafts__item {
+  width: calc(33% - ({{item_margin}}px * 2));
+}
+{% endcall %}
+{% call utils.medium() %}
+  .cm-software-crafts__item {
+    width: calc(50% - ({{ item_margin }}px * 2));
+  }
+{% endcall %}
+{% call utils.small() %}
+  .cm-software-crafts__item {
+    width: 100%;
+  }
+{% endcall %}
+.cm-software-crafts__item:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+}
+
+.cm-software-crafts__link-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+}
+
+.cm-software-crafts__link-container:hover,
+.cm-software-crafts__link-container:focus,
+.cm-software-crafts__link-container:active,
+.cm-software-crafts__link-container:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cm-software-crafts__image-wrapper {
+  width: 100%;
+  padding-top: 66%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.cm-software-crafts__info-wrapper {
+  flex-grow: 1;
+  padding-bottom: 2rem;
+}
+
+.cm-recent-post__meta-info {
+  {{ utils.sejima() }}
+  {{ utils.small_caps() }}
+}
+
+.cm-software-crafts__title {
+  {{ utils.base() }}
+  font-weight: var(--heavy-font-weight);
+  margin-bottom: var(--base-margin);
+  margin-top: calc(var(--base-margin) / 2);
+}
+
+.cm-software-crafts__description {
+  {{ utils.natus() }}
+}
+
+.cm-recent-post__button-wrapper {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.cm-recent-post__button {
+  background-color: transparent;
+  border: 2px solid var(--shark);
+  font-size: 1em;
+  transition: all 0.3s ease;
+  padding:.85714rem 25.571px;
+  border-radius: 50px;
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 15px;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.cm-recent-post__button:hover {
+  background-color: rgba(0,0,0,0.05);
+  color: #444444 !important;
+  transition: all 0.7s ease;
+  text-decoration:none;
+}
+
+.cm-software-crafts__inner {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.5rem;
+}
+
+.cm-software-crafts__button {
+  align-self: flex-start;
+  display:inline-block;
+  font-size: var(--natus-font-size);
+  font-weight: var(--middle-font-weight);
+  line-height: var(--natus-line-height);
+  position: relative;
+  text-transform: uppercase;
+}
+
+.cm-software-crafts__button::after {
+  background: var(--valencia);
+  border-radius: 2px;
+  bottom: -2px;
+  content: "";
+  height: 2px;
+  left: 0;
+  margin-left: 0;
+  position: absolute;
+  transition: all .3s ease;
+  width: 25px;
+}
+
+.cm-software-crafts__item:hover .cm-software-crafts__button:after {
+  width: 100%;
+  transition: all 0.7s ease;
+}

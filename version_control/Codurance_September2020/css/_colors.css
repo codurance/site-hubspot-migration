@@ -1,0 +1,22 @@
+:root {
+  --crimson: hsl(342.7, 88.5%, 44.5%);
+  --tango: hsl(24.2, 86.3%, 54.3%);
+  --gold: hsl(48.9, 100%, 50%);
+
+  --java: hsl(168.5,77%,47.8%);
+  --picton-blue: hsl(204.2, 86.3%, 54.3%);
+  --dodger-blue: hsl(242.4, 100%, 65.9%);
+
+  --valencia: hsl(2, 71.7%, 58.4%);
+  --valencia--dark: hsl(2, 71.7%, 53.4%);
+  --midnight-blue: hsl(209.7, 98%, 19.4%);
+  --midnight-blue--dark: hsl(209.7, 98%, 15.4%);
+
+  --athens-gray: hsl(240, 4%, 95.1%);
+  --french-gray: hsl(240, 3.9%, 75.1%);
+  --mid-gray: hsl(240, 3.9%, 40%);
+  --shark: hsl(240, 3.9%, 20%);
+  --woodsmoke: hsl(240, 3%, 5%);
+  --woodsmoke--50: hsla(240, 3%, 5%, 0.5);
+  --woodsmoke--20: hsla(240, 3%, 5%, 0.2);
+}

@@ -29,16 +29,16 @@ label: Blog Post
 </section>
 <section class="container page-center custom-mt-20">
   <div class="row">
-    <div class="custom-col-lg-9 container page-center">
+    <div class="custom-col-lg-9 container page-center blog-post-body">
       <div class="row container page-center--blog-meta">
         <div
-          class="custom-col text-left text-md-left custom-mt-15 custom-mb-10 custom-col-12 custom-col-md-2 custom-font-size-12"
+          class="custom-col text-left text-md-left custom-mt-15 custom-mb-10 custom-col-12 custom-col-md-3 custom-font-size-12"
         >
           {{ content.publish_date_localized }}
         </div>
         {% if content.tag_list %}
         <div
-          class="custom-col text-left text-md-right custom-mt-10 custom-col-md-10"
+          class="custom-col text-left text-md-right custom-mt-10 custom-col-md-9"
         >
           <ul class="list-inline custom-font-size-12 mb-0">
             {% for tag in content.tag_list %}
@@ -57,7 +57,7 @@ label: Blog Post
 </section>
 <section class="container page-center custom-mt-20">
   <div class="row">
-    <div class="custom-col-lg-9 container page-center">
+    <div class="custom-col-lg-9 container page-center blog-post-body">
       <div class="row">
         <div class="custom-col custom-my-15 text-left">
           <div class="media">
@@ -152,8 +152,16 @@ label: Blog Post
 </section>
 <section class="container page-center custom-pt-15 blog">
   <div class="row justify-content-center">
-    <div class="col-lg-9 custom-overflow-y-hidden">
-      {{ content.post_body }}
+    <div class="col-lg-9 blog-post-body">
+      {% set sections = content.post_body|split('<!--more-->', 2) %}
+      {{ sections[0] }}
+      {% module
+        "newsletter_inline_form"
+        sign_up_form={"form_id": "fbe133ea-3558-4c0a-9f5c-9363ca5d5077"}
+        path="../modules/Newsletter Inline Form.module"
+        label="Newsletter inline form" no_wrapper=True
+      %}
+      {{ sections[1] }}
     </div>
   </div>
   {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
@@ -252,24 +260,19 @@ Banner" %}
   </div>
 </section>
 
-<div class="section custom-color-white codurance-green-background">
-  <div class="container page-center">
-    <div class="row">
-      <div class="custom-col-md-8 text-md-left text-center">
-        <h4 class="my-md-0">Get content like this straight to your inbox!</h4>
-      </div>
-      <div class="custom-col-md-4 text-right">
-        <a
-          class="btn btn-md u-btn-primary btn-codurance-color text-uppercase w-100 custom-width-auto--lg"
-          target="_blank"
-          href="https://mailchi.mp/codurance/newsletter-subscription"
-          rel="noopener noreferrer"
-          >Subscribe now!</a
-        >
-      </div>
-    </div>
-  </div>
-</div>
+{% module
+  "newsletter_footer_form"
+  sign_up_form={"form_id": "fbe133ea-3558-4c0a-9f5c-9363ca5d5077"}
+  path="../modules/Newsletter Footer Form.module"
+  label="Newsletter footer form" no_wrapper=True
+%}
+
+{% module
+  "newsletter_exit_popup"
+  sign_up_form={"form_id": "fbe133ea-3558-4c0a-9f5c-9363ca5d5077"}
+  path="../modules/Newsletter Exit Popup.module"
+  label="Newsletter exit popup" no_wrapper=True
+%}
 
 <script>
   var cookieIframeContainers = document.getElementsByClassName(

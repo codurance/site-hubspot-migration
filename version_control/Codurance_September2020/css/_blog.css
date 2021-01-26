@@ -671,6 +671,10 @@ ul.custom-blog-filter-group.u-list-inline {
   padding-left: 15px;
 }
 
+.hs-blog-post {
+  overflow-x: hidden;
+}
+
 @media (min-width: 768px){
   .text-md-right {
     text-align: right!important;
@@ -848,4 +852,8 @@ a.u-icon-v2 {
     width: 100% !important;
     float: none !important;
   }
+}
+
+.blog-post-body {
+  max-width: 60ch !important;
 }

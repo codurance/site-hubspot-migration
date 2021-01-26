@@ -1,0 +1,60 @@
+{% import '../utils/utils.css' as utils %}
+
+.cm-company-logos-group__heading {
+  {{ utils.dudler() }}
+  margin-top: 0;
+  text-align: center;
+  font-weight: var(--heavy-font-weight);
+}
+.cm-company-logos-inner-group {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+.cm-company-logos-inner-group img {
+  filter: grayscale(100%);
+  opacity: 0.8;
+  width: 115px;
+}
+
+{% call utils.large_and_extra_large() %}
+  .cm-company-logos-inner-group {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  .cm-company-logos-inner-group img{
+    flex-basis: calc((100% - (6 * 60px)) / 6);
+    margin: 10px 30px;
+  }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+  .cm-company-logos-inner-group {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .cm-company-logos-inner-group img{
+    flex-basis: calc((100% - (4 * 50px)) / 4);
+    margin: 10px 25px;
+  }
+{% endcall %}
+
+
+{% call utils.small() %}
+  .cm-company-logos-inner-group {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 30px;
+  }
+  .cm-company-logos-inner-group img{
+    flex-basis: calc((100% - (3 * 40px)) / 3);
+    margin: 10px 20px;
+  }
+{% endcall %}

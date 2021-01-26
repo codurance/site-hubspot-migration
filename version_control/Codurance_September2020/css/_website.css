@@ -2041,9 +2041,9 @@ i.icon-bg-u {
   z-index: 2;
 }
 .u-icon-v2, .u-icon-v2 .u-icon__elem-regular, .u-icon-v2 .u-icon__elem-hover, .u-icon-v3, .u-icon-v3 .u-icon__elem-regular, .u-icon-v3 .u-icon__elem-hover, .u-icon-v4 .u-icon-v4-inner, .u-icon-v4 .u-icon__elem-regular, .u-icon-v4 .u-icon__elem-hover, .u-icon-v5 {
-  width: 3.92857rem;
-  height: 3.92857rem;
-  font-size: 1.57143rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  font-size: 1.45rem;
 }
 .u-icon-v1, .u-icon-v2, .u-icon-v3, .u-icon-v4 {
   position: relative;
