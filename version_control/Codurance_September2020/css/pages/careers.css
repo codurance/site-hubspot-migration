@@ -4,10 +4,13 @@
   padding-bottom: 0;
   padding-top: 0;
 }
+.custom-career-about-us-section {
+  background-color: var(--athens-gray);
+  padding-top: 3.57143rem;
+}
 
 .custom-career-about-us-section .row-fluid .span3 {
   margin-bottom: 2.14286rem;
-  background-color: var(--athens-gray);
 }
 {% call utils.medium_large_and_extra_large() %}
   .custom-career-about-us-section .row-fluid .span3 {
@@ -59,18 +62,15 @@
   background-color: var(--athens-gray);
 }
 
-.custom-career-our-roles-section .span5,
+{# .custom-career-our-roles-section .span5,
 .custom-career-our-roles-section .span7 {
   margin-bottom: 2.14286rem !important;
-}
+} #}
 
-.custom-career-our-roles-section .dnd-section.dnd-row > .row-fluid {
-  display: -ms-flexbox;
+.custom-career-our-roles-section .dnd-section .dnd-row > .row-fluid {
+  align-items: stretch;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-align: stretch!important;
-  align-items: stretch!important;
 }
 
 .custom-career-our-roles-section .dnd-section.dnd-row > .row-fluid * div {
@@ -84,15 +84,15 @@
 
 .custom-career-life-codurance-section .dnd-section .row-fluid {
   display: flex;
-  width: 100%;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .custom-career-life-codurance-section .row-fluid .span4 {
-  padding: 0;
-  margin-bottom: 2.14286rem;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 2.14286rem;
+  padding: 0;
 }
 {% call utils.small() %}
   .custom-career-life-codurance-section .row-fluid .span4 {
