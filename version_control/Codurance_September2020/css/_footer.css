@@ -328,9 +328,6 @@ footer.footer .hs-rss-item  a.hs-rss-title:hover {
     {{ utils.ponti() }}
     margin-bottom: 29px;
   }
-  .cm-footer-contact-us address {
-    {{ utils.ponti() }}
-  }
   .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li {
     padding-top: 11.857px;
     padding-bottom: 10.857px;
