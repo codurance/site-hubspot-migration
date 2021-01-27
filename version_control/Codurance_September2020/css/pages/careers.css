@@ -2,3 +2,117 @@
   padding-bottom: 0;
   padding-top: 0;
 }
+
+.custom-career-about-us-section .row-fluid .span3 {
+  margin-bottom: 2.14286rem;
+  padding-top: 3.57143rem;
+  padding-bottom: 3.57143rem;
+  background-color: var(--athens-gray);
+}
+
+@media (min-width: 768px){
+  .custom-career-about-us-section .row-fluid .span3 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .custom-career-about-us-section .row-fluid .span3 {
+    width: 25%;
+  }
+}
+
+.custom-career-about-you-section {
+  padding-top: 3.57143rem;
+  padding-bottom: 3.57143rem;
+}
+
+.custom-container-row.custom-career-about-you-section .row-fluid .span4{
+  margin-bottom: 2.14286rem;
+}
+
+.custom-container-row.custom-career-about-you-section .dnd-section>.row-fluid .dnd-row .row-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+.custom-container-row.custom-career-about-you-section .row-fluid .span4 div {
+    height: 100%;
+}
+
+@media (max-width: 991px) {
+  .custom-container-row.custom-career-about-you-section .row-fluid .span4 {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 767px){
+  .custom-container-row.custom-career-about-you-section .dnd-section > .row-fluid .dnd-row .row-fluid > div {
+    width: 100%;
+  }
+}
+
+.custom-career-our-roles-section {
+  padding-top: 3.57143rem;
+  padding-bottom: 3.57143rem;
+  background-color: var(--athens-gray);
+}
+
+.custom-career-our-roles-section .span5 {
+  margin-bottom: 2.14286rem !important;
+}
+.custom-career-our-roles-section .span7 {
+  margin-bottom: 2.14286rem !important;
+}
+
+.custom-career-our-roles-section .dnd-section.dnd-row>.row-fluid {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch!important;
+    align-items: stretch!important;
+}
+
+.custom-career-our-roles-section .dnd-section.dnd-row>.row-fluid * div {
+    height: 100%;
+}
+
+.custom-career-life-codurance-section {
+  padding-top: 3.57143rem;
+  padding-bottom: 3.57143rem;
+}
+
+.custom-career-life-codurance-section .dnd-section>.row-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (max-width: 991px) {
+  .custom-container-row.custom-career-life-codurance-section .row-fluid .span4 {
+      width: 100% !important;
+    }
+}
+
+.custom-container-row.custom-career-life-codurance-section .row-fluid .span4 {
+  padding: 0;
+  margin-bottom: 2.14286rem;
+  display: flex;
+    flex-wrap: wrap;
+}
+
+.custom-container-row.custom-career-life-codurance-section .dnd-section>.row-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.custom-container-row.custom-career-life-codurance-section .dnd-section .row-fluid {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.custom-career-questions-section {
+  background-color: var(--athens-gray);
+}

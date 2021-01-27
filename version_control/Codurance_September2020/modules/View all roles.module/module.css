@@ -9,22 +9,10 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 1;
 
-  
-  
+
+
 }
 
-.custom-career-row4 .dnd-section.dnd-row>.row-fluid {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: stretch!important;
-    align-items: stretch!important;
-}
-
-.custom-career-row4 .dnd-section.dnd-row>.row-fluid * div {
-    height: 100%;
-}
 article.custom-view-all-roles {
     background-position: center;
 }
