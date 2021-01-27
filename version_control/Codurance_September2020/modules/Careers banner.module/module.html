@@ -1,9 +1,11 @@
+{{ require_css(get_asset_url("../../css/modules/careers-banner.css")) }}
+
 <section class="custom-career-banner dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall" data-options="{direction: &quot;fromtop&quot;, animation_duration: 25, direction: &quot;reverse&quot;}">
   <div class="divimage dzsparallaxer--target w-100 u-bg-overlay custom-bg-black-opacity-0_3--after" style="height: 140%; background-image: url('{{ module.background_image.src }}'); transform: translate3d(0px, -40.0274px, 0px);"></div>
   <div class="container page-center custom-color-white text-center custom-py-120">
     <div class="custom-mb-40">
-      <h2 class="u-heading-v2__title custom-mb-10 custom-font-weight-800">{{ module.heading }}</h2> 
-      <h4 class="custom-font-weight-200">{{ module.sub_heading }}</h4> 
+      <h2 class="u-heading-v2__title custom-mb-10 custom-font-weight-800">{{ module.heading }}</h2>
+      <h4 class="custom-font-weight-200">{{ module.sub_heading }}</h4>
     </div>
     <div class="text-center">
       {% if module.button.button_type == "std" %}
@@ -22,11 +24,11 @@
 
       {% elif module.button.button_type == "lightbox" %}
       <a class="{{ module.button.module_setting.custom_class }}" data-modal-target="#careers-form" href="#careers-form">
-        <span>{{ module.button.text_field }}</span> 
+        <span>{{ module.button.text_field }}</span>
         <div id="careers-form" class="custom-max-width-800 custom-bg-white custom-overflow-y-auto custom-brd-around custom-brd-gray-light-v4 custom-pa-20 custom-mb-40" style="display: none;">
-          <button type="button" class="close" onclick="Custombox.modal.close();"> <i class="hs-icon hs-icon-close btn-pointer-cursor"></i> 
+          <button type="button" class="close" onclick="Custombox.modal.close();"> <i class="hs-icon hs-icon-close btn-pointer-cursor"></i>
           </button>
-          <h2 class="modal-title" id="myModalLabel4">{{ module.button.lightbox.lightbox_title }}</h2> 
+          <h2 class="modal-title" id="myModalLabel4">{{ module.button.lightbox.lightbox_title }}</h2>
           <div class="small custom-color-grey-opacity-0_6">{{ module.button.lightbox.lightbox_sub_title }}</div>
           <hr>
           <script src='https://www.workable.com/assets/embed.js' type='text/javascript'></script>
