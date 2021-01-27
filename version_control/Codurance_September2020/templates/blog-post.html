@@ -153,7 +153,7 @@ label: Blog Post
 <section class="container page-center custom-pt-15 blog">
   <div class="row justify-content-center">
     <div class="col-lg-9 custom-overflow-y-hidden">
-
+      {% module "newsletter_exit_popup" path="../modules/Newsletter Exit Popup.module" label="Newsletter exit popup" no_wrapper=True %}
       {% if content.post_body is string_containing "</p>" %}
         {% set sections = content.post_body|split('</p>', 5) %}
       {% else %}

@@ -1,0 +1,152 @@
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 2%;
+    right: 1%;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.email_form_container {
+    padding: 8%;
+    border-radius: .5rem;
+    top: 20%;
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.email_cta_image {
+    display: none;
+}
+
+@media (min-width: 35em) {
+    .email_form_container {
+        background-color: rgb(201,255,229);
+        padding: 4%;
+    }
+}
+
+@media (min-width: 50em){
+    .email_form_container {
+        background-color: rgb(201,255,229);
+        padding: 2%;
+    }
+
+    .form_inner {
+        display: inline-block;
+        width: 60%;
+    }
+
+    .email_cta_image {
+        display: inline-block;
+        float: right;
+        width: 25%;
+        margin-right: 8%;
+        margin-top: -1%;
+    }
+
+    .hs_email {
+        display: inline-block;
+    }
+    .hs_submit {
+        display: inline-block;
+    }
+    .hs-error-msg {
+        display: none;
+    }
+
+    .hs-form label
+    {
+        display:none;
+    }
+
+    input[type=email] {
+        width: 300px;
+    }
+
+    input[type=submit], input[type=submit]:hover, input[type=submit]:focus{
+        font-size: inherit;
+        line-height: inherit;
+        padding: 8px 24px;
+    }
+}
+
+.email_form_container {
+    box-shadow: 0px 0px 10px #afc0d9;
+    background-color: rgb(201,255,229);
+    padding: 35px;
+    border-radius: .25rem;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    overflow: hidden;
+}
+
+img {
+    max-height: 150px;
+    width: auto;
+    display:inline-block;
+    justify-content: right;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.form_inner {
+    text-align: left;
+    margin-right: 70px;
+    min-width: 60%;
+}
+
+.cta_text {
+    overflow: hidden;
+    max-width: 50ch;
+}
+
+input[type=email] {
+    width: 400px;
+}
+
+input[type=submit], input[type=submit]:hover, input[type=submit]:focus{
+    background-color: rgb(255, 0, 0);
+    border: rgb(255, 0, 0);
+    font-size: inherit;
+    line-height: inherit;
+    padding: 8px 24px;
+}
+
+.hs-form label
+{
+    display:none;
+}
+
+form > div {
+    display:inline-block;
+    margin-bottom: 0;
+}
+
