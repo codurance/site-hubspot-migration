@@ -164,7 +164,6 @@ label: Blog Post
       {% set half_article_count = word_count / 2 %}
       {% set current_word_count = 0 %}
       {% set have_set_cta = false %}
-      {{ word_count }}
         {% for section in sections %}
           {% set current_word_count = current_word_count|add(section|striptags|wordcount) %}
           {% if current_word_count > half_article_count and have_set_cta is false %}
