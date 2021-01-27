@@ -1,3 +1,5 @@
+{{ require_css(get_asset_url("../../css/modules/about-us-card.css")) }}
+
 <article class="custom-about-us-card">
   {% if module.background_image.src %}
   {% set sizeAttrs = 'width="{{ module.background_image.width }}" height="{{ module.background_image.height }}"' %}
