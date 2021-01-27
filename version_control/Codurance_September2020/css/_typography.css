@@ -286,7 +286,7 @@ p {
 
 /* Anchor Links */
 a {
-  color: {{ link_color }};
+  color: var(--persimmon);
   text-decoration: none;
 }
 a:hover, a:focus {

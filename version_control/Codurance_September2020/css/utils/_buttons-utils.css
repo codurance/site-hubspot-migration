@@ -9,6 +9,7 @@
   text-align: center;
   text-decoration: none;
   transition: var(--cta-transition);
+  white-space: nowrap;
 {% endmacro %}
 
 {% macro button_primary(classname) %}

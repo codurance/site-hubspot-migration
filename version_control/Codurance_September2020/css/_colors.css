@@ -19,4 +19,5 @@
   --woodsmoke: hsl(240, 3%, 5%);
   --woodsmoke--50: hsla(240, 3%, 5%, 0.5);
   --woodsmoke--20: hsla(240, 3%, 5%, 0.2);
+  --woodsmoke--10: hsla(240, 3%, 5%, 0.1);
 }
