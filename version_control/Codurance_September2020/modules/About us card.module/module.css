@@ -1,3 +1,7 @@
 .custom-about-us-card * {
     color: #fff;
 }
+
+.custom-body-container .custom-about-us-card h4 {
+  margin-bottom: .5rem;
+}
