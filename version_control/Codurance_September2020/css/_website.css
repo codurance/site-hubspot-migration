@@ -2292,12 +2292,7 @@ i.icon-bg-u {
 .custom-cookie-row3 table tbody tr {
   border-bottom: 1px solid #777;
 }
-.custom-events-row1 .custom-career-banner h2.u-heading-v2__title {
-  margin-top: 0;
-  margin-bottom: 1rem !important;
-  font-weight: normal !important;
-  position: relative;
-}
+
 .custom-body-container.body-container-cookie h3, .custom-body-container.body-container-cookie h4 {
   margin-bottom: 1rem;
 }
@@ -2319,22 +2314,7 @@ i.icon-bg-u {
   margin: 0 !important;
   padding-bottom: 7px;
 }
-.custom-events-row1 .custom-career-banner h2.u-heading-v2__title:after {}
 
-.custom-events-row1 .custom-career-banner  .custom-mb-40 {
-  margin-bottom: 0 !important;
-  position: relative;
-}
-
-.custom-events-row1 .custom-career-banner .custom-mb-40:after {
-  content: "";
-  display: inline-block;
-  border-top-style: solid;
-  border-color: inherit;
-  width: 2.14286rem;
-  border-top-width: 1px;
-  margin-top: 0.71429rem;
-}
 .custom-body-container.body-container-cookie h3, .custom-body-container.body-container-cookie h4 {
   margin-bottom: 1rem;
 }

@@ -1,10 +1,7 @@
-.whr-code, .whr-date, .whr-dept { display: none; } 
+.whr-code, .whr-date, .whr-dept { display: none; }
 .whr-group { font-weight: bold; }
 .whr-items { margin-right: 1em; }
 
-.custom-career-banner * {
-  color: #fff;
-}
 .u-bg-overlay::before, .u-bg-overlay::after {
   content: "";
   position: absolute;
@@ -15,7 +12,7 @@
 }
 .u-bg-overlay::after {
 
-  background-color: rgba(0, 0, 0, 0.3) 
+  background-color: rgba(0, 0, 0, 0.3)
 
 }
 .custom-bg-orange {

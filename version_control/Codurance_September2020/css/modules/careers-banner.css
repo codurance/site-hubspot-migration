@@ -16,7 +16,31 @@
   left: 0;
 }
 .u-bg-overlay::after {
-
   background-color: rgba(0, 0, 0, 0.3)
+}
 
+.custom-events-row1 .custom-career-banner h2.u-heading-v2__title {
+  margin-top: 0;
+  margin-bottom: 1rem !important;
+  font-weight: normal !important;
+  position: relative;
+}
+
+.custom-events-row1 .custom-career-banner  .custom-mb-40 {
+  margin-bottom: 0 !important;
+  position: relative;
+}
+
+.custom-events-row1 .custom-career-banner .custom-mb-40:after {
+  content: "";
+  display: inline-block;
+  border-top-style: solid;
+  border-color: inherit;
+  width: 2.14286rem;
+  border-top-width: 1px;
+  margin-top: 0.71429rem;
+}
+
+.custom-career-banner * {
+  color: #fff;
 }
