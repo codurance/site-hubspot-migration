@@ -5,6 +5,11 @@
   padding-top: 0;
 }
 
+.body-container-career h2 {
+  {{ utils.dudler() }}
+  margin-bottom: var(--dudler-margin);
+}
+
 .custom-career-page-header-section .row-fluid .dnd-section .row-fluid {
   padding-left: 0;
   padding-right: 0;
