@@ -23,7 +23,7 @@ footer looks when it comes to spacing and other general styles.
 }
 .footer__container {
   margin: 0 auto;
-  max-width: 1140px;
+  max-width: var(--centered-content-max-width);
   padding:0 15px;
 }
 .hs-footer-top-container {
