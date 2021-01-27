@@ -1299,12 +1299,9 @@ blockquote.no-left-border {
   margin: -15px -15px -15px auto
 }
 
-.modal-title {
-  margin-bottom: 0;
-  line-height: 1.5
-}
 
-.small, small {
+
+small {
   font-size: 80%;
   font-weight: 400;
 }

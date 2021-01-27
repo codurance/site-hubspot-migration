@@ -4,6 +4,12 @@
   padding-bottom: 0;
   padding-top: 0;
 }
+
+.custom-career-page-header-section .row-fluid .dnd-section .row-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .custom-career-about-us-section {
   background-color: var(--athens-gray);
   padding-top: 3.57143rem;

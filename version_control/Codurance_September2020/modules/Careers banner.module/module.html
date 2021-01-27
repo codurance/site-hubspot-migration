@@ -1,44 +1,57 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+
 {{ require_css(get_asset_url("../../css/modules/careers-banner.css")) }}
 
 <section class="custom-career-banner dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall" data-options="{direction: &quot;fromtop&quot;, animation_duration: 25, direction: &quot;reverse&quot;}">
-  <div class="divimage dzsparallaxer--target w-100 u-bg-overlay custom-bg-black-opacity-0_3--after" style="height: 140%; background-image: url('{{ module.background_image.src }}'); transform: translate3d(0px, -40.0274px, 0px);"></div>
-  <div class="container page-center custom-color-white text-center custom-py-120">
-    <div class="custom-mb-40">
-      <h2 class="u-heading-v2__title custom-mb-10 custom-font-weight-800">{{ module.heading }}</h2>
-      <h4 class="custom-font-weight-200">{{ module.sub_heading }}</h4>
-    </div>
-    <div class="text-center">
+  <div class="custom-career-banner__bg-image dzsparallaxer--target" style="background-image: url('{{ module.background_image.src }}');"></div>
+  <div class="custom-career-banner__content-wrapper page-center">
+    <h1 class="custom-career-banner__title">{{ module.heading }}</h1>
+    <span class="custom-career-banner__description">{{ module.sub_heading }}</span>
+    <div class="custom-career-banner__button-wrapper">
       {% if module.button.button_type == "std" %}
-      {% set href = module.button.link_field.url.href %}
-      {% if module.button.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-      {% set href = "mailto:" + href %}
-      {% endif %}
-      <a class="{{ module.button.module_setting.custom_class }}" href="{{ href }}{% if module.button.bookmark_id  %}#{{ module.button.bookmark_id }} {% endif %}"
-         {% if module.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
-         {% if module.button.link_field.no_follow %}rel="nofollow"{% endif %}
-         >
-        {{ module.button.text_field }}
-      </a>
+        {% set href = module.button.link_field.url.href %}
+
+        {% if module.button.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% endif %}
+
+        {% if module.button.link_field.open_in_new_tab %}
+          {% set target = "_blank" %}
+        {% endif %}
+
+        {% if module.button.link_field.no_follow %}
+          {% set rel = "nofollow" %}
+        {% endif %}
+
+        {{snippets.button_primary(
+          classnames=module.button.module_setting.custom_class,
+          url="{{href}}{% if module.button.bookmark_id  %}#{{ module.button.bookmark_id }}{% endif %}",
+          target=target,
+          rel=rel,
+          text=module.button.text_field
+        )}}
+
       {% elif module.button.button_type == "cta" %}
-      {% cta guid="{{ module.button.cta_field }}" %}
+        {% cta guid="{{ module.button.cta_field }}" %}
 
       {% elif module.button.button_type == "lightbox" %}
-      <a class="{{ module.button.module_setting.custom_class }}" data-modal-target="#careers-form" href="#careers-form">
-        <span>{{ module.button.text_field }}</span>
-        <div id="careers-form" class="custom-max-width-800 custom-bg-white custom-overflow-y-auto custom-brd-around custom-brd-gray-light-v4 custom-pa-20 custom-mb-40" style="display: none;">
-          <button type="button" class="close" onclick="Custombox.modal.close();"> <i class="hs-icon hs-icon-close btn-pointer-cursor"></i>
-          </button>
-          <h2 class="modal-title" id="myModalLabel4">{{ module.button.lightbox.lightbox_title }}</h2>
-          <div class="small custom-color-grey-opacity-0_6">{{ module.button.lightbox.lightbox_sub_title }}</div>
-          <hr>
-          <script src='https://www.workable.com/assets/embed.js' type='text/javascript'></script>
-          <script type='text/javascript' charset='utf-8'>
-            whr(document).ready(function(){ window.addEventListener('load', function(e) { var cities = document.getElementsByClassName('whr-group'); for (var i = 0; i < cities.length; i++) { var aCity = cities[i].innerText; if (aCity === 'Barcelona') { cities[i].innerText += ', Spain'; } if (aCity === 'London' || aCity === 'Manchester') { cities[i].innerText += ', UK'; } } }); whr_embed(342253, {detail: 'titles', base: 'jobs', zoom: 'city', grouping: 'locations'}); whr(document).on('click', 'li.whr-item a', function(e) { e.preventDefault(); window.open(this.href, '_blank'); }); });
-          </script>
+        <a class="button-primary {{ module.button.module_setting.custom_class }}" data-modal-target="#careers-form" href="#careers-form">
+          <span>{{ module.button.text_field }}</span>
+          <div id="careers-form" class="custom-career-banner__form career-banner-form" style="display: none;">
+            <button class="career-banner-form__close-button" type="button" onclick="Custombox.modal.close();">
+              <i class="las la-times"></i>
+            </button>
+            <h2 class="career-banner-form__modal-title" id="myModalLabel4">{{ module.button.lightbox.lightbox_title }}</h2>
+            <div class="career-banner-form__modal-description">{{ module.button.lightbox.lightbox_sub_title }}</div>
+            <hr>
+            <script src='https://www.workable.com/assets/embed.js' type='text/javascript'></script>
+            <script type='text/javascript' charset='utf-8'>
+              whr(document).ready(function(){ window.addEventListener('load', function(e) { var cities = document.getElementsByClassName('whr-group'); for (var i = 0; i < cities.length; i++) { var aCity = cities[i].innerText; if (aCity === 'Barcelona') { cities[i].innerText += ', Spain'; } if (aCity === 'London' || aCity === 'Manchester') { cities[i].innerText += ', UK'; } } }); whr_embed(342253, {detail: 'titles', base: 'jobs', zoom: 'city', grouping: 'locations'}); whr(document).on('click', 'li.whr-item a', function(e) { e.preventDefault(); window.open(this.href, '_blank'); }); });
+            </script>
 
-          <div id="whr_embed_hook"></div>
-        </div>
-      </a>
+            <div id="whr_embed_hook"></div>
+          </div>
+        </a>
       {% endif %}
     </div>
   </div>
