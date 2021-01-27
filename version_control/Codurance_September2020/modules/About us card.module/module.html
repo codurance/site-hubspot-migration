@@ -1,25 +1,8 @@
 {{ require_css(get_asset_url("../../css/modules/about-us-card.css")) }}
 
-<article class="custom-about-us-card">
-  {% if module.background_image.src %}
-  {% set sizeAttrs = 'width="{{ module.background_image.width }}" height="{{ module.background_image.height }}"' %}
-  {% if module.background_image.size_type == 'auto' %}
-  {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-  {% elif module.background_image.size_type == 'auto_custom_max' %}
-  {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.background_image.max_width }}px; max-height: {{ module.background_image.max_height }}px"' %}
-  {% endif %}
-  <img class="w-100 u-block-hover__main--zoom-v1" src="{{ module.background_image.src }}" alt="{{ module.background_image.alt }}" {{ sizeAttrs }}>
-  {% endif %}
-
-  <div class="u-block-hover__additional custom-flex-middle custom-z-index-2 custom-ma-20">
-    <div class="align-self-baseline w-100">
-      <h4>{{ module.title }}</h4>
-    </div>
-    <div class="custom-flex-middle-item">
-      <span class="d-block custom-color-white-opacity-0_9">
-        {{ module.content }}
-      </span>
-    </div>
-  </div>
-
+<article class="custom-about-us-card" style="background-image: url({{module.background_image.src}})">
+  <h3 class="custom-about-us-card__title">{{ module.title }}</h3>
+  <p class="custom-about-us-card__description">
+    {{ module.content }}
+  </p>
 </article>
