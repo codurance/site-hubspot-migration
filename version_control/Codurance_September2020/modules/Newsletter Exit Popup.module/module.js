@@ -1,21 +1,19 @@
- // Get the modal
-  let modal = document.querySelector('[data-newsletter-exit-popup-modal]');
+  let modalBackground = document.querySelector('[data-exit-popup-modal]');
 
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
+  let closeButton = document.querySelector('[data-exit-popup-close-button]');
 
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
+  closeButton.onclick = _ => {
+    modalBackground.classList.add('hidden');
   }
 
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+  window.onclick = event => {
+    if (event.target == modalBackground) {
+      modalBackground.classList.add('hidden');
     }
   }
 
 document.addEventListener("mouseout", evt => {
-    if (evt.clientY < 10) modal.style.display = "block";
+  if (evt.clientY < 10) {
+    modalBackground.classList.remove('hidden');
+  }
 });
