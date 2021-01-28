@@ -13,7 +13,7 @@
 
 {{ utils.button_primary('.hs-button.primary', important=true) }}
 
-{{ utils.button_secondary('a.button-secondary') }}
+{{ utils.button_secondary('.button-secondary') }}
 
 {{ utils.text_cta('.text-cta') }}
 
