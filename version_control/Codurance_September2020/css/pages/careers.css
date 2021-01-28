@@ -105,6 +105,20 @@
   flex-wrap: wrap;
 }
 
+{% call utils.small_and_medium() %}
+  .custom-career-our-roles-section .dnd-section .dnd-row > .row-fluid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .custom-career-our-roles-section .dnd-section .dnd-row > .row-fluid .dnd-module {
+    width: 100%;
+    max-width: 600px;
+  }
+  .custom-career-our-roles-section .dnd-section .dnd-row > .row-fluid .dnd-module + .dnd-module {
+    margin-top: 2rem;
+  }
+{% endcall %}
+
 .custom-career-our-roles-section .dnd-section.dnd-row > .row-fluid * div,
 .custom-career-our-roles-section .hs_cos_wrapper_type_module {
   height: 100%;
