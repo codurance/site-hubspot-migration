@@ -4,6 +4,16 @@
 
 }
 
+.custom-still-have-questions__title {
+  {{ utils.dudler() }}
+  margin-bottom: var(--dudler-margin);
+}
+
+.custom-still-have-questions__description {
+  {{ utils.natus() }}
+  margin-bottom: var(--base-margin);
+}
+
 .custombox-content .field>label {
   display: none;
 }
