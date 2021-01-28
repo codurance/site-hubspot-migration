@@ -38,6 +38,7 @@
   right: 1rem;
   top: 1rem;
   z-index: 1;
+  pointer-events: none;
 }
 
 .custom-view-all-roles__title {
