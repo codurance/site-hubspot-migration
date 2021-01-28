@@ -1,4 +1,4 @@
-.email_form_container {
+.email_form_container_inline {
     background-color: rgb(201,255,229);
     padding: 8%;
     margin-top: 5%;
@@ -6,29 +6,29 @@
     border-radius: .5rem;
 }
 
-.email_cta_image {
+.email_cta_image_inline {
     display: none;
 }
 
 @media (min-width: 35em) {
-    .email_form_container {
+    .email_form_container_inline {
         background-color: rgb(201,255,229);
         padding: 4%;
     }
 }
 
 @media (min-width: 50em){
-    .email_form_container {
+    .email_form_container_inline {
         background-color: rgb(201,255,229);
         padding: 2%;
     }
 
-    .form_inner {
+    .form_inner_inline {
         display: inline-block;
         width: 60%;
     }
 
-    .email_cta_image {
+    .email_cta_image_inline {
         display: inline-block;
         float: right;
         width: 25%;
@@ -115,4 +115,3 @@
 /*    display:inline-block;*/
 /*    margin-bottom: 0;*/
 /*}*/
-
