@@ -84,7 +84,8 @@
 {% endcall %}
 
 {% call utils.small() %}
-  .custom-career-about-you-section .dnd-section > .row-fluid .dnd-row .row-fluid > div {
+  .custom-career-about-you-section .dnd-section > .row-fluid .dnd-row .row-fluid > div,
+  .custom-career-our-roles-section .dnd-section > .row-fluid .dnd-row .row-fluid > div {
     width: 100%;
   }
 {% endcall %}
