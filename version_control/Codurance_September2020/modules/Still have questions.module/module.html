@@ -1,12 +1,14 @@
+{{ require_css(get_asset_url("../../css/modules/still-have-questions.css")) }}
+
 <section class="custom-bg-gray-light-v5 custom-pt-50">
   <div class="custom-pb-50">
     <div class="custom-pos-rel">
       <div class="container text-center ">
         <div class="text-center mb-4">
-          <h3 class="h3 text-uppercase mb-3">{{ module.heading }}</h3> 
+          <h3 class="h3 text-uppercase mb-3">{{ module.heading }}</h3>
           <div class="d-inline-block custom-width-60 custom-height-1 custom-bg-orange mb-2"></div>
           <p class="lead mb-0">{{ module.sub_heading }}</p>
-        </div> 
+        </div>
 
         {% if module.button.button_type == "std" %}
         {% set href = module.button.link_field.url.href %}
@@ -23,14 +25,14 @@
         {% cta guid="{{ module.button.cta_field }}" %}
 
         {% elif module.button.button_type == "lightbox" %}
-        <a class="btn btn-md u-btn-primary text-uppercase btn-codurance-color" data-modal-effect="blur" data-modal-target="#{{ module.button.bookmark_id }}" href="#{{ module.button.bookmark_id }}">{{ module.button.text_field }}</a> 
+        <a class="btn btn-md u-btn-primary text-uppercase btn-codurance-color" data-modal-effect="blur" data-modal-target="#{{ module.button.bookmark_id }}" href="#{{ module.button.bookmark_id }}">{{ module.button.text_field }}</a>
         {% endif %}
 
       </div>
     </div>
   </div>
   <div class="text-left custom-max-width-600 custom-bg-white custom-overflow-y-auto custom-pa-20" id="{{ module.button.bookmark_id }}" style="display: none;">
-    <button class="close" onclick="Custombox.modal.close();" type="button"> <i class="hs-icon hs-icon-close btn-pointer-cursor"></i> 
+    <button class="close" onclick="Custombox.modal.close();" type="button"> <i class="hs-icon hs-icon-close btn-pointer-cursor"></i>
     </button>
 
     {{ module.button.lightbox.lightbox_content }}

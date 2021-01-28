@@ -1,0 +1,177 @@
+{% import '../utils/utils.css' as utils %}
+
+.custombox-content .field>label {
+  display: none;
+}
+.custombox-content .field .hs-input::-webkit-input-placeholder {
+  color: inherit;
+  opacity: .5;
+}
+
+.custombox-content .field .hs-input:-ms-input-placeholder {
+  color: inherit;
+  opacity: .5;
+}
+
+.custombox-content .field .hs-input::placeholder {
+  color: inherit;
+  opacity: .5;
+}
+.custombox-content .field .hs-input {
+  color: #555;
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  /* color: #495057; */
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  margin: 0;
+  height: auto;
+  font-family: inherit;
+  /* font-weight: 300; */
+}
+
+.custombox-content h3.form-title {
+  margin: 0;
+}
+
+.custombox-content .field {
+  margin-bottom: 20px;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.custombox-content .field .hs-input:focus {
+  border-color: #fd9233;
+  box-shadow: none;
+}
+
+.custombox-content .field.hs_firstname {
+  margin-bottom: 10px;
+}
+
+.custombox-content .field textarea.hs-input {
+  height: 206px;
+}
+
+.custombox-content .hs_submit.hs-submit {
+  padding: 0 15px;
+}
+
+.custombox-content .hs_submit.hs-submit input.hs-button.primary.large {
+  font-size: 15px;
+  margin: 10px 0;
+  padding: 10px 30px;
+  color: white;
+  font-weight: 700;
+  background: #fb7268;
+  border: none;
+  overflow: hidden;
+  position: relative;
+  float: right;
+  line-height: 1.5;
+  border-radius: .25rem;
+  font-family: inherit;
+}
+
+.custombox-content .hs_submit.hs-submit input.hs-button.primary.large:hover {
+    color: white;
+    background: #fb8e86;
+}
+
+
+.custombox-content .field.hs_email {}
+
+.custombox-content .field.hs_email .input {
+    position: relative;
+    display: flex;
+}
+
+.custombox-content .field.hs_email .input:before {
+    padding: 10px 13px 6px 12px;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    min-width: 38px;
+    background-color: transparent;
+    border-color: #ccc;
+    transition: border-color .15s ease-in-out 0s;
+    content: "";
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f0e0";
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.custombox-content .field.hs_email .input .hs-input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.custombox-content .field.hs_firstname {}
+
+.custombox-content .field.hs_firstname .input {
+    position: relative;
+    display: flex;
+}
+
+.custombox-content .field.hs_firstname .input:before {
+    padding: 10px 13px 6px 12px;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    min-width: 38px;
+    background-color: transparent;
+    border-color: #ccc;
+    transition: border-color .15s ease-in-out 0s;
+    content: "";
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f007";
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.hs_error_rollup {
+    padding: 0 15px;
+}
+.custombox-content .field .hs-input.error{
+    border-color: #fd9233;
+    box-shadow: none;
+}
+.custombox-content .field.hs_firstname .input .hs-input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
