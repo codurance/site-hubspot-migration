@@ -10,7 +10,8 @@
 }
 
 {{ utils.button_primary('.button-primary') }}
-{{ utils.button_primary('.hs-button.primary') }}
+
+{{ utils.button_primary('.hs-button.primary', important=true) }}
 
 {{ utils.button_secondary('a.button-secondary') }}
 

@@ -12,19 +12,19 @@
   white-space: nowrap;
 {% endmacro %}
 
-{% macro button_primary(classname) %}
+{% macro button_primary(classname, important) %}
   {{classname}} {
     {{ button() }}
-    background: var(--persimmon);
-    border: solid 2px var(--persimmon);
-    color: white;
+  background: var(--persimmon) {%if important %} !important{%endif%};
+    border: solid 2px var(--persimmon) {%if important %} !important{%endif%};
+    color: white {%if important %} !important{%endif%};
   }
 
   {{classname}}:hover {
-    background: var(--persimmon--dark);
-    border: solid 2px var(--persimmon--dark);
-    color: #FFFFFF;
-    text-decoration: none;
+    background: var(--persimmon--dark) {%if important %} !important{%endif%};
+    border: solid 2px var(--persimmon--dark) {%if important %} !important{%endif%};
+    color: white {%if important %} !important{%endif%};
+    text-decoration: none {%if important %} !important{%endif%};
   }
 {% endmacro %}
 
@@ -39,7 +39,7 @@
   {{classname}}:hover {
     background: var(--persimmon--dark);
     border: solid 2px var(--persimmon--dark);
-    color: #FFFFFF;
+    color: white;
     text-decoration: none;
   }
 {% endmacro %}
