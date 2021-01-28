@@ -7,7 +7,7 @@
   border-radius: 3px;
   height: 100%;
   margin-bottom: .5rem;
-  padding: 0.5rem;
+  padding: 1rem;
   position: relative;
   text-align: center;
 }
@@ -20,15 +20,21 @@
   position: absolute;
   right: 0;
   top: 0;
+  z-index: 1;
 }
 
 .custom-about-us-card__title {
   {{ utils.base() }}
+  font-weight: var(--middle-font-weight);
   margin-bottom: var(--base-margin);
   color: white;
+  position: inherit;
+  z-index: 2;
 }
 
 .custom-about-us-card__description {
   {{ utils.natus() }}
   color: white;
+  position: inherit;
+  z-index: 2;
 }
