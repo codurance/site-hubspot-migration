@@ -11,7 +11,11 @@
 
 .custom-still-have-questions__description {
   {{ utils.natus() }}
+  display: block;
   margin-bottom: var(--base-margin);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--natus-max-width);
 }
 
 .custombox-content .field>label {
