@@ -124,6 +124,17 @@
   height: 100%;
 }
 
+.custom-career-life-codurance-section .widget-type-rich_text h2 {
+  margin-bottom: var(--base-margin);
+  padding-bottom: 0;
+}
+
+.custom-career-life-codurance-section .widget-type-rich_text p {
+  {{ utils.natus() }}
+  margin-bottom: var(--base-margin);
+  padding-bottom: 20px;
+}
+
 .custom-career-life-codurance-section .dnd-section > .row-fluid {
   padding-left: 15px;
   padding-right: 15px;
