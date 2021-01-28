@@ -2,6 +2,7 @@
 
 :root {
   --cta-transition: all 0.3s ease;
+  --button-max-width: 300px;
 }
 
 .button {
