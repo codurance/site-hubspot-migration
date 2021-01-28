@@ -12,19 +12,21 @@
   white-space: nowrap;
 {% endmacro %}
 
-{% macro button_primary(classname, important) %}
+{% macro button_primary(classname) %}
   {{classname}} {
     {{ button() }}
-  background: var(--persimmon) {%if important %} !important{%endif%};
-    border: solid 2px var(--persimmon) {%if important %} !important{%endif%};
-    color: white {%if important %} !important{%endif%};
+    background: var(--persimmon);
+    border: solid 2px var(--persimmon);
+    color: white;
   }
 
-  {{classname}}:hover {
-    background: var(--persimmon--dark) {%if important %} !important{%endif%};
-    border: solid 2px var(--persimmon--dark) {%if important %} !important{%endif%};
-    color: white {%if important %} !important{%endif%};
-    text-decoration: none {%if important %} !important{%endif%};
+  {{classname}}:hover,
+  {{classname}}:active,
+  {{classname}}:focus {
+    background: var(--persimmon--dark);
+    border: solid 2px var(--persimmon--dark);
+    color: white;
+    text-decoration: none;
   }
 {% endmacro %}
 
@@ -36,7 +38,9 @@
     color: var(--persimmon);
   }
 
-  {{classname}}:hover {
+  {{classname}}:hover,
+  {{classname}}:active,
+  {{classname}}:focus {
     background: var(--persimmon--dark);
     border: solid 2px var(--persimmon--dark);
     color: white;
@@ -56,7 +60,9 @@
     transition: var(--cta-transition);
   }
 
-  {{classname}}:hover {
+  {{classname}}:hover,
+  {{classname}}:active,
+  {{classname}}:focus {
     color: var(--persimmon--dark);
     text-decoration: underline;
   }
