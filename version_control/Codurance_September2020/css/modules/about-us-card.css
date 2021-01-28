@@ -7,6 +7,7 @@
   border-radius: 3px;
   height: 100%;
   margin-bottom: .5rem;
+  padding: 0.5rem;
   position: relative;
   text-align: center;
 }
@@ -19,7 +20,6 @@
   position: absolute;
   right: 0;
   top: 0;
-  padding: 0.5rem;
 }
 
 .custom-about-us-card__title {
