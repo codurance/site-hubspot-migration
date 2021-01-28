@@ -19,3 +19,21 @@ article.custom-view-all-roles {
 article.custom-view-all-roles {
    height: 100%;
 }
+
+@media (max-width: 991px) and (min-width: 768px){
+  article.custom-view-all-roles a.btn {
+    font-size: 14px;
+  }
+  article.custom-view-all-roles h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 350px) {
+  .custom-view-all-roles h3 {
+    font-size: 23px;
+  }
+  .custom-view-all-roles .btn {
+    font-size: 15px;
+  }
+}

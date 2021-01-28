@@ -2635,12 +2635,6 @@ i.icon-bg-u {
 
 
 @media (max-width: 991px) and (min-width: 768px){
-  article.custom-view-all-roles a.btn {
-    font-size: 14px;
-  }
-  article.custom-view-all-roles h3 {
-    font-size: 20px;
-  }
   .custom-interview-process .custom-px-40 {
     padding-left: 10px !important;
     padding-right: 10px !important;
@@ -3082,12 +3076,6 @@ i.icon-bg-u {
 }
 
 @media (max-width: 350px) {
-  .custom-view-all-roles h3 {
-    font-size: 23px;
-  }
-  .custom-view-all-roles .btn {
-    font-size: 15px;
-  }
   .cm-event-card-group h1 {
     color: #555;
     font-size: 2.1rem;
