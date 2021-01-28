@@ -10,3 +10,9 @@ margin: 0;
 article.custom-life-at-condurance {
 height: 100%;
 }
+
+.custom-life-at-condurance__title {
+  {{ utils.base() }}
+  margin-bottom: var(--base-margin);
+  font-weight: var(--heavy-font-weight);
+}
