@@ -104,7 +104,8 @@
   flex-wrap: wrap;
 }
 
-.custom-career-our-roles-section .dnd-section.dnd-row > .row-fluid * div {
+.custom-career-our-roles-section .dnd-section.dnd-row > .row-fluid * div,
+.custom-career-our-roles-section .hs_cos_wrapper_type_module {
   height: 100%;
 }
 
