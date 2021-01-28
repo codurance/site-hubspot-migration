@@ -20,7 +20,6 @@
 
 .custom-career-about-us-section {
   background-color: var(--athens-gray);
-  padding-top: 3.57143rem;
 }
 
 .custom-career-about-us-section .row-fluid .span3 {
@@ -48,6 +47,7 @@
   height: 100%;
 }
 
+.custom-career-about-us-section,
 .custom-career-about-you-section,
 .custom-career-our-roles-section,
 .custom-career-life-codurance-section {
