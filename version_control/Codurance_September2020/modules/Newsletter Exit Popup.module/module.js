@@ -1,5 +1,5 @@
  // Get the modal
-  var modal = document.getElementById("myModal");
+  let modal = document.querySelector('[data-newsletter-exit-popup-modal]');
 
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
