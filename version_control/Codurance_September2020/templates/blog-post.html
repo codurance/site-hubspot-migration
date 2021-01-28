@@ -168,7 +168,12 @@ label: Blog Post
         {% for section in sections %}
           {% set current_word_count = current_word_count|add(section|striptags|wordcount) %}
           {% if current_word_count > half_article_count and have_set_cta is false %}
-          {% module "newsletter_inline_form" path="../modules/Newsletter Inline Form.module" label="Newsletter inline form" no_wrapper=True %}
+          {% module 
+            "newsletter_inline_form"
+            sign_up_form={"form_id": "custom-form-id"}
+            path="../modules/Newsletter Inline Form.module"
+            label="Newsletter inline form" no_wrapper=True
+          %}
             {{ section }}
             {% set have_set_cta = true %}
           {% else %}
