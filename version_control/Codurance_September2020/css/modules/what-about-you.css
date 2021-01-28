@@ -1,6 +1,19 @@
 {% import '../utils/utils.css' as utils %}
 
-.custom-body-container.custom-body-container-2 .custom-what-about-you h5 {
-    margin-bottom: .5rem;
+.custom-what-about-you {
+  background-color: var(--athens-gray)
+  border-radius: 3px;
+  box-shadow: 0 2px 5px var(--french-gray);
+  height: 100%;
+  padding: 1.5rem;
 }
 
+.custom-what-about-you__title {
+  {{ utils.base() }}
+  font-weight: var(--middle-font-weight);
+  margin-bottom: var(--base-margin);
+}
+
+.custom-what-about-you__description {
+  {{ utils.natus() }}
+}

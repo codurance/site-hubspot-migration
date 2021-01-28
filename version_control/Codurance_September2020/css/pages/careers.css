@@ -60,13 +60,21 @@
 }
 
 .custom-career-about-you-section .dnd-section >.row-fluid .dnd-row .row-fluid {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
 }
+
+{% call utils.small_and_medium() %}
+  .custom-career-about-you-section .row-number-3 .dnd-module {
+    min-width: 50%;
+  }
+{% endcall %}
+
 .custom-career-about-you-section .row-fluid .span4 div {
-    height: 100%;
+  height: 100%;
 }
 
 {% call utils.small() %}
