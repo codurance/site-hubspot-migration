@@ -1,3 +1,5 @@
+{{ require_css(get_asset_url("../../css/modules/life-at-codurance.css")) }}
+
 <article class="custom-life-at-condurance u-block-hover custom-brd-around custom-brd-top-none custom-brd-gray-light-v4 h-100">
   <figure class="custom-overflow-hidden">
     {% set href = module.link_field.url.href %}
@@ -16,7 +18,7 @@
       {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image_field.max_width }}px; max-height: {{ module.image_field.max_height }}px"' %}
       {% endif %}
       <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ sizeAttrs }}>
-      {% endif %}   
+      {% endif %}
     </a>
   </figure>
   <div class="text-center custom-pa-40">
@@ -31,7 +33,7 @@
          >
         {{ module.heading }}
       </a>
-    </h4> 
+    </h4>
     {% set href = module.link_field.url.href %}
     {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
     {% set href = "mailto:" + href %}
@@ -40,6 +42,6 @@
        {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
        {% if module.link_field.no_follow %}rel="nofollow"{% endif %}
        >
-      Read More</a> 
+      Read More</a>
   </div>
 </article>

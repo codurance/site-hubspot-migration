@@ -1,0 +1,12 @@
+{% import '../utils/utils.css' as utils %}
+
+.custom-life-at-condurance figure.custom-overflow-hidden {
+height: 240px;
+}
+figure.custom-overflow-hidden {
+margin: 0;
+}
+
+article.custom-life-at-condurance {
+height: 100%;
+}
