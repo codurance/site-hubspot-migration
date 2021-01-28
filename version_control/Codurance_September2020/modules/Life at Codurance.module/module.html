@@ -13,26 +13,15 @@
   {% set rel = "nofollow" %}
 {% endif %}
 
-{% if module.image_field.src %}
-  {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
-
-  {% if module.image_field.size_type == 'auto' %}
-    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-
-  {% elif module.image_field.size_type == 'auto_custom_max' %}
-    {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image_field.max_width }}px; max-height: {{ module.image_field.max_height }}px"' %}
-  {% endif %}
-{% endif %}
-
-<article class="custom-life-at-condurance u-block-hover custom-brd-around custom-brd-top-none custom-brd-gray-light-v4 h-100">
-  <figure class="custom-overflow-hidden">
+<article class="custom-life-at-codurance">
+  <figure class="custom-life-at-codurance__image-container">
     {% if module.image_field.src %}
-      <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ sizeAttrs }}>
+      <img class="custom-life-at-codurance__image" src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ sizeAttrs }}>
     {% endif %}
   </figure>
 
   <div class="text-center custom-pa-40">
-    <h4 class="custom-life-at-condurance__title">
+    <h4 class="custom-life-at-codurance__title">
       {{ module.heading }}
     </h4>
 
@@ -40,7 +29,8 @@
       url=href,
       rel=rel,
       target=target,
-      text="Read More"
+      text="Read More",
+      classnames="custom-life-at-codurance__link"
     )}}
   </div>
 </article>

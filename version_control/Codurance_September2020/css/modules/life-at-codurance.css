@@ -1,18 +1,41 @@
 {% import '../utils/utils.css' as utils %}
 
-.custom-life-at-condurance figure.custom-overflow-hidden {
-height: 240px;
-}
-figure.custom-overflow-hidden {
-margin: 0;
-}
-
-article.custom-life-at-condurance {
-height: 100%;
+.custom-life-at-codurance {
+  border: 1px solid var(--athens-gray);
+  height: 100%;
+  position: relative;
 }
 
-.custom-life-at-condurance__title {
+.custom-life-at-codurance__image-container {
+  height: 240px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.custom-life-at-codurance__image {
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center;
+  transform: scale(1);
+  transition: transform 0.2s linear;
+  width: 100%;
+}
+
+.custom-life-at-codurance:hover .custom-life-at-codurance__image {
+  transform: scale(1.1);
+}
+
+.custom-life-at-codurance__title {
   {{ utils.base() }}
-  margin-bottom: var(--base-margin);
   font-weight: var(--heavy-font-weight);
+  margin-bottom: var(--base-margin);
+}
+
+.custom-life-at-codurance__link::after {
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
