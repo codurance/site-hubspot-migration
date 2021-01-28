@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+.custom-still-have-questions {
+
+}
+
 .custombox-content .field>label {
   display: none;
 }

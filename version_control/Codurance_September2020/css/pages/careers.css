@@ -50,7 +50,8 @@
 .custom-career-about-us-section,
 .custom-career-about-you-section,
 .custom-career-our-roles-section,
-.custom-career-life-codurance-section {
+.custom-career-life-codurance-section,
+.custom-career-questions-section {
   padding-top: 3.57143rem;
   padding-bottom: 3.57143rem;
 }
@@ -93,11 +94,6 @@
 .custom-career-our-roles-section {
   background-color: var(--athens-gray);
 }
-
-{# .custom-career-our-roles-section .span5,
-.custom-career-our-roles-section .span7 {
-  margin-bottom: 2.14286rem !important;
-} #}
 
 .custom-career-our-roles-section .dnd-section .dnd-row > .row-fluid {
   align-items: stretch;
