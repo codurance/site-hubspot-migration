@@ -54,36 +54,3 @@
 .custom-how-does-it-work__description {
   {{ utils.natus() }}
 }
-
-{# @media (min-width: 576px){
-  .custom-how-does-it-work.row.bg-color-light {
-    margin: 0;
-  }
-} #}
-.bg-color-light {
-  background-color: #f7f7f7 !important;
-}
-.nopadding {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.howworks-boxes-container {
-  padding-top: 1.5rem;
-  margin: 0 auto;
-}
-.custom-body-container.custom-body-container-2 .howworks-boxes-container .h5 {
-  margin-bottom: .5rem;
-}
-.howworks-boxes-container {
-  padding-top: 1.5rem;
-  margin: 0 auto
-}
-
-.howworks-box {
-  border-left: 3px solid #e67e22;
-  margin-left: 5px;
-  margin-right: 5px
-}
-
-
