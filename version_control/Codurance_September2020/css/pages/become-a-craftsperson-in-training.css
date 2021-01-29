@@ -1,27 +1,27 @@
-.body-container-become-a-craftsperson-in-training .dnd-section {
+.body-container-become-craftsperson-in-training .dnd-section {
   padding-bottom: 0;
   padding-top: 0;
 }
 
-.body-container-become-a-craftsperson-in-training .custom-section-header-row.custom-become-a-craftsperson-in-row3 .span6 .hs_cos_wrapper_type_rich_text {
+.body-container-become-craftsperson-in-training .custom-section-header-row.become-a-craftsperson-in-required-skills-section .span6 .hs_cos_wrapper_type_rich_text {
   margin: 0;
   text-align: left;
 }
 
-.body-container-become-a-craftsperson-in-training .custom-section-header-row.custom-become-a-craftsperson-in-row3 .span6 .hs_cos_wrapper_type_rich_text h5 {
+.body-container-become-craftsperson-in-training .custom-section-header-row.become-a-craftsperson-in-required-skills-section .span6 .hs_cos_wrapper_type_rich_text h5 {
   color: #555;
   position: relative;
   margin-bottom: 30px;
   padding-left: 40px;
 }
 
-.body-container-become-a-craftsperson-in-training .custom-section-header-row.custom-become-a-craftsperson-in-row3 .span6 .hs_cos_wrapper_type_rich_text ul {
+.body-container-become-craftsperson-in-training .custom-section-header-row.become-a-craftsperson-in-required-skills-section .span6 .hs_cos_wrapper_type_rich_text ul {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
 
-.body-container-become-a-craftsperson-in-training .custom-section-header-row.custom-become-a-craftsperson-in-row3 .span6 .hs_cos_wrapper_type_rich_text ul li {
+.body-container-become-craftsperson-in-training .custom-section-header-row.become-a-craftsperson-in-required-skills-section .span6 .hs_cos_wrapper_type_rich_text ul li {
   display: inline-block;
   height: 20px;
   margin: 10px 0;
@@ -33,7 +33,7 @@
   line-height: 20px;
 }
 
-.body-container-become-a-craftsperson-in-training .custom-section-header-row:not(.custom-become-a-craftsperson-in-row6) .hs_cos_wrapper_type_rich_text p {
+.body-container-become-craftsperson-in-training .custom-section-header-row:not(.become-a-craftsperson-in-interview-process-section) .hs_cos_wrapper_type_rich_text p {
   padding-left: 60px;
   padding-right: 60px;
   margin-top: 0;
@@ -44,18 +44,18 @@
   padding-bottom: 16px;
 }
 
-.body-container-become-a-craftsperson-in-training .custom-section-header-row:not(.custom-become-a-craftsperson-in-row6) .hs_cos_wrapper_type_rich_text {
+.body-container-become-craftsperson-in-training .custom-section-header-row:not(.become-a-craftsperson-in-interview-process-section) .hs_cos_wrapper_type_rich_text {
   margin-bottom: 60px;
 }
 
 @media (max-width: 575px) {
-  .body-container-become-a-craftsperson-in-training .custom-section-header-row.custom-become-a-craftsperson-in-row3 .span6 .hs_cos_wrapper_type_rich_text ul {
+  .body-container-become-craftsperson-in-training .custom-section-header-row.become-a-craftsperson-in-required-skills-section .span6 .hs_cos_wrapper_type_rich_text ul {
     margin-top: 0;
     margin-bottom: 1rem;
     padding-left: 15px;
   }
 
-  .body-container-become-a-craftsperson-in-training .custom-section-header-row:not(.custom-become-a-craftsperson-in-row6) .hs_cos_wrapper_type_rich_text p {
+  .body-container-become-craftsperson-in-training .custom-section-header-row:not(.become-a-craftsperson-in-interview-process-section) .hs_cos_wrapper_type_rich_text p {
     padding-left: 20px;
     padding-right: 20px;
   }
