@@ -1825,7 +1825,7 @@ i.icon-bg-u {
 .rounded-circle {
   border-radius: 50%!important;
 }
-.custom-become-a-craftsperson-in-row1.custom-become-a-craftsperson-row1 .custom-py-120 {
+.become-a-craftsperson-in-banner-section.custom-become-a-craftsperson-row1 .custom-py-120 {
   padding-top: 8.57143rem !important;
   padding-bottom: 8.57143rem !important;
 }
@@ -2128,7 +2128,7 @@ i.icon-bg-u {
   -ms-flex: 1;
   flex: 1;
 }
-.custom-become-a-craftsperson-in-row3 .span6 {
+.become-a-craftsperson-in-required-skills-section .span6 {
   width: 50%;
   margin: 0;
   padding: 0 15px;
@@ -2170,7 +2170,7 @@ i.icon-bg-u {
 .custom-privacy-policy-row1 .span9 li a:hover {
   color: #e67e22;
 }
-.custom-become-a-craftsperson-in-row3 .span6 * {}
+.become-a-craftsperson-in-required-skills-section .span6 * {}
 
 .custom-cookie-row3 th, .custom-cookie-row3 td {
   vertical-align: middle;
@@ -2550,7 +2550,7 @@ i.icon-bg-u {
   .w-100 {
     width: 100%!important;
   }
-  .custom-become-a-craftsperson-in-row3 .span6 {
+  .become-a-craftsperson-in-required-skills-section .span6 {
     width: 100%;
   }
   .md-margin-bottom-40 {
@@ -2926,7 +2926,7 @@ i.icon-bg-u {
   .testimonial-picture {
     height:160px
   }
-  .custom-become-a-craftsperson-in-row3 .span6 {
+  .become-a-craftsperson-in-required-skills-section .span6 {
     width: 100%;
     padding: 0;
   }
