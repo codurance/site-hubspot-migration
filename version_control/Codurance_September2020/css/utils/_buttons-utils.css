@@ -20,10 +20,12 @@
     color: white;
   }
 
-  {{classname}}:hover {
+  {{classname}}:hover,
+  {{classname}}:active,
+  {{classname}}:focus {
     background: var(--persimmon--dark);
     border: solid 2px var(--persimmon--dark);
-    color: #FFFFFF;
+    color: white;
     text-decoration: none;
   }
 {% endmacro %}
@@ -36,10 +38,12 @@
     color: var(--persimmon);
   }
 
-  {{classname}}:hover {
+  {{classname}}:hover,
+  {{classname}}:active,
+  {{classname}}:focus {
     background: var(--persimmon--dark);
     border: solid 2px var(--persimmon--dark);
-    color: #FFFFFF;
+    color: white;
     text-decoration: none;
   }
 {% endmacro %}
@@ -56,7 +60,9 @@
     transition: var(--cta-transition);
   }
 
-  {{classname}}:hover {
+  {{classname}}:hover,
+  {{classname}}:active,
+  {{classname}}:focus {
     color: var(--persimmon--dark);
     text-decoration: underline;
   }

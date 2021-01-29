@@ -1299,12 +1299,9 @@ blockquote.no-left-border {
   margin: -15px -15px -15px auto
 }
 
-.modal-title {
-  margin-bottom: 0;
-  line-height: 1.5
-}
 
-.small, small {
+
+small {
   font-size: 80%;
   font-weight: 400;
 }
@@ -1766,10 +1763,6 @@ i.icon-bg-u {
   height: 500px !important;
 }
 
-.body-container-career .dnd-section {
-  padding-bottom: 0;
-  padding-top: 0;
-}
 .custom-section-header-row .hs_cos_wrapper_type_rich_text {
   display: block;
   text-align: center;
@@ -1778,7 +1771,6 @@ i.icon-bg-u {
 .u-bg-overlay {
   position: relative;
 }
-.custom-section-header-row .hs_cos_wrapper_type_rich_text h4 {}
 
 .custom-section-header-row .hs_cos_wrapper_type_rich_text hr {
   display: inline-block;
@@ -1786,9 +1778,7 @@ i.icon-bg-u {
   background-color: #ef7726;
   margin: 0 0 .5rem;
 }
-.custom-career-row2 .row-fluid .span3 {
-  margin-bottom: 2.14286rem
-}
+
 .custom-bg-black-opacity-0_1--after::after {
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
@@ -1942,14 +1932,6 @@ i.icon-bg-u {
 .custom-bcustom-orange {
   background-color: #e57d20 !important;
 }
-.custom-container-row.custom-career-row5 .dnd-section>.row-fluid {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.custom-body-container .custom-about-us-card h4 {
-  margin-bottom: .5rem;
-}
 
 .mb-2, .my-2 {
   margin-bottom: .5rem!important;
@@ -1976,18 +1958,6 @@ i.icon-bg-u {
   max-width: 750px;
   margin: auto;
   font-weight: 300;
-}
-.custom-container-row.custom-career-row3 .row-fluid .span4{
-  margin-bottom: 2.14286rem;
-}
-.custom-career-row4 .span5 {
-  margin-bottom: 2.14286rem !important;
-}
-.custom-career-row4 .span7 {
-  margin-bottom: 2.14286rem !important;
-}
-.custom-mb-40 {
-  margin-bottom: 2.85714rem !important;
 }
 .custom-pos-rel {
   position: relative !important;
@@ -2310,12 +2280,7 @@ i.icon-bg-u {
 .custom-cookie-row3 table tbody tr {
   border-bottom: 1px solid #777;
 }
-.custom-events-row1 .custom-career-banner h2.u-heading-v2__title {
-  margin-top: 0;
-  margin-bottom: 1rem !important;
-  font-weight: normal !important;
-  position: relative;
-}
+
 .custom-body-container.body-container-cookie h3, .custom-body-container.body-container-cookie h4 {
   margin-bottom: 1rem;
 }
@@ -2337,22 +2302,7 @@ i.icon-bg-u {
   margin: 0 !important;
   padding-bottom: 7px;
 }
-.custom-events-row1 .custom-career-banner h2.u-heading-v2__title:after {}
 
-.custom-events-row1 .custom-career-banner  .custom-mb-40 {
-  margin-bottom: 0 !important;
-  position: relative;
-}
-
-.custom-events-row1 .custom-career-banner .custom-mb-40:after {
-  content: "";
-  display: inline-block;
-  border-top-style: solid;
-  border-color: inherit;
-  width: 2.14286rem;
-  border-top-width: 1px;
-  margin-top: 0.71429rem;
-}
 .custom-body-container.body-container-cookie h3, .custom-body-container.body-container-cookie h4 {
   margin-bottom: 1rem;
 }
@@ -2449,9 +2399,6 @@ i.icon-bg-u {
   .custom-container-row .row-fluid .span6 {
     width: 50%;
   }
-  .custom-career-row2 .row-fluid .span3 {
-    width: 50%;
-  }
   .custom-container-row .row-fluid .span4 {
     width: 33.333333%;
 
@@ -2494,9 +2441,6 @@ i.icon-bg-u {
 @media (min-width: 1200px) {
   .custom-container-wrapper .dnd-section>.row-fluid {
     max-width:1170px
-  }
-  .custom-career-row2 .row-fluid .span3 {
-    width: 25%;
   }
 }
 
@@ -2686,20 +2630,11 @@ i.icon-bg-u {
 
     width: 100%;
   }
-  .custom-container-row.custom-career-row3 .row-fluid .span4,
-  .custom-container-row.custom-career-row5 .row-fluid .span4{
-    width: 100% !important;
-  }
+
 }
 
 
 @media (max-width: 991px) and (min-width: 768px){
-  article.custom-view-all-roles a.btn {
-    font-size: 14px;
-  }
-  article.custom-view-all-roles h3 {
-    font-size: 20px;
-  }
   .custom-interview-process .custom-px-40 {
     padding-left: 10px !important;
     padding-right: 10px !important;
@@ -3068,9 +3003,6 @@ i.icon-bg-u {
   .custom-apply-now p {
     margin-bottom: 1.07143rem !important;
   }
-  .custom-container-row.custom-career-row3 .dnd-section > .row-fluid .dnd-row .row-fluid > div {
-    width: 100%;
-  }
   .custom-col-width-row.custom-become-a-craftsperson-row4 .dnd-section > .row-fluid .row-fluid > .span12 {
     width: 100%;
   }
@@ -3144,12 +3076,6 @@ i.icon-bg-u {
 }
 
 @media (max-width: 350px) {
-  .custom-view-all-roles h3 {
-    font-size: 23px;
-  }
-  .custom-view-all-roles .btn {
-    font-size: 15px;
-  }
   .cm-event-card-group h1 {
     color: #555;
     font-size: 2.1rem;

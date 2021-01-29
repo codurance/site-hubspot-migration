@@ -37,9 +37,6 @@ stylesheets or you can add your own custom styles.
 .body-container__homepage .dnd-section:nth-child(odd) {
   background-color: {{ theme.global_colors.secondary_color.color }};
 }
-.page-center {
-  max-width: {{ theme.spacing.max_width }}px;
-}
 
 {###########################################################################}
 {###############################   _forms    ###############################}
@@ -384,35 +381,6 @@ body .social-links__icon:active svg {
 
 body .team-member__descripxion {
   background-color: {{ theme.global_colors.secondary_color.color }};
-}
-
-.page-center {
-  max-width: {{ theme.spacing.max_width }}px;
-  margin: 0 auto;
-}
-
-@media(max-width:1200px){
-  .footer__container,
-  .dnd-section > .row-fluid,
-  .page-center {
-    max-width: {{ theme.spacing.max_width/1.1875 }}px;
-  }
-}
-
-@media(max-width:992px){
-  .footer__container,
-  .dnd-section > .row-fluid,
-  .page-center {
-    max-width: {{ theme.spacing.max_width/1.58334 }}px;
-  }
-}
-
-@media(max-width:767px){
-  .footer__container,
-  .dnd-section > .row-fluid,
-  .page-center {
-    max-width: {{ theme.spacing.max_width/2.1112 }}px;
-  }
 }
 
 {###########################################################################}

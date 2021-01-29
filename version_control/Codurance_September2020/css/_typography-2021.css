@@ -38,12 +38,15 @@
 
   --ponti-font-size: 1rem;
   --ponti-line-height: 1rem;
+  --ponti-max-width: 50ch;
 
   --natus-font-size: 0.8rem;
   --natus-line-height: 1.095rem;
+  --natus-max-width: 70ch;
 
   --sejima-font-size: 0.6rem;
   --sejima-line-height: 0.9rem;
+  --sejima-max-width: 90ch;
 
   --type-font-size: 110%;
 }

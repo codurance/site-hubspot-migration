@@ -294,18 +294,6 @@ a:hover, a:focus {
 }
 
 /* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  line-height: 1.4;
-  font-weight: {{ headings_font_weight }};
-  color: {{ headings_color }};
-}
 
 h1 {
   font-size: {{ h1_font_size }};
@@ -369,16 +357,6 @@ hr {
   background-color: #ccc;
   height: 1px;
   border: none;
-}
-
-/* TODO */
-small {
-
-}
-
-/* TODO */
-mark {
-
 }
 
 sup,

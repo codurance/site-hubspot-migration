@@ -23,7 +23,7 @@ footer looks when it comes to spacing and other general styles.
 }
 .footer__container {
   margin: 0 auto;
-  max-width: 1140px;
+  max-width: var(--centered-content-max-width);
   padding:0 15px;
 }
 .hs-footer-top-container {
@@ -327,9 +327,6 @@ footer.footer .hs-rss-item  a.hs-rss-title:hover {
   .hs-footer-top-container h6 {
     {{ utils.ponti() }}
     margin-bottom: 29px;
-  }
-  .cm-footer-contact-us address {
-    {{ utils.ponti() }}
   }
   .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li {
     padding-top: 11.857px;

@@ -3,49 +3,72 @@ templateType: page
 isAvailableForNewContent: true
 label: Careers
 -->
+{% import './refactor/refactored-pages.html' as refactor %}
+
 {% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {% if refactor.refactored_pages is containing content.name|striptags|lower %}
+    {{ require_css(get_asset_url("../css/main-2021.css")) }}
+  {% endif %}
+
+  {{ require_css(get_asset_url("../css/pages/careers.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
 
 {% block body %}
 
 
-<div class="custom-body-container custom-body-container-2 body-container-career">
+<div class="body-container-career">
 
 
-  {% dnd_area "row1" class='custom-career-row1', label='Row1' %}
+  {% dnd_area "row1" class='custom-career-page-header-section', label='Row1' %}
   {% dnd_section vertical_alignment='MIDDLE' %}
 
   {% end_dnd_section %}
   {% end_dnd_area %}
-  
-  
-  {% dnd_area "row2" class='custom-career-row2 custom-container-wrapper custom-col-width-row custom-py-50 custom-bg-gray-light-v5 custom-section-header-row', label='Row2' %}
+
+
+  {% dnd_area "row2" class='custom-career-about-us-section custom-container-wrapper custom-col-width-row custom-section-header-row', label='Row2' %}
   {% dnd_section vertical_alignment='MIDDLE' %}
 
   {% end_dnd_section %}
   {% end_dnd_area %}
-  
-  
-  {% dnd_area "row3" class='custom-career-row3 custom-py-50 custom-container-wrapper custom-container-row custom-col-width-row custom-section-header-row', label='Row3' %}
+
+
+  {% dnd_area "row3" class='custom-career-about-you-section custom-container-wrapper custom-container-row custom-col-width-row custom-section-header-row', label='Row3' %}
   {% dnd_section vertical_alignment='MIDDLE' %}
 
   {% end_dnd_section %}
   {% end_dnd_area %}
-  
+
 <div id="our_roles">
-    {% dnd_area "row4" class='custom-career-row4 custom-bg-gray-light-v5 custom-py-50 custom-container-wrapper custom-container-row custom-col-width-row custom-section-header-row', label='Row4' %}
+    {% dnd_area "row4" class='custom-career-our-roles-section custom-container-wrapper custom-container-row custom-col-width-row custom-section-header-row', label='Row4' %}
   {% dnd_section vertical_alignment='MIDDLE' %}
 
   {% end_dnd_section %}
   {% end_dnd_area %}
-  
+
   </div>
-   {% dnd_area "row5" class='custom-career-row5  custom-py-50 custom-container-row custom-col-width-row custom-section-header-row', label='Row5' %}
+   {% dnd_area "row5" class='custom-career-life-codurance-section custom-container-row custom-col-width-row custom-section-header-row', label='Row5' %}
   {% dnd_section vertical_alignment='MIDDLE' %}
 
   {% end_dnd_section %}
   {% end_dnd_area %}
-  
-   {% dnd_area "row6" class='custom-career-row6 custom-bg-gray-light-v5 custom-container-row custom-col-width-row custom-section-header-row', label='Row6' %}
+
+   {% dnd_area "row6" class='custom-career-questions-section  custom-container-row custom-col-width-row custom-section-header-row', label='Row6' %}
   {% dnd_section vertical_alignment='MIDDLE' %}
 
   {% end_dnd_section %}

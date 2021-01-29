@@ -1,30 +1,44 @@
-<article class="custom-view-all-roles h-100 text-center info-v3-2 custom-flex-middle custom-bg-cover custom-bg-size-cover custom-bg-black-opacity-0_2--after custom-color-white text-uppercase custom-py-210 custom-px-30"
-         data-bg-img-src="{{ module.background_image.src }}"
-         style="background-image: url('{{ module.background_image.src}}');"
-         >
-  <div class="flex-align-baseline custom-pos-rel custom-z-index-2">
-    <h3 class="custom-font-weight-700 custom-letter-spacing-3 custom-mb-20">
-      {{ module.heading }}</h3>
-  </div>
-  <div class="custom-flex-middle-item custom-pos-rel custom-z-index-2">
-    <em class="d-block custom-letter-spacing-3 custom-font-weight-300 custom-font-style-normal custom-mb-40">
-      {{ module.sub_heading }}
-    </em>
-  </div>
-  <div class="flex-align-bottom custom-pos-rel custom-z-index-2">
-    {% if module.button.button_type == "std" %}
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{{ require_css(get_asset_url("../../css/modules/view-all-roles.css")) }}
+
+<article
+  class="custom-view-all-roles"
+  data-bg-img-src="{{ module.background_image.src }}"
+  style="background-image: url('{{ module.background_image.src}}');"
+>
+  <h3 class="custom-view-all-roles__title">
+    {{ module.heading }}
+  </h3>
+  <em class="custom-view-all-roles__description">
+    {{ module.sub_heading }}
+  </em>
+
+  {% if module.button.button_type == "std" %}
     {% set href = module.button.link_field.url.href %}
+
     {% if module.button.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-    {% set href = "mailto:" + href %}
+      {% set href = "mailto:" + href %}
     {% endif %}
-    <a class="{{ module.button.module_setting.custom_class }}" href="{{ href }}{% if module.button.bookmark_id  %}#{{ module.button.bookmark_id }} {% endif %}"
-       {% if module.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
-       {% if module.button.link_field.no_follow %}rel="nofollow"{% endif %}
-       >
-      {{ module.button.text_field }}
-    </a>
-    {% elif module.button.button_type == "cta" %}
+
+    {% if module.button.link_field.open_in_new_tab %}
+      {% set target = "_blank" %}
+    {% endif %}
+
+    {% if module.button.link_field.no_follow %}
+      {% set rel = "nofollow" %}
+    {% endif %}
+
+    {{snippets.button_primary(
+      classnames=module.button.module_setting.custom_class,
+      url="{{href}}{% if module.button.bookmark_id  %}#{{ module.button.bookmark_id }}{% endif %}",
+      target=target,
+      rel=rel,
+      text=module.button.text_field
+    )}}
+
+  {% elif module.button.button_type == "cta" %}
     {% cta guid="{{ module.button.cta_field }}" %}
-    {% endif %}
-  </div>
+  {% endif %}
+
 </article>

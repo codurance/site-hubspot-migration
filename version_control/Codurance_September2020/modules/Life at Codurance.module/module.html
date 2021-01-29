@@ -1,45 +1,36 @@
-<article class="custom-life-at-condurance u-block-hover custom-brd-around custom-brd-top-none custom-brd-gray-light-v4 h-100">
-  <figure class="custom-overflow-hidden">
-    {% set href = module.link_field.url.href %}
-    {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-    {% set href = "mailto:" + href %}
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{{ require_css(get_asset_url("../../css/modules/life-at-codurance.css")) }}
+
+{% set href = module.link_field.url.href %}
+{% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" + href %}
+{% endif %}
+{% if module.link_field.open_in_new_tab %}
+  {% set target = "_blank" %}
+{% endif %}
+{% if module.link_field.no_follow %}
+  {% set rel = "nofollow" %}
+{% endif %}
+
+<article class="custom-life-at-codurance">
+  <figure class="custom-life-at-codurance__image-container">
+    {% if module.image_field.src %}
+      <img class="custom-life-at-codurance__image" src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ sizeAttrs }}>
     {% endif %}
-    <a href="{{ href }}"
-       {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
-       {% if module.link_field.no_follow %}rel="nofollow"{% endif %}
-       >
-      {% if module.image_field.src %}
-      {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
-      {% if module.image_field.size_type == 'auto' %}
-      {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-      {% elif module.image_field.size_type == 'auto_custom_max' %}
-      {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image_field.max_width }}px; max-height: {{ module.image_field.max_height }}px"' %}
-      {% endif %}
-      <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ sizeAttrs }}>
-      {% endif %}   
-    </a>
   </figure>
+
   <div class="text-center custom-pa-40">
-    <h4 class="h4 text-uppercase custom-font-weight-600 custom-mb-10">
-      {% set href = module.link_field.url.href %}
-      {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-      {% set href = "mailto:" + href %}
-      {% endif %}
-      <a class="custom-color-gray-dark-v2 custom-text-underline--none--hover" href="{{ href }}"
-         {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
-         {% if module.link_field.no_follow %}rel="nofollow"{% endif %}
-         >
-        {{ module.heading }}
-      </a>
-    </h4> 
-    {% set href = module.link_field.url.href %}
-    {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-    {% set href = "mailto:" + href %}
-    {% endif %}
-    <a class="text-uppercase custom-font-weight-600 custom-font-size-12" href="{{ href }}"
-       {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
-       {% if module.link_field.no_follow %}rel="nofollow"{% endif %}
-       >
-      Read More</a> 
+    <h4 class="custom-life-at-codurance__title">
+      {{ module.heading }}
+    </h4>
+
+    {{snippets.text_cta_right_arrow(
+      url=href,
+      rel=rel,
+      target=target,
+      text="Read More",
+      classnames="custom-life-at-codurance__link"
+    )}}
   </div>
 </article>
