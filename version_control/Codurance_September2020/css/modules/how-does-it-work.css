@@ -1,10 +1,26 @@
 {% import '../utils/utils.css' as utils %}
 
-@media (min-width: 576px){
+.custom-how-does-it-work {
+  background-color: var(--athens-gray);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.custom-how-does-it-work__title {
+  {{ utils.base() }}
+  margin-bottom: var(--base-margin);
+  font-weight: var(--middle-font-weight);
+}
+
+.custom-how-does-it-work__description {
+  {{ utils.natus() }}
+}
+
+{# @media (min-width: 576px){
   .custom-how-does-it-work.row.bg-color-light {
     margin: 0;
   }
-}
+} #}
 .bg-color-light {
   background-color: #f7f7f7 !important;
 }
