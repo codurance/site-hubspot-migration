@@ -3,7 +3,30 @@ templateType: page
 isAvailableForNewContent: true
 label: Become A Craftsperson In Training
 -->
+{% import './refactor/refactored-pages.html' as refactor %}
+
 {% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {% if refactor.refactored_pages is containing content.name|striptags|lower %}
+    {{ require_css(get_asset_url("../css/main-2021.css")) }}
+  {% endif %}
+
+  {{ require_css(get_asset_url("../css/pages/become-a-craftsperson-in-training.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
 
 {% block body %}
 
@@ -41,7 +64,7 @@ label: Become A Craftsperson In Training
 
   {% end_dnd_section %}
   {% end_dnd_area %}
-  
+
   {% dnd_area "row6" class='custom-become-a-craftsperson-in-row6 custom-container-wrapper custom-bg-gray-light-v5  custom-container-row custom-py-50 custom-pb-100 custom-section-header-row', label='Row6' %}
   {% dnd_section vertical_alignment='MIDDLE' %}
 
