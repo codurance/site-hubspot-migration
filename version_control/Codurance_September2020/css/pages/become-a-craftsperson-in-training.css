@@ -1,3 +1,5 @@
+{% import '../utils/utils.css' as utils %}
+
 .become-a-craftsperson-in-banner-section.custom-become-a-craftsperson-row1 .custom-py-120 {
   padding-top: 8.57143rem !important;
   padding-bottom: 8.57143rem !important;
@@ -10,18 +12,18 @@
   text-align: left;
 }
 
-@media (max-width: 991px) {
-.become-a-craftsperson-in-required-skills-section .span6 {
-width: 100%;
-}
-}
+{% call utils.small_and_medium() %}
+  .become-a-craftsperson-in-required-skills-section .span6 {
+    width: 100%;
+  }
+{% endcall %}
 
-@media (max-width: 767px){
-.become-a-craftsperson-in-required-skills-section .span6 {
-width: 100%;
-padding: 0;
-}
-}
+{% call utils.small() %}
+  .become-a-craftsperson-in-required-skills-section .span6 {
+    width: 100%;
+    padding: 0;
+  }
+{% endcall %}
 
 .body-container-become-craftsperson-in-training .dnd-section {
   padding-bottom: 0;
@@ -73,7 +75,7 @@ padding: 0;
   margin-bottom: 60px;
 }
 
-@media (max-width: 575px) {
+{% call utils.small() %}
   .body-container-become-craftsperson-in-training .custom-section-header-row.become-a-craftsperson-in-required-skills-section .span6 .hs_cos_wrapper_type_rich_text ul {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -84,4 +86,4 @@ padding: 0;
     padding-left: 20px;
     padding-right: 20px;
   }
-}
+{% endcall %}
