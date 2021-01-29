@@ -1846,10 +1846,7 @@ i.icon-bg-u {
 .rounded-circle {
   border-radius: 50%!important;
 }
-.become-a-craftsperson-in-banner-section.custom-become-a-craftsperson-row1 .custom-py-120 {
-  padding-top: 8.57143rem !important;
-  padding-bottom: 8.57143rem !important;
-}
+
 .u-icon-v1 > i, .u-icon-v2 > i, .u-icon-v3 > i, .u-icon-v4 > span > i {
   position: relative;
   top: 50%;
@@ -2149,12 +2146,7 @@ i.icon-bg-u {
   -ms-flex: 1;
   flex: 1;
 }
-.become-a-craftsperson-in-required-skills-section .span6 {
-  width: 50%;
-  margin: 0;
-  padding: 0 15px;
-  text-align: left;
-}
+
 .custom-privacy-policy-row1 .span9 {}
 
 .custom-privacy-policy-row1 .span9 {
@@ -2191,7 +2183,6 @@ i.icon-bg-u {
 .custom-privacy-policy-row1 .span9 li a:hover {
   color: #e67e22;
 }
-.become-a-craftsperson-in-required-skills-section .span6 * {}
 
 .custom-cookie-row3 th, .custom-cookie-row3 td {
   vertical-align: middle;
@@ -2571,9 +2562,6 @@ i.icon-bg-u {
   .w-100 {
     width: 100%!important;
   }
-  .become-a-craftsperson-in-required-skills-section .span6 {
-    width: 100%;
-  }
   .md-margin-bottom-40 {
     margin-bottom: 40px;
   }
@@ -2946,10 +2934,6 @@ i.icon-bg-u {
   }
   .testimonial-picture {
     height:160px
-  }
-  .become-a-craftsperson-in-required-skills-section .span6 {
-    width: 100%;
-    padding: 0;
   }
   .custom-apply-now p {
     margin-bottom: 1.07143rem !important;

@@ -1,3 +1,28 @@
+.become-a-craftsperson-in-banner-section.custom-become-a-craftsperson-row1 .custom-py-120 {
+  padding-top: 8.57143rem !important;
+  padding-bottom: 8.57143rem !important;
+}
+
+.become-a-craftsperson-in-required-skills-section .span6 {
+  width: 50%;
+  margin: 0;
+  padding: 0 15px;
+  text-align: left;
+}
+
+@media (max-width: 991px) {
+.become-a-craftsperson-in-required-skills-section .span6 {
+width: 100%;
+}
+}
+
+@media (max-width: 767px){
+.become-a-craftsperson-in-required-skills-section .span6 {
+width: 100%;
+padding: 0;
+}
+}
+
 .body-container-become-craftsperson-in-training .dnd-section {
   padding-bottom: 0;
   padding-top: 0;
