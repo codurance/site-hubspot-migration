@@ -1,5 +1,35 @@
 {% import '../utils/utils.css' as utils %}
 
+
+.become-a-craftsperson-in-banner-section .row-number-1 .row-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.become-a-craftsperson-in-how-work-section .row-number-2 h2 {
+  font-size: var(--dudler-font-size);
+  font-weight: var(--heavy-font-weight);
+  line-height: var(--dudler-line-height);
+  margin-bottom: var(--base-margin);
+  text-align: center;
+}
+
+.become-a-craftsperson-in-how-work-section .row-number-2 p {
+  {{ utils.natus() }}
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--natus-max-width);
+  text-align: center;
+  margin-bottom: var(--base-margin);
+  padding-bottom: 20px;
+}
+
+.become-a-craftsperson-in-how-work-section {
+  padding-top: 3.57143rem;
+  padding-bottom: 3.57143rem;
+}
+
 .become-a-craftsperson-in-banner-section.custom-become-a-craftsperson-row1 .custom-py-120 {
   padding-top: 8.57143rem !important;
   padding-bottom: 8.57143rem !important;
