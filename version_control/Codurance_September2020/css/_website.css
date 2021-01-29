@@ -1831,10 +1831,6 @@ i.icon-bg-u {
   padding-top: 0;
 }
 
-.body-container-become-a-craftsperson-in-training .dnd-section {
-  padding-bottom: 0;
-  padding-top: 0;
-}
 .u-icon-v1, .u-icon-v2, .u-icon-v3, .u-icon-v4 {
   position: relative;
   display: inline-block;
@@ -2197,55 +2193,10 @@ i.icon-bg-u {
 }
 .custom-become-a-craftsperson-in-row3 .span6 * {}
 
-.body-container-become-a-craftsperson-in-training .custom-section-header-row.custom-become-a-craftsperson-in-row3 .span6 .hs_cos_wrapper_type_rich_text * {}
-
-.body-container-become-a-craftsperson-in-training .custom-section-header-row.custom-become-a-craftsperson-in-row3 .span6 .hs_cos_wrapper_type_rich_text {
-  margin: 0;
-  text-align: left;
-}
-
-.body-container-become-a-craftsperson-in-training .custom-section-header-row.custom-become-a-craftsperson-in-row3 .span6 .hs_cos_wrapper_type_rich_text h5 {
-  color: #555;
-  position: relative;
-  margin-bottom: 30px;
-  padding-left: 40px;
-}
-
-.body-container-become-a-craftsperson-in-training .custom-section-header-row.custom-become-a-craftsperson-in-row3 .span6 .hs_cos_wrapper_type_rich_text ul {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.body-container-become-a-craftsperson-in-training .custom-section-header-row.custom-become-a-craftsperson-in-row3 .span6 .hs_cos_wrapper_type_rich_text ul li {
-  display: inline-block;
-  height: 20px;
-  margin: 10px 0;
-  background: url({{ get_asset_url("../images/circled-tick.png")}});
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  list-style: none;
-  padding-left: 30px;
-  line-height: 20px;
-}
-
-
-
-.body-container-become-a-craftsperson-in-training .custom-section-header-row:not(.custom-become-a-craftsperson-in-row6) .hs_cos_wrapper_type_rich_text p {
-  padding-left: 60px;
-  padding-right: 60px;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: inherit;
-  max-width: 100%;
-  margin-top: 1.5rem;
-  padding-bottom: 16px;
-}
 .custom-cookie-row3 th, .custom-cookie-row3 td {
   vertical-align: middle;
 }
-.body-container-become-a-craftsperson-in-training .custom-section-header-row:not(.custom-become-a-craftsperson-in-row6) .hs_cos_wrapper_type_rich_text {
-  margin-bottom: 60px;
-}
+
 .custom-cookie-row3  table {
   text-align: center!important;
   border-collapse: collapse;
@@ -3039,19 +2990,12 @@ i.icon-bg-u {
     padding-right: 0;
     padding-left: 0;
   }
-  .body-container-become-a-craftsperson-in-training .custom-section-header-row.custom-become-a-craftsperson-in-row3 .span6 .hs_cos_wrapper_type_rich_text ul {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    padding-left: 15px;
-  }
+
   .custom-container-wrapper.custom-col-width-row .dnd-section>.row-fluid [class*="custom-col-"] {
     padding-right: 0;
     padding-left: 0;
   }
-  .body-container-become-a-craftsperson-in-training .custom-section-header-row:not(.custom-become-a-craftsperson-in-row6) .hs_cos_wrapper_type_rich_text p {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+
   .hs-home-section6 .row-fluid .span4 {
     width:100%;
     margin-left: 0;
