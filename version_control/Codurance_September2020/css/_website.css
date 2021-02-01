@@ -2066,14 +2066,6 @@ i.icon-bg-u {
 .hs-icon-zoom:before {
   content: "\e910";
 }
-
-.custom-apply-now p {
-  color: #FFF;
-  font-size: 1.3em;
-  max-width: 750px;
-  margin: auto;
-  font-weight: 400;
-}
 .align-self-baseline {
   -ms-flex-item-align: baseline!important;
   align-self: baseline!important;
@@ -2316,9 +2308,7 @@ i.icon-bg-u {
     display: -ms-flexbox!important;
     display: flex!important;
   }
-  .custom-apply-now p {
-    margin-right: 1.42857rem;
-  }
+
   .align-self-md-center {
     -ms-flex-item-align: center!important;
     align-self: center!important;
@@ -2935,9 +2925,7 @@ i.icon-bg-u {
   .testimonial-picture {
     height:160px
   }
-  .custom-apply-now p {
-    margin-bottom: 1.07143rem !important;
-  }
+
   .custom-col-width-row.custom-become-a-craftsperson-row4 .dnd-section > .row-fluid .row-fluid > .span12 {
     width: 100%;
   }

@@ -1,6 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
-  .whr-code, .whr-date, .whr-dept { display: none; }
+.whr-code, .whr-date, .whr-dept { display: none; }
 .whr-group { font-weight: bold; }
 .whr-items { margin-right: 1em; }
 
@@ -13,10 +13,52 @@
   left: 0;
 }
 .u-bg-overlay::after {
-
-  background-color: rgba(0, 0, 0, 0.3)
-
+  background-color: var(--woodsmoke-20);
 }
-.custom-bg-orange {
-    background-color: #ef7726 !important;
+
+.custom-apply-now {
+  background-color: var(--tango);
+  padding: 1.5rem;
 }
+
+.custom-apply-now__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+{% call utils.large_and_extra_large() %}
+  .custom-apply-now__inner {
+    align-items: baseline;
+    flex-direction: row;
+  }
+{% endcall %}
+{% call utils.small_and_medium() %}
+  .custom-apply-now__inner {
+    align-items: center;
+    flex-direction: column;
+  }
+{% endcall %}
+
+.custom-apply-now__text-container {
+  text-align: center;
+}
+
+.custom-apply-now__text-container p,
+.custom-apply-now__text-container span {
+  {{ utils.base() }}
+  color: white;
+}
+{% call utils.large_and_extra_large() %}
+  .custom-apply-now__text-container p,
+  .custom-apply-now__text-container span {
+    margin-right: 1rem;
+    max-width: 750px;
+  }
+{% endcall %}
+{% call utils.small_and_medium() %}
+  .custom-apply-now p,
+  .custom-apply-now__text-container span {
+    margin-bottom: var(--base-margin);
+    width: 100%;
+  }
+{% endcall %}
