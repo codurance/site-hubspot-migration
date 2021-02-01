@@ -283,24 +283,12 @@ Banner" %}
   </div>
 </section>
 
-<div class="section custom-color-white codurance-green-background">
-  <div class="container page-center">
-    <div class="row">
-      <div class="custom-col-md-8 text-md-left text-center">
-        <h4 class="my-md-0">Get content like this straight to your inbox!</h4>
-      </div>
-      <div class="custom-col-md-4 text-right">
-        <a
-          class="btn btn-md u-btn-primary btn-codurance-color text-uppercase w-100 custom-width-auto--lg"
-          target="_blank"
-          href="https://mailchi.mp/codurance/newsletter-subscription"
-          rel="noopener noreferrer"
-          >Subscribe now!</a
-        >
-      </div>
-    </div>
-  </div>
-</div>
+{% module
+  "newsletter_inline_form"
+  sign_up_form={"form_id": "my-custom-form-id"}
+  path="../modules/Newsletter Footer Form.module"
+  label="Newsletter footer form" no_wrapper=True
+%}
 
 <script>
   var cookieIframeContainers = document.getElementsByClassName(
