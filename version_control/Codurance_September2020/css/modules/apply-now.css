@@ -1,0 +1,22 @@
+{% import '../utils/utils.css' as utils %}
+
+  .whr-code, .whr-date, .whr-dept { display: none; }
+.whr-group { font-weight: bold; }
+.whr-items { margin-right: 1em; }
+
+.u-bg-overlay::before, .u-bg-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.u-bg-overlay::after {
+
+  background-color: rgba(0, 0, 0, 0.3)
+
+}
+.custom-bg-orange {
+    background-color: #ef7726 !important;
+}
