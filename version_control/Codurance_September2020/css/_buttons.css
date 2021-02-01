@@ -1,0 +1,13 @@
+{% import './utils/_buttons-utils.css' as utils %}
+
+:root {
+  --cta-transition: all 0.3s ease;
+}
+
+.button {
+  {{ utils.button() }}
+}
+
+{{ utils.button_primary('.button-primary') }}
+
+{{ utils.button_secondary('.button-secondary') }}

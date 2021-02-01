@@ -10,6 +10,10 @@
     background-color: rgba(0,0,0,0.4);
 }
 
+.newsletter-exit-modal__background-container .hs_recaptcha {
+    display: none;
+}
+
 .newsletter-exit-modal__inner {
     box-shadow: 0px 0px 10px #afc0d9;
     background-color: #fefefe;

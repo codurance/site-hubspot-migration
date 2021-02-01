@@ -6,6 +6,10 @@
     border-radius: .5rem;
 }
 
+.email_form_container_inline .hs_recaptcha {
+    display: none;
+}
+
 .email_cta_image_inline {
     display: none;
 }
@@ -61,57 +65,3 @@
         padding: 8px 24px;
     }
 }
-
-/*.email_form_container {*/
-/*    box-shadow: 0px 0px 10px #afc0d9;*/
-/*    background-color: rgb(201,255,229);*/
-/*    padding: 35px;*/
-/*    border-radius: .25rem;*/
-/*    text-align: center;*/
-/*    margin-top: 40px;*/
-/*    margin-bottom: 40px;*/
-/*    display: flex;*/
-/*    overflow: hidden;*/
-/*}*/
-
-/*img {*/
-/*    max-height: 150px;*/
-/*    width: auto;*/
-/*    display:inline-block;*/
-/*    justify-content: right;*/
-/*    margin-top: 10px;*/
-/*    margin-left: 10px;*/
-/*}*/
-
-/*.form_inner {*/
-/*    text-align: left;*/
-/*    margin-right: 70px;*/
-/*    min-width: 60%;*/
-/*}*/
-
-/*.cta_text {*/
-/*    overflow: hidden;*/
-/*    max-width: 50ch;*/
-/*}*/
-
-/*input[type=email] {*/
-/*    width: 400px;*/
-/*}*/
-
-/*input[type=submit], input[type=submit]:hover, input[type=submit]:focus{*/
-/*    background-color: rgb(255, 0, 0);*/
-/*    border: rgb(255, 0, 0);*/
-/*    font-size: inherit;*/
-/*    line-height: inherit;*/
-/*    padding: 8px 24px;*/
-/*}*/
-
-/*.hs-form label*/
-/*{*/
-/*    display:none;*/
-/*}*/
-
-/*form > div {*/
-/*    display:inline-block;*/
-/*    margin-bottom: 0;*/
-/*}*/
