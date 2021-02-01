@@ -1,6 +1,6 @@
 .cm-partners-logos-item {
-  width: 25%;
-  padding: 30px 40px;
+  width: 20%;
+  padding: 5px 40px;
   margin: auto;
   display: inline-block;
 }
@@ -65,7 +65,7 @@
     font-size: 1.75em;
   }
   .cm-partners-logos-item {
-    width: 50%;
+    width: 35%;
   }
 }
 
