@@ -1,9 +1,11 @@
+{{ require_css(get_asset_url("../../css/modules/apply-now.css")) }}
+
 <section class="custom-apply-now custom-bg-orange custom-color-white custom-pa-30">
   <div class="d-md-flex justify-content-md-center text-center">
     <div class="align-self-md-center">
       {{ module.content }}
     </div>
-    <div class="align-self-md-center"> 
+    <div class="align-self-md-center">
       {% if module.button.button_type == "std" %}
       {% set href = module.button.link_field.url.href %}
       {% if module.button.link_field.url.type is equalto "EMAIL_ADDRESS" %}
@@ -20,8 +22,8 @@
 
       {% elif module.button.button_type == "lightbox" %}
       <a class="{{ module.button.module_setting.custom_class }}" data-modal-target="#{{ module.button.bookmark_id }} " href="#{{ module.button.bookmark_id }} ">
-        <span>{{ module.button.text_field }}</span> 
-      
+        <span>{{ module.button.text_field }}</span>
+
       </a>
       {% endif %}
     </div>
