@@ -6,8 +6,8 @@
 }
 
 .custom-how-does-it-work__image {
-  background-size: cover;
   background-position: center;
+  background-size: cover;
 }
 {% call utils.large_and_extra_large() %}
   .custom-how-does-it-work__image {
@@ -23,16 +23,16 @@
 .custom-how-does-it-work__card-container {
   display: flex;
   flex-wrap: wrap;
-  padding: 1rem;
   flex: 1;
+  padding: 1rem;
 }
 
 {% set card_margin = '0.5rem' %}
 .custom-how-does-it-work__card {
   background-color: white;
   border-left: 2px solid var(--persimmon);
-  padding: 1rem;
   margin: {{ card_margin }};
+  padding: 1rem;
 }
 {% call utils.medium_large_and_extra_large() %}
   .custom-how-does-it-work__card {
@@ -47,8 +47,8 @@
 
 .custom-how-does-it-work__title {
   {{ utils.base() }}
-  margin-bottom: var(--base-margin);
   font-weight: var(--middle-font-weight);
+  margin-bottom: var(--base-margin);
 }
 
 .custom-how-does-it-work__description {
