@@ -85,6 +85,7 @@ ul {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  list-style-position: outside;
 }
 
 li {
