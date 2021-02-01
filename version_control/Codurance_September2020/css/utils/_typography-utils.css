@@ -1,0 +1,86 @@
+{% macro habib() %}
+  font-size: var(--habib-font-size);
+  line-height: var(--habib-line-height);
+  font-weight: var(--heavy-font-weight);
+{% endmacro %}
+
+{% macro habib_margin() %}
+  margin-bottom: var(--habib-margin);
+  margin-top: var(--habib-margin);
+{% endmacro %}
+
+{% macro gaudi() %}
+  font-size: var(--gaudi-font-size);
+  line-height: var(--gaudi-line-height);
+  font-weight: var(--heavy-font-weight);
+{% endmacro %}
+
+{% macro gaudi_margin() %}
+  margin-bottom: var(--gaudi-margin);
+  margin-bottom: var(--gaudi-margin);
+{% endmacro %}
+
+{% macro eames() %}
+  font-size: var(--eames-font-size);
+  line-height: var(--eames-line-height);
+  font-weight: var(--heavy-font-weight);
+{% endmacro %}
+
+{% macro eames_margin() %}
+  margin-bottom: var(--eames-margin);
+  margin-top: var(--eames-margin);
+{% endmacro %}
+
+{% macro dudler() %}
+  font-size: var(--dudler-font-size);
+  line-height: var(--dudler-line-height);
+{% endmacro %}
+
+{% macro dudler_margin() %}
+  margin-bottom: var(--dudler-margin);
+  margin-top: var(--dudler-margin);
+{% endmacro %}
+
+{% macro freed() %}
+  font-size: var(--freed-font-size);
+  line-height: var(--freed-line-height);
+  font-weight: var(--middle-font-weight);
+{% endmacro %}
+
+{% macro freed_margin() %}
+  margin-bottom: var(--freed-margin);
+  margin-top: var(--freed-margin);
+{% endmacro %}
+
+{% macro base() %}
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+{% endmacro %}
+
+{% macro base_margin() %}
+  margin-top: 0;
+  margin-bottom: var(--base-margin);
+{% endmacro %}
+
+{% macro ponti() %}
+  font-size: var(--ponti-font-size);
+  line-height: var(--ponti-line-height);
+{% endmacro %}
+
+{% macro natus() %}
+  font-size: var(--natus-font-size);
+  font-weight: var(--welter-font-weight);
+  line-height: var(--natus-line-height);
+{% endmacro %}
+
+{% macro sejima() %}
+  font-size: var(--sejima-font-size);
+  font-weight: var(--middle-font-weight);
+  line-height: var(--sejima-line-height);
+{% endmacro %}
+
+{% macro small_caps() %}
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+{% endmacro %}

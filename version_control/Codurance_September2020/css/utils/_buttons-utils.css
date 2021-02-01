@@ -1,0 +1,44 @@
+{% macro button() %}
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: var(--middle-font-weight);
+  line-height: 1rem;
+  margin: 0.5rem 0;
+  padding: 0.6em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: var(--cta-transition);
+{% endmacro %}
+
+{% macro button_primary(classname) %}
+  {{classname}} {
+    {{ button() }}
+    background: var(--valencia);
+    border: solid 2px var(--valencia);
+    color: white;
+  }
+
+  {{classname}}:hover {
+    background: var(--valencia--dark);
+    border: solid 2px var(--valencia--dark);
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+{% endmacro %}
+
+{% macro button_secondary(classname) %}
+  {{classname}} {
+    {{ button() }}
+    background: transparent;
+    border: solid 2px var(--valencia);
+    color: var(--valencia);
+  }
+
+  {{classname}}:hover {
+    background: var(--valencia--dark);
+    border: solid 2px var(--valencia--dark);
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+{% endmacro %}

@@ -1,0 +1,39 @@
+{% import '../utils/utils.css' as utils %}
+
+.cm-partners-logos-item {
+  display: inline-block;
+  margin: auto;
+  padding: 30px 40px;
+  width: 25%;
+}
+.cm-partners-logos-inner-group {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 930px;
+  text-align: center;
+}
+.cm-partners-logo-group {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1140px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.cm-partners-logo-group__heading {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+  margin-bottom: var(--dudler-margin);
+  padding-bottom: 20px;
+  position: relative;
+  text-align: center;
+}
+
+{% call utils.small() %}
+  .cm-partners-logos-item img {
+    width: auto;
+  }
+  .cm-partners-logos-item {
+    width: 50%;
+  }
+{% endcall %}
+
