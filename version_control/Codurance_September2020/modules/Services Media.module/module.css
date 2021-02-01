@@ -37,3 +37,9 @@
     top: -200px;
   }
 }
+
+@media (max-width: 767px) {
+  .services-media__watch-all-cta {
+    padding-top: 60px;
+  }
+}

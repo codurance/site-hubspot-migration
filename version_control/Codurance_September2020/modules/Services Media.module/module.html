@@ -95,13 +95,13 @@
                 <a
                   class="card-slider-item__video-link"
                   target="_blank"
-                  href="{{ event.url }}"
+                  href="{{ media.url }}"
                   >Watch on YouTube</a
                 >
               </div>
               {% else %}
               <div class="card-slider-item__button card-slider-item__button--outlined">
-                <a href="{{ event.url }}" target="_blank">Learn More</a>
+                <a href="{{ media.url }}" target="_blank">Learn More</a>
               </div>
               {% endif %}
             </div>
@@ -111,7 +111,7 @@
       </div>
     </div>
   </div>
-  <div data-watch-all-cta="video" class="hidden">
+  <div class="hidden services-media__watch-all-cta" data-watch-all-cta="video">
     <a
       class="card-slider__watch-all-button"
       href="https://www.youtube.com/c/Codurance/playlists"
@@ -119,7 +119,7 @@
       >{{module.videos.cta_text}}</a
     >
   </div>
-  <div data-watch-all-cta="podcast" class="hidden">
+  <div class="hidden services-media__watch-all-cta" data-watch-all-cta="podcast">
     <a
       class="card-slider__watch-all-button"
       href="https://www.codurance.com/publications/tag/podcasts"
