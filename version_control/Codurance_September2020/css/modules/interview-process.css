@@ -1,5 +1,19 @@
 {% import '../utils/utils.css' as utils%}
 
+.custom-interview-process__title {
+  {{ utils.base() }}
+  margin-bottom: var(--base-margin);
+  font-weight: var(--middle-font-weight);
+}
+
+.custom-interview-process__title span {
+  color: var(--persimmon);
+}
+
+.custom-interview-process__description {
+  {{ utils.natus() }}
+}
+
 .custom-interview-process ul {
   padding-left: 0;
   list-style: none;

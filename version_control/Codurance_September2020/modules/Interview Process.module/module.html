@@ -2,22 +2,25 @@
 
 <div class="custom-interview-process">
   <ul class="row list-inline u-info-v9-1 mb-0">
-    {% for item in module.interview_process_items %}
-    <li class=" custom-col-md-3 list-inline-item custom-mx-0 custom-mb-30">
-      <div class="u-block-hover text-center custom-px-40">
-        <div class="custom-mb-5"> <span class="u-icon-v1 custom-width-85 custom-height-85 custom-color-main custom-font-size-50 rounded-circle">
-          <i class="{{ item.icon_class }}"></i>
-          </span>
-        </div>
-        <div class="custom-mb-25"> <span class="u-icon-v2 u-shadow-v22 custom-width-25 custom-height-25 custom-color-primary custom-bg-white custom-font-size-9 rounded-circle"> <i class="fa fa-check"></i> </span>
-        </div>
-        <h3 class="custom-color-primary custom-font-weight-600 custom-font-size-17 text-uppercase mb-3">
-          <span class="custom-color-main custom-font-weight-700">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}.</span> {{ item.title }} </h3>
-        <p>{{ item.content }}</p>
-      </div>
 
-    </li>
+    {% for item in module.interview_process_items %}
+      <li class=" custom-col-md-3 list-inline-item custom-mx-0 custom-mb-30">
+        <div class="u-block-hover text-center custom-px-40">
+          <div class="custom-mb-5"> <span class="u-icon-v1 custom-width-85 custom-height-85 custom-color-main custom-font-size-50 rounded-circle">
+            <i class="{{ item.icon_class }}"></i>
+            </span>
+          </div>
+          <div class="custom-mb-25"> <span class="u-icon-v2 u-shadow-v22 custom-width-25 custom-height-25 custom-color-primary custom-bg-white custom-font-size-9 rounded-circle"> <i class="fa fa-check"></i> </span>
+          </div>
+          <h3 class="custom-interview-process__title">
+            <span>{% if loop.index < 10 %}0{% endif %}{{ loop.index }}.</span>
+            {{ item.title }}
+          </h3>
+          <p class="custom-interview-process__description" >{{ item.content }}</p>
+        </div>
+      </li>
     {% endfor %}
+
   </ul>
 </div>
 
