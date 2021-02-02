@@ -9,6 +9,17 @@
     background-color: rgba(12, 12, 13, 0.86);
 }
 
+.newsletter-exit-popup__close-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 50px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+
 .newsletter-exit-popup__inner-modal {
     background-color: white;
     border-radius: 5px;
@@ -126,4 +137,14 @@
         width: 260px;
         z-index: -1;
     }
+}
+
+
+.newsletter-exit-popup__footer-image {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/exit-modal-graphic.svg);
+    height: 312px;
+    width: 719px;
+    position: absolute;
+    top: -23px;
+    left: 15px;
 }
