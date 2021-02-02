@@ -35,7 +35,7 @@
         {% cta guid="{{ module.button.cta_field }}" %}
 
       {% elif module.button.button_type == "lightbox" %}
-        <a class="button-primary {{ module.button.module_setting.custom_class }}" data-modal-target="#careers-form" href="#careers-form">
+        <a class="{{ module.button.module_setting.custom_class }} button-primary" data-modal-target="#careers-form" href="#careers-form">
           <span>{{ module.button.text_field }}</span>
           <div id="careers-form" class="custom-career-banner__form career-banner-form" style="display: none;">
             <button class="career-banner-form__close-button" type="button" onclick="Custombox.modal.close();">
