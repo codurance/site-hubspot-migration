@@ -1,21 +1,27 @@
 {{ require_css(get_asset_url("../../css/modules/testimonial-slider-type-2.css")) }}
 
+{% if item.image_field.src %}
+  {% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
+
+  {% if item.image_field.size_type == 'auto' %}
+    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+
+  {% elif item.image_field.size_type == 'auto_custom_max' %}
+    {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.image_field.max_width }}px; max-height: {{ item.image_field.max_height }}px"' %}
+
+  {% endif %}
+{% endif %}
+
 <div class="custom-testimonial-slider row">
   <div class="custom-col-lg-9 testimonials-carousel-container">
     <div id="testimonials-carousel" class="carousel slide" data-ride="carousel">
       <ol class="indicators custom-hidden-sm-down">
         {% for item in module.testimonial_items %}
-        <li data-target="#testimonials-carousel" data-slide-to="{{ loop.index - 1}}" class="testimonial-preview {% if loop.index == 1%}active{% endif %}">
-          {% if item.image_field.src %}
-          {% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
-          {% if item.image_field.size_type == 'auto' %}
-          {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-          {% elif item.image_field.size_type == 'auto_custom_max' %}
-          {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.image_field.max_width }}px; max-height: {{ item.image_field.max_height }}px"' %}
-          {% endif %}
-          <img  class="img-responsive" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ sizeAttrs }}>
-          {% endif %}
-        </li>
+          <li data-target="#testimonials-carousel" data-slide-to="{{ loop.index - 1}}" class="testimonial-preview {% if loop.index == 1%}active{% endif %}">
+            {% if item.image_field.src %}
+              <img  class="img-responsive" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ sizeAttrs }}>
+            {% endif %}
+          </li>
         {% endfor %}
       </ol>
       <div class="carousel-inner">
