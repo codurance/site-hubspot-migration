@@ -12,37 +12,41 @@
   {% endif %}
 {% endif %}
 
-<div class="custom-testimonial-slider row">
-  <div class="custom-col-lg-9 testimonials-carousel-container">
-    <div id="testimonials-carousel" class="carousel slide" data-ride="carousel">
-      <ol class="indicators custom-hidden-sm-down">
+<div class="custom-testimonial-slider">
+  <div class="custom-testimonial-slider__carousel-container">
+    <div id="testimonials-carousel" class="custom-testimonial-slider__wrapper  carousel slide" data-ride="carousel">
+      <ol class="custom-testimonial-slider__indicators">
+
         {% for item in module.testimonial_items %}
-          <li data-target="#testimonials-carousel" data-slide-to="{{ loop.index - 1}}" class="testimonial-preview {% if loop.index == 1%}active{% endif %}">
+          <li data-target="#testimonials-carousel" data-slide-to="{{ loop.index - 1}}" class="custom-testimonial-slider__preview {% if loop.index == 1%}active{% endif %}">
             {% if item.image_field.src %}
-              <img  class="img-responsive" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ sizeAttrs }}>
+              <img  class="custom-testimonial-slider__preview-image" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ sizeAttrs }}>
             {% endif %}
           </li>
         {% endfor %}
+
       </ol>
-      <div class="carousel-inner">
+      <div class="custom-testimonial-slider__inner">
+
         {% for item in module.testimonial_items %}
-        <div class="carousel-item {% if loop.index == 1%}active{% endif %}">
-          <div class="row">
-            <div class="custom-col-lg-4 custom-col-md-4 custom-col-sm-4 custom-hidden-xs-down">
-              <div class="testimonial-picture" style="background-image: url('{{ item.image_field.src }}')"></div>
+          <div class="custom-testimonial-slider__item carousel-item {% if loop.index == 1%}active{% endif %}">
+            <div class="custom-testimonial-slider__picture-wrapper">
+              <img class="custom-testimonial-slider__picture" src="{{ item.image_field.src }}" />
             </div>
-            <div class="custom-col-lg-8 custom-col-md-8 custom-col-sm-8 custom-col-xs-8">
+            <div class="custom-testimonial-slider__text-wrapper">
               <div>
-                <h5 class="h5 mb-1">{{ item.name_ }}</h5>
-                <div class="d-inline-block custom-width-60 custom-height-1 custom-bg-orange mb-2"></div>
+                <h3 class="custom-testimonial-slider__name">{{ item.name_ }}</h3>
+                <div class="custom-testimonial-slider__underline"></div>
               </div>
-              <div class="quote">
-                <div class="curly-quotes">{{ item.quote }}</div>
+              <div class="custom-testimonial-slider__body-text">
+                <i class="las la-quote-left"></i>
+                  {{ item.quote }}
+                <i class="las la-quote-right"></i>
               </div>
             </div>
           </div>
-        </div>
         {% endfor %}
+
       </div>
     </div>
   </div>
