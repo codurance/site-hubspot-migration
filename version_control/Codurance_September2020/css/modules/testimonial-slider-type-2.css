@@ -14,7 +14,7 @@
 }
 {% call utils.large_and_extra_large() %}
   .custom-testimonial-slider__inner {
-    min-height: 18.8rem;
+    min-height: 19.5rem;
     padding-bottom: 60px;
   }
 {% endcall %}
