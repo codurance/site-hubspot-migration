@@ -151,10 +151,6 @@ img{
   line-height: 33px;
   margin-top: 0;
 }
-.cm-service-inner-bottom-wrap,
-.hs-services-inner-section4 .dnd-section {
-  background:#fcf9f1 linear-gradient(90deg, #fcf9f1 52%, #fcf4f4 100%);
-}
 .cm-compass-teaser .cta_button ,
 .custom-blue-button{
   font-weight: 700;
@@ -205,11 +201,6 @@ img{
   border-radius: 3px;
   overflow: hidden;
 }
-.cm-service-inner-bottom-wrap .dnd-section > .row-fluid{
-  max-width:1300px;
-  padding-left:0;
-  padding-right:0;
-}
 .hs-services-inner-section4 .dnd-section {
   padding-top: 100px;
   padding-bottom: 0;
@@ -218,18 +209,6 @@ img{
 .hs-services-inner-section5 .dnd-section {
   padding-top: 0;
   padding-bottom: 0;
-}
-.cm-service-inner-bottom-wrap .page-header.section-header {
-  padding-top: 50px;
-  overflow: hidden;
-  padding-bottom: 50px;
-}
-.cm-service-inner-bottom-wrap .page-header.section-header {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-.cm-service-inner-bottom-wrap .page-header.section-header p {
-  margin: 0;
 }
 .hs-services-inner-section6 .dnd-section {
   padding-top: 0;

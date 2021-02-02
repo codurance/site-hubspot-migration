@@ -1,15 +1,37 @@
+{{ require_css(get_asset_url("../../css/modules/try-our-compass-tool.css")) }}
+
+{% import '../../snippets/button-snippets.html' as snippets %}
+
 <div class="cm-compass-teaser" style="background-image:url({{ module.image_field.src }})">
   <p class="cm-compass-teaser__description">{{ module.title }}</p> 
   {% if module.button_type == 'Standard' %}
-  {% set href = module.link_field.url.href %}
-  {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-  {% set href = "mailto:" + href %}
-  {% endif %}
-  <a href="{{ href }}" class="custom-blue-button" {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if module.link_field.no_follow %}rel="nofollow"{% endif %}>
-    {{ module.button_text }}
-  </a>
+    {% set href = module.link_field.url.href %}
+    {% set target = "" %}
+    {% set rel = "" %}
+
+    {% if module.link_field.open_in_new_tab %}
+      target="_blank"
+    {% endif %}
+
+    {% if module.link_field.no_follow %}
+      rel="nofollow"
+    {% endif %}
+
+    {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+    {% endif %}
+
+    {{
+      snippets.button_primary_alternate(
+        classnames="",
+        url=href,
+        text=module.button_text,
+        target=target,
+        rel=rel
+      )
+    }}
   {% else %}
-  {% cta guid="{{ module.cta_field }}" %}
+    {% cta guid="{{ module.cta_field }}" %}
   {% endif %}
 </div>
 

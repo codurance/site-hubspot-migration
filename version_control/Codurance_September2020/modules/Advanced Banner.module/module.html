@@ -1,3 +1,5 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+
 {{ require_css(get_asset_url("../../css/modules/advanced-banner.css")) }}
 
 <div class="cm-advanced-banner-hero">
@@ -10,7 +12,14 @@
         <p class="cm-advanced-banner-hero__sub-title">{{ module.heading }}</p>
       </div>
       <p class="cm-advanced-banner-hero__description">{{ module.content }}</p>
-      <a href="{{ module.bookmark_link }}" class="cta--primary-coral " target="">{{ module.button_text }}</a>
+      {{
+        snippets.button_primary(
+        classnames="",
+        url=module.bookmark_link,
+        text=module.button_text,
+        target=""
+        )
+      }}
     </div>
   </div>
   <div class="cm-advanced-banner-hero__image-container " style="background-image: url({{ module.image_field.src }});"></div>

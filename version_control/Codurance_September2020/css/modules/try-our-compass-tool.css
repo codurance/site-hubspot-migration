@@ -1,0 +1,58 @@
+{% import '../utils/utils.css' as utils %}
+
+.cm-compass-teaser {
+    background-color: var(--persimmon);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.cm-compass-teaser__description {
+    font-size: var(--base-font-size);
+    font-weight: var(--welter-font-weight);
+    line-height: var(--freed-line-height);
+    color: white;
+    margin-bottom: 25px;
+}
+
+/*.cm-compass-teaser .cta_button {*/
+/*    background-color: var(--midnight-blue);*/
+/*    color: white;*/
+/*    font-weight: var(--middle-font-weight);*/
+/*    font-size: var(--natus-font-size);*/
+/*    line-height: var(--base-line-height);*/
+/*    text-align: center;*/
+/*    border-radius: 3px;*/
+/*    transition: var(--cta-transition);*/
+/*    text-decoration: none !important;*/
+/*}*/
+
+{% call utils.large_and_extra_large() %}
+    .cm-compass-teaser{
+        max-width: 800px;
+        width: calc(100% - (50px * 2));
+    }
+{% endcall %}
+
+{% call utils.medium() %}
+    .cm-compass-teaser{
+        max-width: 770px;
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+    .cm-compass-teaser {
+        padding: 50px;
+        position: relative;
+        margin-top: -200px;
+        margin-bottom: 50px;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .cm-compass-teaser {
+        padding: 50px 25px;
+    }
+{% endcall %}
