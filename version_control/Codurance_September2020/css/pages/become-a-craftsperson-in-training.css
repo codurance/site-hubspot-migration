@@ -16,7 +16,8 @@
 }
 
 .become-a-craftsperson-in-how-work-section .row-number-2 h2,
-.become-a-craftsperson-in-required-skills-section .row-number-2 h2 {
+.become-a-craftsperson-in-required-skills-section .row-number-2 h2,
+.become-a-craftsperson-in-testimonial-section .row-number-2 h2 {
   font-size: var(--dudler-font-size);
   font-weight: var(--heavy-font-weight);
   line-height: var(--dudler-line-height);
@@ -25,7 +26,8 @@
 }
 
 .become-a-craftsperson-in-how-work-section .row-number-2 p,
-.become-a-craftsperson-in-required-skills-section .row-number-2 p {
+.become-a-craftsperson-in-required-skills-section .row-number-2 p,
+.become-a-craftsperson-in-testimonial-section .row-number-2 p {
   {{ utils.natus() }}
   display: block;
   margin-bottom: var(--base-margin);
@@ -37,7 +39,8 @@
 }
 
 .become-a-craftsperson-in-how-work-section,
-.become-a-craftsperson-in-required-skills-section {
+.become-a-craftsperson-in-required-skills-section,
+.become-a-craftsperson-in-testimonial-section {
   padding-bottom: 3.57143rem;
   padding-top: 3.57143rem;
 }
