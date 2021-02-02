@@ -130,36 +130,41 @@ footer looks when it comes to spacing and other general styles.
   margin-top: -0.28571rem;
   color: var(--athens-gray);
 }
-.hs-footer-bottom-right ul {
-  text-align: right;
-}
+
 .hs-footer-bottom-container .page-center {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
-.hs-footer-bottom-right ul {
-  text-align: right;
-  font-size: 15px;
-}
+{% call utils.small_and_medium() %}
+  .hs-footer-bottom-container .page-center {
+    align-items: center;
+    flex-direction: column;
+  }
+{% endcall %}
+
 .hs-footer-bottom-left {
-  -ms-flex: 0 0 66.666667%;
   color: var(--french-gray);
-  flex: 0 0 66.666667%;
   font-size: var(--natus-font-size);
-  max-width: 66.666667%;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
   position: relative;
   width: 100%;
 }
+{% call utils.large_and_extra_large() %}
+  .hs-footer-bottom-left {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+{% endcall %}
+{% call utils.small_and_medium() %}
+  .hs-footer-bottom-left {
+    text-align: center;
+  }
+{% endcall %}
 
 .hs-footer-bottom-right {
-  -ms-flex: 0 0 33.333333%;
-  flex: 0 0 33.333333%;
-  max-width: 33.333333%;
   -ms-flex-item-align: center;
   align-self: center;
   position: relative;
@@ -168,11 +173,38 @@ footer looks when it comes to spacing and other general styles.
   padding-right: 15px;
   padding-left: 15px;
 }
+{% call utils.large_and_extra_large() %}
+  .hs-footer-bottom-right {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+{% endcall %}
+{% call utils.small_and_medium() %}
+  .hs-footer-bottom-right {
+    text-align: center;
+  }
+{% endcall %}
+
 .hs-footer-bottom-right ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: 15px;
 }
+{% call utils.large_and_extra_large() %}
+  .hs-footer-bottom-right ul {
+    text-align: right;
+  }
+{% endcall %}
+{% call utils.small_and_medium() %}
+  .hs-footer-bottom-right ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+{% endcall %}
+
 .hs-footer-bottom-right ul li {
   margin-left: 0.71429rem;
   margin-right: 0.71429rem;
@@ -214,56 +246,6 @@ footer.footer .hs-rss-item  a.hs-rss-title:hover {
   color: var(--athens-gray);
 }
 
-.hs-footer-bottom-right ul li:before {
-  content: attr(data-original-title);
-  position: absolute;
-  background: #000;
-  bottom: 100%;
-  left: 50%;
-  right: 0;
-  margin: 0px auto;
-  padding: 3px 8px;
-  color: #fff;
-  text-align: center;
-  background-color: #000;
-  border-radius: .25rem;
-  width: 77px;
-  text-align: center;
-  display: inline-block;
-  transform: translateX(-50%);
-  transition: all ease .3s;
-  opacity: 0;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-  text-decoration: none;
-  text-shadow: none;
-  text-transform: none;
-  margin-bottom: 6px;
-  font-size: .875rem;
-}
-.hs-footer-bottom-right ul li:after {
-  position: absolute;
-  border-color: transparent;
-  border-style: solid;
-  margin-left: -3px;
-  content: "";
-  border-width: 5px 5px 0;
-  border-top-color: #000;
-  transition: all ease 0.3s;
-  opacity: 0;
-  transform: translateX(-50%);
-  left: 50%;
-  right: 0;
-  bottom: 100%;
-}
-.hs-footer-bottom-right ul li:hover:before,
-.hs-footer-bottom-right ul li:hover:after {
-  opacity: 1;
-}
-
-
 @media(min-width:768px) and (max-width:992px){
   .hs-footer-top-container .footer__container .container-fluid > .row-fluid > .span3 {
     width: 50%;
@@ -291,7 +273,7 @@ footer.footer .hs-rss-item  a.hs-rss-title:hover {
 
 }
 
-@media(max-width:767px) {
+{% call utils.small() %}
   .hs-footer-bottom-left, .hs-footer-bottom-right {
     width: 100%;
     max-width: 100%;
@@ -343,4 +325,4 @@ footer.footer .hs-rss-item  a.hs-rss-title:hover {
     margin-bottom: 0;
   }
 
-}
+{% endcall %}
