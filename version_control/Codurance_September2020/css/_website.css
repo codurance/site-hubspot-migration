@@ -2511,13 +2511,7 @@ i.icon-bg-u {
 }
 
 
-@media (max-width: 991px) and (min-width: 768px){
-  .custom-interview-process .custom-px-40 {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-  }
 
-}
 
 @media (max-width: 1023px) and (min-width: 768px){
   .hs-services-layout main .hs-service-section1 .dnd-section > .row-fluid {
@@ -2903,11 +2897,6 @@ i.icon-bg-u {
   .custom-container-wrapper.custom-col-width-row .dnd-section>.row-fluid .dnd-module {
     padding: 0;
   }
-  .custom-interview-process li.custom-col-md-3 {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
   .custom-container-wrapper.custom-col-width-row .dnd-section>.row-fluid [class*="custom-col-"] {
     padding-right: 0;
     padding-left: 0;
