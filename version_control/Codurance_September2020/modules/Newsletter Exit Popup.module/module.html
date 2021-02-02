@@ -1,15 +1,10 @@
-<div class="newsletter-exit-modal__background-container hidden" data-exit-popup-modal>
-  <div class="newsletter-exit-modal__inner">
-   <span class="newsletter-exit-modal__close-button" data-exit-popup-close-button>&times;</span>
-   <div class="newsletter-exit-form">
-    <h3>Get updates straight to your inbox</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,
-     pulvinar facilisis justo mollis, auctor consequat urna.</p>
+<div class="newsletter-exit-popup__container hidden" data-exit-popup-modal>
+  <button class="newsletter-exit-popup__close-button" data-exit-popup-close-button>X</button>
+  <div class="newsletter-exit-popup__inner-modal">
+    <h3 class="newsletter-exit-popup__heading">Sign up to our newsletter</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing eli</p>
     {% form "email_form" form_to_use={{module.sign_up_form.form_id}} %}
-   </div>
-   <div class="newsletter-exit-modal__image">
-    <img src="https://logodix.com/logo/601050.png" />
-   </div>
+    <div class="newsletter-exit-popup__header-image"></div>
+    <div class="newsletter-exit-popup__footer-image"></div>
   </div>
-
 </div>
