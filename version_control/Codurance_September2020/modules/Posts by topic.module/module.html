@@ -1,4 +1,4 @@
-{% import '../../snippets/button-snippets.html' as snippets%}
+{% import '../../snippets/button-snippets.html' as snippets %}
 
 {{ require_css(get_asset_url("../../css/modules/posts-by-topic.css")) }}
 
@@ -80,7 +80,7 @@
   <div class="custom-btn">
     {{
       snippets.button_secondary(
-        url="{{ blog_all_posts_url(module.select_blog)|replace('all','tag') }}/{{ module.select_tag }}" class="btn btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color",
+        url="{{ blog_all_posts_url(module.select_blog)|replace('all','tag') }}/{{ module.select_tag }}",
         text=module.button_text
       )
     }}
