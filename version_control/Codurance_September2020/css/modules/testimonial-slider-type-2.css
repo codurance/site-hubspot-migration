@@ -18,14 +18,9 @@
     padding-bottom: 60px;
   }
 {% endcall %}
-{% call utils.medium() %}
+{% call utils.small_and_medium() %}
   .custom-testimonial-slider__inner {
-    min-height: 16.66rem;
-  }
-{% endcall %}
-{% call utils.small() %}
-  .custom-testimonial-slider__inner {
-    min-height: 15rem;
+    min-height: 21.2rem;
   }
 {% endcall %}
 
