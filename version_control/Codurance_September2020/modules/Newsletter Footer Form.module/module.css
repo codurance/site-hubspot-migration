@@ -69,7 +69,7 @@
 }
 @media (min-width: 481px) {
     .newsletter-footer-form__container .hs-email {
-        width: calc(100% - 8.037rem);
+        width: calc(100% - 8.61rem);;
     }
 }
 
@@ -83,8 +83,9 @@
 }
 
 .newsletter-footer-form__container .hs-button {
-    vertical-align: top;
+    height: 3.2rem;
     margin: 0;
+    vertical-align: top;
 }
 @media (max-width: 480px) {
     .newsletter-footer-form__container .hs-button {
@@ -103,7 +104,6 @@
     vertical-align: top;
     width: 100%;
 }
-
 @media (max-width: 481px) {
     .newsletter-footer-form__container input[type="email"] {
         margin-bottom: 1.4rem;
@@ -124,6 +124,8 @@
 
 .newsletter-footer-form__container input[type="submit"] {
     padding: 12px 20px;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
 }
 
 .newsletter-footer-form__image {
