@@ -1,0 +1,92 @@
+.newsletter-inline-form__image {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
+}
+@media (max-width: 480px) {
+    .newsletter-inline-form__image {
+        background-size: 175px 135px;
+        height: 135px;
+        margin: 0 auto 20px;
+        width: 175px;
+    }
+}
+@media (min-width: 481px) {
+    .newsletter-inline-form__image {
+        height: 200px;
+        position: absolute;
+        right: -224px;
+        top: 18px;
+        width: 260px;
+        z-index: -1;
+    }
+}
+
+.newsletter-inline-form__container {
+    position: relative;
+    width: 100%;
+}
+@media (max-width: 480px) {
+    .newsletter-inline-form__container {
+        margin: 3rem 0;
+    }
+}
+@media (min-width: 481px) {
+    .newsletter-inline-form__container {
+        margin: 4rem 0;
+    }
+}
+
+.newsletter-inline-form__heading {
+ font-size: 1.87rem;
+ font-weight: 700;
+}
+
+.newsletter-inline-form__container p {
+    font-size: 1.4rem;
+    margin-bottom: 1.67rem;
+}
+
+.hs_email {
+    margin: 0;
+}
+@media (max-width: 480px) {
+    .hs_email {
+        width: 100%;
+    }
+}
+@media (min-width: 481px) {
+    .hs_email {
+        width: calc(100% - 8.037rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .hs_submit {
+        width: 100%;
+    }
+}
+
+.hs-button {
+    vertical-align: top;
+    margin: 0;
+}
+@media (max-width: 480px) {
+    .hs-button {
+        width: 100%;
+    }
+}
+
+.newsletter-inline-form__container input[type="email"] {
+    box-shadow: 0px 0px 20px #00000029;
+    box-sizing: border-box;
+    border: 1px #F0F0F1 solid;
+    background-color: white;
+    font-size: 1.2rem;
+    height: 3.2rem;
+    padding: 15px 20px;
+    vertical-align: top;
+    width: 100%;
+}
+
+.newsletter-inline-form__container input[type="submit"] {
+    padding: 12px 20px;
+}
