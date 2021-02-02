@@ -1,48 +1,47 @@
-.newsletter-inline-form__image {
-    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
-}
-@media (max-width: 480px) {
-    .newsletter-inline-form__image {
-        background-size: 175px 135px;
-        height: 135px;
-        margin: 0 auto 20px;
-        width: 175px;
-    }
-}
-@media (min-width: 481px) {
-    .newsletter-inline-form__image {
-        height: 200px;
-        position: absolute;
-        right: -224px;
-        top: 18px;
-        width: 260px;
-        z-index: -1;
-    }
-}
-
-.newsletter-inline-form__container {
+.newsletter-footer-form__container {
+    max-width: 825px;
     position: relative;
-    width: 100%;
 }
 @media (max-width: 480px) {
-    .newsletter-inline-form__container {
-        margin: 3rem 0;
+    .newsletter-footer-form__container {
+        margin: 45px 25px;
     }
 }
 @media (min-width: 481px) {
-    .newsletter-inline-form__container {
-        margin: 4rem 0;
+    .newsletter-footer-form__container {
+        display: flex;
+        flex-direction: row;
+        margin: 45px auto;
+        width: 75%;
+    }
+}
+@media (max-width: 767px) and (min-width: 481px) {
+    .newsletter-footer-form__container {
+        width: 80%;
     }
 }
 
-.newsletter-inline-form__heading {
+.newsletter-footer-form__heading {
  font-size: 1.87rem;
  font-weight: 700;
 }
 
-.newsletter-inline-form__container p {
+.newsletter-footer-form__container p {
     font-size: 1.4rem;
     margin-bottom: 1.67rem;
+    padding-right: 30px;
+}
+
+@media (min-width: 481px) {
+    .newsletter-footer-form__wrapper {
+        width: calc(100% - 230px);
+    }
+}
+@media (max-width: 767px) and (min-width: 481px) {
+    .newsletter-footer-form__wrapper {
+        width: 100%;
+        margin-top: 150px;
+    }
 }
 
 .hs_email {
@@ -75,7 +74,7 @@
     }
 }
 
-.newsletter-inline-form__container input[type="email"] {
+.newsletter-footer-form__container input[type="email"] {
     box-shadow: 0px 0px 20px #00000029;
     box-sizing: border-box;
     border: 1px #F0F0F1 solid;
@@ -87,6 +86,43 @@
     width: 100%;
 }
 
-.newsletter-inline-form__container input[type="submit"] {
+.newsletter-footer-form__container input[type="submit"] {
     padding: 12px 20px;
+}
+
+.newsletter-footer-form__image {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
+}
+@media (max-width: 767px) {
+    .newsletter-footer-form__image {
+        background-size: 175px 135px;
+        height: 135px;
+        width: 175px;
+    }
+}
+@media (min-width: 768px) {
+    .newsletter-footer-form__image {
+        height: 200px;
+        margin-left: -30px;
+        width: 260px;
+        z-index: -1;
+    }
+}
+@media (max-width: 767px) and (min-width: 481px) {
+    .newsletter-footer-form__image {
+        margin: 0;
+        z-index:-1;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+@media (max-width: 480px) {
+    .newsletter-footer-form__image {
+        margin: 0;
+        z-index:-1;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
