@@ -1,0 +1,184 @@
+{% import '../utils/utils.css' as utils %}
+
+.cm-advanced-banner-hero__inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+}
+
+.cm-advanced-banner-hero__title {
+    {{ utils.natus() }};
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-weight: var(--heavy-font-weight);
+    align-items: center;
+    display: flex;
+    margin-bottom: var(--freed-margin);
+}
+
+.cm-advanced-banner-hero__title svg {
+    width: 35px;
+    margin-right: 15px;
+}
+
+{% call utils.large_and_extra_large() %}
+    .cm-advanced-banner-hero {
+        min-height: 600px;
+        padding-top: 50px;
+        position: relative;
+    }
+    .cm-advanced-banner-hero__inner {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .cm-advanced-banner-hero__content-container {
+        max-width: 600px;
+        padding-top: 50px;
+        width: 50%;
+    }
+    .cm-advanced-banner-hero__small-background-wrapper {
+        background-size: 0;
+    }
+    .cm-advanced-banner-hero__title svg{
+        fill: var(--mid-gray);
+    }
+    .cm-advanced-banner-hero__image-container {
+        background-color: var(--persimmon);
+        background-size: cover;
+        bottom: -50px;
+        left: calc(50% + 100px);
+        position: absolute;
+        top: 50px;
+        z-index: 1;
+    }
+{% endcall %}
+
+{% call utils.extra_large() %}
+    .cm-advanced-banner-hero__image-container {
+        right: 50px;
+    }
+    .cm-advanced-banner-hero__description {
+        font-size: var(--base-font-size);
+        line-height: var(--freed-line-height);
+        margin-bottom: var(--gaudi-margin);
+    }
+    .cm-advanced-banner-hero {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1800px;
+    }
+    .cm-advanced-banner-hero__sub-title {
+        {{ utils.eames() }}
+        font-weight: var(--heavy-font-weight);
+        line-height: var(--gaudi-line-height);
+        margin-bottom: var(--freed-margin);
+    }
+    .cm-advanced-banner-hero__content-container {
+        padding-bottom: 70px;
+    }
+{% endcall %}
+
+{% call utils.small_medium_and_large() %}
+    .cm-advanced-banner-hero__sub-title{
+        {{ utils.freed() }}
+        font-weight: var(--heavy-font-weight);
+        line-height: var(--freed-line-height);
+        margin:0;
+        margin-bottom: var(--freed-margin)
+    }
+    .cm-advanced-banner-hero__description{
+        {{ utils.natus() }}
+        margin-bottom: var(--base-margin);
+    }
+    .cm-advanced-banner-hero__image-container{
+        right: 0;
+        background-color: var(--persimmon);
+        background-size: cover;
+        bottom: -50px;
+        left: calc(50% + 100px);
+        position: absolute;
+        top: 50px;
+        z-index: 1;
+    }
+    .cm-advanced-banner-hero__content-container {
+        margin-top: 0;
+        padding-bottom: 50px;
+        max-width: 600px;
+        padding-top: 29px;
+        padding-bottom: 0;
+    }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+    .cm-advanced-banner-hero__small-background-wrapper{
+        margin-left: -100px;
+        margin-right: -100px;
+        padding-left: 100px;
+        padding-right: 100px;
+        background-position: center;
+        background-size: cover;
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+    .cm-advanced-banner-hero svg {
+        fill: white;
+    }
+    .cm-advanced-banner-hero__title, .cm-advanced-banner-hero__sub-title {
+        color: white;
+    }
+    .cm-advanced-banner-hero__content-container {
+        padding-left: 100px;
+        padding-right: 100px;
+        max-width: 100%;
+        padding-top: 0;
+    }
+    .cm-advanced-banner-hero__image-container{
+        display:none;
+    }
+    .cm-advanced-banner-hero {
+        padding-bottom: 100px;
+    }
+    .cm-advanced-banner-hero__description{
+        margin-top: 50px;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .cm-advanced-banner-hero__small-background-wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-top:51px;
+    }
+
+    .cm-advanced-banner-hero__content-container .button-primary {
+        width: 100%;
+        max-width: var(--button-max-width);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.cm-advanced-banner {
+    padding-bottom: 50px;
+    }
+    .cta--primary-coral {
+        display: block;
+        padding: 10px;
+    }
+    .cm-advanced-banner-hero__content-container {
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 100%;
+        padding-top: 0;
+    }
+    .cm-advanced-banner-hero__sub-title{
+        {{ utils.base() }};
+        font-weight: var(--heavy-font-weight);
+        line-height: var(--freed-line-height);
+    }
+    .cm-advanced-banner-hero {
+        padding-bottom: 50px;
+    }
+{% endcall %}

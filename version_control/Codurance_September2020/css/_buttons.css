@@ -5,13 +5,59 @@
   --button-max-width: 300px;
 }
 
+{% macro button() %}
+  border-radius: 3px;
+  display: inline-block;
+  font-size: var(--natus-font-size);
+  font-weight: var(--middle-font-weight);
+  line-height: var(--natus-line-height);
+  margin: 0.5rem 0;
+  padding: 0.6em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: var(--cta-transition);
+  white-space: nowrap;
+{% endmacro %}
+
 .button {
-  {{ utils.button() }}
+  {{ button() }}
 }
 
-{{ utils.button_primary('.button-primary') }}
+.button-primary,
+.hs-button.primary {
+  {{ button() }}
+  background: var(--persimmon);
+  border: solid 2px var(--persimmon);
+  color: white;
+}
 
-{{ utils.button_primary('.hs-button.primary') }}
+.button-primary:hover,
+.button-primary:active,
+.button-primary:focus,
+.hs-button.primary:hover,
+.hs-button.primary:active,
+.hs-button.primary:focus {
+  background: var(--persimmon--dark);
+  border: solid 2px var(--persimmon--dark);
+  color: white;
+  text-decoration: none;
+}
+
+.button-primary-alternate {
+  {{ button() }}
+  background: var(--midnight-blue);
+  border: solid 2px var(--midnight-blue);
+  color: white;
+}
+
+.button-primary-alternate:hover,
+.button-primary-alternate:active,
+.button-primary-alternate:focus {
+  background: var(--midnight-blue--dark);
+  border: solid 2px var(--midnight-blue--dark);
+  color: white;
+  text-decoration: none;
+}
 
 {{ utils.button_secondary('.button-secondary') }}
 

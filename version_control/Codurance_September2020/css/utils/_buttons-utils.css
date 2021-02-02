@@ -12,24 +12,6 @@
   white-space: nowrap;
 {% endmacro %}
 
-{% macro button_primary(classname) %}
-  {{classname}} {
-    {{ button() }}
-    background: var(--persimmon);
-    border: solid 2px var(--persimmon);
-    color: white;
-  }
-
-  {{classname}}:hover,
-  {{classname}}:active,
-  {{classname}}:focus {
-    background: var(--persimmon--dark);
-    border: solid 2px var(--persimmon--dark);
-    color: white;
-    text-decoration: none;
-  }
-{% endmacro %}
-
 {% macro button_secondary(classname) %}
   {{classname}} {
     {{ button() }}
