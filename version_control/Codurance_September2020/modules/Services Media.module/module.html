@@ -1,4 +1,7 @@
+{{ require_css(get_asset_url("../../css/modules/services-media.css")) }}
+
 {{ require_css(get_asset_url("../../css/card-slider.css")) }}
+
 {% set filter = "&orderBy=-publication_date&limit=8" %}
 {% if module.service_type %}
   {% set filter = filter + "&tags__icontains=" + module.service_type %}
