@@ -48,68 +48,68 @@
       </div>
       <div class="card-slider-results" data-services-media-card-track>
         {% for media in media_collection %}
-        <article class="card-slider-item" data-services-media-card data-card-type="{{media.media_type.name}}">
-          <div class="card-slider-item__content">
-            <div
-              class="card-slider-item__image-container"
-              style="background-image: url({{media.thumbnail.url}})"
-            >
-              {% if media.media_type.name %}
-              <small
-                class="card-slider-item__label card-slider-item__label--type"
+          <article class="card-slider-item" data-services-media-card data-card-type="{{media.media_type.name}}">
+            <div class="card-slider-item__content">
+              <div
+                class="card-slider-item__image-container"
+                style="background-image: url({{media.thumbnail.url}})"
               >
-                {{ media.media_type.name }}
-              </small>
-              <small
-                class="card-slider-item__label card-slider-item__label--duration"
-              >
-                {{ media.duration }}
-              </small>
-              {% endif %}
-            </div>
-            <div class="card-slider-item__text-container">
-              <div class="card-slider-item__text-container-inner">
-                <header class="card-slider-item__header">
-                  <time
-                    class="card-slider-item__metadata"
-                    datetime="{{ media.publication_date|datetimeformat('%Y-%m-%d') }}"
-                  >
-                    {{ media.publication_date|datetimeformat('%a %e %b %Y') }}
-                  </time>
-                  {% call is_less_than_one_week_ago(media.publication_date) %}
-                    <small
-                      class="card-slider-item__metadata card-slider-item__metadata--new"
-                    >
-                      New
-                    </small>
-                  {% endcall %}
-                  <h4 class="card-slider-item__title">
-                    {{ media.title }}
-                  </h4>
-                </header>
-                <small class="card-slider-item__description">
-                  {% set tag_names = [] %} {% for tag in media.tags %} {% do
-                  tag_names.append(tag.name) %} {% endfor %} {{tag_names|join('
-                  | ')}}
-                </small>
-              </div>
-              {% if media.media_type.name == 'video' %}
-              <div class="card-slider-item__button card-slider-item__button--solid">
-                <a
-                  class="card-slider-item__video-link"
-                  target="_blank"
-                  href="{{ media.url }}"
-                  >Watch on YouTube</a
+                {% if media.media_type.name %}
+                <small
+                  class="card-slider-item__label card-slider-item__label--type"
                 >
+                  {{ media.media_type.name }}
+                </small>
+                <small
+                  class="card-slider-item__label card-slider-item__label--duration"
+                >
+                  {{ media.duration }}
+                </small>
+                {% endif %}
               </div>
-              {% else %}
-              <div class="card-slider-item__button card-slider-item__button--outlined">
-                <a href="{{ media.url }}" target="_blank">Learn More</a>
+              <div class="card-slider-item__text-container">
+                <div class="card-slider-item__text-container-inner">
+                  <header class="card-slider-item__header">
+                    <time
+                      class="card-slider-item__metadata"
+                      datetime="{{ media.publication_date|datetimeformat('%Y-%m-%d') }}"
+                    >
+                      {{ media.publication_date|datetimeformat('%a %e %b %Y') }}
+                    </time>
+                    {% call is_less_than_one_week_ago(media.publication_date) %}
+                      <small
+                        class="card-slider-item__metadata card-slider-item__metadata--new"
+                      >
+                        New
+                      </small>
+                    {% endcall %}
+                    <h4 class="card-slider-item__title">
+                      {{ media.title }}
+                    </h4>
+                  </header>
+                  <small class="card-slider-item__description">
+                    {% set tag_names = [] %} {% for tag in media.tags %} {% do
+                    tag_names.append(tag.name) %} {% endfor %} {{tag_names|join('
+                    | ')}}
+                  </small>
+                </div>
+                {% if media.media_type.name == 'video' %}
+                  <div class="card-slider-item__button card-slider-item__button--solid">
+                    <a
+                      class="card-slider-item__video-link"
+                      target="_blank"
+                      href="{{ media.url }}"
+                      >Watch on YouTube</a
+                    >
+                  </div>
+                {% else %}
+                  <div class="card-slider-item__button card-slider-item__button--outlined">
+                    <a href="{{ media.url }}" target="_blank">Learn More</a>
+                  </div>
+                {% endif %}
               </div>
-              {% endif %}
             </div>
-          </div>
-        </article>
+          </article>
         {% endfor %}
       </div>
     </div>
