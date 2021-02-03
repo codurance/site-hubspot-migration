@@ -1,8 +1,11 @@
 <section class="newsletter-inline-form__container">
-    <div class="newsletter-inline-form__image"></div>
+    <div class="newsletter-inline-form__image newsletter-inline-form__image--pending" data-inline-pending></div>
+    <div class="newsletter-inline-form__image newsletter-inline-form__image--success hidden" data-inline-success></div>
     <div class=newsletter-inline-form__wrapper>
-        <h3 class="newsletter-inline-form__heading">Sign up to our newsletter</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing eli</p>
+        <h3 class="newsletter-inline-form__heading" data-inline-pending>Sign up to our newsletter</h3>
+        <h3 class="newsletter-inline-form__heading hidden" data-inline-success>Thank you for signing up</h3>
+        <p class="newsletter-inline-form__info" data-inline-pending>Lorem ipsum dolor sit amet, consectetur adipiscing eli</p>
+        <p class="newsletter-inline-form__info hidden" data-inline-success>Visit our preference centre Lorem ipsum dolor sit amet, consectetur adipiscing elit. Preference Center</p>
         {% form "email_form" form_to_use={{module.sign_up_form.form_id}} %}
     </div>
 </section>
