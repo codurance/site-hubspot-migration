@@ -12,10 +12,10 @@ const checkClosingModal = e => {
   }
 }
 
-
 const showModal = _ => {
   modalBackground.classList.remove('hidden');
-  document.removeEventListener('mouseout', showModal);
+  console.log(checkExit)
+  document.removeEventListener('mouseout', checkExit);
 }
 
 const potentiallyLeavingPage = e => {
