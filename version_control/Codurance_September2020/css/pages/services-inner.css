@@ -2,7 +2,7 @@
 
 .cm-services-inner-layout .dnd-section,
 .hs-training-inner-layout .dnd-section {
-    max-width: 1800px;
+    max-width: var(--max-page-width);
     margin: 0px auto;
 }
 
