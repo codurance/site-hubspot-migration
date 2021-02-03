@@ -31,7 +31,6 @@
 }
 .newsletter-inline-form__image--success {
     background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/bg-form-success.svg);
-    width: 320px;
 }
 @media (max-width: 480px) {
     .newsletter-inline-form__image--success {

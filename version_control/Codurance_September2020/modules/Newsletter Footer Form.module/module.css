@@ -143,8 +143,11 @@
     line-height: 1.6rem;
 }
 
+.newsletter-footer-form__container .submitted-message {
+    display: none;
+}
+
 .newsletter-footer-form__image {
-    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
     z-index: 1;
 }
 @media (min-width: 768px) {
@@ -164,5 +167,31 @@
         top: 50px;
         transform: translateX(-50%);
         width: 175px;
+    }
+}
+.newsletter-footer-form__image--pending {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
+}
+@media (max-width: 767px) {
+    .newsletter-footer-form__image--pending {
+        width: 175px;
+    }
+}
+@media (min-width: 768px) {
+    .newsletter-footer-form__image--pending {
+        width: 260px;
+    }
+}
+.newsletter-footer-form__image--success {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/bg-form-success.svg);
+}
+@media (max-width: 767px) {
+    .newsletter-footer-form__image--success {
+        width: 180px;
+    }
+}
+@media (min-width: 768px) {
+    .newsletter-footer-form__image--success {
+        width: 320px;
     }
 }

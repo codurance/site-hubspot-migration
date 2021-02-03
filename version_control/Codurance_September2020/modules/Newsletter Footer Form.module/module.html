@@ -1,10 +1,13 @@
 <section class="newsletter-footer-form__section">
     <div class="newsletter-footer-form__container">
       <div class=newsletter-footer-form__wrapper>
-        <h3 class="newsletter-footer-form__heading">Sign up to our newsletter</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing eli</p>
+        <h3 class="newsletter-footer-form__heading" data-footer-pending>Sign up to our newsletter</h3>
+        <h3 class="newsletter-footer-form__heading hidden" data-footer-success>Thank you for signing up</h3>
+        <p class="newsletter-footer-form__info" data-footer-pending>Lorem ipsum dolor sit amet, consectetur adipiscing eli</p>
+        <p class="newsletter-footer-form__info hidden" data-footer-success>Visit our preference centre Lorem ipsum dolor sit amet, consectetur adipiscing elit. Preference Center</p>
         {% form "email_form" form_to_use={{module.sign_up_form.form_id}} %}
       </div>
-      <div class="newsletter-footer-form__image"></div>
+      <div class="newsletter-footer-form__image newsletter-footer-form__image--pending" data-footer-pending></div>
+      <div class="newsletter-footer-form__image newsletter-footer-form__image--success hidden" data-footer-success></div>
     </div>
 </section>
