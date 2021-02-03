@@ -20,6 +20,11 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+.newsletter-exit-popup__inner-modal .hs-error-msg {
+    display: none;
+}
+
 @media (max-width: 767px) {
     .newsletter-exit-popup__inner-modal {
         width: 90%;
