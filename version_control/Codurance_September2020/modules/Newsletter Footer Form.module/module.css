@@ -59,8 +59,9 @@
 }
 
 .newsletter-footer-form__container .hs-email {
-    margin: 0;
     display: inline-block;
+    margin: 0;
+    position: relative;
 }
 @media (max-width: 480px) {
     .newsletter-footer-form__container .hs-email {
@@ -73,10 +74,19 @@
     }
 }
 
-.newsletter-footer-form__container .hs-error-msg {
-    display: none;
+.newsletter-footer-form__container .hs-error-msgs {
+    position: absolute;
+    left: 5px;
+}
+@media (max-width: 480px) {
+    .newsletter-footer-form__container .hs-error-msgs {
+        display: none !important;
+    }
 }
 
+.newsletter-footer-form__container .hs_error_rollup {
+    display: none;
+}
 
 .newsletter-footer-form__container .hs-submit {
     display: inline-block;
