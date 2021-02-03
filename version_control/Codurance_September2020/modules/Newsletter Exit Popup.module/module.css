@@ -30,6 +30,11 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+.newsletter-exit-popup__inner-modal .hs-error-msg {
+    display: none;
+}
+
 @media (max-width: 767px) {
     .newsletter-exit-popup__inner-modal {
         width: 90%;
@@ -143,7 +148,7 @@
 }
 @media (max-width: 767px) {
     .newsletter-exit-popup__header-image {
-        background-size:175px 135px;
+        background-size: 175px 135px;
         height: 135px;
         left: 50%;
         position: absolute;

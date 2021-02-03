@@ -73,6 +73,11 @@
     }
 }
 
+.newsletter-footer-form__container .hs-error-msg {
+    display: none;
+}
+
+
 .newsletter-footer-form__container .hs-submit {
     display: inline-block;
 }
