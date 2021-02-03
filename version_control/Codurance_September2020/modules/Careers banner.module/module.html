@@ -6,7 +6,10 @@
   <div class="custom-career-banner__bg-image dzsparallaxer--target" style="background-image: url('{{ module.background_image.src }}');"></div>
   <div class="custom-career-banner__content-wrapper page-center">
     <h1 class="custom-career-banner__title">{{ module.heading }}</h1>
-    <span class="custom-career-banner__description">{{ module.sub_heading }}</span>
+    {% if module.sub_heading %}
+      <span class="custom-career-banner__description">{{ module.sub_heading }}</span>
+    {% endif %}
+
     <div class="custom-career-banner__button-wrapper">
       {% if module.button.button_type == "std" %}
         {% set href = module.button.link_field.url.href %}
