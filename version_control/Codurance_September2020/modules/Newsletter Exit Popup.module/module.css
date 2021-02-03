@@ -133,6 +133,10 @@
     line-height: 1.6rem;
 }
 
+.newsletter-exit-popup__container .hs-error-msg {
+    display: none;
+}
+
 .newsletter-exit-popup__header-image {
     background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
 }
