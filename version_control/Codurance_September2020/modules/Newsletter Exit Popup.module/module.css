@@ -26,7 +26,6 @@
     margin: 0 auto;
     max-width: 785px;
     overflow: hidden;
-    padding: 50px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -34,11 +33,18 @@
 @media (max-width: 767px) {
     .newsletter-exit-popup__inner-modal {
         width: 90%;
+        padding: 175px 50px 50px;
+    }
+}
+@media (max-width: 480px) {
+    .newsletter-exit-popup__inner-modal {
+        padding: 175px 20px 30px;
     }
 }
 @media (min-width: 768px) {
     .newsletter-exit-popup__inner-modal {
         width: 80%;
+        padding: 50px;
     }
 }
 
@@ -51,6 +57,11 @@
 .newsletter-exit-popup__container p {
     font-size: 1.4rem;
     margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+    .newsletter-exit-popup__container p {
+        padding-right: 140px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -120,15 +131,7 @@
 .newsletter-exit-popup__header-image {
     background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
 }
-@media (max-width: 480px) {
-    .newsletter-exit-popup__header-image {
-        background-size: 175px 135px;
-        height: 135px;
-        margin: 0 auto 20px;
-        width: 175px;
-    }
-}
-@media (min-width: 481px) {
+@media (min-width: 768px) {
     .newsletter-exit-popup__header-image {
         height: 200px;
         position: absolute;
@@ -138,13 +141,28 @@
         z-index: -1;
     }
 }
-
+@media (max-width: 767px) {
+    .newsletter-exit-popup__header-image {
+        background-size:175px 135px;
+        height: 135px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        top: 30px;
+        width: 175px;
+    }
+}
 
 .newsletter-exit-popup__footer-image {
     background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/exit-modal-graphic.svg);
+    bottom: -30px;
     height: 312px;
     width: 719px;
     position: absolute;
-    top: -23px;
     left: 15px;
+}
+@media (max-width: 480px) {
+    .newsletter-exit-popup__footer-image {
+        display: none;
+    }
 }
