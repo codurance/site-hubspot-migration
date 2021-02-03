@@ -116,13 +116,13 @@
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
-      "default" : "btn btn-more btn-more-large"
+      "default" : ""
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "type" : "group",
     "default" : {
-      "custom_class" : "btn btn-more btn-more-large"
+      "custom_class" : ""
     }
   } ],
   "tab" : "CONTENT",
@@ -140,7 +140,7 @@
     },
     "text_field" : "Button",
     "module_setting" : {
-      "custom_class" : "btn btn-more btn-more-large"
+      "custom_class" : ""
     }
   }
 } ]

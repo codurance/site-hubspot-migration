@@ -228,7 +228,7 @@
       "lightbox_sub_title" : "Note: Links below will open in a new tab."
     },
     "module_setting" : {
-      "custom_class" : "btn btn-more btn-more-large"
+      "custom_class" : ""
     }
   }
 } ]
