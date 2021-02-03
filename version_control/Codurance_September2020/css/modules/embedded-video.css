@@ -7,20 +7,20 @@
 }
 
 .embed-video__heading {
-  font-size: 2.333rem;
-  font-weight: 700;
-  margin-bottom: 0;
+  {{ utils.dudler() }}
+  margin-bottom: var(--dudler-margin);
   margin-left: auto;
   margin-right: auto;
-  max-width: 800px;
-  padding-bottom: 25px;
+  max-width: var(--dudler-max-width);
 }
 
 .embed-video__sub-heading {
-  font-size: 1.4rem;
-  margin: 0 auto;
-  max-width: 800px;
-  padding-bottom: 25px;
+  {{ utils.natus() }}
+  margin-bottom: var(--base-margin);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--natus-max-width);
+  padding-bottom: 20px;
 }
 
 .embed-video__video {
