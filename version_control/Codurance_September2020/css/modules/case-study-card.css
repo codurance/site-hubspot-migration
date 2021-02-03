@@ -1,13 +1,12 @@
 {% import '../utils/utils.css' as utils %}
 
 .case-study-card-collection {
-    max-width: 1300px;
     align-items: stretch;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    padding-top: 50px;
+    max-width: 1300px;
 }
 
 .case-study-card {
