@@ -1,6 +1,3 @@
-.newsletter-inline-form__image {
-    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
-}
 @media (max-width: 480px) {
     .newsletter-inline-form__image {
         background-size: 175px 135px;
@@ -11,14 +8,42 @@
 }
 @media (min-width: 481px) {
     .newsletter-inline-form__image {
+        bottom: -55px;
         height: 200px;
         position: absolute;
         right: -235px;
-        top: 25px;
         width: 260px;
         z-index: -1;
     }
 }
+.newsletter-inline-form__image--pending {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
+}
+@media (max-width: 480px) {
+    .newsletter-inline-form__image--pending {
+        width: 175px;
+    }
+}
+@media (min-width: 481px) {
+    .newsletter-inline-form__image--pending {
+        width: 260px;
+    }
+}
+.newsletter-inline-form__image--success {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/bg-form-success.svg);
+    width: 320px;
+}
+@media (max-width: 480px) {
+    .newsletter-inline-form__image--success {
+        width: 180px;
+    }
+}
+@media (min-width: 481px) {
+    .newsletter-inline-form__image--success {
+        width: 320px;
+    }
+}
+
 
 .newsletter-inline-form__container {
     position: relative;
@@ -40,9 +65,10 @@
  font-weight: 700;
 }
 
-.newsletter-inline-form__container p {
+.newsletter-inline-form__info {
     font-size: 1.4rem;
     margin-bottom: 1.67rem;
+    padding-right: 60px;
 }
 
 .newsletter-inline-form__container .hs-email {
@@ -116,4 +142,8 @@
     padding: 12px 20px;
     font-size: 1.2rem;
     line-height: 1.6rem;
+}
+
+.newsletter-inline-form__container .submitted-message {
+    display: none;
 }
