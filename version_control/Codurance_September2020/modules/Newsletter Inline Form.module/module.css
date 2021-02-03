@@ -67,7 +67,11 @@
 .newsletter-inline-form__info {
     font-size: 1.4rem;
     margin-bottom: 1.67rem;
-    padding-right: 60px;
+}
+@media (min-width: 481px) {
+    .newsletter-inline-form__info {
+        padding-right: 40px;
+    }
 }
 
 .newsletter-inline-form__container .hs-email {
