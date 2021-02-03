@@ -417,8 +417,6 @@
         width: 100%;
         max-width: var(--button-max-width);
         display: block;
-        margin-left: auto;
-        margin-right: auto;
     }
     .cm-tabber {
         padding-top: 50px;
