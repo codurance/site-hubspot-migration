@@ -67,7 +67,7 @@
 }
 @media (max-width: 480px) {
     .newsletter-inline-form__container .hs-error-msgs {
-        display: none;
+        display: none !important;
     }
 }
 

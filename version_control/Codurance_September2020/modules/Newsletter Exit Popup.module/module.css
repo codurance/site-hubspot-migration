@@ -31,7 +31,17 @@
     transform: translateY(-50%);
 }
 
-.newsletter-exit-popup__inner-modal .hs-error-msg {
+.newsletter-exit-popup__container .hs-error-msgs {
+    position: absolute;
+    left: 5px;
+}
+@media (max-width: 480px) {
+    .newsletter-exit-popup__container .hs-error-msgs {
+        display: none !important;
+    }
+}
+
+.newsletter-exit-popup__container .hs_error_rollup {
     display: none;
 }
 
@@ -78,6 +88,7 @@
 .newsletter-exit-popup__container .hs-email {
     display: inline-block;
     margin: 0;
+    position: relative;
 }
 @media (max-width: 480px) {
     .newsletter-exit-popup__container .hs-email {
@@ -131,10 +142,6 @@
     padding: 12px 20px;
     font-size: 1.2rem;
     line-height: 1.6rem;
-}
-
-.newsletter-exit-popup__container .hs-error-msg {
-    display: none;
 }
 
 .newsletter-exit-popup__header-image {
