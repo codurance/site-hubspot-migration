@@ -26,17 +26,17 @@
  font-weight: 700;
 }
 
-.newsletter-footer-form__container p {
+.newsletter-footer-form__info {
     margin-bottom: 1.67rem;
 }
 @media (min-width: 768px) {
-    .newsletter-footer-form__container p {
+    .newsletter-footer-form__info {
         padding-right: 30px;
         font-size: 1.4rem;
     }
 }
 @media (max-width: 767px) {
-    .newsletter-footer-form__container p {
+    .newsletter-footer-form__info {
         font-size: 1.2rem;
         margin-bottom: 1.33rem;
     }
