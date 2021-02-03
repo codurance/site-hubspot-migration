@@ -68,14 +68,19 @@
     font-weight: 700;
     margin-bottom: 10px;
 }
+@media (min-width: 768px) {
+    .newsletter-exit-popup__heading {
+        padding-right: 210px;
+    }
+}
 
-.newsletter-exit-popup__container p {
+.newsletter-exit-popup__info {
     font-size: 1.4rem;
     margin-bottom: 25px;
 }
 @media (min-width: 768px) {
-    .newsletter-exit-popup__container p {
-        padding-right: 140px;
+    .newsletter-exit-popup__info {
+        padding-right: 210px;
     }
 }
 
@@ -108,6 +113,10 @@
     .newsletter-exit-popup__container .hs-submit {
         width: 100%;
     }
+}
+
+.newsletter-exit-popup__container .submitted-message {
+    display: none;
 }
 
 .newsletter-exit-popup__container .hs-button {
@@ -145,7 +154,7 @@
 }
 
 .newsletter-exit-popup__header-image {
-    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
+    z-index: -1;
 }
 @media (min-width: 768px) {
     .newsletter-exit-popup__header-image {
@@ -153,7 +162,6 @@
         position: absolute;
         right: -35px;
         top: -52px;
-        width: 260px;
         z-index: -1;
     }
 }
@@ -165,7 +173,32 @@
         position: absolute;
         transform: translateX(-50%);
         top: 30px;
+    }
+}
+.newsletter-exit-popup__header-image--pending {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
+}
+@media (max-width: 767px) {
+    .newsletter-exit-popup__header-image--pending {
         width: 175px;
+    }
+}
+@media (min-width: 768px) {
+    .newsletter-exit-popup__header-image--pending {
+        width: 260px;
+    }
+}
+.newsletter-exit-popup__header-image--success {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/bg-form-success.svg);
+}
+@media (max-width: 767px) {
+    .newsletter-exit-popup__header-image--success {
+        width: 180px;
+    }
+}
+@media (min-width: 768px) {
+    .newsletter-exit-popup__header-image--success {
+        width: 320px;
     }
 }
 

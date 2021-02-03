@@ -1,10 +1,13 @@
 <div class="newsletter-exit-popup__container hidden" data-exit-popup-modal>
   <button class="newsletter-exit-popup__close-button" data-exit-popup-close-button>&times</button>
   <div class="newsletter-exit-popup__inner-modal">
-    <h3 class="newsletter-exit-popup__heading">Sign up to our newsletter</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing eli</p>
+    <h3 class="newsletter-exit-popup__heading" data-exit-popup-pending>Sign up to our newsletter</h3>
+    <h3 class="newsletter-exit-popup__heading hidden" data-exit-popup-success>Thank you for signing up</h3>
+    <p class="newsletter-exit-popup__info" data-exit-popup-pending>Lorem ipsum dolor sit amet, consectetur adipiscing eli</p>
+    <p class="newsletter-exit-popup__info hidden" data-exit-popup-success>Visit our preference centre Lorem ipsum dolor sit amet, consectetur adipiscing elit. Preference Center</p>
     {% form "email_form" form_to_use={{module.sign_up_form.form_id}} %}
-    <div class="newsletter-exit-popup__header-image"></div>
+    <div class="newsletter-exit-popup__header-image newsletter-exit-popup__header-image--pending" data-exit-popup-pending></div>
+    <div class="newsletter-exit-popup__header-image newsletter-exit-popup__header-image--success hidden" data-exit-popup-success></div>
     <div class="newsletter-exit-popup__footer-image"></div>
   </div>
 </div>
