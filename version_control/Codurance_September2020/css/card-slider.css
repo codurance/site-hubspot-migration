@@ -151,7 +151,7 @@
   transition: background-color 0.2s linear;
 }
 .card-slider__filter-button:not(:last-of-type)::after {
-  background-color: var(--mid-gray);
+  background-color: var(--french-gray);
   content: '';
   height: 50%;
   position: absolute;
@@ -321,10 +321,12 @@
 }
 
 .card-slider-item__title {
-  font-size: 1.2rem;
-  font-weight: 700;
+  {{ utils.base() }}
+  font-weight: var(--heavy-font-weight);
   display: block;
   width: 100%;
+  margin-top: calc(var(--base-margin) / 2);
+  margin-bottom: var(--base-margin);
 }
 
 .card-slider-item__description {
