@@ -22,13 +22,13 @@
     font-size: var(--dudler-font-size);
     line-height: var(--dudler-line-height);
     font-weight: var(--heavy-font-weight);
-    padding-bottom: 20px;
     margin-bottom: var(--dudler-margin);
 }
 .section-intro p {
     {{ utils.natus() }}
     margin-bottom: var(--base-margin);
     max-width: var(--natus-max-width);
+    padding-bottom: 20px;
 }
 
 .cm-tabber {
@@ -162,9 +162,6 @@
 {% call utils.medium_large_and_extra_large() %}
     .section-intro {
         text-align: center;
-    }
-    .section-intro h2{
-        margin-bottom: 15px;
     }
     .cm-tabber {
         margin-left: auto;
@@ -423,11 +420,6 @@
         margin-left: auto;
         margin-right: auto;
     }
-
-    .section-intro h2 {
-        margin-bottom: 25px;
-    }
-
     .cm-tabber {
         padding-top: 50px;
         padding-left: 20px;
