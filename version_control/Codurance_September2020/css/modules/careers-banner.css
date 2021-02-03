@@ -39,7 +39,6 @@
 .custom-career-banner__title {
   {{ utils.eames() }}
   color: white;
-  margin-bottom: var(--eames-margin);
 }
 
 .custom-career-banner__description {
@@ -48,6 +47,7 @@
   display: inline-block;
   margin-bottom: var(--base-margin);
   max-width: var(--base-max-width);
+  margin-top: var(--eames-margin);
 }
 
 .custom-career-banner__button-wrapper {
