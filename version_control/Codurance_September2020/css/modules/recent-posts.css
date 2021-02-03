@@ -81,7 +81,7 @@
 .cm-recent-post__title {
   {{ utils.base() }}
   font-weight: var(--heavy-font-weight);
-  margin-bottom: calc(var(--base-margin) / 2);
+  margin-bottom: var(--base-margin);
   margin-top: calc(var(--base-margin) / 2);
 }
 
