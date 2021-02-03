@@ -14,7 +14,6 @@ const checkClosingModal = e => {
 
 const showModal = _ => {
   modalBackground.classList.remove('hidden');
-  console.log(checkExit)
   document.removeEventListener('mouseout', checkExit);
 }
 
