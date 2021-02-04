@@ -18,6 +18,12 @@
     position: absolute;
     right: 25px;
     top: 25px;
+    height: 60px;
+    width: 60px;
+}
+
+.newsletter-exit-popup__close-icon {
+    transform: rotate(45deg);
 }
 
 .newsletter-exit-popup__inner-modal {
