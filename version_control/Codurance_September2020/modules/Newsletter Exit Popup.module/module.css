@@ -43,7 +43,15 @@
 }
 @media (max-width: 480px) {
     .newsletter-exit-popup__container .hs-error-msgs {
-        display: none !important;
+        right: 0px;
+        top: 0px;
+        transform: translateY(-100%);
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletter-exit-popup__container .hs-error-msg {
+        float: right;
     }
 }
 
