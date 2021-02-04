@@ -59,6 +59,13 @@
   width: 80%;
 }
 
+{% call utils.small() %}
+  .cm-homepage-hero__content-container [class^="button"] {
+    width: 100%;
+    max-width: var(--button-max-width);
+  }
+{% endcall %}
+
 .cm-homepage-hero__title {
   color: white;
   {{ utils.habib() }}
