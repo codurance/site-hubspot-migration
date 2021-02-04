@@ -403,10 +403,10 @@
 }
 
 .card-slider-item__label {
+  {{ utils.natus() }}
   background-color: white;
   border-radius: 3px;
   box-shadow: 0px 0px 20px var(--woodsmoke--20);
-  letter-spacing: 0.02em;
   padding: 0.05em 0.4em;
   position: absolute;
   text-transform: uppercase;
@@ -422,16 +422,10 @@
 }
 
 .card-slider-item__label--duration::before {
-  background-image: url('data:image/svg+xml;utf8,<svg id="Icon_-_Clock" data-name="Icon - Clock" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><path id="clock_face" data-name="clock face" d="M5,0a5,5,0,1,0,5,5A5.006,5.006,0,0,0,5,0ZM5,9.375A4.375,4.375,0,1,1,9.375,5,4.38,4.38,0,0,1,5,9.375Z" fill="%232b2c2d"/><path id="hands" d="M208.486,83.118h-.692v3.6l2.177,2.177.489-.489-1.974-1.974Z" transform="translate(-203.266 -81.462)" fill="%232b2c2d"/></svg>');
-  background-position: center;
-  background-size: cover;
-  content: '';
-  display: inline-block;
-  height: 10px;
-  margin-right: 2px;
+  content: '\f017';
   position: relative;
-  top: 1px;
-  width: 10px;
+  top: 0.03em;
+  font-family: 'line awesome free';
 }
 
 .card-slider-newsletter-wrapper {
