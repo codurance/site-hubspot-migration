@@ -1,27 +1,29 @@
+{% import '../utils/utils.css' as utils %}
+
 .embed-video {
   margin-bottom: 4.4rem;
 }
-@media (min-width: 1024px) {
+{% call utils.large_and_extra_large() %}
 .embed-video {
     margin-top: 6.6rem;
   }
-}
-@media (max-width: 1023px) {
+{% endcall %}
+{% call utils.small_and_medium() %}
 .embed-video {
     margin-top: 4.4rem;
   }
-}
+{% endcall %}
 
 .cm-tabber-section {
   background-image: none !important;
   background-color: #2b3342;
   padding-top: 100px;
 }
-@media (max-width: 1299px) and (min-width: 768px) {
+{% call utils.medium_and_large() %}
   .cm-tabber-section {
     padding-bottom: 10px;
   }
-}
+{% endcall %}
 .cm-tabber-section::after {
   display: none;
 }
@@ -31,9 +33,9 @@
 .cm-tabber__large-screen-controls > .tabmenu  {
   color: white;
 }
-@media (max-width: 1023px) {
+{% call utils.small_and_medium() %}
   .cm-tabber__panel::before,
   .cm-tabber__panel:not(.active)::before {
     color: white;
   }
-}
+{% endcall %}
