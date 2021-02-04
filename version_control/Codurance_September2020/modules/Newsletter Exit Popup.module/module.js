@@ -68,7 +68,9 @@ const listenForOtherFormSubmissions = _ => {
   observer.observe(document.querySelector("#hs_form_target_newsletter_footer_form_email_form"), { subtree: false, childList: true });
 }
 
-window.addEventListener('load', e => {
-  addPopupEventListeners();
+window.addEventListener('load', _ => {
+  if (!window.hsInEditor) {
+    addPopupEventListeners();
+  }
   listenForOtherFormSubmissions();
 });
