@@ -16,12 +16,14 @@
   background-image: none !important;
   background-color: #2b3342;
   padding-top: 100px;
-  position: initial;
 }
 @media (max-width: 1299px) and (min-width: 768px) {
   .cm-tabber-section {
     padding-bottom: 10px;
   }
+}
+.cm-tabber-section::after {
+  display: none;
 }
 
 .cm-tabber-section__intro,
