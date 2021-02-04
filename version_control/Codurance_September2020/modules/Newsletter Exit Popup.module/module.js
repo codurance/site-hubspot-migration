@@ -8,7 +8,7 @@ const closeModal = _ => {
 
 const checkClosingModal = e => {
   if (e.target == modalBackground) {
-    closeModal()
+    closeModal();
   }
 }
 
@@ -48,13 +48,13 @@ const showSuccessfulFormHTML = _ => {
 }
 
 const detectFormSubmission = _ => {
-  let form = document.querySelector(".newsletter-exit-popup__container form")
+  let form = document.querySelector(".newsletter-exit-popup__container form");
 
   const observer = new MutationObserver(function(mutations_list) {
       mutations_list.forEach(function(mutation) {
           mutation.removedNodes.forEach(function(removed_node) {
               if (removed_node === form) {
-                  showSuccessfulFormHTML()
+                  showSuccessfulFormHTML();
               }
           });
       });
@@ -63,7 +63,30 @@ const detectFormSubmission = _ => {
   observer.observe(document.querySelector("#hs_form_target_newsletter_exit_popup_email_form"), { subtree: false, childList: true });
 }
 
+const disableExitPopup = _ => {
+  document.removeEventListener('mouseout', checkExit);
+}
+
+const listenForOtherFormSubmissions = _ => {
+  let inlineForm = document.querySelector(".newsletter-inline-form__container form");
+  let footerForm = document.querySelector(".newsletter-footer-form__container form");
+
+  const observer = new MutationObserver(function(mutations_list) {
+      mutations_list.forEach(function(mutation) {
+          mutation.removedNodes.forEach(function(removed_node) {
+              if (removed_node === inlineForm || removed_node === footerForm) {
+                disableExitPopup();
+              }
+          });
+      });
+  });
+
+  observer.observe(document.querySelector("#hs_form_target_newsletter_inline_form_email_form"), { subtree: false, childList: true });
+  observer.observe(document.querySelector("#hs_form_target_newsletter_footer_form_email_form"), { subtree: false, childList: true });
+}
+
 window.addEventListener('load', e => {
   addPopupEventListeners();
   detectFormSubmission();
+  listenForOtherFormSubmissions();
 });
