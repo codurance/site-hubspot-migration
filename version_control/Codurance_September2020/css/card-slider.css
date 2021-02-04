@@ -328,6 +328,8 @@
 .card-slider-item__description {
   {{ utils.sejima() }}
   color: var(--mid-gray);
+  display: flex;
+  line-height: var(--sejima-line-height);
 }
 
 .card-slider-item__button {
