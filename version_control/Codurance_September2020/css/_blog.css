@@ -849,3 +849,7 @@ a.u-icon-v2 {
     float: none !important;
   }
 }
+
+.blog-post-body {
+  max-width: 60ch !important;
+}
