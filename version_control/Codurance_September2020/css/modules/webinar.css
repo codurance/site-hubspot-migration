@@ -19,14 +19,20 @@
   padding-bottom: 40px;
   padding-top: 40px;
 }
+
 .cm-webinar_content-type {
-  font-size: 15px;
-  line-height: 1.5;
+  {{ utils.natus() }}
   text-transform: uppercase;
-  letter-spacing: 1.8px;
-  font-family: proxima-nova;
-  font-weight: 700;
 }
+{% call utils.small() %}
+  .cm-webinar_content-type {
+    color: white;
+    right: 20px;
+    position: absolute;
+    top: 30px;
+  }
+{% endcall %}
+
 .cm-webinar_title {
   font-family: proxima-nova;
   font-weight: 700;
@@ -64,10 +70,6 @@
   .cm-webinar_image {
     position: absolute;
     z-index: 10;
-  }
-  .cm-webinar_content-type {
-    color: #fb7268;
-    margin: 0 0 30px;
   }
 }
 
@@ -188,12 +190,6 @@
   }
   .cm-webinar-image-position-left .cm-webinar_content {
     margin-left: 0;
-  }
-  .cm-webinar_content-type {
-    color: white;
-    right: 20px;
-    position: absolute;
-    top: 30px;
   }
   .cm-webinar_title {
     margin: 0 0 20px;
