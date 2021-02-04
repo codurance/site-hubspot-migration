@@ -94,23 +94,6 @@
     margin: 0;
 }
 
-.cm-services-inner-section5 .row-number-2 h2 {
-    color: var(--persimmon);
-    font-size: var(--natus-font-size);
-    font-weight: var(--heavy-font-weight);
-    line-height: var(--natus-line-height);
-}
-
-.cm-services-inner-section5 .row-number-2 p {
-    {{ utils.natus() }}
-    margin-bottom: var(--base-margin);
-    max-width: var(--natus-max-width);
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    padding-bottom: 20px;
-}
-
 .cm-services-inner-section5 .row-number-1 > .row-fluid {
     padding-top: 50px;
     padding-right: 50px;
