@@ -10,7 +10,7 @@
     {{ utils.base() }}
     font-weight: var(--middle-font-weight);
     margin-bottom: var(--base-margin);
-    margin-top: calc(var(--base-margin) * 4 / 3);
+    margin-top: calc(var(--base-margin) * 1.3);
 }
 
 .body-container-privacy-policy p {
