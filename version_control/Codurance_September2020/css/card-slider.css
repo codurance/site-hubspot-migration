@@ -256,7 +256,7 @@
 
 .card-slider-item__text-container-inner {
   flex-grow: 1;
-  margin-bottom: 25px;
+  margin-bottom: 1.5rem;
   max-height: 14.866rem;
   overflow: hidden;
   position: relative;
@@ -288,7 +288,7 @@
   display: inline-block;
   font-size: 0.75rem;
   letter-spacing: 0.003rem;
-  padding-bottom: 15px;
+
   text-transform: uppercase;
 }
 
@@ -330,9 +330,8 @@
 }
 
 .card-slider-item__description {
+  {{ utils.sejima () }}
   color: var(--mid-gray);
-  font-size: 1rem;
-  line-height: 1.7rem;
 }
 
 .card-slider-item__button {
