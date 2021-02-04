@@ -72,7 +72,8 @@
 }
 
 .cm-homepage-hero__subtitle {
+{{ utils.freed() }}
   color: white;
   padding: 10px 0 20px 0;
-  {{ utils.freed() }}
+  margin-bottom: var(--freed-margin);
 }
