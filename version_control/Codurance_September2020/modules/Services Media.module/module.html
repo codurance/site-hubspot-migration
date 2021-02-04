@@ -1,3 +1,5 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+
 {{ require_css(get_asset_url("../../css/modules/services-media.css")) }}
 
 {{ require_css(get_asset_url("../../css/card-slider.css")) }}
@@ -55,16 +57,16 @@
                 style="background-image: url({{media.thumbnail.url}})"
               >
                 {% if media.media_type.name %}
-                <small
-                  class="card-slider-item__label card-slider-item__label--type"
-                >
-                  {{ media.media_type.name }}
-                </small>
-                <small
-                  class="card-slider-item__label card-slider-item__label--duration"
-                >
-                  {{ media.duration }}
-                </small>
+                  <small
+                    class="card-slider-item__label card-slider-item__label--type"
+                  >
+                    {{ media.media_type.name }}
+                  </small>
+                  <small
+                    class="card-slider-item__label card-slider-item__label--duration"
+                  >
+                    {{ media.duration }}
+                  </small>
                 {% endif %}
               </div>
               <div class="card-slider-item__text-container">
@@ -95,11 +97,18 @@
                 </div>
                 {% if media.media_type.name == 'video' %}
                   <div class="card-slider-item__button card-slider-item__button--solid">
-                    <a
+
+                    {{snippets.button_primary(
+                      classnames="card-slider-item__video-link",
+                      url=media.url,
+                      target="_blank",
+                      text="Watch on YouTube"
+                    )}}
+                    {# <a
                       class="card-slider-item__video-link"
                       target="_blank"
-                      href="{{ media.url }}"
-                      >Watch on YouTube</a
+                      href="{{  }}"
+                      ></a #}
                     >
                   </div>
                 {% else %}
