@@ -2095,10 +2095,7 @@ i.icon-bg-u {
   padding-left: 0;
   padding-right: 0;
 }
-.hs-services-section4 .cm-compass-teaser {
-  margin-top: -140px;
-  margin-bottom: 140px;
-}
+
 
 @media (min-width: 576px) {
   .custom-container-wrapper .dnd-section>.row-fluid {
@@ -2396,10 +2393,6 @@ i.icon-bg-u {
   .in-page-cta-block__main{
     padding-left:20px;
     padding-right:20px;
-  }
-  .hs-services-section4 .cm-compass-teaser {
-    margin-top: 0px;
-    margin-bottom: 0px;
   }
   .hs-home-section6 .page-header.section-header {
     text-align: center;
