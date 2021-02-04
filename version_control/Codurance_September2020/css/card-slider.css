@@ -285,10 +285,8 @@
 }
 
 .card-slider-item__metadata {
+  {{ utils.natus() }}
   display: inline-block;
-  font-size: 0.75rem;
-  letter-spacing: 0.003rem;
-
   text-transform: uppercase;
 }
 
@@ -330,7 +328,7 @@
 }
 
 .card-slider-item__description {
-  {{ utils.sejima () }}
+  {{ utils.sejima() }}
   color: var(--mid-gray);
 }
 
@@ -381,6 +379,18 @@
   position: relative;
   top: 0.15rem;
   width: 0;
+}
+
+.card-slider-item__video-button {
+  padding-right: 1.2em;
+}
+
+.card-slider-item__video-button::after {
+  content: '\f04b';
+  font-family: 'line awesome free';
+  font-size: 1.2em;
+  position: relative;
+  top: 0.1em;
 }
 
 .card-slider-item__image-container {
