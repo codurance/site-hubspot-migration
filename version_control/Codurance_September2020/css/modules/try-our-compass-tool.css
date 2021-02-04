@@ -17,18 +17,6 @@
     margin-bottom: 25px;
 }
 
-/*.cm-compass-teaser .cta_button {*/
-/*    background-color: var(--midnight-blue);*/
-/*    color: white;*/
-/*    font-weight: var(--middle-font-weight);*/
-/*    font-size: var(--natus-font-size);*/
-/*    line-height: var(--base-line-height);*/
-/*    text-align: center;*/
-/*    border-radius: 3px;*/
-/*    transition: var(--cta-transition);*/
-/*    text-decoration: none !important;*/
-/*}*/
-
 {% call utils.large_and_extra_large() %}
     .cm-compass-teaser{
         max-width: 800px;
