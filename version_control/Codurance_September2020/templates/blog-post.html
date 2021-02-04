@@ -153,7 +153,6 @@ label: Blog Post
 <section class="container page-center custom-pt-15 blog">
   <div class="row justify-content-center">
     <div class="col-lg-9 blog-post-body">
-
       {% set sections = content.post_body|split('<!--more-->', 2) %}
       {{ sections[0] }}
       {% module
