@@ -350,15 +350,6 @@
 {% endcall %}
 
 
-{% call utils.medium_large_and_extra_large() %}
-  .cm-compass-teaser {
-    margin-bottom: 50px;
-    margin-top: -200px;
-    top:0;
-  }
-{% endcall %}
-
-
 {% call utils.small() %}
   .cm-posts-by-topic-inner-wrap {
     overflow-x: auto;
