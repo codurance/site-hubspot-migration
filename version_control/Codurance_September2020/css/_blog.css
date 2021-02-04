@@ -671,6 +671,10 @@ ul.custom-blog-filter-group.u-list-inline {
   padding-left: 15px;
 }
 
+.hs-blog-post {
+  overflow-x: hidden;
+}
+
 @media (min-width: 768px){
   .text-md-right {
     text-align: right!important;
