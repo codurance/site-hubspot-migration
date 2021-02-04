@@ -25,6 +25,7 @@
 {% call utils.small() %}
   .hs-home-section3 .custom-btn .button-primary {
     width:100%;
+    max-width: var(--button-max-width);
   }
 {% endcall %}
 
