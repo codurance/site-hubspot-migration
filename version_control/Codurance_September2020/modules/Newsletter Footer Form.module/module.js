@@ -1,12 +1,12 @@
 const showSuccessfulFormHTML = _ => {
     Array.prototype.slice.call(
-        document.querySelectorAll("[data-footer-pending]")
+        document.querySelectorAll("[data-newsletter-sign-up-pending]")
     ).forEach(element => {
         element.classList.add('hidden');
     });
     
     Array.prototype.slice.call(
-        document.querySelectorAll("[data-footer-success]")
+        document.querySelectorAll("[data-newsletter-sign-up-success]")
     ).forEach(element => {
         element.classList.remove('hidden');
     })
