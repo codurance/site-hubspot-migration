@@ -1,4 +1,22 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+
 {{ require_css(get_asset_url("../../css/modules/webinar.css")) }}
+
+{% if module.button_type == 'Standard' %}
+  {% set href = module.link_field.url.href %}
+
+  {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+  {% endif %}
+
+  {% if module.link_field.open_in_new_tab %}
+    {% set target = "_blank" %}
+  {% endif %}
+
+  {% if module.link_field.no_follow %}
+    {% set rel = "nofollow" %}
+  {% endif %}
+{% endif %}
 
 <div class="cm-service-line__webinar-teaser {{ module.image_alignment|lower }}">
   <div class="cm-webinar-image-position-{{ module.image_alignment|lower }}">
@@ -8,15 +26,16 @@
       <h3 class="cm-webinar_title">{{ module.heading }}</h3>
       <p class="cm-webinar_description">{{ module.content }}</p>
       {% if module.button_type == 'Standard' %}
-      {% set href = module.link_field.url.href %}
-      {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-      {% set href = "mailto:" + href %}
-      {% endif %}
-      <a href="{{ href }}" class="cta--primary-coral" {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if module.link_field.no_follow %}rel="nofollow"{% endif %}>
-        {{ module.button_text }}
-      </a>
+
+        {{snippets.button_primary(
+          url=href,
+          text=module.button_text,
+          target=target,
+          rel=rel
+        )}}
+
       {% else %}
-      {% cta guid="{{ module.cta_field }}" %}
+        {% cta guid="{{ module.cta_field }}" %}
       {% endif %}
     </div>
   </div>
