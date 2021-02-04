@@ -342,3 +342,26 @@ left: 0;
 right: 0;
 }
 }
+
+@media (min-width: 768px){
+.cm-service-line__webinar-teaser {
+margin-bottom: 50px;
+}
+.cm-service-line__webinar-teaser.right {
+margin-top: 0;
+}
+}
+
+@media (max-width: 1023px){
+.cm-service-line__webinar-teaser {
+padding-left: 25px;
+padding-right: 50px;
+}
+}
+
+@media (max-width: 767px){
+.cm-service-line__webinar-teaser {
+padding-left: 0;
+padding-right: 0;
+}
+}
