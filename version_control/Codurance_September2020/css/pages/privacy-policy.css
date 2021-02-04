@@ -1,0 +1,32 @@
+{% import '../utils/utils.css' as utils %}
+
+.body-container-privacy-policy h1 {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--dudler-margin);
+}
+
+.body-container-privacy-policy h2 {
+    {{ utils.base() }}
+    font-weight: var(--middle-font-weight);
+    margin-bottom: var(--base-margin);
+    margin-top: calc(var(--base-margin) * 4 / 3);
+}
+
+.body-container-privacy-policy p {
+    margin-bottom: var(--base-margin);
+}
+
+.body-container-privacy-policy p, li {
+    {{ utils.natus() }}
+    max-width: var(--natus-max-width);
+}
+
+.body-container-privacy-policy li {
+    line-height: var(--natus-line-height);
+    margin: 10px 0;
+}
+
+.body-container-privacy-policy ul {
+    padding-left: 1rem;
+}
