@@ -7,23 +7,23 @@
     <div class="cm-posts-by-topic-inner-group">
       {% set topic_posts = blog_recent_topic_posts(module.select_blog, module.select_tag, 4) %}
 
-      {% for topic_post in topic_posts %}  
+      {% for topic_post in topic_posts %}
         {% if loop.index <= 1 %}
-          <div class="cm-posts-by-topic-top-group">
-            <div class="cm-service-line__webinar-teaser right">
-              <div class="cm-webinar-image-position-right">
-                <div class="cm-posts-by-topic-group__webinar_image" style="background-image: url({{ topic_post.featured_image }})"></div>
-                <div class="cm-webinar_content">
+          <div class="cm-posts-by-topic-group__hero-post-container">
+            <div class="cm-posts-by-topic-group__hero-post pbtg-hero-post right">
+              <div class="pbtg-hero-post__wrapper">
+                <div class="pbtg-hero-post__image" style="background-image: url({{ topic_post.featured_image }})"></div>
+                <div class="pbtg-hero-post__content">
                   {% set blogName = blog_by_id(module.select_blog) %}
                   {% set namesSplit = blogName|split('blog', 2) %}
 
                     {% for name in namesSplit %}
                       {% if loop.first %}
-                        <h2 class="cm-webinar_content-type">{{ name|split("'")|join('') }}</h2>
+                        <h2 class="pbtg-hero-post__content-type">{{ name|split("'")|join('') }}</h2>
                       {% endif %}
                     {% endfor %}
-                  <h3 class="cm-webinar_title">{{ topic_post.name }}</h3>
-                  <p class="cm-webinar_description">{{ topic_post.post_list_content|safe|striptags|truncatehtml(150, ' ...' , false) }}</p>
+                  <h3 class="pbtg-hero-post__title">{{ topic_post.name }}</h3>
+                  <p class="pbtg-hero-post__description">{{ topic_post.post_list_content|safe|striptags|truncatehtml(150, ' ...' , false) }}</p>
                     {{
                       snippets.button_primary(
                         url=topic_post.absolute_url,
@@ -36,8 +36,8 @@
           </div>
         {% endif %}
       {% endfor %}
-      <div class="cm-posts-by-topic-bottom-group clearfix">
-        {% for topic_post in topic_posts %}  
+      <div class="cm-posts-by-topic-bottom-group">
+        {% for topic_post in topic_posts %}
           {% if loop.index <= 1 %}
           <div class="cm-how-we-helped-our-clients mobile">
             <div class="cm-how-we-helped-card-image" style="background-image: url({{ topic_post.featured_image }});"> </div>

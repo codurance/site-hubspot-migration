@@ -14,6 +14,13 @@
   }
 {% endcall %}
 
+{% call utils.small() %}
+.cm-services-inner-section3 {
+  padding-bottom: 5rem;
+}
+{% endcall %}
+
+
 .cm-tabber-section {
   background-image: none !important;
   background-color: #2b3342;
@@ -39,3 +46,8 @@
     color: white;
   }
 {% endcall %}
+
+.cm-services-inner-section4 .row-number-1 .row-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}

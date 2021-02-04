@@ -13,14 +13,14 @@
 }
 @media (max-width: 767px) {
   .services-media__heading-wrapper {
-    padding-top: 3.82rem;
-    padding-bottom: calc(3.82rem * 2);
+    padding-bottom: calc(3.3rem * 2);
+    padding-top: 3.3rem;
   }
 }
 @media (min-width: 768px) {
   .services-media__heading-wrapper {
-    padding-top: 4.76rem;
     padding-bottom: calc(4.76rem * 2);
+    padding-top: 4.76rem;
   }
 }
 
@@ -29,8 +29,8 @@
 }
 @media (max-width: 767px) {
   .services-media__card-slider-wrapper {
-    margin-bottom: -190px;
-    top: -114px
+    margin-bottom: -9.9825rem;
+    top: -5.9895rem;
   }
 }
 @media (min-width: 768px) {

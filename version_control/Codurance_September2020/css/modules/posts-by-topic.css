@@ -1,7 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 .cm-webinar-image-position-left,
-.cm-webinar-image-position-right {
+.pbtg-hero-post__wrapper {
     margin-left: auto;
     margin-right: auto;
     max-width: 1300px;
@@ -9,7 +9,7 @@
 }
 {% call utils.medium_large_and_extra_large() %}
 .cm-webinar-image-position-left::after,
-.cm-webinar-image-position-right::after {
+.pbtg-hero-post__wrapper::after {
     background-color: var(--persimmon);
     background-size: cover;
     content: "";
@@ -18,14 +18,14 @@
 {% endcall %}
 {% call utils.large_and_extra_large() %}
 .cm-webinar-image-position-left,
-.cm-webinar-image-position-right {
+.pbtg-hero-post__wrapper {
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 40px;
 }
 
 .cm-webinar-image-position-left::after,
-.cm-webinar-image-position-right::after {
+.pbtg-hero-post__wrapper::after {
     bottom: 25px;
     top: 40px;
 }
@@ -35,7 +35,7 @@
     right: 50%;
 }
 
-.cm-webinar-image-position-right::after {
+.pbtg-hero-post__wrapper::after {
     left: 50%;
     right: 100px;
 }
@@ -52,39 +52,39 @@
 {% endcall %}
 
 
-.cm-posts-by-topic-group__webinar_image {
+.pbtg-hero-post__image {
     background-color: var(--french-gray);
     background-size: cover;
 }
 
-.cm-webinar-image-position-left .cm-posts-by-topic-group__webinar_image {
+.cm-webinar-image-position-left .pbtg-hero-post__image {
     background-position: left center;
 }
 {% call utils.medium_large_and_extra_large() %}
-.cm-posts-by-topic-group__webinar_image {
+.pbtg-hero-post__image {
     position: absolute;
     z-index: 10;
 }
 {% endcall %}
 {% call utils.large_and_extra_large() %}
-.cm-posts-by-topic-group__webinar_image {
+.pbtg-hero-post__image {
     bottom: 40px;
     top: 0;
     width: calc(57% - 100px);
 }
 
-.cm-webinar-image-position-right .cm-posts-by-topic-group__webinar_image {
+.pbtg-hero-post__wrapper .pbtg-hero-post__image {
     left: auto;
     right: 50px;
     background-position: right center;
 }
 
-.cm-webinar-image-position-left .cm-posts-by-topic-group__webinar_image {
+.cm-webinar-image-position-left .pbtg-hero-post__image {
     left: 50px;
 }
 {% endcall %}
 {% call utils.medium() %}
-.cm-posts-by-topic-group__webinar_image {
+.pbtg-hero-post__image {
     bottom: 0;
     position: absolute;
     top: 0;
@@ -94,20 +94,20 @@
     right: 0;
 }
 
-.hero-teaser--image-position-left .cm-posts-by-topic-group__webinar_image {
+.hero-teaser--image-position-left .pbtg-hero-post__image {
     background-position: left center;
 }
 
-.hero-teaser--image-position-left .cm-posts-by-topic-group__webinar_image {
+.hero-teaser--image-position-left .pbtg-hero-post__image {
     left: 25px;
 }
 
-.cm-webinar-image-position-left .cm-posts-by-topic-group__webinar_image {
+.cm-webinar-image-position-left .pbtg-hero-post__image {
     background-position: left center;
 }
 {% endcall %}
 {% call utils.small() %}
-.cm-posts-by-topic-group__webinar_image {
+.pbtg-hero-post__image {
     height: 0;
     padding-top: 63.8888888889%;
     width: 100%;
@@ -126,34 +126,34 @@
 {% endcall %}
 
 
-.cm-webinar_content {
+.pbtg-hero-post__content {
     background-color: white;
     padding-bottom: 40px;
     padding-top: 40px;
 }
 {% call utils.medium_large_and_extra_large() %}
-.cm-webinar_content {
+.pbtg-hero-post__content {
     position: relative;
     z-index: 20;
 }
 {% endcall %}
 {% call utils.large_and_extra_large() %}
-.cm-webinar_content {
+.pbtg-hero-post__content {
     box-shadow: var(--woodsmoke--10) 0 0 8px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.cm-webinar-image-position-right .cm-webinar_content {
+.pbtg-hero-post__wrapper .pbtg-hero-post__content {
     margin-right: 43%;
 }
 
-.cm-webinar-image-position-left .cm-webinar_content {
+.cm-webinar-image-position-left .pbtg-hero-post__content {
     margin-left: 43%;
 }
 {% endcall %}
 {% call utils.small_and_medium() %}
-.cm-webinar_content {
+.pbtg-hero-post__content {
     background-color: white;
     margin-left: 0;
     padding-bottom: 40px;
@@ -162,23 +162,23 @@
     padding-top: 40px;
 }
 
-.cm-webinar-image-position-left .cm-webinar_content {
+.cm-webinar-image-position-left .pbtg-hero-post__content {
     margin-left: 40%;
 }
 {% endcall %}
 {% call utils.small() %}
-.cm-webinar_content {
+.pbtg-hero-post__content {
     margin-left:0;
     padding-left: 20px;
     padding-right: 20px;
 }
-.cm-webinar-image-position-left .cm-webinar_content {
+.cm-webinar-image-position-left .pbtg-hero-post__content {
     margin-left: 0;
 }
 {% endcall %}
 
 
-.cm-webinar_content-type {
+.pbtg-hero-post__content-type {
     font-size: 15px;
     font-weight: var(--heavy-font-weight);
     letter-spacing: 1.8px;
@@ -186,13 +186,13 @@
     text-transform: uppercase;
 }
 {% call utils.medium_large_and_extra_large() %}
-.cm-webinar_content-type {
+.pbtg-hero-post__content-type {
     color: var(--persimmon--dark);
     margin: 0 0 30px;
 }
 {% endcall %}
 {% call utils.small() %}
-.cm-webinar_content-type {
+.pbtg-hero-post__content-type {
     color: white;
     right: 20px;
     position: absolute;
@@ -201,33 +201,33 @@
 {% endcall %}
 
 
-.cm-webinar_title {
+.pbtg-hero-post__title {
 {{ utils.freed() }}
 font-weight: var(--heavy-font-weight);
 }
 {% call utils.medium_large_and_extra_large() %}
-.cm-webinar_title {
+.pbtg-hero-post__title {
     margin: 0 0 15px;
 }
 {% endcall %}
 {% call utils.small() %}
-.cm-webinar_title {
+.pbtg-hero-post__title {
     margin: 0 0 20px;
 }
 {% endcall %}
 
 
-.cm-webinar_description {
+.pbtg-hero-post__description {
 {{ utils.base() }}
 font-weight: var(--welter-font-weight);
 }
 {% call utils.medium_large_and_extra_large() %}
-.cm-webinar_description {
+.pbtg-hero-post__description {
     margin: 0 0 25px;
 }
 {% endcall %}
 {% call utils.small() %}
-.cm-webinar_description {
+.pbtg-hero-post__description {
     margin: 0 0 35px;
 }
 {% endcall %}
@@ -374,35 +374,35 @@ margin-bottom: 15px;
 
 
 {% call utils.small() %}
-.cm-posts-by-topic-top-group {
+.cm-posts-by-topic-group__hero-post-container {
     display: none;
 }
 {% endcall %}
 
 
 {% call utils.medium_large_and_extra_large() %}
-.cm-service-line__webinar-teaser {
+.cm-posts-by-topic-group__hero-post {
     margin-bottom: 50px;
     margin-top: 50px;
     position: relative;
 }
 
-.cm-posts-by-topic-top-group .cm-service-line__webinar-teaser {
+.cm-posts-by-topic-group__hero-post-container .cm-posts-by-topic-group__hero-post {
     margin-bottom: 70px;
 }
 
-.cm-service-line__webinar-teaser.right {
+.cm-posts-by-topic-group__hero-post.right {
     margin-top: 0;
 }
 {% endcall %}
 {% call utils.medium() %}
-.cm-service-line__webinar-teaser {
+.cm-posts-by-topic-group__hero-post {
     padding-left: 17px;
     padding-right: 28px;
 }
 {% endcall %}
 {% call utils.small() %}
-.cm-service-line__webinar-teaser {
+.cm-posts-by-topic-group__hero-post {
     padding-left: 0;
     padding-right: 0;
 }
