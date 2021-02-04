@@ -1,4 +1,6 @@
-<div class="cm-service-line__webinar-teaser {{ module.image_alignment|lower }}"> 
+{{ require_css(get_asset_url("../../css/modules/webinar.css")) }}
+
+<div class="cm-service-line__webinar-teaser {{ module.image_alignment|lower }}">
   <div class="cm-webinar-image-position-{{ module.image_alignment|lower }}">
     <div class="cm-webinar_image" style="background-image: url({{ module.image.src }})"></div>
     <div class="cm-webinar_content">
