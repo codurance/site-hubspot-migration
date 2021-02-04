@@ -53,7 +53,7 @@
   color: white;
   display: block;
   height: auto;
-  margin-bottom: 2rem;
+  margin-bottom: var(--base-margin);
   margin-top: 0;
 }
 
