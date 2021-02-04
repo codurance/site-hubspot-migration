@@ -153,14 +153,8 @@ label: Blog Post
 <section class="container page-center custom-pt-15 blog">
   <div class="row justify-content-center">
     <div class="col-lg-9">
-      {% module
-        "newsletter_exit_popup"
-        sign_up_form={"form_id": "fbe133ea-3558-4c0a-9f5c-9363ca5d5077"}
-        path="../modules/Newsletter Exit Popup.module"
-        label="Newsletter exit popup" no_wrapper=True
-      %}
 
-      {% set sections = content.post_body|split('<!--more-->', 5) %}
+      {% set sections = content.post_body|split('<!--more-->', 2) %}
       {{ sections[0] }}
       {% module
         "newsletter_inline_form"
@@ -272,6 +266,13 @@ Banner" %}
   sign_up_form={"form_id": "fbe133ea-3558-4c0a-9f5c-9363ca5d5077"}
   path="../modules/Newsletter Footer Form.module"
   label="Newsletter footer form" no_wrapper=True
+%}
+
+{% module
+  "newsletter_exit_popup"
+  sign_up_form={"form_id": "fbe133ea-3558-4c0a-9f5c-9363ca5d5077"}
+  path="../modules/Newsletter Exit Popup.module"
+  label="Newsletter exit popup" no_wrapper=True
 %}
 
 <script>
