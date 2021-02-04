@@ -95,20 +95,22 @@
                     | ')}}
                   </small>
                 </div>
-                {% if media.media_type.name == 'video' %}
-                  <div class="card-slider-item__button-container">
-                    {{snippets.button_primary(
-                      classnames="card-slider-item__video-button",
+                <div class="card-slider-item__button-container">
+                  {% if media.media_type.name == 'video' %}
+                      {{snippets.button_primary(
+                        classnames="card-slider-item__video-button",
+                        url=media.url,
+                        target="_blank",
+                        text="Watch on YouTube"
+                      )}}
+                  {% else %}
+                    {{snippets.button_secondary(
                       url=media.url,
                       target="_blank",
-                      text="Watch on YouTube"
+                      text="Learn More"
                     )}}
-                  </div>
-                {% else %}
-                  <div class="card-slider-item__button card-slider-item__button--outlined">
-                    <a href="{{ media.url }}" target="_blank">Learn More</a>
-                  </div>
-                {% endif %}
+                  {% endif %}
+                </div>
               </div>
             </div>
           </article>
