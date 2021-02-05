@@ -355,3 +355,16 @@
     overflow-x: auto;
   }
 }
+
+
+.cm-posts-by-topic-group__button-wrapper {
+  margin-top: calc(var(--base-margin) * 2);
+  text-align: center;
+}
+
+{% call utils.small() %}
+  .cm-posts-by-topic-group__button-wrapper [class*="button"] {
+    max-width: var(--button-max-width);
+    width: 100%;
+  }
+{% endcall %}
