@@ -24,11 +24,16 @@
 .cm-tabber-section {
   background-image: none !important;
   background-color: #2b3342;
-  padding-top: 100px;
+  padding-top: 3.88rem;
 }
 {% call utils.medium_and_large() %}
   .cm-tabber-section {
     padding-bottom: 10px;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .cm-tabber-section {
+    padding-bottom: 1rem;
   }
 {% endcall %}
 .cm-tabber-section::after {
@@ -57,4 +62,18 @@
   padding-left: 0;
   padding-right: 0;
 }
+{% endcall %}
+
+{% call utils.small() %}
+  .cm-services-inner-layout.type1 .cm-services-inner-section2 .dnd-section > .row-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .cm-services-inner-section2 .row-number-2 .row-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 {% endcall %}
