@@ -1,3 +1,5 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+
 {{ require_css(get_asset_url("../../css/card-slider.css")) }} {% if
 module.hubdb_table %} {% set previousEventsFilter = "&orderBy=-date&limit=4" %}
 {% set previousEvents = hubdb_table_rows(module.hubdb_table,
@@ -135,12 +137,12 @@ previousEventsFilter) %}
   </div>
 </div>
 <div>
-  <a
-    class="card-slider__watch-all-button"
-    href="https://www.youtube.com/c/Codurance/playlists"
-    target="_blank"
-    >{{module.watch_all_cta_text}}</a
-  >
+  {{snippets.button_secondary(
+    url="https://www.youtube.com/c/Codurance/playlists",
+    classnames="card-slider__watch-all-button",
+    target="_blank",
+    text=module.watch_all_cta_text
+  )}}
 </div>
 
 {% endif %} {{ require_js(get_asset_url("../../js/cardSlider.js"), "footer") }}

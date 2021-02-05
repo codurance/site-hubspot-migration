@@ -119,19 +119,20 @@
     </div>
   </div>
   <div class="hidden services-media__watch-all-cta" data-watch-all-cta="video">
-    <a
-      class="card-slider__watch-all-button"
-      href="https://www.youtube.com/c/Codurance/playlists"
-      target="_blank"
-      >{{module.videos.cta_text}}</a
-    >
+      {{snippets.button_secondary(
+        classnames="card-slider__watch-all-button",
+        url="https://www.youtube.com/c/Codurance/playlists",
+        target="_blank",
+        text=module.videos.cta_text
+      )}}
   </div>
   <div class="hidden services-media__watch-all-cta" data-watch-all-cta="podcast">
-    <a
-      class="card-slider__watch-all-button"
-      href="https://www.codurance.com/publications/tag/podcasts"
-      >{{module.podcasts.cta_text}}</a
-    >
+      {{snippets.button_secondary(
+        classnames="card-slider__watch-all-button",
+        url="https://www.codurance.com/publications/tag/podcasts",
+        target="_blank",
+        text=module.podcasts.cta_text
+      )}}
   </div>
 </section>
 

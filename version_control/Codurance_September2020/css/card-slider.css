@@ -485,20 +485,7 @@
 }
 
 .card-slider__watch-all-button {
-  background-color: white;
-  border-radius: 5px;
-  border: 2px solid var(--persimmon);
-  color: var(--persimmon);
   display: block;
-  font-size: 1.066rem;
-  font-weight: bold;
   margin: 0 auto;
-  max-width: 14rem;
-  padding: 1.066rem 1.6rem;
-  text-align: center;
-  text-decoration: none;
-}
-.card-slider__watch-all-button:hover,
-.card-slider__watch-all-button:focus {
-  text-decoration: none;
+  max-width: var(--button-max-width);
 }
