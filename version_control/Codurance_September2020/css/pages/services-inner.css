@@ -79,16 +79,14 @@
     padding-right:0;
 }
 
-.cm-services-inner-bottom-wrap .page-header.section-header {
-    overflow: hidden;
-    padding-top: 3.88rem;
-}
 
 .cm-services-inner-section5 .hs_cos_wrapper_type_rich_text h2 {
     {{ utils.dudler() }}
     font-weight: var(--heavy-font-weight);
     margin-bottom: var(--dudler-margin);
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .cm-services-inner-section5 .hs_cos_wrapper_type_rich_text p {
@@ -99,6 +97,8 @@
     max-width: var(--natus-max-width);
     margin-left: auto;
     margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .cm-services-inner-section5 .row-number-1 > .row-fluid {

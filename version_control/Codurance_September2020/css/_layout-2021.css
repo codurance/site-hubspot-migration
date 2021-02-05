@@ -1,10 +1,11 @@
 :root {
   --max-page-width: 1800px;
   --centered-content-max-width: 1140px;
+  box-sizing: border-box;
 }
 
 *, *::before, &::after {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 body {

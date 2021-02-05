@@ -57,6 +57,10 @@
   padding-right: 0;
 }
 
+.cm-services-inner-section5 .row-number-3 .row-fluid {
+  overflow: hidden;
+  padding-top: 3.88rem;
+}
 {% call utils.small() %}
 .cm-services-inner-section5 .row-number-1 > .row-fluid {
   padding-left: 0;
