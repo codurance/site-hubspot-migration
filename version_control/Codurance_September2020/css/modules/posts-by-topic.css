@@ -356,7 +356,10 @@
   border-color: white;
   color: white;
 }
-.cm-posts-by-topic-group__button:hover {
+.cm-posts-by-topic-group__button:hover,
+.cm-posts-by-topic-group__button:active,
+.cm-posts-by-topic-group__button:focus,
+.cm-posts-by-topic-group__button:visited {
   background-color: white;
   border-color: white;
   color: var(--shark);
