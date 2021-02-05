@@ -102,9 +102,7 @@
 }
 
 .cm-services-inner-section5 .row-number-1 > .row-fluid {
-    padding-top: 50px;
-    padding-right: 50px;
-    padding-left: 50px;
+    padding-top: 3.88rem;
 }
 
 .cm-services-inner-section7 {
@@ -132,10 +130,10 @@
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
-    .cm-services-inner-section2 .dnd-section>.row-fluid .span3 {
+    .cm-services-inner-section2 .dnd-section > .row-fluid .span3 {
         width: 50%;
     }
-    .cm-services-inner-section2 .dnd-section>.row-fluid {
+    .cm-services-inner-section2 .dnd-section > .row-fluid {
         max-width: 740px;
     }
     .cm-services-inner-section2 .dnd-section {
