@@ -229,114 +229,111 @@
   right: 10px;
 }
 
-@media (min-width: 768px){
+{% call utils.medium_large_and_extra_large() %}
     .cm-webinar-image-position-left:after,
     .pbtg-hero-post__wrapper:after{
         background-image: url(https://www.codurance.com/hubfs/Codurance_September2020/images/bg-mountain-texture.jpg);
     }
-}
+{% endcall %}
 
-@media (max-width: 1023px){
+{% call utils.small_and_medium()  %}
+    .pbtg-hero-post__wrapper .cm-webinar_image {
+        background-position: right center;
+        bottom: 40px;
+        top: 0;
+        width: calc(57% - 100px);
+        position: absolute;
+        z-index: 10;
+    }
+    .pbtg-hero-post__wrapper .cm-webinar_image,
+    .hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper .cm-webinar_image{
+        width:calc(60% - 27px);
+        right:0;
+        left: auto;
+        right: 6px;
+        bottom: 0;
+    }
+    .pbtg-hero-post__wrapper .pbtg-hero-post__content {
+        margin-right: 40%;
+        margin-left: auto;
+    }
 
-.pbtg-hero-post__wrapper .cm-webinar_image {
-background-position: right center;
-bottom: 40px;
-top: 0;
-width: calc(57% - 100px);
-position: absolute;
-z-index: 10;
-}
-.pbtg-hero-post__wrapper .cm-webinar_image,
-.hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper .cm-webinar_image{
-width:calc(60% - 27px);
-right:0;
-left: auto;
-right: 6px;
-bottom: 0;
-}
-.pbtg-hero-post__wrapper .pbtg-hero-post__content {
-margin-right: 40%;
-margin-left: auto;
-}
+    .pbtg-hero-post__wrapper,
+    .hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper {
+        padding-left: 32px;
+        padding-right: 7px;
+        padding-bottom: 40px;
+        padding-top: 40px;
+    }
+    .pbtg-hero-post__wrapper:after {
+        bottom: 15px;
+        top: 15px;
+        left: 7px;
+        right: 50%;
+    }
+    .pbtg-hero-post__wrapper .cm-webinar_image,
+    .hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper .cm-webinar_image {
+        width: 100%;
+        right: 0;
+        position: static;
+    }
+{% endcall %}
 
-.pbtg-hero-post__wrapper,
-.hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper {
-  padding-left: 32px;
-  padding-right: 7px;
-  padding-bottom: 40px;
-  padding-top: 40px;
-}
-.pbtg-hero-post__wrapper:after {
-  bottom: 15px;
-  top: 15px;
-  left: 7px;
-  right: 50%;
-}
-.pbtg-hero-post__wrapper .cm-webinar_image,
-.hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper .cm-webinar_image {
-  width: 100%;
-  right: 0;
-  position: static;
-}
-}
+{% call utils.small() %}
+    .hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper .cm-webinar_image {
+        width: 100%;
+        right: 0;
+    }
+    .pbtg-hero-post__wrapper .pbtg-hero-post__content h2.pbtg-hero-post__content-type {
+        display: none;
+    }
+    .pbtg-hero-post__wrapper,
+    .hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .pbtg-hero-post__wrapper .pbtg-hero-post__content {
+        margin: 0;
+        width: 100%;
+        position: static;
+        left: 0;
+        right: 0;
+    }
+{% endcall %}
 
-@media (max-width: 767px){
-  .hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper .cm-webinar_image {
-  width: 100%;
-  right: 0;
-}
-.pbtg-hero-post__wrapper .pbtg-hero-post__content h2.pbtg-hero-post__content-type {
-  display: none;
-}
-.pbtg-hero-post__wrapper,
-.hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper {
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-top: 0;
-}
-.pbtg-hero-post__wrapper .pbtg-hero-post__content {
-margin: 0;
-width: 100%;
-position: static;
-left: 0;
-right: 0;
-}
-}
 
-@media (min-width: 768px){
-.cm-service-line__webinar-teaser {
-margin-bottom: 50px;
-}
-.cm-service-line__webinar-teaser.right {
-margin-top: 0;
-}
-}
-
-@media (max-width: 1023px){
-.cm-service-line__webinar-teaser {
-padding-left: 25px;
-padding-right: 50px;
-}
-}
-
-@media (max-width: 767px){
+{% call utils.medium_large_and_extra_large() %}
+    .cm-service-line__webinar-teaser {
+        margin-bottom: 50px;
+    }
+    .cm-service-line__webinar-teaser.right {
+        margin-top: 0;
+    }
+{% endcall %}
+{% call utils.small_and_medium() %}
+    .cm-service-line__webinar-teaser {
+        padding-left: 25px;
+        padding-right: 50px;
+    }
+{% endcall %}
+{% call utils.small() %}
     .cm-service-line__webinar-teaser {
         padding-left: 0;
         padding-right: 0;
         margin-left: 20px;
         margin-right: 20px;
     }
-}
+{% endcall %}
 
 .hs-services-section4 .cm-compass-teaser {
   margin-top: -140px;
   margin-bottom: 140px;
 }
-
-@media (max-width: 767px){
+{% call utils.small() %}
     .hs-services-section4 .cm-compass-teaser {
-    margin-top: 0px;
-    margin-bottom: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
-}
+{% endcall %}
