@@ -80,18 +80,20 @@
 }
 
 .cm-services-inner-bottom-wrap .page-header.section-header {
-    padding-top: 50px;
     overflow: hidden;
-    padding-bottom: 50px;
+    padding-top: 50px;
 }
 
-.cm-services-inner-bottom-wrap .page-header.section-header {
-    padding-top: 50px;
-    padding-bottom: 50px;
+.cm-services-inner-bottom-wrap .page-header.section-header h1 {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--dudler-margin);
 }
 
 .cm-services-inner-bottom-wrap .page-header.section-header p {
-    margin: 0;
+    {{ utils.natus() }}
+    margin-bottom: var(--base-margin);
+    padding-bottom: 20px;
 }
 
 .cm-services-inner-section5 .row-number-1 > .row-fluid {
@@ -106,27 +108,6 @@
     max-width: 100%;
     background-color: rgba(43,51,66,1);
     margin-top: -250px;
-}
-
-.cm-services-inner-section7 .custom-btn a {
-    font-family: proxima-nova;
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 28px;
-    text-align: center;
-    background: transparent;
-    border-style: solid;
-    border-width: 2px;
-    text-transform: none !important;
-    border-color: #fff;
-    border-radius: 0;
-    display: inline-block;
-    width: auto !important;
-}
-
-.cm-services-inner-section7 .custom-btn {
-    text-align: center;
-    margin-bottom: 10px;
 }
 
 {% call utils.large_and_extra_large() %}
@@ -240,10 +221,10 @@
 }
 
 @media (min-width: 768px){
-.cm-webinar-image-position-left:after,
-.pbtg-hero-post__wrapper:after{
-  background-image: url({{ get_asset_url('../images/bg-mountain-texture.jpg' ) }});
-}
+    .cm-webinar-image-position-left:after,
+    .pbtg-hero-post__wrapper:after{
+        background-image: url(https://www.codurance.com/hubfs/Codurance_September2020/images/bg-mountain-texture.jpg);
+    }
 }
 
 @media (max-width: 1023px){
@@ -336,10 +317,10 @@ padding-right: 50px;
 }
 
 @media (max-width: 767px){
-.cm-service-line__webinar-teaser {
-padding-left: 0;
-padding-right: 0;
-}
+    .cm-service-line__webinar-teaser {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .hs-services-section4 .cm-compass-teaser {
