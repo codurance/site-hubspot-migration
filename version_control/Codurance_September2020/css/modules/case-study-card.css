@@ -13,11 +13,21 @@
     box-shadow: 0 1px 3px rgba(255,255,255,0.12),0 1px 10px rgba(0,0,0,0.12);
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
     min-width: 230px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     width: 100%;
 }
+{% call utils.medium_large_and_extra_large() %}
+    .case-study-card {
+        margin-bottom: var(--base-margin);
+    }
+{% endcall %}
+{% call utils.medium_large_and_extra_large() %}
+    .case-study-card {
+        margin-bottom: calc(var(--base-margin) * 2);
+    }
+{% endcall %}
+
 
 {% call utils.extra_large() %}
     .case-study-card {
