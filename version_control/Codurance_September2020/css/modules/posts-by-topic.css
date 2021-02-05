@@ -135,35 +135,26 @@
 
 
 .pbtg-hero-post__title {
-  {{ utils.freed() }}
-  font-weight: var(--heavy-font-weight);
+  font-size: var(--freed-font-size);
+  line-height: var(--freed-line-height);
+  margin-bottom: var(--freed-margin);
+  margin-top: calc(var(--freed-margin) / 2);
 }
 {% call utils.medium_large_and_extra_large() %}
   .pbtg-hero-post__title {
-    margin: 0 0 15px;
-  }
-{% endcall %}
-{% call utils.small() %}
-  .pbtg-hero-post__title {
-    margin: 0 0 20px;
+    font-weight: var(--heavy-font-weight);
   }
 {% endcall %}
 
 
 .pbtg-hero-post__description {
-  {{ utils.base() }}
-  font-weight: var(--welter-font-weight);
+  {{ utils.natus() }}
+  margin-bottom: var(--base-margin);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--natus-max-width);
+  padding-bottom: 20px;
 }
-{% call utils.medium_large_and_extra_large() %}
-  .pbtg-hero-post__description {
-    margin: 0 0 25px;
-  }
-{% endcall %}
-{% call utils.small() %}
-  .pbtg-hero-post__description {
-    margin: 0 0 35px;
-  }
-{% endcall %}
 
 
 .cm-how-we-helped-our-clients {
@@ -361,6 +352,21 @@
   margin-top: calc(var(--base-margin) * 2);
   text-align: center;
 }
+{% call utils.small() %}
+  .cm-posts-by-topic-group__button-wrapper {
+    margin-top: calc(var(--base-margin) * 2);
+  }
+{% endcall %}
+{% call utils.medium() %}
+  .cm-posts-by-topic-group__button-wrapper {
+    margin-top: var(--base-margin);
+  }
+{% endcall %}
+{% call utils.large_and_extra_large() %}
+  .cm-posts-by-topic-group__button-wrapper {
+    margin-top: calc(var(--base-margin) * 2);
+  }
+{% endcall %}
 
 {% call utils.small() %}
   .cm-posts-by-topic-group__button-wrapper [class*="button"] {
