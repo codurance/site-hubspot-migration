@@ -1,0 +1,96 @@
+{% import '../utils/utils.css' as utils %}
+
+.body-container-cookie-policy h2 {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--dudler-margin);
+    text-align: center;
+}
+
+.body-container-cookie-policy h3 {
+    {{ utils.base() }}
+    font-weight: var(--middle-font-weight);
+    margin-bottom: var(--base-margin);
+}
+
+.body-container-cookie-policy .row-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.body-container-cookie-policy .dnd-section {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.custom-cookie-policy-header-section .widget-type-rich_text {
+    display: block;
+    text-align: center;
+}
+
+.custom-cookie-policy-header-section p,
+.custom-cookie-policy-cookie-details-section p {
+    {{ utils.natus() }}
+    max-width: var(--natus-max-width);
+    text-align: center;
+    margin: 0 auto var(--base-margin);
+}
+
+.custom-cookie-policy-header-section > .row-fluid-wrapper > .row-fluid {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.custom-cookie-policy-cookie-details-section > .row-fluid-wrapper > .row-fluid {
+    padding: 0 1rem;
+}
+
+.custom-cookie-policy-cookie-details-section h3 {
+    text-align: center;
+}
+
+.custom-cookie-policy-cookie-details-section th, .custom-cookie-policy-cookie-details-section td {
+    vertical-align: middle;
+}
+
+.custom-cookie-policy-cookie-details-section table {
+    text-align: center;
+    border-collapse: collapse;
+    border: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.custom-cookie-policy-cookie-details-section table thead tr {
+    border-bottom: 1px solid var(--shark);
+}
+
+.custom-cookie-policy-cookie-details-section table thead tr th {
+    font-size: var(--natus-font-size);
+    line-height: var(--natus-line-height);
+    text-align: center;
+    font-weight: var(--heavy-font-weight);
+    padding: 0.8rem 0.8rem 0.4rem 0;
+    border: none;
+}
+
+.custom-cookie-policy-cookie-details-section table tbody {
+    border: none;
+}
+
+.custom-cookie-policy-cookie-details-section table tbody td {
+    {{ utils.natus() }}
+    padding: 0.8rem 0.8rem 0.8rem 0;
+    text-align: center;
+    border: none;
+}
+
+.custom-cookie-policy-cookie-details-section table tbody tr {
+    border-bottom: 1px solid var(--mid-gray);
+}
+
+.custom-cookie-policy-cookie-details-section .dnd-row {
+    display: block;
+    margin-bottom: 1.5rem;
+    padding-bottom: 3.57143rem;
+}

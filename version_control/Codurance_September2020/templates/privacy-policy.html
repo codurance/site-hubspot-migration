@@ -3,27 +3,38 @@ templateType: page
 isAvailableForNewContent: true
 label: Privacy Policy
 -->
+{% import './refactor/refactored-pages.html' as refactor %}
+
 {% extends "./layouts/base.html" %}
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+
+  {% if refactor.refactored_pages is containing content.name|striptags|lower %}
+    {{ require_css(get_asset_url("../css/main-2021.css")) }}
+  {% endif %}
+
+  {{ require_css(get_asset_url("../css/pages/privacy-policy.css")) }}
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
 
 {% block body %}
+<div class="body-container-privacy-policy">
+  {% dnd_area "row1" class='', label='Row1' %}
+    {% dnd_section vertical_alignment='MIDDLE' %}
 
-
-<div class="custom-body-container body-container-our-story ">
-
-
-  <div class="custom-content page-center">
-
-    <div class="custom-col-md-8 custom-col-md-offset-2">  
-      {% dnd_area "row1" class='custom-privacy-policy-row1 ', label='Row1' %}
-      {% dnd_section vertical_alignment='MIDDLE' %}
-
-      {% end_dnd_section %}
-      {% end_dnd_area %}
-    </div>
-
-  </div>
-
+    {% end_dnd_section %}
+  {% end_dnd_area %}
 </div>
-
-
 {% endblock body %}
+

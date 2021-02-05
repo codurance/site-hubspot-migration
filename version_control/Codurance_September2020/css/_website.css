@@ -1623,33 +1623,6 @@ i.icon-bg-u {
   padding-bottom: 40px;
 }
 
-.custom-privacy-policy-row1 .dnd-section>.row-fluid {
-  padding: 0;
-}
-
-.custom-privacy-policy-row1 .hs_cos_wrapper_type_rich_text h2 {
-  display: inline-block;
-  margin: 10px 0 24px 0;
-  /* border-bottom: 1px dotted #e4e9f0; */
-  border-bottom: 2px solid #e67e22;
-  font-size: 22px;
-  /* margin-bottom: -2px; */
-  padding-bottom: 10px;
-  display: inline-block;
-  position: relative;
-  /* overflow: hidden; */
-}
-.custom-privacy-policy-row1 .hs_cos_wrapper_type_rich_text h2:after {
-  border-bottom: 1px dotted #e4e9f0;
-  content: "";
-  display: block;
-  width: 1000%;
-  margin-bottom: -6px;
-  z-index: -1;
-  position: relative;
-  top: 5px;
-}
-
 .body-container-become-a-craftsperson .dnd-section {
   padding-bottom: 0;
   padding-top: 0;
@@ -1711,15 +1684,6 @@ i.icon-bg-u {
   width: 2.14286rem;
   border-top-width: 1px;
   margin-top: 0.71429rem;
-}
-.custom-privacy-policy-row1 .hs_cos_wrapper_type_rich_text h4 {
-  margin-top: 30px;
-  margin-bottom: 1rem;
-}
-
-.custom-privacy-policy-row1 .hs_cos_wrapper_type_rich_text {
-  display: block;
-  overflow: hidden;
 }
 
 .mb-4, .my-4 {
@@ -1798,10 +1762,6 @@ i.icon-bg-u {
 .custom-section {
   padding-top: 100px;
   padding-bottom: 100px;
-}
-
-.body-container-cookie .dnd-section{
-  padding: 0;
 }
 
 .close {
@@ -1963,107 +1923,10 @@ i.icon-bg-u {
   flex: 1;
 }
 
-.custom-privacy-policy-row1 .span9 {}
-
-.custom-privacy-policy-row1 .span9 {
-  margin: 0 -15px !important;
-  width: auto;
-  padding-right: 52px;
-  padding-bottom: 60px;
-}
-
-.custom-privacy-policy-row1 .span9 p:first-child {
-  font-size: 1.3em;
-  max-width: 750px;
-  margin: auto;
-}
-
-.custom-privacy-policy-row1 .span9 hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 0;
-  border-top: 1px solid rgba(0,0,0,.1);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  background: transparent;
-  /* padding-right: 20px; */
-}
-
-.custom-privacy-policy-row1 .span9 li a {
-  color: #e67e22;
-}
-
-.custom-privacy-policy-row1 .span9 li a:hover {
-  color: #e67e22;
-}
-
-.custom-cookie-row3 th, .custom-cookie-row3 td {
-  vertical-align: middle;
-}
-
-.custom-cookie-row3  table {
-  text-align: center!important;
-  border-collapse: collapse;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
 .custombox-content button.close:hover {
   opacity: .75;
 }
-.custom-cookie-row3 table thead tr {
-  border-bottom: 1px solid #444;
-}
 
-.custom-cookie-row3 table thead tr th {
-  text-align: center;
-  font-weight: bold;
-  padding: 0.8rem 0.8rem 0.4rem 0;
-  border: none;
-}
-
-.custom-cookie-row3 table tbody {
-  border: none;
-}
-
-.custom-cookie-row3 table tbody td {
-  padding: 0.8rem 0.8rem 0.8rem 0;
-  text-align: center;
-  border: none;
-}
-
-.custom-cookie-row3 table tbody tr {
-  border-bottom: 1px solid #777;
-}
-
-.custom-body-container.body-container-cookie h3, .custom-body-container.body-container-cookie h4 {
-  margin-bottom: 1rem;
-}
-.custom-cookie-row3 .hs_cos_wrapper_type_rich_text {
-  display: block;
-  margin-bottom: 1.5rem!important;
-  padding-bottom: 3.57143rem !important;
-}
-.custom-cookie-row3 h4:after {content: "";width: 60px;display: block;height: 1px;background: #ef7726;margin-top: 16px;}
-
-.custom-cookie-row3 p {
-  margin-bottom: 0.71429rem !important;
-  margin-top: 1.42857rem !important;
-}
-
-.custom-cookie-row3 h4 {
-  /* padding-bottom: 1px; */
-  /* display: inline-block; */
-  margin: 0 !important;
-  padding-bottom: 7px;
-}
-
-.custom-body-container.body-container-cookie h3, .custom-body-container.body-container-cookie h4 {
-  margin-bottom: 1rem;
-}
 .hs-services-layout .hs-services-section2 .dnd-section > .row-fluid {
   padding-left: 0;
   padding-right: 0;
@@ -2617,12 +2480,7 @@ i.icon-bg-u {
     padding-top: 50px;
     padding-bottom: 50px;
   }
-  .custom-privacy-policy-row1 .span9 {
-    margin: 0 -15px !important;
-    width: auto;
-    padding-right: 0;
-    padding-bottom: 32px;
-  }
+
   .hs-home-section6 .dnd-section > .row-fluid {
     max-width: 570px;
   }
