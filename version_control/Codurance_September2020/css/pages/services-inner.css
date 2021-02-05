@@ -279,11 +279,6 @@ margin-left: auto;
 .pbtg-hero-post__wrapper .pbtg-hero-post__content h2.pbtg-hero-post__content-type {
   display: none;
 }
-.pbtg-hero-post__wrapper .pbtg-hero-post__description {
-  font-size: 18px;
-  line-height: 28px;
-  flex-grow: 1;
-}
 .pbtg-hero-post__wrapper,
 .hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper {
   padding-left: 0;
@@ -320,6 +315,8 @@ padding-right: 50px;
     .cm-service-line__webinar-teaser {
         padding-left: 0;
         padding-right: 0;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
