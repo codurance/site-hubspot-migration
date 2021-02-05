@@ -394,3 +394,18 @@ sub {
 sup {
   top: -0.5em;
 }
+
+sub {
+  bottom: -0.25em;
+}
+
+:focus {
+  outline: auto;
+  outline-color: green;
+}
+
+.disable-focus-styles :focus {
+  outline: none;
+}
+
+
