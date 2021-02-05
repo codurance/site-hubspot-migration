@@ -51,3 +51,10 @@
   padding-left: 0;
   padding-right: 0;
 }
+
+{% call utils.small() %}
+.cm-services-inner-section5 .row-number-1 > .row-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+{% endcall %}

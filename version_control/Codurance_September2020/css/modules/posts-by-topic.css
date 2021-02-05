@@ -267,7 +267,7 @@
     padding: 0 30px;
   }
 {% endcall %}
-{% call utils.small_and_medium() %}
+{% call utils.medium() %}
   .cm-posts-by-topic-bottom-group {
     flex-wrap: wrap;
     padding: 0 12px;
@@ -279,7 +279,7 @@
     max-width: 1610px;
     overflow-x: auto;
     padding:0;
-    width: 100%;
+    width: calc( ( 5 * (100vw - (2 * 30px)) ) + 180px );
   }
 {% endcall %}
 
