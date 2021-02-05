@@ -106,9 +106,18 @@
     padding-bottom: 250px;
     padding-top: 200px;
     max-width: 100%;
-    background-color: rgba(43,51,66,1);
+    background-color: rgba(43, 51, 66, 1);
     margin-top: -250px;
 }
+{% call utils.small() %}
+    .cm-services-inner-section7 {
+        padding-bottom: 90px;
+        padding-top: 210px;
+        max-width: 100%;
+        background-color: transparent;
+        margin-top: -250px;
+    }
+{% endcall %}
 
 {% call utils.large_and_extra_large() %}
     .cm-services-inner-section2 .dnd-section .widget-type-rich_text{

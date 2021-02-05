@@ -177,13 +177,6 @@ img{
   text-align: center;
   margin-bottom: 10px;
 }
-.hs-services-inner-section5 .cm-how-we-helped-our-clients:hover,
-.hs-services-inner-section5 .cm-how-we-helped-our-clients {
-  box-shadow: rgba(0,0,0,0.16) 0 0 8px;
-  background-color: white;
-  border-radius: 3px;
-  overflow: hidden;
-}
 .hs-services-inner-section4 .dnd-section {
   padding-top: 100px;
   padding-bottom: 0;
@@ -331,26 +324,6 @@ img{
 }
 .hs-get-in-touch-section form {
   -webkit-font-smoothing: subpixel-antialiased;
-}
-
-.hs-services-inner-section6 .cm-how-we-helped-our-clients:hover{
-  box-shadow: rgba(0,0,0,0.16) 0 0 8px;
-}
-.hs-services-inner-section6 .cm-how-we-helped-our-clients .cm-how-we-helped-card-description{
-  position: relative;
-  overflow: hidden;
-}
-.hs-services-inner-section6 .cm-how-we-helped-our-clients .cm-how-we-helped-card-description::after {
-  background-image: linear-gradient(90deg, rgba(255,255,255,0), #fff);
-  content: "";
-  float: right;
-  height: 28px;
-  left: 100%;
-  margin-left: -50%;
-  padding-right: 1px;
-  position: relative;
-  top: 84px;
-  width: 50%;
 }
 
 .hs-website-layout main .dnd-section {
@@ -2237,9 +2210,6 @@ i.icon-bg-u {
   }
   .hs-services-inner-section2 .dnd-section>.row-fluid {
     max-width: 740px;
-  }
-  .cm-how-we-helped-our-clients {
-    margin-bottom: 40px;
   }
   .hs-services-inner-section2 .dnd-section {
     padding-bottom: 50px;
