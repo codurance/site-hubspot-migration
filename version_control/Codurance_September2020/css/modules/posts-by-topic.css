@@ -120,24 +120,16 @@
 
 
 .pbtg-hero-post__content-type {
-  font-size: 15px;
-  font-weight: var(--heavy-font-weight);
-  letter-spacing: 1.8px;
-  line-height: 1.5;
+  font-size: var(--natus-font-size);
+  line-height: var(--natus-line-height);
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 {% call utils.medium_large_and_extra_large() %}
   .pbtg-hero-post__content-type {
-    color: var(--persimmon--dark);
-    margin: 0 0 30px;
-  }
-{% endcall %}
-{% call utils.small() %}
-  .pbtg-hero-post__content-type {
-    color: white;
-    right: 20px;
-    position: absolute;
-    top: 30px;
+    color: var(--persimmon);
+    font-weight: var(--heavy-font-weight);
+    letter-spacing: 0.1em;
   }
 {% endcall %}
 

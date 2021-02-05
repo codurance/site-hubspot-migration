@@ -35,6 +35,7 @@
   .cm-webinar_content-type {
     color: var(--persimmon);
     font-weight: var(--heavy-font-weight);
+    letter-spacing: 0.1em;
   }
 {% endcall %}
 {% call utils.small() %}
