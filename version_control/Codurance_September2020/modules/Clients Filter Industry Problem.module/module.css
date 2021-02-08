@@ -1,0 +1,23 @@
+.filters {
+    display: flex;
+}
+
+.filter {
+    padding: 0 50px;
+}
+
+.client-container {
+    display: flex;
+    align-items: center;
+}
+
+.client-logo {
+    align-items: center;
+    background-size: 120px;
+    height: 70px;
+    width: 120px;
+}
+
+.client-info {
+    padding-left: 50px;
+}

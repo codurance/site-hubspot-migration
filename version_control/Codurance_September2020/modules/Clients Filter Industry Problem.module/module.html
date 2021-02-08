@@ -1,0 +1,53 @@
+{% set clients = hubdb_table_rows(module.clients_table,
+'') %}
+
+{% set allIndustries = [] %}
+{% set allProblems = [] %}
+{% for client in clients %}
+    {% do allIndustries.append(client.industry.name) %}
+    {% for problem in client.problems %}
+        {% do allProblems.append(problem.name) %}
+    {% endfor %}
+{% endfor %}
+{% set allIndustries = allIndustries|unique %}
+{% set allProblems = allProblems|unique %}
+
+<div class="filters">
+    <div class="filter">
+        <p>industry:</p>
+        <select data-select-industry>
+            <option>all</option>
+            {% for industry in allIndustries %}
+                <option>{{industry}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="filter">
+        <p>problem:</p>
+        <select data-select-problem>
+            <option>all</option>
+            {% for problem in allProblems %}
+                <option>{{problem}}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+<hr />
+{% for client in clients %}
+    {% set problems = [] %}
+    {% for problem in client.problems %}
+        {% do  problems.append(problem.name) %}
+    {% endfor %}
+    <article data-client-industry="{{client.industry.name}}" data-client-problems="{{problems|join(',')}}">
+        <div class="client-container">
+            <div class="client-logo" style="background-image: url({{client.logo.url}})">
+            </div>
+            <div class="client-info">
+                <h3>{{client.name}}</h3>
+                <p>industry: {{client.industry.name}}</p>
+                <p>problems: {{problems|join(' | ')}}</p>
+            </div>
+        </div>
+        <hr />
+    </article>
+{% endfor %}
