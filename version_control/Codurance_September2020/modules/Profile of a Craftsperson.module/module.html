@@ -1,4 +1,6 @@
-<div class="custom-craftperson-slider"> 
+{{ require_css(get_asset_url("../../css/modules/profile-of-a-craftsperson.css")) }}
+
+<div class="custom-craftperson-slider">
   <div class="row justify-content-end align-items-center">
     <div class="custom-col-sm-6 custom-mb-30 custom-mb-0--sm">
       <div id="personaCarousel" class="js-carousel custom-bg-secondary custom-pos-rel" data-infinite="true" data-nav-for="#carouselCus2" data-in-effect="slideInUp" data-out-effect="slideInDown" data-pagi-classes="u-carousel-indicators-v35--main custom-absolute-centered--x custom-bottom-20">
@@ -12,18 +14,18 @@
         </div>
         {% endfor %}
       </div>
-    </div> 
+    </div>
     <div class="custom-col-sm-6">
       <div id="carouselCus2" class="js-carousel custom-pos-rel" data-infinite="true" data-nav-for="#personaCarousel" data-arrows-classes="u-arrow-v1 custom-absolute-centered--y custom-width-40 custom-height-40 custom-color-white custom-color-primary--hover custom-font-size-40" data-arrow-left-classes="fa fa-angle-left custom-left-40" data-arrow-right-classes="fa fa-angle-right custom-right-40">
         {% for item in module.slider_items %}
         <div class="js-slide custom-min-height-50vh custom-bg-size-cover custom-bg-pos-top-center" data-bg-img-src="{{ item.image_field.src }}">
           <div class="bg-slide " style="background-image:url('{{ item.image_field.src }}')">
-            
+
           </div>
         </div>
         {% endfor %}
       </div>
     </div>
-  </div> 
+  </div>
 </div>
 
