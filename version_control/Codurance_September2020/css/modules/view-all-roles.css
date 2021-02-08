@@ -27,20 +27,6 @@
   }
 {% endcall %}
 
-.custom-view-all-roles::before {
-  border: 1px solid var(--athens-gray);
-  bottom: 1rem;
-  content: "";
-  display: block;
-  left: 1rem;
-  opacity: 0.5;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  z-index: 1;
-  pointer-events: none;
-}
-
 .custom-view-all-roles__title {
   {{ utils.freed() }}
   color: white;
