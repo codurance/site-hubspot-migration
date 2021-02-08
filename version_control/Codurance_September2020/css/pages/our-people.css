@@ -30,7 +30,7 @@
   margin: auto;
 }
 .our-people-bottom-banner-section {
-  background-color: var(--java);
+  background-color: var(--midnight-blue);
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -65,11 +65,13 @@
 .our-people-bottom-banner-section h2,
 .our-people-bottom-banner-section h3 {
   {{ utils.dudler() }}
+  color: white;
   margin-bottom: var(--freed-margin);
 }
 
 .our-people-bottom-banner-section p {
   {{ utils.base() }}
+  color: white;
 }
 
 {% call utils.medium_large_and_extra_large() %}
