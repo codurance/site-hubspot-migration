@@ -20,6 +20,13 @@
 .in-page-cta-block__inner {
   max-width: 500px;
 }
+{% call utils.small() %}
+  .in-page-cta-block__inner [class^="button"] {
+    width: 100%;
+    max-width: var(--button-max-width);
+  }
+{% endcall %}
+
 .in-page-cta-block__title {
   {{ utils.freed() }}
   {{ utils.freed_margin() }}

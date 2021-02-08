@@ -50,9 +50,8 @@
 
   <div class="cm-recent-post__button-wrapper">
     {{snippets.button_secondary(
-        blog_all_posts_url(module.select_blog)|replace('all',''),
-        "",
-        module.button_text
+        url=blog_all_posts_url(module.select_blog)|replace('all',''),
+        text=module.button_text
     )}}
   </div>
 </div>

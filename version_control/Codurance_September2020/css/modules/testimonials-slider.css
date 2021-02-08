@@ -7,9 +7,19 @@
 }
 
 .cm-testimonials-top-content h2 {
-    {{ utils.dudler() }};
+    font-size: var(--dudler-font-size);
+    line-height: var(--dudler-line-height);
     font-weight: var(--heavy-font-weight);
-    margin-top: 0;
+    margin-bottom: var(--base-margin);
+}
+
+.cm-testimonials-top-content p {
+    {{ utils.natus() }}
+    margin-bottom: var(--base-margin);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--natus-max-width);
+    padding-bottom: 20px;
 }
 
 .cm-testimonials-slider-group button.slick-prev.slick-arrow:after {
@@ -87,9 +97,10 @@
 
 .cm-testimonials-top-content {
     {{ utils.base() }};
-    text-align: center;
     font-weight: var(--welter-font-weight);
+    margin-bottom: 60px;
     margin-top: 0;
+    text-align: center;
 }
 
 .cm-testimonials-slider-group {
@@ -160,14 +171,6 @@
     text-align: center;
 }
 
-
-{% call utils.medium_large_and_extra_large() %}
-    .cm-testimonials-top-content h2 {
-        margin-bottom: var(--sejima-margin);
-    }
-{% endcall %}
-
-
 {% call utils.large_and_extra_large() %}
     .cm-testimonials-slider-wrapper {
         background-position: center 310px;
@@ -184,7 +187,8 @@
     }
     .cm-testimonials-slider-wrapper .page-center {
         max-width: 770px;
-        width: calc(100% - (25px * 2));
+        {% set side_margin = '1rem' %}
+        width: calc(100% - ({{ side_margin }} * 2));
     }
     .cm-testimonials-slider-group {
         width: 100%;
@@ -199,32 +203,18 @@
         padding-top: 50px;
     }
 
-    .cm-testimonials-slider-wrapper .page-center{
-        max-width: 770px;
-        width: calc(100% - (25px * 2));
-    }
-
     .cm-testimonials-slider-group {
         width: 100%;
     }
 
     .cm-testimonials-top-content {
         text-align: left;
-        padding: 20px 20px 50px;
     }
-
-    .cm-testimonials-top-content h2 {
-        margin-bottom: 25px;
-    }
-
+{#
     .cm-testimonials-slider-wrapper .page-center {
         max-width: 100%;
         width: 100%;
-    }
-
-    .cm-testimonials-top-content p:last-child {
-        margin-bottom: 0;
-    }
+    } #}
 
     .cm-testimonials-slider-group button.slick-next.slick-arrow {
         right: 0;

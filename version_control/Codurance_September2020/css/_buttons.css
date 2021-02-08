@@ -1,5 +1,3 @@
-{% import './utils/_buttons-utils.css' as utils %}
-
 :root {
   --cta-transition: all 0.3s ease;
   --button-max-width: 300px;
@@ -11,7 +9,6 @@
   font-size: var(--natus-font-size);
   font-weight: var(--middle-font-weight);
   line-height: var(--natus-line-height);
-  margin: 0.5rem 0;
   padding: 0.6em 1.5em;
   text-align: center;
   text-decoration: none;
@@ -59,10 +56,51 @@
   text-decoration: none;
 }
 
-{{ utils.button_secondary('.button-secondary') }}
 
-{{ utils.text_cta('.text-cta') }}
+.button-secondary {
+  {{ button() }}
+  background: transparent;
+  border: solid 2px var(--persimmon);
+  color: var(--persimmon);
+}
 
-{{ utils.text_cta_right_arrow('.text-cta--right-arrow') }}
+.button-secondary:hover,
+.button-secondary:active,
+.button-secondary:focus {
+  background: var(--persimmon--dark);
+  border: solid 2px var(--persimmon--dark);
+  color: white;
+  text-decoration: none;
+}
 
 
+.text-cta,
+.text-cta--right-arrow {
+  color: var(--persimmon);
+  display: inline-block;
+  font-size: var(--natus-font-size);
+  font-weight: var(--middle-font-weight);
+  line-height: var(--natus-line-height);
+  margin: 0.5rem 0;
+  text-decoration: none;
+  transition: var(--cta-transition);
+}
+
+.text-cta:hover,
+.text-cta:active,
+.text-cta:focus,
+.text-cta--right-arrow:hover,
+.text-cta--right-arrow:active,
+.text-cta--right-arrow:focus  {
+  color: var(--persimmon--dark);
+  text-decoration: underline;
+}
+
+
+.text-cta--right-arrow i {
+  transform: translate(0em, 0.047em);
+  transition: var(--cta-transition);
+}
+.text-cta--right-arrow:hover i {
+  transform: translate(0.15em, 0.047em);
+}

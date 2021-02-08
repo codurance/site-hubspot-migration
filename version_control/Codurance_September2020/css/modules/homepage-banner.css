@@ -59,13 +59,21 @@
   width: 80%;
 }
 
+{% call utils.small() %}
+  .cm-homepage-hero__content-container [class^="button"] {
+    width: 100%;
+    max-width: var(--button-max-width);
+  }
+{% endcall %}
+
 .cm-homepage-hero__title {
   color: white;
   {{ utils.habib() }}
 }
 
 .cm-homepage-hero__subtitle {
+{{ utils.freed() }}
   color: white;
   padding: 10px 0 20px 0;
-  {{ utils.freed() }}
+  margin-bottom: var(--freed-margin);
 }

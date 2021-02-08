@@ -1,7 +1,50 @@
 [ {
-    "name" : "hubdb_table",
-    "label" : "HubDB table",
-    "required" : false,
-    "locked" : false,
-    "type" : "hubdbtable"
-  } ]
+  "id" : "hubdb_table",
+  "name" : "hubdb_table",
+  "label" : "HubDB table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable"
+}, {
+  "id" : "8504fc47-dc9e-e6bd-7dc3-84f1a69e325b",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Upcoming Events"
+}, {
+  "id" : "68cd05f2-138b-2241-0169-db614bd61760",
+  "name" : "translation_information_text",
+  "label" : "Translation Information Text",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "898cb49a-3b14-3cc2-1126-5b2b1bdd300b",
+  "name" : "space_filling_cta_text",
+  "label" : "Space-filling CTA Text",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Hear about more of our upcoming events"
+}, {
+  "id" : "4c691098-6642-22e3-aa5e-1dd23263688f",
+  "name" : "space_filling_cta_button_text",
+  "label" : "Space-Filling CTA Button Text",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Learn More"
+} ]

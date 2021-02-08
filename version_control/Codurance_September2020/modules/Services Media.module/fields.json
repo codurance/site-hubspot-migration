@@ -1,0 +1,128 @@
+[ {
+  "id" : "e1d58c99-e02b-8214-853c-0862095c8049",
+  "name" : "service_type",
+  "label" : "Service Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "Software Modernisation", "Software Modernisation" ], [ "Software Delivery", "Software Delivery" ], [ "Specialist Expertise", "Specialist Expertise" ], [ "Strategic Advice", "Strategic Advice" ] ],
+  "type" : "choice"
+}, {
+  "id" : "1043274d-cb13-7004-f7d4-f287da9db97a",
+  "name" : "main_heading",
+  "label" : "Main Heading",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Videos and Podcasts"
+}, {
+  "id" : "74162bd2-c0e2-c0a4-d781-e9a6c96a2ae9",
+  "name" : "main_filter_button_text",
+  "label" : "Main Filter Button Text",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "All"
+}, {
+  "id" : "56e9d120-a3b5-956b-3fc1-af67c1d56aac",
+  "name" : "videos",
+  "label" : "Videos",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a187a62f-b8da-3baa-28c1-87aabe0eeb6f",
+    "name" : "heading",
+    "label" : "Heading",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Videos"
+  }, {
+    "id" : "a1dff9e9-5add-7a28-f56c-d680f17b9f05",
+    "name" : "cta_text",
+    "label" : "CTA Text",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "View all on YouTube"
+  }, {
+    "id" : "defe251f-caef-b495-f6fb-99a8655b3dfd",
+    "name" : "filter_button_text",
+    "label" : "Filter Button Text",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Videos"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "heading" : "Videos",
+    "cta_text" : "View all on YouTube",
+    "filter_button_text" : "Videos"
+  }
+}, {
+  "id" : "16069d4b-a8f5-69c2-b99e-b0d0ca7a597a",
+  "name" : "podcasts",
+  "label" : "Podcasts",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "e4b53019-1c3e-7dd1-562c-18d141eac802",
+    "name" : "heading",
+    "label" : "Heading",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Podcasts"
+  }, {
+    "id" : "871a89cd-a63d-9b49-1896-28b93c373e0c",
+    "name" : "cta_text",
+    "label" : "CTA Text",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "View all podcasts"
+  }, {
+    "id" : "22afc2d7-7d1b-06f8-5d60-0164107665ad",
+    "name" : "filter_button_text",
+    "label" : "Filter Button Text",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Podcasts"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "heading" : "Podcasts",
+    "cta_text" : "View all podcasts",
+    "filter_button_text" : "Podcasts"
+  }
+} ]

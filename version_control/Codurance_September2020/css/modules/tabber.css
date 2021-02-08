@@ -22,13 +22,13 @@
     font-size: var(--dudler-font-size);
     line-height: var(--dudler-line-height);
     font-weight: var(--heavy-font-weight);
-    padding-bottom: 20px;
     margin-bottom: var(--dudler-margin);
 }
 .section-intro p {
     {{ utils.natus() }}
     margin-bottom: var(--base-margin);
     max-width: var(--natus-max-width);
+    padding-bottom: 20px;
 }
 
 .cm-tabber {
@@ -163,9 +163,6 @@
     .section-intro {
         text-align: center;
     }
-    .section-intro h2{
-        margin-bottom: 15px;
-    }
     .cm-tabber {
         margin-left: auto;
         margin-right: auto;
@@ -291,7 +288,7 @@
     .cm-tabber-section {
         margin-left: auto;
         margin-right: auto;
-        max-width: 1800px;
+        max-width: var(--max-page-width);
         background-size: 150% auto;
         background-repeat: no-repeat;
     }
@@ -420,14 +417,7 @@
         width: 100%;
         max-width: var(--button-max-width);
         display: block;
-        margin-left: auto;
-        margin-right: auto;
     }
-
-    .section-intro h2 {
-        margin-bottom: 25px;
-    }
-
     .cm-tabber {
         padding-top: 50px;
         padding-left: 20px;
