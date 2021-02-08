@@ -1,5 +1,8 @@
-{% set clients = hubdb_table_rows(module.clients_table,
-'') %}
+{% set clients = hubdb_table_rows(module.clients_table, '') %}
+
+{% set highTierclients = hubdb_table_rows(module.clients_table, 'tier=high') %}
+{% set medTierclients = hubdb_table_rows(module.clients_table, 'tier=medium') %}
+{% set lowTierclients = hubdb_table_rows(module.clients_table, 'tier=low') %}
 
 {% set allIndustries = [] %}
 {% set allProblems = [] %}
