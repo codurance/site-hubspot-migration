@@ -18,7 +18,7 @@
   {{ utils.dudler() }}
   color: white;
   font-weight: var(--heavy-font-weight);
-  margin-bottom: var(--dudler_margin);
+  margin-bottom: var(--dudler-margin);
   margin-top: 0;
 }
 
