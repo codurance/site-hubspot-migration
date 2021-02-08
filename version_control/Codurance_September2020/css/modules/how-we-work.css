@@ -18,8 +18,12 @@
   {{ utils.dudler() }}
   color: white;
   font-weight: var(--heavy-font-weight);
-  margin-bottom: var(--dudler_margin);
+  margin-bottom: var(--dudler-margin);
   margin-top: 0;
+}
+
+.cm-how-we-work__intro p {
+  {{ utils.base() }}
 }
 
 .cm-how-we-work__inner {
@@ -83,9 +87,6 @@
 {% endcall %}
 
 {% call utils.medium_large_and_extra_large() %}
-  .cm-how-we-work__intro h2 {
-    margin-bottom: 15px;
-  }
   .cm-how-we-work .section-intro {
     margin-left: auto;
     margin-right: auto;
@@ -122,9 +123,6 @@
 {% endcall %}
 
 {% call utils.small() %}
-  .cm-how-we-work__intro h2 {
-    margin-bottom: 25px;
-  }
   .cm-how-we-work__intro {
     padding-left: 20px;
     padding-right: 20px;

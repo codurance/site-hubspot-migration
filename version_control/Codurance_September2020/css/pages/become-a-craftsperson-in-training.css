@@ -30,12 +30,12 @@
 .become-a-craftsperson-in-required-skills-section .row-number-2 p,
 .become-a-craftsperson-in-testimonial-section .row-number-2 p,
 .become-a-craftsperson-in-interview-process-section .row-number-2 p {
-  {{ utils.natus() }}
+  {{ utils.base() }}
   display: block;
   margin-bottom: var(--base-margin);
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--natus-max-width);
+  max-width: var(--base-max-width);
   padding-bottom: 20px;
   text-align: center;
 }

@@ -28,9 +28,9 @@
 }
 
 .cm-services-inner-section2 .dnd-section .widget-type-rich_text p {
-    {{ utils.natus() }}
+    {{ utils.base() }}
     margin-bottom: var(--base-margin);
-    max-width: var(--natus-max-width);
+    max-width: var(--base-max-width);
     text-align: center;
     padding-bottom: 20px;
 }
@@ -90,15 +90,15 @@
 }
 
 .cm-services-inner-section5 .hs_cos_wrapper_type_rich_text p {
-    {{ utils.natus() }}
+    {{ utils.base() }}
     margin-bottom: var(--base-margin);
-    padding-bottom: 20px;
-    text-align: center;
-    max-width: var(--natus-max-width);
     margin-left: auto;
     margin-right: auto;
+    max-width: var(--base-max-width);
+    padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
+    text-align: center;
 }
 
 .cm-services-inner-section5 .row-number-1 > .row-fluid {

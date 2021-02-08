@@ -125,9 +125,9 @@
 }
 
 .custom-career-life-codurance-section .widget-type-rich_text p {
-  {{ utils.natus() }}
+  {{ utils.base() }}
   margin-bottom: var(--base-margin);
-  max-width: var(--natus-max-width);
+  max-width: var(--base-max-width);
   padding-bottom: 20px;
 }
 

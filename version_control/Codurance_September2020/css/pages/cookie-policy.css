@@ -8,9 +8,9 @@
 }
 
 .body-container-cookie-policy h3 {
-    {{ utils.base() }}
+    {{ utils.freed() }}
     font-weight: var(--middle-font-weight);
-    margin-bottom: var(--base-margin);
+    margin-bottom: var(--freed-margin);
 }
 
 .body-container-cookie-policy .row-fluid {
@@ -30,8 +30,8 @@
 
 .custom-cookie-policy-header-section p,
 .custom-cookie-policy-cookie-details-section p {
-    {{ utils.natus() }}
-    max-width: var(--natus-max-width);
+    {{ utils.base() }}
+    max-width: var(--base-max-width);
     text-align: center;
     margin: 0 auto var(--base-margin);
 }
