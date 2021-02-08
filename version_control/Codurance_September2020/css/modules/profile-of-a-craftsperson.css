@@ -1,5 +1,15 @@
 {% import '../utils/utils.css' as utils %}
 
+.custom-craftperson-slider__text-container h3 {
+  {{ utils.base() }}
+  margin-bottom: var(--base-margin);
+  font-weight: var(--middle-font-weight);
+}
+
+.custom-craftperson-slider__text-container p {
+  {{ utils.natus() }}
+}
+
 .align-items-center {
   -ms-flex-align: center!important;
   align-items: center!important;
