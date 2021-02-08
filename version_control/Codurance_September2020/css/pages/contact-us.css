@@ -1,7 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
 .hs-contact-us-section1 .dnd-section {
-  background: #fcf9f1 linear-gradient(90deg, #fcf9f1 52%, #fcf4f4 100%);
   padding-top: 50px;
 }
 
