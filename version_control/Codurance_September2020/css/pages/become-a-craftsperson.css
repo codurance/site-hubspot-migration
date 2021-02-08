@@ -1,4 +1,18 @@
+{% import '../utils/utils.css' as utils %}
+
 .body-container-become-a-craftsperson .dnd-section {
   padding-bottom: 0;
   padding-top: 0;
+}
+
+.body-container-become-a-craftsperson .row-number-2 .row-fluid h2 {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+  margin-bottom: var(--dudler-margin);
+}
+
+.body-container-become-a-craftsperson .row-number-2 .row-fluid p {
+  {{ utils.base() }}
+  margin-bottom: var(--base-margin);
+  padding-bottom: 20px;
 }
