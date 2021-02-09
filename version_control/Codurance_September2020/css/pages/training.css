@@ -1,11 +1,15 @@
 {% import '../utils/utils.css' as utils %}
 
+body {
+    max-width: 100%;
+}
+
 .banner-section .row-fluid [class*="span"] {
     min-height: auto;
 }
 {% call utils.extra_large() %}
     .banner-section .dnd-section::before {
-        background-image: url({{ get_asset_url('../images/training-backgrounds_bg-training-courses.svg' ) }});
+        background-image: url({{ get_asset_url('../../images/training-backgrounds_bg-training-courses.svg' ) }});
         background-repeat: no-repeat;
         content: "";
         height: 400px;
@@ -73,8 +77,9 @@
     padding-top:0;
     padding-bottom: calc(100px * 2);
 }
-.container .featured-training-card-section .dnd-section:before {
-    background-image: url({{ get_asset_url('../images/training-backgrounds_bg-training-courses.svg' ) }});
+
+.container .featured-training-card-section .dnd-section::before {
+    background-image: url({{ get_asset_url('../../images/training-backgrounds_bg-training-courses.svg' ) }});
     background-repeat: no-repeat;
     content: "";
     height: 500px;
@@ -86,7 +91,7 @@
     width: 400px;
 }
 {% call utils.small_medium_and_large() %}
-    .container .featured-training-card-section .dnd-section:before {
+    .container .featured-training-card-section .dnd-section::before {
         display: none;
     }
 {% endcall %}
