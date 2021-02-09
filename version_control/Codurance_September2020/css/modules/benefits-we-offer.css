@@ -1,5 +1,10 @@
 {% import '../utils/utils.css' as utils %}
 
+.custom-benfits-we-offer__text-container h2,
+.custom-benfits-we-offer__text-container p {
+  {{ utils.natus() }}
+}
+
 .u-icon-v1, .u-icon-v2, .u-icon-v3, .u-icon-v4 {
   position: relative;
   display: inline-block;

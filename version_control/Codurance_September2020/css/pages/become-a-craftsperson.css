@@ -17,3 +17,70 @@
   margin-bottom: var(--base-margin);
   padding-bottom: 20px;
 }
+
+.custom-become-a-craftsperson-row1 .custom-py-120 {
+  padding-top: 6.42857rem !important;
+  padding-bottom: 6.42857rem !important;
+}
+
+.custom-become-a-craftsperson-row1 .custom-py-120 .custom-mb-40:after {
+  content: "";
+  display: inline-block;
+  border-top-style: solid;
+  border-color: inherit;
+  width: 2.14286rem;
+  border-top-width: 1px;
+  margin-top: 0.71429rem;
+}
+
+.custom-col-width-row.custom-become-a-craftsperson-row4 .row-fluid .dnd-module {
+  padding: 0;
+}
+
+.custom-col-width-row.custom-become-a-craftsperson-row4 .row-fluid .span4 {
+  margin: 0;
+  padding: 0 15px;
+  margin-bottom: 2.14286rem;
+}
+
+.custom-col-width-row.custom-become-a-craftsperson-row4 .row-fluid .dnd-module {
+  padding: 0;
+}
+
+.custom-col-width-row.custom-become-a-craftsperson-row4 .row-fluid .span4 {
+  margin: 0;
+  padding: 0 15px;
+  margin-bottom: 2.14286rem;
+  /* height: 100%; */
+}
+
+.custom-col-width-row.custom-become-a-craftsperson-row4 .dnd-section>.row-fluid .row-fluid {
+  display: flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.custom-col-width-row.custom-become-a-craftsperson-row4 .row-fluid .span4 div {
+  height: 100%;
+}
+
+@media (max-width: 991px) {
+  .custom-col-width-row.custom-become-a-craftsperson-row4 .row-fluid .span4 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .custom-col-width-row.custom-become-a-craftsperson-row4 .dnd-section > .row-fluid .row-fluid > .span12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .custom-col-width-row.custom-become-a-craftsperson-row4 .row-fluid .span4 {
+    margin: 0;
+    padding: 0;
+  }
+}
