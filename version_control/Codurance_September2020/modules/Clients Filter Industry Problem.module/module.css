@@ -20,13 +20,28 @@
 
 .applied-filter {
     background-color: rgba(251,114,104,0.8);;
-    border-radius: 5px;
+    border-radius: 20px;
     color: white;
     margin: 20px;
     padding: 5px 10px;
+    position: relative;
+    padding-right: 20px;
 }
 
-.applied-filter::after {
+.remove-filter {
+    background: none;
+    height: 15px;
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    width: 15px;
+}
+
+.remove-filter:hover {
+    cursor: pointer;
+}
+
+.remove-filter::after {
     color: white;
     content: 'x';
     margin-left: 9px;

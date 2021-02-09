@@ -1,13 +1,59 @@
 const clients = Array.prototype.slice.call(
     document.querySelectorAll('[data-client-industry]')
 );
-
 const industryFilter = document.querySelector('[data-select-industry]');
 const problemFilter = document.querySelector('[data-select-problem]');
+
+let allFilters;
 
 const appliedFilters = {
     industry: [],
     problem: []
+}
+
+const resetFilterDropdownValues = _ => {
+    industryFilter.value = "";
+    problemFilter.value = "";
+}
+
+const setAllFilters = _ => {
+    allFilters = {
+        industry: Array.prototype.slice.call(
+                document.querySelectorAll('[data-industry-option]')
+            ).map(option => option.dataset.industryOption),
+        problem: Array.prototype.slice.call(
+                document.querySelectorAll('[data-problem-option]')
+            ).map(option => option.dataset.problemOption)
+    }
+}
+
+const showAppliedFilter = (key, filter) => {
+    document.querySelector(`[data-applied-${key}-filter="${filter}"]`).classList.remove('hidden');
+}
+
+const hideUnappliedFilter = (key, filter) => {
+    document.querySelector(`[data-applied-${key}-filter="${filter}"]`).classList.add('hidden');
+}
+
+const hideAppliedOption = (key, filter) => {
+    document.querySelector(`[data-${key}-option="${filter}"]`).setAttribute('hidden', '');
+}
+
+const showUnappliedOption = (key, filter) => {
+    document.querySelector(`[data-${key}-option="${filter}"]`).removeAttribute('hidden');
+}
+
+const updateAppliedFilters = _ => {
+    Object.keys(appliedFilters).forEach(key => {
+        const all = allFilters[key];
+        const applied = appliedFilters[key];
+        const unapplied = all.filter(filter => !applied.includes(filter));
+        
+        applied.forEach(filter => showAppliedFilter(key, filter));
+        applied.forEach(filter => hideAppliedOption(key, filter));
+        unapplied.forEach(filter => hideUnappliedFilter(key, filter));
+        unapplied.forEach(filter => showUnappliedOption(key, filter));
+    });
 }
 
 const byIndustry = client => {
@@ -40,45 +86,63 @@ const refilter = _ => {
     hiddenClients.forEach(hideClient);
 }
 
-const showAppliedFilter = (key, filter) => {
-    document.querySelector(`[data-applied-${key}-filter="${filter}"]`).classList.remove('hidden');
-}
-
-const showAppliedFilters = _ => {
-    Object.keys(appliedFilters).forEach(key => {
-        appliedFilters[key].forEach(filter => showAppliedFilter(key, filter));
-    });
-}
-
-const hideAppliedOption = (key, filter) => {
-    document.querySelector(`[data-${key}-option="${filter}"]`).setAttribute('hidden', '');
-}
-
-const hideAppliedOptions = _ => {
-    Object.keys(appliedFilters).forEach(key => {
-        appliedFilters[key].forEach(filter => hideAppliedOption(key, filter));
-    });
+const unnamedFunction = _ => {
+    updateAppliedFilters();
+    refilter();
 }
 
 const applyFilter = (value, type) => {
     appliedFilters[type].push(value);
-    showAppliedFilters();
-    hideAppliedOptions();
-    industryFilter.value = "";
-    refilter();
+    resetFilterDropdownValues();
+    unnamedFunction();
 }
 
-industryFilter.addEventListener('change', e => {
-    applyFilter(e.target.value, 'industry')
-});
-
-problemFilter.addEventListener('change', e => {
-    applyFilter(e.target.value, 'problem')
-});
-
-const initialiseFilterDropdowns = _ => {
-    industryFilter.value = "";
-    problemFilter.value = "";
+const addFilterDropdownListeners = _ => {
+    industryFilter.addEventListener('change', e => 
+        applyFilter(e.target.value, 'industry'));
+    
+    problemFilter.addEventListener('change', e => 
+        applyFilter(e.target.value, 'problem'));
 }
 
-window.addEventListener('DOMContentLoaded', initialiseFilterDropdowns);
+const capitalise = string => {
+    return string.charAt(0).toUpperCase() + string.substring(1);
+}
+
+const removeItemFromArray = (array, value) => {
+    const removableIndex = array.indexOf(value);
+    if (removableIndex >= 0) {
+        array.splice(removableIndex, 1);
+    }
+}
+
+const removeFilter = (type, value) => {
+    removeItemFromArray(appliedFilters[type], value)
+    unnamedFunction();
+}
+
+const addRemoveFilterListener = (type, button) => {
+    button.addEventListener('click', _ => {
+        const filter = button.dataset[`remove${capitalise(type)}Filter`];
+        removeFilter(type, filter);
+    });
+}
+
+const addRemoveFilterListeners = _ => {
+    Array.prototype.slice.call(
+        document.querySelectorAll('[data-remove-industry-filter]')
+    ).forEach(button => addRemoveFilterListener('industry', button));
+
+    Array.prototype.slice.call(
+        document.querySelectorAll('[data-remove-problem-filter]')
+    ).forEach(button => addRemoveFilterListener('problem', button));
+}
+
+const init = _ => {
+    resetFilterDropdownValues();
+    setAllFilters();
+    addFilterDropdownListeners();
+    addRemoveFilterListeners();
+}
+
+window.addEventListener('DOMContentLoaded', init);

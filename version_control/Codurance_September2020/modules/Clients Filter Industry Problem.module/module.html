@@ -30,10 +30,10 @@
     </div>
     <div class="applied-filters">
         {% for industry in allIndustries %}
-            <div class="applied-filter hidden" data-applied-industry-filter="{{industry}}">{{industry}}</div>
+            <div class="applied-filter hidden" data-applied-industry-filter="{{industry}}">{{industry}}<div class="remove-filter" data-remove-industry-filter="{{industry}}"></div></div>
         {% endfor %}
         {% for problem in allProblems %}
-            <div class="applied-filter hidden" data-applied-problem-filter="{{problem}}">{{problem}}</div>
+            <div class="applied-filter hidden" data-applied-problem-filter="{{problem}}">{{problem}}<div class="remove-filter" data-remove-problem-filter="{{problem}}"></div></div>
         {% endfor %}
     </div>
 </div>
