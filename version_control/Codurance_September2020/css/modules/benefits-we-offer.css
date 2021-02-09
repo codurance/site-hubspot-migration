@@ -1,0 +1,58 @@
+{% import '../utils/utils.css' as utils %}
+
+.u-icon-v1, .u-icon-v2, .u-icon-v3, .u-icon-v4 {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition: all .2s ease-in-out;
+}
+
+.media p {
+  margin: 0;
+}
+.u-icon-v2, .u-icon-v2 .u-icon__elem-regular, .u-icon-v2 .u-icon__elem-hover, .u-icon-v3, .u-icon-v3 .u-icon__elem-regular, .u-icon-v3 .u-icon__elem-hover, .u-icon-v4 .u-icon-v4-inner, .u-icon-v4 .u-icon__elem-regular, .u-icon-v4 .u-icon__elem-hover, .u-icon-v5 {
+  width: 3.92857rem;
+  height: 3.92857rem;
+  font-size: 1.57143rem;
+}
+.media {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+[class^="icon-media"]:before, [class*=" icon-media"]:before {
+  font-family: "media" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class*="u-icon-v"] .u-line-icon-pro {
+  -webkit-transform: translateY(-45%);
+  -ms-transform: translateY(-45%);
+  transform: translateY(-45%);
+}
+.u-icon-v1 > i, .u-icon-v2 > i, .u-icon-v3 > i, .u-icon-v4 > span > i {
+  position: relative;
+  top: 50%;
+  display: block;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+@media (max-width: 575px){
+  .custom-col-width-row.custom-become-a-craftsperson-row4 .row-fluid .span4 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2.14286rem;
+  }
+
+
+}
