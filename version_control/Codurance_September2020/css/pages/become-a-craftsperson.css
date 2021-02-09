@@ -24,16 +24,12 @@
 
 .custom-become-a-craftsperson-row4 .dnd-section > .row-fluid .row-fluid {
   display: flex;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
 .custom-become-a-craftsperson-row4 .row-fluid .span4 {
-  margin: 0;
-  padding: 0 15px;
   margin-bottom: 2.14286rem;
+  padding: 0 15px;
 }
 {% call utils.small_and_medium() %}
   .custom-become-a-craftsperson-row4 .row-fluid .span4 {
@@ -42,7 +38,8 @@
 {% endcall %}
 {% call utils.small() %}
   .custom-become-a-craftsperson-row4 .row-fluid .span4 {
-    margin: 0;
+    margin-left: 20px;
+    margin-right: 20px;
     padding: 0;
   }
 {% endcall %}

@@ -1,5 +1,14 @@
 {% import '../utils/utils.css' as utils %}
 
+.custom-benfits-we-offer {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 10px -6px var(--woodsmoke--10);
+  height: 100%;
+  padding: 1.3rem;
+  position: relative;
+}
+
 .custom-benfits-we-offer__text-container h3,
 .custom-benfits-we-offer__text-container p {
   {{ utils.natus() }}
@@ -10,59 +19,15 @@
   margin-bottom: var(--base-margin);
 }
 
-.u-icon-v1, .u-icon-v2, .u-icon-v3, .u-icon-v4 {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  transition: all .2s ease-in-out;
-}
-
-.media p {
-  margin: 0;
-}
-.u-icon-v2, .u-icon-v2 .u-icon__elem-regular, .u-icon-v2 .u-icon__elem-hover, .u-icon-v3, .u-icon-v3 .u-icon__elem-regular, .u-icon-v3 .u-icon__elem-hover, .u-icon-v4 .u-icon-v4-inner, .u-icon-v4 .u-icon__elem-regular, .u-icon-v4 .u-icon__elem-hover, .u-icon-v5 {
-  width: 3.92857rem;
-  height: 3.92857rem;
-  font-size: 1.57143rem;
-}
-.media {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: start;
-  align-items: flex-start;
-}
-[class^="icon-media"]:before, [class*=" icon-media"]:before {
-  font-family: "media" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-[class*="u-icon-v"] .u-line-icon-pro {
-  -webkit-transform: translateY(-45%);
-  -ms-transform: translateY(-45%);
-  transform: translateY(-45%);
-}
-.u-icon-v1 > i, .u-icon-v2 > i, .u-icon-v3 > i, .u-icon-v4 > span > i {
-  position: relative;
-  top: 50%;
-  display: block;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 2;
-}
-
-@media (max-width: 575px){
-  .custom-col-width-row.custom-become-a-craftsperson-row4 .row-fluid .span4 {
-    margin: 0;
-    padding: 0;
-    margin-bottom: 2.14286rem;
-  }
-
-
+.custom-benfits-we-offer__icon {
+  background-color: var(--midnight-blue);
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  font-size: 1rem;
+  left: 0;
+  padding: .4rem;
+  position: absolute;
+  top: 0;
+  transform: translate(-40%, -40%);
 }

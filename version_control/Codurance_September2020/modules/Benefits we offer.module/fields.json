@@ -9,17 +9,6 @@
   "show_emoji_picker" : false,
   "type" : "text"
 }, {
-  "id" : "d07cf091-414d-d220-26c3-f58439f8c5c5",
-  "name" : "icon_background_color",
-  "label" : "Icon Background Color",
-  "required" : false,
-  "locked" : false,
-  "type" : "color",
-  "default" : {
-    "color" : "#e64b3b",
-    "opacity" : 100
-  }
-}, {
   "id" : "3cd2dc36-bc93-46cf-e273-526c68a89d4c",
   "name" : "content",
   "label" : "Content",
