@@ -1,0 +1,208 @@
+{% import '../utils/utils.css' as utils %}
+
+body {
+    max-width: 100%;
+}
+
+.banner-section .row-fluid [class*="span"] {
+    min-height: auto;
+}
+{% call utils.extra_large() %}
+    .banner-section .dnd-section::before {
+        background-image: url({{ get_asset_url('../../images/training-backgrounds_bg-training-courses.svg' ) }});
+        background-repeat: no-repeat;
+        content: "";
+        height: 400px;
+        position: absolute;
+        right: 15%;
+        top: -60px;
+        transform: translateX(40%);
+        width: 400px;
+    }
+{% endcall %}
+
+.container .dnd-section {
+    max-width: var(--max-page-width);
+    margin: 0px auto;
+}
+
+.container .cm-advanced-banner-hero__image-container {
+    background-color: transparent;
+    background-position: center 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: -100px;
+}
+
+.container .featured-training-card-section .dnd-section > .row-fluid,
+.container .training-card-section .dnd-section > .row-fluid {
+    max-width: 1300px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+{% call utils.small_and_medium() %}
+    .container .featured-training-card-section .dnd-section > .row-fluid,
+    .container .training-card-section .dnd-section > .row-fluid {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+{% endcall %}
+{% call utils.small() %}
+    .container .featured-training-card-section .dnd-section > .row-fluid,
+    .container .training-card-section .dnd-section > .row-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+{% endcall %}
+
+.container .featured-training-card-section .dnd-section {
+    background-color: var(--athens-gray);
+    padding-top: calc(100px * 1.5);
+    position:relative;
+    padding-bottom:0;
+}
+{% call utils.small_and_medium() %}
+    .container .featured-training-card-section .dnd-section {
+        padding-top:100px;
+    }
+{% endcall %}
+{% call utils.small() %}
+    .container .featured-training-card-section .dnd-section {
+        padding-top: 0;
+    }
+{% endcall %}
+
+.container .training-card-section .dnd-section {
+    background-color: var(--athens-gray);
+    padding-top:0;
+    padding-bottom: calc(100px * 2);
+}
+{% call utils.small() %}
+    .container .training-card-section .dnd-section {
+        padding-bottom: 50px;
+    }
+{% endcall %}
+
+.container .featured-training-card-section .dnd-section::before {
+    background-image: url({{ get_asset_url('../../images/training-backgrounds_bg-training-courses.svg' ) }});
+    background-repeat: no-repeat;
+    content: "";
+    height: 500px;
+    left: 20%;
+    opacity: 0.4;
+    position: absolute;
+    top: -40px;
+    transform: translateX(-50%);
+    width: 400px;
+}
+{% call utils.small_medium_and_large() %}
+    .container .featured-training-card-section .dnd-section::before {
+        display: none;
+    }
+{% endcall %}
+
+.training-card-section .dnd-section .widget-type-rich_text h2 {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--dudler-margin);
+    text-align: center;
+}
+{% call utils.medium_large_and_extra_large() %}
+    .training-card-section .dnd-section .widget-type-rich_text h2 {
+        margin-bottom: 15px;
+    }
+{% endcall %}
+{% call utils.small() %}
+    .training-card-section .dnd-section .widget-type-rich_text h2 {
+        text-align: left;
+        padding-left: 0;
+        margin-bottom: 25px;
+    }
+{% endcall %}
+
+.training-card-section .dnd-section .widget-type-rich_text {
+    {{ utils.sejima() }}
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    max-width: 800px;
+    width: calc(100% - (50px * 2));
+}
+{% call utils.large_and_extra_large() %}
+    .training-card-section .dnd-section .widget-type-rich_text {
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 34px;
+    }
+{% endcall %}
+{% call utils.small() %}
+    .training-card-section .dnd-section .widget-type-rich_text {
+        text-align: left;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 100%;
+        margin-bottom: 49px;
+    }
+{% endcall %}
+
+.training-card-section .dnd-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+{% call utils.small_medium_and_large() %}
+    .training-card-section .dnd-section {
+        padding-bottom: 50px;
+    }
+{% endcall %}
+
+.training-card-section .dnd-section > .row-fluid {
+    max-width: 1320px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+{% call utils.small_medium_and_large() %}
+    .training-card-section .dnd-section > .row-fluid {
+        max-width: 740px;
+    }
+{% endcall %}
+{% call utils.small_and_medium() %}
+    .training-card-section .dnd-section > .row-fluid {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+{% endcall %}
+{% call utils.small() %}
+    .training-card-section .dnd-section > .row-fluid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+{% endcall %}
+
+.training-card-section .dnd-section > .row-fluid .span3 {
+    width: 25%;
+    margin-left: 0;
+}
+{% call utils.small_medium_and_large() %}
+    .training-card-section .dnd-section > .row-fluid .span3 {
+        width: 50%;
+    }
+{% endcall %}
+{% call utils.small() %}
+    .training-card-section .dnd-section > .row-fluid .span3 {
+        width: 100%;
+    }
+{% endcall %}
+
+.featured-training-card-section .dnd-section > .row-fluid {
+    padding: 0;
+}
+
+{% call utils.small() %}
+    .cm-advanced-banner-hero__content-container .button-primary {
+        margin-left: auto;
+        margin-right: auto;
+    }
+{% endcall %}
+
