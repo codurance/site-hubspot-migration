@@ -16,18 +16,28 @@
     <div class="cm-crafting-details-wrapper-inner">
       <div class="cm-crafting-content-container">
         {% if module.image.src or  module.designation or module.author_name%}
-        <div class="cm-crafting-instructor-wrapper">
-          {% if module.image.src %}<span class="cm-crafting-instructor-avatar" style="background-image: url({{ module.image.src }})"></span>{% endif %}
-          <div class="cm-crafting-instructor-wrapper-inner">
-            <span class="cm-crafting-instructor-title">{{ module.designation }}</span>
-            <span class="cm-crafting-instructor-name">{{ module.author_name }}</span> </div>          
-        </div>
-        {% endif %}
+          <div class="cm-crafting-instructor-wrapper">
+            {% if module.image.src %}
+              <span class="cm-crafting-instructor-avatar" style="background-image: url({{ module.image.src }})"></span>
+            {% endif %}
+
+            <div class="cm-crafting-instructor-wrapper-inner">
+              <span class="cm-crafting-instructor-title">{{ module.designation }}</span>
+              <span class="cm-crafting-instructor-name">{{ module.author_name }}</span> </div>
+            </div>
+       {% endif %}
         <div class="cm-crafting-description-wrapper">
           <div class="cm-crafting-course-description">
             {{ module.content }}
-          </div> 
-          <a href="{{ module.bookmark_id }}" class="cta--primary-coral " target=""> {{ module.button_text }}</a>
+          </div>
+
+          {{
+            snippets.button_primary(
+              url=module.bookmark_id,
+              text=module.button_text,
+              target=""
+            )
+          }}
         </div>
       </div>
     </div>
