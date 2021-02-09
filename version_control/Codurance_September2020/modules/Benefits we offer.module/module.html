@@ -1,16 +1,10 @@
-<div class="custom-benfits-we-offer">
-  <div class="u-shadow-v19 custom-bg-white rounded custom-pa-20 h-100">
-    <div class="media">
-      <div class="d-flex align-self-baseline mr-3">
-        <span class="u-icon-v3  custom-color-white custom-rounded-50x" style="background-color: rgba({{ module.icon_background_color.color|convert_rgb }}, {{ module.icon_background_color.opacity * 0.01 }});"> 
-          <i class="icon-{{ module.icon_class }} u-line-icon-pro"></i> 
-        </span> 
-      </div>
-      <div class="media-body align-self-center">
+{{ require_css(get_asset_url("../../css/modules/benefits-we-offer.css")) }}
 
-        {{ module.content }}
-      </div>
-    </div>
+<div class="custom-benfits-we-offer">
+  <i class="custom-benfits-we-offer__icon las {{ module.icon_class }}"></i>
+  <div class="custom-benfits-we-offer__text-container media-body align-self-center">
+
+    {{ module.content }}
   </div>
 </div>
 
