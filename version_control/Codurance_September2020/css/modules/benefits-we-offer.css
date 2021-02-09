@@ -9,12 +9,12 @@
   position: relative;
 }
 
-.custom-benfits-we-offer__text-container h3,
 .custom-benfits-we-offer__text-container p {
   {{ utils.natus() }}
 }
 
 .custom-benfits-we-offer__text-container h3 {
+  {{ utils.base() }}
   font-weight: var(--middle-font-weight);
   margin-bottom: var(--base-margin);
 }
