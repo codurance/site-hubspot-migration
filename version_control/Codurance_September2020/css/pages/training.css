@@ -77,6 +77,11 @@ body {
     padding-top:0;
     padding-bottom: calc(100px * 2);
 }
+{% call utils.small() %}
+    .container .training-card-section .dnd-section {
+        padding-bottom: 50px;
+    }
+{% endcall %}
 
 .container .featured-training-card-section .dnd-section::before {
     background-image: url({{ get_asset_url('../../images/training-backgrounds_bg-training-courses.svg' ) }});
