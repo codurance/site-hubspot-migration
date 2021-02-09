@@ -1,3 +1,7 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{{ require_css(get_asset_url("../../css/modules/advanced-banner.css")) }}
+
 <div class="cm-crafting-banner-group {% if not module.image.src %} no-author-section {% endif %}">
   <div class="cm-crafting-intro-container" style="background-image: url({{ module.banner_image.src }})">
     <div class="cm-crafting-logo-container">
