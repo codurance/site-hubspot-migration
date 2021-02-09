@@ -1,0 +1,58 @@
+{% import '../utils/utils.css' as utils %}
+
+.body-container-become-a-craftsperson .dnd-section {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.body-container-become-a-craftsperson .row-number-2 .row-fluid h2 {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+  margin-bottom: var(--dudler-margin);
+  padding-bottom: 20px;
+}
+
+.body-container-become-a-craftsperson .row-number-2 .row-fluid p {
+  {{ utils.base() }}
+  margin-bottom: var(--base-margin);
+  padding-bottom: 20px;
+}
+
+.custom-become-a-craftsperson-row4 .row-fluid .dnd-module {
+  padding: 0;
+}
+
+.custom-become-a-craftsperson-row4 .dnd-section > .row-fluid .row-fluid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.custom-become-a-craftsperson-row4 .row-fluid .span4 {
+  margin-bottom: 2.14286rem;
+  padding: 0 15px;
+}
+{% call utils.small_and_medium() %}
+  .custom-become-a-craftsperson-row4 .row-fluid .span4 {
+    width: 100%;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .custom-become-a-craftsperson-row4 .row-fluid .span4 {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+  }
+{% endcall %}
+
+
+.custom-become-a-craftsperson-row4 .row-fluid .span4 div {
+  height: 100%;
+}
+
+
+{% call utils.small() %}
+  .custom-become-a-craftsperson-row4 .dnd-section > .row-fluid .row-fluid > .span12 {
+    width: 100%;
+  }
+{% endcall %}
+
