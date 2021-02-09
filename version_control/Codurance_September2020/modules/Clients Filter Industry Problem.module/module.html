@@ -1,9 +1,5 @@
 {% set clients = hubdb_table_rows(module.clients_table, '') %}
 
-{% set highTierclients = hubdb_table_rows(module.clients_table, 'tier=high') %}
-{% set medTierclients = hubdb_table_rows(module.clients_table, 'tier=medium') %}
-{% set lowTierclients = hubdb_table_rows(module.clients_table, 'tier=low') %}
-
 {% set allIndustries = [] %}
 {% set allProblems = [] %}
 {% for client in clients %}
@@ -17,22 +13,28 @@
 
 <div class="filters">
     <div class="filter">
-        <p>industry:</p>
         <select data-select-industry>
-            <option>all</option>
+            <option value="" disabled selected hidden>Filter by industry</option>
             {% for industry in allIndustries %}
-                <option>{{industry}}</option>
+                <option data-industry-option="{{industry}}">{{industry}}</option>
             {% endfor %}
         </select>
     </div>
     <div class="filter">
-        <p>problem:</p>
-        <select data-select-problem>
-            <option>all</option>
+        <select data-select-problem value="">
+            <option value="" disabled selected hidden>Filter by problem</option>
             {% for problem in allProblems %}
-                <option>{{problem}}</option>
+                <option data-problem-option="{{problem}}">{{problem}}</option>
             {% endfor %}
         </select>
+    </div>
+    <div class="applied-filters">
+        {% for industry in allIndustries %}
+            <div class="applied-filter hidden" data-applied-industry-filter="{{industry}}">{{industry}}</div>
+        {% endfor %}
+        {% for problem in allProblems %}
+            <div class="applied-filter hidden" data-applied-problem-filter="{{problem}}">{{problem}}</div>
+        {% endfor %}
     </div>
 </div>
 <hr />

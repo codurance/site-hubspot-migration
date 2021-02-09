@@ -1,0 +1,72 @@
+{% set highTierclients = hubdb_table_rows(module.clients_table, 'tier=high') %}
+{% set medTierclients = hubdb_table_rows(module.clients_table, 'tier=medium') %}
+{% set lowTierclients = hubdb_table_rows(module.clients_table, 'tier=low') %}
+
+<div class="high-tier-clients">
+    {% for client in highTierclients %}
+        <div class="client-container">
+            <div class="client-logo" style="background-image: url({{client.logo.url}})">
+            </div>
+            <div class="client-info">
+                <h3><a href="">{{client.name}}</a></h3>
+                <p>industry: {{client.industry.name}}</p>
+                {% set problems = [] %}
+                {% for problem in client.problems %}
+                    {% do  problems.append(problem.name) %}
+                {% endfor %}
+                <p>description: {{client.description}}</p>
+                <p>problems: {{problems|join(' | ')}}</p>
+                <p><a href="">View Case Study</a></p>
+                <p>"{{client.testimonial}}" - John Doe</p>
+            </div>
+        </div>
+        <hr />
+    {% endfor %}
+</div>
+<div class="medium-tier-clients">
+    {% for client in medTierclients %}
+        <div class="client-container">
+            <div class="client-logo" style="background-image: url({{client.logo.url}})">
+            </div>
+            <div class="client-info">
+                <h3><a href="">{{client.name}}</a></h3>
+                <p>industry: {{client.industry.name}}</p>
+                {% set problems = [] %}
+                {% for problem in client.problems %}
+                    {% do  problems.append(problem.name) %}
+                {% endfor %}
+                <p>description: {{client.description}}</p>
+                <p>problems: {{problems|join(' | ')}}</p>
+            </div>
+        </div>
+        <hr />
+    {% endfor %}
+</div>
+<div class="low-tier-clients">
+    <div class="low-tier-clients-sub-container">
+        {% for client in lowTierclients %}
+            <div>
+                <div class="client-logo" style="background-image: url({{client.logo.url}})">
+                </div>
+                <div class="client-info">
+                    <h3><a href="">{{client.name}}</a></h3>
+                    <p>description: {{client.description}}</p>
+                </div>
+            </div>
+            <hr />
+        {% endfor %}
+    </div>
+    <div class="low-tier-clients-sub-container">
+        {% for client in lowTierclients|reverse %}
+            <div>
+                <div class="client-logo" style="background-image: url({{client.logo.url}})">
+                </div>
+                <div class="client-info">
+                    <h3><a href="">{{client.name}}</a></h3>
+                    <p>description: {{client.description}}</p>
+                </div>
+            </div>
+            <hr />
+        {% endfor %}
+    </div>
+</div>

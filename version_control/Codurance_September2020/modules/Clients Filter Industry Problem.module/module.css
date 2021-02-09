@@ -1,9 +1,35 @@
 .filters {
+    align-items: center;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 .filter {
-    padding: 0 50px;
+    width: 20%;
+}
+
+.applied-filters {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60%;
+}
+
+.applied-filter {
+    background-color: rgba(251,114,104,0.8);;
+    border-radius: 5px;
+    color: white;
+    margin: 20px;
+    padding: 5px 10px;
+}
+
+.applied-filter::after {
+    color: white;
+    content: 'x';
+    margin-left: 9px;
 }
 
 .client-container {
