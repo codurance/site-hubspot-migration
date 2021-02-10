@@ -422,3 +422,9 @@ and how they stack. This is based off of the bootstrap system.
         padding-right: 50px;
     }
 }
+
+.content-wrapper {
+  max-width: 1240px;
+  padding: 0 20px;
+  margin: 0 auto;
+}

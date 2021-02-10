@@ -6,12 +6,6 @@ Also for the post meta infromation like tags, author and published date
 *********************************************************************************
 ****************************************************************************** */
 
-/* TODO: Find a better place for this */
-.content-wrapper {
-  max-width: 1240px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
 {#
 .blog-header {
   background-color: {{ dnd_accent_bg_color }};
