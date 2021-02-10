@@ -140,9 +140,6 @@ Also for the post meta infromation like tags, author and published date
   margin: 0 5px;
 } #}
 
-.masonry-grid.row.custom-mb-70 {
-  margin: 0;
-}
 
 .custom-transition-0_3 {
   transition-duration: .3s;
@@ -295,38 +292,11 @@ Also for the post meta infromation like tags, author and published date
   object-fit: cover;
 } #}
 
-.masonry-grid .widget-module ul {
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-  margin-top: 0;
-}
-.masonry-grid .hs_cos_wrapper_type_post_filter h3 {
-  margin: 0;
-  padding: 0;
-}
-.masonry-grid .widget-module ul li {
-  margin-right: 0.35714rem;
-  display: inline-block;
-}
-.masonry-grid .widget-module ul li a {
-  color: #555 !important;
-}
-.masonry-grid .widget-module ul li span.filter-link-count {
-  display: none;
-}
-
-.masonry-grid .widget-module ul li:after {
-  color: #ccc;
-  content: "/";
-}
 .u-link-v5 {
   text-decoration: none;
   transition: all .2s;
 }
-.masonry-grid .widget-module ul li:last-child:after {
-  display: none;
-}
+
 .u-link-v5:hover, .u-link-v5:focus {
   text-decoration: none;
 }
@@ -462,9 +432,7 @@ a.tags:hover {
   display: -ms-flexbox!important;
   display: flex!important;
 }
-.custom-blog-author-listing h2.margin-bottom-20 {
-  padding: 0 15px;
-}
+
 .custom-color-reddit {
   color: #ff4301;
 }
@@ -597,12 +565,7 @@ figure {
 
 } #}
 
-.container.custom-blog-author-listing.page-center.content-sm hr {
-  margin: 30px 0;
-  background-color: rgba(0,0,0,.1);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
+
 
 .list-inline-item {
   display: inline-block;
@@ -668,19 +631,7 @@ figure {
 
 }
 
-ul.custom-blog-filter-group.u-list-inline {
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-}
 
-{# .hs-blog-post .page-center, #}
-.custom-blog-author-listing .page-center,
-{# .custom-tag-page .page-center #}
-{
-  padding-right: 15px;
-  padding-left: 15px;
-}
 
 @media (min-width: 768px){
   .text-md-right {
@@ -744,43 +695,8 @@ section.container.blog blockquote {
   margin: 0;
   padding: 0;
 } #}
-.content-sm {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
 
-.blog-author {
-  padding: 20px;
-  background: #fff;
-}
 
-.blog-author img {
-  float: left;
-  width: 80px;
-  height: auto;
-  margin-right: 20px;
-}
-
-.blog-author .blog-author-desc {
-  overflow: hidden;
-}
-
-.blog-author .blog-author-desc h4 {
-  float: left;
-  font-size: 18px;
-  margin: 0 0 10px;
-  text-transform: uppercase;
-  color: #555;
-}
-
-.blog-author .blog-author-desc ul {
-  float: right;
-  margin-top: 6px;
-}
-
-.blog-author .blog-author-desc p {
-  color: #555;
-}
 
 section.container.blog  .custom-col-lg-9.custom-overflow-y-hidden .row {
   margin: 0;
@@ -845,10 +761,7 @@ a.u-icon-v2 {
 
 }
 
-@media (max-width: 767x) {
-  .blog-author .blog-author-desc {
-    margin: 10px 0 10px;
-  }
+@media (max-width: 767px) {
   .row.container.page-center--blog-meta {
     min-height: 62px;
   }

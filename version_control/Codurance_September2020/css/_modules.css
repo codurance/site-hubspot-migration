@@ -115,7 +115,7 @@
     display: none;
 }
 
-.custom-col,.custom-col-1,.custom-col-10,.custom-col-11,.custom-col-12,.custom-col-2,.custom-col-3,.custom-col-4,.custom-col-5,.custom-col-6,.custom-col-7,.custom-col-8,.custom-col-9,.custom-col-auto,.custom-col-lg,.custom-col-lg-1,.custom-col-lg-10,.custom-col-lg-11,.custom-col-lg-12,.custom-col-lg-2,.custom-col-lg-3,.custom-col-lg-4,.custom-col-lg-5,.custom-col-lg-6,.custom-col-lg-7,.custom-col-lg-8,.custom-col-lg-9,.col-lg-9,.custom-col-lg-auto,.custom-col-md,.custom-col-md-1,.custom-col-md-10,.custom-col-md-11,.custom-col-md-12,.custom-col-md-2,.custom-col-md-3,.custom-col-md-4,.custom-col-md-5,.custom-col-md-6,.custom-col-md-7,.custom-col-md-8,.custom-col-md-9,.custom-col-md-auto,.custom-col-sm,.custom-col-sm-1,.custom-col-sm-10,.custom-col-sm-11,.custom-col-sm-12,.custom-col-sm-2,.custom-col-sm-3,.custom-col-sm-4,.custom-col-sm-5,.custom-col-sm-6,.custom-col-sm-7,.custom-col-sm-8,.custom-col-sm-9,.custom-col-sm-auto,.custom-col-xl,.custom-col-xl-1,.custom-col-xl-10,.custom-col-xl-11,.custom-col-xl-12,.custom-col-xl-2,.custom-col-xl-3,.custom-col-xl-4,.custom-col-xl-5,.custom-col-xl-6,.custom-col-xl-7,.custom-col-xl-8,.custom-col-xl-9,.custom-col-xl-auto {
+.custom-col,.custom-col-1,.custom-col-10,.custom-col-11,.custom-col-12,.custom-col-2,.custom-col-3,.custom-col-4,.custom-col-5,.custom-col-6,.custom-col-7,.custom-col-8,.custom-col-9,.custom-col-auto,.custom-col-lg,.custom-col-lg-1,.custom-col-lg-10,.custom-col-lg-11,.custom-col-lg-12,.custom-col-lg-2,.custom-col-lg-3,.custom-col-lg-4,.custom-col-lg-5,.custom-col-lg-6,.custom-col-lg-7,.custom-col-lg-9,.col-lg-9,.custom-col-lg-auto,.custom-col-md,.custom-col-md-1,.custom-col-md-10,.custom-col-md-11,.custom-col-md-12,.custom-col-md-2,.custom-col-md-3,.custom-col-md-4,.custom-col-md-5,.custom-col-md-6,.custom-col-md-7,.custom-col-md-8,.custom-col-md-9,.custom-col-md-auto,.custom-col-sm,.custom-col-sm-10,.custom-col-sm-11,.custom-col-sm-2,.custom-col-sm-3,.custom-col-sm-4,.custom-col-sm-5,.custom-col-sm-6,.custom-col-sm-7,.custom-col-sm-8,.custom-col-sm-9,.custom-col-sm-auto,.custom-col-xl,.custom-col-xl-1,.custom-col-xl-10,.custom-col-xl-11,.custom-col-xl-12,.custom-col-xl-2,.custom-col-xl-3,.custom-col-xl-4,.custom-col-xl-5,.custom-col-xl-6,.custom-col-xl-7,.custom-col-xl-8,.custom-col-xl-9,.custom-col-xl-auto {
   position: relative;
   width: 100%;
   min-height: 1px;
@@ -351,12 +351,6 @@
     max-width: none
   }
 
-  .custom-col-sm-1 {
-    -ms-flex: 0 0 8.333333%;
-    flex: 0 0 8.333333%;
-    max-width: 8.333333%
-  }
-
   .custom-col-sm-2 {
     -ms-flex: 0 0 16.666667%;
     flex: 0 0 16.666667%;
@@ -415,12 +409,6 @@
     -ms-flex: 0 0 91.666667%;
     flex: 0 0 91.666667%;
     max-width: 91.666667%
-  }
-
-  .custom-col-sm-12 {
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    max-width: 100%
   }
 
   .custom-order-sm-first {
@@ -795,12 +783,6 @@
     -ms-flex: 0 0 58.333333%;
     flex: 0 0 58.333333%;
     max-width: 58.333333%
-  }
-
-  .custom-col-lg-8 {
-    -ms-flex: 0 0 66.666667%;
-    flex: 0 0 66.666667%;
-    max-width: 66.666667%
   }
 
   .custom-col-lg-9,
@@ -12477,15 +12459,6 @@ Colors
   color: inherit !important;
 }
 
-/* Main Colors */
-.custom-color-main {
-  color: #555 !important;
-}
-
-.custom-color-main--hover:hover {
-  color: #555 !important;
-}
-
 /* Primary Colors */
 .custom-color-primary {
     color: #fb7268 !important;
@@ -12661,14 +12634,6 @@ Colors
 
 .custom-color-gray-light-v1--hover:hover {
   color: #bbb !important;
-}
-
-.custom-color-gray-light-v2 {
-  color: #ccc !important;
-}
-
-.custom-color-gray-light-v2--hover:hover {
-  color: #ccc !important;
 }
 
 .custom-color-gray-light-v3 {
@@ -15285,9 +15250,6 @@ Margin Spaces
   .custom-ml-minus-4 {
     margin-left: -0.28571rem !important;
   }
-  .custom-ml-5 {
-    margin-left: 0.35714rem !important;
-  }
   .custom-ml-minus-5 {
     margin-left: -0.35714rem !important;
   }
@@ -15320,9 +15282,6 @@ Margin Spaces
   }
   .custom-ml-minus-10 {
     margin-left: -0.71429rem !important;
-  }
-  .custom-ml-5 {
-    margin-left: 0.35714rem !important;
   }
   .custom-ml-minus-5 {
     margin-left: -0.35714rem !important;
@@ -15405,9 +15364,6 @@ Margin Spaces
   .custom-mr-minus-4 {
     margin-right: -0.28571rem !important;
   }
-  .custom-mr-5 {
-    margin-right: 0.35714rem !important;
-  }
   .custom-mr-minus-5 {
     margin-right: -0.35714rem !important;
   }
@@ -15440,9 +15396,6 @@ Margin Spaces
   }
   .custom-mr-minus-10 {
     margin-right: -0.71429rem !important;
-  }
-  .custom-mr-5 {
-    margin-right: 0.35714rem !important;
   }
   .custom-mr-10 {
     margin-right: 0.71429rem !important;
