@@ -301,8 +301,6 @@ img.featured-image {
   object-fit: cover;
 }
 
-.masonry-grid .widget-module {}
-
 .masonry-grid .widget-module ul {
   padding-left: 0;
   margin-bottom: 0;
