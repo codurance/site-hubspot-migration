@@ -302,17 +302,23 @@ label: Blog Listing
 {{ require_js(get_asset_url("../js/masonary.js")) }}
 
 <script>
+  document.onreadystatechange = () => {
+    if (document.readyState === 'complete') {
+      const masonryGrid = document.querySelector('.masonry-grid');
 
-  $(document).on('ready', function () {
+      const masonryOptions = {
+        columnWidth: '.masonry-grid-sizer',
+        itemSelector: '.masonry-grid-item',
+        percentPosition: true
+      };
 
-    $('.masonry-grid').imagesLoaded().then(function () {
-      $('.masonry-grid').masonry( {
-        columnWidth: '.masonry-grid-sizer', itemSelector: '.masonry-grid-item', percentPosition: true
-      });
-    });
+      const makeMasonry = function() {
+        new Masonry(masonryGrid, masonryOptions);
+      }
 
-  });
-
+      imagesLoaded( masonryGrid, makeMasonry );
+    }
+  };
 </script>
 
 {% endblock body %}
