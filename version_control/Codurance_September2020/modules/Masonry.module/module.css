@@ -1,0 +1,32 @@
+.grid-container {
+    margin: 50px auto;
+    width: 80%;
+}
+
+.grid-sizer {
+    width: 33%;
+}
+
+.grid-item {
+    background-color: pink;
+    border: 1px solid #c6c6c6;
+    height: 200px;
+    width: 33%;
+    margin-bottom: 10px;
+}
+
+.wide {
+    width: 66%;
+}
+
+.v-wide {
+    width: 100%;
+}
+
+.long {
+    height: 400px;
+}
+
+.v-long {
+    height: 600px;
+}
