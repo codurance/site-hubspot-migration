@@ -1,0 +1,72 @@
+.dnd-section {
+    padding-top: 0;
+}
+
+.container .widget-span.widget-type-cell {
+    min-height: auto;
+}
+
+.banner-section .row-fluid [class*="span"] {
+    min-height: auto;
+}
+
+.course-details-section .dnd-section {
+    background-color: var(--athens-gray);
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.hs-training-inner-layout .widget-span.widget-type-cell {
+    min-height: auto;
+}
+
+.course-details-section .dnd-section > .row-fluid {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.course-details-section .cm-team-member-card-group {
+    padding-left:50px;
+    padding-right:50px;
+}
+.course-details-section .cm-team-member-card-group .cm-team-member {
+    margin-top: -50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -150px;
+}
+
+{% call utils.small_and_medium() %}
+    .course-details-section .dnd-section {
+        padding: 50px 0 0;
+    }
+
+    .course-details-section .cm-team-member-card-group {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .course-details-section .cm-team-member-card-group .cm-team-member {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .course-details-section .dnd-section {
+        padding: 30px 0 0;
+    }
+
+    .course-details-section .cm-team-member-card-group .cm-team-member {
+        margin-top: 0px;
+        margin-bottom: -300px;
+    }
+
+    .course-details-section .cm-team-member-card-group {
+        padding-left: 20px;
+        margin-top: -22px;
+        padding-right: 20px;
+    }
+{% endcall %}
