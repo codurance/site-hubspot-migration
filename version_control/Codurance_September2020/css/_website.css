@@ -22,11 +22,6 @@ img{
   margin: 0px auto;
 }
 
-.hs-training-inner-section1 .dnd-section {
-  background-color: #efefef;
-  padding-top: 100px;
-  padding-bottom: 50px;
-}
 .hs-training-inner-section2 .dnd-section > .row-fluid {
   padding-left: 50px;
   padding-right: 50px;
@@ -69,11 +64,6 @@ img{
   padding-left: 50px;
   margin-top: 0;
   padding-right: 50px;
-}
-.hs-training-inner-section1 .dnd-section>.row-fluid {
-  max-width: 100%;
-  padding-left: 0;
-  padding-right: 0;
 }
 .hs-get-in-touch-section .actions ,
 .hs-training-inner-section4 .actions {
@@ -215,20 +205,6 @@ img{
   background-color: #2b3342;
 }
 
-.hs-training-inner-section1 .cm-team-member-card-group{
-  padding-left:50px;
-  padding-right:50px;
-}
-.hs-training-inner-section1 .cm-team-member-card-group .cm-team-member {
-  margin-top: -50px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: -150px;
-}
-.hs-training-inner-layout .widget-span.widget-type-cell {
-  min-height: auto;
-}
 .dnd-section.has-author-section {
   margin-bottom: 150px;
 }
@@ -2009,21 +1985,10 @@ i.icon-bg-u {
     padding-bottom:50px;
     padding-right: 25px;
   }
-  .hs-training-inner-section1 .dnd-section {
-    padding: 50px 0 0;
-  }
   .hs-get-in-touch-section .dnd-section > .row-fluid,
   .hs-training-inner-section4 .dnd-section > .row-fluid{
     max-width: 770px;
     width: calc(100% - (25px * 2));
-  }
-  .hs-training-inner-section1 .cm-team-member-card-group {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-  .hs-training-inner-section1 .cm-team-member-card-group .cm-team-member {
-    margin-top: 0;
-    margin-bottom: 50px;
   }
   .dnd-section.has-author-section {
     margin-bottom: 0;
@@ -2233,17 +2198,9 @@ i.icon-bg-u {
   .hs-training-inner-section2 .dnd-section > .row-fluid {
     position:relative;
   }
-  .hs-training-inner-section1 .dnd-section {
-    padding: 30px 0 0;
-  }
   .dnd-section.has-author-section {
     margin-bottom: 300px;
   }
-  .hs-training-inner-section1 .cm-team-member-card-group .cm-team-member {
-    margin-top: 0px;
-    margin-bottom: -300px;
-  }
-
   .hs-training-inner-section3 .dnd-section {
     padding-top: 80px;
   }
@@ -2251,11 +2208,6 @@ i.icon-bg-u {
   .hs-training-inner-section4 .dnd-section > .row-fluid {
     padding-bottom: 83px;
     padding-top: 50px;
-  }
-  .hs-training-inner-section1 .cm-team-member-card-group {
-    padding-left: 20px;
-    margin-top: -22px;
-    padding-right: 20px;
   }
   .hs-training-inner-section2 .dnd-section{
     background-color:#fff;
