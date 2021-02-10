@@ -16,10 +16,6 @@
     padding-bottom: 50px;
 }
 
-.hs-training-inner-layout .widget-span.widget-type-cell {
-    min-height: auto;
-}
-
 .course-details-section .dnd-section > .row-fluid {
     max-width: 100%;
     padding-left: 0;
@@ -30,12 +26,39 @@
     padding-left:50px;
     padding-right:50px;
 }
+
 .course-details-section .cm-team-member-card-group .cm-team-member {
     margin-top: -50px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: -150px;
+}
+
+.course-instructor-bio-section .dnd-section > .row-fluid {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.course-instructor-bio-section .dnd-section {
+    padding-bottom: 0;
+    padding-top: 0;
+    position: relative;
+    margin-bottom: 0;
+}
+.course-instructor-bio-section .dnd-section:before {
+    content: "";
+    background-color: var(--athens-gray);
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    z-index: -1;
+}
+.course-instructor-bio-section .cm-team-member-card-group {
+    margin-top: 50px;
+}
+.course-instructor-bio-section .dnd-section > .row-fluid {
+    max-width: 1300px;
 }
 
 {% call utils.small_and_medium() %}
@@ -52,6 +75,15 @@
         margin-top: 0;
         margin-bottom: 50px;
     }
+
+    .course-instructor-bio-section .dnd-section{
+        background-color: var(--athens-gray);
+    }
+    .course-instructor-bio-section .dnd-section > .row-fluid {
+        padding-left: 25px;
+        padding-bottom:50px;
+        padding-right: 25px;
+    }
 {% endcall %}
 
 {% call utils.small() %}
@@ -67,6 +99,33 @@
     .course-details-section .cm-team-member-card-group {
         padding-left: 20px;
         margin-top: -22px;
+        padding-right: 20px;
+    }
+
+    .course-instructor-bio-section .cm-team-member-card-group {
+        margin-top: 30px;
+    }
+
+    .course-instructor-bio-section .dnd-section:before {
+        z-index: 0;
+        height: 330px;
+    }
+
+    .course-instructor-bio-section .dnd-section .has-author-section {
+        margin-bottom: 0;
+    }
+
+    .course-instructor-bio-section .dnd-section > .row-fluid {
+        position:relative;
+    }
+
+    .course-instructor-bio-section .dnd-section {
+        background-color: white;
+    }
+
+    .course-instructor-bio-section .dnd-section > .row-fluid {
+        padding-left: 20px;
+        padding-bottom: 0;
         padding-right: 20px;
     }
 {% endcall %}
