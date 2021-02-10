@@ -187,112 +187,110 @@ label: Blog Listing
       <div class="masonry-grid-sizer custom-col-sm-1"></div>
       {% for content in contents %}
 
-      {% if loop.index == 1 %}
+        {% if loop.index == 1 %}
+          <div class="masonry-grid-item custom-col-sm-12 custom-col-lg-8 custom-mb-30">
 
-      <div class="masonry-grid-item custom-col-sm-12 custom-col-lg-8 custom-mb-30">
+            <article class="row align-items-stretch no-gutters u-shadow-v21 u-shadow-v21--hover custom-transition-0_3">
+              <div class="custom-col-md-6 custom-bg-white custom-rounded-left-5">
+                <div  class="custom-pa-60">
+                  <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
+                    <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
+                    <li class="list-inline-item mx-2">·</li>
+                    <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
+                  </ul>
+                  <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
+                    <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ content.absolute_url }}">
+                      {{ content.name }}</a>
+                  </h5>
+                  <p class="custom-color-gray-dark-v4 custom-line-height-1_8 mb-4">
+                    {{ content.post_list_content|safe|truncatehtml(305, '...' , false)|striptags  }}
+                  </p>
+                  {% if content.tag_list %}
+                  <ul class="list-inline custom-font-size-12 mb-0">
+                    {% for tag in content.tag_list %}
+                    <li class="list-inline-item custom-mb-10">
+                      <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+              </div>
+              <a href="{{ content.absolute_url }}"  class="custom-bg-white custom-col-md-6 custom-bg-size-cover custom-bg-pos-center custom-min-height-300 custom-rounded-right-5"  style="background-image: url('{{ content.featured_image }}');"></a>
+            </article>
 
-        <article class="row align-items-stretch no-gutters u-shadow-v21 u-shadow-v21--hover custom-transition-0_3">
-          <div class="custom-col-md-6 custom-bg-white custom-rounded-left-5">
-            <div  class="custom-pa-60">
-              <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
-                <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
-                <li class="list-inline-item mx-2">·</li>
-                <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
-              </ul>
-              <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
-                <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ content.absolute_url }}">
-                  {{ content.name }}</a>
-              </h5>
-              <p class="custom-color-gray-dark-v4 custom-line-height-1_8 mb-4">
-                {{ content.post_list_content|safe|truncatehtml(305, '...' , false)|striptags  }}
-              </p>
-              {% if content.tag_list %}
-              <ul class="list-inline custom-font-size-12 mb-0">
-                {% for tag in content.tag_list %}
-                <li class="list-inline-item custom-mb-10">
-                  <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
-                </li>
-                {% endfor %}
-              </ul>
+          </div>
+        {% endif %}
+
+        {% if loop.index > 1 %}
+          <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
+            <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3">
+              {% if content.featured_image %}
+              <a href="{{ content.absolute_url }}">
+                <img class="custom-bg-white img-fluid w-100 custom-rounded-top-5" src="{{ resize_image_url( content.featured_image,528 ) }}" alt="{{ content.name }}">
+              </a>
               {% endif %}
-            </div>
+              <div class="custom-bg-white custom-pa-30 custom-rounded-bottom-5">
+                <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
+                  <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
+                  <li class="list-inline-item mx-2">·</li>
+                  <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
+                </ul>
+                <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
+                  <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ content.absolute_url }}">
+                    {{ content.name }}</a>
+                </h5>
+
+                {% if content.tag_list %}
+                <ul class="list-inline custom-font-size-12 mb-0">
+                  {% for tag in content.tag_list %}
+                  <li class="list-inline-item custom-mb-10">
+                    <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </div>
+            </article>
+
           </div>
-          <a href="{{ content.absolute_url }}"  class="custom-bg-white custom-col-md-6 custom-bg-size-cover custom-bg-pos-center custom-min-height-300 custom-rounded-right-5"  style="background-image: url('{{ content.featured_image }}');"></a>
-        </article>
+        {% endif %}
 
-      </div>
-
-      {% endif %}
-      {% if loop.index > 1 %}
-      <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
-        <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3">
-          {% if content.featured_image %}
-          <a href="{{ content.absolute_url }}">
-            <img class="custom-bg-white img-fluid w-100 custom-rounded-top-5" src="{{ resize_image_url( content.featured_image,528 ) }}" alt="{{ content.name }}">
-          </a>
-          {% endif %}
-          <div class="custom-bg-white custom-pa-30 custom-rounded-bottom-5">
-            <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
-              <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
-              <li class="list-inline-item mx-2">·</li>
-              <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
-            </ul>
-            <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
-              <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ content.absolute_url }}">
-                {{ content.name }}</a>
-            </h5>
-
-            {% if content.tag_list %}
-            <ul class="list-inline custom-font-size-12 mb-0">
-              {% for tag in content.tag_list %}
-              <li class="list-inline-item custom-mb-10">
-                <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-            {% endif %}
+        {% if loop.index == 1 %}
+          <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
+            <!-- Static Quote -->
+            <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-rounded-5 custom-pa-30 custom-py-100 custom-bg-green">
+              <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Did you hone your skills today? </h3>
+              <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> Try Katalyst </h3>
+              <a class="u-link-v2" href="http://katalyst.codurance.com" target="_blank" rel="noopener noreferrer"></a>
+            </article>
+            <!-- End Static Quote -->
           </div>
-        </article>
+        {% endif %}
 
-      </div>
-      {% endif %}
-      {% if loop.index == 1 %}
-      <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
-        <!-- Static Quote -->
-        <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-rounded-5 custom-pa-30 custom-py-100 custom-bg-green">
-          <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Did you hone your skills today? </h3>
-          <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> Try Katalyst </h3>
-          <a class="u-link-v2" href="http://katalyst.codurance.com" target="_blank" rel="noopener noreferrer"></a>
-        </article>
-        <!-- End Static Quote -->
-      </div>
-      {% endif %}
+        {% if loop.index == 3 %}
+          <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
+            <!-- Static Quote -->
+            <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-rounded-5 custom-pa-30 custom-py-100 custom-bg-orange">
+              <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Interested in joining us? </h3>
+              <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> Learn more </h3>
+              <a class="u-link-v2" href="/careers"></a>
+            </article>
+            <!-- End Static Quote -->
+          </div>
+        {% endif %}
 
-      {% if loop.index == 3 %}
-      <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
-        <!-- Static Quote -->
-        <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-rounded-5 custom-pa-30 custom-py-100 custom-bg-orange">
-          <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Interested in joining us? </h3>
-          <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> Learn more </h3>
-          <a class="u-link-v2" href="/careers"></a>
-        </article>
-        <!-- End Static Quote -->
-      </div>
-
-      {% endif %}
-
-      {% if loop.index == 5 %}
-      <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
-        <!-- Static Quote -->
-        <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-rounded-5 custom-pa-30 custom-py-100 custom-bg-red">
-          <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Are you receiving the Codurance newsletter? </h3>
-          <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> SIGN UP </h3>
-          <a target="_blank" class="u-link-v2" href="https://mailchi.mp/codurance/newsletter-subscription"  rel="noopener noreferrer"></a>
-        </article>
-        <!-- End Static Quote -->
-      </div>
-      {% endif %}
-
+        {% if loop.index == 5 %}
+          <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
+            <!-- Static Quote -->
+            <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-rounded-5 custom-pa-30 custom-py-100 custom-bg-red">
+              <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Are you receiving the Codurance newsletter? </h3>
+              <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> SIGN UP </h3>
+              <a target="_blank" class="u-link-v2" href="https://mailchi.mp/codurance/newsletter-subscription"  rel="noopener noreferrer"></a>
+            </article>
+            <!-- End Static Quote -->
+          </div>
+        {% endif %}
 
       {% endfor %}
 
