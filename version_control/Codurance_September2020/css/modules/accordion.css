@@ -1,0 +1,133 @@
+{% import '../utils/utils.css' as utils %}
+
+.panel-heading {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 0;
+    text-decoration: none !important;
+    margin-bottom: 1rem;
+    color: var(--shark);
+    display:block;
+}
+
+.panel-heading p {
+    margin: 0;
+}
+
+.accordion-toggle {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.panel-heading:focus,
+.panel-heading:hover{
+    color: var(--shark);
+}
+
+.panel-heading::before,
+.panel-heading::after {
+    content: "";
+    background-color: var(--persimmon);
+    content: '';
+    height: 2px;
+    right: 0;
+    position: absolute;
+    top: calc(50% + 2px);
+    width: 25px;
+    transition: transform 500ms ease;
+    transform-origin: center;
+    transform: rotate(-180deg);
+}
+
+.panel-heading::after {
+    content: "";
+    transform: rotate(-90deg);
+}
+
+.accordion .panel {
+    border-bottom: 1px solid var(--french-gray);
+}
+
+.accordion .panel:last-child {
+    border-bottom: 0;
+}
+
+.accordion {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.panel-body p, ul, li {
+    {{ utils.natus() }}
+}
+
+.panel-body ul {
+    padding-left: 1rem;
+}
+
+.panel-body li {
+    margin: var(--sejima-margin) 0;
+}
+
+.panel-body h3 {
+    font-weight: var(--middle-font-weight);
+    margin-top: calc(var(--freed-margin) * 2);
+    margin-bottom: var(--freed-margin);
+}
+
+.panel-body {
+    {{ utils.base() }}
+}
+
+.accordion .panel .panel-collapse {
+    padding-bottom: 40px;
+}
+
+.accordion .panel-collapse {
+    display:none;
+}
+
+.panel:not(.accordion-close) .panel-heading:after {
+    transform: rotate(0);
+}
+
+.panel:not(.accordion-close) .panel-heading:before {
+    transform: rotate(0);
+}
+
+{% call utils.small_and_medium() %}
+    .accordion {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .accordion .panel {
+        margin-bottom: 10px;
+    }
+
+    .accordion .panel:last-child {
+        margin-bottom: 0;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .panel-heading {
+        {{ utils.natus() }}
+        font-weight: var(--heavy-font-weight);
+    }
+
+    .accordion {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .panel-body,
+    .panel-body p {
+        {{ utils.natus() }}
+    }
+{% endcall %}
