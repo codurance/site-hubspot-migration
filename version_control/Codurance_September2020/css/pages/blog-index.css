@@ -34,6 +34,19 @@
   border-bottom: 2px solid var(--persimmon--dark);
 }
 
+.masonry-grid-sizer {
+  flex: 0 0 8.333333%;
+  max-width: 8.333333%;
+}
+
+
+
+
+
+
+
+
+
 .custom-blog-author-listing h2.margin-bottom-20 {
   padding: 0 15px;
 }
