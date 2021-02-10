@@ -1,46 +1,55 @@
+{% import '../utils/utils.css' as utils %}
+
 .cm-crafting-intro-container {
     background-size: cover;
 }
+
 .cm-crafting-logo-container {
     margin-left: auto;
     margin-right: auto;
     max-width: 1300px;
     width: 100%;
 }
+
 .cm-crafting-intro-container-inner {
     margin-left: auto;
     margin-right: auto;
     max-width: 1300px;
     width: 100%;
 }
+
 .cm-crafting-course-duration {
-    font-size: 18px;
-    line-height: 28px;
-    font-family: proxima-nova;
-    font-weight: 700;
+    {{ utils.natus() }}
+    font-weight: var(--middle-font-weight);
     color: white;
     text-transform: uppercase;
 }
+
 .cm-crafting-course-title {
     color: white;
 }
+
 .cm-crafting-details-wrapper {
-    background-color: #2b3342;
+    background-color: var(--shark);
 }
+
 .cm-crafting-details-wrapper-inner {
     margin-left: auto;
     margin-right: auto;
     max-width: 1300px;
     position: relative;
 }
+
 .cm-crafting-content-container {
     padding-bottom: 65px;
 }
+
 .cm-crafting-instructor-wrapper {
     display: flex;
     position: relative;
     top: -35px;
 }
+
 .cm-crafting-instructor-avatar {
     background-position: center;
     background-size: cover;
@@ -48,77 +57,54 @@
     width: 100px;
     display: inline-block;
 }
+
 .cm-crafting-instructor-wrapper-inner {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding-left: 25px;
 }
+
 .cm-crafting-instructor-title {
-    font-size: 15px;
-    line-height: 1.5;
+    {{ utils.sejima() }}
     text-transform: uppercase;
     letter-spacing: 1.8px;
-    font-family: proxima-nova;
-    font-weight: 700;
     color: white;
     margin-bottom: 15px;
 }
+
 .cm-crafting-instructor-name {
-    font-family: proxima-nova;
-    font-weight: 700;
-    font-size: 21px;
-    line-height: 33px;
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
     color: white;
-    line-height: 16px;
-}
-.cm-crafting-course-description {
-    color: white;
-    padding-bottom: 30px;
-    padding-top: 25px;
-}
-.cta--primary-coral {
-    font-family: proxima-nova;
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 28px;
-    text-align: center;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-    background-color: #fb7268;
-    color: #ffffff;
-    text-decoration: none;
-}
-.cta--primary-coral:hover,
-.cta--primary-coral:focus {
-    background-color: #fb8e86;
-    color: #ffffff;
-    text-decoration:none;
 }
 
-@media (min-width: 768px){
+.cm-crafting-course-description {
+    color: white;
+    padding-bottom: 50px;
+    padding-top: 25px;
+}
+
+{% call utils.medium_large_and_extra_large() %}
     .cm-crafting-banner-group.no-author-section .cm-crafting-intro-container-inner {
         transform: translateY(60px);
     }
+
     .cm-crafting-intro-container {
         background-position: center;
     }
+
     .cm-crafting-logo-container svg {
         height: 20px;
     }
-    .cta--primary-coral {
-        display: inline-block;
-        padding: 10px 25px;
-    }
-    .cm-crafting-course-title {
-        font-family: proxima-nova;
-        font-weight: 700;
-        font-size: 55px;
-        line-height: 69px;
-    }
-}
 
-@media (min-width: 1024px){
+    .cm-crafting-course-title {
+        {{ utils.gaudi() }}
+        margin-bottom: var(--eames-margin);
+    }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
     .cm-crafting-details-wrapper.no-author-section .cm-crafting-course-description {
         padding-top: 70px;
     }
@@ -153,21 +139,22 @@
         padding-left: 50px;
         padding-right: 50px;
     }
-}
+{% endcall %}
 
-@media (min-width: 1300px){
-    .cm-crafting-course-description {
-        font-size: 28px;
-        line-height: 38px;
+{% call utils.extra_large() %}
+    .cm-crafting-course-description p {
+        {{ utils.freed() }}
+        font-weight: var(--welter-font-weight);
     }
+
     .cm-crafting-details-wrapper {
         background-size: auto 80%;
     }
-}
+{% endcall %}
 
-@media (max-width: 1023px) {
+{% call utils.small_and_medium() %}
     .cm-crafting-intro-container-inner {
-        padding-left:50px;
+        padding-left: 50px;
         padding-right: 50px
     }
     .cm-crafting-details-wrapper {
@@ -177,117 +164,126 @@
         padding-top: 55px;
         padding-bottom: 30px;
     }
+{% endcall %}
 
-}
-
-@media (min-width: 1024px) and (max-width: 1299px) {
+{% call utils.large() %}
     .cm-crafting-intro-container-inner {
-        padding-right:40%
+        padding-right: 40%
     }
+
     .cm-crafting-details-wrapper {
         background-size:auto 70%
     }
-    .cm-crafting-course-description{
-        font-size: 21px;
-        line-height: 33px;
-    }
-}
 
-@media (min-width: 768px) and (max-width: 1023px) {
-    .cm-crafting-course-description{
+    .cm-crafting-course-description {
         font-size: 21px;
         line-height: 33px;
     }
+{% endcall %}
+
+{% call utils.medium() %}
+    .cm-crafting-course-description {
+        {{ utils.base() }}
+    }
+
     .cm-crafting-intro-container {
         padding-bottom:90px;
         padding-top: 70px
     }
+
     .cm-crafting-intro-container-inner {
         padding-left:25px;
         padding-right: 25px
     }
+
     .cm-crafting-logo-container svg {
         transform: translateY(-40px);
     }
+
     .cm-crafting-logo-container {
         padding-left: 25px;
         padding-right: 25px;
     }
+
     .cm-crafting-details-wrapper-inner {
         padding-left: 25px;
         padding-right: 25px;
     }
-}
+{% endcall %}
 
-@media (max-width: 767px) {
+{% call utils.small() %}
     .cm-crafting-banner-group.no-author-section .cm-crafting-intro-container-inner {
         transform: translateY(20px);
     }
+
     .cm-crafting-intro-container-inner {
         padding-left:20px;
         padding-right: 20px;
         position:relative;
         z-index: 2
     }
+
     .cm-crafting-details-wrapper {
         position:relative;
         z-index: 2
     }
+
     .cm-crafting-course-duration {
         text-align:center;
         display: block
     }
-    .cm-crafting-logo-container svg{
+
+    .cm-crafting-logo-container svg {
         height: 17px;
         position: relative;
         transform: translateY(-30px);
         z-index: 2;
     }
+
     .cm-crafting-intro-container {
         background-position: 59% center;
         padding-top: 55px;
         padding-bottom: 100px;
         position: relative;
     }
+
     .cm-crafting-logo-container {
         padding-left: 20px;
         padding-right: 20px;
     }
+
     .cm-crafting-intro-container-inner {
         padding-left: 20px;
         padding-right: 20px;
         position: relative;
         z-index: 2;
     }
+
     .cm-crafting-course-title {
-        font-family: proxima-nova;
-        font-weight: 700;
-        font-size: 35px;
-        line-height: 50px;
+        {{ utils.eames() }}
         text-align: center;
         margin-bottom: 16px;
     }
+
     .cm-crafting-course-duration {
         text-align: center;
         display: block;
     }
+
     .cm-crafting-details-wrapper-inner {
         padding-top: 10px;
         padding-left: 20px;
         padding-right: 20px;
     }
-    .cta--primary-coral {
-        display: block;
-        padding: 10px;
-    }
+
     .cm-crafting-course-description {
-        font-size: 18px;
-        line-height: 28px;
+        {{ utils.base() }}
         padding-top: 25px;
         padding-bottom: 30px;
     }
+
     .cm-crafting-intro-container::after {
-        background-color: #0e4072;
+        background-color: var(--midnight-blue);
         bottom: 0;
         content: "";
         left: 0;
@@ -298,5 +294,4 @@
         z-index: 1;
         opacity: 0.65;
     }
-}
-
+{% endcall %}
