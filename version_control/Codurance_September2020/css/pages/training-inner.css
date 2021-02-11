@@ -1,5 +1,8 @@
-.dnd-section {
+{% import '../utils/utils.css' as utils %}
+
+.banner-section .dnd-section {
     padding-top: 0;
+    padding-bottom: 0;
 }
 
 .container .widget-span.widget-type-cell {
@@ -61,9 +64,58 @@
     max-width: 1300px;
 }
 
+.form-section .dnd-section {
+    max-width: 100%;
+    padding-bottom:0;
+}
+
+.form-section .dnd-section > .row-fluid {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding-bottom: 100px;
+}
+
+.form-section h2 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.form-section .hs_cos_wrapper_type_rich_text p {
+    {{ utils.natus()}}
+    padding-left: 50px;
+    margin-top: 0;
+    padding-right: 50px;
+}
+.form-section form {
+    padding: 35px 35px 8px;
+}
+.form-section fieldset {
+    max-width: none !important;
+}
+.form-section .actions {
+    text-align: right;
+    margin-top: 18px;
+    padding: 7px 0px 0;
+}
+
+.form-section .hs-richtext p {
+    {{ utils.natus() }}
+    margin: var(--base-margin) 0px;
+}
+
+.form-section .dnd-section > .row-fluid {
+    position: relative;
+}
+.form-section form {
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
 {% call utils.small_and_medium() %}
-    .course-details-section .dnd-section {
-        padding: 50px 0 0;
+.course-details-section .dnd-section {
+    padding: 50px 0 0;
     }
 
     .course-details-section .cm-team-member-card-group {
@@ -76,13 +128,22 @@
         margin-bottom: 50px;
     }
 
-    .course-instructor-bio-section .dnd-section{
+    .course-instructor-bio-section .dnd-section {
         background-color: var(--athens-gray);
     }
     .course-instructor-bio-section .dnd-section > .row-fluid {
         padding-left: 25px;
         padding-bottom:50px;
         padding-right: 25px;
+    }
+
+    .form-section form {
+        padding: 34px 10px;
+    }
+
+    .form-section .dnd-section > .row-fluid {
+        max-width: 770px;
+        width: calc(100% - (25px * 2));
     }
 {% endcall %}
 
@@ -127,5 +188,87 @@
         padding-left: 20px;
         padding-bottom: 0;
         padding-right: 20px;
+    }
+
+    .client-logo-section .dnd-section {
+        padding-top: 80px;
+    }
+
+    .form-section .dnd-section > .row-fluid {
+        padding-bottom: 83px;
+        padding-top: 50px;
+    }
+
+    .form-section .dnd-section {
+        padding: 0;
+    }
+
+    .form-section .dnd-section > div {
+        padding: 0;
+    }
+
+    .form-section .dnd-section > .row-fluid {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .form-section .hs_cos_wrapper_type_rich_text p,
+    .form-section .hs_cos_wrapper_type_rich_text h2 {
+        text-align: inherit !important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .form-section .hs_cos_wrapper_type_rich_text h2 {
+        margin-bottom: 25px;
+    }
+
+    .form-section .hs_cos_wrapper_type_rich_text {
+        display: block;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .form-section form {
+        padding: 24px 20px;
+    }
+
+    .form-section form .hs-input{
+        width:100% !important;
+    }
+
+    .form-section .form-columns-3 .hs-form-field,
+    .form-section .form-columns-2 .hs-form-field {
+        width: 100% !important;
+        float: none !important;
+    }
+
+    .form-section form .inputs-list .hs-input{
+        width:auto !important;
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+    .client-logo-section .dnd-section {
+        padding-top: 100px;
+        padding-bottom: 155px;
+    }
+
+    .form-section .dnd-section > .row-fluid {
+        box-shadow: rgba(0,0,0,0.16) 0 0 8px;
+        margin-top: -140px;
+        padding-top: 60px;
+    }
+
+    .form-section h2 {
+        margin-bottom: 15px;
+    }
+
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .form-section .dnd-section > .row-fluid {
+        max-width: 800px;
+        width: calc(100% - (50px * 2));
     }
 {% endcall %}
