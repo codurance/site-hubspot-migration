@@ -86,7 +86,15 @@
   box-shadow: {{card_box_shadow_on_hover}};
 }
 
+.custom-blog-listing__post-title {
+  {{ utils.base() }}
+  margin-bottom: var(--base-margin);
+  font-weight: var(--heavy-font-weight);
+}
 
+.custom-blog-listing__post-description {
+  {{ utils.natus() }}
+}
 
 
 .custom-blog-author-listing h2.margin-bottom-20 {
@@ -186,6 +194,7 @@
 }
 
 .list-inline-item {
+  {{ utils.natus() }}
   display: inline-block;
 }
 .list-inline-item:not(:last-child) {
