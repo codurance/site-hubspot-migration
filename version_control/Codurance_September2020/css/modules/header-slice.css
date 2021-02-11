@@ -21,16 +21,14 @@
 }
 
 .header-slice__heading {
-  font-size: 2.333rem;
-  font-weight: 700;
-  line-height: 3.2rem;
-  margin-bottom: 34px;
+  font-size: var(--dudler-font-size);
+  line-height: var(--dudler-line-height);
+  margin-bottom: var(--dudler-margin);
+  font-weight: var(--heavy-font-weight);
 }
 
 .header-slice__body-text {
-  font-size: 1.4rem;
-  line-height: 1.8rem;
-  margin-bottom: 0;
+  {{ utils.base() }}
   padding-bottom: 50px;
 }
 
