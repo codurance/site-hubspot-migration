@@ -5,6 +5,7 @@ const industryFilter = document.querySelector('[data-select-industry]');
 const problemFilter = document.querySelector('[data-select-problem]');
 
 let allFilters;
+let msnry;
 
 const appliedFilters = {
     industry: [],
@@ -84,6 +85,7 @@ const refilter = _ => {
 
     visibleClients.forEach(showClient);
     hiddenClients.forEach(hideClient);
+    msnry.layout();
 }
 
 const unnamedFunction = _ => {
@@ -138,11 +140,22 @@ const addRemoveFilterListeners = _ => {
     ).forEach(button => addRemoveFilterListener('problem', button));
 }
 
+const doMasonryMagic = _ => {
+    let elem = document.querySelector('.grid-container');
+    msnry = new Masonry(elem, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true
+    });
+    msnry.layout();
+}
+
 const init = _ => {
     resetFilterDropdownValues();
     setAllFilters();
     addFilterDropdownListeners();
     addRemoveFilterListeners();
+    doMasonryMagic();
 }
 
 window.addEventListener('DOMContentLoaded', init);

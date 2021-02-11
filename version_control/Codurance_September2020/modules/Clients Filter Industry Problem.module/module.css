@@ -52,13 +52,69 @@
     align-items: center;
 }
 
+.client-left {
+    width: 300px;
+    margin: 20px;
+}
+
+.client-right {
+    width: 66%;
+    margin: 20px;
+}
+
 .client-logo {
     align-items: center;
     background-size: 120px;
-    height: 70px;
-    width: 120px;
+    height: 200px;
+    width: 100%;
 }
 
 .client-info {
     padding-left: 50px;
+}
+
+.testimonial-author {
+    font-weight: 700;
+}
+
+.case-study-button {
+    position: absolute;
+    right: 30px;
+}
+
+.grid-container {
+    margin: 50px auto;
+    width: 80%;
+}
+
+.grid-sizer {
+    width: 33%;
+}
+
+.grid-item {
+    background-color: pink;
+    border: 1px solid #c6c6c6;
+    min-height: 200px;
+    margin-bottom: 10px;
+    width: 30%;
+}
+
+.wide {
+    width: 60%;
+}
+
+.v-wide {
+    width: 100%;
+}
+
+.long {
+    min-height: 400px;
+}
+
+.v-long {
+    min-height: 600px;
+}
+
+.embed-video__video {
+    padding: 20px;
 }

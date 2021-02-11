@@ -38,21 +38,61 @@
     </div>
 </div>
 <hr />
-{% for client in clients %}
-    {% set problems = [] %}
-    {% for problem in client.problems %}
-        {% do  problems.append(problem.name) %}
-    {% endfor %}
-    <article data-client-industry="{{client.industry.name}}" data-client-problems="{{problems|join(',')}}">
-        <div class="client-container">
-            <div class="client-logo" style="background-image: url({{client.logo.url}})">
-            </div>
-            <div class="client-info">
-                <h3>{{client.name}}</h3>
-                <p>industry: {{client.industry.name}}</p>
-                <p>problems: {{problems|join(' | ')}}</p>
+<div class="grid-container">
+    <div class="grid-sizer"></div>
+    {% for client in clients %}
+        {% set problems = [] %}
+        {% for problem in client.problems %}
+            {% do  problems.append(problem.name) %}
+        {% endfor %}
+        {% if client.testimonial or client.description %}
+            {% set class = "wide" %}
+        {% else %}
+            {% set class = "" %}
+        {% endif %}
+        <div class="grid-item {{class}}" data-client-industry="{{client.industry.name}}" data-client-problems="{{problems|join(',')}}">
+            <div class="client-container">
+                <div class="client-left">
+                    {% if client.logo %}
+                        <div class="client-logo" style="background-image: url({{client.logo.url}})">
+                        </div>
+                    {% endif %}
+                    <h3>{{client.name}}</h3>
+                    <p>🔧 {{client.industry.name}}</p>
+                    <p>❓ {{problems|join(' | ')}}</p>
+                </div>
+                {% if client.description or client.testimonial %}
+                    <div class="client-right">
+                        {% if client.description %}
+                            <p>{{client.description}}</p>
+                        {% endif %}
+                        {% if client.testimonial %}
+                            <p>"{{client.testimonial}}" - <span class="testimonial-author">John Doe, Honest man</span></p>
+                        {% endif %}
+                        {% if client.case_study %}
+                            <a
+                                class="btn btn-md u-btn-primary btn-codurance-color text-uppercase w-100 custom-width-auto--lg case-study-button"
+                                target="_blank"
+                                href=""
+                                rel="noopener noreferrer"
+                                >Case Study</a
+                                >
+                        {% endif %}
+                    </div>
+                {% endif %}
             </div>
         </div>
-        <hr />
-    </article>
-{% endfor %}
+        {% if client.video %}
+            <div class="grid-item wide"  data-client-industry="{{client.industry.name}}" data-client-problems="{{problems|join(',')}}">
+                <h3>{{client.name}}</h3>
+                <div class="embed-video__video">
+                    <div class="embed-video__video-inner">
+                        <iframe width="90%" height="315" src="https://www.youtube.com/embed/cL3DaHZ88ZQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{{ require_js(get_asset_url("../../js/masonary.js"), "footer") }}
