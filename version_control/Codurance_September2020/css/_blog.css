@@ -361,12 +361,13 @@ Also for the post meta infromation like tags, author and published date
 .list-inline-item {
   display: inline-block;
 }
+.list-inline-item:not(:last-child) {
+  margin-right: 5px;
+}
+
 .no-gutters {
   margin-right: 0;
   margin-left: 0;
-}
-.list-inline-item:not(:last-child) {
-  margin-right: 5px;
 }
 
 a.tags {
@@ -565,11 +566,6 @@ figure {
 
 } #}
 
-
-
-.list-inline-item {
-  display: inline-block;
-}
 .u-icon-slide-up--hover:hover .u-icon__elem-regular
 {# , .u-icon-block--hover:hover .u-icon-slide-up--hover .u-icon__elem-regular #}
  {
