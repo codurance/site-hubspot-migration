@@ -21,47 +21,26 @@ img{
   max-width: var(--max-page-width);
   margin: 0px auto;
 }
-.hs-get-in-touch-section .dnd-section ,
-.hs-training-inner-section4 .dnd-section {
+.hs-get-in-touch-section .dnd-section {
   max-width: 100%;
   padding-bottom:0;
 }
-.hs-get-in-touch-section .dnd-section > .row-fluid ,
-.hs-training-inner-section4 .dnd-section > .row-fluid {
+.hs-get-in-touch-section .dnd-section > .row-fluid {
   margin-left: auto;
   margin-right: auto;
   background-color: white;
   padding-bottom: 100px;
 }
-.hs-training-inner-section4 h2{
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 38px;
-  margin-top: 0;
-  margin-bottom: 15px;
-}
 .hs-get-in-touch-section h2 {
   {{ utils.dudler() }}
 }
-.hs-get-in-touch-section fieldset ,
-.hs-training-inner-section4 fieldset {
+.hs-get-in-touch-section fieldset {
   max-width: none !important;
 }
-.hs-get-in-touch-section form ,
-.hs-training-inner-section4 form {
+.hs-get-in-touch-section form {
   padding: 35px 35px 8px;
 }
-.hs-training-inner-section4 .hs_cos_wrapper_type_rich_text p {
-  font-family: proxima-nova;
-  font-weight: 400;
-  font-size: 21px;
-  line-height: 33px;
-  padding-left: 50px;
-  margin-top: 0;
-  padding-right: 50px;
-}
-.hs-get-in-touch-section .actions ,
-.hs-training-inner-section4 .actions {
+.hs-get-in-touch-section .actions {
   text-align: right;
   margin-top: 18px;
   padding: 7px 0px 0;
@@ -79,7 +58,6 @@ img{
   line-height: 38px;
   margin-top: 0;
 }
-.hs-training-inner-section4 .hs-richtext p,
 .hs-get-in-touch-section .hs-richtext p {
   {{ utils.natus() }}
   margin: var(--base-margin) 0px;
@@ -183,8 +161,7 @@ img{
 .hs-services-inner-section6 .cm-how-we-helped-card-text-container h3 {
   margin-bottom: 20px;
 }
-.hs-get-in-touch-section .dnd-section > .row-fluid,
-.hs-training-inner-section4 .dnd-section > .row-fluid {
+.hs-get-in-touch-section .dnd-section > .row-fluid {
   position: relative;
 }
 .hs-services-inner-section7 .dnd-section {
@@ -233,9 +210,7 @@ img{
   border-bottom: 1px solid #b7b7b7;
   color: #555555;
 }
-.hs-training-inner-section4 form {
-  -webkit-font-smoothing: subpixel-antialiased;
-}
+
 .hs-get-in-touch-section form {
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -1816,18 +1791,12 @@ i.icon-bg-u {
   .hs-services-inner-section2 .dnd-section .widget-type-rich_text h2 {
     margin-bottom: 15px;
   }
-  .hs-training-inner-section3 .dnd-section{
-    padding-top: 100px;
-    padding-bottom: 155px;
-  }
-  .hs-get-in-touch-section .dnd-section > .row-fluid ,
-  .hs-training-inner-section4 .dnd-section > .row-fluid {
+  .hs-get-in-touch-section .dnd-section > .row-fluid {
     box-shadow: rgba(0,0,0,0.16) 0 0 8px;
     margin-top: -140px;
     padding-top: 60px;
   }
-  .hs-get-in-touch-section h2,
-  .hs-training-inner-section4 h2{
+  .hs-get-in-touch-section h2 {
     margin-bottom: 15px;
   }
   .hs-contact-us-layout .hs-get-in-touch-section .dnd-section > .row-fluid{
@@ -1898,8 +1867,7 @@ i.icon-bg-u {
     padding-right: 50px;
     padding-bottom: 34px;
   }
-  .hs-get-in-touch-section .dnd-section > .row-fluid ,
-  .hs-training-inner-section4 .dnd-section > .row-fluid {
+  .hs-get-in-touch-section .dnd-section > .row-fluid {
     max-width: 800px;
     width: calc(100% - (50px * 2));
   }
@@ -1948,12 +1916,10 @@ i.icon-bg-u {
     padding-left: 0;
     padding-right: 0;
   }
-  .hs-get-in-touch-section form ,
-  .hs-training-inner-section4 form {
+  .hs-get-in-touch-section form {
     padding: 34px 10px;
   }
-  .hs-get-in-touch-section .dnd-section > .row-fluid,
-  .hs-training-inner-section4 .dnd-section > .row-fluid{
+  .hs-get-in-touch-section .dnd-section > .row-fluid {
     max-width: 770px;
     width: calc(100% - (25px * 2));
   }
@@ -2155,62 +2121,46 @@ i.icon-bg-u {
   .dnd-section.has-author-section {
     margin-bottom: 300px;
   }
-  .hs-training-inner-section3 .dnd-section {
-    padding-top: 80px;
-  }
-  .hs-get-in-touch-section .dnd-section > .row-fluid,
-  .hs-training-inner-section4 .dnd-section > .row-fluid {
+  .hs-get-in-touch-section .dnd-section > .row-fluid {
     padding-bottom: 83px;
     padding-top: 50px;
   }
-  .hs-get-in-touch-section .dnd-section ,
-  .hs-training-inner-section4 .dnd-section {
+  .hs-get-in-touch-section .dnd-section {
     padding: 0;
   }
-  .hs-get-in-touch-section .dnd-section > div,
-  .hs-training-inner-section4 .dnd-section > div{
+  .hs-get-in-touch-section .dnd-section > div {
     padding: 0;
   }
-  .hs-get-in-touch-section .dnd-section > .row-fluid ,
-  .hs-training-inner-section4 .dnd-section > .row-fluid {
+  .hs-get-in-touch-section .dnd-section > .row-fluid {
     max-width: 100%;
     width: 100%;
   }
   .hs-get-in-touch-section .hs_cos_wrapper_type_rich_text p,
-  .hs-training-inner-section4 .hs_cos_wrapper_type_rich_text p,
-  .hs-get-in-touch-section .hs_cos_wrapper_type_rich_text h2,
-  .hs-training-inner-section4 .hs_cos_wrapper_type_rich_text h2 {
+  .hs-get-in-touch-section .hs_cos_wrapper_type_rich_text h2 {
     text-align: inherit !important;
     padding-left: 0;
     padding-right: 0;
   }
-  .hs-get-in-touch-section .hs_cos_wrapper_type_rich_text h2 ,
-  .hs-training-inner-section4 .hs_cos_wrapper_type_rich_text h2 {
+  .hs-get-in-touch-section .hs_cos_wrapper_type_rich_text h2 {
     margin-bottom: 25px;
   }
-  .hs-get-in-touch-section .hs_cos_wrapper_type_rich_text ,
-  .hs-training-inner-section4 .hs_cos_wrapper_type_rich_text {
+  .hs-get-in-touch-section .hs_cos_wrapper_type_rich_text {
     display: block;
     padding-left: 20px;
     padding-right: 20px;
   }
-  .hs-get-in-touch-section form ,
-  .hs-training-inner-section4 form {
+  .hs-get-in-touch-section form {
     padding: 24px 20px;
   }
-  .hs-get-in-touch-section form .hs-input,
-  .hs-training-inner-section4 form .hs-input{
+  .hs-get-in-touch-section form .hs-input {
     width:100% !important;
   }
   .hs-get-in-touch-section .form-columns-3 .hs-form-field,
-  .hs-training-inner-section4 .form-columns-3 .hs-form-field,
-  .hs-get-in-touch-section .form-columns-2 .hs-form-field ,
-  .hs-training-inner-section4 .form-columns-2 .hs-form-field {
+  .hs-get-in-touch-section .form-columns-2 .hs-form-field {
     width: 100% !important;
     float: none !important;
   }
-  .hs-get-in-touch-section form .inputs-list .hs-input,
-  .hs-training-inner-section4 form .inputs-list .hs-input{
+  .hs-get-in-touch-section form .inputs-list .hs-input {
     width:auto !important;
   }
   .hs-services-layout .hs-service-section1 .dnd-section {
