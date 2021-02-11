@@ -3,48 +3,57 @@
     isAvailableForNewContent: true
     label: Events
 -->
+{% import './refactor/refactored-pages.html' as refactor %}
+
 {% extends "./layouts/base.html" %}
 
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>{{ page_meta.html_title }}</title>
   {% if site_settings.favicon_src %}
   <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
   {% endif %}
-  <meta name="description" content="{{ page_meta.meta_description }}" />
-  {{ require_css(get_asset_url("../css/layout.css")) }} {{
-  require_css(get_asset_url("../css/main.css")) }} {{
-  require_css(get_asset_url("../css/event-page.css")) }} {{
-  require_js(get_asset_url("../js/main.js")) }} {{ standard_header_includes }}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {% if refactor.refactored_pages is containing content.name|striptags|lower %}
+    {{ require_css(get_asset_url("../css/main-2021.css")) }}
+  {% endif %}
+
+  {{ require_css(get_asset_url("../css/pages/event-page.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
   {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
 </head>
 
 {% block body %}
 
-<section class="events-header-slice responsive-page-width lateral-spacing">
-  {% module "events_header_slice" path="../modules/Header Slice.module" label="Page Header Slice" no_wrapper=True %}
-</section>
-
-<main>
-  <section class="event-slider">
-    <div
-      class="event-slider__heading-wrapper event-slider__heading-wrapper--upcoming-events"
-    ></div>
-    <div class="event-slider__events-wrapper">
-      {% module "events" path="../modules/Upcoming Events Listing.module"
-      label="Upcoming Events" no_wrapper=True %}
-    </div>
+  <section class="events-header-slice responsive-page-width lateral-spacing">
+    {% module "events_header_slice" path="../modules/Header Slice.module" label="Page Header Slice" no_wrapper=True %}
   </section>
 
-  <section class="event-slider">
-    <div
-      class="event-slider__heading-wrapper event-slider__heading-wrapper--past-events"
-    ></div>
-    <div class="event-slider__events-wrapper">
-      {% module "past_events" path="../modules/Past Events Listing.module"
-      label="Past Events" no_wrapper=True %}
-    </div>
-  </section>
-</main>
+  <main>
+    <section class="event-slider">
+      <div
+        class="event-slider__heading-wrapper event-slider__heading-wrapper--upcoming-events"
+      ></div>
+      <div class="event-slider__events-wrapper">
+        {% module "events" path="../modules/Upcoming Events Listing.module"
+        label="Upcoming Events" no_wrapper=True %}
+      </div>
+    </section>
+
+    <section class="event-slider">
+      <div
+        class="event-slider__heading-wrapper event-slider__heading-wrapper--past-events"
+      ></div>
+      <div class="event-slider__events-wrapper">
+        {% module "past_events" path="../modules/Past Events Listing.module"
+        label="Past Events" no_wrapper=True %}
+      </div>
+    </section>
+  </main>
 
 {% endblock body %}
