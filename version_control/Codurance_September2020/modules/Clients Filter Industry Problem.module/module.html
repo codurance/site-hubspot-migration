@@ -7,7 +7,6 @@
     {% for problem in client.problems %}
         {% do allProblems.append(problem.name) %}
     {% endfor %}
-    <p>{{client.name}}</p>
 {% endfor %}
 {% set allIndustries = allIndustries|unique %}
 {% set allProblems = allProblems|unique %}

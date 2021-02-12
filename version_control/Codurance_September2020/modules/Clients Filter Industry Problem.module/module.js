@@ -151,7 +151,16 @@ const addIsotopeLayout = _ => {
             gutter: '.gutter-sizer'
         }
     });
-} 
+}
+
+// const addScrollListener = _ => {
+//     let elem = document.querySelector('.grid-container');
+//     window.addEventListener('scroll', event => {
+//         if (window.scrollY > (elem.clientHeight - window.innerHeight)) {
+            
+//         }
+//     });
+// }
 
 const init = _ => {
     resetFilterDropdownValues();
@@ -159,6 +168,7 @@ const init = _ => {
     addFilterDropdownListeners();
     addRemoveFilterListeners();
     addIsotopeLayout();
+    // addScrollListener();
 }
 
 window.addEventListener('DOMContentLoaded', init);
