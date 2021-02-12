@@ -2,13 +2,16 @@
 templateType: global_partial
 label: Page Footer
 -->
-<footer class="footer footer_v2">
+
+{{ require_css(get_asset_url("../../css/partials/footer-v2.css")) }}
+
+<footer class="footer-v2">
   <div class="hs-footer-bottom-container">
     <div class="page-center">
       <div class="cm-footer-latest-blog-group span3">
-              <h6><span>Latest Blogs</span></h6>
-              {% module "rss_listing" path="@hubspot/rss_listing", label="" show_date="false" title="" show_detail="false" attribution_text=""  max_links="5"%}
-            </div>
+          <h6>Latest Blogs</h6>
+          {% module "rss_listing" path="@hubspot/rss_listing", label="" show_date="false" title="" show_detail="false" attribution_text=""  max_links="5"%}
+        </div>
       <div class="hs-footer-bottom-left">
         {% module_block module "footer_registration_text" path="@hubspot/text" label="Footer Registration" %}
         {% module_attribute "value" %}Company Registration No: 8712584{% end_module_attribute %}
