@@ -107,14 +107,6 @@
     width: 100%;
 }
 
-.long {
-    min-height: 400px;
-}
-
-.v-long {
-    min-height: 600px;
-}
-
 .gutter-sizer { width: 4%; }
 
 .embed-video__video {

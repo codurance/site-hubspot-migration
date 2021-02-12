@@ -7,6 +7,7 @@
     {% for problem in client.problems %}
         {% do allProblems.append(problem.name) %}
     {% endfor %}
+    <p>{{client.name}}</p>
 {% endfor %}
 {% set allIndustries = allIndustries|unique %}
 {% set allProblems = allProblems|unique %}
@@ -84,7 +85,7 @@
             </div>
         </div>
         {% if client.video %}
-            <div class="grid-item wide"  data-client-industry="{{client.industry.name}}" data-client-problems="{{problems|join(',')}}">
+            <div class="grid-item v-wide"  data-client-industry="{{client.industry.name}}" data-client-problems="{{problems|join(',')}}">
                 <h3>{{client.name}}</h3>
                 <div class="embed-video__video">
                     <div class="embed-video__video-inner">
