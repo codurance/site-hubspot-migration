@@ -68,13 +68,15 @@
 }
 
 .custom-our-people__name {
-  {{ utils.natus() }}
   display: block;
+  font-size: var(--natus-font-size);
+  font-weight: var(--middle-font-weight);
+  line-height: var(--natus-line-height);
   text-align: center;
 }
 
 .custom-our-people__role {
-  {{ utils.sejima() }}
+  {{ utils.natus() }}
   display: block;
   text-align: center;
   color: var(--shark);
