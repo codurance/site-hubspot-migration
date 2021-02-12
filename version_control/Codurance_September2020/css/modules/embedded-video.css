@@ -7,7 +7,9 @@
 }
 
 .embed-video__heading {
-  {{ utils.dudler() }}
+  font-size: var(--dudler-font-size);
+  font-weight: var(--heavy-font-weight);
+  line-height: var(--dudler-line-height);
   margin-bottom: var(--dudler-margin);
   margin-left: auto;
   margin-right: auto;

@@ -134,8 +134,7 @@
 }
 
 .cm-testimonials-slider-inner-item p {
-    {{ utils.natus() }};
-    line-height: var(--base-line-height);
+    {{ utils.base() }};
     margin-bottom: var(--sejima-margin);
 }
 
