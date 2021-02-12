@@ -6,6 +6,7 @@ const problemFilter = document.querySelector('[data-select-problem]');
 
 let allFilters;
 let msnry;
+let isotope;
 
 const appliedFilters = {
     industry: [],
@@ -85,7 +86,8 @@ const refilter = _ => {
 
     visibleClients.forEach(showClient);
     hiddenClients.forEach(hideClient);
-    msnry.layout();
+    // msnry.layout();
+    isotope.layout();
 }
 
 const unnamedFunction = _ => {
@@ -147,7 +149,7 @@ const doMasonryMagic = _ => {
     //     columnWidth: '.grid-sizer',
     //     percentPosition: true
     // });
-    new Isotope(elem, {
+    isotope = new Isotope(elem, {
         layoutMode: 'packery',
         itemSelector: '.grid-item',
         columnWidth: '.grid-sizer',

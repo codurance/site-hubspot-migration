@@ -97,10 +97,12 @@
     margin-bottom: 10px;
     padding: 20px;
     width: 30%;
+    min-width: 300px;
 }
 
 .wide {
     width: 60%;
+    min-width: 600px;
 }
 
 .v-wide {
