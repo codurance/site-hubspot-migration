@@ -150,6 +150,7 @@ const doMasonryMagic = _ => {
     new Isotope(elem, {
         layoutMode: 'packery',
         itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
         percentPosition: true,
         packery: {
             gutter: '.gutter-sizer'
