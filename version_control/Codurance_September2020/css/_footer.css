@@ -190,7 +190,7 @@ footer looks when it comes to spacing and other general styles.
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 15px;
+  font-size: var(--natus-font-size);
 }
 {% call utils.large_and_extra_large() %}
   .hs-footer-bottom-right ul {
