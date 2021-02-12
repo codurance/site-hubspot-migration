@@ -54,12 +54,11 @@
 
 .client-left {
     width: 300px;
-    margin: 20px;
 }
 
 .client-right {
+    margin-left: 5%;
     width: 66%;
-    margin: 20px;
 }
 
 .client-logo {
@@ -83,7 +82,7 @@
 
 .grid-container {
     margin: 50px auto;
-    width: 80%;
+    width: 70%;
 }
 
 .grid-sizer {
@@ -96,6 +95,7 @@
     float: left;
     min-height: 200px;
     margin-bottom: 10px;
+    padding: 20px;
     width: 30%;
 }
 
@@ -111,4 +111,9 @@
 
 .embed-video__video {
     padding: 20px;
+}
+
+.embed-video__video-inner {
+    width: 100%;
+    height: 500px;
 }

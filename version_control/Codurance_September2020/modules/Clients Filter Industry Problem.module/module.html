@@ -1,4 +1,4 @@
-{% set clients = hubdb_table_rows(module.clients_table, '') %}
+{% set clients = hubdb_table_rows(module.clients_table, 'orderBy=-video') %}
 
 {% set allIndustries = [] %}
 {% set allProblems = [] %}
@@ -7,7 +7,6 @@
     {% for problem in client.problems %}
         {% do allProblems.append(problem.name) %}
     {% endfor %}
-    <p>{{client.name}}</p>
 {% endfor %}
 {% set allIndustries = allIndustries|unique %}
 {% set allProblems = allProblems|unique %}
@@ -47,7 +46,9 @@
         {% for problem in client.problems %}
             {% do  problems.append(problem.name) %}
         {% endfor %}
-        {% if client.testimonial or client.description %}
+        {% if client.testimonial and client.description %}
+            {% set class = "v-wide" %}
+        {% elif client.testimonial or client.description %}
             {% set class = "wide" %}
         {% else %}
             {% set class = "" %}
@@ -89,7 +90,7 @@
                 <h3>{{client.name}}</h3>
                 <div class="embed-video__video">
                     <div class="embed-video__video-inner">
-                        <iframe width="90%" height="315" src="https://www.youtube.com/embed/cL3DaHZ88ZQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cL3DaHZ88ZQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
