@@ -34,7 +34,7 @@
   --base-font-size: 1rem;
   --base-line-height: 1.3809524rem;
   --base-margin: 1.3809524rem;
-  --base-max-width: 50ch;
+  --base-max-width: 65ch;
 
   --ponti-font-size: 1rem;
   --ponti-line-height: 1rem;
@@ -42,7 +42,7 @@
 
   --natus-font-size: 0.8rem;
   --natus-line-height: 1.095rem;
-  --natus-max-width: 70ch;
+  --natus-max-width: 80ch;
 
   --sejima-font-size: 0.6rem;
   --sejima-line-height: 0.9rem;
