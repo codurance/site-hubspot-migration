@@ -142,13 +142,20 @@ const addRemoveFilterListeners = _ => {
 
 const doMasonryMagic = _ => {
     let elem = document.querySelector('.grid-container');
-    msnry = new Masonry(elem, {
+    // msnry = new Masonry(elem, {
+    //     itemSelector: '.grid-item',
+    //     columnWidth: '.grid-sizer',
+    //     percentPosition: true
+    // });
+    new Isotope(elem, {
+        layoutMode: 'packery',
         itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true
+        percentPosition: true,
+        packery: {
+            gutter: '.gutter-sizer'
+        }
     });
-    msnry.layout();
-}
+} 
 
 const init = _ => {
     resetFilterDropdownValues();

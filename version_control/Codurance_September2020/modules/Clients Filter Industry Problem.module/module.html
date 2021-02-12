@@ -71,7 +71,7 @@
                         {% endif %}
                         {% if client.case_study %}
                             <a
-                                class="btn btn-md u-btn-primary btn-codurance-color text-uppercase w-100 custom-width-auto--lg case-study-button"
+                                class="btn btn-md u-btn-primary btn-codurance-color text-uppercase custom-width-auto--lg case-study-button"
                                 target="_blank"
                                 href=""
                                 rel="noopener noreferrer"
@@ -96,3 +96,6 @@
 </div>
 
 {{ require_js(get_asset_url("../../js/masonary.js"), "footer") }}
+{{ require_js(get_asset_url("../../js/isotope.js"), "footer") }}
+{{ require_js(get_asset_url("../../js/packery.js"), "footer") }}
+{{ require_js(get_asset_url("../../js/isotopePackery.js"), "footer") }}

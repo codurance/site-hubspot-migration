@@ -78,8 +78,7 @@
 }
 
 .case-study-button {
-    position: absolute;
-    right: 30px;
+    float: right;
 }
 
 .grid-container {
@@ -94,6 +93,7 @@
 .grid-item {
     background-color: pink;
     border: 1px solid #c6c6c6;
+    float: left;
     min-height: 200px;
     margin-bottom: 10px;
     width: 30%;
@@ -114,6 +114,8 @@
 .v-long {
     min-height: 600px;
 }
+
+.gutter-sizer { width: 4%; }
 
 .embed-video__video {
     padding: 20px;
