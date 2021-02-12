@@ -3,6 +3,7 @@
 .custom-benfits-we-offer {
   background-color: white;
   border-radius: 0.25rem;
+  border-top: 5px solid var(--midnight-blue);
   box-shadow: 0 5px 10px -6px var(--woodsmoke--10);
   height: 100%;
   padding: 1.3rem;
@@ -20,14 +21,15 @@
 }
 
 .custom-benfits-we-offer__icon {
-  background-color: var(--midnight-blue);
+  background-color: white;
   border-radius: 50%;
-  color: white;
+  box-shadow: 0 1px 3px rgba(255,255,255,0.12),0 1px 10px rgba(0,0,0,0.12);
+  color: var(--mid-gray);
   font-size: 1.2rem;
   font-size: 1rem;
   left: 0;
   padding: .4rem;
   position: absolute;
-  top: 0;
+  top: -0.3em;
   transform: translate(-40%, -40%);
 }
