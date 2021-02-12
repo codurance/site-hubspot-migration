@@ -79,6 +79,10 @@
   width: 100%;
 }
 
+.custom-color-primary--hover:hover {
+  color: var(--persimmon);
+}
+
  .u-carousel-v11 .slick-slide {
   opacity: .5;
 }

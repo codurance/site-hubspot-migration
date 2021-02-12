@@ -64,7 +64,7 @@
 {% call utils.small_and_medium() %}
   .custom-interview-process__icon-container {
     font-size: 2rem;
-    border-right: 1px solid var(--persimmon);
+    border-right: 1px solid var(--midnight-blue);
     display: flex;
     flex-direction: column;
     align-items: ;
