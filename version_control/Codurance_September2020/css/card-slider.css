@@ -26,9 +26,11 @@
 {% endcall %}
 
 .card-slider__heading {
-  {{ utils.dudler() }}
   color: white;
   flex-grow: 1;
+  font-size: var(--dudler-font-size);
+  font-weight: var(--heavy-font-weight);
+  line-height: var(--dudler-line-height);
   margin-bottom: var(--dudler-margin);
   padding-bottom: 20px;
 }
@@ -283,7 +285,7 @@
 }
 
 .card-slider-item__metadata {
-  {{ utils.natus() }}
+  {{ utils.sejima() }}
   display: inline-block;
   text-transform: uppercase;
 }
@@ -396,7 +398,7 @@
 
 {% set label_position = '10px' %}
 .card-slider-item__label {
-  {{ utils.natus() }}
+  {{ utils.sejima() }}
   background-color: white;
   border-radius: 3px;
   box-shadow: 0px 0px 20px var(--woodsmoke--20);
