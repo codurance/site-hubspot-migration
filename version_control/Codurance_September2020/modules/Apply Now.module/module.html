@@ -26,7 +26,7 @@
     <div class="custom-apply-now__button-container">
       {% if module.button.button_type == "std" %}
 
-        {{snippets.button_primary_alternate(
+        {{snippets.button_primary(
           url="{{href}}{% if module.button.bookmark_id  %}#{{ module.button.bookmark_id }} {% endif %}",
           classnames=module.button.module_setting.custom_class,
           target=target,
