@@ -18,8 +18,9 @@
 }
 
 .our-story-body-copy-section .hs_cos_wrapper_type_rich_text p {
-  {{ utils.natus() }}
+  {{ utils.base() }}
   {{ utils.base_margin() }}
+  max-width: var(--base-max-width);
 }
 
 .our-story-body-copy-section .dnd-row:last-child .hs_cos_wrapper_type_rich_text {
