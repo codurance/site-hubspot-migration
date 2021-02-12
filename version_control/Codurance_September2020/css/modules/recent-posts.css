@@ -79,8 +79,9 @@
 }
 
 .cm-recent-post__title {
-  {{ utils.base() }}
+  font-size: var(--base-font-size);
   font-weight: var(--heavy-font-weight);
+  line-height: 1.3rem;
   margin-bottom: calc(var(--base-margin) / 2);
   margin-top: calc(var(--base-margin) / 2);
 }
