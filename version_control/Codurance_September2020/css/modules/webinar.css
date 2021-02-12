@@ -69,9 +69,9 @@
 {% endcall %}
 
 .cm-webinar_description {
-  {{ utils.natus() }}
+  {{ utils.base() }}
   margin-bottom: var(--base-margin);
-  max-width: var(--natus-max-width);
+  max-width: var(--base-max-width);
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;

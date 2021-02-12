@@ -25,9 +25,10 @@
     margin-bottom: var(--dudler-margin);
 }
 .section-intro p {
-    {{ utils.base() }}
-    margin-bottom: var(--base-margin);
-    max-width: var(--base-max-width);
+font-size: var(--freed-font-size);
+line-height: var(--freed-line-height);
+    margin-bottom: var(--freed-margin);
+    max-width: var(--freed-max-width);
     padding-bottom: 20px;
 }
 

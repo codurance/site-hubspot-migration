@@ -17,7 +17,7 @@
   --gaudi-max-width: 25ch;
 
   --eames-font-size: 1.952381rem;
-  --eames-line-height: 2.047619rem;
+  --eames-line-height: 2.3rem;
   --eames-margin: 1.3809524rem;
   --eames-max-width: 31ch;
 
@@ -58,7 +58,7 @@
 }
 @media (min-width: 705px) {
   :root {
-    --type-font-size: 118.8%;
+    --type-font-size: 125%;
   }
 }
 

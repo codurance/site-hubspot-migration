@@ -28,9 +28,10 @@
 }
 
 .cm-services-inner-section2 .dnd-section .widget-type-rich_text p {
-    {{ utils.base() }}
-    margin-bottom: var(--base-margin);
-    max-width: var(--base-max-width);
+    font-size: var(--freed-font-size);
+    line-height: var(--freed-line-height);
+    margin-bottom: var(--freed-margin);
+    max-width: var(--freed-max-width);
     text-align: center;
     padding-bottom: 20px;
 }
@@ -90,11 +91,12 @@
 }
 
 .cm-services-inner-section5 .hs_cos_wrapper_type_rich_text p {
-    {{ utils.base() }}
-    margin-bottom: var(--base-margin);
+    font-size: var(--freed-font-size);
+    line-height: var(--freed-line-height);
+    margin-bottom: var(--freed-margin);
     margin-left: auto;
     margin-right: auto;
-    max-width: var(--base-max-width);
+    max-width: var(--freed-max-width);
     padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;

@@ -148,11 +148,11 @@
 
 
 .pbtg-hero-post__description {
-  {{ utils.natus() }}
+  {{ utils.base() }}
   margin-bottom: var(--base-margin);
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--natus-max-width);
+  max-width: var(--base-max-width);
   padding-bottom: 20px;
 }
 

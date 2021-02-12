@@ -63,7 +63,7 @@
 }
 
 .panel-body p, ul, li {
-    {{ utils.natus() }}
+    {{ utils.base() }}
 }
 
 .panel-body ul {
@@ -71,7 +71,7 @@
 }
 
 .panel-body li {
-    margin: var(--sejima-margin) 0;
+    margin-bottom: calc(var(--base-margin) / 3);
 }
 
 .panel-body h3 {
