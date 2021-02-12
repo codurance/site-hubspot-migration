@@ -24,9 +24,8 @@
   background-color: white;
   border-radius: 50%;
   box-shadow: 0 1px 3px rgba(255,255,255,0.12),0 1px 10px rgba(0,0,0,0.12);
-  color: var(--mid-gray);
+  color: var(--midnight-blue);
   font-size: 1.2rem;
-  font-size: 1rem;
   left: 0;
   padding: .4rem;
   position: absolute;
