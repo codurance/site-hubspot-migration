@@ -7,6 +7,7 @@
     {% for problem in client.problems %}
         {% do allProblems.append(problem.name) %}
     {% endfor %}
+    <p>{{client.name}}</p>
 {% endfor %}
 {% set allIndustries = allIndustries|unique %}
 {% set allProblems = allProblems|unique %}
@@ -61,8 +62,8 @@
                         </div>
                     {% endif %}
                     <h3>{{client.name}}</h3>
-                    <p>🔧 {{client.industry.name}}</p>
-                    <p>❓ {{problems|join(' | ')}}</p>
+                    <p>🔧 <a href="">{{client.industry.name}}</a></p>
+                    <p>❓ <a href="">{{problems|join(' | ')}}</a></p>
                 </div>
                 {% if client.description or client.testimonial %}
                     <div class="client-right">
@@ -98,7 +99,6 @@
     {% endfor %}
 </div>
 
-{{ require_js(get_asset_url("../../js/masonary.js"), "footer") }}
+{{ require_js(get_asset_url("../js/imageLoaded.js")) }}
 {{ require_js(get_asset_url("../../js/isotope.js"), "footer") }}
-{{ require_js(get_asset_url("../../js/packery.js"), "footer") }}
 {{ require_js(get_asset_url("../../js/isotopePackery.js"), "footer") }}

@@ -5,7 +5,6 @@ const industryFilter = document.querySelector('[data-select-industry]');
 const problemFilter = document.querySelector('[data-select-problem]');
 
 let allFilters;
-let msnry;
 let isotope;
 
 const appliedFilters = {
@@ -86,7 +85,6 @@ const refilter = _ => {
 
     visibleClients.forEach(showClient);
     hiddenClients.forEach(hideClient);
-    // msnry.layout();
     isotope.layout();
 }
 
@@ -142,13 +140,8 @@ const addRemoveFilterListeners = _ => {
     ).forEach(button => addRemoveFilterListener('problem', button));
 }
 
-const doMasonryMagic = _ => {
+const addIsotopeLayout = _ => {
     let elem = document.querySelector('.grid-container');
-    // msnry = new Masonry(elem, {
-    //     itemSelector: '.grid-item',
-    //     columnWidth: '.grid-sizer',
-    //     percentPosition: true
-    // });
     isotope = new Isotope(elem, {
         layoutMode: 'packery',
         itemSelector: '.grid-item',
@@ -165,7 +158,7 @@ const init = _ => {
     setAllFilters();
     addFilterDropdownListeners();
     addRemoveFilterListeners();
-    doMasonryMagic();
+    addIsotopeLayout();
 }
 
 window.addEventListener('DOMContentLoaded', init);
