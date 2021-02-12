@@ -6,27 +6,53 @@ label: Page Footer
 {{ require_css(get_asset_url("../../css/partials/footer-v2.css")) }}
 
 <footer class="footer-v2">
-  <div class="hs-footer-bottom-container">
-    <div class="page-center">
-      <div class="cm-footer-latest-blog-group span3">
-          <h6>Latest Blogs</h6>
-          {% module "rss_listing" path="@hubspot/rss_listing", label="" show_date="false" title="" show_detail="false" attribution_text=""  max_links="5"%}
-        </div>
-      <div class="hs-footer-bottom-left">
+  <div class="page-center">
+    <div class="footer-v2__rss-container">
+        <h6 class="footer-v2__rss-title">Latest Blogs</h6>
+        {% module "rss_listing" path="@hubspot/rss_listing", label="" show_date="false" show_detail="false" attribution_text=""  max_links="5"%}
+      </div>
+  </div>
+  <div class="footer-v2__bottom-container">
+    <div class="footer-v2__bottom-container-inner">
+      <div class="footer-v2__registration">
         {% module_block module "footer_registration_text" path="@hubspot/text" label="Footer Registration" %}
-        {% module_attribute "value" %}Company Registration No: 8712584{% end_module_attribute %}
+          {% module_attribute "value" %}Company Registration No: 8712584{% end_module_attribute %}
         {% end_module_block %}
       </div>
-      <div class="hs-footer-bottom-right">
+      <div class="footer-v2__social-container">
         {% module_block module "footer_social" path="@hubspot/rich_text" label="Footer Social Icons" %}
         {% module_attribute "html" %}
-        <ul>
-          <li data-toggle="tooltip" data-placement="top" title="" data-original-title="Youtube"> <a target="_blank" href="https://www.youtube.com/user/codurance" rel="noopener noreferrer"> <i class="lab la-youtube"></i> </a> </li>
-          <li data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin"> <a target="_blank" href="https://www.linkedin.com/company/codurance" rel="noopener noreferrer"> <i class="lab la-linkedin-in"></i> </a> </li>
-          <li data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter" aria-describedby="tooltip499607"> <a target="_blank" href="https://twitter.com/codurance" rel="noopener noreferrer"> <i class="lab la-twitter"></i> </a> </li>
-          <li data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram"> <a target="_blank" href="https://www.instagram.com/codurance/" rel="noopener noreferrer"> <i class="lab la-instagram"></i> </a> </li>
-          <li data-toggle="tooltip" data-placement="top" title="" data-original-title="Podcasts"> <a target="_blank" href="https://open.spotify.com/show/7DY9af7dP7GUREz4bTPGS4" rel="noopener noreferrer"> <i class="las la-podcast"></i> </a> </li>
-          <li data-toggle="tooltip" data-placement="top" title="" data-original-title="Feed"> <a target="_blank" href="/atom.xml"> <i class="las la-rss"></i> </a> </li>
+        <ul class="footer-v2__social-list">
+          <li class="footer-v2__social-item">
+            <a class="footer-v2__social-link" target="_blank" href="https://www.youtube.com/user/codurance" rel="noopener noreferrer">
+              <i class="lab la-youtube"></i>
+            </a>
+          </li>
+          <li class="footer-v2__social-item">
+            <a class="footer-v2__social-link" target="_blank" href="https://www.linkedin.com/company/codurance" rel="noopener noreferrer">
+              <i class="lab la-linkedin-in"></i>
+            </a>
+          </li>
+          <li class="footer-v2__social-item">
+            <a class="footer-v2__social-link" target="_blank" href="https://twitter.com/codurance" rel="noopener noreferrer">
+              <i class="lab la-twitter"></i>
+            </a>
+          </li>
+          <li class="footer-v2__social-item">
+            <a class="footer-v2__social-link" target="_blank" href="https://www.instagram.com/codurance/" rel="noopener noreferrer">
+              <i class="lab la-instagram"></i>
+            </a>
+          </li>
+          <li class="footer-v2__social-item">
+            <a class="footer-v2__social-link" target="_blank" href="https://open.spotify.com/show/7DY9af7dP7GUREz4bTPGS4" rel="noopener noreferrer">
+              <i class="las la-podcast"></i>
+            </a>
+          </li>
+          <li class="footer-v2__social-item">
+            <a class="footer-v2__social-link" target="_blank" href="/atom.xml">
+              <i class="las la-rss"></i>
+            </a>
+          </li>
         </ul>
         {% end_module_attribute %}
         {% end_module_block %}
