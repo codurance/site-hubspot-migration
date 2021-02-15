@@ -1,7 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 .custom-life-at-codurance {
-  border: 1px solid var(--athens-gray);
+  {{ utils.card_shadow() }}
   height: 100%;
   position: relative;
 }
