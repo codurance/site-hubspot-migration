@@ -8,7 +8,7 @@
 }
 
 .custom-how-we-work__item {
-  box-shadow: 0 1px 3px rgba(255,255,255,0.12),0 1px 10px rgba(0,0,0,0.12);
+  {{ utils.card_shadow() }}
   border-top: 5px solid var(--midnight-blue);
   margin: 10px;
   padding: 1.2rem;
