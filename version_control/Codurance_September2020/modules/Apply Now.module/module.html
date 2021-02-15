@@ -38,7 +38,7 @@
         {% cta guid="{{ module.button.cta_field }}" %}
 
       {% elif module.button.button_type == "lightbox" %}
-        <a class="{{ module.button.module_setting.custom_class }} button-primary-alternate" data-modal-target="#{{ module.button.bookmark_id }}" href="#{{ module.button.bookmark_id }} ">
+        <a class="{{ module.button.module_setting.custom_class }} button-primary" data-modal-target="#{{ module.button.bookmark_id }}" href="#{{ module.button.bookmark_id }} ">
           {{ module.button.text_field }}
         </a>
       {% endif %}
