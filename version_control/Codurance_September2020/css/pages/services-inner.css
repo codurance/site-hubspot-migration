@@ -56,6 +56,11 @@
     padding-left: 50px;
     padding-right: 50px;
 }
+{% call utils.large() %}
+    .cm-services-inner-section2 .dnd-section > .row-fluid {
+        max-width: 740px;
+    }
+{% endcall %}
 .cm-services-inner-section2 .dnd-section > .row-fluid .span3 {
     width: 25%;
     margin-left: 0;
