@@ -6,15 +6,20 @@
 }
 
 .our-story-body-copy-section .hs_cos_wrapper_type_rich_text {
-  display: block;
   overflow: hidden;
   margin-bottom: 14px;
+}
+
+.our-story-body-copy-section .dnd-column .row-fluid .dnd-module {
+  display: flex;
+  justify-content: center;
 }
 
 .our-story-body-copy-section .hs_cos_wrapper_type_rich_text h2 {
   {{ utils.dudler() }}
   margin-bottom: var(--dudler-margin);
   font-weight: var(--heavy-font-weight);
+  max-width: var(--dudler-max-width);
 }
 
 .our-story-body-copy-section .hs_cos_wrapper_type_rich_text p {
