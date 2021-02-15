@@ -257,7 +257,7 @@
 .card-slider-item__text-container-inner {
   flex-grow: 1;
   margin-bottom: 1.5rem;
-  max-height: 12.93rem;
+  max-height: 11.3rem;
   overflow: hidden;
   position: relative;
 }
@@ -266,7 +266,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  height: var(--sejima-line-height);
+  height: var(--natus-line-height);
   width: 100%;
   opacity: ;
   background: linear-gradient(
@@ -328,10 +328,8 @@
 }
 
 .card-slider-item__description {
-  {{ utils.sejima() }}
+  {{ utils.natus() }}
   color: var(--mid-gray);
-  display: flex;
-  line-height: var(--sejima-line-height);
 }
 
 .card-slider-item__button {
