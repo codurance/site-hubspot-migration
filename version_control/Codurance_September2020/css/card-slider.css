@@ -461,10 +461,15 @@
 {% endcall %}
 
 .card-slider-newsletter__icon {
+  background-color: white;
   background-image: url({{ get_asset_url('../images/icon-newsletter.svg' ) }});
-  height:70px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  height: 90px;
   margin-bottom: 10px;
-  width: 70px;
+  padding: 0.3em;
+  width: 90px;
 }
 
 .card-slider-newsletter__header {
