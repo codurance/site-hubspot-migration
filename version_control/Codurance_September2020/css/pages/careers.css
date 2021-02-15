@@ -144,12 +144,8 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  justify-content: center;
 }
-{% call utils.small() %}
-  .custom-career-life-codurance-section .dnd-section .row-fluid {
-    justify-content: center;
-  }
-{% endcall %}
 
 .custom-career-life-codurance-section .row-fluid .span4 {
   display: flex;
@@ -161,6 +157,17 @@
     margin-bottom: 2rem;
     max-width: 450px;
     width: 100%;
+  }
+{% endcall %}
+
+.custom-career-life-codurance-section .row-number-3 .dnd-module {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+{% call utils.medium_and_large() %}
+  .custom-career-life-codurance-section .row-number-3 .dnd-module {
+    flex: 0 1 370px;
+    margin-bottom: 2rem;
   }
 {% endcall %}
 
