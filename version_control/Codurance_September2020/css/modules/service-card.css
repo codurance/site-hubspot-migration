@@ -1,0 +1,196 @@
+{% import '../utils/utils.css' as utils %}
+
+.cm-service-card {
+    position: relative;
+}
+
+.cm-service-card__image {
+    background-position: left center;
+}
+
+.cm-service-card__tag {
+    {{ utils.sejima() }}
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-weight: var(--heavy-font-weight);
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.cm-service-card__title {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.cm-service-card__title,
+.cm-service-card__description {
+    color: white;
+}
+
+.cm-service-card__description {
+    {{ utils.base() }}
+}
+
+.cm-service-card__tag svg {
+    fill: white;
+    margin-right: 20px;
+    width: 50px;
+}
+
+.cm-service-card.Right .cm-service-card__image {
+    left: auto;
+    background-position: right center;
+    right: 0;
+}
+
+.cm-service-card.Right .cm-service-card__content {
+    margin-left: 0;
+    margin-right: 43%;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .cm-service-card__description {
+        margin: 0 0 25px;
+    }
+
+    .cm-service-card__tag {
+        margin: 0 0 30px;
+    }
+
+    .cm-service-card__title {
+        margin: 0 0 15px;
+    }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .cm-service-card {
+        margin-bottom: 50px;
+        padding-top: 40px;
+    }
+
+    .cm-service-card__secondary-content {
+        background-color: var(--mid-gray);
+        padding-bottom: 60px;
+        padding-top: 30px;
+    }
+
+    .cm-service-card__primary-content,
+    .cm-service-card__secondary-content {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .cm-service-card__primary-content {
+        background-color: var(--shark);
+        padding-bottom: 30px;
+        padding-top: 60px;
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: auto 80%;
+    }
+
+    .cm-service-card__content {
+        box-shadow: rgba(0,0,0,0.16) 0 0 8px;
+        background-image: none !important;
+        margin-left: 43%;
+        position: relative;
+        z-index: 20;
+    }
+
+    .cm-service-card__image {
+        background-color: var(--french-gray);
+        background-size: cover;
+        bottom: 40px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 57%;
+        z-index: 10;
+    }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+    .cm-service-card {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .cm-service-card__content {
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        z-index: 20;
+    }
+
+    .cm-service-card__primary-content {
+        background-image: none !important;
+    }
+
+    .cm-service-card__content::before {
+        background-color: var(--shark);
+        bottom: 0;
+        content: "";
+        left: 0;
+        mix-blend-mode: multiply;
+        opacity: 0.8;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    .cm-service-card.Right .cm-service-card__content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .cm-service-card__tag svg {
+        width: 35px;
+    }
+{% endcall %}
+
+{% call utils.medium() %}
+    .cm-service-card__content {
+        align-content: flex-start;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        padding: 35px 40px 50px;
+    }
+{% endcall %}
+
+
+{% call utils.small() %}
+    .button-primary {
+        max-width: var(--button-max-width);
+        width: 100%;
+    }
+
+    .cm-service-card__content {
+        padding-bottom: 65px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 60px;
+        text-align: center;
+    }
+
+    .cm-service-card {
+        margin-bottom: 0;
+    }
+
+    .cm-service-card__description {
+        margin: 0 0 35px;
+    }
+
+    .cm-service-card__tag {
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .cm-service-card__title {
+        margin: 0 0 20px;
+    }
+{% endcall %}

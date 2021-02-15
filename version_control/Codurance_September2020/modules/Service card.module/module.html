@@ -1,25 +1,44 @@
-<div class="cm-featured-training-card matchHeight {{ module.image_alignment }}">
-  <div class="cm-featured-training-card__image" style="background-image: url({{ module.image.src }})"></div>
-  <div class="cm-featured-training-card__content" style="background-image: url({{ module.image.src }})">
-    <div class="cm-featured-training-card__primary-content">
-      <h2 class="cm-featured-training-card__tag"> 
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{{ require_css(get_asset_url("../../css/modules/service-card.css")) }}
+
+<div class="cm-service-card matchHeight {{ module.image_alignment }}">
+  <div class="cm-service-card__image" style="background-image: url({{ module.image.src }})"></div>
+  <div class="cm-service-card__content" style="background-image: url({{ module.image.src }})">
+    <div class="cm-service-card__primary-content">
+      <h2 class="cm-service-card__tag"> 
         {{ module.icon }}
         {{ module.title }}
       </h2>
-      <h3 class="cm-featured-training-card__title">{{ module.heading }}</h3>
+      <h3 class="cm-service-card__title">{{ module.heading }}</h3>
     </div>      
-    <div class="cm-featured-training-card__secondary-content">
-      <p class="cm-featured-training-card__description">{{ module.content }}</p>      
+    <div class="cm-service-card__secondary-content">
+      <p class="cm-service-card__description">{{ module.content }}</p>      
       {% if module.button_type == 'Standard' %}
-      {% set href = module.link_field.url.href %}
-      {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-      {% set href = "mailto:" + href %}
-      {% endif %}
-      <a href="{{ href }}" class="cta--primary-coral" {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if module.link_field.no_follow %}rel="nofollow"{% endif %}>
-        {{ module.button_text }}
-      </a>
+        {% set href = module.link_field.url.href %}
+
+        {% if module.link_field.open_in_new_tab %}
+          {% set target = "_blank" %}
+        {% endif %}
+
+        {% if module.link_field.no_follow %}
+          {% set target = "nofollow" %}
+        {% endif %}
+
+        {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% endif %}
+
+        {{
+          snippets.button_primary(
+            url=href,
+            text=module.button_text,
+            target=target,
+            rel=rel
+          )
+        }}
       {% else %}
-      {% cta guid="{{ module.cta_field }}" %}
+        {% cta guid="{{ module.cta_field }}" %}
       {% endif %}
     </div>
   </div>
