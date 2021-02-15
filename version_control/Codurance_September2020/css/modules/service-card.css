@@ -9,7 +9,7 @@
 }
 
 .cm-service-card__tag {
-    {{ utils.sejima() }}
+    {{ utils.natus() }}
     text-transform: uppercase;
     letter-spacing: 1.8px;
     font-weight: var(--heavy-font-weight);
