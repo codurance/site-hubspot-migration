@@ -265,7 +265,6 @@ ul.inputs-list label {
   display: block;
   font-size: var(--natus-font-size);
   font-weight: var(--middle-font-weight);
-  line-height: 0;
 }
 @media (max-width: 400px),
 (min-device-width: 320px) and (max-device-width: 480px) {

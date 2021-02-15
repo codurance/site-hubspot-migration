@@ -118,7 +118,7 @@
 
 .become-a-craftsperson-in-required-skills-section .row-number-4 li::before,
 .become-a-craftsperson-in-required-skills-section .row-number-5 li::before {
-  color: var(--tango);
+  color: var(--mid-gray);
   content: "\f058";
   font-family: "line awesome free";
   font-size: 1.2em;

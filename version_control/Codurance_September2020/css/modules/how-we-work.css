@@ -1,7 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 .homepage__cm-how-we-work {
-  background: var(--midnight-blue) linear-gradient(45deg, #0a0b3c 0%, #0f1155 100%);
+  background: var(--shark);
   padding-bottom: 100px;
   padding-top: 100px;
 }

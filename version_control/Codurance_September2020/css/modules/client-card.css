@@ -64,7 +64,7 @@
 }
 
 .cm-client-card-body__description {
-  {{ utils.natus() }}
+  {{ utils.base() }}
   max-width: var(--base-max-width);
 }
 

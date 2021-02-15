@@ -1,5 +1,7 @@
 {% import '../../snippets/button-snippets.html' as snippets%}
 
+  {{ require_css(get_asset_url("../../css/modules/button.css")) }}
+
 <div class="custom-btn">
 
   {% if module.button_type == "std" %}

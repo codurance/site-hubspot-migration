@@ -167,9 +167,9 @@
 
 
 .custom-testimonial-slider__carousel-container {
+  {{ utils.card_shadow() }}
   margin: 0 auto;
   padding: 1rem;
-  border: 1px solid var(--french-gray);
 }
 {% call utils.medium_large_and_extra_large() %}
   .custom-testimonial-slider__carousel-container {

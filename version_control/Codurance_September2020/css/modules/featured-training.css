@@ -120,7 +120,7 @@
 
 {% call utils.large_and_extra_large() %}
     .cm-featured-training-card__secondary-content {
-        background-color: var(--mid-gray);
+        background-color: var(--shark);
         padding-bottom: 60px;
         padding-top: 30px;
     }
@@ -142,7 +142,7 @@
 
 {% call utils.large_and_extra_large() %}
     .cm-featured-training-card__primary-content {
-        background-color: var(--shark);
+        background-color: var(--woodsmoke);
         padding-bottom: 30px;
         padding-top: 60px;
         background-repeat: no-repeat;

@@ -11,7 +11,7 @@
 }
 
 .cm-team-member-card-group.active .cm-team-member-inner {
-    max-height: 500px;
+    max-height: 29rem;
 }
 
 .cm-team-member-card-group.active .cm-team-member-content-wrapper::after {

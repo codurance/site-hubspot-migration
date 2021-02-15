@@ -47,8 +47,7 @@
 {% endcall %}
 {% call utils.small() %}
   .our-people-bottom-banner-section .widget-span .widget-span {
-    align-items: flex-start;
-    flex-direction: column;
+    display: block;
   }
 {% endcall %}
 

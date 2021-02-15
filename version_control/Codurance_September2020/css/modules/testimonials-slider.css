@@ -14,10 +14,11 @@
 }
 
 .cm-testimonials-top-content p {
-    {{ utils.base() }}
-    margin-bottom: var(--base-margin);
+    font-size: var(--freed-font-size);
+    line-height: var(--freed-line-height);
+    margin-bottom: var(--freed-margin);
     margin-right: auto;
-    max-width: var(--base-max-width);
+    max-width: var(--freed-max-width);
     padding-bottom: 20px;
 }
 {% call utils.medium_large_and_extra_large() %}
@@ -133,8 +134,7 @@
 }
 
 .cm-testimonials-slider-inner-item p {
-    {{ utils.natus() }};
-    line-height: var(--base-line-height);
+    {{ utils.base() }};
     margin-bottom: var(--sejima-margin);
 }
 

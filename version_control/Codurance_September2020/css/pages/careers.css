@@ -22,18 +22,21 @@
   background-color: var(--athens-gray);
 }
 
+.custom-career-about-us-section .row-number-1 .row-fluid {
+  padding: 0;
+}
+
 .custom-career-about-us-section .row-fluid .span3 {
   margin-bottom: 2rem;
 }
-{% call utils.medium_large_and_extra_large() %}
-  .custom-career-about-us-section .row-fluid .span3 {
-    width: 50%;
-  }
-{% endcall %}
-
-{% call utils.large_and_extra_large() %}
+{% call utils.extra_large() %}
   .custom-career-about-us-section .row-fluid .span3 {
     width: 25%;
+  }
+{% endcall %}
+{% call utils.medium_and_large() %}
+  .custom-career-about-us-section .row-fluid .span3 {
+    width: 50%;
   }
 {% endcall %}
 
@@ -41,6 +44,7 @@
   align-items: stretch;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .custom-career-about-us-section .row-number-3 .row-fluid .hs_cos_wrapper_type_module {
@@ -140,12 +144,8 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  justify-content: center;
 }
-{% call utils.small() %}
-  .custom-career-life-codurance-section .dnd-section .row-fluid {
-    justify-content: center;
-  }
-{% endcall %}
 
 .custom-career-life-codurance-section .row-fluid .span4 {
   display: flex;
@@ -157,6 +157,17 @@
     margin-bottom: 2rem;
     max-width: 450px;
     width: 100%;
+  }
+{% endcall %}
+
+.custom-career-life-codurance-section .row-number-3 .dnd-module {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+{% call utils.medium_and_large() %}
+  .custom-career-life-codurance-section .row-number-3 .dnd-module {
+    flex: 0 1 370px;
+    margin-bottom: 2rem;
   }
 {% endcall %}
 
