@@ -30,30 +30,30 @@
 
 {% block body %}
 
-  <section class="events-header-slice responsive-page-width lateral-spacing">
-    {% module "events_header_slice" path="../modules/Header Slice.module" label="Page Header Slice" no_wrapper=True %}
+<section class="events-header-slice responsive-page-width lateral-spacing">
+  {% module "events_header_slice" path="../modules/Header Slice.module" label="Page Header Slice" no_wrapper=True %}
+</section>
+
+<main>
+  <section class="card-slider">
+    <div
+      class="card-slider__heading-wrapper card-slider__heading-wrapper--upcoming-events"
+    ></div>
+    <div class="card-slider__events-wrapper">
+      {% module "events" path="../modules/Upcoming Events Listing.module"
+      label="Upcoming Events" no_wrapper=True %}
+    </div>
   </section>
 
-  <main>
-    <section class="event-slider">
-      <div
-        class="event-slider__heading-wrapper event-slider__heading-wrapper--upcoming-events"
-      ></div>
-      <div class="event-slider__events-wrapper">
-        {% module "events" path="../modules/Upcoming Events Listing.module"
-        label="Upcoming Events" no_wrapper=True %}
-      </div>
-    </section>
-
-    <section class="event-slider">
-      <div
-        class="event-slider__heading-wrapper event-slider__heading-wrapper--past-events"
-      ></div>
-      <div class="event-slider__events-wrapper">
-        {% module "past_events" path="../modules/Past Events Listing.module"
-        label="Past Events" no_wrapper=True %}
-      </div>
-    </section>
-  </main>
+  <section class="card-slider">
+    <div
+      class="card-slider__heading-wrapper card-slider__heading-wrapper--past-events"
+    ></div>
+    <div class="card-slider__events-wrapper">
+      {% module "past_events" path="../modules/Past Events Listing.module"
+      label="Past Events" no_wrapper=True %}
+    </div>
+  </section>
+</main>
 
 {% endblock body %}
