@@ -1,0 +1,16 @@
+.custom-blog__social-icon {
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--shark);
+  color: var(--shark);
+  display: flex;
+  font-size: 1rem;
+  height: 2.3rem;
+  justify-content: center;
+  padding: 0.3rem;
+  width: 2.3rem;
+}
+.custom-blog__social-icon:hover {
+  text-decoration: none;
+  transform: scale(1.1);
+}

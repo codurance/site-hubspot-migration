@@ -121,19 +121,6 @@
   {{ utils.natus() }}
 }
 
-.custom-blog-listing__tag {
-  background-color: var(--java);
-  color: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-.custom-blog-listing__tag:hover {
-  background-color: var(--java);
-  color: inherit;
-  text-decoration: underline;
-}
-
-
 .custom-blog-author-listing h2.margin-bottom-20 {
   padding: 0 15px;
 }

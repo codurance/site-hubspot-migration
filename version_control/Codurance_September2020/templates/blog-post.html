@@ -3,7 +3,32 @@ templateType: blog
 isAvailableForNewContent: true
 label: Blog Post
 -->
-{% extends './layouts/base.html' %} {% block body %}
+{% import './refactor/refactored-pages.html' as refactor %}
+
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+
+  {{ require_css(get_asset_url("../css/main-2021.css")) }}
+
+
+  {{ require_css(get_asset_url("../css/pages/blog-post.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
 
   <section
     class="custom-bg-cover custom-bg-size-cover custom-bg-cover--text-overlay custom-pb-30"
@@ -102,46 +127,42 @@ label: Blog Post
             <ul class="list-inline my-0">
               <li class="list-inline-item custom-mx-2">
                 <a
-                  class="u-icon-v2 custom-rounded-50 custom-color-facebook custom-color-facebook--hover u-icon-slide-up--hover"
+                  class="custom-blog__social-icon"
                   href="http://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url }}&amp;title={{ page_meta.name }}"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i class="fa fa-facebook u-icon__elem-regular"></i>
-                  <i class="fa fa-facebook u-icon__elem-hover"></i>
+                  <i class="lab la-facebook-f"></i>
                 </a>
               </li>
               <li class="list-inline-item custom-mx-2">
                 <a
-                  class="u-icon-v2 custom-rounded-50 custom-color-twitter custom-color-twitter--hover u-icon-slide-up--hover"
+                  class="custom-blog__social-icon"
                   href="https://twitter.com/intent/tweet?text={{ page_meta.name }}&amp;url={{ content.absolute_url }}&amp;hashtags=specialist expertise,metrics,automation,Technical Debt,silos"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i class="fa fa-twitter u-icon__elem-regular"></i>
-                  <i class="fa fa-twitter u-icon__elem-hover"></i>
+                  <i class="lab la-twitter"></i>
                 </a>
               </li>
               <li class="list-inline-item custom-mx-2">
                 <a
-                  class="u-icon-v2 custom-rounded-50 custom-color-linkedin custom-color-linkedin--hover u-icon-slide-up--hover"
+                  class="custom-blog__social-icon"
                   href="http://www.linkedin.com/shareArticle?mini=true&amp;title={{ page_meta.name }}&amp;summary=&amp;url={{ content.absolute_url }}"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i class="fa fa-linkedin u-icon__elem-regular"></i>
-                  <i class="fa fa-linkedin u-icon__elem-hover"></i>
+                  <i class="lab la-linkedin-in"></i>
                 </a>
               </li>
               <li class="list-inline-item custom-mx-2">
                 <a
-                  class="u-icon-v2 custom-rounded-50 custom-color-reddit custom-color-reddit--hover u-icon-slide-up--hover"
+                  class="custom-blog__social-icon"
                   href="http://www.reddit.com/submit?url={{ content.absolute_url }}&amp;title={{ page_meta.name }}"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i class="fa fa-reddit u-icon__elem-regular"></i>
-                  <i class="fa fa-reddit u-icon__elem-hover"></i>
+                  <i class="lab la-reddit"></i>
                 </a>
               </li>
             </ul>

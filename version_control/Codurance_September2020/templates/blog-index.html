@@ -16,9 +16,7 @@ label: Blog Listing
   <meta name="description" content="{{ page_meta.meta_description }}">
   {{ require_css(get_asset_url("../css/layout.css")) }}
   {{ require_css(get_asset_url("../css/main.css")) }}
-  {% if refactor.refactored_pages is containing content.name|striptags|lower %}
-    {{ require_css(get_asset_url("../css/main-2021.css")) }}
-  {% endif %}
+  {{ require_css(get_asset_url("../css/main-2021.css")) }}
 
   {{ require_css(get_asset_url("../css/pages/blog-index.css")) }}
 
@@ -207,7 +205,7 @@ label: Blog Listing
                     <ul class="list-inline custom-font-size-12 mb-0">
                       {% for tag in content.tag_list %}
                       <li class="list-inline-item custom-mb-10">
-                        <a class="tags custom-blog-listing__tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+                        <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
                       </li>
                       {% endfor %}
                     </ul>

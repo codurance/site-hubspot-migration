@@ -5,6 +5,7 @@ are for the listing and post templates, featured images and pagination.
 Also for the post meta infromation like tags, author and published date
 *********************************************************************************
 ****************************************************************************** */
+{% import './utils/utils.css' as utils %}
 
 {#
 .blog-header {
@@ -371,23 +372,25 @@ Also for the post meta infromation like tags, author and published date
 }
 
 a.tags {
+  {{ utils.natus() }}
+  background-color: var(--java);
+  border-radius: 50px;
+  color: inherit;
   display: inline-block;
+  padding-bottom: 0.2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.2em;
   text-decoration: none;
   transition: all .3s ease;
-  background-color: rgba(24, 186, 155, 0.1);
-  border-radius: 50px;
-  padding-left: 1.07143rem !important;
-  padding-right: 1.07143rem !important;
-  padding-top: 0.28571rem !important;
-  padding-bottom: 0.28571rem !important;
-  color: #18ba9b;
 }
 article.custom-bg-green {
-  background-color: #185466 !important;
+  background-color: #185466;
 }
 a.tags:hover {
-  background-color: #18ba9b;
-  color: #fff;
+  background-color: var(--java);
+  color: inherit;
+  text-decoration: underline;
 }
 .custom-bg-cover--text-overlay {
   position: relative;
