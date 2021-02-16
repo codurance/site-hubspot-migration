@@ -229,15 +229,6 @@
     }
 {% endcall %}
 
-.hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper .cm-webinar_image {
-  width: calc(57% - 56px);
-  right: 10px;
-}
-
 {% call utils.medium_large_and_extra_large() %}
     .cm-webinar-image-position-left:after,
     .pbtg-hero-post__wrapper:after{
@@ -254,8 +245,7 @@
         position: absolute;
         z-index: 10;
     }
-    .pbtg-hero-post__wrapper .cm-webinar_image,
-    .hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper .cm-webinar_image{
+    .pbtg-hero-post__wrapper .cm-webinar_image {
         width:calc(60% - 27px);
         right:0;
         left: auto;
@@ -267,8 +257,7 @@
         margin-left: auto;
     }
 
-    .pbtg-hero-post__wrapper,
-    .hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper {
+    .pbtg-hero-post__wrapper {
         padding-left: 32px;
         padding-right: 7px;
         padding-bottom: 40px;
@@ -280,8 +269,7 @@
         left: 7px;
         right: 50%;
     }
-    .pbtg-hero-post__wrapper .cm-webinar_image,
-    .hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper .cm-webinar_image {
+    .pbtg-hero-post__wrapper .cm-webinar_image {
         width: 100%;
         right: 0;
         position: static;
@@ -289,15 +277,10 @@
 {% endcall %}
 
 {% call utils.small() %}
-    .hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper .cm-webinar_image {
-        width: 100%;
-        right: 0;
-    }
     .pbtg-hero-post__wrapper .pbtg-hero-post__content h2.pbtg-hero-post__content-type {
         display: none;
     }
-    .pbtg-hero-post__wrapper,
-    .hs-services-inner-layout.type1 .hs-services-inner-section6 .pbtg-hero-post__wrapper {
+    .pbtg-hero-post__wrapper {
         padding-left: 0;
         padding-right: 0;
         padding-bottom: 0;
@@ -333,16 +316,5 @@
         padding-right: 0;
         margin-left: 20px;
         margin-right: 20px;
-    }
-{% endcall %}
-
-.hs-services-section4 .cm-compass-teaser {
-  margin-top: -140px;
-  margin-bottom: 140px;
-}
-{% call utils.small() %}
-    .hs-services-section4 .cm-compass-teaser {
-        margin-top: 0px;
-        margin-bottom: 0px;
     }
 {% endcall %}

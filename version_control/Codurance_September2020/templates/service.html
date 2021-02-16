@@ -3,7 +3,31 @@ templateType: page
 isAvailableForNewContent: true
 label: Service Page
 -->
+{% import './refactor/refactored-pages.html' as refactor %}
+
 {% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+
+  {% if refactor.refactored_pages is containing content.name|striptags|lower %}
+    {{ require_css(get_asset_url("../css/main-2021.css")) }}
+  {% endif %}
+
+  {{ require_css(get_asset_url("../css/pages/service.css")) }}
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
 
 {% block body %}
 <div class="hs-services-layout">
@@ -16,13 +40,13 @@ label: Service Page
     {% end_dnd_area %}
   </div>
   <main class="body-container-wrapper">
-    {% dnd_area "dnd_area1" class='hs-service-section1', label='Section 1' %}
+    {% dnd_area "dnd_area1" class='service-card-section', label='Section 1' %}
     {% end_dnd_area %}
-    {% dnd_area "dnd_area2" class='hs-services-section2', label='Section 2' %}
+    {% dnd_area "dnd_area2" class='training-teaser-section', label='Section 2' %}
     {% end_dnd_area %}
-    {% dnd_area "dnd_area3" class='hs-services-section3', label='Section 3' %}
+    {% dnd_area "dnd_area3" class='client-logo-section', label='Section 3' %}
     {% end_dnd_area %}
-    {% dnd_area "dnd_area4" class='hs-services-section4', label='Section 4' %}
+    {% dnd_area "dnd_area4" class='compass-teaser-section', label='Section 4' %}
     {% end_dnd_area %}
   </main>
   <div class="hs-get-in-touch-section" id="get-in-touch">
