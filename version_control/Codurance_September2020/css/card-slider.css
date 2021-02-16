@@ -466,9 +466,11 @@
 }
 
 .card-slider-newsletter__header {
-  font-size: 2.33rem;
-  font-weight: 700;
-  text-align: center;
+font-size: var(--dudler-font-size);
+font-weight: var(--heavy-font-weight);
+line-height: var(--dudler-line-height);
+margin-bottom: var(--dudler-margin);
+text-align: center;
 }
 
 .card-slider-newsletter__cta {
