@@ -17,10 +17,7 @@ label: Service Page
   <meta name="description" content="{{ page_meta.meta_description }}">
   {{ require_css(get_asset_url("../css/layout.css")) }}
   {{ require_css(get_asset_url("../css/main.css")) }}
-
-  {% if refactor.refactored_pages is containing content.name|striptags|lower %}
-    {{ require_css(get_asset_url("../css/main-2021.css")) }}
-  {% endif %}
+  {{ require_css(get_asset_url("../css/main-2021.css")) }}
 
   {{ require_css(get_asset_url("../css/pages/service.css")) }}
   {{ require_js(get_asset_url("../js/main.js")) }}
@@ -36,7 +33,7 @@ label: Service Page
     {% dnd_section full_width=true %}
     {% dnd_module path='../modules/Services Banner', width=12, offset=0, label="" %}
     {% end_dnd_module %}
-    {% end_dnd_section %}   
+    {% end_dnd_section %}
     {% end_dnd_area %}
   </div>
   <main class="body-container-wrapper">
@@ -51,7 +48,7 @@ label: Service Page
   </main>
   <div class="hs-get-in-touch-section" id="get-in-touch">
     {% dnd_area "dnd_area7" class='hs-services-inner-section8', label='Section 5' %}
-    {% end_dnd_area %}  
+    {% end_dnd_area %}
   </div>
 </div>
 {% endblock body %}

@@ -16,9 +16,8 @@ label: Careers
   <meta name="description" content="{{ page_meta.meta_description }}">
   {{ require_css(get_asset_url("../css/layout.css")) }}
   {{ require_css(get_asset_url("../css/main.css")) }}
-  {% if refactor.refactored_pages is containing content.name|striptags|lower %}
-    {{ require_css(get_asset_url("../css/main-2021.css")) }}
-  {% endif %}
+  {{ require_css(get_asset_url("../css/main-2021.css")) }}
+
 
   {{ require_css(get_asset_url("../css/pages/careers.css")) }}
 
