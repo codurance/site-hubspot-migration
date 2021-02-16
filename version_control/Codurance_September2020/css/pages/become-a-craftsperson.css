@@ -12,7 +12,8 @@
   padding-bottom: 20px;
 }
 
-.custom-become-a-craftsperson-row2 .row-number-2 .row-fluid p {
+.custom-become-a-craftsperson-row2 .row-number-2 .row-fluid p,
+.custom-become-a-craftsperson-row5 .row-number-2 .row-fluid p {
   {{ utils.base() }}
   margin-bottom: var(--base-margin);
   padding-bottom: 20px;
