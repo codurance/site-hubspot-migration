@@ -1,1 +1,42 @@
-Hello!
+{% set clients = hubdb_table_rows(module.clients_table, 'orderBy=-video') %}
+
+{% set allIndustries = [] %}
+{% set allProblems = [] %}
+
+{% for client in clients %}
+  {% do allIndustries.append(client.industry.name) %}
+  {% for problem in client.problems %}
+    {% do allProblems.append(problem.name) %}
+  {% endfor %}
+{% endfor %}
+
+{% set allIndustries = allIndustries|unique %}
+{% set allProblems = allProblems|unique %}
+
+<div class="clients-filter-selectors__container">
+ <div class="clients-filter-selector__input">
+  <select data-select-industry>
+   <option value="" disabled selected hidden>Filter by industry</option>
+   {% for industry in allIndustries %}
+   <option data-industry-option="{{industry}}">{{industry}}</option>
+   {% endfor %}
+  </select>
+ </div>
+ <div class="clients-filter-selector__input">
+  <select data-select-problem value="">
+   <option value="" disabled selected hidden>Filter by problem</option>
+   {% for problem in allProblems %}
+   <option data-problem-option="{{problem}}">{{problem}}</option>
+   {% endfor %}
+  </select>
+ </div>
+</div>
+
+<div class="clients-applied-filters__container">
+ {% for industry in allIndustries %}
+ <div class="clients-applied-filters__pill" data-applied-industry-filter="{{industry}}">{{industry}}<div class="clients-applied-filters__remove-button" data-remove-industry-filter="{{industry}}"></div></div>
+ {% endfor %}
+ {% for problem in allProblems %}
+ <div class="clients-applied-filters__pill hidden" data-applied-problem-filter="{{problem}}">{{problem}}<div class="clients-applied-filters__remove-button" data-remove-problem-filter="{{problem}}"></div></div>
+ {% endfor %}
+</div>
