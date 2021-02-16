@@ -107,11 +107,14 @@
   margin-bottom: var(--base-margin);
   font-weight: var(--heavy-font-weight);
 }
-.custom-blog-listing__post-title a {
+.custom-blog-listing__title-link {
   color: inherit;
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
+}
+.custom-blog-listing__title-link:hover {
+  color: var(--persimmon);
 }
 
 .custom-blog-listing__post-description {
