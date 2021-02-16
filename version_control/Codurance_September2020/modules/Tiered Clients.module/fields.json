@@ -1,8 +1,0 @@
-[ {
-  "id" : "a1cb8f09-f22b-1e09-6197-849f9d9228e1",
-  "name" : "clients_table",
-  "label" : "Clients table",
-  "required" : false,
-  "locked" : false,
-  "type" : "hubdbtable"
-} ]
