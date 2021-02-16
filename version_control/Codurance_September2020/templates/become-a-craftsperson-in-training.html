@@ -3,49 +3,70 @@ templateType: page
 isAvailableForNewContent: true
 label: Become A Craftsperson In Training
 -->
+{% import './refactor/refactored-pages.html' as refactor %}
+
 {% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/main-2021.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/become-a-craftsperson-in-training.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
 
 {% block body %}
 
 
-<div class="custom-body-container custom-body-container-2 body-container-become-a-craftsperson-in-training ">
+<div class="body-container-become-craftsperson-in-training ">
 
-  {% dnd_area "row1" class='custom-become-a-craftsperson-in-row1 custom-become-a-craftsperson-row1 ', label='Row1' %}
+  {% dnd_area "row1" class='become-a-craftsperson-in-banner-section', label='Row1' %}
   {% dnd_section vertical_alignment='MIDDLE' %}
 
   {% end_dnd_section %}
   {% end_dnd_area %}
 
 
-  {% dnd_area "row2" class='custom-become-a-craftsperson-in-row2 custom-container-wrapper content-md custom-section-header-row', label='Row2' %}
+  {% dnd_area "row2" class='become-a-craftsperson-in-how-work-section', label='Row2' %}
   {% dnd_section vertical_alignment='MIDDLE' %}
 
   {% end_dnd_section %}
   {% end_dnd_area %}
 
 
-  {% dnd_area "row3" class='custom-become-a-craftsperson-in-row3 custom-container-wrapper content-md custom-bg-gray-light-v5 custom-section-header-row', label='Row3' %}
-  {% dnd_section vertical_alignment='MIDDLE' %}
+  {% dnd_area "row3" class='become-a-craftsperson-in-required-skills-section custom-container-wrapper', label='Row3' %}
+    {% dnd_section vertical_alignment='MIDDLE' %}
 
-  {% end_dnd_section %}
+    {% end_dnd_section %}
   {% end_dnd_area %}
 
-  {% dnd_area "row4" class='custom-become-a-craftsperson-in-row4 ', label='Row4' %}
-  {% dnd_section vertical_alignment='MIDDLE' %}
+  {% dnd_area "row4" class='become-a-craftsperson-in-midpage-banner-section', label='Row4' %}
+    {% dnd_section vertical_alignment='MIDDLE' %}
 
-  {% end_dnd_section %}
+    {% end_dnd_section %}
   {% end_dnd_area %}
 
-  {% dnd_area "row5" class='custom-become-a-craftsperson-in-row5 custom-container-wrapper content-md  custom-section-header-row', label='Row5' %}
-  {% dnd_section vertical_alignment='MIDDLE' %}
+  {% dnd_area "row5" class='become-a-craftsperson-in-testimonial-section', label='Row5' %}
+    {% dnd_section vertical_alignment='MIDDLE' %}
 
-  {% end_dnd_section %}
+    {% end_dnd_section %}
   {% end_dnd_area %}
-  
-  {% dnd_area "row6" class='custom-become-a-craftsperson-in-row6 custom-container-wrapper custom-bg-gray-light-v5  custom-container-row custom-py-50 custom-pb-100 custom-section-header-row', label='Row6' %}
-  {% dnd_section vertical_alignment='MIDDLE' %}
 
-  {% end_dnd_section %}
+  {% dnd_area "row6" class='become-a-craftsperson-in-interview-process-section', label='Row6' %}
+    {% dnd_section vertical_alignment='MIDDLE' %}
+
+    {% end_dnd_section %}
   {% end_dnd_area %}
 
 </div>

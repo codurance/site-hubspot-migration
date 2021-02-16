@@ -1,29 +1,48 @@
-<section class="custom-apply-now custom-bg-orange custom-color-white custom-pa-30">
-  <div class="d-md-flex justify-content-md-center text-center">
-    <div class="align-self-md-center">
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{{ require_css(get_asset_url("../../css/modules/apply-now.css")) }}
+
+{% if module.button.button_type == "std" %}
+  {% set href = module.button.link_field.url.href %}
+
+  {% if module.button.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+  {% endif %}
+
+  {% if module.button.link_field.open_in_new_tab %}
+    {% set target = "_blank" %}
+  {% endif %}
+  {% if module.button.link_field.no_follow %}
+    {% set rel = "nofollow" %}
+  {% endif %}
+
+{% endif %}
+
+<section class="custom-apply-now">
+  <div class="custom-apply-now__inner">
+    <div class="custom-apply-now__text-container">
       {{ module.content }}
     </div>
-    <div class="align-self-md-center"> 
+    <div class="custom-apply-now__button-container">
       {% if module.button.button_type == "std" %}
-      {% set href = module.button.link_field.url.href %}
-      {% if module.button.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-      {% set href = "mailto:" + href %}
-      {% endif %}
-      <a class="{{ module.button.module_setting.custom_class }}" href="{{ href }}{% if module.button.bookmark_id  %}#{{ module.button.bookmark_id }} {% endif %}"
-         {% if module.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
-         {% if module.button.link_field.no_follow %}rel="nofollow"{% endif %}
-         >
-        {{ module.button.text_field }}
-      </a>
+
+        {{snippets.button_primary(
+          url="{{href}}{% if module.button.bookmark_id  %}#{{ module.button.bookmark_id }} {% endif %}",
+          classnames=module.button.module_setting.custom_class,
+          target=target,
+          rel=rel,
+          text=module.button.text_field
+        )}}
+
       {% elif module.button.button_type == "cta" %}
-      {% cta guid="{{ module.button.cta_field }}" %}
+        {% cta guid="{{ module.button.cta_field }}" %}
 
       {% elif module.button.button_type == "lightbox" %}
-      <a class="{{ module.button.module_setting.custom_class }}" data-modal-target="#{{ module.button.bookmark_id }} " href="#{{ module.button.bookmark_id }} ">
-        <span>{{ module.button.text_field }}</span> 
-      
-      </a>
+        <a class="{{ module.button.module_setting.custom_class }} button-primary" data-modal-target="#{{ module.button.bookmark_id }}" href="#{{ module.button.bookmark_id }} ">
+          {{ module.button.text_field }}
+        </a>
       {% endif %}
+
     </div>
   </div>
 </section>

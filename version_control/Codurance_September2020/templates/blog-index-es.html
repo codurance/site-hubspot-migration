@@ -18,16 +18,16 @@ label: Blog Listing Es
       <div class="custom-col-sm-3 pull-left">
         <img class="img-fluid" id="author-img" src="{{ blog_author.avatar }}" alt="{{ blog_author.display_name }}">
       </div>
-     {% endif %}                  
+     {% endif %}
       <div class="custom-col-sm-9">
         <div class="blog-author-desc">
           <div class="overflow-h">
-            <h2>{{ blog_author.display_name }}</h2> 
+            <h2>{{ blog_author.display_name }}</h2>
             {% if blog_author.has_social_profiles %}
             <ul class="list-inline mb-0">
               <li class="list-inline-item custom-mx-2">
                 {% if blog_author.twitter %}
-                <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ blog_author.twitter }}" target="_blank" rel="noopener noreferrer"> <i  class="custom-font-size-default custom-line-height-1 u-icon__elem-regular fa fa-twitter"></i> <i  class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i> </a>
+                <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ blog_author.twitter }}" target="_blank" rel="noopener noreferrer"> <i  class="custom-font-size-default custom-line-height-1 u-icon__elem-regular lab la-twitter"></i> <i  class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover lab la-twitter"></i> </a>
                 {% endif %}
 
                 {% if blog_author.website %}
@@ -59,11 +59,11 @@ label: Blog Listing Es
   </div>
   <hr>
   <div  class="custom-bg-gray-light-v5">
-    <h2 class="margin-bottom-20">{{ group.public_title }}</h2> 
+    <h2 class="margin-bottom-20">{{ group.public_title }}</h2>
     <div class="container page-center">
 
-      <div class="masonry-grid row custom--mb-70"> 
-        <div class="masonry-grid-sizer custom-col-sm-1"></div> 
+      <div class="masonry-grid row custom--mb-70">
+        <div class="masonry-grid-sizer custom-col-sm-1"></div>
         {% for content in contents %}
         <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
           <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3">
@@ -80,14 +80,14 @@ label: Blog Listing Es
               </ul>
               <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
                 <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ content.absolute_url }}">
-                  {{ content.name }}</a> 
-              </h5> 
+                  {{ content.name }}</a>
+              </h5>
 
               {% if content.tag_list %}
               <ul class="list-inline custom-font-size-12 mb-0">
                 {% for tag in content.tag_list %}
                 <li class="list-inline-item custom-mb-10">
-                  <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a> 
+                  <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
                 </li>
                 {% endfor %}
               </ul>
@@ -113,7 +113,7 @@ label: Blog Listing Es
   <div class="page-center container custom-py-50">
 
 
-    <div class="masonry-grid row custom-mb-70">  
+    <div class="masonry-grid row custom-mb-70">
 
 
 
@@ -141,18 +141,18 @@ label: Blog Listing Es
                 <li class="list-inline-item mx-2">·</li>
                 <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
               </ul>
-              <h5 class="h5 custom-color-black custom-font-weight-600 mb-4"> 
+              <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
                 <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ content.absolute_url }}">
-                  {{ content.name }}</a> 
-              </h5> 
+                  {{ content.name }}</a>
+              </h5>
               <p class="custom-color-gray-dark-v4 custom-line-height-1_8 mb-4">
-                {{ content.post_list_content|safe|truncatehtml(305, '...' , false)|striptags  }} 
+                {{ content.post_list_content|safe|truncatehtml(305, '...' , false)|striptags  }}
               </p>
               {% if content.tag_list %}
               <ul class="list-inline custom-font-size-12 mb-0">
                 {% for tag in content.tag_list %}
                 <li class="list-inline-item custom-mb-10">
-                  <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a> 
+                  <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
                 </li>
                 {% endfor %}
               </ul>
@@ -181,14 +181,14 @@ label: Blog Listing Es
             </ul>
             <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
               <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ content.absolute_url }}">
-                {{ content.name }}</a> 
-            </h5> 
+                {{ content.name }}</a>
+            </h5>
 
             {% if content.tag_list %}
             <ul class="list-inline custom-font-size-12 mb-0">
               {% for tag in content.tag_list %}
               <li class="list-inline-item custom-mb-10">
-                <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a> 
+                <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
               </li>
               {% endfor %}
             </ul>
@@ -202,8 +202,8 @@ label: Blog Listing Es
       <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
         <!-- Static Quote -->
         <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-rounded-5 custom-pa-30 custom-py-100 custom-bg-green">
-          <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Did you hone your skills today? </h3> 
-          <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> Try Katalyst </h3> 
+          <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Did you hone your skills today? </h3>
+          <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> Try Katalyst </h3>
           <a class="u-link-v2" href="http://katalyst.codurance.com" target="_blank" rel="noopener noreferrer"></a>
         </article>
         <!-- End Static Quote -->
@@ -214,8 +214,8 @@ label: Blog Listing Es
       <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
         <!-- Static Quote -->
         <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-rounded-5 custom-pa-30 custom-py-100 custom-bg-orange">
-          <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Interested in joining us? </h3> 
-          <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> Learn more </h3> 
+          <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Interested in joining us? </h3>
+          <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> Learn more </h3>
           <a class="u-link-v2" href="/careers"></a>
         </article>
         <!-- End Static Quote -->
@@ -227,8 +227,8 @@ label: Blog Listing Es
       <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
         <!-- Static Quote -->
         <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-rounded-5 custom-pa-30 custom-py-100 custom-bg-red">
-          <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Are you receiving the Codurance newsletter? </h3> 
-          <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> SIGN UP </h3> 
+          <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Are you receiving the Codurance newsletter? </h3>
+          <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> SIGN UP </h3>
           <a target="_blank" class="u-link-v2" href="https://mailchi.mp/codurance/newsletter-subscription"  rel="noopener noreferrer"></a>
         </article>
         <!-- End Static Quote -->
@@ -250,9 +250,9 @@ label: Blog Listing Es
       {% if last_page_num %}
       <a class="u-pagination-v1__item u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 float-left custom-hidden-xs-down {{ "blog-pagination__prev-link--disabled" if !last_page_num }}" href="{{ blog_page_link(last_page_num) }}">
         <i class="fa fa-angle-left custom-mr-5"></i>
-        Previous 
+        Previous
       </a>
-     
+
       {% endif %}
       {% for page in page_list %}
       {% set this_page = current_page_num + page + offset %}
@@ -272,7 +272,7 @@ label: Blog Listing Es
       {% endif %}
     </div>
     {% endif %}
-  </div> 
+  </div>
 </div>
 
 {% endif %}

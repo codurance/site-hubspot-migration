@@ -1,0 +1,100 @@
+{% import '../utils/utils.css' as utils %}
+
+.whr-code, .whr-date, .whr-dept {
+  display: none;
+}
+.whr-group {
+  font-weight: bold;
+}
+.whr-items {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.custom-career-banner__bg-image {
+  height: 140%;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+}
+
+.custom-career-banner__bg-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--woodsmoke--50);
+}
+
+.custom-career-banner__content-wrapper {
+  padding-bottom: 6rem;
+  padding-top: 6rem;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.custom-career-banner__title {
+  {{ utils.eames() }}
+  color: white;
+}
+
+.custom-career-banner__description {
+  {{ utils.base() }}
+  color: white;
+  display: inline-block;
+  margin-bottom: var(--base-margin);
+  max-width: var(--base-max-width);
+  margin-top: var(--eames-margin);
+}
+
+.custom-career-banner__button-wrapper {
+  display: block;
+}
+
+{% call utils.small() %}
+  .custom-career-banner__button-wrapper .button-primary {
+    width: 100%;
+    max-width: var(--button-max-width);
+  }
+{% endcall %}
+
+.custom-career-banner__form {
+  background-color: white;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  overflow-y: auto;
+  padding: 1rem;
+  position: relative;
+}
+.career-banner-form__close-button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  margin-left: auto;
+  opacity: .7;
+  padding: 0;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  transition: opacity .1s linear;
+}
+
+.career-banner-form__modal-title {
+  {{ utils.base() }}
+  margin-bottom: 0;
+}
+
+.career-banner-form__modal-description {
+  {{ utils.sejima() }}
+}
+
+.career-banner-form hr {
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+}

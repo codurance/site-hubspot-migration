@@ -1,6 +1,8 @@
+{{ require_css(get_asset_url("../../css/modules/contact-us-card.css")) }}
+
 <div class="cm-contact-us-card">
-  <div class="cm-heading">
-    <h2>{{ module.heading }}</h2>
+  <div class="cm-contact-us-card__heading-wrapper">
+    <h2 class="cm-contact-us-card__heading">{{ module.heading }}</h2>
   </div>
   <div class="cm-contact-content">
     {{ module.address }}

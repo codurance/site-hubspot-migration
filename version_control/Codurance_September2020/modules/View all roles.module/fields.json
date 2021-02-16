@@ -136,13 +136,13 @@
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
-      "default" : "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"
+      "default" : ""
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "type" : "group",
     "default" : {
-      "custom_class" : "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"
+      "custom_class" : ""
     }
   }, {
     "id" : "309ecca5-6ddb-05cd-32b4-b504686180bf",
@@ -174,7 +174,7 @@
     },
     "text_field" : "Button",
     "module_setting" : {
-      "custom_class" : "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"
+      "custom_class" : ""
     }
   }
 } ]

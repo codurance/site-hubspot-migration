@@ -1,65 +1,89 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{{ require_css(get_asset_url("../../css/modules/posts-by-topic.css")) }}
+
 <div class="cm-posts-by-topic-group">
   <div class="cm-posts-by-topic-inner-wrap">
     <div class="cm-posts-by-topic-inner-group">
       {% set topic_posts = blog_recent_topic_posts(module.select_blog, module.select_tag, 4) %}
-      {% for topic_post in topic_posts %}  
-      {% if loop.index <= 1 %}  
-      <div class="cm-posts-by-topic-top-group">
-        <div class="cm-service-line__webinar-teaser right"> 
-          <div class="cm-webinar-image-position-right">
-            <div class="cm-webinar_image" style="background-image: url({{ topic_post.featured_image }})"></div>
-            <div class="cm-webinar_content">
-              {% set blogName = blog_by_id(module.select_blog) %}
-              {% set namesSplit = blogName|split('blog', 2) %}
-              {% for name in namesSplit %}
-              {% if loop.first %}
-              <h2 class="cm-webinar_content-type">{{ name|split("'")|join('') }}</h2>
-              {% endif %}
-              {% endfor %}              
-              <h3 class="cm-webinar_title">{{ topic_post.name }}</h3>
-              <p class="cm-webinar_description">{{ topic_post.post_list_content|safe|striptags|truncatehtml(150, ' ...' , false) }}</p>
-              <a href="{{ topic_post.absolute_url }}" class="cta--primary-coral">
-                Learn More
-              </a>
+
+      {% for topic_post in topic_posts %}
+        {% if loop.index <= 1 %}
+          <div class="cm-posts-by-topic-group__hero-post-container">
+            <div class="cm-posts-by-topic-group__hero-post pbtg-hero-post right">
+              <div class="pbtg-hero-post__wrapper">
+                <div class="pbtg-hero-post__image" style="background-image: url({{ topic_post.featured_image }})"></div>
+                <div class="pbtg-hero-post__content">
+                  {% set blogName = blog_by_id(module.select_blog) %}
+                  {% set namesSplit = blogName|split('blog', 2) %}
+
+                    {% for name in namesSplit %}
+                      {% if loop.first %}
+                        <h2 class="pbtg-hero-post__content-type">{{ name|split("'")|join('') }}</h2>
+                      {% endif %}
+                    {% endfor %}
+                  <h3 class="pbtg-hero-post__title">{{ topic_post.name }}</h3>
+                  <p class="pbtg-hero-post__description">{{ topic_post.post_list_content|safe|striptags|truncatehtml(150, ' ...' , false) }}</p>
+                    {{
+                      snippets.button_primary(
+                        url=topic_post.absolute_url,
+                        text="Learn More"
+                      )
+                    }}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      {% endif %}
+        {% endif %}
       {% endfor %}
-      <div class="cm-posts-by-topic-bottom-group clearfix">
-        {% for topic_post in topic_posts %}  
-        {% if loop.index <= 1 %} 
-        <div class="cm-how-we-helped-our-clients mobile">
-          <div class="cm-how-we-helped-card-image" style="background-image: url({{ topic_post.featured_image }});"> </div>
-          <div class="cm-how-we-helped-card-text-container">
-            <h3 class="cm-how-we-helped-card-title">{{ topic_post.name }}</h3>
-            <p class="cm-how-we-helped-card-description">{{ topic_post.post_list_content|striptags|truncatehtml(150, ' ...' , false) }}</p> 
-            <a href="{{ topic_post.absolute_url }}" class="cta--primary-coral">
-              Learn More
-            </a>
+      <div class="cm-posts-by-topic-bottom-group">
+        {% for topic_post in topic_posts %}
+          {% if loop.index <= 1 %}
+          <div class="cm-how-we-helped-our-clients mobile">
+            <div class="cm-how-we-helped-card-image" style="background-image: url({{ topic_post.featured_image }});"> </div>
+            <div class="cm-how-we-helped-card__inner">
+              <div class="cm-how-we-helped-card-text-container">
+                <h3 class="cm-how-we-helped-card-title">{{ topic_post.name }}</h3>
+                <p class="cm-how-we-helped-card-description">{{ topic_post.post_list_content|striptags|truncatehtml(150, ' ...' , false) }}</p>
+              </div>
+              {{
+                snippets.text_cta_right_arrow(
+                  url=topic_post.absolute_url,
+                  text="Learn More"
+                )
+              }}
+            </div>
           </div>
-        </div>  
-        {% endif %}
-        {% if loop.index > 1 %}    
-        <div class="cm-how-we-helped-our-clients">
-          <div class="cm-how-we-helped-card-image" style="background-image: url({{ topic_post.featured_image }});"> </div>
-          <div class="cm-how-we-helped-card-text-container">
-            <h3 class="cm-how-we-helped-card-title">{{ topic_post.name }}</h3>
-            <p class="cm-how-we-helped-card-description">{{ topic_post.post_list_content|safe|striptags|truncatehtml(150, ' ...' , false) }}</p> 
-            <a href="{{ topic_post.absolute_url }}" class="cta--primary-coral">
-              Learn More
-            </a>
-          </div>
-        </div>  
-        {% endif %}
+          {% endif %}
+
+          {% if loop.index > 1 %}
+            <div class="cm-how-we-helped-our-clients">
+              <div class="cm-how-we-helped-card-image" style="background-image: url({{ topic_post.featured_image }});"> </div>
+              <div class="cm-how-we-helped-card__inner">
+                <div class="cm-how-we-helped-card-text-container">
+                  <h3 class="cm-how-we-helped-card-title">{{ topic_post.name }}</h3>
+                  <p class="cm-how-we-helped-card-description">{{ topic_post.post_list_content|safe|striptags|truncatehtml(150, ' ...' , false) }}</p>
+                </div>
+                {{
+                  snippets.text_cta_right_arrow(
+                    url=topic_post.absolute_url,
+                    text="Learn More"
+                  )
+                }}
+              </div>
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
     </div>
   </div>
-  <div class="custom-btn">
-    <a href="{{ blog_all_posts_url(module.select_blog)|replace('all','tag') }}/{{ module.select_tag }}" class="btn btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color">
-      {{ module.button_text }}
-    </a>    
+  <div class="cm-posts-by-topic-group__button-wrapper">
+    {{
+      snippets.button_secondary(
+      classnames="cm-posts-by-topic-group__button",
+        url="{{ blog_all_posts_url(module.select_blog)|replace('all','tag') }}/{{ module.select_tag }}",
+        text=module.button_text
+      )
+    }}
   </div>
 </div>

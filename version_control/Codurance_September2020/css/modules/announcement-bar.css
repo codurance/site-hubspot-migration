@@ -1,0 +1,60 @@
+{% import '../utils/utils.css' as utils %}
+
+.announcement-bar {
+  align-items: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  text-align: center;
+  width: 100%;
+}
+.announcement-bar__inner a.cta_button {
+  border-bottom: 1px solid var(--persimmon);
+  color: white;
+  font-size: var(--natus-font-size);
+  font-weight: var(--middle-font-weight);
+  line-height: 1em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.announcement-bar__inner {
+  align-items: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+
+.announcement-bar__text {
+  color: white;
+  font-size: var(--natus-font-size);
+  line-height: 1em;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+{% call utils.small() %}
+  .announcement-bar__text {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .announcement-bar__icon {
+    display:none
+  }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+ .announcement-bar__icon {
+    fill: transparent;
+    float: left;
+    height: 28.7px;
+    stroke-width: 5px;
+    stroke: white;
+    width: 25px;
+  }
+{% endcall %}

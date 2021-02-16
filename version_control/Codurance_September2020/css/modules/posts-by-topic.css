@@ -1,0 +1,374 @@
+{% import '../utils/utils.css' as utils %}
+
+.pbtg-hero-post__wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  position: relative;
+}
+{% call utils.medium_large_and_extra_large() %}
+.pbtg-hero-post__wrapper::after {
+  background-color: var(--persimmon);
+  background-size: cover;
+  content: "";
+  position: absolute;
+}
+{% endcall %}
+{% call utils.large_and_extra_large() %}
+  .pbtg-hero-post__wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 40px;
+  }
+
+  .pbtg-hero-post__wrapper::after {
+    bottom: 25px;
+    top: 40px;
+  }
+
+  .pbtg-hero-post__wrapper::after {
+    left: 50%;
+    right: 100px;
+  }
+{% endcall %}
+
+
+.pbtg-hero-post__image {
+  background-color: var(--french-gray);
+  background-size: cover;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+  .pbtg-hero-post__image {
+    position: absolute;
+    z-index: 10;
+  }
+{% endcall %}
+{% call utils.large_and_extra_large() %}
+  .pbtg-hero-post__image {
+    bottom: 40px;
+    top: 0;
+    width: calc(57% - 100px);
+  }
+
+  .pbtg-hero-post__wrapper .pbtg-hero-post__image {
+    background-position: right center;
+    left: auto;
+    right: 50px;
+  }
+{% endcall %}
+{% call utils.medium() %}
+  .pbtg-hero-post__image {
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    width: calc(60% - 5px);
+    z-index: 10;
+    background-size: cover;
+    right: 0;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .pbtg-hero-post__image {
+    height: 0;
+    padding-top: 63.8888888889%;
+    width: 100%;
+    position: static;
+    z-index: 0;
+  }
+{% endcall %}
+
+.pbtg-hero-post__content {
+  background-color: white;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+{% call utils.medium_large_and_extra_large() %}
+  .pbtg-hero-post__content {
+    position: relative;
+    z-index: 20;
+  }
+{% endcall %}
+{% call utils.large_and_extra_large() %}
+  .pbtg-hero-post__content {
+    box-shadow: var(--woodsmoke--10) 0 0 8px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .pbtg-hero-post__wrapper .pbtg-hero-post__content {
+    margin-right: 43%;
+  }
+{% endcall %}
+{% call utils.small_and_medium() %}
+  .pbtg-hero-post__content {
+    background-color: white;
+    margin-left: 0;
+    padding-bottom: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 40px;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .pbtg-hero-post__content {
+    margin-left:0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+{% endcall %}
+
+
+.pbtg-hero-post__content-type {
+  font-size: var(--natus-font-size);
+  line-height: var(--natus-line-height);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+{% call utils.medium_large_and_extra_large() %}
+  .pbtg-hero-post__content-type {
+    color: var(--persimmon);
+    font-weight: var(--heavy-font-weight);
+    letter-spacing: 0.1em;
+  }
+{% endcall %}
+
+
+.pbtg-hero-post__title {
+  font-size: var(--freed-font-size);
+  line-height: var(--freed-line-height);
+  margin-bottom: var(--freed-margin);
+  margin-top: calc(var(--freed-margin) / 2);
+}
+{% call utils.medium_large_and_extra_large() %}
+  .pbtg-hero-post__title {
+    font-weight: var(--heavy-font-weight);
+  }
+{% endcall %}
+
+
+.pbtg-hero-post__description {
+  {{ utils.base() }}
+  margin-bottom: var(--base-margin);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--base-max-width);
+  padding-bottom: 20px;
+}
+
+
+.cm-how-we-helped-our-clients {
+  box-shadow: 0 1px 3px rgba(255,255,255,0.12), 0 1px 10px var(--woodsmoke--10);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  min-width: 230px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.cm-how-we-helped-our-clients:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px var(--woodsmoke--20);
+}
+{% call utils.extra_large() %}
+  .cm-how-we-helped-our-clients {
+    flex: 1;
+  }
+{% endcall %}
+{% call utils.small_medium_and_large() %}
+  .cm-posts-by-topic-bottom-group .cm-how-we-helped-our-clients {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+{% endcall %}
+{% call utils.small_and_medium() %}
+  .cm-posts-by-topic-bottom-group .cm-how-we-helped-our-clients {
+    margin-left: 14px;
+    margin-right: 14px;
+    width: calc(50% - 28px);
+  }
+{% endcall %}
+{% call utils.small() %}
+  .cm-how-we-helped-our-clients {
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+    text-align: center;
+    text-align: left;
+  }
+
+  .cm-posts-by-topic-bottom-group .cm-how-we-helped-our-clients {
+    margin-bottom: 0;
+    max-width: 370px;
+    width: calc(100vw - 60px);
+  }
+
+  .cm-posts-by-topic-bottom-group .cm-how-we-helped-our-clients:first-child {
+    margin-left: 30px;
+  }
+{% endcall %}
+
+
+.cm-how-we-helped-card-image {
+  background-position: top center;
+  background-size: cover;
+  padding-top: 62%;
+  width: 100%;
+}
+
+.cm-how-we-helped-card__inner {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding: 30px;
+  position: relative;
+}
+{% call utils.medium_large_and_extra_large() %}
+  .cm-how-we-helped-card__inner {
+    height: 100%;
+    min-height: 230px;
+  }
+{% endcall %}
+
+
+.cm-how-we-helped-card-title {
+  {{ utils.base() }}
+  font-weight: var(--heavy-font-weight);
+  margin-bottom: 15px;
+}
+
+.cm-how-we-helped-card-description {
+  {{ utils.natus() }}
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.cm-posts-by-topic-bottom-group {
+  display: flex;
+  padding: 0 25px;
+  position: relative;
+  z-index: 9;
+}
+{% call utils.small_medium_and_large() %}
+  .cm-posts-by-topic-bottom-group {
+    padding: 0 30px;
+  }
+{% endcall %}
+{% call utils.medium() %}
+  .cm-posts-by-topic-bottom-group {
+    flex-wrap: wrap;
+    padding: 0 12px;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .cm-posts-by-topic-bottom-group {
+    flex-wrap: nowrap;
+    max-width: 1610px;
+    overflow-x: auto;
+    padding:0;
+    width: calc( ( 5 * (100vw - (2 * 30px)) ) + 180px );
+  }
+{% endcall %}
+
+
+{% call utils.medium_large_and_extra_large() %}
+  .cm-how-we-helped-our-clients {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .cm-how-we-helped-our-clients.mobile {
+    display: none;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .cm-how-we-helped-our-clients {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+{% endcall %}
+
+
+.cm-how-we-helped-card-text-container {
+  flex-grow: 1;
+}
+
+
+{% call utils.small() %}
+  .cm-posts-by-topic-group__hero-post-container {
+    display: none;
+  }
+{% endcall %}
+
+
+{% call utils.medium_large_and_extra_large() %}
+  .cm-posts-by-topic-group__hero-post {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    position: relative;
+  }
+
+  .cm-posts-by-topic-group__hero-post-container .cm-posts-by-topic-group__hero-post {
+    margin-bottom: 70px;
+  }
+
+  .cm-posts-by-topic-group__hero-post.right {
+    margin-top: 0;
+  }
+{% endcall %}
+{% call utils.medium() %}
+  .cm-posts-by-topic-group__hero-post {
+    padding-left: 17px;
+    padding-right: 28px;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .cm-posts-by-topic-group__hero-post {
+    padding-left: 0;
+    padding-right: 0;
+  }
+{% endcall %}
+
+
+{% call utils.small() %}
+  .cm-posts-by-topic-inner-wrap {
+    overflow-x: auto;
+    margin-bottom: 40px;
+  }
+{% endcall %}
+
+
+@media (max-width: 479px){
+  .cm-posts-by-topic-inner-group {
+    width: calc( ( 4 * (100vw - (2 * 14px)) ) + 180px);
+    overflow-x: auto;
+  }
+}
+
+
+.cm-posts-by-topic-group__button-wrapper {
+  text-align: center;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+.cm-posts-by-topic-group__button {
+  border-color: white;
+  color: white;
+}
+.cm-posts-by-topic-group__button:hover,
+.cm-posts-by-topic-group__button:active,
+.cm-posts-by-topic-group__button:focus {
+  background-color: white;
+  border-color: white;
+  color: var(--shark);
+}
+{% endcall %}
+
+
+{% call utils.small() %}
+  .cm-posts-by-topic-group__button {
+    max-width: var(--button-max-width);
+    width: 100%;
+  }
+{% endcall %}

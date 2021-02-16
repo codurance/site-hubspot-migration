@@ -1,5 +1,8 @@
+{{ require_css(get_asset_url("../../css/modules/homepage-banner.css")) }}
+{% import '../../snippets/button-snippets.html' as snippets %}
+
 <section class="cm-homepage-hero" style="background-image:url({{ module.background_image.src }})">
-  <div class="cm-homepage-hero__video-wrapper"> 
+  <div class="cm-homepage-hero__video-wrapper">
     <video controls="false" playsinline="" autoplay="" muted="" poster="{{ module.poster_image.src }}" loop="" class="cm-homepage-hero__video">
       <source src="{{ module.video }}" type="video/mp4">
       Your browser does not support the video tag.
@@ -8,16 +11,30 @@
   <div class="cm-homepage-hero__content-container">
     <h1 class="cm-homepage-hero__title">{{ module.heading }}</h1>
     <h3 class="cm-homepage-hero__subtitle">{{ module.sub_heading }}</h3>
+
     {% if module.button_type == 'Standard' %}
-    {% set href = module.link_field.url.href %}
-    {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-    {% set href = "mailto:" + href %}
-    {% endif %}
-    <a href="{{ href }}" class="btn btn-more btn-more-large" {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if module.link_field.no_follow %}rel="nofollow"{% endif %}>
-      {{ module.button_text }}
-    </a>
+      {% set button_href = module.link_field.url.href %}
+      {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set button_href = "mailto:" + button_href %}
+      {% endif %}
+      {% if module.link_field.open_in_new_tab %}
+        {% set target = "_blank" %}
+      {% endif %}
+      {% if module.link_field.no_follow %}
+        {% set rel = "nofollow" %}
+      {% endif %}
+
+      {{
+        snippets.button_primary(
+          url=button_href,
+          text=module.button_text,
+          target=target,
+          rel=rel
+        )
+      }}
+
     {% else %}
-    {% cta guid="{{ module.cta_field }}" %}
+      {% cta guid="{{ module.cta_field }}" %}
     {% endif %}
   </div>
 </section>

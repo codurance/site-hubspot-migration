@@ -2,12 +2,12 @@
 # yarn lockfile v1
 
 
-"@hubspot/cms-cli@^2.1.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@hubspot/cms-cli/-/cms-cli-2.2.0.tgz#324e2ffea589269e543225cbc5723ace614074f1"
-  integrity sha512-LhgICEZG9RS5s+0qaZ+BJn0saEjkIlo9L2vrMmqJ43ppr+ozFr+XPB3qV+en3REsGWxZ8Tbk93TGZj64tOK4Dg==
+"@hubspot/cms-cli@^2.2.0":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@hubspot/cms-cli/-/cms-cli-2.2.2.tgz#3e05341c2ff3dfccf461d963a212df2f8498e910"
+  integrity sha512-EfBo7tBnUPpoXjKPNYE+53KUVxDbNljE2piHiPCsE+3QbDcLJ9PnQu9BexD8+2iKGJyUal8a1N40JX2nSjQtvg==
   dependencies:
-    "@hubspot/cms-lib" "^2.1.1-beta.10"
+    "@hubspot/cms-lib" "^2.2.2"
     chalk "^4.1.0"
     express "^4.17.1"
     inquirer "^6.3.1"
@@ -19,10 +19,10 @@
     update-notifier "3.0.1"
     yargs "15.4.1"
 
-"@hubspot/cms-lib@^2.1.1-beta.10":
-  version "2.1.1-beta.10"
-  resolved "https://registry.yarnpkg.com/@hubspot/cms-lib/-/cms-lib-2.1.1-beta.10.tgz#204736d2f5b7d12608c3b7819491e4899cded058"
-  integrity sha512-ZOYVSS8vTq6jA3eFyp8nYwAzVfQPNtSKrp2wC0TqhCSmbjCAKwhiyRUJH98nSqygdfu9YXbbRkfY47LI+OxpTg==
+"@hubspot/cms-lib@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@hubspot/cms-lib/-/cms-lib-2.2.2.tgz#b0b0013246ecb962c20ff943c1fd831a45953344"
+  integrity sha512-7gXZdNurCiMdW+X9HJCpCzwC9adcIQX9/+FMrc3cnvxtX9/WbQkmL2sGbPnJ2R3f9htvHU0EJ/Pgw0IMHdybtw==
   dependencies:
     chalk "^2.4.2"
     chokidar "^3.0.1"

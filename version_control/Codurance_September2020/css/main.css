@@ -8,15 +8,12 @@ styleshets into just this one in each of themed templates.
 
 {# Configuration variables #}
 
-{% set body_font_family = 'Lato, serif' %}
 {% set base_font_scale = 24 %}
 {% set base_font_size = base_font_scale ~ 'px' %}
 {% set body_font_size = '1rem' %}
-{% set body_color = '#494a52' %}
 {% set link_color = '#0270E0' %}
 {% set secondary_font_family = 'Lato, sans-serif' %}
 
-{% set headings_font_family = 'Merriweather, serif' %}
 {% set headings_font_weight = '500' %}
 {% set headings_color = '#494a52' %}
 {% set h1_font_size = '2.1rem' %}
@@ -65,3 +62,16 @@ styleshets into just this one in each of themed templates.
 {% include './_blog.css' %}
 {% include './icons.css' %}
 {% include './_system_pages.css' %}
+
+html, body {
+  color: #2b2c2d;
+  font-family: proxima-nova;
+  font-size: 15px;
+}
+
+h3 {
+    color: #2b2c2d;
+    font-family: proxima-nova;
+    font-size: 1.75rem;
+    font-weight: 400;
+}

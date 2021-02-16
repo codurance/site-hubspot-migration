@@ -1,0 +1,83 @@
+{% import '../utils/utils.css' as utils %}
+
+.embed-video {
+  margin-bottom: 4.4rem;
+}
+{% call utils.large_and_extra_large() %}
+.embed-video {
+    margin-top: 6.6rem;
+  }
+{% endcall %}
+{% call utils.small_and_medium() %}
+.embed-video {
+    margin-top: 4.4rem;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+.cm-services-inner-section3 {
+  padding-bottom: 5rem;
+}
+{% endcall %}
+
+
+.cm-tabber-section {
+  background-image: none !important;
+  background-color: #2b3342;
+  padding-top: 3.88rem;
+}
+{% call utils.medium_and_large() %}
+  .cm-tabber-section {
+    padding-bottom: 10px;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .cm-tabber-section {
+    padding-bottom: 1rem;
+  }
+{% endcall %}
+.cm-tabber-section::after {
+  display: none;
+}
+
+.cm-tabber-section__intro,
+.cm-tabber-section__intro > h2,
+.cm-tabber__large-screen-controls > .tabmenu  {
+  color: white;
+}
+{% call utils.small_and_medium() %}
+  .cm-tabber__panel::before,
+  .cm-tabber__panel:not(.active)::before {
+    color: white;
+  }
+{% endcall %}
+
+.cm-services-inner-section4 .row-number-1 .row-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.cm-services-inner-section5 .row-number-3 .row-fluid {
+  overflow: hidden;
+  padding-top: 3.88rem;
+}
+{% call utils.small() %}
+.cm-services-inner-section5 .row-number-1 > .row-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+{% endcall %}
+
+{% call utils.small() %}
+  .cm-services-inner-layout.type1 .cm-services-inner-section2 .dnd-section > .row-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .cm-services-inner-section2 .row-number-2 .row-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+{% endcall %}

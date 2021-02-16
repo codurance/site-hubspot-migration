@@ -1,0 +1,34 @@
+{% import '../utils/utils.css' as utils %}
+
+.custom-benfits-we-offer {
+  background-color: white;
+  border-radius: 0.25rem;
+  border-top: 5px solid var(--midnight-blue);
+  box-shadow: 0 5px 10px -6px var(--woodsmoke--10);
+  height: 100%;
+  padding: 1.3rem;
+  position: relative;
+}
+
+.custom-benfits-we-offer__text-container p {
+  {{ utils.natus() }}
+}
+
+.custom-benfits-we-offer__text-container h3 {
+  {{ utils.base() }}
+  font-weight: var(--middle-font-weight);
+  margin-bottom: var(--base-margin);
+}
+
+.custom-benfits-we-offer__icon {
+  {{ utils.card_shadow() }}
+  background-color: white;
+  border-radius: 50%;
+  color: var(--midnight-blue);
+  font-size: 1.2rem;
+  left: 0;
+  padding: .4rem;
+  position: absolute;
+  top: -0.3em;
+  transform: translate(-40%, -40%);
+}

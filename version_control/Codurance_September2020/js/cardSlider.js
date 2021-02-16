@@ -399,7 +399,7 @@ class CardSlider {
   }
 
   convertDataAttributeToKey(attribute) {
-    return attribute.slice(6,-1).split('-').map((word, index) => 
+    return attribute.slice(6,-1).split('-').map((word, index) =>
       index > 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word).join('');
   }
 }

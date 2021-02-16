@@ -1,0 +1,121 @@
+{% import '../utils/utils.css' as utils %}
+
+.cm-software-crafts-group {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 2.14286rem;
+}
+
+{% set item_margin = 15 %}
+.cm-software-crafts__item {
+  {{ utils.card_shadow() }}
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.4rem;
+  margin-left: {{ item_margin }}px;
+  margin-right: {{ item_margin }}px;
+  overflow: hidden;
+  position: relative;
+  transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
+}
+{% call utils.large_and_extra_large() %}
+.cm-software-crafts__item {
+  width: calc(33% - ({{item_margin}}px * 2));
+}
+{% endcall %}
+{% call utils.medium() %}
+  .cm-software-crafts__item {
+    width: calc(50% - ({{ item_margin }}px * 2));
+  }
+{% endcall %}
+{% call utils.small() %}
+  .cm-software-crafts__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+{% endcall %}
+.cm-software-crafts__item:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+}
+
+.cm-software-crafts__image-wrapper {
+  width: 100%;
+  padding-top: 66%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.cm-software-crafts__info-wrapper {
+  flex-grow: 1;
+  padding-bottom: calc(var(--base-margin) / 2);
+}
+
+.cm-software-crafts__title {
+  font-size: var(--base-font-size);
+  font-weight: var(--heavy-font-weight);
+  line-height: 1.3rem;
+  margin-bottom: calc(var(--base-margin) / 2);
+  margin-top: calc(var(--base-margin) / 2);
+}
+
+.cm-software-crafts__description {
+  {{ utils.natus() }}
+}
+
+.cm-recent-post__button-wrapper {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.cm-recent-post__button {
+  background-color: transparent;
+  border: 2px solid var(--shark);
+  font-size: 1em;
+  transition: all 0.3s ease;
+  padding:.85714rem 25.571px;
+  border-radius: 50px;
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 15px;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+.cm-recent-post__button:hover {
+  background-color: rgba(0,0,0,0.05);
+  color: #444444 !important;
+  transition: all 0.7s ease;
+  text-decoration:none;
+}
+
+.cm-software-crafts__inner {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.5rem;
+}
+
+.cm-software-crafts__button {
+  align-self: flex-start;
+  display:inline-block;
+  font-size: var(--natus-font-size);
+  font-weight: var(--middle-font-weight);
+  line-height: var(--natus-line-height);
+}
+
+.cm-software-crafts__button::after {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

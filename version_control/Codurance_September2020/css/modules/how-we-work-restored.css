@@ -1,0 +1,59 @@
+{% import '../utils/utils.css' as utils %}
+
+.custom-how-we-work {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.custom-how-we-work__item {
+  {{ utils.card_shadow() }}
+  border-top: 5px solid var(--midnight-blue);
+  margin: 10px;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+{% set item_margin = '20px' %}
+
+{% call utils.large_and_extra_large() %}
+  .custom-how-we-work__item {
+    width: calc(33% - {{ item_margin }});
+  }
+{% endcall %}
+
+{% call utils.medium() %}
+  .custom-how-we-work__item {
+    width: calc(50% - {{ item_margin }});
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .custom-how-we-work__item {
+    width: 100%;
+  }
+{% endcall %}
+
+.custom-how-we-work__icon {
+  color: var(--midnight-blue);
+}
+
+.custom-how-we-work__title {
+  {{ utils.freed() }}
+  margin-bottom: var(--freed-margin);
+  margin-top: calc(var(--freed-margin) / 2);
+}
+
+.custom-how-we-work__description {
+  {{ utils.natus() }}
+}
+
+.custom-how-we-work.row .custom-col-sm-6.custom-col-md-4 .block-centered {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid var(--french-gray);
+  margin: 15px 0;
+}

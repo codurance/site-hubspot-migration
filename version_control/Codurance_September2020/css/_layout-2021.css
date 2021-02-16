@@ -1,0 +1,20 @@
+:root {
+  --max-page-width: 1800px;
+  --centered-content-max-width: 1140px;
+  box-sizing: border-box;
+}
+
+*, *::before, &::after {
+  box-sizing: inherit;
+}
+
+body {
+  max-width: var(--max-page-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-center {
+  max-width: var(--centered-content-max-width);
+  margin: 0 auto;
+}

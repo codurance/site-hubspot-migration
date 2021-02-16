@@ -3,37 +3,62 @@ templateType: page
 isAvailableForNewContent: true
 label: Services Inner Page
 -->
+{% import './refactor/refactored-pages.html' as refactor %}
+
 {% extends "./layouts/base.html" %}
 
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/main-2021.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/services-inner.css")) }}
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
 {% block body %}
-<div class="hs-services-inner-layout type1">
+<div class="cm-services-inner-layout type1">
   <div class="banner-section">
     {% dnd_area "DND_banner" class='banner-area', label='Banner Section' %}
-    {% dnd_section full_width=true %}
-    {% dnd_module path='../modules/Advanced Banner', width=12, offset=0, label="" %}
-    {% end_dnd_module %}
-    {% end_dnd_section %}   
+      {% dnd_section full_width=true %}
+        {% dnd_module path='../modules/Advanced Banner', width=12, offset=0, label="" %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
     {% end_dnd_area %}
   </div>
   <main class="body-container-wrapper">
-    {% dnd_area "dnd_area1" class='hs-services-inner-section1', label='Section 1' %}
+    {% dnd_area "dnd_area1" class='cm-services-inner-section1', label='Section 1' %}
     {% end_dnd_area %}
-    {% dnd_area "dnd_area2" class='hs-services-inner-section2', label='Section 2' %}
+
+    {% dnd_area "dnd_area2" class='cm-services-inner-section2', label='Section 2' %}
     {% end_dnd_area %}
-    {% dnd_area "dnd_area3" class='hs-services-inner-section3', label='Section 3' %}
+
+    {% dnd_area "dnd_area3" class='cm-services-inner-section3', label='Section 3' %}
     {% end_dnd_area %}
-    {% dnd_area "dnd_area4" class='hs-services-inner-section4', label='Section 4' %}
+
+    {% dnd_area "dnd_area4" class='cm-services-inner-section4', label='Section 4' %}
     {% end_dnd_area %}
-    <div class="cm-service-inner-bottom-wrap">
-      {% dnd_area "dnd_area5" class='hs-services-inner-section5', label='Section 5' %}
+
+    <div class="cm-services-inner-bottom-wrap">
+      {% dnd_area "dnd_area5" class='cm-services-inner-section5', label='Section 5' %}
       {% end_dnd_area %}
-      <div class="hs-services-inner-section7"></div>
+
+      <div class="cm-services-inner-section7"></div>
     </div>
     <div class="hs-get-in-touch-section" id="get-in-touch">
-      {% dnd_area "dnd_area7" class='hs-services-inner-section8', label='Section 6' %}
-      {% end_dnd_area %}  
+      {% dnd_area "dnd_area7" class='cm-services-inner-section8', label='Section 6' %}
+      {% end_dnd_area %}
     </div>
-
   </main>
 </div>
 {% endblock body %}
