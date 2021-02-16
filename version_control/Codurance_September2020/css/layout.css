@@ -422,3 +422,8 @@ and how they stack. This is based off of the bootstrap system.
         padding-right: 50px;
     }
 }
+
+.page-center {
+  max-width: 1140px;
+  margin: 0 auto;
+}
