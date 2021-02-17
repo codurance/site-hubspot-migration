@@ -28,8 +28,8 @@
 
 {% set item_margin = 15 %}
 .cm-recent-post__item {
+  {{ utils.card_shadow() }}
   border-radius: 7px;
-  box-shadow: 0 1px 3px rgba(255,255,255,0.12),0 1px 10px rgba(0,0,0,0.12);
   color: inherit;
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@
 
 .cm-recent-post__info-wrapper {
   flex-grow: 1;
-  padding-bottom: 1.5rem;
+  padding-bottom: calc(var(--base-margin) / 2);
 }
 
 .cm-recent-post__meta-info {
@@ -79,9 +79,10 @@
 }
 
 .cm-recent-post__title {
-  {{ utils.base() }}
+  font-size: var(--base-font-size);
   font-weight: var(--heavy-font-weight);
-  margin-bottom: var(--base-margin);
+  line-height: 1.3rem;
+  margin-bottom: calc(var(--base-margin) / 2);
   margin-top: calc(var(--base-margin) / 2);
 }
 

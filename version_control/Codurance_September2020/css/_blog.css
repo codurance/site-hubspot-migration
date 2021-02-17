@@ -160,7 +160,7 @@ Also for the post meta infromation like tags, author and published date
 .u-pagination-v1-4--active {
   color: #fff !important;
 }
-{# .blog-header__author-social-links a:hover {
+.blog-header__author-social-links a:hover {
   background-color: var(--shark);
 }
 .blog-header__author-social-links svg {
@@ -355,8 +355,6 @@ Also for the post meta infromation like tags, author and published date
 .list-inline {
   padding-left: 0;
   list-style: none;
-  /* margin-top: 0; */
-  /* margin-bottom: 1rem; */
 }
 
 .list-inline-item {
@@ -533,15 +531,10 @@ figure {
 
 {# .pb-4, .py-4 {
   padding-bottom: 1.5rem!important;
-} #}
-{# button.close {
-  /* float: right; */
+}
+button.close {
   font-size: 1.5rem;
-  /* font-weight: 700; */
   line-height: 1;
-  /* color: #000; */
-  /* text-shadow: 0 1px 0 #fff; */
-  /* opacity: .5; */
   vertical-align: text-bottom;
   display: block;
   height: 23px;
@@ -632,6 +625,10 @@ figure {
 
 
 
+.hs-blog-post {
+  overflow-x: hidden;
+}
+
 @media (min-width: 768px){
   .text-md-right {
     text-align: right!important;
@@ -685,7 +682,6 @@ section.container.blog blockquote {
   border-left: none;
   border: none;
   padding: 18px;
-  /* font-size: 28px; */
   background: #f3f3f3;
   border-left: solid 2px #666;
   margin: 0 0 1rem;
@@ -761,6 +757,9 @@ a.u-icon-v2 {
 }
 
 @media (max-width: 767px) {
+  .blog-author .blog-author-desc {
+    margin: 10px 0 10px;
+  }
   .row.container.page-center--blog-meta {
     min-height: 62px;
   }
@@ -771,4 +770,9 @@ a.u-icon-v2 {
     width: 100% !important;
     float: none !important;
   }
-} #}
+}
+
+.blog-post-body {
+  font-size:  var(--base-font-size);
+  max-width: var(--base-max-width) !important;
+}

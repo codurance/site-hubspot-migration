@@ -29,10 +29,6 @@
   margin-bottom: .5rem;
 }
 
-.cm-client-card-body__category:not(:first-child) {
-  margin-right: 5px;
-}
-
 .cm-client-card-body__category {
   display: inline-block;
   margin-right: 1.5rem;
@@ -64,7 +60,7 @@
 }
 
 .cm-client-card-body__description {
-  {{ utils.natus() }}
+  {{ utils.base() }}
   max-width: var(--base-max-width);
 }
 

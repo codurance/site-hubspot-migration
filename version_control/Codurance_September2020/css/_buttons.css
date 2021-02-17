@@ -7,7 +7,7 @@
   border-radius: 3px;
   display: inline-block;
   font-size: var(--natus-font-size);
-  font-weight: var(--middle-font-weight);
+  font-weight: var(--heavy-font-weight);
   line-height: var(--natus-line-height);
   padding: 0.6em 1.5em;
   text-align: center;
@@ -79,7 +79,7 @@
   color: var(--persimmon);
   display: inline-block;
   font-size: var(--natus-font-size);
-  font-weight: var(--middle-font-weight);
+  font-weight: var(--heavy-font-weight);
   line-height: var(--natus-line-height);
   margin: 0.5rem 0;
   text-decoration: none;

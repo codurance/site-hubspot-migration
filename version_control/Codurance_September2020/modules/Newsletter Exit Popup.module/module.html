@@ -1,0 +1,25 @@
+{{ require_css(get_asset_url("../../css/newsletter-form.css")) }}
+{{ require_css(get_asset_url("../../css/modules/newsletter-exit-popup.css")) }}
+
+<div class="newsletter-exit-popup__container hidden" data-exit-popup-modal>
+  <button class="newsletter-exit-popup__close-button" data-exit-popup-close-button>
+    <svg id="icon_-_plus" class="newsletter-exit-popup__close-icon" data-name="icon - plus" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+      <g id="icon_-_menu" data-name="icon - menu" transform="translate(0 12.5)">
+        <line id="Line_27" data-name="Line 27" x2="25" fill="none" stroke="white" stroke-width="1.5"/>
+      </g>
+      <path id="Path_889" data-name="Path 889" d="M0,0H25" transform="translate(12.5) rotate(90)" fill="none" stroke="white" stroke-width="1.5"/>
+    </svg>
+  </button>
+  <div class="newsletter-exit-popup__inner-modal">
+    <h3 class="newsletter-exit-popup__heading" data-newsletter-sign-up-pending>Ready to be inspired?</h3>
+    <h3 class="newsletter-exit-popup__heading hidden" data-newsletter-sign-up-success>Thank you for signing up</h3>
+    <p class="newsletter-exit-popup__info" data-newsletter-sign-up-pending>Join our newsletter for expert tips and inspirational case studies.</p>
+    <p class="newsletter-exit-popup__info hidden" data-newsletter-sign-up-success>Your welcome email is on its way! You can pick the emails you’d like to receive by clicking the link to the Preference Centre.</p>
+    <span data-newsletter-sign-up-pending>{% form "email_form" form_to_use={{module.sign_up_form.form_id}} %}</span>
+    <div class="newsletter-exit-popup__header-image newsletter-exit-popup__header-image--pending" data-newsletter-sign-up-pending></div>
+    <div class="newsletter-exit-popup__header-image newsletter-exit-popup__header-image--success hidden" data-newsletter-sign-up-success></div>
+    <div class="newsletter-exit-popup__footer-image"></div>
+  </div>
+</div>
+
+ {{ require_js(get_asset_url("../../js/newsletterSignUpForm.js"), "footer") }}

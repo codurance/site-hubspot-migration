@@ -3,8 +3,8 @@
 .cm-partners-logos-item {
   display: inline-block;
   margin: auto;
-  padding: 30px 40px;
-  width: 25%;
+  padding: 5px 40px;
+  width: 20%;
 }
 .cm-partners-logos-inner-group {
   margin-left: auto;
@@ -33,7 +33,7 @@
     width: auto;
   }
   .cm-partners-logos-item {
-    width: 50%;
+    width: 35%;
   }
 {% endcall %}
 

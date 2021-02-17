@@ -6,11 +6,10 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    max-width: 1300px;
 }
 
 .case-study-card {
-    box-shadow: 0 1px 3px rgba(255,255,255,0.12),0 1px 10px rgba(0,0,0,0.12);
+    {{ utils.card_shadow() }}
     display: flex;
     flex-direction: column;
     min-width: 230px;

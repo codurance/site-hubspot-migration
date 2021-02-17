@@ -121,6 +121,7 @@
 }
 
 .submenu.level-2 > li {
+  display: flex;
   padding: 0;
 }
 .submenu.level-2 li a {

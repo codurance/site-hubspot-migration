@@ -12464,8 +12464,8 @@ Colors
     color: #fb7268 !important;
 }
 
-.u-block-hover:hover .custom-color-primary--hover, .custom-color-primary--hover:hover {
-  color: #fd9233 !important;
+.u-block-hover:hover .custom-color-primary--hover {
+  color: #fd9233;
 }
 
 .custom-parent:hover .custom-color-primary--parent-hover {
@@ -12552,7 +12552,7 @@ Colors
 
 /* White Colors */
 .custom-color-white {
-  color: #fff !important;
+  color: #fff;
 }
 
 .custom-color-white--opened-menu:not(.collapsed) {

@@ -9,10 +9,10 @@
   {{ utils.dudler() }}
   font-weight: var(--heavy-font-weight);
   margin-bottom: var(--dudler-margin);
-  padding-bottom: 20px;
 }
 
-.body-container-become-a-craftsperson .row-number-2 .row-fluid p {
+.custom-become-a-craftsperson-row2 .row-number-2 .row-fluid p,
+.custom-become-a-craftsperson-row5 .row-number-2 .row-fluid p {
   {{ utils.base() }}
   margin-bottom: var(--base-margin);
   padding-bottom: 20px;
@@ -29,6 +29,7 @@
 
 .custom-become-a-craftsperson-row4 .row-fluid .span4 {
   margin-bottom: 2.14286rem;
+  margin-left: 0;
   padding: 0 15px;
 }
 {% call utils.small_and_medium() %}

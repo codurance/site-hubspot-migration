@@ -17,10 +17,7 @@ label: Training Page
   <meta name="description" content="{{ page_meta.meta_description }}">
   {{ require_css(get_asset_url("../css/layout.css")) }}
   {{ require_css(get_asset_url("../css/main.css")) }}
-
-  {% if refactor.refactored_pages is containing content.name|striptags|lower %}
-    {{ require_css(get_asset_url("../css/main-2021.css")) }}
-  {% endif %}
+  {{ require_css(get_asset_url("../css/main-2021.css")) }}
 
   {{ require_css(get_asset_url("../css/pages/training.css")) }}
   {{ require_js(get_asset_url("../js/main.js")) }}
@@ -46,7 +43,7 @@ label: Training Page
     {% end_dnd_area %}
     <div class="hs-get-in-touch-section" id="get-in-touch">
       {% dnd_area "dnd_area7" class='', label='Section 7' %}
-      {% end_dnd_area %}  
+      {% end_dnd_area %}
     </div>
   </main>
 </div>

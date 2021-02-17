@@ -56,13 +56,19 @@
   margin-bottom: 48px;
 }
 
-.hs-home-section6 .page-header.section-header h1 {
+.hs-home-section6 .widget-type-rich_text h2 {
   {{ utils.dudler() }}
   font-weight: var(--heavy-font-weight);
   margin-bottom: var(--dudler-margin);
   text-align: center;
 }
 
-.hs-home-section6 .page-header.section-header p {
+.hs-home-section6 .widget-type-rich_text p {
   {{ utils.base() }}
+  margin-bottom: var(--base-margin);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--base-max-width);
+  padding-bottom: 20px;
+  text-align: center;
 }
