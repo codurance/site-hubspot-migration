@@ -67,13 +67,20 @@
 {% endcall %}
 
 .cm-homepage-hero__title {
-  color: white;
   {{ utils.habib() }}
+  color: white;
+  margin-bottom: var(--habib-margin);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 25ch;
 }
 
 .cm-homepage-hero__subtitle {
 {{ utils.freed() }}
   color: white;
-  padding: 10px 0 20px 0;
   margin-bottom: var(--freed-margin);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50ch;
+  padding: 10px 0 20px 0;
 }
