@@ -67,8 +67,12 @@
 {% endcall %}
 
 .cm-homepage-hero__title {
-  color: white;
   {{ utils.habib() }}
+  color: white;
+  margin-bottom: var(--habib-margin);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 25ch;
 }
 
 .cm-homepage-hero__subtitle {
