@@ -370,10 +370,10 @@ Also for the post meta infromation like tags, author and published date
 }
 
 a.tags {
-  {{ utils.natus() }}
-  background-color: var(--java);
+  {{ utils.sejima() }}
   border-radius: 50px;
-  color: inherit;
+  border: 1px solid var(--mid-gray);
+  color: var(--mid-gray);
   display: inline-block;
   padding-bottom: 0.2em;
   padding-left: 1em;
@@ -386,8 +386,8 @@ article.custom-bg-green {
   background-color: #185466;
 }
 a.tags:hover {
-  background-color: var(--java);
-  color: inherit;
+  background-color: var(--mid-gray);
+  color: white;
   text-decoration: underline;
 }
 .custom-bg-cover--text-overlay {
