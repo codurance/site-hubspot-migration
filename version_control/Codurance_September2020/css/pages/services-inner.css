@@ -76,6 +76,28 @@
     max-width: 100%;
 }
 
+{% call utils.large_and_extra_large() %}
+    .cm-testimonials-slider-wrapper {
+        margin-top: 100px;
+        margin-bottom: 230px;
+    }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+    .cm-testimonials-slider-wrapper {
+        margin-bottom: 150px;
+        margin-top: 80px;
+    }
+{% endcall %}
+
+
+{% call utils.small() %}
+    .cm-testimonials-slider-wrapper{
+        margin-bottom: 80px;
+        margin-top: 50px;
+    }
+{% endcall %}
+
 .cm-services-inner-bottom-wrap,
 .cm-services-inner-section4 .dnd-section {
     background: #fcf9f1 linear-gradient(90deg, #fcf9f1 52%, #fcf4f4 100%);

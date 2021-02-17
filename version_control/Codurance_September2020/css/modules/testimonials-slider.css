@@ -177,17 +177,13 @@
 
 {% call utils.large_and_extra_large() %}
     .cm-testimonials-slider-wrapper {
-        background-position: center 310px;
-        padding-top: 100px;
-        padding-bottom: 230px;
+        background-position: center 10rem;
     }
 {% endcall %}
 
 {% call utils.small_and_medium() %}
     .cm-testimonials-slider-wrapper {
         background-position: center 370px;
-        padding-bottom: 150px;
-        padding-top: 80px;
     }
     .cm-testimonials-slider-wrapper .page-center {
         max-width: 770px;
@@ -201,10 +197,8 @@
 
 
 {% call utils.small() %}
-    .cm-testimonials-slider-wrapper{
+    .cm-testimonials-slider-wrapper {
         background-position: center 380px;
-        padding-bottom: 80px;
-        padding-top: 50px;
     }
 
     .cm-testimonials-slider-group {
