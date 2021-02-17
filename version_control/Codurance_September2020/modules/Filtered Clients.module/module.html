@@ -1,3 +1,6 @@
+{{ require_css(get_asset_url("../../css/modules/filtered-clients.css")) }}
+
+
 {% set clients = hubdb_table_rows(module.clients_table, 'orderBy=-video') %}
 
 {% set allIndustries = [] %}
