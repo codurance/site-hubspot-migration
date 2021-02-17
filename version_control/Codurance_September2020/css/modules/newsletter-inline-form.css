@@ -1,0 +1,76 @@
+{% import '../utils/utils.css' as utils %}
+
+@media (max-width: 480px) {
+    .newsletter-inline-form__image {
+        background-size: 175px 135px;
+        height: 135px;
+        margin: 0 auto 20px;
+        width: 175px;
+    }
+}
+@media (min-width: 481px) {
+    .newsletter-inline-form__image {
+        bottom: -55px;
+        height: 200px;
+        position: absolute;
+        right: -235px;
+        width: 260px;
+        z-index: -1;
+    }
+}
+.newsletter-inline-form__image--pending {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
+}
+@media (max-width: 480px) {
+    .newsletter-inline-form__image--pending {
+        width: 175px;
+    }
+}
+@media (min-width: 481px) {
+    .newsletter-inline-form__image--pending {
+        width: 260px;
+    }
+}
+.newsletter-inline-form__image--success {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/bg-form-success.svg);
+}
+@media (max-width: 480px) {
+    .newsletter-inline-form__image--success {
+        width: 180px;
+    }
+}
+@media (min-width: 481px) {
+    .newsletter-inline-form__image--success {
+        width: 320px;
+    }
+}
+
+
+.newsletter-inline-form__container {
+    position: relative;
+    width: 100%;
+}
+@media (max-width: 480px) {
+    .newsletter-inline-form__container {
+        margin: 3rem 0;
+    }
+}
+@media (min-width: 481px) {
+    .newsletter-inline-form__container {
+        margin: 7rem 0;
+    }
+}
+
+.newsletter-inline-form__heading {
+    {{ utils.dudler() }}
+    margin-bottom: var(--dudler-margin);
+}
+
+.newsletter-inline-form__info {
+    margin-bottom: var(--base-margin);
+}
+@media (min-width: 481px) {
+    .newsletter-inline-form__info {
+        padding-right: 80px;
+    }
+}
