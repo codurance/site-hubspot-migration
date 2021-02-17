@@ -29,7 +29,6 @@
 {% set item_margin = 15 %}
 .cm-recent-post__item {
   {{ utils.card_shadow() }}
-  border-radius: 7px;
   color: inherit;
   display: flex;
   flex-direction: column;
