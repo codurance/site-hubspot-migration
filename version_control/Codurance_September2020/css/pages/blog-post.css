@@ -1,5 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
+{% import '../partials/blog-card.css' %}
+
 .blog-max-width {
   font-size:  var(--base-font-size);
   margin-left: auto;

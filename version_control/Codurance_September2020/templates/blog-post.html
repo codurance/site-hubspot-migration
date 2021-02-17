@@ -21,6 +21,7 @@ label: Blog Post
 
 
   {{ require_css(get_asset_url("../css/pages/blog-post.css")) }}
+  {{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
 
   {{ require_js(get_asset_url("../js/main.js")) }}
   {{ standard_header_includes }}
@@ -195,12 +196,12 @@ label: Blog Post
         >
           <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3">
             {% if post.featured_image %}
-            <a href="{{ post.absolute_url }}">
-              <img
-                class="custom-bg-white img-fluid w-100 custom-rounded-top-5"
-                src="{{ resize_image_url( post.featured_image,528 ) }}"
-                alt="{{ post.name }}"
-              />
+              <a href="{{ post.absolute_url }}">
+                <img
+                  class="custom-bg-white img-fluid w-100 custom-rounded-top-5"
+                  src="{{ resize_image_url( post.featured_image,528 ) }}"
+                  alt="{{ post.name }}"
+                />
             </a>
             {% endif %}
             <div class="custom-bg-white custom-pa-30 custom-rounded-bottom-5">
