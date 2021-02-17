@@ -33,6 +33,7 @@
     border-radius: 20px;
     margin: 20px;
     padding: 5px 10px;
+    flex-basis: 240px;
 }
 
 .clients-applied-filters__remove-button {
