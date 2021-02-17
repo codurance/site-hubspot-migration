@@ -1,0 +1,110 @@
+{% import '../utils/utils.css' as utils %}
+
+.newsletter-footer-form__section {
+    background: transparent linear-gradient(180deg,rgba(79,67,248,0.1) 0%,rgba(45,147,234,0.1) 100%) 0% 0% no-repeat padding-box;
+}
+
+.newsletter-footer-form__container {
+    max-width: 825px;
+    position: relative;
+}
+@media (max-width: 767px) {
+    .newsletter-footer-form__container {
+        padding: 45px 25px;
+    }
+}
+@media (min-width: 481px) {
+    .newsletter-footer-form__container {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        margin: 0px auto;
+        padding: 45px 0;
+        width: 75%;
+    }
+}
+
+.newsletter-footer-form__heading {
+    {{ utils.dudler() }}
+    margin-bottom: var(--dudler-margin);
+}
+
+.newsletter-footer-form__info {
+    margin-bottom: var(--base-margin);
+}
+@media (min-width: 768px) {
+    .newsletter-footer-form__info {
+        padding-right: 30px;
+    }
+}
+@media (max-width: 767px) {
+    .newsletter-footer-form__info {
+        font-size: 1.2rem;
+        margin-bottom: 1.33rem;
+    }
+}
+
+
+.newsletter-footer-form__wrapper {
+    z-index: 2;
+}
+@media (min-width: 481px) {
+    .newsletter-footer-form__wrapper {
+        width: calc(100% - 230px);
+    }
+}
+@media (max-width: 767px) {
+    .newsletter-footer-form__wrapper {
+        width: 100%;
+        padding-top: 150px;
+    }
+}
+
+.newsletter-footer-form__image {
+    z-index: 1;
+}
+@media (min-width: 768px) {
+    .newsletter-footer-form__image {
+        height: 200px;
+        margin-left: -30px;
+        width: 260px;
+    }
+}
+@media (max-width: 767px) {
+    .newsletter-footer-form__image {
+        background-size: 175px 135px;
+        height: 135px;
+        left: 50%;
+        margin: 0;
+        position: absolute;
+        top: 50px;
+        transform: translateX(-50%);
+        width: 175px;
+    }
+}
+.newsletter-footer-form__image--pending {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/newsletter-graphic.svg);
+}
+@media (max-width: 767px) {
+    .newsletter-footer-form__image--pending {
+        width: 175px;
+    }
+}
+@media (min-width: 768px) {
+    .newsletter-footer-form__image--pending {
+        width: 260px;
+    }
+}
+.newsletter-footer-form__image--success {
+    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Newsletter%20Sign-Up%20Form/bg-form-success.svg);
+}
+@media (max-width: 767px) {
+    .newsletter-footer-form__image--success {
+        width: 180px;
+    }
+}
+@media (min-width: 768px) {
+    .newsletter-footer-form__image--success {
+        width: 320px;
+    }
+}
