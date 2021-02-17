@@ -72,10 +72,12 @@ const byProblem = client => {
 }
 
 const showClient = client => {
+  client.classList.add('clients-grid__card');
   client.classList.remove('hidden');
 }
 
 const hideClient = client => {
+  client.classList.remove('clients-grid__card')
   client.classList.add('hidden');
 }
 
