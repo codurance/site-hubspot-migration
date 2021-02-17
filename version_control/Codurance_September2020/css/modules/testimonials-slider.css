@@ -214,11 +214,6 @@
     .cm-testimonials-top-content {
         text-align: left;
     }
-{#
-    .cm-testimonials-slider-wrapper .page-center {
-        max-width: 100%;
-        width: 100%;
-    } #}
 
     .cm-testimonials-slider-group button.slick-next.slick-arrow {
         right: 0;
