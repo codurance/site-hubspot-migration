@@ -380,6 +380,7 @@ a.tags {
   padding-right: 1em;
   padding-top: 0.2em;
   text-decoration: none;
+  text-align: center;
   transition: all .3s ease;
 }
 article.custom-bg-green {

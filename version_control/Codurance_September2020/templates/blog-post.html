@@ -3,6 +3,8 @@ templateType: blog
 isAvailableForNewContent: true
 label: Blog Post
 -->
+{% import '../snippets/button-snippets.html' as snippets %}
+
 {% extends "./layouts/base.html" %}
 
 <head>
@@ -40,7 +42,7 @@ label: Blog Post
       <div class="row d-flex justify-content-center align-content-end flex-wrap">
         <div class="custom-col-lg-7 mt-auto">
           <div class="mb-5 mt-5">
-            <h1 class="custom-color-white custom-font-weight-600 custom-mb-10">
+            <h1 class="blog-post__title">
               {{ content.name }}
             </h1>
             <p class="lead text-white custom-font-weight-600"></p>
@@ -50,130 +52,106 @@ label: Blog Post
       <span class="custom-text-800 custom-font-size-10 text-white"></span>
     </div>
   </section>
-  <section class="container page-center custom-mt-20">
-    <div class="row">
-      <div class="custom-col-lg-9 container page-center">
-        <div class="row container page-center--blog-meta">
-          <div
-            class="custom-col text-left text-md-left custom-mt-15 custom-mb-10 custom-col-12 custom-col-md-2 custom-font-size-12"
-          >
-            {{ content.publish_date_localized }}
-          </div>
-          {% if content.tag_list %}
-          <div
-            class="custom-col text-left text-md-right custom-mt-10 custom-col-md-10"
-          >
-            <ul class="list-inline custom-font-size-12 mb-0">
-              {% for tag in content.tag_list %}
-              <li class="list-inline-item custom-mb-10">
-                <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}"
-                  >{{ tag.name }}</a
-                >
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
-        </div>
+  <section class="blog-meta blog-max-width">
+    <div class="blog-meta__inner">
+      <div class="blog-meta__info">
+        {{ content.publish_date_localized }}
       </div>
+      {% if content.tag_list %}
+        <ul class="blog-meta__tag-list">
+          {% for tag in content.tag_list %}
+            <li class="blog-meta__tag-item">
+              <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}"
+                >{{ tag.name }}</a
+              >
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </div>
   </section>
-  <section class="container page-center custom-mt-20">
-    <div class="row">
-      <div class="custom-col-lg-9 container page-center">
-        <div class="row">
-          <div class="custom-col custom-my-15 text-left">
-            <div class="media">
-              {# Where No Author Avatar Exists Enter Name -
-              http://codurance-azurewebsites-net-3042464.hs-sites.com/publications/2020/05/20/promises-and-lies?hs_preview=AUgGVFjm-35494023046
-              -
-              http://codurance-azurewebsites-net-3042464.hs-sites.com/publications/videos/2012-12-01-ugtastic-interviews-sandro-mancuso-2012
-              #} {% if content.blog_post_author.avatar == NULL ||
-              content.blog_post_author.avatar.src == "(unknown)" ||
-              content.blog_post_author.avatar == "" %}
-              <div class="media-body">
-                <h5 class="custom-color-black custom-font-weight-600">
-                  {{ content.blog_post_author.display_name }}
-                </h5>
-                <a
-                  class="custom-font-weight-600 custom-font-size-12"
-                  href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
-                  >See author's bio and posts</a
-                >
-              </div>
-              {% else %}
-              <div class="media-body">
-                <img
-                  class="u-icon-v2 custom-rounded-50 custom-mr-15"
-                  src="{{ content.blog_post_author.avatar }}"
-                  alt="{{ content.blog_post_author.display_name }}"
-                />
-                <h5 class="custom-color-black custom-font-weight-600">
-                  {{ content.blog_post_author.display_name }}
-                </h5>
-                <a
-                  class="custom-font-weight-600 custom-font-size-12"
-                  href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
-                  >See author's bio and posts</a
-                >
-              </div>
-              {% endif %}
-            </div>
-          </div>
-          <div class="w-100 custom-hidden-md-up"></div>
-          <div class="custom-col custom-my-15 text-center text-md-right">
-            <ul class="list-inline my-0">
-              <li class="list-inline-item custom-mx-2">
-                <a
-                  class="custom-blog__social-icon"
-                  href="http://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url }}&amp;title={{ page_meta.name }}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i class="lab la-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item custom-mx-2">
-                <a
-                  class="custom-blog__social-icon"
-                  href="https://twitter.com/intent/tweet?text={{ page_meta.name }}&amp;url={{ content.absolute_url }}&amp;hashtags=specialist expertise,metrics,automation,Technical Debt,silos"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i class="lab la-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item custom-mx-2">
-                <a
-                  class="custom-blog__social-icon"
-                  href="http://www.linkedin.com/shareArticle?mini=true&amp;title={{ page_meta.name }}&amp;summary=&amp;url={{ content.absolute_url }}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i class="lab la-linkedin-in"></i>
-                </a>
-              </li>
-              <li class="list-inline-item custom-mx-2">
-                <a
-                  class="custom-blog__social-icon"
-                  href="http://www.reddit.com/submit?url={{ content.absolute_url }}&amp;title={{ page_meta.name }}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i class="lab la-reddit"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
+  <section class="blog-author-info blog-max-width">
+    <div class="blog-author-info__text-container">
+      {# Where No Author Avatar Exists Enter Name -
+      http://codurance-azurewebsites-net-3042464.hs-sites.com/publications/2020/05/20/promises-and-lies?hs_preview=AUgGVFjm-35494023046
+      -
+      http://codurance-azurewebsites-net-3042464.hs-sites.com/publications/videos/2012-12-01-ugtastic-interviews-sandro-mancuso-2012
+      #}
+      {% if content.blog_post_author.avatar == NULL ||
+      content.blog_post_author.avatar.src == "(unknown)" ||
+      content.blog_post_author.avatar == "" %}
+        <h2 class="blog-author-info__name">
+          {{ content.blog_post_author.display_name }}
+        </h2>
+        <a
+          class="blog-author-info__author-link"
+          href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
+          >See author's bio and posts</a
+        >
+      {% else %}
+        <div class="media-body">
+          <h2 class="blog-author-info__name">
+            <img
+              class="blog-author-info__author-image"
+              src="{{ content.blog_post_author.avatar }}"
+              alt="{{ content.blog_post_author.display_name }}"
+            />
+            {{ content.blog_post_author.display_name }}
+          </h2>
+          <a
+            class="blog-author-info__author-link"
+            href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
+            >See author's bio and posts</a
+          >
         </div>
-      </div>
+      {% endif %}
     </div>
+    <ul class="blog-social-icons__list">
+      <li class="blog-social-icons__item">
+        <a
+          class="blog-social-icons__icon"
+          href="http://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url }}&amp;title={{ page_meta.name }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="lab la-facebook-f"></i>
+        </a>
+      </li>
+      <li class="list-inline-item custom-mx-2">
+        <a
+          class="blog-social-icons__icon"
+          href="https://twitter.com/intent/tweet?text={{ page_meta.name }}&amp;url={{ content.absolute_url }}&amp;hashtags=specialist expertise,metrics,automation,Technical Debt,silos"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="lab la-twitter"></i>
+        </a>
+      </li>
+      <li class="list-inline-item custom-mx-2">
+        <a
+          class="blog-social-icons__icon"
+          href="http://www.linkedin.com/shareArticle?mini=true&amp;title={{ page_meta.name }}&amp;summary=&amp;url={{ content.absolute_url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="lab la-linkedin-in"></i>
+        </a>
+      </li>
+      <li class="list-inline-item custom-mx-2">
+        <a
+          class="blog-social-icons__icon"
+          href="http://www.reddit.com/submit?url={{ content.absolute_url }}&amp;title={{ page_meta.name }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="lab la-reddit"></i>
+        </a>
+      </li>
+    </ul>
   </section>
-  <section class="container page-center custom-pt-15 blog">
-    <div class="row justify-content-center">
-      <div class="col-lg-9 custom-overflow-y-hidden">
-        {{ content.post_body }}
-      </div>
+  <section class="blog-content blog-max-width">
+    <div class="blog-content__inner">
+      {{ content.post_body }}
     </div>
     {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
     <div class="blog-comments">
@@ -185,26 +163,24 @@ label: Blog Post
   {% module "blog-banner" path="../modules/Blog Post Banner", label="Bottom
   Banner" %}
 
-  <section class="custom-bg-gray-light-v5">
-    <div class="container page-center custom-py-50">
-      <h6
-        class="custom-color-black custom-font-weight-600 text-center text-uppercase mb-5"
-      >
+  <section class="related-blog-section">
+    <div class="related-blog-section__inner page-center">
+      <h2 class="related-blog-section__title">
         Related Blogs
-      </h6>
-      <div class="row mb-5">
+      </h2>
+      <div class="related-blog-section__tag-container">
         {% if content.tag_list %}
-        <div class="custom-col text-center">
-          <ul class="list-inline custom-font-size-12 mb-0">
-            {% for tag in content.tag_list %}
-            <li class="list-inline-item custom-mb-10">
-              <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}"
-                >{{ tag.name }}</a
-              >
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
+          <div class="custom-col text-center">
+            <ul class="list-inline custom-font-size-12 mb-0">
+              {% for tag in content.tag_list %}
+                <li class="list-inline-item custom-mb-10">
+                  <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}"
+                    >{{ tag.name }}</a
+                  >
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
         {% endif %}
       </div>
       <div class="row">
@@ -271,21 +247,18 @@ label: Blog Post
     </div>
   </section>
 
-  <div class="section custom-color-white codurance-green-background">
-    <div class="container page-center">
-      <div class="row">
-        <div class="custom-col-md-8 text-md-left text-center">
-          <h4 class="my-md-0">Get content like this straight to your inbox!</h4>
-        </div>
-        <div class="custom-col-md-4 text-right">
-          <a
-            class="btn btn-md u-btn-primary btn-codurance-color text-uppercase w-100 custom-width-auto--lg"
-            target="_blank"
-            href="https://mailchi.mp/codurance/newsletter-subscription"
-            rel="noopener noreferrer"
-            >Subscribe now!</a
-          >
-        </div>
+  <div class="blog-subscribe-banner">
+    <div class="blog-subscribe-banner__inner page-center">
+      <div class="blog-subscribe-banner__text-container">
+        <h3 class="blog-subscribe-banner__text">Get content like this straight to your inbox!</h3>
+      </div>
+      <div class="blog-subscribe-banner__button-container">
+        {{snippets.button_primary(
+          target="_blank",
+          url="https://mailchi.mp/codurance/newsletter-subscription",
+          rel="noopener noreferrer",
+          text="Subscribe now!"
+        )}}
       </div>
     </div>
   </div>
