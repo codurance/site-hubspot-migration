@@ -40,3 +40,64 @@
  <div class="clients-applied-filters__pill hidden" data-applied-problem-filter="{{problem}}">{{problem}}<div class="clients-applied-filters__remove-button" data-remove-problem-filter="{{problem}}"></div></div>
  {% endfor %}
 </div>
+
+<div class="clients-grid__container">
+ <div class="clients-grid__sizer"></div>
+ <div class="clients-grid__gutter-sizer"></div>
+ {% for client in clients %}
+ {% set problems = [] %}
+ {% for problem in client.problems %}
+ {% do  problems.append(problem.name) %}
+ {% endfor %}
+ {% if client.testimonial and client.description %}
+ {% set class = "clients-grid__card--v-wide" %}
+ {% elif client.testimonial or client.description %}
+ {% set class = "clients-grid__card--wide" %}
+ {% else %}
+ {% set class = "" %}
+ {% endif %}
+ <div class="clients-grid__card {{class}}" data-client-industry="{{client.industry.name}}" data-client-problems="{{problems|join(',')}}">
+   <div class="client-card__l-container">
+    {% if client.logo %}
+    <div class="client-card__image" style="background-image: url({{client.logo.url}})">
+    </div>
+    {% endif %}
+    <h3>{{client.name}}</h3>
+    <p>🔧 <a href="">{{client.industry.name}}</a></p>
+    <p>❓ <a href="">{{problems|join(' | ')}}</a></p>
+   </div>
+   {% if client.description or client.testimonial %}
+   <div class="client-card__r-container">
+    {% if client.description %}
+    <p>{{client.description}}</p>
+    {% endif %}
+    {% if client.testimonial %}
+    <p>"{{client.testimonial}}" - <span class="client-card__testimonial-author">John Doe, Honest man</span></p>
+    {% endif %}
+    {% if client.case_study %}
+    <a
+            class="button-primary"
+            target="_blank"
+            href=""
+    >Case Study</a
+    >
+    {% endif %}
+   </div>
+   {% endif %}
+ </div>
+ {% if client.video %}
+ <div class="clients-grid__card clients-grid__card--v-wide"  data-client-industry="{{client.industry.name}}" data-client-problems="{{problems|join(',')}}">
+  <h3>{{client.name}}</h3>
+  <div class="client-card__video">
+   <div class="client-card__video-inner">
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cL3DaHZ88ZQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </div>
+  </div>
+ </div>
+ {% endif %}
+ {% endfor %}
+</div>
+
+{{ require_js(get_asset_url("../js/imageLoaded.js")) }}
+{{ require_js(get_asset_url("../../js/isotope.js"), "footer") }}
+{{ require_js(get_asset_url("../../js/isotopePackery.js"), "footer") }}
