@@ -25,7 +25,7 @@
       <h3 class="in-page-cta-block__title">{{ module.title }}</h3>
       <p class="in-page-cta-block__description">{{ module.text }}</p>
       {% if module.button_type == 'Standard' %}
-        {{snippets.button_primary_alternate(
+        {{snippets.button_primary(
           url=href,
           text=module.button_text,
           target=target,
