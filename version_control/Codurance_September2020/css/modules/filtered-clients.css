@@ -10,12 +10,26 @@
 
 .clients-filter-selector__input {
     margin: 0 10%;
+    position: relative;
 }
 
 .clients-filter-selector__input select {
     background-color: #33475b;
     border: none;
     color: white;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance: none;
+}
+
+.clients-filter-selectors__container .la-caret-down {
+    color: white;
+}
+
+.clients-filter-selectors__container .clients-filter__problem-icon {
+    position: absolute;
+    top: 2px;
+    right: 30px;
 }
 
 .clients-applied-filters__container {
@@ -70,7 +84,6 @@
 }
 
 .clients-grid__card {
-    background-color: pink;
     border: 1px solid #c6c6c6;
     float: left;
     min-height: 200px;
@@ -80,6 +93,10 @@
     min-width: 300px;
     display: flex;
     align-items: center;
+}
+
+.clients-grid__card h3 {
+    text-align: center;
 }
 
 .clients-grid__card--wide {
@@ -98,6 +115,12 @@
 .client-card__r-container {
     margin-left: 5%;
     width: 66%;
+    position: relative;
+}
+
+.client-card__r-container .button-primary {
+    position: absolute;
+    right: 0px;
 }
 
 .client-card__image {
@@ -122,8 +145,3 @@
 }
 
 
-.clients-filter-selector__input select {
-    -moz-appearance:none; /* Firefox */
-    -webkit-appearance:none; /* Safari and Chrome */
-    appearance:none;
-}
