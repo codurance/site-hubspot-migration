@@ -52,6 +52,14 @@
   }
 {% endcall %}
 
+.cm-services-inner-section3 {
+  background: none;
+}
+
+.cm-services-inner-section4 {
+  background: #fcf9f1 linear-gradient(90deg,#fcf9f1 52%,#fcf4f4 100%);
+}
+
 .cm-services-inner-section4 .row-number-1 .row-fluid {
   padding-left: 0;
   padding-right: 0;
