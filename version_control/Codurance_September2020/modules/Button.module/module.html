@@ -1,18 +1,24 @@
+{% import '../../snippets/button-snippets.html' as snippets%}
+
+  {{ require_css(get_asset_url("../../css/modules/button.css")) }}
+
 <div class="custom-btn">
-  
+
   {% if module.button_type == "std" %}
-  {% set href = module.link_field.url.href %}
-  {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-  {% set href = "mailto:" + href %}
-  {% endif %}
-  <a class="{{ module.module_setting.custom_class }}" href="{{ href }}{% if module.bookmark_id  %}#{{ module.bookmark_id }} {% endif %}"
-     {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
-     {% if module.link_field.no_follow %}rel="nofollow"{% endif %}
-     >
-    {{ module.text_field }}
-  </a>
+    {% set href = module.link_field.url.href %}
+    {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+    {% endif %}
+
+    {{
+      snippets.button_primary(
+      url="{{ href }}{% if module.bookmark_id  %}#{{ module.bookmark_id }} {% endif %}",
+      text=module.text_field
+      )
+    }}
+
   {% elif module.button_type == "cta" %}
-  {% cta guid="{{ module.cta_field }}" %}
+    {% cta guid="{{ module.cta_field }}" %}
   {% endif %}
-  
+
 </div>

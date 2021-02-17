@@ -17,7 +17,6 @@ menu items appear, including the link and hover effects.
 
 .hs-menu-item a {
   display: block;
-  padding: 0.5rem 1rem;
   color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
 }

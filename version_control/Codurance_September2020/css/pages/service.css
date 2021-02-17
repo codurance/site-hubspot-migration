@@ -1,0 +1,94 @@
+{% import '../utils/utils.css' as utils %}
+
+.hs-services-layout main .dnd-section > .row-fluid {
+    max-width: 1300px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.hs-services-layout .training-teaser-section .dnd-section > .row-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.client-logo-section .dnd-section {
+    padding-bottom: 156px;
+}
+
+.client-logo-section .dnd-section > .row-fluid {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.client-logo-section .dnd-section {
+    padding-top: 100px;
+}
+
+.compass-teaser-section .dnd-section {
+    background: var(--shark);
+    padding-bottom: 60px;
+}
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .compass-teaser-section .cm-compass-teaser {
+        margin-top: -140px;
+        margin-bottom: 140px;
+    }
+{% endcall %}
+
+{% call utils.medium() %}
+    .hs-services-layout main .service-card-section .dnd-section > .row-fluid {
+        padding: 0 !important;
+    }
+
+    .service-card-section .dnd-section > .row-fluid > .span12 > .dnd-row {
+        width: 50%;
+        margin-left: 0;
+        display: inline-block;
+        padding: 0 15px;
+        margin: 0 -2px;
+        vertical-align: top;
+    }
+
+    .hs-services-layout main .service-card-section .dnd-section > .row-fluid > .span12 {
+        align-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+    .training-teaser-section .dnd-section > .row-fluid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .hs-services-layout .service-card-section .dnd-section {
+        padding: 0;
+    }
+    .hs-services-layout .service-card-section .dnd-section > .row-fluid {
+        padding: 0;
+    }
+    .client-logo-section .dnd-section {
+        padding-top: 80px;
+        padding-bottom: 0;
+    }
+
+    .compass-teaser-section .dnd-section {
+        padding: 0;
+    }
+
+    .compass-teaser-section .dnd-section > .row-fluid {
+        padding: 0 !important;
+    }
+
+    .compass-teaser-section .cm-company-logos-inner-group {
+        margin-bottom: 20px;
+    }
+{% endcall %}

@@ -4,6 +4,7 @@ This file contains all the neccessary styles to control how your forms looks
 throughout your site. Styles for form fields, buttons, inputs, etc.
 *********************************************************************************
 ****************************************************************************** */
+{% import './utils/utils.css' as utils %}
 
 form {
   max-width: {{ form_max_width }};
@@ -50,16 +51,12 @@ form {
 
 
 .hs-form label {
-  color: {{ form_label_color }};
+  {{ utils.natus() }}
   display: block;
   float: none;
   width: auto;
   padding-top: 0;
-  font-weight: 500;
-  font-family:arial;
   text-align: left;
-  font-size: 13px;
-  line-height: 20px;
   padding-top: 0;
   margin-bottom: 4px;
 }
@@ -78,7 +75,7 @@ input#hs-pwd-widget-password,
   width: 100%;
   height: 40px;
   padding: 9px 15px;
-  font-size: 16px;  
+  font-size: 16px;
   font-family:arial;
   font-weight: normal;
   line-height: 22px;
@@ -234,7 +231,8 @@ ul.no-list {
   width: 91%;
 }
 ul.inputs-list label {
-  font-family: arial;
+  align-items: center;
+  display: flex;
   font-size: 14px;
 }
 .grecaptcha-badge {
@@ -257,8 +255,16 @@ ul.inputs-list label {
   float: left;
 }
 .legal-consent-container .hs-form-booleancheckbox-display > span {
-  display: block; 
-  margin-left: 20px;
+  display: block;
+  font-size: var(--natus-font-size);
+  font-weight: var(--middle-font-weight);
+  line-height: var(--natus-line-height);
+  margin-left: 10px !important;
+}
+.legal-consent-container .hs-form-booleancheckbox-display p {
+  display: block;
+  font-size: var(--natus-font-size);
+  font-weight: var(--middle-font-weight);
 }
 @media (max-width: 400px),
 (min-device-width: 320px) and (max-device-width: 480px) {
@@ -299,7 +305,3 @@ ul.inputs-list label {
   -moz-appearance: none;
 }
 
-.hs-default-font-element,
-.hs-main-font-element {
-  font-family: {{ body_font_family }};
-}

@@ -1,0 +1,68 @@
+{% import '../utils/utils.css' as utils %}
+
+.hs-home-section1 .dnd-section {
+  padding-bottom: 60px;
+  padding-top: 100px;
+}
+
+.hs-home-section4 .dnd-section > .row-fluid,
+.hs-home-section2 .dnd-section > .row-fluid {
+  max-width: 1300px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.hs-home-section3 .dnd-section > .row-fluid {
+  max-width: 1300px;
+}
+.hs-home-section3 .dnd-section {
+  padding-top: 10px;
+  padding-bottom: 60px;
+}
+
+.hs-home-section3 .custom-btn {
+  text-align: center;
+}
+{% call utils.small() %}
+  .hs-home-section3 .custom-btn .button-primary {
+    width:100%;
+    max-width: var(--button-max-width);
+  }
+{% endcall %}
+
+.hs-home-section4 .dnd-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #fafafa;
+}
+
+.hs-home-section5 .dnd-section {
+  padding: 0;
+}
+.hs-home-section5 .dnd-section > .row-fluid {
+  padding: 0;
+  max-width: 100% !important;
+}
+
+.hs-home-section6 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.hs-home-section6 .dnd-section {
+  padding: 0;
+}
+
+.hs-home-section6 .page-header.section-header {
+  padding-bottom: 22px;
+  margin-bottom: 48px;
+}
+
+.hs-home-section6 .widget-type-rich_text h2 {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+  margin-bottom: var(--dudler-margin);
+  text-align: center;
+}
+
+.hs-home-section6 .widget-type-rich_text p {
+  {{ utils.base() }}
+}

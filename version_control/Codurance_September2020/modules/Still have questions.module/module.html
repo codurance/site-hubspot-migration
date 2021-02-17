@@ -1,47 +1,65 @@
-<section class="custom-bg-gray-light-v5 custom-pt-50">
-  <div class="custom-pb-50">
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{{ require_css(get_asset_url("../../css/modules/still-have-questions.css")) }}
+
+{% if module.button.button_type == "std" %}
+  {% set href = module.button.link_field.url.href %}
+
+  {% if module.button.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+  {% endif %}
+
+  {% if module.button.link_field.open_in_new_tab %}
+    {% set target = "_blank" %}
+  {% endif %}
+
+  {% if module.button.link_field.no_follow %}
+    {% set rel = "nofollow" %}
+  {% endif %}
+{% endif %}
+
+<section class="custom-still-have-questions">
+  <div>
     <div class="custom-pos-rel">
       <div class="container text-center ">
         <div class="text-center mb-4">
-          <h3 class="h3 text-uppercase mb-3">{{ module.heading }}</h3> 
-          <div class="d-inline-block custom-width-60 custom-height-1 custom-bg-orange mb-2"></div>
-          <p class="lead mb-0">{{ module.sub_heading }}</p>
-        </div> 
+          <h2 class="custom-still-have-questions__title">{{ module.heading }}</h2>
+          <p class="custom-still-have-questions__description">{{ module.sub_heading }}</p>
+        </div>
 
         {% if module.button.button_type == "std" %}
-        {% set href = module.button.link_field.url.href %}
-        {% if module.button.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-        {% set href = "mailto:" + href %}
-        {% endif %}
-        <a class="{{ module.button.module_setting.custom_class }}" href="{{ href }}{% if module.button.bookmark_id  %}#{{ module.button.bookmark_id }} {% endif %}"
-           {% if module.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
-           {% if module.button.link_field.no_follow %}rel="nofollow"{% endif %}
-           >
-          {{ module.button.text_field }}
-        </a>
+          {{snippets.button_primary(
+            url="{{ href }}{% if module.button.bookmark_id  %}#{{ module.button.bookmark_id }}{% endif %}",
+            target=target,
+            rel=rel,
+            text=module.button.text_field
+          )}}
+
         {% elif module.button.button_type == "cta" %}
-        {% cta guid="{{ module.button.cta_field }}" %}
+          {% cta guid="{{ module.button.cta_field }}" %}
 
         {% elif module.button.button_type == "lightbox" %}
-        <a class="btn btn-md u-btn-primary text-uppercase btn-codurance-color" data-modal-effect="blur" data-modal-target="#{{ module.button.bookmark_id }}" href="#{{ module.button.bookmark_id }}">{{ module.button.text_field }}</a> 
+          <a class="button-primary" data-modal-effect="blur" data-modal-target="#{{ module.button.bookmark_id }}" href="#{{ module.button.bookmark_id }}">{{ module.button.text_field }}</a>
         {% endif %}
 
       </div>
     </div>
   </div>
-  <div class="text-left custom-max-width-600 custom-bg-white custom-overflow-y-auto custom-pa-20" id="{{ module.button.bookmark_id }}" style="display: none;">
-    <button class="close" onclick="Custombox.modal.close();" type="button"> <i class="hs-icon hs-icon-close btn-pointer-cursor"></i> 
+
+  <div class="custom-still-have-questions__form ccustom-still-have-questions-form" id="{{ module.button.bookmark_id }}" style="display: none;">
+    <button class="custom-still-have-questions__close-button" type="button" onclick="Custombox.modal.close();">
+      <i class="las la-times"></i>
     </button>
 
     {{ module.button.lightbox.lightbox_content }}
     <br>
     {% form
-	form_to_use="{{ module.button.lightbox.form_field.form_id }}"
-	response_response_type="{{ module.button.lightbox.form_field.response_type }}"
-	response_message="{{ module.button.lightbox.form_field.message }}"
-	response_redirect_id="{{ module.button.lightbox.form_field.redirect_id }}"
-	response_redirect_url="{{module.button.lightbox.form_field.redirect_url}}"
-	gotowebinar_webinar_key="{{ module.button.lightbox.form_field.gotowebinar_webinar_key }}"
-%}
+      form_to_use="{{ module.button.lightbox.form_field.form_id }}"
+      response_response_type="{{ module.button.lightbox.form_field.response_type }}"
+      response_message="{{ module.button.lightbox.form_field.message }}"
+      response_redirect_id="{{ module.button.lightbox.form_field.redirect_id }}"
+      response_redirect_url="{{module.button.lightbox.form_field.redirect_url}}"
+      gotowebinar_webinar_key="{{ module.button.lightbox.form_field.gotowebinar_webinar_key }}"
+    %}
   </div>
 </section>

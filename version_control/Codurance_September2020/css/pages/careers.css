@@ -1,0 +1,176 @@
+{% import '../utils/utils.css' as utils %}
+
+.body-container-career .dnd-section {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.body-container-career h2 {
+  font-size: var(--dudler-font-size);
+  line-height: var(--dudler-line-height);
+  font-weight: var(--heavy-font-weight);
+  padding-bottom: 20px;
+  margin-bottom: var(--dudler-margin);
+}
+
+.custom-career-page-header-section .row-fluid .dnd-section .row-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.custom-career-about-us-section {
+  background-color: var(--athens-gray);
+}
+
+.custom-career-about-us-section .row-number-1 .row-fluid {
+  padding: 0;
+}
+
+.custom-career-about-us-section .row-fluid .span3 {
+  margin-bottom: 2rem;
+}
+{% call utils.extra_large() %}
+  .custom-career-about-us-section .row-fluid .span3 {
+    width: 25%;
+  }
+{% endcall %}
+{% call utils.medium_and_large() %}
+  .custom-career-about-us-section .row-fluid .span3 {
+    width: 50%;
+  }
+{% endcall %}
+
+.custom-career-about-us-section .row-number-3 .row-fluid {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.custom-career-about-us-section .row-number-3 .row-fluid .hs_cos_wrapper_type_module {
+  height: 100%;
+}
+
+.custom-career-about-us-section,
+.custom-career-about-you-section,
+.custom-career-our-roles-section,
+.custom-career-life-codurance-section,
+.custom-career-questions-section {
+  padding-top: 3.57143rem;
+  padding-bottom: 3.57143rem;
+}
+
+.custom-career-about-you-section .row-fluid .span4 {
+  margin-bottom: 2.14286rem;
+}
+
+.custom-career-about-you-section .dnd-section >.row-fluid .dnd-row .row-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+{% call utils.small_and_medium() %}
+  .custom-career-about-you-section .row-number-3 .dnd-module {
+    min-width: 50%;
+  }
+{% endcall %}
+
+.custom-career-about-you-section .row-fluid .span4 div {
+  height: 100%;
+}
+
+{% call utils.small() %}
+  .custom-career-about-you-section .row-fluid .span4 {
+    width: 100% !important;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .custom-career-about-you-section .dnd-section > .row-fluid .dnd-row .row-fluid > div,
+  .custom-career-our-roles-section .dnd-section > .row-fluid .dnd-row .row-fluid > div {
+    width: 100%;
+  }
+{% endcall %}
+
+.custom-career-our-roles-section {
+  background-color: var(--athens-gray);
+}
+
+.custom-career-our-roles-section .dnd-section .dnd-row > .row-fluid {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+{% call utils.small_and_medium() %}
+  .custom-career-our-roles-section .dnd-section .dnd-row > .row-fluid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .custom-career-our-roles-section .dnd-section .dnd-row > .row-fluid .dnd-module {
+    width: 100%;
+    max-width: 600px;
+  }
+  .custom-career-our-roles-section .dnd-section .dnd-row > .row-fluid .dnd-module + .dnd-module {
+    margin-top: 2rem;
+  }
+{% endcall %}
+
+.custom-career-our-roles-section .dnd-section.dnd-row > .row-fluid * div,
+.custom-career-our-roles-section .hs_cos_wrapper_type_module {
+  height: 100%;
+}
+
+.custom-career-life-codurance-section .widget-type-rich_text h2 {
+  padding-bottom: 0;
+}
+
+.custom-career-life-codurance-section .widget-type-rich_text p {
+  {{ utils.base() }}
+  margin-bottom: var(--base-margin);
+  max-width: var(--base-max-width);
+  padding-bottom: 20px;
+}
+
+.custom-career-life-codurance-section .dnd-section > .row-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.custom-career-life-codurance-section .dnd-section .row-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.custom-career-life-codurance-section .row-fluid .span4 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+{% call utils.small() %}
+  .custom-career-life-codurance-section .row-fluid .span4 {
+    margin-bottom: 2rem;
+    max-width: 450px;
+    width: 100%;
+  }
+{% endcall %}
+
+.custom-career-life-codurance-section .row-number-3 .dnd-module {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+{% call utils.medium_and_large() %}
+  .custom-career-life-codurance-section .row-number-3 .dnd-module {
+    flex: 0 1 370px;
+    margin-bottom: 2rem;
+  }
+{% endcall %}
+
+.custom-career-questions-section {
+  background-color: var(--athens-gray);
+}

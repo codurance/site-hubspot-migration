@@ -1,0 +1,23 @@
+{% import '../utils/utils.css' as utils %}
+
+.cm-contact-us-card__heading {
+  {{ utils.base() }}
+  margin: 0 0 -2px 0;
+  display: inline-block;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid var(--persimmon);
+}
+
+.cm-contact-us-card__heading-wrapper {
+  border-bottom: 1px dotted var(--french-gray);
+  display: block;
+  margin: 0.8rem 0 1rem 0;
+}
+
+.cm-contact-content {
+  margin-bottom: var(--base-margin);
+}
+
+.cm-contact-content p {
+  {{ utils.natus() }}
+}

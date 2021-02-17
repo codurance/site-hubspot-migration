@@ -1,0 +1,55 @@
+{% macro button_primary(url, classnames, text, target, rel) %}
+  <a
+    href="{{ url }}"
+    class="{% for classname in classnames %}{{classname}}&#32{% endfor %}button-primary"
+    {% if target %}target="{{target}}"{% endif %}
+    {% if rel %}rel="{{rel}}"{% endif %}
+  >
+    {{ text }}
+  </a>
+{% endmacro %}
+
+{% macro button_primary_alternate(url, classnames, text, target, rel) %}
+  <a
+    href="{{ url }}"
+    class="{% for classname in classnames %}{{classname}}&#32{% endfor %}button-primary-alternate"
+    {% if target %}target="{{target}}"{% endif %}
+    {% if rel %}rel="{{rel}}"{% endif %}
+  >
+    {{ text }}
+  </a>
+{% endmacro %}
+
+{% macro button_secondary(url, classnames, text, target, rel) %}
+  <a
+    href="{{ url }}"
+    class="{% for classname in classnames %}{{classname}}&#32{% endfor %}button-secondary"
+    {% if target %}target="{{target}}"{% endif %}
+    {% if rel %}rel="{{rel}}"{% endif %}
+  >
+      {{ text }}
+  </a>
+{% endmacro %}
+
+{% macro text_cta(url = 'javascript:;', classnames, text, target, rel) %}
+  <a
+    href="{{ url }}"
+    class="{% for classname in classnames %}{{classname}}&#32{% endfor %}text-cta"
+    {% if target %}target="{{target}}"{% endif %}
+    {% if rel %}rel="{{rel}}"{% endif %}
+  >
+      {{ text }}
+  </a>
+{% endmacro %}
+
+{% macro text_cta_right_arrow(url, classnames, text, target, rel) %}
+  <a
+    href="{{ url }}"
+    class="{% for classname in classnames %}{{classname}}&#32{% endfor %}text-cta--right-arrow"
+    {% if target %}target="{{target}}"{% endif %}
+    {% if rel %}rel="{{rel}}"{% endif %}
+  >
+      {{ text }}
+      <i class="las la-arrow-right"></i>
+  </a>
+{% endmacro %}

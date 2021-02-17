@@ -1,86 +1,91 @@
-<div class="custom-our-people container page-center content">
-  <div class="row ">
-    <div class=" custom-col-md-12">
-      <a id="theteam" target="_blank" rel="noopener noreferrer"></a>
-      <div class="container page-center content">
-        <div class="row team margin-bottom-10">
-          {% set table_info = hubdb_table_rows( module.hubdbtable_field ) %}
+{{ require_css(get_asset_url("../../css/modules/our-people.css")) }}
 
-          {% for row in table_info %}
+<div class="custom-our-people page-center">
+  <a id="theteam" target="_blank" rel="noopener noreferrer"></a>
+  <div class="custom-our-people__card-container">
+    {% set table_info = hubdb_table_rows( module.hubdbtable_field ) %}
 
-          <div class=" custom-col-md-3  custom-col-sm-4  custom-col-6 pb-4">
-            <a href="#team-{{ loop.index }}" data-modal-target="#team-{{ loop.index }}" rel="gallery3" class="fancybox img-hover-v1 team-member custom-color-primary" title="{{ row.name }}" >
-              {% if row.image.url %}
-              <span>
-                <img class="img-fluid" src="{{ row.image.url }}" alt="{{ row.name }}">
-              </span>
-              {% endif %}
-              <span class="pt-1"> 
-                {% if row.name %}  <div class="team-member-name">{{ row.name }}</div> {% endif %}
-                {% if row.designation %}  <div class="team-member-role">{{ row.designation }}</div> {% endif %}
-              </span> 
-            </a>
-          </div>
+    {% for row in table_info %}
 
-          <div data-id="{{ row.name }}" id="team-{{ loop.index }}" class="custom-max-width-800 custom-bg-white custom-overflow-y-auto custom-pa-20" style="display: none;">
-            <button type="button" class="close" onclick="Custombox.modal.close();"> <i class="hs-icon hs-icon-close btn-pointer-cursor"></i> 
-            </button>
-            <div class="custom-pa-20">
-              <div class="row">
-                {% if row.image.url %}
-                <div class=" custom-col-lg-4 custom-mb-40 custom-mb-0--lg">
-
-                  <div class="u-block-hover custom-pos-rel custom-mb-20">
-                    <figure>
-                      <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="{{ row.image.url }}" alt="{{ row.name }}">
-                    </figure>
-                  </div>
-
-                </div>
-                {% endif %}
-                <div class=" custom-col-lg-8">
-
-                  <div class="d-flex align-items-center justify-content-sm-between custom-mb-5">
-                    {% if row.name %}  <h2 class="custom-font-weight-300 custom-mr-10">{{ row.name }}</h2>    {% endif %}
-                    {% if row.github_link or row.twitter_link or row.linkedin_link %}
-                    <ul class="list-inline mb-0">
-                      {% if row.github_link %}
-                      <li class="list-inline-item custom-mx-2">
-                        <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ row.github_link }}" target="_blank" rel="noopener noreferrer"> <i class="custom-font-size-default custom-line-height-1 u-icon__elem-regular fa fa-github"></i>  <i class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover fa fa-github"></i> 
-                        </a>
-                      </li>
-                      {% endif %}
-                      {% if  row.twitter_link %}
-                      <li class="list-inline-item custom-mx-2">
-                        <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ row.twitter_link }}" target="_blank" rel="noopener noreferrer"> <i class="custom-font-size-default custom-line-height-1 u-icon__elem-regular fa fa-twitter"></i>  <i class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i> 
-                        </a>
-                      </li>
-                      {% endif %}
-                      {% if  row.linkedin_link %}
-                      <li class="list-inline-item custom-mx-2">
-                        <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ row.linkedin_link }}" target="_blank" rel="noopener noreferrer"> <i class="custom-font-size-default custom-line-height-1 u-icon__elem-regular fa fa-linkedin"></i>  <i class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover fa fa-linkedin"></i> 
-                        </a>
-                      </li>
-                      {% endif %}
-                    </ul>
-                    {% endif %}
-                  </div>
-                  {% if row.designation %}
-                  <h6 class="h6 custom-font-weight-300 custom-mb-10"> 
-                    <i class="icon-badge custom-pos-rel custom-top-1 custom-mr-5 custom-color-gray-dark-v5"></i> 
-                    {{ row.designation }}
-                  </h6> 
-                  {% endif %}
-                  <hr class="custom-brd-gray-light-v4 custom-my-20">
-                  {{ row.content }}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {% endfor %}
+      <div class="custom-our-people__card">
+        <div class="custom-our-people__card-inner">
+          <a class="custom-our-people__link" href="#team-{{ loop.index }}" data-modal-target="#team-{{ loop.index }}" rel="gallery3" title="{{ row.name }}" >
+            {% if row.image.url %}
+              <img class="custom-our-people__profile-image" src="{{ row.image.url }}" alt="{{ row.name }}">
+            {% endif %}
+            {% if row.name %}
+              <span class="custom-our-people__name">{{ row.name }}</span>
+            {% endif %}
+            {% if row.designation %}
+              <span class="custom-our-people__role">{{ row.designation }}</span>
+            {% endif %}
+          </a>
         </div>
       </div>
-    </div>
+
+      <div class="custom-our-people__modal custom-our-people-modal" data-id="{{ row.name }}" id="team-{{ loop.index }}" style="display: none;">
+        <button class="custom-our-people-modal__close-button" type="button" onclick="Custombox.modal.close();">
+          <i class="las la-times"></i>
+        </button>
+        <div class="custom-our-people-modal__inner">
+
+          {% if row.image.url %}
+            <div class="custom-our-people-modal__left-column">
+              <figure class="custom-our-people-modal__image-container">
+                <img class="custom-our-people-modal__image" src="{{ row.image.url }}" alt="{{ row.name }}">
+              </figure>
+            </div>
+          {% endif %}
+
+          <div class="custom-our-people-modal__right-column">
+            <div class="custom-our-people-modal__intro-info">
+              {% if row.name %}
+                <h2 class="custom-our-people-modal__name">{{ row.name }}</h2>
+              {% endif %}
+              {% if row.designation %}
+                <h6 class="custom-our-people-modal__job-title">
+                  {{ row.designation }}
+                </h6>
+              {% endif %}
+              {% if row.github_link or row.twitter_link or row.linkedin_link %}
+                <ul class="custom-our-people-modal__social-list">
+                  {% if row.github_link %}
+                  <li class="custom-our-people-modal__social-item">
+                    <a class="custom-our-people-modal__social-link" href="{{ row.github_link }}" target="_blank" rel="noopener noreferrer">
+                      <i class="custom-our-people-modal__social-icon  lab la-github"></i>
+                      <i class="custom-our-people-modal__social-icon  lab la-github"></i>
+                    </a>
+                  </li>
+                  {% endif %}
+                  {% if  row.twitter_link %}
+                  <li class="custom-our-people-modal__social-item">
+                    <a class="custom-our-people-modal__social-link" href="{{ row.twitter_link }}" target="_blank" rel="noopener noreferrer">
+                      <i class="custom-our-people-modal__social-icon  lab la-twitter"></i>
+                      <i class="custom-our-people-modal__social-icon  lab la-twitter"></i>
+                    </a>
+                  </li>
+                  {% endif %}
+                  {% if  row.linkedin_link %}
+                  <li class="custom-our-people-modal__social-item">
+                    <a class="custom-our-people-modal__social-link" href="{{ row.linkedin_link }}" target="_blank" rel="noopener noreferrer">
+                      <i class="custom-our-people-modal__social-icon  lab la-linkedin-in"></i>
+                      <i class="custom-our-people-modal__social-icon  lab la-linkedin-in"></i>
+                    </a>
+                  </li>
+                  {% endif %}
+                </ul>
+              {% endif %}
+            </div>
+
+            <hr class="custom-our-people-modal__rule">
+            <div class="custom-our-people-modal__body-copy">
+              {{ row.content }}
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
   </div>
 </div>

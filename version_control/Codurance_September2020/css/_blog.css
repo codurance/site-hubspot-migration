@@ -118,7 +118,7 @@ Also for the post meta infromation like tags, author and published date
   font-family: {{ secondary_font_family }};
 }
 .blog-index__post-content a {
-  color: {{ body_color }};
+  color: var(--shark);
 }
 .blog-index__post img {
   max-width: 100%;
@@ -169,7 +169,7 @@ Also for the post meta infromation like tags, author and published date
   color: #fff !important;
 }
 .blog-header__author-social-links a:hover {
-  background-color: {{ body_color }};
+  background-color: var(--shark);
 }
 .blog-header__author-social-links svg {
   fill: #fff;
@@ -193,7 +193,7 @@ Also for the post meta infromation like tags, author and published date
   margin: 1rem 0;
 }
 .blog-post__meta a {
-  color: {{ body_color }};
+  color: var(--shark);
   text-decoration: underline;
 }
 
@@ -225,7 +225,7 @@ Also for the post meta infromation like tags, author and published date
 .blog-recent-posts__post {
   display: block;
   flex:  0 0 100%;
-  color: {{ body_color }};
+  color: var(--shark);
   padding: 1rem;
 }
 @media screen and (min-width: 768px) {
@@ -392,8 +392,6 @@ img.featured-image {
 .list-inline {
   padding-left: 0;
   list-style: none;
-  /* margin-top: 0; */
-  /* margin-bottom: 1rem; */
 }
 
 .list-inline-item {
@@ -556,13 +554,8 @@ figure {
   padding-bottom: 1.5rem!important;
 }
 button.close {
-  /* float: right; */
   font-size: 1.5rem;
-  /* font-weight: 700; */
   line-height: 1;
-  /* color: #000; */
-  /* text-shadow: 0 1px 0 #fff; */
-  /* opacity: .5; */
   vertical-align: text-bottom;
   display: block;
   height: 23px;
@@ -724,7 +717,6 @@ section.container.blog blockquote {
   border-left: none;
   border: none;
   padding: 18px;
-  /* font-size: 28px; */
   background: #f3f3f3;
   border-left: solid 2px #666;
   margin: 0 0 1rem;

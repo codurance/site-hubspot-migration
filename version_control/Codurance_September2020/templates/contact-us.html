@@ -5,6 +5,25 @@ label: Contact Us Page
 -->
 {% extends "./layouts/base.html" %}
 
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/main-2021.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/contact-us.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
 {% block body %}
 <div class="hs-contact-us-layout">
   <main class="body-container-wrapper">
@@ -12,7 +31,7 @@ label: Contact Us Page
     {% end_dnd_area %}
     <div class="hs-get-in-touch-section" id="get-in-touch">
       {% dnd_area "dnd_area4" class='hs-contact-us-section2', label='Section 2' %}
-      {% end_dnd_area %}  
+      {% end_dnd_area %}
     </div>
   </main>
 </div>

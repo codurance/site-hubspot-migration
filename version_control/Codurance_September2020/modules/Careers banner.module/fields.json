@@ -38,7 +38,7 @@
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
-  "default" : "We are looking for people who share the same values of Software Craftsmanship that we do. Whether you’re an experienced Craftsperson or an aspiring Craftsperson-in-training."
+  "default" : "We are looking for people who share the same values of Software&nbsp;Craftsmanship that we do. Whether you’re an experienced Craftsperson or an aspiring Craftsperson-in-training."
 }, {
   "id" : "2dda9cc9-90fa-661c-fd60-febc5fc72332",
   "name" : "button",
@@ -200,13 +200,13 @@
       "allow_new_line" : false,
       "show_emoji_picker" : false,
       "type" : "text",
-      "default" : "btn btn-more btn-more-large"
+      "default" : ""
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
     "type" : "group",
     "default" : {
-      "custom_class" : "btn btn-more btn-more-large"
+      "custom_class" : ""
     }
   } ],
   "tab" : "CONTENT",
@@ -228,7 +228,7 @@
       "lightbox_sub_title" : "Note: Links below will open in a new tab."
     },
     "module_setting" : {
-      "custom_class" : "btn btn-more btn-more-large"
+      "custom_class" : ""
     }
   }
 } ]

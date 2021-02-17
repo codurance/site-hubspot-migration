@@ -1,0 +1,106 @@
+{% import '../utils/utils.css' as utils %}
+
+{% set side_panning = '1rem' %}
+{% set vertical_padding = '1.3rem' %}
+
+.footer-v2 {
+  background-color: var(--woodsmoke);
+  color: var(--athens-gray);
+  border-top: 1px solid var(--shark);
+  padding-top: {{vertical_padding}};
+  padding-bottom: {{vertical_padding}};
+}
+
+.footer-v2__rss-container {
+  width: 100%;
+  color: var(--athens-gray);
+  padding-left: {{side_panning}};
+  padding-right: {{side_panning}};
+}
+
+.footer-v2__rss-title {
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+  margin-bottom: var(--base-margin);
+  font-weight: var(--heavy-font-weight);
+}
+
+.footer-v2__rss-container .hs-rss-title {
+  color: var(--athens-gray);
+  font-size: var(--natus-font-size);
+  line-height: var(--natus-line-height);
+}
+
+.footer-v2__rss-container .hs-rss-author {
+  color: var(--french-gray);
+  font-size: var(--natus-font-size);
+  line-height: var(--natus-line-height);
+}
+
+.footer-v2__bottom-container {
+  border-top: 1px solid var(--shark);
+  padding-bottom: {{vertical_padding}};
+  padding-top: {{vertical_padding}};
+  width: 100%;
+}
+
+.footer-v2__bottom-container-inner {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  max-width: var(--centered-content-max-width);
+  padding-left: {{side_panning}};
+  padding-right: {{side_panning}};
+}
+
+.footer-v2__registration {
+  {{ utils.natus() }}
+  color: var(--french-gray);
+}
+
+{% call utils.large_and_extra_large() %}
+  .footer-v2__registration,
+  .footer-v2__social-container {
+    width: 50%;
+  }
+{% endcall %}
+{% call utils.small_and_medium() %}
+  .footer-v2__registration,
+  .footer-v2__social-container {
+    width: 100%;
+  }
+  .footer-v2__registration {
+    text-align: center;
+    margin-bottom: 1rem;
+ }
+
+{% endcall %}
+
+.footer-v2__social-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+{% call utils.large_and_extra_large() %}
+  .footer-v2__social-list {
+    justify-content: flex-end;
+  }
+{% endcall %}
+{% call utils.small_and_medium() %}
+  .footer-v2__social-list {
+  justify-content: center;
+  }
+{% endcall %}
+
+.footer-v2__social-item {
+  margin: 0 0.7rem;
+}
+
+.footer-v2__social-link {
+  {{ utils.natus() }}
+  color: var(--french-gray);
+}
+
+.footer-v2__social-link:hover {
+  color: var(--athens-gray);
+}

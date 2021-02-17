@@ -1,0 +1,178 @@
+{% import '../utils/utils.css' as utils %}
+
+.custom-testimonial-slider__wrapper {
+  position: relative
+}
+
+.custom-testimonial-slider__inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+{% call utils.large_and_extra_large() %}
+  .custom-testimonial-slider__inner {
+    min-height: 19.5rem;
+    padding-bottom: 60px;
+  }
+{% endcall %}
+{% call utils.small_and_medium() %}
+  .custom-testimonial-slider__inner {
+    min-height: 21.2rem;
+  }
+{% endcall %}
+
+
+.carousel-item {
+  position: relative;
+  display: none;
+  align-items: flex-start;
+  width: 100%;
+  transition: -webkit-transform .6s ease;
+  transition: transform .6s ease;
+  transition: transform .6s ease,-webkit-transform .6s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+.carousel-item-next,.carousel-item-prev,.carousel-item.active {
+  display: flex;
+}
+
+.carousel-item-next,.carousel-item-prev {
+  position: absolute;
+  top: 0
+}
+
+.carousel-item-next.carousel-item-left,.carousel-item-prev.carousel-item-right {
+  -webkit-transform: translateX(0);
+  transform: translateX(0)
+}
+
+@supports ((-webkit-transform-style: preserve-3d) or (transform-style:preserve-3d)) {
+  .carousel-item-next.carousel-item-left,.carousel-item-prev.carousel-item-right {
+    -webkit-transform:translate3d(0,0,0);
+    transform: translate3d(0,0,0)
+  }
+}
+
+.active.carousel-item-right,.carousel-item-next {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%)
+}
+
+@supports ((-webkit-transform-style: preserve-3d) or (transform-style:preserve-3d)) {
+  .active.carousel-item-right,.carousel-item-next {
+    -webkit-transform:translate3d(100%,0,0);
+    transform: translate3d(100%,0,0)
+  }
+}
+
+.active.carousel-item-left,.carousel-item-prev {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%)
+}
+
+@supports ((-webkit-transform-style: preserve-3d) or (transform-style:preserve-3d)) {
+  .active.carousel-item-left,.carousel-item-prev {
+    -webkit-transform:translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0)
+  }
+}
+
+{% set preview_dimension = '60px' %}
+
+.custom-testimonial-slider__preview {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 5px;
+  width: {{ preview_dimension }};
+  height: {{ preview_dimension }};
+}
+
+.custom-testimonial-slider__preview-image,
+ {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-testimonial-slider__indicators {
+  height: {{ preview_dimension }};
+  z-index: 99;
+  text-align: center;
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100%;
+}
+{% call utils.small_and_medium() %}
+  .custom-testimonial-slider__indicators {
+    display: none;
+  }
+{% endcall %}
+
+.custom-testimonial-slider__name {
+  {{ utils.base() }}
+  margin-bottom: calc(var(--base-margin) / 2);
+}
+
+.custom-testimonial-slider__underline {
+  background-color: var(--persimmon);
+  width: 3rem;
+  height: 1px;
+  display: inline-block;
+  margin-bottom: calc(var(--base-margin) / 2);
+}
+
+.custom-testimonial-slider__body-text {
+  {{ utils.natus() }}
+}
+
+.custom-testimonial-slider__picture-wrapper {
+  width: 33%;
+  height: calc(100% + {{ preview_dimension }});
+  padding-right: 0.5rem;
+}
+{% call utils.small() %}
+  .custom-testimonial-slider__picture-wrapper {
+    display: none;
+  }
+{% endcall %}
+
+
+.custom-testimonial-slider__text-wrapper {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+{% call utils.medium_large_and_extra_large() %}
+  .custom-testimonial-slider__text-wrapper {
+    width: 66%;
+    margin-bottom: 1rem;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .custom-testimonial-slider__text-wrapper {
+    width: 100%;
+  }
+{% endcall %}
+
+
+.custom-testimonial-slider__carousel-container {
+  {{ utils.card_shadow() }}
+  margin: 0 auto;
+  padding: 1rem;
+}
+{% call utils.medium_large_and_extra_large() %}
+  .custom-testimonial-slider__carousel-container {
+    max-width: 75%;
+  }
+{% endcall %}

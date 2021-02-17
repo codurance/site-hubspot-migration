@@ -3,7 +3,30 @@ templateType: page
 isAvailableForNewContent: true
 label: Home Page
 -->
+
 {% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/main-2021.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/homepage.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+
+
 
 {% block body %}
 <div class="hs-home-layout">
@@ -12,7 +35,7 @@ label: Home Page
     {% dnd_section full_width=true %}
     {% dnd_module path='../modules/Homepage Banner', width=12, offset=0, label="" %}
     {% end_dnd_module %}
-    {% end_dnd_section %}   
+    {% end_dnd_section %}
     {% end_dnd_area %}
   </div>
   <main class="body-container-wrapper">
