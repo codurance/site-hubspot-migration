@@ -24,6 +24,7 @@
    <option data-industry-option="{{industry}}">{{industry}}</option>
    {% endfor %}
   </select>
+  <i class="las la-caret-down"></i>
  </div>
  <div class="clients-filter-selector__input">
   <select data-select-problem value="">
@@ -32,7 +33,9 @@
    <option data-problem-option="{{problem}}">{{problem}}</option>
    {% endfor %}
   </select>
+  <i class="las la-caret-down clients-filter__problem-icon"></i>
  </div>
+
 </div>
 
 <div class="clients-applied-filters__container">
@@ -66,7 +69,7 @@
     </div>
     {% endif %}
     <h3>{{client.name}}</h3>
-    <p>🔧 <a href="">{{client.industry.name}}</a></p>
+    <p><i class="las la-wrench"></i><a href="">{{client.industry.name}}</a></p>
     <p>❓ <a href="">{{problems|join(' | ')}}</a></p>
    </div>
    {% if client.description or client.testimonial %}
