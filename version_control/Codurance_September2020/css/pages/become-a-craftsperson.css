@@ -9,7 +9,6 @@
   {{ utils.dudler() }}
   font-weight: var(--heavy-font-weight);
   margin-bottom: var(--dudler-margin);
-  padding-bottom: 20px;
 }
 
 .custom-become-a-craftsperson-row2 .row-number-2 .row-fluid p,
