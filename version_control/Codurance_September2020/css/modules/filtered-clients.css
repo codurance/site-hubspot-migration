@@ -20,6 +20,7 @@
     -moz-appearance:none; /* Firefox */
     -webkit-appearance:none; /* Safari and Chrome */
     appearance: none;
+    width: 160px;
 }
 
 .clients-filter-selectors__container .la-caret-down {
@@ -29,13 +30,14 @@
 .clients-filter-selectors__container .clients-filter__problem-icon {
     position: absolute;
     top: 2px;
-    right: 30px;
+    left: 160px;
 }
 
 .clients-applied-filters__container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
+    padding: 20px 20px 160px;
     width: 100%;
     background-color: #2b3342;
 }
@@ -46,33 +48,25 @@
     color: white;
     border-radius: 20px;
     margin: 20px;
-    padding: 5px 10px;
-    flex-basis: 240px;
+    padding: 5px 30px 5px 10px;
 }
 
 .clients-applied-filters__remove-button {
     background: none;
+    color: white;
     height: 15px;
     position: absolute;
-    right: 8px;
-    top: 5px;
-    width: 15px;
+    right: 5px;
+    top: 10px;
 }
 
 .clients-applied-filters__remove-button:hover {
     cursor: pointer;
 }
 
-.clients-applied-filters__remove-button::after {
-    color: white;
-    content: 'x';
-    margin-left: 9px;
-}
-
-
 .clients-grid__container {
-    margin: 50px auto;
-    width: 70%;
+    margin: -120px auto 50px;
+    width: 80%;
 }
 
 .clients-grid__sizer {
@@ -85,18 +79,15 @@
 
 .clients-grid__card {
     border: 1px solid #c6c6c6;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 10px 18px var(--woodsmoke--10);
     float: left;
     min-height: 200px;
     margin-bottom: 10px;
     padding: 20px;
-    width: 30%;
+    width: 28%;
     min-width: 300px;
-    display: flex;
-    align-items: center;
-}
-
-.clients-grid__card h3 {
-    text-align: center;
 }
 
 .clients-grid__card--wide {
@@ -105,7 +96,30 @@
 }
 
 .clients-grid__card--v-wide {
+    padding: 40px;
     width: 100%;
+}
+
+.client-card__container {
+    align-items: center;
+}
+
+.client-card__name {
+    margin-bottom: var(--dudler-margin);
+    {{ utils.dudler() }}
+}
+
+.client-card__container p {
+    {{ utils.base() }}
+    {{ utils.base_margin() }}
+}
+
+.client-card__container ul {
+    list-style-type: none;
+}
+
+.client-card__icon {
+    margin-right: 10px;
 }
 
 .client-card__l-container {
@@ -125,9 +139,11 @@
 
 .client-card__image {
     align-items: center;
-    background-size: 120px;
     height: 200px;
-    width: 100%;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position:center;
+    margin-bottom: 20px;
 }
 
 .client-card__testimonial-author {
@@ -135,8 +151,6 @@
 }
 
 .client-card__video {
-    padding: 20px;
-    flex-grow: 1;
 }
 
 .client-card__video-inner {
