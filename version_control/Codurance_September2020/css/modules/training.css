@@ -131,6 +131,6 @@
     }
 
     .training-teaser__image {
-        padding-top: 55.5555555556%;
+        display: none;
     }
 {% endcall %}

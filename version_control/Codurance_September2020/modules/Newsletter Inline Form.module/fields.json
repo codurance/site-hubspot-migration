@@ -1,0 +1,12 @@
+[ {
+  "id" : "2c5d0922-a71a-e3e3-61ce-9ea28e2af5a2",
+  "name" : "sign_up_form",
+  "label" : "Sign Up Form",
+  "required" : true,
+  "locked" : false,
+  "type" : "form",
+  "default" : {
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form."
+  }
+} ]
