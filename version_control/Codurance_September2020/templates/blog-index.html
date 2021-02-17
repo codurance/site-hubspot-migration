@@ -25,7 +25,6 @@ label: Blog Listing
 </head>
 
 {% block body %}
-  <h1>HUBSPOT BLOG TEST9</h1>
 {% if blog_author %}
 
   <div class="container custom-blog-author-listing page-center content-sm">
@@ -100,7 +99,7 @@ label: Blog Listing
                   <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
                 </ul>
                 <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
-                  <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ content.absolute_url }}">
+                  <a class="custom-blog-listing__title-link" href="{{ content.absolute_url }}">
                     {{ content.name }}</a>
                 </h5>
 
@@ -231,7 +230,7 @@ label: Blog Listing
                     <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
                   </ul>
                   <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
-                    <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ content.absolute_url }}">
+                    <a class="custom-blog-listing__title-link" href="{{ content.absolute_url }}">
                       {{ content.name }}</a>
                   </h5>
 
