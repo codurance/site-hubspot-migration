@@ -1,3 +1,8 @@
+.blog-post-body {
+  font-size:  var(--base-font-size);
+  max-width: var(--base-max-width) !important;
+}
+
 .custom-blog__social-icon {
   align-items: center;
   border-radius: 50%;
