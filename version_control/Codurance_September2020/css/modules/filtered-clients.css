@@ -120,3 +120,10 @@
     width: 100%;
     height: 500px;
 }
+
+
+.clients-filter-selector__input select {
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+}
