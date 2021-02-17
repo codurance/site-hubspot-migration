@@ -830,7 +830,7 @@ a.u-icon-v2 {
 
 }
 
-@media (max-width: 767x) {
+@media (max-width: 767px) {
   .blog-author .blog-author-desc {
     margin: 10px 0 10px;
   }
@@ -847,5 +847,6 @@ a.u-icon-v2 {
 }
 
 .blog-post-body {
-  max-width: 75ch !important;
+  font-size:  var(--base-font-size);
+  max-width: var(--base-max-width) !important;
 }
