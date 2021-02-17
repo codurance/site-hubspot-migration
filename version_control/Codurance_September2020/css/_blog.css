@@ -392,8 +392,6 @@ img.featured-image {
 .list-inline {
   padding-left: 0;
   list-style: none;
-  /* margin-top: 0; */
-  /* margin-bottom: 1rem; */
 }
 
 .list-inline-item {
@@ -556,13 +554,8 @@ figure {
   padding-bottom: 1.5rem!important;
 }
 button.close {
-  /* float: right; */
   font-size: 1.5rem;
-  /* font-weight: 700; */
   line-height: 1;
-  /* color: #000; */
-  /* text-shadow: 0 1px 0 #fff; */
-  /* opacity: .5; */
   vertical-align: text-bottom;
   display: block;
   height: 23px;
@@ -728,7 +721,6 @@ section.container.blog blockquote {
   border-left: none;
   border: none;
   padding: 18px;
-  /* font-size: 28px; */
   background: #f3f3f3;
   border-left: solid 2px #666;
   margin: 0 0 1rem;

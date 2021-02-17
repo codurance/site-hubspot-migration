@@ -258,7 +258,7 @@ ul.inputs-list label {
   display: block;
   font-size: var(--natus-font-size);
   font-weight: var(--middle-font-weight);
-  line-height: 0;
+  line-height: var(--natus-line-height);
   margin-left: 10px !important;
 }
 .legal-consent-container .hs-form-booleancheckbox-display p {
