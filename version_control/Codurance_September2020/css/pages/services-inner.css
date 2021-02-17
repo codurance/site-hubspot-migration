@@ -78,14 +78,14 @@
 
 {% call utils.large_and_extra_large() %}
     .cm-testimonials-slider-wrapper {
-        margin-top: 100px;
         margin-bottom: 230px;
+        margin-top: 100px;
     }
 {% endcall %}
 
-{% call utils.small_and_medium() %}
+{% call utils.medium() %}
     .cm-testimonials-slider-wrapper {
-        margin-bottom: 150px;
+    margin-bottom: 230px;
         margin-top: 80px;
     }
 {% endcall %}
