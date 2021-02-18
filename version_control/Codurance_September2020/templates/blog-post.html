@@ -90,20 +90,22 @@ label: Blog Post
           >See author's bio and posts</a
         >
       {% else %}
-        <div class="media-body">
-          <h2 class="blog-author-info__name">
-            <img
-              class="blog-author-info__author-image"
-              src="{{ content.blog_post_author.avatar }}"
-              alt="{{ content.blog_post_author.display_name }}"
-            />
-            {{ content.blog_post_author.display_name }}
-          </h2>
-          <a
-            class="blog-author-info__author-link"
-            href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
-            >See author's bio and posts</a
-          >
+        <div class="blog-author-info__outer">
+          <img
+            class="blog-author-info__author-image"
+            src="{{ content.blog_post_author.avatar }}"
+            alt="{{ content.blog_post_author.display_name }}"
+          />
+          <div class="blog-author-info__inner">
+            <h2 class="blog-author-info__name">
+              {{ content.blog_post_author.display_name }}
+            </h2>
+            <a
+              class="blog-author-info__author-link"
+              href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
+              >See author's bio and posts</a
+            >
+          </div>
         </div>
       {% endif %}
     </div>
