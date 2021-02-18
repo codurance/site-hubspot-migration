@@ -244,3 +244,17 @@ flex: 0 0 66.666667%;
 max-width: 66.666667%
 }
 }
+
+.u-pagination-v1-4 {
+  color: var(--shark);
+}
+
+.u-pagination-v1-4:hover {
+  color: var(--shark);
+  border-color: var(--persimmon);
+}
+
+.u-pagination-v1-4--active {
+  background-color: var(--persimmon);
+  border-color: var(--persimmon--dark);
+}

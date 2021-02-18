@@ -157,9 +157,7 @@ Also for the post meta infromation like tags, author and published date
   transition-delay: 0s;
   transition-duration: .3s;
 }
-.u-pagination-v1-4--active {
-  color: #fff !important;
-}
+
 .blog-header__author-social-links a:hover {
   background-color: var(--shark);
 }
@@ -331,23 +329,7 @@ Also for the post meta infromation like tags, author and published date
   opacity: .5;
   pointer-events: none;
 } #}
-.u-pagination-v1-4:hover {
-  color: #555 !important;
-  border-color: #fb7268 !important
-}
 
-.u-pagination-v1-4--active {
-  background-color: #fb7268 !important;
-  border-color: #fb7268 !important
-}
-
-.u-pagination-v1-4--active {
-  color: #fff;
-}
-
-.u-pagination-v1-4 {
-  color: #333;
-}
 .no-gutters>[class*=col-] {
   padding-right: 0;
   padding-left: 0;
