@@ -47,7 +47,6 @@
 
 .blog-cta-card {
   align-items: center;
-  color: var(--woodsmoke);
   flex-direction: column;
   padding-bottom: 5rem;
   padding-top: 5rem;
@@ -56,20 +55,26 @@
 
 .blog-cta-card--tango {
   background-color: var(--tango);
+  color: var(--woodsmoke);
 }
 
 .blog-cta-card--crimson {
   background-color: var(--crimson);
+  color: white;
 }
 
 .blog-cta-card--gold {
   background-color: var(--gold);
+  color: var(--woodsmoke);
 }
 
 .blog-cta-card__title {
   {{ utils.base() }}
   font-weight: var(--heavy-font-weight);
   margin-bottom: var(--base-margin);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
 }
 
 .blog-cta-card__description {
@@ -80,7 +85,7 @@
 .blog-cta-card__link:hover,
 .blog-cta-card__link:active,
 .blog-cta-card__link:focus {
-  color: var(--woodsmoke);
+  color: inherit;
 }
 
 .blog-cta-card__link::after {
