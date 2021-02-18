@@ -154,7 +154,15 @@ label: Blog Post
   </section>
   <section class="blog-content blog-max-width">
     <div class="blog-content__inner">
-      {{ content.post_body }}
+      {% set sections = content.post_body|split('<!--more-->', 2) %}
+        {{ sections[0] }}
+        {% module
+          "newsletter_inline_form"
+          sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
+          path="../modules/Newsletter Inline Form.module"
+          label="Newsletter inline form" no_wrapper=True
+        %}
+      {{ sections[1] }}
     </div>
     {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
     <div class="blog-comments">
@@ -250,21 +258,18 @@ label: Blog Post
     </div>
   </section>
 
-  <div class="blog-subscribe-banner">
-    <div class="blog-subscribe-banner__inner page-center">
-      <div class="blog-subscribe-banner__text-container">
-        <h3 class="blog-subscribe-banner__text">Get content like this straight to your inbox!</h3>
-      </div>
-      <div class="blog-subscribe-banner__button-container">
-        {{snippets.button_primary(
-          target="_blank",
-          url="https://mailchi.mp/codurance/newsletter-subscription",
-          rel="noopener noreferrer",
-          text="Subscribe now!"
-        )}}
-      </div>
-    </div>
-  </div>
+  {% module
+    "newsletter_footer_form"
+    sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
+    path="../modules/Newsletter Footer Form.module"
+    label="Newsletter footer form" no_wrapper=True
+  %}
+  {% module
+    "newsletter_exit_popup"
+    sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
+    path="../modules/Newsletter Exit Popup.module"
+    label="Newsletter exit popup" no_wrapper=True
+  %}
 
   <script>
     var cookieIframeContainers = document.getElementsByClassName(
