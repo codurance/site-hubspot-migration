@@ -5,6 +5,8 @@ label: Blog Listing
 -->
 {% extends "./layouts/base.html" %}
 
+{% import '../snippets/button-snippets.html' as snippets %}
+
 <head>
   <meta charset="utf-8">
   <title>{{ page_meta.html_title }}</title>
@@ -253,10 +255,15 @@ label: Blog Listing
           {% if loop.index == 1 %}
             <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
               <!-- Static Quote -->
-              <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-pa-30 custom-py-100 custom-bg-green">
-                <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Did you hone your skills today? </h3>
-                <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> Try Katalyst </h3>
-                <a class="u-link-v2" href="http://katalyst.codurance.com" target="_blank" rel="noopener noreferrer"></a>
+              <article class="blog-cta-card blog-cta-card--tango">
+                <h3 class="blog-cta-card__title">Did you hone your skills today?</h3>
+                {{snippets.text_cta_right_arrow(
+                  classnames="blog-cta-card__link",
+                  url="http://katalyst.codurance.com",
+                  rel="noopener noreferrer",
+                  target="_blank",
+                  text="Try Katalyst"
+                )}}
               </article>
               <!-- End Static Quote -->
             </div>

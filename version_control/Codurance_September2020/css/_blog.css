@@ -383,9 +383,6 @@ a.tags {
   text-align: center;
   transition: all .3s ease;
 }
-article.custom-bg-green {
-  background-color: #185466;
-}
 a.tags:hover {
   background-color: var(--mid-gray);
   color: white;
