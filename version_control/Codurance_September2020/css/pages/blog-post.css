@@ -179,6 +179,10 @@
   color: inherit !important;
 }
 
+.blog-content blockquote {
+  {{ utils.freed_margin() }}
+}
+
 .related-blog-section {
   background-color: var(--athens-gray);
 }
