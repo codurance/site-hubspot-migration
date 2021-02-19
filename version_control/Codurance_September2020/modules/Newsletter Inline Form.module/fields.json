@@ -9,4 +9,15 @@
     "response_type" : "inline",
     "message" : "Thanks for submitting the form."
   }
+}, {
+  "id" : "15e73eac-5cae-a24b-5ce3-064194bb4ce7",
+  "name" : "language",
+  "label" : "language",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : ""
 } ]

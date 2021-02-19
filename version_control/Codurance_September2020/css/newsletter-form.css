@@ -20,7 +20,7 @@
     height: 100%;
     margin: 0;
 }
-
+/**/
 .hs-form .actions {
     height: 100%;
 }
@@ -37,7 +37,7 @@
 }
 @media (min-width: 481px) {
     .hs-email {
-        width: calc(100% - 8.61rem);;
+        width: calc(100% - 8.61rem);
     }
 }
 
@@ -63,6 +63,7 @@
 .hs-submit {
     display: inline-block;
 }
+
 @media (max-width: 480px) {
     .hs-submit {
         width: 100%;
@@ -75,6 +76,12 @@
     }
 }
 
+@media (max-width: 875px) {
+    .newsletter-exit-popup__container .cta_newsletter_spanish input[type="email"] {
+        {{ utils.base() }}
+    }
+}
+
 .hs-email input {
     {{ utils.base() }}
     box-shadow: 0px 0px 20px #00000029;
@@ -84,7 +91,8 @@
     vertical-align: top;
     width: 100%;
 }
-@media (max-width: 481px) {
+
+@media (max-width: 480px) {
     .hs-email input {
         margin-bottom: 1.4rem;
     }
@@ -92,4 +100,108 @@
 
 .submitted-message {
     display: none;
+}
+
+
+.hs_haz_click_aqui_para_informarnos_si_te_gustaria_recibir_contenido_en_espanol {
+    position: absolute;
+    top: 80px;
+}
+
+.cta_newsletter_spanish .hs_submit {
+    width: 15em;
+}
+
+.cta_newsletter_spanish, ul.inputs-list label {
+    {{ utils.natus() }}
+}
+
+.cta_newsletter_spanish .hs-input[type=checkbox] {
+    opacity: 0;
+    margin: 3px 12px 3px 0px;
+}
+
+.cta_newsletter_spanish .hs-form-booleancheckbox-display span {
+    font-weight: var(--middle-font-weight);
+}
+
+.cta_newsletter_spanish .hs-form-booleancheckbox-display span::before {
+    content: "";
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    border: 1px solid rgba(0, 0, 0, .25);
+}
+
+.cta_newsletter_spanish .hs-form-booleancheckbox-display span::after {
+    content: "";
+    display: inline-block;
+    height: 8px;
+    width: 14px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    transform: rotate(-45deg);
+}
+
+.cta_newsletter_spanish .hs-form-booleancheckbox-display {
+    position: relative;
+}
+
+.cta_newsletter_spanish .hs-form-booleancheckbox-display span::before,
+.cta_newsletter_spanish .hs-form-booleancheckbox-display span::after {
+    position: absolute;
+}
+
+.cta_newsletter_spanish .hs-form-booleancheckbox-display span::before {
+    top: -3px;
+    left: 0px;
+    border-radius: 3px;
+}
+
+.cta_newsletter_spanish .hs-form-booleancheckbox-display span::after {
+    left: 6px;
+    top: 4px;
+}
+
+.cta_newsletter_spanish .hs-form-booleancheckbox-display span {
+    margin-left: 10px;
+}
+
+.cta_newsletter_spanish .hs-form-booleancheckbox-display .hs-input[type=checkbox] + span::after {
+    content: none;
+}
+
+.cta_newsletter_spanish .hs-form-booleancheckbox-display .hs-input[type=checkbox]:checked + span::after {
+    content: "";
+}
+
+.cta_newsletter_spanish .hs-form-booleancheckbox-display .hs-input[type=checkbox]:focus + span:before {
+    outline: rgb(0, 0, 0) auto 5px;
+}
+
+@media(max-width: 480px) {
+    .cta_newsletter_spanish .hs_submit {
+        width: 100%;
+    }
+    .cta_newsletter_spanish .hs-form-booleancheckbox-display span::after {
+        top: 12px;
+    }
+    .cta_newsletter_spanish .hs-form-booleancheckbox-display span::before {
+        top: 6px;
+    }
+
+    .hs_haz_click_aqui_para_informarnos_si_te_gustaria_recibir_contenido_en_espanol {
+        position: static;
+    }
+}
+@media(min-width: 481px) {
+    .newsletter-exit-popup__inner-modal .cta_newsletter_spanish {
+        margin-bottom: 70px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 630px) {
+    .hs-error-msgs {
+        bottom: -2.0rem;
+    }
 }
