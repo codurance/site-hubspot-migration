@@ -7,4 +7,4 @@
 
 {% include './_buttons.css' %}
 
-{% include './_footer.css' %}
+{% include '../_footer.css' %}
