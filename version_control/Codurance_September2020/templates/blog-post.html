@@ -154,13 +154,20 @@ label: Blog Post
   </section>
   <section class="blog-content blog-max-width">
     <div class="blog-content__inner">
+      {% set path = request.path|truncate(3, true, '') %}
+      {% if path is string_containing 'es' %}
+        {% set site_language = 'hello'  %}
+      {% else %}
+        {% set site_language = 'goodbye' %}
+      {% endif %}
       {% set sections = content.post_body|split('<!--more-->', 2) %}
       {{ sections[0] }}
+
       {% module
         "newsletter_inline_form"
         sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
         path="../modules/Newsletter Inline Form.module"
-        label="Newsletter inline form" no_wrapper=True
+        label="Newsletter inline form", language='{{site_language}}', no_wrapper=True
       %}
       {{ sections[1] }}
     </div>
@@ -257,20 +264,33 @@ label: Blog Post
       </div>
     </div>
   </section>
-
-  {% module
-    "newsletter_footer_form"
-    sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
-    path="../modules/Newsletter Footer Form.module"
-    label="Newsletter footer form" no_wrapper=True
-  %}
-  {% module
-    "newsletter_exit_popup"
-    sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
-    path="../modules/Newsletter Exit Popup.module"
-    label="Newsletter exit popup" no_wrapper=True
-  %}
-
+  {% if site_language == 'eng' %}
+    {% module
+      "newsletter_footer_form"
+      sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
+      path="../modules/Newsletter Footer Form.module"
+      label="Newsletter footer form", language="en", no_wrapper=True
+    %}
+    {% module
+      "newsletter_exit_popup"
+      sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
+      path="../modules/Newsletter Exit Popup.module"
+      label="Newsletter exit popup", language="en", no_wrapper=True
+    %}
+  {% else %}
+    {% module
+      "newsletter_footer_form"
+      sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
+      path="../modules/Newsletter Footer Form.module"
+      label="Newsletter footer form", language="es", no_wrapper=True
+    %}
+    {% module
+      "newsletter_exit_popup"
+      sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
+      path="../modules/Newsletter Exit Popup.module"
+      label="Newsletter exit popup", language="es", no_wrapper=True
+    %}
+  {% endif %}
   <script>
     var cookieIframeContainers = document.getElementsByClassName(
       'js-iframe-container'
