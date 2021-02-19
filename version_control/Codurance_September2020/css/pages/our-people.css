@@ -1,5 +1,17 @@
 {% import '../utils/utils.css' as utils %}
 
+.our-people__heading-wrapper {
+  {{ utils.eames() }}
+  background-color: pink;
+  height: 300px;
+  margin-bottom: -150px;
+  padding-top: 100px;
+}
+
+.our-people__header {
+  padding-left: 15px;
+}
+
 .our-people-bottom-banner-section .row-fluid .span8,
 .our-people-bottom-banner-section .row-fluid .span4 {
   position: relative;
