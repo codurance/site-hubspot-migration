@@ -1,5 +1,26 @@
 {% import '../utils/utils.css' as utils %}
 
+.clients-header__section {
+    background-color: var(--shark);
+    color: white;
+}
+
+.clients-header__container {
+    margin: 0 auto;
+    padding: 50px 150px 50px 0;
+    width: 80%;
+}
+
+.clients-header__section h1 {
+    margin-bottom: var(--dudler-margin);
+    {{ utils.dudler() }}
+}
+
+.clients-header__section p {
+    {{ utils.base() }}
+    {{ utils.base_margin() }}
+}
+
 .clients-filter-selectors__container {
     display: flex;
     justify-content: center;
@@ -116,6 +137,12 @@
 
 .client-card__container ul {
     list-style-type: none;
+}
+
+.client-card__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .client-card__icon {
