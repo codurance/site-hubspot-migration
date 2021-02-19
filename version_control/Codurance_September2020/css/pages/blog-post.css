@@ -171,7 +171,8 @@
 .blog-content h4,
 .blog-content h5 {
   {{ utils.freed() }}
-  {{ utils.freed_margin() }}
+  margin-bottom: var(--freed-margin);
+  margin-top: calc(var(--freed-margin) * 2);
 }
 
 .blog-content h1 > span,
