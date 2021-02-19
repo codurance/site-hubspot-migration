@@ -28,20 +28,12 @@ label: Our People
 
 {% block body %}
 
+  <div class="our-people__heading-wrapper">
+    <h1 class="our-people__header page-center">Our People</h1>
+  </div>
 
-  {% dnd_area "row1" class='our-story-header-banner-section', label='Row1' %}
-  {% dnd_section vertical_alignment='MIDDLE' %}
-
-  {% end_dnd_section %}
-  {% end_dnd_area %}
-
-
-  {% dnd_area "row2" class='our-people-collection-section', label='Row2' %}
-  {% dnd_section vertical_alignment='MIDDLE' %}
-
-  {% end_dnd_section %}
-  {% end_dnd_area %}
-
+  {% module "our_people" path="../modules/Our People.module"
+      label="Our People" no_wrapper=True %}
 
   {% dnd_area "row3" class='our-people-bottom-banner-section', label='Row3' %}
   {% dnd_section vertical_alignment='MIDDLE' %}
