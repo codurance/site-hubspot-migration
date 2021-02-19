@@ -171,16 +171,27 @@
 .blog-content h4,
 .blog-content h5 {
   {{ utils.freed() }}
-  {{ utils.freed_margin() }}
+  margin-bottom: var(--freed-margin);
+  margin-top: calc(var(--freed-margin) * 2);
 }
 
-.blog-content span {
+.blog-content h1 > span,
+.blog-content h2 > span,
+.blog-content h3 > span,
+.blog-content h4 > span,
+.blog-content h5 > span,
+.blog-content p > span {
   font-size: inherit !important;
   color: inherit !important;
 }
 
 .blog-content blockquote {
   {{ utils.freed_margin() }}
+}
+
+.blog-content code {
+  {{ utils.natus() }}
+  font-family: monospace;
 }
 
 .related-blog-section {
