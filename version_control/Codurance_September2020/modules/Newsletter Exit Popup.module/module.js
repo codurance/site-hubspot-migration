@@ -26,17 +26,45 @@ const potentiallyLeavingPage = e => {
   return e.clientY < 10;
 }
 
+const setCookie = (key, value) => {
+  const expiry = 60 * 60 * 24 * 7;
+  document.cookie = `${key}=${value}; path=/; max-age=${expiry}`;
+}
+
+const setPopupLimitingCookie = _ => {
+  setCookie('newsletter_exit_popup', 'true');
+}
+
 const checkExit = e => {
   if (potentiallyLeavingPage(e)) {
+    setPopupLimitingCookie();
     showModal();
   }
 }
 
+const getCookies = _ => {
+  let cookies = {};
+
+  document.cookie.split('; ').forEach(cookie => {
+    const splitCookie = cookie.split('=');
+    cookies[splitCookie[0]] = splitCookie[1];
+  });
+
+  return cookies;
+}
+
+const shownPopup = _ => {
+  const cookies = getCookies();
+  return cookies.newsletter_exit_popup === 'true';
+}
+
 const addPopupEventListeners = _ => {
-  closeButton.addEventListener('click', closeModal);
-  document.addEventListener('click', checkClosingModal);
-  document.addEventListener('keydown', checkEscButton);
-  document.addEventListener('mouseout', checkExit);
+  if (!shownPopup()) {
+    closeButton.addEventListener('click', closeModal);
+    document.addEventListener('click', checkClosingModal);
+    document.addEventListener('keydown', checkEscButton);
+    document.addEventListener('mouseout', checkExit);
+  }
 }
 
 const disableExitPopup = _ => {
