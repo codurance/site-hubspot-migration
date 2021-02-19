@@ -112,8 +112,11 @@ hr {
   margin: -1px 0;
 }
 
-a, b, i, strong, em, small, code {
+a, b, i, strong, em, small {
   line-height: 0;
+}
+code {
+  line-height: 1;
 }
 
 a {
