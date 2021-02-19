@@ -188,6 +188,11 @@
   {{ utils.freed_margin() }}
 }
 
+.blog-content code {
+  {{ utils.natus() }}
+  font-family: monospace;
+}
+
 .related-blog-section {
   background-color: var(--athens-gray);
 }
