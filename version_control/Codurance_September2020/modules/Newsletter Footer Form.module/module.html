@@ -1,16 +1,24 @@
 {{ require_css(get_asset_url("../../css/newsletter-form.css")) }}
 {{ require_css(get_asset_url("../../css/modules/newsletter-footer-form.css")) }}
 
+
+{% set language = module.language %}
+{% set spanish = 'es' %}
+{% set english = 'en' %}
+{% import '../../config/config.html' as config %}
+{% if language == spanish %}
+  {% set copy = config.newsletter_cta.es %}
+{% else %}
+  {% set copy = config.newsletter_cta.en %}
+{% endif %}
+
 <section class="newsletter-footer-form__section">
     <div class="newsletter-footer-form__container">
       <div class=newsletter-footer-form__wrapper>
-        <h1>
-          {{ module.language }}
-        </h1>
-        <h3 class="newsletter-footer-form__heading" data-newsletter-sign-up-pending>Ready to be inspired?</h3>
-        <h3 class="newsletter-footer-form__heading hidden" data-newsletter-sign-up-success>Thank you for signing up</h3>
-        <p class="newsletter-footer-form__info" data-newsletter-sign-up-pending>Join our newsletter for expert tips and inspirational case studies.</p>
-        <p class="newsletter-footer-form__info hidden" data-newsletter-sign-up-success>Your welcome email is on its way! You can pick the emails you’d like to receive by clicking the link to the Preference Centre.</p>
+        <h3 class="newsletter-footer-form__heading" data-newsletter-sign-up-pending>{{ copy.pending.header }}</h3>
+        <h3 class="newsletter-footer-form__heading hidden" data-newsletter-sign-up-success>{{ copy.success.header }}</h3>
+        <p class="newsletter-footer-form__info" data-newsletter-sign-up-pending>{{ copy.pending.text }}</p>
+        <p class="newsletter-footer-form__info hidden" data-newsletter-sign-up-success>{{ copy.success.text }}</p>
         <span data-newsletter-sign-up-pending>{% form "email_form" form_to_use={{module.sign_up_form.form_id}} %}</span>
       </div>
       <div class="newsletter-footer-form__image newsletter-footer-form__image--pending" data-newsletter-sign-up-pending></div>
