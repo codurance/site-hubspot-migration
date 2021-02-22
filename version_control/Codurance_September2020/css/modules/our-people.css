@@ -18,6 +18,7 @@
 {% set card_margin = 15 %}
 .custom-our-people__card {
   {{ utils.card_shadow() }}
+  background-color: white;
   margin-bottom: 1.5rem;
   margin-left: {{ card_margin }}px;
   margin-right: {{ card_margin }}px;
