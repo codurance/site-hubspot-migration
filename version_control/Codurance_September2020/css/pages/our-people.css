@@ -4,9 +4,9 @@
   {{ utils.gaudi() }}
   background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Our%20People%20Page/our-people-header.jpg);
   background-size: cover;
-  height: 300px;
-  margin-bottom: -150px;
-  padding-top: 100px;
+  height: 360px;
+  margin-bottom: -170px;
+  padding-top: 90px;
 }
 
 .our-people__header {
