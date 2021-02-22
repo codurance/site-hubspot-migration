@@ -15,25 +15,30 @@
   flex-wrap: wrap;
 }
 
+{% set card_margin = 15 %}
 .custom-our-people__card {
   {{ utils.card_shadow() }}
   margin-bottom: 1.5rem;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: {{card_margin}}px;
+  margin-right: {{card_margin}}px;
+  transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
+}
+.custom-our-people__card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
 }
 {% call utils.large_and_extra_large() %}
   .custom-our-people__card {
-    width: calc(25% - 30px);
+    width: calc(25% - ({{ card_margin }}px * 2));
   }
 {% endcall %}
 {% call utils.medium() %}
   .custom-our-people__card {
-    width: calc(33% - 30px);
+    width: calc(33% - ({{ card_margin }}px * 2));
   }
 {% endcall %}
 {% call utils.small() %}
   .custom-our-people__card {
-    width: calc(50% - 30px);
+    width: calc(50% - ({{ card_margin }}px * 2));
   }
 {% endcall %}
 
