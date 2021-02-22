@@ -21,22 +21,43 @@
 
 .our-people__footer-wrapper {
   align-items: center;
-  display: flex;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.our-people__hiring-info {
-  width: 66%;
-}
+{% call utils.medium_large_and_extra_large() %}
+  .our-people__footer-wrapper {
+    display: flex;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .our-people__footer-wrapper {
+    display: block;
+  }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+  .our-people__hiring-info {
+    width: 66%;
+  }
+{% endcall %}
 
 .our-people__hiring-info h2 {
   {{ utils.dudler() }}
   margin-bottom: var(--dudler-margin);
 }
 
-.our-people__footer-wrapper a {
+.our-people__hiring-info p {
+  margin-bottom: var(--base-margin);
+}
+
+.our-people__hiring-cta {
   margin: 0 auto;
+}
+@media (max-width: 480px) {
+  .our-people__hiring-cta {
+    width: 100%;
+  }
 }
 
 .our-people-bottom-banner-section .row-fluid .span8,
