@@ -35,11 +35,21 @@ label: Our People
   {% module "our_people" path="../modules/Our People.module"
       label="Our People" no_wrapper=True %}
 
-  {% dnd_area "row3" class='our-people-bottom-banner-section', label='Row3' %}
+  <div class="our-people__footer">
+    <div class="our-people__footer-wrapper page-center">
+      <div class="our-people__hiring-info">
+        <h2>We are hiring</h2>
+        <p>Are you looking for autonomy, mastery and purpose in your career? We are looking for people that share the same values of pragmatism, professionalism and transparency that we do.</p>
+      </div>
+      <a class="button-primary" href="https://www.codurance.com/careers/">Learn More</a>
+    </div>
+  </div>
+
+  {# {% dnd_area "row3" class='our-people-bottom-banner-section', label='Row3' %}
   {% dnd_section vertical_alignment='MIDDLE' %}
 
   {% end_dnd_section %}
-  {% end_dnd_area %}
+  {% end_dnd_area %} #}
 
 
 
