@@ -19,8 +19,8 @@
 .custom-our-people__card {
   {{ utils.card_shadow() }}
   margin-bottom: 1.5rem;
-  margin-left: {{card_margin}}px;
-  margin-right: {{card_margin}}px;
+  margin-left: {{ card_margin }}px;
+  margin-right: {{ card_margin }}px;
   transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
 }
 .custom-our-people__card:hover {
