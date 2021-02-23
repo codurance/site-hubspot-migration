@@ -3,8 +3,6 @@ templateType: page
 isAvailableForNewContent: true
 label: Our People
 -->
-{% import './refactor/refactored-pages.html' as refactor %}
-
 {% extends "./layouts/base.html" %}
 
 <head>
@@ -16,7 +14,7 @@ label: Our People
   <meta name="description" content="{{ page_meta.meta_description }}">
   {{ require_css(get_asset_url("../css/layout.css")) }}
   {{ require_css(get_asset_url("../css/main.css")) }}
-  {{ require_css(get_asset_url("../css/main-2021.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
 
   {{ require_css(get_asset_url("../css/pages/our-people.css")) }}
 
