@@ -1,27 +1,29 @@
 {% import '../utils/utils.css' as utils %}
 
+{% set lateral_page_padding = '15px' %}
+
 .custom-our-people {
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 40px;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 40px;
+  margin: 0 auto;
+  max-width: var(--centered-content-max-width);
+  padding: 40px {{ lateral_page_padding }};
   width: 100%;
 }
 
+{% set card_margin = '15px' %}
 .custom-our-people__card-container {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -{{ card_margin }};
+  margin-right: -{{ card_margin }};
 }
 
-{% set card_margin = 15 %}
 .custom-our-people__card {
   {{ utils.card_shadow() }}
   background-color: white;
   margin-bottom: 1.5rem;
-  margin-left: {{ card_margin }}px;
-  margin-right: {{ card_margin }}px;
+  margin-left: {{ card_margin }};
+  margin-right: {{ card_margin }};
+  position: relative;
   transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
 }
 .custom-our-people__card:hover {
@@ -29,17 +31,17 @@
 }
 {% call utils.large_and_extra_large() %}
   .custom-our-people__card {
-    width: calc(25% - ({{ card_margin }}px * 2));
+    width: calc(25% - ({{ card_margin }} * 2));
   }
 {% endcall %}
 {% call utils.medium() %}
   .custom-our-people__card {
-    width: calc(33% - ({{ card_margin }}px * 2));
+    width: calc(33% - ({{ card_margin }} * 2));
   }
 {% endcall %}
 {% call utils.small() %}
   .custom-our-people__card {
-    width: calc(50% - ({{ card_margin }}px * 2));
+    width: calc(50% - ({{ card_margin }} * 2));
   }
 {% endcall %}
 
@@ -101,16 +103,12 @@
 }
 
 .custom-our-people__learn-more::after {
-  background-image: url({{ get_asset_url('../../images/icon-plus-filled.svg' ) }});
-  background-position: center;
-  background-size: 30px 30px;
   content: '';
-  display: inline-block;
-  height: 12px;
+  bottom: 0;
+  left: 0;
   position: absolute;
-  right: -20px;
-  top: 4px;
-  width: 12px;
+  right: 0;
+  top: 0;
 }
 
 .custom-our-people__link:hover .custom-our-people__link,

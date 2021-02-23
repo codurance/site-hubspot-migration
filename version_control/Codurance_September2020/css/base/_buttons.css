@@ -74,8 +74,7 @@
 }
 
 
-.text-cta,
-.text-cta--right-arrow {
+.text-cta {
   color: var(--persimmon);
   display: inline-block;
   font-size: var(--natus-font-size);
@@ -88,19 +87,32 @@
 
 .text-cta:hover,
 .text-cta:active,
-.text-cta:focus,
-.text-cta--right-arrow:hover,
-.text-cta--right-arrow:active,
-.text-cta--right-arrow:focus  {
+.text-cta:focus {
   color: var(--persimmon--dark);
   text-decoration: underline;
 }
 
-
 .text-cta--right-arrow i {
-  transform: translate(0em, 0.047em);
+  transform: translate(0.2em, 0.047em);
   transition: var(--cta-transition);
 }
 .text-cta--right-arrow:hover i {
-  transform: translate(0.15em, 0.047em);
+  transform: translate(0.35em, 0.047em);
+}
+
+.text-cta--plus i {
+  transform: translate(0.2em, 0.047em) rotate(0deg);
+  transition: var(--cta-transition);
+}
+.text-cta--plus:hover i {
+  transform: translate(0.2em, 0.047em) rotate(90deg);
+}
+
+@media (prefers-reduced-motion) {
+  .text-cta i {
+    -webkit-transition-property: none;
+    -moz-transition-property: none;
+    -o-transition-property: none;
+    transition-property: none;
+  }
 }

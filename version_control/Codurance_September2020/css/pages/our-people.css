@@ -1,5 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
+{% set lateral_page_padding = '15px' %}
+
 .our-people__heading-wrapper {
   {{ utils.gaudi() }}
   background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Our%20People%20Page/our-people-header.jpg);
@@ -9,8 +11,11 @@
   padding-top: 90px;
 }
 
-.our-people__header {
-  padding-left: 15px;
+.our-people__title {
+  max-width: var(--centered-content-max-width);
+  margin: 0 auto;
+  padding-left: {{ lateral_page_padding }};
+  padding-right: {{ lateral_page_padding }};
 }
 
 .our-people__footer {
@@ -22,8 +27,8 @@
 
 .our-people__footer-wrapper {
   align-items: center;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: {{ lateral_page_padding }};
+  padding-right: {{ lateral_page_padding }};
 }
 
 {% call utils.medium_large_and_extra_large() %}
