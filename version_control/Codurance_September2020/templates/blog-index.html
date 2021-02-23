@@ -5,299 +5,364 @@ label: Blog Listing
 -->
 {% extends "./layouts/base.html" %}
 
+{% import '../snippets/button-snippets.html' as snippets %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/main-2021.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/blog-index.css")) }}
+  {{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
 {% block body %}
 {% if blog_author %}
-<div class="container custom-blog-author-listing page-center content-sm">
-  <div class="blog-author bg-color-white margin-bottom-30">
-    <!--About the author-->
-    <div class="row">
-     {% if content.blog_post_author.avatar == NULL || content.blog_post_author.avatar.src == "(unknown)" || content.blog_post_author.avatar == "" %}
-      <div class="custom-col-sm-3 pull-left hide">
-      </div>
-     {% else %}
-      <div class="custom-col-sm-3 pull-left">
-        <img class="img-fluid" id="author-img" src="{{ blog_author.avatar }}" alt="{{ blog_author.display_name }}">
-      </div>
-     {% endif %}
-      <div class="custom-col-sm-9">
-        <div class="blog-author-desc">
-          <div class="overflow-h">
-            <h2>{{ blog_author.display_name }}</h2>
-            {% if blog_author.has_social_profiles %}
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item custom-mx-2">
-                {% if blog_author.twitter %}
-                <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ blog_author.twitter }}" target="_blank" rel="noopener noreferrer"> <i  class="custom-font-size-default custom-line-height-1 u-icon__elem-regular lab la-twitter"></i> <i  class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover lab la-twitter"></i> </a>
-                {% endif %}
 
-                {% if blog_author.website %}
-                <a href="{{ blog_author.website }}" target="_blank">
-                  {% icon name="link" style="SOLID" width="10" %}
-                </a>
-                {% endif %}
-                {% if blog_author.facebook %}
-                <a href="{{ blog_author.facebook }}" target="_blank">
-                  {% icon name="facebook-f" style="SOLID" width="10" %}
-                </a>
-                {% endif %}
-                {% if blog_author.linkedin %}
-                <a href="{{ blog_author.linkedin }}" target="_blank">
-                  {% icon name="linkedin-in" style="SOLID" width="10" %}
-                </a>
-                {% endif %}
-
-              </li>
-            </ul>
-            {% endif %}
-          </div>
-          <p></p>
-          {{ blog_author.bio }}
-          <p></p>
+  <div class="container custom-blog-author-listing page-center content-sm">
+    <div class="blog-author bg-color-white margin-bottom-30">
+      <!--About the author-->
+      <div class="row">
+      {% if content.blog_post_author.avatar == NULL || content.blog_post_author.avatar.src == "(unknown)" || content.blog_post_author.avatar == "" %}
+        <div class="custom-col-sm-3 pull-left hide">
         </div>
-      </div>
-    </div>
-  </div>
-  <hr>
-  <div  class="custom-bg-gray-light-v5">
-    <h2 class="margin-bottom-20">{{ group.public_title }}</h2>
-    <div class="container page-center">
+      {% else %}
+        <div class="custom-col-sm-3 pull-left">
+          <img class="img-fluid" id="author-img" src="{{ blog_author.avatar }}" alt="{{ blog_author.display_name }}">
+        </div>
+      {% endif %}
+        <div class="custom-col-sm-9">
+          <div class="blog-author-desc">
+            <div class="overflow-h">
+              <h2>{{ blog_author.display_name }}</h2>
+              {% if blog_author.has_social_profiles %}
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item custom-mx-2">
+                  {% if blog_author.twitter %}
+                  <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover custom-color-gray-light-v1 custom-bg-gray-light-v5 custom-color-gray-light-v1--hover rounded-circle" href="{{ blog_author.twitter }}" target="_blank" rel="noopener noreferrer"> <i  class="custom-font-size-default custom-line-height-1 u-icon__elem-regular fa fa-twitter"></i> <i  class="custom-font-size-default custom-line-height-0_8 u-icon__elem-hover fa fa-twitter"></i> </a>
+                  {% endif %}
 
-      <div class="masonry-grid row custom--mb-70">
-        <div class="masonry-grid-sizer custom-col-sm-1"></div>
-        {% for content in contents %}
-        <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
-          <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3">
-            {% if content.featured_image %}
-            <a href="{{ content.absolute_url }}">
-              <img class="custom-bg-white img-fluid w-100 custom-rounded-top-5" src="{{ resize_image_url( content.featured_image,528 ) }}" alt="{{ content.name }}">
-            </a>
-            {% endif %}
-            <div class="custom-bg-white custom-pa-30 custom-rounded-bottom-5">
-              <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
-                <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
-                <li class="list-inline-item mx-2">·</li>
-                <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
-              </ul>
-              <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
-                <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ content.absolute_url }}">
-                  {{ content.name }}</a>
-              </h5>
+                  {% if blog_author.website %}
+                  <a href="{{ blog_author.website }}" target="_blank">
+                    {% icon name="link" style="SOLID" width="10" %}
+                  </a>
+                  {% endif %}
+                  {% if blog_author.facebook %}
+                  <a href="{{ blog_author.facebook }}" target="_blank">
+                    {% icon name="facebook-f" style="SOLID" width="10" %}
+                  </a>
+                  {% endif %}
+                  {% if blog_author.linkedin %}
+                  <a href="{{ blog_author.linkedin }}" target="_blank">
+                    {% icon name="linkedin-in" style="SOLID" width="10" %}
+                  </a>
+                  {% endif %}
 
-              {% if content.tag_list %}
-              <ul class="list-inline custom-font-size-12 mb-0">
-                {% for tag in content.tag_list %}
-                <li class="list-inline-item custom-mb-10">
-                  <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
                 </li>
-                {% endfor %}
               </ul>
               {% endif %}
             </div>
-          </article>
-
+            <p></p>
+            {{ blog_author.bio }}
+            <p></p>
+          </div>
         </div>
+      </div>
+    </div>
+    <hr>
+    <div  class="custom-bg-gray-light-v5">
+      <h2 class="margin-bottom-20">{{ group.public_title }}</h2>
+      <div class="container page-center">
 
-        {% endfor %}
+        <div class="masonry-grid row custom--mb-70">
+          <div class="masonry-grid-sizer custom-col-sm-1"></div>
+          {% for content in contents %}
+          <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
+            <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3">
+              {% if content.featured_image %}
+              <a href="{{ content.absolute_url }}">
+                <img class="custom-bg-white img-fluid w-100" src="{{ resize_image_url( content.featured_image,528 ) }}" alt="{{ content.name }}">
+              </a>
+              {% endif %}
+              <div class="custom-bg-white custom-pa-30">
+                <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
+                  <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
+                  <li class="list-inline-item mx-2">·</li>
+                  <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
+                </ul>
+                <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
+                  <a class="custom-blog-listing__title-link" href="{{ content.absolute_url }}">
+                    {{ content.name }}</a>
+                </h5>
+
+                {% if content.tag_list %}
+                <ul class="list-inline custom-font-size-12 mb-0">
+                  {% for tag in content.tag_list %}
+                  <li class="list-inline-item custom-mb-10">
+                    <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </div>
+            </article>
+
+          </div>
+
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
-</div>
-
 
 {% else %}
 
+  <div class="custom-blog-listing custom-bg-gray-light-v5">
+    <div class="page-center container custom-py-50">
+      <div class="masonry-grid row custom-mb-70">
+        <div class="masonry-grid-item custom-col-sm-12 text-center custom-mb-30">
 
+          <ul class="custom-blog-listing__filter-list">
+            <li class="custom-blog-listing__filter-item">
+              <a
+                class="custom-blog-listing__filter-link"
+                href="/publications"
+                data-target="blog-index-filter-link"
+              >
+                All
+              </a>
+            </li>
+            <li class="custom-blog-listing__filter-item">
+              <a
+                class="custom-blog-listing__filter-link"
+                href="/publications/tag/posts"
+                data-target="blog-index-filter-link"
+              >
+                Posts
+              </a>
+            </li>
+            <li class="custom-blog-listing__filter-item">
+              <a
+                class="custom-blog-listing__filter-link"
+                href="/publications/tag/videos"
+                data-target="blog-index-filter-link"
+              >
+                Videos
+              </a>
+            </li>
+            <li class="custom-blog-listing__filter-item">
+              <a
+                class="custom-blog-listing__filter-link"
+                href="/publications/tag/podcasts"
+                data-target="blog-index-filter-link"
+              >
+                Podcasts
+              </a>
+            </li>
+            <li class="custom-blog-listing__filter-item">
+              <a
+                class="custom-blog-listing__filter-link"
+                href="/publications/tag/newsletter"
+                data-target="blog-index-filter-link"
+              >
+                Newsletters
+              </a>
+            </li>
+          </ul>
 
-<div class="custom-blog-listing custom-bg-gray-light-v5">
+        </div>
+        <div class="masonry-grid-sizer"></div>
+        {% for content in contents %}
 
-  <div class="page-center container custom-py-50">
-
-
-    <div class="masonry-grid row custom-mb-70">
-
-
-
-      <div class="masonry-grid-item custom-col-sm-12 text-center custom-mb-30">
-
-        <ul class="custom-blog-filter-group u-list-inline">
-          <li class="list-inline-item custom-mr-5"> <a class="u-link-v5 custom-color-main" href="/publications">All</a>  <i  class="custom-color-gray-light-v2 custom-ml-5">/</i>
-          </li>
-          <li class="list-inline-item custom-mr-5"> <a class="u-link-v5 custom-color-main " href="/publications/tag/posts">Posts</a>  <i  class="custom-color-gray-light-v2 custom-ml-5">/</i>
-          </li>
-          <li class="list-inline-item custom-mr-5"> <a class="u-link-v5 custom-color-main " href="/publications/tag/videos">Videos</a>  <i  class="custom-color-gray-light-v2 custom-ml-5">/</i>
-          </li>
-          <li class="list-inline-item custom-mr-5"> <a class="u-link-v5 custom-color-main " href="/publications/tag/podcasts">Podcasts</a>  <i  class="custom-color-gray-light-v2 custom-ml-5">/</i>
-          </li>
-          <li class="list-inline-item custom-color-primary"> <a class="u-link-v5 custom-color-main " href="/publications/tag/newsletter">Newsletters</a>
-          </li>
-        </ul>
-
-      </div>
-      <div class="masonry-grid-sizer custom-col-sm-1"></div>
-      {% for content in contents %}
-
-      {% if loop.index == 1 %}
-
-      <div class="masonry-grid-item custom-col-sm-12 custom-col-lg-8 custom-mb-30">
-
-        <article class="row align-items-stretch no-gutters u-shadow-v21 u-shadow-v21--hover custom-transition-0_3">
-          <div class="custom-col-md-6 custom-bg-white custom-rounded-left-5">
-            <div  class="custom-pa-60">
-              <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
-                <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
-                <li class="list-inline-item mx-2">·</li>
-                <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
-              </ul>
-              <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
-                <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ content.absolute_url }}">
-                  {{ content.name }}</a>
-              </h5>
-              <p class="custom-color-gray-dark-v4 custom-line-height-1_8 mb-4">
-                {{ content.post_list_content|safe|truncatehtml(305, '...' , false)|striptags  }}
-              </p>
-              {% if content.tag_list %}
-              <ul class="list-inline custom-font-size-12 mb-0">
-                {% for tag in content.tag_list %}
-                <li class="list-inline-item custom-mb-10">
-                  <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
-                </li>
-                {% endfor %}
-              </ul>
-              {% endif %}
+          {% if loop.index == 1 %}
+            <div class="custom-blog-listing__post-wrapper custom-blog-listing__post-wrapper--featured masonry-grid-item">
+              <article class="custom-blog-listing__post custom-blog-listing__post--featured">
+                <div class="custom-col-md-6 custom-bg-white">
+                  <div  class="custom-blog-listing__content-wrapper">
+                    <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
+                      <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
+                      <li class="list-inline-item mx-2">·</li>
+                      <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
+                    </ul>
+                    <h5 class="custom-blog-listing__post-title">
+                      <a class="custom-blog-listing__title-link" href="{{ content.absolute_url }}">
+                        {{ content.name }}</a>
+                    </h5>
+                    <p class="custom-blog-listing__post-description">
+                      {{ content.post_list_content|safe|truncatehtml(305, '...' , false)|striptags  }}
+                    </p>
+                    {% if content.tag_list %}
+                    <ul class="list-inline custom-font-size-12 mb-0">
+                      {% for tag in content.tag_list %}
+                      <li class="list-inline-item custom-mb-10">
+                        <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                    {% endif %}
+                  </div>
+                </div>
+                <a href="{{ content.absolute_url }}"  class="custom-bg-white custom-col-md-6 custom-bg-size-cover custom-bg-pos-center custom-min-height-300"  style="background-image: url('{{ content.featured_image }}');"></a>
+              </article>
             </div>
-          </div>
-          <a href="{{ content.absolute_url }}"  class="custom-bg-white custom-col-md-6 custom-bg-size-cover custom-bg-pos-center custom-min-height-300 custom-rounded-right-5"  style="background-image: url('{{ content.featured_image }}');"></a>
-        </article>
-
-      </div>
-
-      {% endif %}
-      {% if loop.index > 1 %}
-      <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
-        <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3">
-          {% if content.featured_image %}
-          <a href="{{ content.absolute_url }}">
-            <img class="custom-bg-white img-fluid w-100 custom-rounded-top-5" src="{{ resize_image_url( content.featured_image,528 ) }}" alt="{{ content.name }}">
-          </a>
           {% endif %}
-          <div class="custom-bg-white custom-pa-30 custom-rounded-bottom-5">
-            <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
-              <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
-              <li class="list-inline-item mx-2">·</li>
-              <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
-            </ul>
-            <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
-              <a class="u-link-v5 custom-color-black custom-color-primary--hover custom-cursor-pointer" href="{{ content.absolute_url }}">
-                {{ content.name }}</a>
-            </h5>
 
-            {% if content.tag_list %}
-            <ul class="list-inline custom-font-size-12 mb-0">
-              {% for tag in content.tag_list %}
-              <li class="list-inline-item custom-mb-10">
-                <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-          </div>
-        </article>
+          {% if loop.index > 1 %}
+            <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
+              <article class="custom-blog-listing__post">
+                {% if content.featured_image %}
+                <a href="{{ content.absolute_url }}">
+                  <img class="custom-bg-white img-fluid w-100" src="{{ resize_image_url( content.featured_image,528 ) }}" alt="{{ content.name }}">
+                </a>
+                {% endif %}
+                <div class="custom-bg-white custom-pa-30">
+                  <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
+                    <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
+                    <li class="list-inline-item mx-2">·</li>
+                    <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
+                  </ul>
+                  <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
+                    <a class="custom-blog-listing__title-link" href="{{ content.absolute_url }}">
+                      {{ content.name }}</a>
+                  </h5>
+
+                  {% if content.tag_list %}
+                  <ul class="list-inline custom-font-size-12 mb-0">
+                    {% for tag in content.tag_list %}
+                    <li class="list-inline-item custom-mb-10">
+                      <a class="tags custom-blog-listing__tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+              </article>
+
+            </div>
+          {% endif %}
+
+          {% if loop.index == 1 %}
+            <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
+              <!-- Static Quote -->
+              <article class="blog-cta-card blog-cta-card--tango">
+                <h3 class="blog-cta-card__title">Did you hone your skills today?</h3>
+                {{snippets.text_cta_right_arrow(
+                  classnames="blog-cta-card__link",
+                  url="http://katalyst.codurance.com",
+                  rel="noopener noreferrer",
+                  target="_blank",
+                  text="Try Katalyst"
+                )}}
+              </article>
+              <!-- End Static Quote -->
+            </div>
+          {% endif %}
+
+          {% if loop.index == 3 %}
+            <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
+              <!-- Static Quote -->
+              <article class="blog-cta-card blog-cta-card--crimson">
+                <h3 class="blog-cta-card__title">Interested in joining us?</h3>
+                {{snippets.text_cta_right_arrow(
+                  classnames="blog-cta-card__link",
+                  url="http://katalyst.codurance.com",
+                  rel="noopener noreferrer",
+                  target="_blank",
+                  text="Learn more"
+                )}}
+              </article>
+              <!-- End Static Quote -->
+            </div>
+          {% endif %}
+
+          {% if loop.index == 5 %}
+            <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
+              <!-- Static Quote -->
+              <article class="blog-cta-card blog-cta-card--gold">
+                <h3 class="blog-cta-card__title">Are you receiving the Codurance newsletter?</h3>
+                {{snippets.text_cta_right_arrow(
+                  classnames="blog-cta-card__link",
+                  url="http://katalyst.codurance.com",
+                  rel="noopener noreferrer",
+                  target="_blank",
+                  text="Sign up"
+                )}}
+              </article>
+              <!-- End Static Quote -->
+            </div>
+          {% endif %}
+
+        {% endfor %}
 
       </div>
-      {% endif %}
-      {% if loop.index == 1 %}
-      <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
-        <!-- Static Quote -->
-        <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-rounded-5 custom-pa-30 custom-py-100 custom-bg-green">
-          <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Did you hone your skills today? </h3>
-          <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> Try Katalyst </h3>
-          <a class="u-link-v2" href="http://katalyst.codurance.com" target="_blank" rel="noopener noreferrer"></a>
-        </article>
-        <!-- End Static Quote -->
+      {% if contents.total_page_count > 1 %}
+      <div class="blog-pagination text-center">
+        {% set page_list = [-8,-7,-6,-5,-4,-3,-2, -1, 0, 1, 2,3,4,5,6,7,8] %}
+        {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+        {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+        {% elif current_page_num == 2 %}{% set offset = 1 %}
+        {% elif current_page_num == 1 %}{% set offset = 2 %}
+        {% else %}{% set offset = 0 %}{% endif %}
+        {% if last_page_num %}
+          <a class="u-pagination-v1__item u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 float-left custom-hidden-xs-down {{ "blog-pagination__prev-link--disabled" if !last_page_num }}" href="{{ blog_page_link(last_page_num) }}">
+            <i class="fa fa-angle-left custom-mr-5"></i>
+            Previous
+          </a>
+        {% endif %}
+        {% for page in page_list %}
+        {% set this_page = current_page_num + page + offset %}
+        {% if this_page > 0 and this_page <= contents.total_page_count %}
+          <a class="u-pagination-v1__item u-pagination-v1-4 custom-rounded-50 custom-pa-7-14 {{ "u-pagination-v1-4--active" if this_page == current_page_num }}" href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if contents.total_page_count > 4 %}
+        <a class="custom-pa-7-14"  rel="noopener noreferrer">...</a>
+        <a class="u-pagination-v1__item u-pagination-v1-4 custom-rounded-50 custom-pa-7-14" href="{{ blog_page_link(contents.total_page_count) }}">{{ contents.total_page_count }}</a>
+        {% endif %}
+        {% if next_page_num %}
+        <a class="u-pagination-v1__item float-right custom-hidden-xs-down u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 {{ "blog-pagination__next-link--disabled" if !next_page_num }}" href="{{ blog_page_link(current_page_num + 1) }}">
+          Next
+          <i class="fa fa-angle-right custom-ml-5"></i>
+        </a>
+        {% endif %}
       </div>
       {% endif %}
-
-      {% if loop.index == 3 %}
-      <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
-        <!-- Static Quote -->
-        <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-rounded-5 custom-pa-30 custom-py-100 custom-bg-orange">
-          <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Interested in joining us? </h3>
-          <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> Learn more </h3>
-          <a class="u-link-v2" href="/careers"></a>
-        </article>
-        <!-- End Static Quote -->
-      </div>
-
-      {% endif %}
-
-      {% if loop.index == 5 %}
-      <div class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30" >
-        <!-- Static Quote -->
-        <article class="u-shadow-v21 u-shadow-v21--hover custom-transition-0_3 custom-bg-primary text-center custom-rounded-5 custom-pa-30 custom-py-100 custom-bg-red">
-          <h3 class="h3 custom-color-white custom-font-weight-600 mb-4"> Are you receiving the Codurance newsletter? </h3>
-          <h3 class="custom-color-white-opacity-0_8 custom-font-size-13 text-uppercase"> SIGN UP </h3>
-          <a target="_blank" class="u-link-v2" href="https://mailchi.mp/codurance/newsletter-subscription"  rel="noopener noreferrer"></a>
-        </article>
-        <!-- End Static Quote -->
-      </div>
-      {% endif %}
-
-
-      {% endfor %}
-
     </div>
-    {% if contents.total_page_count > 1 %}
-    <div class="blog-pagination text-center">
-      {% set page_list = [-8,-7,-6,-5,-4,-3,-2, -1, 0, 1, 2,3,4,5,6,7,8] %}
-      {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
-      {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
-      {% elif current_page_num == 2 %}{% set offset = 1 %}
-      {% elif current_page_num == 1 %}{% set offset = 2 %}
-      {% else %}{% set offset = 0 %}{% endif %}
-      {% if last_page_num %}
-      <a class="u-pagination-v1__item u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 float-left custom-hidden-xs-down {{ "blog-pagination__prev-link--disabled" if !last_page_num }}" href="{{ blog_page_link(last_page_num) }}">
-        <i class="fa fa-angle-left custom-mr-5"></i>
-        Previous
-      </a>
-
-      {% endif %}
-      {% for page in page_list %}
-      {% set this_page = current_page_num + page + offset %}
-      {% if this_page > 0 and this_page <= contents.total_page_count %}
-      <a class="u-pagination-v1__item u-pagination-v1-4 custom-rounded-50 custom-pa-7-14 {{ "u-pagination-v1-4--active" if this_page == current_page_num }}" href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
-      {% endif %}
-      {% endfor %}
-      {% if contents.total_page_count > 4 %}
-       <a class="custom-pa-7-14"  rel="noopener noreferrer">...</a>
-      <a class="u-pagination-v1__item u-pagination-v1-4 custom-rounded-50 custom-pa-7-14" href="{{ blog_page_link(contents.total_page_count) }}">{{ contents.total_page_count }}</a>
-       {% endif %}
-      {% if next_page_num %}
-      <a class="u-pagination-v1__item float-right custom-hidden-xs-down u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 {{ "blog-pagination__next-link--disabled" if !next_page_num }}" href="{{ blog_page_link(current_page_num + 1) }}">
-        Next
-        <i class="fa fa-angle-right custom-ml-5"></i>
-      </a>
-      {% endif %}
-    </div>
-    {% endif %}
   </div>
-</div>
 
 {% endif %}
 {{ require_js(get_asset_url("../js/imageLoaded.js")) }}
 {{ require_js(get_asset_url("../js/masonary.js")) }}
 
 <script>
+  document.onreadystatechange = () => {
+    if (document.readyState === 'complete') {
+      const masonryGrid = document.querySelector('.masonry-grid');
 
-  $(document).on('ready', function () {
+      const masonryOptions = {
+        columnWidth: '.masonry-grid-sizer',
+        itemSelector: '.masonry-grid-item',
+        percentPosition: true
+      };
 
-    $('.masonry-grid').imagesLoaded().then(function () {
-      $('.masonry-grid').masonry( {
-        columnWidth: '.masonry-grid-sizer', itemSelector: '.masonry-grid-item', percentPosition: true
-      });
-    });
+      const makeMasonry = function() {
+        new Masonry(masonryGrid, masonryOptions);
+      }
 
-  });
-
+      imagesLoaded( masonryGrid, makeMasonry );
+    }
+  };
 </script>
 
 {% endblock body %}

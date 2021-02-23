@@ -111,7 +111,7 @@
 .cm-testimonials-slider-group {
     max-width: 800px;
     width: calc(100% - (50px * 2));
-    margin: 0 auto 60px;
+    margin: 0 auto 60px !important;
     background: white;
     border: 0px solid white;
     position: relative;

@@ -99,7 +99,7 @@
 {% endcall %}
 
 .cm-services-inner-bottom-wrap,
-.cm-services-inner-section4 .dnd-section {
+.cm-services-inner-section3 {
     background: #fcf9f1 linear-gradient(90deg, #fcf9f1 52%, #fcf4f4 100%);
 }
 
@@ -169,6 +169,10 @@
     }
 {% endcall %}
 
+.cm-services-inner-section4 {
+    background: #fcf9f1 linear-gradient(90deg,#fcf9f1 52%,#fcf4f4 100%);
+}
+
 {% call utils.small_and_medium() %}
     .cm-services-inner-section2 .dnd-section > .row-fluid {
         padding-left: 25px;
@@ -181,6 +185,7 @@
         display: inline-block;
         vertical-align: top;
     }
+
     .cm-services-inner-layout.type1 .cm-services-inner-section4 .dnd-section > .row-fluid {
         padding-left: 0;
         padding-right: 0;

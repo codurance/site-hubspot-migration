@@ -3,7 +3,7 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
 
 <div class="cm-compass-teaser" style="background-image:url({{ module.image_field.src }})">
-  <p class="cm-compass-teaser__description">{{ module.title }}</p> 
+  <p class="cm-compass-teaser__description">{{ module.title }}</p>
   {% if module.button_type == 'Standard' %}
     {% set href = module.link_field.url.href %}
 
