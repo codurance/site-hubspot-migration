@@ -159,6 +159,37 @@
       }
     });
   });
+
+  var announcementOnDevConsole = function(){
+    try{
+      var main="display:block;font-family:proxima-nova,'Open Sans',Arial, sans-serif;font-size:14px;font-style:normal;font-variant:normal;font-weight:bold;height:34px;line-height:17px;margin-bottom:10px;margin-top:5px;text-align:center;text-shadow:none;";
+      var link="text-decoration: underline;";
+      var isNewEnoughBrowser = "repeat" in String.prototype;
+      if(isNewEnoughBrowser){
+              window.console.log("MMMMMMMMMMMMMMMMMMMMMMMMNklxNMMMMM\n" +
+                  "MMMMMMMMMMWNX'OOkkkO'XWMMXo;oKWMMM\n" +
+                  "MMMMMMMWX'kol''''''''lx'NW'''''WMM\n" +
+                  "MMMMMWXko''''''''''''''lxXNx,':OWM\n" +
+                  "MMMWXkl'''''odxkOOOkdl'''xXK''':'W\n" +
+                  "MMNOo'''ldkKXWWWMMMWWXOd'l'Nd,''lK\n" +
+                  "WXxl''okKNNNWMMMMMMMMMWXkoONO;'',d\n" +
+                  "Kd''dOXNXKXNWMMMMMMMMMMMNO'W':''':\n" +
+                  "o'dONNXK'KNMMMMMMMMMMMMMMNNW':''',\n" +
+                  "oONWNX''KXWMMMMMMMMMMMMMMMMWk;''',\n" +
+                  "XWMWX'''KXWMMMMMMMMMMMMMMMMKl'''';\n" +
+                  "MMMWX''''KNMMMMMMMMMMMMMMW'l,''''l\n" +
+                  "MMMWXK'''KKNWMMWWWWWWWNKOo;'''''''\n" +
+                  "MMMMWXK''''KXNWWXOxoll';'''''':dKW\n" +
+                  "MMMMMWNK'''''KKXNNKOxol::::lokKWMM\n" +
+                  "MMMMMMMWNXK''''''KKXXXXXXXXNWMMMMM\n" +
+                  "MMMMMMMMMWWNXXKKKK''''KKKXXXXNNNWW\n" +
+                  "MMMMMMMMMMMMMMWWWNNNNNXXXXNNNNNNWW");
+              window.console.log("\n%cWe're hiring both Apprentices and Craftspeople in London, Barcelona and Manchester. Want to know more? \n%chttps://codurance.com/careers/",main,link);
+          }
+    } catch(_) {}
+  }
+  announcementOnDevConsole();
+
 })();
 
 
