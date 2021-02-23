@@ -323,12 +323,13 @@
     }
 
     .cm-tabber__panel > .tabmenu {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        top: 0;
+        cursor: pointer;
         height: 48px;
+        left: 0;
+        position: absolute;
         text-indent: -99999px;
+        top: 0;
+        width: 100%;
     }
 
     .cm-tabber__panel.active::before {
