@@ -1,4 +1,4 @@
-{% import './utils/_typography-utils.css' as utils %}
+{% import '../utils/_typography-utils.css' as utils %}
 
 :root {
   --light-font-weight: 300;
