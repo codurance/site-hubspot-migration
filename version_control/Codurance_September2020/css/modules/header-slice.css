@@ -37,7 +37,6 @@
   flex-direction: row;
   justify-content: center;
   max-height: 350px;
-  width: 100%;
   width: -moz-available;
   width: -webkit-fill-available;
   width: fill-available;
