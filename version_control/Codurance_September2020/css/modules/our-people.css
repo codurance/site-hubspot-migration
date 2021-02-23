@@ -93,15 +93,6 @@
   display: block;
 }
 
-.custom-our-people__learn-more {
-  {{ utils.natus() }}
-  font-weight: var(--heavy-font-weight);
-  position: relative;
-}
-.custom-our-people__card:hover .custom-our-people__learn-more {
-  text-decoration: underline;
-}
-
 .custom-our-people__learn-more::after {
   content: '';
   bottom: 0;
