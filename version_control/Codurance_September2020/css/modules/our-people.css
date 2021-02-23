@@ -109,14 +109,8 @@
   height: 12px;
   position: absolute;
   right: -20px;
-  top: 5px;
+  top: 4px;
   width: 12px;
-}
-.custom-our-people__card:hover .custom-our-people__learn-more::after {
-  background-image: url({{ get_asset_url('../../images/learn-more-arrow.svg' ) }});
-  background-size: 25px 15px;
-  right: -30px;
-  width: 23px;
 }
 
 .custom-our-people__link:hover .custom-our-people__link,
