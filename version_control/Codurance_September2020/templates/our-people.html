@@ -26,8 +26,15 @@ label: Our People
 
 {% block body %}
 
+  {% set path = request.path|truncate(3, true, '') %}
+  {% if path is string_containing 'es' %}
+    {% set header_text = 'Nuestro equipo' %}
+  {% else %}
+    {% set header_text = 'Our People' %}
+  {% endif %}
+
   <div class="our-people__heading-wrapper">
-    <h1 class="our-people__title">Our People</h1>
+    <h1 class="our-people__title">{{header_text}}</h1>
   </div>
 
   {% module "our_people" path="../modules/Our People.module"
