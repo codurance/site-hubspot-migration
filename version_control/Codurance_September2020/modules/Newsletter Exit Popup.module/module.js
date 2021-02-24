@@ -58,8 +58,25 @@ const shownPopup = _ => {
   return cookies.newsletter_exit_popup === 'true';
 }
 
-const addPopupEventListeners = _ => {
-  if (!shownPopup()) {
+const getContactByToken = async _ => {
+  const guest = { is_contact: false };
+
+  try {
+    const { hubspotutk } = getCookies();
+    if (!hubspotutk) {
+      return guest;
+    }
+
+    const response = await fetch(`/_hcms/api/contact_by_token?hubspotutk=${hubspotutk}`);
+    return response.json();
+  } catch {
+    return guest
+  }
+}
+
+const addPopupEventListeners = async _ => {
+  const contact = await getContactByToken();
+  if (!shownPopup() && !contact.is_contact) {
     closeButton.addEventListener('click', closeModal);
     document.addEventListener('click', checkClosingModal);
     document.addEventListener('keydown', checkEscButton);
