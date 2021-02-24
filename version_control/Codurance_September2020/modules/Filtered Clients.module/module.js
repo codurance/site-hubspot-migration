@@ -3,18 +3,21 @@ const clients = Array.prototype.slice.call(
 );
 const industryFilter = document.querySelector('[data-select-industry]');
 const problemFilter = document.querySelector('[data-select-problem]');
+const serviceFilter = document.querySelector('[data-select-service]');
 
 let allFilters;
 let isotope;
 
 const appliedFilters = {
   industry: [],
-  problem: []
+  problem: [],
+  service: []
 }
 
 const resetFilterDropdownValues = _ => {
   industryFilter.value = "";
   problemFilter.value = "";
+  serviceFilter.value = "";
 }
 
 const setAllFilters = _ => {
@@ -24,7 +27,10 @@ const setAllFilters = _ => {
     ).map(option => option.dataset.industryOption),
     problem: Array.prototype.slice.call(
       document.querySelectorAll('[data-problem-option]')
-    ).map(option => option.dataset.problemOption)
+    ).map(option => option.dataset.problemOption),
+    service: Array.prototype.slice.call(
+      document.querySelectorAll('[data-service-option]')
+    ).map(option => option.dataset.serviceOption),
   }
 }
 
@@ -71,6 +77,13 @@ const byProblem = client => {
     problemFilters.some(filter => clientProblems.includes(filter));
 }
 
+const byService = client => {
+  let serviceFilters = appliedFilters.service;
+  let clientService = client.dataset.clientService;
+  return serviceFilters.length === 0 ||
+    serviceFilters.includes(clientService);
+}
+
 const showClient = client => {
   client.classList.remove('hidden');
 }
@@ -80,7 +93,7 @@ const hideClient = client => {
 }
 
 const refilter = _ => {
-  const visibleClients = clients.filter(byIndustry).filter(byProblem);
+  const visibleClients = clients.filter(byIndustry).filter(byProblem).filter(byService);
   const hiddenClients = clients.filter(client => !visibleClients.includes(client));
 
   visibleClients.forEach(showClient);
@@ -105,6 +118,9 @@ const addFilterDropdownListeners = _ => {
 
   problemFilter.addEventListener('change', e =>
     applyFilter(e.target.value, 'problem'));
+
+  problemFilter.addEventListener('change', e =>
+    applyFilter(e.target.value, 'service'));
 }
 
 const capitalise = string => {
@@ -138,6 +154,10 @@ const addRemoveFilterListeners = _ => {
   Array.prototype.slice.call(
     document.querySelectorAll('[data-remove-problem-filter]')
   ).forEach(button => addRemoveFilterListener('problem', button));
+
+  Array.prototype.slice.call(
+    document.querySelectorAll('[data-remove-service-filter]')
+  ).forEach(button => addRemoveFilterListener('service', button));
 }
 
 const addIsotopeLayout = _ => {
