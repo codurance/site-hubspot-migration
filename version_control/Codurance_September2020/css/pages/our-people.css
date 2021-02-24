@@ -1,90 +1,67 @@
 {% import '../utils/utils.css' as utils %}
 
-.body-container-our-people .dnd-section {
-  padding-top: 0;
-  padding-bottom: 0;
+{% set lateral_page_padding = '15px' %}
+
+.our-people__heading-wrapper {
+  {{ utils.gaudi() }}
+  background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Our%20People%20Page/our-people-header.jpg);
+  background-size: cover;
+  height: 360px;
+  margin-bottom: -180px;
+  padding-top: 90px;
 }
 
-.body-container-our-people .dnd-section[class*="full-width"] > .row-fluid {
-  padding-left: 0;
-  padding-right: 0;
+.our-people__title {
+  max-width: var(--centered-content-max-width);
+  margin: 0 auto;
+  padding-left: {{ lateral_page_padding }};
+  padding-right: {{ lateral_page_padding }};
 }
 
-.our-people-bottom-banner-section .row-fluid .span8,
-.our-people-bottom-banner-section .row-fluid .span4 {
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin: 0;
-}
-
-.our-people-bottom-banner-section .dnd-section {
-  padding: 0;
-}
-
-.our-people-bottom-banner-section p {
-  font-size: 1.3em;
-  max-width: 750px;
-  margin: auto;
-}
-.our-people-bottom-banner-section {
+.our-people__footer {
   background-color: var(--midnight-blue);
+  color: white;
   padding-top: 100px;
   padding-bottom: 100px;
 }
 
-.our-people-bottom-banner-section .widget-span .widget-span {
-  display: flex;
-  justify-content: center;
+.our-people__footer-wrapper {
+  align-items: center;
+  padding-left: {{ lateral_page_padding }};
+  padding-right: {{ lateral_page_padding }};
 }
+
 {% call utils.medium_large_and_extra_large() %}
-  .our-people-bottom-banner-section .widget-span .widget-span {
-    align-items: center;
-    flex-direction: row;
+  .our-people__footer-wrapper {
+    display: flex;
   }
 {% endcall %}
 {% call utils.small() %}
-  .our-people-bottom-banner-section .widget-span .widget-span {
+  .our-people__footer-wrapper {
     display: block;
   }
 {% endcall %}
 
-.our-people-bottom-banner-section .row-number-2 {
-  margin-right: 4rem;
-}
-
-.our-people-bottom-banner-section .row-fluid .span8 {
-  -ms-flex-item-align: center!important;
-  align-self: center!important;
-}
-
-.our-people-bottom-banner-section h1,
-.our-people-bottom-banner-section h2,
-.our-people-bottom-banner-section h3 {
-  {{ utils.dudler() }}
-  color: white;
-  margin-bottom: var(--freed-margin);
-}
-
-.our-people-bottom-banner-section p {
-  {{ utils.base() }}
-  color: white;
-}
-
 {% call utils.medium_large_and_extra_large() %}
-  .our-people-bottom-banner-section .row-fluid .span8 {
-    width: 75%;
-  }
-  .our-people-bottom-banner-section .row-fluid .span4 {
-    width: 25%;
-    text-align: right!important;
+  .our-people__hiring-info {
+    width: 66%;
   }
 {% endcall %}
 
-{% call utils.small() %}
-  .our-people-bottom-banner-section p {
-    margin-bottom: 1.42857rem !important;
+.our-people__hiring-info h2 {
+  {{ utils.dudler() }}
+  margin-bottom: var(--dudler-margin);
+}
+
+.our-people__hiring-info p {
+  margin-bottom: var(--base-margin);
+}
+
+.our-people__hiring-cta {
+  margin: 0 auto;
+}
+@media (max-width: 480px) {
+  .our-people__hiring-cta {
+    width: 100%;
   }
-{% endcall %}
+}

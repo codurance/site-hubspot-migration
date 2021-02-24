@@ -1,38 +1,47 @@
 {% import '../utils/utils.css' as utils %}
 
+{% set lateral_page_padding = '15px' %}
+
 .custom-our-people {
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 40px;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 40px;
+  margin: 0 auto;
+  max-width: var(--centered-content-max-width);
+  padding: 40px {{ lateral_page_padding }};
   width: 100%;
 }
 
+{% set card_margin = '15px' %}
 .custom-our-people__card-container {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -{{ card_margin }};
+  margin-right: -{{ card_margin }};
 }
 
 .custom-our-people__card {
-  padding-bottom: 1.5rem;
-  padding-left: 15px;
-  padding-right: 15px;
+  {{ utils.card_shadow() }}
+  background-color: white;
+  margin-bottom: 1.5rem;
+  margin-left: {{ card_margin }};
+  margin-right: {{ card_margin }};
+  position: relative;
+  transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
+}
+.custom-our-people__card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
 }
 {% call utils.large_and_extra_large() %}
   .custom-our-people__card {
-    width: 25%;
+    width: calc(25% - ({{ card_margin }} * 2));
   }
 {% endcall %}
 {% call utils.medium() %}
   .custom-our-people__card {
-    width: 33%;
+    width: calc(33% - ({{ card_margin }} * 2));
   }
 {% endcall %}
 {% call utils.small() %}
   .custom-our-people__card {
-    width: 50%;
+    width: calc(50% - ({{ card_margin }} * 2));
   }
 {% endcall %}
 
@@ -54,31 +63,43 @@
   visibility: hidden;
 }
 
-.custom-our-people__card:hover .custom-our-people__card-inner::after,
-.custom-our-people__card:focus .custom-our-people__card-inner::after {
-  opacity: 1;
-  visibility: visible;
-}
-
 .custom-our-people__profile-image {
+  filter: grayscale(1);
   height: auto;
   width: 100%;
 }
+.custom-our-people__card:hover .custom-our-people__profile-image {
+  filter: grayscale(0);
+}
+
+.custom-our-people__info {
+  padding: 20px;
+}
 
 .custom-our-people__name {
+  color: var(--shark);
   display: block;
   font-size: var(--natus-font-size);
-  font-weight: var(--middle-font-weight);
+  font-weight: var(--heavy-font-weight);
   line-height: var(--natus-line-height);
-  text-align: center;
+  margin-bottom: 10px;
 }
 
 .custom-our-people__role {
   {{ utils.natus() }}
-  display: block;
-  text-align: center;
   color: var(--shark);
-  padding-bottom: 1em;
+  margin-bottom: var(--sejima-margin);
+  min-height: 45px;
+  display: block;
+}
+
+.custom-our-people__learn-more::after {
+  content: '';
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .custom-our-people__link:hover .custom-our-people__link,

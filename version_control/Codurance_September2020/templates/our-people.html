@@ -26,32 +26,21 @@ label: Our People
 
 {% block body %}
 
+  <div class="our-people__heading-wrapper">
+    <h1 class="our-people__title">Our People</h1>
+  </div>
 
-<div class="body-container-our-people">
+  {% module "our_people" path="../modules/Our People.module"
+      label="Our People" no_wrapper=True %}
 
-
-  {% dnd_area "row1" class='our-story-header-banner-section', label='Row1' %}
-  {% dnd_section vertical_alignment='MIDDLE' %}
-
-  {% end_dnd_section %}
-  {% end_dnd_area %}
-
-
-  {% dnd_area "row2" class='our-people-collection-section', label='Row2' %}
-  {% dnd_section vertical_alignment='MIDDLE' %}
-
-  {% end_dnd_section %}
-  {% end_dnd_area %}
-
-
-  {% dnd_area "row3" class='our-people-bottom-banner-section', label='Row3' %}
-  {% dnd_section vertical_alignment='MIDDLE' %}
-
-  {% end_dnd_section %}
-  {% end_dnd_area %}
-
-
-</div>
-
-
+  <div class="our-people__footer">
+    <div class="our-people__footer-wrapper page-center">
+      <div class="our-people__hiring-info">
+        <h2>We are hiring</h2>
+        <p>Are you looking for autonomy, mastery and purpose in your career? We are looking for people that share the same values of pragmatism, professionalism and transparency that we do.</p>
+      </div>
+      <a class="button-primary our-people__hiring-cta" href="https://www.codurance.com/careers/">Learn More</a>
+    </div>
+  </div>
+  
 {% endblock body %}
