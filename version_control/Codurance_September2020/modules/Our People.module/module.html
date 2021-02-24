@@ -9,24 +9,24 @@
     {% for row in table_info %}
 
       <article class="custom-our-people__card">
-        <div class="custom-our-people__card-inner">
-          <a class="custom-our-people__link" href="#team-{{ loop.index }}" data-modal-target="#team-{{ loop.index }}" rel="gallery3" title="{{ row.name }}" >
-            {% if row.image.url %}
-              <img class="custom-our-people__profile-image" src="{{ row.image.url }}" alt="{{ row.name }}">
+        <div class="custom-our-people__card-inner" data-modal-target="#team-{{ loop.index }}">
+          {% if row.image.url %}
+            <img class="custom-our-people__profile-image" src="{{ row.image.url }}" alt="{{ row.name }}">
+          {% endif %}
+          <div class="custom-our-people__info">
+            {% if row.name %}
+              <span class="custom-our-people__name">{{ row.name }}</span>
             {% endif %}
-            <div class="custom-our-people__info">
-              {% if row.name %}
-                <span class="custom-our-people__name">{{ row.name }}</span>
-              {% endif %}
-              {% if row.designation %}
-                <span class="custom-our-people__role">{{ row.designation }}</span>
-              {% endif %}
-              {{snippets.text_cta_plus(
-                text='Learn More',
-                classnames="custom-our-people__learn-more"
-              )}}
-            </div>
-          </a>
+            {% if row.designation %}
+              <span class="custom-our-people__role">{{ row.designation }}</span>
+            {% endif %}
+            {{snippets.text_cta_plus(
+              text='Learn More',
+              url="#team-{{ loop.index }}",
+              rel="gallery3",
+              classnames="custom-our-people__learn-more"
+            )}}
+          </div>
         </div>
       </article>
 
