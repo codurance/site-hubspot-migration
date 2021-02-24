@@ -37,6 +37,9 @@
   flex-direction: row;
   justify-content: center;
   max-height: 350px;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
 }
 .header-slice__image-wrapper > svg {
   height: auto;
