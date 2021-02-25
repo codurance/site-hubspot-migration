@@ -77,13 +77,13 @@ const getContactByToken = async _ => {
   }
 }
 
-const shouldSeePopup = _ => {
+const shouldSeePopup = async _ => {
   const contact = await getContactByToken();
   return !shownPopup() && !contact.is_contact;
 }
 
 const addPopupEventListeners = async _ => {
-  if (shouldSeePopup()) {
+  if (await shouldSeePopup()) {
     closeButton.addEventListener('click', closeModal);
     document.addEventListener('click', checkClosingModal);
     document.addEventListener('keydown', checkEscButton);
