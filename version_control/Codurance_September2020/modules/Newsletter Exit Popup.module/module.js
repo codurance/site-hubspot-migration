@@ -59,18 +59,21 @@ const shownPopup = _ => {
 }
 
 const getContactByToken = async _ => {
+  const serverlessPath = '/_hcms/api';
+  const contactEndpoint = 'contact_by_token';
+  const { hubspotutk } = getCookies();
+  const contactByToken = `${serverlessPath}/${contactEndpoint}?hubspotutk=${hubspotutk}`
   const guest = { is_contact: false };
 
-  try {
-    const { hubspotutk } = getCookies();
-    if (!hubspotutk) {
-      return guest;
-    }
+  if (!hubspotutk) {
+    return guest;
+  }
 
-    const response = await fetch(`/_hcms/api/contact_by_token?hubspotutk=${hubspotutk}`);
+  try {
+    const response = await fetch(contactByToken);
     return response.json();
   } catch {
-    return guest
+    return guest;
   }
 }
 
