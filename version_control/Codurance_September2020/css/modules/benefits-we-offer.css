@@ -1,6 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
-.custom-benfits-we-offer {
+.custom-benefits-we-offer {
   background-color: white;
   border-radius: 0.25rem;
   border-top: 5px solid var(--midnight-blue);
@@ -10,17 +10,17 @@
   position: relative;
 }
 
-.custom-benfits-we-offer__text-container p {
+.custom-benefits-we-offer__text-container p {
   {{ utils.natus() }}
 }
 
-.custom-benfits-we-offer__text-container h3 {
+.custom-benefits-we-offer__text-container h3 {
   {{ utils.base() }}
   font-weight: var(--middle-font-weight);
   margin-bottom: var(--base-margin);
 }
 
-.custom-benfits-we-offer__icon {
+.custom-benefits-we-offer__icon {
   {{ utils.card_shadow() }}
   background-color: white;
   border-radius: 50%;
