@@ -8,7 +8,9 @@
 
 {% for client in clients %}
   {% do allIndustries.append(client.industry.name) %}
-  {% do allServices.append(client.services.name) %}
+  {% for service in client.services %}
+    {% do allServices.append(service.name) %}
+  {% endfor %}
   {% for problem in client.problems %}
     {% do allProblems.append(problem.name) %}
   {% endfor %}
@@ -131,16 +133,18 @@
               <i class="client-card__icon las la-wrench"></i>
               <a href="">{{client.industry.name}}</a>
             </li>
-            {% for problem in client.problems %}
+            {% for problem in problems %}
               <li>
                 <i class="client-card__icon las la-briefcase"></i>
                 <a href="">{{problem.name}}</a>
               </li>
             {% endfor %}
-            <li>
-              <i class="client-card__icon las la-exclamation"></i>
-              <a href="">{{client.service_line.name}}</a>
-            </li>
+            {% for service in services %}
+              <li>
+                <i class="client-card__icon las la-briefcase"></i>
+                <a href="">{{problem.name}}</a>
+              </li>
+            {% endfor %}
           </ul>
           {% if client.case_study %}
             <a class="button-primary" href="{{client.case_study}}">
