@@ -3,8 +3,6 @@ templateType: page
 isAvailableForNewContent: true
 label: Our People
 -->
-{% import './refactor/refactored-pages.html' as refactor %}
-
 {% extends "./layouts/base.html" %}
 
 <head>
@@ -16,7 +14,7 @@ label: Our People
   <meta name="description" content="{{ page_meta.meta_description }}">
   {{ require_css(get_asset_url("../css/layout.css")) }}
   {{ require_css(get_asset_url("../css/main.css")) }}
-  {{ require_css(get_asset_url("../css/main-2021.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
 
   {{ require_css(get_asset_url("../css/pages/our-people.css")) }}
 
@@ -28,32 +26,34 @@ label: Our People
 
 {% block body %}
 
+  {% set path = request.path|truncate(3, true, '') %}
+  {% if path is string_containing 'es' %}
+    {% set header_title = 'Nuestro equipo' %}
+    {% set footer_heading = 'Buscamos talento' %}
+    {% set footer_text = '¿Quieres trabajar con autonomía y tienes el propósito de mejorar día a día en tu carrera profesional? Nos gustaría conocerte y compartir contigo nuestros valores de pragmatismo, profesionalidad y transparencia.' %}
+    {% set footer_cta = 'Infórmate' %}    
+  {% else %}
+    {% set header_title = 'Our People' %}
+    {% set footer_heading = 'We are hiring' %}
+    {% set footer_text = 'Are you looking for autonomy, mastery and purpose in your career? We are looking for people that share the same values of pragmatism, professionalism and transparency that we do.' %}
+    {% set footer_cta = 'Learn More' %}
+  {% endif %}
 
-<div class="body-container-our-people">
+  <div class="our-people__heading-wrapper">
+    <h1 class="our-people__title">{{header_title}}</h1>
+  </div>
 
+  {% module "our_people" path="../modules/Our People.module"
+      label="Our People" no_wrapper=True %}
 
-  {% dnd_area "row1" class='our-story-header-banner-section', label='Row1' %}
-  {% dnd_section vertical_alignment='MIDDLE' %}
-
-  {% end_dnd_section %}
-  {% end_dnd_area %}
-
-
-  {% dnd_area "row2" class='our-people-collection-section', label='Row2' %}
-  {% dnd_section vertical_alignment='MIDDLE' %}
-
-  {% end_dnd_section %}
-  {% end_dnd_area %}
-
-
-  {% dnd_area "row3" class='our-people-bottom-banner-section', label='Row3' %}
-  {% dnd_section vertical_alignment='MIDDLE' %}
-
-  {% end_dnd_section %}
-  {% end_dnd_area %}
-
-
-</div>
-
-
+  <div class="our-people__footer">
+    <div class="our-people__footer-wrapper page-center">
+      <div class="our-people__hiring-info">
+        <h2>{{ footer_heading }}</h2>
+        <p>{{ footer_text }}</p>
+      </div>
+      <a class="button-primary our-people__hiring-cta" href="https://www.codurance.com/careers/">{{ footer_cta }}</a>
+    </div>
+  </div>
+  
 {% endblock body %}

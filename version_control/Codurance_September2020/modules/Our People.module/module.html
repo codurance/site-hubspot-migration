@@ -1,27 +1,34 @@
 {{ require_css(get_asset_url("../../css/modules/our-people.css")) }}
+{% import "../../snippets/button-snippets.html" as snippets %}
 
-<div class="custom-our-people page-center">
+<div class="custom-our-people">
   <a id="theteam" target="_blank" rel="noopener noreferrer"></a>
   <div class="custom-our-people__card-container">
     {% set table_info = hubdb_table_rows( module.hubdbtable_field ) %}
 
     {% for row in table_info %}
 
-      <div class="custom-our-people__card">
-        <div class="custom-our-people__card-inner">
-          <a class="custom-our-people__link" href="#team-{{ loop.index }}" data-modal-target="#team-{{ loop.index }}" rel="gallery3" title="{{ row.name }}" >
-            {% if row.image.url %}
-              <img class="custom-our-people__profile-image" src="{{ row.image.url }}" alt="{{ row.name }}">
-            {% endif %}
+      <article class="custom-our-people__card">
+        <div class="custom-our-people__card-inner" data-modal-target="#team-{{ loop.index }}">
+          {% if row.image.url %}
+            <img class="custom-our-people__profile-image" src="{{ row.image.url }}" alt="{{ row.name }}">
+          {% endif %}
+          <div class="custom-our-people__info">
             {% if row.name %}
               <span class="custom-our-people__name">{{ row.name }}</span>
             {% endif %}
             {% if row.designation %}
               <span class="custom-our-people__role">{{ row.designation }}</span>
             {% endif %}
-          </a>
+            {{snippets.text_cta_plus(
+              text='Learn More',
+              url="#team-{{ loop.index }}",
+              rel="gallery3",
+              classnames="custom-our-people__learn-more"
+            )}}
+          </div>
         </div>
-      </div>
+      </article>
 
       <div class="custom-our-people__modal custom-our-people-modal" data-id="{{ row.name }}" id="team-{{ loop.index }}" style="display: none;">
         <button class="custom-our-people-modal__close-button" type="button" onclick="Custombox.modal.close();">

@@ -268,7 +268,7 @@
     max-width: 1610px;
     overflow-x: auto;
     padding:0;
-    width: calc( ( 5 * (100vw - (2 * 30px)) ) + 180px );
+    width: calc(4 * (100vw - (2 * 30px)));
   }
 {% endcall %}
 
@@ -341,7 +341,7 @@
 
 @media (max-width: 479px){
   .cm-posts-by-topic-inner-group {
-    width: calc( ( 4 * (100vw - (2 * 14px)) ) + 180px);
+    width: 100%;
     overflow-x: auto;
   }
 }

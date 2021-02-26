@@ -4,6 +4,5 @@
   "label" : "HubDB table",
   "required" : false,
   "locked" : false,
-  "type" : "hubdbtable",
-  "default" : 2691020
+  "type" : "hubdbtable"
 } ]
