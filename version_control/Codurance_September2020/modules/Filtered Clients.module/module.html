@@ -4,11 +4,11 @@
 
 {% set allIndustries = [] %}
 {% set allProblems = [] %}
-{% set allServiceLines = [] %}
+{% set allServices = [] %}
 
 {% for client in clients %}
   {% do allIndustries.append(client.industry.name) %}
-  {% do allServiceLines.append(client.service_line.name) %}
+  {% do allServices.append(client.services.name) %}
   {% for problem in client.problems %}
     {% do allProblems.append(problem.name) %}
   {% endfor %}
@@ -16,7 +16,7 @@
 
 {% set allIndustries = allIndustries|unique %}
 {% set allProblems = allProblems|unique %}
-{% set allServiceLines = allServiceLines|unique %}
+{% set allServices = allServices|unique %}
 
 <section class="clients-header__section">
   <div class="clients-header__container">
@@ -33,7 +33,7 @@
         <option data-industry-option="{{industry}}">{{industry}}</option>
       {% endfor %}
     </select>
-    <i class="las la-caret-down clients-filter__problem-icon"></i>
+    <i class="las la-caret-down clients-filter__dropdown-icon"></i>
   </div>
   <div class="clients-filter-selector__input">
     <select data-select-problem value="">
@@ -42,12 +42,12 @@
         <option data-problem-option="{{problem}}">{{problem}}</option>
       {% endfor %}
     </select>
-    <i class="las la-caret-down clients-filter__problem-icon"></i>
+    <i class="las la-caret-down clients-filter__dropdown-icon"></i>
   </div>
   <div class="clients-filter-selector__input">
     <select data-select-service value="">
-      <option value="" disabled selected hidden>Filter by problem</option>
-      {% for service in allServiceLines %}
+      <option value="" disabled selected hidden>Filter by service</option>
+      {% for service in allServices %}
       <option data-service-option="{{service}}">{{service}}</option>
       {% endfor %}
     </select>
@@ -57,13 +57,22 @@
 
 <div class="clients-applied-filters__container">
   {% for industry in allIndustries %}
-    <div class="clients-applied-filters__pill hidden" data-applied-industry-filter="{{industry}}">{{industry}}<i class="clients-applied-filters__remove-button las la-times" data-remove-industry-filter="{{industry}}"></i></div>
+    <div class="clients-applied-filters__pill hidden" data-applied-industry-filter="{{industry}}">
+      {{industry}}
+      <i class="clients-applied-filters__remove-button las la-times" data-remove-industry-filter="{{industry}}"></i>
+    </div>
   {% endfor %}
   {% for problem in allProblems %}
-    <div class="clients-applied-filters__pill hidden" data-applied-problem-filter="{{problem}}">{{problem}}<i class="clients-applied-filters__remove-button las la-times" data-remove-problem-filter="{{problem}}"></i></div>
+    <div class="clients-applied-filters__pill hidden" data-applied-problem-filter="{{problem}}">
+      {{problem}}
+      <i class="clients-applied-filters__remove-button las la-times" data-remove-problem-filter="{{problem}}"></i>
+    </div>
   {% endfor %}
-  {% for service in allServiceLines %}
-    <div class="clients-applied-filters__pill hidden" data-applied-service-filter="{{service}}">{{service}}<i class="clients-applied-filters__remove-button las la-times" data-remove-service-filter="{{service}}"></i></div>
+  {% for service in allServices %}
+    <div class="clients-applied-filters__pill hidden" data-applied-service-filter="{{service}}">
+      {{service}}
+      <i class="clients-applied-filters__remove-button las la-times" data-remove-service-filter="{{service}}"></i>
+    </div>
   {% endfor %}
 </div>
 
@@ -75,6 +84,10 @@
     {% for problem in client.problems %}
       {% do  problems.append(problem.name) %}
     {% endfor %}
+    {% set services = [] %}
+    {% for service in client.services %}
+      {% do  services.append(service.name) %}
+    {% endfor %}
 
     {% if client.description %}
       {% set class = "clients-grid__card--wide" %}
@@ -83,48 +96,70 @@
     {% endif %}
 
     {% if client.video %}
-      <div class="clients-grid__card clients-grid__card--v-wide"  data-client-industry="{{client.industry.name}}" data-client-problems="{{problems|join(',')}}" data-client-service="{{ client.service_line.name }}">
+      <div class="clients-grid__card clients-grid__card--v-wide" data-client-industry="{{client.industry.name}}"
+        data-client-problems="{{problems|join(',')}}" data-client-services="{{services|join(',')}}">
         <h3 class="client-card__name">{{client.name}}</h3>
         <div class="client-card__video">
           <div class="client-card__video-inner">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cL3DaHZ88ZQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cL3DaHZ88ZQ"
+              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
       </div>
     {% endif %}
 
-    <div class="clients-grid__card {{class}}" data-client-industry="{{client.industry.name}}" data-client-problems="{{problems|join(',')}}" data-client-service="{{ client.service_line.name }}">
+    <div class="clients-grid__card {{class}}" data-client-industry="{{client.industry.name}}"
+      data-client-problems="{{problems|join(',')}}" data-client-services="{{services|join(',')}}">
       <div class="client-card__container">
         {% if client.logo %}
           <div class="client-card__image" style="background-image: url({{client.logo.url}})">
           </div>
         {% endif %}
         <h3 class="client-card__name">{{client.name}}</h3>
-        <p><i class="client-card__icon las la-globe-africa"></i><a href="">Visit website</a></p>
+        <p>
+          <i class="client-card__icon las la-globe-africa"></i>
+          <a href="">Visit website</a>
+        </p>
         {% if client.description %}
           <p>{{client.description}}</p>
         {% endif %}
         <div class="client-card__info">
           <ul>
-            <li><i class="client-card__icon las la-wrench"></i><a href="">{{client.industry.name}}</a></li>
+            <li>
+              <i class="client-card__icon las la-wrench"></i>
+              <a href="">{{client.industry.name}}</a>
+            </li>
             {% for problem in client.problems %}
-              <li><i class="client-card__icon las la-briefcase"></i><a href="">{{problem.name}}</a></li>
+              <li>
+                <i class="client-card__icon las la-briefcase"></i>
+                <a href="">{{problem.name}}</a>
+              </li>
             {% endfor %}
-            <li><i class="client-card__icon las la-exclamation"></i><a href="">{{client.service_line.name}}</a></li>
+            <li>
+              <i class="client-card__icon las la-exclamation"></i>
+              <a href="">{{client.service_line.name}}</a>
+            </li>
           </ul>
           {% if client.case_study %}
-            <a class="button-primary" href="{{client.case_study}}">Case Study at {{client.name}}</a>
+            <a class="button-primary" href="{{client.case_study}}">
+              Case Study at {{client.name}}
+            </a>
           {% endif %}
         </div>
       </div>
     </div>
 
     {% if client.testimonial %}
-      <div class="clients-grid__card" data-client-industry="{{client.industry.name}}" data-client-problems="{{problems|join(',')}}" data-client-service="{{ client.service_line.name }}">
+      <div class="clients-grid__card" data-client-industry="{{client.industry.name}}"
+        data-client-problems="{{problems|join(',')}}" data-client-services="{{services|join(',')}}">
         <div class="client-card__container">
           <h3 class="client-card__name">{{client.name}}</h3>
           <p>"{{client.testimonial}}"</p>
-          <p class="client-card__testimonial-author">John Doe, Head of Product at {{client.name}}</p>
+          <p class="client-card__testimonial-author">
+            John Doe, Head of Product at {{client.name}}
+          </p>
         </div>
       </div>
     {% endif %}

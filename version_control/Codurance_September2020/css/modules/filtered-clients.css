@@ -48,7 +48,7 @@
     color: white;
 }
 
-.clients-filter-selectors__container .clients-filter__problem-icon {
+.clients-filter-selectors__container .clients-filter__dropdown-icon {
     position: absolute;
     top: 2px;
     left: 160px;
