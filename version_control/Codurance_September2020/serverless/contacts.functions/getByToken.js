@@ -16,7 +16,7 @@ exports.main = (context, sendResponse) => {
 
     const isContact = async _ => {
         const contact = await getContact();
-        return contact && !!contact.vid;
+        return contact && !!contact['is-contact'];
     }
 
     (async _ => {
