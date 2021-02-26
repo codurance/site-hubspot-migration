@@ -23,14 +23,16 @@ const resetFilterDropdownValues = _ => {
 const setAllFilters = _ => {
   allFilters = {
     industry: Array.prototype.slice.call(
-      document.querySelectorAll('[data-industry-option]')
-    ).map(option => option.dataset.industryOption),
+        document.querySelectorAll('[data-industry-option]')
+      ).map(option => option.dataset.industryOption),
+
     problem: Array.prototype.slice.call(
-      document.querySelectorAll('[data-problem-option]')
-    ).map(option => option.dataset.problemOption),
+        document.querySelectorAll('[data-problem-option]')
+      ).map(option => option.dataset.problemOption),
+
     service: Array.prototype.slice.call(
-      document.querySelectorAll('[data-service-option]')
-    ).map(option => option.dataset.serviceOption),
+        document.querySelectorAll('[data-service-option]')
+      ).map(option => option.dataset.serviceOption),
   }
 }
 
@@ -79,9 +81,9 @@ const byProblem = client => {
 
 const byService = client => {
   let serviceFilters = appliedFilters.service;
-  let clientService = client.dataset.clientService;
+  const clientServices = client.dataset.clientServices.split(',');
   return serviceFilters.length === 0 ||
-    serviceFilters.includes(clientService);
+    serviceFilters.some(clientServices);
 }
 
 const showClient = client => {
