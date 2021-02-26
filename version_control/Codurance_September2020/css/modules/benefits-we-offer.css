@@ -1,26 +1,57 @@
 {% import '../utils/utils.css' as utils %}
 
-.custom-benfits-we-offer {
+{% set lateral_page_padding = '15px' %}
+
+.benefits__heading {
+  text-align: center;
+}
+
+.benefits-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: var(--centered-content-max-width);
+  margin: 0 auto;
+  padding-left: {{ lateral_page_padding }};
+  padding-right: {{ lateral_page_padding }};
+}
+
+
+{% set card_lateral_margin = "15px" %}
+.custom-benefits-we-offer {
   background-color: white;
   border-radius: 0.25rem;
   border-top: 5px solid var(--midnight-blue);
   box-shadow: 0 5px 10px -6px var(--woodsmoke--10);
-  height: 100%;
+  margin: 20px {{ card_lateral_margin }};
   padding: 1.3rem;
   position: relative;
+  width: calc(33% - {{ card_lateral_margin }} * 2);
 }
 
-.custom-benfits-we-offer__text-container p {
+{% call utils.large_and_extra_large() %}
+  .custom-benefits-we-offer {
+    width: calc(33% - {{ card_margin }} * 2);
+  }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+  .custom-benefits-we-offer {
+    width: 100%;
+  }
+{% endcall %}
+
+.custom-benefits-we-offer__text-container p {
   {{ utils.natus() }}
 }
 
-.custom-benfits-we-offer__text-container h3 {
+.custom-benefits-we-offer__text-container h3 {
   {{ utils.base() }}
   font-weight: var(--middle-font-weight);
   margin-bottom: var(--base-margin);
 }
 
-.custom-benfits-we-offer__icon {
+.custom-benefits-we-offer__icon {
   {{ utils.card_shadow() }}
   background-color: white;
   border-radius: 50%;
