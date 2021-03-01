@@ -99,7 +99,7 @@
 
     {% if client.video %}
       <div class="clients-grid__card clients-grid__card--v-wide" data-client-industry="{{client.industry.name}}"
-        data-client-problems="{{problems|join(',')}}" data-client-services="{{services|join(',')}}">
+        data-client-problem="{{problems|join(',')}}" data-client-service="{{services|join(',')}}">
         <h3 class="client-card__name">{{client.name}}</h3>
         <div class="client-card__video">
           <div class="client-card__video-inner">
@@ -113,7 +113,7 @@
     {% endif %}
 
     <div class="clients-grid__card {{class}}" data-client-industry="{{client.industry.name}}"
-      data-client-problems="{{problems|join(',')}}" data-client-services="{{services|join(',')}}">
+      data-client-problem="{{problems|join(',')}}" data-client-service="{{services|join(',')}}">
       <div class="client-card__container">
         {% if client.logo %}
           <div class="client-card__image" style="background-image: url({{client.logo.url}})">
@@ -157,7 +157,7 @@
 
     {% if client.testimonial %}
       <div class="clients-grid__card" data-client-industry="{{client.industry.name}}"
-        data-client-problems="{{problems|join(',')}}" data-client-services="{{services|join(',')}}">
+        data-client-problem="{{problems|join(',')}}" data-client-service="{{services|join(',')}}">
         <div class="client-card__container">
           <h3 class="client-card__name">{{client.name}}</h3>
           <p>"{{client.testimonial}}"</p>

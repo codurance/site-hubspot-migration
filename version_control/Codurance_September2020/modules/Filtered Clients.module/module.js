@@ -73,13 +73,21 @@ const onlyUnique = (value, index, self) => {
 }
 
 const updateAvailableFilters = _ => {
-  const availableIndustries = visibleClients.map(client => client.dataset.clientIndustry).filter(onlyUnique);
-  const availableProblems = Array.prototype.concat.apply([], visibleClients.map(client => 
-    client.dataset.clientProblems.split(','))).filter(onlyUnique);
-  const availableServices = Array.prototype.concat.apply([], visibleClients.map(client => 
-    client.dataset.clientServices.split(','))).filter(onlyUnique);
+  Object.keys(allFilters).forEach(type => {
+    const capitalisedType = type.charAt(0).toUpperCase() + type.slice(1);
+    const availableFilters = Array.prototype.concat.apply([], visibleClients.map(client => 
+      client.dataset[`client${capitalisedType}`].split(','))).filter(onlyUnique);
 
-  console.log(availableIndustries, availableProblems, availableServices)
+    const unavailableFilters = allFilters[type].filter(filter => !availableFilters.includes(filter));
+
+    availableFilters.forEach(filter => {
+      document.querySelector(`[data-${type}-option="${filter}"]`).removeAttribute('disabled');
+    });
+
+    unavailableFilters.forEach(filter => {
+      document.querySelector(`[data-${type}-option="${filter}"]`).setAttribute('disabled', 'true');
+    });
+  })  
 }
 
 const byIndustry = client => {
@@ -91,14 +99,14 @@ const byIndustry = client => {
 
 const byProblem = client => {
   let problemFilters = appliedFilters.problem;
-  const clientProblems = client.dataset.clientProblems.split(',');
+  const clientProblems = client.dataset.clientProblem.split(',');
   return problemFilters.length === 0 ||
     problemFilters.some(filter => clientProblems.includes(filter));
 }
 
 const byService = client => {
   let serviceFilters = appliedFilters.service;
-  const clientServices = client.dataset.clientServices.split(',');
+  const clientServices = client.dataset.clientService.split(',');
   return serviceFilters.length === 0 ||
     serviceFilters.some(filter => clientServices.includes(filter));
 }
@@ -112,7 +120,6 @@ const hideClient = client => {
 }
 
 const refilter = _ => {
-  console.log(appliedFilters)
   visibleClients = clients.filter(byIndustry).filter(byProblem).filter(byService);
   hiddenClients = clients.filter(client => !visibleClients.includes(client));
 
@@ -168,17 +175,11 @@ const addRemoveFilterListener = (type, button) => {
 }
 
 const addRemoveFilterListeners = _ => {
-  Array.prototype.slice.call(
-    document.querySelectorAll('[data-remove-industry-filter]')
-  ).forEach(button => addRemoveFilterListener('industry', button));
-
-  Array.prototype.slice.call(
-    document.querySelectorAll('[data-remove-problem-filter]')
-  ).forEach(button => addRemoveFilterListener('problem', button));
-
-  Array.prototype.slice.call(
-    document.querySelectorAll('[data-remove-service-filter]')
-  ).forEach(button => addRemoveFilterListener('service', button));
+  Object.keys(allFilters).forEach(type => {
+    Array.prototype.slice.call(
+      document.querySelectorAll(`[data-remove-${type}-filter]`)
+    ).forEach(button => addRemoveFilterListener(type, button));
+  });
 }
 
 const addIsotopeLayout = _ => {
