@@ -84,11 +84,11 @@
   {% for client in clients %}
     {% set problems = [] %}
     {% for problem in client.problems %}
-      {% do  problems.append(problem.name) %}
+      {% do problems.append(problem.name) %}
     {% endfor %}
     {% set services = [] %}
     {% for service in client.services %}
-      {% do  services.append(service.name) %}
+      {% do services.append(service.name) %}
     {% endfor %}
 
     {% if client.description %}
@@ -135,14 +135,14 @@
             </li>
             {% for problem in problems %}
               <li>
-                <i class="client-card__icon las la-briefcase"></i>
-                <a href="">{{problem.name}}</a>
+                <i class="client-card__icon las la-exclamation"></i>
+                <a href="">{{problem}}</a>
               </li>
             {% endfor %}
             {% for service in services %}
               <li>
                 <i class="client-card__icon las la-briefcase"></i>
-                <a href="">{{problem.name}}</a>
+                <a href="">{{service}}</a>
               </li>
             {% endfor %}
           </ul>
