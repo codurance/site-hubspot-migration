@@ -8,6 +8,9 @@ const serviceFilter = document.querySelector('[data-select-service]');
 let allFilters;
 let isotope;
 
+let visibleClients = clients;
+let hiddenClients = [];
+
 const appliedFilters = {
   industry: [],
   problem: [],
@@ -65,6 +68,20 @@ const updateAppliedFilters = _ => {
   });
 }
 
+const onlyUnique = (value, index, self) => {
+  return self.indexOf(value) === index;
+}
+
+const updateAvailableFilters = _ => {
+  const availableIndustries = visibleClients.map(client => client.dataset.clientIndustry).filter(onlyUnique);
+  const availableProblems = Array.prototype.concat.apply([], visibleClients.map(client => 
+    client.dataset.clientProblems.split(','))).filter(onlyUnique);
+  const availableServices = Array.prototype.concat.apply([], visibleClients.map(client => 
+    client.dataset.clientServices.split(','))).filter(onlyUnique);
+
+  console.log(availableIndustries, availableProblems, availableServices)
+}
+
 const byIndustry = client => {
   let industryFilters = appliedFilters.industry;
   let clientIndustry = client.dataset.clientIndustry;
@@ -83,7 +100,7 @@ const byService = client => {
   let serviceFilters = appliedFilters.service;
   const clientServices = client.dataset.clientServices.split(',');
   return serviceFilters.length === 0 ||
-    serviceFilters.some(clientServices);
+    serviceFilters.some(filter => clientServices.includes(filter));
 }
 
 const showClient = client => {
@@ -95,23 +112,25 @@ const hideClient = client => {
 }
 
 const refilter = _ => {
-  const visibleClients = clients.filter(byIndustry).filter(byProblem).filter(byService);
-  const hiddenClients = clients.filter(client => !visibleClients.includes(client));
+  console.log(appliedFilters)
+  visibleClients = clients.filter(byIndustry).filter(byProblem).filter(byService);
+  hiddenClients = clients.filter(client => !visibleClients.includes(client));
 
   visibleClients.forEach(showClient);
   hiddenClients.forEach(hideClient);
   isotope.layout();
 }
 
-const unnamedFunction = _ => {
+const update = _ => {
   updateAppliedFilters();
   refilter();
+  updateAvailableFilters();
 }
 
 const applyFilter = (value, type) => {
   appliedFilters[type].push(value);
   resetFilterDropdownValues();
-  unnamedFunction();
+  update();
 }
 
 const addFilterDropdownListeners = _ => {
@@ -121,7 +140,7 @@ const addFilterDropdownListeners = _ => {
   problemFilter.addEventListener('change', e =>
     applyFilter(e.target.value, 'problem'));
 
-  problemFilter.addEventListener('change', e =>
+  serviceFilter.addEventListener('change', e =>
     applyFilter(e.target.value, 'service'));
 }
 
@@ -138,7 +157,7 @@ const removeItemFromArray = (array, value) => {
 
 const removeFilter = (type, value) => {
   removeItemFromArray(appliedFilters[type], value)
-  unnamedFunction();
+  update();
 }
 
 const addRemoveFilterListener = (type, button) => {
