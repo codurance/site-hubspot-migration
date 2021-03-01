@@ -72,22 +72,43 @@ const onlyUnique = (value, index, self) => {
   return self.indexOf(value) === index;
 }
 
+const flatten = array => {
+  return Array.prototype.concat.apply([], array);
+}
+
 const updateAvailableFilters = _ => {
-  Object.keys(allFilters).forEach(type => {
-    const capitalisedType = type.charAt(0).toUpperCase() + type.slice(1);
-    const availableFilters = Array.prototype.concat.apply([], visibleClients.map(client => 
-      client.dataset[`client${capitalisedType}`].split(','))).filter(onlyUnique);
+  const availableIndustryFilters = flatten(clients.filter(byProblem).filter(byService).map(client =>
+    client.dataset[`clientIndustry`].split(','))).filter(onlyUnique);
+  const unavailableIndustryFilters = allFilters.industry.filter(filter =>
+    !availableIndustryFilters.includes(filter));
+  availableIndustryFilters.forEach(filter => 
+    document.querySelector(`[data-industry-option="${filter}"]`)
+    .removeAttribute('disabled'));
+  unavailableIndustryFilters.forEach(filter => 
+    document.querySelector(`[data-industry-option="${filter}"]`)
+    .setAttribute('disabled', 'true'));
 
-    const unavailableFilters = allFilters[type].filter(filter => !availableFilters.includes(filter));
+  const availableProblemFilters = flatten(clients.filter(byIndustry).filter(byService).map(client =>
+    client.dataset[`clientProblem`].split(','))).filter(onlyUnique);
+  const unavailableProblemFilters = allFilters.problem.filter(filter =>
+    !availableProblemFilters.includes(filter));
+  availableProblemFilters.forEach(filter => 
+    document.querySelector(`[data-problem-option="${filter}"]`)
+    .removeAttribute('disabled'));
+  unavailableProblemFilters.forEach(filter => 
+    document.querySelector(`[data-problem-option="${filter}"]`)
+    .setAttribute('disabled', 'true'));
 
-    availableFilters.forEach(filter => {
-      document.querySelector(`[data-${type}-option="${filter}"]`).removeAttribute('disabled');
-    });
-
-    unavailableFilters.forEach(filter => {
-      document.querySelector(`[data-${type}-option="${filter}"]`).setAttribute('disabled', 'true');
-    });
-  })  
+    const availableServiceFilters = flatten(clients.filter(byIndustry).filter(byProblem).map(client =>
+      client.dataset[`clientService`].split(','))).filter(onlyUnique);
+    const unavailableServiceFilters = allFilters.service.filter(filter =>
+      !availableServiceFilters.includes(filter));
+    availableServiceFilters.forEach(filter => 
+      document.querySelector(`[data-service-option="${filter}"]`)
+      .removeAttribute('disabled'));
+    unavailableServiceFilters.forEach(filter => 
+      document.querySelector(`[data-service-option="${filter}"]`)
+      .setAttribute('disabled', 'true'));
 }
 
 const byIndustry = client => {
@@ -119,8 +140,15 @@ const hideClient = client => {
   client.classList.add('hidden');
 }
 
+const calculateVisibleClients = _ => {
+  const filteredClients = clients.filter(byIndustry).filter(byProblem).filter(byService);
+  return filteredClients.length > 0 ?
+    filteredClients :
+    clients;
+}
+
 const refilter = _ => {
-  visibleClients = clients.filter(byIndustry).filter(byProblem).filter(byService);
+  visibleClients = calculateVisibleClients();
   hiddenClients = clients.filter(client => !visibleClients.includes(client));
 
   visibleClients.forEach(showClient);
