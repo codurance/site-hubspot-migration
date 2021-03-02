@@ -27,45 +27,30 @@
   </div>
 </section>
 
-{# <div class="clients-filter-selectors__container">
-  <div class="clients-filter-selector__input">
-    <select data-select-industry>
-      <option value="" disabled selected hidden>Filter by industry</option>
-      {% for industry in allIndustries %}
-        <option data-industry-option="{{industry}}">{{industry}}</option>
-      {% endfor %}
-    </select>
-    <i class="las la-caret-down clients-filter__dropdown-icon"></i>
-  </div>
-  <div class="clients-filter-selector__input">
-    <select data-select-problem value="">
-      <option value="" disabled selected hidden>Filter by problem</option>
-      {% for problem in allProblems %}
-        <option data-problem-option="{{problem}}">{{problem}}</option>
-      {% endfor %}
-    </select>
-    <i class="las la-caret-down clients-filter__dropdown-icon"></i>
-  </div>
-  <div class="clients-filter-selector__input">
-    <select data-select-service value="">
-      <option value="" disabled selected hidden>Filter by service</option>
-      {% for service in allServices %}
-      <option data-service-option="{{service}}">{{service}}</option>
-      {% endfor %}
-    </select>
-    <i class="las la-caret-down clients-filter__service-icon"></i>
-  </div>
-</div> #}
-
 <div class="clients__filter">
   <div class="clients__filter-dropdown-container">
-    <button class="clients__filter-dropdown-button">Industry<i class="clients__filter-dropdown las la-angle-down"></i></button>
+    <button class="clients__filter-dropdown-button" data-dropdown="industry">Industry<i class="clients__filter-dropdown-icon las la-angle-down"></i></button>
+    <div class="clients__filter-dropdown-options hidden" data-options-container="industry">
+      {% for industry in allIndustries %}
+        <button class="clients__filter-dropdown-option" data-industry-option="{{industry}}">{{industry}}</button>
+      {% endfor %}
+    </div>
   </div>
   <div class="clients__filter-dropdown-container">
-    <button class="clients__filter-dropdown-button">Problem<i class="clients__filter-dropdown las la-angle-down"></i></button>
+    <button class="clients__filter-dropdown-button" data-dropdown="problem">Problem<i class="clients__filter-dropdown-icon las la-angle-down"></i></button>
+    <div class="clients__filter-dropdown-options hidden" data-options-container="problem">
+      {% for problem in allProblems %}
+        <button class="clients__filter-dropdown-option" data-problem-option="{{problem}}">{{problem}}</button>
+      {% endfor %}
+    </div>
   </div>
   <div class="clients__filter-dropdown-container">
-    <button class="clients__filter-dropdown-button">Service<i class="clients__filter-dropdown las la-angle-down"></i></button>
+    <button class="clients__filter-dropdown-button" data-dropdown="service">Service<i class="clients__filter-dropdown-icon las la-angle-down"></i></button>
+    <div class="clients__filter-dropdown-options hidden" data-options-container="service">
+      {% for service in allServices %}
+        <button class="clients__filter-dropdown-option" data-service-option="{{service}}">{{service}}</button>
+      {% endfor %}
+    </div>
   </div>
 </div>
 

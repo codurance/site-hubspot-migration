@@ -1,9 +1,6 @@
 const clients = Array.prototype.slice.call(
   document.querySelectorAll('[data-client-industry]')
 );
-const industryFilter = document.querySelector('[data-select-industry]');
-const problemFilter = document.querySelector('[data-select-problem]');
-const serviceFilter = document.querySelector('[data-select-service]');
 
 let allFilters;
 let isotope;
@@ -15,12 +12,6 @@ const appliedFilters = {
   industry: [],
   problem: [],
   service: []
-}
-
-const resetFilterDropdownValues = _ => {
-  industryFilter.value = "";
-  problemFilter.value = "";
-  serviceFilter.value = "";
 }
 
 const setAllFilters = _ => {
@@ -39,6 +30,23 @@ const setAllFilters = _ => {
   }
 }
 
+const openDropdown = type => {
+  const containerClasses = document.querySelector(`[data-options-container="${type}"]`).classList;
+  if (containerClasses.contains('hidden')) {
+    containerClasses.remove('hidden');
+  } else {
+    containerClasses.add('hidden');
+  }
+}
+
+const addFilterDropdownListeners = _ => {
+  Array.prototype.slice.call(
+    document.querySelectorAll('[data-dropdown]')
+  ).forEach(button => button.addEventListener('click', _ => 
+    openDropdown(button.dataset.dropdown)
+  ));
+}
+
 const showAppliedFilter = (key, filter) => {
   document.querySelector(`[data-applied-${key}-filter="${filter}"]`).classList.remove('hidden');
 }
@@ -48,11 +56,11 @@ const hideUnappliedFilter = (key, filter) => {
 }
 
 const hideAppliedOption = (key, filter) => {
-  document.querySelector(`[data-${key}-option="${filter}"]`).setAttribute('hidden', '');
+  document.querySelector(`[data-${key}-option="${filter}"]`).classList.add('hidden');
 }
 
 const showUnappliedOption = (key, filter) => {
-  document.querySelector(`[data-${key}-option="${filter}"]`).removeAttribute('hidden');
+  document.querySelector(`[data-${key}-option="${filter}"]`).classList.remove('hidden');
 }
 
 const updateAppliedFilters = _ => {
@@ -156,27 +164,40 @@ const refilter = _ => {
   isotope.layout();
 }
 
+const closeDropdowns = _ => {
+  Array.prototype.slice.call(
+    document.querySelectorAll('[data-options-container]')
+  ).forEach(container => container.classList.add('hidden'))
+}
+
 const update = _ => {
   updateAppliedFilters();
   refilter();
   updateAvailableFilters();
+  closeDropdowns();
 }
 
 const applyFilter = (value, type) => {
   appliedFilters[type].push(value);
-  resetFilterDropdownValues();
   update();
 }
 
-const addFilterDropdownListeners = _ => {
-  industryFilter.addEventListener('change', e =>
-    applyFilter(e.target.value, 'industry'));
+const addFilterOptionListeners = _ => {
+  Object.keys(allFilters).forEach(type => {
+    Array.prototype.slice.call(
+      document.querySelectorAll(`[data-${type}-option]`)
+    ).forEach(button => {
+      button.addEventListener('click', _ => 
+        applyFilter(button.dataset[`${type}Option`], type));
+    })
+  })
 
-  problemFilter.addEventListener('change', e =>
-    applyFilter(e.target.value, 'problem'));
-
-  serviceFilter.addEventListener('change', e =>
-    applyFilter(e.target.value, 'service'));
+  Array.prototype.slice.call(
+    document.querySelectorAll('[data-industry-option]')
+  ).forEach(button => {
+    button.addEventListener('click', e => 
+      applyFilter(button.dataset.industryOption, 'industry'));
+  })
 }
 
 const capitalise = string => {
@@ -224,9 +245,9 @@ const addIsotopeLayout = _ => {
 }
 
 const init = _ => {
-  resetFilterDropdownValues();
   setAllFilters();
   addFilterDropdownListeners();
+  addFilterOptionListeners();
   addRemoveFilterListeners();
   addIsotopeLayout();
 }
