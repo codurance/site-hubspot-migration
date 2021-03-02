@@ -1,7 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 .clients-header__section {
-    background-color: var(--shark);
+    background-color: #1d1a55;
     color: white;
 }
 
@@ -60,25 +60,42 @@
     justify-content: center;
     padding: 20px 20px 160px;
     width: 100%;
-    background-color: #2b3342;
 }
 
 .clients-applied-filters__pill {
-    background-color: rgba(251,114,104,0.8);
-    position: relative;
-    color: white;
-    border-radius: 20px;
+    {{ utils.sejima() }}
+    border: 1px solid var(--mid-gray);
+    border-radius: 50px;
+    color: var(--mid-gray);
+    cursor: default;
     margin: 20px;
-    padding: 5px 30px 5px 10px;
+    padding-bottom: 0.2em;
+    padding-left: 1em;
+    padding-right: 2em;
+    padding-top: 0.2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+
+.clients-applied-filters__pill:hover {
+    background-color: var(--mid-gray);
+    color: white;
 }
 
 .clients-applied-filters__remove-button {
     background: none;
-    color: white;
+    color: var(--mid-gray);
     height: 15px;
     position: absolute;
-    right: 5px;
-    top: 10px;
+    right: 6px;
+    top: 6px;
+}
+
+.clients-applied-filters__pill:hover
+.clients-applied-filters__remove-button {
+    color: white
 }
 
 .clients-applied-filters__remove-button:hover {
