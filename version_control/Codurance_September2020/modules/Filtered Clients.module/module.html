@@ -27,7 +27,7 @@
   </div>
 </section>
 
-<div class="clients-filter-selectors__container">
+{# <div class="clients-filter-selectors__container">
   <div class="clients-filter-selector__input">
     <select data-select-industry>
       <option value="" disabled selected hidden>Filter by industry</option>
@@ -54,6 +54,18 @@
       {% endfor %}
     </select>
     <i class="las la-caret-down clients-filter__service-icon"></i>
+  </div>
+</div> #}
+
+<div class="clients__filter">
+  <div class="clients__filter-dropdown-container">
+    <button class="clients__filter-dropdown-button">Industry<i class="clients__filter-dropdown las la-angle-down"></i></button>
+  </div>
+  <div class="clients__filter-dropdown-container">
+    <button class="clients__filter-dropdown-button">Problem<i class="clients__filter-dropdown las la-angle-down"></i></button>
+  </div>
+  <div class="clients__filter-dropdown-container">
+    <button class="clients__filter-dropdown-button">Service<i class="clients__filter-dropdown las la-angle-down"></i></button>
   </div>
 </div>
 
@@ -167,7 +179,7 @@
         </div>
       </div>
     {% endif %}
- {% endfor %}
+{% endfor %}
 </div>
 
 {{ require_js(get_asset_url("../js/imageLoaded.js")) }}
