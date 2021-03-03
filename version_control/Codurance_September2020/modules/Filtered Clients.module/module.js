@@ -220,15 +220,10 @@ const refilter = _ => {
   isotope.layout();
 }
 
-const closeDropdowns = _ => {
-  getAll('dropdown_containers').forEach(container => container.classList.add('hidden'))
-}
-
 const update = _ => {
   updateAppliedFilters();
   refilter();
   updateAvailableFilters();
-  closeDropdowns();
 }
 
 const applyFilter = (type, value) => {
