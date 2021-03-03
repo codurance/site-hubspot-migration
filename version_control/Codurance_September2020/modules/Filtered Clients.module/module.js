@@ -231,13 +231,15 @@ const applyFilter = (type, value) => {
   update();
 }
 
-const filterSelected = (type, value) => {
+const filterAlreadyApplied = (type, value) => {
   const appliedFiltersForType = filters.applied[type];
-  if (appliedFiltersForType.includes(value)) {
-    removeFilter(type, value);
-  } else {
+  return appliedFiltersForType.includes(value);
+}
+
+const filterSelected = (type, value) => {
+  filterAlreadyApplied(type, value) ?
+    removeFilter(type, value) :
     applyFilter(type, value);
-  }
 }
 
 const addFilterOptionListeners = _ => {
