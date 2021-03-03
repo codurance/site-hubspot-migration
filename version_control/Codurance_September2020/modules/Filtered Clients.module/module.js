@@ -119,10 +119,15 @@ const updateAppliedFilters = _ => {
     const applied = filters.applied[type];
     const unapplied = arrayDifference(all, applied);
 
-    applied.forEach(filter => showAppliedFilter(type, filter));
-    applied.forEach(filter => markOptionSelected(type, filter));
-    unapplied.forEach(filter => hideUnappliedFilter(type, filter));
-    unapplied.forEach(filter => markOptionDeselected(type, filter));
+    applied.forEach(filter => {
+      showAppliedFilter(type, filter);
+      markOptionSelected(type, filter);
+    });
+
+    unapplied.forEach(filter => {
+      hideUnappliedFilter(type, filter);
+      markOptionDeselected(type, filter);
+    });
   });
 }
 
@@ -146,22 +151,20 @@ const filtersAvailableFor = type => {
   const opts = {
     industry: {
       client_dataset_name: 'clientIndustry',
-      remaining: clients.all.filter(byProblem).filter(byService)
+      remaining: clients => clients.filter(byProblem).filter(byService)
     },
     problem: {
       client_dataset_name: 'clientProblem',
-      remaining: clients.all.filter(byIndustry).filter(byService)
+      remaining: clients => clients.filter(byIndustry).filter(byService)
     },
     service: {
       client_dataset_name: 'clientService',
-      remaining: clients.all.filter(byIndustry).filter(byProblem)
+      remaining: clients => clients.filter(byIndustry).filter(byProblem)
     }
   };
 
-  const optsForType = opts[type];
-
-  return optsForType.remaining.map(client =>
-    getClientData(client, optsForType.client_dataset_name));
+  return opts[type].remaining(clients.all).map(client =>
+    getClientData(client, opts[type].client_dataset_name));
 }
 
 const disable = button => {
