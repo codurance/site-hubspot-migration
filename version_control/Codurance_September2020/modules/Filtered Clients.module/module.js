@@ -1,29 +1,12 @@
-const allClients = Array.prototype.slice.call(
-  document.querySelectorAll('[data-client-industry]')
-);
-
-const allFilters = {
-  industry: Array.prototype.slice.call(
-      document.querySelectorAll('[data-industry-option]')
-    ).map(option => option.dataset.industryOption),
-
-  problem: Array.prototype.slice.call(
-      document.querySelectorAll('[data-problem-option]')
-    ).map(option => option.dataset.problemOption),
-
-  service: Array.prototype.slice.call(
-      document.querySelectorAll('[data-service-option]')
-    ).map(option => option.dataset.serviceOption),
-}
-
-let clients = {
-  all: allClients,
-  visible: allClients,
-  hidden: []
-}
+let isotope;
 
 let filters = {
-  all: allFilters,
+  types: [ 'industry', 'problem', 'service' ],
+  all: {
+    industry: [],
+    problem: [],
+    service: []
+  },
   applied: {
     industry: [],
     problem: [],
@@ -31,42 +14,67 @@ let filters = {
   }
 };
 
-let isotope;
+const getAll = (entity, type) => {
+  const selectors = {
+    clients: '[data-client-industry]',
+    options: `[data-${type}-option]`,
+    dropdown_containers: '[data-dropdown-container]',
+    remove_filter_buttons: `[data-remove-${type}-filter]`
+  }
 
-const hideDropdown = dropdown => {
-  dropdown.classList.add('hidden');
+  return Array.prototype.slice.call(
+    document.querySelectorAll(selectors[entity])
+  )
 }
 
-const showDropdown = dropdown => {
-  dropdown.classList.remove('hidden');
+const allClients = getAll('clients');
+
+let clients = {
+  all: allClients,
+  visible: allClients,
+  hidden: []
+}
+
+const filterOptions = type => {
+  return getAll('options', type).map(option => option.dataset[`${type}Option`]);
+}
+
+const setFilterOptions = _ => {
+  filters.types.forEach(type => 
+    filters.all[type] = filterOptions(type));
+}
+
+const hide = element => {
+  element.classList.add('hidden');
+}
+
+const show = element => {
+  element.classList.remove('hidden');
 }
 
 const closeOtherDropdowns = type => {
-  Array.prototype.slice.call(
-    document.querySelectorAll('[data-options-container]')
-  ).filter(dropdown => dropdown.dataset.optionsContainer !== type)
-    .forEach(hideDropdown)
+  getAll('dropdown_containers').filter(dropdown => 
+    dropdown.dataset.dropdownContainer !== type).forEach(hide)
 }
 
 const openDropdown = type => {
   closeOtherDropdowns(type)
-  const dropdown = document.querySelector(`[data-options-container="${type}"]`);
+  const dropdown = document.querySelector(`[data-dropdown-container="${type}"]`);
   if (dropdown.classList.contains('hidden')) {
-    showDropdown(dropdown)
+    show(dropdown)
   } else {
-    hideDropdown(dropdown);
+    hide(dropdown);
   }
 }
 
 const isDropdownButton = element => {
-  return !!element.dataset.dropdown
+  return !!element.dataset.dropdownButton
 }
 
 const addDropdownListeners = _ => {
-  window.addEventListener('click', event => {
-    const clickedElement = event.target;
-    if (isDropdownButton(clickedElement)) {
-      openDropdown(clickedElement.dataset.dropdown);
+  window.addEventListener('click', ({ target }) => {
+    if (isDropdownButton(target)) {
+      openDropdown(target.dataset.dropdownButton);
     } else {
       closeOtherDropdowns();
     }
@@ -74,19 +82,23 @@ const addDropdownListeners = _ => {
 }
 
 const showAppliedFilter = (key, filter) => {
-  document.querySelector(`[data-applied-${key}-filter="${filter}"]`).classList.remove('hidden');
+  const filterPill = document.querySelector(`[data-applied-${key}-filter="${filter}"]`);
+  show(filterPill);
 }
 
 const hideUnappliedFilter = (key, filter) => {
-  document.querySelector(`[data-applied-${key}-filter="${filter}"]`).classList.add('hidden');
+  const filterPill = document.querySelector(`[data-applied-${key}-filter="${filter}"]`);
+  hide(filterPill);
 }
 
 const hideAppliedOption = (key, filter) => {
-  document.querySelector(`[data-${key}-option="${filter}"]`).classList.add('hidden');
+  const option = document.querySelector(`[data-${key}-option="${filter}"]`);
+  hide(option);
 }
 
 const showUnappliedOption = (key, filter) => {
-  document.querySelector(`[data-${key}-option="${filter}"]`).classList.remove('hidden');
+  const option = document.querySelector(`[data-${key}-option="${filter}"]`);
+  show(option);
 }
 
 const updateAppliedFilters = _ => {
@@ -191,9 +203,7 @@ const refilter = _ => {
 }
 
 const closeDropdowns = _ => {
-  Array.prototype.slice.call(
-    document.querySelectorAll('[data-options-container]')
-  ).forEach(container => container.classList.add('hidden'))
+  getAll('dropdown_containers').forEach(container => container.classList.add('hidden'))
 }
 
 const update = _ => {
@@ -210,20 +220,11 @@ const applyFilter = (value, type) => {
 
 const addFilterOptionListeners = _ => {
   Object.keys(filters.all).forEach(type => {
-    Array.prototype.slice.call(
-      document.querySelectorAll(`[data-${type}-option]`)
-    ).forEach(button => {
+    getAll('options', type).forEach(button => {
       button.addEventListener('click', _ => 
         applyFilter(button.dataset[`${type}Option`], type));
-    })
-  })
-
-  Array.prototype.slice.call(
-    document.querySelectorAll('[data-industry-option]')
-  ).forEach(button => {
-    button.addEventListener('click', e => 
-      applyFilter(button.dataset.industryOption, 'industry'));
-  })
+    });
+  });
 }
 
 const capitalise = string => {
@@ -251,13 +252,13 @@ const addRemoveFilterListener = (type, button) => {
 
 const addRemoveFilterListeners = _ => {
   Object.keys(filters.all).forEach(type => {
-    Array.prototype.slice.call(
-      document.querySelectorAll(`[data-remove-${type}-filter]`)
-    ).forEach(button => addRemoveFilterListener(type, button));
+    getAll('remove_filter_buttons', type).forEach(button => 
+      addRemoveFilterListener(type, button));
   });
 }
 
 const initialiseFilters = _ => {
+  setFilterOptions();
   addDropdownListeners();
   addFilterOptionListeners();
   addRemoveFilterListeners();
