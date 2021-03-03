@@ -133,34 +133,51 @@ const flatten = array => {
   return Array.prototype.concat.apply([], array);
 }
 
+const arrayDifference = (a, b) => {
+  return a.filter(item => !b.includes(item))
+}
+
+const getClientData = (client, type) => {
+  return client.dataset[type].split(',')
+}
+
+const filtersAvailableFor = type => {
+  const opts = {
+    industry: {
+      client_dataset_name: 'clientIndustry',
+      remaining: clients.all.filter(byProblem).filter(byService)
+    },
+    problem: {
+      client_dataset_name: 'clientProblem',
+      remaining: clients.all.filter(byIndustry).filter(byService)
+    },
+    service: {
+      client_dataset_name: 'clientService',
+      remaining: clients.all.filter(byIndustry).filter(byProblem)
+    }
+  };
+
+  const optsForType = opts[type];
+
+  return optsForType.remaining.map(client =>
+    getClientData(client, optsForType.client_dataset_name));
+}
+
+const disable = button => {
+  button.setAttribute('disabled', 'true');
+}
+
+const enable = button => {
+  button.removeAttribute('disabled');
+}
+
 const updateAvailableFilters = _ => {
-  const availableIndustryFilters = flatten(clients.all.filter(byProblem).filter(byService).map(client =>
-    client.dataset[`clientIndustry`].split(','))).filter(onlyUnique);
-  const unavailableIndustryFilters = filters.all.industry.filter(filter =>
-    !availableIndustryFilters.includes(filter));
-  availableIndustryFilters.forEach(filter => 
-    get('option', filter, 'industry').removeAttribute('disabled'));
-  unavailableIndustryFilters.forEach(filter => 
-    get('option', filter, 'industry').setAttribute('true'));
-
-  const availableProblemFilters = flatten(clients.all.filter(byIndustry).filter(byService).map(client =>
-    client.dataset[`clientProblem`].split(','))).filter(onlyUnique);
-  const unavailableProblemFilters = filters.all.problem.filter(filter =>
-    !availableProblemFilters.includes(filter));
-  availableProblemFilters.forEach(filter => 
-    get('option', filter, 'problem').removeAttribute('disabled'));
-  unavailableProblemFilters.forEach(filter => 
-    get('option', filter, 'problem').setAttribute('true'));
-
-
-    const availableServiceFilters = flatten(clients.all.filter(byIndustry).filter(byProblem).map(client =>
-      client.dataset[`clientService`].split(','))).filter(onlyUnique);
-    const unavailableServiceFilters = filters.all.service.filter(filter =>
-      !availableServiceFilters.includes(filter));
-    availableServiceFilters.forEach(filter => 
-      get('option', filter, 'service').removeAttribute('disabled'));
-    unavailableServiceFilters.forEach(filter => 
-      get('option', filter, 'service').setAttribute('true'));
+  filters.types.forEach(type => {
+    const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique);
+    const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
+    availableFilters.forEach(filter => enable(get('option', filter, type)));
+    unavailableFilters.forEach(filter => disable(get('option', filter, type)));
+  });
 }
 
 const byIndustry = client => {
@@ -193,15 +210,12 @@ const hideClient = client => {
 }
 
 const calculateVisibleClients = _ => {
-  const filteredClients = clients.all.filter(byIndustry).filter(byProblem).filter(byService);
-  return filteredClients.length > 0 ?
-    filteredClients :
-    clients;
+  return clients.all.filter(byIndustry).filter(byProblem).filter(byService);
 }
 
 const refilter = _ => {
   clients.visible = calculateVisibleClients();
-  clients.hidden = clients.all.filter(client => !clients.visible.includes(client));
+  clients.hidden = arrayDifference(clients.all, clients.visible);
 
   clients.visible.forEach(showClient);
   clients.hidden.forEach(hideClient);

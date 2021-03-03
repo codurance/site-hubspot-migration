@@ -166,6 +166,7 @@
     text-align: center;
     text-decoration: none;
     transition: all .3s ease;
+    user-select: none;
 }
 
 .clients-applied-filters__pill:hover {
