@@ -32,6 +32,7 @@ const get = (entity, value, type) => {
     dropdown_container: `[data-dropdown-container="${value}"]`,
     applied_filter: `[data-applied-${type}-filter="${value}"]`,
     option: `[data-${type}-option="${value}"]`,
+    selected_icon: `[data-${type}-option-selected="${value}"]`,
     grid_container: '.clients-grid__container'
   }
 
@@ -92,36 +93,36 @@ const addDropdownListeners = _ => {
   })
 }
 
-const showAppliedFilter = (key, filter) => {
-  const filterPill = get('applied_filter', filter, key)
+const showAppliedFilter = (type, filter) => {
+  const filterPill = get('applied_filter', filter, type)
   show(filterPill);
 }
 
-const hideUnappliedFilter = (key, filter) => {
-  const filterPill = get('applied_filter', filter, key)
+const hideUnappliedFilter = (type, filter) => {
+  const filterPill = get('applied_filter', filter, type)
   hide(filterPill);
 }
 
-const hideAppliedOption = (key, filter) => {
-  const option = get('option', filter, key);
-  hide(option);
+const markOptionSelected = (type, filter) => {
+  const selectedIcon = get('selected_icon', filter, type);
+  show(selectedIcon);
 }
 
-const showUnappliedOption = (key, filter) => {
-  const option = get('option', filter, key);
-  show(option);
+const markOptionDeselected = (type, filter) => {
+  const selectedIcon = get('selected_icon', filter, type);
+  hide(selectedIcon);
 }
 
 const updateAppliedFilters = _ => {
   Object.keys(filters.applied).forEach(type => {
     const all = filters.all[type];
     const applied = filters.applied[type];
-    const unapplied = all.filter(filter => !applied.includes(filter));
+    const unapplied = arrayDifference(all, applied);
 
     applied.forEach(filter => showAppliedFilter(type, filter));
-    applied.forEach(filter => hideAppliedOption(type, filter));
+    applied.forEach(filter => markOptionSelected(type, filter));
     unapplied.forEach(filter => hideUnappliedFilter(type, filter));
-    unapplied.forEach(filter => showUnappliedOption(type, filter));
+    unapplied.forEach(filter => markOptionDeselected(type, filter));
   });
 }
 

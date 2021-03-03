@@ -108,12 +108,21 @@
     background-color: white;
     border: none;
     cursor: pointer;
-    padding: 10px 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 40px;
+    padding-top: 10px;
+    position: relative;
     text-align: left;
 }
-
 .clients__filter-dropdown-option:hover {
     background-color: var(--athens-gray);
+}
+
+.clients__filter-dropdown-option-selected-icon {
+    position: absolute;
+    right: 10px;
+    top: 11px;
 }
 
 .clients-filter-selector__input {
