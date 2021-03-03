@@ -33,7 +33,7 @@ const get = (entity, value, type) => {
     applied_filter: `[data-applied-${type}-filter="${value}"]`,
     option: `[data-${type}-option="${value}"]`,
     selected_icon: `[data-${type}-option-selected="${value}"]`,
-    grid_container: '.clients-grid__container'
+    grid_container: '[data-grid-container]'
   }
 
   return document.querySelector(selectors[entity]);
