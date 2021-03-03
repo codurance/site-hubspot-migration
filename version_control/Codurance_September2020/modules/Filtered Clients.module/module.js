@@ -163,15 +163,17 @@ const filtersAvailableFor = type => {
     }
   };
 
-  return opts[type].remaining(clients.all).map(client =>
+  const remainingClients = opts[type].remaining(clients.all);
+
+  return remainingClients.map(client =>
     getClientData(client, opts[type].client_dataset_name));
 }
 
-const disable = button => {
+const disableButton = button => {
   button.setAttribute('disabled', 'true');
 }
 
-const enable = button => {
+const enableButton = button => {
   button.removeAttribute('disabled');
 }
 
@@ -179,8 +181,8 @@ const updateAvailableFilters = _ => {
   filters.types.forEach(type => {
     const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique);
     const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
-    availableFilters.forEach(filter => enable(get('option', filter, type)));
-    unavailableFilters.forEach(filter => disable(get('option', filter, type)));
+    availableFilters.forEach(filter => enableButton(get('option', filter, type)));
+    unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
   });
 }
 
@@ -205,14 +207,6 @@ const byService = client => {
     serviceFilters.some(filter => clientServices.includes(filter));
 }
 
-const showClient = client => {
-  client.classList.remove('hidden');
-}
-
-const hideClient = client => {
-  client.classList.add('hidden');
-}
-
 const calculateVisibleClients = _ => {
   return clients.all.filter(byIndustry).filter(byProblem).filter(byService);
 }
@@ -221,8 +215,8 @@ const refilter = _ => {
   clients.visible = calculateVisibleClients();
   clients.hidden = arrayDifference(clients.all, clients.visible);
 
-  clients.visible.forEach(showClient);
-  clients.hidden.forEach(hideClient);
+  clients.visible.forEach(show);
+  clients.hidden.forEach(hide);
   isotope.layout();
 }
 
