@@ -1,19 +1,29 @@
-const clients = Array.prototype.slice.call(
+const allClients = Array.prototype.slice.call(
   document.querySelectorAll('[data-client-industry]')
 );
 
+const allFilters = {
+  industry: Array.prototype.slice.call(
+      document.querySelectorAll('[data-industry-option]')
+    ).map(option => option.dataset.industryOption),
+
+  problem: Array.prototype.slice.call(
+      document.querySelectorAll('[data-problem-option]')
+    ).map(option => option.dataset.problemOption),
+
+  service: Array.prototype.slice.call(
+      document.querySelectorAll('[data-service-option]')
+    ).map(option => option.dataset.serviceOption),
+}
+
 let clients = {
-  all: clients,
-  visible: clients,
+  all: allClients,
+  visible: allClients,
   hidden: []
 }
 
 let filters = {
-  all: {
-    industry: [],
-    problem: [],
-    service: []
-  },
+  all: allFilters,
   applied: {
     industry: [],
     problem: [],
@@ -23,37 +33,44 @@ let filters = {
 
 let isotope;
 
-const setAllFilters = _ => {
-  filters.all = {
-    industry: Array.prototype.slice.call(
-        document.querySelectorAll('[data-industry-option]')
-      ).map(option => option.dataset.industryOption),
+const hideDropdown = dropdown => {
+  dropdown.classList.add('hidden');
+}
 
-    problem: Array.prototype.slice.call(
-        document.querySelectorAll('[data-problem-option]')
-      ).map(option => option.dataset.problemOption),
+const showDropdown = dropdown => {
+  dropdown.classList.remove('hidden');
+}
 
-    service: Array.prototype.slice.call(
-        document.querySelectorAll('[data-service-option]')
-      ).map(option => option.dataset.serviceOption),
-  }
+const closeOtherDropdowns = type => {
+  Array.prototype.slice.call(
+    document.querySelectorAll('[data-options-container]')
+  ).filter(dropdown => dropdown.dataset.optionsContainer !== type)
+    .forEach(hideDropdown)
 }
 
 const openDropdown = type => {
-  const containerClasses = document.querySelector(`[data-options-container="${type}"]`).classList;
-  if (containerClasses.contains('hidden')) {
-    containerClasses.remove('hidden');
+  closeOtherDropdowns(type)
+  const dropdown = document.querySelector(`[data-options-container="${type}"]`);
+  if (dropdown.classList.contains('hidden')) {
+    showDropdown(dropdown)
   } else {
-    containerClasses.add('hidden');
+    hideDropdown(dropdown);
   }
 }
 
-const addFilterDropdownListeners = _ => {
-  Array.prototype.slice.call(
-    document.querySelectorAll('[data-dropdown]')
-  ).forEach(button => button.addEventListener('click', _ => 
-    openDropdown(button.dataset.dropdown)
-  ));
+const isDropdownButton = element => {
+  return !!element.dataset.dropdown
+}
+
+const addDropdownListeners = _ => {
+  window.addEventListener('click', event => {
+    const clickedElement = event.target;
+    if (isDropdownButton(clickedElement)) {
+      openDropdown(clickedElement.dataset.dropdown);
+    } else {
+      closeOtherDropdowns();
+    }
+  })
 }
 
 const showAppliedFilter = (key, filter) => {
@@ -94,7 +111,7 @@ const flatten = array => {
 }
 
 const updateAvailableFilters = _ => {
-  const availableIndustryFilters = flatten(clients.filter(byProblem).filter(byService).map(client =>
+  const availableIndustryFilters = flatten(clients.all.filter(byProblem).filter(byService).map(client =>
     client.dataset[`clientIndustry`].split(','))).filter(onlyUnique);
   const unavailableIndustryFilters = filters.all.industry.filter(filter =>
     !availableIndustryFilters.includes(filter));
@@ -105,7 +122,7 @@ const updateAvailableFilters = _ => {
     document.querySelector(`[data-industry-option="${filter}"]`)
     .setAttribute('disabled', 'true'));
 
-  const availableProblemFilters = flatten(clients.filter(byIndustry).filter(byService).map(client =>
+  const availableProblemFilters = flatten(clients.all.filter(byIndustry).filter(byService).map(client =>
     client.dataset[`clientProblem`].split(','))).filter(onlyUnique);
   const unavailableProblemFilters = filters.all.problem.filter(filter =>
     !availableProblemFilters.includes(filter));
@@ -116,7 +133,7 @@ const updateAvailableFilters = _ => {
     document.querySelector(`[data-problem-option="${filter}"]`)
     .setAttribute('disabled', 'true'));
 
-    const availableServiceFilters = flatten(clients.filter(byIndustry).filter(byProblem).map(client =>
+    const availableServiceFilters = flatten(clients.all.filter(byIndustry).filter(byProblem).map(client =>
       client.dataset[`clientService`].split(','))).filter(onlyUnique);
     const unavailableServiceFilters = filters.all.service.filter(filter =>
       !availableServiceFilters.includes(filter));
@@ -158,7 +175,7 @@ const hideClient = client => {
 }
 
 const calculateVisibleClients = _ => {
-  const filteredClients = clients.filter(byIndustry).filter(byProblem).filter(byService);
+  const filteredClients = clients.all.filter(byIndustry).filter(byProblem).filter(byService);
   return filteredClients.length > 0 ?
     filteredClients :
     clients;
@@ -166,7 +183,7 @@ const calculateVisibleClients = _ => {
 
 const refilter = _ => {
   clients.visible = calculateVisibleClients();
-  clients.hidden = clients.filter(client => !clients.visible.includes(client));
+  clients.hidden = clients.all.filter(client => !clients.visible.includes(client));
 
   clients.visible.forEach(showClient);
   clients.hidden.forEach(hideClient);
@@ -240,7 +257,7 @@ const addRemoveFilterListeners = _ => {
   });
 }
 
-const addIsotopeLayout = _ => {
+const initialiseIsotopeLayout = _ => {
   let elem = document.querySelector('.clients-grid__container');
   isotope = new Isotope(elem, {
     layoutMode: 'packery',
@@ -253,12 +270,15 @@ const addIsotopeLayout = _ => {
   });
 }
 
-const init = _ => {
-  setAllFilters();
-  addFilterDropdownListeners();
+const initialiseFilters = _ => {
+  addDropdownListeners();
   addFilterOptionListeners();
   addRemoveFilterListeners();
-  addIsotopeLayout();
+}
+
+const init = _ => {
+  initialiseIsotopeLayout();
+  initialiseFilters()
 }
 
 window.addEventListener('DOMContentLoaded', init);
