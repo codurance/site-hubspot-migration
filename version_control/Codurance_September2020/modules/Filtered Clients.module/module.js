@@ -27,6 +27,17 @@ const getAll = (entity, type) => {
   )
 }
 
+const get = (entity, value, type) => {
+  const selectors = {
+    dropdown_container: `[data-dropdown-container="${value}"]`,
+    applied_filter: `[data-applied-${type}-filter="${value}"]`,
+    option: `[data-${type}-option="${value}"]`,
+    grid_container: '.clients-grid__container'
+  }
+
+  return document.querySelector(selectors[entity]);
+}
+
 const allClients = getAll('clients');
 
 let clients = {
@@ -59,7 +70,7 @@ const closeOtherDropdowns = type => {
 
 const openDropdown = type => {
   closeOtherDropdowns(type)
-  const dropdown = document.querySelector(`[data-dropdown-container="${type}"]`);
+  const dropdown = get('dropdown_container', type)
   if (dropdown.classList.contains('hidden')) {
     show(dropdown)
   } else {
@@ -82,35 +93,35 @@ const addDropdownListeners = _ => {
 }
 
 const showAppliedFilter = (key, filter) => {
-  const filterPill = document.querySelector(`[data-applied-${key}-filter="${filter}"]`);
+  const filterPill = get('applied_filter', filter, key)
   show(filterPill);
 }
 
 const hideUnappliedFilter = (key, filter) => {
-  const filterPill = document.querySelector(`[data-applied-${key}-filter="${filter}"]`);
+  const filterPill = get('applied_filter', filter, key)
   hide(filterPill);
 }
 
 const hideAppliedOption = (key, filter) => {
-  const option = document.querySelector(`[data-${key}-option="${filter}"]`);
+  const option = get('option', filter, key);
   hide(option);
 }
 
 const showUnappliedOption = (key, filter) => {
-  const option = document.querySelector(`[data-${key}-option="${filter}"]`);
+  const option = get('option', filter, key);
   show(option);
 }
 
 const updateAppliedFilters = _ => {
-  Object.keys(filters.applied).forEach(key => {
-    const all = filters.all[key];
-    const applied = filters.applied[key];
+  Object.keys(filters.applied).forEach(type => {
+    const all = filters.all[type];
+    const applied = filters.applied[type];
     const unapplied = all.filter(filter => !applied.includes(filter));
 
-    applied.forEach(filter => showAppliedFilter(key, filter));
-    applied.forEach(filter => hideAppliedOption(key, filter));
-    unapplied.forEach(filter => hideUnappliedFilter(key, filter));
-    unapplied.forEach(filter => showUnappliedOption(key, filter));
+    applied.forEach(filter => showAppliedFilter(type, filter));
+    applied.forEach(filter => hideAppliedOption(type, filter));
+    unapplied.forEach(filter => hideUnappliedFilter(type, filter));
+    unapplied.forEach(filter => showUnappliedOption(type, filter));
   });
 }
 
@@ -128,33 +139,28 @@ const updateAvailableFilters = _ => {
   const unavailableIndustryFilters = filters.all.industry.filter(filter =>
     !availableIndustryFilters.includes(filter));
   availableIndustryFilters.forEach(filter => 
-    document.querySelector(`[data-industry-option="${filter}"]`)
-    .removeAttribute('disabled'));
+    get('option', filter, 'industry').removeAttribute('disabled'));
   unavailableIndustryFilters.forEach(filter => 
-    document.querySelector(`[data-industry-option="${filter}"]`)
-    .setAttribute('disabled', 'true'));
+    get('option', filter, 'industry').setAttribute('true'));
 
   const availableProblemFilters = flatten(clients.all.filter(byIndustry).filter(byService).map(client =>
     client.dataset[`clientProblem`].split(','))).filter(onlyUnique);
   const unavailableProblemFilters = filters.all.problem.filter(filter =>
     !availableProblemFilters.includes(filter));
   availableProblemFilters.forEach(filter => 
-    document.querySelector(`[data-problem-option="${filter}"]`)
-    .removeAttribute('disabled'));
+    get('option', filter, 'problem').removeAttribute('disabled'));
   unavailableProblemFilters.forEach(filter => 
-    document.querySelector(`[data-problem-option="${filter}"]`)
-    .setAttribute('disabled', 'true'));
+    get('option', filter, 'problem').setAttribute('true'));
+
 
     const availableServiceFilters = flatten(clients.all.filter(byIndustry).filter(byProblem).map(client =>
       client.dataset[`clientService`].split(','))).filter(onlyUnique);
     const unavailableServiceFilters = filters.all.service.filter(filter =>
       !availableServiceFilters.includes(filter));
     availableServiceFilters.forEach(filter => 
-      document.querySelector(`[data-service-option="${filter}"]`)
-      .removeAttribute('disabled'));
+      get('option', filter, 'service').removeAttribute('disabled'));
     unavailableServiceFilters.forEach(filter => 
-      document.querySelector(`[data-service-option="${filter}"]`)
-      .setAttribute('disabled', 'true'));
+      get('option', filter, 'service').setAttribute('true'));
 }
 
 const byIndustry = client => {
@@ -265,8 +271,8 @@ const initialiseFilters = _ => {
 }
 
 const initialiseIsotopeLayout = _ => {
-  let elem = document.querySelector('.clients-grid__container');
-  isotope = new Isotope(elem, {
+  const elem = get('grid_container');
+  const isotopeLayoutOpts = {
     layoutMode: 'packery',
     itemSelector: '.clients-grid__card',
     columnWidth: '.clients-grid__sizer',
@@ -274,7 +280,9 @@ const initialiseIsotopeLayout = _ => {
     packery: {
       gutter: '.clients-grid__gutter-sizer'
     }
-  });
+  };
+
+  isotope = new Isotope(elem, isotopeLayoutOpts);
 }
 
 const init = _ => {
