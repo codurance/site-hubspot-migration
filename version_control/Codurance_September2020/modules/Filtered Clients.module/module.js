@@ -2,20 +2,29 @@ const clients = Array.prototype.slice.call(
   document.querySelectorAll('[data-client-industry]')
 );
 
-let allFilters;
-let isotope;
-
-let visibleClients = clients;
-let hiddenClients = [];
-
-const appliedFilters = {
-  industry: [],
-  problem: [],
-  service: []
+let clients = {
+  all: clients,
+  visible: clients,
+  hidden: []
 }
 
+let filters = {
+  all: {
+    industry: [],
+    problem: [],
+    service: []
+  },
+  applied: {
+    industry: [],
+    problem: [],
+    service: []
+  }
+};
+
+let isotope;
+
 const setAllFilters = _ => {
-  allFilters = {
+  filters.all = {
     industry: Array.prototype.slice.call(
         document.querySelectorAll('[data-industry-option]')
       ).map(option => option.dataset.industryOption),
@@ -64,9 +73,9 @@ const showUnappliedOption = (key, filter) => {
 }
 
 const updateAppliedFilters = _ => {
-  Object.keys(appliedFilters).forEach(key => {
-    const all = allFilters[key];
-    const applied = appliedFilters[key];
+  Object.keys(filters.applied).forEach(key => {
+    const all = filters.all[key];
+    const applied = filters.applied[key];
     const unapplied = all.filter(filter => !applied.includes(filter));
 
     applied.forEach(filter => showAppliedFilter(key, filter));
@@ -87,7 +96,7 @@ const flatten = array => {
 const updateAvailableFilters = _ => {
   const availableIndustryFilters = flatten(clients.filter(byProblem).filter(byService).map(client =>
     client.dataset[`clientIndustry`].split(','))).filter(onlyUnique);
-  const unavailableIndustryFilters = allFilters.industry.filter(filter =>
+  const unavailableIndustryFilters = filters.all.industry.filter(filter =>
     !availableIndustryFilters.includes(filter));
   availableIndustryFilters.forEach(filter => 
     document.querySelector(`[data-industry-option="${filter}"]`)
@@ -98,7 +107,7 @@ const updateAvailableFilters = _ => {
 
   const availableProblemFilters = flatten(clients.filter(byIndustry).filter(byService).map(client =>
     client.dataset[`clientProblem`].split(','))).filter(onlyUnique);
-  const unavailableProblemFilters = allFilters.problem.filter(filter =>
+  const unavailableProblemFilters = filters.all.problem.filter(filter =>
     !availableProblemFilters.includes(filter));
   availableProblemFilters.forEach(filter => 
     document.querySelector(`[data-problem-option="${filter}"]`)
@@ -109,7 +118,7 @@ const updateAvailableFilters = _ => {
 
     const availableServiceFilters = flatten(clients.filter(byIndustry).filter(byProblem).map(client =>
       client.dataset[`clientService`].split(','))).filter(onlyUnique);
-    const unavailableServiceFilters = allFilters.service.filter(filter =>
+    const unavailableServiceFilters = filters.all.service.filter(filter =>
       !availableServiceFilters.includes(filter));
     availableServiceFilters.forEach(filter => 
       document.querySelector(`[data-service-option="${filter}"]`)
@@ -120,21 +129,21 @@ const updateAvailableFilters = _ => {
 }
 
 const byIndustry = client => {
-  let industryFilters = appliedFilters.industry;
+  let industryFilters = filters.applied.industry;
   let clientIndustry = client.dataset.clientIndustry;
   return industryFilters.length === 0 ||
     industryFilters.includes(clientIndustry);
 }
 
 const byProblem = client => {
-  let problemFilters = appliedFilters.problem;
+  let problemFilters = filters.applied.problem;
   const clientProblems = client.dataset.clientProblem.split(',');
   return problemFilters.length === 0 ||
     problemFilters.some(filter => clientProblems.includes(filter));
 }
 
 const byService = client => {
-  let serviceFilters = appliedFilters.service;
+  let serviceFilters = filters.applied.service;
   const clientServices = client.dataset.clientService.split(',');
   return serviceFilters.length === 0 ||
     serviceFilters.some(filter => clientServices.includes(filter));
@@ -156,11 +165,11 @@ const calculateVisibleClients = _ => {
 }
 
 const refilter = _ => {
-  visibleClients = calculateVisibleClients();
-  hiddenClients = clients.filter(client => !visibleClients.includes(client));
+  clients.visible = calculateVisibleClients();
+  clients.hidden = clients.filter(client => !clients.visible.includes(client));
 
-  visibleClients.forEach(showClient);
-  hiddenClients.forEach(hideClient);
+  clients.visible.forEach(showClient);
+  clients.hidden.forEach(hideClient);
   isotope.layout();
 }
 
@@ -178,12 +187,12 @@ const update = _ => {
 }
 
 const applyFilter = (value, type) => {
-  appliedFilters[type].push(value);
+  filters.applied[type].push(value);
   update();
 }
 
 const addFilterOptionListeners = _ => {
-  Object.keys(allFilters).forEach(type => {
+  Object.keys(filters.all).forEach(type => {
     Array.prototype.slice.call(
       document.querySelectorAll(`[data-${type}-option]`)
     ).forEach(button => {
@@ -212,7 +221,7 @@ const removeItemFromArray = (array, value) => {
 }
 
 const removeFilter = (type, value) => {
-  removeItemFromArray(appliedFilters[type], value)
+  removeItemFromArray(filters.applied[type], value)
   update();
 }
 
@@ -224,7 +233,7 @@ const addRemoveFilterListener = (type, button) => {
 }
 
 const addRemoveFilterListeners = _ => {
-  Object.keys(allFilters).forEach(type => {
+  Object.keys(filters.all).forEach(type => {
     Array.prototype.slice.call(
       document.querySelectorAll(`[data-remove-${type}-filter]`)
     ).forEach(button => addRemoveFilterListener(type, button));
