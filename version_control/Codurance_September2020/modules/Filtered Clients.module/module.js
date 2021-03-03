@@ -242,17 +242,17 @@ const filterSelected = (type, value) => {
     applyFilter(type, value);
 }
 
-const addFilterOptionListeners = _ => {
-  Object.keys(filters.all).forEach(type => {
-    getAll('options', type).forEach(button => {
-      button.addEventListener('click', _ => 
-        filterSelected(type, button.dataset[`${type}Option`]));
-    });
-  });
+const addFilterListener = (button, type) => {
+  button.addEventListener('click', _ => 
+    filterSelected(type, button.dataset[`${type}Option`]));
 }
 
-const capitalise = string => {
-  return string.charAt(0).toUpperCase() + string.substring(1);
+const addFilterOptionListeners = _ => {
+  filters.types.forEach(type => {
+    getAll('options', type).forEach(button => {
+      addFilterListener(button, type);
+    });
+  });
 }
 
 const removeItemFromArray = (array, value) => {
@@ -267,10 +267,14 @@ const removeFilter = (type, value) => {
   update();
 }
 
+const capitalise = string => {
+  return string.charAt(0).toUpperCase() + string.substring(1);
+}
+
 const addRemoveFilterListener = (type, button) => {
   button.addEventListener('click', _ => {
-    const filter = button.dataset[`remove${capitalise(type)}Filter`];
-    removeFilter(type, filter);
+    const value = button.dataset[`remove${capitalise(type)}Filter`];
+    removeFilter(type, value);
   });
 }
 
