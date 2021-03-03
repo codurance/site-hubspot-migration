@@ -257,6 +257,12 @@ const addRemoveFilterListeners = _ => {
   });
 }
 
+const initialiseFilters = _ => {
+  addDropdownListeners();
+  addFilterOptionListeners();
+  addRemoveFilterListeners();
+}
+
 const initialiseIsotopeLayout = _ => {
   let elem = document.querySelector('.clients-grid__container');
   isotope = new Isotope(elem, {
@@ -268,12 +274,6 @@ const initialiseIsotopeLayout = _ => {
       gutter: '.clients-grid__gutter-sizer'
     }
   });
-}
-
-const initialiseFilters = _ => {
-  addDropdownListeners();
-  addFilterOptionListeners();
-  addRemoveFilterListeners();
 }
 
 const init = _ => {
