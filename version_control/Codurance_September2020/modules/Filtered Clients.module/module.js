@@ -234,16 +234,25 @@ const update = _ => {
   closeDropdowns();
 }
 
-const applyFilter = (value, type) => {
+const applyFilter = (type, value) => {
   filters.applied[type].push(value);
   update();
+}
+
+const filterSelected = (type, value) => {
+  const appliedFiltersForType = filters.applied[type];
+  if (appliedFiltersForType.includes(value)) {
+    removeFilter(type, value);
+  } else {
+    applyFilter(type, value);
+  }
 }
 
 const addFilterOptionListeners = _ => {
   Object.keys(filters.all).forEach(type => {
     getAll('options', type).forEach(button => {
       button.addEventListener('click', _ => 
-        applyFilter(button.dataset[`${type}Option`], type));
+        filterSelected(type, button.dataset[`${type}Option`]));
     });
   });
 }
