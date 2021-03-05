@@ -44,6 +44,5 @@
 {% call utils.small() %}
     .cm-compass-teaser [class*="button"] {
         display: block;
-        max-width: var(--button-max-width);
     }
 {% endcall %}
