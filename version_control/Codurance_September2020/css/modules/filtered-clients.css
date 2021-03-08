@@ -84,6 +84,11 @@
         justify-content: center;
     }
 }
+@media (min-width: 481px) {
+    .clients__filter-dropdown-wrapper.hidden {
+        visibility: visible;
+    }
+}
 
 @media (min-width: 481px) {
     .clients__filter-dropdown-container:not(:last-of-type)::after {
