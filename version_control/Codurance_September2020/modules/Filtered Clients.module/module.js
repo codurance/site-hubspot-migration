@@ -29,6 +29,8 @@ const getAll = (entity, type) => {
 
 const get = (entity, value, type) => {
   const selectors = {
+    filter_toggle: '[data-filter-toggle]',
+    filters_wrapper: '[data-filters-wrapper]',
     dropdown_container: `[data-dropdown-container="${value}"]`,
     applied_filter: `[data-applied-${type}-filter="${value}"]`,
     option: `[data-${type}-option="${value}"]`,
@@ -62,6 +64,20 @@ const hide = element => {
 
 const show = element => {
   element.classList.remove('hidden');
+}
+
+const toggleShowHideFilters = _ => {
+  const filtersWrapper = get('filters_wrapper');
+  if (filtersWrapper.classList.contains('hidden')) {
+    show(filtersWrapper);
+  } else {
+    hide(filtersWrapper);
+  }
+}
+
+const addFilterToggleListener = _ => {
+  const filterToggleButton = get('filter_toggle');
+  filterToggleButton.addEventListener('click', toggleShowHideFilters)
 }
 
 const closeOtherDropdowns = type => {
@@ -105,12 +121,16 @@ const hideUnappliedFilter = (type, filter) => {
 
 const markOptionSelected = (type, filter) => {
   const selectedIcon = get('selected_icon', filter, type);
+  const option = get('option', filter, type);
   show(selectedIcon);
+  option.classList.add('clients__filter-dropdown-option--selected')
 }
 
 const markOptionDeselected = (type, filter) => {
   const selectedIcon = get('selected_icon', filter, type);
+  const option = get('option', filter, type);
   hide(selectedIcon);
+  option.classList.remove('clients__filter-dropdown-option--selected')
 }
 
 const updateAppliedFilters = _ => {
@@ -285,11 +305,16 @@ const addRemoveFilterListeners = _ => {
   });
 }
 
-const initialiseFilters = _ => {
-  setFilterOptions();
+const addListeners = _ => {
+  addFilterToggleListener();
   addDropdownListeners();
   addFilterOptionListeners();
   addRemoveFilterListeners();
+}
+
+const initialiseFilters = _ => {
+  setFilterOptions();
+  addListeners();
 }
 
 const initialiseIsotopeLayout = _ => {
@@ -309,7 +334,7 @@ const initialiseIsotopeLayout = _ => {
 
 const init = _ => {
   initialiseIsotopeLayout();
-  initialiseFilters()
+  initialiseFilters();
 }
 
 window.addEventListener('DOMContentLoaded', init);
