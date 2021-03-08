@@ -28,7 +28,6 @@
     transform: translate(-50%, -50%);
     z-index: 1;
 }
-
 @media (min-width: 481px) {
     .clients__filter {
         border-radius: 4.7601rem;
@@ -82,6 +81,16 @@
         height: 100%;
         display: flex;
         justify-content: center;
+    }
+}
+@media (max-width: 480px) {
+    .clients__filter-dropdown-wrapper::after {
+        background-color: rgba(0,0,0,0.4);
+        content: '';
+        display: inline-block;
+        height: 100vh;
+        position: absolute;
+        width: 100%;
     }
 }
 @media (min-width: 481px) {
