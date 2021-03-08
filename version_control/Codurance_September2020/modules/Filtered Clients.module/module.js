@@ -99,12 +99,25 @@ const isDropdownButton = element => {
   return !!element.dataset.dropdownButton
 }
 
+const optionTypeFrom = element => {
+  const dataAttributes = Object.keys(element.dataset);
+  const optionMatcher = new RegExp('^(industry|problem|service)(?=Option)');
+  for (let i = 0; i < dataAttributes.length; i++) {
+    const key = dataAttributes[i];
+    const match = key.match(optionMatcher);
+    if (match) {
+      return match[0];
+    }    
+  }
+}
+
 const addDropdownListeners = _ => {
   window.addEventListener('click', ({ target }) => {
     if (isDropdownButton(target)) {
       openDropdown(target.dataset.dropdownButton);
     } else {
-      closeOtherDropdowns();
+      const optionType = optionTypeFrom(target);
+      closeOtherDropdowns(optionType);
     }
   })
 }

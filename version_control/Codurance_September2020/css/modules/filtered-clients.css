@@ -66,6 +66,7 @@
 @media (min-width: 481px) {
     .clients__filter-dropdown-container {
         height: 100%;
+        width: 0;
     }
 }
 
