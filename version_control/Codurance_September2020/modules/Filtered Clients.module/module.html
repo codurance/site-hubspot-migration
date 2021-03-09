@@ -121,13 +121,21 @@
           )
         }}
       {% endif %}
-
-      {{
-        cards.case_study_card(
-          client=client,
-          classnames="clients-grid__card clients-grid__card--medium"
-        )
-      }}
+      {% if client.promotion %}
+        {{
+          cards.promotional_card(
+            client=client,
+            classnames="clients-grid__card clients-grid__card--medium"
+          )
+        }}
+      {% else %}
+        {{
+          cards.case_study_card(
+            client=client,
+            classnames="clients-grid__card clients-grid__card--medium"
+          )
+        }}
+      {% endif %}
     {% endfor %}
 </div>
 

@@ -1,5 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
+{% set card_shadow = "0px 0px 10px var(--woodsmoke--10)" %}
+
 .clients__testimonial-card {
     display: flex;
     flex-direction: column;
@@ -7,7 +9,7 @@
 
 .clients__testimonial-inner {
     background-color: white;
-    box-shadow: 0px 0px 10px var(--woodsmoke--10);
+    box-shadow: {{ card_shadow }};
     display: flex;
 }
 
@@ -20,11 +22,12 @@
     .client-card__display-image {
         flex-basis: 30%;
         flex-shrink: 0;
+        background-size: cover;
     }
 {% endcall %}
 
 .client-card__testimonial-container {
-    padding: 30px;
+    padding: 1.5rem;
 }
 
 .client-card__testimonial-text {
@@ -34,10 +37,6 @@
 .client-card__testimonial-author {
     display: flex;
     align-items: center;
-}
-
-.client-card__testimonial-author-info {
-    margin-left: 1rem;
 }
 
 .client-card__testimonial-author-name {
@@ -56,6 +55,7 @@
     width: 3rem;
     background-size: 3rem;
     border-radius: 3rem;
+    margin-right: 1rem;
 }
 
 .clients__testimonial-footer {
@@ -87,7 +87,49 @@
     }
 {% endcall %}
 
-.clients__testimonial-logo {
+.client-card__logo {
     height: 25px;
     width: auto;
+}
+
+.clients__case-study-card {
+    background-color: white;
+    box-shadow: {{ card_shadow }};
+    display: flex;
+}
+
+.client-card__case-study-info {
+    padding: 1.5rem;
+}
+
+.client-card__case-study-description {
+    margin-bottom: var(--base-margin);
+    margin-top: var(--base-margin);
+}
+
+.client-card__tags-wrapper {
+    margin-top: var(--base-margin);
+}
+
+.client-card__tags-wrapper small {
+    {{ utils.sejima() }}
+    color: var(--mid-gray);
+}
+
+.client-card__tags-icon {
+    margin-right: 0.5rem;
+}
+
+.clients__promotional-card {
+    background-color: white;
+    box-shadow: {{ card_shadow }};
+    display: flex;
+}
+
+.client-card__promotional-info {
+    padding: 1.5rem;
+}
+
+.client-card__promotional-info h2 {
+    {{ utils.eames() }}
 }

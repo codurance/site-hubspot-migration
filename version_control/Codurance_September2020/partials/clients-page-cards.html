@@ -1,3 +1,41 @@
+{% macro test_nested_macro(client) %}
+    {% set tags = [client.industry.name] %}
+    {% for problem in client.problems %}
+        {% do tags.append(problem.name) %}
+    {% endfor %}
+
+    {% set tech_stack = [] %}
+    {% for tech in client.technology_stack %}
+        {% do tech_stack.append(tech.name) %}
+    {% endfor %}
+
+    {% set services = [] %}
+    {% for service in client.services %}
+        {% do services.append(service.name) %}
+    {% endfor %}
+
+    <div class="client-card__tags-wrapper">
+        <p>
+            <small>
+                <i class="client-card__tags-icon las la-tag"></i>
+                {{tags|join(' | ')}}
+            </small>
+        </p>
+        <p>
+            <small>
+                <i class="client-card__tags-icon las la-file-code"></i>
+                {{tech_stack|join(' | ')}}
+            </small>
+        </p>
+        <p>
+            <small>
+                <i class="client-card__tags-icon las la-file-code"></i>
+                {{services|join(' | ')}}
+            </small>
+        </p>
+    </div>
+{% endmacro %}
+
 {% macro testimonial_card(client, classnames) %}
     <article class="{{classnames}} clients__testimonial-card">
         <div class="clients__testimonial-inner">
@@ -5,28 +43,57 @@
             <div class="client-card__testimonial-container">
                 <p class="client-card__testimonial-text">{{client.testimonial_text}}</p>
                 <div class="client-card__testimonial-author">
-                    <div class="client-card__testimonial-author-image"
-                        style="background-image: url({{client.testimonial_author_image.url}})">
-                    </div>
-                    <div class="client-card__testimonial-author-info">
+                    {% if client.testimonial_author_image %}
+                        <div class="client-card__testimonial-author-image"
+                            style="background-image: url({{client.testimonial_author_image.url}})">
+                        </div>
+                    {% endif %}
+
+                    <div>
                         <p class="client-card__testimonial-author-name">
                         {{client.testimonial_author_name}}
                         </p>
                         <p class="client-card__testimonial-author-role">
-                        {{client.testimonial_author_role}}
+                        {{client.testimonial_author_role}} at {{client.name}}
                         </p>
                     </div>
                 </div>
             </div>
         </div>
         <footer class="clients__testimonial-footer">
-            <img class="clients__testimonial-logo" height="25" src="{{client.logo.url}}" />  
+            <img class="client-card__logo" height="25" src="{{client.logo.url}}" />  
         </footer>
     </article>
 {% endmacro %}
 
 {% macro case_study_card(client, classnames) %}
     <article class="{{classnames}} clients__case-study-card">
-        {{client.name}}
+        <div class="client-card__display-image" style="background-image: url({{client.display_image.url}})"></div>
+        <div class="client-card__case-study-info">
+            <img class="client-card__logo" height="25" src="{{client.logo.url}}" />
+            <p class="client-card__case-study-description">{{client.description}}</p>
+            {% if client.case_study %}
+                <a class="button-primary"
+                    href="{{client.case_study}}">
+                    Download Case Study
+                </a>
+            {% endif %}
+            {{ test_nested_macro(client) }}
+        </div>
+    </article>
+{% endmacro %}
+
+{% macro promotional_card(client, classnames) %}
+    <article class="{{classnames}} clients__promotional-card">
+        <div class="client-card__display-image" style="background-image: url({{client.display_image.url}})"></div>
+        <div class="client-card__promotional-info">
+            <h2>{{client.promotion}}</h2>
+            <p class="client-card__case-study-description">Find out how we helped {{client.name}}</p>
+            <a class="button-primary"
+                href="{{client.case_study}}">
+                Download Case Study
+            </a>
+            {{ test_nested_macro(client) }}
+        </div>
     </article>
 {% endmacro %}
