@@ -59,6 +59,15 @@
     }
 }
 
+.clients__filter-toggle-icon {
+    transform: rotate(0deg);
+    transition: var(--cta-transition);
+}
+
+.clients__filter-toggle-icon--selected {
+    transform: rotate(135deg);
+}
+
 .clients__filter-dropdown-container {
     position: relative;
     min-width: 200px;
@@ -135,6 +144,7 @@
 
 .clients__filter-dropdown-icon {
     margin-left: 10px;
+    pointer-events: none;
 }
 
 .clients__filter-dropdown-options {

@@ -30,8 +30,10 @@ const getAll = (entity, type) => {
 const get = (entity, value, type) => {
   const selectors = {
     filter_toggle: '[data-filter-toggle]',
+    filter_toggle_icon: '[data-filter-toggle-icon]',
     filters_wrapper: '[data-filters-wrapper]',
     dropdown_container: `[data-dropdown-container="${value}"]`,
+    dropdown_icon: `[data-dropdown-icon=${value}]`,
     applied_filter: `[data-applied-${type}-filter="${value}"]`,
     option: `[data-${type}-option="${value}"]`,
     selected_icon: `[data-${type}-option-selected="${value}"]`,
@@ -70,8 +72,10 @@ const toggleShowHideFilters = _ => {
   const filtersWrapper = get('filters_wrapper');
   if (filtersWrapper.classList.contains('hidden')) {
     show(filtersWrapper);
+    get('filter_toggle_icon').classList.add('clients__filter-toggle-icon--selected');
   } else {
     hide(filtersWrapper);
+    get('filter_toggle_icon').classList.remove('clients__filter-toggle-icon--selected');
   }
 }
 
@@ -80,18 +84,30 @@ const addFilterToggleListener = _ => {
   filterToggleButton.addEventListener('click', toggleShowHideFilters)
 }
 
+const showDropdown = container => {
+  const type = container.dataset.dropdownContainer;
+  show(container);
+  get('dropdown_icon', type).classList.add('clients__filter-dropdown-icon--selected');
+}
+
+const hideDropdown = container => {
+  const type = container.dataset.dropdownContainer;
+  hide(container);
+  get('dropdown_icon', type).classList.remove('clients__filter-dropdown-icon--selected');
+}
+
 const closeOtherDropdowns = type => {
   getAll('dropdown_containers').filter(dropdown => 
-    dropdown.dataset.dropdownContainer !== type).forEach(hide)
+    dropdown.dataset.dropdownContainer !== type).forEach(hideDropdown)
 }
 
 const openDropdown = type => {
   closeOtherDropdowns(type)
   const dropdown = get('dropdown_container', type)
   if (dropdown.classList.contains('hidden')) {
-    show(dropdown)
+    showDropdown(dropdown, type)
   } else {
-    hide(dropdown);
+    hideDropdown(dropdown, type)
   }
 }
 
