@@ -1,26 +1,32 @@
-{% macro testimonial_card(client) %}
-    <article class="clients-grid__card clients__testimonial-card">
+{% macro testimonial_card(client, classnames) %}
+    <article class="{{classnames}} clients__testimonial-card">
         <div class="clients__testimonial-inner">
-        <div class="client-card__display-image" style="background-image: url({{client.display_image.url}})"></div>
-        <div class="client-card__testimonial-container">
-            <p class="client-card__testimonial-text">{{client.testimonial_text}}</p>
-            <div class="client-card__testimonial-author">
-            <div class="client-card__testimonial-author-image"
-                style="background-image: url({{client.testimonial_author_image.url}})">
+            <div class="client-card__display-image" style="background-image: url({{client.display_image.url}})"></div>
+            <div class="client-card__testimonial-container">
+                <p class="client-card__testimonial-text">{{client.testimonial_text}}</p>
+                <div class="client-card__testimonial-author">
+                    <div class="client-card__testimonial-author-image"
+                        style="background-image: url({{client.testimonial_author_image.url}})">
+                    </div>
+                    <div class="client-card__testimonial-author-info">
+                        <p class="client-card__testimonial-author-name">
+                        {{client.testimonial_author_name}}
+                        </p>
+                        <p class="client-card__testimonial-author-role">
+                        {{client.testimonial_author_role}}
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="client-card__testimonial-author-info">
-                <p class="client-card__testimonial-author-name">
-                {{client.testimonial_author_name}}
-                </p>
-                <p class="client-card__testimonial-author-role">
-                {{client.testimonial_author_role}}
-                </p>
-            </div>
-            </div>
-        </div>
         </div>
         <footer class="clients__testimonial-footer">
-        <img class="clients__testimonial-logo" height="25" src="{{client.logo.url}}" />  
+            <img class="clients__testimonial-logo" height="25" src="{{client.logo.url}}" />  
         </footer>
     </article>
-  {% endmacro %}
+{% endmacro %}
+
+{% macro case_study_card(client, classnames) %}
+    <article class="{{classnames}} clients__case-study-card">
+        {{client.name}}
+    </article>
+{% endmacro %}

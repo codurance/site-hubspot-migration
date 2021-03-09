@@ -290,20 +290,41 @@
     width: 80%;
 }
 
+{% set grid_card_size = "16%" %}
+{% set grid_gutter_size = "4%" %}
+
 .clients-grid__sizer {
-    width: 16%;
+    width: {{ grid_card_size }};
 }
 
 .clients-grid__gutter-sizer {
-    width: 4%;
+    width: {{ grid_gutter_size }};
 }
 
 .clients-grid__card {
-    float: left;
     min-height: 200px;
     margin-bottom: 10px;
-    min-width: 300px;
 }
+
+{% call utils.small() %}
+    .clients-grid__card--small,
+    .clients-grid__card--medium,
+    .clients-grid__card--large {
+        width: 100%;
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+    .clients-grid__card--small {
+        width: calc({{ grid_card_size }} * 2 - {{ grid_gutter_size }} / 2);
+    }
+    .clients-grid__card--medium {
+        width: calc({{ grid_card_size }} * 3 - {{ grid_gutter_size }} / 2);
+    }
+    .clients-grid__card--large {
+        width: calc({{ grid_card_size }} * 6 - {{ grid_gutter_size }} / 2);
+    }
+{% endcall %}
 
 .clients-grid__card--wide {
     width: 60%;

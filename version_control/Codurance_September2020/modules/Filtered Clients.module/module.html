@@ -112,13 +112,23 @@
 <div class="clients-grid__container" data-grid-container>
   <div class="clients-grid__sizer"></div>
   <div class="clients-grid__gutter-sizer"></div>
-  {% for client in clients %}
-    {{
-      cards.testimonial_card(
-        client=client
-      )
-    }}
-  {% endfor %}
+    {% for client in clients %}
+      {% if client.testimonial_text %}
+        {{
+          cards.testimonial_card(
+            client=client,
+            classnames="clients-grid__card clients-grid__card--medium"
+          )
+        }}
+      {% endif %}
+
+      {{
+        cards.case_study_card(
+          client=client,
+          classnames="clients-grid__card clients-grid__card--medium"
+        )
+      }}
+    {% endfor %}
 </div>
 
 {{ require_js(get_asset_url("../js/imageLoaded.js")) }}
