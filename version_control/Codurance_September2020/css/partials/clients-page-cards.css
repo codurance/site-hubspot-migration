@@ -1,0 +1,74 @@
+.clients__testimonial-card {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.clients__testimonial-inner {
+    background-color: white;
+    box-shadow: 0px 0px 10px var(--woodsmoke--10);
+    display: flex;
+    position: relative;
+}
+.clients__testimonial-inner::after {
+    background-color: white;
+    bottom: -0.5rem;
+    box-shadow: 5px 5px 10px -3px var(--woodsmoke--10);
+    content: '';
+    height: 1rem;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%) rotate(45deg);
+    width: 1rem;
+}
+
+.client-card__display-image {
+    width: 100%;
+}
+
+.client-card__testimonial-container {
+    padding: 30px;
+}
+
+.client-card__testimonial-text {
+    margin-bottom: var(--base-margin);
+}
+
+.client-card__testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.client-card__testimonial-author-info {
+    margin-left: 1rem;
+}
+
+.client-card__testimonial-author-name {
+    font-size: var(--natus-font-size);
+    font-weight: var(--heavy-font-weight);
+    line-height: var(--natus-line-height);
+}
+
+.client-card__testimonial-author-role {
+    {{ utils.natus() }}
+}
+
+.client-card__testimonial-author-image {
+    background-image: url(https://f.hubspotusercontent00.net/hubfs/8685554/ewan_sheldon.jpg);
+    height: 3rem;
+    width: 3rem;
+    background-size: 3rem;
+    border-radius: 3rem;
+}
+
+.clients__testimonial-footer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+    padding-top: 1.5rem;
+}
+
+.clients__testimonial-logo {
+    height: 25px;
+    width: auto;
+}

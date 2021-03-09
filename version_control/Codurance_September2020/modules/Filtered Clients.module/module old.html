@@ -1,6 +1,4 @@
 {{ require_css(get_asset_url("../../css/modules/filtered-clients.css")) }}
-{{ require_css(get_asset_url("../../css/partials/clients-page-cards.css")) }}
-{% import '../../partials/clients-page-cards.html' as cards %}
 
 {% set clients = hubdb_table_rows(module.clients_table, 'orderBy=-testimonial&orderBy=-video&orderBy=description') %}
 
@@ -113,12 +111,92 @@
   <div class="clients-grid__sizer"></div>
   <div class="clients-grid__gutter-sizer"></div>
   {% for client in clients %}
-    {{
-      cards.testimonial_card(
-        client=client
-      )
-    }}
-  {% endfor %}
+    {% set problems = [] %}
+    {% for problem in client.problems %}
+      {% do problems.append(problem.name) %}
+    {% endfor %}
+    {% set services = [] %}
+    {% for service in client.services %}
+      {% do services.append(service.name) %}
+    {% endfor %}
+
+    {% if client.description %}
+      {% set class = "clients-grid__card--wide" %}
+    {% else %}
+      {% set class = "" %}
+    {% endif %}
+
+    {% if client.video %}
+      <div class="clients-grid__card clients-grid__card--v-wide" data-client-industry="{{client.industry.name}}"
+        data-client-problem="{{problems|join(',')}}" data-client-service="{{services|join(',')}}">
+        <h3 class="client-card__name">{{client.name}}</h3>
+        <div class="client-card__video">
+          <div class="client-card__video-inner">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cL3DaHZ88ZQ"
+              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="clients-grid__card {{class}}" data-client-industry="{{client.industry.name}}"
+      data-client-problem="{{problems|join(',')}}" data-client-service="{{services|join(',')}}">
+      <div class="client-card__container">
+        {% if client.logo %}
+          <div class="client-card__image" style="background-image: url({{client.logo.url}})">
+          </div>
+        {% endif %}
+        <h3 class="client-card__name">{{client.name}}</h3>
+        <p>
+          <i class="client-card__icon las la-globe-africa"></i>
+          <a href="">Visit website</a>
+        </p>
+        {% if client.description %}
+          <p>{{client.description}}</p>
+        {% endif %}
+        <div class="client-card__info">
+          <ul>
+            <li>
+              <i class="client-card__icon las la-wrench"></i>
+              <a href="">{{client.industry.name}}</a>
+            </li>
+            {% for problem in problems %}
+              <li>
+                <i class="client-card__icon las la-exclamation"></i>
+                <a href="">{{problem}}</a>
+              </li>
+            {% endfor %}
+            {% for service in services %}
+              <li>
+                <i class="client-card__icon las la-briefcase"></i>
+                <a href="">{{service}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+          {% if client.case_study %}
+            <a class="button-primary" href="{{client.case_study}}">
+              Case Study at {{client.name}}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    {% if client.testimonial %}
+      <div class="clients-grid__card" data-client-industry="{{client.industry.name}}"
+        data-client-problem="{{problems|join(',')}}" data-client-service="{{services|join(',')}}">
+        <div class="client-card__container">
+          <h3 class="client-card__name">{{client.name}}</h3>
+          <p>"{{client.testimonial}}"</p>
+          <p class="client-card__testimonial-author">
+            John Doe, Head of Product at {{client.name}}
+          </p>
+        </div>
+      </div>
+    {% endif %}
+{% endfor %}
 </div>
 
 {{ require_js(get_asset_url("../js/imageLoaded.js")) }}

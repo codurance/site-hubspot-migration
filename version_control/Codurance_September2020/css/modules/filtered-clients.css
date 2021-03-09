@@ -291,7 +291,7 @@
 }
 
 .clients-grid__sizer {
-    width: 33%;
+    width: 16%;
 }
 
 .clients-grid__gutter-sizer {
@@ -299,15 +299,9 @@
 }
 
 .clients-grid__card {
-    border: 1px solid #c6c6c6;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 5px 10px 18px var(--woodsmoke--10);
     float: left;
     min-height: 200px;
     margin-bottom: 10px;
-    padding: 20px;
-    width: 28%;
     min-width: 300px;
 }
 
@@ -317,7 +311,6 @@
 }
 
 .clients-grid__card--v-wide {
-    padding: 40px;
     width: 100%;
 }
 
@@ -371,10 +364,6 @@
     background-repeat: no-repeat;
     background-position:center;
     margin-bottom: 20px;
-}
-
-.client-card__testimonial-author {
-    font-weight: var(--heavy-font-weight);
 }
 
 .client-card__video {
