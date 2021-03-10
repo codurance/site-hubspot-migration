@@ -1,9 +1,20 @@
 {% import '../utils/utils.css' as utils %}
 
 .clients-header__section {
-    background-color: #1d1a55;
-    color: white;
+    color: var(--shark);
+    filter: saturate(50%) brightness(1.2);
 }
+{% call utils.small() %}
+    .clients-header__section {
+        background: var(--gold) linear-gradient(135deg, var(--tango), var(--gold) 150%);
+    }
+{% endcall %}
+{% call utils.medium_large_and_extra_large() %}
+    .clients-header__section {
+        background: var(--gold) linear-gradient(135deg, var(--tango), var(--gold) 200%);
+    }
+{% endcall %}
+
 
 .clients-header__container {
     margin: 0 auto;
@@ -23,19 +34,19 @@
 }
 
 .clients__filter {
-    background-color: white;
-    left: 50%;
     position: absolute;
-    transform: translate(-50%, -50%);
     z-index: 1;
 }
 {% call utils.medium_large_and_extra_large() %}
     .clients__filter {
+        background-color: white;
         border-radius: 4.7601rem;
         height: 2.38rem;
+        left: 50%;
         max-width: 800px;
         padding-left: 2rem;
         padding-right: 2rem;
+        transform: translate(-50%, -50%);
         width: 85%;
     }
 {% endcall %}
@@ -85,6 +96,7 @@
 
 {% call utils.small() %}
     .clients__filter-dropdown-wrapper {
+        box-shadow: 0px 0px 6px var(--woodsmoke--20);
         position: absolute;
         width: 100%;
     }
@@ -95,16 +107,6 @@
         height: 100%;
         display: flex;
         justify-content: center;
-    }
-{% endcall %}
-{% call utils.small() %}
-    .clients__filter-dropdown-wrapper::after {
-        background-color: rgba(0,0,0,0.4);
-        content: '';
-        display: inline-block;
-        height: 100vh;
-        position: absolute;
-        width: 100%;
     }
 {% endcall %}
 
@@ -238,10 +240,22 @@
     height: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px 20px 160px;
     min-height: 250px;
     width: 100%;
+    padding-bottom: 160px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
+{% call utils.small() %}
+    .clients-applied-filters__container {
+        padding-top: 50px;
+    }
+{% endcall %}
+{% call utils.medium_large_and_extra_large() %}
+    .clients-applied-filters__container {
+        padding-top: 20px;
+    }
+{% endcall %}
 
 .clients-applied-filters__pill {
     {{ utils.sejima() }}

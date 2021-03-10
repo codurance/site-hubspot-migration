@@ -13,22 +13,64 @@
     display: flex;
 }
 
-{% call utils.small() %}
-    .client-card__display-image {
-        display: none;
+{% call utils.medium_large_and_extra_large() %}
+    .clients__testimonial-inner .client-card__content-container {
+        padding-left: 2rem;
     }
 {% endcall %}
+
 {% call utils.medium_large_and_extra_large() %}
     .client-card__display-image {
         flex-basis: 30%;
         flex-shrink: 0;
+        
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .client-card__display-image--testimonial {
+        display: none;
+    }
+{% endcall %}
+{% call utils.medium_large_and_extra_large() %}
+    .client-card__display-image--testimonial {
         background-size: cover;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .client-card__display-image--case-study {
+        background-size: cover;
+        width: 100%;
+        padding-top: 30%;
+        background-position: center;
+    }
+{% endcall %}
+{% call utils.medium_large_and_extra_large() %}
+    .client-card__display-image--case-study {
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 {% endcall %}
 
 .client-card__content-container {
     padding: 1.5rem;
+    position: relative;
 }
+
+{% call utils.small() %}
+    .client-card__testimonial-quotation-icon {
+        display: none !important;
+    }
+{% endcall %}
+{% call utils.medium_large_and_extra_large() %}
+    .client-card__testimonial-quotation-icon {
+        position: absolute;
+        margin-left: -1.35em;
+        color: var(--persimmon);
+        margin-top: -0.25em;
+    }
+{% endcall %}
 
 .client-card__testimonial-text {
     margin-bottom: var(--base-margin);
@@ -97,19 +139,30 @@
     box-shadow: {{ card_shadow }};
     display: flex;
 }
+{% call utils.small() %}
+    .clients__case-study-card {
+        flex-direction: column;
+    }
+{% endcall %}
 
 .client-card__case-study-description {
+    {{ utils.natus() }}
     margin-bottom: var(--base-margin);
     margin-top: var(--base-margin);
 }
 
 .client-card__tags-wrapper {
+    color: var(--mid-gray);
     margin-top: var(--base-margin);
+}
+
+.client-card__tags-wrapper p {
+    display: flex;
 }
 
 .client-card__tags-wrapper small {
     {{ utils.sejima() }}
-    color: var(--mid-gray);
+    margin-bottom: var(--sejima-margin);
 }
 
 .client-card__tags-icon {
