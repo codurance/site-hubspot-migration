@@ -39,6 +39,7 @@
   <div class="clients__filter-dropdown-wrapper hidden" data-filters-wrapper>
     <div class="clients__filter-dropdown-container">
       <button class="clients__filter-dropdown-button" data-dropdown-button="industry">
+        <i class="clients__filter-icon las la-cog"></i>
         Industry
         <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="industry">
         </i>
@@ -55,6 +56,7 @@
     </div>
     <div class="clients__filter-dropdown-container">
       <button class="clients__filter-dropdown-button" data-dropdown-button="problem">
+        <i class="clients__filter-icon las la-question-circle"></i>
         Problem
         <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="problem">
         </i>
@@ -71,6 +73,7 @@
     </div>
     <div class="clients__filter-dropdown-container">
       <button class="clients__filter-dropdown-button" data-dropdown-button="service">
+        <i class="clients__filter-icon las la-cube"></i>
         Service
         <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="service"></i>
       </button>
@@ -130,7 +133,7 @@
         }}
       {% else %}
 
-        {% if client.case_study_display_image %}
+        {% if client.case_study_display_image_large %}
           {% set classnames = "clients-grid__card clients-grid__card--medium" %}
         {% else %}
           {% set classnames = "clients-grid__card clients-grid__card--small" %}

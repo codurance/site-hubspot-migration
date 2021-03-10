@@ -266,6 +266,7 @@ const refilter = _ => {
 
   clients.visible.forEach(show);
   clients.hidden.forEach(hide);
+  console.log(isotope)
   isotope.layout();
 }
 
