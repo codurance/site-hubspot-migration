@@ -39,8 +39,8 @@
 {% macro testimonial_card(client, classnames) %}
     <article class="{{classnames}} clients__testimonial-card">
         <div class="clients__testimonial-inner">
-            <div class="client-card__display-image" style="background-image: url({{client.display_image.url}})"></div>
-            <div class="client-card__testimonial-container">
+            <div class="client-card__display-image" style="background-image: url({{client.testimonial_display_image.url}})"></div>
+            <div class="client-card__content-container">
                 <p class="client-card__testimonial-text">{{client.testimonial_text}}</p>
                 <div class="client-card__testimonial-author">
                     {% if client.testimonial_author_image %}
@@ -68,8 +68,10 @@
 
 {% macro case_study_card(client, classnames) %}
     <article class="{{classnames}} clients__case-study-card">
-        <div class="client-card__display-image" style="background-image: url({{client.display_image.url}})"></div>
-        <div class="client-card__case-study-info">
+        {% if client.case_study_display_image %}
+            <div class="client-card__display-image" style="background-image: url({{client.case_study_display_image.url}})"></div>
+        {% endif %}
+        <div class="client-card__content-container">
             <img class="client-card__logo" height="25" src="{{client.logo.url}}" />
             <p class="client-card__case-study-description">{{client.description}}</p>
             {% if client.case_study %}
@@ -85,8 +87,8 @@
 
 {% macro promotional_card(client, classnames) %}
     <article class="{{classnames}} clients__promotional-card">
-        <div class="client-card__display-image" style="background-image: url({{client.display_image.url}})"></div>
-        <div class="client-card__promotional-info">
+        <div class="client-card__display-image" style="background-image: url({{client.case_study_display_image.url}})"></div>
+        <div class="client-card__content-container">
             <h2>{{client.promotion}}</h2>
             <p class="client-card__case-study-description">Find out how we helped {{client.name}}</p>
             <a class="button-primary"

@@ -26,7 +26,7 @@
     }
 {% endcall %}
 
-.client-card__testimonial-container {
+.client-card__content-container {
     padding: 1.5rem;
 }
 
@@ -98,10 +98,6 @@
     display: flex;
 }
 
-.client-card__case-study-info {
-    padding: 1.5rem;
-}
-
 .client-card__case-study-description {
     margin-bottom: var(--base-margin);
     margin-top: var(--base-margin);
@@ -126,10 +122,6 @@
     display: flex;
 }
 
-.client-card__promotional-info {
-    padding: 1.5rem;
-}
-
-.client-card__promotional-info h2 {
+.client-card__content-container h2 {
     {{ utils.eames() }}
 }
