@@ -374,6 +374,7 @@ const initialiseIsotopeLayout = _ => {
   };
 
   isotope = new Isotope(elem, isotopeLayoutOpts);
+  console.log(isotope)
 }
 
 const play = video => video.src += '?autoplay=1';

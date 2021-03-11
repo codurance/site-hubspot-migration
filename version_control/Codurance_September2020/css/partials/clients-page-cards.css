@@ -16,6 +16,7 @@
 .client-card__content-container {
     padding: 1.5rem;
     position: relative;
+    width: 100%;
 }
 
 .client-card__testimonial-text {
@@ -130,7 +131,8 @@
 }
 
 .client-card__promotion-heading {
-    {{ utils.eames() }}
+    {{ utils.base() }}
+    font-weight: var(--heavy-font-weight);
 }
 
 .client-card__partners-heading {
@@ -190,7 +192,7 @@
     transition: background-color 0.2s linear;
 }
 
-@media (max-width: 767px) {
+{% call utils.small() %}
     .client-card__promotion-heading {
         background-repeat: no-repeat;
         background-size: cover;
@@ -230,9 +232,9 @@
     .client-card__display-image--testimonial {
         display: none;
     }
-}
+{% endcall %}
 
-@media (min-width: 1024px) and (max-width: 1299px) {
+{% call utils.large() %}
     .client-card__promotion-heading {
         background-repeat: no-repeat;
         background-size: cover;
@@ -272,9 +274,9 @@
     .client-card__display-image--testimonial {
         display: none;
     }
-}
+{% endcall %}
 
-@media (min-width: 768px) and (max-width: 1023px) {
+{% call utils.medium() %}
     .client-card__promotion-heading {
         background-image: none !important;
     }
@@ -312,9 +314,9 @@
     .clients__testimonial-footer {
         justify-content: center;
     }
-}
+{% endcall %}
 
-@media (min-width: 1300px) {
+{% call utils.extra_large() %}
     .client-card__promotion-heading {
         background-image: none !important;
     }
@@ -352,4 +354,4 @@
     .clients__testimonial-footer {
         justify-content: center;
     }
-}
+{% endcall %}
