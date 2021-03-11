@@ -149,11 +149,13 @@
                 <h2 class="client-card__promotion-heading" style="background-image: url({{client.case_study_display_image_small.url}})">
                     {{client.promotion}}
                 </h2>
-                <p class="client-card__case-study-description client-card__case-study-description--promotion">Find out how we helped {{client.name}}</p>
-                <a class="button-primary"
-                    href="{{client.case_study}}">
-                    Download Case Study
-                </a>
+                {% if client.case_study %}
+                    <p class="client-card__case-study-description client-card__case-study-description--promotion">Find out how we helped {{client.name}}</p>
+                    <a class="button-primary"
+                        href="{{client.case_study}}">
+                        Download Case Study
+                    </a>
+                {% endif %}
                 {{ tags_footer(client) }}
             </div>
         </article>
