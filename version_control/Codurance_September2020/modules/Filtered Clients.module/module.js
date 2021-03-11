@@ -38,6 +38,7 @@ const get = (entity, value, type) => {
     applied_filter: `[data-applied-${type}-filter="${value}"]`,
     option: `[data-${type}-option="${value}"]`,
     selected_icon: `[data-${type}-option-selected="${value}"]`,
+    no_clients_message: '[data-no-clients-message]',
     grid_container: '[data-grid-container]',
     video_cover_container: `[data-video-cover-container="${value}"]`,
     video_iframe: `[data-video-iframe="${value}"]`
@@ -272,10 +273,21 @@ const refilter = _ => {
   isotope.layout();
 }
 
+const updateNoClientsMessage = _ => {
+  const noClientsMessage = get('no_clients_message');
+
+  if (clients.visible.length > 0) {
+    hide(noClientsMessage);
+  } else {
+    show(noClientsMessage);
+  }
+}
+
 const update = _ => {
   updateAppliedFilters();
   refilter();
   updateAvailableFilters();
+  updateNoClientsMessage();
 }
 
 const applyFilter = (type, value) => {
