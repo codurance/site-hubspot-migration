@@ -26,7 +26,7 @@
 .clients-header__section p {
     {{ utils.base() }}
     {{ utils.base_margin() }}
-    max-width: var(--base-max-width);
+    max-width: var(--freed-max-width);
 }
 
 .clients__filter {
