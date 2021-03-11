@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+.clients-page__main {
+    background-color: var(--athens-gray);
+}
+
 .clients-header__section {
     background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Clients%20Page/header.jpg);
     background-repeat: no-repeat;

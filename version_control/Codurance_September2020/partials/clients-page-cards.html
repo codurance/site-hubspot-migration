@@ -176,7 +176,7 @@
         data-client-service="{{services|join(',')}}">
         <article class="clients__video-card">
             <div class="client-card__video-cover-container client-card__content-container"
-                data-video-cover-container="{{loop.index}}">
+                style="background-image: url({{client.video_cover_image.url}})" data-video-cover-container="{{loop.index}}">
                 <h2 class="client-card__video-text">{{client.video_text}}</h2>
                 <button class="client-card__video-play-button"
                     data-video-play-button="{{loop.index}}">
