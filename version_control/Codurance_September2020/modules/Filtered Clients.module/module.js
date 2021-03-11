@@ -19,7 +19,8 @@ const getAll = (entity, type) => {
     clients: '[data-client-industry]',
     options: `[data-${type}-option]`,
     dropdown_containers: '[data-dropdown-container]',
-    remove_filter_buttons: `[data-remove-${type}-filter]`
+    remove_filter_buttons: `[data-remove-${type}-filter]`,
+    video_play_buttons: '[data-video-play-button]'
   }
 
   return Array.prototype.slice.call(
@@ -37,7 +38,9 @@ const get = (entity, value, type) => {
     applied_filter: `[data-applied-${type}-filter="${value}"]`,
     option: `[data-${type}-option="${value}"]`,
     selected_icon: `[data-${type}-option-selected="${value}"]`,
-    grid_container: '[data-grid-container]'
+    grid_container: '[data-grid-container]',
+    video_cover_container: `[data-video-cover-container="${value}"]`,
+    video_iframe: `[data-video-iframe="${value}"]`
   }
 
   return document.querySelector(selectors[entity]);
@@ -266,7 +269,6 @@ const refilter = _ => {
 
   clients.visible.forEach(show);
   clients.hidden.forEach(hide);
-  console.log(isotope)
   isotope.layout();
 }
 
@@ -362,9 +364,26 @@ const initialiseIsotopeLayout = _ => {
   isotope = new Isotope(elem, isotopeLayoutOpts);
 }
 
+const play = video => video.src += '?autoplay=1';
+
+const playVideo = button => {
+  const clientIndex = button.dataset.videoPlayButton;
+  const videoCoverContainer = get('video_cover_container', clientIndex);
+  const video = get('video_iframe', clientIndex)
+  hide(videoCoverContainer)
+  play(video)
+}
+
+const addPlayButtonListener = button =>
+  button.addEventListener('click', _ => playVideo(button))
+
+const initialiseVideoPlayers = _ => 
+  getAll('video_play_buttons').forEach(addPlayButtonListener);
+
 const init = _ => {
   initialiseIsotopeLayout();
   initialiseFilters();
+  initialiseVideoPlayers();
 }
 
 window.addEventListener('DOMContentLoaded', init);

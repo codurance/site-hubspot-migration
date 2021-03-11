@@ -147,7 +147,7 @@
 
 .client-card__video-cover-container {
     align-items: center;
-    background-color: pink;
+    background-color: var(--midnight-blue--dark);
     bottom: 0;
     display: flex;
     flex-direction: column;

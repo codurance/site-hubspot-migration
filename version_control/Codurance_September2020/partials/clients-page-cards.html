@@ -175,18 +175,18 @@
         data-client-industry="{{client.industry.name}}" data-client-problem="{{problems|join(',')}}"
         data-client-service="{{services|join(',')}}">
         <article class="clients__video-card">
-            <div class="client-card__video-cover-container client-card__content-container">
+            <div class="client-card__video-cover-container client-card__content-container"
+                data-video-cover-container="{{loop.index}}">
                 <h2 class="client-card__video-text">{{client.video_text}}</h2>
-                <button class="client-card__video-play-button">
+                <button class="client-card__video-play-button"
+                    data-video-play-button="{{loop.index}}">
                     <i class="client-card__video-play-icon las la-play"></i>
                 </button>
             </div>
-            <div>
-                <iframe width="2000" height="400" src="{{client.video}}" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
+            <iframe data-video-iframe="{{loop.index}}" width="2000" height="400" src="{{client.video}}" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
         </article>
     </div>
 {% endmacro %}
