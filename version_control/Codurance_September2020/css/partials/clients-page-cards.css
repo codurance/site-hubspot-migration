@@ -129,7 +129,7 @@
     display: flex;
 }
 
-.client-card__content-container h2 {
+.client-card__promotion-heading {
     {{ utils.eames() }}
 }
 
@@ -139,8 +139,57 @@
     margin-top: var(--sejima-margin);
 }
 
+.clients__video-card {
+    background-color: white;
+    box-shadow: {{ card_shadow }};
+    display: flex;
+}
+
+.client-card__video-cover-container {
+    align-items: center;
+    background-color: pink;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.client-card__video-text {
+    {{ utils.dudler() }}
+    color: white;
+    margin-bottom: var(--dudler-margin);
+    max-width: var(--dudler-max-width);
+    text-align: center;
+}
+
+.client-card__video-play-button {
+    background-color: white;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.client-card__video-play-button:hover {
+    background-color: var(--athens-gray);
+    transition: background-color 0.2s linear;
+}
+
+.client-card__video-play-icon {
+    color: var(--persimmon);
+    font-size: 2rem;
+}
+.client-card__video-play-button:hover .client-card__video-play-icon {
+    color: var(--persimmon--dark);
+    transition: background-color 0.2s linear;
+}
+
 {% call utils.small() %}
-    .clients__promotional-card h2 {
+    .client-card__promotion-heading {
         background-repeat: no-repeat;
         background-size: cover;
         color: white;
@@ -182,7 +231,7 @@
 {% endcall %}
 
 {% call utils.large() %}
-    .clients__promotional-card h2 {
+    .client-card__promotion-heading {
         background-repeat: no-repeat;
         background-size: cover;
         color: white;
@@ -224,7 +273,7 @@
 {% endcall %}
 
 {% call utils.medium() %}
-    .clients__promotional-card h2 {
+    .client-card__promotion-heading {
         background-image: none !important;
     }
 
@@ -235,7 +284,6 @@
     .client-card__display-image {
         flex-basis: 30%;
         flex-shrink: 0;
-        
     }
 
     .client-card__display-image--testimonial {
@@ -265,9 +313,8 @@
 {% endcall %}
 
 {% call utils.extra_large() %}
-    .clients__promotional-card h2 {
+    .client-card__promotion-heading {
         background-image: none !important;
-        background-size: cover;
     }
 
     .clients__testimonial-inner .client-card__content-container {
@@ -277,7 +324,6 @@
     .client-card__display-image {
         flex-basis: 30%;
         flex-shrink: 0;
-        
     }
 
     .client-card__display-image--testimonial {

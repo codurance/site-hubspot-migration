@@ -1,7 +1,7 @@
 {{ require_css(get_asset_url("../../css/modules/filtered-clients.css")) }}
 {% import '../../partials/clients-page-cards.html' as cards %}
 
-{% set clients = hubdb_table_rows(module.clients_table, 'orderBy=-testimonial_text&orderBy=-case_study&orderBy=-video&orderBy=description') %}
+{% set clients = hubdb_table_rows(module.clients_table, 'orderBy=-testimonial_text&orderBy=-case_study_display_image_large&orderBy=-video') %}
 
 {% set allIndustries = [] %}
 {% set allProblems = [] %}
@@ -120,6 +120,15 @@
           cards.testimonial_card(
             client=client,
             classnames="clients-grid__card clients-grid__card--medium"
+          )
+        }}
+      {% endif %}
+
+      {% if client.video %}
+        {{
+          cards.video_card(
+            client=client,
+            classnames="clients-grid__card clients-grid__card--large"
           )
         }}
       {% endif %}

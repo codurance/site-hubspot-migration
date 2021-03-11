@@ -18,12 +18,15 @@
                 {{tags|join(' | ')}}
             </small>
         </p>
-        <p>
-            <i class="client-card__tags-icon las la-code">
-            </i><small>
-                {{tech_stack|join(' | ')}}
-            </small>
-        </p>
+
+        {% if tech_stack|length > 0 %}
+            <p>
+                <i class="client-card__tags-icon las la-code">
+                </i><small>
+                    {{tech_stack|join(' | ')}}
+                </small>
+            </p>
+        {% endif %}        
 
         <div class="client-card__footer-icons">
             {% for service in client.services %}
@@ -143,7 +146,7 @@
         <article class="clients__promotional-card">
             <div class="client-card__display-image client-card__display-image--promotion" style="background-image: url({{client.case_study_display_image_large.url}})"></div>
             <div class="client-card__content-container">
-                <h2 style="background-image: url({{client.case_study_display_image_small.url}})">
+                <h2 class="client-card__promotion-heading" style="background-image: url({{client.case_study_display_image_small.url}})">
                     {{client.promotion}}
                 </h2>
                 <p class="client-card__case-study-description client-card__case-study-description--promotion">Find out how we helped {{client.name}}</p>
@@ -152,6 +155,37 @@
                     Download Case Study
                 </a>
                 {{ tags_footer(client) }}
+            </div>
+        </article>
+    </div>
+{% endmacro %}
+
+{% macro video_card(client, classnames) %}
+    {% set problems = [] %}
+    {% for problem in client.problems %}
+        {% do problems.append(problem.name) %}
+    {% endfor %}
+
+    {% set services = [] %}
+    {% for service in client.services %}
+        {% do services.append(service.name) %}
+    {% endfor %}
+
+    <div class="{{classnames}}"
+        data-client-industry="{{client.industry.name}}" data-client-problem="{{problems|join(',')}}"
+        data-client-service="{{services|join(',')}}">
+        <article class="clients__video-card">
+            <div class="client-card__video-cover-container client-card__content-container">
+                <h2 class="client-card__video-text">{{client.video_text}}</h2>
+                <button class="client-card__video-play-button">
+                    <i class="client-card__video-play-icon las la-play"></i>
+                </button>
+            </div>
+            <div>
+                <iframe width="2000" height="400" src="{{client.video}}" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
             </div>
         </article>
     </div>
