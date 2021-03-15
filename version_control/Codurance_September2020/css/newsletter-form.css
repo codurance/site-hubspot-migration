@@ -102,8 +102,7 @@
     display: none;
 }
 
-
-.hs_haz_click_aqui_para_informarnos_si_te_gustaria_recibir_contenido_en_espanol {
+.cta_newsletter_spanish .hs-form .hs-fieldtype-booleancheckbox {
     position: absolute;
     top: 80px;
 }
@@ -190,7 +189,7 @@
         top: 6px;
     }
 
-    .hs_haz_click_aqui_para_informarnos_si_te_gustaria_recibir_contenido_en_espanol {
+    .cta_newsletter_spanish .hs-form .hs-fieldtype-booleancheckbox {
         position: static;
     }
 }
