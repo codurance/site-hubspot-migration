@@ -163,12 +163,13 @@ label: Blog Post
     <div class="blog-content__inner">
       {% set sections = content.post_body|split('<!--more-->', 2) %}
       {{ sections[0] }}
-
-      {% module
-        "newsletter_inline_form"
-        path="../modules/Newsletter Inline Form.module"
-        label="Newsletter inline form", language='{{site_language}}', no_wrapper=True
-      %}
+      {% if site_language == 'en' %}
+        {% module
+          "newsletter_inline_form"
+          path="../modules/Newsletter Inline Form.module"
+          label="Newsletter inline form", language='{{site_language}}', no_wrapper=True
+        %}
+      {% endif %}
       {{ sections[1] }}
     </div>
     {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
@@ -269,6 +270,7 @@ label: Blog Post
       path="../modules/Newsletter Footer Form.module"
       label="Newsletter footer form", language='{{site_language}}', no_wrapper=True
     %}
+
     {% module
       "newsletter_exit_popup"
       path="../modules/Newsletter Exit Popup.module"
