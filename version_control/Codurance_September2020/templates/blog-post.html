@@ -7,6 +7,13 @@ label: Blog Post
 
 {% extends "./layouts/base.html" %}
 
+{% set path = request.path|truncate(3, true, '') %}
+{% if path is string_containing 'es' %}
+  {% set site_language = 'es'  %}
+{% else %}
+  {% set site_language = 'en' %}
+{% endif %}
+
 <head>
   <meta charset="utf-8">
   <title>{{ page_meta.html_title }}</title>
@@ -156,11 +163,11 @@ label: Blog Post
     <div class="blog-content__inner">
       {% set sections = content.post_body|split('<!--more-->', 2) %}
       {{ sections[0] }}
+
       {% module
         "newsletter_inline_form"
-        sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
         path="../modules/Newsletter Inline Form.module"
-        label="Newsletter inline form" no_wrapper=True
+        label="Newsletter inline form", language='{{site_language}}', no_wrapper=True
       %}
       {{ sections[1] }}
     </div>
@@ -257,20 +264,16 @@ label: Blog Post
       </div>
     </div>
   </section>
-
-  {% module
-    "newsletter_footer_form"
-    sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
-    path="../modules/Newsletter Footer Form.module"
-    label="Newsletter footer form" no_wrapper=True
-  %}
-  {% module
-    "newsletter_exit_popup"
-    sign_up_form={"form_id": "91334e24-959c-4eed-80b1-e2eb60dec492"}
-    path="../modules/Newsletter Exit Popup.module"
-    label="Newsletter exit popup" no_wrapper=True
-  %}
-
+    {% module
+      "newsletter_footer_form"
+      path="../modules/Newsletter Footer Form.module"
+      label="Newsletter footer form", language='{{site_language}}', no_wrapper=True
+    %}
+    {% module
+      "newsletter_exit_popup"
+      path="../modules/Newsletter Exit Popup.module"
+      label="Newsletter exit popup", language='{{site_language}}', no_wrapper=True
+    %}
   <script>
     var cookieIframeContainers = document.getElementsByClassName(
       'js-iframe-container'
