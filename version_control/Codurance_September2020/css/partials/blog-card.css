@@ -48,33 +48,35 @@
 .blog-cta-card {
   align-items: center;
   flex-direction: column;
-  padding-bottom: 5rem;
-  padding-top: 5rem;
+  padding: 3rem 2rem;
   position: relative;
 }
 
 .blog-cta-card--tango {
   background-color: var(--tango);
   color: var(--woodsmoke);
+  text-align: center;
 }
 
 .blog-cta-card--crimson {
   background-color: var(--crimson);
   color: white;
+  text-align: center;
 }
 
-.blog-cta-card--gold {
+.blog-cta-card--newsletter {
   background-color: var(--gold);
-  color: var(--woodsmoke);
+}
+
+.hs_cos_wrapper_type_form,
+.blog-cta-card--newsletter .hs-form .hs-button.primary.large {
+  width: 100%;
 }
 
 .blog-cta-card__title {
   {{ utils.base() }}
   font-weight: var(--heavy-font-weight);
   margin-bottom: var(--base-margin);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  text-align: center;
 }
 
 .blog-cta-card__description {
