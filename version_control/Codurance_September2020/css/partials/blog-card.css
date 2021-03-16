@@ -75,7 +75,7 @@
 
 .hs_cos_wrapper_type_form input[type="checkbox"] {
   opacity: 0;
-  margin: 3px 12px 12px 12px;
+  margin: 0.15rem 0.6rem 0.6rem;
 }
 
 .hs_cos_wrapper_type_form .hs-form-booleancheckbox-display {
@@ -93,12 +93,12 @@
   border: 1px solid rgba(0, 0, 0, .25);
   content: "";
   display: inline-block;
-  height: 25px;
-  left: -35px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 25px;
+  height: 1.25rem;
+  left: -1.75rem;
+  width: 1.25rem;
 }
 .hs_cos_wrapper_type_form input[type=checkbox]:focus + span:before {
   outline: rgb(0, 0, 0) auto 5px;
@@ -108,12 +108,12 @@
   border-bottom: 2px solid;
   border-left: 2px solid;
   display: inline-block;
-  height: 8px;
-  left: -29px;
+  height: 0.4rem;
+  left: -1.45rem;
   position: absolute;
-  top: 12px;
+  top: 0.6rem;
   transform: rotate(-45deg);
-  width: 14px;
+  width: 0.7rem;
 }
 .hs_cos_wrapper_type_form input[type=checkbox]:checked + span::after {
   content: "";
