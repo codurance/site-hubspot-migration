@@ -68,11 +68,21 @@
     flex: 0 0 100%;
     max-width: 100%;
   }
+{% endcall %}
+{% call utils.medium() %}
   .custom-blog-listing__post-wrapper:not(
     .custom-blog-listing__post-wrapper--featured
   ) {
       flex: 0 0 50%;
       max-width: 50%;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .custom-blog-listing__post-wrapper:not(
+    .custom-blog-listing__post-wrapper--featured
+  ) {
+      flex: 0 0 100%;
+      max-width: 100%;
   }
 {% endcall %}
 
