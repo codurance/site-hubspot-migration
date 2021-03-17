@@ -111,7 +111,11 @@
         data-client-service="{{services|join(',')}}">
         <article class="clients__case-study-card">
             {% if client.case_study_display_image_large %}
-                <div class="client-card__display-image client-card__display-image--case-study" style="background-image: url({{client.case_study_display_image_large.url}})"></div>
+                 <picture>
+                    <source srcset="{{client.case_study_display_image_small.url}}" media="(max-width: 767px)">
+                    <source srcset="{{client.case_study_display_image_small.url}}" media="(min-width: 1024px) and (max-width: 1299px)">
+                    <img src="{{client.case_study_display_image_large.url}}" alt="" class="clients__case-study-card-image" >  
+                </picture> 
             {% endif %}
             <div class="client-card__content-container">
                 <img class="client-card__logo" height="25" src="{{client.logo.url}}" />

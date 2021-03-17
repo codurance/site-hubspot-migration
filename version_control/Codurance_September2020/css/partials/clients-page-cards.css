@@ -65,6 +65,13 @@
     width: 1rem;
 }
 
+.clients__case-study-card-image {
+    object-fit: contain;
+    width:100%;
+    height: 100%;
+    object-position:top;
+}
+
 .client-card__logo {
     height: 25px;
     width: auto;
@@ -222,12 +229,7 @@
         display: none;
     }
 
-    .client-card__display-image--case-study {
-        background-size: cover;
-        width: 100%;
-        padding-top: 30%;
-        background-position: center;
-    }
+
 
     .client-card__display-image--testimonial {
         display: none;
@@ -264,12 +266,7 @@
         display: none;
     }
 
-    .client-card__display-image--case-study {
-        background-size: cover;
-        width: 100%;
-        padding-top: 30%;
-        background-position: center;
-    }
+
 
     .client-card__display-image--testimonial {
         display: none;
@@ -292,11 +289,6 @@
 
     .client-card__display-image--testimonial {
         background-size: cover;
-    }
-
-    .client-card__display-image--case-study {
-        background-repeat: no-repeat;
-        background-size: contain;
     }
 
     .client-card__display-image--promotion {
@@ -334,10 +326,7 @@
         background-size: cover;
     }
 
-    .client-card__display-image--case-study {
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
+
 
     .client-card__display-image--promotion {
         background-repeat: no-repeat;
