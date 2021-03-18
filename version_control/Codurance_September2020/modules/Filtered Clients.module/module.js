@@ -1,15 +1,15 @@
 let isotope;
 
 let filters = {
-  types: [ 'industry', 'problem', 'service' ],
+  types: [ 'industry', 'technology', 'service' ],
   all: {
     industry: [],
-    problem: [],
+    technology: [],
     service: []
   },
   applied: {
     industry: [],
-    problem: [],
+    technology: [],
     service: []
   }
 };
@@ -60,7 +60,7 @@ const filterOptions = type => {
 }
 
 const setFilterOptions = _ => {
-  filters.types.forEach(type => 
+  filters.types.forEach(type =>
     filters.all[type] = filterOptions(type));
 }
 
@@ -101,7 +101,7 @@ const hideDropdown = container => {
 }
 
 const closeOtherDropdowns = type => {
-  getAll('dropdown_containers').filter(dropdown => 
+  getAll('dropdown_containers').filter(dropdown =>
     dropdown.dataset.dropdownContainer !== type).forEach(hideDropdown)
 }
 
@@ -121,13 +121,13 @@ const isDropdownButton = element => {
 
 const optionTypeFrom = element => {
   const dataAttributes = Object.keys(element.dataset);
-  const optionMatcher = new RegExp('^(industry|problem|service)(?=Option)');
+  const optionMatcher = new RegExp('^(industry|technology|service)(?=Option)');
   for (let i = 0; i < dataAttributes.length; i++) {
     const key = dataAttributes[i];
     const match = key.match(optionMatcher);
     if (match) {
       return match[0];
-    }    
+    }
   }
 }
 
@@ -204,15 +204,15 @@ const filtersAvailableFor = type => {
   const opts = {
     industry: {
       client_dataset_name: 'clientIndustry',
-      remaining: clients => clients.filter(byProblem).filter(byService)
+      remaining: clients => clients.filter(byTechnology).filter(byService)
     },
-    problem: {
-      client_dataset_name: 'clientProblem',
+    technology: {
+      client_dataset_name: 'clientTechnology',
       remaining: clients => clients.filter(byIndustry).filter(byService)
     },
     service: {
       client_dataset_name: 'clientService',
-      remaining: clients => clients.filter(byIndustry).filter(byProblem)
+      remaining: clients => clients.filter(byIndustry).filter(byTechnology)
     }
   };
 
@@ -246,11 +246,11 @@ const byIndustry = client => {
     industryFilters.includes(clientIndustry);
 }
 
-const byProblem = client => {
-  let problemFilters = filters.applied.problem;
-  const clientProblems = client.dataset.clientProblem.split(',');
-  return problemFilters.length === 0 ||
-    problemFilters.some(filter => clientProblems.includes(filter));
+const byTechnology = client => {
+  let technologyFilters = filters.applied.technology;
+  const clientTechnologies = client.dataset.clientTechnology.split(',');
+  return technologyFilters.length === 0 ||
+    technologyFilters.some(filter => clientTechnologies.includes(filter));
 }
 
 const byService = client => {
@@ -261,7 +261,7 @@ const byService = client => {
 }
 
 const calculateVisibleClients = _ => {
-  return clients.all.filter(byIndustry).filter(byProblem).filter(byService);
+  return clients.all.filter(byIndustry).filter(byTechnology).filter(byService);
 }
 
 const refilter = _ => {
@@ -307,7 +307,7 @@ const filterSelected = (type, value) => {
 }
 
 const addFilterListener = (button, type) => {
-  button.addEventListener('click', _ => 
+  button.addEventListener('click', _ =>
     filterSelected(type, button.dataset[`${type}Option`]));
 }
 
@@ -344,7 +344,7 @@ const addRemoveFilterListener = (type, button) => {
 
 const addRemoveFilterListeners = _ => {
   Object.keys(filters.all).forEach(type => {
-    getAll('remove_filter_buttons', type).forEach(button => 
+    getAll('remove_filter_buttons', type).forEach(button =>
       addRemoveFilterListener(type, button));
   });
 }
@@ -390,7 +390,7 @@ const playVideo = button => {
 const addPlayButtonListener = button =>
   button.addEventListener('click', _ => playVideo(button))
 
-const initialiseVideoPlayers = _ => 
+const initialiseVideoPlayers = _ =>
   getAll('video_play_buttons').forEach(addPlayButtonListener);
 
 const init = _ => {
