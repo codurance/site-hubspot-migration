@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "upload": "npx hs upload version_control version_control",
-    "watch:dev": "hs watch --portal=sandbox version_control version_control --initial-upload --remove"
+    "upload": "npx hs upload version_control version_control"
   },
   "repository": {
     "type": "git",
