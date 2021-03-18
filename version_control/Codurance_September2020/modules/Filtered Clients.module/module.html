@@ -4,7 +4,7 @@
 {% set clients = hubdb_table_rows(module.clients_table, 'orderBy=-testimonial_text&orderBy=-case_study_display_image_large&orderBy=-video') %}
 
 {% set allIndustries = [] %}
-{% set allProblems = [] %}
+{% set allTechnologies = [] %}
 {% set allServices = [] %}
 
 {% for client in clients %}
@@ -12,13 +12,13 @@
   {% for service in client.services %}
     {% do allServices.append(service.name) %}
   {% endfor %}
-  {% for problem in client.problems %}
-    {% do allProblems.append(problem.name) %}
+  {% for technology in client.technology_stack %}
+    {% do allTechnologies.append(technology.name) %}
   {% endfor %}
 {% endfor %}
 
 {% set allIndustries = allIndustries|unique %}
-{% set allProblems = allProblems|unique %}
+{% set allTechnologies = allTechnologies|unique %}
 {% set allServices = allServices|unique %}
 
 <main class="clients-page__main">
@@ -56,18 +56,18 @@
         </div>
       </div>
       <div class="clients__filter-dropdown-container">
-        <button class="clients__filter-dropdown-button" data-dropdown-button="problem">
+        <button class="clients__filter-dropdown-button" data-dropdown-button="technology">
           <i class="clients__filter-icon las la-question-circle"></i>
-          Problem
-          <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="problem">
+          Technology
+          <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="technology">
           </i>
         </button>
-        <div class="clients__filter-dropdown-options hidden" data-dropdown-container="problem">
-          {% for problem in allProblems %}
-            <button class="clients__filter-dropdown-option" data-problem-option="{{problem}}">
-              {{problem}}
+        <div class="clients__filter-dropdown-options hidden" data-dropdown-container="technology">
+          {% for technology in allTechnologies %}
+            <button class="clients__filter-dropdown-option" data-technology-option="{{technology}}">
+              {{technology}}
               <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
-                data-problem-option-selected="{{problem}}"></i>
+                data-technology-option-selected="{{technology}}"></i>
             </button>
           {% endfor %}
         </div>
@@ -98,10 +98,10 @@
         <i class="clients-applied-filters__remove-button las la-times" data-remove-industry-filter="{{industry}}"></i>
       </div>
     {% endfor %}
-    {% for problem in allProblems %}
-      <div class="clients-applied-filters__pill hidden" data-applied-problem-filter="{{problem}}">
-        {{problem}}
-        <i class="clients-applied-filters__remove-button las la-times" data-remove-problem-filter="{{problem}}"></i>
+    {% for technology in allTechnologies %}
+      <div class="clients-applied-filters__pill hidden" data-applied-technology-filter="{{technology}}">
+        {{technology}}
+        <i class="clients-applied-filters__remove-button las la-times" data-remove-technology-filter="{{technology}}"></i>
       </div>
     {% endfor %}
     {% for service in allServices %}

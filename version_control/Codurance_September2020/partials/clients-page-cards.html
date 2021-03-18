@@ -7,7 +7,7 @@
     {% endfor %}
 
     {% set tech_stack = [] %}
-    {% for tech in client.technology_stack %}
+    {% for tech in client.technology %}
         {% do tech_stack.append(tech.name) %}
     {% endfor %}
 
@@ -53,16 +53,21 @@
 
     {% set problems = [] %}
     {% for problem in client.problems %}
-        {% do problems.append(problem.name) %}
+        {# {% do problems.append(problem.name) %} #}
     {% endfor %}
 
     {% set services = [] %}
     {% for service in client.services %}
         {% do services.append(service.name) %}
     {% endfor %}
+
+    {% set tech_stack = [] %}
+        {% for tech in client.technology %}
+            {% do tech_stack.append(tech.name) %}
+    {% endfor %}
     
     <div class="{{classnames}}"
-        data-client-industry="{{client.industry.name}}" data-client-problem="{{problems|join(',')}}"
+        data-client-industry="{{client.industry.name}}" data-client-technology="{{tech_stack|join(',')}}"
         data-client-service="{{services|join(',')}}">
         <article class="clients__testimonial-card">
             <div class="clients__testimonial-inner">
@@ -106,8 +111,15 @@
         {% do services.append(service.name) %}
     {% endfor %}
 
+    {% set tech_stack = [] %}
+        {% for tech in client.technology_stack  %}
+            {% do tech_stack.append(tech.name) %}
+    {% endfor %}
+
+    
+
     <div class="{{classnames}}"
-        data-client-industry="{{client.industry.name}}" data-client-problem="{{problems|join(',')}}"
+        data-client-industry="{{client.industry.name}}" data-client-technology="{{tech_stack|join(',')}}"
         data-client-service="{{services|join(',')}}">
         <article class="clients__case-study-card">
             {% if client.case_study_display_image_large %}
@@ -144,8 +156,13 @@
         {% do services.append(service.name) %}
     {% endfor %}
 
+    {% set tech_stack = [] %}
+        {% for tech in client.technology %}
+            {% do tech_stack.append(tech.name) %}
+    {% endfor %}
+
     <div class="{{classnames}}"
-        data-client-industry="{{client.industry.name}}" data-client-problem="{{problems|join(',')}}"
+        data-client-industry="{{client.industry.name}}" data-client-technology="{{tech_stack|join(',')}}"
         data-client-service="{{services|join(',')}}">
         <article class="clients__promotional-card">
             <div class="client-card__display-image client-card__display-image--promotion" style="background-image: url({{client.case_study_display_image_large.url}})"></div>
@@ -178,7 +195,7 @@
     {% endfor %}
 
     <div class="{{classnames}}"
-        data-client-industry="{{client.industry.name}}" data-client-problem="{{problems|join(',')}}"
+        data-client-industry="{{client.industry.name}}" data-client-technology="{{tech_stack|join(',')}}"
         data-client-service="{{services|join(',')}}">
         <article class="clients__video-card">
             <div class="client-card__video-cover-container client-card__content-container"

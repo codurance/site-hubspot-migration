@@ -1,15 +1,15 @@
 let isotope;
 
 let filters = {
-  types: [ 'industry', 'problem', 'service' ],
+  types: [ 'industry', 'technology', 'service' ],
   all: {
     industry: [],
-    problem: [],
+    technology: [],
     service: []
   },
   applied: {
     industry: [],
-    problem: [],
+    technology: [],
     service: []
   }
 };
@@ -121,7 +121,7 @@ const isDropdownButton = element => {
 
 const optionTypeFrom = element => {
   const dataAttributes = Object.keys(element.dataset);
-  const optionMatcher = new RegExp('^(industry|problem|service)(?=Option)');
+  const optionMatcher = new RegExp('^(industry|technology|service)(?=Option)');
   for (let i = 0; i < dataAttributes.length; i++) {
     const key = dataAttributes[i];
     const match = key.match(optionMatcher);
@@ -206,8 +206,8 @@ const filtersAvailableFor = type => {
       client_dataset_name: 'clientIndustry',
       remaining: clients => clients.filter(byProblem).filter(byService)
     },
-    problem: {
-      client_dataset_name: 'clientProblem',
+    technology: {
+      client_dataset_name: 'clientTechnology',
       remaining: clients => clients.filter(byIndustry).filter(byService)
     },
     service: {
@@ -247,8 +247,8 @@ const byIndustry = client => {
 }
 
 const byProblem = client => {
-  let problemFilters = filters.applied.problem;
-  const clientProblems = client.dataset.clientProblem.split(',');
+  let problemFilters = filters.applied.technology
+  const clientProblems = client.dataset.clientTechnology.split(',');
   return problemFilters.length === 0 ||
     problemFilters.some(filter => clientProblems.includes(filter));
 }
