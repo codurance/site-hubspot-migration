@@ -251,7 +251,7 @@ const byTechnology = client => {
   const clientTechnologies = client.dataset.clientTechnology.split(',');
   return technologyFilters.length === 0 ||
     technologyFilters.some(filter => clientTechnologies.includes(filter));
-
+}
 
 const byService = client => {
   let serviceFilters = filters.applied.service;
