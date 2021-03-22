@@ -1,0 +1,23 @@
+[ {
+  "id" : "b9b9bd8c-d290-4f10-b74d-e5450291b19e",
+  "name" : "job_title",
+  "label" : "Job Title",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "Job Title ",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "9a0bc767-206d-2390-a423-d1bcead37ce1",
+  "name" : "job_info",
+  "label" : "Job Info",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "Job Location, Full time / Part time",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

@@ -1,3 +1,5 @@
 {% include './_typography-utils.css' %}
 {% include './_breakpoints-utils.css' %}
 {% include './_card-styles.css' %}
+{% include './_gradients.css' %}
+

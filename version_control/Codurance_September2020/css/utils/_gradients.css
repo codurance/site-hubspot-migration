@@ -1,0 +1,4 @@
+{% macro gold_to_tango() %}
+  background: rgb(239,119,38, 0.2);
+  background: linear-gradient(-130deg, rgba(239,119,38,0.1) 0%, rgba(255,208,0,0.1) 100%);
+{% endmacro %}

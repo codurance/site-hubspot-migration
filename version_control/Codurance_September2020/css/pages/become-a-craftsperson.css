@@ -30,7 +30,8 @@
 .custom-become-a-craftsperson-row4 .row-fluid .span4 {
   margin-bottom: 2.14286rem;
   margin-left: 0;
-  padding: 0 15px;
+  padding-left: var(--centered-content-lateral-spacing);
+  padding-right: var(--centered-content-lateral-spacing);
 }
 {% call utils.small_and_medium() %}
   .custom-become-a-craftsperson-row4 .row-fluid .span4 {
