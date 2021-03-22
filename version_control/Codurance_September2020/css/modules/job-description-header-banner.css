@@ -2,22 +2,26 @@
 
 .jd-header-banner {
   {{ utils.gold_to_tango() }}
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
   max-width: var(--max-page-width);
-  padding: 3rem 0;
+  padding-bottom: 3rem;
+  padding-left: var(--centered-content-lateral-spacing);
+  padding-right: var(--centered-content-lateral-spacing);
+  padding-top: 3rem;
 }
 
 .jd-header-banner__inner {
   margin: 0 auto;
-  max-width: var(--centered-content-max-width);
-  padding-left: var(--centered-content-lateral-spacing);
-  padding-right: var(--centered-content-lateral-spacing);
+  max-width: var(--base-max-width);
+  width: 100%;
 }
 
 .jd-header-banner__title {
-  {{ utils.dudler() }}
+  {{ utils.eames() }}
   font-weight: var(--heavy-font-weight);
-  margin-top: var(--dudler-margin);
+  margin-top: var(--eames-margin);
 }
 
 .jd-header-banner__description {
