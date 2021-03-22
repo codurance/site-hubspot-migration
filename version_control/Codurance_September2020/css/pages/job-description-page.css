@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+.job-description-page {
+  --page-padding: 1.3rem;
+}
+
 .job-desription-container {
   display: flex;
   justify-content: center;
@@ -11,8 +15,8 @@
 
 .job-desription-container,
 .job-button-container {
-  padding-left: 1.3rem;
-  padding-right: 1.3rem;
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
 }
 
 .job-desription-container h2 {
