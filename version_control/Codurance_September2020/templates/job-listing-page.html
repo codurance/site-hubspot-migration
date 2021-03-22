@@ -5,6 +5,7 @@
 -->
 {% extends "./layouts/base.html" %}
 
+
 <head>
   <meta charset="utf-8">
   <title>{{ page_meta.html_title }}</title>
@@ -15,7 +16,7 @@
   {{ require_css(get_asset_url("../css/layout.css")) }}
   {{ require_css(get_asset_url("../css/main.css")) }}
   {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
-
+  {{ require_css(get_asset_url("../css/pages/job-listing-page.css")) }}
 
   {{ require_js(get_asset_url("../js/main.js")) }}
   {{ standard_header_includes }}
@@ -25,11 +26,15 @@
 
 {% block body %}
 
-<section class="events-header-slice responsive-page-width lateral-spacing">
-  {% module "page_header_slice" path="../modules/Header Slice.module" label="Page Header Slice" no_wrapper=True %}
-</section>
+  <section class="job-listing-page-header-banner responsive-page-width lateral-spacing">
+    {% module "page_header_slice" path="../modules/Header Slice.module" label="Page Header Slice" no_wrapper=True %}
+  </section>
+
 
 <main>
+  <section class="">
+    {% module "job_listing_card" path="../modules/Job Listing Card.module" label="Job Listing Card" no_wrapper=True %}
+  </section>
 </main>
 
 {% endblock body %}
