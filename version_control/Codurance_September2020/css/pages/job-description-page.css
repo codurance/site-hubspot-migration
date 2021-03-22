@@ -11,8 +11,8 @@
 
 .job-desription-container,
 .job-button-container {
-  padding-left: var(--centered-content-lateral-spacing);
-  padding-right: var(--centered-content-lateral-spacing);
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
 }
 
 .job-desription-container h2 {
