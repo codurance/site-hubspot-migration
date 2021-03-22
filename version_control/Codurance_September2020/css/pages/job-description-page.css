@@ -1,0 +1,53 @@
+{% import '../utils/utils.css' as utils %}
+
+.job-description-page {
+  --page-padding: 1.3rem;
+}
+
+.job-desription-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: var(--centered-content-max-width);
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.job-desription-container,
+.job-button-container {
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+}
+
+.job-desription-container h2 {
+  {{ utils.dudler_margin() }}
+  font-size: var(--dudler-font-size);
+  font-weight: var(--heavy-font-weight);
+  line-height: var(--dudler-line-height);
+  max-width: var(--dudler-max-width);
+}
+
+.job-desription-container *:not(h2) {
+  max-width: var(--base-max-width);
+}
+
+.job-desription-container ul {
+  padding-left: 1rem;
+}
+
+.job-button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+  .job-button-container {
+    text-align: right;
+  }
+{% endcall %}
+
+.job-button-container .custom-btn {
+  max-width: var(--base-max-width);
+  width: 100%;
+}

@@ -1,0 +1,30 @@
+{% import '../utils/utils.css' as utils %}
+
+.jd-header-banner {
+  {{ utils.gold_to_tango() }}
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: var(--max-page-width);
+  padding-bottom: 3rem;
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+  padding-top: 3rem;
+}
+
+.jd-header-banner__inner {
+  margin: 0 auto;
+  max-width: var(--base-max-width);
+  width: 100%;
+}
+
+.jd-header-banner__title {
+  {{ utils.eames() }}
+  font-weight: var(--heavy-font-weight);
+  margin-top: var(--eames-margin);
+}
+
+.jd-header-banner__description {
+  {{ utils.base() }}
+  margin-top: var(--freed-margin);
+}

@@ -1,6 +1,7 @@
 :root {
   --max-page-width: 1800px;
   --centered-content-max-width: 1140px;
+  --centered-content-lateral-spacing: 0.75rem;
   box-sizing: border-box;
 }
 

@@ -1,0 +1,51 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Job Description Page
+-->
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/job-description-page.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block header %}
+{% endblock header %}
+
+{% block body %}
+
+<div class="job-description-page">
+  {% module "job_description_header_banner" path="../modules/Job Description Header Banner.module" label="Page Header" no_wrapper=True %}
+
+  <div class="job-desription-container">
+    {% module "job_description_body" path="@hubspot/rich_text" label="Job Description"  %}
+  </div>
+
+  <div class="job-button-container">
+    {% module "job_description_button" path="../modules/Button.module" label="Button to Application" no_wrapper=True %}
+  </div>
+
+{#
+  <div>
+      CTA
+  </div> #}
+
+</div>
+
+
+{% endblock body %}
