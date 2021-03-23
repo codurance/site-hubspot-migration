@@ -1,8 +1,17 @@
+{% import "../utils/utils.css" as utils %}
+
 .job-card__location {
-    color: GREEN;
+    {{utils.freed()}}
+    margin-bottom: var(--dudler-margin);
 }
 
-.job-card__items {
+.job-card {
+    {{utils.card_shadow()}};
     display:flex;
     flex-direction: column;
+    padding: 2rem;
+}
+
+h2{
+color:purple;
 }

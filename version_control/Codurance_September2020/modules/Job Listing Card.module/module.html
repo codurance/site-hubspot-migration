@@ -1,17 +1,13 @@
 <!-- module html  -->
 {{ require_css(get_asset_url("../../css/modules/job-listing-card.css")) }}
 
+
 <div class="job-card">
-	<div class="job-card__inner">
-	<div class="job-card__items">
 	<h2 class="job-card__location">
 		<i class="las la-map-marker"></i>
 		{% inline_text field="job_location" value="{{ module.job_location }}"no_wrapper=True %}
-	<h2>
-
+	</h2>
 	{% for item in module.job_title_cta %}
 		{% cta guid="{{ item }}" no_wrapper=True %}
 	{% endfor %}
-	</div>
-	</div>
 </div>

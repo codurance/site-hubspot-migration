@@ -17,7 +17,6 @@
   {{ require_css(get_asset_url("../css/main.css")) }}
   {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
   {{ require_css(get_asset_url("../css/pages/job-listing-page.css")) }}
-  {{ require_css(get_asset_url("../css/pages/job-listing-card.css")) }}
 
   {{ require_js(get_asset_url("../js/main.js")) }}
   {{ standard_header_includes }}
@@ -33,8 +32,10 @@
 
 
 <main>
-  <section class="job-card">
-    {% module "job_listing_card" path="../modules/Job Listing Card.module" label="Job Listing Card" no_wrapper=True %}
+  <section class="job-listing-page-cards">
+    {% module "job_listing_card_1" path="../modules/Job Listing Card.module" label="Job Listing Card 1" no_wrapper=True %}
+    {% module "job_listing_card_2" path="../modules/Job Listing Card.module" label="Job Listing Card 2 " no_wrapper=True %}
+    {% module "job_listing_card_3" path="../modules/Job Listing Card.module" label="Job Listing Card 3" no_wrapper=True %}
   </section>
 </main>
 
