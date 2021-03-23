@@ -40,6 +40,9 @@
   }
 {% endcall %}
 {% call utils.large_and_extra_large() %}
+  .job-listing-page-cards >.job-card {
+    width: 33%;
+  }
   .job-listing-page-cards >.job-card:not(:first-child) {
   margin-left: 0.7rem;
 }
