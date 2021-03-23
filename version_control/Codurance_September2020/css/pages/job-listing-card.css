@@ -1,0 +1,8 @@
+.job-card__location {
+    color: GREEN;
+}
+
+.job-card__items {
+    display:flex;
+    flex-direction: column;
+}
