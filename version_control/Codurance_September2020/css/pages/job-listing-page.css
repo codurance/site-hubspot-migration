@@ -1,0 +1,49 @@
+{% import '../utils/utils.css' as utils %}
+
+.job-listing-page-header-banner {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+}
+
+.job-listing-page-cards-container {
+  background-color: var(--athens-gray);
+}
+
+.job-listing-page-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-left:auto;
+  margin-right:auto;
+}
+{% call utils.small_and_medium() %}
+  .job-listing-page-cards {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+  }
+{% endcall %}
+{% call utils.large_and_extra_large() %}
+  .job-listing-page-cards {
+    align-items: stretch;
+    position: relative;
+    top: -2rem;
+  }
+{% endcall %}
+
+
+{% call utils.small_and_medium() %}
+  .job-listing-page-cards > .job-card {
+    margin-bottom: 2rem;
+    max-width: 40rem;
+    width: 100%;
+  }
+{% endcall %}
+{% call utils.large_and_extra_large() %}
+  .job-listing-page-cards >.job-card:not(:first-child) {
+  margin-left: 0.7rem;
+}
+.job-listing-page-cards >.job-card:not(:last-child) {
+  margin-right: 0.7rem
+}
+{% endcall %}

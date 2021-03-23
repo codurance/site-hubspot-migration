@@ -41,13 +41,18 @@
   margin-bottom: 3rem;
 }
 
-{% call utils.medium_large_and_extra_large() %}
+{# {% call utils.medium_large_and_extra_large() %}
   .job-button-container {
     text-align: right;
   }
-{% endcall %}
+{% endcall %} #}
 
 .job-button-container .custom-btn {
   max-width: var(--base-max-width);
   width: 100%;
+}
+.job-button-container .custom-btn .button-primary {
+  box-sizing: border-box !important;
+  width: 100%;
+  max-width: 100%;
 }
