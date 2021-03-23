@@ -7,11 +7,9 @@
 
 .job-card {
     {{utils.card_shadow()}};
+    background-color: white;
     display:flex;
     flex-direction: column;
     padding: 2rem;
 }
 
-h2{
-color:purple;
-}
