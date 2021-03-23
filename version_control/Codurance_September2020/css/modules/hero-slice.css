@@ -1,0 +1,28 @@
+{% import '../utils/utils.css' as utils %}
+
+.hero-slice {
+  background-image: url(https://f.hubspotusercontent10.net/hubfs/8230212/current-roles-bg-full-bleed-large-cropped.jpg);
+  background-position: center right;
+  background-repeat: no-repeat;
+  padding-bottom: 7rem;
+  padding-top: 4rem;
+  background-size: auto 100%;
+}
+
+
+.hero-slice__text-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-slice__title {
+  font-size: var(--dudler-font-size);
+  font-weight: var(--heavy-font-weight);
+  line-height: var(--dudler-line-height);
+  margin-bottom: var(--dudler-margin);
+  max-width: var(--dudler-max-width);
+}
+
+.hero-slice__description {
+  max-width: 40ch;
+}

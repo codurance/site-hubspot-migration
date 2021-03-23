@@ -1,11 +1,5 @@
 {% import '../utils/utils.css' as utils %}
 
-.job-listing-page-header-banner {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 50px;
-}
-
 .job-listing-page-cards-container {
   background-color: var(--athens-gray);
 }
@@ -45,8 +39,8 @@
   }
   .job-listing-page-cards >.job-card:not(:first-child) {
   margin-left: 0.7rem;
-}
-.job-listing-page-cards >.job-card:not(:last-child) {
-  margin-right: 0.7rem
-}
+  }
+  .job-listing-page-cards >.job-card:not(:last-child) {
+    margin-right: 0.7rem
+  }
 {% endcall %}
