@@ -4,7 +4,6 @@
   background-repeat: no-repeat;
   padding-bottom: 7rem;
   padding-top: 4rem;
-  background-color: var(--persimmon--dark);
 }
 {% call utils.large_and_extra_large() %}
   .hero-slice {
@@ -15,6 +14,7 @@
 {% endcall %}
 {% call utils.small_and_medium() %}
   .hero-slice {
+    background-color: var(--persimmon--dark);
     background-image: var(--small-bg-image);
     background-position: top left;
     background-size: cover;
