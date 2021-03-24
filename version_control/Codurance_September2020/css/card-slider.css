@@ -485,17 +485,3 @@ text-align: center;
   max-width: var(--button-max-width);
   cursor: pointer;
 }
-.card-slider-newsletter__cta:hover {
-  text-decoration: none;
-}
-
-.card-slider-newsletter__cta:after {
-  background-image: url({{ get_asset_url('../images/learn-more-arrow.svg' ) }});
-  background-repeat: no-repeat;
-  content: "";
-  cursor: pointer;
-  display: inline-block;
-  height: 14px;
-  transform: translate(7px, 3px);
-  width: 17px;
-}
