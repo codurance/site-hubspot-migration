@@ -1,0 +1,10 @@
+{% import '../utils/utils.css' as utils %}
+
+.banner-cta-container {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.banner-cta-container .hs-cta-img  {
+    {{utils.card_shadow()}}
+
+}

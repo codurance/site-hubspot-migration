@@ -1,0 +1,6 @@
+{{ require_css(get_asset_url("../../css/modules/blog-post-banner-recruitment.css")) }}
+
+{% if !module.hide_recruitment_banner %}
+	<!-- HTML to show when checked -->
+ <div class="banner-cta-container"> {% cta guid="{{ module.cta_field }}" no_wrapper=True %} </div>
+{% endif %}

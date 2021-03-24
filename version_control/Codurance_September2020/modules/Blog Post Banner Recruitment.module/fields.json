@@ -1,0 +1,18 @@
+[ {
+  "id" : "f44f1ccf-ad5c-b80c-e6a9-475a5c6dec08",
+  "name" : "hide_recruitment_banner",
+  "label" : "hide-recruitment-banner",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "7e1bd0df-9aad-de76-061c-8f26e0003c20",
+  "name" : "cta_field",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "type" : "cta",
+  "default" : ""
+} ]
