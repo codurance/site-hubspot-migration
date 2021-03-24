@@ -1,15 +1,24 @@
 {% import '../utils/utils.css' as utils %}
 
 .hero-slice {
-  background-repeat: no-repeat;
   padding-bottom: 7rem;
   padding-top: 4rem;
 }
 {% call utils.large_and_extra_large() %}
   .hero-slice {
+    position: relative;
+  }
+  .hero-slice::before {
     background-image: var(--large-bg-image);
-    background-position: center right;
-    background-size: auto 100%;
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    content: '';
+    left: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 {% endcall %}
 {% call utils.small_and_medium() %}
