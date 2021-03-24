@@ -4,6 +4,7 @@
   background-repeat: no-repeat;
   padding-bottom: 7rem;
   padding-top: 4rem;
+  background-color: var(--persimmon--dark);
 }
 {% call utils.large_and_extra_large() %}
   .hero-slice {
