@@ -1,0 +1,50 @@
+{% import '../utils/utils.css' as utils %}
+
+.hero-slice {
+  background-repeat: no-repeat;
+  padding-bottom: 7rem;
+  padding-top: 4rem;
+  background-color: var(--persimmon--dark);
+}
+{% call utils.large_and_extra_large() %}
+  .hero-slice {
+    background-image: var(--large-bg-image);
+    background-position: center right;
+    background-size: auto 100%;
+  }
+{% endcall %}
+{% call utils.small_and_medium() %}
+  .hero-slice {
+    background-image: var(--small-bg-image);
+    background-position: top left;
+    background-size: cover;
+  }
+{% endcall %}
+
+
+.hero-slice__text-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-slice__title {
+  font-size: var(--dudler-font-size);
+  font-weight: var(--heavy-font-weight);
+  line-height: var(--dudler-line-height);
+  margin-bottom: var(--dudler-margin);
+  max-width: var(--dudler-max-width);
+}
+{% call utils.small_and_medium() %}
+  .hero-slice__title {
+    color: white;
+  }
+{% endcall %}
+
+.hero-slice__description {
+  max-width: 40ch;
+}
+{% call utils.small_and_medium() %}
+  .hero-slice__description {
+    color: white;
+  }
+{% endcall %}

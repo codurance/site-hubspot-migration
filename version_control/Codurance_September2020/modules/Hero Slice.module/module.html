@@ -1,0 +1,15 @@
+{{ require_css(get_asset_url("../../css/modules/hero-slice.css")) }}
+
+<style>
+	.hero-slice {
+		--large-bg-image: url("{{ module.large_background_image.src }}");
+		--small-bg-image: url("{{ module.small_background_image.src }}");
+	}
+</style>
+
+<div class="hero-slice">
+	<div class="hero-slice__text-container responsive-page-width lateral-spacing">
+		<h1 class="hero-slice__title">{{module.title}}</h1>
+		<p class="hero-slice__description">{{module.description}}</p>
+	</div>
+</div>
