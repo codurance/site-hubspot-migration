@@ -1,0 +1,22 @@
+{% import '../utils/utils.css' as utils %}
+
+
+.announcement-bar__text-dark {
+    color: var(--shark);
+    font-weight: var(--heavy-font-weight);
+    padding-right: 2em;
+    padding-left: 2em;
+}
+
+{% call utils.small() %}
+    .announcement-bar__inner {
+      display:flex;
+      flex-wrap: nowrap;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .announcement-bar__text-dark {
+    padding-left: 0;
+    text-align:left;
+    }
+{% endcall %}

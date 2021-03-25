@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 43827900591,
+  "label" : "Announcement Bar Light",
+  "is_available_for_new_content" : true
+}
