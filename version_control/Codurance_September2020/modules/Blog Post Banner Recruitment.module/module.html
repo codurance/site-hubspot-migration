@@ -2,5 +2,11 @@
 
 {% if !module.hide_recruitment_banner %}
 	<!-- HTML to show when checked -->
- <div class="banner-cta-container"> {% cta guid="{{ module.cta_field }}" no_wrapper=True %} </div>
+	<div class="banner-cta-container">
+		{% if locale == 'en' %}
+			{% cta guid="b06a8b49-528d-410f-bef5-4581f373cd40" no_wrapper=True %}
+		{% else %}
+			{% cta guid="0d410b54-e3fa-4de8-ae01-27f2eaf3deee" no_wrapper=True %}
+		{% endif %}
+	</div>
 {% endif %}
