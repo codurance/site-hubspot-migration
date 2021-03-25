@@ -2,6 +2,7 @@
   "global" : false,
   "smart_type" : "NOT_SMART",
   "host_template_types" : [ "PAGE" ],
-  "module_id" : 35316281266,
+  "module_id" : 43827900591,
+  "label" : "Announcement Bar",
   "is_available_for_new_content" : true
 }
