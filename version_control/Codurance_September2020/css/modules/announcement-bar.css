@@ -50,4 +50,18 @@
         font-size: var(--natus-font-size);
         line-height: var(--natus-line-height);
     }
+    .announcement-bar__icon {
+         display:none
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+    .announcement-bar__icon {
+       fill: transparent;
+       float: left;
+       height: 28.7px;
+       stroke-width: 5px;
+       stroke: white;
+       width: 25px;
+     }
 {% endcall %}
