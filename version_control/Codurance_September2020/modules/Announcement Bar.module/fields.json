@@ -31,7 +31,7 @@
 }, {
   "id" : "c9a607a7-ee61-ffb6-3475-c87f7a091307",
   "name" : "image_field",
-  "label" : "Image",
+  "label" : "Icon",
   "required" : false,
   "locked" : false,
   "responsive" : true,
