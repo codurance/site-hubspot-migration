@@ -7,12 +7,4 @@
   "display" : "toggle",
   "type" : "boolean",
   "default" : false
-}, {
-  "id" : "7e1bd0df-9aad-de76-061c-8f26e0003c20",
-  "name" : "cta_field",
-  "label" : "CTA",
-  "required" : false,
-  "locked" : false,
-  "type" : "cta",
-  "default" : ""
 } ]
