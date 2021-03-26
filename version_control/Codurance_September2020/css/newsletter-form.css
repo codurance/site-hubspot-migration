@@ -117,7 +117,7 @@
 
 .cta_newsletter_spanish .hs-input[type=checkbox] {
     opacity: 0;
-    margin: 3px 12px 3px 0px;
+    margin: 0.3em;
 }
 
 .cta_newsletter_spanish .hs-form-booleancheckbox-display span {
@@ -152,14 +152,7 @@
 }
 
 .cta_newsletter_spanish .hs-form-booleancheckbox-display span::before {
-    top: -3px;
-    left: 0px;
     border-radius: 3px;
-}
-
-.cta_newsletter_spanish .hs-form-booleancheckbox-display span::after {
-    left: 6px;
-    top: 4px;
 }
 
 .cta_newsletter_spanish .hs-form-booleancheckbox-display span {
@@ -172,6 +165,7 @@
 
 .cta_newsletter_spanish .hs-form-booleancheckbox-display .hs-input[type=checkbox]:checked + span::after {
     content: "";
+    top: 0.3em;
 }
 
 .cta_newsletter_spanish .hs-form-booleancheckbox-display .hs-input[type=checkbox]:focus + span:before {
@@ -182,15 +176,17 @@
     .cta_newsletter_spanish .hs_submit {
         width: 100%;
     }
-    .cta_newsletter_spanish .hs-form-booleancheckbox-display span::after {
-        top: 12px;
-    }
+    
     .cta_newsletter_spanish .hs-form-booleancheckbox-display span::before {
         top: 6px;
     }
 
     .cta_newsletter_spanish .hs-form .hs-fieldtype-booleancheckbox {
         position: static;
+    }
+
+    .cta_newsletter_spanish .hs-form-booleancheckbox-display .hs-input[type=checkbox]:checked + span::after {
+        top: 0;
     }
 }
 @media(min-width: 481px) {
