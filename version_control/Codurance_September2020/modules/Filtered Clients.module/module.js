@@ -213,8 +213,9 @@ const filtersAvailableFor = type => {
     service: {
       client_dataset_name: 'clientService',
       remaining: clients => clients.filter(byIndustry).filter(byTechnology)
-    }
+    }   
   };
+
 
   const remainingClients = opts[type].remaining(clients.all);
 
@@ -232,7 +233,7 @@ const enableButton = button => {
 
 const updateAvailableFilters = _ => {
   filters.types.forEach(type => {
-    const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique);
+    const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(x => x.trim().length > 0);
     const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
     availableFilters.forEach(filter => enableButton(get('option', filter, type)));
     unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
@@ -251,6 +252,7 @@ const byTechnology = client => {
   const clientTechnologies = client.dataset.clientTechnology.split(',');
   return technologyFilters.length === 0 ||
     technologyFilters.some(filter => clientTechnologies.includes(filter));
+}
 
 
 const byService = client => {
@@ -374,7 +376,6 @@ const initialiseIsotopeLayout = _ => {
   };
 
   isotope = new Isotope(elem, isotopeLayoutOpts);
-  console.log(isotope)
 }
 
 const play = video => video.src += '?autoplay=1';
