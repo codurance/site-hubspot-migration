@@ -7,7 +7,7 @@
     {% endfor %}
 
     {% set tech_stack = [] %}
-    {% for tech in client.technology %}
+    {% for tech in client.technology_stack %}
         {% do tech_stack.append(tech.name) %}
     {% endfor %}
 
@@ -53,7 +53,7 @@
 
     {% set problems = [] %}
     {% for problem in client.problems %}
-        {# {% do problems.append(problem.name) %} #}
+        {% do problems.append(problem.name) %}
     {% endfor %}
 
     {% set services = [] %}
