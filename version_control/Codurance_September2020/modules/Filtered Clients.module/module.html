@@ -8,7 +8,9 @@
 {% set allServices = [] %}
 
 {% for client in clients %}
-  {% do allIndustries.append(client.industry.name) %}
+  {% if client.industry.name %}
+    {% do allIndustries.append(client.industry.name) %}
+  {% endif %}
   {% for service in client.services %}
     {% do allServices.append(service.name) %}
   {% endfor %}
