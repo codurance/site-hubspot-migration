@@ -1,9 +1,9 @@
 {{ require_css(get_asset_url("../css/partials/clients-page-cards.css")) }}
 
 {% macro tags_footer(client) %}
-    {% set tags = [client.industry.name] %}
+    {% set industry_tags = [client.industry.name] %}
     {% for problem in client.problems %}
-        {% do tags.append(problem.name) %}
+        {% do industry_tags.append(problem.name) %}
     {% endfor %}
 
     {% set tech_stack = [] %}
@@ -12,12 +12,14 @@
     {% endfor %}
 
     <div class="client-card__tags-wrapper">
-        <p>
-            <i class="client-card__tags-icon las la-tag">
-            </i><small>
-                {{tags|join(' | ')}}
-            </small>
-        </p>
+        {% if industry_tags != [null] %}
+           <p>
+               <i class="client-card__tags-icon las la-tag">
+               </i><small>
+                   {{industry_tags|join(' | ')}}
+               </small>
+           </p>
+        {% endif %}
 
         {% if tech_stack|length > 0 %}
             <p>

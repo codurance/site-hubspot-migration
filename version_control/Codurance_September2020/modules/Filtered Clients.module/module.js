@@ -56,7 +56,7 @@ let clients = {
 }
 
 const filterOptions = type => {
-  return getAll('options', type).map(option => option.dataset[`${type}Option`]);
+  return getAll('options', type).map(option => option.dataset[`${type}Option`]).filter( x => x.length > 0);
 }
 
 const setFilterOptions = _ => {
@@ -234,6 +234,7 @@ const enableButton = button => {
 const updateAvailableFilters = _ => {
   filters.types.forEach(type => {
     const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(x => x.trim().length > 0);
+    console.log(availableFilters)
     const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
     availableFilters.forEach(filter => enableButton(get('option', filter, type)));
     unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
