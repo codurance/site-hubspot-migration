@@ -24,15 +24,19 @@
 {% set allServices = allServices|unique %}
 
   {% if locale == 'en' %}
-    {% set filter = "Filter" %}
-    {% set industry = "Industry" %}
-    {% set technology = "Technology" %}
-    {% set services = "Services" %}
+    {% set filter = { title: "Filter",
+                      industry: "Industry",
+                      technology: "Technology",
+                      services: "Services"
+                    }
+    %}               
   {% else %}
-    {% set filter = "Filtro" %}
-    {% set industry = "Industria" %}
-    {% set technology = "Tecnología" %}
-    {% set services = "Servicios" %}
+    {% set filter = { title: "Filtro",
+                      industry: "Industria",
+                      technology: "TecnologíaES",
+                      services: "Servicios"
+                    }
+    %}
   {% endif %}
 
 
@@ -47,7 +51,7 @@
   <div class="clients__filter">
     <div class="clients__filter-toggle">
       <button data-filter-toggle>
-        {{filter}}
+        {{filter.title}}
         <i class="clients__filter-toggle-icon las la-plus" data-filter-toggle-icon>
         </i>
       </button>
@@ -56,7 +60,7 @@
       <div class="clients__filter-dropdown-container">
         <button class="clients__filter-dropdown-button" data-dropdown-button="industry">
           <i class="clients__filter-icon las la-cog"></i>
-          {{industry}}
+          {{filter.industry}}
           <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="industry">
           </i>
         </button>
@@ -73,7 +77,7 @@
       <div class="clients__filter-dropdown-container">
         <button class="clients__filter-dropdown-button" data-dropdown-button="technology">
           <i class="clients__filter-icon las la-question-circle"></i>
-          {{technology}}
+          {{filter.technology}}
           <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="technology">
           </i>
         </button>
@@ -90,7 +94,7 @@
       <div class="clients__filter-dropdown-container">
         <button class="clients__filter-dropdown-button" data-dropdown-button="service">
           <i class="clients__filter-icon las la-cube"></i>
-          {{services}}
+          {{filter.services}}
           <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="service"></i>
         </button>
         <div class="clients__filter-dropdown-options hidden" data-dropdown-container="service">
