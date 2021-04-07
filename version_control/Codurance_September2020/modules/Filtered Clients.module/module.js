@@ -233,8 +233,7 @@ const enableButton = button => {
 
 const updateAvailableFilters = _ => {
   filters.types.forEach(type => {
-    const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(x => x.trim().length > 0);
-    console.log(availableFilters)
+    const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(element => element.trim().length > 0);
     const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
     availableFilters.forEach(filter => enableButton(get('option', filter, type)));
     unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));

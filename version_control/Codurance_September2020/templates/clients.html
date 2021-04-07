@@ -23,8 +23,11 @@ label: Clients
 </head>
 
 {% block body %}
-
-    {% module "filtered_clients" path="../modules/Filtered Clients.module"
+    <section>
+      {% module "page_hero_slice" path="../modules/Hero Slice.module" label="Hero Slice" no_wrapper=True %}
+    </section>
+    <section>
+      {% module "filtered_clients" path="../modules/Filtered Clients.module"
         label="Filtered Clients" no_wrapper=True %}
-  
+    </section>
 {% endblock body %}
