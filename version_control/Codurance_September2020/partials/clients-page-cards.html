@@ -119,6 +119,7 @@
         {% do tech_stack.append(tech.name) %}
     {% endfor %}
 
+    {% if client.description %}
     <div class="{{classnames}}"
         data-client-industry="{{client.industry.name}}" data-client-technology="{{tech_stack|join(',')}}"
         data-client-service="{{services|join(',')}}">
@@ -144,6 +145,7 @@
             </div>
         </article>
     </div>
+{% endif %}
 {% endmacro %}
 
 {% macro promotional_card(client, classnames) %}
