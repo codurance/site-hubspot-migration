@@ -58,7 +58,7 @@
           </i>
         </button>
         <div class="clients__filter-dropdown-options hidden" data-dropdown-container="industry">
-          {% for industry in allIndustries %}
+          {% for industry in allIndustries|sort(False,False) %}
             <button class="clients__filter-dropdown-option" data-industry-option="{{industry}}">
               {{industry}}
               <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
@@ -75,7 +75,7 @@
           </i>
         </button>
         <div class="clients__filter-dropdown-options hidden" data-dropdown-container="technology">
-          {% for technology in allTechnologies %}
+          {% for technology in allTechnologies|sort(False,False) %}
             <button class="clients__filter-dropdown-option" data-technology-option="{{technology}}">
               {{technology}}
               <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
@@ -91,7 +91,7 @@
           <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="service"></i>
         </button>
         <div class="clients__filter-dropdown-options hidden" data-dropdown-container="service">
-          {% for service in allServices %}
+          {% for service in allServices|sort(False,False) %}
             <button class="clients__filter-dropdown-option" data-service-option="{{service}}">
               {{service}}
               <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
