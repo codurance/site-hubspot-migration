@@ -14,24 +14,34 @@
   padding-bottom: 2rem;
 }
 
+.our-story-container {
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+}
+
 .our-story-container h2 {
-  {{ utils.dudler_margin() }}
-  font-size: var(--dudler-font-size);
+  {{ utils.eames_margin() }}
+  font-size: var(--eames-font-size);
+  line-height: var(--eames-line-height);
+  max-width: var(--eames-max-width);
   font-weight: var(--heavy-font-weight);
-  line-height: var(--dudler-line-height);
-  max-width: var(--dudler-max-width);
 }
 
 .our-story-container h3 {
-  {{ utils.dudler_margin() }}
-  font-size: var(--dudler-font-size);
+  margin-top: var(--freed-margin);
+  margin-bottom: var(--sejima-margin);
+  font-size: var(--freed-font-size);
   font-weight: var(--heavy-font-weight);
-  line-height: var(--dudler-line-height);
-  max-width: var(--dudler-max-width);
+  line-height: var(--freed-line-height);
+  max-width: var(--freed-max-width);
 }
 
 .our-story-container *:not(h2) {
   max-width: var(--base-max-width);
+}
+
+.our-story-container p {
+  margin-bottom: 2rem
 }
 
 .our-story-how-we-work-section {
