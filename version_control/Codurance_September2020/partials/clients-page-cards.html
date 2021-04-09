@@ -168,10 +168,33 @@
     <div class="{{classnames}}"
         data-client-industry="{{client.industry.name}}" data-client-technology="{{tech_stack|join(',')}}"
         data-client-service="{{services|join(',')}}">
-        <article class="clients__promotional-card">
-            <div class="client-card__display-image client-card__display-image--promotion" style="background-image: url({{client.case_study_display_image_large.url}})"></div>
-            <div class="client-card__content-container">
-                <h2 class="client-card__promotion-heading" style="background-image: url({{client.case_study_display_image_small.url}})">
+        <article class="clients__promotion-card">
+            {% if client.promotion_image_large %}
+                <picture>
+                   <source srcset="{{client.promotion_image_small.url}}" media="(max-width: 767px)">
+                   <source srcset="{{client.promotion_image_small.url}}" media="(min-width: 1024px) and (max-width: 1299px)">
+                   <img src="{{client.promotion_image_large.url}}" alt="" class="clients__promotion-card-image" >
+               </picture>
+           {% endif %}
+           <div class="client-card__content-container">
+                <img class="client-card__logo" height="25" src="{{client.logo.url}}" />
+                <h2 class="client-card__promotion-heading">
+               {{client.promotion}}
+                </h2>
+               {% if client.case_study %}
+                <p class="client-card__case-study-description client-card__case-study-description--promotion">Find out how we helped {{client.name}}</p>
+                   <a class="button-primary"
+                       href="{{client.case_study}}">
+                       Download Case Study
+                   </a>
+               {% endif %}
+               {{ tags_footer(client) }}
+
+           </div>
+
+             {# <div class="client-card__display-image client-card__display-image--promotion" style="background-image: url({{client.promotional_image_lage.url}})"></div> #}
+            {# <div class="client-card__content-container">
+                <h2 class="client-card__promotion-heading" style="background-image: url({{client.promotional_image_small.url}})">
                     {{client.promotion}}
                 </h2>
                 {% if client.case_study %}
@@ -182,7 +205,7 @@
                     </a>
                 {% endif %}
                 {{ tags_footer(client) }}
-            </div>
+            </div> #}
         </article>
     </div>
 {% endmacro %}

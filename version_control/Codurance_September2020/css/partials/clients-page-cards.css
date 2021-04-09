@@ -66,10 +66,10 @@
 }
 
 .clients__case-study-card-image {
-    object-fit: contain;
+    object-fit: cover;
     width:100%;
     height: 100%;
-    object-position:top;
+    object-position: center;
 }
 
 .client-card__logo {
@@ -131,7 +131,7 @@
     width: auto;
 }
 
-.clients__promotional-card {
+.clients__promotion-card {
     background-color: white;
     box-shadow: {{ card_shadow }};
     display: flex;
@@ -140,6 +140,16 @@
 .client-card__promotion-heading {
     {{ utils.base() }}
     font-weight: var(--heavy-font-weight);
+    color: var(--shark);
+    padding: 1.5rem 0;
+}
+
+.clients__promotion-card-image{
+    object-fit: cover;
+    width: 100%;
+    object-position: center;
+    max-height: 20vh;
+
 }
 
 .client-card__partners-heading {
@@ -201,18 +211,13 @@
 
 {% call utils.small() %}
     .client-card__promotion-heading {
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: white;
-        margin: -1.5rem;
-        padding: 1.5rem;
+        margin-top: var(--base-font-size);
+        padding: 0;
     }
 
-    .client-card__case-study-description--promotion {
-        padding-top: var(--base-margin);
-    }
 
-    .clients__case-study-card {
+    .clients__case-study-card, 
+    .clients__promotion-card {
         flex-direction: column;
     }
 
@@ -238,18 +243,13 @@
 
 {% call utils.large() %}
     .client-card__promotion-heading {
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: white;
-        margin: -1.5rem;
-        padding: 1.5rem;
+        margin-top: var(--base-font-size);
+        padding: 0;
     }
 
-    .client-card__case-study-description--promotion {
-        padding-top: var(--base-margin);
-    }
 
-    .clients__case-study-card {
+    .clients__case-study-card, 
+    .clients__promotion-card {
         flex-direction: column;
     }
 
@@ -274,10 +274,17 @@
 {% endcall %}
 
 {% call utils.medium() %}
-    .client-card__promotion-heading {
-        background-image: none !important;
+    .clients__promotion-card-image {
+        max-height: 100%;
+        height:100%;
     }
 
+    .client-card__promotion-heading {
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: var(--base-font-size);
+        padding: 0;
+    }
     .clients__testimonial-inner .client-card__content-container {
         padding-left: 2rem;
     }
@@ -309,9 +316,15 @@
 {% endcall %}
 
 {% call utils.extra_large() %}
-    .client-card__promotion-heading {
-        background-image: none !important;
-    }
+    .clients__promotion-card-image {
+    max-height: 100%;
+    height:100%;
+   }
+
+   .client-card__promotion-heading {
+        margin-top: var(--base-font-size);
+        padding: 0;
+   }
 
     .clients__testimonial-inner .client-card__content-container {
         padding-left: 2rem;
