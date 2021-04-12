@@ -227,7 +227,7 @@
     }
 
     .client-card__testimonial-quotation-icon {
-        display: none !important;
+        color: var(--persimmon)
     }
 
     .client-card__display-image--promotion {
@@ -259,7 +259,7 @@
     }
 
     .client-card__testimonial-quotation-icon {
-        display: none !important;
+        color: var(--persimmon)
     }
 
     .client-card__display-image--promotion {
