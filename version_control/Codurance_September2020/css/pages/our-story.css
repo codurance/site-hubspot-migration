@@ -1,36 +1,49 @@
 {% import '../utils/utils.css' as utils %}
 
-.body-container-our-story .dnd-section {
-  padding-bottom: 0;
-  padding-top: 0;
+
+.our-story-page {
+  --page-padding: 1.3rem;
 }
 
-.our-story-body-copy-section .hs_cos_wrapper_type_rich_text {
-  overflow: hidden;
-  margin-bottom: 14px;
-}
-
-.our-story-body-copy-section .dnd-column .row-fluid .dnd-module {
+.our-story-container {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+  max-width: var(--centered-content-max-width);
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
-.our-story-body-copy-section .hs_cos_wrapper_type_rich_text h2 {
-  {{ utils.dudler() }}
-  margin-bottom: var(--dudler-margin);
+.our-story-container {
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+}
+
+.our-story-container h2 {
+  {{ utils.eames_margin() }}
+  font-size: var(--eames-font-size);
+  line-height: var(--eames-line-height);
+  max-width: var(--eames-max-width);
   font-weight: var(--heavy-font-weight);
-  max-width: var(--dudler-max-width);
 }
 
-.our-story-body-copy-section .hs_cos_wrapper_type_rich_text p {
-  {{ utils.base() }}
-  {{ utils.base_margin() }}
+.our-story-container h3 {
+  margin-top: var(--freed-margin);
+  margin-bottom: var(--sejima-margin);
+  font-size: var(--freed-font-size);
+  font-weight: var(--heavy-font-weight);
+  line-height: var(--freed-line-height);
+  max-width: var(--freed-max-width);
+}
+
+.our-story-container *:not(h2) {
   max-width: var(--base-max-width);
 }
 
-.our-story-body-copy-section .dnd-row:last-child .hs_cos_wrapper_type_rich_text {
-  margin-bottom: 0;
+.our-story-container p {
+  margin-bottom: 2rem
 }
+
 .our-story-how-we-work-section {
   margin-top: 3rem;
 }
