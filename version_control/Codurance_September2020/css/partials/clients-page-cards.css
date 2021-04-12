@@ -227,7 +227,10 @@
     }
 
     .client-card__testimonial-quotation-icon {
-        color: var(--persimmon)
+        color: var(--persimmon);
+        margin-left: -1rem;
+        position: absolute;
+        margin-top: -1rem;
     }
 
     .client-card__display-image--promotion {
@@ -259,7 +262,10 @@
     }
 
     .client-card__testimonial-quotation-icon {
-        color: var(--persimmon)
+        color: var(--persimmon);
+        margin-left: -1rem;
+        position: absolute;
+        margin-top: -1rem;
     }
 
     .client-card__display-image--promotion {
