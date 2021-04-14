@@ -53,7 +53,7 @@
   color: white;
   left: 50%;
   position: absolute;
-  text-align: center;
+  text-align: left;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
@@ -68,7 +68,6 @@
 
 .cm-homepage-hero__title {
   color: white;
-  margin-left: auto;
   margin-right: auto;
   max-width: 25ch;
 }
@@ -94,7 +93,6 @@
 
 .cm-homepage-hero__subtitle {
   color: white;
-  margin-left: auto;
   margin-right: auto;
   max-width: 50ch;
   padding: 10px 0 20px 0;
