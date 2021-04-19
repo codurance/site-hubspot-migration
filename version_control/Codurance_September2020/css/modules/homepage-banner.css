@@ -1,6 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 .cm-homepage-hero {
+  background-image: var(--large-bg-image);
   background-position: center;
   background-size: cover;
   height: 800px;
@@ -53,22 +54,38 @@
   color: white;
   left: 50%;
   position: absolute;
-  text-align: left;
+  text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 90%;
+}
+
+.cm-homepage-hero__content-container__ab-test {
+  background: transparent;
+  color: white;
+  left: 50%;
+  position: absolute;
+  text-align: left;
+  top: 50%;
+  transform: translate(-90%, -50%);
+  width: 50%;
 }
 
 {% call utils.small() %}
+  .cm-homepage-hero {
+    background-image: var(--small-bg-image)
+  }
+
   .cm-homepage-hero__content-container [class^="button"] {
     width: 100%;
     max-width: var(--button-max-width);
   }
+
 {% endcall %}
 
 .cm-homepage-hero__title {
   color: white;
-  margin-right: auto;
+  margin: auto;
   max-width: 25ch;
 }
 {% call utils.large_and_extra_large() %}
@@ -93,17 +110,22 @@
 
 .cm-homepage-hero__subtitle {
   color: white;
-  margin-right: auto;
+  margin: auto;
   max-width: 50ch;
   padding: 10px 0 20px 0;
 }
+
 {% call utils.large_and_extra_large() %}
+  .cm-homepage-hero__content-container {
+    width: 60%;
+  }
   .cm-homepage-hero__subtitle {
     {{ utils.freed() }}
     margin-bottom: var(--freed-margin);
   }
 {% endcall %}
 {% call utils.medium() %}
+ 
   .cm-homepage-hero__subtitle {
     {{ utils.freed() }}
     margin-bottom: var(--freed-margin);
