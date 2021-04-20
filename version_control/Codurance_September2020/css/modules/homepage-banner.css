@@ -56,7 +56,7 @@
   color: white;
   left: 50%;
   position: absolute;
-  text-align: left;
+  text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
@@ -79,7 +79,8 @@
   margin: 0;
 }
 
-.cm-homepage-hero__subtitle {
+.cm-homepage-hero__subtitle,
+.cm-homepage-hero__subtitle__ab-test {
   color: white;
   margin: auto;
   max-width: 50ch;
@@ -150,7 +151,12 @@
   .cm-homepage-hero__subtitle {
     {{ utils.freed() }}
     margin-bottom: var(--freed-margin);
+    margin-left: auto;
   }
+  .cm-homepage-hero__subtitle__ab-test {
+    margin-left: 0;
+  }
+  
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
@@ -170,7 +176,13 @@
   .cm-homepage-hero__subtitle {
     {{ utils.freed() }}
     margin-bottom: var(--freed-margin);
-    margin-left: 0;
+    margin: auto;
   }
+
+  .cm-homepage-hero__subtitle__ab-test {
+  
+  margin-left: 0;
+  }
+
 {% endcall %}
 
