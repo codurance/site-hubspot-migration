@@ -49,7 +49,8 @@
   }
 {% endcall %}
 
-.cm-homepage-hero__content-container {
+.cm-homepage-hero__content-container,
+.cm-homepage-hero__content-container__ab-test {
   background: transparent;
   color: white;
   left: 50%;
@@ -61,14 +62,8 @@
 }
 
 .cm-homepage-hero__content-container__ab-test {
-  background: transparent;
-  color: white;
-  left: 50%;
-  position: absolute;
-  text-align: left;
-  top: 50%;
-  transform: translate(-90%, -50%);
   width: 50%;
+  text-align: left;
 }
 
 {% call utils.small() %}
@@ -79,6 +74,9 @@
   .cm-homepage-hero__content-container [class^="button"] {
     width: 100%;
     max-width: var(--button-max-width);
+  }
+  .cm-homepage-hero {
+    background-position: top right;
   }
 
 {% endcall %}
@@ -105,6 +103,14 @@
     {{ utils.dudler() }}
     margin-bottom: var(--dudler-margin);
   }
+  .cm-homepage-hero__content-container__ab-test {
+    left: 0%;
+    top: 45%;
+    transform: translate(0%, 0%);
+    width: 80%;
+    margin-left: 25px;
+    margin-right: 25px;
+}
 {% endcall %}
 
 
