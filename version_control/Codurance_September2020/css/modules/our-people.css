@@ -4,10 +4,19 @@
 
 .custom-our-people {
   margin: 0 auto;
-  max-width: var(--centered-content-max-width);
-  padding: 40px {{ lateral_page_padding }};
+  margin-top: -50px;
+  max-width: 1300px; 
+  padding: 0 20px 40px 20px;
   width: 100%;
 }
+
+{% call utils.large_and_extra_large() %}
+  .custom-our-people {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+{% endcall %}
+
 
 {% set card_margin = '15px' %}
 .custom-our-people__card-container {
