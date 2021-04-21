@@ -39,9 +39,9 @@ label: Our People
     {% set footer_cta = 'Learn More' %}
   {% endif %}
 
-  <div class="our-people__heading-wrapper">
-    <h1 class="our-people__title">{{header_title}}</h1>
-  </div>
+  <section>
+    {% module "simple-hero-slice" path="../modules/simple-hero-slice.module" label="" no_wrapper=True %}
+  </section>
 
   {% module "our_people" path="../modules/Our People.module"
       label="Our People" no_wrapper=True %}
