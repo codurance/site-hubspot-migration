@@ -16,10 +16,15 @@
           Your browser does not support the video tag.
         </video>
     </div>
+
+    <div class="cm-homepage-hero__content-container">
+      <h1 class="cm-homepage-hero__title">{{ module.heading }}</h1>
+      <p class="cm-homepage-hero__subtitle">{{ module.sub_heading }}</p>
+  {% else %}
+    <div class="cm-homepage-hero__content-container__ab-test"}}>
+      <h1 class="cm-homepage-hero__title__ab-test"}}>{{ module.heading }}</h1>
+      <p class="cm-homepage-hero__subtitle__ab-test"}}>{{ module.sub_heading }}</p>
   {% endif %}
-  <div class={{module.video is truthy ? "cm-homepage-hero__content-container" : "cm-homepage-hero__content-container__ab-test"}}>
-    <h1 class={{module.video is truthy ? "cm-homepage-hero__title" : "cm-homepage-hero__title__ab-test"}}>{{ module.heading }}</h1>
-    <p class={{module.video is truthy ? "cm-homepage-hero__subtitle" : "cm-homepage-hero__subtitle__ab-test"}}>{{ module.sub_heading }}</p>
    
 
     {% if module.button_type == 'Standard' %}
