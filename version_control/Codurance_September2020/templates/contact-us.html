@@ -27,6 +27,9 @@ label: Contact Us Page
 {% block body %}
 <div class="hs-contact-us-layout">
   <main class="body-container-wrapper">
+  <section>
+  {% module "simple-hero-slice" path="../modules/simple-hero-slice.module" label="" no_wrapper=True %}
+  </section>
     {% dnd_area "dnd_area1" class='hs-contact-us-section1', label='Section 1' %}
     {% end_dnd_area %}
     <div class="hs-get-in-touch-section" id="get-in-touch">
