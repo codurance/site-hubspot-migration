@@ -1,18 +1,31 @@
 {{ require_css(get_asset_url("../../css/modules/homepage-banner.css")) }}
 {% import '../../snippets/button-snippets.html' as snippets %}
 
-<section class="cm-homepage-hero" style="background-image:url({{ module.background_image.src }})">
-<div class="cm-homepage-hero__video-wrapper">
+<style>
+.cm-homepage-hero {
+		--large-bg-image: url("{{ module.background_image.src }}");
+		--small-bg-image: url("{{ module.poster_image.src }}");
+	}
+</style>
+
+<section class="cm-homepage-hero">
   {% if module.video %}
-      <video controls="false" playsinline="" autoplay="" muted="" poster="{{ module.poster_image.src }}" loop="" class="cm-homepage-hero__video">
-        <source src="{{ module.video }}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-  {% endif %}
+    <div class="cm-homepage-hero__video-wrapper">
+        <video controls="false" playsinline="" autoplay="" muted="" poster="{{ module.poster_image.src }}" loop="" class="cm-homepage-hero__video">
+          <source src="{{ module.video }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
     </div>
-  <div class="cm-homepage-hero__content-container">
-    <h1 class="cm-homepage-hero__title">{{ module.heading }}</h1>
-    <p class="cm-homepage-hero__subtitle">{{ module.sub_heading }}</p>
+
+    <div class="cm-homepage-hero__content-container">
+      <h1 class="cm-homepage-hero__title">{{ module.heading }}</h1>
+      <p class="cm-homepage-hero__subtitle">{{ module.sub_heading }}</p>
+  {% else %}
+    <div class="cm-homepage-hero__content-container__ab-test"}}>
+      <h1 class="cm-homepage-hero__title__ab-test"}}>{{ module.heading }}</h1>
+      <p class="cm-homepage-hero__subtitle__ab-test"}}>{{ module.sub_heading }}</p>
+  {% endif %}
+   
 
     {% if module.button_type == 'Standard' %}
       {% set button_href = module.link_field.url.href %}
