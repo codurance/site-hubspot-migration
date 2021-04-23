@@ -1,9 +1,17 @@
 {% import '../utils/utils.css' as utils %}
 
 .hero-slice {
-  padding-bottom: 4rem;
-  padding-top: 7rem;
+  padding-bottom: 6rem;
+  padding-top: 4rem;
 }
+{% call utils.small_and_medium() %}
+  .hero-slice {
+    padding-bottom: 4rem;
+    padding-top: 7rem;
+  }
+{% endcall %}
+
+
 {% call utils.large_and_extra_large() %}
   .hero-slice {
     position: relative;
