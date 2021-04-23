@@ -1,8 +1,8 @@
 {% import '../utils/utils.css' as utils %}
 
 .hero-slice {
-  padding-bottom: 7rem;
-  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-top: 7rem;
 }
 {% call utils.large_and_extra_large() %}
   .hero-slice {
@@ -23,9 +23,8 @@
 {% endcall %}
 {% call utils.small_and_medium() %}
   .hero-slice {
-    background-color: var(--persimmon--dark);
     background-image: var(--small-bg-image);
-    background-position: top left;
+    background-position: top right;
     background-size: cover;
   }
 {% endcall %}
@@ -42,18 +41,16 @@
   line-height: var(--dudler-line-height);
   margin-bottom: var(--dudler-margin);
   max-width: var(--dudler-max-width);
-}
-{% call utils.small_and_medium() %}
-  .hero-slice__title {
-    color: white;
+  }
+  
+  {% call utils.small_and_medium() %}
+    .hero-slice__title {
+      max-width: var(--gaudi-max-width); 
+    
   }
 {% endcall %}
 
 .hero-slice__description {
   max-width: 40ch;
 }
-{% call utils.small_and_medium() %}
-  .hero-slice__description {
-    color: white;
-  }
-{% endcall %}
+
