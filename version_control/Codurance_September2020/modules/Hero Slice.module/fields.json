@@ -53,4 +53,11 @@
     "alt" : null,
     "loading" : "disabled"
   }
+}, {
+  "id" : "b78f37d9-f28b-eb7c-79e3-3c65337d9aa6",
+  "name" : "cta_field",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "type" : "cta"
 } ]

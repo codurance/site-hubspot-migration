@@ -4,12 +4,17 @@
   padding-bottom: 6rem;
   padding-top: 4rem;
 }
+
+.hero-slice__cta {
+  margin-top: 1rem;
+}
 {% call utils.small_and_medium() %}
   .hero-slice {
     padding-bottom: 4rem;
     padding-top: 7rem;
   }
 {% endcall %}
+
 
 
 {% call utils.large_and_extra_large() %}
