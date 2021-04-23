@@ -18,7 +18,7 @@
   }
   .hero-slice::before {
     background-image: var(--large-bg-image);
-    background-position: center left;
+    background-position: top left;
     background-repeat: no-repeat;
     background-size: cover;
     bottom: 0;
