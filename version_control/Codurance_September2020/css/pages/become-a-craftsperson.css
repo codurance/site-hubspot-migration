@@ -19,7 +19,8 @@
 }
 
 .custom-become-a-craftsperson-row2 .row-number-2 .row-fluid p {
-  {{ utils.natus() }}
+    font-size: var(--natus-font-size);
+  
 }
 
 .custom-become-a-craftsperson-row4 .row-fluid .dnd-module {
