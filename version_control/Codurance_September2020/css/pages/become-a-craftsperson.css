@@ -18,6 +18,10 @@
   padding-bottom: 20px;
 }
 
+.custom-become-a-craftsperson-row2 .row-number-2 .row-fluid p {
+  {{ utils.natus() }}
+}
+
 .custom-become-a-craftsperson-row4 .row-fluid .dnd-module {
   padding: 0;
 }
