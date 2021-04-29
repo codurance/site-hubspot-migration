@@ -183,7 +183,7 @@
  {% endmacro %}
   {#
 ----------------------------------------------------------------------------------------------------
-#} {# BIG CARD #} 
+#} {# MAIN CARD #} 
 
 {% macro large_card(client, classnames) %} 
 
@@ -264,10 +264,10 @@
       </div>
       </div>
       <div class="clients__large-card__secondary__case-study">
-        <p class="clients__large-card__secondary__case-study__text">
+        <img class="clients__large-card__secondary__case-study-image" src="https://f.hubspotusercontent10.net/hubfs/3042464/Clients%20Page/Case%20Studies/large/Glasswall-Case-Study-Large.jpg"/>
+        <p class="clients__large-card__secondary__case-study-text">
           Find out how we helped Cazoo
         </p>
-        <img />
         <a class="button-primary" href=" ">
           {{case_study_button_text}}
         </a>
@@ -277,7 +277,7 @@
     </div>
 {% endmacro %} 
 
-{# END OF BIG CARD #} 
+{# END OF MAIN CARD -------------------------------------------------------------------------------------------------------------------------------------------- #} 
 
 {% macro promotional_card(client, classnames) %} 
     {% set problems = [] %} 
