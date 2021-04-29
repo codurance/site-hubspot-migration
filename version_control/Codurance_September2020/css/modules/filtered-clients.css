@@ -305,7 +305,7 @@
 
 .clients-grid__container {
     margin: 0 auto 50px;
-    width: 80%;
+    width: 90%;
 }
 
 {% set grid_card_size = "16%" %}
@@ -421,3 +421,5 @@
     font-weight: var(--heavy-font-weight);
     margin-bottom: var(--base-margin);
 }
+
+

@@ -127,7 +127,7 @@
 
 .client-card__partner-icon {
     height: 1.5rem;
-    margin: 0 0.5rem 0.5rem;
+    {# margin: 0 0.5rem 0.5rem; #}
     width: auto;
 }
 
@@ -154,8 +154,9 @@
 
 .client-card__partners-heading {
     {{ utils.sejima() }}
-    margin-bottom: var(--sejima-margin);
-    margin-top: var(--sejima-margin);
+    margin-right: .5rem;
+    {# margin-bottom: var(--sejima-margin);
+    margin-top: var(--sejima-margin); #}
 }
 
 .clients__video-card {
@@ -373,3 +374,93 @@
         justify-content: center;
     }
 {% endcall %}
+
+{# -- NEW CLIENTS CARDS ------------------------------------------------------------------------------------------------ #}
+
+.clients__large-card{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+
+.clients__large-card__main {
+    background: white;
+    order: 1;
+    {{utils.card_shadow_large()}}
+    z-index: 1;
+}
+
+.clients__large-card__secondary {
+    background: white;
+    order: 2;
+    width: 90%;
+    {{utils.card_shadow()}}
+}
+
+.clients__large-card__img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.clients__large-card__logo {
+    margin-bottom: 1em;
+    height: 30px;
+    width: auto;
+
+}
+
+.clients__large-card__body {
+    padding: 2rem;
+}
+
+.clients__large-card__testimonial-text {
+    {{ utils.natus() }}
+    
+}
+.clients__large-card__testimonial-container{
+    position: relative
+
+}
+.clients__large-card__testimonial-quotation-icon {
+    color: var(--persimmon);
+    position: absolute;
+    font-size: 1.3rem;
+    left: -25px;
+    top: -4px;
+}
+
+.clients__large-card__testimonial-text{
+    margin-bottom: 1em;
+    font-weight: var(--heavy-font-weight);
+}
+
+.clients__large-card__testimonial-author-name,
+.clients__large-card__body-author-title{
+    {{ utils.sejima() }} 
+}
+
+.clients__large-card__secondary__body {
+    padding: 1.5rem 1.5rem 0 1.5rem;    
+}
+
+.clients__large-card__secondary__text {
+    {{utils.natus()}}
+}
+
+.client-card__partners {
+    display:flex;
+    align-items: center;
+    margin-bottom: var(--sejima-margin);
+}
+
+.clients__large-card__secondary__case-study {
+    background: #FCEFF3;
+    padding: 1rem;
+}
+
+.clients__large-card__secondary__case-study__text {
+    font-size: var(--sejima-font-size);
+}

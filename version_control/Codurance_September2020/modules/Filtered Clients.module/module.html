@@ -129,10 +129,29 @@
     <p>Try adjusting your filters to find what you’re looking for.</p>
   </div>
 
+{# Cards start here: #}
+
   <div class="clients-grid__container" data-grid-container>
     <div class="clients-grid__sizer"></div>
     <div class="clients-grid__gutter-sizer"></div>
       {% for client in clients %}
+
+        {# MAIN CARD -> if we have 2 things: either testimonial + impact statement or testimonial + descriptiopn #} 
+
+        {% if client.testimonial_text && client.promotion  ||
+              client.testimonial_text && client.description  || 
+              client.promotion && client.description
+        %}
+          {{
+            cards.large_card(
+              client=client,
+              classnames="clients-grid__card clients-grid__card--medium"
+            )
+          }}
+        {% endif %}
+
+
+        {# SMALL SECONDARY CARD -> if we only have one (either testimonial, description or impact statement) #} 
         {% if client.testimonial_text %}
           {{
             cards.testimonial_card(
@@ -140,9 +159,9 @@
               classnames="clients-grid__card clients-grid__card--medium"
             )
           }}
-        {% endif %}
+        {% endif %} 
 
-        {% if client.video %}
+         {% if client.video %}
           {{
             cards.video_card(
               client=client,
