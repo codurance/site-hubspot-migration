@@ -464,7 +464,7 @@
 }
 
 .clients__large-card__secondary__case-study-image{
-    {{utils.card_shadow_large}}
+    {{utils.card_shadow_large()}}
     position: absolute;
     right: -15px;
     top: -33%;
