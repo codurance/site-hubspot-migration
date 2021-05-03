@@ -140,7 +140,8 @@
 
         {% if client.testimonial_text && client.promotion  ||
               client.testimonial_text && client.description  || 
-              client.promotion && client.description
+              client.promotion && client.description ||
+              client.promotion
         %}
           {{
             cards.large_card(
