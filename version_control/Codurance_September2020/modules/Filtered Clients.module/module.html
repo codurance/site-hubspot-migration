@@ -134,25 +134,41 @@
   <div class="clients-grid__container" data-grid-container>
     <div class="clients-grid__sizer"></div>
     <div class="clients-grid__gutter-sizer"></div>
+    {% set clientSecondaryCards = []  %}
       {% for client in clients %}
 
-        {# MAIN CARD -> if we have 2 things: either testimonial + impact statement or testimonial + descriptiopn #} 
-
+        {# LARGE CARD -> if we have 2 things: either testimonial + impact statement or testimonial + descriptiopn #} 
         {% if client.testimonial_text && client.promotion  ||
               client.testimonial_text && client.description  || 
               client.promotion && client.description ||
               client.promotion
         %}
+
           {{
             cards.large_card(
               client=client,
               classnames="clients-grid__card clients-grid__card--medium"
             )
           }}
-        {% endif %}
-
+       
+        
+          {% elif client.description  %}
+            {% do clientSecondaryCards.append(client) %}
+          {% endif %}
+        {% endfor %}
+        
 
         {# SMALL SECONDARY CARD -> if we only have one (either testimonial, description or impact statement) #} 
+        {% for client in clientSecondaryCards %}
+          {{
+          cards.secondary_card(
+          client=client,
+          classnames="clients-grid__card clients-grid__card--medium"
+          )
+          }}
+        {% endfor %}
+
+{#
         {% if client.testimonial_text %}
           {{
             cards.testimonial_card(
@@ -193,7 +209,7 @@
             )
           }}
         {% endif %}
-      {% endfor %}
+     #}
   </div>
 </main>
 

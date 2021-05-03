@@ -385,11 +385,21 @@
 }
 
 
-.clients__large-card__main {
+.clients__large-card__primary {
     background: white;
     order: 1;
     {{utils.card_shadow_large()}}
     z-index: 1;
+}
+
+.clients__secondary-card {
+   background: white;
+   {{utils.card_shadow_large()}}
+   padding: 1.5em;
+}
+
+.clients__secondary-card__description-text {
+    {{ utils.natus() }}    
 }
 
 .clients__large-card__secondary {
@@ -406,11 +416,11 @@
     object-position: center;
 }
 
-.clients__large-card__logo {
+.clients__large-card__logo,
+.clients__secondary-card__logo {
     margin-bottom: 1em;
     height: 30px;
     width: auto;
-
 }
 
 .clients__large-card__body {

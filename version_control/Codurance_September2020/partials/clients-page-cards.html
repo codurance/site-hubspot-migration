@@ -67,7 +67,7 @@
 
   {#
 ----------------------------------------------------------------------------------------------------
-#} {# MAIN CARD #} 
+#} {# LARGE CARD #} 
 
 {% macro large_card(client, classnames) %} 
 
@@ -93,7 +93,7 @@
   data-client-service="{{services|join(',')}}"
 >
   <article class="clients__large-card">
-    <div class="clients__large-card__main">
+    <div class="clients__large-card__primary">
       <img
         class="clients__large-card__img"
         src="{{client.hero_image.url}}"
@@ -167,5 +167,38 @@
   </div>
 {% endmacro %} 
 
-{# END OF MAIN CARD -------------------------------------------------------------------------------------------------------------------------------------------- #} 
+{# END OF LARGE CARD -------------------------------------------------------------------------------------------------------------------------------------------- #} 
 
+{# START OF SECONDARY CARD -------------------------------------------------------------------------------------------------------------------------------------------- #} 
+{% macro secondary_card(client, classnames) %} 
+
+  {% set problems = []%} 
+      {% for problem in client.problems %} 
+          {% do problems.append(problem.name) %}
+      {% endfor %}
+
+{% set services = [] %} 
+      {% for service in client.services %} 
+          {% do services.append(service.name) %} 
+      {% endfor %} 
+      
+      {% set tech_stack = [] %}
+       {% for tech in client.technology_stack %} 
+          {% do tech_stack.append(tech.name) %} 
+          {%endfor %}
+
+        <div
+        class="{{classnames}}"
+        data-client-industry="{{client.industry.name}}"
+        data-client-technology="{{tech_stack|join(',')}}"
+        data-client-service="{{services|join(',')}}"
+        >
+        <article class="clients__secondary-card">
+          <img class="clients__secondary-card__logo"  src={{client.logo.url}} alt="">
+          <p class="clients__secondary-card__description-text"> {{client.description}} </p>
+          <div>{{ tags_footer(client) }}</div>
+          </article>
+        </div>
+{% endmacro %} 
+
+{# END OF SECONDARY CARD -------------------------------------------------------------------------------------------------------------------------------------------- #} 
