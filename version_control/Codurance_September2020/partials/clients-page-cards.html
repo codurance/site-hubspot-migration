@@ -126,9 +126,10 @@
           
           </div>
         {# else if (promotion) #}
+        {% set isPromotionSet = False %}
         {% elif client.promotion %} 
-        {% set isPromotionSet = true %}
-    
+          {% set isPromotionSet = True %}
+  
             <p class="clients__large-card__promotion-text">
             {{client.promotion}}
   
@@ -139,8 +140,7 @@
     </div>
       <div class="clients__large-card__secondary">
         <div class="clients__large-card__secondary__body">
-
-          {% if isPromotionSet === false %}
+          {% if isPromotionSet == False %}
             <p class="clients__large-card__secondary__text">
               {{client.promotion}}
             </p>
