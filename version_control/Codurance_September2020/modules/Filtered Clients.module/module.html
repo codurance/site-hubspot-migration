@@ -147,7 +147,7 @@
           {{
             cards.large_card(
               client=client,
-              classnames="clients-grid__card clients-grid__card--medium"
+              classnames="clients-grid__card clients-grid__card--large"
             )
           }}
        
@@ -163,12 +163,13 @@
           {{
           cards.secondary_card(
           client=client,
-          classnames="clients-grid__card clients-grid__card--medium"
+          classnames="clients-grid__card clients-grid__card--small"
           )
           }}
         {% endfor %}
 
-{#
+
+{#THIS IS NOT USED CURRENTLY:
         {% if client.testimonial_text %}
           {{
             cards.testimonial_card(

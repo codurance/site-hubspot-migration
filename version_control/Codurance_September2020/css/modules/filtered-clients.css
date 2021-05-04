@@ -5,6 +5,8 @@
     padding-bottom: 2.5rem;
 }
 
+{# Header #}
+
 .clients-header__section {
     background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Clients%20Page/header.jpg);
     background-repeat: no-repeat;
@@ -29,6 +31,7 @@
     max-width: var(--freed-max-width);
 }
 
+{# Filter #}
 .clients__filter {
     position: absolute;
     z-index: 2;
@@ -303,6 +306,8 @@
     cursor: pointer;
 }
 
+
+{# GRID CONTAINER #}
 .clients-grid__container {
     margin: 0 auto 50px;
     width: 90%;
@@ -321,28 +326,49 @@
 
 .clients-grid__card {
     min-height: 200px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
+{# 
+    {% call utils.small_and_medium() %}
+        .clients-grid__card--small,
+        .clients-grid__card--medium,
+        .clients-grid__card--large {
+            width: 100%;
+        }
+    {% endcall %} 
+#}
 
-{% call utils.small_and_medium() %}
-    .clients-grid__card--small,
-    .clients-grid__card--medium,
-    .clients-grid__card--large {
+
+.clients-grid__card--large,
+.clients-grid__card--small {
         width: 100%;
+}   
+
+{% call utils.medium() %}
+    .clients-grid__card--small {
+        width: calc({{ grid_card_size }} * 3 - {{ grid_gutter_size }} / 2); {# 48 - 2 = 46% -> 2 cards#}  
+        margin-left: 20px;
     }
-{% endcall %}
+    
+{% endcall %} 
+
 
 {% call utils.large_and_extra_large() %}
     .clients-grid__card--small {
-        width: calc({{ grid_card_size }} * 2 - {{ grid_gutter_size }} / 2);
+        width: calc({{ grid_card_size }} * 2 - {{ grid_gutter_size }} / 2); {# 32 - 2 = 30% -> 3 card #}
+        margin-left: 20px;
     }
-    .clients-grid__card--medium {
-        width: calc({{ grid_card_size }} * 3 - {{ grid_gutter_size }} / 2);
-    }
+
     .clients-grid__card--large {
-        width: calc(100% - {{ grid_gutter_size }} / 2);
+        width: calc(100% - {{ grid_gutter_size }} / 2); {# 98% #}
     }
-{% endcall %}
+  
+
+{% endcall %} 
+
+
+
+{# Grid end  #}
 
 .clients-grid__card--wide {
     width: 60%;

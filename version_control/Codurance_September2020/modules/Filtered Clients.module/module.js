@@ -366,7 +366,7 @@ const initialiseFilters = _ => {
 const initialiseIsotopeLayout = _ => {
   const elem = get('grid_container');
   const isotopeLayoutOpts = {
-    layoutMode: 'packery',
+    layoutMode: 'fitRows',
     itemSelector: '.clients-grid__card',
     columnWidth: '.clients-grid__sizer',
     percentPosition: true,
