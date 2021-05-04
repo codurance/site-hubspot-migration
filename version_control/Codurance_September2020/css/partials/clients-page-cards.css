@@ -390,6 +390,7 @@
     order: 1;
     {{utils.card_shadow_large()}}
     z-index: 1;
+    min-width: 100%;
 }
 
 .clients__secondary-card {
