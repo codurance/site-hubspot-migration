@@ -379,9 +379,11 @@
 {# -- NEW CLIENTS CARDS ------------------------------------------------------------------------------------------------ #}
 
 .clients__large-card{
+    align-items:center;
     display:flex;
     flex-direction: column;
-    align-items:center;
+    margin: 0 auto;
+    max-width: 550px;
 }
 
 
@@ -427,6 +429,7 @@
 .clients__large-card__body {
     padding: 2rem;
 }
+
 
 .clients__large-card__testimonial-text {
     {{ utils.natus() }}
@@ -480,7 +483,7 @@
     right: -15px;
     top: -33%;
     transform: rotate(7deg);
-    width: 20vw;
+    width: 20%;
 }
 
 .clients__large-card__secondary__case-study-text {
@@ -490,3 +493,19 @@
 .clients__large-card__secondary__case-study .button-primary {
     margin-top: 0.5em;
 }
+
+
+{# Medium size screens #}
+{% call utils.medium() %}
+    .clients__large-card__body {
+        padding-left: 2.7em;
+    }
+    .clients__large-card__testimonial-quotation-icon {
+        left: -30px;
+    }
+
+    .clients__large-card__secondary__case-study-image {
+        right: 35px;
+        top: -37%;
+    }
+{% endcall %}
