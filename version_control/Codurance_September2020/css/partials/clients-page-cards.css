@@ -506,6 +506,10 @@
         right: 35px;
         top: -37%;
     }
+    .clients__secondary-card  {
+        min-height: 450px;
+        max-height: 450px;
+    }
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
@@ -524,5 +528,10 @@
         width: 50%;
         order: 2;
     } 
+    .clients__secondary-card  {
+        min-height: 450px;
+        max-height: 450px;
+    
+    }
 
 {% endcall %}
