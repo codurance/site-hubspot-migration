@@ -139,9 +139,8 @@
 
         {# LARGE CARD -> if we have 2 things: either testimonial + impact statement or testimonial + descriptiopn #} 
         {% if client.testimonial_text && client.promotion  ||
-              client.testimonial_text && client.description  || 
-              client.promotion && client.description ||
-              client.promotion
+              client.testimonial_text   || 
+              client.promotion && client.case_study 
         %}
 
           {{
@@ -152,7 +151,7 @@
           }}
        
         
-          {% elif client.description  %}
+          {% elif client.promotion  %}
             {% do clientSecondaryCards.append(client) %}
           {% endif %}
         {% endfor %}
