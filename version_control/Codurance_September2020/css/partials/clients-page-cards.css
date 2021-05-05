@@ -389,7 +389,6 @@
 
 .clients__large-card__primary {
     background: white;
-    order: 1;
     {{utils.card_shadow_large()}}
     z-index: 1;
     min-width: 100%;
@@ -407,7 +406,6 @@
 
 .clients__large-card__secondary {
     background: white;
-    order: 2;
     width: 90%;
     {{utils.card_shadow()}}
 }
@@ -508,4 +506,23 @@
         right: 35px;
         top: -37%;
     }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .clients__large-card {
+        flex-direction: row;
+        max-width: 1100px;
+    }
+    
+    .clients__large-card__primary {
+        min-width: 0;
+        min-height: 20em;
+        width: 50%;
+        order: 1;
+    }   
+    .clients__large-card__secondary {
+        width: 50%;
+        order: 2;
+    } 
+
 {% endcall %}
