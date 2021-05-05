@@ -531,7 +531,15 @@
     .clients__secondary-card  {
         min-height: 450px;
         max-height: 450px;
-    
     }
+
+    .clients-grid__container .clients-grid__card:nth-of-type(even) .clients__large-card .clients__large-card__secondary {
+        order: -1;     
+    }   
+    
+    .clients__large-card__secondary__case-study-image {
+        right: 35px;
+        top: -37%;
+    }   
 
 {% endcall %}
