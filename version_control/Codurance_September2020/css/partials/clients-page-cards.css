@@ -525,7 +525,7 @@
     
     .clients__large-card__primary {
         min-width: 0;
-        min-height: 20em;
+        min-height: 25em;
         width: 50%;
         order: 1;
     }   
