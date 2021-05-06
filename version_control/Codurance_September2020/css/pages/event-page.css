@@ -33,25 +33,10 @@ main {
   }
 }
 
-.card-slider__heading-wrapper--upcoming-events {
-  background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Upcoming%20Events%20Images/upcoming-events-banner.jpg');
-}
-.card-slider__heading-wrapper--past-events {
-  background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Past%20Events%20Images/past%20events.jpg');
-}
-
-.card-slider__events-wrapper {
-  position: relative;
-  top: -{{overlap}}px;
-}
 @media (max-width: 767px) {
-  .card-slider__events-wrapper {
-    margin-bottom: -190px;
-  }
+  
 }
 @media (min-width: 768px) {
   {% set bottom_card_spacing = 30 %}
-  .card-slider__events-wrapper {
-    margin-bottom: -{{overlap - bottom_card_spacing}}px;
-  }
+  
 }
