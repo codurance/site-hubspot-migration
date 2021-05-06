@@ -2,10 +2,14 @@
 
 {% if locale == 'en' %}
     {% set promotion_text = "Find out how we helped" %} 
-    {% set case_study_button_text = "Download Case Study" %}              
+    {% set case_study_button_text = "Download Case Study" %}  
+    {% set case_study_info_text = "Find out how we helped" %}  
+    {% set proposition_job_title = "at" %}        
   {% else %}
     {% set promotion_text = "Descubre como ayudamos a" %}
     {% set case_study_button_text = "Descarga el case study" %} 
+    {% set case_study_info_text = "Descubre cómo ayudamos a" %}
+    {% set proposition_job_title ="en" %}
   {% endif %}
 
 {% macro tags_footer(client) %}
@@ -120,7 +124,7 @@
 
             {% if client.testimonial_author_role %}
             <p class="clients__large-card__body-author-title">
-             {{client.testimonial_author_role}} at {{client.name}}
+             {{client.testimonial_author_role}} {{proposition_job_title}} {{client.name}}
             </p>
             {% endif %}
           
@@ -153,7 +157,7 @@
           <div class="clients__large-card__secondary__case-study">
             <img class="clients__large-card__secondary__case-study-image" src="{{client.case_study_display_image.url}}"/>
             <p class="clients__large-card__secondary__case-study-text">
-              Find out how we helped {{client.name}}
+              {{case_study_info_text}} {{client.name}}
             </p>
             <a class="button-primary" href="{{client.case_study}}">
               {{case_study_button_text}}
