@@ -194,9 +194,11 @@
         data-client-service="{{services|join(',')}}"
         >
         <article class="clients__secondary-card">
+          
           <img class="clients__secondary-card__logo"  src={{client.logo.url}} alt="">
           <p class="clients__secondary-card__description-text"> {{client.promotion}} </p>
-          <div>{{ tags_footer(client) }}</div>
+          
+          <div class="clients__secondary-card__extra-info">{{ tags_footer(client) }}</div>
           </article>
         </div>
 {% endmacro %} 
