@@ -137,7 +137,7 @@
     {% set clientSecondaryCards = []  %}
       {% for client in clients %}
 
-        {# LARGE CARD -> if we have 2 things: either testimonial + impact statement or testimonial + descriptiopn #} 
+        {# LARGE CARD -> if we have 2 things: either testimonial + impact statement or testimonial + case study #} 
         {% if client.testimonial_text && client.promotion  ||
               client.testimonial_text && client.case_study || 
               client.promotion && client.case_study 
@@ -150,14 +150,12 @@
             )
           }}
        
-        
           {% elif client.promotion  %}
             {% do clientSecondaryCards.append(client) %}
           {% endif %}
         {% endfor %}
-        
 
-        {# SMALL SECONDARY CARD -> if we only have one (either testimonial, description or impact statement) #} 
+        {# SMALL SECONDARY CARD -> if we only have one (either testimonial or impact statement) #} 
         {% for client in clientSecondaryCards %}
           {{
           cards.secondary_card(
@@ -166,50 +164,6 @@
           )
           }}
         {% endfor %}
-
-
-{#THIS IS NOT USED CURRENTLY:
-        {% if client.testimonial_text %}
-          {{
-            cards.testimonial_card(
-              client=client,
-              classnames="clients-grid__card clients-grid__card--medium"
-            )
-          }}
-        {% endif %} 
-
-         {% if client.video %}
-          {{
-            cards.video_card(
-              client=client,
-              classnames="clients-grid__card clients-grid__card--large"
-            )
-          }}
-        {% endif %}
-
-        {% if client.promotion %}
-          {{
-            cards.promotional_card(
-              client=client,
-              classnames="clients-grid__card clients-grid__card--medium"
-            )
-          }}
-        {% else %}
-
-          {% if client.case_study_display_image_large %}
-            {% set classnames = "clients-grid__card clients-grid__card--medium" %}
-          {% else %}
-            {% set classnames = "clients-grid__card clients-grid__card--small" %}
-          {% endif %}
-
-          {{
-            cards.case_study_card(
-              client=client,
-              classnames=classnames
-            )
-          }}
-        {% endif %}
-     #}
   </div>
 </main>
 

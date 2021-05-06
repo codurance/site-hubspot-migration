@@ -69,10 +69,6 @@
 </div>
 {% endmacro %} 
 
-  {#
-----------------------------------------------------------------------------------------------------
-#} {# LARGE CARD #} 
-
 {% macro large_card(client, classnames) %} 
 
     {% set problems = []%} 
@@ -107,7 +103,6 @@
           class="clients__large-card__logo"
           src="{{client.logo.url}}"
         />
-        {# if(testimonial / quote ) #}
 
         {% if client.testimonial_text %}
           <div class="clients__large-card__testimonial-container">
@@ -129,7 +124,7 @@
             {% endif %}
           
           </div>
-        {# else if (promotion) #}
+      
         {% set isPromotionSet = False %}
         {% elif client.promotion %} 
           {% set isPromotionSet = True %}
@@ -171,9 +166,6 @@
   </div>
 {% endmacro %} 
 
-{# END OF LARGE CARD -------------------------------------------------------------------------------------------------------------------------------------------- #} 
-
-{# START OF SECONDARY CARD -------------------------------------------------------------------------------------------------------------------------------------------- #} 
 {% macro secondary_card(client, classnames) %} 
 
   {% set problems = []%} 
@@ -206,5 +198,3 @@
           </article>
         </div>
 {% endmacro %} 
-
-{# END OF SECONDARY CARD -------------------------------------------------------------------------------------------------------------------------------------------- #} 
