@@ -32,9 +32,6 @@
 
 <main>
   <section class="card-slider">
-    <div
-      class="card-slider__heading-wrapper card-slider__heading-wrapper--upcoming-events"
-    ></div>
     <div class="card-slider__events-wrapper">
       {% module "events" path="../modules/Upcoming Events Listing.module"
       label="Upcoming Events" no_wrapper=True %}
@@ -42,9 +39,14 @@
   </section>
 
   <section class="card-slider">
-    <div
-      class="card-slider__heading-wrapper card-slider__heading-wrapper--past-events"
-    ></div>
+    <div class="card-slider__events-wrapper">
+      {% module "comunity_events" path="../modules/Community-events-listing.module"
+      label="Community Events" no_wrapper=True %}
+    </div>
+  </section>
+
+  <section class="card-slider">
+   
     <div class="card-slider__events-wrapper">
       {% module "past_events" path="../modules/Past Events Listing.module"
       label="Past Events" no_wrapper=True %}
