@@ -183,8 +183,8 @@
         max-height: 150px;
     }
     .clients__secondary-card__description-text {
-        min-height: 230px;
-        max-height: 230px;
+        min-height: 200px;
+        max-height: 200px;
     }
 
 {% endcall %}
@@ -206,6 +206,27 @@
         order: 2;
     } 
 
+    {# .clients-grid__container .clients-grid__card ,
+    .clients-grid__container .clients-grid__card.hidden:nth-child(even) + 
+    .clients-grid__container .clients-grid__card:nth-of-type(odd) + 
+    .clients-grid__container .clients-grid__card:nth-of-type(even),
+
+    .clients-grid__container .clients-grid__card.hidden:nth-child(even) +
+    .clients-grid__container .clients-grid__card.hidden:nth-child(odd)  ~
+    .clients-grid__container .clients-grid__card:nth-of-type(odd){
+        background: khaki;     
+    }
+
+    .clients-grid__container .clients-grid__card:nth-child(even),
+    .clients-grid__container .clients-grid__card.hidden:nth-child(even) ~
+    .clients-grid__container .clients-grid__card:nth-of-type(odd),
+    .clients-grid__container .clients-grid__card.hidden:nth-child(even) + 
+    .clients-grid__container .clients-grid__card.hidden:nth-child(odd)
+     ~ .clients-grid__container .clients-grid__card:nth-of-type(even) { 
+        background: indianred; 
+    } #}
+
+
     .clients-grid__container .clients-grid__card:nth-of-type(even) .clients__large-card .clients__large-card__secondary {
         order: -1;     
     }   
@@ -219,7 +240,7 @@
         max-height: 150px;
     }
     .clients__secondary-card__description-text {
-        min-height: 270px;
-        max-height: 270px;
+        min-height: 230px;
+        max-height: 230px;
     }
 {% endcall %}
