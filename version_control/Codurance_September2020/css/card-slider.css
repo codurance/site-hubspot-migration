@@ -485,3 +485,25 @@ text-align: center;
   max-width: var(--button-max-width);
   cursor: pointer;
 }
+
+
+.events-cta-card{
+  align-items: center;
+  background: lightseagreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.events-cta-card__icon {
+  font-size: 3rem;
+  margin-top: 1.3em;
+}
+
+.events-cta-card__title{
+  font-weight: var(--heavy-font-weight);
+  text-align: center;
+  {{ utils.freed() }}
+}
+
