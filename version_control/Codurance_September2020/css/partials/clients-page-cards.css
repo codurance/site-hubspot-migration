@@ -206,26 +206,6 @@
         order: 2;
     } 
 
-    {# .clients-grid__container .clients-grid__card ,
-    .clients-grid__container .clients-grid__card.hidden:nth-child(even) + 
-    .clients-grid__container .clients-grid__card:nth-of-type(odd) + 
-    .clients-grid__container .clients-grid__card:nth-of-type(even),
-
-    .clients-grid__container .clients-grid__card.hidden:nth-child(even) +
-    .clients-grid__container .clients-grid__card.hidden:nth-child(odd)  ~
-    .clients-grid__container .clients-grid__card:nth-of-type(odd){
-        background: khaki;     
-    }
-
-    .clients-grid__container .clients-grid__card:nth-child(even),
-    .clients-grid__container .clients-grid__card.hidden:nth-child(even) ~
-    .clients-grid__container .clients-grid__card:nth-of-type(odd),
-    .clients-grid__container .clients-grid__card.hidden:nth-child(even) + 
-    .clients-grid__container .clients-grid__card.hidden:nth-child(odd)
-     ~ .clients-grid__container .clients-grid__card:nth-of-type(even) { 
-        background: indianred; 
-    } #}
-
 
     .clients-grid__container .clients-grid__card:nth-of-type(even) .clients__large-card .clients__large-card__secondary {
         order: -1;     
