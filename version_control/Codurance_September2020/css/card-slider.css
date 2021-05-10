@@ -32,7 +32,6 @@
   font-weight: var(--heavy-font-weight);
   line-height: var(--dudler-line-height);
   margin-bottom: var(--dudler-margin);
-  padding-bottom: 20px;
 }
 {% call utils.small() %}
   .card-slider__heading {
@@ -489,7 +488,8 @@ text-align: center;
 
 .events-cta-card{
   align-items: center;
-  background: lightseagreen;
+  background: url(https://f.hubspotusercontent10.net/hubfs/3042464/Events%20page/newsletter-cta-shape-1.svg) white;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -505,5 +505,22 @@ text-align: center;
   font-weight: var(--heavy-font-weight);
   text-align: center;
   {{ utils.freed() }}
+}
+
+#hs_cos_wrapper_comunity_events_email_form{
+  width: 90%;
+}
+
+.hs_submit .hs-button{
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--french-gray);
+  color: var(--persimmon);
+  margin-bottom: 0;
+}
+
+.hs_submit .hs-button:hover,
+.hs_submit .hs-button:focus {
+  border: solid 1px var(--persimmon--dark);
 }
 
