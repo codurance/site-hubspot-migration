@@ -94,7 +94,7 @@
 .clients__large-card__logo,
 .clients__secondary-card__logo {
     margin-bottom: 1em;
-    height: 30px;
+    height: 38px;
     width: auto;
 }
 
@@ -113,7 +113,7 @@
 }
 .clients__large-card__testimonial-quotation-icon {
     color: var(--persimmon);
-    font-size: 1.3rem;
+    font-size: 1rem;
     left: -25px;
     position: absolute;
     top: -4px;
@@ -191,8 +191,9 @@
 
 {% call utils.large_and_extra_large() %}
     .clients__large-card {
+        align-items: start;
         flex-direction: row;
-        max-width: 1100px;
+        max-width: 1100px;   
     }
     
     .clients__large-card__primary {
