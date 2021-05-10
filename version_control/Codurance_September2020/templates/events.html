@@ -27,10 +27,16 @@
 {% block body %}
 
 <section class="events-header-slice responsive-page-width lateral-spacing">
-  {% module "events_header_slice" path="../modules/Header Slice.module" label="Page Header Slice" no_wrapper=True %}
+  {% module "events_header_slice" path="../modules/Header Slice.module" 
+  label="Page Header Slice" no_wrapper=True %}
 </section>
 
-<main>
+<main class="main-container">
+   <section class="events-description">
+      {% module "events_description_banner" path="@hubspot/rich_text" 
+      label="Events Description" no_wrapper=True %}
+   </section>
+
   <section class="card-slider">
     <div class="card-slider__events-wrapper">
       {% module "events" path="../modules/Upcoming Events Listing.module"
@@ -46,7 +52,6 @@
   </section>
 
   <section class="card-slider">
-   
     <div class="card-slider__events-wrapper">
       {% module "past_events" path="../modules/Past Events Listing.module"
       label="Past Events" no_wrapper=True %}
