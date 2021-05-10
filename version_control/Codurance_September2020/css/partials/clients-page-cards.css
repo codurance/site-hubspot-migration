@@ -222,6 +222,5 @@
     .clients__secondary-card__description-text {
         min-height: 230px;
         max-height: 230px;
-        border: 1px solid red;
     }
 {% endcall %}
