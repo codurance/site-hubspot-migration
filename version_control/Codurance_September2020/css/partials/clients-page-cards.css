@@ -207,9 +207,9 @@
     } 
 
 
-    .clients-grid__container .clients-grid__card:nth-of-type(even) .clients__large-card .clients__large-card__secondary {
+    {# .clients-grid__container .clients-grid__card:nth-of-type(even) .clients__large-card .clients__large-card__secondary {
         order: -1;     
-    }   
+    }    #}
 
     .clients__large-card__secondary__case-study-image {
         right: 35px;
@@ -222,5 +222,6 @@
     .clients__secondary-card__description-text {
         min-height: 230px;
         max-height: 230px;
+        border: 1px solid red;
     }
 {% endcall %}
