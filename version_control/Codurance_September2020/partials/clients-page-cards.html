@@ -38,7 +38,7 @@
         <p>
             <i class="client-card__tags-icon las la-code"> </i
             ><small>
-            {{tech_stack|join(' | ')}}
+            {{tech_stack|sort(False,False)|join(' | ')}}
             </small>
         </p>
     {% endif %}
@@ -55,7 +55,7 @@
 
   {% if client.partners|length > 0 %}
     <div class="client-card__partners">
-        <p class="client-card__partners-heading">Partners</p>
+        <p class="client-card__partners-heading">Partnered with</p>
   
         {% for partner in client.partners %}
           <img
