@@ -1,10 +1,11 @@
+{% import '../utils/utils.css' as utils %}
+
 {% set overlap = 200 %}
 {% set ultimate_max_width = 1800 %}
 
 .events-header-slice {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 50px;
+  max-width: none;
+  {{ utils.card_shadow() }}
 }
 
 
@@ -15,15 +16,35 @@
   padding-top: 3em;
   padding-bottom: 5em;
 }
+
 .events-description{
+  margin: 0 auto;
+}
+
+.events-description__wrapper{
   background: white;
-  max-width: {{ultimate_max_width}}px;
+  margin: 0 2.5em;
+  padding: 2.5em 7.5em;
+  text-align: center;
+  {{ utils.card_shadow() }}
+}
+
+@media (max-width: 1023px){
+  .events-description__wrapper{
+  margin: 0 1.5em;
+  padding: 2.5em 1.5em;
+  }
+}
+
+.events-description h2{
+  font-weight: var(--heavy-font-weight);
 }
 
 .card-slider {
   max-width: {{ultimate_max_width}}px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 3em;
 }
 
 .card-slider__heading-wrapper {
@@ -42,9 +63,6 @@
   }
 }
 
-@media (max-width: 767px) {
-  
-}
 @media (min-width: 768px) {
   {% set bottom_card_spacing = 30 %}
   
