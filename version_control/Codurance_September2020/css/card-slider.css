@@ -79,26 +79,25 @@
 }
 
 .card-slider__translation-info {
-  color: white;
+  color: var(--shark);
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: .5em;
   padding-bottom: 30px;
   width: 415px;
 }
+
 {% call utils.small_and_medium() %}
   .card-slider__translation-info {
     margin-top: -30px;
   }
 {% endcall %}
-.card-slider__translation-info::before {
-  background-image: url({{ get_asset_url('../images/icon-information.svg' ) }});
-  background-repeat: no-repeat;
-  content: "";
-  display: inline-block;
-  height: 35px;
-  margin: auto 0;
-  width: 95px;
+
+.card-slider__translation-info i {
+  font-size: 2.5rem;
 }
+
 .card-slider__translation-info small {
   font-size: 1rem;
   line-height: 1.1;
@@ -452,7 +451,7 @@
   padding-right: 20px;
 }
 @media (max-width: 1023px) {
-  .card-slider-newsletter-wrapper {
+  .card-slider-newsletter-wrapper{
     display: none;
   }
 }
@@ -487,13 +486,18 @@ text-align: center;
 
 
 .events-cta-card{
-  align-items: center;
   background: url(https://f.hubspotusercontent10.net/hubfs/3042464/Events%20page/newsletter-cta-shape-1.svg) white;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  min-height: 25em;
   padding: 20px;
+}
+@media (max-width: 1023px) {
+  .events-cta-card{
+  }
 }
 
 .events-cta-card__icon {
