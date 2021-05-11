@@ -207,11 +207,6 @@
         order: 2;
     } 
 
-
-    {# .clients-grid__container .clients-grid__card:nth-of-type(even) .clients__large-card .clients__large-card__secondary {
-        order: -1;     
-    }    #}
-
     .clients__large-card__secondary__case-study-image {
         right: 35px;
         top: -37%;
@@ -221,7 +216,15 @@
         max-height: 150px;
     }
     .clients__secondary-card__description-text {
-        min-height: 230px;
-        max-height: 230px;
+        min-height: 270px;
+        max-height: 270px;
     }
+{% endcall %}
+
+{% call utils.extra_large() %}
+    .clients__secondary-card__description-text {
+        min-height: 210px;
+        max-height: 210px;
+}
+
 {% endcall %}
