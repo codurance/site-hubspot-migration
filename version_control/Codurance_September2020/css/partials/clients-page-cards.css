@@ -15,11 +15,12 @@
 }
 
 .client-card__tags-wrapper p {
+    {{ utils.natus() }}
     display: flex;
 }
 
 .client-card__tags-wrapper small {
-    {{ utils.sejima() }}
+    {{ utils.natus() }}
     margin-bottom: var(--sejima-margin);
 }
 
@@ -36,9 +37,10 @@
 }
 
 .client-card__service-icon {
-    height: 1rem;
+    height: 1.4rem;
     margin: 0.5rem;
     width: auto;
+    margin-top: .7rem;
 }
 
 .client-card__partner-icon {
@@ -93,13 +95,17 @@
 
 .clients__large-card__logo,
 .clients__secondary-card__logo {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
     height: 38px;
     width: auto;
 }
 
+.clients__large-card__logo {
+    margin-bottom: 0.4rem;
+}
+
 .clients__large-card__body {
-    padding: 2rem;
+    padding: 2rem 2.5rem;
 }
 
 
@@ -188,6 +194,13 @@
         max-height: 200px;
     }
 
+    .clients__large-card__body-author-title{
+        font-weight: var(--welter-font-weight);
+    }
+    .clients__large-card__secondary__case-study-text {
+        font-size: var(--natus-font-size);
+}
+
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
@@ -229,6 +242,13 @@
 
     .clients__large-card__secondary__case-study-text {
         font-size: var(--natus-font-size);
+    }
+
+    .clients__large-card__secondary__case-study {
+        padding: 1.2rem 2rem 1.9rem;
+    }
+    .clients__large-card__secondary__body {
+        padding: 1.5rem 2rem;
     }
 
 {% endcall %}
