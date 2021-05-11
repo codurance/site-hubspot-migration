@@ -216,15 +216,15 @@
         max-height: 150px;
     }
     .clients__secondary-card__description-text {
-        min-height: 270px;
-        max-height: 270px;
+        min-height: 330px;
+        max-height: 330px;
     }
 {% endcall %}
 
 {% call utils.extra_large() %}
     .clients__secondary-card__description-text {
-        min-height: 210px;
-        max-height: 210px;
+        min-height: 260px;
+        max-height: 260px;
 }
 
 {% endcall %}
