@@ -106,6 +106,7 @@
 
 .clients__large-card__body {
     padding: 2rem 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 
@@ -186,8 +187,8 @@
         top: -37%;
     }
     .clients__secondary-card__extra-info {
-        min-height: 150px;
-        max-height: 150px;
+        min-height: 200px;
+        max-height: 200px;
     }
     .clients__secondary-card__description-text {
         min-height: 230px;
@@ -212,7 +213,6 @@
     
     .clients__large-card__primary {
         min-width: 0;
-        min-height: 25em;
         width: 50%;
         order: 1;
     }   
@@ -227,8 +227,8 @@
     }  
 
     .clients__secondary-card__extra-info {
-        min-height: 150px;
-        max-height: 150px;
+        min-height: 200px;
+        max-height: 200px;
     }
 
     .clients__secondary-card__description-text {
