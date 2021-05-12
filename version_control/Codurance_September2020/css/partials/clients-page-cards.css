@@ -168,6 +168,7 @@
 
 .clients__large-card__secondary__case-study-text {
     font-size: var(--sejima-font-size);
+    max-width: 200px
 }
 
 .clients__large-card__secondary__case-study .button-primary {
@@ -200,6 +201,7 @@
     }
     .clients__large-card__secondary__case-study-text {
         font-size: var(--natus-font-size);
+        max-width: 250px
 }
 
 {% endcall %}
@@ -242,6 +244,7 @@
 
     .clients__large-card__secondary__case-study-text {
         font-size: var(--natus-font-size);
+        max-width: 300px;
     }
 
     .clients__large-card__secondary__case-study {
