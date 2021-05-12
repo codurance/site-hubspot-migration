@@ -51,21 +51,17 @@
         src="https://f.hubspotusercontent10.net/hubfs/3042464/Services%20Logos/icon-{{service.name|lower|split(' ')|join('-')}}.svg"
       />
       {% endfor %}
+ 
   </div>
-
-  {% if client.partners|length > 0 %}
-    <div class="client-card__partners">
-        <p class="client-card__partners-heading">Partnered with</p>
-  
-        {% for partner in client.partners %}
-          <img
-            class="client-card__partner-icon"
-            src="https://f.hubspotusercontent10.net/hubfs/3042464/CMS%20Sandbox/Partner%20Logos/{{partner.name|lower|split(' ')|join('')}}.png"
-          />
-        {% endfor %}
-    </div> 
+  {% if client.partner.name %}
+    <div class="client-card__partners"> 
+      <p> 
+            <img
+              class="client-card__partner-icon"
+              src="https://f.hubspotusercontent10.net/hubfs/3042464/CMS%20Sandbox/Partner%20Logos/{{client.partner.name|lower}}.svg"
+            />
+      </p>
   {% endif %}
-
 </div>
 {% endmacro %} 
 
