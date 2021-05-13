@@ -541,3 +541,8 @@ text-align: center;
   display: none;
 }
 
+.submitted-message{
+  text-align: center;
+  margin-bottom: 2.5em;
+}
+
