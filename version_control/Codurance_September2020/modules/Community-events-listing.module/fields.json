@@ -26,6 +26,16 @@
   "type" : "boolean",
   "default" : false
 }, {
+  "id" : "35683103-66da-e088-217c-68482b20fa30",
+  "name" : "newsletter_text_field",
+  "label" : "Newsletter title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
   "id" : "fc04eed3-2315-61e0-8f79-7ac82e912e98",
   "name" : "newsletter_form",
   "label" : "Newsletter Form",

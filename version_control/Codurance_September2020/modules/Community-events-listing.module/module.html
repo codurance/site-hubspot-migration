@@ -127,7 +127,7 @@
 
         <div class="card-slider-item events-cta-card" data-community-events-newsletter-cta>
           <i class="events-cta-card__icon las la-envelope"></i>
-          <h3 class="events-cta-card__title">Get content like this straight to your inbox</h3>
+          <h3 class="events-cta-card__title">{{ module.newsletter_text_field }}</h3>
           {% form "email_form" form_to_use={{ module.newsletter_form.form_id }} %} 
         </div>
       </div>
