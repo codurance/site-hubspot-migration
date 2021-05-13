@@ -26,28 +26,6 @@
   "type" : "boolean",
   "default" : false
 }, {
-  "id" : "898cb49a-3b14-3cc2-1126-5b2b1bdd300b",
-  "name" : "space_filling_cta_text",
-  "label" : "Space-filling CTA Text",
-  "required" : true,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Hear about more of our upcoming events"
-}, {
-  "id" : "4c691098-6642-22e3-aa5e-1dd23263688f",
-  "name" : "space_filling_cta_button_text",
-  "label" : "Space-Filling CTA Button Text",
-  "required" : true,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Learn More"
-}, {
   "id" : "fc04eed3-2315-61e0-8f79-7ac82e912e98",
   "name" : "newsletter_form",
   "label" : "Newsletter Form",

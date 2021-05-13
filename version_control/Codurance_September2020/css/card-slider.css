@@ -497,6 +497,7 @@ text-align: center;
 }
 @media (max-width: 1023px) {
   .events-cta-card{
+    display: none;
   }
 }
 
@@ -526,5 +527,9 @@ text-align: center;
 .hs_submit .hs-button:hover,
 .hs_submit .hs-button:focus {
   border: solid 1px var(--persimmon--dark);
+}
+
+.hs_error_rollup{
+  display: none;
 }
 
