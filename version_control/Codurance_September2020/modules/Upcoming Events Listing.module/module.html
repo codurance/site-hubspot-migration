@@ -123,18 +123,12 @@
       </div>
     </article>
     {% endfor %}
-    <div class="card-slider-newsletter-wrapper" style="display: none;" data-upcoming-events-newsletter-cta>
-      <div class="card-slider-newsletter__icon"></div>
-      <h4 class="card-slider-newsletter__header">
-        {{module.space_filling_cta_text}}
-      </h4>
-      {{snippets.text_cta_right_arrow(
-        classnames="card-slider-newsletter__cta",
-        target="_blank",
-        url="https://mailchi.mp/codurance/newsletter-subscription",
-        text=module.space_filling_cta_button_text
-      )}}
+    <div class="card-slider-item events-cta-card" data-community-events-newsletter-cta>
+      <i class="events-cta-card__icon las la-envelope"></i>
+      <h3 class="events-cta-card__title">{{ module.newsletter_text_field }}</h3>
+      {% form "email_form" form_to_use={{ module.newsletter_form.form_id }} %} 
     </div>
+
   </div>
 </div>
 
