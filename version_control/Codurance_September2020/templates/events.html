@@ -32,14 +32,16 @@
   label="Page Hero Slice" no_wrapper=True %}
 </section>
 
+
 <main class="main-container">
-   <section class="events-description responsive-page-width">
+    <section class="events-description responsive-page-width">
       <div class="events-description__wrapper">
       {% module "events_description_banner" path="@hubspot/rich_text" 
       label="Events Description" no_wrapper=True %}
-      <div>
-   </section>
-
+      </div>
+    </section>
+   
+     
   <section class="card-slider">
     <div class="card-slider__events-wrapper">
       {% module "events" path="../modules/Upcoming Events Listing.module"
@@ -52,8 +54,8 @@
       {% module "comunity_events" path="../modules/Community-events-listing.module"
       label="Community Events" no_wrapper=True %}
     </div>
-  </section>
-
+  </section>  
+  
   <section class="card-slider">
     <div class="card-slider__events-wrapper">
       {% module "past_events" path="../modules/Past Events Listing.module"
