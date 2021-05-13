@@ -102,7 +102,7 @@
                     class="card-slider-item__metadata"
                     datetime="{{ event.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
                   >
-                    {{ event.datetime|datetimeformat('%a %e %b %Y | %H:%M (%Z)') }}
+                    {{ event.datetime|datetimeformat('%a %e %b %Y | %H:%M (%Z +1)') }}
                   </time>
                   <h6>{{ event.type[name] }}</h6>
                   <h4 class="card-slider-item__title">
