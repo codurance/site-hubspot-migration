@@ -496,6 +496,12 @@ text-align: center;
   padding: 20px;
 }
 
+.community-cta-card{
+  background: url(https://f.hubspotusercontent10.net/hubfs/3042464/Events%20page/newsletter-cta-shape-2.svg) white;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 @media (max-width: 1023px) {
   .events-cta-card{
     display: none;
