@@ -513,7 +513,8 @@ text-align: center;
   {{ utils.freed() }}
 }
 
-#hs_cos_wrapper_comunity_events_email_form{
+/* Sets the with of the newsletter form */
+.hs_cos_wrapper{
   width: 90%;
 }
 
