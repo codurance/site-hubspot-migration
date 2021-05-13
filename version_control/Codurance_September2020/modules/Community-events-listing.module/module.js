@@ -1,11 +1,11 @@
 const SELECTORS = {
   navigationControl: true,
-  cardWindowSelector: '[data-upcoming-card-window]',
-  trackSelector: '[data-upcoming-card-track]',
-  cardsSelector: '[data-upcoming-card]',
-  leftButtonSelector: '[data-upcoming-events-button-left]',
-  rightButtonSelector: '[data-upcoming-events-button-right]',
-  ctaContainerSelector: '[data-upcoming-events-newsletter-cta]'
+  cardWindowSelector: '[data-community-card-window]',
+  trackSelector: '[data-community-card-track]',
+  cardsSelector: '[data-community-card]',
+  leftButtonSelector: '[data-community-events-button-left]',
+  rightButtonSelector: '[data-community-events-button-right]',
+  ctaContainerSelector: '[data-community-events-newsletter-cta]'
 };
 
 function init() {
