@@ -250,6 +250,7 @@
   flex-grow: 1;
   padding: 20px;
   background-color: white;
+  justify-content: space-between;
 }
 
 .card-slider-item__text-container-inner {
@@ -484,7 +485,6 @@ text-align: center;
   cursor: pointer;
 }
 
-
 .events-cta-card{
   background: url(https://f.hubspotusercontent10.net/hubfs/3042464/Events%20page/newsletter-cta-shape-1.svg) white;
   background-repeat: no-repeat;
@@ -495,6 +495,7 @@ text-align: center;
   min-height: 25em;
   padding: 20px;
 }
+
 @media (max-width: 1023px) {
   .events-cta-card{
     display: none;
