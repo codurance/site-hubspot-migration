@@ -280,7 +280,7 @@
 }
 
 .clients-grid__container {
-    margin: 0 50px;
+    margin: 0 auto 50px;
     width: 90%;
 }
 
@@ -297,7 +297,7 @@
 
 .clients-grid__card {
     min-height: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .clients-grid__card--large,
@@ -324,12 +324,16 @@
         width: 100%
         {# width: calc(100% - {{ grid_gutter_size }} / 2); 98% #}
     }
+    .clients-grid__container {
+        margin: 0 50px;
+    }
   
 {% endcall %} 
 
 {% call utils.extra_large() %}
     .clients-grid__card--large {
-        margin: 0 50px;
+        margin-left: 50px;
+        margin-right: 50px;
   }
 {% endcall %} 
 
