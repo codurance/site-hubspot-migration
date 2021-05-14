@@ -207,7 +207,7 @@
     .clients__large-card {
         align-items: start;
         flex-direction: row;
-        max-width: 1100px;   
+        max-width: 1300px;   
     }
     
     .clients__large-card__primary {
@@ -258,5 +258,4 @@
         min-height: 260px;
         max-height: 260px;
 }
-
 {% endcall %}

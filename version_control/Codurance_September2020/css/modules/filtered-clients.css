@@ -280,7 +280,7 @@
 }
 
 .clients-grid__container {
-    margin: 0 auto 50px;
+    margin: 0 50px;
     width: 90%;
 }
 
@@ -321,10 +321,16 @@
     }
 
     .clients-grid__card--large {
-        width: calc(100% - {{ grid_gutter_size }} / 2); {# 98% #}
+        width: 100%
+        {# width: calc(100% - {{ grid_gutter_size }} / 2); 98% #}
     }
   
+{% endcall %} 
 
+{% call utils.extra_large() %}
+    .clients-grid__card--large {
+        margin: 0 50px;
+  }
 {% endcall %} 
 
 .clients__no-clients-message-container {
