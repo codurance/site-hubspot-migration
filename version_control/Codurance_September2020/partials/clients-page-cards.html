@@ -83,10 +83,10 @@
             {% do services.append(service.name) %} 
         {% endfor %} 
         
-        {% set tech_stack = [] %}
-         {% for tech in client.technology_stack %} 
-            {% do tech_stack.append(tech.name) %} 
-            {%endfor %}
+{% set tech_stack = [] %}
+  {% for tech in client.technology_stack %} 
+    {% do tech_stack.append(tech.name) %} 
+    {%endfor %}
 
 <div
   class="{{classnames}}"
