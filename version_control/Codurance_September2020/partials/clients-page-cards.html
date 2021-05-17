@@ -13,12 +13,7 @@
   {% endif %}
 
 {% macro tags_footer(client) %}
-    {% set industry_tags = [] %}
-      {% for industry in client.industry %}
-            {% do industry_tags.append(industry.name) %}
-        {% endfor %}
-
-
+    {% set industry_tags = [client.industry.name] %}
     {% for problem in client.problems %}
         {% do industry_tags.append(problem.name) %}
     {% endfor %}
