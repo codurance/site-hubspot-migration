@@ -78,11 +78,6 @@
             {% do problems.append(problem.name) %}
         {% endfor %}
 
-  {% set industry = []%} 
-    {% for industry in client.industry %} 
-        {% do industry.append(industry.name) %}
-    {% endfor %}
-
  {% set services = [] %} 
         {% for service in client.services %} 
             {% do services.append(service.name) %} 
@@ -95,7 +90,7 @@
 
 <div
   class="{{classnames}}"
-  data-client-industry="{{industry|join(',')}}"
+  data-client-industry="{{client.industry.name}}"
   data-client-technology="{{tech_stack|join(',')}}"
   data-client-service="{{services|join(',')}}"
 >
