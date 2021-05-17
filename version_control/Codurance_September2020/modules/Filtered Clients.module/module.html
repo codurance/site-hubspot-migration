@@ -8,15 +8,18 @@
 {% set allServices = [] %}
 
 {% for client in clients %}
-  {% if client.industry.name %}
-    {% do allIndustries.append(client.industry.name) %}
-  {% endif %}
+  {% for industry in client.industry %}
+    {% do allIndustries.append(industry.name) %}
+  {% endfor %}
+
   {% for service in client.services %}
     {% do allServices.append(service.name) %}
   {% endfor %}
+
   {% for technology in client.technology_stack %}
     {% do allTechnologies.append(technology.name) %}
   {% endfor %}
+
 {% endfor %}
 
 {% set allIndustries = allIndustries|unique %}
@@ -159,7 +162,7 @@
             )
           }}       
 
-          {% elif  client.testimonial_text && client.promotion   %}
+          {% elif  client.testimonial_text && client.promotion  %}
           {% do clientNoCaseStudy.append(client) %}
 
           {% elif client.promotion  %}
