@@ -1,0 +1,61 @@
+[ {
+  "id" : "291068d9-7bd9-e367-9cd5-b1168db809e3",
+  "name" : "youtube_url",
+  "label" : "youtube url",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
+  "validation_error_message" : "Please include https:// or http://",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "https://www.youtube.com/user/codurance"
+}, {
+  "id" : "69154a29-c782-8231-0995-1dd1bd8e2771",
+  "name" : "linkedin_url",
+  "label" : "linkedin url",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
+  "validation_error_message" : "Please include https:// or http://",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "https://www.linkedin.com/company/codurance"
+}, {
+  "id" : "9c792a52-9d13-3ab9-a29d-6f3863c0ac93",
+  "name" : "twitter_url",
+  "label" : "twitter url",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
+  "validation_error_message" : "Please include https:// or http://",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "https://twitter.com/codurance"
+}, {
+  "id" : "30d22f3e-2bfd-2c54-c308-b36493268fe9",
+  "name" : "instagram_url",
+  "label" : "instagram url",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
+  "validation_error_message" : "Please include https:// or http://",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "https://www.instagram.com/codurance/"
+}, {
+  "id" : "1a3785f3-46ba-3d86-e73e-d9532289fa77",
+  "name" : "podcast_url",
+  "label" : "podcast url",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
+  "validation_error_message" : "Please include https:// or http://",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "https://open.spotify.com/show/7DY9af7dP7GUREz4bTPGS4"
+} ]
