@@ -533,6 +533,7 @@ text-align: center;
 .hs_cos_wrapper_type_form .hs-form-booleancheckbox-display {
   {{ utils.sejima() }}
   position: relative;
+  max-width: 20em;
 }
 
 .hs_cos_wrapper_type_form .hs-form-booleancheckbox-display span {
@@ -570,6 +571,10 @@ text-align: center;
 }
 .hs_cos_wrapper_type_form input[type=checkbox]:checked + span::after {
   content: "";
+}
+
+.hs-form-field, .field{
+  margin-bottom: 5px;
 }
 
 .hs_submit .hs-button{
