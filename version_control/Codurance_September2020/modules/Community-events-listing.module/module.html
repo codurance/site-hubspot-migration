@@ -1,0 +1,139 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{{ require_css(get_asset_url("../../css/card-slider.css")) }}
+
+{% if module.hubdb_table %}
+  {% set upcomingEventsFilter = ("&orderBy=datetime" +
+    "&datetime__gt=" + local_dt|unixtimestamp + "&limit=4") %}
+  {% set upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
+  {% set totalUpcomingEvents = upcomingEvents|length %}
+  
+  
+  {% if upcomingEvents|length >= 2 %}
+      
+    <div class="card-slider__event-inner responsive-page-width lateral-spacing" data-community-card-window>
+      <div class="card-slider__header-wrapper">
+    
+      <h2 class="card-slider__heading responsive-page-width">
+        {{module.heading}}
+        </h2>
+        <div class="card-slider__nav-button-wrapper">
+          <button
+            class="card-slider__nav-button"
+            autocomplete="off"
+            data-community-events-button-left
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 8.209 14.414"
+              style="margin-right: 1px;"
+            >
+              <g
+                id="icon_-_dropdown"
+                data-name="icon - dropdown"
+                transform="translate(7.502 0.707) rotate(90)"
+              >
+                <path
+                  id="icon_-_dropdown-2"
+                  data-name="icon - dropdown"
+                  d="M17917.205-19615.16l6.5,6.5,6.5-6.5"
+                  transform="translate(-17917.205 19615.16)"
+                  fill="none"
+                  stroke="#2b2c2d"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </g>
+            </svg>
+          </button>
+          <button
+            class="card-slider__nav-button card-slider__nav-button"
+            autocomplete="off"
+            data-community-events-button-right
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 8.2 14.4"
+              style="margin-left: 1px;"
+            >
+              <style type="text/css">
+                .st0 {
+                  fill: none;
+                  stroke: #2b2c2d;
+                  stroke-width: 2;
+                  stroke-linejoin: round;
+                }
+              </style>
+              <g id="icon_-_dropdown" transform="translate(7.502 0.707) rotate(90)">
+                <path
+                  id="icon_-_dropdown-2"
+                  class="st0"
+                  d="M13,6.8L6.5,0.3L0,6.8"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+        {% if module.translation_information_text %}
+          <div class="card-slider__translation-info">
+            <small>Nuestros eventos son, en su mayoría, en inglés. Por eso estás viendo sus títulos y descripciones en este idioma.</small>
+          </div>
+        {% endif %}
+      </div>
+      <div class="card-slider-results" data-community-card-track>
+        {% for event in upcomingEvents %}
+        <article class="card-slider-item" data-community-card>
+          <div class="card-slider-item__content">
+            <div
+              class="card-slider-item__image-container"
+              style="background-image: url({{event.thumbnail.url}})"
+            >
+              {% if event.type.name %}
+              <small
+                class="card-slider-item__label card-slider-item__label--type"
+              >
+                {{ event.type.name }}
+              </small>
+              {% endif %}
+            </div>
+            <div class="card-slider-item__text-container">
+              <div class="card-slider-item__text-container-inner truncated">
+                <header>
+                  <time
+                    class="card-slider-item__metadata"
+                    datetime="{{ event.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
+                  >
+                    {{ event.datetime|datetimeformat('%a %e %b %Y | %H:%M (%Z +1)') }}
+                  </time>
+                  <h4 class="card-slider-item__title">
+                    {{ event.name }}
+                  </h4>
+                </header>
+                <p class="card-slider-item__description">
+                  {{ event.description }}
+                </p>
+              </div>
+              <div class="card-slider-item__button-container">
+                {{snippets.button_primary(
+                  url=event.link,
+                  target="_blank",
+                  text="Register Attendance"
+                )}}
+              </div>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+
+        <div class="card-slider-item events-cta-card community-cta-card" style="display: none;" data-community-events-newsletter-cta>
+          <i class="events-cta-card__icon las la-envelope"></i>
+          <h3 class="events-cta-card__title">{{ module.newsletter_text_field }}</h3>
+          {% form "email_form" form_to_use={{ module.newsletter_form.form_id }} %} 
+        </div>
+      </div>
+    </div>
+  {%endif%}
+
+{% endif %}
+
+{{ require_js(get_asset_url("../../js/cardSlider.js"), "footer") }}

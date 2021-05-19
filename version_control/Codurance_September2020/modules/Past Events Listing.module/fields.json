@@ -17,28 +17,6 @@
   "type" : "text",
   "default" : "Recent Events"
 }, {
-  "id" : "6cc5441e-011b-127a-9562-d5c2b679bb07",
-  "name" : "space_filling_cta_text",
-  "label" : "Space-Filling CTA Text",
-  "required" : true,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Get content like this straight to your inbox"
-}, {
-  "id" : "559108ac-fc86-71c6-d339-bf9469a6c32c",
-  "name" : "space_filling_cta_button_text",
-  "label" : "Space-Filling CTA Button Text",
-  "required" : true,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Learn More"
-}, {
   "id" : "3c2b6f0e-bc96-18a1-e3ed-e15d7ab6a463",
   "name" : "watch_all_cta_text",
   "label" : "Watch All CTA Text",
