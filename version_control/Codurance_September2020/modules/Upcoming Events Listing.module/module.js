@@ -14,3 +14,17 @@ function init() {
 }
 
 window.addEventListener('DOMContentLoaded', init);
+
+let dateArray = document.querySelectorAll('time')
+
+Array.from(dateArray).map(item => {
+  console.log(item)
+  let timeToConvers = item.getAttribute('data-time')
+
+  const timeOptions = { hour12: false, hour: '2-digit', minute:'2-digit', timeZoneName: 'short'};
+  let localTime = new Date(parseInt(timeToConvers)).toLocaleTimeString("en-US", timeOptions)
+
+  const dateOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+  let localDate = new Date(parseInt(timeToConvers)).toLocaleDateString("en-US", dateOptions )
+  item.innerHTML = `${localDate} | ${localTime} `;
+})
