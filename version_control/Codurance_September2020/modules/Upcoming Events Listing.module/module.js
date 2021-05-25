@@ -20,7 +20,7 @@ let dateArray = document.querySelectorAll('.upcoming-events')
 Array.from(dateArray).map(item => {
   let timeToConvers = item.getAttribute('data-time')
 
-  const timeOptions = { hour12: false, hour: '2-digit', minute:'2-digit', timeZoneName: 'short'};
+  const timeOptions = { hour12: false, hour: '2-digit', minute:'2-digit', timeZoneName: 'long'};
   let localTime = new Date(parseInt(timeToConvers)).toLocaleTimeString("en-US", timeOptions)
   
   const dateOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
