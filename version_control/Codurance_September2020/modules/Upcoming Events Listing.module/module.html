@@ -99,11 +99,12 @@
           <div class="card-slider-item__text-container-inner truncated">
             <header>
               <time
-                class="card-slider-item__metadata"
+                class="card-slider-item__metadata upcoming-events"
                 datetime="{{ event.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
+                data-time=" {{ event.datetime }}"
               >
-                {{ event.datetime|datetimeformat('%a %e %b %Y | %H:%M (%Z +1)') }}
-              </time>
+               
+              </time>              
               <h4 class="card-slider-item__title">
                 {{ event.name }}
               </h4>
