@@ -1,0 +1,45 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Newsletter Sign Up
+-->
+{% extends "./layouts/base.html" %}
+
+head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/newsletter-sign-up.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+
+{% block body %}
+
+
+<div class="body-container-become_newsletter-sign-up">
+    <section class="newsletter-sign-up__container">
+        <h1 class="newsletter-sign-up-container__title">Join our newsletter for expert tips and inspirational case studies</h1>
+          <div class="form-wrapper-class"> 
+            {% form "email_form" form_to_use="3802b7ad-0e35-49ae-b98f-77573a11c68d" no_title %} 
+          </div>
+          <i class="newsletter-sign-up_container__icon las la-envelope"></i>
+    </section>
+</div>
+
+
+{% endblock body %}
+
+{% block footer %}
+{% endblock footer%}
