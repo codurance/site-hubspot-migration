@@ -8,10 +8,11 @@
 
 
 .newsletter-sign-up__container {
-    padding: 4rem;
-    {{ utils.card_shadow() }};
-    max-width: 90%;
     margin: 4rem auto;
+    max-width: 90%;
+    padding: 4rem 2rem 2rem 2rem;
+    position: relative;
+    {{ utils.card_shadow() }};
 }
 
 .newsletter-sign-up-container__title {
@@ -21,46 +22,45 @@
 }
 
 .newsletter-sign-up_container__icon {
-    font-size: 3rem;
-    color: var(--french-gray);
-    border-radius: 50%;
-    padding: 0.75rem;
-    {{ utils.card_shadow() }};
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    margin-top: 1.5rem;
-    z-index: 1;
     background: white;
-
+    border-radius: 50%;
+    color: var(--french-gray);
+    font-size: 3rem;
+    left: 50%;
+    top: -8%;
+    padding: 0.75rem;
+    position: absolute;
+    transform: translate(-50%);
+    z-index: 1;
+    {{ utils.card_shadow() }};
 }
 
 .form-wrapper-class .hs-button {
-    width: 100%;
-    color: white;
     background: var(--persimmon);
-    padding: 8px 15px;
-    text-align: center;
+    border-radius: 3px;
+    color: white;
     display: inline-block;
     font-size: var(--natus-font-size);
     font-weight: var(--heavy-font-weight);
     line-height: var(--natus-line-height);
-    border-radius: 3px;
-
+    padding: 8px 15px;
+    text-align: center;
+    width: 100%;
 }
 
 
 {% call utils.medium_large_and_extra_large() %}
+
     .newsletter-sign-up-container__title {
         font-size: var(--habib-font-size);
         line-height: var(--habib-line-height);
-        max-width: 80%; 
         margin-bottom: 4rem; 
+        max-width: 80%; 
     }
 
     .form-wrapper-class form {
-        display: flex;
         align-items: baseline;
+        display: flex;
         max-width: 80%;
     }
 
@@ -68,6 +68,15 @@
         flex: 1;
     }
     
+    .newsletter-sign-up_container__icon {
+        top: 92%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%);
+    }
+    .newsletter-sign-up__container {
+        padding: 4rem;
+    }
 
 {% endcall %} 
 
