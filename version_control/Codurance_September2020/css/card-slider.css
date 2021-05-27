@@ -520,8 +520,7 @@ text-align: center;
   font-weight: var(--heavy-font-weight);
 }
 
-/* Sets the with of the newsletter form */
-.hs_cos_wrapper{
+.events-cta-card__form{
   width: 90%;
 }
 
