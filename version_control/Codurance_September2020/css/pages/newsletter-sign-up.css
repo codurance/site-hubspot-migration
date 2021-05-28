@@ -1,13 +1,20 @@
 {% import '../utils/utils.css' as utils %}
 
- .body-container-become_newsletter-sign-up {
+     
+.body-wrapper {
+    background: rgb(239,119,38);
+    background: linear-gradient(0deg, rgba(239,119,38,0.7329306722689075) 0%, rgba(255,255,255,1) 100%);
+    background: url('https://f.hubspotusercontent10.net/hubfs/3042464/newsletter%20sign%20up%20page/background-image-newsletter-sign-up-x-large.png');
+}
+
+ .body-container-sign-up {
     max-width: 1300px;
     width: 100%;
     margin: 0 auto;
  }
 
-
 .newsletter-sign-up__container {
+    background: white;
     margin: 4rem auto;
     max-width: 90%;
     padding: 4rem 2rem 2rem 2rem;
@@ -19,6 +26,10 @@
     font-size: var(--dudler-font-size);
     line-height: var(--dudler-line-height);
     margin-bottom: var(--dudler-margin);
+} 
+
+.bolded-text {
+    font-weight: var(--heavy-font-weight);
 }
 
 .newsletter-sign-up_container__icon {
@@ -48,34 +59,41 @@
     width: 100%;
 }
 
+{% call utils.medium() %}
+    .newsletter-sign-up__container {
+        max-width: 70%;    
+        padding: 4rem 3rem 3rem 3rem;
+    }
+    .form-wrapper-class form {
+        margin-top: 2rem;
+    }
+{% endcall %} 
 
-{% call utils.medium_large_and_extra_large() %}
+{% call utils.large() %}
+    .newsletter-sign-up__container {
+        max-width: 50%;    
+        padding: 6rem 5rem 5rem 5rem;
+    }
+    .form-wrapper-class form {
+        margin-top: 2rem;
+    }
+{% endcall %} 
 
-    .newsletter-sign-up-container__title {
-        font-size: var(--habib-font-size);
-        line-height: var(--habib-line-height);
-        margin-bottom: 4rem; 
-        max-width: 80%; 
+{% call utils.extra_large() %}
+
+    .newsletter-sign-up__container {
+        max-width: 90%;    
+        padding: 4.5rem 5rem 3rem 5rem;
     }
 
     .form-wrapper-class form {
         align-items: baseline;
         display: flex;
-        max-width: 80%;
+        max-width: 90%;
     }
 
     .form-wrapper-class form div {
         flex: 1;
-    }
-    
-    .newsletter-sign-up_container__icon {
-        top: 92%;
-        left: 50%;
-        position: absolute;
-        transform: translate(-50%);
-    }
-    .newsletter-sign-up__container {
-        padding: 4rem;
     }
 
 {% endcall %} 

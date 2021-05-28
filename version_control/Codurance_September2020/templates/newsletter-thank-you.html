@@ -16,7 +16,7 @@ head>
   {{ require_css(get_asset_url("../css/main.css")) }}
   {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
 
-  {{ require_css(get_asset_url("../css/pages/newsletter-sign-up.css")) }}
+  {{ require_css(get_asset_url("../css/pages/newsletter-thank-you.css")) }}
 
   {{ require_js(get_asset_url("../js/main.js")) }}
   {{ standard_header_includes }}
@@ -28,15 +28,13 @@ head>
 {% block body %}
 
 
-<div class="body-container-become_newsletter-sign-up">
-    <section class="newsletter-sign-up__container">
-          <h1 class="newsletter-sign-up-container__title">Thank you!</h1>
-            <i class="newsletter-sign-up_container__icon las la-envelope"></i>
+<div class="body-container-thank-you">
+    <section class="newsletter-thank-you__container">
+          <h1 class="newsletter-thank-you-container__title"><span class="bolded-text">Thanks for subscribing to our newsletter! </span> <br> <br>We look forward to sharing new and exciting content with you.</h1>
+            <i class="newsletter-thank-you_container__icon las la-check"></i>
     </section>
 </div>
 
 
 {% endblock body %}
 
-{% block footer %}
-{% endblock footer%}
