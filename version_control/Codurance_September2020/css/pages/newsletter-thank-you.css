@@ -1,9 +1,8 @@
 {% import '../utils/utils.css' as utils %}
 
     .body-container-thank-you {
+        {{ utils.white_to_tango() }}
         padding: 4em 2em;
-        background: rgb(239,119,38);
-        background: linear-gradient(145deg, rgba(255,252,250,1) 0%, rgba(252,224,206,1) 100%);
         width: 100%;
         margin: 0 auto;
     }
