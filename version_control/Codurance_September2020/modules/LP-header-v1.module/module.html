@@ -1,24 +1,24 @@
 {{ require_css(get_asset_url("../../css/modules/lp-header-v1.css")) }}
 
 <div class="lp-header-v1">
-	<div class="lp-header-v1__image">
-		{% if module.header_image.src %}
-			{% set sizeAttrs = 'width="{{ module.header_image.width }}" height="{{ module.header_image.height }}"' %}
-			{% if module.header_image.size_type == 'auto' %}
-				{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-			{% elif module.header_image.size_type == 'auto_custom_max' %}
-				{% set sizeAttrs = 'width="{{ module.header_image.max_width }}" height="{{ module.header_image.max_height }}" style="max-width: 100%; height: auto;"' %}
-			{% endif %}
-			{% set loadingAttr = module.header_image.loading != 'disabled' ? 'loading="{{ module.header_image.loading }}"' : '' %}
-			<img src="{{ module.header_image.src }}" alt="{{ module.header_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-		{% endif %}
-	</div>
 	<div class="lp-header-v1__content">
 		<h1 class="lp-header-vi__content__title">
-		{% inline_text field="title" value="{{ module.title }}" %}
+		{% inline_text field="title" value="{{ module.title }}"  no_wrapper=true  %}
 		</h1>
 		<p class="lp-header-vi__content__subtitle">
-		{% inline_text field="subtitle" value="{{ module.subtitle }}" %}
+		{% inline_text field="subtitle" value="{{ module.subtitle }}" no_wrapper=true %}
 		</p>
 	</div>
+	<div class="lp-header-v1__image">
+	{% if module.header_image.src %}
+		{% set sizeAttrs = 'width="{{ module.header_image.width }}" height="{{ module.header_image.height }}"' %}
+		{% if module.header_image.size_type == 'auto' %}
+			{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+		{% elif module.header_image.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="{{ module.header_image.max_width }}" height="{{ module.header_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+		{% endif %}
+		{% set loadingAttr = module.header_image.loading != 'disabled' ? 'loading="{{ module.header_image.loading }}"' : '' %}
+		<img src="{{ module.header_image.src }}" alt="{{ module.header_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+	{% endif %}
+</div>
 </div>
