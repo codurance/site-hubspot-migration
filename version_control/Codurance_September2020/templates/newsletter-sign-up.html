@@ -5,6 +5,16 @@ label: Newsletter Sign Up
 -->
 {% extends "./layouts/base.html" %}
 
+
+{% if locale == 'en' %}
+  {% set title = "Join our newsletter "  %}
+  {% set subtitle = "for expert tips and inspirational case studies"%}
+
+{% else %}
+  {% set title = "Únete a nuestro newsletter "  %}
+  {% set subtitle = "para que podamos hacerte llegar consejos y casos prácticos inspiradores" %}
+{% endif %}
+
 <head>
   <meta charset="utf-8">
   <title>{{ page_meta.html_title }}</title>
@@ -30,7 +40,7 @@ label: Newsletter Sign Up
 
 <div class="body-container-sign-up">
     <section class="newsletter-sign-up__container">
-          <h1 class="newsletter-sign-up-container__title"><span class="bolded-text">Join our newsletter</span> <br> for expert tips and inspirational case studies</h1>
+          <h1 class="newsletter-sign-up-container__title"><span class="bolded-text">{{title}}</span> <br>{{subtitle}}</h1>
             <div class="form-wrapper-class"> 
               {% form "email_form" form_to_use="78f833ae-cc13-4e66-b887-6d9e08899522" no_title %} 
             </div>
