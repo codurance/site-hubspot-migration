@@ -1,0 +1,38 @@
+[ {
+  "id" : "1fcb0562-3180-f689-aa7e-86bef7bed6f0",
+  "name" : "header_image",
+  "label" : "Header Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "ebdfd606-bb10-3b52-e15e-4697c0b0f2a2",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Landing Page Header"
+}, {
+  "id" : "9dbddcaa-ea57-2b52-ae99-ce3004fd8a9e",
+  "name" : "subtitle",
+  "label" : "Subtitle",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]
