@@ -1,0 +1,22 @@
+[ {
+  "id" : "c6e921be-ec41-03f2-7929-2b9a4c968612",
+  "name" : "richtext_field",
+  "label" : "Rich text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "491675cd-60bb-179d-2d26-0ffd14ba163d",
+  "name" : "form_field",
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "default" : {
+    "form_id" : "2e50636a-5a3c-44e9-8571-377d15f2f19d",
+    "response_type" : "inline",
+    "message" : "Thank you for submitting the form.",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+} ]
