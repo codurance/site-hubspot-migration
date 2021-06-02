@@ -1,0 +1,5 @@
+{% import '../utils/utils.css' as utils %}
+
+    h2 {
+        color: purple;
+    }
