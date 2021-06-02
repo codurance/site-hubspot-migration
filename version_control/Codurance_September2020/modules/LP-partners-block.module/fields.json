@@ -8,7 +8,7 @@
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
-  "default" : "Clients"
+  "default" : "Partners"
 }, {
   "id" : "f52c88f3-fdc8-6b7e-bbb9-8b6e4a418758",
   "name" : "subtitle",
