@@ -1,34 +1,37 @@
 {{ require_css(get_asset_url("../../css/modules/lp-clients-partners.css")) }}
 
 <div class="lp-partners-clients-container">
-  <h2 class="lp-partners-clients-container__title"> 
-    {% inline_text field="title" value="{{ module.title }}" %}
-  </h2>
+  <div class="lp-partners-clients-container__content">
+    <h2 class="lp-partners-clients-container__title"> 
+      {% inline_text field="title" value="{{ module.title }}"  no_wrapper=true %}
+    </h2>
 
- <p class="lp-partners-clients-container__subtitle">
-  {% inline_text field="subtitle" value="{{ module.subtitle }}" %}
-  </p>
+    <p class="lp-partners-clients-container__subtitle">
+      {% inline_text field="subtitle" value="{{ module.subtitle }}" no_wrapper=true %}
+    </p>
   
-  <p class="lp-partners-clients-container__cta">
-    {% cta guid="{{ module.cta_field }}" %}
-  </p>
-  
+    <p class="lp-partners-clients-container__cta">
+      {% cta guid="{{ module.cta_field }}" no_wrapper=true %}
+    </p>
+  </div>
+    
   <div class="lp-partners-clients-container__logo-group">
-    {% for item in module.logo_item %}
-          {% if item.logo.src %}
-            {% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}"' %}
-            {% if item.logo.size_type == 'auto' %}
-            {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-            {% elif item.logo.size_type == 'auto_custom_max' %}
-            {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.max_width }}px; max-height: {{ item.max_height }}px"' %}
+      {% for item in module.logo_item %}
+            {% if item.logo.src %}
+              {% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}"' %}
+              {% if item.logo.size_type == 'auto' %}
+              {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+              {% elif item.logo.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.max_width }}px; max-height: {{ item.max_height }}px"' %}
+              {% endif %}
+              <img 
+              class="lp-partners-clients-container__logo-group__image"
+              src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ sizeAttrs }} no_wrapper=true>
             {% endif %}
-            <img 
-            class="lp-partners-clients-container__logo-group__image"
-            src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ sizeAttrs }}>
-          {% endif %}
-    {% endfor %}
+      {% endfor %}
   </div>
+  <hr>
 
-  </div>
+</div>
   
   
