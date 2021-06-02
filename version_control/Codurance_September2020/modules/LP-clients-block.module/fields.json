@@ -32,6 +32,12 @@
   "label" : "Logo Item",
   "required" : false,
   "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
   "children" : [ {
     "id" : "978b2a32-03bb-ac4d-ebdb-720e8bbe3fc8",
     "name" : "logo",

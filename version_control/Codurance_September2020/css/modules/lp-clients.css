@@ -9,9 +9,11 @@
 
 .lp-partners-clients-container__title {
     {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
     margin-bottom: var(--freed-margin);
 }
 .lp-partners-clients-container__subtitle {
+    {{ utils.natus() }}
     margin-bottom: var(--base-margin);
 }
 
@@ -28,6 +30,18 @@
     height: 30px;
     filter: grayscale(100%);
     margin: .5rem 1rem;
+}
+
+.lp-clients-partners-container__line {
+    max-width: 1300px; 
+    margin: 0 auto;
+}
+
+.lp-clients-partners-container__line hr {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 
@@ -48,6 +62,9 @@
     }
     .lp-partners-clients-container__logo-group {
         align-items: center;
-    }   
+    }  
 
+    .lp-clients-partners-container__line hr {
+        max-width: 60%;
+    }
 {% endcall%}
