@@ -1,0 +1,136 @@
+{% import '../utils/utils.css' as utils %}
+
+
+    
+.body-container-sign-up {
+    {{ utils.white_to_tango() }}
+    padding: 4em 2em;
+    width: 100%;
+    margin: 0 auto;
+ }
+
+.newsletter-sign-up__container {
+    background: white;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem 2rem;
+    max-width: 25em;
+    position: relative;
+    {{ utils.card_shadow() }};
+}
+
+.newsletter-sign-up-container__title {
+    font-size: var(--dudler-font-size);
+    line-height: var(--dudler-line-height);
+    margin-bottom: var(--dudler-margin);
+} 
+
+.bolded-text {
+    font-weight: var(--heavy-font-weight);
+}
+
+.newsletter-sign-up_container__icon {
+    background: white;
+    border-radius: 50%;
+    color: var(--french-gray);
+    font-size: 3rem;
+    left: 50%;
+    top: -8%;
+    padding: 0.75rem;
+    position: absolute;
+    transform: translate(-50%);
+    z-index: 1;
+    {{ utils.card_shadow() }};
+}
+
+.form-wrapper-class .hs-button {
+    background: var(--persimmon);
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    font-size: var(--natus-font-size);
+    font-weight: var(--heavy-font-weight);
+    line-height: var(--natus-line-height);
+    padding: 8px 15px;
+    text-align: center;
+    width: 100%;
+}
+
+
+.hs_cos_wrapper_type_form input[type="checkbox"] {
+  opacity: 0;
+  margin: 0.15rem 0.6rem 0.6rem;
+}
+
+.hs_cos_wrapper_type_form .hs-form-booleancheckbox-display {
+  {{ utils.sejima() }}
+  position: relative;
+}
+
+.hs_cos_wrapper_type_form .hs-form-booleancheckbox-display span {
+  font-weight: var(--middle-font-weight);
+  position: relative;
+}
+
+.hs_cos_wrapper_type_form .hs-form-booleancheckbox-display span::before {
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, .25);
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1.25rem;
+  left: -1.75rem;
+  width: 1.25rem;
+}
+
+.hs_cos_wrapper_type_form input[type=checkbox]:focus + span:before {
+  outline: rgb(0, 0, 0) auto 5px;
+}
+
+.hs_cos_wrapper_type_form .hs-form-booleancheckbox-display span::after {
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  display: inline-block;
+  height: 0.4rem;
+  left: -1.45rem;
+  position: absolute;
+  top: 0.6rem;
+  transform: rotate(-45deg);
+  width: 0.7rem;
+}
+.hs_cos_wrapper_type_form input[type=checkbox]:checked + span::after {
+  content: "";
+}
+
+{% call utils.medium() %}
+    .newsletter-sign-up__container {
+        padding: 4rem 3rem 3rem 3rem;
+    }
+    .form-wrapper-class form {
+        margin-top: 2rem;
+    }
+{% endcall %} 
+
+{% call utils.large() %}
+    .form-wrapper-class form {
+        margin-top: 2rem;
+    }
+{% endcall %} 
+
+{% call utils.extra_large() %}
+    .newsletter-sign-up__container {
+        padding: 4.5rem 5rem 3rem 5rem; 
+    }
+
+{% endcall %} 
+
+{% call utils.medium_large_and_extra_large() %}
+    .body-container-sign-up{
+        background: url('https://f.hubspotusercontent10.net/hubfs/3042464/newsletter%20sign%20up%20page/background-image-newsletter-sign-up-x-large.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center; 
+    }
+{% endcall %}
+

@@ -1,0 +1,50 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Newsletter Thank You
+-->
+{% extends "./layouts/base.html" %}
+
+{% if locale == 'en' %}
+  {% set title = "Thanks for subscribing to our newsletter! "  %}
+  {% set subtitle = "We look forward to sharing new and exciting content with you."%}
+
+{% else %}
+  {% set title = "Gracias por suscribirte a nuestra newsletter "  %}
+  {% set subtitle = "Esperamos poder compartir nuevo contenido e información contigo" %}
+{% endif %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/newsletter-thank-you.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+
+{% block body %}
+
+
+<div class="body-container-thank-you">
+    <section class="newsletter-thank-you__container">
+          <h1 class="newsletter-thank-you-container__title"><span class="bolded-text">{{title}}</span>
+          <br> <br>{{subtitle}}</h1>
+            <i class="newsletter-thank-you_container__icon las la-check"></i>
+    </section>
+</div>
+
+
+{% endblock body %}
+
