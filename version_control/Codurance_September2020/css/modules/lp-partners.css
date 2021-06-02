@@ -17,7 +17,11 @@
         margin-bottom: var(--base-margin);
     }
     
-    
+    .lp-partners-container__cta {
+        font-family: 'proxima-nova';
+        margin-bottom: var(--base-margin);
+    }
+
     .lp-partners-container__logo-group {
         display: flex;
         flex-wrap: wrap;
