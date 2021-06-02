@@ -44,6 +44,11 @@
     margin: 0 auto;
 }
 
+.lp-partners-clients-container__cta {
+    font-family: 'proxima-nova';
+    margin-bottom: var(--base-margin);
+}
+
 
 {% call utils.large_and_extra_large() %}
     .lp-partners-clients-container {
@@ -51,7 +56,7 @@
         justify-content: space-between;
         margin: 0 auto;
         max-width: 1300px;
-        padding: 2rem 3rem;
+        padding: 0 4rem;
     }
     .lp-partners-clients-container__content {
         max-width: 40%;
