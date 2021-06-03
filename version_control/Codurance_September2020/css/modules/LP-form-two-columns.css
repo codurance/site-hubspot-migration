@@ -3,9 +3,49 @@
 .form__wrapper{
     {{utils.white_to_tango()}}
     padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.form__text {
+    max-width: 40ch;
+    margin-bottom: 2em;
+}
+
+.form__text h3{
+    {{utils.dudler()}}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: 1em;
+}
+
 
 .form__fields .hs-input {
     width: 100% !important;
     {{ utils.card_shadow() }}
 }
+
+.form__fields .hs-fieldtype-text{
+    margin-bottom: 0.5em;
+}
+
+.legal-consent-container p{
+    {{ utils.sejima() }}
+    font-weight: normal;
+    color: var(--shark);
+    margin-bottom: 1em;
+    max-width: 98%;
+}
+
+.form__fields .hs-button{
+    width: 98%;
+}
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .form__wrapper{
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-evenly;
+    }
+{% endcall %}
