@@ -32,18 +32,6 @@
     margin: .5rem 1rem;
 }
 
-.lp-clients-partners-container__line {
-    max-width: 1300px; 
-    margin: 0 auto;
-}
-
-.lp-clients-partners-container__line hr {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    max-width: 80%;
-    margin: 0 auto;
-}
-
 .lp-partners-clients-container__cta {
     font-family: 'proxima-nova';
     margin-bottom: var(--base-margin);
@@ -69,7 +57,4 @@
         align-items: center;
     }  
 
-    .lp-clients-partners-container__line hr {
-        max-width: 60%;
-    }
 {% endcall%}
