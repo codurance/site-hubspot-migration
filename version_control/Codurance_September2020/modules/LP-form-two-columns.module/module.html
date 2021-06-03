@@ -3,7 +3,7 @@
 
 <div class="form__wrapper">
     <div class="form__text">
-        {% inline_rich_text field="richtext_field" value="{{ module.richtext_field }}" %}
+        {% module "form_text" path="@hubspot/rich_text" label="Form header"  %}
     </div>
     <div class="form__fields">  
         {% form "email_form" form_to_use="{{ module.form_full.form_id }}" no_wrapper=True %}
