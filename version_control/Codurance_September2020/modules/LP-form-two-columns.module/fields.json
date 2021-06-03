@@ -7,7 +7,7 @@
   "type" : "richtext"
 }, {
   "id" : "491675cd-60bb-179d-2d26-0ffd14ba163d",
-  "name" : "form_field",
+  "name" : "form_full",
   "label" : "Form",
   "required" : false,
   "locked" : false,
