@@ -36,18 +36,6 @@
         {{ utils.card_shadow() }}
     }
 
-    .lp-partners-container__line {
-        max-width: 1300px; 
-        margin: 0 auto;
-    }
-
-    .lp-partners-container__line hr {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        max-width: 80%;
-        margin: 0 auto;
-    }
-    
     {% call utils.large_and_extra_large() %}
         .lp-partners-container {
             flex-direction: row;
@@ -65,8 +53,5 @@
         .lp-partners-container {
             align-items: center;
         }
-        .lp-partners-container__line hr {
-            max-width: 60%;
-        }
-
+        
     {% endcall%} 
