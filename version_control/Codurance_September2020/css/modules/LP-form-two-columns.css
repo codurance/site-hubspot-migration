@@ -1,0 +1,11 @@
+{% import '../utils/utils.css' as utils %}
+
+.form__wrapper{
+    {{utils.white_to_tango()}}
+    padding: 2em;
+}
+
+.form__fields .hs-input {
+    width: 100% !important;
+    {{ utils.card_shadow() }}
+}
