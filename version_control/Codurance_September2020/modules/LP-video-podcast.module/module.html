@@ -1,0 +1,18 @@
+
+{{ require_css(get_asset_url("../../css/modules/lp-video-podcast.css")) }}
+<div class="lp-video-podcast-container {{module.background}}">
+  <div class="lp-video-podcast-container-info">
+    <h2 class="lp-video-podcast-container-info-title">
+      {% inline_text field="title" value="{{ module.title }}" no_wrapper=true %}
+    </h2>
+    <p class="lp-video-podcast-container-info-description">
+    {% inline_text field="description" value="{{ module.description }}" no_wrapper=true %}
+    </p>
+    <p class="lp-video-podcast-container-info-cta">
+    {% cta guid="{{ module.cta_field }}" no_wrapper=true %}
+    </p>
+  </div>
+  <div class="lp-video-podcast-container-embedded">
+    {{ module.embed_field.embed_html }}
+  </div>
+</div>
