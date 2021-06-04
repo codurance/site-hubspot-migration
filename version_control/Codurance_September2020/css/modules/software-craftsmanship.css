@@ -40,6 +40,7 @@
 {% endcall %}
 .cm-software-crafts__item:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+
 }
 
 .cm-software-crafts__image-wrapper {
@@ -117,4 +118,9 @@
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.cm-software-crafts-wrapper{
+  {{ utils.white_to_tango() }}
+  padding: 3em;
 }
