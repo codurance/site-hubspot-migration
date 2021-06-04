@@ -31,8 +31,19 @@
     font-family: 'proxima-nova';
     margin-bottom: var(--base-margin);
 }
+{% call utils.medium() %}
+    .lp-video-podcast-container {
+        padding: 3rem 3rem;
+    }
+    .lp-video-podcast-container-embedded {
+        align-self: center;
+    }
+    .lp-video-podcast-container-info {
+        margin-bottom: 2rem;
+    }
+{% endcall%}
 
-{% call utils.medium_large_and_extra_large() %}
+{% call utils.large_and_extra_large() %}
     .lp-video-podcast-container {
         flex-direction: row;
         justify-content: space-between;
@@ -41,8 +52,7 @@
         padding: 4rem;
     }
     .lp-video-podcast-container-info {
-        max-width: 40%;
-        padding-right: 2rem;
+        max-width: 50%;
     }
 
     .lp-video-podcast-container-embedded {
@@ -51,3 +61,4 @@
     }
 
 {% endcall%}
+
