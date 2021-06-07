@@ -53,6 +53,7 @@
     }
     .lp-video-podcast-container-info {
         max-width: 50%;
+        margin: 1rem;
     }
 
     .lp-video-podcast-container-embedded {
