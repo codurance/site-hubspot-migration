@@ -1,8 +1,13 @@
 {% import '../utils/utils.css' as utils %}
 
-.cm-software-crafts-wrapper{
+.cm-software-crafts{
   {{ utils.white_to_tango() }}
   padding: 3em;
+}
+
+.cm-software-crafts__content-wrapper{
+  margin:0 auto;
+  max-width: 1300px;
 }
 
 .cm-software-crafts-group {
