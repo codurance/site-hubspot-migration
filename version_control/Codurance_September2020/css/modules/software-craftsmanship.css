@@ -1,5 +1,10 @@
 {% import '../utils/utils.css' as utils %}
 
+.cm-software-crafts-wrapper{
+  {{ utils.white_to_tango() }}
+  padding: 3em;
+}
+
 .cm-software-crafts-group {
   align-items: stretch;
   display: flex;
@@ -8,9 +13,17 @@
   padding-bottom: 2.14286rem;
 }
 
+.cm-software-crafts__cards-title{
+  {{utils.freed()}}
+  margin-bottom: 1.5em;
+  margin-left: 20px;
+}
+
+
 {% set item_margin = 15 %}
 .cm-software-crafts__item {
   {{ utils.card_shadow() }}
+  background: white;
   display: flex;
   flex-direction: column;
   margin-bottom: 1.4rem;
@@ -120,7 +133,4 @@
   top: 0;
 }
 
-.cm-software-crafts-wrapper{
-  {{ utils.white_to_tango() }}
-  padding: 3em;
-}
+
