@@ -1,1 +1,10 @@
 {% import '../utils/utils.css' as utils %}
+
+.section-area-dark {
+    {{ utils.black_to_navy() }}
+  
+}
+
+.section-area-tango {
+    {{ utils.white_to_tango() }}
+}
