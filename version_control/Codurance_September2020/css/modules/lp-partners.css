@@ -3,7 +3,7 @@
     .lp-partners-container {
         display: flex;
         color: var(--shark);
-        padding: 0 1rem;
+        padding: 1.5rem;
         flex-direction: column;
     }
     
@@ -42,7 +42,7 @@
             justify-content: space-between;
             margin: 0 auto;
             max-width: 1300px;
-            padding: 0 4rem;
+            padding: 4rem;
         }
         .lp-partners-container__content {
             max-width: 40%;
