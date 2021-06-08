@@ -65,6 +65,7 @@
     }
     .lp-partners-clients-container__content {
         max-width: 40%;
+        min-width: 40%; 
     }
     .lp-partners-clients-container__logo-group__image {
         height: 40px;
