@@ -31,6 +31,10 @@
     margin: .5rem 1rem;
 }
 
+.lp-partners-clients-container__logo-group__image:first-child {
+    margin-left:0px;
+}
+
 .lp-partners-clients-container__cta {
     font-family: 'proxima-nova';
     margin-top: var(--base-margin);
@@ -43,6 +47,12 @@
     .lp-partners-clients-container__logo-group__image {
         height: 35px;
     } 
+    .lp-partners-clients-container__logo-group__image:first-child {
+        margin-left:0px;
+    }
+    .lp-partners-clients-container {
+        padding: 3rem;
+    }
 
 
 {% endcall%}
@@ -60,9 +70,11 @@
         height: 40px;
         margin: 1.5rem 1rem;
     }
+
+
     .lp-partners-clients-container__logo-group {
         align-items: center;
-        margin-left: auto;
+        margin: 0 auto;    
     }  
 
 {% endcall%}
