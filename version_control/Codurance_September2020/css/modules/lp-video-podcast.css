@@ -53,6 +53,7 @@
     }
     .lp-video-podcast-container-info {
         max-width: 50%;
+        min-width: 50%;
         margin-right: 2rem;
     }
 
