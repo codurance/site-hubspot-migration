@@ -28,7 +28,6 @@
 {% set item_margin = 15 %}
 .cm-software-crafts__item {
   {{ utils.card_shadow() }}
-  background: white;
   display: flex;
   flex-direction: column;
   margin-bottom: 1.4rem;
@@ -119,6 +118,7 @@
   flex-direction: column;
   flex-grow: 1;
   padding: 1.5rem;
+  background: white;
 }
 
 .cm-software-crafts__button {
