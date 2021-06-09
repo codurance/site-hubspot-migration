@@ -8,7 +8,7 @@ throughout your site. Styles for form fields, buttons, inputs, etc.
 
 form {
   max-width: {{ form_max_width }};
-  font-family: {{ secondary_font_family }};
+  font-family: {{ primary_font_family }};
 }
 
 .hs-button {
@@ -20,7 +20,7 @@ form {
   line-height: 12px;
   position: relative;
   text-align: center;
-  font-family:arial;
+  font-family:{{ primary_font_family }};
   transition: all 0.15s linear;
   background-color: {{ form_button_color }};
   border-color: {{ form_button_color }};
@@ -66,7 +66,7 @@ form {
   color: {{ form_error_label_color }};
 }
 ul.inputs-list .hs-error-msgs label{
-  font-family: arial;
+  font-family: {{ primary_font_family }};
   font-size: 13px;
 }
 input#hs-pwd-widget-password,
@@ -76,7 +76,7 @@ input#hs-pwd-widget-password,
   height: 40px;
   padding: 9px 15px;
   font-size: 16px;
-  font-family:arial;
+  font-family:{{ primary_font_family }};
   font-weight: normal;
   line-height: 22px;
   color: {{ form_input_color }};
@@ -221,7 +221,7 @@ ul.no-list {
   margin-bottom: 3px;
   font-size: 1rem;
   color: #494a52;
-  font-family: arial;
+  font-family: {{ primary_font_family }};
   font-size: 14px;
   line-height: 24px;
 }
