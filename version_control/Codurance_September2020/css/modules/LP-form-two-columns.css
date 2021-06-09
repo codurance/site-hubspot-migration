@@ -46,9 +46,6 @@
     margin-bottom: 1em;
     max-width: 98%;
 }
-/* .form__fields .hs-form-booleancheckbox-display input[type=checkbox]{
-    margin-right: 0.8em
-} */
 
 .form__fields .hs-form-booleancheckbox-display span {
   position: relative;
@@ -62,7 +59,7 @@
   height: 1rem;
   width: 1rem;
   top: 0.2em;
-  left: -2.5em;
+  left: -2.1em;
   background: white;
   {{ utils.card_shadow() }}
 }
@@ -73,15 +70,15 @@
 
 
 .form__fields .hs-form-booleancheckbox-display span::after {
-    position: absolute;
+  position: absolute;
   border-bottom: 2px solid;
   border-left: 2px solid;
   display: inline-block;
   transform: rotate(-45deg);
   height: 0.4rem;
   width: 0.6rem;
-  left: -2.2em;
-  top: 0.6em;
+  left: -1.9em;
+  top: 0.5em;
 }
 
 .form__fields input[type=checkbox]:checked + span::after {
@@ -90,6 +87,15 @@
 
 .form__fields .hs-button{
     width: 98%;
+}
+
+.form__fields .legal-consent-container p{
+  {{utils.sejima()}}
+  font-weight:var(--light-font-weight);
+}
+
+.form__fields .legal-consent-container .hs-form-booleancheckbox-display > span{
+  margin-left: 0 !important;
 }
 
 
