@@ -20,6 +20,7 @@
 
 .cm-software-crafts__cards-title{
   {{utils.freed()}}
+  font-weight: var(--heavy-font-weight);
   margin-bottom: 1.5em;
   margin-left: 20px;
 }
