@@ -1,0 +1,52 @@
+[ {
+  "id" : "3cb0b1fa-0330-1af0-5598-a0b563817af1",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "12f64fb9-4cd6-c943-827a-8224403201af",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "7fbd57e4-56e6-cc58-5e97-dd69daf80e33",
+  "name" : "embed_field",
+  "label" : "Embed",
+  "required" : false,
+  "locked" : false,
+  "supported_source_types" : [ "oembed", "html" ],
+  "supported_oembed_types" : [ "photo", "video", "link", "rich" ],
+  "resizable" : false,
+  "show_preview" : true,
+  "supported_media_bridge_providers" : [ ],
+  "type" : "embed",
+  "default" : {
+    "source_type" : "oembed"
+  }
+}, {
+  "id" : "b8d63b15-3c8b-3f9d-905f-3047ec906e52",
+  "name" : "background",
+  "label" : "Background",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "navy-bg", "dark" ], [ "white-bg", "light" ] ],
+  "type" : "choice"
+}, {
+  "id" : "3ad7c5e1-3900-5049-c897-e9de75c6ec15",
+  "name" : "cta_field",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "type" : "cta"
+} ]
