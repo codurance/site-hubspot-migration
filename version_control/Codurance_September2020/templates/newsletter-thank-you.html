@@ -11,7 +11,7 @@ label: Newsletter Thank You
 
 {% else %}
   {% set title = "Gracias por suscribirte a nuestra newsletter "  %}
-  {% set subtitle = "Esperamos poder compartir nuevo contenido e información contigo" %}
+  {% set subtitle = "Pronto recibirás contenidos e información que esperamos sea de tu interés." %}
 {% endif %}
 
 <head>
@@ -40,10 +40,14 @@ label: Newsletter Thank You
 <div class="body-container-thank-you">
     <section class="newsletter-thank-you__container">
           <h1 class="newsletter-thank-you-container__title"><span class="bolded-text">{{title}}</span>
-          <br> <br>{{subtitle}}</h1>
+          <br><br>{{subtitle}}</h1>
             <i class="newsletter-thank-you_container__icon las la-check"></i>
     </section>
 </div>
+    <section class="recent-posts__container">
+      {% module "Recent Posts" path="../modules/Recent posts", label="Recent posts" no_wrapper=True %}
+    </section>
+    
 
 
 {% endblock body %}
