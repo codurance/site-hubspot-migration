@@ -20,7 +20,7 @@ form {
   line-height: 12px;
   position: relative;
   text-align: center;
-  font-family:arial;
+  font-family:'proxima-nova';
   transition: all 0.15s linear;
   background-color: {{ form_button_color }};
   border-color: {{ form_button_color }};
