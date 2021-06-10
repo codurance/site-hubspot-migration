@@ -5,13 +5,13 @@ label: Newsletter Thank You
 -->
 {% extends "./layouts/base.html" %}
 
-{% if locale == 'en' %}
+{% if locale == 'es' %}
+  {% set title = "Gracias por suscribirte a nuestra newsletter "  %}
+  {% set subtitle = "Esperamos poder compartir nuevo contenido e información contigo" %}
+{% else %}
   {% set title = "Thanks for subscribing to our newsletter! "  %}
   {% set subtitle = "We look forward to sharing new and exciting content with you."%}
 
-{% else %}
-  {% set title = "Gracias por suscribirte a nuestra newsletter "  %}
-  {% set subtitle = "Pronto recibirás contenidos e información que esperamos sea de tu interés." %}
 {% endif %}
 
 <head>

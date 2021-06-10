@@ -6,14 +6,14 @@ label: Newsletter Sign Up
 {% extends "./layouts/base.html" %}
 
 
-{% if locale == 'en' %}
-  {% set title = "Join our newsletter "  %}
-  {% set subtitle = "for expert tips and inspirational case studies"%}
-
+{% if locale == 'es' %}
+    {% set title = "Únete a nuestro newsletter "  %}
+    {% set subtitle = "para que podamos hacerte llegar consejos y casos prácticos inspiradores" %}
 {% else %}
-  {% set title = "Regístrate a nuestra newsletter "  %}
-  {% set subtitle = "para que podamos enviarte recomendaciones y case studies inspiradores." %}
-{% endif %}
+      {% set title = "Join our newsletter "  %}
+      {% set subtitle = "for expert tips and inspirational case studies"%}
+    {% endif %}
+
 
 <head>
   <meta charset="utf-8">
