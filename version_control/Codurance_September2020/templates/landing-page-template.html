@@ -5,6 +5,12 @@ label: Landing Page Template
 -->
 {% extends "./layouts/base.html" %}
 
+{% if locale == 'en' %}
+    {% set url = "https://www.codurance.com/" %}               
+  {% else %}
+    {% set url = "https://www.codurance.com/es" %} 
+
+{% endif %}
 
 <head>
   <meta charset="utf-8">
@@ -31,19 +37,24 @@ label: Landing Page Template
 
 {% block body %}
 
-
-    <div class="landing-page-template-layout">
-        <header class="banner-section">
-        {% dnd_area "DND_banner" class='banner-area', label='Banner Section' %}
-            {% dnd_section max_width=1300 %}
-            {% end_dnd_section %}   
-        {% end_dnd_area %}
+        <header 
+        class="header no-navigation"
+        >
+            <div class="cm-header-group">
+                <div class="header__container">
+                    <div class="custom-logo">
+                        <a href={{url}}>
+                            <img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Logo.svg" class="hs-image-widget " style="width:719px;border-width:0px;border:0px;" width="719" alt="Codurance" title="Codurance">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </header>
-
+ 
         <section>
             {% dnd_area "dbd-main-section" class='section-area-full', label='Main Section' %}
                 {% dnd_section max_width=1300  %}
-                
+        
                 {% end_dnd_section %}   
             {% end_dnd_area %}
         </section>
