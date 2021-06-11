@@ -2,7 +2,7 @@
 
 .cm-software-crafts{
   {{ utils.white_to_tango() }}
-  padding: 2em 0;
+  padding-top: 2em;
 }
 
 .cm-software-crafts__content-wrapper{
@@ -139,4 +139,11 @@
   top: 0;
 }
 
+{% call utils.large_and_extra_large() %}
+
+.cm-software-crafts {
+  padding: 2.5em;
+}
+
+{% endcall %}
 
