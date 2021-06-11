@@ -139,7 +139,7 @@
   top: 0;
 }
 
-{% call utils.large_and_extra_large() %}
+{% call utils.medium_large_and_extra_large() %}
 
 .cm-software-crafts {
   padding: 2.5em;
