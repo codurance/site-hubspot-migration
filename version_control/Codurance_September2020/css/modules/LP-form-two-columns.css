@@ -103,7 +103,8 @@
     .form__wrapper{
         flex-direction: row;
         align-items: start;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        padding: 4em;
     }
 
     .form__text{

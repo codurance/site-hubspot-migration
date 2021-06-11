@@ -2,7 +2,7 @@
 
 .cm-software-crafts{
   {{ utils.white_to_tango() }}
-  padding: 3em;
+  padding: 4em;
 }
 
 .cm-software-crafts__content-wrapper{
