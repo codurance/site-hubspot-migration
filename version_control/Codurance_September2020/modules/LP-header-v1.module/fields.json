@@ -1,4 +1,13 @@
 [ {
+  "id" : "94113f9d-558e-e4ef-3a28-216fb3c29df1",
+  "name" : "background_color",
+  "label" : "Background color",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "white-bg", "Light" ], [ "navy-bg", "Dark" ] ],
+  "type" : "choice"
+}, {
   "id" : "1fcb0562-3180-f689-aa7e-86bef7bed6f0",
   "name" : "header_image",
   "label" : "Header Image",
