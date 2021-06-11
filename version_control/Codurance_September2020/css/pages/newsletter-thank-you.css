@@ -58,6 +58,14 @@
        width: 100%;
    }
 
+   .recent-posts__container{
+       margin: 3em 1em;
+   }
+   .recent-posts__container h2 {
+       text-align: left;
+       margin-left: .5em;
+   }
+
 {% call utils.medium() %} 
    .form-wrapper-class form {
        margin-top: 2rem;
