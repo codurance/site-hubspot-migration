@@ -3,7 +3,7 @@
     .lp-partners-container {
         display: flex;
         color: var(--shark);
-        padding: 1.5rem;
+        padding: 2em 1.5em;
         flex-direction: column;
     }
     

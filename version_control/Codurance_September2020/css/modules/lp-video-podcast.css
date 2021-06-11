@@ -14,7 +14,7 @@
 .lp-video-podcast-container {
     display: flex;
     flex-direction:column;
-    padding: 1.5rem;
+    padding: 2em 1.5em;
 }
 
 .lp-video-podcast-container-info-title {
