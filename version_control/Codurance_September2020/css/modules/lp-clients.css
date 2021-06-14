@@ -43,6 +43,7 @@
 {% call utils.medium() %}
     .lp-partners-clients-container__logo-group {
         justify-content: start;
+        flex-wrap: nowrap;
     } 
     .lp-partners-clients-container__logo-group__image {
         height: 50px;
@@ -61,6 +62,7 @@
     .lp-partners-clients-container {
         flex-direction: row;
         justify-content: space-between;
+        flex-wrap: wrap;
         padding: 2rem 4rem;
     }
     .lp-partners-clients-container__content {
