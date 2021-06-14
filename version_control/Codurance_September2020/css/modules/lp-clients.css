@@ -51,7 +51,7 @@
         margin-left:0px;
     }
     .lp-partners-clients-container {
-        padding: 3rem;
+        padding: 2rem 4rem;
     }
 
 
@@ -61,11 +61,11 @@
     .lp-partners-clients-container {
         flex-direction: row;
         justify-content: space-between;
-        padding: 4rem;
+        padding: 2rem 4rem;
     }
     .lp-partners-clients-container__content {
-        max-width: 40%;
-        min-width: 40%; 
+        max-width: 35%;
+        min-width: 35%; 
     }
     .lp-partners-clients-container__logo-group__image {
         height: 50px;
