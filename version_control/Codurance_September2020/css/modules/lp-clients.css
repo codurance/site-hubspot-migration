@@ -27,7 +27,7 @@
 
 .lp-partners-clients-container__logo-group__image {
     height: 40px;
-    filter: grayscale(100%);
+    filter: contrast(10%);
     margin: .5rem 1rem;
 }
 
