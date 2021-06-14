@@ -10,7 +10,7 @@
     .lp-partners-container__title {
         {{ utils.freed() }}
         font-weight: var(--heavy-font-weight);
-        margin-bottom: var(--freed-margin);
+        margin-bottom: 10px;
     }
     .lp-partners-container__subtitle {
         {{ utils.natus() }}
@@ -30,7 +30,7 @@
     }    
     
     .lp-partners-container__logo-group__image {
-        height: 80px;
+        height: 100px;
         margin: 1rem;
         {{ utils.card_shadow() }}
     }
