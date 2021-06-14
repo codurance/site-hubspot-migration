@@ -9,10 +9,13 @@
     <p class="lp-partners-container__subtitle">
       {% inline_text field="subtitle" value="{{ module.subtitle }}" no_wrapper=true %}
     </p>
-  
+
+  {%if module.cta_field %}
     <div class="lp-partners-container__cta">
       {% cta guid="{{ module.cta_field }}" no_wrapper=true %}
     </div>
+  {% endif %}  
+  
   </div>
     
   <div class="lp-partners-container__logo-group">
