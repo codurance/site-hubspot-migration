@@ -18,9 +18,9 @@
 }
 
 .lp-video-podcast-container-info-title {
-    {{ utils.dudler() }}
+    {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
-    margin-bottom: var(--dudler-margin);
+    margin-bottom: 10px;
 }
 .lp-video-podcast-container-info-description {
     {{ utils.natus() }}
