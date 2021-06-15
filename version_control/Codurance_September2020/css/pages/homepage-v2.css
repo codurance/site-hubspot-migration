@@ -1,0 +1,12 @@
+{% import '../utils/utils.css' as utils %}
+
+.homepage-hero{
+    background: rgb(239,119,38);
+    background: linear-gradient(0deg, rgba(255,252,250,1) 0%, rgba(252,224,206,1) 100%);
+}
+
+.homepage-hero .announcement-bar{
+    background: rgba(242, 242, 243,0.7) !important;
+    position: absolute;
+    z-index: 1;
+}
