@@ -54,7 +54,6 @@
     .lp-video-podcast-container-info {
         max-width: 50%;
         min-width: 50%;
-        margin-right: 2rem;
     }
     .lp-video-podcast-container-info-description {
         max-width: 80%;
@@ -63,6 +62,7 @@
     .lp-video-podcast-container-embedded {
         margin: 0 auto;
         align-self: center;
+        width: 100%;
     }
 
 {% endcall%}
