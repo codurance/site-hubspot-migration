@@ -1,0 +1,69 @@
+[ {
+  "id" : "4f23e8e0-dc3e-eda2-e50d-fb2f84611e07",
+  "name" : "title",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Partners"
+}, {
+  "id" : "f52c88f3-fdc8-6b7e-bbb9-8b6e4a418758",
+  "name" : "subtitle",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "342925ca-c7f9-34c4-bf28-1d7e32f301aa",
+  "name" : "cta_field",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "type" : "cta"
+}, {
+  "id" : "567201a8-4257-469e-705d-5a21d67f3e47",
+  "name" : "logo_item",
+  "label" : "Logo Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "978b2a32-03bb-ac4d-ebdb-720e8bbe3fc8",
+    "name" : "logo",
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "exact",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
+  }
+} ]
