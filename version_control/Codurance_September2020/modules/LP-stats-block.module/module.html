@@ -1,0 +1,19 @@
+{{ require_css(get_asset_url("../../css/modules/lp-stats-block.css")) }}
+<div class="lp-stats-block">
+	<h2 class="lp-stats-block__title">{% inline_text field="title" value="{{ module.title }}" no_wrapper=true %}</h2>
+	<div class="lp-stats-block__content">
+		{% for item in module.field_group %}
+			<div class="lp-stats-block-card">
+				<div class="lp-stats-block-card__statistic">
+					<h1 class="lp-stats-block-card__number">
+					{{ item.number }}{{ item.symbol }}
+					</h1>
+				</div>
+				<p class="lp-stats-block-card__text">
+				{% inline_text field="content" value="{{ item.content }}" no_wrapper=true %}
+				</p>
+			</div>
+			
+		{% endfor %}
+	</div>
+</div>
