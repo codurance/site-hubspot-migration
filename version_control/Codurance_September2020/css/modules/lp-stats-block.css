@@ -33,13 +33,8 @@
 
 
 {% call utils.medium() %}
-    .lp-stats-block__content {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
     .lp-stats-block {
-        padding: 3rem 3rem;
+        padding: 3rem;
     }
 
     .lp-video-podcast-container-info {
@@ -57,5 +52,8 @@
         margin: 0 auto;
         max-width: 1300px;
         padding: 4rem;
-     }
+    }
+    .lp-stats-block-card {
+        margin: 1.5rem;
+    }
 {% endcall%}
