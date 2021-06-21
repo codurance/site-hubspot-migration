@@ -5,14 +5,14 @@
 		{% for item in module.field_group %}
 			<div class="lp-stats-block-card">
 				<div class="lp-stats-block-card__statistic">
-				<h1 class="lp-stats-block-card__number">
+				<h2 class="lp-stats-block-card__number">
 					{{ item.number }}
-					{% if item.symbol%}
-						<span class="lp-stats-block-card__symbol">
-						{{ item.symbol }}
-						</span>
-					{% endif %}
-				</h1>
+				</h2>
+				{% if item.symbol%}
+					<p class="lp-stats-block-card__symbol">
+					{{ item.symbol }}
+					</p>
+				{% endif %}
 				</div>
 				<p class="lp-stats-block-card__text">
 				{% inline_text field="content" value="{{ item.content }}" no_wrapper=true %}
