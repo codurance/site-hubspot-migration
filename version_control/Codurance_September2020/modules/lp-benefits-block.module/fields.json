@@ -1,0 +1,85 @@
+[ {
+  "id" : "2f4b87cc-2360-bbea-15b3-9ec3a6943c36",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Benefits Block Title (2 col or 3 col)"
+}, {
+  "id" : "024998d0-a3b0-7dac-9919-4ebcef312f6d",
+  "name" : "field_group",
+  "label" : "Field group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 2,
+    "max" : 3,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "b7909fd1-397e-03e9-1583-a0c24c0beb6a",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "1fc33921-1cd4-bb9f-001a-4c55a605b06b",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : ""
+  }, {
+    "id" : "c619c27f-dfd4-14af-544a-2b49b4633e46",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper dolor vel ultrices faucibus. Curabitur eu sem viverra, rhoncus magna a, posuere mauris. (Learn more optional)"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    },
+    "link" : "",
+    "content" : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper dolor vel ultrices faucibus. Curabitur eu sem viverra, rhoncus magna a, posuere mauris. (Learn more optional)"
+  }, {
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    },
+    "link" : "",
+    "content" : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper dolor vel ultrices faucibus. Curabitur eu sem viverra, rhoncus magna a, posuere mauris. (Learn more optional)"
+  } ]
+} ]
