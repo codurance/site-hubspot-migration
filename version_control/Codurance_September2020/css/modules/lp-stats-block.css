@@ -48,7 +48,7 @@
 
 {% call utils.medium() %}
     .lp-stats-block {
-        padding: 2em 4em;
+        padding: 3em;
     }
 
     .lp-video-podcast-container-info {
@@ -61,7 +61,7 @@
     .lp-stats-block {
         margin: 0 auto;
         max-width: 1300px;
-        padding: 4rem;
+        padding: 4em;
     }
     .lp-stats-block__content {
         flex-direction: row;
