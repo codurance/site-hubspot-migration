@@ -23,12 +23,17 @@
 
 .lp-benefits-block-card img{
     margin-bottom: 1.5em;
+    height: 5rem;
 }
 
 .lp-benefits-block-text{
     max-width: 25em;
     margin-bottom: 1em;
     text-align: left; 
+}
+
+.lp-benefits-block__cta{
+    align-self: start;
 }
 
 .lp-benefits-block__cta i{
