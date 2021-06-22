@@ -1,1 +1,69 @@
 {% import '../utils/utils.css' as utils %}
+
+.lp-benefits-block {
+    padding: 2em 1.5em;
+
+}
+
+.lp-benefits-block__title {
+    {{ utils.freed() }}
+    margin-bottom: var(--freed-margin);
+}
+
+.lp-benefits-block__content {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.lp-benefits-block-card{
+    margin-bottom: 2em;
+}
+
+.lp-benefits-block-card img{
+    margin-bottom: 1.2em;
+}
+
+.lp-benefits-block-text{
+    max-width: 25em;
+    margin-bottom: 1em;
+}
+.lp-benefits-block__cta i{
+    transform: translate(0em,0.1em);
+
+}
+.lp-benefits-block__cta:hover i{
+    transform: translate(0.2em,0.1em);
+    transition: var(--cta-transition);
+}
+
+
+{% call utils.medium() %}
+    .lp-benefits-block {
+        padding: 3em;
+    }
+
+{% endcall%}
+
+{% call utils.large_and_extra_large() %}
+    .lp-benefits-block {
+        margin: 0 auto;
+        max-width: 1300px;
+        padding: 4em;
+    }
+    .lp-benefits-block__content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+    }
+    .lp-benefits-block-card {
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5rem;
+    }
+
+{% endcall%}
