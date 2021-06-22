@@ -7,15 +7,14 @@
 
 .lp-benefits-block__title {
     {{ utils.freed() }}
-    margin-bottom: var(--freed-margin);
+    margin-bottom: 2.5rem;
 }
 
 .lp-benefits-block__content {
     display: flex;
     flex-direction:column;
     align-items: center;
-    text-align: center;
-    
+    text-align: center; 
 }
 
 .lp-benefits-block-card{
@@ -23,13 +22,15 @@
 }
 
 .lp-benefits-block-card img{
-    margin-bottom: 1.2em;
+    margin-bottom: 1.5em;
 }
 
 .lp-benefits-block-text{
     max-width: 25em;
     margin-bottom: 1em;
+    text-align: left; 
 }
+
 .lp-benefits-block__cta i{
     transform: translate(0em,0.1em);
 

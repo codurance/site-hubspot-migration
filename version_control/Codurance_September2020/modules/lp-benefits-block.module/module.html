@@ -8,7 +8,7 @@
         	<img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>       
         	<p class="lp-benefits-block-text">{{item.content}}</p>
         	{% if item.link %}
-	          <a class="lp-benefits-block__cta" href="{{ item.link }}">{{ item.link_text }}<i class="las la-arrow-right"></i></a>
+	          <a class="lp-benefits-block__cta" href="{{ item.link }}">{{ item.link_text }} <i class="las la-arrow-right"></i></a>
          	{% endif %}
 	</div>
 		{% endfor %}
