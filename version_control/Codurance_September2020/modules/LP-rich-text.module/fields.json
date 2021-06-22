@@ -1,4 +1,15 @@
 [ {
+  "id" : "ca3a231d-d3f9-d6c3-a7f0-1fb52a69c9be",
+  "name" : "text_columns",
+  "label" : "Text Columns",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "placeholder" : "Please select how many columns you want",
+  "choices" : [ [ "one_col", "one column" ], [ "two_col", "two columns" ] ],
+  "type" : "choice",
+  "default" : "one_col"
+}, {
   "id" : "bf959c20-d9cd-d0be-ee10-f69308e561a2",
   "name" : "title",
   "label" : "Title",

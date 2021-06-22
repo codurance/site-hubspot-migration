@@ -9,6 +9,14 @@
     font-weight: var(--heavy-font-weight);
     margin-bottom: var(--dudler-margin);
 }
+.one_col{
+    columns: 1;
+}
+
+.two_col {
+    columns: 400px 2;
+    column-gap: 5rem;
+}
 
 {% call utils.medium_large_and_extra_large() %}
     .lp-rich-text {
