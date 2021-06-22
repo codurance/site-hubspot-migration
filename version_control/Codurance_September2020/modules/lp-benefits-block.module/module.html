@@ -6,10 +6,11 @@
 		{% for item in module.field_group %}
 			<div class="lp-benefits-block-card">
         	<img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>       
-        	{% if item.link%}
-	          <a href="{{ item.link }}" %} >Learn More</a><i class="las la-arrow-right"></i>
-         {% endif %}
         	<p class="lp-benefits-block-text">{{item.content}}</p>
+        	{% if item.link %}
+	          <a href="{{ item.link }}">{{ item.link_text }}</a><i class="las la-arrow-right"></i>
+         	{% endif %}
 	</div>
 		{% endfor %}
 </div>
+  

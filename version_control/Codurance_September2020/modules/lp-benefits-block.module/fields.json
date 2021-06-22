@@ -38,6 +38,17 @@
       "loading" : "disabled"
     }
   }, {
+    "id" : "c619c27f-dfd4-14af-544a-2b49b4633e46",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper dolor vel ultrices faucibus. Curabitur eu sem viverra, rhoncus magna a, posuere mauris. (Learn more optional)"
+  }, {
     "id" : "1fc33921-1cd4-bb9f-001a-4c55a605b06b",
     "name" : "link",
     "label" : "Link",
@@ -49,37 +60,39 @@
     "type" : "text",
     "default" : ""
   }, {
-    "id" : "c619c27f-dfd4-14af-544a-2b49b4633e46",
-    "name" : "content",
-    "label" : "Content",
+    "id" : "b6baf05a-7b61-2333-cb4c-5e69511d7dcc",
+    "name" : "link_text",
+    "label" : "Link text",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper dolor vel ultrices faucibus. Curabitur eu sem viverra, rhoncus magna a, posuere mauris. (Learn more optional)"
+    "default" : ""
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
   "default" : [ {
     "icon" : {
-      "size_type" : "auto",
+      "size_type" : "exact",
       "src" : "",
       "alt" : null,
       "loading" : "disabled"
     },
+    "content" : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper dolor vel ultrices faucibus. Curabitur eu sem viverra, rhoncus magna a, posuere mauris. (Learn more optional)",
     "link" : "",
-    "content" : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper dolor vel ultrices faucibus. Curabitur eu sem viverra, rhoncus magna a, posuere mauris. (Learn more optional)"
+    "link_text" : ""
   }, {
     "icon" : {
-      "size_type" : "auto",
+      "size_type" : "exact",
       "src" : "",
       "alt" : null,
       "loading" : "disabled"
     },
+    "content" : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper dolor vel ultrices faucibus. Curabitur eu sem viverra, rhoncus magna a, posuere mauris. (Learn more optional)",
     "link" : "",
-    "content" : " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper dolor vel ultrices faucibus. Curabitur eu sem viverra, rhoncus magna a, posuere mauris. (Learn more optional)"
+    "link_text" : ""
   } ]
 } ]
