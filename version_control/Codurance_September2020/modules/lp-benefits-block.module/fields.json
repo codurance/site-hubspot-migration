@@ -29,7 +29,7 @@
     "locked" : false,
     "responsive" : true,
     "resizable" : true,
-    "show_loading" : false,
+    "show_loading" : true,
     "type" : "image",
     "default" : {
       "size_type" : "auto",
