@@ -1,7 +1,7 @@
 {
   "global" : false,
   "host_template_types" : [ "PAGE" ],
-  "module_id" : 49169891420,
-  "label" : "benefit",
+  "module_id" : 49228298659,
+  "label" : "LP-benefits-block",
   "is_available_for_new_content" : true
 }
