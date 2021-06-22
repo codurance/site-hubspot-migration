@@ -14,35 +14,41 @@
     display: flex;
     flex-direction:column;
     align-items: center;
-    text-align: center; 
 }
 
-.lp-benefits-block-card{
+.lp-benefits-block-card {
     margin-bottom: 2em;
 }
 
-.lp-benefits-block-card img{
+.lp-benefits-block-card img {
     margin-bottom: 1.5em;
     height: 5rem;
 }
 
-.lp-benefits-block-text{
+.lp-benefits-block-text {
     max-width: 25em;
     margin-bottom: 1em;
     text-align: left; 
 }
 
-.lp-benefits-block__cta{
+.lp-benefits-block__cta {
     align-self: start;
 }
 
-.lp-benefits-block__cta i{
+.lp-benefits-block__cta i {
     transform: translate(0em,0.1em);
 
 }
-.lp-benefits-block__cta:hover i{
+.lp-benefits-block__cta:hover i {
     transform: translate(0.2em,0.1em);
     transition: var(--cta-transition);
+}
+
+.lp-benefits-block-card {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
