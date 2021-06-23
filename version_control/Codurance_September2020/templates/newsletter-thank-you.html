@@ -5,15 +5,6 @@ label: Newsletter Thank You
 -->
 {% extends "./layouts/base.html" %}
 
-{% if locale == 'es' %}
-  {% set title = "Gracias por hacernos saber tus intereses. "  %}
-  {% set subtitle = "Esperamos que el contenido que compartamos contigo te resulte interesante." %}
-{% else %}
-  {% set title = "Thanks for letting us know what you want to hear more about! "  %}
-  {% set subtitle = "We look forward to sharing new and exciting content with you."%}
-
-{% endif %}
-
 <head>
   <meta charset="utf-8">
   <title>{{ page_meta.html_title }}</title>
@@ -36,19 +27,13 @@ label: Newsletter Thank You
 
 {% block body %}
 
-
-<div class="body-container-thank-you">
-    <section class="newsletter-thank-you__container">
-          <h1 class="newsletter-thank-you-container__title"><span class="bolded-text">{{title}}</span>
-          <br><br>{{subtitle}}</h1>
-            <i class="newsletter-thank-you_container__icon las la-check"></i>
+    <section class="thank-you-message__container">
+      {% module "Thank you message" path="../modules/thank-you-message", label="Thank you message" no_wrapper=True %}
     </section>
-</div>
+
     <section class="recent-posts__container">
       {% module "Recent Posts" path="../modules/Recent posts", label="Recent posts" no_wrapper=True %}
     </section>
-    
-
-
+  
 {% endblock body %}
 
