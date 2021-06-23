@@ -36,19 +36,13 @@ label: Newsletter Thank You
 
 {% block body %}
 
-
-<div class="body-container-thank-you">
-    <section class="newsletter-thank-you__container">
-          <h1 class="newsletter-thank-you-container__title"><span class="bolded-text">{{title}}</span>
-          <br><br>{{subtitle}}</h1>
-            <i class="newsletter-thank-you_container__icon las la-check"></i>
+    <section>
+      {% module "Thank you message" path="../modules/thank-you-message", label="Thank you message" no_wrapper=True %}
     </section>
-</div>
+
     <section class="recent-posts__container">
       {% module "Recent Posts" path="../modules/Recent posts", label="Recent posts" no_wrapper=True %}
     </section>
-    
-
-
+  
 {% endblock body %}
 
