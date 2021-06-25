@@ -1,0 +1,42 @@
+[
+ 
+  {
+  "name": "headline",
+  "label": "Headline",
+  "required": false,
+  "locked": false,
+  "validation_regex": "",
+  "allow_new_line": false,
+  "show_emoji_picker": false,
+  "type": "text",
+  "placeholder": "",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": null 
+},
+{
+"name": "subheadline",
+"label": "Subheadline",
+"required": false,
+"locked": false,
+"validation_regex": "",
+"allow_new_line": false,
+"show_emoji_picker": false,
+"type": "text",
+"placeholder": "",
+"inline_help_text": "",
+"help_text": "",
+"default": null 
+},
+{
+"name": "cta_field",
+"label": "CTA field",
+"required": false,
+"locked": false,
+"inline_help_text": "",
+"help_text": "",
+"type": "cta",
+"default": null 
+}
+
+]

@@ -1,0 +1,11 @@
+<!-- module html  -->
+
+<div class="cta-block">
+    <h2 class="cta-block__title">{{module.headline}}</h2>
+    <p class="cta-block__subtitle">{{module.subheadline}}</p>
+    {% if module.cta_field %}
+       <div class="cta-block__button">
+        {% cta guid="{{ module.cta_field }}" %}
+        </div>
+    {% endif %}
+</div>
