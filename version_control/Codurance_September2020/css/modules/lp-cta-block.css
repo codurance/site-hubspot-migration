@@ -12,13 +12,13 @@
 }
 
 .cta-block__title{
-    {{utils.dudler()}}
+    {{utils.eames()}}
     font-weight: var(--heavy-font-weight);
     }
     
 .cta-block__subtitle{
     {{utils.freed()}}
-    margin-top: .5em;
+    margin-top: 1em;
 
 }
 
@@ -35,4 +35,12 @@
 .cta-block__button{
     text-align: left;
 }
+{% endcall %}  
+
+{% call utils.large_and_extra_large() %}
+    .cta-block__title,
+    .cta-block__subtitle{
+        max-width: 60%;
+    }
+
 {% endcall %}    
