@@ -1,0 +1,38 @@
+{% import '../utils/utils.css' as utils %}
+
+.cta-block{
+    background-image: url("https://f.hubspotusercontent40.net/hubfs/14557846/Imported%20images/BG-CTA-x-large-landing-page.svg");
+    background-position: top;
+    background-size: cover;
+    margin: 0 auto;
+    color: white;  
+    max-width: 1300px;
+    padding:  3em 1.5em;
+
+}
+
+.cta-block__title{
+    {{utils.dudler()}}
+    font-weight: var(--heavy-font-weight);
+    }
+    
+.cta-block__subtitle{
+    {{utils.freed()}}
+    margin-top: .5em;
+
+}
+
+.cta-block__button{
+    text-align: center;
+    margin-top: 2em;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+.cta-block{
+    padding: 4em;
+    
+}
+.cta-block__button{
+    text-align: left;
+}
+{% endcall %}    
