@@ -1,0 +1,64 @@
+[ {
+  "id" : "9078be8d-a327-670d-27af-62499e5b9abf",
+  "name" : "background_image",
+  "label" : "Background image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "7332edc9-835d-a5dd-def5-742728f5a080",
+  "name" : "testimonial_items",
+  "label" : "Testimonial items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "53f594b8-3ebd-4fd6-ba1f-ab230998ae9e",
+    "name" : "testimonial_body",
+    "label" : "Testimonial body",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "250d9116-6df7-8c4d-cc4c-5befdba6e87f",
+    "name" : "testimonial_name",
+    "label" : "Testimonial name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "4b924710-4691-9092-18d9-22d96d49cb9b",
+    "name" : "testimonal_position",
+    "label" : "Testimonal position",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+} ]

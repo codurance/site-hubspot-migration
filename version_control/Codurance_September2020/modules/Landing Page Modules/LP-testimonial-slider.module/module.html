@@ -1,0 +1,15 @@
+
+
+{% if module.background_image.src %}
+	 {% set loadingAttr = module.background_image.loading != 'disabled' ? 'loading="{{ module.background_image.loading }}"' : '' %}
+	<img src="{{ module.background_image.src }}" alt="{{ module.background_image.alt }}" {{ loadingAttr }}>
+{% endif %}
+
+{% for item in module.testimonial_items %}
+	<div class="testimonial-item">
+		<p>{{ item.testimonial_body }}</p>
+		<p>{{ item.testimonial_name }}</p>
+		<p>{{ item.testimonal_position }}</p>
+	</div>
+{% endfor %}
+
