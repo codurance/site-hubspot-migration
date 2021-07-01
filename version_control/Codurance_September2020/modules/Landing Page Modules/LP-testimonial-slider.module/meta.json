@@ -2,5 +2,17 @@
   "global" : false,
   "host_template_types" : [ "PAGE" ],
   "module_id" : 49801953793,
+  "css_assets" : [  
+  {
+    "url" : "https://unpkg.com/swiper/swiper-bundle.min.css",
+    "autoload" : true,
+    "name" : "swiper-bundle.min.css"
+  } ],
+  "js_assets" : [ {
+    "url" : "https://unpkg.com/swiper/swiper-bundle.min.js",
+    "autoload" : true,
+    "name" : "swiper-bundle.min.js"
+  }],
   "is_available_for_new_content" : true
+    
 }
