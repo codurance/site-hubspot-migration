@@ -38,8 +38,8 @@
     "type" : "text"
   }, {
     "id" : "250d9116-6df7-8c4d-cc4c-5befdba6e87f",
-    "name" : "testimonial_name",
-    "label" : "Testimonial name",
+    "name" : "testimonial_author",
+    "label" : "Testimonial Author name",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -48,8 +48,8 @@
     "type" : "text"
   }, {
     "id" : "4b924710-4691-9092-18d9-22d96d49cb9b",
-    "name" : "testimonal_position",
-    "label" : "Testimonal position",
+    "name" : "testimonal_role",
+    "label" : "Testimonal Author role",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
