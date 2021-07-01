@@ -1,0 +1,24 @@
+{% import '../utils/utils.css' as utils %}
+ 
+
+    .testimonial-slider{
+        padding: 1em .5em;
+    }
+ 
+    .swiper-container{
+        /* width: 90%;
+        height: 30vh;
+        margin: 1em auto; */
+    }
+
+    .swiper-wrapper{
+        align-items: center;
+    }
+        
+    .swiper-slide{
+        {{ utils.card_shadow() }}
+        padding: 2em;
+        background: var(--athens-gray);
+        border-radius: 7px;
+    }
+  

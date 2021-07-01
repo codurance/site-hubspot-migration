@@ -1,15 +1,35 @@
 
-
-{% if module.background_image.src %}
-	 {% set loadingAttr = module.background_image.loading != 'disabled' ? 'loading="{{ module.background_image.loading }}"' : '' %}
-	<img src="{{ module.background_image.src }}" alt="{{ module.background_image.alt }}" {{ loadingAttr }}>
-{% endif %}
-
-{% for item in module.testimonial_items %}
-	<div class="testimonial-item">
-		<p>{{ item.testimonial_body }}</p>
-		<p>{{ item.testimonial_name }}</p>
-		<p>{{ item.testimonal_position }}</p>
+	{{ require_css(get_asset_url("../../../css/modules/lp-testimonial-slider.css")) }}
+{#
+	<div class="testimonial-slider" style="background-image:url({{ module.background_image.src }})">
+		<div class="testimonial-slider__wrapper swiper-container">
+			<div class="testimonial-slider-item-group swiper-wrapper">
+        {% for item in module.testimonial_items %}
+          <div class="testimonial-slider-item swiper-slide">
+            <div class="testimonial-slider-item__body">{{ item.testimonial_body }}</div>
+            <p class="testimonial-slider-item__author">{{ item.testimonial_author }}</p>
+            <p class="testimonial-slider-item__role">{{ item.testimonal_role }}</p>
+          </div>
+        {% endfor %}
+	    </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+		</div>
 	</div>
-{% endfor %}
-
+  
+  #}
+  <div class="testimonial-slider" style="background-image:url({{ module.background_image.src }})">
+    <div class="swiper-container mySwiper">
+      <div class="swiper-wrapper">
+        {% for item in module.testimonial_items %}
+          <div class="swiper-slide">
+            <div class="testimonial-slider-item__body">{{ item.testimonial_body }}</div>
+            <p class="testimonial-slider-item__author">{{ item.testimonial_author }}</p>
+            <p class="testimonial-slider-item__role">{{ item.testimonal_role }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+      </div>
+</div>
