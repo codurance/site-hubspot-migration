@@ -2,23 +2,81 @@
  
 
     .testimonial-slider{
-        padding: 1em .5em;
+        background-image: url(https://f.hubspotusercontent40.net/hubfs/14557846/bg-slider-small-landing-pages.svg);
+        background-size: cover;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 2em .5em;
     }
  
     .swiper-container{
-        /* width: 90%;
-        height: 30vh;
-        margin: 1em auto; */
+        max-width: 30rem;
     }
 
     .swiper-wrapper{
         align-items: center;
+
     }
-        
+    .testimonial-slider__wrapper {
+        background: white;
+        padding: 1em;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(255,255,255,0.12),0 1px 10px rgba(0,0,0,0.12);
+    }
+
     .swiper-slide{
+        {{utils.natus()}}
         {{ utils.card_shadow() }}
-        padding: 2em;
-        background: var(--athens-gray);
+        padding: 2.3em 1.2em 1.5em;
+        background: white;
         border-radius: 7px;
+        display: flex;
+        gap: 0.5em; 
+    
     }
-  
+
+    .testimonial-slider__icon{
+        position: relative;
+        top: -7px;
+        color: var(--persimmon);
+        font-size: 1.5rem;
+    }
+
+    .swiper-pagination{
+        position: relative;
+        top: 0;
+    }
+
+    .testimonial-slider-item__author,
+    .testimonial-slider-item__role{
+        {{utils.sejima()}}
+    }
+
+    .testimonial-slider-item__author{
+        margin-top: 1em;
+    }
+
+    .testimonial-slider-item__role{
+        font-weight: var(--light-font-weight)
+    }
+    
+    .swiper-pagination-bullet {
+        background: white;
+        border: 2px solid var(--persimmon);
+        height:12px;
+        opacity: 1;
+        width:12px;
+       }
+    .swiper-pagination-bullet-active {
+        background: var(--persimmon);
+        border: none;
+       }
+       
+
+    {% call utils.medium_large_and_extra_large() %}
+        .testimonial-slider{
+            background-image: url(https://f.hubspotusercontent40.net/hubfs/14557846/bg-slider-x-large-landing-pages.svg);
+            background-position: center;
+            padding: 4em;
+        }
+    {% endcall %}
