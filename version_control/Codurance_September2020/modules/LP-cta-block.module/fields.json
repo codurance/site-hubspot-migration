@@ -1,6 +1,51 @@
 [
- 
   {
+  "name": "background_image",
+  "label": "Background Image",
+  "required": true,
+  "locked": false,
+  "children": [
+    {
+    "name": "small",
+    "label": "Small screens background image",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "responsive": true,
+    "resizable": false,
+    "show_loading" : false,
+    "type": "image",
+    "default": {
+      "size_type" : "auto",
+      "src": "",
+      "alt": null,
+      "loading": "lazy"}
+    }, 
+    {
+    "name": "large",
+    "label": "Large screens background image",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "responsive": true,
+    "resizable": false,
+    "show_loading" : false,
+    "type": "image",
+    "default": {
+      "size_type" : "auto",
+      "src": "",
+      "alt": null,
+      "loading": "lazy"}
+    }
+  ],
+  "type": "group",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": {} 
+},
+{
   "name": "headline",
   "label": "Headline",
   "required": false,
