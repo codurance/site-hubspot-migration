@@ -1,8 +1,17 @@
 
 	{{ require_css(get_asset_url("../../../css/modules/lp-testimonial-slider.css")) }}
 
+  
+  <style>
+    .testimonial-slider{
+      --background_small: url( {{module.background_images.small_image.src}} );
+      --background_large: url( {{module.background_images.large_image.src}} );
+    }
+  </style>
+
+
   <div class="testimonial-slider">
-    <div class="swiper-container mySwiper">
+    <div class="swiper-container">
       <div class="swiper-wrapper"> 
         {% for item in module.testimonial_items %}
           <div class="swiper-slide">
