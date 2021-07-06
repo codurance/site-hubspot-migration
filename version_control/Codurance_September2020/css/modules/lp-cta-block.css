@@ -2,8 +2,6 @@
 
 
 .cta-block{
-    --bg-img-small: url("https://f.hubspotusercontent10.net/hubfs/3042464/Landing%20Page%20Template%20assets/CTA%20block%20module/BG-CTA-small-landing-page.svg");
-    --bg-img-large: url("https://f.hubspotusercontent10.net/hubfs/3042464/Landing%20Page%20Template%20assets/CTA%20block%20module/BG-CTA-x-large-landing-page.svg");
     background-image: var(--bg-img-small);
     background-position: top;
     background-size: cover;
