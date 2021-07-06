@@ -80,9 +80,14 @@
         .testimonial-slider-item__text-wrapper{
             {{ utils.base() }}
         }
+
         .testimonial-slider-item__author,
         .testimonial-slider-item__role{
             {{ utils.natus() }}
+        }
+        .testimonial-slider-item__author{
+            font-weight: var(--heavy-font-weight);
+
         }
 
     {% endcall %}
