@@ -1,8 +1,7 @@
 {% import '../utils/utils.css' as utils %}
- 
 
     .testimonial-slider{
-        background-image: url(https://f.hubspotusercontent40.net/hubfs/14557846/bg-slider-small-landing-pages.svg);
+        background-image: var(--background_small);
         background-size: cover;
         max-width: 1300px;
         margin: 0 auto;
@@ -18,21 +17,19 @@
 
     }
     .testimonial-slider__wrapper {
+        {{utils.natus()}}
         background: white;
         padding: 1em;
-        border-radius: 5px;
-        box-shadow: 0 1px 3px rgba(255,255,255,0.12),0 1px 10px rgba(0,0,0,0.12);
+        border-radius: 7px;
+        padding: 2.3em 1.2em 1.5em;
+        {{ utils.card_shadow() }}
+        display: flex;
+        gap: 0.5em;
     }
 
     .swiper-slide{
-        {{utils.natus()}}
-        {{ utils.card_shadow() }}
-        padding: 2.3em 1.2em 1.5em;
-        background: white;
+        padding: .5em;
         border-radius: 7px;
-        display: flex;
-        gap: 0.5em; 
-    
     }
 
     .testimonial-slider__icon{
@@ -75,8 +72,17 @@
 
     {% call utils.medium_large_and_extra_large() %}
         .testimonial-slider{
-            background-image: url(https://f.hubspotusercontent40.net/hubfs/14557846/bg-slider-x-large-landing-pages.svg);
+            background-image: var(--background_large);
             background-position: center;
             padding: 4em;
         }
+
+        .testimonial-slider-item__text-wrapper{
+            {{ utils.base() }}
+        }
+        .testimonial-slider-item__author,
+        .testimonial-slider-item__role{
+            {{ utils.natus() }}
+        }
+
     {% endcall %}
