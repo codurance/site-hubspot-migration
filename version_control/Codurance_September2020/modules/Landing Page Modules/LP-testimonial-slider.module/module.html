@@ -1,0 +1,31 @@
+
+	{{ require_css(get_asset_url("../../../css/modules/lp-testimonial-slider.css")) }}
+
+  
+  <style>
+    .testimonial-slider{
+      --background_small: url( {{module.background_images.small_image.src}} );
+      --background_large: url( {{module.background_images.large_image.src}} );
+    }
+  </style>
+
+
+  <div class="testimonial-slider">
+    <div class="swiper-container">
+      <div class="swiper-wrapper"> 
+        {% for item in module.testimonial_items %}
+          <div class="swiper-slide">
+            <div class="testimonial-slider__wrapper">
+              <i class="testimonial-slider__icon las la-quote-left"></i>
+              <div class="testimonial-slider-item__text-wrapper">
+                <div class="testimonial-slider-item__body">{{ item.testimonial_body }}</div>
+                <p class="testimonial-slider-item__author">{{ item.testimonial_author }}</p>
+                <p class="testimonial-slider-item__role">{{ item.testimonal_role }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div> 
+      <div class="swiper-pagination"></div>
+      </div>
+</div>
