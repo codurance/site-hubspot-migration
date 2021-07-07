@@ -6,10 +6,16 @@
     background-position: top;
     background-size: cover;
     margin: 0 auto;
-    color: white;  
     max-width: 1300px;
     padding:  3em 1.5em;
 
+}
+
+.cta-block--font-dark{
+    color: var(--shark);
+}
+.cta-block--font-light{
+    color: white;
 }
 
 .cta-block__title{
