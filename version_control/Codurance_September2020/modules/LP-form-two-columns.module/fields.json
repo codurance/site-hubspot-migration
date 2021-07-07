@@ -1,4 +1,15 @@
 [ {
+  "id" : "492b8884-d794-814d-3e39-0eb992c4b774",
+  "name" : "background_color",
+  "label" : "Background color",
+  "help_text" : "Please select a background colour, depending on the content you're creating. By default is a light gradient.",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "background-light", "Light gradient" ], [ "background-dark", "Dark gradient" ] ],
+  "type" : "choice",
+  "default" : "background-light"
+}, {
   "id" : "c6e921be-ec41-03f2-7929-2b9a4c968612",
   "name" : "richtext_field",
   "label" : "Rich text",
