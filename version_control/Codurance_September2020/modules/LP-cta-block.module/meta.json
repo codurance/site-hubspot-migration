@@ -1,17 +1,7 @@
 {
-  "label": "LP-cta-block",
-  "css_assets": [],
-  "external_js": [],
-  "global": false,
-  "help_text": "",
-  "host_template_types": [
-    "PAGE"
-  ],
-  "js_assets": [],
-  "other_assets": [],
-  "smart_type": "NOT_SMART",
-  "tags": [],
-  "is_available_for_new_content": true
+  "global" : false,
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 49550477959,
+  "label" : "LP-cta-block",
+  "is_available_for_new_content" : true
 }
-
-
