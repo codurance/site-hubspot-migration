@@ -3,7 +3,7 @@
 
 .cta-block{
     background-image: var(--bg-img-small);
-    background-position: top;
+    background-position: top right;
     background-size: cover;
     margin: 0 auto;
     max-width: 1300px;
