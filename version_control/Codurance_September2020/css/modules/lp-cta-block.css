@@ -7,7 +7,7 @@
     background-size: cover;
     margin: 0 auto;
     max-width: 1300px;
-    padding:  3em 1.5em;
+    padding: 3em 1.5em;
 
 }
 
@@ -46,7 +46,7 @@
 }
 {% endcall %}  
 
-{% call utils.large_and_extra_large() %}
+{% call utils.medium_large_and_extra_large() %}
     .cta-block__title,
     .cta-block__subtitle{
         max-width: 60%;
