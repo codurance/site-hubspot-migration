@@ -1,12 +1,24 @@
 {% import '../utils/utils.css' as utils %}
 
 .form__wrapper{
-    {{utils.white_to_tango()}}
-    padding: 2em 1.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding: 2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+
+.form__wrapper--background-light{
+    {{utils.white_to_tango()}}    
 }
+
+.form__wrapper--background-dark{
+    {{utils.black_to_navy()}} 
+    color: white;   
+}
+.form__wrapper--background-dark .legal-consent-container p{
+    color: white;
+ }
+
 
 .form__text {
     max-width: 40ch;
