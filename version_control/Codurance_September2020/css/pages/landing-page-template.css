@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+.row-fluid [class*="span"] {
+    min-height: 0;
+}
+
 .section-area-full .dnd-section > .row-fluid   {
     padding-left: 0px;
     padding-right: 0px;

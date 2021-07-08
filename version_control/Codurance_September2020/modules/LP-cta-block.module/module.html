@@ -1,0 +1,19 @@
+
+{{ require_css(get_asset_url("../../css/modules/lp-cta-block.css")) }}
+
+<style>
+.cta-block{
+    --bg-img-small: url({{module.background_image.small.src}});
+    --bg-img-large: url({{module.background_image.large.src}});
+}
+</style>
+
+<div class="cta-block  cta-block--{{ module.font_color }}">
+    <h2 class="cta-block__title">{{module.headline}}</h2>
+    <p class="cta-block__subtitle">{{module.subheadline}}</p>
+    {% if module.cta_field %}
+       <div class="cta-block__button">
+        {% cta guid="{{ module.cta_field }}" %}
+        </div>
+    {% endif %}
+</div>
