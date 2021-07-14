@@ -24,9 +24,9 @@
   "locked" : false,
   "type" : "form",
   "default" : {
-    "form_id" : "2e50636a-5a3c-44e9-8571-377d15f2f19d",
-    "response_type" : "inline",
-    "message" : "Thank you for submitting the form.",
+    "form_id" : "",
+    "response_type" : "redirect",
+    "message" : "",
     "gotowebinar_webinar_key" : null,
     "form_type" : "HUBSPOT"
   }
