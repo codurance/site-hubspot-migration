@@ -13,3 +13,9 @@
     padding: 2rem;
 }
 
+{% call utils.small() %}
+    .job-card { 
+        margin-bottom: 1.5em;
+    }
+{% endcall %}
+
