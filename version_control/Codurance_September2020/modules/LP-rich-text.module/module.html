@@ -1,0 +1,10 @@
+{{ require_css(get_asset_url("../../css/modules/lp-rich-text.css")) }}
+
+
+
+<div class="lp-rich-text">
+  <h2 class="lp-rich-text__title">{% inline_text field="title" value="{{ module.title }}" no_wrapper=True %}</h2>
+  <div class="lp-rich-text__content {{ module.text_columns }}">
+    {{ module.content }}
+  </div>
+</div>

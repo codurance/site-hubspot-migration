@@ -1,0 +1,79 @@
+{% import '../utils/utils.css' as utils %}
+
+.lp-stats-block {
+    padding: 2em 1.5em;
+}
+
+.lp-stats-block__title {
+    {{ utils.freed() }}
+    margin-bottom: var(--freed-margin);
+}
+
+.lp-stats-block__content {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.lp-stats-block-card__statistic {
+    display: flex;
+    column-gap: 1.2em;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 4em;
+    margin-bottom: 2em;
+    color: #4A5790;
+    font-weight: var(--heavy-font-weight);
+}
+
+
+.lp-stats-block-card__number {
+    font-size: 100px;
+}
+
+.lp-stats-block-card__symbol {
+    font-size: 40px;
+    margin-left: -1.2rem;
+    line-height: 0;
+    
+}
+
+.lp-stats-block-card__text{
+    max-width: 25em;
+}
+
+
+
+{% call utils.medium() %}
+    .lp-stats-block {
+        padding: 3em;
+    }
+
+    .lp-video-podcast-container-info {
+        margin-bottom: 2rem;
+    }
+
+{% endcall%}
+
+{% call utils.large_and_extra_large() %}
+    .lp-stats-block {
+        margin: 0 auto;
+        max-width: 1300px;
+        padding: 4em;
+    }
+    .lp-stats-block__content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+    }
+    .lp-stats-block-card {
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5rem;
+    }
+
+{% endcall%}

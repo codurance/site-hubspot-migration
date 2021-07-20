@@ -1,0 +1,13 @@
+{{ require_css(get_asset_url("../../css/modules/LP-form-two-columns.css")) }}
+
+
+<div class="form__wrapper form__wrapper--{{ module.background_color }}">
+    {% if module.richtext_field %}
+        <div class="form__text">
+        {% inline_rich_text field="richtext_field" value="{{ module.richtext_field }}" %}
+        </div>
+    {% endif %}
+    <div class="form__fields">  
+        {% form "email_form" form_to_use="{{ module.form_full.form_id }}" no_wrapper=True %}
+    </div>
+</div>

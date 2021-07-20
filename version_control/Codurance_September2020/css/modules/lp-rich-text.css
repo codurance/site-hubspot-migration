@@ -1,0 +1,27 @@
+{% import '../utils/utils.css' as utils %}
+
+.lp-rich-text {
+    padding: 2em 1.5em;
+}
+
+.lp-rich-text__title {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--dudler-margin);
+}
+.one_col{
+    columns: 1;
+}
+
+.two_col {
+    columns: 400px 2;
+    column-gap: 5rem;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .lp-rich-text {
+        padding: 2em 1.5em;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+{% endcall%} 
