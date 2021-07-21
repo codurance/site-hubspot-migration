@@ -28,7 +28,24 @@ label: Home Page version 2
 {% block body %}
   <section class="homepage-hero">
     {% module "Announcement Bar" path="../modules/Announcement Bar.module" label="Announcement Bar" no_wrapper=True %}
-    {% module "Hero slice" path="../modules/Hero Slice.module" label="Hero slice" no_wrapper=True %}
+   {# {% module "LP-header" path="../modules/LP-header-v1.module" label="Hero slice" no_wrapper=True %} #}
+    <div class="homepage-hero__container">
+      <div class="homepage-hero__text">
+        {% module_block module "rich_text" path="@hubspot/rich_text" label="Hero Copy" no_wrapper=True %}
+             {% module_attribute "html" %}
+                 <h1>Create solutions that are fit for today and ready for tomorrow</h1>
+                 <p>Improve business agility and accelerate innovation while driving business growth – quickly, safely, securely – with confidence.</p>
+             {% end_module_attribute %}
+        {% end_module_block %} 
+      </div>
+        <div class="homepage-hero__image">          
+            {% module_block module "image" overrideable=True, label="image_home" %}
+               {% module_attribute "img" %}
+                { "src": "https://f.hubspotusercontent40.net/hubfs/14557846/header-x-large-homepage.png", "alt": "this is a description"}
+               {% end_module_attribute %}
+            {% end_module_block %}
+      </div>
+    </div>
   </section>
   <section>
   </section>
