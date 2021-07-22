@@ -1,0 +1,59 @@
+[ {
+  "id" : "6a7d51e7-385e-fb75-c9aa-cb05434e702c",
+  "name" : "clients_headline",
+  "label" : "Clients headline",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "You’re in good company"
+}, {
+  "id" : "699b6c22-941a-425d-3bee-06ecdf5275ea",
+  "name" : "logos_group",
+  "label" : "Logos group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 5,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "e5a985f1-c410-73ca-fca4-933dd3b7d4c6",
+    "name" : "logo",
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ]
+}, {
+  "id" : "09b06862-a1a7-717e-f34a-92a6894f3b44",
+  "name" : "see_all_clients",
+  "label" : "See all clients",
+  "required" : false,
+  "locked" : false,
+  "type" : "cta"
+} ]
