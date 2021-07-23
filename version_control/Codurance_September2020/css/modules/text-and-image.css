@@ -1,0 +1,17 @@
+
+{% import '../utils/utils.css' as utils %}
+
+.text-and-image__container {
+    padding: 1em;
+    display: flex;
+    flex-flow: column-reverse;
+}
+
+.text-and-image__copy h2 {
+    {{utils.dudler()}}
+    font-weight: var(--light-font-weight);
+}
+
+.text-and-image__copy p {
+
+}
