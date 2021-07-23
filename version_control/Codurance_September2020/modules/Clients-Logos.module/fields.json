@@ -51,8 +51,8 @@
   } ]
 }, {
   "id" : "09b06862-a1a7-717e-f34a-92a6894f3b44",
-  "name" : "see_all_clients",
-  "label" : "See all clients",
+  "name" : "clients_cta",
+  "label" : "Clients CTA",
   "required" : false,
   "locked" : false,
   "type" : "cta"
