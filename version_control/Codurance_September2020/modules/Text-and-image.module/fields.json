@@ -1,0 +1,34 @@
+[ {
+  "id" : "79d9defb-1c7b-32d0-256b-bdb6c48d9a5e",
+  "name" : "image_order",
+  "label" : "Image order",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "img-right", "Image right" ], [ "img-left", "Image Left" ] ],
+  "type" : "choice"
+}, {
+  "id" : "5257a3c3-b412-24b3-247b-0d08f391e9f7",
+  "name" : "description_text",
+  "label" : "Description text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<h2>Codurance is a <strong>global software consultancy</strong> that helps businesses build a better sustainable technical capability to support growth</h2>\n<p>We understand that no two organisations are the same. Our adaptable approach enables us to focus support on where you need it most. We take the time to understand your business needs – technical, operational, cultural and functional. Then we work alongside your team, augmenting your current capacity and capabilities, to help you create solutions that are sustainable, flexible and scalable.</p>"
+}, {
+  "id" : "2d46a554-1910-5c42-c62f-a43077b3926f",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+} ]
