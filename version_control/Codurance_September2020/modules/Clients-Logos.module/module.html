@@ -1,15 +1,18 @@
-<h2>{{ module.clients_headline }}</h2>
-{% for item in module.logos_group %}
-	{% if item.logo.src %}
-		{% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}"' %}
-		{% if item.logo.size_type == 'auto' %}
-			{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-		{% elif item.logo.size_type == 'auto_custom_max' %}
-			{% set sizeAttrs = 'width="{{ item.logo.max_width }}" height="{{ item.logo.max_height }}" style="max-width: 100%; height: auto;"' %}
-		{% endif %}
-		 {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading }}"' : '' %}
-		<img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-	{% endif %}
-{% endfor %}
+{{ require_css(get_asset_url("../../css/modules/client-logos.css")) }}
 
-{% cta guid="{{ module.see_all_clients }}" %}
+<div class="client-logos__content">
+	<div class="client-logos__headline">
+		<h2>{{ module.clients_headline }}</h2>
+	</div>
+	<div class="client-logos__logos-group">
+		{% for item in module.logos_group %}
+			{% if item.logo.src %}
+				 {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading }}"' : '' %}
+				<img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ loadingAttr }}>
+			{% endif %}
+		{% endfor %}
+	</div>
+	<div class="client-logo__button">
+		{% cta guid="{{ module.clients_cta }}" %}
+	</div>
+</div>
