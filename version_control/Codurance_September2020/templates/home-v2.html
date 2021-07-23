@@ -38,16 +38,17 @@ label: Home Page version 2
              {% end_module_attribute %}
         {% end_module_block %} 
       </div>
-        <div class="homepage-hero__image">          
-            {% module_block module "image" overrideable=True, label="image_home" %}
-               {% module_attribute "img" %}
-                { "src": "https://f.hubspotusercontent40.net/hubfs/14557846/header-x-large-homepage.png", "alt": "this is a description"}
-               {% end_module_attribute %}
-            {% end_module_block %}
+        <div class="homepage-hero__image">
+        {% module_block module "image" overrideable=True, label="Hero Image" %}
+          {% module_attribute "img" %}
+           { "src": "https://images.unsplash.com/photo-1594878462522-f6e3db86d0ec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80", "alt": "this is a description"}
+          {% end_module_attribute %}
+       {% end_module_block %}
       </div>
     </div>
   </section>
-  <section>
+  <section class="client-logos">
+    {% module 'clients logos' path='../modules/Clients-Logos.module' label="Clients logos Section"%}
   </section>
   <section>
   </section>
