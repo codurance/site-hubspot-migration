@@ -1,5 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
+/* HOMEPAGE HERO SECTION */
+
 .homepage-hero{
     background: linear-gradient(0deg, rgba(255,252,250,1) 0%, rgba(252,224,206,1) 100%);
     padding-bottom: 4em;
@@ -81,3 +83,11 @@
     }
 
 {% endcall %}
+
+
+/* CLIENTS LOGOS SECTION */
+
+.client-logos{
+    padding: 2em 1em;
+}
+
