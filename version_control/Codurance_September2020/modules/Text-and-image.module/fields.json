@@ -14,7 +14,7 @@
   "required" : false,
   "locked" : false,
   "type" : "richtext",
-  "default" : "<h2>Codurance is a <strong>global software consultancy</strong> that helps businesses build a better sustainable technical capability to support growth</h2>\n<p>We understand that no two organisations are the same. Our adaptable approach enables us to focus support on where you need it most. We take the time to understand your business needs – technical, operational, cultural and functional. Then we work alongside your team, augmenting your current capacity and capabilities, to help you create solutions that are sustainable, flexible and scalable.</p>"
+  "default" : "<h2>Codurance is a <strong>global software consultancy</strong> that helps businesses build a better sustainable technical capability to support growth</h2>\n<p></p><p>We understand that no two organisations are the same. Our adaptable approach enables us to focus support on where you need it most. We take the time to understand your business needs – technical, operational, cultural and functional. Then we work alongside your team, augmenting your current capacity and capabilities, to help you create solutions that are sustainable, flexible and scalable.</p>"
 }, {
   "id" : "2d46a554-1910-5c42-c62f-a43077b3926f",
   "name" : "image_field",
