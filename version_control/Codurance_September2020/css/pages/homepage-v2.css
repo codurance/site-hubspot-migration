@@ -93,8 +93,17 @@
 
 /* SOFTWARE CONSULTANCY SECTION */
 .software-consultancy {
- background: url(https://f.hubspotusercontent40.net/hubfs/14557846/who-we-are-bg-x-large-homepage.svg) 
+    background: url(https://f.hubspotusercontent40.net/hubfs/14557846/who-we-are-bg-x-large-homepage.svg) 
                 no-repeat 
                 top right/cover;
+       
 }
+
+{% call utils.medium_large_and_extra_large() %}
+    .software-consultancy {
+        background-position: contain;
+    }
+{%endcall%}
+
+
 
