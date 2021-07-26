@@ -1,0 +1,81 @@
+[ {
+  "id" : "1b0e3ba6-12f1-466b-e102-46ed7490414a",
+  "name" : "image_field",
+  "label" : "Main Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "4280f3a2-948d-5c27-90c1-28d138780194",
+  "name" : "richtext_field",
+  "label" : "Main Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "3b81a496-bd49-c58a-cfc1-6a760d77e0b2",
+  "name" : "expertise_areas",
+  "label" : "Expertise areas",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "816c006e-fb33-8f4a-c5df-27c0d5746aa1",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "220ace95-52ee-048f-6a96-8d68e3972acc",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ]
+}, {
+  "id" : "3cca208f-9284-f0d7-e52d-b585bb088034",
+  "name" : "cta_field",
+  "label" : "Compass CTA",
+  "required" : false,
+  "locked" : false,
+  "type" : "cta"
+} ]
