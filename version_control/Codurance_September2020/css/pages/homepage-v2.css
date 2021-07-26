@@ -101,7 +101,7 @@
 
 {% call utils.medium_large_and_extra_large() %}
     .software-consultancy {
-        background-position: contain;
+        background-size: contain;
     }
 {%endcall%}
 

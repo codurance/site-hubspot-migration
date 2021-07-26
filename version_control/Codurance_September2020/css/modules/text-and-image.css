@@ -40,6 +40,9 @@
         margin: 0 auto;
         max-width: 1000px;
     }
+    .container--img-left{
+        flex-direction: row-reverse;
+    }
 
     .text-and-image__copy{
         max-width: 50%;
