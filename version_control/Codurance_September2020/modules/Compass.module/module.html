@@ -1,9 +1,12 @@
-<div class="compass__wrapper">
-	<div class="compass__content">
-		<div class="compass__content-text">
+
+{{ require_css(get_asset_url("../../css/modules/compass.css")) }}
+
+<div class="compass-wrapper">
+	<div class="compass-content">
+		<div class="compass-content__text">
 			{% inline_rich_text field="richtext_field" value="{{ module.richtext_field }}" %}
 		</div>
-		<div class="compass__content-expetise-areas">
+		<div class="compass-content__expetise-areas">
 			{% for item in module.expertise_areas %}
 				<div class="expertise-areas__item">
 					<h3 class="expertise-areas__title">{{ item.title }}</h3>
@@ -16,13 +19,13 @@
 		</div>
 
 		{% if module.cta_field%} 
-		<div class="compass__content-cta">
+		<div class="compass-content__cta">
 			{% cta guid="{{ module.cta_field }}" %}
 		</div>
 		{% endif %}
 		
 	</div>
-	<div class="compasss__main-image">
+	<div class="compasss-image">
 		{% if module.image_field.src %}
 			{% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
 			{% if module.image_field.size_type == 'auto' %}
@@ -34,5 +37,4 @@
 			<img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
 		{% endif %}
 	</div>
-	
 </div>
