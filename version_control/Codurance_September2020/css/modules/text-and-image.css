@@ -59,6 +59,9 @@
     }
     .text-and-image__copy h2{
         {{utils.dudler()}}
+        font-weight: var(--light-font-weight);
+
+
     }
         
     .text-and-image__copy p{
