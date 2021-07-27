@@ -91,6 +91,8 @@
     padding: 2em 1em;
 }
 
+
+
 /* SOFTWARE CONSULTANCY SECTION */
 .software-consultancy {
     background: url(https://f.hubspotusercontent40.net/hubfs/14557846/who-we-are-bg-x-large-homepage.svg) 
@@ -106,4 +108,8 @@
 {%endcall%}
 
 
+/* COMPASS SECTION */
+.compass{
+    background: linear-gradient( white, #ECF8F8 )
+}
 

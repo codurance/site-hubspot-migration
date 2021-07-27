@@ -1,0 +1,78 @@
+
+{% import "../utils/utils.css" as utils %}
+
+.compass-wrapper{
+    display: flex;
+    flex-flow: column-reverse;
+    padding: 2em 1em;
+
+}
+
+.compass-content {
+    margin: 0 auto;
+}
+
+.compasss-image {
+    max-width: 75%;
+   }
+   
+
+.compass-content__text h2{
+    {{ utils.freed() }}
+   font-weight: var(--light-font-weight);
+}
+
+.compass-content__text p{
+    {{ utils.natus() }}
+}
+
+.compass-content__expetise-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1em;
+    max-width: 90%;
+}
+
+.expertise-areas__item {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+}
+
+.expertise-areas__title{
+    {{ utils.natus() }}
+    order: 1;
+    max-width: 40%;
+}
+
+.expertise-areas__image {
+  height: 3rem;
+}
+
+.compass-content__cta{
+    margin-top: 2em;
+}
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .compass-wrapper {
+        flex-flow:row-reverse;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .compass-content__text h2{
+        {{ utils.dudler() }}
+        font-weight: var(--light-font-weight);
+    }
+
+    .compass-content__text p{
+        {{ utils.base() }}
+    }
+
+    .compasss-image {
+        transform: translateY(-10%);
+    }
+
+
+{% endcall %}
