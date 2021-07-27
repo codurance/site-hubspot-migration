@@ -1,27 +1,26 @@
-<div class="compass">
+<div class="compass__wrapper">
 	<div class="compass__content">
 		<div class="compass__content-text">
 			{% inline_rich_text field="richtext_field" value="{{ module.richtext_field }}" %}
 		</div>
 		<div class="compass__content-expetise-areas">
 			{% for item in module.expertise_areas %}
-				{% inline_text field="title" value="{{ item.title }}" %}
-				{% if item.icon.src %}
-					{% set sizeAttrs = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}"' %}
-					{% if item.icon.size_type == 'auto' %}
-						{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-					{% elif item.icon.size_type == 'auto_custom_max' %}
-						{% set sizeAttrs = 'width="{{ item.icon.max_width }}" height="{{ item.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
-					{% endif %}
+				<div class="expertise-areas__item">
+					<h3 class="expertise-areas__title">{{ item.title }}</h3>
+					{% if item.icon.src %}
 						{% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
-					<img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-				{% endif %}
+					<img class="expertise-areas__image" src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }}>
+					{% endif %}
+				</div>
 			{% endfor %}
-			
 		</div>
+
+		{% if module.cta_field%} 
 		<div class="compass__content-cta">
 			{% cta guid="{{ module.cta_field }}" %}
 		</div>
+		{% endif %}
+		
 	</div>
 	<div class="compasss__main-image">
 		{% if module.image_field.src %}
