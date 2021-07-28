@@ -5,7 +5,6 @@
     display: flex;
     flex-flow: column-reverse;
     padding: 2em 1em;
-
 }
 
 .compass-content {
@@ -24,6 +23,7 @@
 
 .compass-content__text p{
     {{ utils.natus() }}
+     margin-top: 1em;
 }
 
 .compass-content__expetise-areas {
@@ -31,6 +31,7 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1em;
     max-width: 90%;
+    margin-top: 2em;
 }
 
 .expertise-areas__item {
@@ -59,20 +60,28 @@
         flex-flow:row-reverse;
         max-width: 1200px;
         margin: 0 auto;
+        padding-top: 3em;
     }
 
     .compass-content__text h2{
         {{ utils.dudler() }}
         font-weight: var(--light-font-weight);
     }
-
+       
     .compass-content__text p{
         {{ utils.base() }}
+        margin-top: var(--base-margin);
+
     }
+
 
     .compasss-image {
         transform: translateY(-10%);
     }
+{% endcall %}
 
-
+{% call utils.medium_large_and_extra_large() %}
+    .compass-content__text{
+        max-width: 70%;
+    }
 {% endcall %}
