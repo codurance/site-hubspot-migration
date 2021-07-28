@@ -113,3 +113,58 @@
     background: linear-gradient( white, #ECF8F8 )
 }
 
+/* PARTNERS SECTION */
+
+.partners{
+    padding: 1em;
+}
+
+.partners .lp-header-v1__image {
+    order: revert;
+    width: revert;
+}
+
+.partners .lp-header-v1__content {
+    padding: 2em 0;
+    max-width: 30em;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+   .partners .lp-header-v1 {
+       padding: 2em 1em;
+       align-items: center;
+   }
+   .partners .lp-header-v1__content {
+        max-width: 50%;
+   }
+   .partners .lp-header-v1__image {
+        max-width: 50%;
+   }
+{%endcall%}
+
+{% call utils.medium_large_and_extra_large() %}
+    .partners .lp-header-v1 {
+       padding: 2em 0em;
+   }
+{% endcall %}
+
+
+/* CRAFTMANSHIP ETHOS SECTION */
+
+.craftmanship-ethos{
+    {{ utils.black_to_navy() }}
+    color: white;
+}
+
+
+.craftmanship-ethos .compasss-image {
+    transform: translate(-21%, -13%);
+    scale: 1.2;
+}
+
+
+
+
+
+
+
