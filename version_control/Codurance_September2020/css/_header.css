@@ -6,6 +6,8 @@ You will also find the mobile menu styles below.
 *********************************************************************************
 ****************************************************************************** */
 
+{% include "../utils/utils.css" as utils %}
+
 header.header {
   min-height: 90px;
 }
@@ -17,6 +19,7 @@ header.header {
   transition: transform 0.3s ease;
   width: 100%;
   z-index: 100;
+  {{ utils.card_shadow() }}
 }
 .custom-logo img {
   max-width: 147px;
@@ -74,6 +77,7 @@ header.header.fixed  .cm-header-group {
 #nav-toggle {
   display: none;
 }
+
 
 /* Styles for the Logo */
 
@@ -309,16 +313,7 @@ header.header .mobile-logo{
     padding-left: 50px;
     padding-right: 50px;
   }
-  .cm-header-group:after{
-    background-color: #b7b7b7;
-    content: "";
-    height: 1px;
-    margin-top:1px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: var(--max-page-width);
-    display: block;
-  }
+ 
 }
 
 @media (min-width: 1300px){
@@ -415,16 +410,9 @@ header.header .mobile-logo{
     overflow: hidden;
     transition: background-color 0.5s, height 0.5s;
     z-index: 100;
+
   }
-  .cm-header-group:before {
-    background-color: #b7b7b7;
-    content: "";
-    height: 1px;
-    position: absolute;
-    top: 70px;
-    left: 25px;
-    right: 25px;
-  }
+
   .cm-header-group.website-header--open {
     background-color: #2b3342;
     height: 100vh;
@@ -501,10 +489,6 @@ header.header .mobile-logo{
   .cm-header-group.website-header--open .mobile-logo img {
     display: block;
     margin-top: 0px;
-  }
-  .cm-header-group:before {
-    left: 20px;
-    right: 20px;
   }
   .custom-menu-primary nav {
     padding-left: 20px;
