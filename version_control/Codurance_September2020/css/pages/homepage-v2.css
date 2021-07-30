@@ -211,8 +211,30 @@
 
 
 
+/* CONTACT US SECTION */
 
+.contact-banner .cta-block{
+    max-width: initial;
+    text-align: center;
+}
+.cta-block__button .button-secondary{
+    background: white;
+}
+.cta-block__button .button-secondary:hover,
+.cta-block__button .button-secondary:focus,
+.cta-block__button .button-secondary:active{
+    background: var(--persimmon--dark);
+}
 
+{% call utils.medium_large_and_extra_large() %}
+    .contact-banner .cta-block__title{
+        margin: 0 auto; 
+    }
+
+    .contact-banner .cta-block__button{
+        text-align: inherit;
+    }
+{% endcall %}
 
 
 
