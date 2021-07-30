@@ -28,7 +28,6 @@ label: Home Page version 2
 {% block body %}
   <section class="homepage-hero">
     {% module "Announcement Bar" path="../modules/Announcement Bar.module" label="Announcement Bar" no_wrapper=True %}
-   {# {% module "LP-header" path="../modules/LP-header-v1.module" label="Hero slice" no_wrapper=True %} #}
     <div class="homepage-hero__container">
       <div class="homepage-hero__text">
         {% module_block module "rich_text" path="@hubspot/rich_text" label="Hero Copy" no_wrapper=True %}
