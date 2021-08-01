@@ -209,7 +209,17 @@
     }
 {% endcall %}
 
+/* TESTIMONIALS SECTION */
 
+.latest-insights{
+    background: transparent linear-gradient(251deg, #EF77267C 0%, white 100%) 0% 0%;
+    margin-top: 10em;       
+}
+
+
+/* LATEST INSIGHTS SECTION */
+/* NEWSLETTER SIGNUP SECTION */
+/* COMMUNITY SECTION */
 
 /* CONTACT US SECTION */
 
