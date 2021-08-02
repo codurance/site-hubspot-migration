@@ -1,16 +1,21 @@
 {% import '../utils/utils.css' as utils %}
 
+body{
+  max-width: none;
+}  
+
 .cm-recent-post {
   max-width: 1200px;
   margin: 0 auto;
-  transform: translateY(-15%);
-  padding: 0 1em;
+  transform: translateY(-20%);
+
 }
 
 {% call utils.large_and_extra_large() %}
   .cm-recent-post {
     display: flex;
     justify-content: space-between;
+    transform: translateY(-20%);
     gap: 4em;
   }
 {% endcall%}
@@ -21,7 +26,7 @@
   position: relative;
   padding-bottom: 20px;
   font-weight: var(--heavy-font-weight);
-  text-align: center;
+  margin-left: 15px;
   margin-bottom: var(--dudler-margin);
 }
 
@@ -29,15 +34,20 @@
   align-items: stretch;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-bottom: 1em;
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
 }
-{% call utils.small_and_medium() %}
-  .cm-recent-post__group {
-    flex-wrap: wrap;
-  }
-{% endcall %}
+
+.cm-recent-post__group::-webkit-scrollbar{
+  display: none;
+}
+
 
 {% set item_margin = 15 %}
+
 .cm-recent-post__item {
   {{ utils.card_shadow() }}
   color: inherit;
@@ -46,10 +56,13 @@
   margin-bottom: 1.4rem;
   margin-left: {{ item_margin }}px;
   margin-right: {{ item_margin }}px;
+  min-width: 14em;
   overflow: hidden;
   position: relative;
+  scroll-snap-align: center;
   transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
 }
+
 {% call utils.large_and_extra_large() %}
   .cm-recent-post__item {
     width: 33.333%;
