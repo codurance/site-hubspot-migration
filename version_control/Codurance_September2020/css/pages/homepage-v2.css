@@ -221,8 +221,20 @@
 /* NEWSLETTER SIGNUP SECTION */
 /* COMMUNITY SECTION */
 
-/* CONTACT US SECTION */
+.community-content{
+    margin: 2em 1em 0;
+}
+.community-content__title{
+    {{utils.freed()}}
+    font-weight: var(--heavy-font-weight)
+}
+.community-content__subtitle{
+    {{utils.natus()}}
+    margin-top: 1em;
+}
 
+
+/* CONTACT US SECTION */
 .contact-banner .cta-block{
     max-width: initial;
     text-align: center;

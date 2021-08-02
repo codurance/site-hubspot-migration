@@ -1,0 +1,43 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{{ require_css(get_asset_url("../../css/modules/software-craftsmanship-v2.css")) }}
+
+<div class="software-craft-group">
+  {% for item in module.item %}
+
+    <div class="software-craft__item">
+      <div class="software-craft__image-wrapper" style="background-image:url({{ item.image_field.src }})"></div>
+      <div class="software-craft__inner">
+        <div class="software-craft__info-wrapper">
+          <h4 class="software-craft__title">{{ item.heading }}</h4>
+          <div class="software-craft__body-wrapper">
+            <p class="software-craft__description">{{ item.content }}</p>
+          </div>
+        </div>
+
+        {% set href = item.link_field.url.href %}
+        {% set target = "" %}
+        {% set rel = "" %}
+        {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% endif %}
+        {% if item.link_field.open_in_new_tab %}
+          {% set target = "_blank" %}
+        {% endif %}
+        {% if item.link_field.no_follow %}
+          {% set rel = "nofollow" %}
+        {% endif %}
+
+        {{snippets.text_cta_right_arrow(
+          url=href,
+          text=item.button_text,
+          classnames="software-craft__button",
+          target=target,
+          rel=rel
+        )}}
+
+      </div>
+    </div>
+
+  {% endfor %}
+</div>
