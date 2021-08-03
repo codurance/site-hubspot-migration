@@ -246,14 +246,20 @@
 {% call utils.large_and_extra_large() %}
     .community-content{
         max-width: 20%;
+        margin-left: 0;
     }
     .community-content__title{
         {{ utils.dudler() }}
         font-weight: var(--heavy-font-weight)
     }
-    
     .community-content__subtitle{
         {{ utils.base() }}
+    }
+{% endcall %}
+
+{% call utils.extra_large() %}
+    .community-content{
+        margin-left: 0;
     }
 {% endcall %}
 

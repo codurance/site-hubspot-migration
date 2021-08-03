@@ -11,16 +11,6 @@ body{
 
 }
 
-{% call utils.large_and_extra_large() %}
-  .cm-recent-post {
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-20%);
-    gap: 4em;
-  }
-{% endcall%}
-
-
 .cm-recent-post__heading {
   {{ utils.dudler() }}
   position: relative;
@@ -29,6 +19,23 @@ body{
   margin-left: 15px;
   margin-bottom: var(--dudler-margin);
 }
+
+{% call utils.large_and_extra_large() %}
+  .cm-recent-post {
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-20%);
+  }
+  .cm-recent-post__heading {
+    width: 100%;
+  }
+{% endcall%}
+{% call utils.large_and_extra_large() %}
+  .cm-recent-post__heading {
+    marign-left: 0;
+  }
+{% endcall %}
+
 
 .cm-recent-post__group {
   align-items: stretch;
