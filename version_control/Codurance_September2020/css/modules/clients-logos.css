@@ -8,11 +8,13 @@
 
 
 .client-logos__headline{
+    {{ utils.natus() }}
+    font-weight: var(--heavy-font-size);
     color: var(--mid-gray);
 }
 
 .client-logos__logos-group{
-    filter: contrast(10%);
+    filter: contrast(0%);
     margin: 2em 0;
     gap: 1e;
     display: flex;
