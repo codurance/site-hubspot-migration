@@ -87,7 +87,7 @@
 /* CLIENTS LOGOS SECTION */
 
 .client-logos{
-    padding: 2em 1em;
+    padding: 2em 1em 4em;
 }
 
 
@@ -117,6 +117,9 @@
 .partners{
     padding: 1em;
 }
+.partners .lp-header-v1{
+    max-width: 1000px;
+}
 
 .partners .lp-header-v1__image {
     order: revert;
@@ -134,7 +137,7 @@
        align-items: center;
    }
    .partners .lp-header-v1__content {
-        max-width: 50%;
+        max-width: 45%;
    }
    .partners .lp-header-v1__image {
         max-width: 50%;
@@ -143,7 +146,8 @@
 
 {% call utils.medium_large_and_extra_large() %}
     .partners .lp-header-v1 {
-       padding: 2em 0em;
+       padding: 3em 0em;
+    
    }
 {% endcall %}
 
@@ -176,7 +180,7 @@
     max-width: initial;
 }
 .craftmanship-ethos .expertise-areas__image {
-    height:3rem;
+    height:2.5rem;
     filter: brightness(100);
 }
 
@@ -208,18 +212,26 @@
     }
 {% endcall %}
 
+
 /* TESTIMONIALS SECTION */
+
+
+
+/* LATEST INSIGHTS SECTION */
 
 .latest-insights{
     background: transparent linear-gradient(251deg, #EF77267C 0%, white 100%) 0% 0%;
     margin-top: 10em;       
 }
 
-
-/* LATEST INSIGHTS SECTION */
 /* NEWSLETTER SIGNUP SECTION */
-/* COMMUNITY SECTION */
 
+
+
+/* COMMUNITY SECTION */
+.community{
+    padding: 2em 0;
+}
 .community-content{
     margin: 2em 1em 0;
 }
