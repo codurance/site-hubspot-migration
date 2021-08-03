@@ -16,7 +16,7 @@
 .client-logos__logos-group{
     filter: contrast(0%);
     margin: 2em 0;
-    gap: 1e;
+    gap: 1em;
     display: flex;
     gap: 1.5em;
     flex-flow: wrap;
