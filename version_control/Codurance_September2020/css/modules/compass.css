@@ -12,8 +12,8 @@
 }
 
 .compasss-image {
-    max-width: 75%;
-   }
+    width: 65%
+}
    
 
 .compass-content__text h2{
@@ -42,6 +42,7 @@
 
 .expertise-areas__title{
     {{ utils.natus() }}
+    font-weight: var(--heavy-font-weight);
     order: 1;
     max-width: 40%;
 }
