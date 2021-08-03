@@ -9,7 +9,7 @@ You will also find the mobile menu styles below.
 {% include "../utils/utils.css" as utils %}
 
 header.header {
-  min-height: 90px;
+  min-height: 85px;
 }
 .cm-header-group {
   background-color: white;
