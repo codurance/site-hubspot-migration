@@ -69,11 +69,13 @@ label: Home Page version 2
   <section class="newsletter-signup">
   </section>
   <section class="community">
-      <div class="community-content">
-        <h2 class="community-content__title">{% module 'Title' path="@hubspot/text" label="Community Title" no_wrapper=True%}</h2>
-        <p class="community-content__subtitle">{% module 'Subtitle' path="@hubspot/text" label="Community Subtitle" no_wrapper=True%}</p>
+      <div class="community__wrapper">
+        <div class="community-content">
+          <h2 class="community-content__title">{% module 'Title' path="@hubspot/text" label="Community Title" no_wrapper=True%}</h2>
+          <p class="community-content__subtitle">{% module 'Subtitle' path="@hubspot/text" label="Community Subtitle" no_wrapper=True%}</p>
+        </div>
+        {% module 'Software-craftsmanship-V2' path='../modules/Software-craftsmanship-V2.module' label="Community Cards" no_wrapper=True%}
       </div>
-      {% module 'Software-craftsmanship-V2' path='../modules/Software-craftsmanship-V2.module' label="Community Cards" no_wrapper=True%}
   </section>
   <section class="contact-banner">
     {% module 'LP-cta-block' path='../modules/LP-cta-block.module' label="Contact us Section" no_wrapper=True%}
