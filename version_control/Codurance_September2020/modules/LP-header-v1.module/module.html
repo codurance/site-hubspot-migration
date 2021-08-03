@@ -3,11 +3,16 @@
 <div class="lp-header-v1 {{ module.background_color }}">
 	<div class="lp-header-v1__content">
 		<h1 class="lp-header-vi__content__title">
-		{% inline_text field="title" value="{{ module.title }}"  no_wrapper=True  %}
+			{% inline_text field="title" value="{{ module.title }}"  no_wrapper=True  %}
 		</h1>
 		<p class="lp-header-vi__content__subtitle">
-		{% inline_text field="subtitle" value="{{ module.subtitle }}" no_wrapper=True %}
+			{% inline_text field="subtitle" value="{{ module.subtitle }}" no_wrapper=True %}
 		</p>
+		{%if module.cta_button %}
+			<div class="lp-header__content__button">
+			{% cta guid="{{ module.cta_button }}" %}
+			</div>
+		{% endif %}
 	</div>
 	<div class="lp-header-v1__image">
 	{% if module.header_image.src %}
