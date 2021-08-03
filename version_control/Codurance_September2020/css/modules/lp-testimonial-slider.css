@@ -1,0 +1,93 @@
+{% import '../utils/utils.css' as utils %}
+
+    .testimonial-slider{
+        background-image: var(--background_small);
+        background-size: cover;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 2em .5em;
+    }
+ 
+    .swiper-container{
+        max-width: 30rem;
+    }
+
+    .swiper-wrapper{
+        align-items: center;
+
+    }
+    .testimonial-slider__wrapper {
+        {{utils.natus()}}
+        background: white;
+        padding: 1em;
+        border-radius: 7px;
+        padding: 2.3em 1.2em 1.5em;
+        {{ utils.card_shadow() }}
+        display: flex;
+        gap: 0.5em;
+    }
+
+    .swiper-slide{
+        padding: .5em;
+        border-radius: 7px;
+    }
+
+    .testimonial-slider__icon{
+        position: relative;
+        top: -7px;
+        color: var(--persimmon);
+        font-size: 1.5rem;
+    }
+
+    .swiper-pagination{
+        position: relative;
+        top: 0;
+    }
+
+    .testimonial-slider-item__author,
+    .testimonial-slider-item__role{
+        {{utils.sejima()}}
+    }
+
+    .testimonial-slider-item__author{
+        margin-top: 1em;
+    }
+
+    .testimonial-slider-item__role{
+        font-weight: var(--light-font-weight)
+    }
+    
+    .swiper-pagination-bullet {
+        background: white;
+        border: 2px solid var(--persimmon);
+        height:12px;
+        opacity: 1;
+        width:12px;
+       }
+    .swiper-pagination-bullet-active {
+        background: var(--persimmon);
+        border: none;
+       }
+       
+
+    {% call utils.medium_large_and_extra_large() %}
+        .testimonial-slider{
+            background-image: var(--background_large);
+            background-position: center;
+            padding: 4em;
+        }
+
+        .testimonial-slider-item__text-wrapper{
+            {{ utils.base() }}
+        }
+
+        .testimonial-slider-item__author,
+        .testimonial-slider-item__role{
+            {{ utils.natus() }}
+        }
+        .testimonial-slider-item__author{
+            font-weight: var(--heavy-font-weight);
+
+        }
+
+    {% endcall %}

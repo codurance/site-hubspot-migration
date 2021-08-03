@@ -44,4 +44,14 @@
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text"
-} ]
+} ,
+{
+"name": "cta_button",
+"label": "Header CTA",
+"required": false,
+"locked": false,
+"inline_help_text": "",
+"help_text": "",
+"type": "cta",
+"default": null 
+}]
