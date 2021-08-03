@@ -66,7 +66,18 @@ label: Home Page version 2
   <section class="latest-insights">
       {% module 'Recent-posts-V2' path='../modules/Recent-posts-V2.module' label="Latest Insights" no_wrapper=True%}
   </section>
-  <section class="newsletter-signup">
+  <section class="newsletter">
+    <div class="newsletter-wrapper">
+        <div class="newsletter-content">
+          <h2 class="newsletter-content__title">
+          {% module "text" path="@hubspot/text" label="Newsletter Title" no_wrapper=True %}
+          </h2>
+          <i class="newsletter-content__icon las la-envelope"></i>
+        </div>
+      <div class="newsletter__form">
+        {% module "form" path="@hubspot/form" label="Newsletter Form" no_wrapper=True %}
+      </div>
+    </div>
   </section>
   <section class="community">
       <div class="community__wrapper">

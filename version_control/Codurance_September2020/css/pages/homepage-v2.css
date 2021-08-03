@@ -1,6 +1,8 @@
 {% import '../utils/utils.css' as utils %}
 
-/* HOMEPAGE HERO SECTION */
+/* ======================= 
+    HOMEPAGE HERO SECTION 
+========================== */
 
 .homepage-hero{
     background: linear-gradient(0deg, rgba(255,252,250,1) 0%, rgba(252,224,206,1) 100%);
@@ -41,10 +43,6 @@
     transform: translate(15%, 5%);
 }
 
-{% call utils.medium() %}
-   
-
-{% endcall %}
 
 {% call utils.medium_large_and_extra_large() %}
     .homepage-hero__container {
@@ -84,15 +82,16 @@
 {% endcall %}
 
 
-/* CLIENTS LOGOS SECTION */
-
+/* ======================= 
+    CLIENTS LOGOS SECTION 
+========================== */
 .client-logos{
     padding: 2em 1em 4em;
 }
 
-
-
-/* SOFTWARE CONSULTANCY SECTION */
+/* =============================== 
+    SOFTWARE CONSULTANCY SECTION 
+================================= */
 .software-consultancy {
     background: url(https://f.hubspotusercontent40.net/hubfs/14557846/who-we-are-bg-x-large-homepage.svg) 
                 no-repeat 
@@ -107,12 +106,20 @@
 {%endcall%}
 
 
-/* COMPASS SECTION */
+
+/* ======================= 
+    COMPASS SECTION 
+========================== */
+
 .compass{
     background: linear-gradient( white, #ECF8F8 )
 }
 
-/* PARTNERS SECTION */
+
+
+/* ======================= 
+    PARTNERS SECTION 
+========================== */
 
 .partners{
     padding: 1em;
@@ -152,7 +159,10 @@
 {% endcall %}
 
 
-/* CRAFTMANSHIP ETHOS SECTION */
+
+/* ============================= 
+    CRAFTMANSHIP ETHOS SECTION
+================================= */
 
 .craftmanship-ethos{
     {{ utils.black_to_navy() }}
@@ -213,22 +223,41 @@
 {% endcall %}
 
 
-/* TESTIMONIALS SECTION */
+/* ======================= 
+   TESTIMONIALS SECTION
+========================== */
 
 
 
-/* LATEST INSIGHTS SECTION */
+/* */
+/* ======================= 
+    LATEST INSIGHTS SECTION  
+========================== */
 
 .latest-insights{
     background: transparent linear-gradient(251deg, #EF77267C 0%, white 100%) 0% 0%;
     margin-top: 10em;       
 }
 
-/* NEWSLETTER SIGNUP SECTION */
+
+/* ======================= 
+    NEWSLETTER SIGNUP SECTION 
+========================== */
+
+.newsletter-wrapper {
+    margin: 1em;
+    padding: 2em 1em;
+    border-radius: 20px;
+    background: white;
+    {{ utils.card_shadow_large() }}
+    transform: translateY(-55%);
+}
 
 
+/* ======================= 
+    COMMUNITY SECTION 
+========================== */
 
-/* COMMUNITY SECTION */
 .community{
     padding: 2em 0;
 }
@@ -274,7 +303,10 @@
     }
 {% endcall %}
 
-/* CONTACT US SECTION */
+
+/* ======================= 
+    CONTACT US SECTION 
+========================== */
 
 .contact-banner .cta-block{
     max-width: initial;
