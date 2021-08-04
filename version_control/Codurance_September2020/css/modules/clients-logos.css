@@ -9,7 +9,7 @@
 
 .client-logos__headline{
     {{ utils.natus() }}
-    font-weight: var(--heavy-font-size);
+    font-weight: var(--heavy-font-weight);
     color: var(--mid-gray);
 }
 
@@ -26,7 +26,7 @@
     height: 40px;
 }
 
-{% call utils.large_and_extra_large() %}
+{% call utils.medium_large_and_extra_large() %}
     .client-logos__logos-group{
         justify-content: space-between;
     }
