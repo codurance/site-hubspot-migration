@@ -10,13 +10,18 @@
   max-width: 1300px;
 }
 
+
 .software-craft-group {
   align-items: stretch;
   display: flex;
   overflow: scroll;
   margin-top: 2em;
   padding-bottom: 2.14286rem;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
 }
+
+
 
 {% call utils.extra_large() %}
   .software-craft-group {
