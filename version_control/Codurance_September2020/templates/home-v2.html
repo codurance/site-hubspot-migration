@@ -60,8 +60,20 @@ label: Home Page version 2
   </section>
   <section class="craftmanship-ethos">
     {% module 'Ethos' path='../modules/Compass.module' label="Craftmanship Ethos Section" no_wrapper=True%}
-  </section>
-  <section class="testimonials">
+      </section>
+  <section class="testimonial">
+      <div class="testimonial-wrapper">
+        <div class="testimonial-content">
+          <div class="testimonial-content__title">{% module 'Testimonial title' path='@hubspot/text', label="Testimonial Title" no_wrapper=True %}</div>
+          <div class="testimonial-content__paragraph">{% module 'Testimonial paragraph' path='@hubspot/text' label="Testimonial Paragraph" no_wrapper=True %}</div>
+        </div>
+        <div class="testimonial-cta">
+          {% module "cta" path="@hubspot/cta" label="Testimonial CTA"  no_wrapper=True %} 
+        </div>
+        <div class="slider">
+          {% module 'Testimonial Slider' path='../modules/Landing Page Modules/LP-testimonial-slider.module' label="Testimonial Slider"  no_wrapper=True %}
+        </div>
+      </div>
   </section>
   <section class="latest-insights">
       {% module 'Recent-posts-V2' path='../modules/Recent-posts-V2.module' label="Latest Insights" no_wrapper=True%}
