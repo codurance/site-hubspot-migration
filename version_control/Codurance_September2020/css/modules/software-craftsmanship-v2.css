@@ -50,7 +50,6 @@
   position: relative;
   transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
   min-width: 14em;
-  scroll-snap-type: x mandatory;
   scroll-snap-align: center;
 }
 
