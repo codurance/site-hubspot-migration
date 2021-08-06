@@ -25,7 +25,7 @@
     flex-direction: column-reverse;
     padding: 1em;
     overflow: hidden;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 .homepage-hero__text{
@@ -66,9 +66,7 @@
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
-    .homepage-hero__text{
-        /* margin-left: 1.5em; */
-    }
+   
     .homepage-hero__image {
         scale: 1.2;
     }
@@ -77,6 +75,8 @@
 {% call utils.extra_large() %}
     .homepage-hero__container{
         overflow: revert;
+        padding: 1em 0;
+
     }
 
 {% endcall %}

@@ -21,6 +21,10 @@
   scroll-snap-type: x mandatory;
 }
 
+.software-craft-group::-webkit-scrollbar {
+    display: none;
+}
+
 
 
 {% call utils.extra_large() %}
