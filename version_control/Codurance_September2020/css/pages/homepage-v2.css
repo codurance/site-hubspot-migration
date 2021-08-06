@@ -226,14 +226,19 @@
    TESTIMONIALS SECTION
 ========================== */
 .testimonial{
-    margin-top: 2em;
+    background-color: #ffffff;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent), 
+                        url('https://f.hubspotusercontent40.net/hubfs/14557846/bg-testimonials-test/hexagons-minify.svg'),radial-gradient(rgba(219, 219, 223, 0.3) .12em,transparent .12em),radial-gradient(rgb(205, 205, 205) 3px,#fff 3px);
+    background-size: cover,cover,33px 33px;
+    background-position: center, top right,24px 24px;
+    background-repeat:no-repeat, no-repeat, repeat;
+    padding: 2em 1em;
+
 }
 
 .testimonial-wrapper{
-    background: url("https://f.hubspotusercontent40.net/hubfs/14557846/testimonial-x-large-homepage.svg");
     display: grid;
     grid-template: 1fr/100%;
-    transition: left 1s ease-in;
     max-width: 35em;
     margin: 0 auto;
 }
@@ -273,6 +278,9 @@
 {% endcall %} 
 
 {% call utils.extra_large() %}
+    .testimonial{
+        padding: 5em 0;
+    }
     .testimonial-wrapper {
         grid-template: 1fr 2em/50% 50%;
         align-items: center;
@@ -311,8 +319,16 @@
 
 .latest-insights{
     background: transparent linear-gradient(251deg, #EF77267C 0%, white 100%) 0% 0%;
-    margin-top: 10em;       
+    margin-top: 7em;
+    transition: var(--cta-transition);   
 }
+
+{% call utils.extra_large() %}
+    .latest-insights{
+        margin-top: 7em;
+            
+    }
+{% endcall %}
 
 
 /* ======================= 
