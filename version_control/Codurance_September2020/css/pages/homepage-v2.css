@@ -266,7 +266,7 @@
     max-width: unset;
 }
 
-{% call utils.medium_large() %}
+{% call utils.medium_and_large() %}
     .testimonial-cta{
         grid-row: 2;
     }   
