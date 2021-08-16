@@ -5,6 +5,12 @@
   padding-top: 2em;
 }
 
+{% call utils.medium_large_and_extra_large() %}
+  .software-craft {
+    padding: 2.5em;
+  }
+{% endcall %}
+
 .software-craft__content-wrapper{
   margin:0 auto;
   max-width: 1300px;
@@ -155,11 +161,4 @@
   top: 0;
 }
 
-{% call utils.medium_large_and_extra_large() %}
-
-.software-craft {
-  padding: 2.5em;
-}
-
-{% endcall %}
 
