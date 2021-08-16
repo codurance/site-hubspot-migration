@@ -26,7 +26,7 @@
      margin-top: 1em;
 }
 
-.compass-content__expetise-areas {
+.compass-content__expertise-areas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1em;
@@ -59,7 +59,7 @@
 {% call utils.medium_large_and_extra_large() %}
     .compass-wrapper {
         flex-flow:row-reverse;
-        max-width: 1200px;
+        max-width: var(--content-max-width);
         margin: 0 auto;
         padding-top: 3em;
     }
