@@ -1,5 +1,14 @@
 {% import '../utils/utils.css' as utils %}
 
+/* ===== Refactoring section ======= 
+This is a temporary solution while refactoring until is applied in all pages of the site without any side effects globally.
+*/
+
+body{
+  max-width: none;
+}  
+
+
 /* ======================= 
     HOMEPAGE HERO SECTION 
 ========================== */
@@ -25,7 +34,7 @@
     flex-direction: column-reverse;
     padding: 1em;
     overflow: hidden;
-    max-width: 1200px;
+    max-width: var(--content-max-width);
     margin: 0 auto;
 }
 .homepage-hero__text{
@@ -284,7 +293,7 @@
     .testimonial-wrapper {
         grid-template: 1fr 2em/50% 50%;
         align-items: center;
-        max-width: 1200px;
+        max-width: var(--content-max-width);
         gap: 1em;
         margin: 0 auto;
     }
@@ -465,7 +474,7 @@
     .community__wrapper{
         display: flex;
         margin: 0 auto;
-        max-width: 1200px;
+        max-width: var(--content-max-width);
     }
   
 {% endcall %}
