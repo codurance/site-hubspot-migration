@@ -1,0 +1,33 @@
+
+{% import '../utils/utils.css' as utils %}
+
+.client-logos__content{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.client-logos__headline{
+    {{ utils.natus() }}
+    font-weight: var(--heavy-font-weight);
+    color: var(--mid-gray);
+}
+
+.client-logos__logos-group{
+    filter: contrast(0%);
+    margin: 2em 0;
+    gap: 1em;
+    display: flex;
+    gap: 1.5em;
+    flex-flow: wrap;
+}
+
+.client-logos__logos-group img{
+    height: 40px;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .client-logos__logos-group{
+        justify-content: space-between;
+    }
+{% endcall %}

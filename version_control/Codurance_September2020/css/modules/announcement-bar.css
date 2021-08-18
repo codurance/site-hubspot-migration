@@ -1,6 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 .announcement-bar {
+    background: rgba(242, 242, 243, 0.9);
     align-items: center;
     background-size: cover;
     display: flex;
