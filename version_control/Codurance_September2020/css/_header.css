@@ -294,7 +294,7 @@ header.header .mobile-logo{
   }
 }
 
-@media (min-width: 1024px){
+{% call utils.large_and_extra_large() %}
   .hs-header-language ul .active::after {
     bottom: -2px;
   }
@@ -313,18 +313,20 @@ header.header .mobile-logo{
     padding-left: 50px;
     padding-right: 50px;
   }
- 
-}
+{% endcall %}
 
-@media (min-width: 1300px){
-  .hs-header-language ul a {
-    font-size: 18px;
-    line-height: 23px;
+
+{% call utils.extra_large() %}
+  .hs-header-language ul li{
+    margin-left: 15px;
   }
+
+  .hs-header-language ul a,
   .hs-header-language ul span {
     font-size: 18px;
     line-height: 23px;
   }
+
   .header__container {
     padding-bottom: 30px;
     padding-top: 30px;
@@ -332,12 +334,11 @@ header.header .mobile-logo{
   .custom-menu-primary nav {
     margin: 0 30px 0 45px;
   }
-  .hs-header-language ul li{
-    margin-left: 15px;
-  }
-}
+  
+{% endcall %}
 
-@media (max-width: 1299px){
+
+{% call utils.small_medium_and_large() %}
   .header__container {
     padding-top: 25px;
     padding-bottom: 19.5px;
@@ -351,19 +352,21 @@ header.header .mobile-logo{
   .hs-header-language ul .active::after {
     bottom: 0;
   }
-}
+{% endcall %}
 
-@media (max-width: 1299px) and (min-width: 1024px){
+
+{% call utils.large() %}
   .navigation-primary{
     margin: 0 25px;
   }
   .hs-header-language {
     width: 73.5px;
   }
+{% endcall %}
 
-}
 
-@media (max-width: 1023px){
+{% call utils.small_and_medium() %}
+
   .cm-header-group.website-header--open .hs-header-language {
     opacity: 0;
     visibility: hidden;
@@ -481,11 +484,14 @@ header.header .mobile-logo{
     background-color: white;
     bottom: 22px;
   }
-}
+
+{% endcall %} /* End small_and_medium */
+
 
 /* Mobile Styles */
 
-@media (max-width: 767px) {
+{% call utils.small() %}
+
   .cm-header-group.website-header--open .mobile-logo img {
     display: block;
     margin-top: 0px;
@@ -688,4 +694,6 @@ header.header .mobile-logo{
   .header__close--toggle.show {
     display: block;
   }
-}
+
+{% endcall %}  /* End Mobile Styles */
+
