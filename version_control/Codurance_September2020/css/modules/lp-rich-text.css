@@ -9,6 +9,21 @@
     font-weight: var(--heavy-font-weight);
     margin-bottom: var(--dudler-margin);
 }
+
+.lp-rich-text__content em{
+    font-style: italic;
+}
+
+.lp-rich-text__content h1{
+    {{utils.eames()}}
+}
+.lp-rich-text__content h2{
+    {{utils.dudler()}}}
+
+.lp-rich-text__content h3{
+    {{utils.freed()}}
+}
+
 .one_col{
     columns: 1;
 }
