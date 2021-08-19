@@ -13,7 +13,7 @@
   "id" : "bf959c20-d9cd-d0be-ee10-f69308e561a2",
   "name" : "title",
   "label" : "Title",
-  "required" : true,
+  "required" : false,
   "locked" : false,
   "validation_regex" : "",
   "allow_new_line" : false,
