@@ -237,7 +237,9 @@ body{
 .testimonial{
     background-color: #ffffff;
     background-image: linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent), 
-                        url('https://f.hubspotusercontent40.net/hubfs/14557846/bg-testimonials-test/hexagons-minify.svg'),radial-gradient(rgba(219, 219, 223, 0.3) .12em,transparent .12em),radial-gradient(rgb(205, 205, 205) 3px,#fff 3px);
+                        url('https://f.hubspotusercontent40.net/hubfs/14557846/bg-testimonials-test/hexagons-minify.svg'),
+                        radial-gradient(rgba(219, 219, 223, 0.3) .12em,transparent .12em),
+                        radial-gradient(rgb(205, 205, 205) 0px,#fff 0px);
     background-size: cover,cover,33px 33px;
     background-position: center, top right,24px 24px;
     background-repeat:no-repeat, no-repeat, repeat;
