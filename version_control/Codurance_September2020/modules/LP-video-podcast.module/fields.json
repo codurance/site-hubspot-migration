@@ -1,13 +1,36 @@
 [ {
-  "id" : "3cb0b1fa-0330-1af0-5598-a0b563817af1",
-  "name" : "title",
-  "label" : "Title",
+  "id" : "2ce68d7e-e285-7eae-a1d5-003251cdfb3a",
+  "name" : "title_section",
+  "label" : "Title section",
   "required" : false,
   "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
+  "children" : [ {
+    "id" : "124923c1-6933-1aad-4ca5-adfc97de5e26",
+    "name" : "title_tag_selector",
+    "label" : "Title Tag selector",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "", "" ] ],
+    "type" : "choice",
+    "default" : "h2"
+  }, {
+    "id" : "3cb0b1fa-0330-1af0-5598-a0b563817af1",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title_tag_selector" : "h2"
+  }
 }, {
   "id" : "12f64fb9-4cd6-c943-827a-8224403201af",
   "name" : "description",

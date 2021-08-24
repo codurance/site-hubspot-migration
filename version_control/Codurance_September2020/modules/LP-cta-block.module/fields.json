@@ -70,7 +70,23 @@
   "choices" : [ [ "font-dark", "Dark" ], [ "font-light", "Light" ] ],
   "type" : "choice",
   "default" : "font-light"
-}, {
+},
+{
+  "name": "headline_tag",
+  "label": "Headline HTML Tag",
+  "required": false,
+  "locked": false,
+  "display": "select",
+  "inline_help_text": "Select the right tag depending on the page structure",
+  "choices": [
+    [ "h1", "H1"],
+    [ "h2", "H2"],
+    [ "p", "Paragraph"]
+  ],
+  "type": "choice",
+  "default": "h2" 
+},
+{
   "id" : "headline",
   "name" : "headline",
   "label" : "Headline",

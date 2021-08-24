@@ -38,11 +38,14 @@ label: Home Page version 2
         {% end_module_block %} 
       </div>
         <div class="homepage-hero__image">
-        {% module_block module "image" overrideable=True, label="Hero Image" %}
-          {% module_attribute "img" %}
-           { "src": "https://images.unsplash.com/photo-1594878462522-f6e3db86d0ec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80", "alt": "this is a description"}
-          {% end_module_attribute %}
-       {% end_module_block %}
+        {% module 'linked_image',
+              path="@hubspot/linked_image",
+              img={
+                "src": "https://f.hubspotusercontent10.net/hubfs/3042464/Homepage/Header%20Section/header-x-large-homepage.png"
+              },
+              label="Hero Image", 
+              no_wrapper=True        
+        %}
       </div>
     </div>
   </section>

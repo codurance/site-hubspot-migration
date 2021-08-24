@@ -9,7 +9,7 @@
 </style>
 
 <div class="cta-block  cta-block--{{ module.font_color }}">
-    <h2 class="cta-block__title">{{module.headline}}</h2>
+    <{{module.headline_tag}} class="cta-block__title">{{module.headline}}</{{module.headline_tag}}>
     {% if module.subheadline %}
         <p class="cta-block__subtitle">{{module.subheadline}}</p>
     {% endif %}
