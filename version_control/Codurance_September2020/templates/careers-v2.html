@@ -17,7 +17,7 @@ label: Careers v2
   {{ require_css(get_asset_url("../css/main.css")) }}
   {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
 
-  {{ require_css(get_asset_url("../css/base/careers-v2.css")) }}
+  {{ require_css(get_asset_url("../css/pages/careers-v2.css")) }}
 
   {{ require_js(get_asset_url("../js/main.js")) }}
   {{ standard_header_includes }}
@@ -28,7 +28,7 @@ label: Careers v2
 {% block body %}
 
 <main class="careers-container">
-  <section class="header">
+  <section class="careers-hero">
     <div class="careers-hero__container">
         <div class="careers-hero__text">
           {% module 'rich_text' 
@@ -52,9 +52,11 @@ label: Careers v2
   </section>
 
 
-  <section></section>
-  <section></section>
-  <section></section>
+  <section class="benefits"></section>
+  <section class="video">
+  </section>
+  <section class="testimonials">
+  </section>
   <section></section>
   <section></section>
   <section></section>
