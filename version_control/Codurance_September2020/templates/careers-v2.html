@@ -1,0 +1,65 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Careers v2
+
+-->
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/base/careers-v2.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+
+<main class="careers-container">
+  <section class="header">
+    <div class="careers-hero__container">
+        <div class="careers-hero__text">
+          {% module 'rich_text' 
+              html="
+              <h1>Careers</h1>
+              <p>Whether you’re a software engineer, agile delivery manager or marketing exec, at Codurance you’re given the freedom, support and development opportunities to thrive.</p>
+              ",
+              path='@hubspot/rich_text'%}
+        </div>
+          <div class="careers-hero__image">
+          {% module 'linked_image',
+                path="@hubspot/linked_image",
+                img={
+                  "src": "https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Overview/header-image-XL-careers-overview.png"
+                },
+                label="Hero Image", 
+                no_wrapper=True        
+          %}
+        </div>
+      </div>
+  </section>
+
+
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+</main>
+
+{% endblock body %}
