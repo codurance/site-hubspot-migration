@@ -52,10 +52,20 @@ label: Careers v2
   </section>
 
 
-  <section class="benefits"></section>
-  <section class="video">
+  <section class="benefits">
+  </section>
+  <section class="video" >
+      <div class="video-wrapper">
+        <div class="video__title">
+          {% module 'text' label="Video title" path='@hubspot/text'%}
+        </div>
+        <div class="video__embed">
+          {% module 'video' label="Embeded Video",  video_type="embed",  class="video__embeded" path='@hubspot/video'%}
+        </div>
+      </div>
   </section>
   <section class="testimonials">
+    {% module 'Testimonial Slider' path='../modules/Landing Page Modules/LP-testimonial-slider.module' label="Testimonial Slider"  no_wrapper=True %}
   </section>
   <section></section>
   <section></section>

@@ -1,6 +1,10 @@
 {% import '../utils/utils.css' as utils %}
 
 
+/*------------------------------------*\
+  #Hero section
+\*------------------------------------*/
+
 .careers-hero{
     background: linear-gradient(180deg, rgba(253,237,226,1) 0%, rgba(255,255,255,1) 85%);
     padding-bottom: 2em;
@@ -62,3 +66,42 @@
         padding: 1em 0;
     }
 {% endcall %}
+
+/*------------------------------------*\
+  #Video Section
+\*------------------------------------*/
+
+.video{
+    {{ utils.black_to_navy() }}
+    color: white;
+    
+}
+
+.video-wrapper{
+    padding: 2.5em 1em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.video__embed{
+    margin: 2em auto;
+    width: 100%;
+    max-width: 35em;
+}
+
+{% call utils.large_and_extra_large() %} 
+    .video-wrapper{
+        padding-top: 4em;
+        padding-bottom: 4em;
+    }
+{% endcall %}
+
+
+/*------------------------------------*\
+  #Testimonials Section
+\*------------------------------------*/
+
+.testimonials .testimonial-slider__wrapper {
+  max-width: 50em;
+  margin: 0 auto;
+}
