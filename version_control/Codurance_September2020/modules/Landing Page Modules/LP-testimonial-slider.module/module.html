@@ -18,9 +18,19 @@
             <div class="testimonial-slider__wrapper">
               <i class="testimonial-slider__icon las la-quote-left"></i>
               <div class="testimonial-slider-item__text-wrapper">
-                <div class="testimonial-slider-item__body">{{ item.testimonial_body }}</div>
-                <p class="testimonial-slider-item__author">{{ item.testimonial_author }}</p>
-                <p class="testimonial-slider-item__role">{{ item.testimonal_role }}</p>
+                <div class="testimonial-slider-item__body">
+                  {{ item.testimonial_body }}
+                </div>
+                <div class="testimonial-slider-item__author">
+                  {% if item.testimonial_image.src %}                  
+                    <img class="testimonial-slider-item__author-image" 
+                          src={{ resize_image_url(item.testimonial_image.src, 0, 0, 90 ) }} />
+                  {% endif %}
+                  <div class="author-details-wrapper">
+                    <p class="testimonial-slider-item__author-name">{{ item.testimonial_author }}</p>
+                    <p class="testimonial-slider-item__role">{{ item.testimonal_role }}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -29,3 +39,4 @@
       <div class="swiper-pagination"></div>
       </div>
 </div>
+
