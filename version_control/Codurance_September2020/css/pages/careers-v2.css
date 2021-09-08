@@ -1,6 +1,8 @@
 {% import '../utils/utils.css' as utils %}
 
 
+
+
 /*------------------------------------*\
   #Hero section
 \*------------------------------------*/
@@ -24,7 +26,7 @@
 }
 
 .careers-hero__text h1{
-    {{utils.dudler()}}
+    {{utils.eames()}}
     font-weight: var(--heavy-font-weight);
 }
 
@@ -66,6 +68,11 @@
         padding: 1em 0;
     }
 {% endcall %}
+
+/*------------------------------------*\
+  #Benefits Section
+\*------------------------------------*/
+
 
 /*------------------------------------*\
   #Video Section
