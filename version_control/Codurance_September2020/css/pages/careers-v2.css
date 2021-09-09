@@ -1,7 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 
-
+{% set indent_content_max_with = "50em"%}
 
 /*------------------------------------*\
   #Hero section
@@ -86,7 +86,7 @@
 
 .video-wrapper{
     padding: 2.5em 1em;
-    max-width: 1000px;
+    max-width: {{indent_content_max_with}};
     margin: 0 auto;
 }
 
@@ -109,6 +109,67 @@
 \*------------------------------------*/
 
 .testimonials .testimonial-slider__wrapper {
-  max-width: 50em;
-  margin: 0 auto;
+    max-width: {{indent_content_max_with}};
+    margin: 0 auto;
 }
+
+/*------------------------------------*\
+  #CTAs section
+\*------------------------------------*/
+
+.current-roles-cta-light .cta-block,
+.current-roles-cta-dark .cta-block{
+    max-width: {{indent_content_max_with}};
+    padding-left: inherit;
+    padding-right: inherit;
+
+}
+
+.current-roles-cta-light{
+    background: center/ cover no-repeat 
+                url("https://f.hubspotusercontent40.net/hubfs/14557846/Imported%20sitepage%20images/cta-bg-light.svg");
+
+}
+
+.current-roles-cta-dark{
+    background: center/ cover no-repeat 
+                url("https://f.hubspotusercontent40.net/hubfs/14557846/Imported%20sitepage%20images/cta-bg-dark.svg");
+
+}
+
+
+
+
+/*------------------------------------*\
+  #Academy training section
+\*------------------------------------*/
+
+.academy-training {
+    margin: 2em auto;
+}
+
+.academy-training .text-and-image__container {
+        max-width: var(--content-max-width);
+}
+
+.academy-training .text-and-image__image img{
+        transform: initial;
+}
+
+{% call utils.small()%}
+    .academy-training .text-and-image__container {
+        flex-flow: column;
+    }
+
+    .academy-training .text-and-image__image {
+        margin-top: 2em;
+        align-self: center
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large()%}
+    .academy-training .text-and-image__image {
+        align-self: start;
+    }
+{% endcall %}
+
