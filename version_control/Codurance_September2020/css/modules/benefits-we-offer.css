@@ -5,18 +5,18 @@
 
 .benefits-wrapper{
   margin: 0 auto;
+  padding: 0 {{lateral_page_padding}};
   max-width: 1000px;
+
 }
 
 .benefits__heading {
   {{ utils.dudler() }}
-  padding: 0 {{lateral_page_padding}} ;
   max-width: {{ text_max_width }} ;
 }
 
 .benefits-container {
   margin: 2em auto;
-  padding: 0 {{lateral_page_padding}};
 }
 
 
@@ -42,7 +42,7 @@
 
 
 .custom-benefits-we-offer__icon {
-  filter: drop-shadow(5px 5px 15px var(--french-gray));
+  filter: drop-shadow(5px 5px 10px var(--tango) / 0.5);
   width: 3.5em;
   
 }
