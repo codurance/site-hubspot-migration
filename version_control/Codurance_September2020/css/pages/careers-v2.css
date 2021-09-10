@@ -72,7 +72,9 @@
 /*------------------------------------*\
   #Benefits Section
 \*------------------------------------*/
-
+.benefits{
+    margin-bottom: 2em;
+}
 
 /*------------------------------------*\
   #Video Section
@@ -108,6 +110,10 @@
   #Testimonials Section
 \*------------------------------------*/
 
+.testimonials .testimonial-slider{
+    max-width: initial;
+}
+
 .testimonials .testimonial-slider__wrapper {
     max-width: {{indent_content_max_with}};
     margin: 0 auto;
@@ -116,14 +122,6 @@
 /*------------------------------------*\
   #CTAs section
 \*------------------------------------*/
-
-.current-roles-cta-light .cta-block,
-.current-roles-cta-dark .cta-block{
-    max-width: {{indent_content_max_with}};
-    padding-left: inherit;
-    padding-right: inherit;
-
-}
 
 .current-roles-cta-light{
     background: center/ cover no-repeat 
@@ -138,7 +136,26 @@
 }
 
 
+{% call utils.large_and_extra_large() %} 
+    .current-roles-cta-light .cta-block,
+    .current-roles-cta-dark .cta-block{
+        max-width: {{indent_content_max_with}};
+        padding-left: inherit;
+        padding-right: inherit;  
+    }
 
+{% endcall %}    
+
+/*------------------------------------*\
+  #Craftsmanship section
+\*------------------------------------*/
+
+
+.craftspeople{
+    {{ utils.black_to_navy() }}
+    color: white;
+    padding: 2em 0;
+}
 
 /*------------------------------------*\
   #Academy training section
@@ -173,3 +190,15 @@
     }
 {% endcall %}
 
+/*------------------------------------*\
+  #Life at codurance section
+\*------------------------------------*/
+
+.life-codurance{
+    margin-top: 2em;
+}
+
+.life-codurance__title{
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
