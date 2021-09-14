@@ -42,7 +42,7 @@
 
 
 .custom-benefits-we-offer__icon {
-  filter: drop-shadow(5px 5px 10px var(--tango) / 0.5);
+  filter: drop-shadow(5px 5px 7px var(--tango));
   width: 3.5em;
   
 }
