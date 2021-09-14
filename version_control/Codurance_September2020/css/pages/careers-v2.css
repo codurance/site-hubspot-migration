@@ -76,6 +76,12 @@
     margin-bottom: 2em;
 }
 
+{% call utils.large_and_extra_large() %}
+    .benefits{
+        margin-bottom: 4em;
+    }
+{% endcall %}
+
 /*------------------------------------*\
   #Video Section
 \*------------------------------------*/
@@ -120,25 +126,37 @@
 }
 
 /*------------------------------------*\
-  #CTAs section
+  #CTAs sections
 \*------------------------------------*/
 
-.current-roles-cta-light{
+.cta-light{
+    background: rgba(253,237,226,1);
     background: center/ cover no-repeat 
-                url("https://f.hubspotusercontent40.net/hubfs/14557846/Imported%20sitepage%20images/cta-bg-light.svg");
+                url("https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Overview/CTA%20block/cta-bg-light.svg");
 
 }
 
-.current-roles-cta-dark{
+.cta-dark{
+    background: var(--midnight-blue--dark);
     background: center/ cover no-repeat 
-                url("https://f.hubspotusercontent40.net/hubfs/14557846/Imported%20sitepage%20images/cta-bg-dark.svg");
+                url("https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Overview/CTA%20block/cta-bg-dark.svg");
 
 }
+
+
+.current-roles-cta .cta-block__title,
+.current-roles-cta .cta-block__subtitle{
+    max-width: none;
+}
+
+.current-roles-cta .cta-block__button{
+    text-align: start;
+}
+
 
 
 {% call utils.large_and_extra_large() %} 
-    .current-roles-cta-light .cta-block,
-    .current-roles-cta-dark .cta-block{
+    .current-roles-cta .cta-block{
         max-width: {{indent_content_max_with}};
         padding-left: inherit;
         padding-right: inherit;  
@@ -150,12 +168,47 @@
   #Craftsmanship section
 \*------------------------------------*/
 
+{% set image_offset = "30%"%}
+
 
 .craftspeople{
     {{ utils.black_to_navy() }}
     color: white;
     padding: 2em 0;
 }
+
+.craftspeople .text-and-image__copy p > a{
+    color: var(--tango-400);
+}
+
+.craftspeople .cta-button.button-secondary{
+    background: white;
+    color: var(--persimmon);
+}
+
+
+
+{% call utils.small() %}
+    .craftspeople{
+        padding-bottom:0;
+    }
+
+    
+    .craftspeople .text-and-image__container{
+        flex-direction: column;
+        overflow-x: clip;
+        overflow-y: visible;
+    }
+
+    .craftspeople .text-and-image__image{
+        max-width: none;
+    }
+
+    .craftspeople .text-and-image__image img{
+        transform: translate(15%, {{ image_offset }} );
+        margin-top: calc(-1 * {{ image_offset }});
+    }
+{% endcall %}
 
 /*------------------------------------*\
   #Academy training section
@@ -198,7 +251,41 @@
     margin-top: 2em;
 }
 
+.life-codurance__content{
+    margin: 1em;
+    transition: max-width  ease-in-out .3s;
+}
+
+{% call utils.medium() %}
+    .life-codurance__content{
+        max-width: 40%
+    }
+{% endcall %}    
+
+{% call utils.large_and_extra_large() %}
+    .life-codurance__content{
+        max-width: 30%
+    }
+{% endcall %}    
+
+
 .life-codurance__title{
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
 }
+.life-codurance__subtitle{
+    margin-top: .5em;
+}
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .life-codurance__container{
+        display: flex;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .life-codurance__content{
+        margin-top: 2em;
+    }
+{% endcall %}
