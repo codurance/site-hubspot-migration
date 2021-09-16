@@ -23,8 +23,10 @@
                 </div>
                 <div class="testimonial-slider-item__author">
                   {% if item.testimonial_image.src %}                  
-                    <img class="testimonial-slider-item__author-image" 
-                          src={{ resize_image_url(item.testimonial_image.src, 0, 0, 90 ) }} />
+                    <img class="testimonial-slider-item__author-image"
+                         alt="{{ item.testimonial_image.alt }}" 
+                         src={{ resize_image_url(item.testimonial_image.src, 0, 0, 90 ) }}
+                         loading="lazy" />
                   {% endif %}
                   <div class="author-details-wrapper">
                     <p class="testimonial-slider-item__author-name">{{ item.testimonial_author }}</p>
@@ -39,4 +41,6 @@
       <div class="swiper-pagination"></div>
       </div>
 </div>
+
+
 
