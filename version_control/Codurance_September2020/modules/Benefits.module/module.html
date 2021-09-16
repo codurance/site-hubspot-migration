@@ -6,7 +6,7 @@
       {% for benefit in module.benefit_item %}
           <article class="custom-benefits-we-offer">
               <img class="custom-benefits-we-offer__icon" src="{{ benefit.icon_image.src }}" alt="{{ module.icon_image.alt }}" loading="lazy" width="100" height="auto" >
-            <div class="custom-benefits-we-offer__text-container media-body align-self-center">
+            <div class="custom-benefits-we-offer__text-container">
               <h3>{{ benefit.heading }}</h3>
               <p>{{ benefit.text }}</p>
             </div>
