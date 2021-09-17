@@ -1,0 +1,97 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Careers v2
+
+-->
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/careers-v2.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+
+<main class="careers-container">
+  <section class="careers-hero">
+    <div class="careers-hero__container">
+        <div class="careers-hero__text">
+          {% module 'rich_text' 
+              html="
+              <h1>Careers</h1>
+              <p>Whether you’re a software engineer, agile delivery manager or marketing exec, at Codurance you’re given the freedom, support and development opportunities to thrive.</p>
+              ",
+              path='@hubspot/rich_text'%}
+        </div>
+          <div class="careers-hero__image">
+          {% module 'linked_image',
+                path="@hubspot/linked_image",
+                img={
+                  "src": "https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Overview/header-image-XL-careers-overview.png"
+                },
+                label="Hero Image", 
+                no_wrapper=True        
+          %}
+        </div>
+      </div>
+  </section>
+
+  <section class="benefits">
+    {% module "Benefits" label="Benefits Section" path='../modules/Benefits.module' no_wrapper=True %}
+  </section>
+  <section class="video" >
+      <div class="video-wrapper">
+        <div class="video__title">
+          {% module 'text' label="Video title" path='@hubspot/text'%}
+        </div>
+        <div class="video__embed">
+          {% module 'video' label="Embeded Video",  video_type="embed",  class="video__embeded" path='@hubspot/video'%}
+        </div>
+      </div>
+  </section>
+  <section class="testimonials">
+    {% module 'Testimonial Slider' path='../modules/Landing Page Modules/LP-testimonial-slider.module' label="Testimonial Slider"  no_wrapper=True %}
+  </section>
+  <section class="current-roles-cta cta-light">
+    {% module 'Current roles CTA light' path='../modules/LP-cta-block.module' label="Current Roles CTA (light)"  no_wrapper=True %}
+  </section>
+  <section class="craftspeople">
+    {% module 'craftspeople' path='../modules/Text-and-image.module' label="Craftspeople section" no_wrapper=True%}
+  </section>
+  <section class="academy-training">
+    {% module 'academy' path='../modules/Text-and-image.module' label="Academy Training section" no_wrapper=True%}
+  </section>
+  <section class="current-roles-cta cta-dark">
+    {% module 'current roles cta dark' path='../modules/LP-cta-block.module' label="Current Roles CTA (dark)"  no_wrapper=True %}
+  </section>
+  <section class="life-codurance">
+    <div class="life-codurance__container">
+      <div class="life-codurance__content">
+        <h2 class="life-codurance__title">
+          {% module 'text title' path="@hubspot/text" label="Title Life at Codurance" no_wrapper=True%}
+        </h2>
+        <p class="life-codurance__subtitle">
+          {% module 'text subtitle' path="@hubspot/text" label="Subtitle Life at Codurance" no_wrapper=True%}
+        </p>
+      </div>
+      {% module 'Software-craftsmanship-V2' path='../modules/Software-craftsmanship-V2.module' label="Life at Codurance" no_wrapper=True%}
+    </div>
+  </section>
+</main>
+
+{% endblock body %}

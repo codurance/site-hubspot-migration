@@ -32,15 +32,21 @@
     "show_emoji_picker" : false,
     "type" : "text"
   }, {
-    "id" : "aa223f83-7fc8-c8a2-654e-2dbd7b3e4b24",
-    "name" : "icon_class",
-    "label" : "Icon Class",
+    "id" : "e3fea168-2589-a152-6fde-d6bb09e60ba2",
+    "name" : "icon_image",
+    "label" : "Icon image",
     "required" : false,
     "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "exact",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
   }, {
     "id" : "515b9717-9609-8d7c-9e88-cfa8c257fd7f",
     "name" : "text",
@@ -55,5 +61,12 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
-  "default" : { }
+  "default" : {
+    "icon_image" : {
+      "size_type" : "exact",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }
 } ]

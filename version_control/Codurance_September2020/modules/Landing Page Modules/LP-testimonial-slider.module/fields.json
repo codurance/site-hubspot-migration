@@ -1,49 +1,51 @@
-
 [ {
-    "name": "background_images",
-    "label": "Background Images",
-    "required": false,
-    "locked": false,
-    "children": [
-      {
-        "id" : "9078be8d-a327-670d-27af-62499e5b9abf",
-        "name" : "large_image",
-        "label" : "Large Background image",
-        "required" : false,
-        "locked" : false,
-        "inline_help_text": "This image would serve for medium, large and x-large screens",
-        "responsive" : true,
-        "resizable" : false,
-        "show_loading" : false,
-        "type" : "image",
-        "default" : {
-          "size_type" : "auto",
-          "src" : "",
-          "alt" : null,
-          "loading" : "lazy"
-        }
-      }, {
-        "name": "small_image",
-        "label": "Small Background image",
-        "required": false,
-        "locked": false,
-        "inline_help_text": "This image would serve for small screens up to 767px",
-        "responsive": true,
-        "resizable": false,
-        "show_loading" : false,
-        "type": "image",
-        "default": {
-          "size_type" : "auto",
-          "src": "",
-          "alt": null,
-          "loading": "lazy"}
-        }
-    ],
-    "type": "group",
-    "inline_help_text": "",
-    "help_text": "",
-    "default": {} 
+  "id" : "background_images",
+  "name" : "background_images",
+  "label" : "Background Images",
+  "help_text" : "",
+  "inline_help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "9078be8d-a327-670d-27af-62499e5b9abf",
+    "name" : "large_image",
+    "label" : "Large Background image",
+    "inline_help_text" : "This image would serve for medium, large and x-large screens",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
   }, {
+    "id" : "background_images.small_image",
+    "name" : "small_image",
+    "label" : "Small Background image",
+    "inline_help_text" : "This image would serve for small screens up to 767px",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+}, {
   "id" : "7332edc9-835d-a5dd-def5-742728f5a080",
   "name" : "testimonial_items",
   "label" : "Testimonial items",
@@ -65,6 +67,24 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text"
+  }, {
+    "id" : "testimonial_items.testimonial_image",
+    "name" : "testimonial_image",
+    "label" : "Author Image",
+    "help_text" : "",
+    "inline_help_text" : "Author profile picture",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
   }, {
     "id" : "250d9116-6df7-8c4d-cc4c-5befdba6e87f",
     "name" : "testimonial_author",
@@ -91,3 +111,4 @@
   "type" : "group",
   "default" : { }
 } ]
+

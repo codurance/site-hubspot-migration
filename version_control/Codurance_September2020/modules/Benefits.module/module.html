@@ -1,14 +1,16 @@
 {{ require_css(get_asset_url("../../css/modules/benefits-we-offer.css")) }}
 
-<h2 class="benefits__heading">{{ module.heading }}</h2>
-<div class="benefits-container">
-    {% for benefit in module.benefit_item %}
-        <article class="custom-benefits-we-offer">
-          <i class="custom-benefits-we-offer__icon las {{ benefit.icon_class }}"></i>
-          <div class="custom-benefits-we-offer__text-container media-body align-self-center">
-            <h3>{{ benefit.heading }}</h3>
-            <p>{{ benefit.text }}</p>
-          </div>
-        </article>
-    {% endfor %}
+<div class="benefits-wrapper">
+  <h2 class="benefits__heading">{{ module.heading }}</h2>
+  <div class="benefits-container">
+      {% for benefit in module.benefit_item %}
+          <article class="custom-benefits-we-offer">
+              <img class="custom-benefits-we-offer__icon" src="{{ benefit.icon_image.src }}" alt="{{ module.icon_image.alt }}" loading="lazy" width="100" height="auto" >
+            <div class="custom-benefits-we-offer__text-container">
+              <h3>{{ benefit.heading }}</h3>
+              <p>{{ benefit.text }}</p>
+            </div>
+          </article>
+      {% endfor %}
+  </div>
 </div>

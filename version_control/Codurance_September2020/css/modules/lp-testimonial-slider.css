@@ -44,15 +44,25 @@
         top: 0;
     }
 
-    .testimonial-slider-item__author,
+    .testimonial-slider-item__author{
+        margin-top: 1.5em;
+        display: flex;
+        align-items: center;
+    }
+
+    .testimonial-slider-item__author-image{
+        border-radius: 50%;
+        margin-right: 2em;
+        max-width: 5em;
+        margin-right: 1em;
+    }
+
+    .testimonial-slider-item__author-name,
     .testimonial-slider-item__role{
         {{utils.sejima()}}
     }
 
-    .testimonial-slider-item__author{
-        margin-top: 1em;
-    }
-
+  
     .testimonial-slider-item__role{
         font-weight: var(--light-font-weight)
     }
@@ -81,11 +91,11 @@
             {{ utils.base() }}
         }
 
-        .testimonial-slider-item__author,
+        .testimonial-slider-item__author-name,
         .testimonial-slider-item__role{
             {{ utils.natus() }}
         }
-        .testimonial-slider-item__author{
+        .testimonial-slider-item__author-name{
             font-weight: var(--heavy-font-weight);
 
         }

@@ -1,10 +1,11 @@
 :root {
   --crimson: hsl(342.7, 88.5%, 44.5%);
   --tango: hsl(24.2, 86.3%, 54.3%);
+  --tango-400: hsl(24.2, 86.3%, 60%);
   --gold: hsl(48.9, 100%, 50%);
 
   --java: hsl(168.5,77%,47.8%);
-  --picton-blue: hsl(204.2, 86.3%, 54.3%);
+  --picton-blue: hsl(204, 86%, 54%);
   --dodger-blue: hsl(242.4, 100%, 65.9%);
 
   --persimmon: hsl(2.4,100%,65.9%);
