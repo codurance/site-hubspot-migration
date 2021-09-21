@@ -16,7 +16,7 @@ label: Become A Craftsperson
   {{ require_css(get_asset_url("../css/main.css")) }}
   {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
 
-  {{ require_css(get_asset_url("../css/pages/become-a-craftsperson.css")) }}
+  {{ require_css(get_asset_url("../css/pages/become-a-craftsperson-v2.css")) }}
 
   {{ require_js(get_asset_url("../js/main.js")) }}
   {{ standard_header_includes }}
@@ -49,6 +49,10 @@ label: Become A Craftsperson
         </div>
       </div>
   </section>
+  <section class="craftsperson-profile">
+    {% module 'craftsperson-profile' path='../modules/Text-and-image.module' label="Craftsperson Profile section" no_wrapper=True%}
+  </section>
+
 </main>
 
 
