@@ -12,11 +12,12 @@
 
 .benefits__heading {
   {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
   max-width: {{ text_max_width }} ;
 }
 
 .benefits-container {
-  margin: 2em auto;
+  margin: 1em auto 2em;
 }
 
 
@@ -31,7 +32,7 @@
 
 .custom-benefits-we-offer__text-container h3 {
   {{ utils.base() }}
-  font-weight: var(--middle-font-weight);
+  font-weight: var(--heavy-font-weight);
   
 }
 
