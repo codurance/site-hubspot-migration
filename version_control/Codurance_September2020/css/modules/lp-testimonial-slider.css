@@ -85,6 +85,7 @@
     .swiper-button-next:after,
     .swiper-button-prev:after {
         font-size:1rem;
+
     }
     
     {% set arrow_offset = "0.1em" %}
@@ -94,6 +95,7 @@
     .swiper-button-prev:after {
         transform: translateX( calc(-1 * {{ arrow_offset }}) );
     } 
+
 
 
     {% call utils.small_and_medium() %}
