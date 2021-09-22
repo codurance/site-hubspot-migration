@@ -3,6 +3,14 @@
 
 {% set indent_content_max_with = "50em"%}
 
+
+/* ===== Refactoring section ======= 
+This is a temporary solution while refactoring until is applied in all pages of the site without any side effects globally.
+*/
+body{
+    max-width: none;
+}
+
 /*------------------------------------*\
   #Hero section
 \*------------------------------------*/
