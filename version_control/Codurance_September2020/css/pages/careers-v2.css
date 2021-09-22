@@ -30,6 +30,10 @@
     font-weight: var(--heavy-font-weight);
 }
 
+.careers-hero__text h2{
+    margin-bottom: 0.5em;
+}
+
 .careers-hero__image{
     transform: translate(15%, 5%);
 }
@@ -44,14 +48,18 @@
         scale: 1.2;
     }
     .careers-hero__text{
-        /* margin-top: 5em; */
         max-width: 50%;
     }
     .careers-hero__text h1{
         {{utils.eames()}}
     }
+
+    .careers-hero__text h2{
+        {{ utils.freed() }}
+    }
+
     .careers-hero__text p{
-        {{utils.freed()}}
+        {{ utils.base() }}
         font-weight: var(--light-font-weight);
     }
 
@@ -97,6 +105,11 @@
     padding: 2.5em 1em;
     max-width: {{indent_content_max_with}};
     margin: 0 auto;
+}
+
+.video__title{
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
 }
 
 .video__embed{
