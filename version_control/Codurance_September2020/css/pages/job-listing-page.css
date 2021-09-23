@@ -1,5 +1,10 @@
 {% import '../utils/utils.css' as utils %}
 
+
+
+
+
+
 .job-listing-page-cards-container {
   background-color: var(--athens-gray);
 }
@@ -44,3 +49,37 @@
     margin-right: 0.7rem
   }
 {% endcall %}
+
+
+/* 
+  ------------ IGNORE BELOW THIS (TEST PURPOSE) ----------------
+*/
+  
+ul {
+ list-style-type:none;
+}
+
+#whr_embed_hook {
+ width: 100%;
+}
+.whr-code,
+.whr-date {
+display: none;
+}
+
+.whr-item:nth-child(2n) {
+background-color: hsl(207.7, 50%, 90%);
+}
+.whr-item {
+padding: 1em;
+}
+
+ .job-listing-page-cards {
+  top:0;
+ }
+}
+
+
+/* 
+  ------------ IGNORE ABOVE THIS (TEST PURPOSE) ----------------
+*/
