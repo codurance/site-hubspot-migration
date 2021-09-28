@@ -115,7 +115,7 @@
     .form__wrapper{
         flex-direction: row;
         align-items: start;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 4em;
     }
 
