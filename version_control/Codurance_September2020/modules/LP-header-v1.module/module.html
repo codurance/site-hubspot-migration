@@ -10,7 +10,30 @@
 		</p>
 		{%if module.cta_button %}
 			<div class="lp-header__content__button">
-			{% cta guid="{{ module.cta_button }}" %}
+        
+      {% if module.button_type == "standard" %}
+		{% set href = module.button_link.url.href %}
+			{% if module.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+				{% set href = "mailto:" + href %}
+			{% endif %}
+			{% set rel = [] %}
+			{% if module.button_link.no_follow %}
+				{% do rel.append("nofollow") %}
+			{% endif %}
+			{% if module.button_link.open_in_new_tab %}
+				{% do rel.append("noopener") %}
+			{% endif %}
+			<a class="{{module.button_custom_class}}" href="{{ href }}"
+				{% if module.button_link.open_in_new_tab %}target="_blank"{% endif %}
+				{% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+				>
+				{{ module.button_text }}
+			</a>
+      {% elif module.button_type == "cta" %}
+        {% cta guid="{{ module.cta_button }}" %}
+      {% endif %}
+
+         
 			</div>
 		{% endif %}
 	</div>
