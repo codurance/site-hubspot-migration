@@ -273,3 +273,9 @@ hr.custom-our-people-modal__rule {
   {{ utils.natus() }}
   {{ utils.base_margin() }}
 }
+
+
+.custombox-content, 
+.custombox-overlay{
+  left: 0;
+}
