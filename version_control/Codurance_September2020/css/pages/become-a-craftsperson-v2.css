@@ -68,7 +68,7 @@
 
 /*------------------------------------*\
   #Profile Craftperson Section
-  \*------------------------------------*/
+\*------------------------------------*/
 
 
 {% call utils.small()%}
@@ -86,4 +86,31 @@
 }
 .craftsperson-profile .text-and-image__copy{
   align-self: center;
+}
+
+/*------------------------------------*\
+  #Skills section
+\*------------------------------------*/
+.craftsperson-skills{
+  padding: 2em;
+}
+
+.craftsperson-skills__list-wrapper{
+    margin-top: 2em
+}
+
+.craftsperson-skills__list-wrapper h3{
+    {{ utils.freed() }} 
+
+}
+
+.craftsperson-skills__list-wrapper ul{
+  font-family: "line awesome free";
+  list-style-type: "\f058";
+  transform: translateX(-.4em);
+}
+
+.craftsperson-skills__list-wrapper li{
+  font-family: "proxima-nova";
+  padding-left: 0.4em;
 }
