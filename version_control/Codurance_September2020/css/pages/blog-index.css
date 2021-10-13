@@ -268,3 +268,29 @@
   background-color: var(--persimmon);
   border-color: var(--persimmon--dark);
 }
+
+.blog-pagination ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1em;
+}
+
+.blog-pagination li {
+  list-style-type: none;
+}
+
+.pagination-wrapper li{
+  display: inline-block;
+}
+
+.previous-button a,
+.next-button a{
+  display: inline-flex;
+  align-items: center;
+}
+
+.pagination-wrapper a:hover{ 
+  text-decoration: none;
+}
+

@@ -71,7 +71,6 @@ label: Blog Listing
                     {% icon name="linkedin-in" style="SOLID" width="10" %}
                   </a>
                   {% endif %}
-
                 </li>
               </ul>
               {% endif %}
@@ -302,10 +301,11 @@ label: Blog Listing
           {% endif %}
 
         {% endfor %}
-
       </div>
+
       {% if contents.total_page_count > 1 %}
-      <div class="blog-pagination text-center">
+      <nav class="blog-pagination text-center" role="navigation" aria-label="Pagination Navigation">
+        <ul>
         {% set page_list = [-8,-7,-6,-5,-4,-3,-2, -1, 0, 1, 2,3,4,5,6,7,8] %}
         {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
         {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
@@ -313,28 +313,46 @@ label: Blog Listing
         {% elif current_page_num == 1 %}{% set offset = 2 %}
         {% else %}{% set offset = 0 %}{% endif %}
         {% if last_page_num %}
-          <a class="u-pagination-v1__item u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 float-left custom-hidden-xs-down {{ "blog-pagination__prev-link--disabled" if !last_page_num }}" href="{{ blog_page_link(last_page_num) }}">
-            <i class="fa fa-angle-left custom-mr-5"></i>
-            Previous
-          </a>
+          <li class="previous-button">
+            <a class="u-pagination-v1__item u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 float-left custom-hidden-xs-down {{ "blog-pagination__prev-link--disabled" if !last_page_num }}" href="{{ blog_page_link(last_page_num) }}">
+              <i class="fa fa-angle-left custom-mr-5"></i>
+              Previous
+            </a>
+          </li>
         {% endif %}
-        {% for page in page_list %}
-        {% set this_page = current_page_num + page + offset %}
-        {% if this_page > 0 and this_page <= contents.total_page_count %}
-          <a class="u-pagination-v1__item u-pagination-v1-4 custom-rounded-50 custom-pa-7-14 {{ "u-pagination-v1-4--active" if this_page == current_page_num }}" href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
-        {% endif %}
-        {% endfor %}
-        {% if contents.total_page_count > 4 %}
-        <a class="custom-pa-7-14"  rel="noopener noreferrer">...</a>
-        <a class="u-pagination-v1__item u-pagination-v1-4 custom-rounded-50 custom-pa-7-14" href="{{ blog_page_link(contents.total_page_count) }}">{{ contents.total_page_count }}</a>
-        {% endif %}
+        <div class="pagination-wrapper">
+          {% for page in page_list %}
+            {% set this_page = current_page_num + page + offset %}
+            {% if this_page > 0 and this_page <= contents.total_page_count %}
+                <li>
+                <a  aria-label="Goto Page {{this_page}}"
+                {% if this_page == current_page_num %} 
+                  aria-label="Current Page, {{this_page}}"
+                  aria-current="true" 
+                {% endif %}
+                  class="u-pagination-v1__item u-pagination-v1-4 custom-rounded-50 custom-pa-7-14 
+                  {{ "u-pagination-v1-4--active" if this_page == current_page_num }}" 
+                  href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+                </li>
+            {% endif %}
+          {% endfor %}
+          {% if contents.total_page_count > 4 %}
+              <li><a class="custom-pa-7-14"  rel="noopener noreferrer">...</a></li>
+              <li><a class="u-pagination-v1__item u-pagination-v1-4 custom-rounded-50 custom-pa-7-14" href="{{ blog_page_link(contents.total_page_count) }}">{{ contents.total_page_count }}</a></li>
+          {% endif %}
+        </div>
         {% if next_page_num %}
-        <a class="u-pagination-v1__item float-right custom-hidden-xs-down u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 {{ "blog-pagination__next-link--disabled" if !next_page_num }}" href="{{ blog_page_link(current_page_num + 1) }}">
-          Next
-          <i class="fa fa-angle-right custom-ml-5"></i>
-        </a>
+        <li class="previous-button">
+          <a class="u-pagination-v1__item float-right custom-hidden-xs-down u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 
+          {{ "blog-pagination__next-link--disabled" if !next_page_num }}" 
+          href="{{ blog_page_link(current_page_num + 1) }}">
+            Next
+            <i class="fa fa-angle-right custom-ml-5"></i>
+            </a>
+        </li>
         {% endif %}
-      </div>
+        </ul>
+       </nav> {# end pagination navigation #}
       {% endif %}
     </div>
   </div>
