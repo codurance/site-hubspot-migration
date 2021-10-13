@@ -69,7 +69,7 @@ label: Blog Post
         {% set comparedDates = publishDate | between_times(updatedDate, 'days') %}
         {% if comparedDates != 0 %}
         <span class="info__dot">·</span>
-        <span class="info__updated-date">Last Updated {{ content.updated | datetimeformat('%e %b %y') }} </span>
+        <span class="info__updated-date">Updated on {{ content.updated | datetimeformat('%e %b %y') }} </span>
         {% endif %}
       </div>
       {% if content.tag_list %}
