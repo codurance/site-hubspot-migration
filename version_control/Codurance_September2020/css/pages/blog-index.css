@@ -284,8 +284,8 @@
   display: inline-block;
 }
 
-.previous-button a,
-.next-button a{
+.previous-page-button a,
+.next-page-button a{
   display: inline-flex;
   align-items: center;
 }
