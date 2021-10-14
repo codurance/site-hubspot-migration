@@ -16,6 +16,7 @@
   {{ require_css(get_asset_url("../css/layout.css")) }}
   {{ require_css(get_asset_url("../css/main.css")) }}
   {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
   {{ require_css(get_asset_url("../css/pages/job-listing-page.css")) }}
 
   {{ require_js(get_asset_url("../js/main.js")) }}
@@ -27,18 +28,34 @@
 
 {% block body %}
 
-<section class="job-listing-page-header-banner">
-  {% module "page_hero_slice" path="../modules/Hero Slice.module" label="Hero Slice" no_wrapper=True %}
+<section class="job-listing-hero">
+  <div class="job-listing-hero__container">
+    <div class="job-listing-hero__text">
+      {% module_block module "rich_text" path="@hubspot/rich_text" label="Hero Copy" no_wrapper=True %}
+          {% module_attribute "html" %}
+              <h1>Current Roles</h1>
+              <p>If you are passionate about quality software, best practices and want to continuously learn, we want to hear from you.s</p>
+          {% end_module_attribute %}
+      {% end_module_block %} 
+    </div>
+      <div class="job-listing-hero__image">
+      {% module 'linked_image',
+            path="@hubspot/linked_image",
+            img={
+              "src": "https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Current%20Roles/header-image-XL-careers-current-roles.png"
+            },
+            label="Hero Image", 
+            no_wrapper=True        
+      %}
+    </div>
+  </div>
 </section>
 
 
 <main>
   <div class="job-listing-page-cards-container">
     <section class="job-listing-page-cards responsive-page-width lateral-spacing">
-      {# {% module "job_listing_card_1" path="../modules/Job Listing Card.module" label="Job Listing Card 1" no_wrapper=True %}
-      {% module "job_listing_card_2" path="../modules/Job Listing Card.module" label="Job Listing Card 2 " no_wrapper=True %}
-      {% module "job_listing_card_3" path="../modules/Job Listing Card.module" label="Job Listing Card 3" no_wrapper=True %} #}
-
+     
         <script src='https://www.workable.com/assets/embed.js' type='text/javascript'></script>
         <script type='text/javascript' charset='utf-8'>
         whr(document).ready(function(){
