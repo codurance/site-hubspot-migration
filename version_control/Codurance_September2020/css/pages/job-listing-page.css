@@ -1,7 +1,84 @@
 {% import '../utils/utils.css' as utils %}
 
 
+/* ===== Refactoring section ======= 
+This is a temporary solution while refactoring until is applied in all pages of the site without any side effects globally.
+*/
 
+body{
+  max-width: none;
+}  
+
+
+/* ======================= 
+    JOB LISTING HERO SECTION 
+========================== */
+
+.job-listing-hero{
+    background: linear-gradient(180deg, rgba(253,237,226,1) 0%, rgba(255,255,255,1) 85%);
+    padding-bottom: 2em;
+    overflow: hidden;
+}
+
+
+.job-listing-hero__container{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1em;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+.job-listing-hero__text{
+    margin-top: 1em;
+    max-width: 48ch;
+    align-self: center;
+}
+
+.job-listing-hero__text h1{
+    {{utils.dudler()}}
+    font-weight: var(--heavy-font-weight);
+}
+
+.job-listing-hero__image{
+    transform: translate(15%, 5%);
+}
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .job-listing-hero__container {
+        flex-direction:row;
+    }
+    .job-listing-hero__image {
+        transform: translate(10%, 5%);
+    }
+
+    .job-listing-hero__text{
+        margin-top: 5em;
+    }
+    .job-listing-hero__text h1{
+        {{utils.eames()}}
+    }
+    .job-listing-hero__text p{
+        {{utils.freed()}}
+        font-weight: var(--light-font-weight);
+    }
+
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+   
+    .job-listing-hero__image {
+        scale: 1.2;
+    }
+
+{% endcall %}
+{% call utils.extra_large() %}
+    .job-listing-hero__container{
+        overflow: revert;
+        padding: 1em 0;
+    }
+
+{% endcall %} /* end JOB LISTING HERO SECTION  */
 
 
 
@@ -64,21 +141,19 @@ ul {
 }
 .whr-code,
 .whr-date {
-display: none;
+  display: none;
 }
 
 .whr-item:nth-child(2n) {
-background-color: hsl(207.7, 50%, 90%);
+  background-color: hsl(207.7, 50%, 90%);
 }
 .whr-item {
-padding: 1em;
+  padding: 1em;
 }
 
- .job-listing-page-cards {
+.job-listing-page-cards {
   top:0;
- }
 }
-
 
 /* 
   ------------ IGNORE ABOVE THIS (TEST PURPOSE) ----------------
