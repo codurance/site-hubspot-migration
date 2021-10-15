@@ -1,2 +1,58 @@
 {% import '../utils/utils.css' as utils %}
 
+.locations__title{
+    {{utils.freed()}}
+    font-weight: var(--heavy-font-weight);
+    
+}
+    
+.locations__text {
+    margin-top: 1em;
+}
+
+{% call utils.small()%}
+    .locations__text {
+        {{utils.natus()}}
+    }
+{% endcall %}
+
+
+
+.locations__images{
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 20em;
+   
+}
+
+{% call utils.medium_large_and_extra_large()%}
+    .locations__images{
+        flex-direction: row;
+        gap: 1em;
+        height: 15em;
+        max-width: none;
+    }
+{% endcall %}
+
+.locations__item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    align-self: start;
+}
+
+.locations__item:nth-child(even){
+    align-self: end;
+}
+
+.location__text {
+    margin-top: 0.5em;
+    font-weight: var(--heavy-font-weight);
+
+}
+
+.locations__remote-countries{
+    {{utils.natus()}}
+}
