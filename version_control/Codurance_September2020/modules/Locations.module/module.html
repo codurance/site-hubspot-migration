@@ -1,0 +1,19 @@
+{% inline_text field="field_group.title" value="{{ module.field_group.title }}" %}
+{% inline_text field="field_group.paragraph_text" value="{{ module.field_group.paragraph_text }}" %}
+{% for item in module.location %}
+	{% if item.image_field.src %}
+		{% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
+		{% if item.image_field.size_type == 'auto' %}
+			{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+		{% elif item.image_field.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="{{ item.image_field.max_width }}" height="{{ item.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+		{% endif %}
+		 {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+		<img src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+	{% endif %}
+	{% inline_text field="image_location" value="{{ item.image_location }}" %}
+{% endfor %}
+
+{% inline_rich_text field="disclosure_text.rich_text" value="{{ module.disclosure_text.rich_text }}" %}
+
+
