@@ -81,6 +81,16 @@ body{
 {% endcall %} /* end JOB LISTING HERO SECTION  */
 
 
+/* ======================= 
+    LOCATIONS SECTION 
+========================== */
+
+.locations{
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 1000px;
+}
+
 
 .job-listing-page-cards-container {
   background-color: var(--athens-gray);
