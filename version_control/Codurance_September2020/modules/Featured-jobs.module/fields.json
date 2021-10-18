@@ -1,7 +1,7 @@
 [ {
   "id" : "da30b70d-ff28-c859-a438-0a8e7a3da3d8",
   "name" : "module_title",
-  "label" : "Module Title",
+  "label" : "Module Header Title",
   "required" : false,
   "locked" : false,
   "validation_regex" : "",
