@@ -2,10 +2,11 @@
 {{ require_css(get_asset_url("../../css/modules/locations.css")) }}
 
 
+
 <h2 class="locations__title">{{ module.field_group.title }}</h2>
 <p class="locations__text">{{ module.field_group.paragraph_text }}</p>
 <div class="locations__images">
-	
+
 		{% for item in module.location %}
 			{% if item.image_field.src %}
 				{% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
@@ -21,10 +22,11 @@
 				<h4 class="location__text">{{ item.image_location }}</h4>
 			</div>
 		{% endfor %}
-	
+
 </div>
-<hr>
-<p class="locations__remote-countries">{{ module.disclosure_text.rich_text }}</p>
+<hr class="locations__line-break">
+<div class="locations__remote-countries">{{ module.disclosure_text.rich_text }}</div>
+
 
 
 
