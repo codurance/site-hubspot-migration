@@ -34,7 +34,7 @@
       {% module_block module "rich_text" path="@hubspot/rich_text" label="Hero Copy" no_wrapper=True %}
           {% module_attribute "html" %}
               <h1>Current Roles</h1>
-              <p>If you are passionate about quality software, best practices and want to continuously learn, we want to hear from you.s</p>
+              <p>If you are passionate about quality software, best practices and want to continuously learn, we want to hear from you.</p>
           {% end_module_attribute %}
       {% end_module_block %} 
     </div>
@@ -52,14 +52,15 @@
 </section>
 
 <section class="locations">
-      {% module 'locations' path='../modules/locations.module' label="Locations Section" no_wrapper=True%%}
+      <div class="locations__container">
+        {% module 'locations' path='../modules/locations.module' label="Locations Section" no_wrapper=True%}
+      </div>
 </section>
 
 <main>
   <div class="job-listing-page-cards-container">
     <section class="job-listing-page-cards responsive-page-width lateral-spacing">
      
-    
                 
     </section>
   </div>
