@@ -1,0 +1,129 @@
+[ {
+  "id" : "da30b70d-ff28-c859-a438-0a8e7a3da3d8",
+  "name" : "module_title",
+  "label" : "Module Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Featured Roles"
+}, {
+  "id" : "4d0ac13d-8cfe-5f9b-69c3-9b25944ed9eb",
+  "name" : "featured_role",
+  "label" : "Featued Role",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "f61e9a59-19fd-e0bf-cc6b-a951e43a5a74",
+    "name" : "position_icon",
+    "label" : "Position Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "fe17f216-9745-46e4-6239-dae46ee5dd37",
+    "name" : "department_name",
+    "label" : "Department Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Software Engineer",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "5b46720b-d0d7-1f25-41d0-55aff62adaae",
+    "name" : "position_name",
+    "label" : "Position Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Principal Craftsperson",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "226ae438-0cee-fadb-721a-4bd7a24c7a7d",
+    "name" : "role_type",
+    "label" : "Role Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "placeholder" : "Select a choice",
+    "choices" : [ [ "consultant", "Consultant" ], [ "in_house", "In-house" ] ],
+    "type" : "choice"
+  }, {
+    "id" : "5131dbf0-9021-32eb-d7c4-a1c3789995cf",
+    "name" : "hybrid_position_location",
+    "label" : "Hybrid Position Location",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "London, Manchester, Barcelona",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : ""
+  }, {
+    "id" : "4a89e74d-a2c8-dfe2-7d99-e8c844f1f757",
+    "name" : "role_description",
+    "label" : "Role description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "As a platform engineer, you will tackle a wide breadth of technologies..",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "cc01641b-201d-75f6-1838-e5852cd2cedd",
+    "name" : "link_field",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : true
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "position_icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "hybrid_position_location" : "",
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : true
+    }
+  }
+} ]
