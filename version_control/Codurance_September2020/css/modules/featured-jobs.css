@@ -1,0 +1,40 @@
+
+{% import "../utils/utils.css" as utils %}
+
+.featured__title{
+    {{utils.dudler()}}
+}
+
+
+.featured__postion{
+    font-weight: var(--heavy-font-weight);
+    }
+
+.featured__department,
+.featured__role-type{
+    {{utils.natus()}}
+}
+    
+.featured__job-card{
+    margin-top: 1em;
+    display: grid;
+    grid-template: auto / 5em 1fr;  
+}
+.featured__locations {
+    grid-column: span 2;
+}
+.featured__description {
+    grid-column: 1/-1;
+}
+.featured__role-type{
+    color: var(--french-gray);
+}
+
+.featured__link{
+    grid-column: 2/-1;
+    place-self: end;
+}
+
+}
+
+
