@@ -15,6 +15,12 @@
   "label" : "Featued Role",
   "required" : false,
   "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "5b46720b-d0d7-1f25-41d0-55aff62adaae",
+    "default" : null
+  },
   "children" : [ {
     "id" : "f61e9a59-19fd-e0bf-cc6b-a951e43a5a74",
     "name" : "position_icon",
@@ -61,7 +67,7 @@
     "locked" : false,
     "display" : "select",
     "placeholder" : "Select a choice",
-    "choices" : [ [ "consultant", "Consultant" ], [ "in_house", "In-house" ] ],
+    "choices" : [ [ "Consultant", "Consultant" ], [ "In-house", "In-house" ] ],
     "type" : "choice"
   }, {
     "id" : "5131dbf0-9021-32eb-d7c4-a1c3789995cf",
