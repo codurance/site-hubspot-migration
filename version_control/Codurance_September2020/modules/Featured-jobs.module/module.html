@@ -1,35 +1,48 @@
 
-{{ module.module_title }}
+<h2 class="featured__title">{{ module.module_title }}</h2>
 
-{% if module.featured_role.position_icon.src %}
-	{% set sizeAttrs = 'width="{{ module.featured_role.position_icon.width }}" height="{{ module.featured_role.position_icon.height }}"' %}
-	{% if module.featured_role.position_icon.size_type == 'auto' %}
-		{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-	{% elif module.featured_role.position_icon.size_type == 'auto_custom_max' %}
-		{% set sizeAttrs = 'width="{{ module.featured_role.position_icon.max_width }}" height="{{ module.featured_role.position_icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+{% for item in module.featured_role %}
+	{% if item.position_icon.src %}
+		{% set sizeAttrs = 'width="{{ item.position_icon.width }}" height="{{ item.position_icon.height }}"' %}
+		{% if item.position_icon.size_type == 'auto' %}
+			{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+		{% elif item.position_icon.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="{{ item.position_icon.max_width }}" height="{{ item.position_icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+		{% endif %}
+		 {% set loadingAttr = item.position_icon.loading != 'disabled' ? 'loading="{{ item.position_icon.loading }}"' : '' %}
+		<img class="featured__icon" src="{{ item.position_icon.src }}" alt="{{ item.position_icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
 	{% endif %}
-	 {% set loadingAttr = module.featured_role.position_icon.loading != 'disabled' ? 'loading="{{ module.featured_role.position_icon.loading }}"' : '' %}
-	<img src="{{ module.featured_role.position_icon.src }}" alt="{{ module.featured_role.position_icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-{% endif %}
-{% inline_text field="featured_role.department_name" value="{{ module.featured_role.department_name }}" %}
-{% inline_text field="featured_role.position_name" value="{{ module.featured_role.position_name }}" %}
-{{ module.featured_role.role_type }}
-{% inline_text field="featured_role.hybrid_position_location" value="{{ module.featured_role.hybrid_position_location }}" %}
-{% inline_text field="featured_role.role_description" value="{{ module.featured_role.role_description }}" %}
-{% set href = module.featured_role.link_field.url.href %}
-{% if module.featured_role.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-	{% set href = "mailto:" + href %}
-{% endif %}
-{% set rel = [] %}
-{% if module.featured_role.link_field.no_follow %}
-	{% do rel.append("nofollow") %}
-{% endif %}
-{% if module.featured_role.link_field.open_in_new_tab %}
-	{% do rel.append("noopener") %}
-{% endif %}
-<a href="{{ href }}"
-	{% if module.featured_role.link_field.open_in_new_tab %}target="_blank"{% endif %}
-	{% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
-	>
-	Link text
-</a>
+
+	<h3 class="featured__department">{{ item.department_name }}</h3>
+	<h4 class="featured__postion">{{ item.position_name }}</h4>
+	<p class="featured__role-type">
+		{{ item.role_type }} <i class="las la-question-circle"></i>
+	</p>
+	
+	<div class="featured__locations">
+		<i class="las la-map-marker"></i>
+		<p><span>Remote:</span> Worldwide</p>
+		<p><span>Hybrid:</span> {{ item.hybrid_position_location }}</p>
+	</div>
+	
+	<p class="featured__description">{{ item.role_description }}</p>
+
+	{% set href = item.link_field.url.href %}
+	{% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+		{% set href = "mailto:" + href %}
+	{% endif %}
+	{% set rel = [] %}
+	{% if item.link_field.no_follow %}
+		{% do rel.append("nofollow") %}
+	{% endif %}
+	{% if item.link_field.open_in_new_tab %}
+		{% do rel.append("noopener") %}
+	{% endif %}
+
+	<a href="{{ href }}"
+		{% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+		{% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+		>
+		Learn More <i class="las la-arrow-down"></i>
+	</a>
+{% endfor %}
