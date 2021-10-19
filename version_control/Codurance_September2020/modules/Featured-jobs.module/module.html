@@ -1,48 +1,54 @@
+{{ require_css(get_asset_url("../../css/modules/featured-jobs.css")) }}
+
 
 <h2 class="featured__title">{{ module.module_title }}</h2>
 
-{% for item in module.featured_role %}
-	{% if item.position_icon.src %}
-		{% set sizeAttrs = 'width="{{ item.position_icon.width }}" height="{{ item.position_icon.height }}"' %}
-		{% if item.position_icon.size_type == 'auto' %}
-			{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-		{% elif item.position_icon.size_type == 'auto_custom_max' %}
-			{% set sizeAttrs = 'width="{{ item.position_icon.max_width }}" height="{{ item.position_icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+<div class="featured__job-card">	
+	{% for item in module.featured_role %}
+		{% if item.position_icon.src %}
+			{% set sizeAttrs = 'width="{{ item.position_icon.width }}" height="{{ item.position_icon.height }}"' %}
+			{% if item.position_icon.size_type == 'auto' %}
+				{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+			{% elif item.position_icon.size_type == 'auto_custom_max' %}
+				{% set sizeAttrs = 'width="{{ item.position_icon.max_width }}" height="{{ item.position_icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+			{% endif %}
+			 {% set loadingAttr = item.position_icon.loading != 'disabled' ? 'loading="{{ item.position_icon.loading }}"' : '' %}
+			<img class="featured__icon" src="{{ item.position_icon.src }}" alt="{{ item.position_icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
 		{% endif %}
-		 {% set loadingAttr = item.position_icon.loading != 'disabled' ? 'loading="{{ item.position_icon.loading }}"' : '' %}
-		<img class="featured__icon" src="{{ item.position_icon.src }}" alt="{{ item.position_icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-	{% endif %}
-
-	<h3 class="featured__department">{{ item.department_name }}</h3>
-	<h4 class="featured__postion">{{ item.position_name }}</h4>
-	<p class="featured__role-type">
-		{{ item.role_type }} <i class="las la-question-circle"></i>
-	</p>
 	
-	<div class="featured__locations">
-		<i class="las la-map-marker"></i>
-		<p><span>Remote:</span> Worldwide</p>
-		<p><span>Hybrid:</span> {{ item.hybrid_position_location }}</p>
-	</div>
+		<div class="featured__main-info">
+			<h3 class="featured__department">{{ item.department_name }}</h3>
+			<h4 class="featured__postion">{{ item.position_name }}</h4>
+			<p class="featured__role-type">
+				{{ item.role_type }} <i class="las la-question-circle"></i>
+			</p>
+		</div>
 	
-	<p class="featured__description">{{ item.role_description }}</p>
-
-	{% set href = item.link_field.url.href %}
-	{% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-		{% set href = "mailto:" + href %}
-	{% endif %}
-	{% set rel = [] %}
-	{% if item.link_field.no_follow %}
-		{% do rel.append("nofollow") %}
-	{% endif %}
-	{% if item.link_field.open_in_new_tab %}
-		{% do rel.append("noopener") %}
-	{% endif %}
-
-	<a href="{{ href }}"
-		{% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
-		{% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
-		>
-		Learn More <i class="las la-arrow-down"></i>
-	</a>
-{% endfor %}
+		<div class="featured__locations">
+			<i class="las la-map-marker"></i>
+			<p><span>Remote:</span> Worldwide</p>
+			<p><span>Hybrid:</span> {{ item.hybrid_position_location }}</p>
+		</div>
+	
+		<p class="featured__description">{{ item.role_description }}</p>
+	
+		{% set href = item.link_field.url.href %}
+		{% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+			{% set href = "mailto:" + href %}
+		{% endif %}
+		{% set rel = [] %}
+		{% if item.link_field.no_follow %}
+			{% do rel.append("nofollow") %}
+		{% endif %}
+		{% if item.link_field.open_in_new_tab %}
+			{% do rel.append("noopener") %}
+		{% endif %}
+	
+		<a class="featured__link" href="{{ href }}"
+			{% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+			{% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+			>
+			Learn More <i class="las la-arrow-down"></i>
+		</a>
+	{% endfor %}
+</div>
