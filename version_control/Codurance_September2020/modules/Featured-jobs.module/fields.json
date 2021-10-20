@@ -67,7 +67,7 @@
     "locked" : false,
     "display" : "select",
     "placeholder" : "Select a choice",
-    "choices" : [ [ "Consultant", "Consultant" ], [ "In-house", "In-house" ] ],
+    "choices" : [ [ "consultant", "Consultant" ], [ "in_house", "In-house" ] ],
     "type" : "choice"
   }, {
     "id" : "5131dbf0-9021-32eb-d7c4-a1c3789995cf",
