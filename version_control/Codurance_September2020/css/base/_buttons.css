@@ -132,6 +132,14 @@
 }
 .text-cta--right-arrow:hover i {
   transform: translate(0.35em, 0.047em);
+  }
+
+.text-cta--down-arrow i {
+  transform: translateY(0.1em);
+  transition: transform .3s ease;
+}
+.text-cta--down-arrow:hover i{
+  transform: translateY(0.3em);
 }
 
 .text-cta--plus i {
