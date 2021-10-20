@@ -96,6 +96,14 @@ body{
 }
 
 
+/* ======================= 
+    FEATURED JOBS SECTION 
+========================== */
+
+.featured-job{
+    padding: 0 1em;
+}
+
 /* 
   ------------ IGNORE BELOW THIS (TEST PURPOSE) ----------------
 */
