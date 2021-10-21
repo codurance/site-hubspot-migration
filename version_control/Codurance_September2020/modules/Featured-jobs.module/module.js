@@ -1,18 +1,23 @@
 
 const divTarget = document.querySelector("#role-type");
 
+const show = (element) => {
+   return element.classList.add('info-tooltip--show');
+}
+const hide = (element) => {
+   return element.classList.remove('info-tooltip--show');
+}
+
 const showHideTooltip = (event) => {
     event.preventDefault();
     const tooltip = document.querySelector('.info-tooltip');
 
-    if(tooltip.classList.contains("show")){
-        tooltip.classList.remove("show")
-        tooltip.classList.add("hide")
+    if(tooltip.classList.contains("info-tooltip--show")){
+        hide(tooltip);
     }else{
-        tooltip.classList.remove("hide")
-        tooltip.classList.add("show")
+        show(tooltip);
     }
 }
 
-divTarget.addEventListener("click", showHideTooltip)
-divTarget.addEventListener("touchstart", showHideTooltip)
+divTarget.addEventListener("click", showHideTooltip, false)
+divTarget.addEventListener("touchstart", showHideTooltip, false)
