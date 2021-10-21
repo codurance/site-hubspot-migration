@@ -101,7 +101,9 @@ body{
 ========================== */
 
 .featured-job{
+    margin: 3em auto 0;
     padding: 0 1em;
+    max-width: 1000px;
 }
 
 /* 
