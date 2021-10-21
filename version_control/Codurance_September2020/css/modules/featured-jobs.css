@@ -128,5 +128,30 @@
 }
 
 
+{% call utils.medium_large_and_extra_large()%}
+    .featured__locations {
+        grid-column: span 2 / -2;
+        justify-self:end;
+        transform: translateY(2em);
+    }
 
+    .featured__description {
+        grid-column:1 / span 4;
+    }
 
+    .featured__link{
+        grid-column-end: -2;
+    }
+    
+
+{%endcall%}
+
+{% call utils.large_and_extra_large()%}
+    .featured__job-card {
+        grid-template-columns:repeat(auto-fill,minmax(5em,1fr));
+    }
+
+    .featured__description {
+        grid-column-start: 2;
+    }
+{% endcall %}
