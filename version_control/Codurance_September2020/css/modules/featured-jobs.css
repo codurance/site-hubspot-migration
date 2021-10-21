@@ -14,16 +14,18 @@
     {{ utils.base() }}
 }
 
+.featured__cards-container{
+    margin-top: 2em;
+}
     
 .featured__job-card{
     margin-top: 1em;
     padding: 1em; 
-    max-width: 25em;
 
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));
-    row-gap: .5em;
+    row-gap: 1em;
 
     border-radius: 1em;
     {{ utils.card_shadow_large() }}
@@ -32,7 +34,7 @@
 }
 
 .featured__icon{
-    align-self: center;
+    place-self: center;
 }
 .featured__main-info{
     grid-column: span 2;
@@ -80,15 +82,9 @@
     cursor: help;
 }
 
-{% call utils.medium_large_and_extra_large()%}
 
-.featured__role-type:hover .info-bubble{
-    visibility: visible;
-}
 
-{% endcall %}
-
-.info-bubble {
+.info-tooltip {
 	position: absolute;
     visibility: hidden;
 	background: white;
@@ -99,19 +95,23 @@
     z-index: 1;
     top: 2em;
 }
+.info-tooltip p {
+    {{ utils.sejima() }}
+    font-weight: var(--light-font-weight);
+}
 
-.info-bubble:after {
+.info-tooltip:after {
 	content: '';
 	position: absolute;
 	top: 0;
-	left: 37%;
+	left: 5.5em;
 	width: 0;
 	height: 0;
 	border: 0.5em solid transparent;
 	border-bottom-color: white;
 	border-top: 0;
 	margin-left: -0.5em;
-	margin-top: -0.6em;
+	margin-top: -0.5em;
 }
 
 .show{
@@ -122,8 +122,17 @@
     visibility: hidden;
 }
 
+{% call utils.medium_large_and_extra_large()%}
+
+    .featured__role-type:hover .info-tooltip,
+    .featured__role-type:focus .info-tooltip{
+        visibility: visible;
+    }
+    
+{% endcall %}
+
 .featured__link{
-    grid-column: 2/-1;
+    grid-column: auto / -1;
     place-self: end;
 }
 
