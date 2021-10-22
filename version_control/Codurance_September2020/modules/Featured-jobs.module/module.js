@@ -1,23 +1,27 @@
 
-const divTarget = document.querySelector("#role-type");
-
 const show = (element) => {
-   return element.classList.add('info-tooltip--show');
+    element.classList.add('info-tooltip--show');
 }
 const hide = (element) => {
-   return element.classList.remove('info-tooltip--show');
+    element.classList.remove('info-tooltip--show');
 }
 
 const showHideTooltip = (event) => {
     event.preventDefault();
-    const tooltip = document.querySelector('.info-tooltip');
+
+    const target = event.target;
+    const tooltip = target.querySelector('.info-tooltip');
+
+    if(!target.matches('.featured__role-type')) return
 
     if(tooltip.classList.contains("info-tooltip--show")){
         hide(tooltip);
     }else{
         show(tooltip);
-    }
-}
 
-divTarget.addEventListener("click", showHideTooltip, false)
-divTarget.addEventListener("touchstart", showHideTooltip, false)
+    }
+} 
+
+document.addEventListener("click", showHideTooltip, false)
+
+
