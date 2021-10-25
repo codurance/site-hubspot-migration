@@ -104,7 +104,29 @@ body{
     margin: 3em auto 0;
     padding: 0 1em;
     max-width: 1000px;
+
 }
+
+
+/* ======================= 
+    CTA SECTION 
+========================== */
+
+.job-listing__cta-block{
+    margin-top: 2em;
+    background: center / cover no-repeat 
+                url("https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Overview/CTA%20block/cta-bg-dark.svg");
+
+}
+
+.job-listing__cta-block .cta-block {
+    padding: 3em 4em;
+}
+
+.job-listing__cta-block .cta-block__title{
+    max-width: none;
+}
+
 
 /* 
   ------------ IGNORE BELOW THIS (TEST PURPOSE) ----------------
