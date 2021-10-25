@@ -13,24 +13,33 @@
 		{% endif %}
 		{% set loadingAttr = item.position_icon.loading != 'disabled' ? 'loading="{{ item.position_icon.loading }}"' : '' %}
 	<div class="featured__job-card">	
-				<img class="featured__icon" src="{{ item.position_icon.src }}" alt="{{ item.position_icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-			{% endif %}
+			<img class="featured__icon" src="{{ item.position_icon.src }}" alt="{{ item.position_icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+		{% endif %}
 		
 			<div class="featured__main-info">
 				<h3 class="featured__department">{{ item.department_name }}</h3>
 				<h4 class="featured__position">{{ item.position_name }}</h4>
-				<div id="role-type" class="featured__role-type">
-					{{ item.role_type }}<i class="las la-question-circle"></i>
-					<hgroup class="info-tooltip">
-						<p>As a Codurance consultant, your focus is supporting the delivery of our client work while also helping to shape Codurance’s internal ways of working and culture.</p>
-					</hgroup>
-				</div>
+				{% if item.role_type %}
+				{% set role = item.role_type == 'in_house' ? 'In house' : 'Consultant' %}
+					<div class="featured__role-type">
+						{{ role }}<i class="las la-question-circle"></i>
+						<hgroup class="info-tooltip">
+						{% if role == 'Consultant'%}
+							<p>As a Codurance consultant, your focus is supporting the delivery of our client work while also helping to shape Codurance’s internal ways of working and culture.</p>
+						{% elif role == "In house" %}
+							<p>As an internal team member, your focus is on helping your team and the company grow.</p>
+						{% endif %}
+						</hgroup>
+					</div>
+				{% endif %}
 			</div>
 		
 			<div class="featured__locations">
 				<i class="las la-map-marker"></i>
-				<p><span>Remote:</span> Worldwide
-					<span>Hybrid:</span> {{ item.hybrid_position_location }}</p>
+				<div>
+					<p><span>Remote:</span> Worldwide*</p>
+					<p><span>Hybrid:</span> {{ item.hybrid_position_location }}</p>
+				</div>
 			</div>
 		
 			<p class="featured__description">{{ item.role_description }}</p>
