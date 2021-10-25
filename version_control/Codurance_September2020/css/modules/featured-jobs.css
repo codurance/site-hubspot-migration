@@ -70,6 +70,7 @@
     color: var(--mid-gray);
     text-decoration-line: underline;
     text-decoration-style: dotted;
+    width: fit-content;
 }
 
 .featured__role-type i {
@@ -85,15 +86,16 @@
 
 
 .info-tooltip {
-	position: absolute;
+    position: absolute;
     visibility: hidden;
-	background: white;
+    top: 2em;
     padding: 1em;
+	background: white;
     color: var(--mid-gray);
+    min-width: 11em;
 	border-radius: 1em;
     {{ utils.card_shadow_large()}}
     z-index: 1;
-    top: 2em;
 }
 .info-tooltip p {
     {{ utils.sejima() }}
