@@ -51,27 +51,24 @@
   </div>
 </section>
 
-<section class="locations">
-  <div class="locations__container">
-    {% module 'locations' path='../modules/locations.module' label="Locations Section" no_wrapper=True%}
-  </div>
-</section>
-          
-<section class="featured-job">
-  {% module 'featured jobs' path='../modules/Featured-Jobs.module' label="Featured Jobs Section" no_wrapper=True%}
-    </section>
-    
-  <main>
-  <div class="job-listing-page-cards-container">
-  <section class="job-listing-page-cards responsive-page-width lateral-spacing">
-  
-  
+<main>
+  <section class="locations">
+    <div class="locations__container">
+      {% module 'locations' path='../modules/locations.module' label="Locations Section" no_wrapper=True%}
+    </div>
   </section>
-  </div>
-  
-  <section>
-  {% module 'CTA block' path='../modules/LP-cta-block.module' label="Cta block section" no_wrapper=True%}
-</section>
+            
+  <section class="featured-job">
+    {% module 'featured jobs' path='../modules/Featured-Jobs.module' label="Featured Jobs Section" no_wrapper=True%}
+      </section>
+      
+  <section class="job-listing-page-cards responsive-page-width lateral-spacing">    
+    {% module 'Filtered Jobs' path='../modules/Filtered-Jobs.module' label="Filtered Jobs Section" no_wrapper=True%}
+  </section>
+    
+  <section class="job-listing__cta-block">
+    {% module 'CTA block' path='../modules/LP-cta-block.module' label="Cta block section" no_wrapper=True%}
+  </section>
 </main>
 
 {% endblock body %}

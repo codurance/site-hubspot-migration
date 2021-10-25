@@ -1,0 +1,23 @@
+{{ require_css(get_asset_url("../../css/modules/filtered-jobs.css")) }}
+
+
+<div class="clients__filter">
+    <div class="clients__filter-dropdown-wrapper" data-filters-wrapper>
+      <div class="clients__filter-dropdown-container">
+        <button class="clients__filter-dropdown-button" data-dropdown-button="role">
+            Role
+          <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="role">
+          </i>
+        </button>
+        <div class="clients__filter-dropdown-options hidden" data-dropdown-container="role">
+          {% for role in allIndustries|sort(False,False) %} 
+            <button class="clients__filter-dropdown-option" data-role-option="{{role}}">
+              {{role}}
+              <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
+                data-role-option-selected="{{role}}"></i>
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
