@@ -23,5 +23,6 @@ const showHideTooltip = (event) => {
 } 
 
 document.addEventListener("click", showHideTooltip, false)
+document.addEventListener("touchstart", showHideTooltip)
 
 
