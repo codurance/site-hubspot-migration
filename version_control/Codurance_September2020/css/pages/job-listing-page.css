@@ -10,6 +10,8 @@ body{
 }  
 
 
+{% set max_width_content = "50em"%}
+
 /* ======================= 
     JOB LISTING HERO SECTION 
 ========================== */
@@ -92,7 +94,7 @@ body{
 .locations__container{
     margin: 0 auto;
     padding: 2em 1em;
-    max-width: 1000px;
+    max-width: {{max_width_content}};
 }
 
 
@@ -103,7 +105,7 @@ body{
 .featured-job{
     margin: 3em auto 0;
     padding: 0 1em;
-    max-width: 1000px;
+    max-width: {{max_width_content}};
 
 }
 
@@ -152,7 +154,8 @@ ul {
 }
 
 .job-listing-page-cards {
-  top:0;
+    max-width: {{max_width_content}};
+    margin: 0 auto;
 }
 
 /* 
