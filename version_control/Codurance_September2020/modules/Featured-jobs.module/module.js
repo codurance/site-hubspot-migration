@@ -7,22 +7,27 @@ const hide = (element) => {
 }
 
 const showHideTooltip = (event) => {
-    event.preventDefault();
-
+    
     const target = event.target;
     const tooltip = target.querySelector('.info-tooltip');
-
+    
     if(!target.matches('.featured__role-type')) return
-
+    
     if(tooltip.classList.contains("info-tooltip--show")){
         hide(tooltip);
     }else{
         show(tooltip);
-
     }
+
+    event.preventDefault();
 } 
 
-document.addEventListener("click", showHideTooltip, false)
-document.addEventListener("touchstart", showHideTooltip)
+const createListeners = () => {
+    const sectionTarget = document.querySelector(".featured__cards-container")
+    sectionTarget.addEventListener("click", showHideTooltip, false)
+    sectionTarget.addEventListener("touchstart", showHideTooltip)
+}
+
+window.addEventListener("DOMContentLoaded", createListeners);
 
 
