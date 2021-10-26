@@ -1,93 +1,99 @@
 
 {% import '../utils/utils.css' as utils %}
 
-.clients__filter {
-    position: absolute;
-    z-index: 2;
+
+.jobs__filter-title{
+    {{ utils.dudler() }}
+    margin-top:2em;
 }
-{% call utils.medium_large_and_extra_large()%}
-    .clients__filter {
-        background-color: white;
-        border-radius: 4.7601rem;
-        box-shadow: 0px 0px 10px var(--woodsmoke--20);
-        height: 2.38rem;
-        left: 50%;
-        max-width: 800px;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        transform: translate(-50%, -50%);
-        width: 85%;
-    }
-{% endcall %}
-{% call utils.small() %}
-    .clients__filter {
-        width: 100%;
-    }
-{% endcall %}
 
 {% call utils.medium_large_and_extra_large()%}
-    .clients__filter-toggle {
-        display: none;
-    }
+.jobs__filter-wrapper{
+    display: flex;
+    gap: 1em;
+
+}
 {% endcall %}
-{% call utils.small() %}
-    .clients__filter-toggle button {
-        background: none;
-        border: none;
-        font-weight: var(--heavy-font-weight);
-        cursor: pointer;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 1rem;
+
+
+
+/* ===================
+    Filter Selector
+==================== */
+{% set border_radius = ".5em" %}
+
+.jobs__filter {
+    width: 100%;
+}
+
+{% call utils.small()%}
+.jobs__filter {
+    box-shadow: 0px 0px 10px var(--woodsmoke--20);
+    border-radius: {{border_radius}};
+}
+{% endcall %}
+
+
+{% call utils.medium_large_and_extra_large()%}
+    .jobs__filter {
+        display: flex;
+        gap: 1em;
     }
 {% endcall %}
 
 
-.clients__filter-toggle-icon {
+.jobs__filter-toggle-icon {
     transform: rotate(0deg);
     transition: var(--cta-transition);
 }
 
-.clients__filter-toggle-icon--selected {
+.jobs__filter-toggle-icon--selected {
     transform: rotate(135deg);
 }
 
-.clients__filter-dropdown-container {
+.jobs__filter-dropdown-container {
     position: relative;
-    min-width: 200px;
+    min-width: 150px;
 }
 {% call utils.medium_large_and_extra_large()%}
-    .clients__filter-dropdown-container {
+    .jobs__filter-dropdown-container {
         height: 100%;
         width: 0;
     }
 {% endcall %}
 
-{% call utils.small() %}
-    .clients__filter-dropdown-wrapper {
-        box-shadow: 0px 0px 6px var(--woodsmoke--20);
-        position: absolute;
-        width: 100%;
-    }
-{% endcall %}
+
 {% call utils.medium_large_and_extra_large()%}
-    .clients__filter-dropdown-wrapper {
+    .jobs__filter-dropdown-wrapper {
         align-items: center;
         height: 100%;
+        width: 100%;
         display: flex;
         justify-content: center;
+    }
+    .jobs__filter-radio-wrapper{
+        width: 70%;
+    }
+
+    .jobs__filter-dropdown-wrapper, 
+    .jobs__filter-radio-wrapper {
+        background-color: white;
+        border-radius: .5em;
+        box-shadow: 0px 0px 10px var(--woodsmoke--20);
+        height: 2.38rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 {% endcall %}
 
 {% call utils.medium_large_and_extra_large()%}
-    .clients__filter-dropdown-wrapper.hidden {
+    .jobs__filter-dropdown-wrapper.hidden {
         visibility: visible;
     }
 {% endcall %}
 
 {% call utils.medium_large_and_extra_large()%}
-    .clients__filter-dropdown-container:not(:last-of-type)::after {
+    .jobs__filter-dropdown-container:not(:last-of-type)::after {
         background-color: var(--french-gray);
         content: '';
         height: 50%;
@@ -99,7 +105,7 @@
     }
 {% endcall %}
 
-.clients__filter-dropdown-button {
+.jobs__filter-dropdown-button {
     {{ utils.base() }}
     background-color: white;
     border: none;
@@ -109,40 +115,43 @@
     width: 100%;
 }
 {% call utils.small() %}
-    .clients__filter-dropdown-button {
-        border: 1px solid var(--athens-gray);
+    .jobs__filter-dropdown-button {
+        border-bottom: 1px solid var(--athens-gray);
         padding: 1rem;
     }
+    .jobs__filter-dropdown-button:first-child{
+        border-radius: {{border_radius}} {{border_radius}} 0 0;
+    }
 {% endcall %}
-.clients__filter-dropdown-button:hover {
+.jobs__filter-dropdown-button:hover {
     background-color: var(--athens-gray);
     transition: background-color 0.2s linear;
 }
 
-.clients__filter-icon {
+.jobs__filter-icon {
     margin-right: 0.2rem;
     pointer-events: none;
 }
 
-.clients__filter-dropdown-icon {
+.jobs__filter-dropdown-icon {
     margin-left: 0.5rem;
     pointer-events: none;
     transform: rotate(0deg);
     transition: var(--cta-transition);
 }
 
-.clients__filter-dropdown-icon--selected {
+.jobs__filter-dropdown-icon--selected {
     transform: rotate(180deg);
 }
 
-.clients__filter-dropdown-options {
+.jobs__filter-dropdown-options {
     background-color: white;
     display: flex;
     flex-direction: column;
     padding: 10px;
 }
 {% call utils.medium_large_and_extra_large()%}
-    .clients__filter-dropdown-options {
+    .jobs__filter-dropdown-options {
         box-shadow: 0px 4px 14px var(--french-gray);
         margin-left: 50%;
         margin-top: -0.2rem;
@@ -156,11 +165,11 @@
     }
 {% endcall %}
 
-.clients__filter-dropdown-options.hidden {
+.jobs__filter-dropdown-options.hidden {
     display: none;
 }
 
-.clients__filter-dropdown-option {
+.jobs__filter-dropdown-option {
     background-color: white;
     border: none;
     cursor: pointer;
@@ -171,26 +180,26 @@
     position: relative;
     text-align: left;
 }
-.clients__filter-dropdown-option:hover {
+.jobs__filter-dropdown-option:hover {
     background-color: var(--athens-gray);
 }
 
-.clients__filter-dropdown-option--selected {
+.jobs__filter-dropdown-option--selected {
     font-weight: var(--heavy-font-weight);
 }
 
-.clients__filter-dropdown-option-selected-icon {
+.jobs__filter-dropdown-option-selected-icon {
     position: absolute;
     margin-left: 10px;
     top: 11px;
 }
 
-.clients-filter-selector__input {
+.jobs-filter-selector__input {
     margin: 0 10%;
     position: relative;
 }
 
-.clients-filter-selector__input select {
+.jobs-filter-selector__input select {
     background-color: #33475b;
     border: none;
     color: white;
@@ -199,3 +208,72 @@
     appearance: none;
     width: 160px;
 }
+
+
+
+/* ===================
+    CHECKBOX Selector
+==================== */
+
+.jobs__filter-radio-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: .5em;
+    padding: 1em;
+}
+
+
+.c-custom-radio {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  color: var(--woodsmoke);
+}
+
+.c-custom-radio svg { 
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: .2em;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+}
+
+
+.c-custom-radio input[type="radio"] {
+  opacity: 0.00001;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  left: 0;
+  top: .2em;
+}
+
+.c-custom-radio svg path {
+  transition: stroke-dashoffset .4s linear;
+}
+
+.c-custom-radio input[type="radio"]:checked + svg path {
+  stroke-dashoffset: 0;
+  stroke: currentColor;
+}
+
+.c-custom-radio input[type="radio"] + svg path {
+  stroke: #eee;
+}
+
+.c-custom-radio input[type="radio"]:checked + label {
+  text-decoration: line-through;
+}
+
+.c-custom-radio input[type="radio"]:focus + svg {
+  outline: 3px dotted gold;
+  outline-offset: 5px;
+}
+
+
+.c-custom-radio input[type="radio"]:focus:not(:focus-visible) + svg {
+  outline: none;
+}
+
