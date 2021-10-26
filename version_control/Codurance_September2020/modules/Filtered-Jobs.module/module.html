@@ -1,23 +1,66 @@
 {{ require_css(get_asset_url("../../css/modules/filtered-jobs.css")) }}
 
 
-<div class="clients__filter">
-    <div class="clients__filter-dropdown-wrapper" data-filters-wrapper>
-      <div class="clients__filter-dropdown-container">
-        <button class="clients__filter-dropdown-button" data-dropdown-button="role">
-            Role
-          <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="role">
-          </i>
-        </button>
-        <div class="clients__filter-dropdown-options hidden" data-dropdown-container="role">
-          {% for role in allIndustries|sort(False,False) %} 
-            <button class="clients__filter-dropdown-option" data-role-option="{{role}}">
-              {{role}}
-              <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
-                data-role-option-selected="{{role}}"></i>
+<h2 class="jobs__filter-title">All available roles</h2>
+
+<div class="jobs__filter-wrapper">
+    <div class="jobs__filter">
+        <div class="jobs__filter-dropdown-wrapper" data-filters-wrapper>
+          <div class="jobs__filter-dropdown-container">
+            <button class="jobs__filter-dropdown-button" data-dropdown-button="role">
+                Role
+              <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="role">
+              </i>
             </button>
-          {% endfor %}
+            <div class="jobs__filter-dropdown-options hidden" data-dropdown-container="role">
+              {% for role in allIndustries|sort(False,False) %}
+                <button class="jobs__filter-dropdown-option" data-role-option="{{role}}">
+                  {{role}}
+                  <i class="jobs__filter-dropdown-option-selected-icon las la-check hidden"
+                    data-role-option-selected="{{role}}"></i>
+                </button>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="jobs__filter-dropdown-container">
+            <button class="jobs__filter-dropdown-button" data-dropdown-button="location">
+                Location
+              <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="location">
+              </i>
+            </button>
+            <div class="jobs__filter-dropdown-options hidden" data-dropdown-container="location">
+              {% for location in allIndustries|sort(False,False) %}
+                <button class="jobs__filter-dropdown-option" data-location-option="{{location}}">
+                  {{ location }}
+                  <i class="jobs__filter-dropdown-option-selected-icon las la-check hidden"
+                    data-location-option-selected="{{role}}"></i>
+                </button>
+              {% endfor %}
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="jobs__filter-radio-wrapper">
+          <label for="hybrid" class="c-custom-radio">
+            <input id="hybrid" name="selector" type="radio" checked/>
+              <svg viewBox="0 0 60 40" aria-hidden="true" focusable="false">
+                <path d="M21,2 C13.4580219,4.16027394 1.62349378,18.3117469 3,19 C9.03653312,22.0182666 25.2482171,10.3758914 30,8 C32.9363621,6.53181896 41.321398,1.67860195 39,4 C36.1186011,6.8813989 3.11316157,27.1131616 5,29 C10.3223659,34.3223659 30.6434647,19.7426141 35,18 C41.2281047,15.5087581 46.3445303,13.6554697 46,14 C42.8258073,17.1741927 36.9154967,19.650702 33,22 C30.3136243,23.6118254 17,31.162498 17,34 C17,40.4724865 54,12.4064021 54,17 C54,23.7416728 34,27.2286213 34,37" stroke-width="4" fill="none" stroke-dasharray="270" stroke-dashoffset="270" ></path>
+              </svg>
+              Hybrid
+          </label>
+          <label for="remote" class="c-custom-radio">
+            <input id="remote" name="selector" type="radio"/>
+            <svg viewBox="0 0 60 40" aria-hidden="true" focusable="false">
+              <path d="M21,2 C13.4580219,4.16027394 1.62349378,18.3117469 3,19 C9.03653312,22.0182666 25.2482171,10.3758914 30,8 C32.9363621,6.53181896 41.321398,1.67860195 39,4 C36.1186011,6.8813989 3.11316157,27.1131616 5,29 C10.3223659,34.3223659 30.6434647,19.7426141 35,18 C41.2281047,15.5087581 46.3445303,13.6554697 46,14 C42.8258073,17.1741927 36.9154967,19.650702 33,22 C30.3136243,23.6118254 17,31.162498 17,34 C17,40.4724865 54,12.4064021 54,17 C54,23.7416728 34,27.2286213 34,37" stroke-width="4" fill="none" stroke-dasharray="270" stroke-dashoffset="270" ></path>
+            </svg>
+            Remote
+          </label>
+          <label for="all" class="c-custom-radio">
+            <input id="all" name="selector" type="radio"/>
+            <svg viewBox="0 0 60 40" aria-hidden="true" focusable="false">
+              <path d="M21,2 C13.4580219,4.16027394 1.62349378,18.3117469 3,19 C9.03653312,22.0182666 25.2482171,10.3758914 30,8 C32.9363621,6.53181896 41.321398,1.67860195 39,4 C36.1186011,6.8813989 3.11316157,27.1131616 5,29 C10.3223659,34.3223659 30.6434647,19.7426141 35,18 C41.2281047,15.5087581 46.3445303,13.6554697 46,14 C42.8258073,17.1741927 36.9154967,19.650702 33,22 C30.3136243,23.6118254 17,31.162498 17,34 C17,40.4724865 54,12.4064021 54,17 C54,23.7416728 34,27.2286213 34,37" stroke-width="4" fill="none" stroke-dasharray="270" stroke-dashoffset="270" ></path>
+            </svg>
+            All
+          </label>
+        </div>
     </div>
-  </div>
+</div>
