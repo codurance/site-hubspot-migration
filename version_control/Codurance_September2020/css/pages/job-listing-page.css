@@ -109,6 +109,18 @@ body{
 
 }
 
+/* ======================= 
+    Filter SECTION 
+========================== */
+
+.job-listing-page-filter {
+    max-width: {{max_width_content}};
+    padding: 0 1em;
+    margin: 0 auto;
+}
+
+
+
 
 /* ======================= 
     CTA SECTION 
@@ -130,34 +142,4 @@ body{
 }
 
 
-/* 
-  ------------ IGNORE BELOW THIS (TEST PURPOSE) ----------------
-*/
-  
-ul {
- list-style-type:none;
-}
 
-#whr_embed_hook {
- width: 100%;
-}
-.whr-code,
-.whr-date {
-  display: none;
-}
-
-.whr-item:nth-child(2n) {
-  background-color: hsl(207.7, 50%, 90%);
-}
-.whr-item {
-  padding: 1em;
-}
-
-.job-listing-page-cards {
-    max-width: {{max_width_content}};
-    margin: 0 auto;
-}
-
-/* 
-  ------------ IGNORE ABOVE THIS (TEST PURPOSE) ----------------
-*/
