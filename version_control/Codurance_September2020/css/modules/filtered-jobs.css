@@ -9,6 +9,7 @@
 
 {% call utils.medium_large_and_extra_large()%}
 .jobs__filter-wrapper{
+    margin-top: 1em;
     display: flex;
     gap: 1em;
 
