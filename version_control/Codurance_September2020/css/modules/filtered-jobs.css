@@ -278,3 +278,15 @@
   outline: none;
 }
 
+
+
+.job-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-item__title{
+    font-weight: var(--heavy-font-weight);
+
+}
