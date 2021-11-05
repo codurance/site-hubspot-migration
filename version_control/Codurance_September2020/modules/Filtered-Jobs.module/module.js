@@ -11,7 +11,7 @@ const addJob = (entry, jobData) => {
 const appendLocations = (entry, jobData) => {
   const newLocation = {
     city: jobData.city,
-    country: jobData.country.length = 0 ? 'World-wide' : jobData.country,
+    country: jobData.country.length === 0 ? 'World-wide' : jobData.country,
     url: jobData.url,
     location: jobData.telecommuting ? 'Remote' : 'Hybrid'
   }
@@ -39,7 +39,6 @@ const createJobsObject = (jsonData) => {
 const bluePrint = {
       Tech: {
         Principal_Craftsperson: {
-          title: 'Principal Craftsperson',
           locations: [
               {
               city: "London",
@@ -60,7 +59,6 @@ const bluePrint = {
           ], 
         },
         Software_Craftsperson: {
-          title: 'Software Craftsperson',
           locations: [
               {
               city: "London",
@@ -85,40 +83,34 @@ const bluePrint = {
       Academy: {}
 }
 
-console.log("number one")
+
 async function fetchJobs() {
   try {
     const urlEndpoint = "/_hcms/api/get_all_jobs";
     const response = await fetch(urlEndpoint);
     const data = await response.json();
     const jobsData = data.response.jobs
-    const jobs = createJobsObject(jobsData)
-    
+
     displayJobs(jobsData)
     // displayRoles(jobsData);
-    displayDropdownButtons(filterUniqueJobTitles, jobsData, 'roles');
-    displayDropdownButtons(filterUniqueCountries, jobsData, 'locations');
+    displayDropdownButtons(filterUniqueJobTitles(jobsData), 'roles');
+    displayDropdownButtons(filterUniqueLocations(jobsData), 'locations');
 
   } catch (error) {
     console.error(error)
   }
 }
 
-
-
-const filterUniqueJobTitles = (object) => {
-  const jobTitles = object.map(job => job.title )
-  const uniqueJobTitles = [...new Set(jobTitles)];
-
-  return uniqueJobTitles;
+const filterUniqueJobTitles = (data) => {
+  return [...new Set(data.map(job => job.title))];
 }
 
-const hasEmptyCountry = (country) => {
-  return country === "" ? "Woldwide" : country ;
-}
+// const hasEmptyCountry = (country) => {
+//   return country === "" ? "Woldwide" : country ;
+// }
 
-const filterUniqueCountries = (object) => {
-  const getAllCountries = object.map(job => {
+const filterUniqueLocations = (jobsObj) => {
+  const getAllCountries = jobsObj.map(job => {
        return job.country === "" ? "Woldwide" : job.country ; 
   })
   const uniqueCouintries = [...new Set(getAllCountries)];
@@ -145,9 +137,7 @@ const displayRoles = (object) =>{
 }
 
 
-const displayDropdownButtons = (callback, object, idSelector) =>{
-  const filteredItems = callback(object);
-
+const displayDropdownButtons = (filteredItems, idSelector) =>{
   const htmlItems = filteredItems.map((item) => {
     return `
     <button class="jobs__filter-dropdown-option" data-role-option="${item}">
@@ -172,8 +162,47 @@ const hasHybridCity = (city) => {
 }
 
 
+console.log("number 3")
 
-const displayJobs = (jobs) => {
+const renderLocations = (locationsArray) => {
+  return locationsArray.map(({city, country, url, location}) => `
+  <div class="job-list__locations">
+    <p class="job-item__telecommuting">${location}</p>
+    <p class="job-item__country">
+      <i class="las la-map-marker"></i>
+      ${ hasHybridCity(city) ? city : country }
+    </p>
+    <a class="job-item__link text-cta-primary
+    text-cta--right-arrow"
+    href=${url}
+    target=_blank>Apply<i class="las la-arrow-right"></i>
+    </a>
+  </div>
+  `).join('');
+}
+
+const displayJobs = (jobsData) => {
+  const jobs = createJobsObject(jobsData)
+
+  const htmlRender = Object.entries(jobs).map( ([departmentName, jobInfo]) => {
+    return  ` 
+      <div class="job-item__section">
+        <p class="job-item__department">${departmentName}</p>
+        <div class="job-item__titles-continer">
+          ${Object.entries(jobInfo).map( ([jobTitle, {locations}]) => {             
+            return `<h3 class="job-item__title">${jobTitle}</h3>${renderLocations(locations)}`
+            }).join('')
+          }
+        </div>
+      </div>
+      `
+  }).join('')
+
+  // console.log(htmlRender);
+
+  jobsItemsList.innerHTML = htmlRender;
+  return
+
   const htmlString = jobs.map(job => {
     return `
       <li class=job-item>
