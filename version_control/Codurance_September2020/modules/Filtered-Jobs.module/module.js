@@ -162,7 +162,7 @@ const hasHybridCity = (city) => {
 }
 
 
-console.log("number 3")
+console.log("number 7")
 
 const renderLocations = (locationsArray) => {
   return locationsArray.map(({city, country, url, location}) => `
@@ -202,69 +202,51 @@ const displayJobs = (jobsData) => {
       `
   }).join('')
 
-  // console.log(htmlRender);
 
   jobsItemsList.innerHTML = htmlRender;
-  return
-
-  const htmlString = jobs.map(job => {
-    return `
-      <li class=job-item>
-        <div class="job-item__section">
-          <p class="job-item__department">${job.department}</p>
-          <h3 class="job-item__title">${job.title}</h3>
-        </div>
-        <div class="job-list__locations">
-          <p class="job-item__telecommuting">${job.telecommuting ? "Remote" : "Hybrid"}</p>
-          <p class="job-item__country">
-            <i class="las la-map-marker"></i>
-            ${ hasHybridCity(job.city) ? job.city : job.country }
-          </p>
-          <a class="job-item__link text-cta-primary
-          text-cta--right-arrow"
-          href=${job.url}
-          target=_blank>Apply<i class="las la-arrow-right"></i>
-          </a>
-        </div>
-      </li>
-          `
-  }).join('');
-
-  jobsItemsList.innerHTML = htmlString;
-
+ 
 }
 
 
-const hide = element => {
+const hide = (element) => {
   element.classList.add('hidden');
 }
 
-const show = element => {
+const show = (element) => {
   element.classList.remove('hidden');
 }
 
-const showDropdown = container => {
+const showDropdown = (container, eventTarget) => {
   show(container);
-  let dropdownIcon = document.querySelector('.jobs__filter-dropdown-icon');
-  dropdownIcon.classList.add('jobs__filter-dropdown-icon--selected');
+  eventTarget.classList.add('jobs__filter-dropdown-button--active');
 }
 
-const hideDropdown = container => {
+const hideDropdown = (container, eventTarget) => {
   hide(container);
-  let dropdownIcon = document.querySelector('.jobs__filter-dropdown-icon');
-  dropdownIcon.classList.remove('jobs__filter-dropdown-icon--selected');
+  eventTarget.classList.remove('jobs__filter-dropdown-button--active');
+}
+
+const closeAllDropdowns = () => {
+  const allContainers = document.querySelectorAll(".jobs__filter-dropdown-container");
+
+  allContainers.forEach( element => {
+      element.children[0].classList.remove('jobs__filter-dropdown-button--active');
+      element.children[1].classList.add('hidden');
+  } )
 }
 
 document.addEventListener('click', (event) => {
-  const buttonToggle = event.target.dataset.dropdownButton;
+  const target = event.target;
+  const buttonToggle = target.dataset.dropdownButton;
     if(!buttonToggle) return;
 
   const dropdownOptions = document.getElementById(buttonToggle);
   
   if(dropdownOptions.classList.contains('hidden')){
-    showDropdown(dropdownOptions)
+    closeAllDropdowns();
+    showDropdown(dropdownOptions, target);
   }else{
-    hideDropdown(dropdownOptions)
+    hideDropdown(dropdownOptions, target);
   }
 })
 
