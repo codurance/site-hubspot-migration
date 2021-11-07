@@ -296,7 +296,54 @@
 .job-item{
     display: flex;
     justify-content: space-between;
+    align-items: end;
+    margin-top: 1.2em;
+}
+.job-item__department{
+    {{ utils.natus() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.job-item__title{
+  font-weight: var(--heavy-font-weight);
+  margin-top: 2em; 
+}
+
+.job-item__titles-container .job-item__title:first-child {
+  margin-top: 1em;
+}
+
+.job-list__location {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
     align-items: center;
+  gap: 1em;
+  border-bottom: 1px var(--french-gray) solid;
+  justify-content: space-between;
+}
+
+.job-item__title + .job-list__location {
+  margin-top: 0.5em;
+}
+
+.job-item__telecommuting,
+.job-item__country, 
+.job-item__link {
+    {{ utils.natus() }}
+}
+
+.job-item__telecommuting {
+  grid-column: span 2;
+}
+
+.job-item__country {
+  grid-column: span 2;
+  white-space: nowrap;
+}
+
+.job-item__link{
+    font-weight: bold;
+    justify-self: end;
 }
 
 .job-item__title{
