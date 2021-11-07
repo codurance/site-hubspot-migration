@@ -166,7 +166,7 @@ console.log("number 3")
 
 const renderLocations = (locationsArray) => {
   return locationsArray.map(({city, country, url, location}) => `
-  <div class="job-list__locations">
+  <div class="job-list__location">
     <p class="job-item__telecommuting">${location}</p>
     <p class="job-item__country">
       <i class="las la-map-marker"></i>
@@ -188,12 +188,16 @@ const displayJobs = (jobsData) => {
     return  ` 
       <div class="job-item__section">
         <p class="job-item__department">${departmentName}</p>
-        <div class="job-item__titles-continer">
           ${Object.entries(jobInfo).map( ([jobTitle, {locations}]) => {             
-            return `<h3 class="job-item__title">${jobTitle}</h3>${renderLocations(locations)}`
+            return `
+            <div class="job-item__titles-container">
+              <h3 class="job-item__title">${jobTitle}</h3>
+              <div class="job-list__location-wrapper">
+                ${renderLocations(locations)}
+              </div>
+            </div>`
             }).join('')
           }
-        </div>
       </div>
       `
   }).join('')
