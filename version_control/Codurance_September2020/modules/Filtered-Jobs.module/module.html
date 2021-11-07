@@ -7,35 +7,23 @@
     <div class="jobs__filter">
         <div class="jobs__filter-dropdown-wrapper" data-filters-wrapper>
           <div class="jobs__filter-dropdown-container">
-            <button class="jobs__filter-dropdown-button" data-dropdown-button="role">
+            <button class="jobs__filter-dropdown-button" data-dropdown-button="roles">
                 Role
-              <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="role">
+              <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="roles">
               </i>
             </button>
-            <div class="jobs__filter-dropdown-options hidden" data-dropdown-container="role">
-              {% for role in allIndustries|sort(False,False) %}
-                <button class="jobs__filter-dropdown-option" data-role-option="{{role}}">
-                  {{role}}
-                  <i class="jobs__filter-dropdown-option-selected-icon las la-check hidden"
-                    data-role-option-selected="{{role}}"></i>
-                </button>
-              {% endfor %}
+            <div id="roles" class="jobs__filter-dropdown-options hidden" data-dropdown-container="role"> 
+            {# the buttons are added dinamically here #}  
             </div>
           </div>
           <div class="jobs__filter-dropdown-container">
-            <button class="jobs__filter-dropdown-button" data-dropdown-button="location">
+            <button class="jobs__filter-dropdown-button" data-dropdown-button="locations">
                 Location
               <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="location">
               </i>
             </button>
-            <div class="jobs__filter-dropdown-options hidden" data-dropdown-container="location">
-              {% for location in allIndustries|sort(False,False) %}
-                <button class="jobs__filter-dropdown-option" data-location-option="{{location}}">
-                  {{ location }}
-                  <i class="jobs__filter-dropdown-option-selected-icon las la-check hidden"
-                    data-location-option-selected="{{role}}"></i>
-                </button>
-              {% endfor %}
+            <div id="locations" class="jobs__filter-dropdown-options hidden" data-dropdown-container="location">
+            {# the buttons are added dinamically here #}
             </div>
           </div>
         </div>
