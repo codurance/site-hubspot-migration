@@ -279,6 +279,19 @@
 }
 
 
+/* =========================
+    Displayed Jobs Layout
+=========================== */
+
+
+.jobs__results{
+    max-width: 500px;
+    margin: 0 auto;
+}
+.job-item__section {
+    margin-top: 3em;
+    transition: padding .3s ease-in-out;
+}
 
 .job-item{
     display: flex;
