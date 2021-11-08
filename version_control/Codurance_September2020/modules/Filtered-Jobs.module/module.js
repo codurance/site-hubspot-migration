@@ -251,5 +251,26 @@ document.addEventListener('click', (event) => {
 })
 
 
+document.addEventListener('change', (event) => {
+  const input = event.target.tagName;
+  const inputValue = event.target.value;
+  if(input != "INPUT") return;
+
+  const allCommutingItems = document.querySelectorAll(".job-item__telecommuting");
+  allCommutingItems.forEach( element => {
+      const innerElement = element.innerHTML.toLocaleLowerCase()
+
+      if(innerElement !== inputValue && inputValue !== "all"){
+        hide(element.parentElement);
+      }else{
+        show(element.parentElement);
+      }
+  })
+  
+  hideParentElements();
+  checkHiddenElements();
+})
+
+
 
 fetchJobs()
