@@ -1,4 +1,3 @@
-
 const jobsItemsList = document.querySelector('#jobs-list');
 
 const addJob = (entry, jobData) => {
@@ -92,7 +91,6 @@ async function fetchJobs() {
     const jobsData = data.response.jobs
 
     displayJobs(jobsData)
-    // displayRoles(jobsData);
     displayDropdownButtons(filterUniqueJobTitles(jobsData), 'roles');
     displayDropdownButtons(filterUniqueLocations(jobsData), 'locations');
 
@@ -162,12 +160,12 @@ const hasHybridCity = (city) => {
 }
 
 
-console.log("number 7")
+
 
 const renderLocations = (locationsArray) => {
   return locationsArray.map(({city, country, url, location}) => `
   <div class="job-list__location">
-    <p class="job-item__telecommuting">${location}</p>
+    <p class="job-item__telecommuting element-item ${location}">${location}</p>
     <p class="job-item__country">
       <i class="las la-map-marker"></i>
       ${ hasHybridCity(city) ? city : country }
@@ -235,6 +233,34 @@ const closeAllDropdowns = () => {
   } )
 }
 
+
+
+
+const checkHiddenElements = () => {
+  const allSections = document.querySelectorAll('.job-item__section');
+  allSections.forEach( section => {
+    const hiddenElements = section.children.length - 1 === section.querySelectorAll('.hidden').length;
+    
+    console.log(hiddenElements)
+
+    hiddenElements ? hide(section) : show(section);
+  
+  });
+}
+const hideParentElements = () => {
+   const allLocationsContainer = document.querySelectorAll('.job-list__location-wrapper');
+
+    allLocationsContainer.forEach( location => {
+    const hiddenElements = location.children.length === location.querySelectorAll('.hidden').length;
+
+    if(hiddenElements){
+      hide(location.parentElement);
+    }else{
+      show(location.parentElement);
+    }
+  });
+}
+
 document.addEventListener('click', (event) => {
   const target = event.target;
   const buttonToggle = target.dataset.dropdownButton;
@@ -294,4 +320,5 @@ document.addEventListener('change', (event) => {
 
 
 
-fetchJobs()
+fetchJobs();
+
