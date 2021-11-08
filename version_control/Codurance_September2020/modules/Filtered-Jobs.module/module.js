@@ -250,6 +250,27 @@ document.addEventListener('click', (event) => {
   }
 })
 
+console.log('number 8');
+
+document.addEventListener('click', (event) => {
+  const target = event.target;
+  const selectedButton = target.dataset.roleOption;
+    if(!selectedButton) return;
+
+  const allTitles = document.querySelectorAll('.job-item__title');
+
+  allTitles.forEach( title => {
+    if(title.innerText !== event.target.dataset.roleOption){
+      hide(title.parentElement)
+    }else{
+      show(title.parentElement)
+    }
+  })
+  
+  checkHiddenElements();
+})
+
+
 
 document.addEventListener('change', (event) => {
   const input = event.target.tagName;
