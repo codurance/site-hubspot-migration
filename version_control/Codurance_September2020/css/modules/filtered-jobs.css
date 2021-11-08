@@ -21,6 +21,7 @@
 /* ===================
     Filter Selector
 ==================== */
+
 {% set border_radius = ".5em" %}
 
 .jobs__filter {
@@ -146,12 +147,6 @@
     transition: var(--cta-transition);
 }
 
-/* .jobs__filter-dropdown-icon--selected {
-    transform: rotate(180deg);
-} */
-
-
-
 .jobs__filter-dropdown-options {
     background-color: white;
     display: flex;
@@ -233,59 +228,46 @@
     padding: 1em;
 }
 
-
 .c-custom-radio {
-  display: block;
-  position: relative;
   cursor: pointer;
-  color: var(--woodsmoke);
+  display: flex;
+  align-items: start;
+  --checked-state-check-color: black;
+  --outline-color: var(--checked-state-bg-color);
+  --outline-offset: 2px;
 }
 
-.c-custom-radio svg { 
-  display: inline-block;
-  vertical-align: middle;
-  margin-bottom: .2em;
-  width: 1em;
-  height: 1em;
-  border: 2px solid currentColor;
-}
-
-
-.c-custom-radio input[type="radio"] {
-  opacity: 0.00001;
-  width: 1em;
-  height: 1em;
+.c-custom-radio input[type=radio] {
   position: absolute;
-  left: 0;
-  top: .2em;
+  width: 1em;
+  height: 1em;
+  opacity: 0.00001;
 }
 
-.c-custom-radio svg path {
-  transition: stroke-dashoffset .4s linear;
+.c-custom-radio svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  margin-top: 0.1em;
+}
+.c-custom-radio svg * {
+  transition: all 0.1s linear;
 }
 
-.c-custom-radio input[type="radio"]:checked + svg path {
-  stroke-dashoffset: 0;
-  stroke: currentColor;
+.c-custom-radio input[type=radio]:checked + svg .custom-radio-checkmark {
+  stroke: var(--checked-state-check-color);
 }
 
-.c-custom-radio input[type="radio"] + svg path {
-  stroke: #eee;
+.c-custom-radio input[type=radio]:focus + svg {
+  outline: 3px dotted var(--persimmon);
+  outline-offset: var(--outline-offset);
 }
 
-.c-custom-radio input[type="radio"]:checked + label {
-  text-decoration: line-through;
-}
-
-.c-custom-radio input[type="radio"]:focus + svg {
-  outline: 3px dotted gold;
-  outline-offset: 5px;
-}
-
-
-.c-custom-radio input[type="radio"]:focus:not(:focus-visible) + svg {
+.c-custom-radio input[type=radio]:focus:not(:focus-visible) + svg {
   outline: none;
 }
+
+
 
 
 /* =========================
@@ -315,14 +297,13 @@
 
 .job-item__title{
   font-weight: var(--heavy-font-weight);
-  margin-top: 2em; 
 }
 
 .job-item__titles-container{
     margin-top: 2em;
 }
 
-.job-item__section .job-item__titles-container:first-of-type {
+.job-item__titles-container:first-of-type {
   margin-top: 1em;
 }
 
@@ -391,3 +372,8 @@
         transition: box-shadow .5s ease-in-out, padding 0.3s ease-in-out; 
     }
 {% endcall %}
+
+
+.hidden{
+    display: none;
+}
