@@ -239,7 +239,7 @@ const closeAllDropdowns = () => {
 const checkHiddenElements = () => {
   const allSections = document.querySelectorAll('.job-item__section');
   allSections.forEach( section => {
-    const hiddenElements = section.children.length - 1 === section.querySelectorAll('.hidden').length;
+    const hiddenElements = section.children.length - 1 === section.querySelectorAll('.job-item__titles-container.hidden').length;
     
     console.log(hiddenElements)
 
