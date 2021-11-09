@@ -54,11 +54,13 @@ label: Careers v2
     {% module 'craftspeople' path='../modules/Text-and-image.module' label="Craftspeople section" no_wrapper=True%}
   </section>
   <section class="testimonials">
-  {% module 'Testimonial Slider' path='../modules/Landing Page Modules/LP-testimonial-slider.module' label="Testimonial Slider"  no_wrapper=True %}
+    {% module 'Testimonial Slider' path='../modules/Landing Page Modules/LP-testimonial-slider.module' label="Testimonial Slider"  no_wrapper=True %}
   </section>
 
-  <section class="Locations">
-  {% module 'Locations' path='../modules/Locations.module' label="Locations Section"  no_wrapper=True %}
+  <section class="locations">
+    <div class="locations_container">
+      {% module 'Locations' path='../modules/Locations.module' label="Locations Section"  no_wrapper=True %}
+    </div>
   </section>
   
   <section class="benefits">
