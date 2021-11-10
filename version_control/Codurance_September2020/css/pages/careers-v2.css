@@ -157,7 +157,8 @@ body{
 \*------------------------------------*/
 
 .locations{
-    background: linear-gradient(180deg,hsla(24.2,86.3%,54.3%,0.3) 0%,white 100%);
+    --tango-modified: hsla(24.2,86.3%,54.3%,0.3);
+    {{ utils.color1_to_color2('to bottom', 'var(--tango-modified)' , 'white' ) }}
 }
 
 .locations__container{
