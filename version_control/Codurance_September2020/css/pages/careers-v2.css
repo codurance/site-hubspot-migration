@@ -86,6 +86,72 @@ body{
     }
 {% endcall %}
 
+
+/*------------------------------------*\
+  #Craftsmanship section
+\*------------------------------------*/
+
+{% set image_offset = "30%"%}
+
+
+.craftspeople{
+    {{ utils.black_to_navy() }}
+    color: white;
+    padding: 2em 0;
+}
+
+.craftspeople .text-and-image__copy p > a{
+    color: var(--tango-400);
+}
+
+.craftspeople .text-and-image__copy ol{
+    list-style: revert;
+}
+
+.craftspeople ol li{
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+}
+
+.craftspeople .cta-button.button-secondary{
+    background: white;
+    color: var(--persimmon);
+}
+
+.craftspeople .text-and-image__image {
+    scale: 1.2;
+    align-self: start;
+}
+
+.craftspeople .text-and-image__image img {
+    transform:translate(-20%);
+}
+
+
+{% call utils.small() %}
+    .craftspeople{
+        padding-bottom:0;
+    }
+
+    
+    .craftspeople .text-and-image__container{
+        flex-direction: column;
+        overflow-x: clip;
+        overflow-y: visible;
+    }
+
+    .craftspeople .text-and-image__image{
+        max-width: none;
+    }
+
+    .craftspeople .text-and-image__image img{
+        transform: translate(15%, {{ image_offset }} );
+        margin-top: calc(-1 * {{ image_offset }});
+        scale: revert;
+    }
+{% endcall %}
+    
+
 /*------------------------------------*\
   #Locations Section
 \*------------------------------------*/
@@ -94,7 +160,7 @@ body{
     background: linear-gradient(180deg,hsla(24.2,86.3%,54.3%,0.3) 0%,white 100%);
 }
 
-.locations_container{
+.locations__container{
     margin: 0 auto;
     padding: 3em 1em;
     max-width: 50em;
@@ -201,69 +267,6 @@ body{
 
 {% endcall %}    
 
-/*------------------------------------*\
-  #Craftsmanship section
-\*------------------------------------*/
-
-{% set image_offset = "30%"%}
-
-
-.craftspeople{
-    {{ utils.black_to_navy() }}
-    color: white;
-    padding: 2em 0;
-}
-
-.craftspeople .text-and-image__copy p > a{
-    color: var(--tango-400);
-}
-
-.craftspeople .text-and-image__copy ol{
-    list-style: revert;
-}
-
-.craftspeople ol li{
-    margin-bottom: 0.5em;
-    margin-left: 1em;
-}
-
-.craftspeople .cta-button.button-secondary{
-    background: white;
-    color: var(--persimmon);
-}
-
-.craftspeople .text-and-image__image {
-    scale: 1.2;
-    align-self: start;
-}
-
-.craftspeople .text-and-image__image img {
- transform:translate(-20%);
-}
-
-
-{% call utils.small() %}
-    .craftspeople{
-        padding-bottom:0;
-    }
-
-    
-    .craftspeople .text-and-image__container{
-        flex-direction: column;
-        overflow-x: clip;
-        overflow-y: visible;
-    }
-
-    .craftspeople .text-and-image__image{
-        max-width: none;
-    }
-
-    .craftspeople .text-and-image__image img{
-        transform: translate(15%, {{ image_offset }} );
-        margin-top: calc(-1 * {{ image_offset }});
-        scale: revert;
-    }
-{% endcall %}
 
 /*------------------------------------*\
   #Academy training section
