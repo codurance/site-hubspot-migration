@@ -7,22 +7,21 @@ const addJob = (entry, jobData) => {
   appendLocations(entry[jobData.title], jobData)
 }
 
-const determinedCountry = (country) => {
+const getDeterminedCountry = (country) => {
   return country.length === 0 ? 'World-wide' : country;
 }
 
-console.log('number 3');
+console.log('number 5');
 
 const appendLocations = (entry, jobData) => {
   const newLocation = {
     city: jobData.city,
-    country: determinedCountry(jobData.country),
+    country: getDeterminedCountry(jobData.country),
     url: jobData.url,
     workType: jobData.telecommuting ? 'Remote' : 'Hybrid',
-    location:  hasHybridCity(jobData.city) ? jobData.city : determinedCountry(jobData.country) 
+    location:  hasHybridCity(jobData.city) ? jobData.city : getDeterminedCountry(jobData.country) 
   }
 
-  console.log(newLocation);
 
   if (!entry.locations) {
     entry.locations = [];
@@ -43,53 +42,60 @@ const createJobsObject = (jsonData) => {
 }
 
 
+/* TRANSFORMED DATA STRUCTURE FOR RENDERING JOB LISTINGS
+ {
+  Tech: {
+    Principal_Craftsperson: {
+      locations: [
+          {
+          city: "London",
+          country: "UK",
+          url: "https...",
+          workType: 'Hybrid/Remote',
+          location: 'country, city or world-wide'
+        },{
+          city: "Manchester",
+          country: "UK",
+          url: "https...",
+          workType: 'Hybrid/Remote',
+          location: 'country, city or world-wide'
+        },{
+          city: "Barcelona",
+          country: "Spain",
+          url: "https...",
+          workType: 'Hybrid/Remote',
+          location: 'country, city or world-wide'
+        }
+      ], 
+    },
+    Software_Craftsperson: {
+      locations: [
+          {
+          city: "London",
+          country: "UK",
+          url: "https...",
+          workType: 'Hybrid/Remote',
+          location: 'country, city or world-wide'
+        },{
+          city: "Manchester",
+          country: "UK",
+          url: "https...",
+          workType: 'Hybrid/Remote',
+          location: 'country, city or world-wide'
+        },{
+          city: "Barcelona",
+          country: "Spain",
+          url: "https...",
+          workType: 'Hybrid/Remote',
+          location: 'country, city or world-wide'
+        }
+      ], 
+    },
 
-const bluePrint = {
-      Tech: {
-        Principal_Craftsperson: {
-          locations: [
-              {
-              city: "London",
-              country: "UK",
-              url: "https...",
-              workType: 'Hybrid/Remote'
-            },{
-              city: "Manchester",
-              country: "UK",
-              url: "https...",
-              workType: 'Hybrid/Remote'
-            },{
-              city: "Barcelona",
-              country: "Spain",
-              url: "https...",
-              workType: 'Hybrid/Remote'
-            }
-          ], 
-        },
-        Software_Craftsperson: {
-          locations: [
-              {
-              city: "London",
-              country: "UK",
-              url: "https...",
-              workType: 'Hybrid/Remote'
-            },{
-              city: "Manchester",
-              country: "UK",
-              url: "https...",
-              workType: 'Hybrid/Remote'
-            },{
-              city: "Barcelona",
-              country: "Spain",
-              url: "https...",
-              workType: 'Hybrid/Remote'
-            }
-          ], 
-        },
-
-      },
-      Academy: {}
+  },
+  Academy: {}
 }
+*/
 
 
 async function fetchJobs() {
@@ -98,6 +104,9 @@ async function fetchJobs() {
     const response = await fetch(urlEndpoint);
     const data = await response.json();
     const jobsData = data.response.jobs
+
+    console.log(jobsData);
+
 
     displayJobs(jobsData)
     displayDropdownButtons(filterUniqueJobTitles(jobsData), 'roles');
@@ -112,18 +121,11 @@ const filterUniqueJobTitles = (data) => {
   return [...new Set(data.map(job => job.title))];
 }
 
-// const hasEmptyCountry = (country) => {
-//   return country === "" ? "Woldwide" : country ;
-// }
-
-const filterUniqueLocations = (jobsObj) => {
-  const getAllCountries = jobsObj.map(job => {
-       return job.country === "" ? "Woldwide" : job.country ; 
-  })
-  const uniqueCouintries = [...new Set(getAllCountries)];
-
-  return uniqueCouintries;
+const filterUniqueLocations = (data) => {
+  return [...new Set(data.map(job => hasHybridCity(job.city) ? job.city : getDeterminedCountry(job.country)))];
 }
+
+
 
 // reference button
 /* <button class="jobs__filter-dropdown-option" data-role-option="${jobTitle}">
@@ -132,12 +134,13 @@ ${jobTitle}
 data-role-option-selected="${jobTitle}"></i>
 </button> */
 
-// const filterState = {
-//   jobTitle
-//   location
-
-// }
-
+/*
+const filterState = {
+  jobTitle: ['title', 'title'], // if empty, show all 
+  location: ['location', 'location'], // if empty , show all 
+  workType: 'work-type'
+}
+*/
 
 
 
