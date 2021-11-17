@@ -162,6 +162,8 @@ const hasHybridCity = (city) => {
 const renderLocations = (locationsArray) => {
   return locationsArray.map(({city, country, url, location, workType}) => `
   <div class="job-list__position">
+    <p class="job-item__workType ${workType}">${workType}</p>
+    <p class="job-item__location">
       <i class="las la-map-marker"></i>
       ${ location }
     </p>
@@ -185,7 +187,7 @@ const displayJobs = (jobsData) => {
             return `
             <div class="job-item__titles-container">
               <h3 class="job-item__title">${jobTitle}</h3>
-              <div class="job-list__location-wrapper">
+              <div class="job-list__position-wrapper">
                 ${renderLocations(locations)}
               </div>
             </div>`
@@ -242,19 +244,20 @@ const checkHiddenElements = () => {
   
   });
 }
-const hideParentElements = () => {
-   const allLocationsContainer = document.querySelectorAll('.job-list__location-wrapper');
 
-    allLocationsContainer.forEach( location => {
-    const hiddenElements = location.children.length === location.querySelectorAll('.hidden').length;
+// const hideParentElements = () => {
+//    const allLocationsContainer = document.querySelectorAll('.job-list__position-wrapper');
 
-    if(hiddenElements){
-      hide(location.parentElement);
-    }else{
-      show(location.parentElement);
-    }
-  });
-}
+//     allLocationsContainer.forEach( location => {
+//     const hiddenElements = location.children.length === location.querySelectorAll('.hidden').length;
+
+//     if(hiddenElements){
+//       hide(location.parentElement);
+//     }else{
+//       show(location.parentElement);
+//     }
+//   });
+// }
 
 document.addEventListener('click', (event) => {
   const target = event.target;
@@ -273,73 +276,122 @@ document.addEventListener('click', (event) => {
 
 
 
-document.addEventListener('click', (event) => {
-  const target = event.target;
-  const selectedButton = target.dataset.roleOption;
-    if(!selectedButton) return;
+// document.addEventListener('click', (event) => {
+//   const target = event.target;
+//   const selectedButton = target.dataset.roleOption;
+//     if(!selectedButton) return;
 
-  const allTitles = document.querySelectorAll('.job-item__title');
+//   const allTitles = document.querySelectorAll('.job-item__title');
 
-  allTitles.forEach( title => {
-    if(title.innerText !== event.target.dataset.roleOption){
-      hide(title.parentElement)
-    }else{
-      show(title.parentElement)
+//   allTitles.forEach( title => {
+//     if(title.innerText !== event.target.dataset.roleOption){
+//       hide(title.parentElement)
+//     }else{
+//       show(title.parentElement)
+//     }
+//   })
+  
+//   checkHiddenElements();
+// })
+
+
+
+// document.addEventListener('change', (event) => {
+//   const input = event.target.tagName;
+//   const inputValue = event.target.value;
+//   if(input != "INPUT") return;
+
+//   const allCommutingItems = document.querySelectorAll(".job-item__workType");
+//   allCommutingItems.forEach( element => {
+//       const innerElement = element.innerHTML.toLocaleLowerCase()
+
+//       if(innerElement !== inputValue && inputValue !== "all"){
+//         hide(element.parentElement);
+//       }else{
+//         show(element.parentElement);
+//       }
+//   })
+  
+//   // hideParentElements();
+//   checkHiddenElements();
+// })
+
+
+const getCheckedEntries = (list, filterTerm) => {
+  return Array.from(list)
+          .filter(el => el.dataset.category === filterTerm)
+          .filter(el => el.checked)
+          .map(el => el.name)
+}
+
+const removeElementFromArray = (arr, name) => arr.filter(el => el !== name);
+
+const addElementToArray = (arr, name) => [...arr, name];
+
+const setBaseFilterState = (form) => {
+  const formRoles = getCheckedEntries(form.elements, 'roles');
+  const formLocations = getCheckedEntries(form.elements, 'locations')
+  const formWorkType = form.elements.workType.value;
+
+  return {
+    roles: formRoles,
+    locations: formLocations,
+    workType: formWorkType
+  }
+}
+
+console.log('number 7');
+
+const renderFilteredResults = (filterState) => {
+  // hide section if empty
+  // show all results if empty filterState
+
+  const jobListings = document.querySelectorAll('.job-item__titles-container');
+
+  for(const jobListing of jobListings){
+    const jobTitle = jobListing.querySelector('.job-item__title').innerText;
+    const jobLocations = jobListing.querySelectorAll('.job-item__')
+    if( filterState.roles.includes(jobTitle) ){
+      show(jobListing)
+    }else {
+      hide(jobListing)
     }
-  })
-  
-  checkHiddenElements();
-})
+    if(  )
+  }
+
+}
 
 
+const handleFilterFormChange = async (e, filterState) => {
+ await updateFilterState(e, filterState);
+  renderFilteredResults(filterState);
+}
 
-document.addEventListener('change', (event) => {
-  const input = event.target.tagName;
-  const inputValue = event.target.value;
-  if(input != "INPUT") return;
-
-  const allCommutingItems = document.querySelectorAll(".job-item__telecommuting");
-  allCommutingItems.forEach( element => {
-      const innerElement = element.innerHTML.toLocaleLowerCase()
-
-      if(innerElement !== inputValue && inputValue !== "all"){
-        hide(element.parentElement);
-      }else{
-        show(element.parentElement);
+const updateFilterState = async ({target: {type, checked, dataset, name, value}}, filterState) => {
+  switch (type) {
+    case 'checkbox': {
+      if (checked) {
+        filterState[dataset.category] = addElementToArray(filterState[dataset.category], name)
+      } else {
+        filterState[dataset.category] = removeElementFromArray(filterState[dataset.category], name)
       }
-  })
-  
-  hideParentElements();
-  checkHiddenElements();
-})
+      break;
+    }
+    case 'radio': {
+      filterState[name] = value;
+      break;
+    }
+  }
+  console.log(`new filterState`, filterState);
+};
 
 
-
-
-
-
-console.log('number 2');
 
 window.addEventListener('DOMContentLoaded', async () => {
   await fetchJobs();
 
-  let filterState = {
-    jobTitle: [], // if empty, show all 
-    location: [], // if empty , show all 
-    workType: null
-  }
-  
   const filterForm = document.forms['filter-form'];
-  const formJobTitles = Array.from(filterForm.elements).filter(el => el.dataset.category === "roles")
-  const formLocations = Array.from(filterForm.elements).filter(el => el.dataset.category === "locations")
-  const formWorkType = filterForm.elements.workType.value;
-  
-  filterState = {
-    ...filterState,
-    jobTitle: formJobTitles,
-    location: formLocations,
-    workType: formWorkType
-  }
-  
-  console.log('filterState', filterState)
+  let filterState = setBaseFilterState(filterForm);
+
+  filterForm.addEventListener('change', e => handleFilterFormChange(e, filterState))
 })
