@@ -161,9 +161,7 @@ const hasHybridCity = (city) => {
 
 const renderLocations = (locationsArray) => {
   return locationsArray.map(({city, country, url, location, workType}) => `
-  <div class="job-list__location">
-    <p class="job-item__telecommuting element-item ${workType}">${workType}</p>
-    <p class="job-item__country">
+  <div class="job-list__position">
       <i class="las la-map-marker"></i>
       ${ location }
     </p>

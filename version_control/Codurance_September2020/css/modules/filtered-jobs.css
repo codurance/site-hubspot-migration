@@ -307,7 +307,7 @@
   margin-top: 1em;
 }
 
-.job-list__location {
+.job-list__position {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   align-items: center;
@@ -316,21 +316,21 @@
   justify-content: space-between;
 }
 
-.job-item__title + .job-list__location {
+.job-item__title + .job-list__position {
   margin-top: 0.5em;
 }
 
-.job-item__telecommuting,
-.job-item__country, 
+.job-item__workType,
+.job-item__location, 
 .job-item__link {
     {{ utils.natus() }}
 }
 
-.job-item__telecommuting {
+.job-item__workType {
   grid-column: span 2;
 }
 
-.job-item__country {
+.job-item__location {
   grid-column: span 2;
   white-space: nowrap;
 }
@@ -353,11 +353,11 @@
     .job-item__title{
         max-width: 40%;
     }
-    .job-list__location-wrapper{
+    .job-list__position-wrapper{
         max-width: 60%;
     }
 
-    .job-list__location {
+    .job-list__position {
         padding: 0 1em;
     }
 
