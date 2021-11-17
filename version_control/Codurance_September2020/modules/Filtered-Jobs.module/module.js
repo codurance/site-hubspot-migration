@@ -11,7 +11,7 @@ const getDeterminedCountry = (country) => {
   return country.length === 0 ? 'World-wide' : country;
 }
 
-console.log('number 8');
+
 
 const appendLocations = (entry, jobData) => {
   const newLocation = {
@@ -105,9 +105,6 @@ async function fetchJobs() {
     const data = await response.json();
     const jobsData = data.response.jobs
 
-    console.log(jobsData);
-
-
     displayJobs(jobsData)
     displayDropdownButtons(filterUniqueJobTitles(jobsData), 'roles');
     displayDropdownButtons(filterUniqueLocations(jobsData), 'locations');
@@ -134,14 +131,6 @@ ${jobTitle}
 data-role-option-selected="${jobTitle}"></i>
 </button> */
 
-/*
-const filterState = {
-  jobTitle: ['title', 'title'], // if empty, show all 
-  location: ['location', 'location'], // if empty , show all 
-  workType: 'work-type'
-}
-*/
-
 
 
 const displayDropdownButtons = (filteredItems, idSelector) =>{
@@ -149,7 +138,7 @@ const displayDropdownButtons = (filteredItems, idSelector) =>{
     return `
     <label>
      ${item} 
-    <input type="checkbox" class="jobs__filter-dropdown-option" name="${item}" />
+    <input type="checkbox" class="jobs__filter-dropdown-option" name="${item}" data-category="${idSelector}"  />
     </label>
     `
   }).join('');
@@ -328,5 +317,31 @@ document.addEventListener('change', (event) => {
 
 
 
-fetchJobs();
 
+
+
+console.log('number 2');
+
+window.addEventListener('DOMContentLoaded', async () => {
+  await fetchJobs();
+
+  let filterState = {
+    jobTitle: [], // if empty, show all 
+    location: [], // if empty , show all 
+    workType: null
+  }
+  
+  const filterForm = document.forms['filter-form'];
+  const formJobTitles = Array.from(filterForm.elements).filter(el => el.dataset.category === "roles")
+  const formLocations = Array.from(filterForm.elements).filter(el => el.dataset.category === "locations")
+  const formWorkType = filterForm.elements.workType.value;
+  
+  filterState = {
+    ...filterState,
+    jobTitle: formJobTitles,
+    location: formLocations,
+    workType: formWorkType
+  }
+  
+  console.log('filterState', filterState)
+})
