@@ -11,7 +11,7 @@ const getDeterminedCountry = (country) => {
   return country.length === 0 ? 'World-wide' : country;
 }
 
-console.log('number 7');
+console.log('number 8');
 
 const appendLocations = (entry, jobData) => {
   const newLocation = {
@@ -147,10 +147,10 @@ const filterState = {
 const displayDropdownButtons = (filteredItems, idSelector) =>{
   const htmlItems = filteredItems.map((item) => {
     return `
+    <label>
+     ${item} 
     <input type="checkbox" class="jobs__filter-dropdown-option" name="${item}" />
-      ${item}
-    <i class="jobs__filter-dropdown-option-selected-icon las la-check hidden"
-    data-role-option-selected="${item}"></i>
+    </label>
     `
   }).join('');
 
