@@ -11,7 +11,7 @@ const getDeterminedCountry = (country) => {
   return country.length === 0 ? 'World-wide' : country;
 }
 
-console.log('number 5');
+console.log('number 7');
 
 const appendLocations = (entry, jobData) => {
   const newLocation = {
@@ -144,31 +144,13 @@ const filterState = {
 
 
 
-const displayRoles = (object) =>{
-  const jobTitles = filterUniqueJobTitle(object);
-
-  const htmlJobTitles = jobTitles.map((jobTitle) => {
-    return `
-    <input type="checkbox" class="jobs__filter-dropdown-option" name="${jobTitle}" />
-      ${jobTitle}
-    <i class="jobs__filter-dropdown-option-selected-icon las la-check hidden"
-    data-role-option-selected="${jobTitle}"></i>
-    `
-  }).join('');
-  
-  const roleItemList = document.querySelector('#roles')
-  roleItemList.innerHTML = htmlJobTitles;
-}
-
-
 const displayDropdownButtons = (filteredItems, idSelector) =>{
   const htmlItems = filteredItems.map((item) => {
     return `
-    <button class="jobs__filter-dropdown-option" data-role-option="${item}">
+    <input type="checkbox" class="jobs__filter-dropdown-option" name="${item}" />
       ${item}
     <i class="jobs__filter-dropdown-option-selected-icon las la-check hidden"
     data-role-option-selected="${item}"></i>
-    </button>
     `
   }).join('');
 
