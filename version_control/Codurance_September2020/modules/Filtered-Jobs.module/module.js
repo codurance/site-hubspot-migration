@@ -7,13 +7,22 @@ const addJob = (entry, jobData) => {
   appendLocations(entry[jobData.title], jobData)
 }
 
+const determinedCountry = (country) => {
+  return country.length === 0 ? 'World-wide' : country;
+}
+
+console.log('number 3');
+
 const appendLocations = (entry, jobData) => {
   const newLocation = {
     city: jobData.city,
-    country: jobData.country.length === 0 ? 'World-wide' : jobData.country,
+    country: determinedCountry(jobData.country),
     url: jobData.url,
-    location: jobData.telecommuting ? 'Remote' : 'Hybrid'
+    workType: jobData.telecommuting ? 'Remote' : 'Hybrid',
+    location:  hasHybridCity(jobData.city) ? jobData.city : determinedCountry(jobData.country) 
   }
+
+  console.log(newLocation);
 
   if (!entry.locations) {
     entry.locations = [];
@@ -43,17 +52,17 @@ const bluePrint = {
               city: "London",
               country: "UK",
               url: "https...",
-              location: 'Hybrid/Remote'
+              workType: 'Hybrid/Remote'
             },{
               city: "Manchester",
               country: "UK",
               url: "https...",
-              location: 'Hybrid/Remote'
+              workType: 'Hybrid/Remote'
             },{
               city: "Barcelona",
               country: "Spain",
               url: "https...",
-              location: 'Hybrid/Remote'
+              workType: 'Hybrid/Remote'
             }
           ], 
         },
@@ -63,17 +72,17 @@ const bluePrint = {
               city: "London",
               country: "UK",
               url: "https...",
-              location: 'Hybrid/Remote'
+              workType: 'Hybrid/Remote'
             },{
               city: "Manchester",
               country: "UK",
               url: "https...",
-              location: 'Hybrid/Remote'
+              workType: 'Hybrid/Remote'
             },{
               city: "Barcelona",
               country: "Spain",
               url: "https...",
-              location: 'Hybrid/Remote'
+              workType: 'Hybrid/Remote'
             }
           ], 
         },
@@ -116,17 +125,31 @@ const filterUniqueLocations = (jobsObj) => {
   return uniqueCouintries;
 }
 
+// reference button
+/* <button class="jobs__filter-dropdown-option" data-role-option="${jobTitle}">
+${jobTitle}
+<i class="jobs__filter-dropdown-option-selected-icon las la-check hidden"
+data-role-option-selected="${jobTitle}"></i>
+</button> */
+
+// const filterState = {
+//   jobTitle
+//   location
+
+// }
+
+
+
 
 const displayRoles = (object) =>{
   const jobTitles = filterUniqueJobTitle(object);
 
   const htmlJobTitles = jobTitles.map((jobTitle) => {
     return `
-    <button class="jobs__filter-dropdown-option" data-role-option="${jobTitle}">
+    <input type="checkbox" class="jobs__filter-dropdown-option" name="${jobTitle}" />
       ${jobTitle}
     <i class="jobs__filter-dropdown-option-selected-icon las la-check hidden"
     data-role-option-selected="${jobTitle}"></i>
-    </button>
     `
   }).join('');
   
@@ -163,12 +186,12 @@ const hasHybridCity = (city) => {
 
 
 const renderLocations = (locationsArray) => {
-  return locationsArray.map(({city, country, url, location}) => `
+  return locationsArray.map(({city, country, url, location, workType}) => `
   <div class="job-list__location">
-    <p class="job-item__telecommuting element-item ${location}">${location}</p>
+    <p class="job-item__telecommuting element-item ${workType}">${workType}</p>
     <p class="job-item__country">
       <i class="las la-map-marker"></i>
-      ${ hasHybridCity(city) ? city : country }
+      ${ location }
     </p>
     <a class="job-item__link text-cta-primary
     text-cta--right-arrow"
@@ -276,7 +299,7 @@ document.addEventListener('click', (event) => {
   }
 })
 
-console.log('number 8');
+
 
 document.addEventListener('click', (event) => {
   const target = event.target;
