@@ -1,0 +1,8 @@
+[ {
+  "id" : "91933ea2-0b4a-0444-ae7b-f9d12f9be44d",
+  "name" : "date_selector",
+  "label" : "Date Selector",
+  "required" : false,
+  "locked" : false,
+  "type" : "date"
+} ]
