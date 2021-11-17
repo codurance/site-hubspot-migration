@@ -38,10 +38,13 @@
   {{ utils.natus() }}
   white-space: nowrap;
   display: flex;
-  flex-wrap: wrap;
   gap: 0.3em;
 }
 {% call utils.medium_large_and_extra_large() %}
+  .blog-meta__info {
+    flex-direction: column;
+  }
+  
   .info__dot{
     display: none;
   }
