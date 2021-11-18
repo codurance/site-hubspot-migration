@@ -232,32 +232,17 @@ const closeAllDropdowns = () => {
 
 
 
-
-const checkHiddenElements = () => {
+const hideEmptySections = () => {
   const allSections = document.querySelectorAll('.job-item__section');
   allSections.forEach( section => {
-    const hiddenElements = section.children.length - 1 === section.querySelectorAll('.job-item__titles-container.hidden').length;
+    const jobTitles = Array.from(section.querySelectorAll('.job-item__titles-container'));
     
-    console.log(hiddenElements)
 
-    hiddenElements ? hide(section) : show(section);
-  
+    allItemsAreHidden(jobTitles) ? hide(section) : show(section);
   });
 }
 
-const hideParentElements = () => {
-   const allLocationsContainer = document.querySelectorAll('.job-list__position-wrapper');
 
-    allLocationsContainer.forEach( location => {
-    const hiddenElements = location.children.length === location.querySelectorAll('.hidden').length;
-
-    if(hiddenElements){
-      hide(location.parentElement);
-    }else{
-      show(location.parentElement);
-    }
-  });
-}
 
 document.addEventListener('click', (event) => {
   const target = event.target;
@@ -273,27 +258,6 @@ document.addEventListener('click', (event) => {
     hideDropdown(dropdownOptions, target);
   }
 })
-
-
-
-// document.addEventListener('click', (event) => {
-//   const target = event.target;
-//   const selectedButton = target.dataset.roleOption;
-//     if(!selectedButton) return;
-
-//   const allTitles = document.querySelectorAll('.job-item__title');
-
-//   allTitles.forEach( title => {
-//     if(title.innerText !== event.target.dataset.roleOption){
-//       hide(title.parentElement)
-//     }else{
-//       show(title.parentElement)
-//     }
-//   })
-  
-//   checkHiddenElements();
-// })
-
 
 
 
@@ -327,7 +291,7 @@ const setBaseFilterState = (form) => {
   }
 }
 
-console.log('number 3');
+console.log('number 6');
 
 const renderFilteredResults = (filterState) => {
 
@@ -365,24 +329,7 @@ const renderFilteredResults = (filterState) => {
       hide(jobListing);
     }
 
-  }
-
-
-  
-  
-}
-
-// hideEmptySections() {
-//   if all items are empty (job pos)
-//     hide 
-//   if all items are empty (department )
-//   hide
-// }
-
-
-const handleFilterFormChange = async (e, filterState) => {
- await updateFilterState(e, filterState);
-  renderFilteredResults(filterState);
+  } 
 }
 
 const updateFilterState = async ({target: {type, checked, dataset, name, value}}, filterState) => {
@@ -403,7 +350,11 @@ const updateFilterState = async ({target: {type, checked, dataset, name, value}}
   console.log(`new filterState`, filterState);
 };
 
-
+const handleFilterFormChange = async (e, filterState) => {
+ await updateFilterState(e, filterState);
+  renderFilteredResults(filterState);
+  hideEmptySections();
+}
 
 window.addEventListener('DOMContentLoaded', async () => {
   await fetchJobs();
