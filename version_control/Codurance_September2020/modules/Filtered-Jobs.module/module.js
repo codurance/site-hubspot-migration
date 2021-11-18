@@ -247,18 +247,24 @@ const hideEmptySections = () => {
 document.addEventListener('click', (event) => {
   const target = event.target;
   const buttonToggle = target.dataset.dropdownButton;
-    if(!buttonToggle) return;
 
-  const dropdownOptions = document.getElementById(buttonToggle);
-  
-  if(dropdownOptions.classList.contains('hidden')){
+  if(!buttonToggle && !event.target.closest('[data-dropdown-container]')) {
     closeAllDropdowns();
-    showDropdown(dropdownOptions, target);
-  }else{
-    hideDropdown(dropdownOptions, target);
-  }
-})
+    return;
+  } 
+  
+  if (buttonToggle) {
+    const dropdownOptions = document.getElementById(buttonToggle);
+    
+    if(dropdownOptions.classList.contains('hidden')){
+      closeAllDropdowns();
+      showDropdown(dropdownOptions, target);
+    }else{
+      hideDropdown(dropdownOptions, target);
+    }
+  };
 
+})
 
 
 
@@ -291,7 +297,7 @@ const setBaseFilterState = (form) => {
   }
 }
 
-console.log('number 6');
+console.log('number 3');
 
 const renderFilteredResults = (filterState) => {
 
