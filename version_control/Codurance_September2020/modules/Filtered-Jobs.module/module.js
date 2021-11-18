@@ -162,7 +162,7 @@ const hasHybridCity = (city) => {
 const renderLocations = (locationsArray) => {
   return locationsArray.map(({city, country, url, location, workType}) => `
   <div class="job-list__position">
-    <p class="job-item__workType ${workType}">${workType}</p>
+    <p class="job-item__workType" data-workType="${workType}">${workType}</p>
     <p class="job-item__location">
       <i class="las la-map-marker"></i>
       ${ location }
@@ -245,19 +245,19 @@ const checkHiddenElements = () => {
   });
 }
 
-// const hideParentElements = () => {
-//    const allLocationsContainer = document.querySelectorAll('.job-list__position-wrapper');
+const hideParentElements = () => {
+   const allLocationsContainer = document.querySelectorAll('.job-list__position-wrapper');
 
-//     allLocationsContainer.forEach( location => {
-//     const hiddenElements = location.children.length === location.querySelectorAll('.hidden').length;
+    allLocationsContainer.forEach( location => {
+    const hiddenElements = location.children.length === location.querySelectorAll('.hidden').length;
 
-//     if(hiddenElements){
-//       hide(location.parentElement);
-//     }else{
-//       show(location.parentElement);
-//     }
-//   });
-// }
+    if(hiddenElements){
+      hide(location.parentElement);
+    }else{
+      show(location.parentElement);
+    }
+  });
+}
 
 document.addEventListener('click', (event) => {
   const target = event.target;
@@ -296,25 +296,6 @@ document.addEventListener('click', (event) => {
 
 
 
-// document.addEventListener('change', (event) => {
-//   const input = event.target.tagName;
-//   const inputValue = event.target.value;
-//   if(input != "INPUT") return;
-
-//   const allCommutingItems = document.querySelectorAll(".job-item__workType");
-//   allCommutingItems.forEach( element => {
-//       const innerElement = element.innerHTML.toLocaleLowerCase()
-
-//       if(innerElement !== inputValue && inputValue !== "all"){
-//         hide(element.parentElement);
-//       }else{
-//         show(element.parentElement);
-//       }
-//   })
-  
-//   // hideParentElements();
-//   checkHiddenElements();
-// })
 
 
 const getCheckedEntries = (list, filterTerm) => {
@@ -328,6 +309,12 @@ const removeElementFromArray = (arr, name) => arr.filter(el => el !== name);
 
 const addElementToArray = (arr, name) => [...arr, name];
 
+const filterIsEmpty = filter => filter.length === 0;
+
+const filterIncludes = (filter, item) => filter.includes(item);
+
+const allItemsAreHidden = (arr) => arr.every(el => el.classList.contains('hidden'));
+
 const setBaseFilterState = (form) => {
   const formRoles = getCheckedEntries(form.elements, 'roles');
   const formLocations = getCheckedEntries(form.elements, 'locations')
@@ -340,26 +327,57 @@ const setBaseFilterState = (form) => {
   }
 }
 
-console.log('number 7');
+console.log('number 3');
 
 const renderFilteredResults = (filterState) => {
-  // hide section if empty
-  // show all results if empty filterState
 
   const jobListings = document.querySelectorAll('.job-item__titles-container');
 
   for(const jobListing of jobListings){
     const jobTitle = jobListing.querySelector('.job-item__title').innerText;
-    const jobLocations = jobListing.querySelectorAll('.job-item__')
-    if( filterState.roles.includes(jobTitle) ){
+    const jobPositions = Array.from(jobListing.querySelectorAll('.job-list__position'))
+
+    if ( filterIncludes(filterState.roles, jobTitle) || filterIsEmpty(filterState.roles) ) {
       show(jobListing)
-    }else {
+    }  else {
       hide(jobListing)
     }
-    if(  )
+
+    for (const jobPosition of jobPositions) {
+      const jobLocation = jobPosition.querySelector('.job-item__location').innerText.trim();
+      const jobWorkType = jobPosition.querySelector('[data-workType]').innerText.trim();
+
+      console.log(`fitlerState.workType`, filterState.workType)
+
+      if (
+        (filterIncludes(filterState.locations, jobLocation)
+        || filterIsEmpty(filterState.locations))
+        && (filterState.workType === jobWorkType
+        || filterState.workType === 'All')
+      ) {
+        show(jobPosition);
+      } else {
+        hide(jobPosition);
+      }
+    }
+
+    if(allItemsAreHidden(jobPositions)){
+      hide(jobListing);
+    }
+
   }
 
+
+  
+  
 }
+
+// hideEmptySections() {
+//   if all items are empty (job pos)
+//     hide 
+//   if all items are empty (department )
+//   hide
+// }
 
 
 const handleFilterFormChange = async (e, filterState) => {
