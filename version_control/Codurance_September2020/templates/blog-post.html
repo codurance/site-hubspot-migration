@@ -63,7 +63,13 @@ label: Blog Post
   <section class="blog-meta blog-max-width">
     <div class="blog-meta__inner">
       <div class="blog-meta__info">
-        {{ content.publish_date_localized }}
+        <span class="info__publish-date">{{ content.publish_date_localized}}</span>
+          {% module 'Date Picker' 
+                      module_id='date-picker', 
+                      path='../modules/Date-Picker.module',
+                      label="Updated date",
+                      no_wrapper=True
+          %}
       </div>
       {% if content.tag_list %}
         <ul class="blog-meta__tag-list">

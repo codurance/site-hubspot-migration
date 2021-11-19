@@ -37,7 +37,20 @@
 .blog-meta__info {
   {{ utils.natus() }}
   white-space: nowrap;
+  display: flex;
+  gap: 0.3em;
 }
+{% call utils.medium_large_and_extra_large() %}
+  .blog-meta__info {
+    flex-direction: column;
+  }
+  
+  .info__dot{
+    display: none;
+  }
+
+{% endcall %}
+
 
 .blog-meta__tag-list {
   list-style: none;
