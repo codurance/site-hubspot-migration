@@ -131,18 +131,24 @@ ${jobTitle}
 data-role-option-selected="${jobTitle}"></i>
 </button> */
 
+const convertToDashCase = (string) => {
+  return string.split(" ").join("-").toLowerCase();
+}
 
 
 const displayDropdownButtons = (filteredItems, idSelector) =>{
   const htmlItems = filteredItems.map((item) => {
     return `
-    <label>
-     ${item} 
-    <input type="checkbox" class="jobs__filter-dropdown-option" name="${item}" data-category="${idSelector}"  />
-    </label>
+      <li>
+        <input type="checkbox" id="${convertToDashCase(item)}" class="jobs__filter-dropdown-option" name="${item}" data-category="${idSelector}"/>
+        <label for="${convertToDashCase(item)}">
+         ${item}
+        </label>
+      </li>
     `
   }).join('');
 
+  const ul = document.createElement('ul')
   const divSelector = document.querySelector(`#${idSelector}`)
   divSelector.innerHTML = htmlItems;
 

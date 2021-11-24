@@ -57,12 +57,26 @@
     position: relative;
     min-width: 150px;
 }
+
 {% call utils.medium_large_and_extra_large()%}
     .jobs__filter-dropdown-container {
         height: 100%;
         width: 0;
     }
 {% endcall %}
+
+.jobs__filter-dropdown-container li{
+    position: relative;
+}
+.jobs__filter-dropdown-container label {
+    padding: .3em 1em;
+    display: block;
+}
+
+.jobs__filter-dropdown-container label:hover {
+    background: var(--athens-gray);
+    cursor: pointer;
+}
 
 
 {% call utils.medium_large_and_extra_large()%}
@@ -148,9 +162,8 @@
 }
 
 .jobs__filter-dropdown-options {
+    list-style-type: none;
     background-color: white;
-    display: flex;
-    flex-direction: column;
     padding: 10px;
 }
 
@@ -175,29 +188,28 @@
 }
 
 .jobs__filter-dropdown-option {
-    background-color: white;
-    border: none;
-    cursor: pointer;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 40px;
-    padding-top: 10px;
-    position: relative;
-    text-align: left;
-}
-.jobs__filter-dropdown-option:hover {
-    background-color: var(--athens-gray);
+   position: absolute;
+   opacity: 0;
+   top: 30%;
 }
 
-.jobs__filter-dropdown-option--selected {
-    font-weight: var(--heavy-font-weight);
+.jobs__filter-dropdown-container label:after {
+  content: "";
+  display: inline-block;
+  width: 1rem;
 }
 
-.jobs__filter-dropdown-option-selected-icon {
-    position: absolute;
-    margin-left: 10px;
-    top: 11px;
+.jobs__filter-dropdown-option:checked + label:after{
+  content: "\f00c";
+  font-family: 'Line Awesome Free';
+  font-weight: 900;
 }
+
+.jobs__filter-dropdown-option:checked + label {
+  font-weight: bold;
+}
+
+
 
 .jobs-filter-selector__input {
     margin: 0 10%;
