@@ -4,6 +4,9 @@
 /* ===== Refactoring section ======= 
 This is a temporary solution while refactoring until is applied in all pages of the site without any side effects globally.
 */
+html{
+    scroll-behavior: smooth;
+}
 
 body{
   max-width: none;
@@ -93,7 +96,7 @@ body{
 
 .locations__container{
     margin: 0 auto;
-    padding: 2em 1em;
+    padding: 3em 1em;
     max-width: {{max_width_content}};
 }
 
@@ -103,8 +106,8 @@ body{
 ========================== */
 
 .featured-job{
-    margin: 3em auto 0;
-    padding: 0 1em;
+    margin: 0 auto;
+    padding: 3em 1em;
     max-width: {{max_width_content}};
 
 }
