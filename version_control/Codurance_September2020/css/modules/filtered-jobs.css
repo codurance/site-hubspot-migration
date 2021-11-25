@@ -78,6 +78,11 @@
     cursor: pointer;
 }
 
+.jobs__filter-dropdown-container label:focus {
+    outline: 1px dotted var(--persimmon);
+    outline-offset: var(--outline-offset); 
+}
+
 
 {% call utils.medium_large_and_extra_large()%}
     .jobs__filter-dropdown-wrapper {
@@ -144,9 +149,14 @@
         border-radius: {{border_radius}} {{border_radius}} 0 0;
     }
 {% endcall %}
+
 .jobs__filter-dropdown-button:hover {
     background-color: var(--athens-gray);
     transition: background-color 0.2s linear;
+}
+.jobs__filter-dropdown-button:focus {
+    outline: 1px dotted var(--persimmon);
+    outline-offset: var(--outline-offset);
 }
 
 .jobs__filter-icon {
@@ -271,7 +281,7 @@
 }
 
 .c-custom-radio input[type=radio]:focus + svg {
-  outline: 3px dotted var(--persimmon);
+  outline: 1px dotted var(--persimmon);
   outline-offset: var(--outline-offset);
 }
 
@@ -291,7 +301,8 @@
     max-width: 500px;
     margin: 0 auto;
 }
-.job-item__section {
+.job-item__section,
+.job-item__not-found {
     margin-top: 3em;
     transition: padding .3s ease-in-out;
 }
@@ -377,7 +388,8 @@
 
 
 {% call utils.large_and_extra_large()%}
-    .job-item__section {
+    .job-item__section,
+    .job-item__not-found {
         box-shadow: 0px 0px 10px var(--woodsmoke--20);
         border-radius: .5em;
         padding: 3em 5em;
