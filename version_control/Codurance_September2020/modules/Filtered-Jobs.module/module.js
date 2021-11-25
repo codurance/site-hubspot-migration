@@ -122,6 +122,9 @@ const filterUniqueLocations = (data) => {
   return [...new Set(data.map(job => hasHybridCity(job.city) ? job.city : getDeterminedCountry(job.country)))];
 }
 
+const convertToPascalCase = (string) => {
+  return string.split(" ").join("");
+}
 
 const convertToDashCase = (string) => {
   return string.split(" ").join("-").toLowerCase();
@@ -180,7 +183,7 @@ const displayJobs = (jobsData) => {
           ${Object.entries(jobInfo).map( ([jobTitle, {locations}]) => {             
             return `
             <div class="job-item__titles-container">
-              <h3 class="job-item__title">${jobTitle}</h3>
+              <h3 id=${convertToPascalCase(jobTitle)} class="job-item__title">${jobTitle}</h3>
               <div class="job-list__position-wrapper">
                 ${renderLocations(locations)}
               </div>
