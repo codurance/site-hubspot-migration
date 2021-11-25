@@ -123,14 +123,6 @@ const filterUniqueLocations = (data) => {
 }
 
 
-
-// reference button
-/* <button class="jobs__filter-dropdown-option" data-role-option="${jobTitle}">
-${jobTitle}
-<i class="jobs__filter-dropdown-option-selected-icon las la-check hidden"
-data-role-option-selected="${jobTitle}"></i>
-</button> */
-
 const convertToDashCase = (string) => {
   return string.split(" ").join("-").toLowerCase();
 }
@@ -148,12 +140,10 @@ const displayDropdownButtons = (filteredItems, idSelector) =>{
     `
   }).join('');
 
-  const ul = document.createElement('ul')
   const divSelector = document.querySelector(`#${idSelector}`)
   divSelector.innerHTML = htmlItems;
 
 }
-
 
 
 const hasHybridCity = (city) => {
@@ -161,8 +151,6 @@ const hasHybridCity = (city) => {
       return true;
   }
 }
-
-
 
 
 const renderLocations = (locationsArray) => {
@@ -237,17 +225,27 @@ const closeAllDropdowns = () => {
 }
 
 
-
 const hideEmptySections = () => {
   const allSections = document.querySelectorAll('.job-item__section');
   allSections.forEach( section => {
     const jobTitles = Array.from(section.querySelectorAll('.job-item__titles-container'));
     
-
     allItemsAreHidden(jobTitles) ? hide(section) : show(section);
   });
 }
+console.log("number 4")
 
+const checkEmptyResults = () => {
+  const allSections = Array.from(document.querySelectorAll('.job-item__section'));
+  const notFoundMessage = document.querySelector('.job-item__not-found');
+
+  if(allItemsAreHidden(allSections)){
+    show(notFoundMessage)
+  }else{
+    hide(notFoundMessage);
+  }
+
+}
 
 
 document.addEventListener('click', (event) => {
@@ -271,7 +269,6 @@ document.addEventListener('click', (event) => {
   };
 
 })
-
 
 
 const getCheckedEntries = (list, filterTerm) => {
@@ -303,7 +300,6 @@ const setBaseFilterState = (form) => {
   }
 }
 
-console.log('number 3');
 
 const renderFilteredResults = (filterState) => {
 
@@ -323,7 +319,7 @@ const renderFilteredResults = (filterState) => {
       const jobLocation = jobPosition.querySelector('.job-item__location').innerText.trim();
       const jobWorkType = jobPosition.querySelector('[data-workType]').innerText.trim();
 
-      console.log(`fitlerState.workType`, filterState.workType)
+      // console.log(`fitlerState.workType`, filterState.workType)
 
       if (
         (filterIncludes(filterState.locations, jobLocation)
@@ -359,13 +355,14 @@ const updateFilterState = async ({target: {type, checked, dataset, name, value}}
       break;
     }
   }
-  console.log(`new filterState`, filterState);
+  // console.log(`new filterState`, filterState);
 };
 
 const handleFilterFormChange = async (e, filterState) => {
  await updateFilterState(e, filterState);
   renderFilteredResults(filterState);
   hideEmptySections();
+  checkEmptyResults();
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
