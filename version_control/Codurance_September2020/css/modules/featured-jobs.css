@@ -1,6 +1,8 @@
 
 {% import "../utils/utils.css" as utils %}
 
+
+
 .featured__title{
     {{ utils.dudler() }}
 }
@@ -21,7 +23,7 @@
 .featured__job-card{
     margin-top: 1em;
     padding: 1em; 
-
+    padding-bottom: 2em;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));
@@ -58,7 +60,8 @@
 .featured__locations i{
     font-size: 1.4em;
     position: absolute;
-    left: -1.5em;
+    left: -1.2em;
+    top: -.1em;
 }
 
 .featured__description {
@@ -68,27 +71,39 @@
 .featured__role-type{
     position: relative;
     color: var(--mid-gray);
-    text-decoration-line: underline;
-    text-decoration-style: dotted;
     width: fit-content;
 }
 
 .featured__role-type i {
     font-size: 1rem;
-    color: var(--tango);
     margin-left: 0.2em;
 }
 
-.featured__role-type:hover {
+{% set tooltip_margin_top = "1.8em" %}
+
+.featured__role-type:hover{
     cursor: help;
 }
 
-
+.featured__role-type:hover:after {
+	position: absolute;
+    content: '';
+	top: {{tooltip_margin_top}};
+	left: 5.6em;
+	width: 0;
+	height: 0;
+	border: 0.5em solid transparent;
+	border-bottom-color: white;
+	border-top: 0;
+	margin-left: -0.5em;
+	margin-top: -0.5em;
+    z-index: 1;
+}
 
 .info-tooltip {
     position: absolute;
     visibility: hidden;
-    top: 2em;
+    top: {{tooltip_margin_top}};
     padding: 1em;
 	background: white;
     color: var(--mid-gray);
@@ -102,19 +117,6 @@
     font-weight: var(--light-font-weight);
 }
 
-.info-tooltip:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 5.5em;
-	width: 0;
-	height: 0;
-	border: 0.5em solid transparent;
-	border-bottom-color: white;
-	border-top: 0;
-	margin-left: -0.5em;
-	margin-top: -0.5em;
-}
 
 .info-tooltip--show{
     visibility: visible;
@@ -133,6 +135,7 @@
 .featured__link{
     grid-column: auto / -1;
     place-self: end;
+    font-weight: bold;
 }
 
 
