@@ -3,14 +3,36 @@
 {% if locale == 'es'  %}
   {% set infoMessage = { header: "Lo sentimos, tu búsqueda no ha obtenido resultados.",
                          paragraph: "Intenta ajustar tus filtros para encontrar lo que buscas."
-                         } 
-    %}
+                        } 
+  %}
+
+  {% set filterTitle = { role: "Posiciones",
+                        locations: "Ubicaciones"
+                      } 
+  %}
+  {% set workType = { hybrid: "Híbrido",
+                      remote: "Remoto",
+                      all: "Todos"
+                    } 
+  %}
+
 {% else %}
 
   {% set infoMessage = { header: "We’re sorry, your search returned no results.",
                          paragraph: "Try adjusting your filters to find what you’re looking for."
                         } 
     %}
+  {% set filterTitle = {  role: "Role",
+                         locations: "Locations"
+                        } 
+  %}
+  {% set workType = {  
+                        hybrid: "Hybrid",
+                        remote: "Remote",
+                        all: "All"
+                  } 
+  %}
+
 {% endif %}
 
 
@@ -21,7 +43,7 @@
         <div class="jobs__filter-dropdown-wrapper" data-filters-wrapper>
           <div class="jobs__filter-dropdown-container">
             <button class="jobs__filter-dropdown-button" data-dropdown-button="roles" type="button">
-                Role
+                {{filterTitle.role}}
               <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="roles">
               </i>
             </button>
@@ -31,7 +53,7 @@
           </div>
           <div class="jobs__filter-dropdown-container">
             <button class="jobs__filter-dropdown-button" data-dropdown-button="locations" type="button">
-                Location
+            {{filterTitle.locations}}
               <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="location">
               </i>
             </button>
@@ -48,7 +70,7 @@
               <!-- The checkmark-->
               <polyline class="custom-radio-checkmark" points="4,14 12,23 28,5" stroke="transparent" stroke-width="4" fill="none"></polyline>
             </svg>
-              Hybrid
+              {{workType.hybrid}}
           </label>
           <label for="remote" class="c-custom-radio">
             <input id="remote" name="workType" type="radio" value="Remote"/>
@@ -57,7 +79,7 @@
               <!-- The checkmark-->
               <polyline class="custom-radio-checkmark" points="4,14 12,23 28,5" stroke="transparent" stroke-width="4" fill="none"></polyline>
               </svg>
-            Remote
+              {{workType.remote}}
           </label>
           <label for="all" class="c-custom-radio">
             <input id="all" name="workType" type="radio" value="All" checked />
@@ -66,7 +88,7 @@
               <!-- The checkmark-->
               <polyline class="custom-radio-checkmark" points="4,14 12,23 28,5" stroke="transparent" stroke-width="4" fill="none"></polyline>
             </svg>
-            All
+            {{workType.all}}
           </label>
         </div>
     </form>
