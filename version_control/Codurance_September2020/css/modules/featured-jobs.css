@@ -70,6 +70,7 @@
 
 .featured__role-type{
     position: relative;
+    display: flex;
     color: var(--mid-gray);
     width: fit-content;
 }
