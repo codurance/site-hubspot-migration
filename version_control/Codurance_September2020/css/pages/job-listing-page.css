@@ -1,46 +1,148 @@
 {% import '../utils/utils.css' as utils %}
 
-.job-listing-page-cards-container {
-  background-color: var(--athens-gray);
+
+/* ===== Refactoring section ======= 
+This is a temporary solution while refactoring until is applied in all pages of the site without any side effects globally.
+*/
+html{
+    scroll-behavior: smooth;
 }
 
-.job-listing-page-cards {
-  display: flex;
-  justify-content: space-between;
-  margin-left:auto;
-  margin-right:auto;
+body{
+  max-width: none;
+}  
+
+
+{% set max_width_content = "50em"%}
+
+/* ======================= 
+    JOB LISTING HERO SECTION 
+========================== */
+
+.job-listing-hero{
+    background: linear-gradient(180deg, rgba(253,237,226,1) 0%, rgba(255,255,255,1) 85%);
+    padding-bottom: 2em;
+    overflow: hidden;
 }
-{% call utils.small_and_medium() %}
-  .job-listing-page-cards {
-    flex-direction: column;
-    align-items: center;
-    padding-top: 2rem;
-  }
-{% endcall %}
-{% call utils.large_and_extra_large() %}
-  .job-listing-page-cards {
-    align-items: stretch;
-    position: relative;
-    top: -2rem;
-  }
-{% endcall %}
 
 
-{% call utils.small_and_medium() %}
-  .job-listing-page-cards > .job-card {
-    margin-bottom: 2rem;
-    max-width: 40rem;
-    width: 100%;
-  }
+.job-listing-hero__container{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1em;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+.job-listing-hero__text{
+    margin-top: 1em;
+    max-width: 48ch;
+    align-self: center;
+}
+
+.job-listing-hero__text h1{
+    {{utils.dudler()}}
+    font-weight: var(--heavy-font-weight);
+}
+
+.job-listing-hero__image{
+    transform: translate(15%, 5%);
+}
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .job-listing-hero__container {
+        flex-direction:row;
+    }
+    .job-listing-hero__image {
+        transform: translate(10%, 5%);
+    }
+
+    .job-listing-hero__text{
+        margin-top: 5em;
+    }
+    .job-listing-hero__text h1{
+        {{utils.eames()}}
+    }
+    .job-listing-hero__text p{
+        {{utils.freed()}}
+        font-weight: var(--light-font-weight);
+    }
+
 {% endcall %}
+
 {% call utils.large_and_extra_large() %}
-  .job-listing-page-cards >.job-card {
-    width: 33%;
-  }
-  .job-listing-page-cards >.job-card:not(:first-child) {
-  margin-left: 0.7rem;
-  }
-  .job-listing-page-cards >.job-card:not(:last-child) {
-    margin-right: 0.7rem
-  }
+   
+    .job-listing-hero__image {
+        scale: 1.2;
+    }
+
 {% endcall %}
+{% call utils.extra_large() %}
+    .job-listing-hero__container{
+        overflow: revert;
+        padding: 1em 0;
+    }
+
+{% endcall %} /* end JOB LISTING HERO SECTION  */
+
+
+/* ======================= 
+    LOCATIONS SECTION 
+========================== */
+
+.locations{
+  background: linear-gradient(180deg, hsla(24.2, 86.3%, 54.3%, 0.3) 0%, white 100%);
+}
+
+.locations__container{
+    margin: 0 auto;
+    padding: 3em 1em;
+    max-width: {{max_width_content}};
+}
+
+
+/* ======================= 
+    FEATURED JOBS SECTION 
+========================== */
+
+.featured-job{
+    margin: 0 auto;
+    padding: 3em 1em;
+    max-width: {{max_width_content}};
+
+}
+
+/* ======================= 
+    Filter SECTION 
+========================== */
+
+.job-listing-page-filter {
+    max-width: {{max_width_content}};
+    padding: 0 1em;
+    margin: 0 auto;
+}
+
+
+
+
+/* ======================= 
+    CTA SECTION 
+========================== */
+
+.job-listing__cta-block{
+    margin-top: 2em;
+    background: center / cover no-repeat 
+                url("https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Overview/CTA%20block/cta-bg-dark.svg");
+
+}
+
+.job-listing__cta-block .cta-block {
+    padding: 3em 4em;
+}
+
+.job-listing__cta-block .cta-block__title{
+    max-width: none;
+}
+
+
+

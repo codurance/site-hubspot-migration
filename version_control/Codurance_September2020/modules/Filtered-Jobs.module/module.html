@@ -1,0 +1,107 @@
+{{ require_css(get_asset_url("../../css/modules/filtered-jobs.css")) }}
+
+{% if locale == 'es'  %}
+  {% set infoMessage = { header: "Lo sentimos, tu búsqueda no ha obtenido resultados.",
+                         paragraph: "Intenta ajustar tus filtros para encontrar lo que buscas."
+                        } 
+  %}
+
+  {% set filterTitle = { role: "Puesto",
+                        locations: "Ubicaciones"
+                      } 
+  %}
+  {% set workType = { hybrid: "Híbrido",
+                      remote: "Remoto",
+                      all: "Todos"
+                    } 
+  %}
+
+{% else %}
+
+  {% set infoMessage = { header: "We’re sorry, your search returned no results.",
+                         paragraph: "Try adjusting your filters to find what you’re looking for."
+                        } 
+  %}
+  {% set filterTitle = {  role: "Role",
+                         locations: "Locations"
+                        } 
+  %}
+  {% set workType = {  
+                        hybrid: "Hybrid",
+                        remote: "Remote",
+                        all: "All"
+                  } 
+  %}
+
+{% endif %}
+
+
+<h2 class="jobs__filter-title">{{ module.section_title }}</h2>
+
+<div class="jobs__filter-wrapper">
+    <form class="jobs__filter" name="filter-form" autocomplete='off' >
+        <div class="jobs__filter-dropdown-wrapper" data-filters-wrapper>
+          <div class="jobs__filter-dropdown-container">
+            <button class="jobs__filter-dropdown-button" data-dropdown-button="roles" type="button">
+                {{filterTitle.role}}
+              <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="roles">
+              </i>
+            </button>
+            <ul id="roles" class="jobs__filter-dropdown-options hidden" data-dropdown-container="role"> 
+            {# the options are added dinamically here #}  
+            </ul>
+          </div>
+          <div class="jobs__filter-dropdown-container">
+            <button class="jobs__filter-dropdown-button" data-dropdown-button="locations" type="button">
+            {{filterTitle.locations}}
+              <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="location">
+              </i>
+            </button>
+            <ul id="locations" class="jobs__filter-dropdown-options hidden" data-dropdown-container="location">
+            {# the options are added dinamically here #}
+            </ul>
+          </div>
+        </div>
+        <div class="jobs__filter-radio-wrapper">
+          <label for="hybrid" class="c-custom-radio">
+            <input id="hybrid" name="workType" type="radio" value="Hybrid"/>
+            <svg width="32" height="32" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
+              <rect class="custom-radio-bg" width="35" height="35" x="-2" y="-2" stroke="currentColor" fill="none" stroke-width="3"></rect>
+              <!-- The checkmark-->
+              <polyline class="custom-radio-checkmark" points="4,14 12,23 28,5" stroke="transparent" stroke-width="4" fill="none"></polyline>
+            </svg>
+              {{workType.hybrid}}
+          </label>
+          <label for="remote" class="c-custom-radio">
+            <input id="remote" name="workType" type="radio" value="Remote"/>
+            <svg width="32" height="32" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
+              <rect class="custom-radio-bg" width="35" height="35" x="-2" y="-2" stroke="currentColor" fill="none" stroke-width="3"></rect>
+              <!-- The checkmark-->
+              <polyline class="custom-radio-checkmark" points="4,14 12,23 28,5" stroke="transparent" stroke-width="4" fill="none"></polyline>
+              </svg>
+              {{workType.remote}}
+          </label>
+          <label for="all" class="c-custom-radio">
+            <input id="all" name="workType" type="radio" value="All" checked />
+            <svg width="32" height="32" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
+              <rect class="custom-radio-bg" width="35" height="35" x="-2" y="-2" stroke="currentColor" fill="none" stroke-width="3"></rect>
+              <!-- The checkmark-->
+              <polyline class="custom-radio-checkmark" points="4,14 12,23 28,5" stroke="transparent" stroke-width="4" fill="none"></polyline>
+            </svg>
+            {{workType.all}}
+          </label>
+        </div>
+    </form>
+</div>
+
+
+<div id="job-container" class="jobs__results">
+  <div class="job-item__not-found hidden">
+    <h4>{{infoMessage.header}}</h4>
+    <p>{{infoMessage.paragraph}}</p>
+  </div>
+  <div id="jobs-list">  
+  </div>
+</div>
+
+

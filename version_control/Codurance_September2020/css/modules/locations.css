@@ -1,9 +1,8 @@
 {% import '../utils/utils.css' as utils %}
 
 .locations__title{
-    {{utils.freed()}}
+    {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
-    
 }
 
 {% call utils.medium_large_and_extra_large()%}
@@ -22,8 +21,6 @@
         {{utils.natus()}}
     }
 {% endcall %}
-
-
 
 
 .locations__images{
@@ -70,9 +67,11 @@
     border: 0.1em;
     margin-top: 5em;
 }
+
 .locations__remote-countries{
-    margin-top: 1em;
+    margin-top: .5em;
 }
+
 .locations__remote-countries > p{
     {{utils.natus()}}
 }
