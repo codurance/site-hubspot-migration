@@ -106,6 +106,7 @@
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
+    "placeholder" : "Worldwide",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text"

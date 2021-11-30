@@ -8,7 +8,7 @@ const addJob = (entry, jobData) => {
 }
 
 const getDeterminedCountry = (country) => {
-  return country.length === 0 ? 'World-wide' : country;
+  return country.length === 0 ? 'Worldwide' : country;
 }
 
 
