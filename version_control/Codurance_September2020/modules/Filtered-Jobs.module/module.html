@@ -6,7 +6,7 @@
                         } 
   %}
 
-  {% set filterTitle = { role: "Posiciones",
+  {% set filterTitle = { role: "Puesto",
                         locations: "Ubicaciones"
                       } 
   %}
@@ -21,7 +21,7 @@
   {% set infoMessage = { header: "We’re sorry, your search returned no results.",
                          paragraph: "Try adjusting your filters to find what you’re looking for."
                         } 
-    %}
+  %}
   {% set filterTitle = {  role: "Role",
                          locations: "Locations"
                         } 
@@ -36,7 +36,7 @@
 {% endif %}
 
 
-<h2 class="jobs__filter-title">All available roles</h2>
+<h2 class="jobs__filter-title">{{ module.section_title }}</h2>
 
 <div class="jobs__filter-wrapper">
     <form class="jobs__filter" name="filter-form" autocomplete='off' >
@@ -94,6 +94,7 @@
     </form>
 </div>
 
+
 <div id="job-container" class="jobs__results">
   <div class="job-item__not-found hidden">
     <h4>{{infoMessage.header}}</h4>
@@ -102,3 +103,5 @@
   <div id="jobs-list">  
   </div>
 </div>
+
+
