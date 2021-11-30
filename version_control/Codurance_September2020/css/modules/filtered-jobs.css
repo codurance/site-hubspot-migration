@@ -1,0 +1,408 @@
+
+{% import '../utils/utils.css' as utils %}
+
+
+.jobs__filter-title{
+    {{ utils.dudler() }}
+    margin-top:2em;
+}
+
+.jobs__filter-wrapper{
+    margin-top: 1em;
+}
+
+{% call utils.medium_large_and_extra_large()%}
+.jobs__filter-wrapper{
+    display: flex;
+    gap: 1em;
+}
+{% endcall %}
+
+
+
+/* ===================
+    Filter Selector
+==================== */
+
+{% set border_radius = ".5em" %}
+
+.jobs__filter {
+    width: 100%;
+}
+
+{% call utils.small()%}
+.jobs__filter {
+    box-shadow: 0px 0px 10px var(--woodsmoke--20);
+    border-radius: {{border_radius}};
+}
+{% endcall %}
+
+
+{% call utils.medium_large_and_extra_large()%}
+    .jobs__filter {
+        display: flex;
+        gap: 1em;
+    }
+{% endcall %}
+
+
+.jobs__filter-toggle-icon {
+    transform: rotate(0deg);
+    transition: var(--cta-transition);
+}
+
+.jobs__filter-toggle-icon--selected {
+    transform: rotate(135deg);
+}
+
+.jobs__filter-dropdown-container {
+    position: relative;
+    min-width: 170px;
+}
+
+{% call utils.medium_large_and_extra_large()%}
+    .jobs__filter-dropdown-container {
+        height: 100%;
+        width: 0;
+    }
+{% endcall %}
+
+.jobs__filter-dropdown-container li{
+    position: relative;
+}
+.jobs__filter-dropdown-container label {
+    padding: .3em 1em;
+    display: block;
+}
+
+.jobs__filter-dropdown-container label:hover {
+    background: var(--athens-gray);
+    cursor: pointer;
+}
+
+.jobs__filter-dropdown-container label:focus {
+    outline: 1px dotted var(--persimmon);
+    outline-offset: var(--outline-offset); 
+}
+
+
+{% call utils.medium_large_and_extra_large()%}
+    .jobs__filter-dropdown-wrapper {
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .jobs__filter-radio-wrapper{
+        width: 70%;
+    }
+
+    .jobs__filter-dropdown-wrapper, 
+    .jobs__filter-radio-wrapper {
+        background-color: white;
+        border-radius: .5em;
+        box-shadow: 0px 0px 10px var(--woodsmoke--20);
+        height: 2.38rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large()%}
+    .jobs__filter-dropdown-wrapper.hidden {
+        visibility: visible;
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large()%}
+    .jobs__filter-dropdown-container:not(:last-of-type)::after {
+        background-color: var(--french-gray);
+        content: '';
+        height: 50%;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+    }
+{% endcall %}
+
+.jobs__filter-dropdown-button {
+    {{ utils.base() }}
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    transition: background-color 0.3s linear;
+    width: 100%;
+}
+
+.jobs__filter-dropdown-button--active i {
+    transform: rotate(180deg);
+}
+
+{% call utils.small() %}
+    .jobs__filter-dropdown-button {
+        border-bottom: 1px solid var(--athens-gray);
+        padding: 1rem;
+    }
+    .jobs__filter-dropdown-button:first-child{
+        border-radius: {{border_radius}} {{border_radius}} 0 0;
+    }
+{% endcall %}
+
+.jobs__filter-dropdown-button:hover {
+    background-color: var(--athens-gray);
+    transition: background-color 0.2s linear;
+}
+.jobs__filter-dropdown-button:focus {
+    outline: 1px dotted var(--persimmon);
+    outline-offset: var(--outline-offset);
+}
+
+.jobs__filter-icon {
+    margin-right: 0.2rem;
+    pointer-events: none;
+}
+
+.jobs__filter-dropdown-icon {
+    margin-left: 0.5rem;
+    pointer-events: none;
+    transform: rotate(0deg);
+    transition: var(--cta-transition);
+}
+
+.jobs__filter-dropdown-options {
+    list-style-type: none;
+    background-color: white;
+    padding: 10px;
+}
+
+{% call utils.medium_large_and_extra_large()%}
+    .jobs__filter-dropdown-options {
+        box-shadow: 0px 4px 14px var(--french-gray);
+        margin-left: 50%;
+        margin-top: -0.2rem;
+        position: relative;
+        transform: translateX(-40%);
+        width: intrinsic;
+        width: -moz-max-content;
+        width: -webkit-max-content;
+        width: max-content;
+        border-radius: 0.5em;
+        z-index: 1;
+    }
+{% endcall %}
+
+.jobs__filter-dropdown-options.hidden {
+    display: none;
+}
+
+.jobs__filter-dropdown-option {
+   position: absolute;
+   opacity: 0;
+   top: 30%;
+}
+
+.jobs__filter-dropdown-container label:after {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+}
+
+.jobs__filter-dropdown-option:checked + label:after{
+  content: "\f00c";
+  font-family: 'Line Awesome Free';
+  font-weight: 900;
+}
+
+.jobs__filter-dropdown-option:checked + label {
+  font-weight: bold;
+}
+
+
+
+.jobs-filter-selector__input {
+    margin: 0 10%;
+    position: relative;
+}
+
+.jobs-filter-selector__input select {
+    background-color: #33475b;
+    border: none;
+    color: white;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance: none;
+    width: 160px;
+}
+
+
+
+/* ===================
+    CHECKBOX Selector
+==================== */
+
+.jobs__filter-radio-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: .5em;
+    padding: 1em;
+}
+
+.c-custom-radio {
+  {{ utils.natus() }}
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  --checked-state-check-color: var(--shark);
+  --outline-color: var(--persimmon);
+  --outline-offset: 2px;
+}
+
+.c-custom-radio input[type=radio] {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  opacity: 0.00001;
+}
+
+.c-custom-radio svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  color: var(--checked-state-check-color);
+}
+.c-custom-radio svg * {
+  transition: all 0.1s linear;
+}
+
+.c-custom-radio input[type=radio]:checked + svg .custom-radio-checkmark {
+  stroke: var(--checked-state-check-color);
+}
+
+.c-custom-radio input[type=radio]:focus + svg {
+  outline: 1px dotted var(--outline-color);
+  outline-offset: var(--outline-offset);
+}
+
+.c-custom-radio input[type=radio]:focus:not(:focus-visible) + svg {
+  outline: none;
+}
+
+
+
+
+/* =========================
+    Displayed Jobs Layout
+=========================== */
+
+
+.jobs__results{
+    max-width: 30em;
+    margin: 0 auto;
+}
+.job-item__section,
+.job-item__not-found {
+    margin-top: 2em;
+}
+
+.job-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 1.2em;
+}
+.job-item__department{
+    {{ utils.natus() }}
+    font-weight: var(--extra-heavy-font-weight);
+}
+
+.job-item__title{
+  font-weight: var(--middle-font-weight);
+  scroll-margin-top: 2em;
+}
+
+.job-item__titles-container{
+    margin-top: 2em;
+}
+
+.job-item__titles-container:first-of-type {
+  margin-top: 1em;
+}
+
+.job-list__position {
+  display: grid;
+  grid-template-columns: 1fr 0 repeat(4, 1fr);
+  align-items: center;
+  gap: .8em;
+  border-bottom: 1px var(--athens-gray) solid;
+  justify-content: space-between;
+}
+
+.job-item__title + .job-list__position {
+  margin-top: 0.5em;
+}
+
+.job-item__workType,
+.job-item__location, 
+.job-item__link {
+    {{ utils.natus() }}
+}
+
+.job-item__workType {
+  grid-column: span 2;
+}
+
+.job-item__location {
+  grid-column: span 2;
+  white-space: nowrap;
+}
+
+.job-item__link{
+    grid-column-start: 6;
+    font-weight: bold;
+    justify-self: end;
+}
+
+{% call utils.large_and_extra_large() %}
+    .jobs__results{
+        max-width: none;
+    }
+
+    .job-item__titles-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .job-item__title{
+        max-width: 40%;
+    }
+    .job-list__position-wrapper{
+        max-width: 60%;
+    }
+
+    .job-list__position {
+        padding: 0 1em;
+    }
+
+{% endcall %}
+
+
+{% call utils.large_and_extra_large()%}
+    .job-item__section,
+    .job-item__not-found {
+        box-shadow: 0px 0px 10px var(--woodsmoke--20);
+        border-radius: .5em;
+        padding: 3em 5em;
+        transition: box-shadow .5s ease-in-out; 
+    }
+{% endcall %}
+
+
+.hidden{
+    display: none;
+}

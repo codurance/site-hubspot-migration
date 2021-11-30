@@ -92,6 +92,7 @@
   position: absolute;
   border-bottom: 2px solid;
   border-left: 2px solid;
+  color: var(--shark);
   display: inline-block;
   transform: rotate(-45deg);
   height: 0.4rem;

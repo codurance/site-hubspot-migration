@@ -1,0 +1,215 @@
+[ {
+  "id" : "da30b70d-ff28-c859-a438-0a8e7a3da3d8",
+  "name" : "module_title",
+  "display_width" : null,
+  "label" : "Module Header Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Featured Roles"
+}, {
+  "id" : "4d0ac13d-8cfe-5f9b-69c3-9b25944ed9eb",
+  "name" : "featured_role",
+  "display_width" : null,
+  "label" : "Featued Role",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "5b46720b-d0d7-1f25-41d0-55aff62adaae",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "f61e9a59-19fd-e0bf-cc6b-a951e43a5a74",
+    "name" : "position_icon",
+    "display_width" : null,
+    "label" : "Position Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "fe17f216-9745-46e4-6239-dae46ee5dd37",
+    "name" : "department_name",
+    "display_width" : null,
+    "label" : "Department Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Software Engineer",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "5b46720b-d0d7-1f25-41d0-55aff62adaae",
+    "name" : "position_name",
+    "display_width" : null,
+    "label" : "Position Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Principal Craftsperson",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "1177d189-768b-ad09-4806-843de2c87d54",
+    "name" : "tooltip",
+    "display_width" : null,
+    "label" : "Tooltip",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "c97690a7-9433-ffa7-1f95-605731828805",
+      "name" : "role_type",
+      "display_width" : null,
+      "label" : "Role type",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "e97fd4af-9eab-9414-8e53-dc03473f28df",
+      "name" : "description",
+      "display_width" : null,
+      "label" : "Description",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : { }
+  }, {
+    "id" : "c3ee1401-48b0-c1d5-2493-f23df900fe6d",
+    "name" : "remote_postion_location",
+    "display_width" : null,
+    "label" : "Remote postion location",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Worldwide",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "5131dbf0-9021-32eb-d7c4-a1c3789995cf",
+    "name" : "hybrid_position_location",
+    "display_width" : null,
+    "label" : "Hybrid Position Location",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "London, Manchester, Barcelona",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : ""
+  }, {
+    "id" : "4a89e74d-a2c8-dfe2-7d99-e8c844f1f757",
+    "name" : "role_description",
+    "display_width" : null,
+    "label" : "Role description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "As a platform engineer, you will tackle a wide breadth of technologies..",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "7e5e851f-ac32-9a07-de8b-24c8fa19fbb2",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "c85404b9-dccb-0336-673c-37c58cceaf1b",
+      "name" : "display_text",
+      "display_width" : null,
+      "label" : "Display text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "cc01641b-201d-75f6-1838-e5852cd2cedd",
+      "name" : "url",
+      "display_width" : null,
+      "label" : "Url",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : true
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "url" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : true
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "position_icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "tooltip" : { },
+    "hybrid_position_location" : "",
+    "link" : {
+      "url" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : true
+      }
+    }
+  }
+} ]

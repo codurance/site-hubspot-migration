@@ -1,10 +1,10 @@
 {% import '../utils/_typography-utils.css' as utils %}
 
 :root {
-  --light-font-weight: 300;
-  --welter-font-weight: 400;
+  --light-font-weight: 400;
   --middle-font-weight: 600;
-  --heavy-font-weight: 800;
+  --heavy-font-weight: 700;
+  --extra-heavy-font-weight: 800;
 
   --habib-font-size: 3.095rem;
   --habib-line-height: 3.47619rem;

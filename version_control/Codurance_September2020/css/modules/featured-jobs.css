@@ -1,0 +1,169 @@
+
+{% import "../utils/utils.css" as utils %}
+
+
+
+.featured__title{
+    {{ utils.dudler() }}
+}
+
+.featured__job-card * {
+    {{ utils.natus() }}
+}
+
+.featured__position{
+    font-weight: var(--heavy-font-weight);
+    {{ utils.base() }}
+}
+
+.featured__cards-container{
+    margin-top: 2em;
+}
+    
+.featured__job-card{
+    margin-top: 1em;
+    padding: 1em; 
+    padding-bottom: 2em;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));
+    row-gap: 1em;
+
+    border-radius: 1em;
+    {{ utils.card_shadow_large() }}
+
+
+}
+
+.featured__icon{
+    place-self: center;
+}
+.featured__main-info{
+    grid-column: span 2;
+    align-self: end;
+}
+
+.featured__locations {
+    position: relative;
+    max-width: 10em;
+
+    grid-column: 2 / span 2;
+    display: flex;
+    justify-self: start;
+    
+}
+
+.featured__locations span{
+    font-weight: bold;
+}
+
+.featured__locations i{
+    font-size: 1.4em;
+    position: absolute;
+    left: -1.2em;
+    top: -.1em;
+}
+
+.featured__description {
+    grid-column: 1/-1;
+}
+
+.featured__role-type{
+    position: relative;
+    display: flex;
+    color: var(--mid-gray);
+    width: fit-content;
+}
+
+.featured__role-type i {
+    font-size: 1rem;
+    margin-left: 0.2em;
+}
+
+{% set tooltip_margin_top = "1.8em" %}
+
+.featured__role-type:hover{
+    cursor: help;
+}
+
+.featured__role-type:hover:after {
+	position: absolute;
+    content: '';
+	top: {{tooltip_margin_top}};
+	left: 5.6em;
+	width: 0;
+	height: 0;
+	border: 0.5em solid transparent;
+	border-bottom-color: white;
+	border-top: 0;
+	margin-left: -0.5em;
+	margin-top: -0.5em;
+    z-index: 1;
+}
+
+.info-tooltip {
+    position: absolute;
+    visibility: hidden;
+    top: {{tooltip_margin_top}};
+    padding: 1em;
+	background: white;
+    color: var(--mid-gray);
+    min-width: 13em;
+	border-radius: 1em;
+    {{ utils.card_shadow_large()}}
+    z-index: 1;
+}
+.info-tooltip p {
+    {{ utils.sejima() }}
+    font-weight: var(--light-font-weight);
+}
+
+
+.info-tooltip--show{
+    visibility: visible;
+}
+
+
+{% call utils.medium_large_and_extra_large()%}
+
+    .featured__role-type:hover .info-tooltip,
+    .featured__role-type:focus .info-tooltip{
+        visibility: visible;
+    }
+    
+{% endcall %}
+
+.featured__link{
+    grid-column: auto / -1;
+    place-self: end;
+    font-weight: bold;
+}
+
+
+{% call utils.medium_large_and_extra_large()%}
+    .featured__locations {
+        grid-column: span 2 / -2;
+        justify-self:end;
+        transform: translateY(2em);
+    }
+
+    .featured__description {
+        grid-column:1 / span 4;
+    }
+
+    .featured__link{
+        grid-column-end: -2;
+    }
+    
+
+{%endcall%}
+
+{% call utils.large_and_extra_large()%}
+    .featured__job-card {
+        grid-template-columns:repeat(auto-fill,minmax(5em,1fr));
+    }
+
+    .featured__description {
+        grid-column-start: 2;
+    }
+{% endcall %}
