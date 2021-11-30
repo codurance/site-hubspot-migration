@@ -42,62 +42,6 @@ const createJobsObject = (jsonData) => {
 }
 
 
-/* TRANSFORMED DATA STRUCTURE FOR RENDERING JOB LISTINGS
- {
-  Tech: {
-    Principal_Craftsperson: {
-      locations: [
-          {
-          city: "London",
-          country: "UK",
-          url: "https...",
-          workType: 'Hybrid/Remote',
-          location: 'country, city or world-wide'
-        },{
-          city: "Manchester",
-          country: "UK",
-          url: "https...",
-          workType: 'Hybrid/Remote',
-          location: 'country, city or world-wide'
-        },{
-          city: "Barcelona",
-          country: "Spain",
-          url: "https...",
-          workType: 'Hybrid/Remote',
-          location: 'country, city or world-wide'
-        }
-      ], 
-    },
-    Software_Craftsperson: {
-      locations: [
-          {
-          city: "London",
-          country: "UK",
-          url: "https...",
-          workType: 'Hybrid/Remote',
-          location: 'country, city or world-wide'
-        },{
-          city: "Manchester",
-          country: "UK",
-          url: "https...",
-          workType: 'Hybrid/Remote',
-          location: 'country, city or world-wide'
-        },{
-          city: "Barcelona",
-          country: "Spain",
-          url: "https...",
-          workType: 'Hybrid/Remote',
-          location: 'country, city or world-wide'
-        }
-      ], 
-    },
-
-  },
-  Academy: {}
-}
-*/
-
-
 async function fetchJobs() {
   try {
     const urlEndpoint = "/_hcms/api/get_all_jobs";
@@ -156,6 +100,11 @@ const hasHybridCity = (city) => {
 }
 
 
+const renderApplyBtnLang = () => {
+ return location.pathname.includes('es') ? "Aplicar" : "Apply";
+}
+
+
 const renderLocations = (locationsArray) => {
   return locationsArray.map(({city, country, url, location, workType}) => `
   <div class="job-list__position">
@@ -167,7 +116,7 @@ const renderLocations = (locationsArray) => {
     <a class="job-item__link text-cta-primary
     text-cta--right-arrow"
     href=${url}
-    target=_blank>Apply<i class="las la-arrow-right"></i>
+    target=_blank>${renderApplyBtnLang()}<i class="las la-arrow-right"></i>
     </a>
   </div>
   `).join('');
@@ -236,7 +185,7 @@ const hideEmptySections = () => {
     allItemsAreHidden(jobTitles) ? hide(section) : show(section);
   });
 }
-console.log("number 4")
+
 
 const checkEmptyResults = () => {
   const allSections = Array.from(document.querySelectorAll('.job-item__section'));
@@ -322,7 +271,6 @@ const renderFilteredResults = (filterState) => {
       const jobLocation = jobPosition.querySelector('.job-item__location').innerText.trim();
       const jobWorkType = jobPosition.querySelector('[data-workType]').innerText.trim();
 
-      // console.log(`fitlerState.workType`, filterState.workType)
 
       if (
         (filterIncludes(filterState.locations, jobLocation)
@@ -358,7 +306,6 @@ const updateFilterState = async ({target: {type, checked, dataset, name, value}}
       break;
     }
   }
-  // console.log(`new filterState`, filterState);
 };
 
 const handleFilterFormChange = async (e, filterState) => {

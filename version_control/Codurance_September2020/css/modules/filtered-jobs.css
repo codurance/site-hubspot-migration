@@ -337,7 +337,7 @@
   display: grid;
   grid-template-columns: 1fr 0 repeat(4, 1fr);
   align-items: center;
-  gap: 1em;
+  gap: .8em;
   border-bottom: 1px var(--athens-gray) solid;
   justify-content: space-between;
 }
