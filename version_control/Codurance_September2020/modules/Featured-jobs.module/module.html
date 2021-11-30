@@ -1,5 +1,19 @@
 {{ require_css(get_asset_url("../../css/modules/featured-jobs.css")) }}
 
+{% if locale == 'es'  %}
+	{% set workType = { remote: "Remoto",
+						hybrid: "Híbrido"
+						  } 
+	%}
+  
+  {% else %}
+
+	{% set workType = { remote: "Remote",
+						hybrid: "Hybrid"
+						  } 
+	%}
+
+  {% endif %}
 
 <h2 class="featured__title">{{ module.module_title }}</h2>
 <div class="featured__cards-container">
@@ -19,16 +33,11 @@
 			<div class="featured__main-info">
 				<h3 class="featured__department">{{ item.department_name }}</h3>
 				<h4 class="featured__position">{{ item.position_name }}</h4>
-				{% if item.role_type %}
-				{% set role = item.role_type == 'in_house' ? 'In house' : 'Consultant' %}
+				{% if item.tooltip.role_type %}
 					<div class="featured__role-type">
-						{{ role }}<i class="las la-question-circle"></i>
+						{{ item.tooltip.role_type }}<i class="las la-question-circle"></i>
 						<hgroup class="info-tooltip">
-						{% if role == 'Consultant'%}
-							<p>As a Codurance consultant, your focus is supporting the delivery of our client work while also helping to shape Codurance’s internal ways of working and culture.</p>
-						{% elif role == "In house" %}
-							<p>As an internal team member, your focus is on helping your team and the company grow.</p>
-						{% endif %}
+							<p>{{ item.tooltip.description }}</p>
 						</hgroup>
 					</div>
 				{% endif %}
@@ -37,8 +46,8 @@
 			<div class="featured__locations">
 				<i class="las la-map-marker"></i>
 				<div>
-					<p><span>Remote:</span> Worldwide*</p>
-					<p><span>Hybrid:</span> {{ item.hybrid_position_location }}</p>
+					<p><span>{{ workType.remote }}:</span> {{ item.remote_postion_location }}</p>
+					<p><span>{{ workType.hybrid }}:</span> {{ item.hybrid_position_location }}</p>
 				</div>
 			</div>
 		
@@ -60,8 +69,9 @@
 				{% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
 				{% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
 				>
-				Learn More<i class="las la-arrow-down"></i>
+				{{ item.link.display_text }}<i class="las la-arrow-down"></i>
 			</a>
 	</div> {# end featured job card #}
 	{% endfor %}
 </div>  {# end featured cards container #}
+
