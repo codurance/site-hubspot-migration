@@ -108,7 +108,7 @@
     padding: 1em;
 	background: white;
     color: var(--mid-gray);
-    min-width: 11em;
+    min-width: 13em;
 	border-radius: 1em;
     {{ utils.card_shadow_large()}}
     z-index: 1;
