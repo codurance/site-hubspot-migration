@@ -56,7 +56,14 @@ label: Careers v2
     {% module 'craftspeople' path='../modules/Text-and-image.module' label="Craftspeople section" no_wrapper=True%}
   </section>
   <section class="testimonials">
-    {% module 'Testimonial Slider' path='../modules/Landing Page Modules/LP-testimonial-slider.module' label="Testimonial Slider"  no_wrapper=True %}
+      <div class="testimonials-wrapper">
+        <h2 class="testimonials__title">
+          {% module 'text' label="Video title" path='@hubspot/text' no_wrapper=True%}
+        </h2>
+        <div class="testimonials__video">
+          {% module 'video testimonials' label="Testimonial videos", video_type="embed" path='@hubspot/video' no_wrapper=True%}
+        </div>
+      </div>
   </section>
 
   <section class="locations">
