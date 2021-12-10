@@ -226,7 +226,7 @@ body{
 
 .testimonials-wrapper {
     margin: 0 auto;
-    padding: 4em 0;
+    padding: 4em 1em;
     max-width: {{indent_content_max_with}};
 }
 
