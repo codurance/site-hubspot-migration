@@ -53,25 +53,26 @@
 		
 			<p class="featured__description">{{ item.role_description }}</p>
 		
-			{% set href = item.link_field.url.href %}
-			{% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+			{% set href = item.button.link.url.href %}
+			{% if item.button.link.url.type is equalto "EMAIL_ADDRESS" %}
 				{% set href = "mailto:" + href %}
 			{% endif %}
 			{% set rel = [] %}
-			{% if item.link_field.no_follow %}
+			{% if item.button.link.no_follow %}
 				{% do rel.append("nofollow") %}
 			{% endif %}
-			{% if item.link_field.open_in_new_tab %}
+			{% if item.button.link.open_in_new_tab %}
 				{% do rel.append("noopener") %}
 			{% endif %}
 		
 			<a class="featured__link text-cta--down-arrow" href="{{ href }}"
-				{% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+				{% if item.button.link.open_in_new_tab %}target="_blank"{% endif %}
 				{% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
 				>
-				{{ item.link.display_text }}<i class="las la-arrow-down"></i>
+				{{ item.button.display_text }}<i class="las la-arrow-down"></i>
 			</a>
 	</div> {# end featured job card #}
 	{% endfor %}
 </div>  {# end featured cards container #}
+
 

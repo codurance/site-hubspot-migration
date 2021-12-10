@@ -137,9 +137,9 @@
     "type" : "text"
   }, {
     "id" : "7e5e851f-ac32-9a07-de8b-24c8fa19fbb2",
-    "name" : "link",
+    "name" : "button",
     "display_width" : null,
-    "label" : "Link",
+    "label" : "Button",
     "required" : false,
     "locked" : false,
     "children" : [ {
@@ -155,9 +155,9 @@
       "type" : "text"
     }, {
       "id" : "cc01641b-201d-75f6-1838-e5852cd2cedd",
-      "name" : "url",
+      "name" : "link",
       "display_width" : null,
-      "label" : "Url",
+      "label" : "Link",
       "required" : false,
       "locked" : false,
       "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
