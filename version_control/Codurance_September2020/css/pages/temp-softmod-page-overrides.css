@@ -1,18 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
-.embed-video {
-  margin-bottom: 4.4rem;
-}
-{% call utils.large_and_extra_large() %}
-.embed-video {
-    margin-top: 6.6rem;
-  }
-{% endcall %}
-{% call utils.small_and_medium() %}
-.embed-video {
-    margin-top: 4.4rem;
-  }
-{% endcall %}
+
 
 {% call utils.small() %}
 .cm-services-inner-section3 {

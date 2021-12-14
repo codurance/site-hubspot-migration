@@ -101,7 +101,7 @@ const hasHybridCity = (city) => {
 
 
 const renderApplyBtnLang = () => {
- return location.pathname.includes('es') ? "Aplicar" : "Apply";
+ return location.pathname.includes('/es/') ? "Aplicar" : "Apply";
 }
 
 
