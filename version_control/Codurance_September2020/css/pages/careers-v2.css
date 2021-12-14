@@ -224,24 +224,6 @@ body{
     background: url(https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Testimonials%20Section/background-testimonials-dots-shapes.svg) center / cover no-repeat  ;
 }
 
-.testimonials-wrapper {
-    margin: 0 auto;
-    padding: 4em 1em;
-    max-width: {{indent_content_max_with}};
-}
-
-.testimonials__title{
-    {{ utils.freed() }}
-    font-weight: var(--heavy-font-weight);
-    
-}
-
-.testimonials__video {
-    max-width: 35em;
-    margin: 2em auto;
-}
-
-
 
 /*------------------------------------*\
   #CTAs sections

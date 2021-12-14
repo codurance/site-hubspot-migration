@@ -1,34 +1,25 @@
 {% import '../utils/utils.css' as utils %}
 
 .embed-video {
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
+  margin: 0 auto;
+  padding: 4em 1em;
+  max-width: 1000px;
 }
 
+
 .embed-video__heading {
-  font-size: var(--dudler-font-size);
+  {{utils.dudler()}}
   font-weight: var(--heavy-font-weight);
-  line-height: var(--dudler-line-height);
-  margin-bottom: var(--dudler-margin);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: var(--dudler-max-width);
 }
 
 .embed-video__sub-heading {
-  font-size: var(--freed-font-size);
-  line-height: var(--freed-line-height);
-  margin-bottom: var(--freed-margin);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: var(--freed-max-width);
-  padding-bottom: 20px;
+  {{ utils.base() }}
+  margin-top: 20px;
 }
 
 .embed-video__video {
-  margin: 25px auto 0;
-  max-width: 992px;
+  margin: 40px auto 0;
+  max-width: 800px;
 }
 
 .embed-video__video-inner {
@@ -53,3 +44,8 @@
   margin: 25px auto 30px;
   max-width: 800px;
 }
+
+
+/* from temp-softmod-page-overrides */
+
+
