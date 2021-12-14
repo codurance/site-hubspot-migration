@@ -56,7 +56,7 @@ label: Careers v2
     {% module 'craftspeople' path='../modules/Text-and-image.module' label="Craftspeople section" no_wrapper=True%}
   </section>
   <section class="testimonials">
-    {% module 'Testimonial Slider' path='../modules/Landing Page Modules/LP-testimonial-slider.module' label="Testimonial Slider"  no_wrapper=True %}
+      {% module 'testimonials' label="Testimonials Video"  class="video__embeded" path='../modules/Embedded Video.module'%}
   </section>
 
   <section class="locations">
@@ -77,23 +77,23 @@ label: Careers v2
           {% module 'text' label="Video title" path='@hubspot/text'%}
         </div>
         <div class="video__embed">
-          {% module 'video' label="Embeded Video",  video_type="embed",  class="video__embeded" path='@hubspot/video'%}
+          {% module 'video' label="Embeded Video", video_type="embed", class="video__embeded" path='@hubspot/video'%}
         </div>
-      </div>
+      </div>    
   </section>
   <section class="life-codurance">
-  <div class="life-codurance__container">
-    <div class="life-codurance__content">
-      <h2 class="life-codurance__title">
-        {% module 'text title' path="@hubspot/text" label="Title Life at Codurance" no_wrapper=True%}
-      </h2>
-      <p class="life-codurance__subtitle">
-        {% module 'text subtitle' path="@hubspot/text" label="Subtitle Life at Codurance" no_wrapper=True%}
-      </p>
+    <div class="life-codurance__container">
+      <div class="life-codurance__content">
+        <h2 class="life-codurance__title">
+          {% module 'text title' path="@hubspot/text" label="Title Life at Codurance" no_wrapper=True%}
+        </h2>
+        <p class="life-codurance__subtitle">
+          {% module 'text subtitle' path="@hubspot/text" label="Subtitle Life at Codurance" no_wrapper=True%}
+        </p>
+      </div>
+      {% module 'Software-craftsmanship-V2' path='../modules/Software-craftsmanship-V2.module' label="Life at Codurance" no_wrapper=True%}
     </div>
-    {% module 'Software-craftsmanship-V2' path='../modules/Software-craftsmanship-V2.module' label="Life at Codurance" no_wrapper=True%}
-  </div>
-</section>
+  </section>
   
   <section class="academy-training">
     {% module 'academy' path='../modules/Text-and-image.module' label="Academy Training section" no_wrapper=True%}
