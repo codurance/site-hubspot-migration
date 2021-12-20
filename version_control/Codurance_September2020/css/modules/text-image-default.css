@@ -1,0 +1,59 @@
+{% import '../utils/utils.css' as utils %}
+
+{% set max_module_width = "50em" %}
+
+.cm-text-img__container {
+    margin: 2em auto;
+    padding: 0 1em;
+    max-width: {{ max_module_width }};
+
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1em;
+    align-items: center;
+}
+
+
+.cm-text-img__rich-text {
+    max-width: 48ch;
+    {{ utils.natus() }}
+        
+}
+    
+.cm-text-img__rich-text h2{
+    {{ utils.freed() }}
+
+}
+    
+.cm-text-img__image {
+    max-width: 80%;
+}
+            
+{% call utils.medium_large_and_extra_large() %}
+    .cm-text-img__container{
+        margin-top: 1em;
+        margin-bottom: 0;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .container--img-left{
+        flex-direction: row-reverse;
+    }
+
+    .cm-text-img__image {
+        max-width: 45%;
+    }   
+{% endcall %}
+
+
+{% call utils.large_and_extra_large() %}
+    .cm-text-img__container{
+        padding: 0; 
+    }
+
+    .cm-text-img__rich-text h2{
+        {{ utils.dudler() }}
+
+    }
+{% endcall%}
