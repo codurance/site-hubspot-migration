@@ -4,7 +4,6 @@
 
 .cm-text-img__container {
     margin: 2em auto;
-    padding: 0 1em;
     max-width: {{ max_module_width }};
 
     display: flex;
@@ -15,7 +14,7 @@
 
 
 .cm-text-img__rich-text {
-    max-width: 48ch;
+    max-width: 52ch;
     {{ utils.natus() }}
         
 }
@@ -26,7 +25,7 @@
 }
     
 .cm-text-img__image {
-    max-width: 80%;
+    max-width: 70%;
 }
             
 {% call utils.medium_large_and_extra_large() %}
@@ -48,10 +47,6 @@
 
 
 {% call utils.large_and_extra_large() %}
-    .cm-text-img__container{
-        padding: 0; 
-    }
-
     .cm-text-img__rich-text h2{
         {{ utils.dudler() }}
 
