@@ -21,6 +21,7 @@
     
 .cm-text-img__rich-text h2{
     {{ utils.freed() }}
+    margin-bottom: .5em;
 
 }
     
@@ -30,7 +31,7 @@
             
 {% call utils.medium_large_and_extra_large() %}
     .cm-text-img__container{
-        margin-top: 1em;
+        margin-top: 3em;
         margin-bottom: 0;
         flex-direction: row;
         justify-content: space-between;
