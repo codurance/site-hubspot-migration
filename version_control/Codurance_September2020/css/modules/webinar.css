@@ -43,7 +43,7 @@
     background-color: white;
     border-radius: 3px;
     box-shadow: 0px 0px 20px var(--woodsmoke--20);
-    font-weight: var(--welter-font-weight);
+    font-weight: var(--light-font-weight);
     left: 10px;
     padding: .05em .4em;
     position: absolute;

@@ -1,0 +1,36 @@
+[ {
+  "id" : "40cee7a9-61d3-7a73-51eb-3568050d93e2",
+  "name" : "description",
+  "display_width" : null,
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "926a3b8c-f676-259e-4031-51f99e7c963a",
+  "name" : "image_order",
+  "display_width" : null,
+  "label" : "Image Order",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "", "Right" ], [ "left", "Left" ] ],
+  "type" : "choice"
+}, {
+  "id" : "4b4dcd2b-ed11-f059-5278-283d08a4418a",
+  "name" : "image_field",
+  "display_width" : null,
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+} ]
