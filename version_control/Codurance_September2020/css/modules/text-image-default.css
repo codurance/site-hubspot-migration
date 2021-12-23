@@ -15,14 +15,15 @@
 
 .cm-text-img__rich-text {
     max-width: 52ch;
-    {{ utils.natus() }}
-        
 }
-    
+
 .cm-text-img__rich-text h2{
     {{ utils.freed() }}
     margin-bottom: .5em;
+}
 
+.cm-text-img__rich-text p{
+    {{ utils.natus() }}
 }
     
 .cm-text-img__image {
@@ -44,6 +45,10 @@
     .cm-text-img__image {
         max-width: 45%;
     }   
+
+    .cm-text-img__rich-text p{
+        {{ utils.base() }}
+    }
 {% endcall %}
 
 
