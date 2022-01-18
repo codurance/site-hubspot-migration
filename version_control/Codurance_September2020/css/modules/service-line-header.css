@@ -1,0 +1,61 @@
+{% import '../utils/utils.css' as utils %}
+
+.module-wrapper{
+    padding: 1em;
+	color: white;
+}
+
+.header{
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+
+.header__text{
+    margin-top: 1em;
+    max-width: 48ch;
+    align-self: center;
+}
+.header__text h1{
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+}
+.header__image{
+    transform: translate(15%, -14%);
+}
+
+
+
+
+
+.text-and-image{
+}
+.text-and-image__text{}
+.text-and-image__image{}
+
+
+.clients{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.clients__title{
+    {{ utils.natus() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.clients__logos{
+    margin: 2em 0;
+    display: flex;
+    gap: 1.5em;
+    flex-flow: wrap;
+    filter: brightness(0) invert(1);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .client-logos{
+        justify-content: space-between;
+    }
+{% endcall %}
