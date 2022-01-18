@@ -1,22 +1,20 @@
 
 {% require_css %}
   <style>
-    .main{
+    .module-wrapper{
 		background: url("{{ module.style.backgroundimage_field.src }}") bottom right,
 					linear-gradient(141deg,
 					{{ module.style.gradient.color_1.color }} 60%,
 					{{ module.style.gradient.color_2.color }});
 		background-size: 40%, cover;
 		background-repeat: no-repeat, repeat;
-		padding: 1em;
-		color: white;
     }
   </style>
 {% end_require_css %}
 
+{{ require_css(get_asset_url("../../css/modules/service-line-header.css")) }}
 
-
-<div class="main">
+<div class="module-wrapper">
 {% if module.header.image.src %}
 	{% set sizeAttrs = 'width="{{ module.header.image.width }}" height="{{ module.header.image.height }}"' %}
 	{% if module.header.image.size_type == 'auto' %}
@@ -41,9 +39,9 @@
 		{% set sizeAttrs = 'width="{{ module.image_text_section.image.max_width }}" height="{{ module.image_text_section.image.max_height }}" style="max-width: 100%; height: auto;"' %}
 	{% endif %}
 	 {% set loadingAttr = module.image_text_section.image.loading != 'disabled' ? 'loading="{{ module.image_text_section.image.loading }}"' : '' %}
-	<section class="text-img-block">
-		<div class="text-img-block__text">{{ module.image_text_section.richtext }}</div>
-		<img class="text-img-block__image" src="{{ module.image_text_section.image.src }}" alt="{{ module.image_text_section.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+	<section class="text-and-image">
+		<div class="text-and-image__text">{{ module.image_text_section.richtext }}</div>
+		<img class="text-and-image__image" src="{{ module.image_text_section.image.src }}" alt="{{ module.image_text_section.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
 	</section>
 {% endif %}
 <!-- END text and image section -->
