@@ -1,0 +1,84 @@
+
+{% require_css %}
+  <style>
+    .main{
+		background: url("{{ module.style.backgroundimage_field.src }}") bottom right,
+					linear-gradient(141deg,
+					{{ module.style.gradient.color_1.color }} 60%,
+					{{ module.style.gradient.color_2.color }});
+		background-size: 40%, cover;
+		background-repeat: no-repeat, repeat;
+		padding: 1em;
+		color: white;
+    }
+  </style>
+{% end_require_css %}
+
+
+
+<div class="main">
+{% if module.header.image.src %}
+	{% set sizeAttrs = 'width="{{ module.header.image.width }}" height="{{ module.header.image.height }}"' %}
+	{% if module.header.image.size_type == 'auto' %}
+		{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+	{% elif module.header.image.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.header.image.max_width }}" height="{{ module.header.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+
+	<section class="header">
+		<div class="header__text">{{ module.header.richtext_field }}</div>
+		<img class="header__image" src="{{ module.header.image.src }}" alt="{{ module.header.image.alt }}" {{ sizeAttrs }}>
+	</section>
+{% endif %} 
+
+
+<!-- START Text and image section -->
+{% if module.image_text_section.image.src %}
+	{% set sizeAttrs = 'width="{{ module.image_text_section.image.width }}" height="{{ module.image_text_section.image.height }}"' %}
+	{% if module.image_text_section.image.size_type == 'auto' %}
+		{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+	{% elif module.image_text_section.image.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.image_text_section.image.max_width }}" height="{{ module.image_text_section.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	 {% set loadingAttr = module.image_text_section.image.loading != 'disabled' ? 'loading="{{ module.image_text_section.image.loading }}"' : '' %}
+	<section class="text-img-block">
+		<div class="text-img-block__text">{{ module.image_text_section.richtext }}</div>
+		<img class="text-img-block__image" src="{{ module.image_text_section.image.src }}" alt="{{ module.image_text_section.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+	</section>
+{% endif %}
+<!-- END text and image section -->
+
+
+
+<!-- START Clients section -->
+<section class="clients">
+	<h2 class="clients__title">{{ module.client_logos.title }}</h2>
+	<div class="clients__logos">
+	{% for item in module.client_logos.logo_image %}
+		{% if item.src %}
+			{% set sizeAttrs = 'width="{{ item.width }}" height="40"' %}
+			{% if item.size_type == 'auto' %}
+				{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+			{% elif item.size_type == 'auto_custom_max' %}
+				{% set sizeAttrs = 'width="{{ item.max_width }}" height="{{ item.max_height }}" style="max-width: 100%; height: auto;"' %}
+			{% endif %}
+			{% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading }}"' : '' %}
+			<img src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+		{% endif %}
+	{% endfor %}
+	</div>
+{% if module.client_logos.button_type == "standard" %}
+{% set href = module.client_logos.link_field.url.href %}
+	<a class="button-primary" href="{{ href }}"
+		{% if module.client_logos.link_field.open_in_new_tab %}target="_blank"{% endif %}
+		{% if module.client_logos.link_field.rel %}rel="{{ module.client_logos.link_field.rel }}"{% endif %}
+		>
+	{{ module.client_logos.button_text }}
+	</a>
+{% elif module.client_logos.button_type == "CTA" %}
+	{% cta guid="{{ module.client_logos.cta_field }}" %} 
+{% endif %}
+
+</section> <!-- END Clients section -->
+</div>  
+  
