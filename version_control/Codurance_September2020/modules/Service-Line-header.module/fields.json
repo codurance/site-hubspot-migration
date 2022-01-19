@@ -116,7 +116,31 @@
       "alt" : null,
       "loading" : "lazy"
     }
-  } ],
+  }, {
+  "name": "button_text",
+  "label": "Button Text",
+  "required": false,
+  "locked": false,
+  "validation_regex": "",
+  "allow_new_line": false,
+  "show_emoji_picker": false,
+  "type": "text",
+  "placeholder": "",
+  "help_text": "Define the text to be displayed for the button",
+  "default": "Tell us about your challenges" 
+  }, {
+  "name": "button_link",
+  "label": "Button Link",
+  "required": false,
+  "locked": false,
+  "validation_regex": "",
+  "allow_new_line": false,
+  "show_emoji_picker": false,
+  "type": "text",
+  "placeholder": "",
+  "help_text": "Set the web url or anchor point within the page",
+  "default": "#get-in-touch" 
+  }],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
@@ -128,6 +152,7 @@
       "loading" : "lazy"
     }
   }
+
 }, {
   "id" : "751abc44-132f-6cf6-d2e1-c1a26f4fb793",
   "name" : "image_text_section",

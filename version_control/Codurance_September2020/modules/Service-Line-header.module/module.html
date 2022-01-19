@@ -1,19 +1,30 @@
 
 {% require_css %}
   <style>
+  {% scope_css %}
     .module-wrapper{
 		background: url("{{ module.style.backgroundimage_field.src }}"),
 					linear-gradient(141deg,
 					{{ module.style.gradient.color_1.color }} 60%,
 					{{ module.style.gradient.color_2.color }});
-		background-size: 0, cover;
+		
 		background-repeat: no-repeat, repeat;
 		background-position: right 40em ,center;
     }
+
+	@media (max-width: 767px) {
+		.module-wrapper{
+			background-size: 0, cover;
+		}
+  	}
+  {% end_scope_css %}
   </style>
 {% end_require_css %}
 
+
+{% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../../css/modules/service-line-header.css")) }}
+
 
 <div class="module-wrapper">
 {% if module.header.image.src %}
@@ -25,7 +36,14 @@
 	{% endif %}
 
 	<section class="header">
-		<div class="header__text">{{ module.header.richtext_field }}</div>
+		<div class="header__text">
+			{{ module.header.richtext_field }}
+			{{	snippets.button_primary(
+				url=module.header.button_link,
+				text=module.header.button_text
+				)
+      		}}
+		</div>
 		<img class="header__image" src="{{ module.header.image.src }}" alt="{{ module.header.image.alt }}" {{ sizeAttrs }}>
 	</section>
 {% endif %} 
