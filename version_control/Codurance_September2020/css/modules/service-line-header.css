@@ -47,10 +47,12 @@
     }
 
     .header__text h1{
-        {{ utils.eames()}}
+        {{ utils.eames() }}
+        margin-bottom: 0.2em;
     }
     .header__text p {
-        {{ utils.freed()}}
+        {{ utils.freed() }}
+        font-weight: var(--light-font-weight);
     }
 
     .header__image{
@@ -70,7 +72,7 @@
     margin-bottom: 4em;
 }
 .text-and-image__text p{
-  line-heihgt: var(--freed-line-height);
+  line-height: var(--freed-line-height);
 }
 .text-and-image__image{
     width: 80%;
