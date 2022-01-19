@@ -1,6 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 {% set content_inner_max_width = "1000px"%}
+{% set content_mobile_max_width = "600px"%}
 
 .module-wrapper{
     padding: 1em;
@@ -23,7 +24,7 @@
 
 .header,
 .text-and-image{
-    max-width: 48ch;
+    max-width: {{content_mobile_max_width}};
     margin: 0 auto;
 }
 
@@ -89,13 +90,8 @@
         align-items: center;
 
         margin-top: inherit;
-        max-width: {{content_inner_max_width}};
+        max-width: {{ content_inner_max_width }};
     }
-    
-    
-{% endcall %}
-
-{% call utils.medium_large_and_extra_large() %}
     .text-and-image__text{
         width: 60%;
     }
@@ -104,7 +100,13 @@
         width: 40%;
         transform: translateX(-20%) scale(1.1);
     }
+    
+    
 {% endcall %}
+
+/* {% call utils.medium_large_and_extra_large() %}
+  
+{% endcall %} */
 
 {% call utils.large_and_extra_large() %}
     .text-and-image{
@@ -121,7 +123,7 @@
     {% endcall %}
 
 .clients{
-    max-width: {{content_inner_max_width}};
+    max-width: {{content_mobile_max_width}};
     margin: 0 auto 2em;
 }
 
@@ -139,6 +141,10 @@
 }
 
 {% call utils.medium_large_and_extra_large() %}
+    .clients{
+        max-width: {{ content_inner_max_width }};
+    }
+
     .clients__logos{
         justify-content: space-between;
     }
