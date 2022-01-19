@@ -2,12 +2,13 @@
 {% require_css %}
   <style>
     .module-wrapper{
-		background: url("{{ module.style.backgroundimage_field.src }}") bottom right,
+		background: url("{{ module.style.backgroundimage_field.src }}"),
 					linear-gradient(141deg,
 					{{ module.style.gradient.color_1.color }} 60%,
 					{{ module.style.gradient.color_2.color }});
-		background-size: 40%, cover;
+		background-size: 0, cover;
 		background-repeat: no-repeat, repeat;
+		background-position: right 40em ,center;
     }
   </style>
 {% end_require_css %}
@@ -41,7 +42,9 @@
 	 {% set loadingAttr = module.image_text_section.image.loading != 'disabled' ? 'loading="{{ module.image_text_section.image.loading }}"' : '' %}
 	<section class="text-and-image">
 		<div class="text-and-image__text">{{ module.image_text_section.richtext }}</div>
-		<img class="text-and-image__image" src="{{ module.image_text_section.image.src }}" alt="{{ module.image_text_section.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+		<div class="text-and-image__image">
+			<img src="{{ module.image_text_section.image.src }}" alt="{{ module.image_text_section.image.alt }}"{{ loadingAttr }} {{ sizeAttrs }}>
+		</div>
 	</section>
 {% endif %}
 <!-- END text and image section -->
