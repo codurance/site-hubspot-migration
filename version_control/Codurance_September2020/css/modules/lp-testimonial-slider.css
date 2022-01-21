@@ -1,5 +1,10 @@
 {% import '../utils/utils.css' as utils %}
 
+    .testimonial-wrapper{
+        max-width: 35em;
+        margin: 0 auto;
+    }    
+
     .testimonial-slider{
         background-image: var(--background_small);
         background-size: cover;
@@ -7,10 +12,19 @@
         margin: 0 auto;
         padding: 2em .5em;
     }
- 
-    .swiper-container{
-        max-width: 30rem;
+
+    .testimonial-slider__title{
+        {{ utils.freed() }}
     }
+    .testimonial-slider__button{
+        margin-top: 1em;
+    }
+
+    .testimonial-slider__title,
+    .testimonial-slider__button{
+        padding: 0 2rem;
+    }
+
 
     .swiper{
         max-width: 40em;
@@ -32,7 +46,7 @@
     }
 
     .swiper-slide{
-        padding: 1.5em;
+        padding: 1.5em 1.5em 1em;
         border-radius: 7px;
     }
 
@@ -97,7 +111,6 @@
     } 
 
 
-
     {% call utils.small_and_medium() %}
         .swiper-button-prev,
         .swiper-button-next{
@@ -122,7 +135,6 @@
         .testimonial-slider{
             background-image: var(--background_large);
             background-position: center;
-            padding: 4em;
         }
 
         .testimonial-slider-item__text-wrapper{
