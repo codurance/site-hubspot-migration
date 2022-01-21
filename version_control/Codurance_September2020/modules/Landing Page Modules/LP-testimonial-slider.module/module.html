@@ -10,39 +10,55 @@
   </style>
 
 
-  <div class="testimonial-slider">
-    <div class="swiper">
-      <div class="swiper-wrapper"> 
-        {% for item in module.testimonial_items %}
-          <div class="swiper-slide">
-            <div class="testimonial-slider__wrapper">
-              <i class="testimonial-slider__icon las la-quote-left"></i>
-              <div class="testimonial-slider-item__text-wrapper">
-                <div class="testimonial-slider-item__body">
-                  {{ item.testimonial_body }}
-                </div>
-                <div class="testimonial-slider-item__author">
-                  {% if item.testimonial_image.src %}                  
-                    <img class="testimonial-slider-item__author-image"
-                         alt="{{ item.testimonial_image.alt }}" 
-                         src={{ resize_image_url(item.testimonial_image.src, 0, 0, 90 ) }}
-                         loading="lazy" />
-                  {% endif %}
-                  <div class="author-details-wrapper">
-                    <p class="testimonial-slider-item__author-name">{{ item.testimonial_author }}</p>
-                    <p class="testimonial-slider-item__role">{{ item.testimonal_role }}</p>
+  
+  <div class="testimonial-wrapper">
+  {% if module.header.title %}
+    <h2 class="testimonial-slider__title">{{ module.header.title }}</h2>
+  {% endif %}
+    <div class="testimonial-slider">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {% for item in module.testimonial_items %}
+            <div class="swiper-slide">
+              <div class="testimonial-slider__wrapper">
+                <i class="testimonial-slider__icon las la-quote-left"></i>
+                <div class="testimonial-slider-item__text-wrapper">
+                  <div class="testimonial-slider-item__body">
+                    {{ item.testimonial_body }}
+                  </div>
+                  <div class="testimonial-slider-item__author">
+                    {% if item.testimonial_image.src %}
+                      <img class="testimonial-slider-item__author-image"
+                           alt="{{ item.testimonial_image.alt }}"
+                           src={{ resize_image_url(item.testimonial_image.src, 0, 0, 90 ) }}
+                           loading="lazy" />
+                    {% endif %}
+                    <div class="author-details-wrapper">
+                      <p class="testimonial-slider-item__author-name">{{ item.testimonial_author }}</p>
+                      <p class="testimonial-slider-item__role">{{ item.testimonal_role }}</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+          {% endfor %}
           </div>
-        {% endfor %}
-        </div> 
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> 
-        <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
-</div>
 
+    {% if module.button.text %} 
+    {% set href = module.button.link_field.url.href %}
 
-
+    <div class="testimonial-slider__button">
+      <a class="button-primary" href="{{ href }}"
+        {% if module.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
+        {% if module.button.link_field.rel %}rel="{{ module.button.link_field.rel }}"{% endif %}
+        >
+        {{ module.button.text }}
+      </a>
+    </div>
+    {% endif %}
+  </div>
