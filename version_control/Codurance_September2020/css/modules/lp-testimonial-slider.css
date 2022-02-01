@@ -1,9 +1,5 @@
 {% import '../utils/utils.css' as utils %}
 
-    .testimonial-wrapper{
-        max-width: 35em;
-        margin: 0 auto;
-    }    
 
     .testimonial-slider{
         background-image: var(--background_small);
@@ -23,8 +19,17 @@
     .testimonial-slider__title,
     .testimonial-slider__button{
         padding: 0 2rem;
+        max-width: 40rem;
+        margin: 0 auto;
     }
 
+    {% call utils.large_and_extra_large() %}
+        .testimonial-slider__title,
+        .testimonial-slider__button{
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+        }
+    {% endcall %}
 
     .swiper{
         max-width: 40em;
