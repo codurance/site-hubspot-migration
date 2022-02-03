@@ -97,7 +97,37 @@
 {% elif module.client_logos.button_type == "CTA" %}
 	{% cta guid="{{ module.client_logos.cta_field }}" %} 
 {% endif %}
-
 </section> <!-- END Clients section -->
+
+{% if module.boolean_video %}
+<section class="video-module">
+	<h2 class="video-module__title">{{ module.video.title }}</h2>
+	<p class="video-module__subtitle">{{ module.video.subtitle }}</p>
+	{% if module.video.embed_code %}
+		{# <div class="video-module__embed-code">{{ module.video.embed_code }}</div> #}
+	{% endif %}
+	{% if module.video.file_source.player_id %}
+		{% set max_width = module.video.file_source.size_type == 'auto_custom_max' ? module.video.file_source.max_width : module.video.file_source.width %}
+		{% set max_height = module.video.file_source.size_type == 'auto_custom_max' ? module.video.file_source.max_height : module.video.file_source.height %}
+		{% widget_block video_player "embed_player"
+		overrideable=False,
+		type='scriptV4',
+		hide_playlist=True,
+		viral_sharing=False,
+		embed_button=False,
+		full_width={{ module.video.file_source.size_type == 'auto_full_width' }},
+		width="{{ max_width }}",
+		height="{{ max_height }}",
+		player_id="{{ module.video.file_source.player_id }}"
+		%}
+		{% widget_attribute "conversion_asset" %}
+			{{ module.video.file_source.conversion_asset|tojson|safe }}
+		{% end_widget_attribute %}
+		{% end_widget_block %}
+	{% endif %}
+</section>
+{% endif %}
+  
+
 </div>  
   

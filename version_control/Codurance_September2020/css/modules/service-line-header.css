@@ -153,3 +153,31 @@
         justify-content: space-between;
     }
 {% endcall %}
+
+
+.video-module{
+    max-width: {{ content_mobile_max_width }};
+    margin: 0 auto 2em;
+}
+
+.video-module__title{
+    {{ utils.freed() }}
+}
+
+.video-module__subtitle{
+    {{ utils.natus() }}
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .video-module{
+        max-width: {{ content_inner_max_width }};
+    }
+
+    .video-module__title{
+        {{ utils.dudler() }}
+    }
+
+    .video-module__subtitle{
+        {{ utils.base() }}
+    }
+{% endcall %}
