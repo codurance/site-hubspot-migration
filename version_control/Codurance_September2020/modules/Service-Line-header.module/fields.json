@@ -117,30 +117,34 @@
       "loading" : "lazy"
     }
   }, {
-  "name": "button_text",
-  "label": "Button Text",
-  "required": false,
-  "locked": false,
-  "validation_regex": "",
-  "allow_new_line": false,
-  "show_emoji_picker": false,
-  "type": "text",
-  "placeholder": "",
-  "help_text": "Define the text to be displayed for the button",
-  "default": "Tell us about your challenges" 
+    "id" : "header.button_text",
+    "name" : "button_text",
+    "display_width" : null,
+    "label" : "Button Text",
+    "help_text" : "Define the text to be displayed for the button",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Tell us about your challenges"
   }, {
-  "name": "button_link",
-  "label": "Button Link",
-  "required": false,
-  "locked": false,
-  "validation_regex": "",
-  "allow_new_line": false,
-  "show_emoji_picker": false,
-  "type": "text",
-  "placeholder": "",
-  "help_text": "Set the web url or anchor point within the page",
-  "default": "#get-in-touch" 
-  }],
+    "id" : "header.button_link",
+    "name" : "button_link",
+    "display_width" : null,
+    "label" : "Button Link",
+    "help_text" : "Set the web url or anchor point within the page",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "#get-in-touch"
+  } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
@@ -150,9 +154,10 @@
       "src" : "",
       "alt" : null,
       "loading" : "lazy"
-    }
+    },
+    "button_text" : "Tell us about your challenges",
+    "button_link" : "#get-in-touch"
   }
-
 }, {
   "id" : "751abc44-132f-6cf6-d2e1-c1a26f4fb793",
   "name" : "image_text_section",
@@ -247,8 +252,6 @@
     "locked" : false,
     "display" : "select",
     "choices" : [ [ "standard", "Standard" ], [ "cta", "CTA" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
     "type" : "choice"
   }, {
     "id" : "3ab8dfd5-c18c-6850-6769-8fe4a368496a",
@@ -330,4 +333,101 @@
       "no_follow" : false
     }
   }
+}, {
+  "id" : "dbc668d0-449d-1fbf-2023-ff5f4366f7d9",
+  "name" : "boolean_video",
+  "display_width" : null,
+  "label" : "Add video section?",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "2f6969d3-240a-9a3d-b377-a36cc4896e91",
+  "name" : "video",
+  "display_width" : null,
+  "label" : "Video",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "dbc668d0-449d-1fbf-2023-ff5f4366f7d9",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "children" : [ {
+    "id" : "476b5fff-f64e-ed14-4ad7-2e98601ffbf3",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "c52da640-66a8-07a9-073c-67825a918a89",
+    "name" : "subtitle",
+    "display_width" : null,
+    "label" : "Subtitle",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "73c4c53e-0b94-5282-78bc-072fb9b581d4",
+    "name" : "source",
+    "display_width" : null,
+    "label" : "Type of source",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "embed", "Embed" ], [ "hs_files", "Hubspot Files" ] ],
+    "type" : "choice"
+  }, {
+    "id" : "8f0cd49c-17ed-d55c-62cc-31c8fbbb520e",
+    "name" : "embed_code",
+    "display_width" : null,
+    "label" : "Embed code",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "73c4c53e-0b94-5282-78bc-072fb9b581d4",
+      "controlling_value_regex" : "embed",
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "ab77020f-2b70-ecd8-63d7-0f78407eed93",
+    "name" : "file_source",
+    "display_width" : null,
+    "label" : "File source",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "73c4c53e-0b94-5282-78bc-072fb9b581d4",
+      "controlling_value_regex" : "hs_files",
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "resizable" : true,
+    "show_preview" : true,
+    "show_advanced_options" : false,
+    "type" : "videoplayer"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
 } ]
