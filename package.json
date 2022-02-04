@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/codurance/site-hubspot-migration#readme",
   "dependencies": {
-    "@hubspot/cli": "^3.0.9",
+    "@hubspot/cli": "^3.0.10",
     "@hubspot/cms-cli": "^2.2.0",
     "js-yaml": "^3.14.0"
   }
