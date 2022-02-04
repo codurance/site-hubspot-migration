@@ -156,7 +156,7 @@
 
 .video{
     max-width: {{ content_mobile_max_width }};
-    margin: 6em auto 2em;
+    margin: 4em auto 2em;
 }
 
 .video__title{
@@ -170,7 +170,7 @@
 
 .video__embed-code{
     max-width: 40em;
-    margin: 2em auto;
+    margin: 2.5em auto;
 }
 
 .video__embed-code__inner{
@@ -204,12 +204,11 @@
         {{ utils.base() }}
         max-width: 50ch;
     }
-
-   
 {% endcall %}
 
-{% call utils.extra_large() %}
-     .video__embed-code{
-        margin-top: 4em;
+
+{% call utils.large_and_extra_large() %}
+    .video{
+        margin-top: 8em;
     }
 {% endcall %}
