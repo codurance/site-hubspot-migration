@@ -1,0 +1,44 @@
+{% import '../utils/utils.css' as utils %}
+
+.cm-form-wrapper{
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 1em;
+}
+
+.cm-form__title{
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+.cm-form__subtitle{
+    {{ utils.natus() }}
+    margin-top: 0.5em;
+    max-width: 45ch;
+}
+
+.cm-form-wrapper form{
+    margin-top: 2em;
+}
+
+.cm-form-wrapper fieldset{
+    max-width: none !important;
+}
+
+.cm-form-wrapper .form-columns-2 .hs-input{
+    width: 100% !important;
+}
+
+.cm-form-wrapper .legal-consent-container p{
+    color: white;
+    {{utils.natus()}}
+}
+.cm-form-wrapper .hs-button{
+    width: 100%;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .cm-form-wrapper{
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+{% endcall %}
