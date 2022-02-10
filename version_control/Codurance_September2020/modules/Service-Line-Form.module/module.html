@@ -1,0 +1,41 @@
+  {% require_css %}
+  <style>
+  {% scope_css %}
+    .cm-form{
+		background: url("{{ module.style.background_image.src }}"),
+					linear-gradient(204deg,
+					{{ module.style.gradient.color_1.color }} 60%,
+					{{ module.style.gradient.color_2.color }});
+    background-repeat: no-repeat, no-repeat;
+    background-position: top right, bottom left;
+
+    color: white;
+    }
+
+	@media (max-width: 767px) {
+		.cm-form{
+			background-size: 0, cover;
+		}
+  }
+  {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+
+{{ require_css(get_asset_url("../../css/modules/service-line-form.css")) }}
+
+  <div class="cm-form">
+    <div class="cm-form-wrapper">
+      <h2 class="cm-form__title">{{ module.title }}</h2>
+      <p class="cm-form__subtitle">{{ module.subtitle }}</p>
+
+      {% form
+        form_to_use="{{ module.form_field.form_id }}"
+        response_response_type="{{ module.form_field.response_type }}"
+        response_message="{{ module.form_field.message }}"
+        response_redirect_id="{{ module.form_field.redirect_id }}"
+        response_redirect_url="{{module.form_field.redirect_url}}"
+        gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+      %}
+    </div>
+  </div>
