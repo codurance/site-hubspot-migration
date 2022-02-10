@@ -22,7 +22,7 @@ label: Services Inner Page
   {{ standard_header_includes }}
   {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
   {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
-</head>
+  </head>
 
 {% block body %}
 <div class="cm-services-inner-layout type1">
@@ -47,15 +47,11 @@ label: Services Inner Page
     {% dnd_area "dnd_area4" class='cm-services-inner-section4', label='Section 4' %}
     {% end_dnd_area %}
 
-    <div class="cm-services-inner-bottom-wrap">
-      {% dnd_area "dnd_area5" class='cm-services-inner-section5', label='Section 5' %}
-      {% end_dnd_area %}
+    <div class="cm-services-inner-bottom-wrap" id="get-in-touch">
+    
+    {% dnd_area "dnd_area5" class='section-5', label='Section 5' %}
+    {% end_dnd_area %}
 
-      <div class="cm-services-inner-section7"></div>
-    </div>
-    <div class="hs-get-in-touch-section" id="get-in-touch">
-      {% dnd_area "dnd_area7" class='cm-services-inner-section8', label='Section 6' %}
-      {% end_dnd_area %}
     </div>
   </main>
 </div>
