@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+html{
+    scroll-behavior: smooth;
+}
+
 .cm-services-inner-layout .dnd-section,
 .hs-training-inner-layout .dnd-section {
     max-width: var(--max-page-width);
@@ -98,15 +102,15 @@
     }
 {% endcall %}
 
-.cm-services-inner-bottom-wrap,
-.cm-services-inner-section3 {
-    background: #fcf9f1 linear-gradient(90deg, #fcf9f1 52%, #fcf4f4 100%);
-}
 
 .cm-services-inner-bottom-wrap .dnd-section > .row-fluid {
     max-width:1300px;
     padding-left:0;
     padding-right:0;
+}
+
+.section-5 .dnd-section {
+    padding:0;
 }
 
 
@@ -140,7 +144,7 @@
     padding-bottom: 250px;
     padding-top: 200px;
     max-width: 100%;
-    background-color: rgba(43, 51, 66, 1);
+    background-color: lightblue;
     margin-top: -250px;
 }
 {% call utils.small() %}
