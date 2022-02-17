@@ -17,7 +17,7 @@
 
 {% macro gaudi_margin() %}
   margin-bottom: var(--gaudi-margin);
-  margin-bottom: var(--gaudi-margin);
+  margin-top: var(--gaudi-margin);
 {% endmacro %}
 
 {% macro eames() %}

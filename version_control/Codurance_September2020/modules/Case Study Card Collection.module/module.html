@@ -1,10 +1,12 @@
 {{ require_css(get_asset_url("../../css/modules/case-study-card.css")) }}
 {% import '../../snippets/button-snippets.html' as snippets %}
 
-<div class="case-study-card-collection__header">
-  <h2>{{ module.title }}</h2>
-  <p>{{ module.subtitle }}</p>
-</div>
+{% if module.title or module.subtitle %} 
+  <div class="case-study-card-collection__header">
+    <h2>{{ module.title }}</h2>
+    <p>{{ module.subtitle }}</p>
+  </div>
+{% endif %}
 
 <div class="case-study-card-collection">
   {% for card in module.case_study_card %}
