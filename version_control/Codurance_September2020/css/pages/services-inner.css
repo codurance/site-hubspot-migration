@@ -103,11 +103,6 @@ html{
 {% endcall %}
 
 
-.cm-services-inner-bottom-wrap .dnd-section > .row-fluid {
-    max-width:1300px;
-    padding-left:0;
-    padding-right:0;
-}
 
 .section-5 .dnd-section {
     padding:0;
