@@ -1,14 +1,16 @@
 {{ require_css(get_asset_url("../../css/modules/case-study-card.css")) }}
 {% import '../../snippets/button-snippets.html' as snippets %}
 
-{% if module.title or module.subtitle %} 
+<div class="case-study-card-collection">
+    
+  {% if module.title or module.subtitle %}
   <div class="case-study-card-collection__header">
     <h2>{{ module.title }}</h2>
     <p>{{ module.subtitle }}</p>
   </div>
-{% endif %}
-
-<div class="case-study-card-collection">
+  {% endif %}
+  
+  <div class="case-study-card-collection__cards">
   {% for card in module.case_study_card %}
     <div class="case-study-card">
       <div class="case-study-card__image" style="background-image: url({{ card.card_top_background.src }});"> </div>
@@ -17,26 +19,25 @@
           {% set sizeAttrs = 'width="{{ card.card_thumbnail.width }}" height="{{ card.card_thumbnail.height }}"' %}
           <img src="{{ card.card_thumbnail.src }}" alt="{{ card.card_thumbnail.alt }}" {{ sizeAttrs }} class="case-study-card__card-thumbnail">
         {% endif %}
-        
-        <h3 class="case-study-card__card-title">{{ card.card_title }}</h3>
-        <p class="case-study-card__card-description">{{ card.card_text }}</p>
-        
+  
+        <h3 class="case-study-card__title">{{ card.card_title }}</h3>
+        <p class="case-study-card__description">{{ card.card_text }}</p>
+  
         {% set href = card.card_button_link.url.href %}
         {% set link_target = "" %}
-
         {% if card.card_button_link.open_in_new_tab %}
           {% set link_target = "_blank" %}
         {% endif %}
-
-        {{ 
+        {{
           snippets.button_secondary(
-          url=href, 
-          classnames="", 
-          text=card.card_button_text, 
-          target=link_target, 
-          rel=card.card_button_link.rel) 
+          url=href,
+          classnames="",
+          text=card.card_button_text,
+          target=link_target,
+          rel=card.card_button_link.rel)
         }}
       </div>
     </div>
   {% endfor %}
+  </div>
 </div>
