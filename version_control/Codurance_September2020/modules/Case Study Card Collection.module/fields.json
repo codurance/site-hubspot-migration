@@ -8,7 +8,8 @@
   "validation_regex" : "",
   "allow_new_line" : false,
   "show_emoji_picker" : false,
-  "type" : "text"
+  "type" : "text",
+  "default": "How we’ve helped our clients"
 }, {
   "id" : "a7f696e4-98e2-ea70-6d3e-7b2346924e67",
   "name" : "subtitle",
@@ -19,7 +20,8 @@
   "validation_regex" : "",
   "allow_new_line" : false,
   "show_emoji_picker" : false,
-  "type" : "text"
+  "type" : "text",
+  "default": "Take a look at how we’ve helped some of our clients tackle similar challenges."
 }, {
   "id" : "6da6934c-6675-9016-fd46-1043fd2f0db4",
   "name" : "case_study_card",
