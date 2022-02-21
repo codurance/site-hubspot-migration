@@ -1,18 +1,64 @@
 [ {
+  "id" : "2088a497-0efd-bda7-6f6b-144d222d10c4",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default": "How we’ve helped our clients"
+}, {
+  "id" : "a7f696e4-98e2-ea70-6d3e-7b2346924e67",
+  "name" : "subtitle",
+  "display_width" : null,
+  "label" : "Subtitle",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default": "Take a look at how we’ve helped some of our clients tackle similar challenges."
+}, {
   "id" : "6da6934c-6675-9016-fd46-1043fd2f0db4",
   "name" : "case_study_card",
+  "display_width" : null,
   "label" : "Case Study Card",
   "required" : false,
   "locked" : false,
   "occurrence" : {
     "min" : null,
-    "max" : null,
+    "max" : 3,
     "sorting_label_field" : null,
     "default" : null
   },
   "children" : [ {
+    "id" : "18aa2491-4bbb-d9b4-f03a-d8aeb6c23dd0",
+    "name" : "card_top_background",
+    "display_width" : null,
+    "label" : "Card Top Background",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent-eu1.net/hubfs/25556651/Imported%20images/case%20study%20card-bg.png",
+      "alt" : "Case study card top background",
+      "width" : 386,
+      "height" : 96,
+      "max_width" : 386,
+      "max_height" : 96
+    }
+  }, {
     "id" : "a78c6488-4267-b617-fb08-530d4120f321",
     "name" : "card_thumbnail",
+    "display_width" : null,
     "label" : "Card Thumbnail",
     "required" : false,
     "locked" : false,
@@ -28,6 +74,7 @@
   }, {
     "id" : "d450a564-2817-dcd6-d99d-3aa8b3fc91dc",
     "name" : "card_title",
+    "display_width" : null,
     "label" : "Card Title",
     "required" : false,
     "locked" : false,
@@ -39,6 +86,7 @@
   }, {
     "id" : "fc42559c-30dd-257b-d7c8-5f883bc3bb05",
     "name" : "card_text",
+    "display_width" : null,
     "label" : "Card Text",
     "required" : false,
     "locked" : false,
@@ -48,22 +96,65 @@
     "show_emoji_picker" : false,
     "type" : "text"
   }, {
-    "id" : "80bece89-a741-139d-ce9a-a68f33c8165c",
-    "name" : "cta_field",
-    "label" : "CTA",
+    "id" : "2690f020-9a95-9974-6dae-6b1f2caa56c4",
+    "name" : "card_button_text",
+    "display_width" : null,
+    "label" : "Card Button Text",
     "required" : false,
     "locked" : false,
-    "type" : "cta"
+    "validation_regex" : "",
+    "placeholder" : "A brief description of the case study.",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Download Case Study"
+  }, {
+    "id" : "0f0ac2ee-2482-3952-a2cd-c5ecc8b2adb5",
+    "name" : "card_button_link",
+    "display_width" : null,
+    "label" : "Card Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
   "default" : {
+    "card_top_background" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent-eu1.net/hubfs/25556651/Imported%20images/case%20study%20card-bg.png",
+      "alt" : "Case study card top background",
+      "width" : 386,
+      "height" : 96,
+      "max_width" : 386,
+      "max_height" : 96
+    },
     "card_thumbnail" : {
       "size_type" : "auto",
       "src" : "",
-      "alt" : null,
-      "loading" : "disabled"
+      "alt" : null
+    },
+    "card_button_text" : "Download Case Study",
+    "card_button_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
     }
   }
 } ]
