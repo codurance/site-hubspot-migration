@@ -231,7 +231,7 @@ ul.no-list {
   width: 91%;
 }
 ul.inputs-list label {
-  align-items: center;
+  align-items: start;
   display: flex;
   font-size: 14px;
 }

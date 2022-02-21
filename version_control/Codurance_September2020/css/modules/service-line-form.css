@@ -42,11 +42,11 @@
     margin: 0;
     font: inherit;
     color: currentColor;
-    width: 2.55em !important;
+    width: 1.15em !important;
     height: 1.15em;
     border: 0.15em solid currentColor;
     border-radius: 0.15em;
-    transform: translateY(-1.375em);
+    transform: translateY(0.025rem);
 }
 
 .cm-form-wrapper input[type="checkbox"]::before {
