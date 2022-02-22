@@ -1,0 +1,47 @@
+<!--
+    templateType: page
+    label: Service Line Hub Template
+    isAvailableForNewContent: true
+-->
+
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/homepage-v2.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+  {% dnd_area 'header menu' class='class' %}
+    {% module "page_template_rich_text" path="@hubspot/rich_text" label="Rich Text" %}
+    {% end_dnd_area %}
+    
+    {% dnd_area 'section1' class='section1' label="Section 1" %}   
+        {% module 'clients' path='../modules/Clients-Logos.module' label="Clients logos Section" no_wrapper=True%}
+    {% end_dnd_area %}
+
+
+  {% dnd_area 'section2' class='section2' %}
+  {% end_dnd_area %}
+
+  {% dnd_area 'section3' class='section3' %}  
+  {% end_dnd_area %}
+
+  {% dnd_area 'section4' class='section4' %}  
+  {% end_dnd_area %}
+
+{% endblock body %}
