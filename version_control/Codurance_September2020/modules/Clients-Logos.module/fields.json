@@ -17,7 +17,7 @@
   "locked" : false,
   "occurrence" : {
     "min" : 1,
-    "max" : 5,
+    "max" : null,
     "sorting_label_field" : null,
     "default" : null
   },
