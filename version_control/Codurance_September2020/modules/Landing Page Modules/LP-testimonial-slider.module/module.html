@@ -42,8 +42,12 @@
             </div>
           {% endfor %}
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+
+          {% if module.testimonial_items|length > 1 %}
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          {% endif %}
+
           <div class="swiper-pagination"></div>
         </div>
       </div>
