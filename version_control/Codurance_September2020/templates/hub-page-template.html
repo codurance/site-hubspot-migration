@@ -26,22 +26,17 @@
 </head>
 
 {% block body %}
-  {% dnd_area 'header menu' class='class' %}
-    {% module "page_template_rich_text" path="@hubspot/rich_text" label="Rich Text" %}
-    {% end_dnd_area %}
-    
-    {% dnd_area 'section1' class='section1' label="Section 1" %}   
-        {% module 'clients' path='../modules/Clients-Logos.module' label="Clients logos Section" no_wrapper=True%}
-    {% end_dnd_area %}
 
 
-  {% dnd_area 'section2' class='section2' %}
-  {% end_dnd_area %}
+<section>
+  {% module "clients_section"path='../modules/Clients-logos.module' label="Clients Section" no_wrapper=True %}
+</section>
+<section>
+  {% module "compass_section" path='../modules/Compass.module' label="Compass Section" no_wrapper=True %}
+</section>
+<section>
+  {% module "form_section" path='../modules/Service-Line-Form.module' label="Form Section" no_wrapper=True %}
+</section>
 
-  {% dnd_area 'section3' class='section3' %}  
-  {% end_dnd_area %}
-
-  {% dnd_area 'section4' class='section4' %}  
-  {% end_dnd_area %}
 
 {% endblock body %}
