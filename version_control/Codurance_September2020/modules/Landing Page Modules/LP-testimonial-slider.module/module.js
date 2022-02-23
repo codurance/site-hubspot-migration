@@ -17,10 +17,9 @@ let swiper = new Swiper(".swiper", {
   },
 });
 
-/* Check the number of slides on the swiper slider and
-disable it if there's just a single one (in that case,
-the length would be 3 due to the loop property) */
-if(swiper.slides.length == 3) {
+const minimumSlidesAvailable = 3;
+
+if(swiper.slides.length == minimumSlidesAvailable) {
   swiper.destroy();
 }
 
