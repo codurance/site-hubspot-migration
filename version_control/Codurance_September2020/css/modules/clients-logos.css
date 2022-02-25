@@ -4,8 +4,8 @@
 .client-logos__content{
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 1em;
 }
-
 
 .client-logos__headline{
     {{ utils.natus() }}
@@ -16,18 +16,19 @@
 .client-logos__logos-group{
     filter: contrast(0%);
     margin: 2em 0;
+    display: grid;
     gap: 1em;
-    display: flex;
-    gap: 1.5em;
-    flex-flow: wrap;
+    grid-template-columns: repeat( auto-fit, minmax(130px, 1fr) );
+    justify-items: center;
 }
 
 .client-logos__logos-group img{
-    height: 40px;
+    max-height: 40px;
 }
 
 {% call utils.medium_large_and_extra_large() %}
     .client-logos__logos-group{
-        justify-content: space-between;
+        grid-template-columns: repeat( auto-fit, minmax(180px, 1fr) );
+        row-gap: 2em;
     }
 {% endcall %}
