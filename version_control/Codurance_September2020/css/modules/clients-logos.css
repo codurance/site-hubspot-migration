@@ -4,7 +4,7 @@
 .client-logos__content{
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 2em 1em;
 }
 
 .client-logos__headline{
@@ -15,7 +15,7 @@
 
 .client-logos__logos-group{
     filter: contrast(0%);
-    margin: 2em 0;
+    margin: 1.5em 0;
     display: grid;
     gap: 1em;
     grid-template-columns: repeat( auto-fit, minmax(130px, 1fr) );
@@ -28,7 +28,7 @@
 
 {% call utils.medium_large_and_extra_large() %}
     .client-logos__logos-group{
-        grid-template-columns: repeat( auto-fit, minmax(180px, 1fr) );
+        grid-template-columns: repeat( auto-fit, minmax(170px, 1fr) );
         row-gap: 2em;
     }
 {% endcall %}
