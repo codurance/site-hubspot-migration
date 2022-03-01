@@ -6,9 +6,21 @@
 {{ require_css(get_asset_url("../../../css/layout.css")) }}
 
 <section class="feature-section">
-    <h1 class="feature-section__title">{% module "Title" path='@hubspot/text' label="Titulo" no_wrapper=True %}</h1>
+    <h1 class="feature-section__title">
+        {% module "Title" path='@hubspot/text' label="Titulo" no_wrapper=True %}
+    </h1>
+    
     {% module "Subtitle" path='@hubspot/rich_text' label="Subtitulo" no_wrapper=True %}
 
-    {% module "Button-CTA" path='/version_control/Codurance_September2020/modules/Button.module' label="Button-CTA" %}
+    {% module "industries_section" 
+        path='/version_control/Codurance_September2020/modules/Icon-cloud.module' 
+        label="Industries Section" 
+        no_wrapper=True 
+    %}
+
+    {% module "Button-CTA" 
+        path='/version_control/Codurance_September2020/modules/Button.module' 
+        label="Button-CTA" 
+    %}
 </section>
 <!-- End partial -->
