@@ -1,0 +1,17 @@
+
+
+<div class="icons-group">
+	{% for icon in module.icon_group %}
+		{% if icon.image.src %}	
+		{% set sizeAttrs = 'width="{{ icon.image.width }}" height="{{ icon.image.height }}"' %}
+			{% if icon.image.size_type == 'auto' %}
+				{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+			{% elif icon.image.size_type == 'auto_custom_max' %}
+				{% set sizeAttrs = 'width="{{ icon.image.max_width }}" height="{{ icon.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+			{% endif %}
+			{% set loadingAttr = icon.image.loading != 'disabled' ? 'loading="{{ icon.image.loading }}"' : '' %}
+			<img class="icon__image" src="{{ icon.image.src }}" alt="{{ icon.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+			{% endif %}
+			<p class="icon__title">{{ icon.title }}</p>
+	{% endfor %}
+</div>

@@ -1,0 +1,12 @@
+{
+  "global" : false,
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 67456635665,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../css/modules/icon-cloud.css",
+    "name" : "icon-cloud.css"
+  } ],
+  "label" : "Icon",
+  "is_available_for_new_content" : true
+}
