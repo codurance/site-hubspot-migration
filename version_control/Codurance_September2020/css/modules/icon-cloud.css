@@ -3,7 +3,6 @@
 .icons-group{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    max-width: var(--content-inner-max-width);
     row-gap: 2em;
     margin: 2.5em auto;
 }
@@ -13,6 +12,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5em;
+    max-width: 5em;
 }
 
 .icon__title {
@@ -28,4 +28,14 @@
     .icon__image {
         width: 70%;
     }
+
+    .icon__title {
+        {{ utils.natus() }}
+    }   
 {% endcall %}
+
+{% call utils.small_and_medium() %}
+    .icon__title {
+        font-weight: var(--heavy-font-weight);
+    }  
+{%endcall%}
