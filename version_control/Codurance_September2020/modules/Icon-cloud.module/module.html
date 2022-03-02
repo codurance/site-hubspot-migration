@@ -10,8 +10,10 @@
 				{% set sizeAttrs = 'width="{{ icon.image.max_width }}" height="{{ icon.image.max_height }}" style="max-width: 100%; height: auto;"' %}
 			{% endif %}
 			{% set loadingAttr = icon.image.loading != 'disabled' ? 'loading="{{ icon.image.loading }}"' : '' %}
-			<img class="icon__image" src="{{ icon.image.src }}" alt="{{ icon.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-			{% endif %}
-			<p class="icon__title">{{ icon.title }}</p>
+			<div class="icon">
+				<img class="icon__image" src="{{ icon.image.src }}" alt="{{ icon.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+				{% endif %}
+				<p class="icon__title">{{ icon.title }}</p>
+			</div>
 	{% endfor %}
 </div>
