@@ -1,0 +1,45 @@
+{% import '../../utils/utils.css' as utils %}
+
+.feature-section {
+    background: 
+        url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Industries/HP_Industries_Background.svg"),
+        linear-gradient(240deg, var(--slate) 60%, var(--woodsmoke));
+    background-position: top right, bottom left;
+    background-repeat: no-repeat, no-repeat;
+    color: white;
+    padding: 3em 1em;
+}
+
+.feature-section__heading-text {
+    max-width: var(--content-inner-max-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-section__heading-text h2 {
+    {{ utils.eames() }}
+}
+
+.feature-section__heading-text p {
+    {{ utils.base() }}
+    {{ utils.dudler_margin() }}
+    max-width: var(--base-max-width);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .feature-section {
+        padding: 4em 1em;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .feature-section__heading-text h2 {
+        {{ utils.freed() }}
+        font-weight: var(--heavy-font-weight);  
+    }
+
+    .feature-section__heading-text p {
+        {{ utils.natus() }}
+    }
+{% endcall %}
+
