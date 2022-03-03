@@ -1,14 +1,14 @@
 {% import '../../utils/utils.css' as utils %}
 
 .feature-section {
+    --image-background: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Industries/HP_Industries_Background.svg");
+    --gradient: linear-gradient(240deg, var(--slate) 60%, var(--woodsmoke));
     background-color: var(--slate);
-    background:
-        url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Industries/HP_Industries_Background.svg"),
-        linear-gradient(240deg, var(--slate) 60%, var(--woodsmoke));
+    background: var(--image-background),
+                var(--gradient);
     background-position: top right, bottom left;
     background-repeat: no-repeat, no-repeat;
     color: white;
-    padding: 3em 1em;
 }
 
 .feature-section > div {
@@ -33,7 +33,7 @@
 
 {% call utils.small() %}
     .feature-section {
-        background: linear-gradient(240deg, var(--slate) 60%, var(--woodsmoke));
+        background: var(--gradient)
     }
 
     .feature-section__heading-text h2 {
@@ -46,16 +46,12 @@
     }
 {% endcall %}
 
-{% call utils.medium_large_and_extra_large() %}
-    .feature-section {
-        padding: 4em 3em;
-    }
-{% endcall %}
-
 {% call utils.medium() %}
     .feature-section {
         background-position-x: 125%;
         background-position-y: -20%;
     }
 {% endcall %}
+
+
 
