@@ -2,12 +2,7 @@
 
 {{ require_css(get_asset_url("../../css/modules/compass.css")) }}
 
-<div class="compasss-image">
-	{% if module.image_field_test.src %}
-    {% set loadingAttr = module.image_field_test.loading != 'disabled' ? 'loading="{{ module.image_field_test.loading }}"' : '' %}
-    <img src="{{ module.image_field_test.src }}" alt="{{ module.image_field_test.alt }}" {{ loadingAttr }}>
-	{% endif %}
-</div>
+
 
 <div class="compass-wrapper">
 	<div class="compass-content">
@@ -51,7 +46,7 @@
     {% endif %}
 		
 	</div>
-	<div class="compasss-image">
+	<div class="compass-image">
 		{% if module.image_field.src %}
 			 {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
 			<img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }}>

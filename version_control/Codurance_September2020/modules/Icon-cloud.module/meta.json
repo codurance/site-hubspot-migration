@@ -1,5 +1,6 @@
 {
   "global" : false,
+  "icon" : "fontawesome-5.14.0:Grip%20Horizontal:SOLID",
   "host_template_types" : [ "PAGE" ],
   "module_id" : 67456635665,
   "css_assets" : [ {
