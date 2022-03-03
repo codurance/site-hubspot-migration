@@ -28,24 +28,27 @@
 {% block body %}
 
 <section class="header">
-  {% module 'title' path='@hubspot/text' label="Header Title" no_wrapper=True %}
-  {% module 'subtitle'  path='@hubspot/text' label="Header Subtitle"%}
-  {% module 'button'  path='../modules/button.module' label="Header button"%}
-    
+  <h1 class="header__title">{% module 'title' path='@hubspot/text' label="Header Title" no_wrapper=True %}</h1>
+  <p class="header__subtitle">
+    {% module 'subtitle'  path='@hubspot/text' label="Header Subtitle" no_wrapper=True %}
+  </p>
+  {% module 'button'  path='../modules/button.module' label="Header button" no_wrapper=True %}
 </section>
 
-<section class="clients-section">
-  {% module "clients_section" path='../modules/Clients-logos.module' label="Clients Section" no_wrapper=True %}
-</section>
-
-{% include "./partials/sections/feature-section.html" %}
-
-<section class="compass-section">
-  {% module "compass_section" path='../modules/Compass.module' label="Compass Section" no_wrapper=True %}
-</section>
-
-<section id="form-section" class="form-section">
-  {% module "form_section" path='../modules/Service-Line-Form.module' label="Form Section" %}
-</section>
+<main>
+  <section class="clients-section">
+    {% module "clients_section" path='../modules/Clients-logos.module' label="Clients Section" no_wrapper=True %}
+  </section>
+  
+  {% include "./partials/sections/feature-section.html" %}
+  
+  <section class="compass-section">
+    {% module "compass_section" path='../modules/Compass.module' label="Compass Section" no_wrapper=True %}
+  </section>
+  
+  <section id="form-section" class="form-section">
+    {% module "form_section" path='../modules/Service-Line-Form.module' label="Form Section" %}
+  </section>
+</main>
 
 {% endblock body %}
