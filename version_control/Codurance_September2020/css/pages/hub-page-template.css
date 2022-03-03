@@ -1,9 +1,41 @@
 {% import '../utils/utils.css' as utils %}
 
+html{
+    scroll-behavior: smooth;
+}
 
+body{
+    max-width: none;
+}
+
+.header,
 .clients-section,
 .feature-section{
        padding: 3em 1em;   
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .header,
+    .clients-section,
+    .compass-section,
+    .feature-section{
+           padding: 5em 3em;   
+    }    
+{% endcall %}
+
+
+.header__title{
+    {{ utils.dudler() }}
+    var(--heavy-font-weight)
+}
+
+.header__subtitle{
+    {{ utils.freed_margin() }}
+    max-width: var(--habib-max-width);
+}
+
+.header .custom-btn{
+    max-width: fit-content;
 }
 
 .compass-section{
@@ -13,11 +45,3 @@
     padding-right: 1em;   
 }
 
-
-{% call utils.medium_large_and_extra_large() %}
-    .clients-section,
-    .compass-section,
-    .feature-section{
-           padding: 5em 3em;   
-    }    
-{% endcall %}
