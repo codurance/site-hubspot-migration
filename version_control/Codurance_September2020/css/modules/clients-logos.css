@@ -2,9 +2,8 @@
 {% import '../utils/utils.css' as utils %}
 
 .client-logos__content{
-    max-width: 1000px;
+    max-width: var(--content-inner-max-width);
     margin: 0 auto;
-    padding: 2em 1em;
 }
 
 .client-logos__headline{

@@ -1,0 +1,23 @@
+{% import '../utils/utils.css' as utils %}
+
+
+.clients-section,
+.feature-section{
+       padding: 3em 1em;   
+}
+
+.compass-section{
+    --gradient-main: #ecf8f8;
+   {{ utils.color1_to_color2("to top", "var(--gradient-main)", "white") }}
+    padding-left: 1em;   
+    padding-right: 1em;   
+}
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .clients-section,
+    .compass-section,
+    .feature-section{
+           padding: 5em 3em;   
+    }    
+{% endcall %}

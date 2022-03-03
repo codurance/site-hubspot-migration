@@ -17,7 +17,7 @@
   {{ require_css(get_asset_url("../css/main.css")) }}
   {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
 
-  {{ require_css(get_asset_url("../css/pages/homepage-v2.css")) }}
+  {{ require_css(get_asset_url("../css/pages/hub-page-template.css")) }}
 
   {{ require_js(get_asset_url("../js/main.js")) }}
   {{ standard_header_includes }}
@@ -27,15 +27,24 @@
 
 {% block body %}
 
-{% include "./partials/sections/feature-section.html" %}
+<section class="header">
+  {% module 'title' path='@hubspot/text' label="Header Title" no_wrapper=True %}
+  {% module 'subtitle'  path='@hubspot/text' label="Header Subtitle"%}
+  {% module 'button'  path='../modules/button.module' label="Header button"%}
+    
+</section>
 
-<section>
+<section class="clients-section">
   {% module "clients_section" path='../modules/Clients-logos.module' label="Clients Section" no_wrapper=True %}
 </section>
-<section>
+
+{% include "./partials/sections/feature-section.html" %}
+
+<section class="compass-section">
   {% module "compass_section" path='../modules/Compass.module' label="Compass Section" no_wrapper=True %}
 </section>
-<section>
+
+<section id="form-section" class="form-section">
   {% module "form_section" path='../modules/Service-Line-Form.module' label="Form Section" %}
 </section>
 
