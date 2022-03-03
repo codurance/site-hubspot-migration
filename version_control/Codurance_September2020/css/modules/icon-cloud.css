@@ -11,8 +11,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5em;
     max-width: 5em;
+}
+
+.icon__image {
+    margin-bottom: 10px;
 }
 
 .icon__title {
@@ -23,14 +26,17 @@
 {% call utils.small()%}
     .icons-group{
         grid-template-columns: repeat(4, 1fr);
+        column-gap: 0.5em;
         row-gap: 1em;
     }
+
     .icon__image {
         width: 70%;
     }
 
     .icon__title {
         {{ utils.natus() }}
+        line-height: var(--sejima-line-height);
     }   
 {% endcall %}
 
