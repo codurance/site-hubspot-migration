@@ -1,0 +1,15 @@
+{% import '../utils/utils.css' as utils %}
+
+{% call utils.small() %}
+    .header__links-hub {
+        display: flex;
+        flex-direction: column;
+        flex: wrap;
+        list-style-type: none;
+    }
+
+    .header__hub-item {
+        max-width: 100%;
+        display: block;
+    }
+{%endcall %}

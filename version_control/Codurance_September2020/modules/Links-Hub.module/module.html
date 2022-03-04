@@ -1,0 +1,31 @@
+{{ require_css(get_asset_url("../../css/modules/links-hub.css")) }}
+
+<ul class="header__links-hub">
+	{% for item in module.links_hub %}
+		<li class="header__hub-item" style="
+			background: transparent linear-gradient(72deg, var(--woodsmoke) 0%, 
+			{{ item.movile_version.gradient_color }} 100%) 0% 0% no-repeat padding-box;
+			box-shadow: 0px 3px 10px {{ item.movile_version.box_shadow_color }};"
+		>
+			{% set href = item.link_field.url.href %}
+			<a class="header__hub-link" href="{{ href }}"
+				{% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+				{% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+			>
+				{% if item.image_field.src %}
+					{% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
+					{% if item.image_field.size_type == 'auto' %}
+						{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+					{% elif item.image_field.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="{{ item.image_field.max_width }}" height="{{ item.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+					{% endif %}
+					{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+						<img class="header__hub-link-icon" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+				{% endif %}
+			
+				<h2 class="header__hub-link-title">{% inline_text field="title" value="{{ item.title }}" %}</h2>
+				<p class="header__hub-link-subtitle">{% inline_text field="subtitle" value="{{ item.subtitle }}" %}</p>
+			</a>
+		</li>
+	{% endfor %}
+</ul>
