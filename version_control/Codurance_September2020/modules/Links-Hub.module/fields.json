@@ -88,7 +88,7 @@
     "type" : "text"
   }, {
     "id" : "c1825aee-8f7a-d7f4-0b47-7095f34a8662",
-    "name" : "movile_version",
+    "name" : "mobile_version",
     "display_width" : null,
     "label" : "Mobile Version",
     "required" : false,
