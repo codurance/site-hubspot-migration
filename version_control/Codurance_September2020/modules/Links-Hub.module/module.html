@@ -6,7 +6,7 @@
 			<li class="hub-menu__item" style="
 				background: transparent linear-gradient(72deg, var(--woodsmoke) 25%,
 				rgba({{ item.mobile_version.gradient_color.color|convert_rgb }}, 0.42) 100%) 0% 0% no-repeat padding-box;
-				box-shadow: 0px 3px 10px {{ item.mobile_version.box_shadow_color.color }};"
+				box-shadow: 0px 3px 10px rgba({{ item.mobile_version.box_shadow_color.color|convert_rgb }}, 0.4);"
 			>
 				{% set href = item.link_field.url.href %}
 				<a class="hub-menu__link" href="{{ href }}"

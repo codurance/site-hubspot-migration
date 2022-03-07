@@ -1,15 +1,16 @@
 {% import '../utils/utils.css' as utils %}
 
-    
+
 .hub-menu {
     list-style-type: none;
+    margin: 2em auto 0;
+    max-width: 25em;
 }
 
 .hub-menu__item {
     border-radius: 6px;
     display: block;
     max-width: 100%;
-    padding: 1em 0.5em;
 }
 
 .hub-menu__item:not(:first-child){
@@ -17,11 +18,12 @@
 }
 
 .hub-menu__link{
-    display: flex;
     align-items: center;
     color: white;
+    display: flex;
     gap: 1em;
     line-height: inherit;
+    padding: 1em 0.5em;
 }
 .hub-menu__link:hover{
     text-decoration: none;
@@ -42,9 +44,7 @@
 .hub-menu__link-info {
   display: flex;
   flex-direction: column;
-  gap: .5em;
-  justify-content: space-between;
-  width: 75%;
+  gap: .25em;
   z-index: 1;
 }
 

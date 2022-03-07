@@ -2,10 +2,8 @@
 
 .feature-section {
     --image-background: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Industries/HP_Industries_Background.svg");
-    --gradient: linear-gradient(240deg, var(--slate) 60%, var(--woodsmoke));
     background-color: var(--slate);
-    background: var(--image-background),
-                var(--gradient);
+    background: var(--image-background), var(--slate-to-woodsmoke);
     background-position: top right, bottom left;
     background-repeat: no-repeat, no-repeat;
     color: white;
@@ -33,7 +31,7 @@
 
 {% call utils.small() %}
     .feature-section {
-        background: var(--gradient)
+        background: var(--slate-to-woodsmoke);
     }
 
     .feature-section__heading-text h2 {
