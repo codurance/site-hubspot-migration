@@ -23,6 +23,10 @@ body{
     }    
 {% endcall %}
 
+.hub-header {
+    {{ utils.slate_to_woodsmoke() }}
+}
+
 
 .hub-header__title{
     {{ utils.dudler() }}

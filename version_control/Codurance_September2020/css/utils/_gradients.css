@@ -1,5 +1,5 @@
 {% macro gold_to_tango() %}
-  background: rgb(239,119,38, 0.2);
+  background: rgba(239,119,38, 0.2);
   background: linear-gradient(-130deg, rgba(239,119,38,0.1) 0%, rgba(255,208,0,0.1) 100%);
 {% endmacro %}
 
@@ -8,11 +8,15 @@
   background: linear-gradient(145deg, rgba(255,252,250,1) 0%, rgba(252,224,206,1) 100%);
 {% endmacro %}
 
-{%macro black_to_navy() %} 
+{% macro black_to_navy() %} 
   background: rgb(12,12,13);
   background: linear-gradient(30deg, rgba(12,12,13,1) 0%, rgba(29,35,60,1) 55%);
 {% endmacro %}
 
+{%macro slate_to_woodsmoke() %} 
+  background: var(--slate);
+  background: linear-gradient(200deg, var(--slate) 0%, var(--woodsmoke) 100%);
+{% endmacro %}
 
 {% macro color1_to_color2(direction, color1, color2) %}
     background: {{ color1 }};

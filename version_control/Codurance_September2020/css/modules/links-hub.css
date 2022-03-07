@@ -6,12 +6,10 @@
 }
 
 .hub-menu__item {
-    box-shadow: 0px 3px 10px;
-    background: var(--slate) !important; /* remove bg after testing layout */
-    padding: 1em 0.5em;
     border-radius: 6px;
-    max-width: 100%;
     display: block;
+    max-width: 100%;
+    padding: 1em 0.5em;
 }
 
 .hub-menu__item:not(:first-child){
@@ -44,9 +42,10 @@
 .hub-menu__link-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: .5em;
+  justify-content: space-between;
   width: 75%;
+  z-index: 1;
 }
 
 .link-info__title{

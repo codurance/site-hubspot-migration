@@ -4,9 +4,9 @@
 	<ul class="hub-menu">
 		{% for item in module.links_hub %}
 			<li class="hub-menu__item" style="
-				background: transparent linear-gradient(72deg, var(--woodsmoke) 0%,
-				{{ item.mobile_version.gradient_color }} 100%) 0% 0% no-repeat padding-box;
-				box-shadow: 0px 3px 10px {{ item.mobile_version.box_shadow_color }};"
+				background: transparent linear-gradient(72deg, var(--woodsmoke) 25%,
+				rgba({{ item.mobile_version.gradient_color.color|convert_rgb }}, 0.42) 100%) 0% 0% no-repeat padding-box;
+				box-shadow: 0px 3px 10px {{ item.mobile_version.box_shadow_color.color }};"
 			>
 				{% set href = item.link_field.url.href %}
 				<a class="hub-menu__link" href="{{ href }}"
