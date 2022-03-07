@@ -8,14 +8,14 @@ body{
     max-width: none;
 }
 
-.header,
+.hub-header,
 .clients-section,
 .feature-section{
        padding: 3em 1em;   
 }
 
 {% call utils.medium_large_and_extra_large() %}
-    .header,
+    .hub-header,
     .clients-section,
     .compass-section,
     .feature-section{
@@ -24,17 +24,17 @@ body{
 {% endcall %}
 
 
-.header__title{
+.hub-header__title{
     {{ utils.dudler() }}
     var(--heavy-font-weight)
 }
 
-.header__subtitle{
+.hub-header__subtitle{
     {{ utils.freed_margin() }}
     max-width: var(--habib-max-width);
 }
 
-.header .custom-btn{
+.hub-header .custom-btn{
     max-width: fit-content;
 }
 

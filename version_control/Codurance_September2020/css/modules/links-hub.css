@@ -17,7 +17,6 @@
 .hub-menu__item:not(:first-child){
     margin-top: 1em;
 }
-    
 
 .hub-menu__link{
     display: flex;
@@ -28,6 +27,18 @@
 }
 .hub-menu__link:hover{
     text-decoration: none;
+}
+
+.hub-menu__link-icon {
+    height: 4rem;
+    position: relative;
+}
+
+.hub-menu__icon-background {
+    left: 2.5em;
+    opacity: 0.44;
+    position: absolute;
+    transform: scale(1.25);
 }
 
 .hub-menu__link-info {
@@ -46,5 +57,6 @@
 .link-info__subtitle{
     {{ utils.sejima() }}
     font-weight: var(--middle-font-weight);
+    max-width: var(--eames-max-width);
 }
 

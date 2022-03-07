@@ -16,14 +16,14 @@
 					{% if item.icon.src %}
 						{% set sizeAttrs = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}"' %}
 						{% if item.icon.size_type == 'auto' %}
-							{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+							{% set sizeAttrs = 'style="max-width: 100%; height: 100%;"' %}
 						{% elif item.icon.size_type == 'auto_custom_max' %}
 							{% set sizeAttrs = 'width="{{ item.icon.max_width }}" height="{{ item.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
 						{% endif %}
 						{% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
-					<div class="hub-menu__link--icon">
-						<img class="icon-img" src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-						{# <img class="icon-background" src="{{ item.icon_background.src }}" alt="{{ item.icon_background.alt }}" {{ loadingAttr }} {{ sizeAttrs }}> #}
+					<div class="hub-menu__link-icon">
+						<img class="hub-menu__icon-img" src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+						<img class="hub-menu__icon-background" src="{{ item.icon_background.src }}" alt="{{ item.icon_background.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
 					</div>
 					{% endif %}
 										
