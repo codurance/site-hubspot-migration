@@ -59,3 +59,19 @@
     max-width: var(--eames-max-width);
 }
 
+
+{% call utils.medium_large_and_extra_large() %}
+
+    
+    .hub-menu{
+        position: relative;
+        height: 25em;
+        display: grid;
+        place-items: center;
+    }
+    .hub-menu__item{
+        position: absolute;
+    }
+    .hub-menu__item{
+    }
+{% endcall%}
