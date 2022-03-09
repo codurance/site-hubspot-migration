@@ -2,7 +2,7 @@
 
 .feature-section {
     --image-background: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Industries/HP_Industries_Background.svg");
-    background-color: var(--slate);
+    {{ utils.slate_to_woodsmoke() }}
     background: var(--image-background), var(--slate-to-woodsmoke);
     background-position: top right, bottom left;
     background-repeat: no-repeat, no-repeat;
