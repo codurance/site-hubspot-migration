@@ -1,11 +1,16 @@
 {{ require_css(get_asset_url("../../css/modules/links-hub.css")) }}
-{% import '../../css/modules/links-hub.css' as utils %}
+{% import '../../css/modules/links-hub.css' as link_hub %}
 
 {% require_css %}
-<style>
-	{% call utils.display_circle(module.links_hub)|trim %}
-	{% endcall %}
-</style>
+	<style>
+		{% set medium_screens_min = 768 %}
+
+		@media (min-width: {{medium_screens_min}}px) {
+			{% call link_hub.display_circle(module.links_hub)|trim %}
+			{% endcall %}
+		}
+		
+	</style>
 {% end_require_css %}
 
 <nav>
