@@ -1,8 +1,5 @@
 {% import '../utils/utils.css' as utils %}
 
-{% set hub_menu_width = "13em" %}
-{% set hub_menu_item_width = "6rem" %}
-
 {% macro display_circle(item_count) %}
     {% set rotation = {degrees : 90} %}
     {% set angle = 360 / item_count|length %}
@@ -10,24 +7,33 @@
     {% for item in item_count %}
         .hub-menu > *:nth-of-type({{ loop.index }}) {
             transform: rotate(calc({{ rotation.degrees }} * 1deg)) 
-            translate(calc({{ hub_menu_width }} / 2)) 
+                       translate(calc(var(--hub-menu-width) / 2)) 
             rotate(calc({{ rotation.degrees }} * -1deg));
         }
 
         .hub-menu > *:nth-of-type({{ loop.index }}) .hub-menu__icon-background  {
             transform: rotate(calc({{ rotation.degrees }} * 1deg)) 
-            translate(calc({{ hub_menu_item_width }} / 2))
+                   translate(calc(var(--hub-menu-item-width) / 2))
             rotate(calc({{ rotation.degrees }} * -1deg))
             scale(1.25);
         }
+
+        .hub-menu > *:nth-of-type({{ loop.index }}) .hub-menu__link-info  {
+            transform: rotate(calc({{ rotation.degrees }} * 1deg)) 
+                       translate(calc(var(--hub-menu-item-width) * 1.2))
+                       rotate(calc({{ rotation.degrees }} * -1deg));
+        }
+
         {% do rotation.update({degrees : rotation.degrees + angle}) %}
     {% endfor %}
 {% endmacro %}
 
 .hub-menu {
+    --hub-menu-width: 13em;
+    --hub-menu-item-width: 6rem;
     list-style-type: none;
     margin: 2em auto 0;
-    max-width: {{ hub_menu_width }};
+    max-width: 25em;
 }
 
 .hub-menu__item {
