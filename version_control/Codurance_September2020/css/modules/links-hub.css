@@ -1,33 +1,39 @@
 {% import '../utils/utils.css' as utils %}
 
+{% set hub_menu_width = "13em" %}
+{% set hub_menu_item_width = "6rem" %}
+
 {% macro display_circle(item_count) %}
-    {% set rotation = {degrees : 0} %}
+    {% set rotation = {degrees : 90} %}
     {% set angle = 360 / item_count|length %}
-        
+
     {% for item in item_count %}
         .hub-menu > *:nth-of-type({{ loop.index }}) {
-            transform: rotate(calc({{ rotation.degrees }} * 1deg)) translate(calc(25em / 2)) rotate(calc({{ rotation.degrees }} * -1deg));
-
-            {% do rotation.update({degrees : rotation.degrees + angle}) %}
+            transform: rotate(calc({{ rotation.degrees }} * 1deg)) 
+            translate(calc({{ hub_menu_width }} / 2)) 
+            rotate(calc({{ rotation.degrees }} * -1deg));
         }
+
+        .hub-menu > *:nth-of-type({{ loop.index }}) .hub-menu__icon-background  {
+            transform: rotate(calc({{ rotation.degrees }} * 1deg)) 
+            translate(calc({{ hub_menu_item_width }} / 2))
+            rotate(calc({{ rotation.degrees }} * -1deg))
+            scale(1.25);
+        }
+        {% do rotation.update({degrees : rotation.degrees + angle}) %}
     {% endfor %}
-    
 {% endmacro %}
 
 .hub-menu {
     list-style-type: none;
     margin: 2em auto 0;
-    max-width: 25em;
+    max-width: {{ hub_menu_width }};
 }
 
 .hub-menu__item {
     border-radius: 6px;
     display: block;
     max-width: 100%;
-}
-
-.hub-menu__item:not(:first-child){
-    margin-top: 1em;
 }
 
 .hub-menu__link{
@@ -72,18 +78,36 @@
     max-width: var(--eames-max-width);
 }
 
+{% call utils.small() %}
+    .hub-menu__item:not(:first-child){
+        margin-top: 1em;
+    }
+{% endcall %}
 
 {% call utils.medium_large_and_extra_large() %}
     .hub-menu{
         position: relative;
-        height: 25em;
+        height: {{ hub_menu_width }};
         display: grid;
         place-items: center;
     }
 
     .hub-menu__item{
-        position: absolute;
         background: none !important;
         box-shadow: none !important;
+        position: absolute;
     }
-{% endcall%}
+
+    .hub-menu__link-icon {
+        height: {{ hub_menu_item_width }};
+        width: {{ hub_menu_item_width }};
+    }
+
+    .hub-menu__icon-background {
+        left: 0;
+    }
+
+    .hub-menu__link-info {
+        display: none;
+    }
+{% endcall %}

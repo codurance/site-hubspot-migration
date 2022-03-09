@@ -1,10 +1,12 @@
 {{ require_css(get_asset_url("../../css/modules/links-hub.css")) }}
 {% import '../../css/modules/links-hub.css' as utils %}
-	
+
+{% require_css %}
 <style>
-	{% call utils.display_circle(module.links_hub) %}
+	{% call utils.display_circle(module.links_hub)|trim %}
 	{% endcall %}
 </style>
+{% end_require_css %}
 
 <nav>
 	<ul class="hub-menu">
