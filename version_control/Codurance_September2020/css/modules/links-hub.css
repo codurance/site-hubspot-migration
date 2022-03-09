@@ -8,14 +8,14 @@
         .hub-menu > *:nth-of-type({{ loop.index }}) {
             transform: rotate(calc({{ rotation.degrees }} * 1deg)) 
                        translate(calc(var(--hub-menu-width) / 2)) 
-            rotate(calc({{ rotation.degrees }} * -1deg));
+                       rotate(calc({{ rotation.degrees }} * -1deg));
         }
 
         .hub-menu > *:nth-of-type({{ loop.index }}) .hub-menu__icon-background  {
-            transform: rotate(calc({{ rotation.degrees }} * 1deg)) 
+        transform: rotate(calc({{ rotation.degrees }} * 1deg)) 
                    translate(calc(var(--hub-menu-item-width) / 2))
-            rotate(calc({{ rotation.degrees }} * -1deg))
-            scale(1.25);
+                   rotate(calc({{ rotation.degrees }} * -1deg))
+                   scale(1.25);
         }
 
         .hub-menu > *:nth-of-type({{ loop.index }}) .hub-menu__link-info  {
@@ -73,8 +73,9 @@
   z-index: 1;
 }
 
+
 .link-info__title{
-    {{utils.base()}}
+    {{ utils.base() }}
     font-weight: var(--heavy-font-weight);
 }
 
@@ -90,12 +91,22 @@
     }
 {% endcall %}
 
+{% call utils.medium() %}
+    .hub-menu {
+        --hub-menu-width: 11em;
+        --hub-menu-item-width: 5rem;
+    }
+{% endcall %}
+
 {% call utils.medium_large_and_extra_large() %}
     .hub-menu{
         position: relative;
-        height: {{ hub_menu_width }};
+        height: var(--hub-menu-width);
         display: grid;
         place-items: center;
+        max-width: var(--hub-menu-width);
+        margin-top: var(--hub-menu-width);
+        margin-bottom: var(--hub-menu-width);
     }
 
     .hub-menu__item{
@@ -104,9 +115,48 @@
         position: absolute;
     }
 
+    .hub-menu__link{
+        position: relative;
+        padding: 0;
+    }
+
+    .hub-menu__link-info::before {
+        content: "";
+        clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+        width: 0.5em;
+        height: 0.5em;
+        position: absolute;
+        box-shadow: inset .5em .5em white;
+        top: 0.5em;
+        left: -1em;
+    }
+
+    .hub-menu__link-info::after {
+        content: "";
+        border-right: 2px white dotted;
+        height: 3em;
+        position: absolute;
+        top: .5em;
+        left: -0.8em;;
+    }
+
+    .hub-menu__item:nth-of-type(2) .hub-menu__link-info::before,
+    .hub-menu__item:nth-of-type(3) .hub-menu__link-info::before{
+        top: 0.5em;
+        right: -1em;
+        left: unset;
+    }
+
+    .hub-menu__item:nth-of-type(2) .hub-menu__link-info::after,
+    .hub-menu__item:nth-of-type(3) .hub-menu__link-info::after{
+        top: 0.5em;
+        right: -0.8em;
+    }
+
+
     .hub-menu__link-icon {
-        height: {{ hub_menu_item_width }};
-        width: {{ hub_menu_item_width }};
+        height: var(--hub-menu-item-width);
+        width: var(--hub-menu-item-width);
     }
 
     .hub-menu__icon-background {
@@ -114,6 +164,61 @@
     }
 
     .hub-menu__link-info {
-        display: none;
+        position: absolute;
+        display: block;
+        width: 15em;
     }
+
+    .link-info__title{
+        {{ utils.freed() }}
+    }
+
+    .link-info__subtitle{
+        {{ utils.natus() }}
+        max-width: var(--habib-max-width);
+
+    }
+
+    .hub-menu__item:nth-of-type(1) .hub-menu__link-info{
+        left: 3em;
+        top: 0;
+    }
+
+    .hub-menu__item:nth-of-type(2) .hub-menu__link-info{
+        top: -2em;
+        right: .5em;
+        text-align: right;
+        max-width: 19ch;
+    }
+
+    .hub-menu__item:nth-of-type(3) .hub-menu__link-info{
+        top: 0;
+        right: .7em;
+        text-align: right;
+        max-width: 17ch;
+    }
+
+    
+
+    .hub-menu__item:nth-of-type(2) .link-info__subtitle,
+    .hub-menu__item:nth-of-type(3) .link-info__subtitle{
+        max-width: none;
+    }
+
+    .hub-menu__item:nth-of-type(4) .hub-menu__link-info{
+        left: 8em;
+        top: 3.5em;
+    }
+
+    .hub-menu__item:nth-of-type(5) .hub-menu__link-info{
+        left: 3em;
+        top: 5em;
+    }
+
+    .hub-menu__item:nth-of-type(6) .hub-menu__link-info{
+        left: 3em;
+        top: -0.25em;
+    }
+
+
 {% endcall %}
