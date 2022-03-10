@@ -1,7 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 {% macro display_circle(item_count) %}
-    {% set rotation = {degrees : 90} %}
+    {% set rotation = {degrees : 210} %}
     {% set angle = 360 / item_count|length %}
 
     {% for item in item_count %}
@@ -13,7 +13,7 @@
 
         .hub-menu > *:nth-of-type({{ loop.index }}) .hub-menu__icon-background  {
         transform: rotate(calc({{ rotation.degrees }} * 1deg)) 
-                   translate(calc(var(--hub-menu-item-width) / 2))
+                   translate(calc(var(--hub-menu-item-width) / 2.5))
                    rotate(calc({{ rotation.degrees }} * -1deg))
                    scale(1.25);
         }
@@ -57,6 +57,7 @@
 .hub-menu__link-icon {
     height: 4rem;
     position: relative;
+    z-index: 0;
 }
 
 .hub-menu__icon-background {
@@ -64,6 +65,7 @@
     opacity: 0.44;
     position: absolute;
     transform: scale(1.25);
+    z-index: -1;
 }
 
 .hub-menu__link-info {
@@ -140,15 +142,15 @@
         left: -0.8em;;
     }
 
-    .hub-menu__item:nth-of-type(2) .hub-menu__link-info::before,
-    .hub-menu__item:nth-of-type(3) .hub-menu__link-info::before{
+    .hub-menu__item:nth-of-type(1) .hub-menu__link-info::before,
+    .hub-menu__item:nth-of-type(6) .hub-menu__link-info::before{
         top: 0.5em;
         right: -1em;
         left: unset;
     }
 
-    .hub-menu__item:nth-of-type(2) .hub-menu__link-info::after,
-    .hub-menu__item:nth-of-type(3) .hub-menu__link-info::after{
+    .hub-menu__item:nth-of-type(1) .hub-menu__link-info::after,
+    .hub-menu__item:nth-of-type(6) .hub-menu__link-info::after{
         top: 0.5em;
         right: -0.8em;
     }
@@ -166,59 +168,60 @@
     .hub-menu__link-info {
         position: absolute;
         display: block;
-        width: 15em;
+        width: 13em;
     }
 
     .link-info__title{
         {{ utils.freed() }}
+        font-weight: var(--heavy-font-weight);
+        margin-bottom: 0.25em;
+        line-height: var(--base-line-height);
     }
 
     .link-info__subtitle{
         {{ utils.natus() }}
         max-width: var(--habib-max-width);
-
     }
 
     .hub-menu__item:nth-of-type(1) .hub-menu__link-info{
-        left: 3em;
-        top: 0;
+        max-width: 16ch;
+        right: 1.5em;
+        text-align: right;
+        top: 1em;
     }
 
     .hub-menu__item:nth-of-type(2) .hub-menu__link-info{
-        top: -2em;
-        right: .5em;
-        text-align: right;
-        max-width: 19ch;
+        top: 2em;
+        left: 4em;
     }
 
     .hub-menu__item:nth-of-type(3) .hub-menu__link-info{
-        top: 0;
-        right: .7em;
-        text-align: right;
+        top: 0.8em;
+        left: 1em;
         max-width: 17ch;
     }
 
-    
-
     .hub-menu__item:nth-of-type(2) .link-info__subtitle,
-    .hub-menu__item:nth-of-type(3) .link-info__subtitle{
+    .hub-menu__item:nth-of-type(5) .link-info__subtitle{
         max-width: none;
     }
 
     .hub-menu__item:nth-of-type(4) .hub-menu__link-info{
-        left: 8em;
-        top: 3.5em;
+        top: 0.8em;
+        left: 1em;
+
     }
 
     .hub-menu__item:nth-of-type(5) .hub-menu__link-info{
-        left: 3em;
-        top: 5em;
+        left: 4em;
     }
+
 
     .hub-menu__item:nth-of-type(6) .hub-menu__link-info{
-        left: 3em;
-        top: -0.25em;
+        right: 2em;
+        top: -2.75em;
+        text-align: right;
+        max-width: 16ch;
     }
-
 
 {% endcall %}
