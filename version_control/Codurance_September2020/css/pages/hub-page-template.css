@@ -24,16 +24,36 @@ body{
 {% endcall %}
 
 .hub-header {
-    --image-background: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Header/HP_Background_Top-Right-Corner.svg");
+    --image-background-top-right: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Header/HP_Background_Top-Right-Corner.svg");
+    --image-background-bottom-left: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Header/HP_Background_Bottom-Left-Corner.svg");
+    --image-background-bottom-right: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Header/HP_Background_Bottom-Right-Corner.svg");
     {{ utils.slate_to_woodsmoke() }}
-    background: var(--image-background), var(--slate-to-woodsmoke) ;
-    background-position: top right, bottom left;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 13em, cover;
+
+    background: var(--image-background-top-right), 
+        var(--image-background-bottom-left),
+        var(--image-background-bottom-right),
+        var(--slate-to-woodsmoke);
+    background-position: top right, bottom left, bottom right;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 25em, 12em, 6em, cover;
     color: white;
-    padding-top: 6em;
+    padding-top: 5em;
 }
 
+{% call utils.small_and_medium() %}
+    .hub-header {
+        background: var(--image-background-top-right), var(--slate-to-woodsmoke);
+        background-size: 8em, cover;
+        background-position: top right;
+        background-repeat: no-repeat;
+    } 
+{% endcall %}
+
+{% call utils.medium() %}
+    .hub-header {
+        background-size: 13em, cover;
+    } 
+{% endcall %}
 
 .hub-header__title{
     {{ utils.dudler() }}
