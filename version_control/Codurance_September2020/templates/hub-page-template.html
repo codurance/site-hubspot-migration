@@ -28,12 +28,13 @@
 {% block body %}
 
 <section class="hub-header">
-  <h1 class="hub-header__title">{% module 'title' path='@hubspot/text' label="Header Title" no_wrapper=True %}</h1>
-  <p class="hub-header__subtitle">
-    {% module 'subtitle'  path='@hubspot/text' label="Header Subtitle" no_wrapper=True %}
-  </p>
-
-  {% module 'button'  path='../modules/button.module' label="Header button" no_wrapper=True %}
+  <div class="hub-header__wrapper">
+    <h1 class="hub-header__title">{% module 'title' path='@hubspot/text' label="Header Title" no_wrapper=True %}</h1>
+    <p class="hub-header__subtitle">
+      {% module 'subtitle'  path='@hubspot/text' label="Header Subtitle" no_wrapper=True %}
+    </p>
+    {% module 'button'  path='../modules/button.module' label="Header button" no_wrapper=True %}
+  </div>
 
   {% module 'links_hub' path="../modules/Links-Hub.module" label="Hub Menu" no_wrapper=True %}   
 </section>

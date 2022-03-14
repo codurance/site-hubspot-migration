@@ -14,6 +14,11 @@ body{
        padding: 3em 1em;   
 }
 
+.hub-header__wrapper{
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+}
+
 {% call utils.medium_large_and_extra_large() %}
     .hub-header,
     .clients-section,
