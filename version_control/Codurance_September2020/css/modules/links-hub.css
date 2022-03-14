@@ -136,7 +136,7 @@
     .hub-menu__link-info::after {
         content: "";
         border-right: 2px white dotted;
-        height: 3em;
+        height: 50%;
         position: absolute;
         top: .5em;
         left: -0.8em;;
@@ -144,15 +144,20 @@
 
     .hub-menu__item:nth-of-type(1) .hub-menu__link-info::before,
     .hub-menu__item:nth-of-type(6) .hub-menu__link-info::before{
-        top: 0.5em;
         right: -1em;
         left: unset;
     }
 
     .hub-menu__item:nth-of-type(1) .hub-menu__link-info::after,
     .hub-menu__item:nth-of-type(6) .hub-menu__link-info::after{
-        top: 0.5em;
         right: -0.8em;
+    }
+
+    .hub-menu__item:nth-of-type(4) .hub-menu__link-info::after{
+        top: -2em;
+    }
+    .hub-menu__item:nth-of-type(5) .hub-menu__link-info::after{
+        top: -1em;
     }
 
 
@@ -192,7 +197,7 @@
 
     .hub-menu__item:nth-of-type(2) .hub-menu__link-info{
         top: 2em;
-        left: 4em;
+        left: 5em;
     }
 
     .hub-menu__item:nth-of-type(3) .hub-menu__link-info{
@@ -209,11 +214,12 @@
     .hub-menu__item:nth-of-type(4) .hub-menu__link-info{
         top: 0.8em;
         left: 1em;
+        max-width: 17ch;
 
     }
 
     .hub-menu__item:nth-of-type(5) .hub-menu__link-info{
-        left: 4em;
+        left: 5em;
     }
 
 
@@ -225,3 +231,4 @@
     }
 
 {% endcall %}
+

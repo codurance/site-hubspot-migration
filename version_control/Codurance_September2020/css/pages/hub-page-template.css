@@ -26,7 +26,7 @@ body{
 .hub-header {
     --image-background: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Header/HP_Background_Top-Right-Corner.svg");
     {{ utils.slate_to_woodsmoke() }}
-    background: var(--image-background), var(--slate-to-woodsmoke) ;
+    background: var(--image-background), var(--slate-to-woodsmoke);
     background-position: top right, bottom left;
     background-repeat: no-repeat, no-repeat;
     background-size: 13em, cover;
@@ -70,4 +70,11 @@ body{
         margin-bottom: 1.7em;
     }
 
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .hub-header{
+        background-size: auto, cover;
+    }
+    
 {% endcall %}
