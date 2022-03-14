@@ -91,10 +91,3 @@ body{
     }
 
 {% endcall %}
-
-{% call utils.large_and_extra_large() %}
-    .hub-header{
-        background-size: auto, cover;
-    }
-    
-{% endcall %}
