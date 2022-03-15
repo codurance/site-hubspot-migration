@@ -257,6 +257,24 @@ label: Blog Listing
           {% if loop.index == 1 %}
             <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
               <!-- Static Quote -->
+              <article class="blog-cta-card blog-cta-card--cluster-page">
+                <h3 class="blog-cta-card__title">Codurance can help you with your software modernisation</h3>
+                {{snippets.text_cta_right_arrow(
+                  classnames="blog-cta-card__link",
+                  url="https://www.codurance.com",
+                  rel="noopener noreferrer",
+                  target="_blank",
+                  text="Learn More"
+                )}}
+              </article>
+              <!-- End Static Quote -->
+            </div>
+          {% endif %}
+
+
+          {% if loop.index == 3 %}
+            <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
+              <!-- Static Quote -->
               <article class="blog-cta-card blog-cta-card--tango">
                 <h3 class="blog-cta-card__title">Have you improved your skills today?</h3>
                 {{snippets.text_cta_right_arrow(
@@ -271,7 +289,7 @@ label: Blog Listing
             </div>
           {% endif %}
 
-          {% if loop.index == 3 %}
+          {% if loop.index == 5 %}
             <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
               <!-- Static Quote -->
               <article class="blog-cta-card blog-cta-card--crimson">
@@ -288,7 +306,7 @@ label: Blog Listing
             </div>
           {% endif %}
 
-          {% if loop.index == 5 %}
+          {% if loop.index == 7 %}
             <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
               <!-- Static Quote -->
               <article class="blog-cta-card blog-cta-card--newsletter">
