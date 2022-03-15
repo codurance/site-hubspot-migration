@@ -157,8 +157,8 @@
         display: grid;
         place-items: center;
         max-width: var(--hub-menu-width);
-        margin-top: var(--hub-menu-item-width);
-        margin-bottom: var(--hub-menu-item-width);
+        margin-top: 6em;
+        margin-bottom: 6em;
     }
 
     .hub-menu__item{
