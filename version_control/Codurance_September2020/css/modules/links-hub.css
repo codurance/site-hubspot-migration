@@ -120,7 +120,7 @@
 
     .hub-menu__item:nth-of-type(2) .hub-menu__link-info,
     .hub-menu__item:nth-of-type(5) .hub-menu__link-info {
-        width: 20ch;
+        width: 23ch;
     }
 
     .hub-menu__item:nth-of-type(2) .hub-menu__link-info{
@@ -134,7 +134,6 @@
 
     .hub-menu__item:nth-of-type(5) .hub-menu__link-info{
         right: 6.5em;
-        bottom: 1em;
     }
 
     .hub-menu__item:nth-of-type(3) .hub-menu__link-info::after{
@@ -153,7 +152,7 @@
         place-items: center;
         max-width: var(--hub-menu-width);
         margin-top: 6em;
-        margin-bottom: 6em;
+        margin-bottom: 8em;
     }
 
     .hub-menu__item{
@@ -232,7 +231,11 @@
         box-shadow: inset .5em .5em white;
         top: 0.5em;
         left: -1em;
+
+        transition: opacity ease-in-out 200ms;
+        opacity: 0.8;
     }
+
 
     .hub-menu__item:nth-of-type(1) .hub-menu__link-info::after,
     .hub-menu__item:nth-of-type(2) .hub-menu__link-info::after,
@@ -240,12 +243,14 @@
     .hub-menu__item:nth-of-type(6) .hub-menu__link-info::after {
         position: absolute;
         content: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Header/Line_test.svg");
+        opacity: 0.8;
     }
 
     .hub-menu__item:nth-of-type(3) .hub-menu__link-info::after,
     .hub-menu__item:nth-of-type(4) .hub-menu__link-info::after {
         position: absolute;
         content: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Header/Line_test%20%E2%80%93%202.svg");
+        opacity: 0.8;
     }
 
     .hub-menu__item:nth-of-type(1) .hub-menu__link-info::before,
@@ -279,6 +284,12 @@
         transform: rotate(70deg);
     }
 
+    .hub-menu__link:hover .hub-menu__link-info::before,
+    .hub-menu__link:hover .hub-menu__link-info::after {
+        opacity: 1;
+        transition: opacity ease-in-out 200ms;
+    }
+
     .link-info__title{
         {{ utils.freed() }}
         font-weight: var(--heavy-font-weight);
@@ -309,12 +320,12 @@
     
     .hub-menu__item:nth-of-type(3) .hub-menu__link-info::after{
         left: -3.22em;
-        bottom: 0.1em;
+        top: 1em;
     }
 
     .hub-menu__item:nth-of-type(5) .hub-menu__link-info{
         right: 7.5em;
-        bottom: 2em;    
+        top: 0;    
     }
 
 {% endcall %}
