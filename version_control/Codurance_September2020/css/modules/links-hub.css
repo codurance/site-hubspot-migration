@@ -56,6 +56,7 @@
     line-height: inherit;
     padding: 1em 0.5em;
 }
+
 .hub-menu__link:hover{
     text-decoration: none;
 }
@@ -142,32 +143,7 @@
     }
 {% endcall %}
 
-{% call utils.large_and_extra_large() %}
-    .hub-menu__link-info {
-        --link-info-left-space: 2em;
-        --link-info-right-space: 2em;
-        width: 13em;
-    }
 
-    .hub-menu__item:nth-of-type(2) .hub-menu__link-info{
-        top: 5em;
-        left: 8em;
-    }
-
-    .hub-menu__item:nth-of-type(3) .hub-menu__link-info{
-        top: 5em;
-    }
-
-    .hub-menu__item:nth-of-type(5) .hub-menu__link-info{
-        right: 7.5em;
-        bottom: 2em;
-    }
-
-    .hub-menu__item:nth-of-type(3) .hub-menu__link-info::after{
-        left: -3.22em;
-        bottom: 0.1em;
-    }
-{% endcall %}
 
 {% call utils.medium_large_and_extra_large() %}
     .hub-menu{
@@ -205,9 +181,21 @@
         display: block;
         position: absolute;
         z-index: -1;
+        transition: color ease-in-out 300ms;
     }
+
     .hub-menu__link:hover .hub-menu__link-info {
         color: white;
+        transition: color ease-in-out 200ms;
+    }
+
+    .hub-menu__icon-img{
+        transition: scale ease-in-out 300ms;
+    }
+
+    .hub-menu__link:hover .hub-menu__icon-img {
+        scale: 1.1;
+        transition: scale ease-in-out 200ms;
     }
 
     .hub-menu__item:nth-of-type(1) .hub-menu__link-info{
@@ -237,7 +225,7 @@
 
     .hub-menu__link-info::before {
         content: "";
-        clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+        clip-path: polygon(50% 5%, 92% 25%, 92% 75%, 50% 95%, 8% 75%, 8% 25%);
         width: 0.5em;
         height: 0.5em;
         position: absolute;
@@ -303,3 +291,30 @@
     }
 {% endcall %}
 
+{% call utils.large_and_extra_large() %}
+    .hub-menu__link-info {
+        --link-info-left-space: 2em;
+        --link-info-right-space: 2em;
+        width: 13em;
+    }
+
+    .hub-menu__item:nth-of-type(2) .hub-menu__link-info{
+        top: 5em;
+        left: 8em;
+    }
+
+    .hub-menu__item:nth-of-type(3) .hub-menu__link-info{
+        top: 5em;
+    }
+    
+    .hub-menu__item:nth-of-type(3) .hub-menu__link-info::after{
+        left: -3.22em;
+        bottom: 0.1em;
+    }
+
+    .hub-menu__item:nth-of-type(5) .hub-menu__link-info{
+        right: 7.5em;
+        bottom: 2em;    
+    }
+
+{% endcall %}
