@@ -1,0 +1,267 @@
+
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: NEW Case Study Template
+-->
+{% extends "./layouts/base.html" %}
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/case-study-template.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+
+<div class="case-study">
+
+
+{# Header Section #}
+{% dnd_area "header" label="Header Section" %}
+  {% dnd_section
+    background_image={
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover",
+      "image_url" : "https://f.hubspotusercontent10.net/hubfs/3042464/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_bg.png"
+    }
+  %}
+    {% dnd_column
+      offset=0,
+      width=7,
+      padding={
+        "default" : {
+          "bottom" : "40px"
+        }
+      }
+    %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/linked_image",
+          offset=0,
+          width=12,
+          horizontal_alignment="LEFT",
+          img={
+            "alt" : "CS_header_badge",
+            "height" : 95,
+            "loading" : "lazy",
+            "max_height" : 95,
+            "max_width" : 224,
+            "size_type" : "auto",
+            "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_badge.png",
+            "width" : 224
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/header",
+          offset=0,
+          width=12,
+          header_tag="h4",
+          value="\n\n\n\nHealth Sector"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/header",
+          offset=0,
+          width=12,
+          header_tag="h2",
+          value="\n\n\n\nClinicalWorks Transform the Electronic Medical Records Software"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/header",
+          offset=0,
+          width=12,
+          header_tag="h3",
+          value="\n\n\n\nModernising legacy software through innovative techniques"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+      {% dnd_row %}
+        {% dnd_column
+          offset=0,
+          width=12,
+          padding={
+            "default" : {
+              "bottom" : "0px",
+              "left" : "70px"
+            }
+          }
+        %}
+          {% dnd_row %}
+            {% dnd_module
+              path="/Codurance_September2020/modules/Button",
+              offset=0,
+              width=12,
+              button_type="cta",
+              cta_field="85143f9c-02e4-4d77-acce-7ef03487d59f"
+            %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+        {% end_dnd_column %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% dnd_column
+      offset=7,
+      width=5
+    %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/linked_image",
+          offset=0,
+          width=12,
+          horizontal_alignment="CENTER",
+          img={
+            "alt" : "CS_header_icon",
+            "height" : 114,
+            "loading" : "lazy",
+            "max_height" : 151,
+            "max_width" : 199,
+            "size_type" : "exact",
+            "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_icon.png",
+            "width" : 150
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+{% end_dnd_area %}
+{# End Header Section #}
+
+{# Menu Section #}
+{% dnd_area 'menu', class="sticky-menu" 	label="Menu Section" %}
+  {% dnd_section  
+    background_linear_gradient={
+    "colors" : [ "rgba(238, 238, 238, 1)", "rgba(255, 255, 255, 1)" ],
+    "direction" : "to bottom right"
+    },
+  padding={
+    "default" : {
+      "bottom" : "20px",
+      "left" : "70px",
+      "right" : "70px",
+      "top" : "20px"
+    }
+  }
+  %}
+  {% dnd_column
+    offset=0,
+    width=4
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        offset=0,
+        width=12
+      %}
+        {% module_attribute "html" %}
+          <h2 style="text-align: center; font-weight: bold;"><a href="#discovery" rel="noopener">Discovery</a></h2>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% dnd_column
+    offset=4,
+    width=4
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        offset=0,
+        width=12
+      %}
+        {% module_attribute "html" %}
+          <h2 style="text-align: center; font-weight: bold;"><a href="#tech-meets-ingenuity" rel="noopener">Tech meets ingenuity</a></h2>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% dnd_column
+    offset=8,
+    width=4
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        offset=0,
+        width=12
+      %}
+        {% module_attribute "html" %}
+          <h2 style="font-weight: bold; text-align: center;"><a href="#valuable-difference" rel="noopener">Valuable Difference</a></h2>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+{% end_dnd_area %}
+{# End Menu Section #}
+ 
+{% dnd_area 'main' 	label="Main Section" %}
+{# Intro Section #}
+  {% dnd_section %}
+    {% dnd_module
+      path="@hubspot/rich_text",
+      offset=0,
+      width=12
+    %}
+      {% module_attribute "html" %}
+        <a id="discovery" data-hs-anchor="true"></a>
+        <h2 style="font-size: 30px;">&nbsp;</h2>
+        <h2 style="font-size: 30px;"><strong>Discovery</strong></h2>
+        <p>&nbsp;</p>
+        <p style="font-size: 18px; line-height: 1.25;"><span>Continuous Delivery was a major challenge for Roche. They operate in the highly regulated environment of healthcare. Roche started work to increase their overall agility and being able to frequently release safe changes while remaining fully compliant was a key part of this initiative. At Codurance, we routinely build state-of-the-art Continuous Integration and Deployment solutions, but the strong regulatory requirements presented a challenge that we relished. The proposed reference implementation would later be used as an example for similar applications. Thus, the solution also had to be very flexible, customisable and extendable, serving as the core template for any similar future migration in their portfolio.</span></p>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+{# END Intro Section #}
+
+{# Video Section #}
+{% dnd_section %}
+  {% dnd_module
+    path="@hubspot/video_embed_lp",
+    offset=0,
+    width=12,
+    url="https://www.youtube.com/embed/7vlJfYyH3gM"
+    }
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}
+{# End Video Section #}
+
+{# Testimonial Section #}
+{% dnd_section %}
+  {% dnd_module
+    path="/Codurance_September2020/modules/Landing Page Modules/LP-testimonial-slider",
+    offset=0,
+    width=12
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}
+{# End Testimonial Section #}
+
+  
+{% end_dnd_area %}
+</div>  
+{% endblock body %}
+
