@@ -201,9 +201,13 @@
     }
 
     .hub-menu__link-info {
+        color: var(--french-gray);
         display: block;
         position: absolute;
         z-index: -1;
+    }
+    .hub-menu__link:hover .hub-menu__link-info {
+        color: white;
     }
 
     .hub-menu__item:nth-of-type(1) .hub-menu__link-info{
