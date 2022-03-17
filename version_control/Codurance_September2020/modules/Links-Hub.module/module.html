@@ -36,19 +36,20 @@
 							{% set sizeAttrs = 'width="{{ item.icon.max_width }}" height="{{ item.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
 						{% endif %}
 						{% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
-					<div class="hub-menu__link-icon">
+					<div class="hub-menu__link-wrapper">
 						<img class="hub-menu__icon-img" src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
 						<img class="hub-menu__icon-background" src="{{ item.icon_background.src }}" alt="{{ item.icon_background.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+
+						<div class="hub-menu__link-info">
+							<h2 class="link-info__title">{{ item.title }}</h2>
+							<p class="link-info__subtitle">
+								{{ item.subtitle }}
+								<i class="las la-arrow-right link-info__icon"></i>
+							</p>
+						</div>
 					</div>
 					{% endif %}
 										
-					<div class="hub-menu__link-info">
-						<h2 class="link-info__title">{{ item.title }}</h2>
-						<p class="link-info__subtitle">
-							{{ item.subtitle }}
-							<i class="link-info__icon las la-arrow-right"></i>
-						</p>
-					</div>
 				</a>
 			</li>
 		{% endfor %}
