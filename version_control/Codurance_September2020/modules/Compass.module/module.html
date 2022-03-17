@@ -25,9 +25,6 @@
       <div class="compass-content__cta">
         {% if module.button_type == "std" %}
           {% set href = module.link_field.url.href %}
-          {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-            {% set href = "mailto:" + href %}
-          {% endif %}
 
           {{
             snippets.button_primary(
