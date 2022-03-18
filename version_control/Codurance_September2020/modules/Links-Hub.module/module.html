@@ -1,0 +1,57 @@
+{{ require_css(get_asset_url("../../css/modules/links-hub.css")) }}
+{% import '../../css/modules/links-hub.css' as link_hub %}
+
+{% require_css %}
+	<style>
+		{% set medium_screens_min = 768 %}
+
+		@media (min-width: {{medium_screens_min}}px) {
+			{% call link_hub.display_circle(module.links_hub)|trim %}
+			{% endcall %}
+		}
+		
+	</style>
+{% end_require_css %}
+
+<nav role="navigation" aria-label="Secondary Menu">
+	<ul class="hub-menu">
+		{% for item in module.links_hub %}
+			<li class="hub-menu__item" 
+			{% if item.mobile_version.gradient_color.color %}
+				style="background: linear-gradient(72deg, var(--woodsmoke) 25%, 
+				rgba({{ item.mobile_version.gradient_color.color|convert_rgb }}, 0.42) 100%) 0% 0% no-repeat padding-box; 
+				box-shadow: 0px 3px 10px rgba({{ item.mobile_version.box_shadow_color.color|convert_rgb }}, 0.4);"
+			{% endif %}	
+			>
+
+				<a class="hub-menu__link" href="{{ href }}"
+					{% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+					{% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+				>
+					{% if item.icon.src %}
+						{% set sizeAttrs = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}"' %}
+						{% if item.icon.size_type == 'auto' %}
+							{% set sizeAttrs = 'style="max-width: 100%; height: 100%;"' %}
+						{% elif item.icon.size_type == 'auto_custom_max' %}
+							{% set sizeAttrs = 'width="{{ item.icon.max_width }}" height="{{ item.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+						{% endif %}
+						{% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
+					<div class="hub-menu__link-wrapper">
+						<img class="hub-menu__icon-img" src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+						<img class="hub-menu__icon-background" src="{{ item.icon_background.src }}" alt="{{ item.icon_background.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+
+						<div class="hub-menu__link-info">
+							<h2 class="link-info__title">{{ item.title }}</h2>
+							<p class="link-info__subtitle">
+								{{ item.subtitle }}
+								<i class="las la-arrow-right link-info__icon"></i>
+							</p>
+						</div>
+					</div>
+					{% endif %}
+										
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</nav>

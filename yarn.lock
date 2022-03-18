@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@hubspot/cli-lib@^3.0.10":
-  version "3.0.10"
-  resolved "https://registry.yarnpkg.com/@hubspot/cli-lib/-/cli-lib-3.0.10.tgz#57ec4bf20551d5a1a6fe9207df69e9cb47715f4b"
-  integrity sha512-Glb87QSf+0KqjihZXocUH8aCqcym0esEjQikNR33MfraTh4MiMVRN7ekkXyBVZuXRUAF+K+5jQeDbnotIXo2LA==
+"@hubspot/cli-lib@^3.0.11":
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/@hubspot/cli-lib/-/cli-lib-3.0.11.tgz#3e95bcda7bd5f0a504a438a16ff621dd84e0392d"
+  integrity sha512-63GM+SMU4MZtSz4ep/ldhNmc1DpkOyPWwrncUNA1TRIxJUVU4xE6bBhPFDajpCZHpgBNogryJCreD/fMMNDZSw==
   dependencies:
     chalk "^2.4.2"
     chokidar "^3.0.1"
@@ -24,13 +24,13 @@
     table "^6.6.0"
     unixify "1.0.0"
 
-"@hubspot/cli@^3.0.10":
-  version "3.0.10"
-  resolved "https://registry.yarnpkg.com/@hubspot/cli/-/cli-3.0.10.tgz#4a69e26aaeca631c034dea9b914103b79b71f85d"
-  integrity sha512-WcD0LcVTDq37hwuhJy/GDIdA7a64rZ36CYN+8hzc19P5CzjDJMu6yE8cVtGkjs1nIiupBEgZ5s7c5PqwzJztRA==
+"@hubspot/cli@^3.0.11":
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/@hubspot/cli/-/cli-3.0.11.tgz#a4cd41c6fd667e96b34f80ff1795ef58fa16152b"
+  integrity sha512-ipMN/ShiBdb8MUT7gYhldgqPLT7pTusFWJ2p44qGPBiOFxyUai1cT6fYrCqrFEVkDsz5kQxk9kK54JdhhnbdVQ==
   dependencies:
-    "@hubspot/cli-lib" "^3.0.10"
-    "@hubspot/serverless-dev-runtime" "^3.0.10"
+    "@hubspot/cli-lib" "^3.0.11"
+    "@hubspot/serverless-dev-runtime" "^3.0.11"
     archiver "^5.3.0"
     chalk "^4.1.2"
     express "^4.17.1"
@@ -85,12 +85,12 @@
     request-promise-native "^1.0.7"
     unixify "1.0.0"
 
-"@hubspot/serverless-dev-runtime@^3.0.10":
-  version "3.0.10"
-  resolved "https://registry.yarnpkg.com/@hubspot/serverless-dev-runtime/-/serverless-dev-runtime-3.0.10.tgz#a0c2fec450d2d81071cabf98fe601ccd8fb5d4f2"
-  integrity sha512-3SWP7Au9nQwT8BlLYWtDokHpv1D0kliBBOfV06SHVHh7XC9kMxuGOhdqeWho0HqhFYDTZKlLGIP+xy2NpEAbog==
+"@hubspot/serverless-dev-runtime@^3.0.11":
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/@hubspot/serverless-dev-runtime/-/serverless-dev-runtime-3.0.11.tgz#fb31c3fd17b1855907be0fbe34144fa6631d903f"
+  integrity sha512-7eZkXe+EN7o1K1x0Bwy0K26PUEwXKyWpFQmX3h16mbT4JlUVJZaULrMIRpKMxFkLp84y5Iep6ee8oUbjqYXF2w==
   dependencies:
-    "@hubspot/cli-lib" "^3.0.10"
+    "@hubspot/cli-lib" "^3.0.11"
     body-parser "^1.19.0"
     chalk "^4.1.0"
     chokidar "^3.4.3"

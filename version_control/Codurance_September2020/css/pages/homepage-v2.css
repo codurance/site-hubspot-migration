@@ -178,7 +178,7 @@ body{
     color: white;
 }
 
-.craftmanship-ethos .compasss-image {
+.craftmanship-ethos .compass-image {
     transform: translate(-29%,-20.7%);
     width: 21em;
     max-width: initial;
@@ -212,19 +212,19 @@ body{
         max-width: 100%;
     }
 
-    .craftmanship-ethos .compasss-image {
+    .craftmanship-ethos .compass-image {
         width: 50%;
         transform: initial;
     }
 
-    .craftmanship-ethos .compasss-image img {
+    .craftmanship-ethos .compass-image img {
         height: 18em;
         transform: translate(-29%,-25.7%);
         max-width: initial;
     }
 {% endcall %}
 {% call utils.large_and_extra_large() %}
-    .craftmanship-ethos .compasss-image img {
+    .craftmanship-ethos .compass-image img {
         height: 25em;
         transform: translate(-29%,-21.7%);
     }
