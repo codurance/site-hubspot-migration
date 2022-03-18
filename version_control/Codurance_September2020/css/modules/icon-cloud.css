@@ -1,0 +1,47 @@
+{% import '../utils/utils.css' as utils %}
+
+.icons-group{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 2em;
+    margin: 2.5em auto;
+}
+
+.icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 5em;
+}
+
+.icon__image {
+    margin-bottom: 10px;
+}
+
+.icon__title {
+    max-width: 10ch;
+    text-align: center;
+}
+
+{% call utils.small()%}
+    .icons-group{
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 0.5em;
+        row-gap: 1em;
+    }
+
+    .icon__image {
+        width: 70%;
+    }
+
+    .icon__title {
+        {{ utils.natus() }}
+        line-height: var(--sejima-line-height);
+    }   
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+    .icon__title {
+        font-weight: var(--heavy-font-weight);
+    }  
+{%endcall%}

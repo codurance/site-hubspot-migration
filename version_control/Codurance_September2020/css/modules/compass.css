@@ -11,7 +11,7 @@
     margin: 0 auto;
 }
 
-.compasss-image {
+.compass-image {
     width: 65%
 }
    
@@ -76,7 +76,7 @@
     }
 
 
-    .compasss-image {
+    .compass-image {
         transform: translateY(-10%);
     }
 {% endcall %}

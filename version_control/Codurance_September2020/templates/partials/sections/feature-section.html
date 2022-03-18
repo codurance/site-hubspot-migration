@@ -1,0 +1,24 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: false
+-->
+
+{{ require_css(get_asset_url("version_control/Codurance_September2020/css/partials/sections/feature-section.css")) }}
+
+<section class="feature-section">
+    <div class="feature-section__heading-text">
+        {% module "title_and_subtitle" path='@hubspot/rich_text' label="Industries Heading Text" no_wrapper=True %}
+    </div>
+
+    {% module "industries_section" 
+        path='/version_control/Codurance_September2020/modules/Icon-cloud.module' 
+        label="Industries Icons Section" 
+        no_wrapper=True 
+    %}
+
+    {% module "Button-CTA" 
+        path='/version_control/Codurance_September2020/modules/Button.module' 
+        label="Industries Button" 
+        no_wrapper=True
+    %}
+</section>
