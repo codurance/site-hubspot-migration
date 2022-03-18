@@ -31,121 +31,8 @@ label: NEW Case Study Template
 
 
 {# Header Section #}
-{% dnd_area "header" label="Header Section" %}
-  {% dnd_section
-    background_image={
-      "background_position" : "MIDDLE_CENTER",
-      "background_size" : "cover",
-      "image_url" : "https://f.hubspotusercontent10.net/hubfs/3042464/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_bg.png"
-    }
-  %}
-    {% dnd_column
-      offset=0,
-      width=7,
-      padding={
-        "default" : {
-          "bottom" : "40px"
-        }
-      }
-    %}
-      {% dnd_row %}
-        {% dnd_module
-          path="@hubspot/linked_image",
-          offset=0,
-          width=12,
-          horizontal_alignment="LEFT",
-          img={
-            "alt" : "CS_header_badge",
-            "height" : 95,
-            "loading" : "lazy",
-            "max_height" : 95,
-            "max_width" : 224,
-            "size_type" : "auto",
-            "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_badge.png",
-            "width" : 224
-          }
-        %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-      {% dnd_row %}
-        {% dnd_module
-          path="@hubspot/header",
-          offset=0,
-          width=12,
-          header_tag="h4",
-          value="\n\n\n\nHealth Sector"
-        %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-      {% dnd_row %}
-        {% dnd_module
-          path="@hubspot/header",
-          offset=0,
-          width=12,
-          header_tag="h2",
-          value="\n\n\n\nClinicalWorks Transform the Electronic Medical Records Software"
-        %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-      {% dnd_row %}
-        {% dnd_module
-          path="@hubspot/header",
-          offset=0,
-          width=12,
-          header_tag="h3",
-          value="\n\n\n\nModernising legacy software through innovative techniques"
-        %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-      {% dnd_row %}
-        {% dnd_column
-          offset=0,
-          width=12,
-          padding={
-            "default" : {
-              "bottom" : "0px",
-              "left" : "70px"
-            }
-          }
-        %}
-          {% dnd_row %}
-            {% dnd_module
-              path="/Codurance_September2020/modules/Button",
-              offset=0,
-              width=12,
-              button_type="cta",
-              cta_field="85143f9c-02e4-4d77-acce-7ef03487d59f"
-            %}
-            {% end_dnd_module %}
-          {% end_dnd_row %}
-        {% end_dnd_column %}
-      {% end_dnd_row %}
-    {% end_dnd_column %}
-    {% dnd_column
-      offset=7,
-      width=5
-    %}
-      {% dnd_row %}
-        {% dnd_module
-          path="@hubspot/linked_image",
-          offset=0,
-          width=12,
-          horizontal_alignment="CENTER",
-          img={
-            "alt" : "CS_header_icon",
-            "height" : 114,
-            "loading" : "lazy",
-            "max_height" : 151,
-            "max_width" : 199,
-            "size_type" : "exact",
-            "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_icon.png",
-            "width" : 150
-          }
-        %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-    {% end_dnd_column %}
-  {% end_dnd_section %}
+{% dnd_area "header", label="Header Section", class="header-section" %}
+  {% include_dnd_partial path='./sections/case-study-header.html' %}
 {% end_dnd_area %}
 {# End Header Section #}
 
@@ -217,7 +104,7 @@ label: NEW Case Study Template
 {% end_dnd_area %}
 {# End Menu Section #}
  
-{% dnd_area 'main' 	label="Main Section" %}
+{% dnd_area 'main', label="Main Section" %}
 {# Intro Section #}
   {% dnd_section %}
     {% dnd_module
