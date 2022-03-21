@@ -29,11 +29,38 @@ label: NEW Case Study Template
 
 <div class="case-study">
 
-
 {# Header Section #}
-{% dnd_area "header", label="Header Section", class="header-section" %}
-  {% include_dnd_partial path='./sections/case-study-header.html' %}
-{% end_dnd_area %}
+<header class="case-study-header">
+  <span class="case-study-header__tag">
+    Case Study
+  </span>
+
+  <p class="case-study-header__p">
+    {% module "industry_text" 
+      label="Industry Text"
+      path="@hubspot/text"
+      value="Health Sector" 
+      no_wrapper=True 
+    %}
+  </p>
+  <h1 class="case-study-header__title">
+    {% module "case_study_title"
+      label="Case Study Title"
+      path="@hubspot/text"
+      value="ClinicalWorks Transform the Electronic Medical Records Software" 
+      no_wrapper=True
+    %}
+  </h1>
+  <h2 class="case-study-header__subtitle">
+    {% module "text3"
+      label="Case Study Subtitle"
+      path="@hubspot/text" 
+      value="Modernising legacy software through innovative techniques"
+      no_wrapper=True
+    %}
+  </h2>
+
+</header>
 {# End Header Section #}
 
 {# Menu Section #}
@@ -147,7 +174,6 @@ label: NEW Case Study Template
 {% end_dnd_section %}
 {# End Testimonial Section #}
 
-  
 {% end_dnd_area %}
 </div>  
 {% endblock body %}
