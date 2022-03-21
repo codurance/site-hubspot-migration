@@ -16,6 +16,8 @@
 <nav role="navigation" aria-label="Secondary Menu">
 	<ul class="hub-menu">
 		{% for item in module.links_hub %}
+			{% set href = item.link_field.url.href %}
+				
 			<li class="hub-menu__item" 
 			{% if item.mobile_version.gradient_color.color %}
 				style="background: linear-gradient(72deg, var(--woodsmoke) 25%, 

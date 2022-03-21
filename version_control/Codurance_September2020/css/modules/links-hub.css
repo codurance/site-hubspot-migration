@@ -194,7 +194,7 @@
     }
 
     .hub-menu__icon-img{
-        transition: scale ease-in-out 300ms;
+        transition: transform ease-in-out 300ms, scale ease-in-out 300ms;
     }
 
 
@@ -304,8 +304,9 @@
     }
     
     .hub-menu__link:hover .hub-menu__icon-img {
+        transform: scale(1.1);
         scale: 1.1;
-        transition: scale ease-in-out 200ms;
+        transition: transform ease-in-out 300ms, scale ease-in-out 300ms;
     }
 
     .hub-menu__link:hover .hub-menu__link-info::before,
