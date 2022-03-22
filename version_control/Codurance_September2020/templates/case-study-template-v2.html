@@ -36,7 +36,7 @@ label: NEW Case Study Template
       Case Study
     </span>
 
-    <p class="case-study-header__p">
+    <p class="case-study-header__industry">
       {% module "industry_text" 
         label="Industry Text",
         path="@hubspot/text",
@@ -44,35 +44,26 @@ label: NEW Case Study Template
         no_wrapper=True 
       %}
     </p>
-    <h1 class="case-study-header__title">
-      {% module "case_study_title"
-        label="Case Study Title",
-        path="@hubspot/text",
-        value="ClinicalWorks Transform the Electronic Medical Records Software", 
-        no_wrapper=True
-      %}
-    </h1>
-    <h2 class="case-study-header__subtitle">
-      {% module "case_study_subtitle"
-        label="Case Study Subtitle",
-        path="@hubspot/text", 
-        value="Modernising legacy software through innovative techniques",
-        no_wrapper=True
-      %}
-    </h2>
-  </div>{# End Text Block #}
+
+    {% section_header 'my_section_header' 
+      header='ClinicalWorks Transform the Electronic Medical Records Software', 
+      subheader='Modernising legacy software through innovative techniques',
+      label="Case Study Header",
+      no_wrapper=True %}
+
+
+  </div>
 
   {% module 'case_study_icon'
     label="Case Study Icon",
     path='@hubspot/linked_image',
     img={
       "src": "https://www.codurance.com/hubfs/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_icon.png",
-      "alt": "Case Study Icon",
-      "loading": "lazy"
+      "alt": "Case Study Icon"
     },
-    no_wrapper=True,
-    class="case-study-header__icon"
+    no_wrapper=True
   %}
+  
 </header>
 {# End Header Section #}
 
