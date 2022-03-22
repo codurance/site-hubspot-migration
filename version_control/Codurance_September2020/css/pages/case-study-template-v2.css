@@ -8,7 +8,12 @@
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  min-height: 18em;
+  gap: 2em;
+  padding: 4em 2em 2em;
+}
+
+.case-study-header > * {
+  max-width: var(--content-max-width);
 }
 
 .case-study-header__tag{
@@ -22,7 +27,7 @@
 }
 
 .case-study-header__industry{
-  margin-top: 1.5em;
+  margin-top: 2em;
   {{ utils.natus() }}
 }
 
@@ -34,17 +39,23 @@
 
 .case-study-header__text-block .page-header.section-header h1{
   {{ utils.dudler() }}
-  margin-top: var(--base-margin);
+  font-weight: var(--heavy-font-weight);
+  line-height: var(--freed-line-height);
+  margin-top: 0.5em;
 }
 
 .case-study-header__text-block .page-header.section-header p{
   line-height: var(--base-line-height);
-  margin-top: var(--sejima-margin);
+  margin-top: 0.5em;
 }
 
 .case-study-header__text-block{
   max-width: 50%;
   position: relative;
+}
+
+.case-study-header__text-block .custom-btn {
+  margin-top: 1em;
 }
 
 
