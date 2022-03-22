@@ -1,0 +1,9 @@
+.case-study-header {
+  align-items: center;
+  background: url("https://info.codurance.com/hubfs/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_bg.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  min-height: 18em;
+}
