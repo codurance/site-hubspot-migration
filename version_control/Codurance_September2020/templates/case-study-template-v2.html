@@ -49,9 +49,14 @@ label: NEW Case Study Template
       header='ClinicalWorks Transform the Electronic Medical Records Software', 
       subheader='Modernising legacy software through innovative techniques',
       label="Case Study Header",
-      no_wrapper=True %}
+      no_wrapper=True 
+    %}
 
-    {% module 'button_module' path='../modules/button.module', label="Button module", no_wrapper=True %}
+    {% module 'button_module' 
+      path='../modules/button.module', 
+      label="Case Study Download", 
+      no_wrapper=True 
+    %}
   </div>
 
   {% module 'case_study_icon'
@@ -61,80 +66,27 @@ label: NEW Case Study Template
       "src": "https://www.codurance.com/hubfs/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_icon.png",
       "alt": "Case Study Icon"
     },
-    no_wrapper=True
+    no_wrapper=True 
   %}
-
-  
-
 </header>
 {# End Header Section #}
 
 {# Menu Section #}
-{% dnd_area 'menu', class="sticky-menu" 	label="Menu Section" %}
-  {% dnd_section  
-    background_linear_gradient={
-    "colors" : [ "rgba(238, 238, 238, 1)", "rgba(255, 255, 255, 1)" ],
-    "direction" : "to bottom right"
-    },
-  padding={
-    "default" : {
-      "bottom" : "20px",
-      "left" : "70px",
-      "right" : "70px",
-      "top" : "20px"
-    }
-  }
+<nav class="case-study-menu" role="navigation" aria-label="Secondary Menu">
+  {% module_block simple_menu "case_study_menu",
+    no_wrapper=True,
+    overrideable=True, 
+    orientation="horizontal", 
+    label="Case Study Menu",
   %}
-  {% dnd_column
-    offset=0,
-    width=4
-  %}
-    {% dnd_row %}
-      {% dnd_module
-        path="@hubspot/rich_text",
-        offset=0,
-        width=12
-      %}
-        {% module_attribute "html" %}
-          <h2 style="text-align: center; font-weight: bold;"><a href="#discovery" rel="noopener">Discovery</a></h2>
-        {% end_module_attribute %}
-      {% end_dnd_module %}
-    {% end_dnd_row %}
-  {% end_dnd_column %}
-  {% dnd_column
-    offset=4,
-    width=4
-  %}
-    {% dnd_row %}
-      {% dnd_module
-        path="@hubspot/rich_text",
-        offset=0,
-        width=12
-      %}
-        {% module_attribute "html" %}
-          <h2 style="text-align: center; font-weight: bold;"><a href="#tech-meets-ingenuity" rel="noopener">Tech meets ingenuity</a></h2>
-        {% end_module_attribute %}
-      {% end_dnd_module %}
-    {% end_dnd_row %}
-  {% end_dnd_column %}
-  {% dnd_column
-    offset=8,
-    width=4
-  %}
-    {% dnd_row %}
-      {% dnd_module
-        path="@hubspot/rich_text",
-        offset=0,
-        width=12
-      %}
-        {% module_attribute "html" %}
-          <h2 style="font-weight: bold; text-align: center;"><a href="#valuable-difference" rel="noopener">Valuable Difference</a></h2>
-        {% end_module_attribute %}
-      {% end_dnd_module %}
-    {% end_dnd_row %}
-  {% end_dnd_column %}
-  {% end_dnd_section %}
-{% end_dnd_area %}
+    {% module_attribute "menu_tree" is_json=True %}
+      [{"contentType": null, "subCategory": null, "pageLinkName": null, "pageLinkId": null, "isPublished": false, "categoryId": null, "linkParams": null, "linkLabel": "Anchor 1", "linkTarget": null, "linkUrl": "#anchor-1", "children": [], "isDeleted": false}, 
+        {"contentType": null, "subCategory": null, "pageLinkName": null, "pageLinkId": null, "isPublished": false, "categoryId": null, "linkParams": null, "linkLabel": "Anchor 2", "linkTarget": null, "linkUrl": "#anchor-2", "children": [], "isDeleted": false},
+        {"contentType": null, "subCategory": null, "pageLinkName": null, "pageLinkId": null, "isPublished": false, "categoryId": null, "linkParams": null, "linkLabel": "Anchor 3", "linkTarget": null, "linkUrl": "#anchor-2", "children": [], "isDeleted": false}
+      ]
+    {% end_module_attribute %}
+  {% end_module_block %}
+</nav>
 {# End Menu Section #}
  
 {% dnd_area 'main', label="Main Section" %}
