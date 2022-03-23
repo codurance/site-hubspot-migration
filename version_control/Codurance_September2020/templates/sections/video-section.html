@@ -1,0 +1,13 @@
+<!--
+ templateType: section
+ label: Video Section
+ description: "Embedded Youtube/Vimeo video via URL"
+ isAvailableForNewContent: true
+ screenshotPath: "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Case%20Study%20Landing%20Pages/Sections%20Preview%20thumbnails/video_section.png"
+-->
+
+{% dnd_section max_width=700 %}
+  {% dnd_module path="@hubspot/video_embed_lp"
+      url="https://www.youtube.com/watch?v=xdU1b_VpOp4" %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

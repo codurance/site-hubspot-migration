@@ -1,0 +1,22 @@
+<!--
+ templateType: section
+ label: Intro Text Section
+ description: "Title and body text"
+ isAvailableForNewContent: true
+ screenshotPath: "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Case%20Study%20Landing%20Pages/Sections%20Preview%20thumbnails/text_section.png"
+-->
+{% dnd_section max_width=700 %}
+  {% dnd_module
+    path="@hubspot/rich_text",
+    offset=0,
+    width=12
+  %}
+    {% module_attribute "html" %}
+      <a id="discovery" data-hs-anchor="true"></a>
+      <h2 style="font-size: 30px;">&nbsp;</h2>
+      <h2 style="font-size: 30px;"><strong>Discovery</strong></h2>
+      <p>&nbsp;</p>
+      <p style="font-size: 18px; line-height: 1.25;"><span>Continuous Delivery was a major challenge for Roche. They operate in the highly regulated environment of healthcare. Roche started work to increase their overall agility and being able to frequently release safe changes while remaining fully compliant was a key part of this initiative. At Codurance, we routinely build state-of-the-art Continuous Integration and Deployment solutions, but the strong regulatory requirements presented a challenge that we relished. The proposed reference implementation would later be used as an example for similar applications. Thus, the solution also had to be very flexible, customisable and extendable, serving as the core template for any similar future migration in their portfolio.</span></p>
+    {% end_module_attribute %}
+  {% end_dnd_module %}
+{% end_dnd_section %}
