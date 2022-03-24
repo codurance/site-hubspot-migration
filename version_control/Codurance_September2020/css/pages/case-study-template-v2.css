@@ -1,5 +1,13 @@
 {% import '../utils/utils.css' as utils %}
 
+html {
+  scroll-behavior: smooth;
+}  
+
+body {
+  max-width: unset;
+}
+
 .case-study-header {
   align-items: center;
   background: url("https://info.codurance.com/hubfs/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_bg.png");
@@ -85,7 +93,7 @@
 .case-study-menu {
   background-color: white;
   box-shadow: 0px 3px 10px -4px rgba(0,0,0,0.18);
-  position: sticky;
+  position: static;
   top: 3.5rem;
   z-index: 2;
 }
