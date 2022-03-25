@@ -1,0 +1,20 @@
+
+{{ require_css(get_asset_url("../../css/modules/secondary-menu.css")) }}
+
+{% if module.menu_tree %}
+    <nav 
+        class="secondary-menu" 
+        role="navigation" 
+        aria-label="Secondary Menu"
+        {% if module.sticky %}
+            style="position: sticky;"
+        {% endif %}
+    >
+        {% simple_menu 
+            menu_tree="{{ module.menu_tree }}", 
+            orientation="{{ module.orientation }}"
+        %}
+    </nav>
+{% endif %}
+
+

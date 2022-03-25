@@ -1,10 +1,8 @@
-
 <!--
 templateType: page
 isAvailableForNewContent: true
 label: NEW Case Study Template
 -->
-
 
 {% extends "./layouts/base.html" %}
 <head>
@@ -74,47 +72,21 @@ label: NEW Case Study Template
 {# End Header Section #}
 
 {# Menu Section #}
-<nav class="case-study-menu" role="navigation" aria-label="Secondary Menu">
-  {% module_block simple_menu "case_study_menu",
-    no_wrapper=True,
-    overrideable=True, 
-    orientation="horizontal", 
-    label="Case Study Menu"
-  %}
-    {% module_attribute "menu_tree" is_json=True %}
-      [{"contentType": null, "subCategory": null, "pageLinkName": null, "pageLinkId": null, "isPublished": false, "categoryId": null, "linkParams": null, "linkLabel": "Anchor 1", "linkTarget": null, "linkUrl": "#anchor-1", "children": [], "isDeleted": false}, 
-        {"contentType": null, "subCategory": null, "pageLinkName": null, "pageLinkId": null, "isPublished": false, "categoryId": null, "linkParams": null, "linkLabel": "Anchor 2", "linkTarget": null, "linkUrl": "#anchor-2", "children": [], "isDeleted": false},
-        {"contentType": null, "subCategory": null, "pageLinkName": null, "pageLinkId": null, "isPublished": false, "categoryId": null, "linkParams": null, "linkLabel": "Anchor 3", "linkTarget": null, "linkUrl": "#anchor-2", "children": [], "isDeleted": false}
-      ]
-    {% end_module_attribute %}
-  {% end_module_block %}
-</nav>
-{# End Menu Section #}
-
-
-
+  {% module 'secondary_menu' path='../modules/secondary-menu.module' no_wrapper=True %}
 
 {% dnd_area 'main', label="Main Section" %}
-
   {# Intro Section #}
     {% include_dnd_partial path='./sections/text-module-section.html' context={} %}
   
-
   {# Video Section  #}
     {% include_dnd_partial path='./sections/video-section.html' context={} %}
-
 
   {# Text Section  #}
   {% include_dnd_partial path='./sections/text-module-section.html' context={} %}
 
-
   {# Testimonial Section #}
     {% include_dnd_partial path='./sections/testimonial-section.html' context={} %}
-
-
 {% end_dnd_area %}
 </div>  
 
-
 {% endblock body %}
-
