@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+:root {
+  --menu-height: 3.5rem;
+}
+
 html {
   scroll-behavior: smooth;
 }  
@@ -65,6 +69,10 @@ body {
 
 .case-study-header__text-block .custom-btn {
   margin-top: 1em;
+}
+
+a[data-hs-anchor="true"] {
+  scroll-margin-top: var(--menu-height);
 }
 
 {% call utils.small() %}
