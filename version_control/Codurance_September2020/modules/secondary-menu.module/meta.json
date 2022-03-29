@@ -1,0 +1,17 @@
+{
+  "content_tags" : [ {
+    "name" : "COMPATIBLE_BLOG",
+    "source" : "MARKETPLACE"
+  }, {
+    "name" : "COMPATIBLE_PAGE",
+    "source" : "MARKETPLACE"
+  } ],
+  "extra_classes" : "widget-type-simple_menu",
+  "global" : false,
+  "master_language" : "en",
+  "icon" : "fontawesome-5.14.0:Compass",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 47247765490,
+  "label" : "Secondary Menu",
+  "is_available_for_new_content" : true
+}
