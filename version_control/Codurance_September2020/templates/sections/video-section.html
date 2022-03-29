@@ -1,0 +1,13 @@
+<!--
+ templateType: section
+ label: Video Section
+ description: "Embedded Youtube/Vimeo video via URL"
+ isAvailableForNewContent: true
+ screenshotPath: ../../images/template-previews/video_section.png
+-->
+
+{% dnd_section max_width=700 %}
+  {% dnd_module path="@hubspot/video_embed_lp"
+      url="https://www.youtube.com/watch?v=xdU1b_VpOp4" %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

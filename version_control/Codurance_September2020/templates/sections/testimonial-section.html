@@ -1,0 +1,35 @@
+<!--
+ templateType: section
+ label: Testimonial Section
+ description: "Testimonial cards slider"
+ isAvailableForNewContent: true
+ screenshotPath: ../../images/template-previews/testimonial_section.png
+-->
+
+{# The route to custom dnd modules should be relative to the template in use #}
+
+{% dnd_section max_width=800 %}
+  {% dnd_module
+    path="../modules/Landing Page Modules/LP-testimonial-slider.module",
+    offset=0,
+    width=12,
+    label="Testimonial Slider",
+    testimonial_items=[ {
+      "testimonal_role" : "Head of amazing at brain.org",
+      "testimonial_author" : "Tech person",
+      "testimonial_body" : "Software modernisation does, however, raise questions. Creating growth and innovation through software modernisation isn’t without risks, but having good risk management, operational excellence and compliance process can help minimise these. ",
+      "testimonial_image" : {
+        "alt" : "Estefania-Moreno",
+        "height" : 400,
+        "loading" : "lazy",
+        "max_height" : 400,
+        "max_width" : 400,
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Estefania-Moreno.jpg",
+        "width" : 400
+      }
+    } ]
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}
+

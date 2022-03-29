@@ -1,0 +1,22 @@
+<!--
+ templateType: section
+ label: Intro Text Section
+ description: "Title and body text"
+ isAvailableForNewContent: true
+ screenshotPath: ../../images/template-previews/text_section.png
+-->
+{% dnd_section max_width=700 %}
+  {% dnd_module
+    path="@hubspot/rich_text",
+    offset=0,
+    width=12
+  %}
+    {% module_attribute "html" %}
+      <a id="discovery" data-hs-anchor="true"></a>
+      <h2 style="font-size: 30px;">&nbsp;</h2>
+      <h2 style="font-size: 30px;"><strong>Lorem Ipsum</strong></h2>
+      <p>&nbsp;</p>
+      <p style="font-size: 18px; line-height: 1.25;"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean finibus luctus libero, eu facilisis velit vulputate ornare. Etiam eleifend tortor non ante tincidunt interdum. Pellentesque vel lectus non metus faucibus blandit quis vitae nibh. Nulla faucibus eros id neque pretium facilisis. Duis vehicula, augue a aliquam venenatis, purus justo consectetur eros, sed dictum purus justo quis diam. Maecenas eget sem sed felis luctus tempus. Nulla eros mauris, facilisis a nulla a, suscipit fermentum nisl. Morbi condimentum risus id dolor euismod rutrum. Nunc ut turpis in lorem luctus ultrices. Suspendisse sed pretium ipsum, vitae pharetra diam. Phasellus molestie rhoncus nisi, eget pharetra est mattis quis. Fusce ligula risus, convallis at massa sed, varius interdum ante. Mauris vel faucibus arcu. Morbi eget sapien mauris.</span></p>
+    {% end_module_attribute %}
+  {% end_dnd_module %}
+{% end_dnd_section %}
