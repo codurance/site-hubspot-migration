@@ -26,7 +26,8 @@
 {% endcall %}
 
 .card-slider__heading {
-  color: var(--shark);
+  --card-slider-heading-color: var(--shark);
+  color: var(--card-slider-heading-color);
   flex-grow: 1;
   font-size: var(--dudler-font-size);
   font-weight: var(--heavy-font-weight);
@@ -38,6 +39,9 @@
     width: 100%;
   }
 {% endcall %}
+.past-events .card-slider__heading {
+  --card-slider-heading-color: white;
+}
 
 {% call utils.large_and_extra_large() %}
   .card-slider__nav-button-wrapper {
@@ -451,11 +455,12 @@
   padding-left: 20px;
   padding-right: 20px;
 }
-@media (max-width: 1023px) {
+
+{% call utils.small_medium_and_large()%}
   .card-slider-newsletter-wrapper{
     display: none;
   }
-}
+{% endcall %}
 
 .card-slider-newsletter__icon {
   background-image: url({{ get_asset_url('../images/icon-newsletter.svg' ) }});
@@ -485,6 +490,10 @@ text-align: center;
   cursor: pointer;
   background: white;
 }
+.past-events .card-slider__watch-all-button {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 
 .events-cta-card{
   background: url(https://f.hubspotusercontent10.net/hubfs/3042464/Events%20page/newsletter-cta-shape-1.svg) rgba(255,255,255, 0.7);
@@ -503,11 +512,11 @@ text-align: center;
   background-size: contain;
 }
 
-@media (max-width: 1023px) {
+{% call utils.small_medium_and_large()%}
   .events-cta-card{
     display: none;
   }
-}
+{% endcall %}
 
 .events-cta-card__icon {
   font-size: 3rem;
