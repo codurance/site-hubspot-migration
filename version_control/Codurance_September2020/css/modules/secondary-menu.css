@@ -1,0 +1,57 @@
+{% import '../utils/utils.css' as utils %}
+
+.secondary-menu {
+  background-color: white;
+  box-shadow: 0px 3px 10px -4px rgba(0,0,0,0.18);
+  top: 3.5rem;
+  transition: top 0.3s ease;
+  z-index: 2;
+}
+
+.secondary-menu--fixed {
+  top: 0;
+}
+
+.sticky-menu {
+  position: sticky;
+}
+
+.secondary-menu ul { 
+  justify-content: space-evenly;
+  margin-top: 0;
+  row-gap: 0.5em;
+}
+
+.secondary-menu a {
+  line-height: 3.5rem;
+  padding: 0 2em;
+  position: relative;
+}
+.secondary-menu a:hover:after {
+  border-bottom: 2px solid var(--persimmon);
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 3.4rem;
+  width: 100%;
+}
+
+{% call utils.small() %}
+  .secondary-menu {
+    position: static;
+  }
+
+  .secondary-menu a {
+    line-height: 2.5rem;
+    padding: 0 1em;
+  }
+  .secondary-menu a:hover:after {
+    top: 2.4rem;
+  }
+{% endcall %}
+
+{% call utils.extra_large() %}
+  .secondary-menu:not(.secondary-menu--fixed) {
+    top: 4.35rem;
+  }
+{% endcall %}

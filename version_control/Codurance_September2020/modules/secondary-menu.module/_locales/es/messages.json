@@ -1,0 +1,57 @@
+{
+  "menu_tree.label" : {
+    "message" : "Menú simple",
+    "description" : null,
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "secondary-menu",
+    "description" : null,
+    "placeholders" : null
+  },
+  "orientation.choices.horizontal" : {
+    "message" : "Horizontal",
+    "description" : null,
+    "placeholders" : null
+  },
+  "orientation.choices.vertical" : {
+    "message" : "Vertical",
+    "description" : null,
+    "placeholders" : null
+  },
+  "orientation.label" : {
+    "message" : "Orientación del menú",
+    "description" : null,
+    "placeholders" : null
+  },
+  "orientation.placeholder" : {
+    "message" : "Buscar",
+    "description" : null,
+    "placeholders" : null
+  },
+  "sticky.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "sticky.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "sticky.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "sticky.label" : {
+    "message" : "Boolean",
+    "description" : null,
+    "placeholders" : null
+  },
+  "sticky.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}
