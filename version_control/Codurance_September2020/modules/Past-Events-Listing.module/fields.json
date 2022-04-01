@@ -1,0 +1,18 @@
+[ {
+  "id" : "hubdb_table",
+  "name" : "hubdb_table",
+  "label" : "HubDB table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable"
+}, {
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Recent Events"
+} ]
