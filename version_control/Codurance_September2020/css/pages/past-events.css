@@ -416,13 +416,21 @@ body{
   padding-right: 1.2em;
 }
 
-.card-item__video-button::after {
+.icon-gated::after {
+  content: '\f30b'; 
+}
+.icon-ungated::after {
   content: '\f04b';
+}
+
+.icon-gated::after,
+.icon-ungated::after{
   font-family: 'line awesome free';
   font-size: 1.2em;
   position: relative;
   top: 0.1em;
 }
+
 
 .card-item__button-container [class*="button"] {
   width: 100%;
