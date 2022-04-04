@@ -384,6 +384,21 @@
   max-width: var(--button-max-width);
 }
 
+.icon-gated::after {
+  content: '\f30b'; 
+}
+.icon-ungated::after {
+  content: '\f04b';
+}
+
+.icon-gated::after,
+.icon-ungated::after{
+  font-family: 'line awesome free';
+  font-size: 1.2em;
+  position: relative;
+  top: 0.1em;
+}
+
 .card-slider-item__image-container {
   position: relative;
   width: 100%;
@@ -391,6 +406,17 @@
   background-color: var(--persimmon--dark);
   background-size: cover;
   background-position: center;
+}
+
+.card-slider-item--overlay::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
 }
 
 {% set label_position = '10px' %}
