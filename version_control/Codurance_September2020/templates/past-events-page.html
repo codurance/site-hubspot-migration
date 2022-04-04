@@ -25,13 +25,22 @@
 </head>
 
 {% block body %}
+  <header class="header-section">
+    <div class="header-section__text-wrapper responsive-page-width">
+      {% section_header 'header_section' 
+        header='Recent events', 
+        subheader='Have a look at all previous events hosted by Codurance'
+        no_wrapper=True
+      %}
+    </div>
+    
+  </header>
 
-<main class="main-container">
-  <section class="card-collection past-events">
-    {% module 'past_events' 
-      label="Past Events Section",
-      path='../modules/Past-Events-Listing.module' %}
-  </section>
-</main>
-
+  <main class="main-container">
+    <section class="card-collection past-events">
+      {% module 'past_events' 
+        label="Past Events Section",
+        path='../modules/Past-Events-Listing.module' %}
+    </section>
+  </main>
 {% endblock body %}

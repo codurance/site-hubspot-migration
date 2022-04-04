@@ -4,41 +4,68 @@
 
 body{
   max-width: none;
-}
-
-.events-header-slice {
-  max-width: none;
-  {{ utils.card_shadow() }}
-}
-
-.main-container {
   {{ utils.slate_to_woodsmoke() }}
-  padding-top: 2em;
-  padding-bottom: 5em;
 }
 
-.events-description{
-  margin: 0 auto;
+.header-section {
+  padding-top: 8em;
+  padding-bottom: 7em;
+  color: white;
+  background: url(https://www.codurance.com/hubfs/Events%20page/Recent%20Events%20Page/recent-events-hero-img.svg) top right no-repeat;
 }
-
-.events-description__wrapper{
-  background: white;
-  margin: 0 2.5em;
-  padding: 1.5em 7.5em;
-  text-align: center;
-  {{ utils.card_shadow() }}
-}
-
-{% call utils.small_and_medium() %}
-  .events-description__wrapper{
-    margin: 0 1.5em;
-    padding: 2.5em 1.5em;
+{% call utils.extra_large() %}
+  .header-section {
+    padding-bottom: 10em;
+  }
+{% endcall %}
+{% call utils.medium_and_large() %}
+  .header-section {
+    background-size: 50%;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .header-section {
+    background-size: 75%;
   }
 {% endcall %}
 
-.events-description h2{
+.header-section__text-wrapper {
+  margin: 0 auto;
+}
+{% call utils.small() %}
+  .header-section__text-wrapper {
+    margin-top: 3em;
+  }
+{% endcall %}
+
+{% call utils.medium() %}
+  .header-section .page-header {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+{% endcall %}
+
+.header-section__text-wrapper .page-header {
+  margin: 0;
+}
+
+.header-section__text-wrapper .page-header > * {
+  text-align: left;
+}
+
+.header-section .page-header > h1 {
+  {{ utils.gaudi() }}
+}
+
+.header-section .page-header > p {
   {{ utils.freed() }}
-  font-weight: var(--heavy-font-weight);
+  font-weight: normal;
+  margin-top: 1em;
+}
+
+.main-container {
+  padding-top: 2em;
+  padding-bottom: 5em;
 }
 
 .card-collection {
