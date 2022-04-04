@@ -227,12 +227,10 @@ body{
 }
 
 .card-collection-results {
-  align-items: stretch;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  column-gap: 1em;
-  row-gap: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  column-gap: 1.25em;
+  row-gap: 1.25em;
 }
 
 {% call utils.small_and_medium() %}
@@ -249,36 +247,7 @@ body{
 
 .card-item {
   box-shadow: 5px 10px 18px var(--woodsmoke--10);
-  -webkit-box-flex: 1;
-  flex: 1 1 25%;
 }
-
-{% call utils.extra_large() %}
-  .card-item {
-    /* 4 rows of cards */
-    max-width: calc(25% - 1em); 
-  }
-{% endcall %}
-
-{% call utils.large() %}
-  .card-item {
-    /* 3 rows of cards */
-    max-width: calc(33% - 1em);
-  }
-{% endcall %}
-
-{% call utils.medium() %}
-  .card-item {
-    /* 2 rows of cards */
-    max-width: calc(50% - 1em);
-  }
-{% endcall %}
-
-{% call utils.small_and_medium() %}
-  .card-item:last-of-type {
-    margin-right: 0;
-  }
-{% endcall %}
 
 .card-item__content {
   display: flex;
