@@ -302,6 +302,17 @@ body{
   justify-content: space-between;
 }
 
+.card-item--overlay::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+}
+
 .card-item__text-container-inner {
   flex-grow: 1;
   margin-bottom: 1.5rem;
