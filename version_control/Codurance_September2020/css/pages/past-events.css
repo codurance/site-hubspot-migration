@@ -8,9 +8,17 @@ body{
 }
 
 .header-section {
-  padding-top: 8em;
-  color: white;
   background: url(https://www.codurance.com/hubfs/Events%20page/Recent%20Events%20Page/recent-events-hero-img.svg) top right no-repeat;
+  color: white;
+  padding-top: 8em;
+}
+/* Media Query based on the max-page-width custom property */ 
+@media (min-width: 1800px) {
+  .header-section {
+    background-image: url(https://www.codurance.com/hubfs/Events%20page/Recent%20Events%20Page/Recent-events-hero-img-XL.svg);
+    max-width: var(--max-page-width);
+    margin: 0 auto;
+  }
 }
 {% call utils.extra_large() %}
   .header-section {
