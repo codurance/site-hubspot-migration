@@ -302,6 +302,17 @@ body{
   justify-content: space-between;
 }
 
+.card-item--overlay::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+}
+
 .card-item__text-container-inner {
   flex-grow: 1;
   margin-bottom: 1.5rem;
@@ -416,13 +427,21 @@ body{
   padding-right: 1.2em;
 }
 
-.card-item__video-button::after {
+.icon-gated::after {
+  content: '\f30b'; 
+}
+.icon-ungated::after {
   content: '\f04b';
+}
+
+.icon-gated::after,
+.icon-ungated::after{
   font-family: 'line awesome free';
   font-size: 1.2em;
   position: relative;
   top: 0.1em;
 }
+
 
 .card-item__button-container [class*="button"] {
   width: 100%;
