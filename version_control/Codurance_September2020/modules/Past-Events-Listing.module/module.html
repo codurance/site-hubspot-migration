@@ -11,9 +11,9 @@
       {{ module.heading }}
     </h2>
     <div class="card-collection-results">
-      {% for event in previousEvents %}
-        {% set eventThumb_desktop = resize_image_url(event.thumbnail.url, 0, 0, 375) %}
-        {% set eventThumb_mobile = resize_image_url(event.thumbnail.url, 0, 0, 260) %}
+    {% for event in previousEvents %}
+      {% set eventThumb_desktop = resize_image_url(event.thumbnail.url, 0, 0, 375) %}
+      {% set eventThumb_mobile = resize_image_url(event.thumbnail.url, 0, 0, 260) %}
 
         <article class="card-item">
           <div class="card-item__content">
@@ -66,7 +66,26 @@
                 </p>
               </div>
               <div class="card-item__button-container">
-              {% if event.video is string_containing 'livestorm' %}
+                  {% set button = { icon: "icon-ungated",
+                                    text: "Watch on Youtube" 
+                                  }
+                  %}
+          
+                {% if event.video is string_containing 'livestorm' %}
+                {% set button = { icon: "icon-gated",
+                                  text: "Register for free to watch" 
+                                }
+                %}
+                {% endif %}
+                {{snippets.button_primary(
+                  classnames="card-item__video-button {{button.icon}}",
+                  url=event.video,
+                  target="_blank",
+                  text= button.text
+                )}}
+
+
+              {# {% if event.video is string_containing 'livestorm' %}
                 {{snippets.button_primary(
                   classnames="card-item__video-button icon-gated",
                   url=event.video,
@@ -80,7 +99,7 @@
                   target="_blank",
                   text="Watch on YouTube"
                  )}}
-              {% endif %}
+              {% endif %} #}
               </div>
             </div>
           </div>
