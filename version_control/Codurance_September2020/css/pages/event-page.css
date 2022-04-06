@@ -14,7 +14,6 @@
                                       rgba(255,208,0,0.1026611328125) 77%, 
                                       rgba(255,255,255,1) 100%) fixed;
   padding-top: 2em;
-  padding-bottom: 5em;
 }
 
 .events-description{
@@ -47,12 +46,18 @@
   margin-right: auto;
   margin-top: 2em;
 }
+.recent-events-bg{
+  background: var(--slate);
+  padding-top: 2em;
+  padding-bottom: 4em;
+}
 
 .card-slider__heading-wrapper {
   background-position: top center;
   background-size: cover;
   padding-bottom: {{overlap}}px;
 }
+
 @media (max-width: 767px) {
   .card-slider__heading-wrapper {
     padding-top: 40px;
