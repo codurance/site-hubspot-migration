@@ -27,6 +27,9 @@
 
 {% block body %}
 
+{% module 'youtube_popup' 
+  path='../modules/YouTube-Video-Popup.module',
+  no_wrapper=True %}
 
 <section class="events-header-slice responsive-page-width ">
   {% module "page_hero_slice" path="../modules/Hero Slice.module" 
