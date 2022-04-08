@@ -1,6 +1,7 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
 
 {{ require_css(get_asset_url("../../css/card-slider.css")) }}
+
 {% if module.hubdb_table %} 
   {% set previousEventsFilter = "&orderBy=-date&limit=4" %}
   {% set previousEvents = hubdb_table_rows(module.hubdb_table, previousEventsFilter) %}
@@ -118,21 +119,23 @@
             </p>
           </div>
           <div class="card-slider-item__button-container">
-          {% if event.video is string_containing 'livestorm' %}
+            {% set button = { icon: "icon-ungated",
+                              text: "Watch on Youtube" 
+                            }
+            %}
+            {% if event.video is string_containing 'livestorm' %}
+              {% set button = { icon: "icon-gated",
+                                text: "Register for free to watch" 
+                              }
+              %}
+            {% endif %}
+
             {{snippets.button_primary(
-              classnames="card-item__video-button icon-gated",
-              url=event.video,
-              target="_blank",
-              text="Register for free to watch"
+                classnames="card-item__video-button {{button.icon}}",
+                url=event.video,
+                target="_blank",
+                text= button.text
             )}}
-          {% else %}
-            {{snippets.button_primary(
-              classnames="card-item__video-button icon-ungated",
-              url=event.video,
-              target="_blank",
-              text="Watch on YouTube"
-             )}}
-          {% endif %}
           </div>
         </div>
       </div>
@@ -142,7 +145,7 @@
 </div>
 <div>
   {{snippets.button_secondary(
-    url="https://www.youtube.com/c/Codurance/playlists",
+    url="https://www.codurance.com/past-events",
     classnames="card-slider__watch-all-button",
     target="_blank",
     text=module.watch_all_cta_text
