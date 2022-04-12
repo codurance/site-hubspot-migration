@@ -1,0 +1,11 @@
+
+.overlay{
+    background-color: hsla(0, 0%, 13.5%, .7);
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    display: none;
+}
