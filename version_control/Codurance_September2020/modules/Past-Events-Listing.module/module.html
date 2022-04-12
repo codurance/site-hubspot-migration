@@ -67,20 +67,23 @@
               </div>
               <div class="card-item__button-container">
                   {% set button = { icon: "icon-ungated",
-                                    text: "Watch on Youtube" 
+                                    text: "Watch on Youtube",
+                                    target: "" 
                                   }
                   %}
           
                 {% if event.video is string_containing 'livestorm' %}
                 {% set button = { icon: "icon-gated",
-                                  text: "Register for free to watch" 
+                                  text: "Register for free to watch",
+                                  target: "_blank" 
                                 }
                 %}
                 {% endif %}
+
                 {{snippets.button_primary(
                   classnames="card-item__video-button {{button.icon}}",
                   url=event.video,
-                  target="_blank",
+                  target= button.target,
                   text= button.text
                 )}}
 
