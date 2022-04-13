@@ -1,11 +1,39 @@
 
 .overlay{
-    background-color: hsla(0, 0%, 13.5%, .7);
-    /* position: fixed; */
+    background-color: hsla(0, 0%, 13.5%, .6);
+    position: fixed;
+    display: none;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: 10;
-    display: none;
+    z-index: 110;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal{
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+}
+
+.close-button{
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0;
+    transition: scale ease-in-out 100ms;
+}
+
+.close-button:hover {
+  scale: 1.4;
+}
+.overflow-hidden {
+    overflow: hidden;
 }
