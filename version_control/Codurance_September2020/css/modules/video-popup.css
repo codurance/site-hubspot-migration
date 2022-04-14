@@ -30,11 +30,11 @@
     color: white;
     font-size: 1.5rem;
     padding: 0;
-    transition: scale ease-in-out 100ms;
+    transition: transform ease-in-out 100ms;
 }
 
 .close-button:hover {
-  scale: 1.4;
+  transform: scale(1.4);
 }
 .overflow-hidden {
     overflow: hidden;
