@@ -11,12 +11,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
 }
 
 .modal{
     position: relative;
     max-width: 800px;
     width: 100%;
+    animation: fadein 1s;
 }
 
 .close-button{
@@ -36,4 +38,16 @@
 }
 .overflow-hidden {
     overflow: hidden;
+}
+
+
+@keyframes fadein {
+	from {
+		opacity:0;
+        transform: translateY(30px);
+	}
+	to {
+		opacity:1;
+        transform: translateY(0);
+	}
 }

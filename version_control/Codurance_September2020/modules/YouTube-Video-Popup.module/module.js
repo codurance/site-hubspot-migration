@@ -4,6 +4,7 @@ const ungatedButtons = document.querySelectorAll(".icon-ungated");
 const overlay = document.querySelector(".overlay");
 const popupVideo = document.querySelector(".modal__video");
 const closeModalButton = document.querySelector(".close-button");
+const modal = document.querySelector(".modal");
 
 ungatedButtons.forEach(openVideoPopupOnClick);
 
@@ -48,12 +49,14 @@ function stripYoutubeID(str){
 
 function showModal(elem) {
     document.body.classList.add('overflow-hidden');
-    return elem.style.display = 'flex';
+    elem.style.display = 'flex';
+    modal.style.opacity = '1';
 }
 
 function hideModal(elem) {
     document.body.classList.remove('overflow-hidden');
     elem.style.display = 'none';
+    modal.style.opacity = '0';
     popupVideo.src = "";
 }
 
