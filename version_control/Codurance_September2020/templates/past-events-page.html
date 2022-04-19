@@ -1,0 +1,45 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Past Events
+-->
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/past-events.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+  <header class="header-section">
+    <div class="header-section__text-wrapper responsive-page-width">
+      {% section_header 'header_section' 
+        header='Recent events', 
+        subheader='Have a look at all previous events hosted by Codurance'
+        no_wrapper=True
+      %}
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="card-collection past-events">
+      {% module 'past_events' 
+        label="Past Events Section",
+        path='../modules/Past-Events-Listing.module' %}
+    </section>
+  </main>
+{% endblock body %}

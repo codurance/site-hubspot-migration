@@ -1,0 +1,92 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: NEW Case Study Template
+-->
+
+{% extends "./layouts/base.html" %}
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/case-study-template-v2.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+
+<div class="case-study">
+
+{# Header Section #}
+<header class="case-study-header">
+  <div class="case-study-header__text-block">
+    <span class="case-study-header__tag">
+      Case Study
+    </span>
+
+    <p class="case-study-header__industry">
+      {% module "industry_text" 
+        label="Industry Text",
+        path="@hubspot/text",
+        value="Health Sector" 
+        no_wrapper=True 
+      %}
+    </p>
+
+    {% section_header 'my_section_header' 
+      header='ClinicalWorks Transform the Electronic Medical Records Software', 
+      subheader='Modernising legacy software through innovative techniques',
+      label="Case Study Header",
+      no_wrapper=True 
+    %}
+
+    {% module 'button_module' 
+      path='../modules/button.module', 
+      label="Case Study Download", 
+      no_wrapper=True 
+    %}
+  </div>
+
+  {% module 'case_study_icon'
+    label="Case Study Icon",
+    path='@hubspot/linked_image',
+    img={
+      "src": "https://www.codurance.com/hubfs/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_icon.png",
+      "alt": "Case Study Icon"
+    },
+    no_wrapper=True 
+  %}
+</header>
+{# End Header Section #}
+
+{# Menu Section #}
+  {% module 'secondary_menu' path='../modules/secondary-menu.module' no_wrapper=True %}
+
+{% dnd_area 'main', label="Main Section" %}
+  {# Intro Section #}
+    {% include_dnd_partial path='./sections/text-module-section.html' context={} %}
+  
+  {# Video Section  #}
+    {% include_dnd_partial path='./sections/video-section.html' context={} %}
+
+  {# Text Section  #}
+  {% include_dnd_partial path='./sections/text-module-section.html' context={} %}
+
+  {# Testimonial Section #}
+    {% include_dnd_partial path='./sections/testimonial-section.html' context={} %}
+{% end_dnd_area %}
+</div>  
+
+{% endblock body %}
