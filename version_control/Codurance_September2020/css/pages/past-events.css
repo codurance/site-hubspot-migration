@@ -1,8 +1,8 @@
 {% import '../utils/utils.css' as utils %}
 
 {% set overlap = 200 %}
-
-html, body {
+ 
+body {
   overflow-x: hidden;
 }
 
@@ -18,6 +18,7 @@ body{
   padding-right: 4em;
   padding-top: 8em;
 }
+
 /* Media Query based on the max-page-width custom property */ 
 @media (min-width: 1600px) {
   .header-section {
@@ -55,6 +56,7 @@ body{
 .header-section__text-wrapper {
   margin: 0 auto;
 }
+
 {% call utils.small() %}
   .header-section__text-wrapper {
     margin-top: 3em;
@@ -119,11 +121,13 @@ body{
   line-height: var(--dudler-line-height);
   margin-bottom: var(--dudler-margin);
 }
+
 {% call utils.small() %}
   .card-collection__heading {
     width: 100%;
   }
 {% endcall %}
+
 .past-events .card-collection__heading {
   --card-collection-heading-color: white;
 }
@@ -133,6 +137,7 @@ body{
     display: none;
   }
 {% endcall %}
+
 {% call utils.medium() %}
   .card-collection__nav-button-wrapper {
     display: flex;
@@ -140,6 +145,7 @@ body{
     width: 50%;
   }
 {% endcall %}
+
 {% call utils.small() %}
   .card-collection__nav-button-wrapper {
     display: none;

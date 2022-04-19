@@ -1,0 +1,16 @@
+{{ require_css(get_asset_url("../../css/modules/video-popup.css")) }}
+
+<div class="overlay">
+    <div class="modal">
+        <iframe class="modal__video" 
+            width="800" 
+            height="450" 
+            src="" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+        <button class="close-button"><i class="las la-times"></i></button>
+    </div>
+</div>
