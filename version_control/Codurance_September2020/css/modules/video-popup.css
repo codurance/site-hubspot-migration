@@ -35,6 +35,7 @@
 
 .close-button:hover {
   transform: scale(1.4);
+  cursor: pointer;
 }
 .overflow-hidden {
     overflow: hidden;
