@@ -8,18 +8,14 @@ const modal = document.querySelector(".modal");
 
 ungatedButtons.forEach(openVideoPopupOnClick);
 
-closeModalButton.addEventListener("click", () => hideModal(overlay) );
+closeModalButton.addEventListener("click", () => hideModal() );
 
 document.addEventListener('click', function(event){
-    if(event.target.className !== "overlay") return;
-
-    hideModal(overlay);
+    if(event.target.className === "overlay") hideModal();
 })
 
 document.addEventListener('keyup', function(event){
-    if(event.code !== "Escape") return;
-
-    hideModal(overlay);
+    if(event.code === "Escape") hideModal();
 })
 
 function openVideoPopupOnClick(ungatedButton){
@@ -33,7 +29,7 @@ function setVideoOnPopup(event) {
     const embedPreferences = '?autoplay=1';
     popupVideo.src = `https://www.youtube.com/embed/${youtubeId}${embedPreferences}`;
     
-    showModal(overlay);
+    showModal();
     
 }
 
@@ -47,15 +43,15 @@ function stripYoutubeID(str){
     throw new Error('Expression not found');  
 }
 
-function showModal(elem) {
+function showModal() {
     document.body.classList.add('overflow-hidden');
-    elem.style.display = 'flex';
+    overlay.style.display = 'flex';
     modal.style.opacity = '1';
 }
 
-function hideModal(elem) {
+function hideModal() {
     document.body.classList.remove('overflow-hidden');
-    elem.style.display = 'none';
+    overlay.style.display = 'none';
     modal.style.opacity = '0';
     popupVideo.src = "";
 }
