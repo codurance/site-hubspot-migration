@@ -216,6 +216,23 @@ label: Blog Listing ES
           {% if loop.index == 1 %}
             <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
               <!-- Static Quote -->
+              <article class="blog-cta-card blog-cta-card--cluster-page">
+                <h3 class="blog-cta-card__title">Descubre cómo la modernización de software puede acelerar tu negocio</h3>
+                {{snippets.text_cta_right_arrow(
+                  classnames="blog-cta-card__link",
+                  url="https://info.codurance.com/es/software-modernisation-insights",
+                  rel="noopener noreferrer",
+                  target="_blank",
+                  text="Más información"
+                )}}
+              </article>
+              <!-- End Static Quote -->
+            </div>
+          {% endif %}
+
+          {% if loop.index == 3 %}
+            <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
+              <!-- Static Quote -->
               <article class="blog-cta-card blog-cta-card--tango">
                 <h3 class="blog-cta-card__title">¿Has perfeccionado hoy tus habilidades?</h3>
                 {{snippets.text_cta_right_arrow(
@@ -230,7 +247,7 @@ label: Blog Listing ES
             </div>
           {% endif %}
 
-          {% if loop.index == 3 %}
+          {% if loop.index == 5 %}
             <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
               <!-- Static Quote -->
               <article class="blog-cta-card blog-cta-card--crimson">
@@ -247,7 +264,7 @@ label: Blog Listing ES
             </div>
           {% endif %}
 
-          {% if loop.index == 5 %}
+          {% if loop.index == 7 %}
             <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
               <!-- Static Quote -->
               <article class="blog-cta-card blog-cta-card--newsletter">
