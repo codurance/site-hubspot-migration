@@ -12,7 +12,9 @@ body{
 }
 
 .header-section {
-  background: url(https://www.codurance.com/hubfs/Events%20page/Recent%20Events%20Page/Recent-events-hero-img-XL.svg) top right no-repeat;
+  --background-link: url(https://www.codurance.com/hubfs/Events%20page/Recent%20Events%20Page/Recent-events-hero-img-XL.svg);
+
+  background: var(--background-link) top right no-repeat;
   color: white;
   margin: 0 -4em 0 auto;
   padding-right: 4em;
@@ -99,6 +101,10 @@ body{
   padding-top: 2em;
 }
 
+.card-collection + .card-collection {
+  margin-top: 3em;
+}
+
 .card-collection__event-inner {
   margin: 0 auto;
 }
@@ -113,8 +119,7 @@ body{
 {% endcall %}
 
 .card-collection__heading {
-  --card-collection-heading-color: var(--shark);
-  color: var(--card-collection-heading-color);
+  color: white;
   flex-grow: 1;
   font-size: var(--dudler-font-size);
   font-weight: var(--heavy-font-weight);
@@ -127,10 +132,6 @@ body{
     width: 100%;
   }
 {% endcall %}
-
-.past-events .card-collection__heading {
-  --card-collection-heading-color: white;
-}
 
 {% call utils.large_and_extra_large() %}
   .card-collection__nav-button-wrapper {
@@ -284,7 +285,7 @@ body{
 
 .card-collection-results {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
   column-gap: 1.25em;
   row-gap: 1.25em;
 }
@@ -538,15 +539,3 @@ body{
     display: none;
   }
 {% endcall %}
-
-.card-collection__watch-all-button {
-  display: block;
-  margin: 0 auto;
-  max-width: var(--button-max-width);
-  cursor: pointer;
-  background: white;
-}
-.past-events .card-collection__watch-all-button {
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
