@@ -31,9 +31,16 @@
   path='../modules/YouTube-Video-Popup.module',
   no_wrapper=True %}
 
-<section class="events-header-slice responsive-page-width">
-  {% module "page_hero_slice" path="../modules/Hero Slice.module" 
-  label="Page Hero Slice" no_wrapper=True %}
+<section class="events-header lateral-spacing">
+  <div class="events-header-wrapper">
+    <div class="events-header__text">
+      <h1>{% module 'header_title' path='@hubspot/text' label="Page Hero Title" no_wrapper=True%}</h1>
+      <p>{% module 'header_subtitle' path='@hubspot/text' label="Page Hero Subtitle" no_wrapper=True%}</p>
+    </div>
+    <div class="events-header__image">
+      {% module 'header_image' path='@hubspot/image' no_wrapper=True%}
+    </div>
+  </div>
 </section>
 
 <main class="main-container"> 
