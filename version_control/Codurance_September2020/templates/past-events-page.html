@@ -39,10 +39,10 @@
       </div>
     </header>
     <main class="main-container">
-      <section class="card-collection past-events">
-        {% module 'past_events'
-          label="Past Events Section",
-          path='../modules/Past-Events-Listing.module' %}
-      </section>
+      {% module 'past_events'
+        label="Past Events Sections",
+        path='../modules/Past-Events-Listing.module' 
+        no_wrapper=True
+      %}
     </main>
 {% endblock body %}

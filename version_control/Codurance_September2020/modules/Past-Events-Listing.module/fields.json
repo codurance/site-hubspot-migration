@@ -1,13 +1,63 @@
 [ {
-  "id" : "hubdb_table",
-  "name" : "hubdb_table",
-  "label" : "HubDB table",
+  "id" : "9cc2a5e3-64a5-83eb-32da-347174a87b44",
+  "name" : "promoted_events_row",
+  "display_width" : null,
+  "label" : "Promoted Events Row",
+  "help_text" : "Add a row above with a selection of promoted events",
   "required" : false,
   "locked" : false,
-  "type" : "hubdbtable"
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
 }, {
-  "name" : "heading",
-  "label" : "Heading",
+  "id" : "2b6d45be-9278-2301-581b-5000ae4e123a",
+  "name" : "promoted_events_heading",
+  "display_width" : null,
+  "label" : "Promoted Events Heading",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "9cc2a5e3-64a5-83eb-32da-347174a87b44",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Recommended"
+}, {
+  "id" : "1e08183f-2481-710a-276b-0f42be4e19cb",
+  "name" : "promoted_events",
+  "display_width" : null,
+  "label" : "Promoted Events",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 4,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "visibility" : {
+    "controlling_field" : "9cc2a5e3-64a5-83eb-32da-347174a87b44",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "table_name_or_id" : "3404866",
+  "type" : "hubdbrow",
+  "default" : {
+    "id" : null
+  }
+}, {
+  "id" : "7b936bf8-8504-1065-d9f3-d763d9526fc5",
+  "name" : "past_events_heading",
+  "display_width" : null,
+  "label" : "Past Events Heading",
   "required" : true,
   "locked" : false,
   "validation_regex" : "",
@@ -15,4 +65,12 @@
   "show_emoji_picker" : false,
   "type" : "text",
   "default" : "Recent Events"
+}, {
+  "id" : "hubdb_table",
+  "name" : "past_events_hubdb_table",
+  "display_width" : null,
+  "label" : "Past Events HubDB table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable"
 } ]
