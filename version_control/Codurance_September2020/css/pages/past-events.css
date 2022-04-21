@@ -2,7 +2,7 @@
 
 {% set overlap = 200 %}
  
-body {
+.body-wrapper {
   overflow-x: hidden;
 }
 
