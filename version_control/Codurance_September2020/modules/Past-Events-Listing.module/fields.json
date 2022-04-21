@@ -27,7 +27,7 @@
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
-  "default" : "Promoted / Recommended "
+  "default" : "Recommended"
 }, {
   "id" : "1e08183f-2481-710a-276b-0f42be4e19cb",
   "name" : "promoted_events",
