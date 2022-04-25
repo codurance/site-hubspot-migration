@@ -37,11 +37,11 @@
   "label" : "Watch All CTA URL",
   "required" : false,
   "locked" : false,
-  "supported_types" : [ "EXTERNAL" ],
+  "supported_types" : [ "CONTENT" ],
   "type" : "url",
   "default" : {
-    "type" : "EXTERNAL",
-    "href" : "https://www.codurance.com/events",
-    "content_id" : null
+    "content_id" : null,
+    "href" : "",
+    "type" : "CONTENT"
   }
 } ]
