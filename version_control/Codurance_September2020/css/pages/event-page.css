@@ -14,8 +14,9 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: -4rem auto 0;
   max-width: var(--content-max-width);
+
 }
 
 .events-header__text h1{
@@ -67,6 +68,7 @@ body{
   .events-header-wrapper {
     flex-direction: column-reverse;
     align-items: start;
+    margin-top: -2rem;
   }
 
   .events-header__image {
