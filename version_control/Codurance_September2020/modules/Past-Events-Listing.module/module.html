@@ -1,96 +1,112 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
 
-{% if module.hubdb_table %} 
-  {% set previousEventsFilter = "&orderBy=-date" %}
-  {% set previousEvents = hubdb_table_rows(module.hubdb_table, previousEventsFilter) %}
+{% macro card_collection(event_listing, heading) %}
+  <section class="card-collection">
+    <div
+      class="card-collection__event-inner responsive-page-width lateral-spacing"
+    >
+      <h2 class="card-collection__heading responsive-page-width">
+        {{ heading }}
+      </h2>
+      <div class="card-collection-results">
+        {% for event in event_listing %}
+          {% set eventThumb_desktop = resize_image_url(event.thumbnail.url, 0, 0, 375) %}
+          {% set eventThumb_mobile = resize_image_url(event.thumbnail.url, 0, 0, 260) %}
 
-  <div
-    class="card-collection__event-inner responsive-page-width lateral-spacing"
-  >
-    <h2 class="card-collection__heading responsive-page-width">
-      {{ module.heading }}
-    </h2>
-    <div class="card-collection-results">
-    {% for event in previousEvents %}
-      {% set eventThumb_desktop = resize_image_url(event.thumbnail.url, 0, 0, 375) %}
-      {% set eventThumb_mobile = resize_image_url(event.thumbnail.url, 0, 0, 260) %}
+          <article class="card-item">
+            <div class="card-item__content">
+              <div class="card-item__image-container">
+                <img class="card-item__image" alt=""
+                  {% if event.thumbnail.url %}
+                    srcset="{{eventThumb_mobile}} 260w,
+                            {{eventThumb_desktop}} 375w"
+                    sizes="(max-width: 425px) 260px, 375px"
+                    src="{{eventThumb_desktop}}"
+                  {% endif %}
+                />
 
-        <article class="card-item">
-          <div class="card-item__content">
-            <div class="card-item__image-container
-                        {% if event.video is string_containing 'livestorm' %} card-item--overlay {% endif %}">
-              <img class="card-item__image" alt=""
-                {% if event.thumbnail.url is none %}
-
-                {% else %}
-                  srcset="{{eventThumb_mobile}} 260w,
-                          {{eventThumb_desktop}} 375w"
-                  sizes="(max-width: 425px) 260px, 375px"
-                  src="{{eventThumb_desktop}}"
-                {% endif %}
-               />
-
-              <small
-                class="card-item__label card-item__label--type"
-              >
-                {{ event.type.name }}
-              </small>
-              <small
-                class="card-item__label card-item__label--duration"
-              >
-                {{ event.duration }}
-              </small>
-              {% if event.internal %}
                 <small
-                  class="card-item__label card-item__label--internal"
+                  class="card-item__label card-item__label--type"
                 >
-                  Internal Event
+                  {{ event.type.name }}
                 </small>
-              {% endif %}
-            </div>
-            <div class="card-item__text-container">
-              <div class="card-item__text-container-inner truncated">
-                <header class="card-item__header">
-                  <time
-                    class="card-item__metadata"
-                    datetime="{{ event.date|datetimeformat('%Y-%m-%d') }}"
+                <small
+                  class="card-item__label card-item__label--duration"
+                >
+                  {{ event.duration }}
+                </small>
+                {% if event.internal %}
+                  <small
+                    class="card-item__label card-item__label--internal"
                   >
-                    {{ event.date|datetimeformat('%a %e %b %Y') }}
-                  </time>
-                  <h4 class="card-item__title">
-                    {{ event.name }}
-                  </h4>
-                </header>
-                <p class="card-item__description">
-                  {{ event.description }}
-                </p>
+                    Internal Event
+                  </small>
+                {% endif %}
               </div>
-              <div class="card-item__button-container">
-                  {% set button = { icon: "icon-ungated",
-                                    text: "Watch now",
-                                    target: "" 
+              <div class="card-item__text-container">
+                <div class="card-item__text-container-inner truncated">
+                  <header class="card-item__header">
+                    <time
+                      class="card-item__metadata"
+                      datetime="{{ event.date|datetimeformat('%Y-%m-%d') }}"
+                    >
+                      {{ event.date|datetimeformat('%a %e %b %Y') }}
+                    </time>
+                    <h4 class="card-item__title">
+                      {{ event.name }}
+                    </h4>
+                  </header>
+                  <p class="card-item__description">
+                    {{ event.description }}
+                  </p>
+                </div>
+                <div class="card-item__button-container">
+                    {% set button = { icon: "icon-ungated",
+                                      text: "Watch now",
+                                      target: "" 
+                                    }
+                    %}
+            
+                  {% if event.video is string_containing 'livestorm' %}
+                  {% set button = { icon: "icon-gated",
+                                    text: "Register for free to watch",
+                                    target: "_blank" 
                                   }
                   %}
-          
-                {% if event.video is string_containing 'livestorm' %}
-                {% set button = { icon: "icon-gated",
-                                  text: "Register for free to watch",
-                                  target: "_blank" 
-                                }
-                %}
-                {% endif %}
+                  {% endif %}
 
-                {{snippets.button_primary(
-                  classnames="card-item__video-button {{button.icon}}",
-                  url=event.video,
-                  target= button.target,
-                  text= button.text
-                )}}
+                  {{snippets.button_primary(
+                    classnames="card-item__video-button {{button.icon}}",
+                    url=event.video,
+                    target= button.target,
+                    text= button.text
+                  )}}
 
+                </div>
               </div>
             </div>
-          </div>
-        </article>
-      {% endfor %}
-  </div>
+          </article>
+        {% endfor %}
+    </div>
+  </section>
+{% endmacro %}
+  
+{% if module.promoted_events_row %}
+  {% set promoted_events_listing = [] %}
+  {% set heading = module.promoted_events_heading %}
+  
+  {% for promoted_event in module.promoted_events %}
+    {% do promoted_events_listing.append(promoted_event.columns) %}
+  {% endfor %}
+
+  {{ card_collection(promoted_events_listing, heading) }}
 {% endif %}
+
+{% if module.past_events_hubdb_table %}
+  {% set past_events_filter = "&orderBy=-date" %} 
+  {% set past_events_listing = hubdb_table_rows(module.past_events_hubdb_table, past_events_filter) %}
+  {% set heading = module.past_events_heading %}
+  
+  {{ card_collection(past_events_listing, heading) }}
+{% endif %}
+

@@ -256,7 +256,25 @@ label: Blog Listing
 
           {% if loop.index == 1 %}
             <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
-              <!-- Static Quote -->
+              <!-- Static Card -->
+              <article class="blog-cta-card blog-cta-card--cluster-page">
+                <h3 class="blog-cta-card__title">Learn more about the impact of Software Modernisation on your business</h3>
+                {{snippets.text_cta_right_arrow(
+                  classnames="blog-cta-card__link",
+                  url="https://info.codurance.com/en/software-modernisation-insights",
+                  rel="noopener noreferrer",
+                  target="_blank",
+                  text="Learn More"
+                )}}
+              </article>
+              <!-- End Static Card -->
+            </div>
+          {% endif %}
+
+
+          {% if loop.index == 3 %}
+            <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
+              <!-- Static Card -->
               <article class="blog-cta-card blog-cta-card--tango">
                 <h3 class="blog-cta-card__title">Have you improved your skills today?</h3>
                 {{snippets.text_cta_right_arrow(
@@ -267,13 +285,13 @@ label: Blog Listing
                   text="Try Katalyst"
                 )}}
               </article>
-              <!-- End Static Quote -->
+              <!-- End Static Card -->
             </div>
           {% endif %}
 
-          {% if loop.index == 3 %}
+          {% if loop.index == 5 %}
             <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
-              <!-- Static Quote -->
+              <!-- Static Card -->
               <article class="blog-cta-card blog-cta-card--crimson">
                 <h3 class="blog-cta-card__title">Interested in joining us?</h3>
                 {{snippets.text_cta_right_arrow(
@@ -284,19 +302,19 @@ label: Blog Listing
                   text="Learn more"
                 )}}
               </article>
-              <!-- End Static Quote -->
+              <!-- End Static Card -->
             </div>
           {% endif %}
 
-          {% if loop.index == 5 %}
+          {% if loop.index == 7 %}
             <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
-              <!-- Static Quote -->
+              <!-- Static Card -->
               <article class="blog-cta-card blog-cta-card--newsletter">
               <div class="blog-cta-card__bg-image"></div>
                 <h3 class="blog-cta-card__title">{{form.pending.text}}</h3>
                 {% form "email_form" form_to_use={{form.form_id}} %}
               </article>
-              <!-- End Static Quote -->
+              <!-- End Static Card -->
             </div>
           {% endif %}
 
