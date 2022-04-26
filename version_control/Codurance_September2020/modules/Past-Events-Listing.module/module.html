@@ -1,7 +1,7 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
 
-{% macro card_collection(event_listing, heading) %}
-  <section class="card-collection">
+{% macro card_collection(event_listing, heading, card_collection_class) %}
+  <section class="{{ card_collection_class }} card-collection">
     <div
       class="card-collection__event-inner responsive-page-width lateral-spacing"
     >
@@ -99,7 +99,7 @@
     {% do promoted_events_listing.append(promoted_event.columns) %}
   {% endfor %}
 
-  {{ card_collection(promoted_events_listing, heading) }}
+  {{ card_collection(promoted_events_listing, heading, "promoted-events") }}
 {% endif %}
 
 {% if module.past_events_hubdb_table %}
@@ -107,6 +107,6 @@
   {% set past_events_listing = hubdb_table_rows(module.past_events_hubdb_table, past_events_filter) %}
   {% set heading = module.past_events_heading %}
   
-  {{ card_collection(past_events_listing, heading) }}
+  {{ card_collection(past_events_listing, heading, "past-events") }}
 {% endif %}
 
