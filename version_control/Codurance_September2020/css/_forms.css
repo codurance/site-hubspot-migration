@@ -261,11 +261,20 @@ ul.inputs-list label {
   line-height: var(--natus-line-height);
   margin-left: 10px !important;
 }
+
+.legal-consent-container p {
+  {{ utils.natus() }} 
+}
+
 .legal-consent-container .hs-form-booleancheckbox-display p {
   display: block;
   font-size: var(--natus-font-size);
-  font-weight: var(--middle-font-weight);
+  font-weight: var(--light-font-weight);
 }
+
+
+
+
 @media (max-width: 400px),
 (min-device-width: 320px) and (max-device-width: 480px) {
   .email-correction form .form-columns-2 .hs-form-field,
