@@ -1,7 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 .lp-rich-text {
-    padding: 2em 1.5em;
+    margin: 2em 0;
 }
 
 .lp-rich-text__title {
@@ -26,17 +26,18 @@
 
 .one_col{
     columns: 1;
+    max-width: var(--base-max-width);
 }
 
 .two_col {
     columns: 400px 2;
-    column-gap: 5rem;
+    column-gap: 3rem;
 }
 
 {% call utils.medium_large_and_extra_large() %}
     .lp-rich-text {
-        padding: 2em 1.5em;
-        max-width: 80%;
-        margin: 0 auto;
+        max-width: var(--content-inner-max-width);
+        margin-left: auto;
+        margin-right: auto;
     }
 {% endcall%} 
