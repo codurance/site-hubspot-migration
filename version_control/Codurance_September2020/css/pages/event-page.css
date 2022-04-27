@@ -78,6 +78,10 @@ body{
     margin-top: -2rem;
   }
 
+  .events-header__text p {
+    {{ utils.base() }}
+  }
+
   .events-header__image {
     width: 50%;
     align-self: end;
