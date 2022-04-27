@@ -5,7 +5,11 @@
   "required" : false,
   "locked" : false,
   "display" : "select",
-  "choices" : [ [ "white-bg", "Light" ], [ "navy-bg", "Dark" ] ],
+  "choices" : [ 
+                [ "transparent-bg", "None" ],
+                [ "white-bg", "Light" ], 
+                [ "navy-bg", "Dark" ] 
+              ],
   "type" : "choice"
 }, {
   "id" : "1fcb0562-3180-f689-aa7e-86bef7bed6f0",
@@ -21,7 +25,7 @@
     "size_type" : "auto",
     "src" : "",
     "alt" : null,
-    "loading" : "lazy"
+    "loading" : "eager"
   }
 }, {
   "id" : "ebdfd606-bb10-3b52-e15e-4697c0b0f2a2",
