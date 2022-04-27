@@ -3,10 +3,5 @@
   "icon" : "fontawesome-5.14.0:Grip%20Horizontal:SOLID",
   "host_template_types" : [ "PAGE" ],
   "module_id" : 47422464990,
-  "is_available_for_new_content" : true,
-  "js_assets" : [{ 
-    "url" : "https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js",
-    "autoload" : true,
-    "name": "isotope.pkgd.min.js"
-  }]
+  "is_available_for_new_content" : true
 }
