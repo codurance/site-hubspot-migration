@@ -22,15 +22,11 @@ function checkPromotedEventsVisibility(searchBarText) {
 }
 
 function hidePromotedEvents(promotedEventsCollection) {
-    if(!promotedEventsCollection.classList.contains("card-collection--hidden")) {
-        promotedEventsCollection.classList.add("card-collection--hidden");
-    }
+    promotedEventsCollection.classList.add("card-collection--hidden");
 }
 
 function showPromotedEvents(promotedEventsCollection) {
-    if(promotedEventsCollection.classList.contains("card-collection--hidden")) {
-        promotedEventsCollection.classList.remove("card-collection--hidden");
-    }
+    promotedEventsCollection.classList.remove("card-collection--hidden");
 }
 
 function applyFilters(searchBarText) {
@@ -69,23 +65,39 @@ function createRegExpObject(text) {
 }
 
 function showEvent(event) {
-    if(event.classList.contains("card-item--hidden")) {
-        event.style.display = "block";
+    removeVisibilityModifier(event);
 
-        // Required to display the transition correctly
-        setTimeout(function() {
-            event.classList.remove("card-item--hidden");
-        }, 100); 
-    }
+    // Required to display the transition correctly
+    setTimeout(removeFadeAnimationModifier, getfadingAnimationDuration(), event); 
 }
 
 function hideEvent(event) {
-    if(!event.classList.contains("card-item--hidden")) {
-        event.classList.add("card-item--hidden");
+    addFadeAnimationModifier(event);
         
-        // Required to display the transition correctly
-        setTimeout(function() {
-            event.style.display = "none";
-        }, 100);
-    }
+    // Required to display the transition correctly
+    setTimeout(addVisibilityModifier, getfadingAnimationDuration(), event); 
+}
+
+function removeFadeAnimationModifier(event) {
+    event.classList.remove("card-item--faded");
+}
+
+function addFadeAnimationModifier(event) {
+    event.classList.add("card-item--faded");
+}
+
+function removeVisibilityModifier(event) {
+    event.classList.remove("card-item--hidden");
+}
+
+function addVisibilityModifier(event) {
+    event.classList.add("card-item--hidden");
+}
+
+function getfadingAnimationDuration() {
+    const rootHtml = document.documentElement;
+    const fadingAnimationDurationInMs = 
+        getComputedStyle(rootHtml).getPropertyValue("--fading-animation-duration");
+    
+    return parseInt(fadingAnimationDurationInMs);
 }

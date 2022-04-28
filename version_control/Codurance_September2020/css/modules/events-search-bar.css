@@ -1,10 +1,33 @@
-/* @import url('http://example.com/example_style.css'); */
+:root {
+    --fading-animation-duration: 250ms;
+}
 
-/***********************************************/
-/* CSS @imports must be at the top of the file */
-/* Add them above this section                 */
-/***********************************************/
+.card-collection {
+  opacity: 1;
+  transition: opacity 
+    var(--fading-animation-duration) 
+    ease-in-out;
+}
 
-/*****************************************/
-/* Start your style declarations here    */
-/*****************************************/
+.card-collection--faded {
+  opacity: 0;
+}
+
+.card-collection--hidden {
+  display: none;
+}
+
+.card-item {
+  opacity: 1;
+  transition: opacity 
+    var(--fading-animation-duration) 
+    ease-in-out;
+}
+
+.card-item--faded {
+  opacity: 0;
+}
+
+.card-item--hidden {
+  display: none;
+}
