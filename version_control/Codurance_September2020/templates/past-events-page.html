@@ -37,7 +37,13 @@
           no_wrapper=True
         %}
       </div>
+
+      {% module 'Events-Search-Bar' 
+        path='../modules/Events-Search-Bar.module',
+        no_wrapper=True
+      %}
     </header>
+    
     <main class="main-container">
       {% module 'past_events'
         label="Past Events Sections",
