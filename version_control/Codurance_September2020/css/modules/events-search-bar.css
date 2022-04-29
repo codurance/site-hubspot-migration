@@ -4,17 +4,15 @@
 
 .card-collection {
   opacity: 1;
-  transition: opacity 
+  transition: all 
     var(--fading-animation-duration) 
     ease-in-out;
 }
 
 .card-collection--faded {
   opacity: 0;
-}
-
-.card-collection--hidden {
-  display: none;
+  height: 0;
+  margin: 0 !important;
 }
 
 .card-item {

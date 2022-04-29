@@ -22,11 +22,11 @@ function checkPromotedEventsVisibility(searchBarText) {
 }
 
 function hidePromotedEvents(promotedEventsCollection) {
-    promotedEventsCollection.classList.add("card-collection--hidden");
+    promotedEventsCollection.classList.add("card-collection--faded");
 }
 
 function showPromotedEvents(promotedEventsCollection) {
-    promotedEventsCollection.classList.remove("card-collection--hidden");
+    promotedEventsCollection.classList.remove("card-collection--faded");
 }
 
 function applyFilters(searchBarText) {
