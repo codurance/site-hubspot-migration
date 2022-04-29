@@ -20,13 +20,14 @@
     color: var(--shark);
 }
 
-.lp-header-vi__content__title {
+.lp-header-v1__content__title {
     {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
     margin-bottom: var(--base-margin); 
  
 }
 
-.lp-header-vi__content__subtitle {
+.lp-header-v1__content__subtitle {
     {{ utils.base() }}
     margin-bottom: var(--base-margin); 
 }
