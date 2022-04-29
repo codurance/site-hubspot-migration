@@ -19,6 +19,7 @@ body{
   margin: 0 -4em 0 auto;
   padding-right: 4em;
   padding-top: 8em;
+  position: relative;
 }
 
 /* Media Query based on the max-page-width custom property */ 
@@ -91,7 +92,7 @@ body{
 }
 
 .main-container {
-  padding-top: 2em;
+  padding-top: 4em;
   padding-bottom: 5em;
 }
 

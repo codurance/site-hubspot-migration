@@ -1,6 +1,26 @@
+{% import '../utils/utils.css' as utils %}
+
 :root {
     --fading-animation-duration: 250ms;
 }
+
+.events-search-bar {
+  margin-top: 1.5em;
+  margin-left: 1em;
+  width: 15rem;
+  padding-left: 1em;
+  height: 2.5rem;
+  border-radius: 0.6rem;
+  border: 0;
+}
+
+{% call utils.large_and_extra_large() %}
+  .events-search-bar {
+    margin-left: 2.5em;
+    position: absolute;
+    bottom: 0;
+  }
+{% endcall %}
 
 .card-collection {
   opacity: 1;
