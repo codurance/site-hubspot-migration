@@ -4,7 +4,7 @@ const searchBar = document.querySelector(".events-search-bar");
 searchBar.addEventListener("input", filterEvents);
 
 function filterEvents(inputEvent) {
-    let searchBarText = inputEvent.target.value;
+    const searchBarText = inputEvent.target.value;
 
     checkPromotedEventsVisibility(searchBarText);
     applyFilters(searchBarText);
@@ -18,7 +18,7 @@ function checkPromotedEventsVisibility(searchBarText) {
     }
     else {
         showPromotedEvents(promotedEventsCollection);
-    }
+    }           
 }
 
 function hidePromotedEvents(promotedEventsCollection) {
@@ -51,7 +51,7 @@ function searchTextInEvent(event, searchBarText) {
     const regExp = createRegExpObject(searchBarText);
 
     if(eventItemTitle.match(regExp) || 
-        eventItemDescription.match(regExp)
+       eventItemDescription.match(regExp)
     ) {
         return true;
     }
@@ -67,15 +67,15 @@ function createRegExpObject(text) {
 function showEvent(event) {
     removeVisibilityModifier(event);
 
-    // Required to display the transition correctly
-    setTimeout(removeFadeAnimationModifier, getfadingAnimationDuration(), event); 
+    // Timeout to show the transition before the display property changes
+    setTimeout(removeFadeAnimationModifier, getFadingAnimationDuration(), event); 
 }
 
 function hideEvent(event) {
     addFadeAnimationModifier(event);
         
-    // Required to display the transition correctly
-    setTimeout(addVisibilityModifier, getfadingAnimationDuration(), event); 
+    // Timeout to show the transition before the display property changes
+    setTimeout(addVisibilityModifier, getFadingAnimationDuration(), event); 
 }
 
 function removeFadeAnimationModifier(event) {
@@ -94,7 +94,8 @@ function addVisibilityModifier(event) {
     event.classList.add("card-item--hidden");
 }
 
-function getfadingAnimationDuration() {
+
+function getFadingAnimationDuration() {
     const rootHtml = document.documentElement;
     const fadingAnimationDurationInMs = 
         getComputedStyle(rootHtml).getPropertyValue("--fading-animation-duration");
