@@ -6,7 +6,6 @@
   "locked" : false,
   "display" : "select",
   "choices" : [ 
-                [ "transparent-bg", "None" ],
                 [ "white-bg", "Light" ], 
                 [ "navy-bg", "Dark" ] 
               ],
