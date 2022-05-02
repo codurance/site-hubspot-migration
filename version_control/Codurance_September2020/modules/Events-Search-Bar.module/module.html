@@ -1,1 +1,14 @@
-<input type="searchbar" placeholder="{{ module.placeholder_text}}" class="events-search-bar"/>
+<form role='search' class="events-search-bar">
+    {# Hidden label for accessibility #}
+    <label for='searchbar'>Search</label>
+
+    <input class="events-search-bar__input" 
+        id="searchbar"
+        type="searchbar" 
+        placeholder="{{ module.placeholder_text}}" 
+    />
+    <i class="events-search-bar__icon las la-search"></i>
+
+    {# Hidden button submit for accessibility #}
+    <button type='submit'>Submit Search</button>
+</div>

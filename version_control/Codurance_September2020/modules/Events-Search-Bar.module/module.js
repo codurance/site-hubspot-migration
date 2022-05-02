@@ -1,6 +1,6 @@
 "use strict";
 
-const searchBar = document.querySelector(".events-search-bar");
+const searchBar = document.querySelector(".events-search-bar__input");
 searchBar.addEventListener("input", filterEvents);
 
 function filterEvents(inputEvent) {

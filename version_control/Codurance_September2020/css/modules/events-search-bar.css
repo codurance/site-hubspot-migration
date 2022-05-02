@@ -5,13 +5,11 @@
 }
 
 .events-search-bar {
+  --horizontal-padding-search-bar: 1em;
   margin-top: 1.5em;
   margin-left: 1em;
-  width: 15rem;
-  padding-left: 1em;
-  height: 2.5rem;
-  border-radius: 0.6rem;
-  border: 0;
+  position: relative;
+  width: fit-content;
 }
 
 {% call utils.large_and_extra_large() %}
@@ -21,6 +19,25 @@
     bottom: 0;
   }
 {% endcall %}
+
+.events-search-bar > label, .events-search-bar > button {
+  display: none;
+}
+
+.events-search-bar__input {
+  padding-left: var(--horizontal-padding-search-bar);
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 0.6rem;
+  border: 0;
+}
+
+.events-search-bar__icon {
+  color: black;
+  position: absolute;
+  top: 0.75em;
+  right: var(--horizontal-padding-search-bar);
+}
 
 .card-collection {
   opacity: 1;
