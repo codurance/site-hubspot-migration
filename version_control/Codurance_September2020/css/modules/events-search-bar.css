@@ -26,17 +26,18 @@
 
 .events-search-bar__input {
   padding-left: var(--horizontal-padding-search-bar);
-  width: 15rem;
+  width: 30rem;
   height: 2.5rem;
-  border-radius: 0.6rem;
+  border-radius: 0.3rem;
   border: 0;
 }
 
 .events-search-bar__icon {
-  color: black;
+  color: var(--french-gray);
   position: absolute;
   top: 0.75em;
   right: var(--horizontal-padding-search-bar);
+  transform: rotateY(180deg);
 }
 
 .card-collection {
