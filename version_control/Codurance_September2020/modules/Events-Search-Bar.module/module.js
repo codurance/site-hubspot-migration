@@ -7,6 +7,9 @@ function filterEvents(inputEvent) {
     const searchBarText = inputEvent.target.value;
 
     checkPromotedEventsVisibility(searchBarText);
+    
+    checkSearchResultsTitleVisibility(searchBarText);       
+
     applyFilters(searchBarText);
 }
 
@@ -27,6 +30,28 @@ function hidePromotedEvents(promotedEventsCollection) {
 
 function showPromotedEvents(promotedEventsCollection) {
     promotedEventsCollection.classList.remove("card-collection--faded");
+}
+
+function checkSearchResultsTitleVisibility(searchBarText) {
+    const generalTitle = document.querySelector(".past-events .card-collection__title");
+    const searchResultsTitle = document.querySelector(".past-events .card-collection__search-results-title");
+
+    if (searchBarText != "") {
+        showSearchResultsTitle(generalTitle, searchResultsTitle);
+    }
+    else {
+        hideSearchResultsTitle(generalTitle, searchResultsTitle);
+    }
+}
+
+function showSearchResultsTitle(generalTitle, searchResultsTitle) {
+    generalTitle.classList.add("card-collection__title--hidden");
+    searchResultsTitle.classList.add("card-collection__search-results-title--shown");
+}
+
+function hideSearchResultsTitle(generalTitle, searchResultsTitle) {
+    generalTitle.classList.remove("card-collection__title--hidden");
+    searchResultsTitle.classList.remove("card-collection__search-results-title--shown");
 }
 
 function applyFilters(searchBarText) {

@@ -1,12 +1,19 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
 
-{% macro card_collection(event_listing, heading, card_collection_class) %}
-  <section class="{{ card_collection_class }} card-collection">
+{% macro card_collection(event_listing, copy) %}
+  <section class="{{ copy.card_collection_class }} card-collection">
     <div
       class="card-collection__event-inner responsive-page-width lateral-spacing"
     >
-      <h2 class="card-collection__heading responsive-page-width">
-        {{ heading }}
+      <h2 class="card-collection__heading-wrapper responsive-page-width">
+        <span class="card-collection__title">
+          {{ copy.heading }}
+        </span>
+        {% if copy.search_results_heading %}
+          <span class="card-collection__search-results-title">
+            {{ copy.search_results_heading }}
+          </span>
+        {% endif %}
       </h2>
       <div class="card-collection-results">
         {% for event in event_listing %}
@@ -93,20 +100,30 @@
   
 {% if module.promoted_events_row %}
   {% set promoted_events_listing = [] %}
-  {% set heading = module.promoted_events_heading %}
   
-  {% for promoted_event in module.promoted_events %}
+  {% for promoted_event in module.promoted_events.hubdb %}
     {% do promoted_events_listing.append(promoted_event.columns) %}
   {% endfor %}
 
-  {{ card_collection(promoted_events_listing, heading, "promoted-events") }}
+  {% set copy = { 
+    heading: module.promoted_events.heading,
+    card_collection_class: "promoted-events"
+  } %}
+
+  {{ card_collection(promoted_events_listing, copy) }}
 {% endif %}
 
-{% if module.past_events_hubdb_table %}
+{% if module.past_events.hubdb_table %}
   {% set past_events_filter = "&orderBy=-date" %} 
-  {% set past_events_listing = hubdb_table_rows(module.past_events_hubdb_table, past_events_filter) %}
-  {% set heading = module.past_events_heading %}
+  {% set past_events_listing = hubdb_table_rows(module.past_events.hubdb_table, past_events_filter) %}
   
-  {{ card_collection(past_events_listing, heading, "past-events") }}
+  {% set copy = { 
+    heading: module.past_events.heading,
+    card_collection_class: "past-events",
+    search_results_heading: module.past_events.search_results_heading
+  } %}
+  
+  
+  {{ card_collection(past_events_listing, copy) }}
 {% endif %}
 
