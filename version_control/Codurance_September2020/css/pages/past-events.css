@@ -12,69 +12,36 @@ body{
 }
 
 .header-section {
-  --background-link: url(https://www.codurance.com/hubfs/Events%20page/Recent%20Events%20Page/Recent-events-hero-img-XL.svg);
-
-  background: var(--background-link) top right no-repeat;
   color: white;
-  margin: 0 -4em 0 auto;
-  padding-right: 4em;
-  padding-top: 8em;
+  padding-top: 4.25em;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
 }
 
-/* Media Query based on the max-page-width custom property */ 
-@media (min-width: 1600px) {
+{% call utils.small_and_medium() %}
   .header-section {
-    max-width: calc(var(--max-page-width) - 10em);
-    margin: 0 auto;
-    padding-right: 0;
-  }
-}
-{% call utils.extra_large() %}
-  .header-section {
-    padding-bottom: 10em;
-  }
-{% endcall %}
-{% call utils.large() %}
-  .header-section {
-    padding-bottom: 6.5em;
-  }
-{% endcall %}
-{% call utils.medium_and_large() %}
-  .header-section {
-    background-size: 50%;
-  }
-{% endcall %}
-{% call utils.medium() %}
-  .header-section {
-    padding-bottom: 1.75em;
-  }
-{% endcall %}
-{% call utils.small() %}
-  .header-section {
-    background-size: 75%;
+    flex-flow: column-reverse;
+    padding-top: 0;
   }
 {% endcall %}
 
-.header-section__text-wrapper {
-  margin: 0 auto;
-}
+{% call utils.large_and_extra_large() %}
+  .header-section__text-wrapper {
+    margin-top: 1.5em;
+  }
+{% endcall %}
 
 {% call utils.small() %}
   .header-section__text-wrapper {
-    margin-top: 3em;
-  }
-{% endcall %}
-
-{% call utils.medium() %}
-  .header-section .page-header {
-    padding-left: 1em;
-    padding-right: 1em;
+    margin-top: -3.5em;
   }
 {% endcall %}
 
 .header-section__text-wrapper .page-header {
   margin: 0;
+  padding: 0;
 }
 
 .header-section__text-wrapper .page-header > * {
@@ -87,9 +54,22 @@ body{
 
 .header-section .page-header > p {
   {{ utils.freed() }}
+  max-width: var(--freed-max-width);
   font-weight: normal;
   margin-top: 1em;
 }
+
+{% call utils.small_and_medium() %}
+  .header-section__image {
+    margin-left: auto;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .header-section__image {
+    transform: translate(30%, -20%);
+  }
+{% endcall %}
 
 .main-container {
   padding-top: 4em;
@@ -105,10 +85,7 @@ body{
   margin-bottom: 5em;
 }
 
-.card-collection__title--hidden {
-  display: none;
-}
-
+.card-collection__title--hidden,
 .card-collection__search-results-title {
   display: none;
 }
