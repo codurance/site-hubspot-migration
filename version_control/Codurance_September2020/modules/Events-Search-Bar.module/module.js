@@ -1,22 +1,32 @@
 "use strict";
 
-const searchBar = document.querySelector(".events-search-bar__input");
-searchBar.addEventListener("input", filterEvents);
+const searchBarForm = document.querySelector(".events-search-bar");
+const searchBar = searchBarForm.querySelector(".events-search-bar__input");
+const searchBarResetButton = searchBarForm.querySelector(".events-search-bar__reset-button");
 
-function filterEvents(inputEvent) {
+searchBar.addEventListener("input", filterEventsOnInputValueChange);
+searchBarResetButton.addEventListener("click", filterEventsOnResetButtonClick);
+
+function filterEventsOnInputValueChange(inputEvent) {
     const searchBarText = inputEvent.target.value;
-
-    checkPromotedEventsVisibility(searchBarText);
     
+    checkPromotedEventsVisibility(searchBarText);
     checkSearchResultsTitleVisibility(searchBarText);       
-
     applyFilters(searchBarText);
+    checkSearchBarResetButtonVisibility(searchBarText);
+}
+
+function filterEventsOnResetButtonClick() {
+    checkPromotedEventsVisibility();
+    checkSearchResultsTitleVisibility();    
+    applyFilters();
+    hideSearchBarResetButton();
 }
 
 function checkPromotedEventsVisibility(searchBarText) {
     const promotedEventsCollection = document.querySelector(".promoted-events");
 
-    if(searchBarText != "") {
+    if(searchBarText != "" && searchBarText != undefined) {
         hidePromotedEvents(promotedEventsCollection);
     }
     else {
@@ -36,7 +46,7 @@ function checkSearchResultsTitleVisibility(searchBarText) {
     const generalTitle = document.querySelector(".past-events .card-collection__title");
     const searchResultsTitle = document.querySelector(".past-events .card-collection__search-results-title");
 
-    if (searchBarText != "") {
+    if (searchBarText != "" && searchBarText != undefined) {
         showSearchResultsTitle(generalTitle, searchResultsTitle);
     }
     else {
@@ -55,6 +65,10 @@ function hideSearchResultsTitle(generalTitle, searchResultsTitle) {
 }
 
 function applyFilters(searchBarText) {
+    if(arguments.length == 0) {
+        searchBarText = "";
+    }
+
     const pastEventsCollection = document.querySelector(".past-events .card-collection-results");
     const pastEvents = pastEventsCollection.querySelectorAll(".card-item");
 
@@ -119,6 +133,24 @@ function addVisibilityModifier(event) {
     event.classList.add("card-item--hidden");
 }
 
+function checkSearchBarResetButtonVisibility(searchBarText) {
+    if (searchBarText != "") {
+        showSearchBarResetButton();
+    }
+    else {
+        hideSearchBarResetButton();
+    }
+}
+
+function showSearchBarResetButton() {
+    searchBarForm.classList.add("events-search-bar--icon-hidden");
+    searchBarResetButton.classList.add("events-search-bar__reset-button--shown");
+}
+
+function hideSearchBarResetButton() {
+    searchBarForm.classList.remove("events-search-bar--icon-hidden");
+    searchBarResetButton.classList.remove("events-search-bar__reset-button--shown");
+}
 
 function getFadingAnimationDuration() {
     const rootHtml = document.documentElement;
