@@ -90,24 +90,32 @@
     "required" : false,
     "locked" : false,
     "type" : "hubdbtable"
-  }, {
-    "id" : "2ec85958-c7dc-f008-f52c-e2a70299973b",
-    "name" : "search_results_heading",
-    "display_width" : null,
-    "label" : "Search Results Heading",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Results"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
   "default" : {
-    "heading" : "Recent Events",
-    "search_results_heading" : "Results"
+    "heading" : "Recent Events"
   }
+}, {
+  "id" : "2ec85958-c7dc-f008-f52c-e2a70299973b",
+  "name" : "search_results_heading",
+  "display_width" : null,
+  "label" : "Search Results Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Results"
+}, {
+  "id" : "73a38d62-b042-1e68-c793-ef3cca7c2219",
+  "name" : "no_results_message",
+  "display_width" : null,
+  "label" : "No Results Message",
+  "required" : true,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "Sorry it doesn't look like we have any videos on that topic yet. Check our <a data-insert=\"true\" href=\"https://www.codurance.com/events/\" rel=\"noopener\">upcoming events</a> or <a href=\"https://www.codurance.com/contact-us\" rel=\"noopener\" target=\"_blank\">get in touch</a> and make a suggestion for future content."
 } ]

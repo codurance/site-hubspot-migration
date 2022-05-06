@@ -3,9 +3,9 @@
 {% macro card_collection(event_listing, copy) %}
   <section class="{{ copy.card_collection_class }} card-collection">
     <div
-      class="card-collection__event-inner responsive-page-width lateral-spacing"
+      class="card-collection__event-inner"
     >
-      <h2 class="card-collection__heading-wrapper responsive-page-width">
+      <h2 class="card-collection__heading-wrapper">
         <span class="card-collection__title">
           {{ copy.heading }}
         </span>
@@ -120,10 +120,14 @@
   {% set copy = { 
     heading: module.past_events.heading,
     card_collection_class: "past-events",
-    search_results_heading: module.past_events.search_results_heading
+    search_results_heading: module.search_results_heading
   } %}
   
   
   {{ card_collection(past_events_listing, copy) }}
+
+  <div class="card-collection-results__no-results-message ">
+    {{ module.no_results_message }}
+  </div>
 {% endif %}
 
