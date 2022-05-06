@@ -72,8 +72,9 @@ body{
 {% endcall %}
 
 .main-container {
-  padding-top: 4em;
+  margin: auto;
   padding-bottom: 5em;
+  padding-top: 4em;
 }
 
 .card-collection {
@@ -371,3 +372,17 @@ body{
     display: none;
   }
 {% endcall %}
+
+.card-collection-results__no-results-message {
+  opacity: 0;
+  position: absolute;
+  transition: opacity 
+    var(--fading-animation-duration) 
+    ease-in-out;
+}
+
+.card-collection-results__no-results-message > p {
+  color: white;
+  {{ utils.freed() }}
+  max-width: var(--freed-max-width);
+}
