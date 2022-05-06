@@ -86,15 +86,6 @@ body{
   margin-bottom: 5em;
 }
 
-.card-collection__title--hidden,
-.card-collection__search-results-title {
-  display: none;
-}
-
-.card-collection__search-results-title--shown {
-  display: block;
-}
-
 .card-collection__event-inner {
   margin: 0 auto;
 }
@@ -374,8 +365,6 @@ body{
 {% endcall %}
 
 .card-collection-results__no-results-message {
-  opacity: 0;
-  position: absolute;
   transition: opacity 
     var(--fading-animation-duration) 
     ease-in-out;

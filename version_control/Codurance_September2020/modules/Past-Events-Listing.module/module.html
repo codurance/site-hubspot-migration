@@ -10,7 +10,7 @@
           {{ copy.heading }}
         </span>
         {% if copy.search_results_heading %}
-          <span class="card-collection__search-results-title">
+          <span class="card-collection__search-results-title hidden">
             {{ copy.search_results_heading }}
           </span>
         {% endif %}
@@ -126,7 +126,7 @@
   
   {{ card_collection(past_events_listing, copy) }}
 
-  <div class="card-collection-results__no-results-message ">
+  <div class="card-collection-results__no-results-message hidden fade-animation">
     {{ module.no_results_message }}
   </div>
 {% endif %}

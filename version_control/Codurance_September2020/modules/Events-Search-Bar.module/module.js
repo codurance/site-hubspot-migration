@@ -10,51 +10,37 @@ searchBarResetButton.addEventListener("click", filterEventsOnResetButtonClick);
 function filterEventsOnInputValueChange(inputEvent) {
     const searchBarText = inputEvent.target.value;
     
-    checkPromotedEventsVisibility(searchBarText);
-    checkSearchResultsTitleVisibility(searchBarText);       
-    checkSearchBarResetButtonVisibility(searchBarText);
+    togglePromotedEvents(searchBarText);
+    toggleSearchResultsTitle(searchBarText);       
+    toggleSearchBarResetButton(searchBarText);
     applyFilters(searchBarText);
 
     // Timeout to adjust to the event card items animations
     setTimeout(
-        checkNoSearchResultsMessageVisibility,
+        toggleNoSearchResultsMessage,
         getFadingAnimationDuration()
     );
 }
 
 function filterEventsOnResetButtonClick() {
-    checkPromotedEventsVisibility();
-    checkSearchResultsTitleVisibility();    
+    togglePromotedEvents();
+    toggleSearchResultsTitle();    
     hideSearchBarResetButton();
     applyFilters();
 }
 
-function checkPromotedEventsVisibility(searchBarText) {
+function togglePromotedEvents(searchBarText) {
     const promotedEventsCollection = document.querySelector(".promoted-events");
 
     if(searchBarText != "" && searchBarText != undefined) {
-        hidePromotedEvents(promotedEventsCollection);
+        hideWithAnimation(promotedEventsCollection);
     }
     else {
-        showPromotedEvents(promotedEventsCollection);
+        showWithAnimation(promotedEventsCollection);
     }           
 }
 
-function hidePromotedEvents(promotedEventsCollection) {
-    addFadeAnimationModifier(promotedEventsCollection);
-
-    // Timeout to show the transition before the display property changes
-    setTimeout(addHiddenModifier, getFadingAnimationDuration(), promotedEventsCollection); 
-}
-
-function showPromotedEvents(promotedEventsCollection) {
-    removeHiddenModifier(promotedEventsCollection);
-
-    // Timeout to show the transition before the display property changes
-    setTimeout(removeFadeAnimationModifier, getFadingAnimationDuration(), promotedEventsCollection); 
-}
-
-function checkSearchResultsTitleVisibility(searchBarText) {
+function toggleSearchResultsTitle(searchBarText) {
     const generalTitle = document.querySelector(".past-events .card-collection__title");
     const searchResultsTitle = document.querySelector(".past-events .card-collection__search-results-title");
 
@@ -72,15 +58,15 @@ function checkSearchResultsTitleVisibility(searchBarText) {
 
 function showSearchResultsTitle(generalTitle, searchResultsTitle) {
     addHiddenModifier(generalTitle);
-    addShownModifier(searchResultsTitle);
+    removeHiddenModifier(searchResultsTitle);
 }
 
 function hideSearchResultsTitle(generalTitle, searchResultsTitle) {
     removeHiddenModifier(generalTitle);
-    removeShownModifier(searchResultsTitle);
+    addHiddenModifier(searchResultsTitle);
 }
 
-function checkSearchBarResetButtonVisibility(searchBarText) {
+function toggleSearchBarResetButton(searchBarText) {
     if (searchBarText != "") {
         showSearchBarResetButton();
     }
@@ -91,12 +77,12 @@ function checkSearchBarResetButtonVisibility(searchBarText) {
 
 function showSearchBarResetButton() {
     searchBarForm.classList.add("events-search-bar--icon-hidden");
-    addShownModifier(searchBarResetButton);
+    removeHiddenModifier(searchBarResetButton);
 }
 
 function hideSearchBarResetButton() {
     searchBarForm.classList.remove("events-search-bar--icon-hidden");
-    removeShownModifier(searchBarResetButton);
+    addHiddenModifier(searchBarResetButton);
 }
 
 function applyFilters(searchBarText) {
@@ -112,10 +98,10 @@ function applyFilters(searchBarText) {
 
 function filterEvent(event, searchBarText) {
     if(searchTextInEvent(event, searchBarText)) {
-        showEvent(event);            
+        showWithAnimation(event);            
     }
     else {
-        hideEvent(event);
+        hideWithAnimation(event);
     }
 }
 
@@ -138,20 +124,21 @@ function createRegExpObject(text) {
     return new RegExp(text, regexpFlags);
 }
 
-function checkNoSearchResultsMessageVisibility() {
+function toggleNoSearchResultsMessage() {
     const noSearchResultsMessage = document.querySelector(".card-collection-results__no-results-message");
 
-    if(checkIfSearchResultsAreDisplayed()) {
-        removeShownModifier(noSearchResultsMessage);
+    if(areSearchResultsDisplayed()) {
+        hideWithAnimation(noSearchResultsMessage);
     }
     else {
-        addShownModifier(noSearchResultsMessage);
+        showWithAnimation(noSearchResultsMessage);
     }
 }
 
-function checkIfSearchResultsAreDisplayed() {
+function areSearchResultsDisplayed() {
     const pastEventsCollection = document.querySelector(".past-events .card-collection-results");
     const pastEvents = pastEventsCollection.querySelectorAll(".card-item");
+    
     let searchResultsDisplayed = false;
 
     pastEvents.forEach((event) => {
@@ -163,18 +150,18 @@ function checkIfSearchResultsAreDisplayed() {
     return searchResultsDisplayed;
 }
 
-function showEvent(event) {
-    removeHiddenModifier(event);
+function showWithAnimation(element) {
+    removeHiddenModifier(element);
 
     // Timeout to show the transition before the display property changes
-    setTimeout(removeFadeAnimationModifier, getFadingAnimationDuration(), event); 
+    setTimeout(removeFadeAnimationModifier, getFadingAnimationDuration(), element); 
 }
 
-function hideEvent(event) {
-    addFadeAnimationModifier(event);
+function hideWithAnimation(element) {
+    addFadeAnimationModifier(element);
         
     // Timeout to show the transition before the display property changes
-    setTimeout(addHiddenModifier, getFadingAnimationDuration(), event); 
+    setTimeout(addHiddenModifier, getFadingAnimationDuration(), element); 
 }
 
 function removeFadeAnimationModifier(element) {
@@ -191,14 +178,6 @@ function removeHiddenModifier(element) {
 
 function addHiddenModifier(element) {
     element.classList.add("hidden");
-}
-
-function removeShownModifier(element) {
-    element.classList.remove("shown");
-}
-
-function addShownModifier(element) {
-    element.classList.add("shown");
 }
 
 function getFadingAnimationDuration() {
