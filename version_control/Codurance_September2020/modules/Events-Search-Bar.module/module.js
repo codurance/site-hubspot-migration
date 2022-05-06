@@ -12,15 +12,21 @@ function filterEventsOnInputValueChange(inputEvent) {
     
     checkPromotedEventsVisibility(searchBarText);
     checkSearchResultsTitleVisibility(searchBarText);       
-    applyFilters(searchBarText);
     checkSearchBarResetButtonVisibility(searchBarText);
+    applyFilters(searchBarText);
+
+    // Timeout to adjust to the event card items animations
+    setTimeout(
+        checkNoSearchResultsMessageVisibility,
+        getFadingAnimationDuration()
+    );
 }
 
 function filterEventsOnResetButtonClick() {
     checkPromotedEventsVisibility();
     checkSearchResultsTitleVisibility();    
-    applyFilters();
     hideSearchBarResetButton();
+    applyFilters();
 }
 
 function checkPromotedEventsVisibility(searchBarText) {
@@ -35,11 +41,17 @@ function checkPromotedEventsVisibility(searchBarText) {
 }
 
 function hidePromotedEvents(promotedEventsCollection) {
-    promotedEventsCollection.classList.add("card-collection--faded");
+    addFadeAnimationModifier(promotedEventsCollection);
+
+    // Timeout to show the transition before the display property changes
+    setTimeout(addHiddenModifier, getFadingAnimationDuration(), promotedEventsCollection); 
 }
 
 function showPromotedEvents(promotedEventsCollection) {
-    promotedEventsCollection.classList.remove("card-collection--faded");
+    removeHiddenModifier(promotedEventsCollection);
+
+    // Timeout to show the transition before the display property changes
+    setTimeout(removeFadeAnimationModifier, getFadingAnimationDuration(), promotedEventsCollection); 
 }
 
 function checkSearchResultsTitleVisibility(searchBarText) {
@@ -50,18 +62,41 @@ function checkSearchResultsTitleVisibility(searchBarText) {
         showSearchResultsTitle(generalTitle, searchResultsTitle);
     }
     else {
-        hideSearchResultsTitle(generalTitle, searchResultsTitle);
+        setTimeout(
+            hideSearchResultsTitle, 
+            getFadingAnimationDuration(), 
+            generalTitle, searchResultsTitle
+        );
     }
 }
 
 function showSearchResultsTitle(generalTitle, searchResultsTitle) {
-    generalTitle.classList.add("card-collection__title--hidden");
-    searchResultsTitle.classList.add("card-collection__search-results-title--shown");
+    addHiddenModifier(generalTitle);
+    addShownModifier(searchResultsTitle);
 }
 
 function hideSearchResultsTitle(generalTitle, searchResultsTitle) {
-    generalTitle.classList.remove("card-collection__title--hidden");
-    searchResultsTitle.classList.remove("card-collection__search-results-title--shown");
+    removeHiddenModifier(generalTitle);
+    removeShownModifier(searchResultsTitle);
+}
+
+function checkSearchBarResetButtonVisibility(searchBarText) {
+    if (searchBarText != "") {
+        showSearchBarResetButton();
+    }
+    else {
+        hideSearchBarResetButton();
+    }
+}
+
+function showSearchBarResetButton() {
+    searchBarForm.classList.add("events-search-bar--icon-hidden");
+    addShownModifier(searchBarResetButton);
+}
+
+function hideSearchBarResetButton() {
+    searchBarForm.classList.remove("events-search-bar--icon-hidden");
+    removeShownModifier(searchBarResetButton);
 }
 
 function applyFilters(searchBarText) {
@@ -103,8 +138,33 @@ function createRegExpObject(text) {
     return new RegExp(text, regexpFlags);
 }
 
+function checkNoSearchResultsMessageVisibility() {
+    const noSearchResultsMessage = document.querySelector(".card-collection-results__no-results-message");
+
+    if(checkIfSearchResultsAreDisplayed()) {
+        removeShownModifier(noSearchResultsMessage);
+    }
+    else {
+        addShownModifier(noSearchResultsMessage);
+    }
+}
+
+function checkIfSearchResultsAreDisplayed() {
+    const pastEventsCollection = document.querySelector(".past-events .card-collection-results");
+    const pastEvents = pastEventsCollection.querySelectorAll(".card-item");
+    let searchResultsDisplayed = false;
+
+    pastEvents.forEach((event) => {
+        if(!event.classList.contains("hidden")) {
+            searchResultsDisplayed = true;
+        }
+    });
+
+    return searchResultsDisplayed;
+}
+
 function showEvent(event) {
-    removeVisibilityModifier(event);
+    removeHiddenModifier(event);
 
     // Timeout to show the transition before the display property changes
     setTimeout(removeFadeAnimationModifier, getFadingAnimationDuration(), event); 
@@ -114,42 +174,31 @@ function hideEvent(event) {
     addFadeAnimationModifier(event);
         
     // Timeout to show the transition before the display property changes
-    setTimeout(addVisibilityModifier, getFadingAnimationDuration(), event); 
+    setTimeout(addHiddenModifier, getFadingAnimationDuration(), event); 
 }
 
-function removeFadeAnimationModifier(event) {
-    event.classList.remove("card-item--faded");
+function removeFadeAnimationModifier(element) {
+    element.classList.remove("fade-animation");
 }
 
-function addFadeAnimationModifier(event) {
-    event.classList.add("card-item--faded");
+function addFadeAnimationModifier(element) {
+    element.classList.add("fade-animation");
 }
 
-function removeVisibilityModifier(event) {
-    event.classList.remove("card-item--hidden");
+function removeHiddenModifier(element) {
+    element.classList.remove("hidden");
 }
 
-function addVisibilityModifier(event) {
-    event.classList.add("card-item--hidden");
+function addHiddenModifier(element) {
+    element.classList.add("hidden");
 }
 
-function checkSearchBarResetButtonVisibility(searchBarText) {
-    if (searchBarText != "") {
-        showSearchBarResetButton();
-    }
-    else {
-        hideSearchBarResetButton();
-    }
+function removeShownModifier(element) {
+    element.classList.remove("shown");
 }
 
-function showSearchBarResetButton() {
-    searchBarForm.classList.add("events-search-bar--icon-hidden");
-    searchBarResetButton.classList.add("events-search-bar__reset-button--shown");
-}
-
-function hideSearchBarResetButton() {
-    searchBarForm.classList.remove("events-search-bar--icon-hidden");
-    searchBarResetButton.classList.remove("events-search-bar__reset-button--shown");
+function addShownModifier(element) {
+    element.classList.add("shown");
 }
 
 function getFadingAnimationDuration() {
