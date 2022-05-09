@@ -3,7 +3,6 @@
 /* ===== Refactoring section ======= 
 This is a temporary solution while refactoring until is applied in all pages of the site without any side effects globally.
 */
-
 body{
   max-width: none;
 }  
@@ -135,6 +134,7 @@ body{
 }
 .partners .lp-header-v1{
     max-width: 1000px;
+    margin: 0 auto;
 }
 
 .partners .lp-header-v1__image {
