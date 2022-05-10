@@ -5,11 +5,11 @@
 }
 
 .fade-animation {
-  opacity: 0 !important;
+  opacity: 0;
 }
 
 .hidden {
-  display: none !important;
+  display: none;
 }
 
 .events-search-bar {
@@ -87,7 +87,6 @@
 }
 
 .card-item {
-  opacity: 1;
   transition: opacity 
     var(--fading-animation-duration) 
     ease-in-out;
