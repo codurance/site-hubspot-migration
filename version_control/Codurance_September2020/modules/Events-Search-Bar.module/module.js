@@ -32,11 +32,11 @@ function filterEventsOnResetButtonClick() {
 function togglePromotedEvents(searchBarText) {
     const promotedEventsCollection = document.querySelector(".promoted-events");
 
-    if(searchBarText != "" && searchBarText != undefined) {
-        hideWithAnimation(promotedEventsCollection);
+    if(searchBarText == "" || searchBarText == undefined) {
+        showWithAnimation(promotedEventsCollection);
     }
     else {
-        showWithAnimation(promotedEventsCollection);
+        hideWithAnimation(promotedEventsCollection);
     }           
 }
 
@@ -44,15 +44,15 @@ function toggleSearchResultsTitle(searchBarText) {
     const generalTitle = document.querySelector(".past-events .card-collection__title");
     const searchResultsTitle = document.querySelector(".past-events .card-collection__search-results-title");
 
-    if (searchBarText != "" && searchBarText != undefined) {
-        showSearchResultsTitle(generalTitle, searchResultsTitle);
-    }
-    else {
+    if (searchBarText == "" || searchBarText == undefined) {
         setTimeout(
             hideSearchResultsTitle, 
             getFadingAnimationDuration(), 
             generalTitle, searchResultsTitle
         );
+    }
+    else {
+        showSearchResultsTitle(generalTitle, searchResultsTitle);
     }
 }
 
@@ -97,7 +97,7 @@ function applyFilters(searchBarText) {
 }
 
 function filterEvent(event, searchBarText) {
-    if(searchTextInEvent(event, searchBarText)) {
+    if(isSearchTextInEvent(event, searchBarText)) {
         showWithAnimation(event);            
     }
     else {
@@ -105,7 +105,7 @@ function filterEvent(event, searchBarText) {
     }
 }
 
-function searchTextInEvent(event, searchBarText) {
+function isSearchTextInEvent(event, searchBarText) {
     const eventItemTitle = event.querySelector(".card-item__title").innerText;
     const eventItemDescription = event.querySelector(".card-item__description").innerText;
     const regExp = createRegExpObject(searchBarText);
@@ -164,6 +164,14 @@ function hideWithAnimation(element) {
     setTimeout(addHiddenModifier, getFadingAnimationDuration(), element); 
 }
 
+function getFadingAnimationDuration() {
+    const rootHtml = document.documentElement;
+    const fadingAnimationDurationInMs = 
+        getComputedStyle(rootHtml).getPropertyValue("--fading-animation-duration");
+    
+    return parseInt(fadingAnimationDurationInMs);
+}
+
 function removeFadeAnimationModifier(element) {
     element.classList.remove("fade-animation");
 }
@@ -178,12 +186,4 @@ function removeHiddenModifier(element) {
 
 function addHiddenModifier(element) {
     element.classList.add("hidden");
-}
-
-function getFadingAnimationDuration() {
-    const rootHtml = document.documentElement;
-    const fadingAnimationDurationInMs = 
-        getComputedStyle(rootHtml).getPropertyValue("--fading-animation-duration");
-    
-    return parseInt(fadingAnimationDurationInMs);
 }
