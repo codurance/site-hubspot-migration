@@ -177,7 +177,6 @@ body{
   right: 0;
   height: var(--natus-line-height);
   width: 100%;
-  opacity: ;
   background: linear-gradient(
     to right,
     rgba(255, 255, 255, 0),

@@ -34,7 +34,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "Promoted / Recommended "
+    "default" : "Recommended"
   }, {
     "id" : "1e08183f-2481-710a-276b-0f42be4e19cb",
     "name" : "hubdb",
@@ -48,7 +48,7 @@
       "sorting_label_field" : null,
       "default" : null
     },
-    "table_name_or_id" : "4660473",
+    "table_name_or_id" : "past_events",
     "type" : "hubdbrow",
     "default" : {
       "id" : null
@@ -58,7 +58,7 @@
   "expanded" : false,
   "type" : "group",
   "default" : {
-    "heading" : "Promoted / Recommended ",
+    "heading" : "Recommended",
     "hubdb" : {
       "id" : null
     }
@@ -89,7 +89,8 @@
     "label" : "Past Events HubDB table",
     "required" : false,
     "locked" : false,
-    "type" : "hubdbtable"
+    "type" : "hubdbtable",
+    "default": "past_events"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -117,5 +118,5 @@
   "required" : true,
   "locked" : false,
   "type" : "richtext",
-  "default" : "Sorry it doesn't look like we have any videos on that topic yet. Check our <a data-insert=\"true\" href=\"https://www.codurance.com/events/\" rel=\"noopener\">upcoming events</a> or <a href=\"https://www.codurance.com/contact-us\" rel=\"noopener\" target=\"_blank\">get in touch</a> and make a suggestion for future content."
+  "default" : "<p>Sorry it doesn't look like we have any videos on that topic yet.</p><p>&nbsp;</p><p>Check our <a href='https://www.codurance.com/events/' rel='noopener'>upcoming events</a> or <a href='https://www.codurance.com/contact-us' rel='noopener' target='_blank'>get in touch</a> and make a suggestion for future content.</p>"
 } ]
