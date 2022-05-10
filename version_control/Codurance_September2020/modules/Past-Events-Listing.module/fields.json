@@ -10,37 +10,12 @@
   "type" : "boolean",
   "default" : false
 }, {
-  "id" : "2b6d45be-9278-2301-581b-5000ae4e123a",
-  "name" : "promoted_events_heading",
-  "display_width" : null,
-  "label" : "Promoted Events Heading",
-  "required" : true,
-  "locked" : false,
-  "validation_regex" : "",
-  "visibility" : {
-    "controlling_field" : "9cc2a5e3-64a5-83eb-32da-347174a87b44",
-    "controlling_value_regex" : "true",
-    "operator" : "EQUAL",
-    "access" : null,
-    "hidden_subfields" : null
-  },
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Recommended"
-}, {
-  "id" : "1e08183f-2481-710a-276b-0f42be4e19cb",
+  "id" : "23350043-2228-78fa-e782-f4c4a0cc8519",
   "name" : "promoted_events",
   "display_width" : null,
   "label" : "Promoted Events",
   "required" : false,
   "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : 4,
-    "sorting_label_field" : null,
-    "default" : null
-  },
   "visibility" : {
     "controlling_field" : "9cc2a5e3-64a5-83eb-32da-347174a87b44",
     "controlling_value_regex" : "true",
@@ -48,29 +23,99 @@
     "access" : null,
     "hidden_subfields" : null
   },
-  "table_name_or_id" : "3404866",
-  "type" : "hubdbrow",
+  "children" : [ {
+    "id" : "2b6d45be-9278-2301-581b-5000ae4e123a",
+    "name" : "heading",
+    "display_width" : null,
+    "label" : "Promoted Events Heading",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Promoted / Recommended "
+  }, {
+    "id" : "1e08183f-2481-710a-276b-0f42be4e19cb",
+    "name" : "hubdb",
+    "display_width" : null,
+    "label" : "Promoted Events",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : 4,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "table_name_or_id" : "4660473",
+    "type" : "hubdbrow",
+    "default" : {
+      "id" : null
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
   "default" : {
-    "id" : null
+    "heading" : "Promoted / Recommended ",
+    "hubdb" : {
+      "id" : null
+    }
   }
 }, {
-  "id" : "7b936bf8-8504-1065-d9f3-d763d9526fc5",
-  "name" : "past_events_heading",
+  "id" : "e91dc222-83e6-21ff-3e7a-8ee1873f6ca1",
+  "name" : "past_events",
   "display_width" : null,
-  "label" : "Past Events Heading",
-  "required" : true,
+  "label" : "Past Events",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "7b936bf8-8504-1065-d9f3-d763d9526fc5",
+    "name" : "heading",
+    "display_width" : null,
+    "label" : "Past Events Heading",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Recent Events"
+  }, {
+    "id" : "hubdb_table",
+    "name" : "hubdb_table",
+    "display_width" : null,
+    "label" : "Past Events HubDB table",
+    "required" : false,
+    "locked" : false,
+    "type" : "hubdbtable"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "heading" : "Recent Events"
+  }
+}, {
+  "id" : "2ec85958-c7dc-f008-f52c-e2a70299973b",
+  "name" : "search_results_heading",
+  "display_width" : null,
+  "label" : "Search Results Heading",
+  "required" : false,
   "locked" : false,
   "validation_regex" : "",
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
-  "default" : "Recent Events"
+  "default" : "Results"
 }, {
-  "id" : "hubdb_table",
-  "name" : "past_events_hubdb_table",
+  "id" : "73a38d62-b042-1e68-c793-ef3cca7c2219",
+  "name" : "no_results_message",
   "display_width" : null,
-  "label" : "Past Events HubDB table",
-  "required" : false,
+  "label" : "No Results Message",
+  "required" : true,
   "locked" : false,
-  "type" : "hubdbtable"
+  "type" : "richtext",
+  "default" : "Sorry it doesn't look like we have any videos on that topic yet. Check our <a data-insert=\"true\" href=\"https://www.codurance.com/events/\" rel=\"noopener\">upcoming events</a> or <a href=\"https://www.codurance.com/contact-us\" rel=\"noopener\" target=\"_blank\">get in touch</a> and make a suggestion for future content."
 } ]
