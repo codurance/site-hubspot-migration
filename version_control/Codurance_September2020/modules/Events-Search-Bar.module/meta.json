@@ -1,0 +1,12 @@
+{
+  "global" : false,
+  "icon" : "fontawesome-5.14.0:Search:SOLID",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 48157619430,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../css/modules/events-search-bar.css",
+    "name" : "events-search-bar.css"
+  } ],
+  "is_available_for_new_content" : true
+}
