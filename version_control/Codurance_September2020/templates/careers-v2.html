@@ -52,11 +52,20 @@ label: Careers v2
         </div>
       </div>
   </section>
-  <section class="craftspeople">
-    {% module 'craftspeople' path='../modules/Text-and-image.module' label="Craftspeople section" no_wrapper=True%}
+  <section class="craftspeople-banner">
+    {% module 'Craftspeople Banner' path='../modules/LP-cta-block.module' label="Why we call our..."  no_wrapper=True %}
   </section>
-  <section class="testimonials">
-      {% module 'testimonials' label="Testimonials Video"  class="video__embeded" path='../modules/Embedded Video.module'%}
+
+  <section class="why-join-us">
+    {% module 'Why join us' path='../modules/Text-and-image.module' label="Why join us section" no_wrapper=True%}
+  </section>
+
+  <section class="testimonial-slider">
+    {% module 'Testimonial Slider' path='../modules/Landing Page Modules/LP-testimonial-slider.module' label="Testimonial Slider"  no_wrapper=True %}
+  </section>
+
+  <section class="academy-training">
+    {% module 'academy' path='../modules/Text-and-image.module' label="Academy Training section" no_wrapper=True%}
   </section>
 
   <section class="locations">
@@ -64,13 +73,15 @@ label: Careers v2
       {% module 'Locations' path='../modules/Locations.module' label="Locations Section"  no_wrapper=True %}
     </div>
   </section>
-  
+
   <section class="benefits">
     {% module "Benefits" label="Benefits Section" path='../modules/Benefits.module' no_wrapper=True %}
   </section>
+
   <section class="current-roles-cta cta-light">
     {% module 'Current roles CTA light' path='../modules/LP-cta-block.module' label="Current Roles CTA (light)"  no_wrapper=True %}
   </section>
+
   <section class="video" >
       <div class="video-wrapper">
         <div class="video__title">
@@ -81,6 +92,7 @@ label: Careers v2
         </div>
       </div>    
   </section>
+
   <section class="life-codurance">
     <div class="life-codurance__container">
       <div class="life-codurance__content">
@@ -95,10 +107,6 @@ label: Careers v2
     </div>
   </section>
   
-  <section class="academy-training">
-    {% module 'academy' path='../modules/Text-and-image.module' label="Academy Training section" no_wrapper=True%}
-  </section>
-
    <section class="current-roles-cta cta-dark">
     {% module 'current roles cta dark' path='../modules/LP-cta-block.module' label="Current Roles CTA (dark)"  no_wrapper=True %}
   </section>

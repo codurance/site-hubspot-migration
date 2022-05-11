@@ -88,63 +88,73 @@ body{
 
 
 /*------------------------------------*\
-  #Craftsmanship section
+  #Craftsmanship banner
+\*------------------------------------*/
+
+.craftspeople-banner {
+    background-image: url("https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Careers%20Page/Overview/CTA%20block/cta-why%20join-bg-light.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*------------------------------------*\
+  #Why join us section
 \*------------------------------------*/
 
 {% set image_offset = "30%"%}
 
 
-.craftspeople{
+.why-join-us{
     {{ utils.black_to_navy() }}
     color: white;
     padding: 2em 0;
 }
 
-.craftspeople .text-and-image__copy p > a{
+.why-join-us .text-and-image__copy p > a{
     color: var(--tango-400);
 }
 
-.craftspeople .text-and-image__copy ol{
+.why-join-us .text-and-image__copy ol{
     list-style: revert;
 }
 
-.craftspeople ol li{
+.why-join-us ol li{
     margin-bottom: 0.5em;
     margin-left: 1em;
 }
 
-.craftspeople .cta-button.button-secondary{
+.why-join-us .cta-button.button-secondary{
     background: white;
     color: var(--persimmon);
 }
 
-.craftspeople .text-and-image__image {
+.why-join-us .text-and-image__image {
     scale: 1.2;
     align-self: start;
 }
 
-.craftspeople .text-and-image__image img {
+.why-join-us .text-and-image__image img {
     transform:translate(-20%);
 }
 
 
 {% call utils.small() %}
-    .craftspeople{
+    .why-join-us{
         padding-bottom:0;
     }
 
     
-    .craftspeople .text-and-image__container{
+    .why-join-us .text-and-image__container{
         flex-direction: column;
         overflow-x: clip;
         overflow-y: visible;
     }
 
-    .craftspeople .text-and-image__image{
+    .why-join-us .text-and-image__image{
         max-width: none;
     }
 
-    .craftspeople .text-and-image__image img{
+    .why-join-us .text-and-image__image img{
         transform: translate(15%, {{ image_offset }} );
         margin-top: calc(-1 * {{ image_offset }});
         scale: revert;
