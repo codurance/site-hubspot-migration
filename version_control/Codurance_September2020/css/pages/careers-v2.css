@@ -1,9 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
 
-{% set indent_content_max_with = "50em"%}
-
-
 /* ===== Refactoring section ======= 
 This is a temporary solution while refactoring until is applied in all pages of the site without any side effects globally.
 */
@@ -152,11 +149,16 @@ body{
 
     .why-join-us .text-and-image__image{
         max-width: none;
+        scale: 1;
     }
 
     .why-join-us .text-and-image__image img{
         transform: translate(15%, {{ image_offset }} );
-        margin-top: calc(-1 * {{ image_offset }});
+        margin-top: calc( 
+            calc( -1 * {{ image_offset }})
+             + 
+            10%
+        );
         scale: revert;
     }
 {% endcall %}
@@ -174,7 +176,7 @@ body{
 .locations__container{
     margin: 0 auto;
     padding: 3em 1em;
-    max-width: {{indent_content_max_with}};
+    max-width: var(--content-inner-max-width);
 }
 
 
@@ -203,7 +205,7 @@ body{
 
 .video-wrapper{
     padding: 2.5em 1em;
-    max-width: {{indent_content_max_with}};
+    max-width: var(--content-inner-max-width);
     margin: 0 auto;
 }
 
@@ -227,7 +229,7 @@ body{
 
 
 /*------------------------------------*\
-  #Testimonials Section
+  #Video Testimonials Section
 \*------------------------------------*/
 
 .testimonials{
@@ -235,9 +237,9 @@ body{
 }
 
 
-/*------------------------------------*\
-  #CTAs sections
-\*------------------------------------*/
+/*--------------------------------------------------------*\
+  #CTAs sections (current roles and craftspeople banner)
+\*--------------------------------------------------------*/
 
 .cta-light{
     background: rgba(253,237,226,1);
