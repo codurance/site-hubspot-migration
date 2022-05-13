@@ -255,21 +255,25 @@ body{
 
 
 .current-roles-cta .cta-block__title,
-.current-roles-cta .cta-block__subtitle{
+.current-roles-cta .cta-block__subtitle,
+.craftspeople-banner .cta-block__title,
+.craftspeople-banner .cta-block__subtitle {
     max-width: none;
 }
 
-.current-roles-cta .cta-block__button{
+.current-roles-cta .cta-block__button,
+.craftspeople-banner .cta-block__button {
     text-align: start;
 }
 
 
 
 {% call utils.large_and_extra_large() %} 
-    .current-roles-cta .cta-block{
-        max-width: {{indent_content_max_with}};
-        padding-left: inherit;
-        padding-right: inherit;  
+    .current-roles-cta .cta-block,
+    .craftspeople-banner .cta-block{
+        max-width: var(--content-inner-max-width);
+        padding-left: 1em;
+        padding-right: 1em;  
     }
 
 {% endcall %}    
