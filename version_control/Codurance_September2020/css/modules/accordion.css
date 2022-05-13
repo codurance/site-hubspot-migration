@@ -1,6 +1,22 @@
 {% import '../utils/utils.css' as utils %}
 
-.panel-heading {
+.accordion {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.accordion .panel {
+    border-bottom: 1px solid var(--french-gray);
+}
+
+.accordion .panel:last-child {
+    border-bottom: 0;
+}
+
+.panel-title {
     padding-bottom: 20px;
     padding-top: 20px;
     position: relative;
@@ -12,22 +28,13 @@
     display:block;
 }
 
-.panel-heading p {
-    margin: 0;
-}
-
-.accordion-toggle {
-    {{ utils.freed() }}
-    font-weight: var(--heavy-font-weight);
-}
-
-.panel-heading:focus,
-.panel-heading:hover{
+.panel-title:focus,
+.panel-title:hover{
     color: var(--shark);
 }
 
-.panel-heading::before,
-.panel-heading::after {
+.panel-title::before,
+.panel-title::after {
     content: "";
     background-color: var(--persimmon);
     content: '';
@@ -41,25 +48,31 @@
     transform: rotate(-180deg);
 }
 
-.panel-heading::after {
+.panel-title::after {
     content: "";
     transform: rotate(-90deg);
 }
 
-.accordion .panel {
-    border-bottom: 1px solid var(--french-gray);
+.panel:not(.accordion-close) .panel-title:after {
+    transform: rotate(0);
 }
 
-.accordion .panel:last-child {
-    border-bottom: 0;
+.panel:not(.accordion-close) .panel-title:before {
+    transform: rotate(0);
 }
 
-.accordion {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1000px;
-    padding-left: 50px;
-    padding-right: 50px;
+.panel-title__heading {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.accordion .panel-collapse {
+    padding-bottom: 40px;
+    display:none;
+}
+
+.panel-body {
+    {{ utils.base() }}
 }
 
 .panel-body p, ul, li {
@@ -80,26 +93,6 @@
     margin-bottom: var(--freed-margin);
 }
 
-.panel-body {
-    {{ utils.base() }}
-}
-
-.accordion .panel .panel-collapse {
-    padding-bottom: 40px;
-}
-
-.accordion .panel-collapse {
-    display:none;
-}
-
-.panel:not(.accordion-close) .panel-heading:after {
-    transform: rotate(0);
-}
-
-.panel:not(.accordion-close) .panel-heading:before {
-    transform: rotate(0);
-}
-
 {% call utils.small_and_medium() %}
     .accordion {
         padding-left: 25px;
@@ -116,14 +109,14 @@
 {% endcall %}
 
 {% call utils.small() %}
-    .panel-heading {
-        {{ utils.natus() }}
-        font-weight: var(--heavy-font-weight);
-    }
-
     .accordion {
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    .panel-title {
+        {{ utils.natus() }}
+        font-weight: var(--heavy-font-weight);
     }
 
     .panel-body,

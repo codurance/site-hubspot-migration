@@ -1,6 +1,6 @@
-if (window.NodeList && !NodeList.prototype.forEach) {
+/*if (window.NodeList && !NodeList.prototype.forEach) {
   NodeList.prototype.forEach = Array.prototype.forEach;
-}
+}*/
 let slideUp = (target, duration=500) => {
   target.style.transitionProperty = 'height, margin, padding';
   target.style.transitionDuration = duration + 'ms';
@@ -61,7 +61,7 @@ var slideToggle = (target, duration = 500) => {
     return slideUp(target, duration);
   }
 }
-var accHD = document.getElementsByClassName("panel-heading");
+var accHD = document.getElementsByClassName("panel-title");
 var accItem = document.getElementsByClassName("panel");
 var i;
 for (i = 0; i < accHD.length; i++) {
@@ -82,7 +82,7 @@ for (i = 0; i < accHD.length; i++) {
 
 
 
-$('.panel-heading').click(function(e){
+$('.panel-title').click(function(e){
   var getThis = $(this);
   var timer = setTimeout(function () {
     $('body, html').animate({
@@ -93,7 +93,7 @@ $('.panel-heading').click(function(e){
 })
 
 
-let smoothScroll = document.querySelectorAll('.panel-heading');
+let smoothScroll = document.querySelectorAll('.panel-title');
 for(var i = 0; i<smoothScroll.length; i++){
   var getThis = this;
   
