@@ -1,0 +1,77 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Become A Craftsperson
+-->
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/become-a-craftsperson-v2.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+
+<main class="craftsperson-container">
+    <section class="craftsperson-hero">
+    <div class="craftsperson-hero__container">
+        <div class="craftsperson-hero__text">
+          {% module 'rich_text' 
+              html="
+              <h1>Software Craftsperson</h1>
+              <p>Would you like to work with people who value autonomy, strive to continuously learn and enjoy being paid to do what they love? What about working in an environment that regularly encourages feedback, recognises a job well done and doesn’t forget to have fun along the way? If these are key aspects that you want from your next role, then you’ll be in good company at Codurance.</p>
+              ",
+              path='@hubspot/rich_text'%}
+        </div>
+          <div class="craftsperson-hero__image">
+          {% module 'linked_image',
+                path="@hubspot/linked_image",
+                img={
+                  "src": "https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Software%20Craftspeople/header-image-XL-careers-software-craftsperson.png"
+                },
+                label="Hero Image", 
+                no_wrapper=True        
+          %}
+        </div>
+      </div>
+  </section>
+  <section class="craftsperson-profile">
+    {% module 'craftsperson-profile' path='../modules/Text-and-image.module' label="Craftsperson Profile section" no_wrapper=True%}
+  </section>
+  <section class="craftsperson-skills">
+    <div class="craftsperson-skills__title">
+      {% module 'Skills Title' path='@hubspot/rich_text' label="Skills Title" no_wrapper=True%}
+    </div>
+    <div class="craftsperson-skills__list-wrapper">
+      {% module 'Expected skills' path='@hubspot/rich_text' label="Expected knowledge skills" no_wrapper=True%}
+      {% module 'Desired skills' path='@hubspot/rich_text' label="Desired skills" no_wrapper=True%}
+    </div>
+  </section>
+  <section class="craftsperson-testimonials">
+    {% module 'testimonials' path='../modules/Landing Page Modules/LP-testimonial-slider.module' label="Testimonials Section" no_wrapper=True%}
+  </section>
+  <section class="craftsperson-cta">
+    {% module 'CTA Section' path='../modules/LP-cta-block.module' label="CTA section" no_wrapper=True%}
+  </section>
+
+</main>
+
+
+
+
+
+{% endblock body %}

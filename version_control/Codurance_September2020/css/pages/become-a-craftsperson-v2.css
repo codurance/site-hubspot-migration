@@ -1,0 +1,89 @@
+{% import '../utils/utils.css' as utils %}
+
+/*------------------------------------*\
+  #Hero section
+\*------------------------------------*/
+
+.craftsperson-hero{
+    background: linear-gradient(180deg, rgba(253,237,226,1) 0%, rgba(255,255,255,1) 85%);
+    padding-bottom: 2em;
+    overflow: hidden;
+}
+.craftsperson-hero__container{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1em;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+.craftsperson-hero__text{
+    margin-top: 1em;
+    max-width: 48ch;
+    align-self: center;
+}
+
+.craftsperson-hero__text h1{
+    {{utils.eames()}}
+    font-weight: var(--heavy-font-weight);
+}
+
+.craftsperson-hero__image{
+    transform: translate(15%, 5%);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .craftsperson-hero__container {
+        flex-direction:row;
+    }
+    .craftsperson-hero__image {
+        transform: translateX(10%);
+        align-self: start;
+        scale: 1.2;
+    }
+    .craftsperson-hero__text{
+        max-width: 50%;
+    }
+    .craftsperson-hero__text h1{
+        {{utils.eames()}}
+    }
+    .craftsperson-hero__text p{
+        {{utils.freed()}}
+        font-weight: var(--light-font-weight);
+    }
+
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .craftsperson-hero__container{
+        padding-left: 2.5em;
+    }
+{% endcall %}
+
+{% call utils.extra_large() %}
+    .craftsperson-hero__container{
+        overflow: initial;
+        padding: 1em 0;
+    }
+{% endcall %}
+
+/*------------------------------------*\
+  #Profile Craftperson Section
+  \*------------------------------------*/
+
+
+{% call utils.small()%}
+  .craftsperson-profile .text-and-image__container{
+    flex-direction: column;
+  }
+  .craftsperson-profile .text-and-image__image{
+    align-self: center;
+    max-width: 100%;
+  }
+{% endcall %}
+
+.craftsperson-profile .text-and-image__image img{
+  transform: none;
+}
+.craftsperson-profile .text-and-image__copy{
+  align-self: center;
+}
