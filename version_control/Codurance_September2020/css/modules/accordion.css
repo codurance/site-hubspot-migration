@@ -17,15 +17,17 @@
 }
 
 .panel-title {
-    padding-bottom: 20px;
-    padding-top: 20px;
-    position: relative;
-    cursor: pointer;
-    margin-top: 0;
-    text-decoration: none !important;
-    margin-bottom: 1rem;
+    --panel-title-icon-width: 1.25em;
+
     color: var(--shark);
-    display:block;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    position: relative;
+    text-decoration: none !important;
 }
 
 .panel-title:focus,
@@ -42,7 +44,7 @@
     right: 0;
     position: absolute;
     top: calc(50% + 2px);
-    width: 25px;
+    width: var(--panel-title-icon-width);
     transition: transform 500ms ease;
     transform-origin: center;
     transform: rotate(-180deg);
@@ -64,6 +66,7 @@
 .panel-title__heading {
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
+    max-width: calc(100% - var(--panel-title-icon-width));
 }
 
 .panel-body {
