@@ -1,9 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
 
-{% set indent_content_max_with = "50em"%}
-
-
 /* ===== Refactoring section ======= 
 This is a temporary solution while refactoring until is applied in all pages of the site without any side effects globally.
 */
@@ -88,65 +85,80 @@ body{
 
 
 /*------------------------------------*\
-  #Craftsmanship section
+  #Craftsmanship banner
+\*------------------------------------*/
+
+.craftspeople-banner {
+    background-image: url("https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Careers%20Page/Overview/CTA%20block/cta-why%20join-bg-light.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*------------------------------------*\
+  #Why join us section
 \*------------------------------------*/
 
 {% set image_offset = "30%"%}
 
 
-.craftspeople{
+.why-join-us{
     {{ utils.black_to_navy() }}
     color: white;
     padding: 2em 0;
 }
 
-.craftspeople .text-and-image__copy p > a{
+.why-join-us .text-and-image__copy p > a{
     color: var(--tango-400);
 }
 
-.craftspeople .text-and-image__copy ol{
+.why-join-us .text-and-image__copy ol{
     list-style: revert;
 }
 
-.craftspeople ol li{
+.why-join-us ol li{
     margin-bottom: 0.5em;
     margin-left: 1em;
 }
 
-.craftspeople .cta-button.button-secondary{
+.why-join-us .cta-button.button-secondary{
     background: white;
     color: var(--persimmon);
 }
 
-.craftspeople .text-and-image__image {
+.why-join-us .text-and-image__image {
     scale: 1.2;
     align-self: start;
 }
 
-.craftspeople .text-and-image__image img {
+.why-join-us .text-and-image__image img {
     transform:translate(-20%);
 }
 
 
 {% call utils.small() %}
-    .craftspeople{
+    .why-join-us{
         padding-bottom:0;
     }
 
     
-    .craftspeople .text-and-image__container{
+    .why-join-us .text-and-image__container{
         flex-direction: column;
         overflow-x: clip;
         overflow-y: visible;
     }
 
-    .craftspeople .text-and-image__image{
+    .why-join-us .text-and-image__image{
         max-width: none;
+        scale: 1;
     }
 
-    .craftspeople .text-and-image__image img{
+    .why-join-us .text-and-image__image img{
         transform: translate(15%, {{ image_offset }} );
-        margin-top: calc(-1 * {{ image_offset }});
+        margin-top: calc( 
+            calc( -1 * {{ image_offset }})
+             + 
+            10%
+        );
         scale: revert;
     }
 {% endcall %}
@@ -164,7 +176,7 @@ body{
 .locations__container{
     margin: 0 auto;
     padding: 3em 1em;
-    max-width: {{indent_content_max_with}};
+    max-width: var(--content-inner-max-width);
 }
 
 
@@ -193,7 +205,7 @@ body{
 
 .video-wrapper{
     padding: 2.5em 1em;
-    max-width: {{indent_content_max_with}};
+    max-width: var(--content-inner-max-width);
     margin: 0 auto;
 }
 
@@ -217,7 +229,7 @@ body{
 
 
 /*------------------------------------*\
-  #Testimonials Section
+  #Video Testimonials Section
 \*------------------------------------*/
 
 .testimonials{
@@ -225,9 +237,9 @@ body{
 }
 
 
-/*------------------------------------*\
-  #CTAs sections
-\*------------------------------------*/
+/*--------------------------------------------------------*\
+  #CTAs sections (current roles and craftspeople banner)
+\*--------------------------------------------------------*/
 
 .cta-light{
     background: rgba(253,237,226,1);
@@ -245,21 +257,25 @@ body{
 
 
 .current-roles-cta .cta-block__title,
-.current-roles-cta .cta-block__subtitle{
+.current-roles-cta .cta-block__subtitle,
+.craftspeople-banner .cta-block__title,
+.craftspeople-banner .cta-block__subtitle {
     max-width: none;
 }
 
-.current-roles-cta .cta-block__button{
+.current-roles-cta .cta-block__button,
+.craftspeople-banner .cta-block__button {
     text-align: start;
 }
 
 
 
 {% call utils.large_and_extra_large() %} 
-    .current-roles-cta .cta-block{
-        max-width: {{indent_content_max_with}};
-        padding-left: inherit;
-        padding-right: inherit;  
+    .current-roles-cta .cta-block,
+    .craftspeople-banner .cta-block{
+        max-width: var(--content-inner-max-width);
+        padding-left: 1em;
+        padding-right: 1em;  
     }
 
 {% endcall %}    

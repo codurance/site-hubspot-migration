@@ -13,9 +13,20 @@
     {% if module.subheadline %}
         <p class="cta-block__subtitle">{{module.subheadline}}</p>
     {% endif %}
-    {% if module.cta_field %}
-       <div class="cta-block__button">
-        {% cta guid="{{ module.cta_field }}" %}
+
+    {% if module.button_type %}
+       <div class="cta-block__button">         
+         {% if module.button_type == "cta" %}
+             {% cta guid="{{ module.cta_field }}" %}
+         {% elif module.button_type == "std" %}
+             {% set href = module.link_field.url.href %}                
+              <a class="button-primary" href="{{ href }}"
+                {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                {% if module.link_field.rel %}rel="{{ module.link_field.rel }}"{% endif %}
+                >
+               {{ module.button_text }}
+              </a>
+         {% endif %}
         </div>
     {% endif %}
 </div>
