@@ -130,7 +130,7 @@ body{
     align-self: start;
 }
 
-.why-join-us .text-and-image__image img {
+.why-join-us .container--img-left img {
     transform:translate(-20%);
 }
 
