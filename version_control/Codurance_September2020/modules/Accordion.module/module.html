@@ -4,16 +4,14 @@
   <div class="container">
     <div class="panel-group" id="accordion-section">
       {% for item in module.accordion_item %}
-        <div class="panel panel-default {% if not loop.first %} accordion-close {% endif %}">
+        <div class="panel panel--close">
           <a class="panel-title" href="#accordion-section">
             <h2 class="panel-title__heading">{{ item.accordion_title }}</h2>
           </a>
           {% if item.accordion_content %}
-            <div class="panel-collapse collapse" role="tabpanel"  {% if loop.first %} style="display: block;" {% endif %}>
-              <div class="panel-body">
-                <div class="frame frame-default frame-type-text frame-layout-0">
-                  {{ item.accordion_content }}
-                </div>
+            <div class="panel-body" role="tabpanel">
+              <div class="frame frame-default frame-type-text frame-layout-0">
+                {{ item.accordion_content }}
               </div>
             </div>
           {% endif %}

@@ -1,86 +1,77 @@
-/*if (window.NodeList && !NodeList.prototype.forEach) {
-  NodeList.prototype.forEach = Array.prototype.forEach;
-}*/
-let slideUp = (target, duration=500) => {
-  target.style.transitionProperty = 'height, margin, padding';
-  target.style.transitionDuration = duration + 'ms';
-  target.style.boxSizing = 'border-box';
-  target.style.height = target.offsetHeight + 'px';
-  target.offsetHeight;
-  target.style.overflow = 'hidden';
-  target.style.height = 0;
-  target.style.paddingTop = 0;
-  target.style.paddingBottom = 0;
-  target.style.marginTop = 0;
-  target.style.marginBottom = 0;
-  window.setTimeout( () => {
-    target.style.display = 'none';
-    target.style.removeProperty('height');
-    target.style.removeProperty('padding-top');
-    target.style.removeProperty('padding-bottom');
-    target.style.removeProperty('margin-top');
-    target.style.removeProperty('margin-bottom');
-    target.style.removeProperty('overflow');
-    target.style.removeProperty('transition-duration');
-    target.style.removeProperty('transition-property');
-  }, duration);
+let accordionItems = document.querySelectorAll(".panel");
+accordionItems.forEach(toggleOnClick); 
+
+function toggleOnClick(accordionItem) { 
+  const accordionItemLink = accordionItem.querySelector(".panel-title");
+  accordionItemLink.addEventListener("click", toggle);
 }
-let slideDown = (target, duration=500) => {
-  target.style.removeProperty('display');
-  let display = window.getComputedStyle(target).display;
-  if (display === 'none')
-    display = 'block';
-  target.style.display = display;
-  let height = target.offsetHeight;
-  target.style.overflow = 'hidden';
-  target.style.height = 0;
-  target.style.paddingTop = 0;
-  target.style.paddingBottom = 0;
-  target.style.marginTop = 0;
-  target.style.marginBottom = 0;
-  target.offsetHeight;
-  target.style.boxSizing = 'border-box';
-  target.style.transitionProperty = "height, margin, padding";
-  target.style.transitionDuration = duration + 'ms';
-  target.style.height = height + 'px';
-  target.style.removeProperty('padding-top');
-  target.style.removeProperty('padding-bottom');
-  target.style.removeProperty('margin-top');
-  target.style.removeProperty('margin-bottom');
-  window.setTimeout( () => {
-    target.style.removeProperty('height');
-    target.style.removeProperty('overflow');
-    target.style.removeProperty('transition-duration');
-    target.style.removeProperty('transition-property');
-  }, duration);
+
+function toggle(clickEvent) {
+  const accordionItem = clickEvent.target.closest(".panel");
+  const transitionDuration = 600;
+
+  slideUpSiblingAccordionItems(accordionItem);
+  slideToggle(accordionItem, transitionDuration);
 }
-var slideToggle = (target, duration = 500) => {
-  if (window.getComputedStyle(target).display === 'none') {
-    return slideDown(target, duration);
-  } else {
-    return slideUp(target, duration);
+
+function slideUpSiblingAccordionItems(accordionItem) {
+  slideUpPreviousSiblingAccordionItems(accordionItem);
+  slideUpNextSiblingAccordionItems(accordionItem);
+}
+
+function slideUpPreviousSiblingAccordionItems(accordionItem) {
+  let previousSiblingAccordionItem = accordionItem.previousElementSibling;
+  const transitionDuration = 200;
+
+  while (previousSiblingAccordionItem) {
+    const previousSiblingAccordionItemBody = 
+      previousSiblingAccordionItem.querySelector(".panel-body");
+
+    slideUp(previousSiblingAccordionItemBody, transitionDuration);
+    previousSiblingAccordionItem.classList.add('panel--close');
+
+    previousSiblingAccordionItem = 
+      previousSiblingAccordionItem.previousElementSibling;
   }
 }
-var accHD = document.getElementsByClassName("panel-title");
-var accItem = document.getElementsByClassName("panel");
-var i;
-for (i = 0; i < accHD.length; i++) {
-  accHD[i].addEventListener('click',function(){ 
-    slideToggle(this.nextElementSibling, 600);
-    this.parentElement.classList.toggle('open');
-    this.parentElement.classList.toggle('accordion-close');
-    /** Sibling Child **/
-    var siblings = [].slice.call(this.parentElement.parentElement.children); 
-    siblings.splice(siblings.indexOf(this.parentElement), 1);
-    siblings.forEach(ele=> {
-      slideUp(ele.querySelector('.panel-collapse'), 200);
-      ele.classList.remove('open');
-      ele.classList.add('accordion-close');
-    });
-  });
+
+function slideUpNextSiblingAccordionItems(accordionItem) {
+  let nextSiblingAccordionItem = accordionItem.nextElementSibling;
+  const transitionDuration = 200;
+
+  while (nextSiblingAccordionItem) {
+    const nextSiblingAccordionItemBody = nextSiblingAccordionItem
+    .querySelector(".panel-body");
+
+    slideUp(nextSiblingAccordionItemBody, transitionDuration);
+    nextSiblingAccordionItem.classList.add('panel--close');
+
+    nextSiblingAccordionItem = nextSiblingAccordionItem.nextElementSibling;
+  }
 }
 
+function slideToggle(accordionItem, transitionDuration) {
+  const accordionItemBody = accordionItem.querySelector(".panel-body");
 
+  if (accordionItem.classList.contains("panel--close")) {
+    slideDown(accordionItemBody, transitionDuration);
+  } else {
+    slideUp(accordionItemBody, transitionDuration);
+  }
+
+  accordionItem.classList.toggle('panel--close');
+}
+
+function slideUp(accordionItemBody, transitionDuration) {
+  accordionItemBody.style.transitionDuration = transitionDuration + 'ms';
+  accordionItemBody.style.removeProperty('max-height');
+}
+
+function slideDown(accordionItemBody, transitionDuration) {
+  accordionItemBody.style.transitionDuration = transitionDuration + 'ms';
+  const accordionItemBodyHeight = accordionItemBody.scrollHeight;
+  accordionItemBody.style.maxHeight = accordionItemBodyHeight + 'px';
+}
 
 $('.panel-title').click(function(e){
   var getThis = $(this);
@@ -91,7 +82,6 @@ $('.panel-title').click(function(e){
     clearTimeout(timer);
   }, 600);
 })
-
 
 let smoothScroll = document.querySelectorAll('.panel-title');
 for(var i = 0; i<smoothScroll.length; i++){
