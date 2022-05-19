@@ -125,6 +125,37 @@
 {% endcall %}
 
 
+.banner {
+    display: flex;
+    align-items: center;
+    max-width: var(--content-inner-max-width);
+    margin: 0 auto 3.5em;
+}
+
+
+.banner__text h2 {
+    {{ utils.freed() }}
+    max-width: var(--eames-max-width);
+}
+
+{% call utils.medium() %}
+    .banner__text {
+        min-width: 25em;
+    }
+
+{% endcall %}
+
+{% call utils.small() %}
+    .banner {
+        max-width: {{content_mobile_max_width}};
+    }
+    .banner img {
+       display: none;
+    }
+
+{% endcall %}
+
+
 .clients{
     max-width: {{content_mobile_max_width}};
     margin: 0 auto 2em;
