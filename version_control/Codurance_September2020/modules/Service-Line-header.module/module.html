@@ -98,6 +98,26 @@
 	{% cta guid="{{ module.client_logos.cta_field }}" %} 
 {% endif %}
 </section> <!-- END Clients section -->
+  
+
+{% if module.banner_section %}
+  <section>
+  {{ module.banner_fields.title }}
+  {{ module.banner_fields.url_text }}
+  {{ module.banner_fields.url.href }}
+  {% if module.banner_fields.image.src %}
+    {% set sizeAttrs = 'width="{{ module.banner_fields.image.width }}" height="{{ module.banner_fields.image.height }}"' %}
+    {% if module.banner_fields.image.size_type == 'auto' %}
+      {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+    {% elif module.banner_fields.image.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.banner_fields.image.max_width }}" height="{{ module.banner_fields.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+    {% endif %}
+     {% set loadingAttr = module.banner_fields.image.loading != 'disabled' ? 'loading="{{ module.banner_fields.image.loading }}"' : '' %}
+    <img src="{{ module.banner_fields.image.src }}" alt="{{ module.banner_fields.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+  {% endif %}
+  </section>
+{% endif %}<!-- END Banner section -->	  
+
 
 {% if module.boolean_video %}
 <section class="video">

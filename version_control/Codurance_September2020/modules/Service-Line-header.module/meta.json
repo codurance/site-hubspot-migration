@@ -2,5 +2,6 @@
   "global" : false,
   "host_template_types" : [ "PAGE" ],
   "module_id" : 62942421790,
+  "label" : "Banner Section",
   "is_available_for_new_content" : true
 }
