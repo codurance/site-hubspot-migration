@@ -1,4 +1,4 @@
-let accordionItems = document.querySelectorAll(".panel");
+const accordionItems = document.querySelectorAll(".panel");
 accordionItems.forEach(toggleOnClick); 
 
 function toggleOnClick(accordionItem) { 
@@ -15,38 +15,21 @@ function toggle(clickEvent) {
 }
 
 function slideUpSiblingAccordionItems(accordionItem) {
-  slideUpPreviousSiblingAccordionItems(accordionItem);
-  slideUpNextSiblingAccordionItems(accordionItem);
-}
-
-function slideUpPreviousSiblingAccordionItems(accordionItem) {
-  let previousSiblingAccordionItem = accordionItem.previousElementSibling;
+  const firstAccordionItem = accordionItem.parentElement.firstElementChild;
   const transitionDuration = 200;
 
-  while (previousSiblingAccordionItem) {
-    const previousSiblingAccordionItemBody = 
-      previousSiblingAccordionItem.querySelector(".panel-body");
+  let currentAccordionItem = firstAccordionItem;
 
-    slideUp(previousSiblingAccordionItemBody, transitionDuration);
-    previousSiblingAccordionItem.classList.add('panel--close');
+  while(currentAccordionItem) {
+    if(currentAccordionItem != accordionItem) {
+      const currentAccordionItemBody = 
+        currentAccordionItem.querySelector(".panel-body");
 
-    previousSiblingAccordionItem = 
-      previousSiblingAccordionItem.previousElementSibling;
-  }
-}
+      slideUp(currentAccordionItemBody, transitionDuration);
+      currentAccordionItem.classList.add('panel--close');
+    }
 
-function slideUpNextSiblingAccordionItems(accordionItem) {
-  let nextSiblingAccordionItem = accordionItem.nextElementSibling;
-  const transitionDuration = 200;
-
-  while (nextSiblingAccordionItem) {
-    const nextSiblingAccordionItemBody = nextSiblingAccordionItem
-    .querySelector(".panel-body");
-
-    slideUp(nextSiblingAccordionItemBody, transitionDuration);
-    nextSiblingAccordionItem.classList.add('panel--close');
-
-    nextSiblingAccordionItem = nextSiblingAccordionItem.nextElementSibling;
+    currentAccordionItem = currentAccordionItem.nextElementSibling;
   }
 }
 
@@ -71,27 +54,5 @@ function slideDown(accordionItemBody, transitionDuration) {
   accordionItemBody.style.transitionDuration = transitionDuration + 'ms';
   const accordionItemBodyHeight = accordionItemBody.scrollHeight;
   accordionItemBody.style.maxHeight = accordionItemBodyHeight + 'px';
-}
-
-$('.panel-title').click(function(e){
-  var getThis = $(this);
-  var timer = setTimeout(function () {
-    $('body, html').animate({
-      scrollTop: getThis.offset().top
-    }, 400);
-    clearTimeout(timer);
-  }, 600);
-})
-
-let smoothScroll = document.querySelectorAll('.panel-title');
-for(var i = 0; i<smoothScroll.length; i++){
-  var getThis = this;
-  
-  var timer = setTimeout(function () {
-    $('body, html').animate({
-      scrollTop: getThis.offset().top
-    }, 400);
-    clearTimeout(timer);
-  }, 600);
 }
 

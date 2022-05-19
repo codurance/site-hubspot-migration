@@ -3,7 +3,7 @@
 .accordion {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1000px;
+    max-width: var(--content-inner-max-width);
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -17,7 +17,7 @@
 }
 
 .panel-title {
-    --panel-title-icon-width: 1.25em;
+    --icon-width: 1.25em;
 
     color: var(--shark);
     cursor: pointer;
@@ -27,12 +27,12 @@
     padding-bottom: 1em;
     padding-top: 1em;
     position: relative;
-    text-decoration: none !important;
 }
 
 .panel-title:focus,
 .panel-title:hover{
     color: var(--shark);
+    text-decoration: none;
 }
 
 .panel-title::before,
@@ -44,7 +44,7 @@
     right: 0;
     position: absolute;
     top: calc(50% + 2px);
-    width: var(--panel-title-icon-width);
+    width: var(--icon-width);
     transition: transform 500ms ease;
     transform-origin: center;
     transform: rotate(-180deg);
@@ -55,18 +55,15 @@
     transform: rotate(-90deg);
 }
 
-.panel:not(.panel--close) .panel-title:after {
-    transform: rotate(0);
-}
-
-.panel:not(.panel--close) .panel-title:before {
+.panel:not(.panel--close) .panel-title:after,
+.panel:not(.panel--close) .panel-title:before  {
     transform: rotate(0);
 }
 
 .panel-title__heading {
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
-    max-width: calc(100% - var(--panel-title-icon-width));
+    max-width: calc(100% - var(--icon-width));
 }
 
 .panel-body {
