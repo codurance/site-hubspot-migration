@@ -132,11 +132,21 @@
     margin: 0 auto 3.5em;
 }
 
+.banner img { 
+    margin-left: 1em;
+}
+
 
 .banner__text h2 {
     {{ utils.freed() }}
     max-width: var(--eames-max-width);
+
+    border-top: 2px solid white;
+    padding-top: 1em;
+    padding-right: 2em;
 }
+
+
 
 {% call utils.medium() %}
     .banner__text {
