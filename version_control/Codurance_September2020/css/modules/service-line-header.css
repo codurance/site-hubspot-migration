@@ -136,7 +136,6 @@
     margin-left: 1em;
 }
 
-
 .banner__text h2 {
     {{ utils.freed() }}
     max-width: var(--eames-max-width);
@@ -146,14 +145,10 @@
     padding-right: 2em;
 }
 
+.banner__text .cta-text-primary {
+    margin-top: 2em;
+}
 
-
-{% call utils.medium() %}
-    .banner__text {
-        min-width: 25em;
-    }
-
-{% endcall %}
 
 {% call utils.small() %}
     .banner {
@@ -162,8 +157,14 @@
     .banner img {
        display: none;
     }
-
 {% endcall %}
+
+{% call utils.medium() %}
+    .banner__text {
+        min-width: 25em;
+    }
+{% endcall %}
+
 
 
 .clients{
