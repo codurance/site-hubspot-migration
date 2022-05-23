@@ -125,6 +125,48 @@
 {% endcall %}
 
 
+.banner {
+    display: flex;
+    align-items: center;
+    max-width: var(--content-inner-max-width);
+    margin: 0 auto 4.5em;
+}
+
+.banner img { 
+    margin-left: 3.5em;
+}
+
+.banner__text h2 {
+    {{ utils.freed() }}
+    max-width: var(--eames-max-width);
+
+    border-top: 2px solid white;
+    padding-top: 1em;
+    padding-right: 2em;
+}
+
+.banner__text .text-cta-primary {
+    margin-top: 1.5em;
+}
+
+
+{% call utils.small() %}
+    .banner {
+        max-width: {{content_mobile_max_width}};
+    }
+    .banner img {
+       display: none;
+    }
+{% endcall %}
+
+{% call utils.medium() %}
+    .banner__text {
+        min-width: 25em;
+    }
+{% endcall %}
+
+
+
 .clients{
     max-width: {{content_mobile_max_width}};
     margin: 0 auto 2em;
