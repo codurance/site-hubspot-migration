@@ -1,15 +1,29 @@
 [ {
   "id" : "086ed45a-4e5f-4cea-e94e-cb557f43f707",
-  "name" : "newsletter_title",
+  "name" : "title",
   "display_width" : null,
-  "label" : "Newsletter Title",
-  "required" : false,
+  "label" : "Title",
+  "required" : true,
   "locked" : false,
   "validation_regex" : "",
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
   "default" : "Join our newsletter for more insights"
+}, {
+  "id" : "f16617c8-ae47-8c12-7ac4-eaec5babf2fd",
+  "name" : "subtitle",
+  "display_width" : null,
+  "label" : "Subtitle",
+  "help_text" : "",
+  "inline_help_text" : "Optional",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : ""
 }, {
   "id" : "90954a15-1837-98fb-81fc-3955a2503342",
   "name" : "newsletter_form",

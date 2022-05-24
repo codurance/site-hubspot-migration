@@ -4,10 +4,17 @@
     <div class="newsletter-wrapper">
         <div class="newsletter-inner">
           <div class="newsletter-content">
-            <h2 class="newsletter-content__title">
-              {{ module.newsletter_title }}
-            </h2>
             <i class="newsletter-content__icon las la-envelope"></i>
+            <div class="newsletter-text-content">
+              <h2 class="newsletter-text-content__title">
+                {{ module.title }}
+              </h2>
+              {% if module.subtitle %}
+                <h3 class="newsletter-text-content__subtitle">
+                  {{ module.subtitle }}
+                </h3>
+              {% endif %}
+            </div>
           </div>
           <div class="newsletter__form">
             {% form
