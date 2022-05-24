@@ -1,4 +1,18 @@
 [ {
+  "id" : "3bd6c5de-1033-41a8-32de-4ee1f04a255b",
+  "name" : "icon",
+  "display_width" : null,
+  "label" : "Icon",
+  "help_text" : "Insert icon class (for example, la-envelope) <a href=\"https://icons8.com/line-awesome\">List of available icons</a>",
+  "inline_help_text" : "<a href=\"https://icons8.com/line-awesome\">List of available icons</a>",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "la-envelope"
+}, {
   "id" : "086ed45a-4e5f-4cea-e94e-cb557f43f707",
   "name" : "title",
   "display_width" : null,
