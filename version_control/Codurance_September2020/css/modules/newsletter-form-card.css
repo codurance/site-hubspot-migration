@@ -1,0 +1,117 @@
+{% import '../utils/utils.css' as utils %}
+
+.newsletter {
+    height: 8em;
+}
+
+.newsletter-wrapper {
+    margin: 1em;
+    padding: 2em 1em;
+    border-radius: 20px;
+    background: white;
+    {{ utils.card_shadow_large() }}
+    transform: translateY(-45%);
+    max-width: 35em;
+}
+
+.newsletter-inner {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    gap: 2em;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.newsletter-content {
+    align-items: flex-start;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.newsletter-text-content__title {
+    {{utils.freed()}}
+    font-weight: var(--heavy-font-weight);
+    order: 1;
+}
+
+.newsletter-text-content__subtitle {
+    margin-top: var(--freed-margin);
+}
+
+.newsletter-content__icon {
+    font-size: 2rem;
+    color: var(--french-gray);
+    border-radius: 50%;
+    padding: 0.4em;
+    {{ utils.card_shadow_large() }}
+}
+
+.newsletter__form .hs-button {
+  width: 100%;
+  margin-top: 0;
+}
+
+{% call utils.medium_and_large() %}
+    .newsletter-text-content__title {
+        max-width: 20ch;
+    }
+
+    .newsletter__form {
+        align-self: flex-end;
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+    .newsletter-wrapper {
+        margin: 0 auto; 
+    }
+
+    .newsletter-inner {
+        align-items: baseline;
+        max-width: 600px;
+        gap: 1em;
+    }
+
+    .newsletter-text-content__title {
+        {{ utils.dudler() }}
+    }
+
+    .newsletter-content {
+        justify-content:start;
+        gap: 1.8em;
+    }
+
+    .newsletter__form .hs-form{
+        display: flex;
+        align-items: baseline;
+    }
+
+    .newsletter__form .hs-input{
+        width: 20em;
+        border-radius: 3px 0 0 3px;
+        height: unset;
+    }
+
+    .newsletter__form .hs-button{
+        padding: 0.5em 3em;
+        border-radius: 0 3px 3px 0;
+    }
+{% endcall %}
+
+{% call utils.extra_large() %}
+    .newsletter-wrapper {
+        max-width: 60em;
+    }
+
+    .newsletter-inner {
+        flex-flow: row;
+        justify-content: space-around;
+        max-width: unset;
+    }
+
+    .newsletter-text-content {
+        max-width: 30ch;
+    }
+{% endcall %}

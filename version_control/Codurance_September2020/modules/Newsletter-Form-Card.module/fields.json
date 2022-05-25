@@ -1,0 +1,56 @@
+[ {
+  "id" : "3bd6c5de-1033-41a8-32de-4ee1f04a255b",
+  "name" : "icon",
+  "display_width" : null,
+  "label" : "Icon",
+  "help_text" : "Insert icon class (for example, la-envelope) <a href=\"https://icons8.com/line-awesome\">List of available icons</a>",
+  "inline_help_text" : "<a href=\"https://icons8.com/line-awesome\">List of available icons</a>",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "la-envelope"
+}, {
+  "id" : "086ed45a-4e5f-4cea-e94e-cb557f43f707",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Join our newsletter for more insights"
+}, {
+  "id" : "f16617c8-ae47-8c12-7ac4-eaec5babf2fd",
+  "name" : "subtitle",
+  "display_width" : null,
+  "label" : "Subtitle",
+  "help_text" : "",
+  "inline_help_text" : "Optional",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : ""
+}, {
+  "id" : "90954a15-1837-98fb-81fc-3955a2503342",
+  "name" : "newsletter_form",
+  "display_width" : null,
+  "label" : "Newsletter Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "default" : {
+    "form_id" : "df72d9f2-3f33-43a6-9411-f49774df9041",
+    "response_type" : "inline",
+    "message" : "Thanks for signing up! You will receive an email from us shortly where you can choose what you'd like to hear from us.",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+} ]
