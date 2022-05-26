@@ -1,6 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
-{% set card_box_shadow = '0 20px 25px -12px var(--woodsmoke--10)'%}
+{% set card_box_shadow = '0 20px 25px -12px var(--woodsmoke--10)' %}
 
 {% set card_box_shadow_on_hover = '0.3rem 20px 30px -12px var(--woodsmoke--10)'%}
 
@@ -111,24 +111,24 @@
   padding-left: 15px;
 }
 
-
 .blog-author {
   padding: 20px;
   background: #fff;
 }
 
-.blog-author img {
+.blog-author__img {
+  border-radius: 50%;
   float: left;
-  width: 80px;
   height: auto;
   margin-right: 20px;
+  max-width: 100%;
 }
 
-.blog-author .blog-author-desc {
+.blog-author__description {
   overflow: hidden;
 }
 
-.blog-author .blog-author-desc h4 {
+.blog-author__description h4 {
   float: left;
   font-size: 18px;
   margin: 0 0 10px;
@@ -136,17 +136,12 @@
   color: #555;
 }
 
-.blog-author .blog-author-desc ul {
-  float: right;
-  margin-top: 6px;
-}
-
-.blog-author .blog-author-desc p {
+.blog-author__description p {
   color: #555;
 }
 
 {% call utils.small() %}
-  .blog-author .blog-author-desc {
+.blog-author__description {
     margin: 10px 0 10px;
   }
 {% endcall %}

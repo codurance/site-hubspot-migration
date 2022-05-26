@@ -236,9 +236,6 @@ figure {
   transform: translateY(110%);
 }
 
-#author-img {
-  width: 100%;
-}
 .blog .js-cookie-message {
   display: none;
 }
