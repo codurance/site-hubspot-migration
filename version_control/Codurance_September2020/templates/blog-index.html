@@ -35,9 +35,9 @@ label: Blog Listing
 {% if blog_author %}
 
   <div class="container custom-blog-author-listing content-sm">
-    <div class="blog-author bg-color-white margin-bottom-30 page-center">
+    <div class="bg-color-white margin-bottom-30 page-center">
       <!--About the author-->
-      <div class="row">
+      <div class="blog-author row">
         <div class="blog-author__intro">
           {% if blog_author.avatar != NULL && 
             blog_author.avatar.src != "(unknown)" && 
@@ -49,7 +49,7 @@ label: Blog Listing
             >
           {% endif %}
 
-          <h1>{{ blog_author.display_name }}</h1>
+          <h1 class="blog-author__title">{{ blog_author.display_name }}</h1>
 
           {% if blog_author.has_social_profiles %}
             <ul class="blog-social-icons__list">
@@ -97,9 +97,8 @@ label: Blog Listing
     <hr>
     
     <div  class="custom-bg-gray-light-v5">
-      <h2 class="margin-bottom-20">{{ group.public_title }}</h2>
       <div class="container page-center">
-
+        <h2 class="author-listing-title">{{ group.public_title }}</h2>
         <div class="masonry-grid row custom--mb-70">
           <div class="masonry-grid-sizer custom-col-sm-1"></div>
           {% for content in contents %}
