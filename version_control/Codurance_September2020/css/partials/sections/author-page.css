@@ -49,11 +49,11 @@
   font-size: 18px;
   margin: 0 0 10px;
   text-transform: uppercase;
-  color: #555;
+  color: var(--mid-gray);
 }
 
 .blog-author__description p {
-  color: #555;
+  color: var(--mid-gray);
 }
 
 {% call utils.small() %}
