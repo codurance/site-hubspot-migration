@@ -26,9 +26,9 @@ label: Blog Post
 
   {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
 
-
   {{ require_css(get_asset_url("../css/pages/blog-post.css")) }}
   {{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
+  {{ require_css(get_asset_url("../css/partials/social-icons.css")) }}
 
   {{ require_js(get_asset_url("../js/main.js")) }}
   {{ standard_header_includes }}
@@ -125,7 +125,7 @@ label: Blog Post
     <ul class="blog-social-icons__list">
       <li class="blog-social-icons__item">
         <a
-          class="blog-social-icons__icon"
+          class="blog-social-icons__icon custom-mx-2"
           href="http://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url }}&amp;title={{ page_meta.name }}"
           target="_blank"
           rel="noopener noreferrer"
