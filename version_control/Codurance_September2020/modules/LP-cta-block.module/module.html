@@ -1,12 +1,16 @@
 
 {{ require_css(get_asset_url("../../css/modules/lp-cta-block.css")) }}
 
-<style>
-.cta-block{
-    --bg-img-small: url({{module.background_image.small.src}});
-    --bg-img-large: url({{module.background_image.large.src}});
-}
-</style>
+{% require_css %}
+    <style>
+      {% scope_css %}
+        .cta-block {
+            --bg-img-small: url({{module.background_image.small.src}});
+            --bg-img-large: url({{module.background_image.large.src}});
+        }   
+      {% end_scope_css %} 
+    </style>
+{% end_require_css %}
 
 <div class="cta-block  cta-block--{{ module.font_color }}">
     <{{module.headline_tag}} class="cta-block__title">{{module.headline}}</{{module.headline_tag}}>
