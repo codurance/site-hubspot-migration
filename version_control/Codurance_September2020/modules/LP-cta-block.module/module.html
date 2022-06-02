@@ -7,7 +7,15 @@
         .cta-block {
             --bg-img-small: url({{module.background_image.small.src}});
             --bg-img-large: url({{module.background_image.large.src}});
-        }   
+        }
+        
+        {% if module.button_mobile_alignment == "left" %}
+            @media(max-width: 768px) {
+                .cta-block__button {
+                    text-align: left;
+                }
+            }
+        {% endif %}
       {% end_scope_css %} 
     </style>
 {% end_require_css %}

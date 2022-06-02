@@ -186,4 +186,15 @@
     "open_in_new_tab" : false,
     "no_follow" : false
   }
+}, {
+  "id" : "e39faf76-adee-fe81-7f1a-90306d5c7578",
+  "name" : "button_mobile_alignment",
+  "display_width" : null,
+  "label" : "Button Mobile Alignment",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "center", "Center" ], [ "left", "Left" ] ],
+  "type" : "choice",
+  "default" : "center"
 } ]
