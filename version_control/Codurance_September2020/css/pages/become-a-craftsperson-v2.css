@@ -111,25 +111,46 @@ body {
 \*------------------------------------*/
 
 .craftsperson-skills {
-  padding: 2em;
+  {{ utils.white_to_tango() }}
 }
 
-.craftsperson-skills__list-wrapper {
-    margin-top: 2em
+.craftsperson-skills__wrapper {
+  margin-inline: auto;
+  max-width: var(--content-inner-max-width);
+  padding: 4em 1em;
 }
 
-.craftsperson-skills__list-wrapper h3 {
-    {{ utils.freed() }} 
+.craftsperson-skills__title {
+  {{ utils.dudler() }}
 
+  font-weight: var(--light-font-weight);
+  margin-bottom: 1.5em;
 }
 
-.craftsperson-skills__list-wrapper ul{
-  font-family: "line awesome free";
-  list-style-type: "\f058";
-  transform: translateX(-.4em);
+.craftsperson-skills__wrapper ul {
+  margin-left: 1em;
 }
 
-.craftsperson-skills__list-wrapper li{
-  font-family: "proxima-nova";
+{% call utils.medium_large_and_extra_large() %}
+  .craftsperson-skills__wrapper ul {
+    columns: 2;
+  }
+
+  .craftsperson-skills__wrapper li {
+    display: inline-block;
+    display: list-item;
+  }
+{% endcall %}
+
+.craftsperson-skills__wrapper li {
   padding-left: 0.4em;
+  list-style-type: "\f058";
+}
+
+.craftsperson-skills__wrapper li:not(:first-child) {
+  margin-top: 0.5em;
+}
+
+.craftsperson-skills__wrapper li::marker {
+  font-family: "line awesome free";
 }

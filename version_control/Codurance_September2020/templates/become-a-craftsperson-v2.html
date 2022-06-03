@@ -62,27 +62,29 @@ label: Become A Craftsperson
   <section class="craftsperson-video">
       {% module 'craftsperson_video' 
         label="Craftsperson Video" 
-        class="video__embeded" 
         path='../modules/Embedded Video.module' 
       %}
   </section>
 
   <section class="craftsperson-skills">
-    <div class="craftsperson-skills__title">
-      {% module 'Skills Title' 
-        path='@hubspot/header' 
-        label="Skills Section Title" 
-        no_wrapper=True 
-      %}
-    </div>
-    <div class="craftsperson-skills__list-wrapper">
+    <div class="craftsperson-skills__wrapper">
+      <div class="craftsperson-skills__title">
+        {% module 'craftsperson_skills_title' 
+          path='@hubspot/rich_text' 
+          label="Craftsperson Skills Title" 
+          no_wrapper=True
+        %}
+      </div>
+    
       {% module 'Expected skills' 
-        path='@hubspot/rich_text' 
+        path='@hubspot/rich_text'
+        label="Craftsperson Skills" 
         no_wrapper=True
       %}
+
       {% module 'apply_now_skills' 
         path='../modules/Button.module' 
-        label="Skills Section Button" 
+        label="Craftsperson Skills Button" 
         no_wrapper=True
       %}
     </div>
@@ -102,7 +104,7 @@ label: Become A Craftsperson
       no_wrapper=True 
     %}
   </section>
-  
+
   <section class="craftsperson-cta">
     {% module 'CTA-Section-4' 
       path='../modules/LP-cta-block.module' 
