@@ -8,32 +8,39 @@ body {
   margin-top: 1.5em;
 }
 
+.craftsperson-hero,
+.craftsperson-video {
+  {{ utils.color1_to_color2("180deg", 
+    "rgba(253,237,226,1) 0%", 
+    "rgba(255,255,255,1) 85%") 
+  }}
+}
+
 /*------------------------------------*\
   #Hero section
 \*------------------------------------*/
 
 .craftsperson-hero {
-    background: linear-gradient(180deg, rgba(253,237,226,1) 0%, rgba(255,255,255,1) 85%);
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .craftsperson-hero__container {
-    display: flex;
-    flex-direction: column-reverse;
-    padding: 1em 1em 0 1em;
-    max-width: var(--content-max-width);
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 1em 1em 0 1em;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
 }
 
 .craftsperson-hero__text {
-    margin-top: 1em;
-    max-width: 48ch;
-    align-self: center;
+  margin-top: 1em;
+  max-width: 48ch;
+  align-self: center;
 }
 
 .craftsperson-hero__text h1 {
-    {{utils.eames()}}
-    font-weight: var(--heavy-font-weight);
+  {{utils.eames()}}
+  font-weight: var(--heavy-font-weight);
 }
 
 .craftsperson-hero__image {
@@ -59,7 +66,6 @@ body {
         {{utils.freed()}}
         font-weight: var(--light-font-weight);
     }
-
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
@@ -103,15 +109,16 @@ body {
 /*------------------------------------*\
   #Skills section
 \*------------------------------------*/
-.craftsperson-skills{
+
+.craftsperson-skills {
   padding: 2em;
 }
 
-.craftsperson-skills__list-wrapper{
+.craftsperson-skills__list-wrapper {
     margin-top: 2em
 }
 
-.craftsperson-skills__list-wrapper h3{
+.craftsperson-skills__list-wrapper h3 {
     {{ utils.freed() }} 
 
 }

@@ -27,29 +27,30 @@ label: Become A Craftsperson
 {% block body %}
 
 <main class="craftsperson-container">
-    <section class="craftsperson-hero">
+  <section class="craftsperson-hero">
     <div class="craftsperson-hero__container">
-        <div class="craftsperson-hero__text">
-          {% module 'rich_text' 
-            path='@hubspot/rich_text'
-            label='Header Text' 
-          %}
+      <div class="craftsperson-hero__text">
+        {% module 'rich_text' 
+          path='@hubspot/rich_text'
+          label='Header Text' 
+        %}
 
-          {% module 'apply_now_header' 
-            path='../modules/Button.module' 
-            label="Header Button" 
-            no_wrapper=True 
-          %}
-        </div>
-          <div class="craftsperson-hero__image">
-            {% module 'linked_image',
-                path="@hubspot/linked_image",
-                label="Hero Image", 
-                no_wrapper=True        
-            %}
-        </div>
+        {% module 'apply_now_header' 
+          path='../modules/Button.module' 
+          label="Header Button" 
+          no_wrapper=True 
+        %}
       </div>
+      <div class="craftsperson-hero__image">
+          {% module 'linked_image',
+              path="@hubspot/linked_image",
+              label="Hero Image", 
+              no_wrapper=True        
+          %}
+      </div>
+    </div>
   </section>
+
   <section class="craftsperson-profile">
     {% module 'craftsperson-profile' 
       path='../modules/Text-and-image.module' 
@@ -57,6 +58,15 @@ label: Become A Craftsperson
       no_wrapper=True 
     %}
   </section>
+
+  <section class="craftsperson-video">
+      {% module 'craftsperson_video' 
+        label="Craftsperson Video" 
+        class="video__embeded" 
+        path='../modules/Embedded Video.module' 
+      %}
+  </section>
+
   <section class="craftsperson-skills">
     <div class="craftsperson-skills__title">
       {% module 'Skills Title' 
@@ -77,6 +87,7 @@ label: Become A Craftsperson
       %}
     </div>
   </section>
+
   <section class="academy">
     {% module 'Academy' 
       path='../modules/Text-and-image.module' 
@@ -84,17 +95,18 @@ label: Become A Craftsperson
       no_wrapper=True
     %}
   </section>
+
   <section class="benefits">
     {% module "Benefits" 
       path='../modules/Benefits.module' 
       no_wrapper=True 
     %}
   </section>
+  
   <section class="craftsperson-cta">
     {% module 'CTA-Section-4' 
       path='../modules/LP-cta-block.module' 
       label="CTA Section 4" 
-      no_wrapper=True
     %}
   </section>
 </main>
