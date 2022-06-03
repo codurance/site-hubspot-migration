@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "fontawesome-5.14.0:Envelope",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 48878289894,
+  "label" : "Newsletter Form Card",
+  "is_available_for_new_content" : true
+}

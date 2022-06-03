@@ -27,21 +27,23 @@
 
 {% block body %}
 
-<section class="events-header-slice responsive-page-width ">
-  {% module "page_hero_slice" path="../modules/Hero Slice.module" 
-  label="Page Hero Slice" no_wrapper=True %}
+{% module 'youtube_popup' 
+  path='../modules/YouTube-Video-Popup.module',
+  no_wrapper=True %}
+
+<section class="events-header lateral-spacing">
+  <div class="events-header-wrapper">
+    <div class="events-header__text">
+      <h1>{% module 'header_title' path='@hubspot/text' label="Page Hero Title" no_wrapper=True%}</h1>
+      <p>{% module 'header_subtitle' path='@hubspot/text' label="Page Hero Subtitle" no_wrapper=True%}</p>
+    </div>
+    <div class="events-header__image">
+      {% module 'header_image' path='@hubspot/image' no_wrapper=True%}
+    </div>
+  </div>
 </section>
 
-
-<main class="main-container">
-    <section class="events-description responsive-page-width">
-      <div class="events-description__wrapper">
-      {% module "events_description_banner" path="@hubspot/rich_text" 
-      label="Events Description" no_wrapper=True %}
-      </div>
-    </section>
-   
-     
+<main class="main-container"> 
   <section class="card-slider">
     <div class="card-slider__events-wrapper">
       {% module "events" path="../modules/Upcoming Events Listing.module"
@@ -56,10 +58,10 @@
     </div>
   </section>  
   
-  <section class="card-slider">
+  <section class="card-slider recent-events-bg">
     <div class="card-slider__events-wrapper">
-      {% module "past_events" path="../modules/Past Events Listing.module"
-      label="Past Events" no_wrapper=True %}
+      {% module "recent_events" path="../modules/Recent-Events-Listing.module"
+      label="Recent Events" no_wrapper=True %}
     </div>
   </section>
 </main>

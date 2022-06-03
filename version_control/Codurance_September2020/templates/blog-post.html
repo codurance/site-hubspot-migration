@@ -26,9 +26,9 @@ label: Blog Post
 
   {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
 
-
   {{ require_css(get_asset_url("../css/pages/blog-post.css")) }}
   {{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
+  {{ require_css(get_asset_url("../css/partials/social-icons.css")) }}
 
   {{ require_js(get_asset_url("../js/main.js")) }}
   {{ standard_header_includes }}
@@ -63,7 +63,13 @@ label: Blog Post
   <section class="blog-meta blog-max-width">
     <div class="blog-meta__inner">
       <div class="blog-meta__info">
-        {{ content.publish_date_localized }}
+        <span class="info__publish-date">{{ content.publish_date_localized}}</span>
+          {% module 'Date Picker' 
+                      module_id='date-picker', 
+                      path='../modules/Date-Picker.module',
+                      label="Updated date",
+                      no_wrapper=True
+          %}
       </div>
       {% if content.tag_list %}
         <ul class="blog-meta__tag-list">
@@ -119,7 +125,7 @@ label: Blog Post
     <ul class="blog-social-icons__list">
       <li class="blog-social-icons__item">
         <a
-          class="blog-social-icons__icon"
+          class="blog-social-icons__icon custom-mx-2"
           href="http://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url }}&amp;title={{ page_meta.name }}"
           target="_blank"
           rel="noopener noreferrer"

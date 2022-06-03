@@ -1,0 +1,103 @@
+[ {
+  "id" : "415dd937-d850-1a15-e3d1-cb6c612a4b98",
+  "name" : "field_group",
+  "label" : "Header",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "c3dfe9a4-5463-e064-c4be-f96c03774230",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Locations"
+  }, {
+    "id" : "70324fd9-a12e-62f2-afed-bb8122a56f4b",
+    "name" : "paragraph_text",
+    "label" : "Paragraph text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Locations"
+  }
+}, {
+  "id" : "5f54c170-9a2c-808e-eca9-6ce93fdebfee",
+  "name" : "location",
+  "label" : "Location",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "3b1f817b-92f0-b97d-7cf3-58168cdb1375",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "1bca742d-63d3-0c2f-740f-3795a9f7f215",
+    "name" : "image_location",
+    "label" : "Image Location",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }
+}, {
+  "id" : "314d1be3-7504-3395-5731-79fc31d5155e",
+  "name" : "disclosure_text",
+  "label" : "Disclosure text",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "254e23f3-2801-9102-2309-d193cc4cd545",
+    "name" : "rich_text",
+    "label" : "rich text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+} ]

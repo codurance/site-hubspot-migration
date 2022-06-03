@@ -119,7 +119,7 @@
 }
 
 .cm-tabber-panel__how-wrapper ul li {
-    font-weight: var(--welter-font-weight);
+    font-weight: var(--light-font-weight);
     padding-left: 23px;
 }
 

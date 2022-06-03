@@ -1,0 +1,98 @@
+{% import '../utils/utils.css' as utils %}
+
+:root {
+  --menu-height: 7em;
+}
+
+html {
+  scroll-behavior: smooth;
+}  
+
+body {
+  max-width: unset;
+}
+
+.case-study-header {
+  align-items: center;
+  background: url("https://info.codurance.com/hubfs/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_bg.png");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 4em 2em 2em;
+}
+
+.case-study-header > * {
+  max-width: var(--content-max-width);
+}
+
+.case-study-header__tag{
+   padding: .5em 1em;
+   border-radius: 1.3em;
+   background: var(--dodger-blue);
+   color: white;
+   position: absolute;
+   top: -20%;
+   left: -1em;
+   font-weight: var(--middle-font-weight);
+}
+
+.case-study-header__industry{
+  margin-top: 2em;
+  {{ utils.natus() }}
+}
+
+.page-header.section-header{
+  text-align: left;
+  padding: unset;
+  margin: unset;
+}
+
+.case-study-header__text-block .page-header.section-header h1{
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+  line-height: var(--freed-line-height);
+  margin-top: 0.5em;
+}
+
+.case-study-header__text-block .page-header.section-header p{
+  line-height: var(--base-line-height);
+  margin-top: 0.5em;
+}
+
+.case-study-header__text-block{
+  max-width: 50%;
+  position: relative;
+}
+
+.case-study-header__text-block .custom-btn {
+  margin-top: 1em;
+}
+
+a[data-hs-anchor="true"] {
+  scroll-margin: var(--menu-height);
+}
+
+{% call utils.small() %}
+  .case-study-header{
+    flex-direction: column-reverse;
+    padding: 1em;
+  }
+  
+  .case-study-header__text-block{
+    max-width: none;
+  }
+
+  .case-study-header__tag{
+    left: -3em;
+    padding-left: 3em;
+  }
+
+  .case-study-header span{
+    align-self: end;
+  }
+
+{% endcall %}
+

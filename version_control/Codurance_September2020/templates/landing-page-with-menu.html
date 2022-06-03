@@ -1,0 +1,83 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Landing Page With Menu
+-->
+{% extends "./layouts/base.html" %}
+
+{% set url_redirection = "https://www.codurance.com/" %}               
+
+{% if locale == 'es' %}
+    {% set url_redirection = "https://www.codurance.com/es" %} 
+{% endif %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}xpl
+
+  {{ require_css(get_asset_url("../css/pages/landing-page-template.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+    
+    <section>
+        {% dnd_area "dnd-main-section" class='section-area-full', label='Main Section' %}
+            {% dnd_section max_width=1300  %}
+        
+            {% end_dnd_section %}   
+        {% end_dnd_area %}
+    </section>
+
+    <section>
+        {% dnd_area "dnd-section1" class='section-area-full', label='Section 1' %}
+            {% dnd_section max_width=1300  %}
+                
+            {% end_dnd_section %}   
+        {% end_dnd_area %}
+    </section>
+
+    <section>
+        {% dnd_area "dnd-section2" class='section-area-full', label='Section 2' %}
+            {% dnd_section max_width=1300  %}
+                
+            {% end_dnd_section %}   
+        {% end_dnd_area %}
+    </section>
+
+    <section>
+        {% dnd_area "dnd-section3" class='section-area-full', label='Section 3' %}
+            {% dnd_section max_width=1300  %}
+                
+            {% end_dnd_section %}   
+        {% end_dnd_area %}
+    </section>
+
+    <section>
+        {% dnd_area "dnd-section4" class='section-area-full', label='Section 4' %}
+            {% dnd_section max_width=1300  %}
+                
+            {% end_dnd_section %}   
+        {% end_dnd_area %}
+    </section>
+
+    <section>
+        {% dnd_area "dnd-section5" class='section-area-full', label='Section 5' %}
+            {% dnd_section max_width=1300  %}
+                
+            {% end_dnd_section %}   
+        {% end_dnd_area %}
+    </section>
+
+{% endblock body %}

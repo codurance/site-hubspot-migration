@@ -1,0 +1,160 @@
+
+{% require_css %}
+  <style>
+  {% scope_css %}
+    .module-wrapper{
+		background: url("{{ module.style.backgroundimage_field.src }}"),
+					linear-gradient(141deg,
+					{{ module.style.gradient.color_1.color }} 60%,
+					{{ module.style.gradient.color_2.color }});
+		
+		background-repeat: no-repeat, repeat;
+		background-position: right 40em ,center;
+    }
+
+	@media (max-width: 767px) {
+		.module-wrapper{
+			background-size: 0, cover;
+		}
+  	}
+  {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+
+{% import '../../snippets/button-snippets.html' as snippets %}
+{{ require_css(get_asset_url("../../css/modules/service-line-header.css")) }}
+
+
+<div class="module-wrapper">
+{% if module.header.image.src %}
+	{% set sizeAttrs = 'width="{{ module.header.image.width }}" height="{{ module.header.image.height }}"' %}
+	{% if module.header.image.size_type == 'auto' %}
+		{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+	{% elif module.header.image.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.header.image.max_width }}" height="{{ module.header.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+
+	<section class="header">
+		<div class="header__text">
+			{{ module.header.richtext_field }}
+			{{	snippets.button_primary(
+				url=module.header.button_link,
+				text=module.header.button_text
+				)
+      		}}
+		</div>
+		<img class="header__image" src="{{ module.header.image.src }}" alt="{{ module.header.image.alt }}" {{ sizeAttrs }}>
+	</section>
+{% endif %} 
+
+
+<!-- START Text and image section -->
+{% if module.image_text_section.image.src %}
+	{% set sizeAttrs = 'width="{{ module.image_text_section.image.width }}" height="{{ module.image_text_section.image.height }}"' %}
+	{% if module.image_text_section.image.size_type == 'auto' %}
+		{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+	{% elif module.image_text_section.image.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.image_text_section.image.max_width }}" height="{{ module.image_text_section.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	 {% set loadingAttr = module.image_text_section.image.loading != 'disabled' ? 'loading="{{ module.image_text_section.image.loading }}"' : '' %}
+	<section class="text-and-image">
+		<div class="text-and-image__text">{{ module.image_text_section.richtext }}</div>
+		<div class="text-and-image__image">
+			<img src="{{ module.image_text_section.image.src }}" alt="{{ module.image_text_section.image.alt }}"{{ loadingAttr }} {{ sizeAttrs }}>
+		</div>
+	</section>
+{% endif %}<!-- END text and image section -->
+
+
+{% if module.banner_section %}
+	<section class="banner">
+		<div class="banner__text">
+			<h2>{{ module.banner_fields.title }}</h2>
+			{{	snippets.text_cta_right_arrow(
+						url=module.banner_fields.url.href,
+						text=module.banner_fields.url_text
+				)
+			}}
+		</div>
+
+	{% if module.banner_fields.image.src %}
+	  {% set sizeAttrs = 'width="{{ module.banner_fields.image.width }}" height="{{ module.banner_fields.image.height }}"' %}
+	  {% if module.banner_fields.image.size_type == 'auto' %}
+		{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+	  {% elif module.banner_fields.image.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.banner_fields.image.max_width }}" height="{{ module.banner_fields.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	  {% endif %}
+	  <img src="{{ module.banner_fields.image.src }}" alt="{{ module.banner_fields.image.alt }}" loading="lazy" {{ sizeAttrs }}>
+	{% endif %}
+	</section>
+  {% endif %}<!-- END Banner section -->	  
+
+
+
+<!-- START Clients section -->
+<section class="clients">
+	<h2 class="clients__title">{{ module.client_logos.title }}</h2>
+	<div class="clients__logos">
+	{% for item in module.client_logos.logo_image %}
+		{% if item.src %}
+			{% set sizeAttrs = 'width="{{ item.width }}" height="40"' %}
+			{% if item.size_type == 'auto' %}
+				{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+			{% elif item.size_type == 'auto_custom_max' %}
+				{% set sizeAttrs = 'width="{{ item.max_width }}" height="{{ item.max_height }}" style="max-width: 100%; height: auto;"' %}
+			{% endif %}
+			{% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading }}"' : '' %}
+			<img src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+		{% endif %}
+	{% endfor %}
+	</div>
+{% if module.client_logos.button_type == "standard" %}
+{% set href = module.client_logos.link_field.url.href %}
+	<a class="button-primary" href="{{ href }}"
+		{% if module.client_logos.link_field.open_in_new_tab %}target="_blank"{% endif %}
+		{% if module.client_logos.link_field.rel %}rel="{{ module.client_logos.link_field.rel }}"{% endif %}
+		>
+	{{ module.client_logos.button_text }}
+	</a>
+{% elif module.client_logos.button_type == "CTA" %}
+	{% cta guid="{{ module.client_logos.cta_field }}" %} 
+{% endif %}
+</section> <!-- END Clients section -->
+  
+
+
+{% if module.boolean_video %}
+<section class="video">
+	<h2 class="video__title">{{ module.video.title }}</h2>
+	<p class="video__subtitle">{{ module.video.subtitle }}</p>
+	{% if module.video.embed_code %}		
+		<div class="video__embed-code">
+			<div class="video__embed-code__inner">{{ module.video.embed_code }}</div>
+		</div>
+	{% endif %}
+	{% if module.video.file_source.player_id %}
+		{% set max_width = module.video.file_source.size_type == 'auto_custom_max' ? module.video.file_source.max_width : module.video.file_source.width %}
+		{% set max_height = module.video.file_source.size_type == 'auto_custom_max' ? module.video.file_source.max_height : module.video.file_source.height %}
+		{% widget_block video_player "embed_player"
+			overrideable=False,
+			type='scriptV4',
+			hide_playlist=True,
+			viral_sharing=False,
+			embed_button=False,
+			full_width={{ module.video.file_source.size_type == 'auto_full_width' }},
+			width="{{ max_width }}",
+			height="{{ max_height }}",
+			player_id="{{ module.video.file_source.player_id }}"
+		%}
+		{% widget_attribute "conversion_asset" %}
+			{{ module.video.file_source.conversion_asset|tojson|safe }}
+		{% end_widget_attribute %}
+		{% end_widget_block %}
+	{% endif %}
+</section>
+{% endif %}
+  
+
+</div>  
+  

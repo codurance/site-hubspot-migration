@@ -1,0 +1,68 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Past Events
+-->
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/past-events.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+    {% module 'youtube_popup'
+      path='../modules/YouTube-Video-Popup.module',
+      no_wrapper=True,
+      overrideable=False %}
+    
+    <header class="header-section responsive-page-width lateral-spacing">
+      <div class="header-section__text-wrapper">
+        {% section_header 'header_section'
+          header='Recent events',
+          subheader='Have a look at all previous events hosted by Codurance'
+          no_wrapper=True
+        %}
+
+        {% module 'Events-Search-Bar' 
+          path='../modules/Events-Search-Bar.module',
+          no_wrapper=True
+        %}
+      </div>
+      
+      {% module 'header_image'
+        label="Header Image",
+        path='@hubspot/linked_image',
+        extra_classes="header-section__image",
+        img={
+          "src": "https://www.codurance.com/hubfs/Events%20page/Recent%20Events%20Page/Header-recent-events.png",
+          "alt": " ",
+          "loading": "disabled",
+          "width": 424,
+          "height": 332
+        }
+      %}
+    </header>
+    
+    <main class="main-container responsive-page-width lateral-spacing">
+      {% module 'past_events'
+        label="Past Events Sections",
+        path='../modules/Past-Events-Listing.module' 
+        no_wrapper=True
+      %}
+    </main>
+{% endblock body %}

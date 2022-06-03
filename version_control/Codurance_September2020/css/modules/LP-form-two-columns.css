@@ -59,11 +59,13 @@
     max-width: 98%;
 }
 
-.form__fields .hs-form-booleancheckbox-display span {
+.form__fields .hs-form-booleancheckbox-display span,
+.form__fields .hs-form-checkbox-display span {
   position: relative;
 }
 
-.form__fields .hs-form-booleancheckbox-display span::before {
+.form__fields .hs-form-booleancheckbox-display span::before,
+.form__fields .hs-form-checkbox-display span::before {
   position: absolute;
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, .25);
@@ -76,21 +78,31 @@
   {{ utils.card_shadow() }}
 }
 
+.form__fields .hs-form-checkbox-display span::before{
+  top: 0;
+}
+
 .form__fields input[type=checkbox]:focus + span:before {
   outline: rgb(0, 0, 0) auto 5px;
 }
 
 
-.form__fields .hs-form-booleancheckbox-display span::after {
+.form__fields .hs-form-booleancheckbox-display span::after,
+.form__fields .hs-form-checkbox-display span::after {
   position: absolute;
   border-bottom: 2px solid;
   border-left: 2px solid;
+  color: var(--shark);
   display: inline-block;
   transform: rotate(-45deg);
   height: 0.4rem;
   width: 0.6rem;
-  left: -1.9em;
+  left: -1.8em;
   top: 0.5em;
+}
+
+.form__fields .hs-form-checkbox-display span::after{
+  top: 0.3em;
 }
 
 .form__fields input[type=checkbox]:checked + span::after {
@@ -115,7 +127,7 @@
     .form__wrapper{
         flex-direction: row;
         align-items: start;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 4em;
     }
 

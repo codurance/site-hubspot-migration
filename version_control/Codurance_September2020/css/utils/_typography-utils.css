@@ -17,7 +17,7 @@
 
 {% macro gaudi_margin() %}
   margin-bottom: var(--gaudi-margin);
-  margin-bottom: var(--gaudi-margin);
+  margin-top: var(--gaudi-margin);
 {% endmacro %}
 
 {% macro eames() %}
@@ -70,7 +70,7 @@
 
 {% macro natus() %}
   font-size: var(--natus-font-size);
-  font-weight: var(--welter-font-weight);
+  font-weight: var(--light-font-weight);
   line-height: var(--natus-line-height);
 {% endmacro %}
 

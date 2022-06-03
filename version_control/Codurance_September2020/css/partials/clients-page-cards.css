@@ -194,7 +194,7 @@
     }
 
     .clients__large-card__body-author-title{
-        font-weight: var(--welter-font-weight);
+        font-weight: var(--light-font-weight);
     }
     .clients__large-card__secondary__case-study-text {
         font-size: var(--natus-font-size);
@@ -236,7 +236,7 @@
     }
 
     .clients__large-card__body-author-title{
-        font-weight: var(--welter-font-weight);
+        font-weight: var(--light-font-weight);
     }
 
     .clients__large-card__secondary__case-study-text {

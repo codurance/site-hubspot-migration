@@ -34,7 +34,8 @@ label: Careers v2
           {% module 'rich_text' 
               html="
               <h1>Careers</h1>
-              <p>Whether you’re a software engineer, agile delivery manager or marketing exec, at Codurance you’re given the freedom, support and development opportunities to thrive.</p>
+              <h2>Codurance equips you with the tools, support and professional development opportunities to advance your career and become a master of your craft.</h2>
+              <p>By joining you get the opportunity to work as part of a high performing multifunctional team on a variety of challenging and rewarding projects.</p>
               ",
               path='@hubspot/rich_text'%}
         </div>
@@ -42,7 +43,8 @@ label: Careers v2
           {% module 'linked_image',
                 path="@hubspot/linked_image",
                 img={
-                  "src": "https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Overview/header-image-XL-careers-overview.png"
+                  "src": "https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Overview/header-image-XL-careers-overview.png",
+                  "width": auto,
                 },
                 label="Hero Image", 
                 no_wrapper=True        
@@ -50,35 +52,47 @@ label: Careers v2
         </div>
       </div>
   </section>
+  <section class="craftspeople-banner">
+    {% module 'Craftspeople Banner' path='../modules/LP-cta-block.module' label="Why we call our..." %}
+  </section>
+
+  <section class="why-join-us">
+    {% module 'Why join us' path='../modules/Text-and-image.module' label="Why join us section" no_wrapper=True%}
+  </section>
+
+  <section class="testimonials">
+      {% module 'testimonials' label="Testimonials Video"  class="video__embeded" path='../modules/Embedded Video.module'%}
+  </section>
+
+  <section class="academy-training">
+    {% module 'academy' path='../modules/Text-and-image.module' label="Academy Training section" no_wrapper=True%}
+  </section>
+
+  <section class="locations">
+    <div class="locations__container">
+      {% module 'Locations' path='../modules/Locations.module' label="Locations Section"  no_wrapper=True %}
+    </div>
+  </section>
 
   <section class="benefits">
     {% module "Benefits" label="Benefits Section" path='../modules/Benefits.module' no_wrapper=True %}
   </section>
+
+  <section class="current-roles-cta cta-light">
+    {% module 'Current roles CTA light' path='../modules/LP-cta-block.module' label="Current Roles CTA (light)" %}
+  </section>
+
   <section class="video" >
       <div class="video-wrapper">
         <div class="video__title">
           {% module 'text' label="Video title" path='@hubspot/text'%}
         </div>
         <div class="video__embed">
-          {% module 'video' label="Embeded Video",  video_type="embed",  class="video__embeded" path='@hubspot/video'%}
+          {% module 'video' label="Embeded Video", video_type="embed", class="video__embeded" path='@hubspot/video'%}
         </div>
-      </div>
+      </div>    
   </section>
-  <section class="testimonials">
-    {% module 'Testimonial Slider' path='../modules/Landing Page Modules/LP-testimonial-slider.module' label="Testimonial Slider"  no_wrapper=True %}
-  </section>
-  <section class="current-roles-cta cta-light">
-    {% module 'Current roles CTA light' path='../modules/LP-cta-block.module' label="Current Roles CTA (light)"  no_wrapper=True %}
-  </section>
-  <section class="craftspeople">
-    {% module 'craftspeople' path='../modules/Text-and-image.module' label="Craftspeople section" no_wrapper=True%}
-  </section>
-  <section class="academy-training">
-    {% module 'academy' path='../modules/Text-and-image.module' label="Academy Training section" no_wrapper=True%}
-  </section>
-  <section class="current-roles-cta cta-dark">
-    {% module 'current roles cta dark' path='../modules/LP-cta-block.module' label="Current Roles CTA (dark)"  no_wrapper=True %}
-  </section>
+
   <section class="life-codurance">
     <div class="life-codurance__container">
       <div class="life-codurance__content">
@@ -92,6 +106,11 @@ label: Careers v2
       {% module 'Software-craftsmanship-V2' path='../modules/Software-craftsmanship-V2.module' label="Life at Codurance" no_wrapper=True%}
     </div>
   </section>
+  
+   <section class="current-roles-cta cta-dark">
+    {% module 'current roles cta dark' path='../modules/LP-cta-block.module' label="Current Roles CTA (dark)" %}
+  </section>
 </main>
+
 
 {% endblock body %}

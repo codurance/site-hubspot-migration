@@ -144,7 +144,7 @@
 {% call utils.extra_large() %}
     .cm-crafting-course-description p {
         {{ utils.freed() }}
-        font-weight: var(--welter-font-weight);
+        font-weight: var(--light-font-weight);
     }
 
     .cm-crafting-details-wrapper {
