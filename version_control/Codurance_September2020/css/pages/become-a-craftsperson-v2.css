@@ -111,8 +111,18 @@ body {
 \*------------------------------------*/
 
 .craftsperson-skills {
-  {{ utils.white_to_tango() }}
+  --background-img: url("https://www.codurance.com/hubfs/Careers%20Page/Software%20Craftsperson/skills-image-XL-careers-software-craftsperson.svg");
+  --background-gradient: linear-gradient(180deg, rgba(255,252,250,1) 0%, rgba(252,224,206,1) 100%);
+
+  background: var(--tango-400);
+  background: var(--background-gradient);
 }
+
+{% call utils.extra_large() %}
+  .craftsperson-skills {
+    background: var(--background-img) right calc(100% - 4em) no-repeat, var(--background-gradient);
+  }
+{% endcall %}
 
 .craftsperson-skills__wrapper {
   margin-inline: auto;
