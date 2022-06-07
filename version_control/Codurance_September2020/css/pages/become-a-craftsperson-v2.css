@@ -134,11 +134,12 @@ body {
 {% call utils.medium_large_and_extra_large() %}
   .craftsperson-skills__wrapper ul {
     columns: 2;
+    column-gap: 4em;
   }
 
   .craftsperson-skills__wrapper li {
-    display: inline-block;
-    display: list-item;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
   }
 {% endcall %}
 
