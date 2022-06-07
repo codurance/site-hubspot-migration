@@ -52,16 +52,15 @@ label: Careers v2
         </div>
       </div>
   </section>
+
   <section class="craftspeople-banner">
     {% module 'Craftspeople Banner' path='../modules/LP-cta-block.module' label="Why we call our..." %}
   </section>
 
-  <section class="why-join-us">
-    {% module 'Why join us' path='../modules/Text-and-image.module' label="Why join us section" no_wrapper=True%}
-  </section>
+  {% include "./partials/why-join-us.html" %}
 
   <section class="testimonials">
-      {% module 'testimonials' label="Testimonials Video"  class="video__embeded" path='../modules/Embedded Video.module'%}
+    {% module 'testimonials' label="Testimonials Video"  class="video__embeded" path='../modules/Embedded Video.module'%}
   </section>
 
   <section class="academy-training">
