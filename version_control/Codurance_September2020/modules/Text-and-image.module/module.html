@@ -1,9 +1,29 @@
-
+{% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../../css/modules/text-and-image.css")) }}
 
 <div class="text-and-image__container container--{{ module.image_order }}">
 	<div class="text-and-image__copy">
 		{% inline_rich_text field="description_text" value="{{ module.description_text }}" %}
+		
+		<div class="custom-btn">
+			{% if module.button_type == "std" %}
+				{% set href = module.link_field.url.href %}
+
+			  	{% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+			  	{% endif %}
+		  
+				{{
+					snippets.button_primary(
+						url="{{ href }}{% if module.bookmark_id  %}#{{ module.bookmark_id }} {% endif %}",
+						text=module.text_field
+					)
+				}}
+		  
+			{% elif module.button_type == "cta" %}
+			  	{% cta guid="{{ module.cta_field }}" %}
+			{% endif %}
+		</div>
 	</div>
 	<div class="text-and-image__image">
 		{% if module.image_field.src %}
