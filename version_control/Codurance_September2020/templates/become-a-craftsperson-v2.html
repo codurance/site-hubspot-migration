@@ -90,8 +90,6 @@ label: Become A Craftsperson
     </div>
   </section>
 
-  {% include "./partials/why-join-us.html" %}
-
   <section class="academy">
     {% module 'Academy' 
       path='../modules/Text-and-image.module' 
@@ -100,19 +98,14 @@ label: Become A Craftsperson
     %}
   </section>
 
-  <section class="benefits">
-    {% module "Benefits" 
-      path='../modules/Benefits.module' 
-      no_wrapper=True 
+  <section class="craftsperson-cta">
+    {% module 'CTA-Section-2' 
+      path='../modules/LP-cta-block.module' 
+      label="CTA Section 2" 
     %}
   </section>
 
-  <section class="craftsperson-cta">
-    {% module 'CTA-Section-4' 
-      path='../modules/LP-cta-block.module' 
-      label="CTA Section 4" 
-    %}
-  </section>
+  {% include "./partials/why-join-us.html" %}
 </main>
 
 {% endblock body %}
