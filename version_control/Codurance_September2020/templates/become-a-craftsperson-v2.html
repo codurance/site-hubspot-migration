@@ -98,6 +98,19 @@ label: Become A Craftsperson
     %}
   </section>
 
+  <section class="interview">
+    {% module 'interview_intro' 
+      path='../modules/Text-and-image.module' 
+      label="Interview Section Intro" 
+      no_wrapper=True
+    %}
+
+    {% module 'interview_process' 
+      path='../modules/Interview Process.module'
+      no_wrapper=True
+    %}
+  </section>
+
   <section class="craftsperson-cta">
     {% module 'CTA-Section-2' 
       path='../modules/LP-cta-block.module' 
