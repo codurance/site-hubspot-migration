@@ -281,7 +281,7 @@
 
 .clients-grid__container {
     margin: 0 auto 50px;
-    width: 90%;
+    max-width: 80%;
 }
 
 {% set grid_card_size = "16%" %}
@@ -307,7 +307,8 @@
 
 {% call utils.medium() %}
     .clients-grid__card--small {
-        width: calc({{ grid_card_size }} * 3 - {{ grid_gutter_size }} / 2); {# 48 - 2 = 46% -> 2 cards#}  
+        /* width: calc({{ grid_card_size }} * 2 - {{ grid_gutter_size }} / 2); {# 48 - 2 = 46% -> 2 cards#}   */
+        width: 46%;  
         margin-left: 20px;
     }
     
@@ -316,26 +317,26 @@
 
 {% call utils.large_and_extra_large() %}
     .clients-grid__card--small {
-        width: calc({{ grid_card_size }} * 2 - {{ grid_gutter_size }} / 2); {# 32 - 2 = 30% -> 3 card #}
+        /* width: calc({{ grid_card_size }} * 3 - {{ grid_gutter_size }} / 2); {# 32 - 2 = 30% -> 3 card #} */
+        width: 30%;
         margin-left: 20px;
     }
 
     .clients-grid__card--large {
-        width: 100%
-        {# width: calc(100% - {{ grid_gutter_size }} / 2); 98% #}
+        width: 100%;
     }
     .clients-grid__container {
-        margin: 0 50px;
+        margin: 0 auto;
     }
   
 {% endcall %} 
 
-{% call utils.extra_large() %}
+/* {% call utils.extra_large() %}
     .clients-grid__card--large {
         margin-left: 50px;
         margin-right: 50px;
-  }
-{% endcall %} 
+     }
+{% endcall %}  */
 
 .clients__no-clients-message-container {
     text-align: center;
