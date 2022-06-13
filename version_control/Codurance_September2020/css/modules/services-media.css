@@ -1,7 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
 .services-media {
-  max-width: var(--max-page-width);
   margin-left: auto;
   margin-right: auto;
 }
