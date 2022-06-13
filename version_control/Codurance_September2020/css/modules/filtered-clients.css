@@ -281,11 +281,12 @@
 
 .clients-grid__container {
     margin: 0 auto 50px;
-    max-width: 80%;
+    max-width: var(--content-max-width);
+    width: 80%;
 }
 
 {% set grid_card_size = "16%" %}
-{% set grid_gutter_size = "4%" %}
+{% set grid_gutter_size = "2%" %}
 
 .clients-grid__sizer {
     width: {{ grid_card_size }};
@@ -296,7 +297,6 @@
 }
 
 .clients-grid__card {
-    min-height: 200px;
     margin-bottom: 30px;
 }
 
@@ -305,21 +305,18 @@
         width: 100%;
 }   
 
-{% call utils.medium() %}
+
+{% call utils.large() %}
     .clients-grid__card--small {
-        /* width: calc({{ grid_card_size }} * 2 - {{ grid_gutter_size }} / 2); {# 48 - 2 = 46% -> 2 cards#}   */
-        width: 46%;  
-        margin-left: 20px;
+        width: 49%;  
     }
     
 {% endcall %} 
 
 
-{% call utils.large_and_extra_large() %}
+{% call utils.extra_large() %}
     .clients-grid__card--small {
-        /* width: calc({{ grid_card_size }} * 3 - {{ grid_gutter_size }} / 2); {# 32 - 2 = 30% -> 3 card #} */
-        width: 30%;
-        margin-left: 20px;
+        width: 32%;
     }
 
     .clients-grid__card--large {
@@ -330,13 +327,6 @@
     }
   
 {% endcall %} 
-
-/* {% call utils.extra_large() %}
-    .clients-grid__card--large {
-        margin-left: 50px;
-        margin-right: 50px;
-     }
-{% endcall %}  */
 
 .clients__no-clients-message-container {
     text-align: center;
