@@ -4,9 +4,6 @@ html{
     scroll-behavior: smooth;
 }
 
-body{
-    max-width: none;
-}
 
 .hub-header,
 .clients-section,

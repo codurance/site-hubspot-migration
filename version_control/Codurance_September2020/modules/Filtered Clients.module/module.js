@@ -368,9 +368,8 @@ const initialiseIsotopeLayout = _ => {
   const isotopeLayoutOpts = {
     layoutMode: 'fitRows',
     itemSelector: '.clients-grid__card',
-    columnWidth: '.clients-grid__sizer',
     percentPosition: true,
-    packery: {
+    fitRows: {
       gutter: '.clients-grid__gutter-sizer'
     }
   };
