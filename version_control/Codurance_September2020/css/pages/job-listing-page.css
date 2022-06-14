@@ -1,16 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
 
-/* ===== Refactoring section ======= 
-This is a temporary solution while refactoring until is applied in all pages of the site without any side effects globally.
-*/
 html{
     scroll-behavior: smooth;
 }
-
-body{
-  max-width: none;
-}  
 
 
 {% set max_width_content = "50em"%}

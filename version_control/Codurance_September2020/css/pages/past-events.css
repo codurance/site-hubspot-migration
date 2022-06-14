@@ -7,7 +7,6 @@
 }
 
 body{
-  max-width: none;
   {{ utils.slate_to_woodsmoke() }}
 }
 
