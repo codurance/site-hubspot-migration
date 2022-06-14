@@ -25,11 +25,13 @@
 </head>
 
 {% block body %}
-    {% module 'youtube_popup'
-      path='../modules/YouTube-Video-Popup.module',
-      no_wrapper=True,
-      overrideable=False %}
-    
+  {% module 'youtube_popup'
+    path='../modules/YouTube-Video-Popup.module',
+    no_wrapper=True,
+    overrideable=False 
+  %}
+  
+  <div class="inner-page-wrapper">
     <header class="header-section responsive-page-width lateral-spacing">
       <div class="header-section__text-wrapper">
         {% section_header 'header_section'
@@ -65,4 +67,5 @@
         no_wrapper=True
       %}
     </main>
+  </div>
 {% endblock body %}
