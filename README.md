@@ -1,6 +1,5 @@
 # [Codurance Hubspot account](https://app.hubspot.com/getting-started/3042464/v3)
 
-leankit board ( Service Line Transformation ): [board](https://codurance-online.leankit.com/board/1048837936)
 <br><br>
 
 ## Setup the development environment
