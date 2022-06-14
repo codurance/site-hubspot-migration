@@ -285,11 +285,6 @@
     width: 80%;
 }
 
-.clients-grid__sizer {
-    --card-width: 32%;
-    width: var(--card-width);
-}
-
 .clients-grid__gutter-sizer {
     --grid-gutter-size: 2%;
     width: var(--grid-gutter-size);
@@ -300,7 +295,8 @@
 }
 
 .clients-grid__card--large,
-.clients-grid__card--small {
+.clients-grid__card--small,
+.clients-grid__sizer {
     --card-width: 100%;
     width: var(--card-width);
 }   
@@ -315,7 +311,8 @@
 
 
 {% call utils.extra_large() %}
-    .clients-grid__card--small {
+    .clients-grid__card--small,
+    .clients-grid__sizer {
         --card-width: 32%;
     }
 
