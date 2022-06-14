@@ -366,11 +366,11 @@ const initialiseFilters = _ => {
 const initialiseIsotopeLayout = _ => {
   const elem = get('grid_container');
   const isotopeLayoutOpts = {
-    layoutMode: 'fitRows',
+    layoutMode: 'masonry',
     itemSelector: '.clients-grid__card',
-    columnWidth: '.clients-grid__sizer',
     percentPosition: true,
-    packery: {
+    masonry: {
+      columnWidth: '.clients-grid__sizer',
       gutter: '.clients-grid__gutter-sizer'
     }
   };

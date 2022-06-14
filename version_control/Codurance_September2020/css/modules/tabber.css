@@ -289,7 +289,6 @@
     .cm-tabber-section {
         margin-left: auto;
         margin-right: auto;
-        max-width: var(--max-page-width);
         background-size: 150% auto;
         background-repeat: no-repeat;
     }

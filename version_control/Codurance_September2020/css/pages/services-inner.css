@@ -4,12 +4,6 @@ html{
     scroll-behavior: smooth;
 }
 
-.cm-services-inner-layout .dnd-section,
-.hs-training-inner-layout .dnd-section {
-    max-width: var(--max-page-width);
-    margin: 0px auto;
-}
-
 .cm-services-inner-layout.type1 .cm-services-inner-section6 .pbtg-hero-post__wrapper {
     padding-left: 10px;
     padding-right: 10px;
