@@ -144,6 +144,9 @@
   {{ utils.white_to_tango() }}
 }
 
+.craftsperson-info .text-and-image__copy {
+  align-self: center;
+}
 
 /*------------------------------------*\
   #Interview section
