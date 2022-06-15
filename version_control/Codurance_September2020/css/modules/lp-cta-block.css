@@ -1,49 +1,49 @@
 {% import '../utils/utils.css' as utils %}
 
-
-.cta-block{
+.cta-block {
     background-image: var(--bg-img-small);
     background-position: top right;
     background-size: cover;
     margin: 0 auto;
-    max-width: 1300px;
     padding: 3em 1.5em;
-
 }
 
-.cta-block--font-dark{
+.cta-block--font-dark {
     color: var(--shark);
 }
-.cta-block--font-light{
+.cta-block--font-light {
     color: white;
 }
 
-.cta-block__title{
-    {{utils.eames()}}
-    font-weight: var(--heavy-font-weight);
-    }
-    
-.cta-block__subtitle{
-    {{utils.freed()}}
-    margin-top: 1em;
-
+.cta-block__wrapper {
+    margin-inline: auto;
+    max-width: var(--content-inner-max-width);
 }
 
-.cta-block__button{
+.cta-block__title {
+    {{utils.eames()}}
+    font-weight: var(--heavy-font-weight);
+}
+    
+.cta-block__subtitle {
+    {{utils.freed()}}
+    margin-top: 1em;
+}
+
+.cta-block__button {
     text-align: center;
     margin-top: 2em;
 }
 
 {% call utils.medium_large_and_extra_large() %}
-.cta-block{
-    background-image: var(--bg-img-large);
-    padding: 4em;
+    .cta-block {
+        background-image: var(--bg-img-large);
+        padding: 4em;  
+    }
 
-    
-}
-.cta-block__button{
-    text-align: left;
-}
+    .cta-block__button{
+        text-align: left;
+    }
 {% endcall %}  
 
 {% call utils.medium_large_and_extra_large() %}
