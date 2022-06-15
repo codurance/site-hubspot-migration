@@ -34,12 +34,6 @@ label: Become A Craftsperson
           path='@hubspot/rich_text'
           label='Header Text' 
         %}
-
-        {% module 'apply_now_header' 
-          path='../modules/Button.module' 
-          label="Header Button" 
-          no_wrapper=True 
-        %}
       </div>
       <div class="craftsperson-hero__image">
           {% module 'linked_image',
@@ -51,19 +45,18 @@ label: Become A Craftsperson
     </div>
   </section>
 
-  <section class="craftsperson-profile">
-    {% module 'craftsperson-profile' 
-      path='../modules/Text-and-image.module' 
-      label="Craftsperson Profile Section" 
-      no_wrapper=True 
-    %}
-  </section>
-
   <section class="craftsperson-video">
       {% module 'craftsperson_video' 
         label="Craftsperson Video" 
         path='../modules/Embedded Video.module' 
       %}
+  </section>
+
+  <section class="craftsperson-cta">
+    {% module 'CTA-Section' 
+      path='../modules/LP-cta-block.module' 
+      label="CTA Section" 
+    %}
   </section>
 
   <section class="craftsperson-skills">
@@ -90,11 +83,17 @@ label: Become A Craftsperson
     </div>
   </section>
 
-  <section class="academy">
+  <section class="craftsperson-info">
     {% module 'Academy' 
       path='../modules/Text-and-image.module' 
       label="Academy Section" 
       no_wrapper=True
+    %}
+
+    {% module 'craftsperson-profile' 
+      path='../modules/Text-and-image.module' 
+      label="Craftsperson Profile Section" 
+      no_wrapper=True 
     %}
   </section>
 
