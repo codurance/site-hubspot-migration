@@ -5,7 +5,7 @@
     background-position: top right;
     background-size: cover;
     margin: 0 auto;
-    padding: 3em 1.5em;
+    padding: 2em 1em;
 }
 
 .cta-block--font-dark {
@@ -21,24 +21,24 @@
 }
 
 .cta-block__title {
-    {{utils.eames()}}
+    {{ utils.dudler() }}
     font-weight: var(--heavy-font-weight);
 }
     
 .cta-block__subtitle {
-    {{utils.freed()}}
-    margin-top: 1em;
+    {{ utils.freed() }}
+    font-weight: var(--light-font-weight);
+    margin-top: .5em;
 }
 
 .cta-block__button {
     text-align: center;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 {% call utils.medium_large_and_extra_large() %}
     .cta-block {
         background-image: var(--bg-img-large);
-        padding: 4em;  
     }
 
     .cta-block__button{
@@ -46,10 +46,16 @@
     }
 {% endcall %}  
 
+{% call utils.large_and_extra_large() %}
+    .cta-block__wrapper {
+        padding-left: 1em;
+    }
+{% endcall %}
+
 {% call utils.medium_large_and_extra_large() %}
     .cta-block__title,
     .cta-block__subtitle{
-        max-width: 60%;
+        max-width: 70%;
     }
 
 {% endcall %}    
