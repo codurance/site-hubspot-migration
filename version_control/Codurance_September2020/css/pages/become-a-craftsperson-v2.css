@@ -23,7 +23,7 @@
 .craftsperson-hero__container {
   display: flex;
   flex-direction: column-reverse;
-  padding: 1em 1em 0 1em;
+  padding: 1em;
   max-width: var(--content-max-width);
   margin: 0 auto;
 }
