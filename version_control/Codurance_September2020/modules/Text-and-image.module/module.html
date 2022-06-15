@@ -1,4 +1,3 @@
-{% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../../css/modules/text-and-image.css")) }}
 
 <div class="text-and-image__container container--{{ module.image_order }}">
@@ -6,22 +5,23 @@
 		{% inline_rich_text field="description_text" value="{{ module.description_text }}" %}
 		
 		<div class="custom-btn">
-			{% if module.button_type == "std" %}
-				{% set href = module.link_field.url.href %}
-
-			  	{% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-					{% set href = "mailto:" + href %}
-			  	{% endif %}
-		  
-				{{
-					snippets.button_primary(
-						url="{{ href }}{% if module.bookmark_id  %}#{{ module.bookmark_id }} {% endif %}",
-						text=module.text_field
-					)
-				}}
-		  
-			{% elif module.button_type == "cta" %}
-			  	{% cta guid="{{ module.cta_field }}" %}
+			{% if module.button.button_type == "std" %}
+				{% if module.button.bookmark_id %}
+					{% set bookmark_id = module.button.bookmark_id %}
+					{% set href = module.button.link_field.url.href ~ "#" ~ bookmark_id %}
+				{% else %}
+					{% set href = module.button.link_field.url.href %}
+				{% endif %}
+		
+				<a href="{{ href }}"
+					{% if module.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
+					{% if module.button.link_field.rel %}rel="{{ module.button.link_field.rel }}"{% endif %}
+					class="{{ module.button.button_style }}"
+				>
+					{{ module.button.text_field }}
+				</a>
+			{% elif module.button.button_type == "cta" %}
+			  	{% cta guid="{{ module.button.cta_field }}" %}
 			{% endif %}
 		</div>
 	</div>
