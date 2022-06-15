@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+.custom-interview-process {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+}
 
 .custom-interview-process__item-list {
   display: flex;
@@ -32,7 +36,6 @@
 {% endcall %}
 
 .custom-interview-process__item {
-  text-align: center;
   z-index: 2;
 }
 
