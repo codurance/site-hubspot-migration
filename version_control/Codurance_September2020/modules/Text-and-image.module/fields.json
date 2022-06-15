@@ -129,7 +129,7 @@
       "hidden_subfields" : null
     },
     "display" : "select",
-    "choices" : [ [ "button-primary", "Primary" ], [ "button-secondary", "Secondary" ], [ "text-cta--right-arrow", "Arrow Link" ] ],
+    "choices" : [ [ "button-primary", "Primary" ], [ "button-secondary", "Secondary" ], [ "text-cta-primary text-cta--right-arrow", "Arrow Link" ] ],
     "type" : "choice",
     "default" : "button-primary"
   }, {

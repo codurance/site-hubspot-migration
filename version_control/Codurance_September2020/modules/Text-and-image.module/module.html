@@ -18,7 +18,10 @@
 					{% if module.button.link_field.rel %}rel="{{ module.button.link_field.rel }}"{% endif %}
 					class="{{ module.button.button_style }}"
 				>
-					{{ module.button.text_field }}
+					{{ module.button.text_field }} 
+					{% if module.button.button_style is string_containing "text-cta-primary" %}
+						<i class="las la-arrow-right"></i>
+					{% endif %}
 				</a>
 			{% elif module.button.button_type == "cta" %}
 			  	{% cta guid="{{ module.button.cta_field }}" %}
