@@ -1,8 +1,13 @@
 {% import '../utils/utils.css' as utils %}
 
+:root {
+  --icon-width: 3rem;
+}
+
 .custom-interview-process {
   max-width: var(--content-max-width);
   margin-inline: auto;
+  padding: 1em 0;
 }
 
 .custom-interview-process__item-list {
@@ -14,15 +19,6 @@
     position: relative;
   }
 
-  .custom-interview-process__item-list::before {
-    position: absolute;
-    top: 4.7rem;
-    left: 6.3rem;
-    right: 6.3rem;
-    border-top: 1px dotted var(--mid-gray);
-    content: " ";
-    z-index: 1;
-  }
 {% endcall %}
 
 {% call utils.small_and_medium() %}
@@ -52,19 +48,18 @@
   }
 {% endcall %}
 
+
 {% call utils.small_and_medium() %}
   .custom-interview-process__item {
     display: flex;
-    text-align: left;
   }
   .custom-interview-process__item + .custom-interview-process__item {
-    margin-top: 4rem;
+    margin-top: 2em;
   }
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
   .custom-interview-process__icon-container {
-    font-size: 3rem;
     margin-bottom: 1rem;
   }
 {% endcall %}
@@ -72,48 +67,67 @@
 {% call utils.small_and_medium() %}
   .custom-interview-process__icon-container {
     font-size: 2rem;
-    border-right: 1px solid var(--midnight-blue);
     display: flex;
     flex-direction: column;
-    align-items: ;
-    justify-content: center;
-    margin-right: 1.5rem;
-    padding-right: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    padding:0 0.5em;
   }
+
 {% endcall %}
 
-{% call utils.medium() %}
-  .custom-interview-process__icon-container {
-    padding-left: 0.5rem;
-  }
-{% endcall %}
 
-.custom-interview-process__check-container {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: var(--midnight-blue);
+
+.custom-interview-process__step {
+  {{ utils.natus() }}
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 0;
 }
 
-{% call utils.small_and_medium() %}
-  .custom-interview-process__check-container {
-    display: none;
+
+{% call utils.large_and_extra_large() %}
+
+  .custom-interview-process__step {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 1em; 
+    position:relative;
   }
+  
+  .custom-interview-process__step::before {
+    content: "";
+    position: relative;
+    background-color: var(--french-gray);
+    width: 100%;
+    height: 2px;
+    flex: 1;
+    z-index: 1;
+  }
+  
+  .custom-interview-process__step::after {
+      --arrow-size: 0.8rem;
+      content: "";
+      right: -1px;
+      transform: rotate(-90deg);
+      position: absolute;
+      width: var(--arrow-size);
+      height: var(--arrow-size);
+      background: var(--french-gray);
+      clip-path: polygon(0 55%, 50% 90%, 100% 55%, 100% 65%, 50% 100%, 0 66%);
+  } 
+  
 {% endcall %}
 
-.custom-interview-process__check-container i {
-  background-color: var(--athens-gray);
-  border-radius: 50%;
-}
 
 .custom-interview-process__title {
   {{ utils.base() }}
-  margin-bottom: var(--base-margin);
-  font-weight: var(--middle-font-weight);
+  margin-bottom: var(--freed-margin);
+  font-weight: var(--heavy-font-weight);
 }
 
-.custom-interview-process__title span {
-  color: var(--midnight-blue);
-}
+
 
 .custom-interview-process__description > p {
   {{ utils.natus() }}
@@ -123,7 +137,7 @@
   .custom-interview-process__description > p {
     margin-left: auto;
     margin-right: auto;
-    max-width: var(--base-max-width);
+    max-width: var(--freed-max-width);
   }
 {% endcall %}
 
@@ -133,3 +147,46 @@
   margin: 0;
 }
 
+
+{% call utils.small_and_medium() %}
+  .custom-interview-process__icon-container {
+    position: relative;
+  }
+
+  .custom-interview-process__icon-container img {
+    min-width: var(--icon-width);
+  }
+
+  .custom-interview-process__icon-container::before {
+    --top-position: 40%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    background-color: var(--french-gray);
+    width: 1px;
+    height: calc(100% - var(--icon-width) - 1rem);
+    content: "";
+  }
+
+  .custom-interview-process__icon-container::after {
+    --arrow-size: 15px;
+    content: "";
+    bottom: -2px;
+    left: calc(50% - var(--arrow-size)/2);
+    position: absolute;
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    background: var(--french-gray);
+    clip-path: polygon(0 55%, 50% 90%, 100% 55%, 100% 65%, 50% 100%, 0 66%);
+    border-radius: 50%;
+  }
+
+  .custom-interview-process__item:last-child .custom-interview-process__icon-container::after {
+    background: white;
+    z-index: 1;
+    clip-path: circle(100%);
+    outline: 2px solid var(--french-gray);
+  }
+
+{% endcall %}
