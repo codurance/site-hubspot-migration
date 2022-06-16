@@ -142,10 +142,22 @@
 \*------------------------------------*/
 .craftsperson-info {
   {{ utils.white_to_tango() }}
+
+  padding-bottom: 1.25em;
+}
+
+.craftsperson-info .text-and-image__container {
+  gap: 3.5em;
+  padding-bottom:
+  padding-top: 1em;
 }
 
 .craftsperson-info .text-and-image__copy {
   align-self: center;
+}
+
+.craftsperson-info .text-and-image__image > img {
+  transform: none;
 }
 
 /*------------------------------------*\
