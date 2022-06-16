@@ -7,22 +7,27 @@
   "locked" : false,
   "occurrence" : {
     "min" : null,
-    "max" : null,
+    "max" : 4,
     "sorting_label_field" : "38281e9a-f8f1-3dbd-d7f2-61abece84d90",
     "default" : null
   },
-  "children" : [ {
-    "id" : "eb4a0df8-e4d9-4319-1aff-29b2d3e83e4d",
-    "name" : "icon_class",
-    "display_width" : null,
-    "label" : "Icon Class",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
-  }, {
+  "children" : [{
+    "name": "icon_image",
+    "label": "Icon image",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "responsive": true,
+    "resizable": true,
+    "show_loading" : false,
+    "type": "image",
+    "default": {
+      "size_type" : "auto",
+      "src": "",
+      "alt": null,
+      "loading": "lazy"}
+    },{
     "id" : "38281e9a-f8f1-3dbd-d7f2-61abece84d90",
     "name" : "title",
     "display_width" : null,
