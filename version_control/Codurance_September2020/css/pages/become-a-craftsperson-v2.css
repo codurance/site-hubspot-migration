@@ -4,19 +4,13 @@
   margin-top: 1.5em;
 }
 
-.craftsperson-hero,
-.craftsperson-video {
-  {{ utils.color1_to_color2("180deg", 
-    "rgba(253,237,226,1) 0%", 
-    "rgba(255,255,255,1) 85%") 
-  }}
-}
-
 /*------------------------------------*\
   #Hero section
 \*------------------------------------*/
 
 .craftsperson-hero {
+  {{ utils.tango_to_white() }}
+
   overflow: hidden;
 }
 
@@ -76,6 +70,14 @@
         padding: 1em 0;
     }
 {% endcall %}
+
+/*------------------------------------*\
+  #Craftsperson Videos section
+\*------------------------------------*/
+
+.craftsperson-videos {
+  {{ utils.white_to_tango() }}
+}
 
 /*------------------------------------*\
   #Skills section
