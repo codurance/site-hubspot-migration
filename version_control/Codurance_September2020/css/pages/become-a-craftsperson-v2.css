@@ -150,7 +150,7 @@
 
 .craftsperson-info .text-and-image__container {
   gap: 3.5em;
-  padding-bottom:
+  padding-bottom: 0;
   padding-top: 1em;
 }
 
@@ -166,12 +166,11 @@
   #Interview section
 \*------------------------------------*/
 {% call utils.large_and_extra_large() %}
-
   .interview {
     padding: 2.5em 0;
   }
+
   .interview .text-and-image__copy {
     max-width: 60%;
   }
-
 {% endcall %}
