@@ -7,7 +7,7 @@
 .custom-interview-process {
   max-width: var(--content-max-width);
   margin-inline: auto;
-  padding: 1em 0;
+  padding: 2em 0 4em;
 }
 
 .custom-interview-process__item-list {
@@ -58,10 +58,11 @@
   }
 {% endcall %}
 
-
-.custom-interview-process__icon-container {
-  margin-bottom: .8em;
-}
+{% call utils.large_and_extra_large() %}
+  .custom-interview-process__icon-container {
+    margin-bottom: 0.8em;
+  }
+{% endcall %}
 
 {% call utils.small_and_medium() %}
   .custom-interview-process__icon-container {
