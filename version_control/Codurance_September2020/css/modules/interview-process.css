@@ -58,14 +58,14 @@
   }
 {% endcall %}
 
-{% call utils.large_and_extra_large() %}
-  .custom-interview-process__icon-container {
-    margin-bottom: 1rem;
-  }
-{% endcall %}
+
+.custom-interview-process__icon-container {
+  margin-bottom: .8em;
+}
 
 {% call utils.small_and_medium() %}
   .custom-interview-process__icon-container {
+    position: relative;
     font-size: 2rem;
     display: flex;
     flex-direction: column;
@@ -74,8 +74,43 @@
     padding:0 0.5em;
   }
 
-{% endcall %}
+  .custom-interview-process__icon-container img {
+    min-width: var(--icon-width);
+  }
 
+  .custom-interview-process__icon-container::before {
+    --top-position: 40%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    background-color: var(--french-gray);
+    width: 1px;
+    height: calc(100% - var(--icon-width) - 1rem);
+    content: "";
+  }
+
+  .custom-interview-process__icon-container::after {
+    --arrow-size: 15px;
+    content: "";
+    bottom: -2px;
+    left: calc(50% - var(--arrow-size)/2);
+    position: absolute;
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    background: var(--french-gray);
+    clip-path: polygon(0 55%, 50% 90%, 100% 55%, 100% 65%, 50% 100%, 0 66%);
+  }
+
+  .custom-interview-process__item:last-child .custom-interview-process__icon-container::after {
+    border-radius: 50%;
+    background-color: white;
+    outline: 1px solid var(--french-gray);
+    clip-path: none;
+    z-index: 1;
+  }
+
+{% endcall %}
 
 
 .custom-interview-process__step {
@@ -107,16 +142,24 @@
   }
   
   .custom-interview-process__step::after {
-      --arrow-size: 0.8rem;
-      content: "";
-      right: -1px;
-      transform: rotate(-90deg);
-      position: absolute;
-      width: var(--arrow-size);
-      height: var(--arrow-size);
-      background: var(--french-gray);
-      clip-path: polygon(0 55%, 50% 90%, 100% 55%, 100% 65%, 50% 100%, 0 66%);
+    --arrow-size: 0.8rem;
+    content: "";
+    right: -1px;
+    transform: rotate(-90deg);
+    position: absolute;
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    background: var(--french-gray);
+    clip-path: polygon(0 55%, 50% 90%, 100% 55%, 100% 65%, 50% 100%, 0 66%);
   } 
+
+  .custom-interview-process__item:last-child .custom-interview-process__step::after {
+    border-radius: 50%;
+    background-color: white;
+    outline: 1px solid var(--french-gray);
+    clip-path: none;
+    z-index: 1;
+  }
   
 {% endcall %}
 
@@ -126,7 +169,6 @@
   margin-bottom: var(--freed-margin);
   font-weight: var(--heavy-font-weight);
 }
-
 
 
 .custom-interview-process__description > p {
@@ -148,45 +190,3 @@
 }
 
 
-{% call utils.small_and_medium() %}
-  .custom-interview-process__icon-container {
-    position: relative;
-  }
-
-  .custom-interview-process__icon-container img {
-    min-width: var(--icon-width);
-  }
-
-  .custom-interview-process__icon-container::before {
-    --top-position: 40%;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    z-index: 1;
-    background-color: var(--french-gray);
-    width: 1px;
-    height: calc(100% - var(--icon-width) - 1rem);
-    content: "";
-  }
-
-  .custom-interview-process__icon-container::after {
-    --arrow-size: 15px;
-    content: "";
-    bottom: -2px;
-    left: calc(50% - var(--arrow-size)/2);
-    position: absolute;
-    width: var(--arrow-size);
-    height: var(--arrow-size);
-    background: var(--french-gray);
-    clip-path: polygon(0 55%, 50% 90%, 100% 55%, 100% 65%, 50% 100%, 0 66%);
-    border-radius: 50%;
-  }
-
-  .custom-interview-process__item:last-child .custom-interview-process__icon-container::after {
-    background: white;
-    z-index: 1;
-    clip-path: circle(100%);
-    outline: 2px solid var(--french-gray);
-  }
-
-{% endcall %}
