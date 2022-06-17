@@ -143,8 +143,7 @@
   #Craftsperson Info section
 \*------------------------------------*/
 .craftsperson-info {
-  {{ utils.white_to_tango() }}
-
+  background: linear-gradient(180deg,#fff, 80%, #fce0ce);
   padding-bottom: 1.25em;
 }
 
