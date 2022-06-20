@@ -86,40 +86,6 @@
       "loading" : "disabled"
     }
   }, {
-    "id" : "style_options",
-    "name" : "video_thumbnail_style",
-    "display_width" : null,
-    "label" : "Video Thumbnail Style",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : "fbf34944-98e6-f649-0fdb-bb4f2b7ed258",
-      "controlling_value_regex" : "video",
-      "operator" : "EQUAL",
-      "access" : null,
-      "hidden_subfields" : null
-    },
-    "children" : [ {
-      "id" : "style_options.oembed_thumbnail_play_button_color",
-      "name" : "play_button_color",
-      "display_width" : null,
-      "label" : "Play Button Color",
-      "required" : false,
-      "locked" : false,
-      "type" : "color",
-      "default" : {
-        "color" : "#ffffff"
-      }
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "type" : "group",
-    "default" : {
-      "play_button_color" : {
-        "color" : "#ffffff"
-      }
-    }
-  }, {
     "id" : "42a3af43-171b-cbe5-d0a8-65759aefc2ec",
     "name" : "image",
     "display_width" : null,
@@ -161,11 +127,6 @@
       "max_height" : null,
       "loading" : "disabled"
     },
-    "video_thumbnail_style" : {
-      "play_button_color" : {
-        "color" : "#ffffff"
-      }
-    },
     "image" : {
       "size_type" : "auto",
       "src" : "",
@@ -186,11 +147,6 @@
       "max_height" : null,
       "loading" : "disabled"
     },
-    "video_thumbnail_style" : {
-      "play_button_color" : {
-        "color" : "#ffffff"
-      }
-    },
     "image" : {
       "size_type" : "auto",
       "src" : "",
@@ -210,11 +166,6 @@
       "max_width" : null,
       "max_height" : null,
       "loading" : "disabled"
-    },
-    "video_thumbnail_style" : {
-      "play_button_color" : {
-        "color" : "#ffffff"
-      }
     },
     "image" : {
       "size_type" : "auto",

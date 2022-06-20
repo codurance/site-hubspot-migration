@@ -2,19 +2,11 @@
 
 <div class="mosaic-collection">
   {% for mosaic_item in module.mosaic_collection %}
-    {% require_css %}
-      <style>
-        #oembed_container-{{ loop.index }} .oembed_custom-thumbnail_icon svg {
-          fill: {{ mosaic_item.video_thumbnail_style.play_button_color.color }};
-        }
-      </style>
-    {% end_require_css %}
-    
     <div class="mosaic-collection__item-{{ loop.index }}">
       {% if mosaic_item.media_type == "video" %}
         {% if mosaic_item.video_embed.oembed_url || mosaic_item.video_embed.embed_html %}
           {% if mosaic_item.video_embed.source_type == "oembed" %}
-            <div class="oembed_container" id="oembed_container-{{ loop.index }}">
+            <div class="oembed_container">
 
               {% if mosaic_item.custom_video_thumbnail.src %}
                 <button class="oembed_custom-thumbnail" style="background-image:url({{mosaic_item.custom_video_thumbnail.src}})">

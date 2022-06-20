@@ -56,6 +56,7 @@
 
 .oembed_custom-thumbnail_icon svg {
   display: block;
+  fill: #fff;
   height: auto;
   width: 12%;
 }
