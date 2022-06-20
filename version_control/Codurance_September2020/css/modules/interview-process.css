@@ -58,9 +58,14 @@
   }
 {% endcall %}
 
+.custom-interview-process__icon-container img {
+  --shadow-color: rgba(234, 133, 33, 0.38);
+  filter: drop-shadow(0 8px 10px var(--shadow-color));
+}
+
 {% call utils.large_and_extra_large() %}
   .custom-interview-process__icon-container {
-    margin-bottom: 0.8em;
+  margin-bottom: 0.8em;
   }
 {% endcall %}
 
