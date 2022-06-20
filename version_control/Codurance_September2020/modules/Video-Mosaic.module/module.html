@@ -1,51 +1,55 @@
-{{ require_css(get_asset_url("../../css/mosaic_items/video-mosaic.css")) }}
+{{ require_css(get_asset_url("../../css/modules/video-mosaic.css")) }}
 
-{% for mosaic_item in module.mosaic_collection %}
-  {% if mosaic_item.media_type == "video" %}
-    {% if mosaic_item.video_embed.oembed_url || mosaic_item.video_embed.embed_html %}
-      {% if mosaic_item.video_embed.source_type == "oembed" %}
-        <div class="oembed_container" id="oembed_container-{{ name }}">
+<div class="mosaic-collection">
+  {% for mosaic_item in module.mosaic_collection %}
+    {% require_css %}
+      <style>
+        #oembed_container-{{ loop.index }} .oembed_custom-thumbnail_icon svg {
+          fill: {{ mosaic_item.video_thumbnail_style.play_button_color.color }};
+        }
+      </style>
+    {% end_require_css %}
+    
+    <div class="mosaic-collection__item-{{ loop.index }}">
+      {% if mosaic_item.media_type == "video" %}
+        {% if mosaic_item.video_embed.oembed_url || mosaic_item.video_embed.embed_html %}
+          {% if mosaic_item.video_embed.source_type == "oembed" %}
+            <div class="oembed_container" id="oembed_container-{{ loop.index }}">
 
-          {% if mosaic_item.custom_video_thumbnail.src %}
-            <button class="oembed_custom-thumbnail" style="background-image:url({{mosaic_item.custom_video_thumbnail.src}})">
-              <div class="oembed_custom-thumbnail_icon">
-                <svg viewBox="0 0 135.39 149.4">
-                  <path d="M371.2,398.69l-127.79,71c-1.47.83-2.74.93-3.8.28a3.69,3.69,0,0,1-1.59-3.46V324.88a3.73,3.73,0,0,1,1.59-3.47,3.66,3.66,0,0,1,3.8.29l127.79,71c1.47.84,2.21,1.82,2.21,3S372.67,397.85,371.2,398.69Z" transform="translate(-238.02 -321)"></path>
-                </svg>
+              {% if mosaic_item.custom_video_thumbnail.src %}
+                <button class="oembed_custom-thumbnail" style="background-image:url({{mosaic_item.custom_video_thumbnail.src}})">
+                  <div class="oembed_custom-thumbnail_icon">
+                    <svg viewBox="0 0 135.39 149.4">
+                      <path d="M371.2,398.69l-127.79,71c-1.47.83-2.74.93-3.8.28a3.69,3.69,0,0,1-1.59-3.46V324.88a3.73,3.73,0,0,1,1.59-3.47,3.66,3.66,0,0,1,3.8.29l127.79,71c1.47.84,2.21,1.82,2.21,3S372.67,397.85,371.2,398.69Z" transform="translate(-238.02 -321)"></path>
+                    </svg>
+                  </div>
+                </button>
+              {% endif %}
+
+              {% set isVideo = mosaic_item.video_embed.oembed_url %}
+              {% set isSupportedOEmbedType = mosaic_item.video_embed.supported_oembed_types.index(mosaic_item.video_embed.oembed_response.type) >= 0 %}
+
+              {% if isVideo && isSupportedOEmbedType %}
+                <div class="iframe_wrapper"
+                    data-embed-url="{{ mosaic_item.video_embed.oembed_url }}"
+                >
+                </div>
+              {% endif %}
+            </div>
+          {% else %}
+            <div id="embed_container" class="embed_container">
+              <div class="iframe_wrapper">
+                {{ mosaic_item.video_embed.embed_html }}
               </div>
-            </button>
-          {% endif %}
-
-          {% set isVideo = mosaic_item.video_embed.oembed_url %}
-          {% set isSupportedOEmbedType = mosaic_item.video_embed.supported_oembed_types.index(mosaic_item.video_embed.oembed_response.type) >= 0 %}
-
-          {% if isVideo && isSupportedOEmbedType %}
-            <div class="iframe_wrapper"
-                data-embed-url="{{ mosaic_item.video_embed.oembed_url }}"
-            >
             </div>
           {% endif %}
-        </div>
+        {% endif %}
       {% else %}
-        <div id="embed_container" class="embed_container">
-          <div class="iframe_wrapper">
-            {{ mosaic_item.video_embed.embed_html }}
-          </div>
-        </div>
+        {% if mosaic_item.image.src %}
+          {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+          <img src="{{ mosaic_item.image.src }}" alt="{{ mosaic_item.image.alt }}" {{ sizeAttrs }}>
+        {% endif %}
       {% endif %}
-    {% endif %}
-  {% else %}
-    {% if mosaic_item.image.src %}
-      {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-      <img src="{{ mosaic_item.image.src }}" alt="{{ mosaic_item.image.alt }}" {{ sizeAttrs }}>
-    {% endif %}
-  {% endif %}
-{% endfor %}
-
-{% require_css %}
-  <style>
-    #oembed_container-{{ name }} .oembed_custom-thumbnail_icon svg {
-      fill: {{ mosaic_item.video_thumbnail_style.play_button_color.color }};
-    }
-  </style>
-{% end_require_css %}
+    </div>
+  {% endfor %}
+</div>
