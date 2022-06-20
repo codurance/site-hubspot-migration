@@ -1,0 +1,90 @@
+.oembed_container {
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.iframe_wrapper {
+  height: 0;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  position: relative;
+}
+
+.oembed_container_iframe {
+  height: 100%;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.oembed_custom-thumbnail,
+.oembed_custom-thumbnail:hover,
+.oembed_custom-thumbnail:focus,
+.oembed_custom-thumbnail:active {
+  align-items: center;
+  appearance: none;
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0;
+  border: none;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.oembed_custom-thumbnail_icon {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.oembed_custom-thumbnail_icon svg {
+  display: block;
+  height: auto;
+  width: 12%;
+}
+
+.oembed_custom-thumbnail--hide {
+  display: none;
+}
+
+.embed_container {
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.embed_container iframe {
+  left: 0;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.oembed-info {
+  height: 1px;
+  left: -10000px;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  width: 1px;
+}
