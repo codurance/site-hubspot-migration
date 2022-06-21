@@ -1,6 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
-  /*------------------------------------*\
+/*------------------------------------*\
   #Hero section
 \*------------------------------------*/
 
@@ -67,3 +67,29 @@
         padding: 1em 0;
     }
 {% endcall %}
+
+
+/*------------------------------------*\
+  #Video Ask
+\*------------------------------------*/
+
+.video-ask {
+  padding: 2em 1em;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+
+/*------------------------------------*\
+  #Video sections
+\*------------------------------------*/
+
+
+.video-wrapper {
+  {{ utils.slate_to_woodsmoke() }}
+}
+
+.video-wrapper h2 {
+  color: white;
+}
+
