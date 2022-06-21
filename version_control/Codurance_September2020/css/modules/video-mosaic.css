@@ -51,9 +51,7 @@
 }
 
 .iframe_wrapper {
-  height: 0;
-  padding-bottom: 56.25%;
-  padding-top: 25px;
+  height: 100%;
   position: relative;
 }
 
