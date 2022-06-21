@@ -37,6 +37,11 @@
   grid-row: 7/9;
 }
 
+.mosaic-collection__item-2, .mosaic-collection__item-3 {
+  position: relative;
+  top: 2em;
+}
+
 /* Video Embed Styles */
 .oembed_container {
   display: inline-block;
