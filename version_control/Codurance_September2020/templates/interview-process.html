@@ -45,8 +45,15 @@ label: Interview Process Journey
     </div>
   </section>
 
-  {# Video Ask embed #}
-
+  <section class="video-ask">  
+      <iframe src="https://www.videoask.com/fvjg73nor"
+        allow="camera *; microphone *; autoplay *; encrypted-media *; fullscreen *; display-capture *;"
+        width="100%"
+        height="600px"
+        style="border: none;"
+        >
+      </iframe>
+  </section>
 
   <section class="interview-cta">
     {% module 'CTA-Section' 
@@ -68,7 +75,7 @@ label: Interview Process Journey
     %}
   </section>
 
-  <section class="video" >
+  <section class="video-wrapper" >
     {% module 'working at codurance' 
       path='../modules/Embedded Video.module'
       label="Working at Codurance"
@@ -81,7 +88,7 @@ label: Interview Process Journey
     no_wrapper=True
   %}
 
-  <section class="video" >
+  <section class="video-wrapper" >
     {% module 'video_testimonials' 
       path='../modules/Embedded Video.module'
       label="Craftspeople video testimonials"
