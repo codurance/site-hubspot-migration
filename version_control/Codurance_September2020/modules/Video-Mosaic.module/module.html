@@ -1,6 +1,10 @@
 {{ require_css(get_asset_url("../../css/modules/video-mosaic.css")) }}
 
 <div class="mosaic-collection">
+  <div class="mosaic-collection__title">
+    {{ module.mosaic_title }}
+  </div>
+
   {% for mosaic_item in module.mosaic_collection %}
     <div class="mosaic-collection__item-{{ loop.index }}">
       {% if mosaic_item.media_type == "video" %}
