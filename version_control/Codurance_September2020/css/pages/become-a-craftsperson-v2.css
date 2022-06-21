@@ -77,6 +77,8 @@
 
 .craftsperson-videos {
   {{ utils.white_to_tango() }}
+  padding-top: 1em;
+  padding-bottom: 4em;
 }
 
 /*------------------------------------*\
