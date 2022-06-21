@@ -38,8 +38,7 @@
         {% endif %}
       {% else %}
         {% if mosaic_item.image.src %}
-          {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-          <img src="{{ mosaic_item.image.src }}" alt="{{ mosaic_item.image.alt }}" {{ sizeAttrs }}>
+          <img class="mosaic-collection__img" src="{{ mosaic_item.image.src }}" alt="{{ mosaic_item.image.alt }}">
         {% endif %}
       {% endif %}
     </div>
