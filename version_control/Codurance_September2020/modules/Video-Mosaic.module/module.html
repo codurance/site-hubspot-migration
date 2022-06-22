@@ -1,9 +1,11 @@
 {{ require_css(get_asset_url("../../css/modules/video-mosaic.css")) }}
 
 <div class="mosaic-collection">
-  <div class="mosaic-collection__title">
-    {{ module.mosaic_title }}
-  </div>
+  {% if module.mosaic_title && module.mosaic_collection|length >= 4 %}
+    <div class="mosaic-collection__title">
+      {{ module.mosaic_title }}
+    </div>
+  {% endif %}
 
   {% for mosaic_item in module.mosaic_collection %}
     <div class="mosaic-collection__item-{{ loop.index }}">
