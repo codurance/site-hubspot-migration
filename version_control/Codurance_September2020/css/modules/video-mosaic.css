@@ -3,7 +3,12 @@
 .mosaic-collection {
   --mosaic-gap: 1.25em;
   --mosaic-rows-height: 5.5em;
+  --mosaic-background-1: url("https://www.codurance.com/hubfs/Careers%20Page/Becoming%20a%20Software%20Craftsperson/Mosaic/mosaic-XL-careers-software-craftsperson.svg");
+  --mosaic-background-2: url("https://www.codurance.com/hubfs/Careers%20Page/Becoming%20a%20Software%20Craftsperson/Mosaic/mosaic1-XL-careers-software-craftsperson.svg");
 
+  background-image: var(--mosaic-background-1), var(--mosaic-background-2);
+  background-position: calc(100% - 6.5em) 6.5em, left 72.5%;
+  background-repeat: no-repeat;
   display: grid;
   grid-gap: var(--mosaic-gap);
   grid-template-columns: repeat(6, 1fr);
@@ -56,7 +61,6 @@
   grid-column: 5/7;
   grid-row: span 2;
   order: 5;
-  
 }
 
 .mosaic-collection__item-4 {
