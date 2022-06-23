@@ -41,7 +41,12 @@
         background-image: var(--bg-img-large);
     }
 
-    .cta-block__button{
+    .cta-block__title,
+    .cta-block__subtitle {
+        max-width: 70%;
+    }
+
+    .cta-block__button {
         text-align: left;
     }
 {% endcall %}  
@@ -52,10 +57,9 @@
     }
 {% endcall %}
 
-{% call utils.medium_large_and_extra_large() %}
-    .cta-block__title,
-    .cta-block__subtitle{
-        max-width: 70%;
+{% call utils.small() %}
+    .cta-block__title {
+        {{ utils.freed() }}
+        font-weight: var(--heavy-font-weight);
     }
-
-{% endcall %}    
+{% endcall %}
