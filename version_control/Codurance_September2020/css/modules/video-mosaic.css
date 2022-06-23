@@ -1,18 +1,11 @@
 {% import '../utils/utils.css' as utils %}
 
 .mosaic-collection {
-  --mosaic-gap: 1.25em;
-  --mosaic-rows-height: 5.5em;
   --mosaic-background-1: url("https://www.codurance.com/hubfs/Careers%20Page/Becoming%20a%20Software%20Craftsperson/Mosaic/mosaic-XL-careers-software-craftsperson.svg");
   --mosaic-background-2: url("https://www.codurance.com/hubfs/Careers%20Page/Becoming%20a%20Software%20Craftsperson/Mosaic/mosaic1-XL-careers-software-craftsperson.svg");
 
   background-image: var(--mosaic-background-1), var(--mosaic-background-2);
-  background-position: calc(100% - 6.5em) 6.5em, left 72.5%;
   background-repeat: no-repeat;
-  display: grid;
-  grid-gap: var(--mosaic-gap);
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: var(--mosaic-rows-height);
   margin-inline: auto;
   max-width: var(--content-max-width);
 }
@@ -20,72 +13,180 @@
 .mosaic-collection__title {
   {{ utils.card_shadow_large() }}
 
-  --box-left-position: 4em;
-
   background: rgba(255, 255, 255, 0.85);
   border-radius: 8px;
-  display: flex; 
-  align-items: center;
-  grid-column: 4/7;
-  grid-row: span 2;
-  order: 2;
-  padding-right: 2.5em;
-
-  /* Center box vertically in relation to first image of mosaic */
-  position: relative;
-  top: calc(var(--mosaic-gap) / 2 + var(--mosaic-rows-height) / 2);
-
-  right: calc(var(--box-left-position) + var(--mosaic-gap) - 0.5em);
-  padding-left: var(--box-left-position);
 }
 
-.mosaic-collection__title > h2 {
-  {{ utils.dudler() }}
+{% call utils.medium_large_and_extra_large() %}
+  .mosaic-collection {
+    --mosaic-gap: 1.25em;
+    --mosaic-rows-height: 5.5em;
 
-  font-weight: initial;
-}
+    background-position: calc(100% - 6.5em) 6.5em, left 72.5%;
+    display: grid;
+    grid-gap: var(--mosaic-gap);
+    grid-template-columns: repeat(var(--mosaic-columns), 1fr);
+    grid-auto-rows: var(--mosaic-rows-height);
+  }
 
-.mosaic-collection__item-1 {
-  grid-column: 2/5;
-  grid-row: span 3;
-  order: 3;
-}
+  .mosaic-collection__title {
+    order: 2;
+  }
 
-.mosaic-collection__item-2 {
-  grid-column: 5/7;
-  grid-row: span 2;
-  order: 4;
-}
+  .mosaic-collection__item-1 {
+    grid-column: 2/5;
+    grid-row: span 3;
+    order: 3;
+  }
 
-.mosaic-collection__item-3 {
-  grid-column: 5/7;
-  grid-row: span 2;
-  order: 5;
-}
+  .mosaic-collection__item-2 {
+    grid-column: 5/7;
+    grid-row: span 2;
+    order: 4;
+  }
 
-.mosaic-collection__item-4 {
-  grid-column: 1/4;
-  grid-row: span 3;
-  order: 1;
-}
+  .mosaic-collection__item-3 {
+    grid-column: 5/7;
+    grid-row: span 2;
+    order: 5;
+  }
 
-.mosaic-collection__item-5 {
-  grid-column: 3/5;
-  grid-row: span 3;
-  order: 7;
-}
+  .mosaic-collection__item-4 {
+    grid-column: 1/4;
+    grid-row: span 3;
+    order: 1;
+  }
 
-.mosaic-collection__item-6 {
-  grid-column: 1/3;
-  grid-row: span 2;
-  order: 6;
-}
+  .mosaic-collection__item-5 {
+    grid-column: 3/5;
+    grid-row: span 3;
+    order: 7;
+  }
 
-.mosaic-collection__item-2, 
-.mosaic-collection__item-3 {
-  position: relative;
-  top: 2em;
-}
+  .mosaic-collection__item-6 {
+    grid-column: 1/3;
+    grid-row: span 2;
+    order: 6;
+  }
+
+  .mosaic-collection__item-2, 
+  .mosaic-collection__item-3 {
+    position: relative;
+    top: 2em;
+  }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+  .mosaic-collection {
+    --mosaic-columns: 6;
+  }
+
+  .mosaic-collection__title {
+    --box-left-position: 4em;
+
+    display: flex; 
+    align-items: center;
+    grid-column: 4/7;
+    grid-row: span 2;
+    padding-right: 2.5em;
+
+    /* Center box vertically in relation to first image of mosaic */
+    position: relative;
+    top: calc(var(--mosaic-gap) / 2 + var(--mosaic-rows-height) / 2);
+
+    right: calc(var(--box-left-position) + var(--mosaic-gap) - 0.5em);
+    padding-left: var(--box-left-position);
+  }
+
+  .mosaic-collection__title > h2 {
+    {{ utils.dudler() }}
+
+    font-weight: initial;
+  }
+{% endcall %}
+
+{% call utils.medium() %}
+  .mosaic-collection {
+    --mosaic-gap: 0.75em;
+    --mosaic-rows-height: 2em;
+    --mosaic-columns: 12;
+
+    background-position: -6em 6em, calc(100% - 1em) 95%;
+    background-size: 40%;
+    position: relative;
+  }
+
+  .mosaic-collection__title {
+    padding: 1.5em 1.5em 1.5em 2em;
+    position: absolute;
+    right: 2.5em;
+    top: 2em;
+  }
+
+  .mosaic-collection__title > h2 {
+    {{ utils.freed() }}
+
+    font-weight: initial;
+    width: var(--habib-max-width);
+  }
+
+  .mosaic-collection__item-1 {
+    grid-column: 2/9;
+    grid-row: span 5;
+  }
+
+  .mosaic-collection__item-2 {
+    grid-column: 9/13;
+    grid-row: span 3;
+  }
+
+  .mosaic-collection__item-3 {
+    grid-column: 4/10;
+    grid-row: span 4;
+    order: 7;
+    position: static;
+  }
+
+  .mosaic-collection__item-4 {
+    grid-column: 1/8;
+    grid-row: span 5;
+  }
+
+  .mosaic-collection__item-5 {
+    grid-column: 7/11;
+    grid-row: span 4;
+    order: 6;
+  }
+
+  .mosaic-collection__item-6 {
+    grid-column: 1/7;
+    grid-row: span 4;
+    order: 5;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .mosaic-collection {
+    background-position: -6em 4em, calc(100% + 4.5em) 85%;
+    background-size: 75%;
+  }
+  
+  .mosaic-collection__title {
+    padding: 1.5em 2em 1.5em 1.5em;
+  }
+
+  .mosaic-collection > div:not(:last-child) {
+    margin-bottom: 1em;
+  }
+
+  .iframe_wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+  }
+{% endcall %}
 
 /* Video Embed Styles */
 .oembed_container {
