@@ -38,7 +38,7 @@
         gap: 1em;
         justify-content: space-between;
         margin: 0 auto;
-        max-width: 1000px;
+        max-width: var(--content-inner-max-width);
     }
     .container--img-left{
         flex-direction: row-reverse;

@@ -1,9 +1,32 @@
-
 {{ require_css(get_asset_url("../../css/modules/text-and-image.css")) }}
 
 <div class="text-and-image__container container--{{ module.image_order }}">
 	<div class="text-and-image__copy">
 		{% inline_rich_text field="description_text" value="{{ module.description_text }}" %}
+		
+		<div class="custom-btn">
+			{% if module.button.button_type == "std" %}
+				{% if module.button.bookmark_id %}
+					{% set bookmark_id = module.button.bookmark_id %}
+					{% set href = module.button.link_field.url.href ~ "#" ~ bookmark_id %}
+				{% else %}
+					{% set href = module.button.link_field.url.href %}
+				{% endif %}
+		
+				<a href="{{ href }}"
+					{% if module.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
+					{% if module.button.link_field.rel %}rel="{{ module.button.link_field.rel }}"{% endif %}
+					class="{{ module.button.button_style }}"
+				>
+					{{ module.button.text_field }} 
+					{% if module.button.button_style is string_containing "text-cta-primary" %}
+						<i class="las la-arrow-right"></i>
+					{% endif %}
+				</a>
+			{% elif module.button.button_type == "cta" %}
+			  	{% cta guid="{{ module.button.cta_field }}" %}
+			{% endif %}
+		</div>
 	</div>
 	<div class="text-and-image__image">
 		{% if module.image_field.src %}

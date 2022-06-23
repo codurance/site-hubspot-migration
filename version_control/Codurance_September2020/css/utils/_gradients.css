@@ -4,8 +4,13 @@
 {% endmacro %}
 
 {% macro white_to_tango() %}
-  background: rgb(239,119,38);
-  background: linear-gradient(145deg, rgba(255,252,250,1) 0%, rgba(252,224,206,1) 100%);
+  background: rgb(252,224,206);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(252,224,206,1) 100%);
+{% endmacro %}
+
+{% macro tango_to_white() %}
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(252,224,206,1) 0%, rgba(255,255,255,1) 100%);
 {% endmacro %}
 
 {% macro black_to_navy() %} 

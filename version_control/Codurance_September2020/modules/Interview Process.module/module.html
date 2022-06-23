@@ -6,19 +6,18 @@
     {% for item in module.interview_process_items %}
       <li class="custom-interview-process__item">
         <div class="custom-interview-process__icon-container">
-          <i class="las {{ item.icon_class }}"></i>
-        </div>
-        <div class="custom-interview-process__check-container">
-          <i class="las la-check-circle"></i>
+          <img src="{{ item.icon_image.src }}" alt="" loading="lazy" width="60" height="60">
         </div>
         <div class="custom-interview-process__text-container">
+          <div class="custom-interview-process__step">
+            <span>Step {{ loop.index }}</span>
+          </div>
           <h3 class="custom-interview-process__title">
-            <span>{% if loop.index < 10 %}0{% endif %}{{ loop.index }}.</span>
             {{ item.title }}
           </h3>
-          <p class="custom-interview-process__description" >
+          <div class="custom-interview-process__description" >
             {{ item.content }}
-          </p>
+          </div>
         </div>
       </li>
     {% endfor %}

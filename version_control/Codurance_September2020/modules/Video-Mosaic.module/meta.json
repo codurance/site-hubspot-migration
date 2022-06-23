@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "master_language" : "en",
+  "icon" : "fontawesome-5.14.0:Photo%20Video:SOLID",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 49705706478,
+  "label" : "Video-Mosaic",
+  "is_available_for_new_content" : true
+}
