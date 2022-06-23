@@ -1,7 +1,47 @@
 {% import '../utils/utils.css' as utils %}
 
+/*------------------------------------*\
+  #General styles
+\*------------------------------------*/  
 .custom-btn {
   margin-top: 1.5em;
+}
+
+.custom-btn > a {
+  margin: 0;
+}
+
+{% call utils.small_and_medium() %}
+  .craftsperson-skills .custom-btn > a,
+  .craftsperson-info .custom-btn > a {
+    width: fit-content;
+  }
+{% endcall %}
+
+{% call utils.medium() %}
+  .craftsperson-cta .cta-block {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
+
+  .craftsperson-cta .cta-block__title {
+    max-width: none;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .craftsperson-cta .cta-block {
+    background-position-x: 70%;
+  }
+{% endcall %}
+
+.text-and-image__container .text-and-image__copy p {
+  {{ utils.base() }}
+}
+
+.text-and-image__container .text-and-image__copy h2 {
+  {{ utils.dudler() }}
+  font-weight: initial;
 }
 
 /*------------------------------------*\
@@ -28,40 +68,43 @@
   align-self: center;
 }
 
-.craftsperson-hero__text h1 {
-  {{utils.eames()}}
-  font-weight: var(--heavy-font-weight);
-}
-
-.craftsperson-hero__image {
-    transform: translate(15%, 5%);
-}
-
 {% call utils.medium_large_and_extra_large() %}
-    .craftsperson-hero__container {
-        flex-direction:row;
+    .craftsperson-hero__container{
+      flex-direction: row;
+      padding-left: 2.5em;
     }
+
     .craftsperson-hero__image {
-        transform: translateX(10%);
-        align-self: start;
-        scale: 1.2;
+      align-self: start;
     }
-    .craftsperson-hero__text{
-        max-width: 50%;
-    }
-    .craftsperson-hero__text h1{
-        {{utils.eames()}}
-    }
-    .craftsperson-hero__text p{
-        {{utils.freed()}}
-        font-weight: var(--light-font-weight);
+
+    .craftsperson-hero__text {
+      max-width: 50%;
     }
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
-    .craftsperson-hero__container{
-        padding-left: 2.5em;
-    }
+  .craftsperson-hero__text h1 {
+      {{ utils.eames() }}
+      font-weight: var(--heavy-font-weight);
+  }
+
+  .craftsperson-hero__text p {
+    {{ utils.freed() }}
+    font-weight: var(--light-font-weight);
+  }
+
+  .craftsperson-hero__image {
+    transform: translateX(10%);
+  }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+  .craftsperson-hero__image {
+    --translate-img: translate(27.5%,-25%);
+
+    transform: var(--translate-img);
+  }
 {% endcall %}
 
 {% call utils.extra_large() %}
@@ -69,6 +112,36 @@
         overflow: initial;
         padding: 1em 0;
     }
+{% endcall %}
+
+{% call utils.medium() %}
+  .craftsperson-hero__text h1 {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+  }
+
+  .craftsperson-hero__image {
+    transform: var(--translate-img) scale(1.2);
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .craftsperson-hero__container {
+    padding-top: 0;
+  }
+
+  .craftsperson-hero__text {
+    margin-top: -4.5em;
+  }
+
+  .craftsperson-hero__text h1 {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+  }
+
+  .craftsperson-hero__text p {
+    {{ utils.natus() }}
+  }
 {% endcall %}
 
 /*------------------------------------*\
@@ -80,6 +153,20 @@
   padding-top: 1em;
   padding-bottom: 4em;
 }
+
+{% call utils.medium_and_large() %}
+  .craftsperson-videos > .mosaic-collection {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .craftsperson-videos > .mosaic-collection {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+{% endcall %}
 
 /*------------------------------------*\
   #Skills section
@@ -93,9 +180,16 @@
   background: var(--background-gradient);
 }
 
-{% call utils.extra_large() %}
+{% call utils.medium_large_and_extra_large() %}
   .craftsperson-skills {
     background: var(--background-img) right calc(100% - 4em) no-repeat, var(--background-gradient);
+  }
+{% endcall %}
+
+{% call utils.medium() %}
+  .craftsperson-skills > .craftsperson-skills__wrapper {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
   }
 {% endcall %}
 
@@ -109,14 +203,21 @@
   {{ utils.dudler() }}
 
   font-weight: var(--light-font-weight);
-  margin-bottom: 1.5em;
+  margin-bottom: 0.5em;
 }
+
+{% call utils.small() %}
+  .craftsperson-skills__title {
+    {{ utils.freed() }}
+    font-weight: initial;
+  }
+{% endcall %}
 
 .craftsperson-skills__wrapper ul {
   margin-left: 1em;
 }
 
-{% call utils.medium_large_and_extra_large() %}
+{% call utils.large_and_extra_large() %}
   .craftsperson-skills__wrapper ul {
     columns: 2;
     column-gap: 4em;
@@ -125,6 +226,12 @@
   .craftsperson-skills__wrapper li {
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
+  }
+{% endcall %}
+
+{% call utils.medium() %}
+  .craftsperson-skills__wrapper li {
+    max-width: var(--freed-max-width);
   }
 {% endcall %}
 
@@ -140,6 +247,12 @@
 .craftsperson-skills__wrapper li::marker {
   font-family: "line awesome free";
 }
+
+{% call utils.small() %}
+  .craftsperson-skills__wrapper li {
+    {{ utils.natus() }}
+  }
+{% endcall %}
 
 /*------------------------------------*\
   #Craftsperson Info section
@@ -163,6 +276,60 @@
   transform: none;
 }
 
+{% call utils.medium() %}
+  .craftsperson-info .text-and-image__container {
+    padding-top: 3em;
+  }
+
+  .craftsperson-info .container--img-left {
+    padding-left: 0;
+    padding-right: 2.5em;
+  }
+
+  .craftsperson-info .text-and-image__image {
+    align-self: flex-start;
+  }
+
+  .craftsperson-info .container--img-left .text-and-image__image  {
+    transform: scale(1.5) translateX(-2.5em);
+  }
+
+  .craftsperson-info .container--img-right {
+    padding-left: 2.5em;
+    padding-right: 0;
+    padding-bottom: 3em;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .craftsperson-info .text-and-image__container {
+    gap: 0;
+    padding-top: 0;
+  }
+
+  .craftsperson-info .text-and-image__copy h2 {
+    {{ utils.freed() }}
+    font-weight: initial;
+  }
+
+  .craftsperson-info .text-and-image__copy p {
+    {{ utils.natus() }}
+  }
+
+  .craftsperson-info .text-and-image__image {
+    max-width: 80%;
+  }
+
+  .craftsperson-info .container--img-left .text-and-image__image {
+    align-self: flex-start;
+    transform: translateX(-4.5em);
+  }
+
+  .craftsperson-info .container--img-right .text-and-image__image {
+    transform: translateX(2em);
+  }
+{% endcall %}
+
 /*------------------------------------*\
   #Interview section
 \*------------------------------------*/
@@ -171,7 +338,42 @@
     padding: 2.5em 0;
   }
 
-  .interview .text-and-image__copy {
-    max-width: 60%;
+  .interview .text-and-image__container {
+    gap: 5em;
+  }
+
+  .interview .text-and-image__image {
+    align-self: flex-start;
+  }
+{% endcall %}
+
+{% call utils.medium() %}
+  .interview .text-and-image__container {
+    padding: 4em 2.5em 0 0;
+  }
+
+  .interview .text-and-image__image {
+    align-self: flex-start;
+    transform: translateX(-2.5em);
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .interview .text-and-image__container {
+    padding-top: 4em;
+    padding-bottom: 0;
+  }
+
+  .interview .text-and-image__image {
+    display: none;
+  }
+
+  .interview .text-and-image__copy h2 {
+    {{ utils.freed() }}
+    font-weight: initial;
+  }
+
+  .interview .text-and-image__copy p {
+    {{ utils.natus() }}
   }
 {% endcall %}
