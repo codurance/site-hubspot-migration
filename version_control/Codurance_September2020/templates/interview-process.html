@@ -96,7 +96,13 @@ label: Interview Process Journey
     %}  
   </section>
 
-  <section>
+  <section class="recruitment-team">
+      <h2 class="recruitment-team__title">
+        {% module 'recruit_title' path='@hubspot/text' label="Recruitment Team title"%}
+      </h2>
+      <p class="recruitment-team__subtitle">
+        {% module 'recruit_subtitle' path='@hubspot/text' label="Recruitment Team subtitle"%}
+      </p>
       {% module "recruitment_team" path="../modules/Our People.module"
       label="Recruitment Team" no_wrapper=True %}
   </section>
