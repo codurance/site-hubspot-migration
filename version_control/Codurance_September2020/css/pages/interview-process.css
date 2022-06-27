@@ -74,10 +74,17 @@
 \*------------------------------------*/
 
 .video-ask {
-  padding: 2em 1em;
+  padding: 2em .5em;
   max-width: var(--content-max-width);
   margin: 0 auto;
 }
+
+{% call utils.large_and_extra_large() %}
+  .video-ask {
+    padding: 4em 1em;
+  }
+{%endcall%}
+
 
 
 /*------------------------------------*\
@@ -93,3 +100,31 @@
   color: white;
 }
 
+
+/*------------------------------------*\
+  #Process interview sections
+\*------------------------------------*/
+
+.process-interview {
+  padding-top: 4em;
+  {{utils.white_to_tango()}}
+}
+
+.text-and-image__copy h2 {
+  margin-bottom: 1em;
+}
+
+
+/*------------------------------------*\
+  #Recruitment team section
+\*------------------------------------*/
+
+.recruitment-team {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+
+.recruitment-team__title {
+  {{ utils.dudler() }}
+}
