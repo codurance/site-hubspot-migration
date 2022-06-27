@@ -1,15 +1,11 @@
 [ {
-  "id" : "f9acd35b-889a-9e26-05ba-6072184f33b2",
+  "id" : "e453a8ed-1dd1-3b03-921a-3c9b9718bd03",
   "name" : "mosaic_title",
   "display_width" : null,
   "label" : "Mosaic Title",
-  "inline_help_text" : "Optional",
   "required" : false,
   "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
+  "type" : "richtext"
 }, {
   "id" : "7d6664be-246d-d9e2-8c4e-1ab648d806ea",
   "name" : "mosaic_collection",
