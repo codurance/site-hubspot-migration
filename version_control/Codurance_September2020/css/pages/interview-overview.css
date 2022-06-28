@@ -1,0 +1,154 @@
+{% import '../utils/utils.css' as utils %}
+
+/*------------------------------------*\
+  #Hero section
+\*------------------------------------*/
+
+
+.interview-process-hero {
+  {{ utils.tango_to_white() }}
+  overflow: hidden;
+}
+
+.interview-process-hero__container {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 1em;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.interview-process-hero__text {
+  margin-top: 1em;
+  max-width: 48ch;
+  align-self: center;
+}
+
+.interview-process-hero__text h1 {
+  {{utils.eames()}}
+  font-weight: var(--heavy-font-weight);
+}
+
+.interview-process-hero__image {
+    transform: translate(15%, 5%);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .interview-process-hero__container {
+        flex-direction:row;
+    }
+    .interview-process-hero__image {
+        transform: translateX(10%);
+        align-self: start;
+        scale: 1.2;
+    }
+    .interview-process-hero__text{
+        max-width: 50%;
+    }
+    .interview-process-hero__text h1{
+        {{utils.eames()}}
+    }
+    .interview-process-hero__text p{
+        {{utils.freed()}}
+        font-weight: var(--light-font-weight);
+    }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .interview-process-hero__container{
+        padding-left: 2.5em;
+    }
+{% endcall %}
+
+{% call utils.extra_large() %}
+    .interview-process-hero__container{
+        overflow: initial;
+        padding: 1em 0;
+    }
+{% endcall %}
+
+
+/*------------------------------------*\
+  #Video Ask
+\*------------------------------------*/
+
+.video-ask {
+  padding: 2em .5em;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+{% call utils.large_and_extra_large() %}
+  .video-ask {
+    padding: 4em 1em;
+  }
+{%endcall%}
+
+
+
+/*------------------------------------*\
+  #Video sections
+\*------------------------------------*/
+
+
+.video-wrapper {
+  {{ utils.slate_to_woodsmoke() }}
+}
+
+.video-wrapper h2 {
+  color: white;
+}
+
+
+/*------------------------------------*\
+  #Process interview sections
+\*------------------------------------*/
+
+.process-interview {
+  padding-top: 4em;
+  background: linear-gradient(180deg,#fff, 80%, var(--tango-100));
+}
+
+.text-and-image__copy h2 {
+  margin-bottom: 1em;
+}
+
+/*------------------------------------*\
+  #Benefits section
+\*------------------------------------*/
+
+.codurance-benefits {
+  padding: 4em 0;
+}
+
+/*------------------------------------*\
+  #Recruitment team section
+\*------------------------------------*/
+
+.recruitment-team {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding-top: 4em;
+}
+
+
+.recruitment-team__title {
+  {{ utils.dudler() }}
+  margin-bottom: var(--dudler-margin);
+  font-weight: var(--light-font-weight);
+}
+
+.recruitment-team__subtitle {
+  max-width: var(--freed-max-width);
+}
+
+.recruitment-team .custom-our-people {
+  padding: 0;
+}
+
+{% call utils.extra_large() %}
+  .recruitment-team {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+{% endcall %}
