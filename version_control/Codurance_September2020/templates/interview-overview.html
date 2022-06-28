@@ -45,20 +45,14 @@ label: Interview Overview Page
     </div>
   </section>
 
-  <section class="video-ask">  
-      <iframe src="https://www.videoask.com/fvjg73nor"
-        allow="camera *; microphone *; autoplay *; encrypted-media *; fullscreen *; display-capture *;"
-        width="100%"
-        height="600px"
-        style="border: none;"
-        >
-      </iframe>
+  <section class="video-ask">
+    {% module 'video_ask' path='@hubspot/text' label="Video Ask Embed" no_wrapper=True %}  
   </section>
 
   <section class="interview-cta">
     {% module 'CTA-Section' 
       path='../modules/LP-cta-block.module' 
-      label="CTA Section" 
+      label="CTA Section"
     %}
   </section>
 
