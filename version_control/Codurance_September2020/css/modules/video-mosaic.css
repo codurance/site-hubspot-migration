@@ -107,7 +107,7 @@
   }
 
   .mosaic-collection__title > h2 {
-    width: var(--gaudi-max-width);
+    max-width: var(--gaudi-max-width);
   }
 {% endcall %}
 
@@ -130,7 +130,7 @@
   }
 
   .mosaic-collection__title > h2 {
-    width: var(--habib-max-width);
+    max-width: var(--habib-max-width);
   }
 
   .mosaic-collection__item-1 {
