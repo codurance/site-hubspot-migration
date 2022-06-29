@@ -38,19 +38,22 @@
         flex-direction:row;
     }
     .interview-process-hero__image {
-        transform: translateX(10%);
+        transform: translateX(10%) scale(1.1);
         align-self: start;
-        scale: 1.2;
     }
+
     .interview-process-hero__text{
         max-width: 50%;
     }
+
     .interview-process-hero__text h1{
         {{ utils.eames() }}
     }
+
     .interview-process-hero__text p{
         {{ utils.freed() }}
         font-weight: var(--light-font-weight);
+        margin-top: .8rem;
     }
 {% endcall %}
 
@@ -84,6 +87,12 @@
   }
 {%endcall%}
 
+/*------------------------------------*\
+  #CTA Banner section
+\*------------------------------------*/
+.interview-cta .cta-block {
+  background-position: center;
+}
 
 
 /*------------------------------------*\
