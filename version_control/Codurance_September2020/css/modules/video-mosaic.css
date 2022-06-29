@@ -33,6 +33,12 @@
     order: 2;
   }
 
+  .mosaic-collection__title > h2 {
+    {{ utils.freed() }}
+
+    font-weight: initial;
+  }
+
   .mosaic-collection__item-1 {
     grid-column: 2/5;
     grid-row: span 3;
@@ -86,22 +92,21 @@
 
     display: flex; 
     align-items: center;
+    justify-content: center;
     grid-column: 4/7;
     grid-row: span 2;
-    padding-right: 2.5em;
+    height: calc(100% - 1.5em);
 
     /* Center box vertically in relation to first image of mosaic */
     position: relative;
-    top: calc(var(--mosaic-gap) / 2 + var(--mosaic-rows-height) / 2);
+    top: calc(var(--mosaic-gap) + var(--mosaic-rows-height) / 2);
 
+    /* Position box to overlap the mosaic element at its left */
     right: calc(var(--box-left-position) + var(--mosaic-gap) - 0.5em);
-    padding-left: var(--box-left-position);
   }
 
   .mosaic-collection__title > h2 {
-    {{ utils.dudler() }}
-
-    font-weight: initial;
+    max-width: var(--gaudi-max-width);
   }
 {% endcall %}
 
@@ -124,10 +129,7 @@
   }
 
   .mosaic-collection__title > h2 {
-    {{ utils.freed() }}
-
-    font-weight: initial;
-    width: var(--habib-max-width);
+    max-width: var(--habib-max-width);
   }
 
   .mosaic-collection__item-1 {

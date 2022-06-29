@@ -69,7 +69,7 @@
 }
 
 {% call utils.medium_large_and_extra_large() %}
-    .craftsperson-hero__container{
+    .craftsperson-hero__container {
       flex-direction: row;
       padding-left: 2.5em;
     }
@@ -349,12 +349,11 @@
 
 {% call utils.medium() %}
   .interview .text-and-image__container {
-    padding: 4em 2.5em 0 0;
+    padding: 4em 2.5em 0 2.5em;
   }
 
   .interview .text-and-image__image {
     align-self: flex-start;
-    transform: translateX(-2.5em);
   }
 {% endcall %}
 
