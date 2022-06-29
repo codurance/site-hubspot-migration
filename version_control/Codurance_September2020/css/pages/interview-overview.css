@@ -142,6 +142,7 @@
 
 .recruitment-team__title {
   {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
   margin-bottom: var(--dudler-margin);
 }
 
