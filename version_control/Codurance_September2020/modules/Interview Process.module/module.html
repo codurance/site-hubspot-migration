@@ -1,5 +1,10 @@
 {{ require_css(get_asset_url("../../css/modules/interview-process.css")) }}
 
+{% set step_lang = "Step" %}
+{% if locale == "es" %}
+  {% set step_lang = "Paso" %}
+{% endif %}
+
 <div class="custom-interview-process">
   <ul class="custom-interview-process__item-list">
 
@@ -10,7 +15,8 @@
         </div>
         <div class="custom-interview-process__text-container">
           <div class="custom-interview-process__step">
-            <span>Step {{ loop.index }}</span>
+          
+            <span>{{step_lang}} {{ loop.index }}</span>
           </div>
           <h3 class="custom-interview-process__title">
             {{ item.title }}
