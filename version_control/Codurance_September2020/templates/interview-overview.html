@@ -72,7 +72,7 @@ label: Interview Overview Page
   <section class="video-wrapper" >
     {% module 'working at codurance' 
       path='../modules/Embedded Video.module'
-      label="Working at Codurance"
+      label="Insinde Codurance"
       no_wrapper=True
     %}
   </section>
@@ -84,23 +84,17 @@ label: Interview Overview Page
     %}
   </section>
 
-  <section class="video-wrapper" >
-    {% module 'video_testimonials' 
-      path='../modules/Embedded Video.module'
-      label="Craftspeople video testimonials"
-      no_wrapper=True
-    %}  
-  </section>
-
   <section class="recruitment-team lateral-spacing">
-      <h2 class="recruitment-team__title">
-        {% module 'recruit_title' path='@hubspot/text' label="Recruitment Team title" no_wrapper=True%}
-      </h2>
-      <p class="recruitment-team__subtitle">
-        {% module 'recruit_subtitle' path='@hubspot/text' label="Recruitment Team subtitle" no_wrapper=True%}
-      </p>
-      {% module "recruitment_team" path="../modules/Our People.module"
-      label="Recruitment Team Cards" no_wrapper=True %}
+      <div class="recruitment-team--wrapper">
+        <h2 class="recruitment-team__title">
+          {% module 'recruit_title' path='@hubspot/text' label="Recruitment Team title" no_wrapper=True%}
+        </h2>
+        <p class="recruitment-team__subtitle">
+          {% module 'recruit_subtitle' path='@hubspot/text' label="Recruitment Team subtitle" no_wrapper=True%}
+        </p>
+        {% module "recruitment_team" path="../modules/Our People.module"
+        label="Recruitment Team Cards" no_wrapper=True %}
+      </div>
   </section>
   
   <section class="interview-cta">
