@@ -51,11 +51,6 @@
     }
 {% endcall %}  
 
-{% call utils.large_and_extra_large() %}
-    .cta-block__wrapper {
-        padding-left: 1em;
-    }
-{% endcall %}
 
 {% call utils.small() %}
     .cta-block__title {
