@@ -11,6 +11,7 @@
   max-width: var(--centered-content-max-width);
   padding-top: 1rem;
   padding-bottom: 2rem;
+  word-break: break-word;
 }
 
 .job-desription-container,

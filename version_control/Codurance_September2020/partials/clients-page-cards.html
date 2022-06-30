@@ -1,0 +1,208 @@
+{{ require_css(get_asset_url("../css/partials/clients-page-cards.css")) }} 
+
+{% if locale == 'en' %}
+    {% set promotion_text = "Find out how we helped" %} 
+    {% set case_study_button_text = "Read Case Study" %}  
+    {% set case_study_info_text = "Find out how we helped" %}  
+    {% set proposition_job_title = "at" %}        
+  {% else %}
+    {% set promotion_text = "Descubre como ayudamos a" %}
+    {% set case_study_button_text = "Descarga el case study" %} 
+    {% set case_study_info_text = "Descubre cómo ayudamos a" %}
+    {% set proposition_job_title ="en" %}
+  {% endif %}
+
+{% macro tags_footer(client) %}
+    {% set industry_tags = [] %}
+      {% for industry in client.industry %}
+            {% do industry_tags.append(industry.name) %}
+        {% endfor %}
+
+
+    {% for problem in client.problems %}
+        {% do industry_tags.append(problem.name) %}
+    {% endfor %}
+
+    {% set tech_stack = [] %}
+    {% for tech in client.technology_stack %}
+        {% do tech_stack.append(tech.name) %}
+    {% endfor %}
+
+
+<div class="client-card__tags-wrapper">
+    {% if industry_tags != [null] %}
+        <p>
+            <i class="client-card__tags-icon las la-tag"> </i
+            ><small>
+            {{industry_tags|join(' | ')}}
+            </small>
+        </p>
+    {% endif %} 
+    
+    {% if tech_stack|length > 0 %}
+        <p>
+            <i class="client-card__tags-icon las la-code"> </i
+            ><small>
+            {{tech_stack|sort(False,False)|join(' | ')}}
+            </small>
+        </p>
+    {% endif %}
+
+  <div class="client-card__footer-icons">
+      {% for service in client.services %}
+      <img
+        class="client-card__service-icon"
+        height="20"
+        src="https://f.hubspotusercontent10.net/hubfs/3042464/Services%20Logos/icon-{{service.name|lower|split(' ')|join('-')}}.svg"
+        alt=""
+      />
+      {% endfor %}
+ 
+  </div>
+  {% if client.partner.name %}
+    <div class="client-card__partners"> 
+      <p> 
+            <img
+              class="client-card__partner-icon"
+              src="https://f.hubspotusercontent10.net/hubfs/3042464/CMS%20Sandbox/Partner%20Logos/{{client.partner.name|lower}}.svg"
+              alt="{{client.patner.name}}-logo"
+            />
+      </p>
+    </div>  
+  {% endif %}
+</div>
+{% endmacro %} 
+
+{% macro large_card(client, classnames) %} 
+
+    {% set problems = []%} 
+        {% for problem in client.problems %} 
+            {% do problems.append(problem.name) %}
+        {% endfor %}
+
+ {% set services = [] %} 
+        {% for service in client.services %} 
+            {% do services.append(service.name) %} 
+        {% endfor %} 
+        
+{% set tech_stack = [] %}
+  {% for tech in client.technology_stack %} 
+    {% do tech_stack.append(tech.name) %} 
+    {%endfor %}
+
+<div
+  class="{{classnames}}"
+  data-client-industry="{{client.industry.name}}"
+  data-client-technology="{{tech_stack|join(',')}}"
+  data-client-service="{{services|join(',')}}"
+>
+  <article class="clients__large-card">
+    <div class="clients__large-card__primary">
+      <img
+        class="clients__large-card__img"
+        src="{{client.hero_image.url}}"
+        url=""
+      />
+      <div class="clients__large-card__body">
+        <img
+          class="clients__large-card__logo"
+          src="{{client.logo.url}}"
+          url="{{client.name}}-logo"
+        />
+
+        {% if client.testimonial_text %}
+          <div class="clients__large-card__testimonial-container">
+            <i class="las la-quote-left clients__large-card__testimonial-quotation-icon"></i>
+            <p class="clients__large-card__testimonial-text">
+              {{client.testimonial_text }}
+            </p>
+
+            {% if client.testimonial_author_name %}
+                <p class="clients__large-card__testimonial-author-name">
+                {{client.testimonial_author_name}}
+                </p>
+            {% endif%}
+
+            {% if client.testimonial_author_role %}
+            <p class="clients__large-card__body-author-title">
+             {{client.testimonial_author_role}} {{proposition_job_title}} {{client.name}}
+            </p>
+            {% endif %}
+          
+          </div>
+      
+        {% set isPromotionSet = False %}
+        {% elif client.promotion %} 
+          {% set isPromotionSet = True %}
+  
+            <p class="clients__large-card__promotion-text">
+            {{client.promotion}}
+  
+            </p>
+        {% endif %}
+  
+      </div>
+    </div>
+      <div class="clients__large-card__secondary">
+        <div class="clients__large-card__secondary__body">
+          {% if isPromotionSet == False %}
+            <p class="clients__large-card__secondary__text">
+              {{client.promotion}}
+            </p>
+          {% endif %}
+
+          <div>{{ tags_footer(client) }}</div>
+        </div>
+
+        {% if client.case_study %}
+          <div class="clients__large-card__secondary__case-study">
+            <img class="clients__large-card__secondary__case-study-image" 
+                 src="{{client.case_study_display_image.url}}"
+                 alt=""/>
+            <p class="clients__large-card__secondary__case-study-text">
+              {{case_study_info_text}} {{client.name}}
+            </p>
+            <a class="button-primary" href="{{client.case_study}}">
+              {{case_study_button_text}}
+            </a>
+          </div>
+        {% endif %}
+      
+      </div>
+     
+    </article>
+  </div>
+{% endmacro %} 
+
+{% macro secondary_card(client, classnames) %} 
+
+  {% set problems = []%} 
+      {% for problem in client.problems %} 
+          {% do problems.append(problem.name) %}
+      {% endfor %}
+
+{% set services = [] %} 
+      {% for service in client.services %} 
+          {% do services.append(service.name) %} 
+      {% endfor %} 
+      
+      {% set tech_stack = [] %}
+       {% for tech in client.technology_stack %} 
+          {% do tech_stack.append(tech.name) %} 
+          {%endfor %}
+
+        <div
+        class="{{classnames}}"
+        data-client-industry="{{client.industry.name}}"
+        data-client-technology="{{tech_stack|join(',')}}"
+        data-client-service="{{services|join(',')}}"
+        >
+        <article class="clients__secondary-card">
+          
+          <img class="clients__secondary-card__logo"  src={{client.logo.url}} alt="">
+          <p class="clients__secondary-card__description-text"> {{client.promotion}} </p>
+          
+          <div class="clients__secondary-card__extra-info">{{ tags_footer(client) }}</div>
+          </article>
+        </div>
+{% endmacro %} 

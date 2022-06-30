@@ -1,0 +1,422 @@
+{% import '../utils/utils.css' as utils %}
+ 
+
+
+/* ======================= 
+    HOMEPAGE HERO SECTION 
+========================== */
+
+.homepage-hero{
+    background: linear-gradient(180deg, rgba(253,237,226,1) 0%, rgba(255,255,255,1) 85%);
+    padding-bottom: 2em;
+    overflow: hidden;
+}
+
+.homepage-hero .announcement-bar{
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.homepage-hero .announcement-bar__inner{
+    padding:1em;
+}
+
+
+.homepage-hero__container{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1em;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+.homepage-hero__text{
+    margin-top: 1em;
+    max-width: 48ch;
+    align-self: center;
+}
+
+.homepage-hero__text h1{
+    {{utils.dudler()}}
+    font-weight: var(--heavy-font-weight);
+}
+
+.homepage-hero__image{
+    transform: translate(15%, 5%);
+}
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .homepage-hero__container {
+        flex-direction:row;
+    }
+    .homepage-hero__image {
+        transform: translate(10%, 5%);
+    }
+
+    .homepage-hero__text{
+        margin-top: 5em;
+    }
+    .homepage-hero__text h1{
+        {{utils.eames()}}
+    }
+    .homepage-hero__text p{
+        {{utils.freed()}}
+        font-weight: var(--light-font-weight);
+    }
+
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+   
+    .homepage-hero__image {
+        scale: 1.2;
+    }
+
+{% endcall %}
+{% call utils.extra_large() %}
+    .homepage-hero__container{
+        overflow: revert;
+        padding: 1em 0;
+
+    }
+
+{% endcall %}
+
+
+/* ======================= 
+    CLIENTS LOGOS SECTION 
+========================== */
+.client-logos{
+    padding: 2em 1em 4em;
+}
+
+/* =============================== 
+    SOFTWARE CONSULTANCY SECTION 
+================================= */
+.software-consultancy {
+    background: url(https://f.hubspotusercontent40.net/hubfs/14557846/who-we-are-bg-x-large-homepage.svg) 
+                no-repeat 
+                top right/cover;
+       
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .software-consultancy {
+        background-size: contain;
+    }
+{%endcall%}
+
+
+
+/* ======================= 
+    COMPASS SECTION 
+========================== */
+
+.compass{
+    background: linear-gradient( white, #ECF8F8 )
+}
+
+
+
+/* ======================= 
+    PARTNERS SECTION 
+========================== */
+
+.partners{
+    padding: 1em;
+}
+.partners .lp-header-v1{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.partners .lp-header-v1__image {
+    order: revert;
+    width: revert;
+}
+
+.partners .lp-header-v1__content {
+    padding: 2em 0;
+    max-width: 30em;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+   .partners .lp-header-v1 {
+       padding: 2em 1em;
+       align-items: center;
+   }
+   .partners .lp-header-v1__content {
+        max-width: 45%;
+   }
+   .partners .lp-header-v1__image {
+        max-width: 50%;
+   }
+{%endcall%}
+
+{% call utils.medium_large_and_extra_large() %}
+    .partners .lp-header-v1 {
+       padding: 3em 0em;
+    
+   }
+{% endcall %}
+
+
+
+/* ============================= 
+    CRAFTMANSHIP ETHOS SECTION
+================================= */
+
+.craftmanship-ethos{
+    {{ utils.black_to_navy() }}
+    color: white;
+}
+
+.craftmanship-ethos .compass-image {
+    transform: translate(-29%,-20.7%);
+    width: 21em;
+    max-width: initial;
+}
+
+.craftmanship-ethos .compass-content {
+    margin:0 auto;
+    max-width: 90%;
+    margin-top: -3em;
+}
+
+.craftmanship-ethos .compass-content__text h2{
+    {{ utils.dudler() }}
+ 
+}
+
+.craftmanship-ethos .expertise-areas__title {
+    max-width: initial;
+}
+.craftmanship-ethos .expertise-areas__image {
+    filter: brightness(100);
+}
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .craftmanship-ethos .compass-content {
+        margin:0 auto;
+        max-width: 100%;
+    }
+    .craftmanship-ethos .compass-content__text{
+        max-width: 100%;
+    }
+
+    .craftmanship-ethos .compass-image {
+        width: 50%;
+        transform: initial;
+    }
+
+    .craftmanship-ethos .compass-image img {
+        height: 18em;
+        transform: translate(-29%,-25.7%);
+        max-width: initial;
+    }
+{% endcall %}
+{% call utils.large_and_extra_large() %}
+    .craftmanship-ethos .compass-image img {
+        height: 25em;
+        transform: translate(-29%,-21.7%);
+    }
+{% endcall %}
+
+
+/* ======================= 
+   TESTIMONIALS SECTION
+========================== */
+.testimonial{
+    background-color: #ffffff;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent), 
+                        url('https://f.hubspotusercontent40.net/hubfs/14557846/bg-testimonials-test/hexagons-minify.svg'),
+                        radial-gradient(rgba(219, 219, 223, 0.3) .12em,transparent .12em),
+                        radial-gradient(rgb(205, 205, 205) 0px,#fff 0px);
+    background-size: cover,cover,33px 33px;
+    background-position: center, top right,24px 24px;
+    background-repeat:no-repeat, no-repeat, repeat;
+    padding: 2em 1em;
+
+}
+
+.testimonial-wrapper{
+    display: grid;
+    grid-template: 1fr/100%;
+    max-width: 35em;
+    margin: 0 auto;
+}
+
+.testimonial-content,
+.testimonial-cta{
+    padding: 1em;
+}
+
+.testimonial-cta{
+    grid-row: 3;
+}
+
+.testimonial-content__title{
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.testimonial-content__paragraph{
+    {{ utils.base() }}
+    margin-top: 1em;
+    max-width: 45ch
+}
+
+.slider .testimonial-slider{
+    padding: 0;
+}
+
+.testimonial-slider .swiper-container{
+    max-width: unset;
+}
+
+{% call utils.medium_and_large() %}
+    .testimonial-cta{
+        grid-row: 2;
+    }   
+{% endcall %} 
+
+{% call utils.extra_large() %}
+    .testimonial{
+        padding: 5em 0;
+    }
+    .testimonial-wrapper {
+        grid-template: 1fr 2em/50% 50%;
+        align-items: center;
+        max-width: var(--content-max-width);
+        gap: 1em;
+        margin: 0 auto;
+    }
+
+    .testimonial-content {
+        padding:1em;
+        grid-column: 1 /2;
+        grid-row: 1/2;
+    }
+
+    .testimonial-content__title {
+        {{ utils.dudler() }}
+        font-weight: var(--heavy-font-weight);
+    }
+
+    .testimonial-cta {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding-left: 1em;
+    }
+    .slider {
+        grid-row: span 2;
+    }
+
+{% endcall %}
+
+
+/* */
+/* ======================= 
+    LATEST INSIGHTS SECTION  
+========================== */
+
+.latest-insights{
+    background: transparent linear-gradient(251deg, #EF77267C 0%, white 100%) 0% 0%;
+    margin-top: 7em;
+    transition: var(--cta-transition);   
+}
+
+{% call utils.extra_large() %}
+    .latest-insights{
+        margin-top: 7em;
+            
+    }
+{% endcall %}
+
+
+/* ================================ 
+    NEWSLETTER SIGNUP SECTION 
+    (Styles coming from the module)
+=============================== */
+
+
+/* ======================= 
+    COMMUNITY SECTION 
+========================== */
+
+.community{
+    padding: 2em 0;
+}
+.community-content{
+    margin: 2em 1em 0;
+}
+.community-content__title{
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight)
+}
+.community-content__subtitle{
+    {{utils.natus()}}
+    margin-top: 1em;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+
+    .community__wrapper{
+        display: flex;
+        margin: 0 auto;
+        max-width: var(--content-max-width);
+    }
+  
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .community-content{
+        max-width: 20%;
+    }
+    .community-content__title{
+        {{ utils.dudler() }}
+        font-weight: var(--heavy-font-weight)
+    }
+    .community-content__subtitle{
+        {{ utils.base() }}
+    }
+{% endcall %}
+
+{% call utils.extra_large() %}
+    .community-content{
+        margin-left: 0;
+    }
+{% endcall %}
+
+
+/* ======================= 
+    CONTACT US SECTION 
+========================== */
+
+.contact-banner .cta-block{
+    max-width: initial;
+    text-align: center;
+}
+.cta-block__button .button-secondary{
+    background: white;
+}
+.cta-block__button .button-secondary:hover,
+.cta-block__button .button-secondary:focus,
+.cta-block__button .button-secondary:active{
+    background: var(--persimmon--dark);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .contact-banner .cta-block__title{
+        margin: 0 auto; 
+    }
+
+    .contact-banner .cta-block__button{
+        text-align: inherit;
+    }
+{% endcall %}
+
+
+

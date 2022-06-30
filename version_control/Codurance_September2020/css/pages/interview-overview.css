@@ -1,0 +1,192 @@
+{% import '../utils/utils.css' as utils %}
+
+/*------------------------------------*\
+  #Hero section
+\*------------------------------------*/
+
+
+.interview-process-hero {
+  {{ utils.tango_to_white() }}
+  overflow: hidden;
+}
+
+.interview-process-hero__container {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 1em;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.interview-process-hero__text {
+  margin-top: 1em;
+  max-width: 48ch;
+  align-self: center;
+}
+
+.interview-process-hero__text h1 {
+  {{utils.eames()}}
+  font-weight: var(--heavy-font-weight);
+}
+
+.interview-process-hero__text p {
+  margin-top: .8rem;
+}
+
+.interview-process-hero__image {
+    transform: translate(15%, 5%);
+}
+
+{% call utils.small() %}
+  .interview-process-hero__text h1 {
+    {{ utils.freed() }}
+  }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+    .interview-process-hero__container {
+        flex-direction:row;
+    }
+    .interview-process-hero__image {
+        transform: translateX(10%) scale(1.1);
+        align-self: start;
+    }
+
+    .interview-process-hero__text{
+        max-width: 50%;
+    }
+
+    .interview-process-hero__text h1{
+        {{ utils.eames() }}
+    }
+
+    .interview-process-hero__text p{
+        {{ utils.freed() }}
+        font-weight: var(--light-font-weight);
+    }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .interview-process-hero__container{
+        padding-left: 2.5em;
+    }
+{% endcall %}
+
+{% call utils.extra_large() %}
+    .interview-process-hero__container{
+        overflow: initial;
+        padding: 1em 0;
+    }
+{% endcall %}
+
+
+/*------------------------------------*\
+  #Video Ask
+\*------------------------------------*/
+
+.video-ask {
+  padding: 2em .5em;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+{% call utils.extra_large() %}
+  .video-ask {
+    max-width: var(--content-max-width);
+    paddin-bottom: 4em;
+  }
+{%endcall%}
+
+/*------------------------------------*\
+  #CTA Banner section
+\*------------------------------------*/
+.interview-cta .cta-block {
+  background-position: center;
+}
+
+
+/*------------------------------------*\
+  #Video sections
+\*------------------------------------*/
+
+
+.video-wrapper {
+  {{ utils.slate_to_woodsmoke() }}
+}
+
+.video-wrapper h2 {
+  color: white;
+}
+
+
+/*------------------------------------*\
+  #Process interview sections
+\*------------------------------------*/
+
+.process-interview {
+  padding-top: 2em;
+  background: linear-gradient(180deg, white, 80%, var(--tango-100));
+}
+
+.process-interview .text-and-image__copy h2 {
+  margin-bottom: 1em;
+  font-weight: revert;
+}
+
+{% call utils.small() %}
+  .process-interview .text-and-image__image {
+    display: none;
+  }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+  .process-interview {
+    padding-top: 4em;
+  }
+{% endcall %}
+
+/*------------------------------------*\
+  #Benefits section
+\*------------------------------------*/
+
+.codurance-benefits {
+  padding: 4em 0;
+}
+
+/*------------------------------------*\
+  #Recruitment team section
+\*------------------------------------*/
+
+.recruitment-team {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  background: linear-gradient(180deg, var(--tango-100), white 50%);
+}
+
+.recruitment-team--wrapper {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+
+.recruitment-team__title {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+  margin-bottom: var(--dudler-margin);
+}
+
+.recruitment-team__subtitle {
+  max-width: var(--freed-max-width);
+}
+
+.recruitment-team .custom-our-people {
+  padding: 0;
+}
+
+{% call utils.extra_large() %}
+  .recruitment-team {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+{% endcall %}

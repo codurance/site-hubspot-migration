@@ -1,0 +1,66 @@
+[ {
+  "id" : "9bd91a1f-9db4-e83b-82f5-a7cffd81742d",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "Stats Block Tite",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Stats Block Tite"
+}, {
+  "id" : "a5ee556b-1161-4471-8fa8-0cf72b33db1e",
+  "name" : "field_group",
+  "label" : "Field group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 3,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "531bf3cc-c13d-7e59-2b1a-8925696d9457",
+    "name" : "number",
+    "label" : "Number",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "statistic",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : ""
+  }, {
+    "id" : "2cb69acb-ef66-9254-13c2-52edf1fd9c25",
+    "name" : "symbol",
+    "label" : "Symbol",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "11ce807c-3489-f7d5-c09a-57cee6991445",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper dolor vel ultrices faucibus. Curabitur eu sem"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "number" : "",
+    "content" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper dolor vel ultrices faucibus. Curabitur eu sem"
+  } ]
+} ]

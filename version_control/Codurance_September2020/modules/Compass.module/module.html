@@ -1,0 +1,52 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{{ require_css(get_asset_url("../../css/modules/compass.css")) }}
+
+
+
+<div class="compass-wrapper">
+	<div class="compass-content">
+		<div class="compass-content__text">
+			{% inline_rich_text field="richtext_field" value="{{ module.richtext_field }}" %}
+		</div>
+		<div class="compass-content__expertise-areas">
+			{% for item in module.expertise_areas %}
+				<div class="expertise-areas__item">
+					<h3 class="expertise-areas__title">{{ item.title }}</h3>
+					{% if item.icon.src %}
+						{% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
+					<img class="expertise-areas__image" src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }}>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+
+    {% if module.button_type %}
+      <div class="compass-content__cta">
+        {% if module.button_type == "std" %}
+          {% set href = module.link_field.url.href %}
+
+          {{
+            snippets.button_primary(
+            url="{{ href }}{% if module.bookmark_id  %}#{{ module.bookmark_id }} {% endif %}",
+			classnames="{{ module.module_setting.custom_class }}",
+            target="{% if module.link_field.open_in_new_tab %}_blank{% endif %}",
+			rel="{% if module.link_field.rel %}{{ module.link_field.rel }}{% endif %}",
+            text=module.text_field
+            )
+          }}
+
+        {% elif module.button_type == "cta" %}
+          {% cta guid="{{ module.cta_field }}" %}
+        {% endif %}
+      </div>
+    {% endif %}
+		
+	</div>
+	<div class="compass-image">
+		{% if module.image_field.src %}
+			 {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
+			<img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }}>
+		{% endif %}
+	</div>
+</div>

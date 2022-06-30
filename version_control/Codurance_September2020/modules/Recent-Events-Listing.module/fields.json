@@ -1,0 +1,47 @@
+[ {
+  "id" : "hubdb_table",
+  "name" : "hubdb_table",
+  "display_width" : null,
+  "label" : "HubDB table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable"
+}, {
+  "id" : "7b936bf8-8504-1065-d9f3-d763d9526fc5",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Recent Events"
+}, {
+  "id" : "3c2b6f0e-bc96-18a1-e3ed-e15d7ab6a463",
+  "name" : "watch_all_cta_text",
+  "display_width" : null,
+  "label" : "Watch All CTA Text",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Watch all on YouTube"
+}, {
+  "id" : "4c93f6c1-6b3f-6c27-fc26-6221f558681f",
+  "name" : "watch_all_cta_url",
+  "display_width" : null,
+  "label" : "Watch All CTA URL",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "CONTENT" ],
+  "type" : "url",
+  "default" : {
+    "content_id" : null,
+    "href" : "",
+    "type" : "CONTENT"
+  }
+} ]

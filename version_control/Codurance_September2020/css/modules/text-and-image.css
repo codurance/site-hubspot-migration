@@ -1,0 +1,71 @@
+
+{% import '../utils/utils.css' as utils %}
+
+.text-and-image__container {
+    padding: 2em 1em;
+    display: flex;
+    flex-flow: column-reverse;
+    overflow: hidden;
+}
+
+.text-and-image__copy{
+    max-width: 48ch;
+    align-self: center;
+} 
+
+.text-and-image__copy h2 {
+    {{utils.freed()}}
+    font-weight: var(--light-font-weight);
+}
+
+.text-and-image__copy p {
+    {{utils.natus()}}
+}
+
+.text-and-image__image{
+    max-width: 70%;
+    align-self: end;
+}
+.text-and-image__image img{
+    transform: translate(20%);
+}
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .text-and-image__container{
+        overflow: initial;
+        flex-direction: row;
+        gap: 1em;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: var(--content-inner-max-width);
+    }
+    .container--img-left{
+        flex-direction: row-reverse;
+    }
+
+    .text-and-image__copy{
+        max-width: 50%;
+        align-self: initial;
+    }
+    .text-and-image__image img{
+        transform: translate(5%, -5%);
+    }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .text-and-image__container {
+        padding: 2em 0;
+    }
+    .text-and-image__copy h2{
+        {{utils.dudler()}}
+        font-weight: var(--light-font-weight);
+
+
+    }
+        
+    .text-and-image__copy p{
+        {{utils.base()}}
+    }
+
+{% endcall %}

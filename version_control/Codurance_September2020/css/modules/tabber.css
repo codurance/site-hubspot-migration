@@ -119,7 +119,7 @@
 }
 
 .cm-tabber-panel__how-wrapper ul li {
-    font-weight: var(--welter-font-weight);
+    font-weight: var(--light-font-weight);
     padding-left: 23px;
 }
 
@@ -289,7 +289,6 @@
     .cm-tabber-section {
         margin-left: auto;
         margin-right: auto;
-        max-width: var(--max-page-width);
         background-size: 150% auto;
         background-repeat: no-repeat;
     }

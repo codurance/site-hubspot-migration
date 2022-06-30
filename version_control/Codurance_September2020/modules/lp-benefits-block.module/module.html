@@ -1,0 +1,16 @@
+{{ require_css(get_asset_url("../../css/modules/lp-benefits-block.css")) }}
+
+<div class="lp-benefits-block">
+	<h2 class="lp-benefits-block__title">{{ module.title }}</h2>
+	<div class="lp-benefits-block__content">
+		{% for item in module.field_group %}
+			<div class="lp-benefits-block-card">
+        	<img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>       
+        	<p class="lp-benefits-block-text">{{item.content}}</p>
+        	{% if item.link %}
+	          <a class="lp-benefits-block__cta" href="{{ item.link }}">{{ item.link_text }} <i class="las la-arrow-right"></i></a>
+         	{% endif %}
+	</div>
+		{% endfor %}
+</div>
+  

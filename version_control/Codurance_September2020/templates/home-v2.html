@@ -1,0 +1,99 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Home Page version 2
+-->
+
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/homepage-v2.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+  <section class="homepage-hero">
+    {% module "Announcement Bar" path="../modules/Announcement Bar.module" label="Announcement Bar" no_wrapper=True %}
+    <div class="homepage-hero__container">
+      <div class="homepage-hero__text">
+        {% module_block module "rich_text" path="@hubspot/rich_text" label="Hero Copy" no_wrapper=True %}
+             {% module_attribute "html" %}
+                 <h1>Create solutions that are fit for today and ready for tomorrow</h1>
+                 <p>Improve business agility and accelerate innovation while driving business growth – quickly, safely, securely – with confidence.</p>
+             {% end_module_attribute %}
+        {% end_module_block %} 
+      </div>
+        <div class="homepage-hero__image">
+        {% module 'linked_image',
+              path="@hubspot/linked_image",
+              img={
+                "src": "https://f.hubspotusercontent10.net/hubfs/3042464/Homepage/Header%20Section/header-x-large-homepage.png"
+              },
+              label="Hero Image", 
+              no_wrapper=True        
+        %}
+      </div>
+    </div>
+  </section>
+  <section class="client-logos">
+    {% module 'clients logos' path='../modules/Clients-Logos.module' label="Clients logos Section" no_wrapper=True%}
+  </section>
+  <section class="software-consultancy">
+    {% module 'Text and image' path='../modules/Text-and-image.module' label="Software Consultancy Section" no_wrapper=True%}
+  </section>
+  <section class="compass">
+    {% module 'Compass' path='../modules/Compass.module' label="Compass Section" no_wrapper=True%}
+  </section>
+  <section class="partners">
+    {% module 'LP-header-v1' path='../modules/LP-header-v1.module' label="Partners Section" no_wrapper=True%}    
+  </section>
+  <section class="craftmanship-ethos">
+    {% module 'Ethos' path='../modules/Compass.module' label="Craftmanship Ethos Section" no_wrapper=True%}
+      </section>
+  <section class="testimonial">
+      <div class="testimonial-wrapper">
+        <div class="testimonial-content">
+          <div class="testimonial-content__title">{% module 'Testimonial title' path='@hubspot/text', label="Testimonial Title" no_wrapper=True %}</div>
+          <div class="testimonial-content__paragraph">{% module 'Testimonial paragraph' path='@hubspot/text' label="Testimonial Paragraph" no_wrapper=True %}</div>
+        </div>
+        <div class="testimonial-cta">
+          {% module "cta" path="@hubspot/cta" label="Testimonial CTA"  no_wrapper=True %} 
+        </div>
+        <div class="slider">
+          {% module 'Testimonial Slider' path='../modules/Landing Page Modules/LP-testimonial-slider.module' label="Testimonial Slider"  no_wrapper=True %}
+        </div>
+      </div>
+  </section>
+  <section class="latest-insights">
+      {% module 'Recent-posts-V2' path='../modules/Recent-posts-V2.module' label="Latest Insights" no_wrapper=True%}
+  </section>
+
+  {% module 'newsletter_form' path='../modules/Newsletter-Form-Card.module' label="Newsletter Form" no_wrapper=True %}
+ 
+  <section class="community">
+      <div class="community__wrapper">
+        <div class="community-content">
+          <h2 class="community-content__title">{% module 'Title' path="@hubspot/text" label="Community Title" no_wrapper=True%}</h2>
+          <p class="community-content__subtitle">{% module 'Subtitle' path="@hubspot/text" label="Community Subtitle" no_wrapper=True%}</p>
+        </div>
+        {% module 'Software-craftsmanship-V2' path='../modules/Software-craftsmanship-V2.module' label="Community Cards" no_wrapper=True%}
+      </div>
+  </section>
+  <section class="contact-banner">
+    {% module 'LP-cta-block' path='../modules/LP-cta-block.module' label="Contact us Section" %}
+  </section>
+{% endblock body %}

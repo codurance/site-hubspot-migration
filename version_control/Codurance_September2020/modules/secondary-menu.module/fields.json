@@ -1,0 +1,32 @@
+[ {
+  "id" : "de863304-d116-95df-701d-946282fb63fc",
+  "name" : "menu_tree",
+  "display_width" : null,
+  "label" : "Simple menu",
+  "required" : false,
+  "locked" : false,
+  "type" : "simplemenu",
+  "default" : [ ]
+}, {
+  "id" : "b9755df2-ad38-55a3-f10e-f1bb67127be6",
+  "name" : "orientation",
+  "display_width" : null,
+  "label" : "Menu orientation",
+  "required" : false,
+  "locked" : false,
+  "display" : "radio",
+  "placeholder" : "Search",
+  "choices" : [ [ "horizontal", "Horizontal" ], [ "vertical", "Vertical" ] ],
+  "type" : "choice",
+  "default" : "horizontal"
+}, {
+  "id" : "fe13560d-ccbb-4e26-cacd-372654068bfb",
+  "name" : "sticky",
+  "display_width" : null,
+  "label" : "Sticky",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+} ]

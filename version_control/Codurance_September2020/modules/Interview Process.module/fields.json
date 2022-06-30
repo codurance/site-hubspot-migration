@@ -1,28 +1,36 @@
 [ {
   "id" : "fb1dab42-60e2-52a6-e9a3-569873af3959",
   "name" : "interview_process_items",
+  "display_width" : null,
   "label" : "Interview Process Items",
   "required" : false,
   "locked" : false,
   "occurrence" : {
     "min" : null,
-    "max" : null,
+    "max" : 4,
     "sorting_label_field" : "38281e9a-f8f1-3dbd-d7f2-61abece84d90",
     "default" : null
   },
-  "children" : [ {
-    "id" : "eb4a0df8-e4d9-4319-1aff-29b2d3e83e4d",
-    "name" : "icon_class",
-    "label" : "Icon Class",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
-  }, {
+  "children" : [{
+    "name": "icon_image",
+    "label": "Icon image",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "responsive": true,
+    "resizable": true,
+    "show_loading" : false,
+    "type": "image",
+    "default": {
+      "size_type" : "auto",
+      "src": "",
+      "alt": null,
+      "loading": "lazy"}
+    },{
     "id" : "38281e9a-f8f1-3dbd-d7f2-61abece84d90",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -31,15 +39,13 @@
     "show_emoji_picker" : false,
     "type" : "text"
   }, {
-    "id" : "0f2e8dad-ba43-2088-26ed-bfed4c12630d",
+    "id" : "b1cab328-c9c9-c8c8-1edb-d7b0fa8bbd20",
     "name" : "content",
+    "display_width" : null,
     "label" : "Content",
     "required" : false,
     "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
+    "type" : "richtext"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,

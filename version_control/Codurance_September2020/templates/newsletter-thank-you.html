@@ -1,0 +1,39 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Newsletter Thank You
+-->
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/newsletter-thank-you.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+
+{% block body %}
+
+    <section class="thank-you-message__container">
+      {% module "Thank you message" path="../modules/thank-you-message", label="Thank you message" no_wrapper=True %}
+    </section>
+
+    <section class="recent-posts__container">
+      {% module "Recent Posts" path="../modules/Recent posts", label="Recent posts" no_wrapper=True %}
+    </section>
+  
+{% endblock body %}
+

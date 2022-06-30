@@ -1,0 +1,47 @@
+
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Case study template
+-->
+{% extends "./layouts/base.html" %}
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/case-study-template.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+
+<div class="case-study">
+  {% module "Main Banner" path="../modules/LP-cta-block", 
+          label="" %}
+   <section>
+     <div class="form__wrapper">
+       <div class="form__text">
+         {% module "case_study_description" path="@hubspot/rich_text"
+             label="Case Study Description" no_wrapper=True %}
+       </div>
+        <div class="form__fields">
+          {% module "form" path="@hubspot/form" %}
+        </div>
+      </div>
+   </section>
+
+   </div>  
+{% endblock body %}
+

@@ -1,57 +1,100 @@
-{% set overlap = 200 %}
-{% set ultimate_max_width = 1800 %}
+{% import '../utils/utils.css' as utils %}
 
-.events-header-slice {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 50px;
+
+.events-header {
+  background: linear-gradient(180deg, rgba(253,237,226,1) 0%,
+                                      rgba(255,255,255,1) 85%)
 }
 
-main {
-  margin-bottom: 100px;
+.events-header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -4rem auto 0;
+  max-width: var(--content-max-width);
+
+}
+
+.events-header__text h1{
+  {{ utils.eames() }}
+}
+
+.events-header__text p {
+  {{ utils.freed() }}
+  font-weight: var(--light-font-weight);
+  max-width: var(--dudler-max-width);
+  margin-top: var(--freed-margin);
+}
+
+.events-header__image {
+  transform: translateY(1.5em);
+}
+
+.events-description{
+  margin: 0 auto;
+}
+
+.events-description__wrapper{
+  background: white;
+  margin: 0 2.5em;
+  padding: 1.5em 7.5em;
+  text-align: center;
+  {{ utils.card_shadow() }}
+}
+
+.events-description h2{
+  {{ utils.freed() }}
+  font-weight: var(--heavy-font-weight);
+}
+
+
+.main-container {
+  background: linear-gradient(360deg, hsla(24, 86%, 54%, 0.49) 0%, 
+                                      hsla(0, 0%, 100%, 0.98) 97%) ;
+  }
 }
 
 .card-slider {
-  max-width: {{ultimate_max_width}}px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 2em;
 }
 
-.card-slider__heading-wrapper {
-  background-position: top center;
-  background-size: cover;
-  padding-bottom: {{overlap}}px;
-}
-@media (max-width: 767px) {
-  .card-slider__heading-wrapper {
-    padding-top: 40px;
-  }
-}
-@media (min-width: 768px) {
-  .card-slider__heading-wrapper {
-    padding-top: 100px;
-  }
+.recent-events-bg{
+  background: var(--slate);
+  padding-top: 2em;
+  padding-bottom: 4em;
 }
 
-.card-slider__heading-wrapper--upcoming-events {
-  background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Upcoming%20Events%20Images/upcoming-events-banner.jpg');
-}
-.card-slider__heading-wrapper--past-events {
-  background-image: url('https://www.codurance.com/hubfs/Codurance_September2020/images/Module%20Images/Past%20Events%20Images/past%20events.jpg');
-}
 
-.card-slider__events-wrapper {
-  position: relative;
-  top: -{{overlap}}px;
-}
-@media (max-width: 767px) {
-  .card-slider__events-wrapper {
-    margin-bottom: -190px;
+{% call utils.small() %}
+  .events-header-wrapper {
+    flex-direction: column-reverse;
+    align-items: start;
+    margin-top: -2rem;
   }
-}
-@media (min-width: 768px) {
-  {% set bottom_card_spacing = 30 %}
-  .card-slider__events-wrapper {
-    margin-bottom: -{{overlap - bottom_card_spacing}}px;
+
+  .events-header__text p {
+    {{ utils.base() }}
   }
-}
+
+  .events-header__image {
+    width: 50%;
+    align-self: end;
+    transform: initial;
+  }
+
+  .main-container {
+    margin-top: 3em;
+  }
+
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+
+  .events-description__wrapper{
+    margin: 0 1.5em;
+    padding: 2.5em 1.5em;
+    }
+
+{% endcall %}

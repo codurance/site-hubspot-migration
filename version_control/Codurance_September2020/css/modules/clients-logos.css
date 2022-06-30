@@ -1,0 +1,33 @@
+
+{% import '../utils/utils.css' as utils %}
+
+.client-logos__content{
+    max-width: var(--content-inner-max-width);
+    margin: 0 auto;
+}
+
+.client-logos__headline{
+    {{ utils.natus() }}
+    font-weight: var(--heavy-font-weight);
+    color: var(--mid-gray);
+}
+
+.client-logos__logos-group{
+    filter: contrast(0%);
+    margin: 1.5em 0;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat( auto-fit, minmax(130px, 1fr) );
+    justify-items: center;
+}
+
+.client-logos__logos-group img{
+    max-height: 40px;
+}
+
+{% call utils.large_and_extra_large() %}
+    .client-logos__logos-group{
+        grid-template-columns: repeat( auto-fit, minmax(160px, 1fr) );
+        row-gap: 2em;
+    }
+{% endcall %}

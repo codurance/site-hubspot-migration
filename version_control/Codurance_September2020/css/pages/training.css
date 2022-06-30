@@ -22,7 +22,6 @@ body {
 {% endcall %}
 
 .container .dnd-section {
-    max-width: var(--max-page-width);
     margin: 0px auto;
 }
 

@@ -1,0 +1,122 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Become A Craftsperson
+-->
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/become-a-craftsperson-v2.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+
+<main class="craftsperson-container">
+  <section class="craftsperson-hero">
+    <div class="craftsperson-hero__container">
+      <div class="craftsperson-hero__text">
+        {% module 'rich_text' 
+          path='@hubspot/rich_text'
+          label='Header Text' 
+        %}
+      </div>
+      <div class="craftsperson-hero__image">
+          {% module 'linked_image',
+              path="@hubspot/linked_image",
+              label="Hero Image", 
+              no_wrapper=True        
+          %}
+      </div>
+    </div>
+  </section>
+
+  <section class="craftsperson-videos">
+    {% module 'craftsperson_videos' 
+      label="Craftsperson Video Mosaic" 
+      path='../modules/Video-Mosaic.module' 
+      no_wrapper=True
+    %}
+  </section>
+
+  <section class="craftsperson-cta">
+    {% module 'CTA-Section' 
+      path='../modules/LP-cta-block.module' 
+      label="CTA Section" 
+    %}
+  </section>
+
+  <section class="craftsperson-skills">
+    <div class="craftsperson-skills__wrapper">
+      <div class="craftsperson-skills__title">
+        {% module 'craftsperson_skills_title' 
+          path='@hubspot/rich_text' 
+          label="Craftsperson Skills Title" 
+          no_wrapper=True
+        %}
+      </div>
+    
+      {% module 'Expected skills' 
+        path='@hubspot/rich_text'
+        label="Craftsperson Skills" 
+        no_wrapper=True
+      %}
+
+      {% module 'apply_now_skills' 
+        path='../modules/Button.module' 
+        label="Craftsperson Skills Button" 
+        no_wrapper=True
+      %}
+    </div>
+  </section>
+
+  <section class="craftsperson-info">
+    {% module 'Academy' 
+      path='../modules/Text-and-image.module' 
+      label="Academy Section" 
+      no_wrapper=True
+    %}
+
+    {% module 'craftsperson-profile' 
+      path='../modules/Text-and-image.module' 
+      label="Craftsperson Profile Section" 
+      no_wrapper=True 
+    %}
+  </section>
+
+  <section class="interview">
+    {% module 'interview_intro' 
+      path='../modules/Text-and-image.module' 
+      label="Interview Section Intro" 
+      no_wrapper=True
+    %}
+
+    {% module 'interview_process' 
+      path='../modules/Interview Process.module'
+      no_wrapper=True
+    %}
+  </section>
+
+  <section class="craftsperson-cta">
+    {% module 'CTA-Section-2' 
+      path='../modules/LP-cta-block.module' 
+      label="CTA Section 2" 
+    %}
+  </section>
+</main>
+
+{% endblock body %}

@@ -1,0 +1,46 @@
+
+{{ require_css(get_asset_url("../../css/modules/lp-cta-block.css")) }}
+
+{% require_css %}
+    <style>
+      {% scope_css %}
+        .cta-block {
+            --bg-img-small: url({{module.background_image.small.src}});
+            --bg-img-large: url({{module.background_image.large.src}});
+        }
+        
+        {% if module.button_mobile_alignment == "left" %}
+            @media(max-width: 768px) {
+                .cta-block__button {
+                    text-align: left;
+                }
+            }
+        {% endif %}
+      {% end_scope_css %} 
+    </style>
+{% end_require_css %}
+
+<div class="cta-block  cta-block--{{ module.font_color }}">
+    <div class="cta-block__wrapper">
+        <{{module.headline_tag}} class="cta-block__title">{{module.headline}}</{{module.headline_tag}}>
+        {% if module.subheadline %}
+            <p class="cta-block__subtitle">{{module.subheadline}}</p>
+        {% endif %}
+
+        {% if module.button_type %}
+        <div class="cta-block__button">         
+            {% if module.button_type == "cta" %}
+                {% cta guid="{{ module.cta_field }}" %}
+            {% elif module.button_type == "std" %}
+                {% set href = module.link_field.url.href %}                
+                <a class="button-primary" href="{{ href }}"
+                    {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                    {% if module.link_field.rel %}rel="{{ module.link_field.rel }}"{% endif %}
+                    >
+                {{ module.button_text }}
+                </a>
+            {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</div>

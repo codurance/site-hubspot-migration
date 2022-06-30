@@ -1,5 +1,15 @@
 {% import '../utils/utils.css' as utils %}
 
+.cm-software-crafts{
+  {{ utils.white_to_tango() }}
+  padding-top: 2em;
+}
+
+.cm-software-crafts__content-wrapper{
+  margin:0 auto;
+  max-width: 1300px;
+}
+
 .cm-software-crafts-group {
   align-items: stretch;
   display: flex;
@@ -7,6 +17,14 @@
   justify-content: center;
   padding-bottom: 2.14286rem;
 }
+
+.cm-software-crafts__cards-title{
+  {{utils.freed()}}
+  font-weight: var(--heavy-font-weight);
+  margin-bottom: 1.5em;
+  margin-left: 20px;
+}
+
 
 {% set item_margin = 15 %}
 .cm-software-crafts__item {
@@ -40,6 +58,7 @@
 {% endcall %}
 .cm-software-crafts__item:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+
 }
 
 .cm-software-crafts__image-wrapper {
@@ -100,6 +119,7 @@
   flex-direction: column;
   flex-grow: 1;
   padding: 1.5rem;
+  background: white;
 }
 
 .cm-software-crafts__button {
@@ -118,3 +138,12 @@
   right: 0;
   top: 0;
 }
+
+{% call utils.medium_large_and_extra_large() %}
+
+.cm-software-crafts {
+  padding: 2.5em;
+}
+
+{% endcall %}
+

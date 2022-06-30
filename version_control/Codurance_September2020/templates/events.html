@@ -5,6 +5,7 @@
 -->
 {% extends "./layouts/base.html" %}
 
+
 <head>
   <meta charset="utf-8">
   <title>{{ page_meta.html_title }}</title>
@@ -26,15 +27,24 @@
 
 {% block body %}
 
-<section class="events-header-slice responsive-page-width lateral-spacing">
-  {% module "events_header_slice" path="../modules/Header Slice.module" label="Page Header Slice" no_wrapper=True %}
+{% module 'youtube_popup' 
+  path='../modules/YouTube-Video-Popup.module',
+  no_wrapper=True %}
+
+<section class="events-header lateral-spacing">
+  <div class="events-header-wrapper">
+    <div class="events-header__text">
+      <h1>{% module 'header_title' path='@hubspot/text' label="Page Hero Title" no_wrapper=True%}</h1>
+      <p>{% module 'header_subtitle' path='@hubspot/text' label="Page Hero Subtitle" no_wrapper=True%}</p>
+    </div>
+    <div class="events-header__image">
+      {% module 'header_image' path='@hubspot/image' no_wrapper=True%}
+    </div>
+  </div>
 </section>
 
-<main>
+<main class="main-container"> 
   <section class="card-slider">
-    <div
-      class="card-slider__heading-wrapper card-slider__heading-wrapper--upcoming-events"
-    ></div>
     <div class="card-slider__events-wrapper">
       {% module "events" path="../modules/Upcoming Events Listing.module"
       label="Upcoming Events" no_wrapper=True %}
@@ -42,12 +52,16 @@
   </section>
 
   <section class="card-slider">
-    <div
-      class="card-slider__heading-wrapper card-slider__heading-wrapper--past-events"
-    ></div>
     <div class="card-slider__events-wrapper">
-      {% module "past_events" path="../modules/Past Events Listing.module"
-      label="Past Events" no_wrapper=True %}
+      {% module "comunity_events" path="../modules/Community-events-listing.module"
+      label="Community Events" no_wrapper=True %}
+    </div>
+  </section>  
+  
+  <section class="card-slider recent-events-bg">
+    <div class="card-slider__events-wrapper">
+      {% module "recent_events" path="../modules/Recent-Events-Listing.module"
+      label="Recent Events" no_wrapper=True %}
     </div>
   </section>
 </main>

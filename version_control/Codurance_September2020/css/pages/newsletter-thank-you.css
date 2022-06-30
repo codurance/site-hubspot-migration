@@ -1,0 +1,89 @@
+{% import '../utils/utils.css' as utils %}
+
+    .body-container-thank-you {
+        {{ utils.white_to_tango() }}
+        padding: 4em 2em;
+        width: 100%;
+        margin: 0 auto;
+    }
+   
+   .newsletter-thank-you__container {
+       background: white;
+       margin: 0 auto;
+       max-width: 25em;
+       padding: 4rem 2rem 2rem 2rem;
+       position: relative;
+       {{ utils.card_shadow() }};
+   }
+
+   .bolded-text {
+    font-weight: var(--heavy-font-weight);
+    }
+   
+   .newsletter-thank-you-container__title {
+       font-size: var(--dudler-font-size);
+       line-height: var(--dudler-line-height);
+       margin-bottom: var(--dudler-margin);
+   }
+   
+   .newsletter-thank-you_container__icon {
+       background: white;
+       border-radius: 50%;
+       border: 2px solid var(--java);
+       color: var(--java);
+       font-size: 2.6rem;
+       left: 50%;
+       padding: 0.75rem;
+       position: absolute;
+       top: -10%;
+       transform: translate(-50%);
+       z-index: 1;
+       {{ utils.card_shadow_large() }};
+   }
+
+   .bolded-text {
+    font-weight: var(--heavy-font-weight);
+    }
+   
+   .form-wrapper-class .hs-button {
+       background: var(--persimmon);
+       border-radius: 3px;
+       color: white;
+       display: inline-block;
+       font-size: var(--natus-font-size);
+       font-weight: var(--heavy-font-weight);
+       line-height: var(--natus-line-height);
+       padding: 8px 15px;
+       text-align: center;
+       width: 100%;
+   }
+
+   .recent-posts__container{
+       margin: 3em 1em;
+   }
+   .recent-posts__container h2 {
+       text-align: left;
+       margin-left: .5em;
+   }
+
+{% call utils.medium() %} 
+   .form-wrapper-class form {
+       margin-top: 2rem;
+   }
+{% endcall %} 
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .newsletter-thank-you__container {
+        padding: 4rem 3rem 3rem 3rem;
+    }
+    .body-container-thank-you{
+        background: url('https://f.hubspotusercontent10.net/hubfs/3042464/newsletter%20sign%20up%20page/background-image-newsletter-sign-up-x-large.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center; 
+    }
+{% endcall %}
+
+
+   

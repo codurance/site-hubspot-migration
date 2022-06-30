@@ -1,0 +1,284 @@
+{% import '../utils/utils.css' as utils %}
+
+/*------------------------------------*\
+  #Hero section
+\*------------------------------------*/
+
+.careers-hero{
+    background: linear-gradient(180deg, rgba(253,237,226,1) 0%, rgba(255,255,255,1) 85%);
+    padding-bottom: 2em;
+    overflow: hidden;
+}
+.careers-hero__container{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1em;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+.careers-hero__text{
+    margin-top: 1em;
+    max-width: 48ch;
+    align-self: center;
+}
+
+.careers-hero__text h1{
+    {{utils.eames()}}
+    font-weight: var(--heavy-font-weight);
+}
+
+.careers-hero__text h2{
+    margin-bottom: 0.5em;
+}
+
+.careers-hero__image{
+    transform: translate(15%, 5%);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .careers-hero__container {
+        flex-direction:row;
+    }
+    .careers-hero__image {
+        transform: translateX(10%);
+        align-self: start;
+        scale: 1.2;
+    }
+    .careers-hero__text{
+        max-width: 50%;
+    }
+    .careers-hero__text h1{
+        {{utils.eames()}}
+    }
+
+    .careers-hero__text h2{
+        {{ utils.freed() }}
+    }
+
+    .careers-hero__text p{
+        {{ utils.base() }}
+        font-weight: var(--light-font-weight);
+    }
+
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .careers-hero__container{
+        padding-left: 2.5em;
+    }
+{% endcall %}
+
+{% call utils.extra_large() %}
+    .careers-hero__container{
+        overflow: initial;
+        padding: 1em 0;
+    }
+{% endcall %}
+
+
+/*------------------------------------*\
+  #Craftsmanship banner
+\*------------------------------------*/
+
+.craftspeople-banner {
+    background-image: url("https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Careers%20Page/Overview/CTA%20block/cta-why%20join-bg-light.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*------------------------------------*\
+  #Locations Section
+\*------------------------------------*/
+
+.locations{
+    --tango-modified: hsla(24.2,86.3%,54.3%,0.3);
+    {{ utils.color1_to_color2('to bottom', 'var(--tango-modified)' , 'white' ) }}
+}
+
+.locations__container{
+    margin: 0 auto;
+    padding: 3em 1em;
+    max-width: var(--content-inner-max-width);
+}
+
+
+/*------------------------------------*\
+  #Benefits Section
+\*------------------------------------*/
+.benefits{
+    margin: 2em 0;
+}
+
+{% call utils.large_and_extra_large() %}
+    .benefits{
+        margin-bottom: 4em;
+    }
+{% endcall %}
+
+/*------------------------------------*\
+  #Video Section
+\*------------------------------------*/
+
+.video{
+    {{ utils.black_to_navy() }}
+    color: white;
+    
+}
+
+.video-wrapper{
+    padding: 2.5em 1em;
+    max-width: var(--content-inner-max-width);
+    margin: 0 auto;
+}
+
+.video__title{
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.video__embed{
+    margin: 2em auto;
+    width: 100%;
+    max-width: 35em;
+}
+
+{% call utils.large_and_extra_large() %} 
+    .video-wrapper{
+        padding-top: 4em;
+        padding-bottom: 4em;
+    }
+{% endcall %}
+
+
+/*------------------------------------*\
+  #Video Testimonials Section
+\*------------------------------------*/
+
+.testimonials{
+    background: url(https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Testimonials%20Section/background-testimonials-dots-shapes.svg) center / cover no-repeat  ;
+}
+
+
+/*--------------------------------------------------------*\
+  #CTAs sections (current roles and craftspeople banner)
+\*--------------------------------------------------------*/
+
+.cta-light{
+    background: rgba(253,237,226,1);
+    background: center/ cover no-repeat 
+                url("https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Overview/CTA%20block/cta-bg-light.svg");
+
+}
+
+.cta-dark{
+    background: var(--midnight-blue--dark);
+    background: center/ cover no-repeat 
+                url("https://f.hubspotusercontent10.net/hubfs/3042464/Careers%20Page/Overview/CTA%20block/cta-bg-dark.svg");
+
+}
+
+
+.current-roles-cta .cta-block__title,
+.current-roles-cta .cta-block__subtitle,
+.craftspeople-banner .cta-block__title,
+.craftspeople-banner .cta-block__subtitle {
+    max-width: none;
+}
+
+.current-roles-cta .cta-block__button,
+.craftspeople-banner .cta-block__button {
+    text-align: start;
+}
+
+
+
+{% call utils.large_and_extra_large() %} 
+    .current-roles-cta .cta-block,
+    .craftspeople-banner .cta-block{
+        max-width: var(--content-inner-max-width);
+        padding-left: 1em;
+        padding-right: 1em;  
+    }
+
+{% endcall %}    
+
+
+/*------------------------------------*\
+  #Academy training section
+\*------------------------------------*/
+
+.academy-training {
+    margin: 2em auto;
+}
+
+.academy-training .text-and-image__container {
+        max-width: var(--content-max-width);
+}
+
+.academy-training .text-and-image__image img{
+        transform: initial;
+}
+
+{% call utils.small()%}
+    .academy-training .text-and-image__container {
+        flex-flow: column;
+    }
+
+    .academy-training .text-and-image__image {
+        margin-top: 2em;
+        align-self: center
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large()%}
+    .academy-training .text-and-image__image {
+        align-self: start;
+    }
+{% endcall %}
+
+/*------------------------------------*\
+  #Life at codurance section
+\*------------------------------------*/
+
+.life-codurance{
+    margin-top: 2em;
+}
+
+.life-codurance__content{
+    margin: 1em;
+    transition: max-width  ease-in-out .3s;
+}
+
+{% call utils.medium() %}
+    .life-codurance__content{
+        max-width: 40%
+    }
+{% endcall %}    
+
+{% call utils.large_and_extra_large() %}
+    .life-codurance__content{
+        max-width: 30%
+    }
+{% endcall %}    
+
+
+.life-codurance__title{
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+.life-codurance__subtitle{
+    margin-top: .5em;
+}
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .life-codurance__container{
+        display: flex;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .life-codurance__content{
+        margin-top: 2em;
+    }
+{% endcall %}

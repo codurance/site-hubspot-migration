@@ -1,0 +1,43 @@
+{% import '../utils/utils.css' as utils %}
+
+.lp-rich-text {
+    margin: 2em 0;
+}
+
+.lp-rich-text__title {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--dudler-margin);
+}
+
+.lp-rich-text__content em{
+    font-style: italic;
+}
+
+.lp-rich-text__content h1{
+    {{utils.eames()}}
+}
+.lp-rich-text__content h2{
+    {{utils.dudler()}}}
+
+.lp-rich-text__content h3{
+    {{utils.freed()}}
+}
+
+.one_col{
+    columns: 1;
+    max-width: var(--base-max-width);
+}
+
+.two_col {
+    columns: 400px 2;
+    column-gap: 3rem;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .lp-rich-text {
+        max-width: var(--content-inner-max-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+{% endcall%} 

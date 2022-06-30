@@ -1,0 +1,28 @@
+{{ require_css(get_asset_url("../css/modules/newsletter-form-card.css")) }}
+
+<section class="newsletter">
+    <div class="newsletter-wrapper">
+        <div class="newsletter-inner">
+          <div class="newsletter-content">
+            <i class="newsletter-content__icon las {{ module.icon }}"></i>
+            <div class="newsletter-text-content">
+              <h2 class="newsletter-text-content__title">
+                {{ module.title }}
+              </h2>
+              {% if module.subtitle %}
+                <h3 class="newsletter-text-content__subtitle">
+                  {{ module.subtitle }}
+                </h3>
+              {% endif %}
+            </div>
+          </div>
+          <div class="newsletter__form">
+            {% form
+              form_to_use="{{ module.newsletter_form.form_id }}"
+              response_response_type="{{ module.newsletter_form.response_type }}"
+              response_message="{{ module.newsletter_form.message }}"
+            %}
+          </div>
+    </div>
+  </div>
+ </section>

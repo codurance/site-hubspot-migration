@@ -1,0 +1,7 @@
+{
+  "global" : false,
+  "icon" : "fontawesome-5.14.0:Alternate%20Calendar",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 59908036902,
+  "is_available_for_new_content" : true
+}

@@ -1,5 +1,14 @@
 {
   "label": "Codurance September2020 Theme",
-  "preview_path": "./templates/website-page.html",
-  "enable_domain_stylesheets": false
+  "preview_path": "./templates/home-v2.html",
+  "enable_domain_stylesheets": false,
+  "responsive_breakpoints": [
+    {
+      "name": "mobile",
+      "mediaQuery": "@media (max-width: 767px)",
+      "previewWidth": {
+        "value": 520
+      }
+    }
+  ]
 }

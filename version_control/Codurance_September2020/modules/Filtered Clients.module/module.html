@@ -1,0 +1,197 @@
+{{ require_css(get_asset_url("../../css/modules/filtered-clients.css")) }}
+{% import '../../partials/clients-page-cards.html' as cards %}
+
+{% set clients = hubdb_table_rows(module.clients_table, 'orderBy=-testimonial_text&orderBy=-case_study_display_image_large&orderBy=-video') %}
+
+{% set allIndustries = [] %}
+{% set allTechnologies = [] %}
+{% set allServices = [] %}
+
+{% for client in clients %}
+  {% for industry in client.industry %}
+    {% do allIndustries.append(industry.name) %}
+  {% endfor %}
+
+  {% for service in client.services %}
+    {% do allServices.append(service.name) %}
+  {% endfor %}
+
+  {% for technology in client.technology_stack %}
+    {% do allTechnologies.append(technology.name) %}
+  {% endfor %}
+
+{% endfor %}
+
+{% set allIndustries = allIndustries|unique %}
+{% set allTechnologies = allTechnologies|unique %}
+{% set allServices = allServices|unique %}
+
+  {% if locale == 'en' %}
+    {% set filter = { title: "Filter",
+                      industry: "Industry",
+                      technology: "Technology",
+                      services: "Services"
+                    }
+    %}               
+    {% set infoMessage = { header: "We’re sorry, your search returned no results",
+                           paragraph: "Try adjusting your filters to find what you’re looking for."
+                         } 
+    %}
+  {% else %}
+    {% set filter = { title: "Filtro",
+                      industry: "Sector",
+                      technology: "Tecnología",
+                      services: "Servicios"
+                    }
+    %}
+    {% set infoMessage = {  header: "Lo sentimos, tu búsqueda no ha obtenido resultados.",
+                            paragraph: "Intenta ajustar tus filtros para encontrar lo que buscas."
+                         } 
+    %}
+
+  {% endif %}
+
+
+<main class="clients-page__main">
+  <div class="clients__filter">
+    <div class="clients__filter-toggle">
+      <button data-filter-toggle>
+        {{filter.title}}
+        <i class="clients__filter-toggle-icon las la-plus" data-filter-toggle-icon>
+        </i>
+      </button>
+    </div>
+    <div class="clients__filter-dropdown-wrapper hidden" data-filters-wrapper>
+      <div class="clients__filter-dropdown-container">
+        <button class="clients__filter-dropdown-button" data-dropdown-button="industry">
+          <i class="clients__filter-icon las la-tag"></i>
+          {{filter.industry}}
+          <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="industry">
+          </i>
+        </button>
+        <div class="clients__filter-dropdown-options hidden" data-dropdown-container="industry">
+          {% for industry in allIndustries|sort(False,False) %}
+            <button class="clients__filter-dropdown-option" data-industry-option="{{industry}}">
+              {{industry}}
+              <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
+                data-industry-option-selected="{{industry}}"></i>
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="clients__filter-dropdown-container">
+        <button class="clients__filter-dropdown-button" data-dropdown-button="technology">
+          <i class="clients__filter-icon las la-code"></i>
+          {{filter.technology}}
+          <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="technology">
+          </i>
+        </button>
+        <div class="clients__filter-dropdown-options hidden" data-dropdown-container="technology">
+          {% for technology in allTechnologies|sort(False,False) %}
+            <button class="clients__filter-dropdown-option" data-technology-option="{{technology}}">
+              {{technology}}
+              <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
+                data-technology-option-selected="{{technology}}"></i>
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="clients__filter-dropdown-container">
+        <button class="clients__filter-dropdown-button" data-dropdown-button="service">
+          <i class="clients__filter-icon las la-cube"></i>
+          {{filter.services}}
+          <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="service"></i>
+        </button>
+        <div class="clients__filter-dropdown-options hidden" data-dropdown-container="service">
+          {% for service in allServices|sort(False,False) %}
+            <button class="clients__filter-dropdown-option" data-service-option="{{service}}">
+              {{service}}
+              <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
+                data-service-option-selected="{{service}}"></i>
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clients-applied-filters__container">
+    {% for industry in allIndustries %}
+      <div class="clients-applied-filters__pill hidden" data-applied-industry-filter="{{industry}}">
+        {{industry}}
+        <i class="clients-applied-filters__remove-button las la-times" data-remove-industry-filter="{{industry}}"></i>
+      </div>
+    {% endfor %}
+    {% for technology in allTechnologies %}
+      <div class="clients-applied-filters__pill hidden" data-applied-technology-filter="{{technology}}">
+        {{technology}}
+        <i class="clients-applied-filters__remove-button las la-times" data-remove-technology-filter="{{technology}}"></i>
+      </div>
+    {% endfor %}
+    {% for service in allServices %}
+      <div class="clients-applied-filters__pill hidden" data-applied-service-filter="{{service}}">
+        {{service}}
+        <i class="clients-applied-filters__remove-button las la-times" data-remove-service-filter="{{service}}"></i>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="clients__no-clients-message-container hidden" data-no-clients-message>
+    <h4>{{infoMessage.header}}</h4>
+    <p>{{infoMessage.paragraph}}</p>
+  </div>
+
+
+  <div class="clients-grid__container" data-grid-container>
+    <div class="clients-grid__sizer"></div>
+    <div class="clients-grid__gutter-sizer"></div>
+
+    {% set clientSecondaryCards = []  %}
+    {% set clientNoCaseStudy = []  %}
+
+      {% for client in clients %}
+
+        {% if client.testimonial_text && client.case_study || 
+              client.promotion && client.case_study 
+        %}
+
+          {{
+            cards.large_card(
+              client=client,
+              classnames="clients-grid__card clients-grid__card--large"
+            )
+          }}       
+
+          {% elif  client.testimonial_text && client.promotion  %}
+          {% do clientNoCaseStudy.append(client) %}
+
+          {% elif client.promotion  %}
+          {% do clientSecondaryCards.append(client) %}
+          
+        {% endif %}
+
+        {% endfor %}
+
+        {% for client in clientNoCaseStudy %}
+          {{
+            cards.large_card(
+              client=client,
+              classnames="clients-grid__card clients-grid__card--large"
+            )
+          }}
+        {% endfor %}
+
+        {% for client in clientSecondaryCards %}
+          {{
+          cards.secondary_card(
+          client=client,
+          classnames="clients-grid__card clients-grid__card--small"
+          )
+          }}
+        {% endfor %}
+  </div>
+</main>
+
+{{ require_js(get_asset_url("../js/imageLoaded.js")) }}
+{{ require_js(get_asset_url("../../js/isotope.js"), "footer") }}
+{{ require_js(get_asset_url("../../js/isotopePackery.js"), "footer") }}

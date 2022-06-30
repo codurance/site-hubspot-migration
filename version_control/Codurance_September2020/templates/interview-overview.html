@@ -1,0 +1,108 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Interview Overview Page
+-->
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/interview-overview.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+
+<main>
+  <section class="interview-process-hero">
+    <div class="interview-process-hero__container">
+      <div class="interview-process-hero__text">
+        {% module 'rich_text' 
+          path='@hubspot/rich_text'
+          label='Header Text' 
+        %}
+      </div>
+      <div class="interview-process-hero__image">
+          {% module 'linked_image',
+              path="@hubspot/linked_image",
+              label="Hero Image", 
+              no_wrapper=True        
+          %}
+      </div>
+    </div>
+  </section>
+
+  <section class="video-ask">
+    {% module 'video_ask' path='@hubspot/text' label="Video Ask Embed" no_wrapper=True %}  
+  </section>
+
+  <section class="interview-cta">
+    {% module 'CTA-Section' 
+      path='../modules/LP-cta-block.module' 
+      label="CTA Section"
+    %}
+  </section>
+
+  <section class="process-interview">
+    {% module 'interview_intro' 
+      path='../modules/Text-and-image.module' 
+      label="Interview Section Intro" 
+      no_wrapper=True
+    %}
+
+    {% module 'interview_process' 
+      path='../modules/Interview Process.module'
+      no_wrapper=True
+    %}
+  </section>
+
+  <section class="video-wrapper" >
+    {% module 'working at codurance' 
+      path='../modules/Embedded Video.module'
+      label="Inside Codurance"
+      no_wrapper=True
+    %}
+  </section>
+
+  <section class="codurance-benefits">
+    {% module 'benefits'
+      path='../modules/Benefits.module'
+      no_wrapper=True
+    %}
+  </section>
+
+  <section class="recruitment-team lateral-spacing">
+      <div class="recruitment-team--wrapper">
+        <h2 class="recruitment-team__title">
+          {% module 'recruit_title' path='@hubspot/text' label="Recruitment Team title" no_wrapper=True%}
+        </h2>
+        <p class="recruitment-team__subtitle">
+          {% module 'recruit_subtitle' path='@hubspot/text' label="Recruitment Team subtitle" no_wrapper=True%}
+        </p>
+        {% module "recruitment_team" path="../modules/Our People.module"
+        label="Recruitment Team Cards" no_wrapper=True %}
+      </div>
+  </section>
+  
+  <section class="interview-cta">
+    {% module 'CTA-Section-2' 
+      path='../modules/LP-cta-block.module' 
+      label="CTA Section 2" 
+    %}
+  </section>
+</main>
+
+{% endblock body %}
