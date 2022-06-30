@@ -115,7 +115,7 @@
 
 .process-interview {
   padding-top: 2em;
-  background: linear-gradient(180deg,#fff, 80%, var(--tango-100));
+  background: linear-gradient(180deg, white, 80%, var(--tango-100));
 }
 
 .process-interview .text-and-image__copy h2 {
@@ -142,10 +142,14 @@
 \*------------------------------------*/
 
 .recruitment-team {
-  max-width: var(--content-max-width);
-  margin: 0 auto;
   padding-top: 4em;
   padding-bottom: 4em;
+  background: linear-gradient(180deg, var(--tango-100), white 50%);
+}
+
+.recruitment-team--wrapper {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
 }
 
 
