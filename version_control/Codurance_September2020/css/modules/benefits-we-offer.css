@@ -48,12 +48,6 @@
   
 }
 
-{% call utils.medium() %}
-  .benefits-container{
-    padding: 0 calc( {{ lateral_page_padding }} * 2)
-  }
-{% endcall %}
-
 {% call utils.medium_large_and_extra_large() %}
     .benefits-container{
       display: grid;
