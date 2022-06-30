@@ -184,7 +184,7 @@
                   "MMMMMMMWNXK''''''KKXXXXXXXXNWMMMMM\n" +
                   "MMMMMMMMMWWNXXKKKK''''KKKXXXXNNNWW\n" +
                   "MMMMMMMMMMMMMMWWWNNNNNXXXXNNNNNNWW");
-              window.console.log("\n%cWe're hiring both Apprentices and Craftspeople in London, Barcelona and Manchester. Want to know more? \n%chttps://codurance.com/careers/",main,link);
+              window.console.log("\n%cWe're hiring both Academy Students and Craftspeople in London, Portugal, Barcelona, Manchester, or remote*. Want to know more? \n%chttps://codurance.com/careers/\n* In Austria, Belgium, Canada, Croatia, Czech Republic, France, Germany, Greece, Ireland, Italy, Netherlands, Poland, Portugal, Romania, Slovakia, South Africa, Spain, UK.",main,link);
           }
     } catch(_) {}
   }
