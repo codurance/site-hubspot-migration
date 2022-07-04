@@ -1,0 +1,16 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+{{ require_css(get_asset_url("../../css/modules/banner-link.css")) }}
+
+<div class="banner{% if module.image_position == "left" %} banner--image-left{% endif %}">
+<div class="banner__text">
+  <h2>{{ module.title }}</h2>
+    {{ snippets.text_cta_right_arrow(
+      url=module.link.href,
+      text=module.link_text
+    ) }}
+  </div>
+
+  {% if module.image.src %}
+    <img class="banner__image" src="{{ module.image.src }}" alt="{{ module.image.alt }}" loading="lazy">
+  {% endif %}
+</div>
