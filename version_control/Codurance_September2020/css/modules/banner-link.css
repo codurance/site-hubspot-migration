@@ -8,7 +8,7 @@
     max-width: var(--content-inner-max-width);
 }
 
-.banner--image-right {
+.banner--image-left {
     flex-direction: row-reverse;
     justify-content: flex-end;
 }
@@ -33,13 +33,13 @@
 {% endcall %}
 
 {% call utils.small() %}
-    .banner img {
-        display: none;
-    }
-
     .banner__text > h2 {
         {{ utils.base() }}
 
         font-weight: var(--heavy-font-weight);
+    }
+
+    .banner img {
+        display: none;
     }
 {% endcall %}
