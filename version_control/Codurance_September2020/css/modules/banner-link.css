@@ -33,6 +33,10 @@
 {% endcall %}
 
 {% call utils.small() %}
+    .banner {
+        justify-content: center;
+    }
+    
     .banner__text > h2 {
         {{ utils.base() }}
 
