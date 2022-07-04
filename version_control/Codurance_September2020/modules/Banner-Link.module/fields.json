@@ -45,23 +45,18 @@
   "show_emoji_picker" : false,
   "type" : "text"
 }, {
-  "id" : "1c762a39-9832-9904-e0e1-8adaba085d30",
+  "id" : "a1017028-cab3-45a3-7b32-7b58de451c89",
   "name" : "link",
   "display_width" : null,
   "label" : "Link",
   "required" : false,
   "locked" : false,
   "supported_types" : [ "EXTERNAL", "CONTENT", "FILE" ],
-  "show_advanced_rel_options" : false,
-  "type" : "link",
+  "type" : "url",
   "default" : {
-    "url" : {
-      "content_id" : null,
-      "type" : "EXTERNAL",
-      "href" : ""
-    },
-    "open_in_new_tab" : false,
-    "no_follow" : false
+    "content_id" : null,
+    "href" : "",
+    "type" : "EXTERNAL"
   }
 }, {
   "id" : "8a0bf5c7-1fa0-2927-ade4-f44c817e0e5c",
@@ -72,7 +67,7 @@
   "locked" : false,
   "validation_regex" : "",
   "visibility" : {
-    "controlling_field" : "1c762a39-9832-9904-e0e1-8adaba085d30",
+    "controlling_field" : "a1017028-cab3-45a3-7b32-7b58de451c89",
     "controlling_value_regex" : null,
     "operator" : "NOT_EMPTY",
     "access" : null,
