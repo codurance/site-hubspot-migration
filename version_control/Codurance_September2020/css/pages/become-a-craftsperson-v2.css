@@ -3,6 +3,7 @@
 /*------------------------------------*\
   #General styles
 \*------------------------------------*/  
+
 .custom-btn {
   margin-top: 1.5em;
 }
@@ -257,6 +258,7 @@
 /*------------------------------------*\
   #Craftsperson Info section
 \*------------------------------------*/
+
 .craftsperson-info {
   background: linear-gradient(180deg,#fff, 80%, #fce0ce);
   padding-bottom: 1.25em;
@@ -275,6 +277,12 @@
 .craftsperson-info .text-and-image__image > img {
   transform: none;
 }
+
+{% call utils.large() %}
+  .craftsperson-info {
+    padding: 0 1em 1.25em 1em;
+  }
+{% endcall %}
 
 {% call utils.medium() %}
   .craftsperson-info .text-and-image__container {
@@ -333,6 +341,7 @@
 /*------------------------------------*\
   #Interview section
 \*------------------------------------*/
+
 {% call utils.large_and_extra_large() %}
   .interview {
     padding: 2.5em 0;
