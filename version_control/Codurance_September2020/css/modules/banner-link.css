@@ -3,38 +3,43 @@
 .banner {
     display: flex;
     align-items: center;
+    gap: 3.5em;
+    margin-inline: auto;
     max-width: var(--content-inner-max-width);
-    margin: 0 auto 4.5em;
 }
 
-.banner img { 
-    margin-left: 3.5em;
+.banner--image-right {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 
 .banner__text h2 {
     {{ utils.freed() }}
-    max-width: var(--eames-max-width);
 
-    border-top: 2px solid white;
+    border-top: 2px solid black;
+    font-weight: var(--heavy-font-weight);
+    max-width: var(--eames-max-width);
     padding-top: 1em;
-    padding-right: 2em;
 }
 
 .banner__text .text-cta-primary {
     margin-top: 1.5em;
 }
 
-{% call utils.small() %}
+{% call utils.medium() %}
     .banner {
-        max-width: {{content_mobile_max_width}};
-    }
-    .banner img {
-       display: none;
+        gap: 1.25em;
     }
 {% endcall %}
 
-{% call utils.medium() %}
-    .banner__text {
-        min-width: 25em;
+{% call utils.small() %}
+    .banner img {
+        display: none;
+    }
+
+    .banner__text > h2 {
+        {{ utils.base() }}
+
+        font-weight: var(--heavy-font-weight);
     }
 {% endcall %}
