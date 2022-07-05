@@ -1,0 +1,79 @@
+[ {
+  "id" : "eae2cf11-06ce-27e5-be11-1782d9f84f43",
+  "name" : "image",
+  "display_width" : null,
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "c9c0f60e-d027-4745-c542-a06c50af0444",
+  "name" : "image_position",
+  "display_width" : null,
+  "label" : "Image position",
+  "required" : true,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "eae2cf11-06ce-27e5-be11-1782d9f84f43",
+    "controlling_value_regex" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+  "type" : "choice",
+  "default" : "left"
+}, {
+  "id" : "84696359-1f31-936b-3edb-28348a9a11fb",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "a1017028-cab3-45a3-7b32-7b58de451c89",
+  "name" : "link",
+  "display_width" : null,
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE" ],
+  "type" : "url",
+  "default" : {
+    "content_id" : null,
+    "href" : "",
+    "type" : "CONTENT"
+  }
+}, {
+  "id" : "8a0bf5c7-1fa0-2927-ade4-f44c817e0e5c",
+  "name" : "link_text",
+  "display_width" : null,
+  "label" : "Link Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "a1017028-cab3-45a3-7b32-7b58de451c89",
+    "controlling_value_regex" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

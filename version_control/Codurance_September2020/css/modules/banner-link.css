@@ -1,0 +1,49 @@
+{% import '../utils/utils.css' as utils %}
+
+.banner {
+    display: flex;
+    align-items: center;
+    gap: 3.5em;
+    margin-inline: auto;
+    max-width: var(--content-inner-max-width);
+}
+
+.banner--image-left {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.banner__text h2 {
+    {{ utils.freed() }}
+
+    border-top: 2px solid black;
+    font-weight: var(--heavy-font-weight);
+    max-width: var(--eames-max-width);
+    padding-top: 1em;
+}
+
+.banner__text .text-cta-primary {
+    margin-top: 1.5em;
+}
+
+{% call utils.medium() %}
+    .banner {
+        gap: 1.25em;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .banner {
+        justify-content: center;
+    }
+    
+    .banner__text > h2 {
+        {{ utils.base() }}
+
+        font-weight: var(--heavy-font-weight);
+    }
+
+    .banner img {
+        display: none;
+    }
+{% endcall %}
