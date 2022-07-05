@@ -123,43 +123,42 @@
     PARTNERS SECTION 
 ========================== */
 
-.partners{
-    padding: 1em;
-}
-.partners .lp-header-v1{
-    max-width: 1000px;
-    margin: 0 auto;
+
+.partners .text-and-image__container {
+   flex-direction: column;
+   align-items: center;
+   
 }
 
-.partners .lp-header-v1__image {
-    order: revert;
-    width: revert;
-}
-
-.partners .lp-header-v1__content {
-    padding: 2em 0;
+.partners .text-and-image__copy {
     max-width: 30em;
 }
 
-{% call utils.medium_large_and_extra_large() %}
-   .partners .lp-header-v1 {
-       padding: 2em 1em;
-       align-items: center;
-   }
-   .partners .lp-header-v1__content {
-        max-width: 45%;
-   }
-   .partners .lp-header-v1__image {
-        max-width: 50%;
-   }
-{%endcall%}
+.partners .text-and-image__image {
+    margin-top: 2em;
+    align-self: initial;
+}
+
+.partners .text-and-image__image img {
+    transform: initial;
+}   
+
 
 {% call utils.medium_large_and_extra_large() %}
-    .partners .lp-header-v1 {
-       padding: 3em 0em;
-    
+
+   .partners .text-and-image__container {
+       flex-direction: initial;
+       padding: 4em 1.5em;
+       align-items: center;
+   }
+   .partners .text-and-image__copy {
+        max-width: 45%;
+   }
+   .partners .text-and-image__image {
+        max-width: 50%;
    }
 {% endcall %}
+
 
 
 
