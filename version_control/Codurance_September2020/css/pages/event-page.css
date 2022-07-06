@@ -47,11 +47,11 @@
   font-weight: var(--heavy-font-weight);
 }
 
-
 .main-container {
   background: linear-gradient(360deg, hsla(24, 86%, 54%, 0.49) 0%, 
-                                      hsla(0, 0%, 100%, 0.98) 97%) ;
-  }
+    hsla(0, 0%, 100%, 0.98) 97%
+  );
+  margin-top: 2em;
 }
 
 .card-slider {
@@ -83,18 +83,11 @@
     align-self: end;
     transform: initial;
   }
-
-  .main-container {
-    margin-top: 3em;
-  }
-
 {% endcall %}
 
 {% call utils.small_and_medium() %}
-
-  .events-description__wrapper{
+  .events-description__wrapper {
     margin: 0 1.5em;
     padding: 2.5em 1.5em;
-    }
-
+  }
 {% endcall %}
