@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "fontawesome-5.14.0:Grip%20Lines:SOLID",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 78546251371,
+  "label" : "Section divider",
+  "is_available_for_new_content" : true
+}

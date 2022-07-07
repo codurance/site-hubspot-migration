@@ -1,0 +1,11 @@
+
+{{ require_css(get_asset_url("../../css/modules/section-divider.css")) }}
+
+<h2 {% if module.use_as_anchor %} 
+      id='{{ module.anchor_id }}'
+      data-anchor="true"
+    {% endif %}
+    class="section-title">
+    {{ module.section_title }}
+</h2>
+

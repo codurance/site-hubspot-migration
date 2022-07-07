@@ -1,0 +1,42 @@
+[ {
+  "id" : "8b9e5c24-1773-0256-6495-b6a2b2d73a90",
+  "name" : "section_title",
+  "display_width" : null,
+  "label" : "Section title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "d0c4821b-92f3-6396-f6f2-bde52972524a",
+  "name" : "use_as_anchor",
+  "display_width" : null,
+  "label" : "Use as anchor",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "572020da-37f2-93a6-3cdc-b1df37196ef5",
+  "name" : "anchor_id",
+  "display_width" : null,
+  "label" : "Anchor name",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "validation_error_message" : "The anchor name shouldn't contain whitespaces",
+  "visibility" : {
+    "controlling_field" : "d0c4821b-92f3-6396-f6f2-bde52972524a",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "placeholder" : "anchor-name-section",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

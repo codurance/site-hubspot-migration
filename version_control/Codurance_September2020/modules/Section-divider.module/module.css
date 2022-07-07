@@ -1,0 +1,19 @@
+
+.section-title {
+    display: flex;
+    align-items: baseline;
+    gap: .8em;
+    color: var(--mid-gray);
+  }
+
+.section-title::after {
+  content: "";
+  width: 30%;
+  height: 1px;
+  background-color: var(--mid-gray);
+  position: relative;
+}
+
+
+
+
