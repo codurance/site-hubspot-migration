@@ -1,0 +1,20 @@
+
+{% import '../utils/utils.css' as utils %}
+
+.section-title {
+    display: flex;
+    gap: .8em;
+    align-items: baseline;
+
+    color: var(--mid-gray);
+    {{utils.natus()}}
+}
+
+.section-title::after {
+    content: "";
+    width: 30%;
+    height: 1px;
+    background-color: var(--mid-gray);
+    position: relative;
+}
+    
