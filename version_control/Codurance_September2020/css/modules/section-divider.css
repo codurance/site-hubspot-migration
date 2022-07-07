@@ -7,7 +7,6 @@
     align-items: baseline;
 
     color: var(--mid-gray);
-    {{utils.natus()}}
 }
 
 .section-title::after {
