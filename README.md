@@ -135,6 +135,11 @@ Layouts are to be extended by templates. A layout will template out things like 
 The partials folder holds `html` files that isolate or capture re-usable sections within templates or layouts. An example of these would be a header or a footer.
 <br><br>
 
+#### **|– 📁 sections**
+
+Sections are reusable drag and drop sections meant to be inserted on drag and drop areas. They can be found when adding a new section to a drag and drop area under the menu "Theme sections", and the main difference between these and the "Saved sections" is that the former don't have a maximum limitation. 
+<br><br>
+
 #### **|– 📁 system**
 
 These files are templates for a specific purpose within the site, such as 404 pages. They are set through the settings within Hubspot. More information can be found [here](https://developers.hubspot.com/docs/cms/building-blocks/templates) under `System Pages`.
