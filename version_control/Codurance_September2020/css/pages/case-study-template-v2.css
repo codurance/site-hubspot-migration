@@ -1,9 +1,5 @@
 {% import '../utils/utils.css' as utils %}
 
-:root {
-  --menu-height: 7em;
-}
-
 html {
   scroll-behavior: smooth;
 }  
@@ -71,8 +67,9 @@ body {
   margin-top: 1em;
 }
 
+h2[data-anchor="true"],
 a[data-hs-anchor="true"] {
-  scroll-margin: var(--menu-height);
+  scroll-margin-top: 9em;
 }
 
 {% call utils.small() %}
