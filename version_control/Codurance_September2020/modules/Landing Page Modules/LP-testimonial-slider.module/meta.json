@@ -6,6 +6,10 @@
     "url" : "https://unpkg.com/swiper/swiper-bundle.min.css",
     "autoload" : true,
     "name" : "swiper-bundle.min.css"
+  }, {
+    "autoload" : true,
+    "path" : "../../../css/modules/lp-testimonial-slider.css",
+    "name" : "lp-testimonial-slider.css"
   } ],
   "js_assets" : [ {
     "url" : "https://unpkg.com/swiper/swiper-bundle.min.js",
