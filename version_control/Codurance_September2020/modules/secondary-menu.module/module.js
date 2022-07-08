@@ -1,7 +1,7 @@
 
 let previousViewpoint = 0;
 const navigationHeight = document.querySelector('.secondary-menu').offsetHeight;
-const mainMenuHeight = document.querySelector('.header__container').offsetHeight;
+const mainMenuHeight = document.querySelector('.header').offsetHeight;
 
 document.documentElement.style.setProperty('--scroll-padding', (navigationHeight + mainMenuHeight) + "px");
 
