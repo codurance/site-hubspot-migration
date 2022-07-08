@@ -1,5 +1,10 @@
 
 let previousViewpoint = 0;
+const navigationHeight = document.querySelector('.secondary-menu').offsetHeight;
+const mainMenuHeight = document.querySelector('.header__container').offsetHeight;
+
+document.documentElement.style.setProperty('--scroll-padding', (navigationHeight + mainMenuHeight) + "px");
+
 
 $(window).scroll(function(event) {
     let currentViewpoint = $(this).scrollTop();

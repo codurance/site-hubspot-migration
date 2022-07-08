@@ -2,6 +2,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-padding, 100px);
 }  
 
 body {
@@ -67,10 +68,6 @@ body {
   margin-top: 1em;
 }
 
-h2[data-anchor="true"],
-a[data-hs-anchor="true"] {
-  scroll-margin-top: 9em;
-}
 
 {% call utils.small() %}
   .case-study-header{
