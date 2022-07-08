@@ -24,10 +24,11 @@
   "name" : "anchor_id",
   "display_width" : null,
   "label" : "Anchor name",
+  "help_text" : "Write the anchor name with hyphens between words, otherwise, it won't work",
   "required" : false,
   "locked" : false,
-  "validation_regex" : "",
-  "validation_error_message" : "The anchor name shouldn't contain whitespaces",
+  "validation_regex" : "(?=\\S*[-])([a-zA-Z'-]+)",
+  "validation_error_message" : "The anchor name shouldn't contain any whitespaces",
   "visibility" : {
     "controlling_field" : "d0c4821b-92f3-6396-f6f2-bde52972524a",
     "controlling_value_regex" : "true",
