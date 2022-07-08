@@ -5,7 +5,7 @@
     display: flex;
     gap: .8em;
     align-items: baseline;
-
+    margin-bottom: .8em;
     color: var(--mid-gray);
 }
 
