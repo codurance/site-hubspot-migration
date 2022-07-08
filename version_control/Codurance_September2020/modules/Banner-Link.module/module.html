@@ -1,9 +1,9 @@
+{# CSS included in meta.json to make the module usable in dnd_section #}
 {% import '../../snippets/button-snippets.html' as snippets %}
-{{ require_css(get_asset_url("../../css/modules/banner-link.css")) }}
 
 <div class="banner{% if module.image_position == "left" %} banner--image-left{% endif %}">
-<div class="banner__text">
-  <h2>{{ module.title }}</h2>
+  <div class="banner__text">
+    <h2>{{ module.title }}</h2>
     {{ snippets.text_cta_right_arrow(
       url=module.link.href,
       text=module.link_text
