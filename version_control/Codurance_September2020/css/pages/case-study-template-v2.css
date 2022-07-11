@@ -12,6 +12,7 @@ body {
   max-width: unset;
 }
 
+/* Header Section */
 .case-study-header {
   align-items: center;
   background: url("https://info.codurance.com/hubfs/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_bg.png");
@@ -95,4 +96,19 @@ a[data-hs-anchor="true"] {
   }
 
 {% endcall %}
+
+/* Text and Image Theme Section */
+.dnd-section .text-and-image__container {
+  gap: 2.75em;
+}
+
+{% call utils.large_and_extra_large() %}
+  .dnd-section .text-and-image__copy {
+    max-width: var(--freed-max-width);
+  }
+{% endcall %}
+
+.dnd-section .text-and-image__image > img {
+  transform: none;
+}
 
