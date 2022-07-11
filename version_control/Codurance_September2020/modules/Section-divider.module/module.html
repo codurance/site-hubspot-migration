@@ -1,0 +1,13 @@
+{# CSS included in meta.json file #}
+
+  <div class="divider-wrapper">
+    <p {% if module.use_as_anchor %}
+          id='{{ module.anchor_id }}'
+          data-anchor="true"
+        {% endif %}
+        class="section-title">
+      {{ module.section_title }}
+    </p>
+    <hr>
+  </div>
+
