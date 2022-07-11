@@ -1,0 +1,34 @@
+<!--
+ templateType: section
+ label: Text and Image
+ description: "Horizontal section with a block of text and an image. The position of the image can be changed."
+ isAvailableForNewContent: true
+ screenshotPath: ../../images/template-previews/banner-link_section.png
+-->
+
+{% dnd_section max_width=1000 %}
+  {% dnd_module
+    path="../../modules/Text-and-image.module",
+    image_order="img-right",
+    image_field={ 
+      src:"https://www.codurance.com/hubfs/New%20Case%20Study%20Landing%20Pages%20Test/case-study-LP-img.png"
+    },
+    description_text="
+      <h2>
+        <strong>
+          Creating a multi-year software modernisation project
+        </strong>
+      </h2>
+      <p>&nbsp;</p>
+      <p>
+        eCW recognised the need to modernise its systems and prepare the EMR platform for the next 10 years of rapid
+        growth. In order to take this platform to the next level, it would need to upskill its delivery teams, and this
+        would be the first area of improvement. The full modernization project would involve creating an effective
+        software modernisation strategy which would address eCW’s enterprise needs and lead to a full multi-year
+        modernisation program.
+      </p>
+    "
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}
+
