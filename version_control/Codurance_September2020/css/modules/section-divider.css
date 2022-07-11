@@ -1,19 +1,16 @@
 
 {% import '../utils/utils.css' as utils %}
 
-.section-title {
+.divider-wrapper {
     display: flex;
     gap: .8em;
     align-items: baseline;
-    margin-bottom: .8em;
+    margin-bottom: 1em;
     color: var(--mid-gray);
 }
 
-.section-title::after {
-    content: "";
+.divider-wrapper hr {
     width: 30%;
-    height: 1px;
-    background-color: var(--mid-gray);
-    position: relative;
+    border: none;
+    height: 2px;
 }
-    
