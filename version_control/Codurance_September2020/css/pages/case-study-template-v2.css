@@ -94,21 +94,4 @@ a[data-hs-anchor="true"] {
   .case-study-header span{
     align-self: end;
   }
-
 {% endcall %}
-
-/* Text and Image Theme Section */
-.dnd-section .text-and-image__container {
-  gap: 2.75em;
-}
-
-{% call utils.large_and_extra_large() %}
-  .dnd-section .text-and-image__copy {
-    max-width: var(--freed-max-width);
-  }
-{% endcall %}
-
-.dnd-section .text-and-image__image > img {
-  transform: none;
-}
-

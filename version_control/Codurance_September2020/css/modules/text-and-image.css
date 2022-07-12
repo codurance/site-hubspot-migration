@@ -69,3 +69,29 @@
     }
 
 {% endcall %}
+
+/* Drag and drop styling */
+.dnd-section .text-and-image__container {
+  gap: 1em;
+  padding: 0;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+  .dnd-section .text-and-image__container {
+    gap: 2.75em;
+  }
+
+  .dnd-section .text-and-image__image {
+    align-self: center;
+  }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+  .dnd-section .text-and-image__copy {
+    max-width: var(--freed-max-width);
+  }
+{% endcall %}
+
+.dnd-section .text-and-image__image > img {
+  transform: none;
+}
