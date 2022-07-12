@@ -1,16 +1,4 @@
 [ {
-  "id" : "b9755df2-ad38-55a3-f10e-f1bb67127be6",
-  "name" : "orientation",
-  "display_width" : null,
-  "label" : "Menu orientation",
-  "required" : false,
-  "locked" : false,
-  "display" : "radio",
-  "placeholder" : "Search",
-  "choices" : [ [ "horizontal", "Horizontal" ], [ "vertical", "Vertical" ] ],
-  "type" : "choice",
-  "default" : "vertical"
-}, {
   "id" : "13a6c064-7a23-7650-cb75-7c3c3403e087",
   "name" : "menu_items",
   "display_width" : null,
