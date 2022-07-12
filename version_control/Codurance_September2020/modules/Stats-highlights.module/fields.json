@@ -1,0 +1,41 @@
+[ {
+  "id" : "bc8b4a23-854a-b455-fe1d-729b7463600a",
+  "name" : "highlights_group",
+  "display_width" : null,
+  "label" : "Highlights group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 3,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "77a1c62f-755d-f91a-d118-d08daad7c005",
+    "name" : "copy",
+    "display_width" : null,
+    "label" : "Copy",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "4f6a6afb-50fb-d9fd-65d9-fa3be986d327",
+    "name" : "icon_class",
+    "display_width" : null,
+    "label" : "Icon Class",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+} ]
