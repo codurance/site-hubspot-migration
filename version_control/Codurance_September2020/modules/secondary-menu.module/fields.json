@@ -1,13 +1,4 @@
 [ {
-  "id" : "de863304-d116-95df-701d-946282fb63fc",
-  "name" : "menu_tree",
-  "display_width" : null,
-  "label" : "Simple menu",
-  "required" : false,
-  "locked" : false,
-  "type" : "simplemenu",
-  "default" : [ ]
-}, {
   "id" : "b9755df2-ad38-55a3-f10e-f1bb67127be6",
   "name" : "orientation",
   "display_width" : null,
@@ -18,15 +9,66 @@
   "placeholder" : "Search",
   "choices" : [ [ "horizontal", "Horizontal" ], [ "vertical", "Vertical" ] ],
   "type" : "choice",
-  "default" : "horizontal"
+  "default" : "vertical"
 }, {
-  "id" : "fe13560d-ccbb-4e26-cacd-372654068bfb",
-  "name" : "sticky",
+  "id" : "13a6c064-7a23-7650-cb75-7c3c3403e087",
+  "name" : "menu_items",
   "display_width" : null,
-  "label" : "Sticky",
+  "label" : "Menu items",
   "required" : false,
   "locked" : false,
-  "display" : "toggle",
-  "type" : "boolean",
-  "default" : true
+  "occurrence" : {
+    "min" : null,
+    "max" : 4,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "ac7362ef-9d57-c64e-cff9-63b15d02b11f",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "9e42f0a7-284f-3355-09bd-7b126c43056f",
+    "name" : "icon_class",
+    "display_width" : null,
+    "label" : "Icon class",
+    "help_text" : "For more information, you should use one of the icons in <a href=\"https://icons8.com/line-awesome\">Line Awesome library</a> ",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "9a1e65bd-625d-c463-db33-9188d43551a4",
+    "name" : "url",
+    "display_width" : null,
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT" ],
+    "type" : "url",
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
 } ]
