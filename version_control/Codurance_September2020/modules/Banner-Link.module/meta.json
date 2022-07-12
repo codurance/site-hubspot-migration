@@ -3,6 +3,11 @@
   "icon" : "fontawesome-5.14.0:Image:SOLID",
   "host_template_types" : [ "PAGE" ],
   "module_id" : 50292248806,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../css/modules/banner-link.css",
+    "name" : "banner-link.css"
+  } ],
   "label" : "Banner Link",
   "is_available_for_new_content" : true
 }
