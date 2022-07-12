@@ -1,11 +1,8 @@
 {% import '../utils/utils.css' as utils %}
 
-:root {
-  --menu-height: 7em;
-}
-
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-padding, 100px);
 }  
 
 body {
@@ -72,9 +69,6 @@ body {
   margin-top: 1em;
 }
 
-a[data-hs-anchor="true"] {
-  scroll-margin: var(--menu-height);
-}
 
 {% call utils.small() %}
   .case-study-header{
