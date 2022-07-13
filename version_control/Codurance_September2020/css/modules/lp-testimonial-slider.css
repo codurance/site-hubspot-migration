@@ -159,12 +159,8 @@
 /* Drag and drop styling */
 .dnd-section .testimonial-slider {
   padding-bottom: 0;
-
-  /* Negative margin to allow the module to just use the padding set up       
-  globally on the dnd-section */
-  margin-top: calc(-1 * var(--dnd-vertical-spacing));
 }
 
 .dnd-section .swiper-slide {
-  padding-top: var(--dnd-vertical-spacing);
+  padding-top: 0.5em;
 }
