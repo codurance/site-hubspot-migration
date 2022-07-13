@@ -1,0 +1,13 @@
+{% import '../utils/utils.css' as utils %}
+
+.highlight__container {
+  color: var(--midnight-blue);
+}
+
+.highlight__wrapper i {
+  font-size: 80px;
+}
+
+.highlight__wrapper p {
+  {{ utils.natus() }}
+}
