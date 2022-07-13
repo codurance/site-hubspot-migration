@@ -1,8 +1,13 @@
 {
   "global" : false,
   "icon" : "fontawesome-5.14.0:Highlighter:SOLID",
-  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "host_template_types" : [ "PAGE" ],
   "module_id" : 79005452562,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../css/modules/stats-highlights.css",
+    "name" : "stats-highlights.css"
+  } ],
   "label" : "Stats Highlights",
   "is_available_for_new_content" : true
 }
