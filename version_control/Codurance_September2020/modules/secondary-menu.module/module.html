@@ -10,7 +10,7 @@
         {% for menu_item in module.menu_items %}
             <li>
                 {% if menu_item.icon_class %}
-                    <i class="{{ menu_item.icon_class }}"></i>
+                    <i class="las {{ menu_item.icon_class }}"></i>
                 {% endif %}
                 <a href="{{ menu_item.url.href }}">{{ menu_item.title }}</a>
             </li>
