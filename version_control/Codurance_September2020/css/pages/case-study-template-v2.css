@@ -48,9 +48,8 @@ body {
 }
 
 .case-study-header__text-block .page-header.section-header h1{
-  {{ utils.dudler() }}
+  {{ utils.eames() }}
   font-weight: var(--heavy-font-weight);
-  line-height: var(--freed-line-height);
   margin-top: 0.5em;
 }
 
@@ -79,6 +78,14 @@ body {
     max-width: none;
   }
 
+  .case-study-header__text-block .page-header.section-header h1 {
+    {{ utils.freed() }}
+  }
+
+  .case-study-header__text-block .page-header.section-header p {
+    {{ utils.natus() }}
+  }
+
   .case-study-header__tag{
     left: -3em;
     padding-left: 3em;
@@ -90,3 +97,29 @@ body {
 
 {% endcall %}
 
+
+
+/* General styles for main content */
+
+.dnd-section h2 {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+
+}
+  
+.dnd-section p {
+  {{ utils.base() }}
+}
+
+{% call utils.small() %}
+  
+  .dnd-section h2 {
+    {{utils.freed()}}
+    font-weight: var(--heavy-font-weight);
+  }
+
+  .dnd-section p {
+    {{utils.natus()}}
+  }
+
+{% endcall %}
