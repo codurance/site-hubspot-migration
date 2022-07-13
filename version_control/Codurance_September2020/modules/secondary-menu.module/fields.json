@@ -1,4 +1,13 @@
 [ {
+  "name": "sticky_menu",
+  "label": "Sticky menu?",
+  "required": false,
+  "locked": false,
+  "type": "boolean",
+  "inline_help_text": "",
+  "help_text": "Checking this, it would make the menu stay visible at all times when scrolling",
+  "default": false 
+},{
   "id" : "13a6c064-7a23-7650-cb75-7c3c3403e087",
   "name" : "menu_items",
   "display_width" : null,
@@ -38,10 +47,11 @@
     "id" : "9a1e65bd-625d-c463-db33-9188d43551a4",
     "name" : "url",
     "display_width" : null,
-    "label" : "URL",
+    "label" : "Anchor Link",
+    "help_text" : "Please, create anchor links with hypens. E.g. anchor-point",
     "required" : false,
     "locked" : false,
-    "supported_types" : [ "EXTERNAL", "CONTENT" ],
+    "supported_types" : [ "EXTERNAL" ],
     "type" : "url",
     "default" : {
       "content_id" : null,
