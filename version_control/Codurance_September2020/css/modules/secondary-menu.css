@@ -19,14 +19,20 @@
 .secondary-menu ul { 
   {{ utils.natus() }}
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 0;
-  row-gap: 0.5em;
+  gap: 0.5em;
   list-style-type: none;
   max-width: var(--content-inner-max-width);
   margin-inline: auto;
 }
+
+{% call utils.small() %}
+  .secondary-menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+{% endcall %}
 
 .secondary-menu li {
   position: relative;
