@@ -69,3 +69,35 @@
     }
 
 {% endcall %}
+
+/* Drag and drop styling */
+.dnd-section .text-and-image__container {
+    gap: 1.5em;
+    padding: 0;
+}
+
+.dnd-section .text-and-image__image {
+    align-self: center;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+  .dnd-section .text-and-image__container {
+    gap: 2.75em;
+  }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+  .dnd-section .text-and-image__copy {
+    max-width: var(--freed-max-width);
+  }
+{% endcall %}
+
+{% call utils.small() %}
+    .dnd-section .text-and-image__container {
+        flex-direction: column;
+    }
+{% endcall %}
+
+.dnd-section .text-and-image__image > img {
+  transform: none;
+}
