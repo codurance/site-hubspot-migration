@@ -1,0 +1,82 @@
+<!--
+ templateType: section
+ label: Text and highlights
+ description: "This section contains a rich text and highlights module "
+ isAvailableForNewContent: true
+ screenshotPath: ../../images/template-previews/text_section.png
+-->
+{% dnd_section max_width=1000 %}
+  {% dnd_column
+    width=12
+    offset=0,
+  	max_width=1000,
+  	vertical_alignment='TOP'
+  %}
+    {% dnd_row 
+      max_width=600,
+      offset=0,
+      width=12
+    %}
+      {% dnd_module
+        path="@hubspot/rich_text"
+        offset=0,
+        width=8
+      %}
+  
+        {% module_attribute "html" %}
+          <h2 style="font-size: 30px;">&nbsp;</h2>
+          <h2 style="font-size: 30px;"><strong>Lorem Ipsum</strong></h2>
+          <p>&nbsp;</p>
+          <p style="font-size: 18px; line-height: 1.25;"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean finibus luctus libero, eu facilisis velit vulputate ornare. Etiam eleifend tortor non ante tincidunt interdum. Pellentesque vel lectus non metus faucibus blandit quis vitae nibh. Nulla faucibus eros id neque pretium facilisis. Duis vehicula, augue a aliquam venenatis, purus justo consectetur eros, sed dictum purus justo quis diam. Maecenas eget sem sed felis luctus tempus. Nulla eros mauris, facilisis a nulla a, suscipit fermentum nisl. Morbi condimentum risus id dolor euismod rutrum. Nunc ut turpis in lorem luctus ultrices. Suspendisse sed pretium ipsum, vitae pharetra diam. Phasellus molestie rhoncus nisi, eget pharetra est mattis quis. Fusce ligula risus, convallis at massa sed, varius interdum ante. Mauris vel faucibus arcu. Morbi eget sapien mauris.</span></p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+      
+    {% end_dnd_row %}
+
+    {% dnd_row 
+        max_width= 1000    
+    %}
+      {% dnd_module 'stats_highlights'
+        path='../../modules/Stats-highlights.module'
+        width=7
+        offset=0,
+        highlights_group=[ {
+          "copy" : "Over 100 developers trained in modern Agile and Craftsmanship practices",
+          "icon_class" : "la-users-cog"
+        }, {
+          "copy" : "QA cycle reduced from 2 weeks to under >2 hours",
+          "icon_class" : "la-tachometer-alt"
+        }, {
+          "copy" : "Reduced risk of introducing patient safety issues",
+          "icon_class" : "la-chart-area"
+        } ]
+      %}
+        
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+
+    {% dnd_row 
+      max_width=600
+    %}
+      {% dnd_module
+        path="@hubspot/rich_text"
+        offset=0,
+        width=8
+      %}
+  
+        {% module_attribute "html" %}
+          <h2 style="font-size: 30px;">&nbsp;</h2>
+          <h2 style="font-size: 30px;"><strong>Lorem Ipsum</strong></h2>
+          <p>&nbsp;</p>
+          <p style="font-size: 18px; line-height: 1.25;"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean finibus luctus libero, eu facilisis velit vulputate ornare. Etiam eleifend tortor non ante tincidunt interdum. Pellentesque vel lectus non metus faucibus blandit quis vitae nibh. Nulla faucibus eros id neque pretium facilisis. Duis vehicula, augue a aliquam venenatis, purus justo consectetur eros, sed dictum purus justo quis diam. Maecenas eget sem sed felis luctus tempus. Nulla eros mauris, facilisis a nulla a, suscipit fermentum nisl. Morbi condimentum risus id dolor euismod rutrum. Nunc ut turpis in lorem luctus ultrices. Suspendisse sed pretium ipsum, vitae pharetra diam. Phasellus molestie rhoncus nisi, eget pharetra est mattis quis. Fusce ligula risus, convallis at massa sed, varius interdum ante. Mauris vel faucibus arcu. Morbi eget sapien mauris.</span></p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+      
+    {% end_dnd_row %}
+    
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+
+
