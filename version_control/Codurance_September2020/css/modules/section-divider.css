@@ -12,5 +12,6 @@
 .divider-wrapper hr {
     width: 30%;
     border: none;
-    height: 2px;
+    height: 1px;
+    color: var(--mid-gray);
 }
