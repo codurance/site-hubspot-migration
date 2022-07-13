@@ -1,5 +1,5 @@
 [ {
-  "name": "sticky_menu",
+  "name": "sticky",
   "label": "Sticky menu?",
   "required": false,
   "locked": false,
