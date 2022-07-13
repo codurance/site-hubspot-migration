@@ -7,22 +7,14 @@
 -->
 {% dnd_section max_width=1000 %}
   {% dnd_column
-    width=12
-    offset=0,
-  	max_width=1000,
   	vertical_alignment='TOP'
   %}
-    {% dnd_row 
-      max_width=600,
-      offset=0,
-      width=12
-    %}
+    {% dnd_row %}
       {% dnd_module
         path="@hubspot/rich_text"
         offset=0,
-        width=8
+        width=10
       %}
-  
         {% module_attribute "html" %}
           <h2>Software fit for the future</h2>
           <p>&nbsp;</p>
@@ -31,16 +23,11 @@
           <p>The Codurance team created a strategic continuous improvement program (CIP) that would help eCW senior leadership strategically prioritise improvement projects according to the business value. The CIP would be efficiently managed following agile methodologies, software craftsmanship principles and DevOps mindset. It would create a knowledge transfer through tasks, allowing a learn and apply approach and creating that new working culture within the organization.</p>
         {% end_module_attribute %}
       {% end_dnd_module %}
-      
     {% end_dnd_row %}
 
-    {% dnd_row 
-        max_width= 1000    
-    %}
+    {% dnd_row %}
       {% dnd_module 'stats_highlights'
-        path='../../modules/Stats-Highlights.module'
-        width=7
-        offset=0,
+        path='../../modules/Stats-Highlights.module',
         highlights_group=[ {
           "copy" : "Over 100 developers trained in modern Agile and Craftsmanship practices",
           "icon_class" : "la-users-cog"
@@ -52,27 +39,22 @@
           "icon_class" : "la-chart-area"
         } ]
       %}
-        
       {% end_dnd_module %}
     {% end_dnd_row %}
 
-
-    {% dnd_row 
-      max_width=600
-    %}
+    {% dnd_row %}
       {% dnd_module
-        path="@hubspot/rich_text"
+        path="@hubspot/rich_text",
         offset=0,
-        width=8
+        width=10
       %}
-  
         {% module_attribute "html" %}
-          <p>The CIP would create teams of eCW personnel working closely with experienced Codurance developers so they could begin to understand the new ways of working and a cultural shift that empowers the development of new skills. This led to the production of 6 strategic improvement projects in core business areas (4 led by Codurance, 2 by eCW with support from Codurance). As well as creating better ways of working being replicated across the organisation with a clear understanding of the ROI and reduction of accumulated technical debt.</p>
+          <p>The CIP would create teams of eCW personnel working closely with experienced Codurance developers so they could begin to understand the new ways of working and a cultural shift that empowers the development of new skills.</p>
+          <p>&nbsp;</p>
+          <p>This led to the production of 6 strategic improvement projects in core business areas (4 led by Codurance, 2 by eCW with support from Codurance). As well as creating better ways of working being replicated across the organisation with a clear understanding of the ROI and reduction of accumulated technical debt.</p>
         {% end_module_attribute %}
       {% end_dnd_module %}
-      
     {% end_dnd_row %}
-    
   {% end_dnd_column %}
 {% end_dnd_section %}
 
