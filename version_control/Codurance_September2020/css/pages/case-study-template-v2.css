@@ -9,6 +9,7 @@ body {
   max-width: unset;
 }
 
+/* Header Section */
 .case-study-header {
   align-items: center;
   background: url("https://info.codurance.com/hubfs/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_bg.png");
@@ -94,7 +95,6 @@ body {
   .case-study-header span{
     align-self: end;
   }
-
 {% endcall %}
 
 

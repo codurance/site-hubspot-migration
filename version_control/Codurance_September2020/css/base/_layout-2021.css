@@ -3,6 +3,7 @@
   --centered-content-max-width: 1140px;
   --content-inner-max-width: 1000px;
   --centered-content-lateral-spacing: 0.75rem;
+  --dnd-vertical-spacing: 40px;
   box-sizing: border-box;
 }
 
