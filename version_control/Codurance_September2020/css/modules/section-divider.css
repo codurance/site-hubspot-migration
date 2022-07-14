@@ -5,7 +5,7 @@
     display: flex;
     gap: .8em;
     align-items: baseline;
-    margin-bottom: 1em;
+    padding-bottom: 1em;
     color: var(--mid-gray);
 }
 
@@ -15,3 +15,9 @@
     height: 1px;
     color: var(--mid-gray);
 }
+
+{% call utils.small() %}
+    .divider-wrapper p {
+        {{ utils.natus() }}
+    }
+{% endcall %}
