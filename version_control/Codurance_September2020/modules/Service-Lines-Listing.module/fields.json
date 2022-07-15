@@ -41,9 +41,9 @@
     "type" : "text"
   }, {
     "id" : "375ab30e-7a25-3bc7-db4d-d6400fcd0628",
-    "name" : "text",
+    "name" : "description",
     "display_width" : null,
-    "label" : "Text",
+    "label" : "Description",
     "required" : true,
     "locked" : false,
     "validation_regex" : "",
