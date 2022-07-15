@@ -1,0 +1,22 @@
+{# CSS included in meta.json to make the module usable in dnd_section #}
+
+{% for item in module.listing %}
+    <div class="service-line">
+        {% if item.image.src %}
+            {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+        
+            <img 
+                class="service-line__image" 
+                src="{{ item.image.src }}" 
+                alt="{{ item.image.alt }}" 
+                loading="lazy" 
+                {{ sizeAttrs }}
+            >
+        {% endif %}
+
+        <div class="service-line__text">
+            <h2 class="service-line__title">{{ item.title }}</h2>
+            <p class="service-line__description">{{ item.description }}</p>
+        </div>
+    </div>
+{% endfor %}

@@ -1,0 +1,46 @@
+{% import '../utils/utils.css' as utils %}
+
+.service-line {
+    align-items: flex-start;
+    display: flex;
+    gap: 0.5em;
+}
+
+.service-line:not(:first-of-type) {
+    margin-top: 2em;
+}
+
+{% call utils.large_and_extra_large() %}
+    .service-line {
+        gap: 3.5em;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .service-line {
+        flex-direction: column;
+    }
+{% endcall %}
+
+.service-line__image {
+    height: auto;
+    max-width: 100%;
+    min-height: 6rem;
+    min-width: 6rem;
+}
+
+.service-line__title {
+    font-weight: var(--heavy-font-weight);
+}
+
+{% call utils.small() %}
+    .service-line__title {
+        {{ utils.natus() }}
+
+        font-weight: var(--heavy-font-weight);
+    }
+
+    .service-line__description {
+        {{ utils.natus() }}
+    }
+{% endcall %}
