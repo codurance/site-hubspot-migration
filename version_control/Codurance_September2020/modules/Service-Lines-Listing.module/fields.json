@@ -50,6 +50,31 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text"
+  }, {
+    "id" : "dd062e5f-78b0-3c94-ee14-7cd9849e2f1a",
+    "name" : "read_more_text",
+    "display_width" : null,
+    "label" : "Read More Text",
+    "help_text" : "This text will be collapsed behind a \"Read more\" button",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "bf545b7d-dc6c-d0e7-57e3-0d911855c65c",
+    "name" : "read_more_button_text",
+    "display_width" : null,
+    "label" : "Read More Button Text",
+    "help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Read more"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -60,6 +85,7 @@
       "src" : "",
       "alt" : null,
       "loading" : "lazy"
-    }
+    },
+    "read_more_button_text" : "Read more"
   } ]
 } ]

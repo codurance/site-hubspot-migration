@@ -60,3 +60,54 @@
         {{ utils.natus() }}
     }
 {% endcall %}
+
+.service-line__read-more {
+    margin-top: 1em;
+}
+
+{% call utils.small() %}
+    .service-line__read-more {
+        {{ utils.natus() }}
+    }
+{% endcall %}
+
+.service-line__read-more-title,
+.service-line__read-more-close-button {
+    color: var(--mid-gray);
+    font-weight: var(--heavy-font-weight);
+}
+
+.service-line__read-more-title::after,
+.service-line__read-more-close-button::after {
+    color: var(--persimmon);
+    font-weight: var(--heavy-font-weight);
+    font-family: "line awesome free";
+    margin-left: 0.25em;
+}
+
+.service-line__read-more-title::after {
+    content: "\f107";
+    
+}
+
+.service-line__read-more-close-button::after {
+    content: "\f106";
+    
+}
+
+.service-line__read-more-title::marker {
+    content: "";
+}
+
+.service-line__read-more[open] .service-line__read-more-title {
+    display: none;
+}
+
+.service-line__read-more-close-button {
+    background: none;
+    border: none;
+    display: block;
+    margin-top: 1em;
+    padding: 0;
+    
+}
