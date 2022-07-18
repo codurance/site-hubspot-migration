@@ -12,7 +12,7 @@
 
 {% call utils.large_and_extra_large() %}
     .service-line {
-        gap: 3.5em;
+        gap: 3em;
     }
 {% endcall %}
 
@@ -37,7 +37,7 @@
 
 .service-line__title > h2 {
     {{ utils.base() }}
-    
+
     color: var(--shark);
     font-weight: var(--heavy-font-weight);
 }
