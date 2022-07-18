@@ -30,17 +30,33 @@
 }
 
 .service-line__title {
+    align-items: baseline;
+    display: flex;
+    gap: 0.8em;
+}
+
+.service-line__title > h2 {
+    {{ utils.base() }}
+    
+    color: var(--shark);
     font-weight: var(--heavy-font-weight);
 }
 
+.service-line__title > hr {
+    background-color: var(--shark);
+    border: none;
+    height: 1px;
+    width: 30%;
+}
+
 {% call utils.small() %}
-    .service-line__title {
+    .service-line__title > h2 {
         {{ utils.natus() }}
 
         font-weight: var(--heavy-font-weight);
     }
 
-    .service-line__description {
+    .service-line__text > .service-line__description {
         {{ utils.natus() }}
     }
 {% endcall %}

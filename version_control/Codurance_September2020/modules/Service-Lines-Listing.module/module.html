@@ -15,7 +15,11 @@
         {% endif %}
 
         <div class="service-line__text">
-            <h2 class="service-line__title">{{ item.title }}</h2>
+            <div class="service-line__title">
+                <h2>{{ item.title }}</h2>
+                <hr>
+            </div>
+            
             <p class="service-line__description">{{ item.description }}</p>
         </div>
     </div>
