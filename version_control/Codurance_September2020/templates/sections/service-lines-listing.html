@@ -1,0 +1,36 @@
+<!--
+ templateType: section
+ label: Service Lines Listing
+ description: "Section to display a dynamic list of Service Lines"
+ isAvailableForNewContent: true
+ screenshotPath: ../../images/template-previews/service-lines-listing_section.png
+-->
+
+{% dnd_section max_width=1000 %}
+  {% dnd_module
+    path="../../modules/Service-Lines-Listing.module",
+    listing=[ {
+      "image" : { 
+        "src" : "https://www.codurance.com/hubfs/Case%20Study%20Landing%20Pages/SL%20icons/Training.svg" 
+      },
+      "title" : "Training",
+      "description" : "Given the size and complexity of the development team and software, it was hard to keep consistency in the code and architecture. Codurance was brought in to create a training program to upskill the developers with an in-person, hands-on approach. This training program took place in both India and the United States, it created excitement in a development approach that would allow consistency going forward.",
+    },
+    {
+      "image" : { 
+        "src" : "https://www.codurance.com/hubfs/Case%20Study%20Landing%20Pages/SL%20icons/Strategic%20Advice.svg" 
+      },
+      "title" : "Strategic Advice",
+      "description" : "Vice presidents within eCW from all different departments such as sales, compliance, architecture, operations and marketing were bought together. Together with Codurance, they planned out a strategic improvement approach to the EMR with the eCW leadership and senior management team’s collaboration. The internal teams were able to understand the approach they would need to take, the most important outcomes, and where the biggest improvements would be.",
+    },
+    {
+      "image" : { 
+        "src" : "https://www.codurance.com/hubfs/Case%20Study%20Landing%20Pages/SL%20icons/Software%20Modernisation.svg" 
+      },
+      "title" : "Software Modernisation",
+      "description" : "The EMR was initially created 20-years ago. Throughout its lifespan it had grown considerably and continuously been updated, meaning it now consisted of around 16 million lines of code. Each system within the EMR would need to be updated, creating safe areas to experiment and improve while establishing new ways of working. The system would need to continue to be live to support the thousands of eCW customers relying on its use, every day.",
+    } ]
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}
+
