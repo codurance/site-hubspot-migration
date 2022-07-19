@@ -20,14 +20,14 @@
                 <hr>
             </div>
 
-            <p class="service-line__description">
+            <p class="service-line__description {% if item.read_more_text %}service-line__description--read-more{% endif %}">
                 {{ item.description }}
             </p>
 
             {% if item.read_more_text %}
                 <details class="service-line__read-more">
                     <summary class="service-line__read-more-title">{{ item.read_more_button_text }}</summary>
-                    {{ item.read_more_text }}
+                    <span class="service-line__read-more-text">{{ item.read_more_text }}</span>
                     <button class="service-line__read-more-close-button">{{ item.read_more_button_text }}</button>
                 </details>
             {% endif %}
