@@ -29,6 +29,12 @@
     min-width: 6rem;
 }
 
+{% call utils.medium_large_and_extra_large() %}
+    .service-line__text {
+        padding-top: 1em;
+    }
+{% endcall %}
+
 .service-line__title {
     align-items: baseline;
     display: flex;
