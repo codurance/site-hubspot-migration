@@ -9,37 +9,40 @@ body {
   max-width: unset;
 }
 
-/* Header Section */
+
 .case-study-header {
-  align-items: center;
-  background: url("https://info.codurance.com/hubfs/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_bg.png");
-  background-position: top center;
-  background-size: cover;
+  background: url("https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Case%20Study%20Landing%20Pages/case-study-LP-header-bg-img.svg");
+  background-position: top right;
+  background-size: 70%;
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-  padding: 4em 2em 2em;
+  padding: 4em 2.5em;
+  max-width: 1300px;
+  margin-inline: auto;
 }
 
-.case-study-header > * {
-  max-width: var(--content-max-width);
+.case-study-header__wrapper {
+  display: flex;
 }
+
 
 .case-study-header__tag{
-   padding: .5em 1em;
-   border-radius: 1.3em;
-   background: var(--dodger-blue);
-   color: white;
-   position: absolute;
-   top: -20%;
-   left: -1em;
-   font-weight: var(--middle-font-weight);
+  background-image: url("https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Case%20Study%20Landing%20Pages/Case%20Studie%20Label.svg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  color: white;
+  font-weight: var(--middle-font-weight);
+  padding: 1.2em;
+
+  position: absolute;
+  top: -3em;
 }
 
 .case-study-header__industry{
   margin-top: 2em;
   {{ utils.natus() }}
+  font-weight: var(--middle-font-weight);
 }
 
 .page-header.section-header{
@@ -62,44 +65,69 @@ body {
 .case-study-header__text-block{
   max-width: 50%;
   position: relative;
+  margin-top: 1em;
 }
 
 .case-study-header__text-block .custom-btn {
   margin-top: 1em;
 }
 
+.case-study-header__image {
+  margin-left: auto;
+  margin-right: 2em;
+}
+
+
+
+
+{% call utils.medium()%}
+
+  .case-study-header {
+    background-position-x: 130%;
+  }
+
+{% endcall %}
 
 {% call utils.small() %}
+
   .case-study-header{
-    flex-direction: column-reverse;
     padding: 1em;
+    background-position-x: 130%;
+    background-size: 80%;
+
   }
-  
+
+  .case-study-header__wrapper{
+    flex-direction: column-reverse;
+    align-items: start;
+  }
+
   .case-study-header__text-block{
     max-width: none;
+    margin-top: unset;
   }
 
   .case-study-header__text-block .page-header.section-header h1 {
     {{ utils.freed() }}
+    max-width: var(--dudler-max-width);
   }
 
   .case-study-header__text-block .page-header.section-header p {
     {{ utils.natus() }}
   }
 
-  .case-study-header__tag{
-    left: -3em;
-    padding-left: 3em;
-  }
 
-  .case-study-header span{
-    align-self: end;
+  .case-study-header__image{
+    margin-right: 1em;
+    max-width: 50%;
   }
 {% endcall %}
 
 
 
-/* General styles for main content */
+/* ================================
+  General styles for dnd_sections 
+=================================== */
 
 .dnd-section h2 {
   {{ utils.dudler() }}
