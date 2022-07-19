@@ -15,7 +15,8 @@ body {
   background-position: top right;
   background-size: 70%;
   background-repeat: no-repeat;
-  padding: 4em 2.5em;
+  padding-top: 4em;
+  padding-bottom: 2em;
   max-width: 1300px;
   margin-inline: auto;
 }
@@ -63,7 +64,7 @@ body {
 }
 
 .case-study-header__text-block{
-  max-width: 50%;
+  max-width: 45%;
   position: relative;
   margin-top: 1em;
 }
@@ -91,7 +92,7 @@ body {
 {% call utils.small() %}
 
   .case-study-header{
-    padding: 1em;
+    padding-top: 1em;
     background-position-x: 130%;
     background-size: 80%;
 
@@ -109,6 +110,7 @@ body {
 
   .case-study-header__text-block .page-header.section-header h1 {
     {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
     max-width: var(--dudler-max-width);
   }
 
