@@ -23,6 +23,7 @@
 {% endcall %}
 
 .service-line__image {
+    aspect-ratio: 1/1;
     height: auto;
     max-width: 100%;
     min-height: 6rem;
