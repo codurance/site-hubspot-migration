@@ -29,44 +29,48 @@ label: NEW Case Study Template
 <div class="case-study">
 
 {# Header Section #}
-<header class="case-study-header">
-  <div class="case-study-header__text-block">
-    <span class="case-study-header__tag">
-      Case Study
-    </span>
-
-    <p class="case-study-header__industry">
-      {% module "industry_text" 
-        label="Industry Text",
-        path="@hubspot/text",
-        value="Health Sector" 
-        no_wrapper=True 
+<header class="case-study-header lateral-spacing">
+  <div class="case-study-header__wrapper">
+    <div class="case-study-header__text-block">
+      <span class="case-study-header__tag">
+        Case Study
+      </span>
+      <p class="case-study-header__industry">
+        {% module "industry_text"
+          label="Industry Text",
+          path="@hubspot/text",
+          value="Health Sector"
+          no_wrapper=True
+        %}
+      </p>
+      {% section_header 'my_section_header'
+        header='ClinicalWorks Transform the Electronic Medical Records Software',
+        subheader='Modernising legacy software through innovative techniques',
+        label="Case Study Header",
+        no_wrapper=True
       %}
-    </p>
-
-    {% section_header 'my_section_header' 
-      header='ClinicalWorks Transform the Electronic Medical Records Software', 
-      subheader='Modernising legacy software through innovative techniques',
-      label="Case Study Header",
-      no_wrapper=True 
-    %}
-
-    {% module 'button_module' 
-      path='../modules/button.module', 
-      label="Case Study Download", 
-      no_wrapper=True 
-    %}
+      
+      {% if module.button_module %}
+        {% module 'button_module'
+            path='../modules/button.module',
+            label="Case Study Download",
+            no_wrapper=True
+        %}
+      {% endif %}
+    
+    </div>
+    <div class="case-study-header__image">
+      {% module 'case_study_icon'
+        label="Case Study Icon",
+        path='@hubspot/linked_image',
+        img={
+          "src": "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Case%20Study%20Landing%20Pages/case-study-LP-header-icon.svg",
+          "alt": "Case Study Icon"
+        },
+        no_wrapper=True
+      %}
+    </div>
   </div>
-
-  {% module 'case_study_icon'
-    label="Case Study Icon",
-    path='@hubspot/linked_image',
-    img={
-      "src": "https://www.codurance.com/hubfs/New%20Case%20Study%20Landing%20Pages%20Test/CS_header_icon.png",
-      "alt": "Case Study Icon"
-    },
-    no_wrapper=True 
-  %}
 </header>
 {# End Header Section #}
 
