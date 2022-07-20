@@ -1,0 +1,109 @@
+[ {
+  "id" : "cf75fb70-6e09-7a10-ab8b-d58ac581412b",
+  "name" : "listing",
+  "display_width" : null,
+  "label" : "Listing",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "10c9a026-0fda-9c34-4a84-86ce9508d86a",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "f8006ece-3e7e-3da3-5481-3a5dc1c3e7b0",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "10c9a026-0fda-9c34-4a84-86ce9508d86a",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "375ab30e-7a25-3bc7-db4d-d6400fcd0628",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "help_text" : "",
+    "inline_help_text" : "If you want to add a large text or additional paragraphs, please consider using the following \"Read more\" fields",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "60e9a5c6-272b-78cc-a3b7-bec96ea9d57c",
+    "name" : "read_more",
+    "display_width" : null,
+    "label" : "Read More",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "dd062e5f-78b0-3c94-ee14-7cd9849e2f1a",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "help_text" : "This text will be collapsed behind a \"Read more\" button",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "bf545b7d-dc6c-d0e7-57e3-0d911855c65c",
+      "name" : "button_text",
+      "display_width" : null,
+      "label" : "Button Text",
+      "help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Read more"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "button_text" : "Read more"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "field_group" : {
+      "read_more_button_text" : "Read more"
+    }
+  } ]
+} ]

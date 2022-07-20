@@ -1,0 +1,147 @@
+{% import '../utils/utils.css' as utils %}
+
+.service-line:not(:first-of-type) {
+    margin-top: 2em;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .service-line {
+        align-items: flex-start;
+        display: flex;
+        gap: 0.5em;
+    }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .service-line {
+        gap: 3em;
+    }
+{% endcall %}
+
+.service-line__image {
+    aspect-ratio: 1/1;
+    height: auto;
+    max-width: 100%;
+    width: 6rem;
+}
+
+.service-line__text {
+    padding-top: 0.5em;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .service-line__text {
+        padding-top: 1.5em;
+    }
+{% endcall %}
+
+.service-line__title {
+    align-items: baseline;
+    display: flex;
+    gap: 0.8em;
+}
+
+.service-line__title > h2 {
+    {{ utils.natus() }}
+
+    color: var(--shark);
+    font-weight: var(--heavy-font-weight);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .service-line__title > h2 {
+        {{ utils.base() }}
+
+        font-weight: var(--heavy-font-weight);
+    }
+{% endcall %}
+
+.service-line__title > hr {
+    background-color: var(--shark);
+    border: none;
+    height: 1px;
+    width: 30%;
+}
+
+.service-line__text > .service-line__description {
+    {{ utils.natus() }}
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .service-line__text > .service-line__description {
+        {{ utils.base() }}
+    }
+{% endcall %}
+
+.service-line__description {
+    position: relative;
+}
+
+.service-line__description--read-more::after {
+    background: linear-gradient(180deg, hsla(0,0%,100%,0), #fff);
+    bottom: 0;
+    content: "";
+    height: var(--natus-line-height);
+    position: absolute;
+    right: 0;
+    width: 100%;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .service-line__description::after {
+        height: var(--base-line-height);
+    }
+{% endcall %}
+
+.service-line__read-more {
+    {{ utils.natus() }}
+
+    margin-top: 1em;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .service-line__read-more {
+        {{ utils.base() }}
+    }
+{% endcall %}
+
+.service-line__read-more-open-button,
+.service-line__read-more-close-button {
+    {{ utils.natus() }}
+
+    align-items: center;
+    color: var(--mid-gray);
+    cursor: pointer;
+    display: flex;
+    font-weight: var(--heavy-font-weight);
+    gap: 0.25em;
+}
+
+.service-line__read-more-open-button::after,
+.service-line__read-more-close-button::after {
+    color: var(--persimmon);
+    font-family: "line awesome free";
+}
+
+.service-line__read-more-open-button::after {
+    content: "\f107";
+}
+
+.service-line__read-more-close-button::after {
+    content: "\f106";
+}
+
+.service-line__read-more-open-button::marker {
+    content: "";
+}
+
+.service-line__read-more[open] .service-line__read-more-open-button {
+    display: none;
+}
+
+.service-line__read-more-close-button {
+    background: none;
+    border: none;
+    margin-top: 1em;
+    padding: 0;
+}

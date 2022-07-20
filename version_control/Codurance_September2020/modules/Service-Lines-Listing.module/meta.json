@@ -1,0 +1,13 @@
+{
+  "global" : false,
+  "icon" : "fontawesome-5.14.0:list-ul:SOLID",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 50779446766,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../css/modules/service-lines-listing.css",
+    "name" : "service-lines-listing.css"
+  } ],
+  "label" : "Service Lines Listing",
+  "is_available_for_new_content" : true
+}
