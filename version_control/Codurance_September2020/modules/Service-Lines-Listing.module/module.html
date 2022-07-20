@@ -24,11 +24,11 @@
                 {{ item.description }}
             </p>
 
-            {% if item.read_more_text %}
+            {% if item.read_more.text %}
                 <details class="service-line__read-more">
-                    <summary class="service-line__read-more-title">{{ item.read_more_button_text }}</summary>
-                    <span class="service-line__read-more-text">{{ item.read_more_text }}</span>
-                    <button class="service-line__read-more-close-button">{{ item.read_more_button_text }}</button>
+                    <summary class="service-line__read-more-title">{{ item.read_more.button_text }}</summary>
+                    <span class="service-line__read-more-text">{{ item.read_more.text }}</span>
+                    <button class="service-line__read-more-close-button">{{ item.read_more.button_text }}</button>
                 </details>
             {% endif %}
         </div>
