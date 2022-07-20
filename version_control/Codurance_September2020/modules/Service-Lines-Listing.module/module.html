@@ -28,7 +28,9 @@
                 <details class="service-line__read-more">
                     <summary class="service-line__read-more-title">{{ item.read_more.button_text }}</summary>
                     <span class="service-line__read-more-text">{{ item.read_more.text }}</span>
-                    <button class="service-line__read-more-close-button">{{ item.read_more.button_text }}</button>
+                    <button aria-label="Button to collapse Read More text" class="service-line__read-more-close-button">
+                        {{ item.read_more.button_text }}
+                    </button>
                 </details>
             {% endif %}
         </div>
