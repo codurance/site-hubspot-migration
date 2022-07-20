@@ -3,12 +3,12 @@
 const readMoreBlocks = document.querySelectorAll(".service-line__read-more");
 
 readMoreBlocks.forEach(
-    readMoreBlock => toggleReadMoreOnButtonClick(readMoreBlock)
+    readMoreBlock => toggleReadMoreButton(readMoreBlock)
 );
 
-function toggleReadMoreOnButtonClick(readMoreBlock) {
+function toggleReadMoreButton(readMoreBlock) {
     const readMoreOpenButton = 
-        readMoreBlock.querySelector(".service-line__read-more-title");
+        readMoreBlock.querySelector(".service-line__read-more-open-button");
     const readMoreCloseButton = 
         readMoreBlock.querySelector(".service-line__read-more-close-button");
 
@@ -18,10 +18,11 @@ function toggleReadMoreOnButtonClick(readMoreBlock) {
     );
     readMoreCloseButton.addEventListener(
         "click", 
-        () => { toggleReadMoreOverflow(readMoreBlock) }
+        (event) => { 
+            toggleReadMoreOverflow(readMoreBlock);
+            collapseReadMore(event);
+        }
     );
-
-    readMoreCloseButton.addEventListener("click", collapseReadMore);
 }
 
 function collapseReadMore(event) {

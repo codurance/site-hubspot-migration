@@ -105,7 +105,7 @@
     }
 {% endcall %}
 
-.service-line__read-more-title,
+.service-line__read-more-open-button,
 .service-line__read-more-close-button {
     {{ utils.natus() }}
 
@@ -117,13 +117,13 @@
     gap: 0.25em;
 }
 
-.service-line__read-more-title::after,
+.service-line__read-more-open-button::after,
 .service-line__read-more-close-button::after {
     color: var(--persimmon);
     font-family: "line awesome free";
 }
 
-.service-line__read-more-title::after {
+.service-line__read-more-open-button::after {
     content: "\f107";
 }
 
@@ -131,11 +131,11 @@
     content: "\f106";
 }
 
-.service-line__read-more-title::marker {
+.service-line__read-more-open-button::marker {
     content: "";
 }
 
-.service-line__read-more[open] .service-line__read-more-title {
+.service-line__read-more[open] .service-line__read-more-open-button {
     display: none;
 }
 
