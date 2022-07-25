@@ -50,14 +50,11 @@ label: NEW Case Study Template
         no_wrapper=True
       %}
       
-      {% if module.button_module %}
-        {% module 'button_module'
-            path='../modules/button.module',
-            label="Case Study Download",
-            no_wrapper=True
-        %}
-      {% endif %}
-    
+      {% module 'button_module'
+          path='../modules/button.module',
+          label="Case Study Download",
+          no_wrapper=True
+      %}
     </div>
     <div class="case-study-header__image">
       {% module 'case_study_icon'
