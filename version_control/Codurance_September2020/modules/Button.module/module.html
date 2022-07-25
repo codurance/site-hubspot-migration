@@ -2,6 +2,7 @@
 
   {{ require_css(get_asset_url("../../css/modules/button.css")) }}
 
+{% if module.button_type %}
 <div class="custom-btn">
 
   {% if module.button_type == "std" %}
@@ -22,3 +23,4 @@
   {% endif %}
 
 </div>
+{% endif %}
