@@ -70,7 +70,8 @@ body {
 }
 
 .case-study-header__text-block .custom-btn {
-  margin-top: 1em;
+  margin-top: 1.8em;
+  max-width: fit-content;
 }
 
 .case-study-header__image {
