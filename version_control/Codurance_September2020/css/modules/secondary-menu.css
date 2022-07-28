@@ -19,7 +19,7 @@
 .secondary-menu ul { 
   {{ utils.natus() }}
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 0;
   gap: 0.5em;
   list-style-type: none;
