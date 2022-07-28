@@ -27,6 +27,11 @@
   margin-inline: auto;
 }
 
+.secondary-menu .lateral-spacing {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 {% call utils.small() %}
   .secondary-menu ul {
     flex-direction: column;
