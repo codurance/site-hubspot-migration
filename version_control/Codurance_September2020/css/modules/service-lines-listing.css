@@ -14,12 +14,11 @@
 
 {% call utils.large_and_extra_large() %}
     .service-line {
-        gap: 3em;
+        gap: 2.4em;
     }
 {% endcall %}
 
 .service-line__image {
-    aspect-ratio: 1/1;
     height: auto;
     max-width: 100%;
     width: 6rem;
