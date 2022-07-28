@@ -1,7 +1,7 @@
 {% import '../utils/utils.css' as utils %}
   
 .highlight__container {
-  color: var(--midnight-blue);
+  color: var(--purple-navy);
   padding: 2em 0;
 }
     

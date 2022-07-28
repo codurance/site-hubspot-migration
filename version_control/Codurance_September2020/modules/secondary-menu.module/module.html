@@ -5,8 +5,7 @@
         class="secondary-menu {% if module.sticky %}sticky-menu{% endif %}" 
         role="navigation" 
         aria-label="Secondary">
-     <ul>
-         
+     <ul class="lateral-spacing">  
         {% for menu_item in module.menu_items %}
             <li>
                 {% if menu_item.icon_class %}

@@ -19,12 +19,17 @@
 .secondary-menu ul { 
   {{ utils.natus() }}
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 0;
   gap: 0.5em;
   list-style-type: none;
   max-width: var(--content-inner-max-width);
   margin-inline: auto;
+}
+
+.secondary-menu .lateral-spacing {
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 {% call utils.small() %}
