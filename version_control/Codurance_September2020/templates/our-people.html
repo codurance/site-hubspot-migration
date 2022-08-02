@@ -41,14 +41,21 @@ label: Our People
     {% set footer_cta = 'Learn More' %}
   {% endif %}
 
-  <section>
-    {% module "simple-hero-slice" path="../modules/simple-hero-slice.module" label="" no_wrapper=True %}
-  </section>
+    <section>
+      {% module "simple-hero-slice" path="../modules/simple-hero-slice.module" label="" no_wrapper=True %}
+    </section>
 
-  {% module "our_people" path="../modules/Our People.module"
-      label="Our People" no_wrapper=True %}
+    <main>
+      {% module "our_people" path="../modules/Our People.module"
+        label="Our People" no_wrapper=True %}
+    </main>
 
-  <div class="our-people__footer">
+    <section>
+      {% module "skinny_banner" path="../modules/LP-cta-block.module"
+        label="CTA to careers page" %}
+    </section>
+
+  {# <div class="our-people__footer">
     <div class="our-people__footer-wrapper page-center">
       <div class="our-people__hiring-info">
         <h2>{{ footer_heading }}</h2>
@@ -56,6 +63,6 @@ label: Our People
       </div>
       <a class="button-primary our-people__hiring-cta" href={{ footer_href }}>{{ footer_cta }}</a>
     </div>
-  </div>
+  </div> #}
   
 {% endblock body %}
