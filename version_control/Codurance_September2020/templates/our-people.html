@@ -42,7 +42,29 @@ label: Our People
   {% endif %}
 
     <section>
-      {% module "simple-hero-slice" path="../modules/simple-hero-slice.module" label="" no_wrapper=True %}
+    <section class="our-people__hero">
+    <div class="our-people__hero-container">
+        <div class="our-people__hero-text">
+          {% module 'rich_text' 
+              html="
+              <h1>Our People</h1>
+              <p>Our people come from many different countries and backgrounds and are all brought together by a shared passion for craftsmanship and quality.</p>
+              ",  
+              path='@hubspot/rich_text'%}
+        </div>
+          <div class="our-people__hero-image">
+          {% module 'linked_image',
+                path="@hubspot/linked_image",
+                img={
+                  "src": "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Our%20People%20Page/Our%20People%20%E2%80%93%20Header%20Image.png",
+                  "width": auto,
+                },
+                label="Hero Image", 
+                no_wrapper=True        
+          %}
+        </div>
+      </div>
+  </section>
     </section>
 
     <main>
@@ -54,15 +76,5 @@ label: Our People
       {% module "skinny_banner" path="../modules/LP-cta-block.module"
         label="CTA to careers page" %}
     </section>
-
-  {# <div class="our-people__footer">
-    <div class="our-people__footer-wrapper page-center">
-      <div class="our-people__hiring-info">
-        <h2>{{ footer_heading }}</h2>
-        <p>{{ footer_text }}</p>
-      </div>
-      <a class="button-primary our-people__hiring-cta" href={{ footer_href }}>{{ footer_cta }}</a>
-    </div>
-  </div> #}
   
 {% endblock body %}
