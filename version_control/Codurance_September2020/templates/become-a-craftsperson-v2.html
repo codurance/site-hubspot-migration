@@ -27,23 +27,7 @@ label: Become A Craftsperson
 {% block body %}
 
 <main class="craftsperson-container">
-  <section class="craftsperson-hero">
-    <div class="craftsperson-hero__container">
-      <div class="craftsperson-hero__text">
-        {% module 'rich_text' 
-          path='@hubspot/rich_text'
-          label='Header Text' 
-        %}
-      </div>
-      <div class="craftsperson-hero__image">
-          {% module 'linked_image',
-              path="@hubspot/linked_image",
-              label="Hero Image", 
-              no_wrapper=True        
-          %}
-      </div>
-    </div>
-  </section>
+  {% include "./partials/header-hero.html" %}
 
   <section class="craftsperson-videos">
     {% module 'craftsperson_videos' 
