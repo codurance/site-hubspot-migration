@@ -26,30 +26,7 @@ label: Our People
 
 {% block body %}
 
-  <section class="our-people__hero">
-    <div class="our-people__hero-container">
-      <div class="our-people__hero-text">
-        {% module 'rich_text' 
-          html="
-          <h1>Our People</h1>
-          <p>Our people come from many different countries and backgrounds and are all brought together by a shared passion for craftsmanship and quality.</p>
-          ",  
-          path='@hubspot/rich_text' 
-        %}
-      </div>
-      <div class="our-people__hero-image">
-        {% module 'linked_image',
-          path="@hubspot/linked_image",
-          img={
-            "src": "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Our%20People%20Page/Our%20People%20%E2%80%93%20Header%20Image.png",
-            "width": auto,
-          },
-          label="Hero Image", 
-          no_wrapper=True        
-        %}
-      </div>
-    </div>
-  </section>
+  {% include "./partials/header-hero.html" %}
 
   <main>
     {% module "our_people" 
