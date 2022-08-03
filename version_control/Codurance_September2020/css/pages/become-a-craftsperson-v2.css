@@ -55,6 +55,26 @@
   overflow: hidden;
 }
 
+{% call utils.small_and_medium() %}
+  .craftsperson-container .header-hero__image {
+    --translate-img: translate(27.5%,-25%);
+
+    transform: var(--translate-img);
+  }
+{% endcall %}
+
+{% call utils.medium() %}
+  .craftsperson-container .header-hero__image {
+    transform: var(--translate-img) scale(1.2);
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .craftsperson-container .header-hero__text {
+    margin-top: -4.5em;
+  }
+{% endcall %}
+
 /*------------------------------------*\
   #Craftsperson Videos section
 \*------------------------------------*/
