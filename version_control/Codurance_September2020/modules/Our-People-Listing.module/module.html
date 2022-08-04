@@ -1,12 +1,14 @@
 {{ require_css(get_asset_url("../../css/modules/our-people-listing.css")) }}
 {% import "../../snippets/button-snippets.html" as snippets %}
 
-
-
 <div class="custom-our-people">
-  <label class="custom-our-people__checkbox">Show Leadership Board
-    <input type="checkbox" id="leadership_filter" value="leadership_checkbox">
-  </label>
+  {% if module.filter_label %}
+    <label class="custom-our-people__filter" for="leadership_filter">
+      {{ module.filter_label }}
+      <input type="checkbox" id="leadership_filter" value="leadership_checkbox" class="custom-our-people__checkbox">
+      <span class="custom-our-people__toggle"></span>
+    </label>
+  {% endif %}
 
   <a id="theteam" target="_blank" rel="noopener noreferrer"></a>
   <div class="custom-our-people__card-container">

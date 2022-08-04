@@ -1,8 +1,67 @@
 {% import '../utils/utils.css' as utils %}
 
-{% set lateral_page_padding = '15px' %}
+/* Leadership Toggle Filter */
+.custom-our-people__filter {
+  {{ utils.card_shadow() }}
 
+  align-items: center;
+  display: flex;
+  gap: 1.2em;
+  width: fit-content;
+  padding: 0.4em 1.2em;
+  margin-bottom: 5em;
+  border-radius: 0.5em;
+}
 
+{% call utils.small() %}
+  .custom-our-people__filter {
+    margin-top: 1em;
+    margin-bottom: 3em;
+  }
+{% endcall %}
+
+.custom-our-people__checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.custom-our-people__toggle {
+  background-color: var(--french-gray);
+  border-radius: 12px;
+  height: 1.2rem;
+  width: 2.2rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.custom-our-people__toggle::before {
+  --offset: 0.1em;
+
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  left: var(--offset);
+  transition: transform 200ms;
+}
+
+.custom-our-people__checkbox:checked + .custom-our-people__toggle {
+  background-color: var(--persimmon--dark);
+}
+
+.custom-our-people__checkbox:focus + span.custom-our-people__toggle {
+    outline: 1px dotted var(--shark);
+    outline-offset: 1px;
+}
+
+.custom-our-people__checkbox:checked + .custom-our-people__toggle::before {
+  transform: translateX(100%);
+}
+
+/* Our People Listing */
 .custom-our-people {
   margin: 0 auto;
   margin-top: 2em;
@@ -18,14 +77,12 @@
   }
 {% endcall %}
 
-
 {% set card_margin = '15px' %}
 .custom-our-people__card-container {
   display: flex;
   flex-wrap: wrap;
   margin-left: -{{ card_margin }};
   margin-right: -{{ card_margin }};
-  margin-top: 1.2em;
 }
 
 .custom-our-people__card {
