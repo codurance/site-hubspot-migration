@@ -1,4 +1,16 @@
 [ {
+  "id" : "dae9a006-a992-a3c8-dd4a-c485830efad6",
+  "name" : "filter_label",
+  "display_width" : null,
+  "label" : "Filter Label",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : ""
+}, {
   "id" : "a9a780c2-b18f-97df-96b2-263889e79fca",
   "name" : "hubdbtable_field",
   "display_width" : null,
