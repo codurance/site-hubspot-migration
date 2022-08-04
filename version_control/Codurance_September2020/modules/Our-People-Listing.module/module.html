@@ -1,14 +1,21 @@
-{{ require_css(get_asset_url("../../css/modules/our-people.css")) }}
+{{ require_css(get_asset_url("../../css/modules/our-people-listing.css")) }}
 {% import "../../snippets/button-snippets.html" as snippets %}
 
+
+
 <div class="custom-our-people">
+  <label class="custom-our-people__checkbox">Show Leadership Board
+    <input type="checkbox" id="leadership_filter" value="leadership_checkbox">
+  </label>
+
   <a id="theteam" target="_blank" rel="noopener noreferrer"></a>
   <div class="custom-our-people__card-container">
     {% set table_info = hubdb_table_rows( module.hubdbtable_field ) %}
+    {% set leadership_board = hubdb_table_rows( module.hubdbtable_field, "leadership_board=true" ) %}
 
     {% for row in table_info %}
-
-      <article class="custom-our-people__card">
+      
+      <article class="custom-our-people__card  {% if row.leadership_board %}leadership{% endif %}">
         <div class="custom-our-people__card-inner" data-modal-target="#team-{{ loop.index }}">
           {% if row.image.url %}
             <img class="custom-our-people__profile-image" src="{{ row.image.url }}" alt="{{ row.name }}">

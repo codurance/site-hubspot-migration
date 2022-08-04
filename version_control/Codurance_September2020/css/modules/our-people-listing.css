@@ -2,6 +2,7 @@
 
 {% set lateral_page_padding = '15px' %}
 
+
 .custom-our-people {
   margin: 0 auto;
   margin-top: 2em;
@@ -24,6 +25,7 @@
   flex-wrap: wrap;
   margin-left: -{{ card_margin }};
   margin-right: -{{ card_margin }};
+  margin-top: 1.2em;
 }
 
 .custom-our-people__card {
