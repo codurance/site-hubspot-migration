@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+main .custom-our-people {
+  margin-top: 0;
+}
+
 /* Override to align the CTA banner text to the rest of elements */
 .cta-to-careers .cta-block__wrapper {
   max-width: var(--content-max-width);

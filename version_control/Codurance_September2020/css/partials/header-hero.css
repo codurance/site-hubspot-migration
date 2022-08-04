@@ -1,7 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
 .header-hero {
-    padding-bottom: 2em;
     overflow: hidden;
 }
 
@@ -46,23 +45,23 @@
         align-self: start;
     }
 
-    .header-hero__text{
+    .header-hero__text {
         max-width: 50%;
     }
 
-    .header-hero__text h1{
+    .header-hero__text h1 {
         {{utils.eames()}}
     }
 
-    .header-hero__text h2{
+    .header-hero__text h2 {
         {{ utils.freed() }}
     }
 
-    .header-hero__text p{
-        {{ utils.base() }}
+    .header-hero__text p {
+        {{ utils.freed() }}
+
         font-weight: var(--light-font-weight);
         margin-top: .8em;
-        
     }
 
 {% endcall %}
