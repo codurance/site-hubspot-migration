@@ -53,7 +53,7 @@
 }
 
 .custom-our-people__checkbox:focus + span.custom-our-people__toggle {
-    outline: 1px dotted var(--shark);
+    outline: 1px solid var(--shark);
     outline-offset: 1px;
 }
 
