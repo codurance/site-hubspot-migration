@@ -15,7 +15,6 @@
 .header-hero__text {
     margin-top: 1em;
     max-width: 48ch;
-    align-self: center;
 }
 
 .header-hero__text h1 { 
@@ -76,11 +75,15 @@
     .header-hero__container{
         padding-left: 2.5em;
     }
+
+    .header-hero__text {
+        align-self: center;
+    }
 {% endcall %}
 
 {% call utils.small() %}
     .header-hero__text {
-        margin-top: 0;
+        margin-top: -1.2em;
     }
 
     .header-hero__text h1 { 

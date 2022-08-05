@@ -1,5 +1,11 @@
 {% import '../utils/utils.css' as utils %}
 
+{% call utils.large_and_extra_large() %}
+  .header-hero > .header-hero__container {
+    padding-bottom: 0;
+  }
+{% endcall %}
+
 main .custom-our-people {
   margin-top: 0;
 }
