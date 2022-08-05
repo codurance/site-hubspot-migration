@@ -53,8 +53,8 @@
 }
 
 .custom-our-people__checkbox:focus + span.custom-our-people__toggle {
-    outline: 1px solid var(--shark);
-    outline-offset: 1px;
+    outline: 2px solid var(--persimmon--dark);
+    outline-offset: 2px;
 }
 
 .custom-our-people__checkbox:checked + .custom-our-people__toggle::before {
