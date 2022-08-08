@@ -13,7 +13,6 @@
   <a id="theteam" target="_blank" rel="noopener noreferrer"></a>
   <div class="custom-our-people__card-container">
     {% set table_info = hubdb_table_rows( module.hubdbtable_field ) %}
-    {% set leadership_board = hubdb_table_rows( module.hubdbtable_field, "leadership_board=true" ) %}
 
     {% for row in table_info %}
       
