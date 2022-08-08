@@ -84,7 +84,6 @@
   }
 {% endcall %}
 
-
 .custom-our-people__card-container {
   --columns: 2;
   --column-gap: .8em;
@@ -113,21 +112,14 @@
   }
 {% endcall %}
 
-
-
 .custom-our-people__card {
   {{ utils.card_shadow() }}
   background-color: white;
-  /* position: relative; */
+  position: relative;
   transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
 }
 .custom-our-people__card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
-}
-
-
-.custom-our-people__card-inner {
-  position: relative;
 }
 
 .custom-our-people__card-inner::after {
