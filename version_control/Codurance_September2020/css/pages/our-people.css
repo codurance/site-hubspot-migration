@@ -1,52 +1,16 @@
 {% import '../utils/utils.css' as utils %}
 
-{% set lateral_page_padding = '15px' %}
-
-
-.our-people__footer {
-  background-color: var(--midnight-blue);
-  color: white;
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-.our-people__footer-wrapper {
-  align-items: center;
-  padding-left: {{ lateral_page_padding }};
-  padding-right: {{ lateral_page_padding }};
-}
-
-{% call utils.medium_large_and_extra_large() %}
-  .our-people__footer-wrapper {
-    display: flex;
-  }
-{% endcall %}
-{% call utils.small() %}
-  .our-people__footer-wrapper {
-    display: block;
+{% call utils.large_and_extra_large() %}
+  .header-hero > .header-hero__container {
+    padding-bottom: 0;
   }
 {% endcall %}
 
-{% call utils.medium_large_and_extra_large() %}
-  .our-people__hiring-info {
-    width: 66%;
-  }
-{% endcall %}
-
-.our-people__hiring-info h2 {
-  {{ utils.dudler() }}
-  margin-bottom: var(--dudler-margin);
+main .custom-our-people {
+  margin-top: 0;
 }
 
-.our-people__hiring-info p {
-  margin-bottom: var(--base-margin);
-}
-
-.our-people__hiring-cta {
-  margin: 0 auto;
-}
-@media (max-width: 480px) {
-  .our-people__hiring-cta {
-    width: 100%;
-  }
+/* Override to align the CTA banner text to the rest of elements */
+.cta-to-careers .cta-block__wrapper {
+  max-width: var(--content-max-width);
 }

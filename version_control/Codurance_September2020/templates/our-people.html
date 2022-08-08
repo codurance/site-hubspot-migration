@@ -26,36 +26,21 @@ label: Our People
 
 {% block body %}
 
-  {% set path = request.path|truncate(3, true, '') %}
-  {% if path is string_containing 'es' %}
-    {% set header_title = 'Nuestro equipo' %}
-    {% set footer_heading = 'Buscamos talento' %}
-    {% set footer_text = '¿Quieres trabajar con autonomía y tienes el propósito de mejorar día a día en tu carrera profesional? Nos gustaría conocerte y compartir contigo nuestros valores de pragmatismo, profesionalidad y transparencia.' %}
-    {% set footer_href = 'https://www.codurance.com/es/careers/' %}    
-    {% set footer_cta = 'Infórmate' %}    
-  {% else %}
-    {% set header_title = 'Our People' %}
-    {% set footer_heading = 'We are hiring' %}
-    {% set footer_text = 'Are you looking for autonomy, mastery and purpose in your career? We are looking for people that share the same values of pragmatism, professionalism and transparency that we do.' %}
-    {% set footer_href = 'https://www.codurance.com/careers/' %}
-    {% set footer_cta = 'Learn More' %}
-  {% endif %}
+  {% include "./partials/header-hero.html" %}
 
-  <section>
-    {% module "simple-hero-slice" path="../modules/simple-hero-slice.module" label="" no_wrapper=True %}
+  <main>
+    {% module "our_people_listing" 
+      path="../modules/Our-People-Listing.module"
+      label="Our People Listing" 
+      no_wrapper=True 
+    %}
+  </main>
+
+  <section class="cta-to-careers">
+    {% module "skinny_banner" 
+      path="../modules/LP-cta-block.module"
+      label="CTA to careers page" 
+    %}
   </section>
-
-  {% module "our_people" path="../modules/Our People.module"
-      label="Our People" no_wrapper=True %}
-
-  <div class="our-people__footer">
-    <div class="our-people__footer-wrapper page-center">
-      <div class="our-people__hiring-info">
-        <h2>{{ footer_heading }}</h2>
-        <p>{{ footer_text }}</p>
-      </div>
-      <a class="button-primary our-people__hiring-cta" href={{ footer_href }}>{{ footer_cta }}</a>
-    </div>
-  </div>
   
 {% endblock body %}

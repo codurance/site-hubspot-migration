@@ -49,99 +49,29 @@
   #Hero section
 \*------------------------------------*/
 
-.craftsperson-hero {
+.header-hero {
   {{ utils.tango_to_white() }}
 
   overflow: hidden;
 }
 
-.craftsperson-hero__container {
-  display: flex;
-  flex-direction: column-reverse;
-  padding: 1em;
-  max-width: var(--content-max-width);
-  margin: 0 auto;
-}
-
-.craftsperson-hero__text {
-  margin-top: 1em;
-  max-width: 48ch;
-  align-self: center;
-}
-
-{% call utils.medium_large_and_extra_large() %}
-    .craftsperson-hero__container {
-      flex-direction: row;
-      padding-left: 2.5em;
-    }
-
-    .craftsperson-hero__image {
-      align-self: start;
-    }
-
-    .craftsperson-hero__text {
-      max-width: 50%;
-    }
-{% endcall %}
-
-{% call utils.large_and_extra_large() %}
-  .craftsperson-hero__text h1 {
-      {{ utils.eames() }}
-      font-weight: var(--heavy-font-weight);
-  }
-
-  .craftsperson-hero__text p {
-    {{ utils.freed() }}
-    font-weight: var(--light-font-weight);
-  }
-
-  .craftsperson-hero__image {
-    transform: translateX(10%);
-  }
-{% endcall %}
-
 {% call utils.small_and_medium() %}
-  .craftsperson-hero__image {
+  .craftsperson-container .header-hero__image {
     --translate-img: translate(27.5%,-25%);
 
     transform: var(--translate-img);
   }
 {% endcall %}
 
-{% call utils.extra_large() %}
-    .craftsperson-hero__container{
-        overflow: initial;
-        padding: 1em 0;
-    }
-{% endcall %}
-
 {% call utils.medium() %}
-  .craftsperson-hero__text h1 {
-    {{ utils.dudler() }}
-    font-weight: var(--heavy-font-weight);
-  }
-
-  .craftsperson-hero__image {
+  .craftsperson-container .header-hero__image {
     transform: var(--translate-img) scale(1.2);
   }
 {% endcall %}
 
 {% call utils.small() %}
-  .craftsperson-hero__container {
-    padding-top: 0;
-  }
-
-  .craftsperson-hero__text {
+  .craftsperson-container .header-hero__text {
     margin-top: -4.5em;
-  }
-
-  .craftsperson-hero__text h1 {
-    {{ utils.freed() }}
-    font-weight: var(--heavy-font-weight);
-  }
-
-  .craftsperson-hero__text p {
-    {{ utils.natus() }}
   }
 {% endcall %}
 

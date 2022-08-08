@@ -1,0 +1,31 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: false
+-->
+
+{{ require_css(get_asset_url("../../css/partials/header-hero.css")) }}
+
+<section class="header-hero">
+    <div class="header-hero__container">
+        <div class="header-hero__text">
+            {% module 'rich_text' 
+                html="
+                <h1>Our People</h1>
+                <p>Our people come from many different countries and backgrounds and are all brought together by a shared passion for craftsmanship and quality.</p>
+                ",  
+                path='@hubspot/rich_text' 
+            %}
+        </div>
+        <div class="header-hero__image">
+            {% module 'linked_image',
+                path="@hubspot/linked_image",
+                img={
+                    "src": "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Our%20People%20Page/Our%20People%20%E2%80%93%20Header%20Image.png",
+                    "width": auto,
+                },
+                label="Hero Image", 
+                no_wrapper=True        
+            %}
+        </div>
+    </div>
+</section>
