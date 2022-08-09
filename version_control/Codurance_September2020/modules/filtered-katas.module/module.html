@@ -1,0 +1,51 @@
+<!-- module html  -->
+{{ require_css(get_asset_url("../../css/modules/filtered-jobs.css")) }}
+
+{% set infoMessage = { header: "We’re sorry, your search returned no results.",
+paragraph: "Try adjusting your filters to find what you’re looking for."
+}
+%}
+{% set filterTitle = { difficulty: "Difficulty",
+topic: "Topic"
+}
+%}
+
+
+<h2 class="jobs__filter-title">{{ module.section_title }}</h2>
+
+<div class="jobs__filter-wrapper">
+  <form class="jobs__filter" name="filter-form" autocomplete='off'>
+    <div class="jobs__filter-dropdown-wrapper" data-filters-wrapper>
+      <div class="jobs__filter-dropdown-container">
+        <button class="jobs__filter-dropdown-button" data-dropdown-button="difficulty" type="button">
+          {{filterTitle.difficulty}}
+          <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="difficulty">
+          </i>
+        </button>
+        <ul id="difficulties" class="jobs__filter-dropdown-options hidden" data-dropdown-container="difficulty">
+          {# the options are added dynamically here #}
+        </ul>
+      </div>
+      <div class="jobs__filter-dropdown-container">
+        <button class="jobs__filter-dropdown-button" data-dropdown-button="topic" type="button">
+          {{filterTitle.topic}}
+          <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="topic">
+          </i>
+        </button>
+        <ul id="topics" class="jobs__filter-dropdown-options hidden" data-dropdown-container="topic">
+          {# the options are added dinamically here #}
+        </ul>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<div id="katas-container" class="jobs__results">
+  <div class="job-item__not-found hidden">
+    <h4>{{infoMessage.header}}</h4>
+    <p>{{infoMessage.paragraph}}</p>
+  </div>
+  <div id="katas-list">
+  </div>
+</div>
