@@ -37,7 +37,11 @@ label: Blog Listing
 
 {% else %}
 
-<div>
+<section class="job-listing-page-filter ">    
+  {% module 'Filtered Katas' path='../modules/Filtered-Katas.module' label="Filtered Katas Section" no_wrapper=True%}
+</section>
+
+<!-- <div>
 	<h3>Difficulty</h3>
 	<ul>
 		<li>
@@ -172,7 +176,7 @@ label: Blog Listing
               </a>
             </li>
           </ul>
-</div>
+</div> -->
 
   <div class="custom-blog-listing custom-bg-gray-light-v5">
     <div class="page-center container custom-py-50">

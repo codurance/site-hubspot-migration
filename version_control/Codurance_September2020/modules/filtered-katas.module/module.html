@@ -21,6 +21,15 @@ topic: "Topic"
           {{filterTitle.difficulty}}
           <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="difficulty">
           </i>
+          {% set difficulties = ["Novice", "Beginner", "Competent", "Expert"] %}
+          {% for difficulty in difficulties %}
+          <div>
+            <label for="hybrid" class="c-custom-radio">
+              <input id="hybrid" name="workType" type="checkbox" value="difficulty" />
+              {{difficulty}}
+            </label>
+          </div>
+          {% endfor %}
         </button>
         <ul id="difficulties" class="jobs__filter-dropdown-options hidden" data-dropdown-container="difficulty">
           {# the options are added dynamically here #}
@@ -32,6 +41,15 @@ topic: "Topic"
           <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="topic">
           </i>
         </button>
+        {% set topics = blog_tags("katalyst", 100) %}
+        {% for topic in topics %}
+          <div>
+            <label for="hybrid" class="c-custom-radio">
+              <input id="hybrid" name="workType" type="checkbox" value="topic" />
+                 {{topic}}
+            </label>
+          </div>
+        {% endfor %}
         <ul id="topics" class="jobs__filter-dropdown-options hidden" data-dropdown-container="topic">
           {# the options are added dinamically here #}
         </ul>
