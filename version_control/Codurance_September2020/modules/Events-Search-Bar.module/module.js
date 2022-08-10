@@ -41,8 +41,8 @@ function togglePromotedEvents(searchBarText) {
 }
 
 function toggleSearchResultsTitle(searchBarText) {
-    const generalTitle = document.querySelector(".past-events .card-collection__title");
-    const searchResultsTitle = document.querySelector(".past-events .card-collection__search-results-title");
+    const generalTitle = document.querySelector(".videos .card-collection__title");
+    const searchResultsTitle = document.querySelector(".videos .card-collection__search-results-title");
 
     if (searchBarText == "" || searchBarText == undefined) {
         setTimeout(
@@ -90,7 +90,7 @@ function applyFilters(searchBarText) {
         searchBarText = "";
     }
 
-    const pastEventsCollection = document.querySelector(".past-events .card-collection-results");
+    const pastEventsCollection = document.querySelector(".videos .card-collection-results");
     const pastEvents = pastEventsCollection.querySelectorAll(".card-item");
 
     pastEvents.forEach(event => filterEvent(event, searchBarText));
@@ -136,7 +136,7 @@ function toggleNoSearchResultsMessage() {
 }
 
 function areSearchResultsDisplayed() {
-    const pastEventsCollection = document.querySelector(".past-events .card-collection-results");
+    const pastEventsCollection = document.querySelector(".videos .card-collection-results");
     const pastEvents = pastEventsCollection.querySelectorAll(".card-item");
     
     let searchResultsDisplayed = false;

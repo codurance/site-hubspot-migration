@@ -3,7 +3,7 @@
   "name" : "promoted_videos_row",
   "display_width" : null,
   "label" : "Promoted Videos Row",
-  "help_text" : "Add a row above with a selection of promoted events",
+  "help_text" : "Add a row above with a selection of promoted videos",
   "required" : false,
   "locked" : false,
   "display" : "toggle",
@@ -81,7 +81,7 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text",
-    "default" : "Recent Events"
+    "default" : "Videos"
   }, {
     "id" : "hubdb_table",
     "name" : "hubdb_table",
@@ -89,15 +89,13 @@
     "label" : "Videos HubDB table",
     "required" : false,
     "locked" : false,
-    "type" : "hubdbtable",
-    "default" : 5474339
+    "type" : "hubdbtable"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
   "default" : {
-    "heading" : "Recent Events",
-    "hubdb_table" : 5474339
+    "heading" : "Recent Videos"
   }
 }, {
   "id" : "2ec85958-c7dc-f008-f52c-e2a70299973b",
