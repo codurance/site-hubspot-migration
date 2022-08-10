@@ -30,7 +30,7 @@ function filterEventsOnResetButtonClick() {
 }
 
 function togglePromotedEvents(searchBarText) {
-    const promotedEventsCollection = document.querySelector(".promoted-events");
+    const promotedEventsCollection = document.querySelector(".promoted-videos");
 
     if(searchBarText == "" || searchBarText == undefined) {
         showWithAnimation(promotedEventsCollection);
