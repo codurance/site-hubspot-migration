@@ -1,8 +1,8 @@
 [ {
   "id" : "9cc2a5e3-64a5-83eb-32da-347174a87b44",
-  "name" : "promoted_events_row",
+  "name" : "promoted_videos_row",
   "display_width" : null,
-  "label" : "Promoted Events Row",
+  "label" : "Promoted Videos Row",
   "help_text" : "Add a row above with a selection of promoted events",
   "required" : false,
   "locked" : false,
@@ -11,9 +11,9 @@
   "default" : false
 }, {
   "id" : "23350043-2228-78fa-e782-f4c4a0cc8519",
-  "name" : "promoted_events",
+  "name" : "promoted_videos",
   "display_width" : null,
-  "label" : "Promoted Events",
+  "label" : "Promoted Videos",
   "required" : false,
   "locked" : false,
   "visibility" : {
@@ -27,7 +27,7 @@
     "id" : "2b6d45be-9278-2301-581b-5000ae4e123a",
     "name" : "heading",
     "display_width" : null,
-    "label" : "Promoted Events Heading",
+    "label" : "Promoted Videos Heading",
     "required" : true,
     "locked" : false,
     "validation_regex" : "",
@@ -39,7 +39,7 @@
     "id" : "1e08183f-2481-710a-276b-0f42be4e19cb",
     "name" : "hubdb",
     "display_width" : null,
-    "label" : "Promoted Events",
+    "label" : "Promoted Videos",
     "required" : false,
     "locked" : false,
     "occurrence" : {
@@ -48,7 +48,7 @@
       "sorting_label_field" : null,
       "default" : null
     },
-    "table_name_or_id" : "past_events",
+    "table_name_or_id" : "videos",
     "type" : "hubdbrow",
     "default" : {
       "id" : null
@@ -65,16 +65,16 @@
   }
 }, {
   "id" : "e91dc222-83e6-21ff-3e7a-8ee1873f6ca1",
-  "name" : "past_events",
+  "name" : "videos",
   "display_width" : null,
-  "label" : "Past Events",
+  "label" : "Videos",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "7b936bf8-8504-1065-d9f3-d763d9526fc5",
     "name" : "heading",
     "display_width" : null,
-    "label" : "Past Events Heading",
+    "label" : "Videos Heading",
     "required" : true,
     "locked" : false,
     "validation_regex" : "",
@@ -86,17 +86,18 @@
     "id" : "hubdb_table",
     "name" : "hubdb_table",
     "display_width" : null,
-    "label" : "Past Events HubDB table",
+    "label" : "Videos HubDB table",
     "required" : false,
     "locked" : false,
     "type" : "hubdbtable",
-    "default": "past_events"
+    "default" : 5474339
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
   "default" : {
-    "heading" : "Recent Events"
+    "heading" : "Recent Events",
+    "hubdb_table" : 5474339
   }
 }, {
   "id" : "2ec85958-c7dc-f008-f52c-e2a70299973b",

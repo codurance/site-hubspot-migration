@@ -98,33 +98,33 @@
   </section>
 {% endmacro %}
   
-{% if module.promoted_events_row %}
-  {% set promoted_events_listing = [] %}
+{% if module.promoted_videos_row %}
+  {% set promoted_videos_listing = [] %}
   
-  {% for promoted_event in module.promoted_events.hubdb %}
-    {% do promoted_events_listing.append(promoted_event.columns) %}
+  {% for promoted_video in module.promoted_videos.hubdb %}
+    {% do promoted_videos_listing.append(promoted_video.columns) %}
   {% endfor %}
 
   {% set copy = { 
-    heading: module.promoted_events.heading,
-    card_collection_class: "promoted-events"
+    heading: module.promoted_videos.heading,
+    card_collection_class: "promoted-videos"
   } %}
 
-  {{ card_collection(promoted_events_listing, copy) }}
+  {{ card_collection(promoted_videos_listing, copy) }}
 {% endif %}
 
-{% if module.past_events.hubdb_table %}
-  {% set past_events_filter = "&orderBy=-date" %} 
-  {% set past_events_listing = hubdb_table_rows(module.past_events.hubdb_table, past_events_filter) %}
+{% if module.videos.hubdb_table %}
+  {% set past_videos_filter = "&orderBy=-date" %} 
+  {% set past_videos_listing = hubdb_table_rows(module.videos.hubdb_table, past_videos_filter) %}
   
   {% set copy = { 
-    heading: module.past_events.heading,
+    heading: module.videos.heading,
     card_collection_class: "past-events",
     search_results_heading: module.search_results_heading
   } %}
   
   
-  {{ card_collection(past_events_listing, copy) }}
+  {{ card_collection(past_videos_listing, copy) }}
 
   <div class="card-collection-results__no-results-message hidden fade-animation">
     {{ module.no_results_message }}
