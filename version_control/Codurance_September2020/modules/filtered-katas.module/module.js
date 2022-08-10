@@ -16,11 +16,10 @@ let filters = {
 
 const getAll = (entity, type) => {
   const selectors = {
-    clients: '[data-client-industry]',
+    tags: '[blog-tags]',
     options: `[data-${type}-option]`,
     dropdown_containers: '[data-dropdown-container]',
-    remove_filter_buttons: `[data-remove-${type}-filter]`,
-    video_play_buttons: '[data-video-play-button]'
+    remove_filter_buttons: `[data-remove-${type}-filter]`
   }
 
   return Array.prototype.slice.call(
@@ -47,11 +46,11 @@ const get = (entity, value, type) => {
   return document.querySelector(selectors[entity]);
 }
 
-const allClients = getAll('clients');
+const allBlogPosts = getAll('tags');
 
-let clients = {
-  all: allClients,
-  visible: allClients,
+let katas = {
+  all: allBlogPosts,
+  visible: allBlogPosts,
   hidden: []
 }
 
@@ -196,31 +195,27 @@ const arrayDifference = (a, b) => {
   return a.filter(item => !b.includes(item))
 }
 
-const getClientData = (client, type) => {
-  return client.dataset[type].split(',')
+const getKataData = (kata, type) => {
+  return kata.dataset[type].split(',')
 }
 
 const filtersAvailableFor = type => {
   const opts = {
-    industry: {
-      client_dataset_name: 'clientIndustry',
-      remaining: clients => clients.filter(byTechnology).filter(byService)
+    difficulty: {
+      kata_dataset_name: 'kataDifficulty',
+      remaining: katas => katas.filter(byDifficulty)
     },
     technology: {
       client_dataset_name: 'clientTechnology',
       remaining: clients => clients.filter(byIndustry).filter(byService)
-    },
-    service: {
-      client_dataset_name: 'clientService',
-      remaining: clients => clients.filter(byIndustry).filter(byTechnology)
     }
   };
 
 
-  const remainingClients = opts[type].remaining(clients.all);
+  const remainingKatas = opts[type].remaining(katas.all);
 
-  return remainingClients.map(client =>
-    getClientData(client, opts[type].client_dataset_name));
+  return remainingKatas.map(kata =>
+    getKataData(kata, opts[type].kata_dataset_name));
 }
 
 const disableButton = button => {
@@ -240,11 +235,11 @@ const updateAvailableFilters = _ => {
   });
 }
 
-const byIndustry = client => {
-  let industryFilters = filters.applied.industry;
-  let clientIndustry = client.dataset.clientIndustry;
-  return industryFilters.length === 0 ||
-    industryFilters.includes(clientIndustry);
+const byDifficulty = kata => {
+  let difficultyFilters = filters.applied.difficulty;
+  let kataDifficulty = kata.dataset.kataDifficulty;
+  return difficultyFilters.length === 0 ||
+    difficultyFilters.includes(kataDifficulty);
 }
 
 const byTechnology = client => {
@@ -254,31 +249,23 @@ const byTechnology = client => {
     technologyFilters.some(filter => clientTechnologies.includes(filter));
 }
 
-
-const byService = client => {
-  let serviceFilters = filters.applied.service;
-  const clientServices = client.dataset.clientService.split(',');
-  return serviceFilters.length === 0 ||
-    serviceFilters.some(filter => clientServices.includes(filter));
-}
-
 const calculateVisibleClients = _ => {
-  return clients.all.filter(byIndustry).filter(byTechnology).filter(byService);
+  return katas.all.filter(byDifficulty);
 }
 
 const refilter = _ => {
-  clients.visible = calculateVisibleClients();
-  clients.hidden = arrayDifference(clients.all, clients.visible);
+  katas.visible = calculateVisibleClients();
+  katas.hidden = arrayDifference(katas.all, katas.visible);
 
-  clients.visible.forEach(show);
-  clients.hidden.forEach(hide);
+  katas.visible.forEach(show);
+  katas.hidden.forEach(hide);
   isotope.layout();
 }
 
 const updateNoClientsMessage = _ => {
   const noClientsMessage = get('no_clients_message');
 
-  if (clients.visible.length > 0) {
+  if (katas.visible.length > 0) {
     hide(noClientsMessage);
   } else {
     show(noClientsMessage);
@@ -377,22 +364,6 @@ const initialiseIsotopeLayout = _ => {
 
   isotope = new Isotope(elem, isotopeLayoutOpts);
 }
-
-const play = video => video.src += '?autoplay=1';
-
-const playVideo = button => {
-  const clientIndex = button.dataset.videoPlayButton;
-  const videoCoverContainer = get('video_cover_container', clientIndex);
-  const video = get('video_iframe', clientIndex)
-  hide(videoCoverContainer)
-  play(video)
-}
-
-const addPlayButtonListener = button =>
-  button.addEventListener('click', _ => playVideo(button))
-
-const initialiseVideoPlayers = _ =>
-  getAll('video_play_buttons').forEach(addPlayButtonListener);
 
 const init = _ => {
   initialiseIsotopeLayout();
