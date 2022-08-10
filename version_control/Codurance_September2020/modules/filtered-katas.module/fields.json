@@ -1,12 +1,8 @@
 [ {
-  "id" : "93b3fd3b-264c-df85-ad1a-3e6e3133ac9dsdrghswert",
-  "name" : "section_title",
-  "display_width" : null,
-  "label" : "section title",
-  "required" : false,
+  "id" : "902f0092-31ec-43a4-9912-065027c18166",
+  "name" : "clients_table",
+  "label" : "Clients table",
+  "required" : true,
   "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
+  "type" : "hubdbtable"
 } ]

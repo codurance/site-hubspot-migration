@@ -1,315 +1,403 @@
-const jobsItemsList = document.querySelector('#katas-list');
+let isotope;
 
-const addKata = (entry, kataData) => {
-  if (!entry[kataData.title]) {
-    entry[kataData.title] = {};
-  }
-  appendLocations(entry[kataData.title], kataData)
-}
-
-const getDeterminedCountry = (country) => {
-  return country.length === 0 ? 'Worldwide' : country;
-}
-
-
-
-const appendLocations = (entry, jobData) => {
-  const newLocation = {
-    city: jobData.city,
-    country: getDeterminedCountry(jobData.country),
-    url: jobData.url,
-    workType: jobData.telecommuting ? 'Remote' : 'Hybrid',
-    location:  hasHybridCity(jobData.city) ? jobData.city : getDeterminedCountry(jobData.country) 
-  }
-  
-  
-  if (!entry.locations) {
-    entry.locations = [];
-  }
-  entry.locations.push(newLocation)
-}
-
-const createJobsObject = (jsonData) => {
-  const jobs = {};
-  
-  jsonData.map((job) => {
-    if (!jobs[job.department]) {
-      jobs[job.department] = {} 
-    }
-    addKata(jobs[job.department], job)
-  })
-  return jobs;
-}
-
-const Difficulties = ["Novice", "Beginner", "Competent", "Expert"]
-
-async function fetchJobs() {
-  try {
-    const urlEndpoint = "/_hcms/api/blogs/tags";
-    const response = await fetch(urlEndpoint);
-    const data = await response.json();
-    const tagsData = data.response.results
-
-    //displayJobs(jobsData)
-    displayDropdownButtons(Difficulties, 'difficulty');
-    displayDropdownButtons(filterUniqueTopics(tagsData), 'topics');
-
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-const filterUniqueTopics = (data) => {
-  return [...new Set(data.map(results => isNotDifficultyTag(results.name)))];
-}
-
-const isNotDifficultyTag = (tag) => {
-    if (!Difficulties.contains(tag)) return tag;
-}
-
-const convertToPascalCase = (string) => {
-  return string.split(" ").join("");
-}
-
-const convertToDashCase = (string) => {
-  return string.split(" ").join("-").toLowerCase();
-}
-
-
-const displayDropdownButtons = (filteredItems, idSelector) =>{
-  const htmlItems = filteredItems.map((item) => {
-    return `
-      <li>
-        <input type="checkbox" id="${convertToDashCase(item)}" class="jobs__filter-dropdown-option" name="${item}" data-category="${idSelector}"/>
-        <label for="${convertToDashCase(item)}">
-         ${item}
-        </label>
-      </li>
-    `
-  }).join('');
-
-  const divSelector = document.querySelector(`#${idSelector}`)
-  divSelector.innerHTML = htmlItems;
-
-}
-
-
-
-const renderLocations = (locationsArray) => {
-  return locationsArray.map(({city, country, url, location, workType}) => `
-  <div class="job-list__position">
-    <p class="job-item__workType" data-workType="${workType}">${workType}</p>
-    <p class="job-item__location">
-      <i class="las la-map-marker"></i>
-      ${ location }
-    </p>
-    <a class="job-item__link text-cta-primary
-    text-cta--right-arrow"
-    href=${url}
-    target=_blank>${renderApplyBtnLang()}<i class="las la-arrow-right"></i>
-    </a>
-  </div>
-  `).join('');
-}
-
-const displayJobs = (jobsData) => {
-  const jobs = createJobsObject(jobsData)
-
-  const htmlRender = Object.entries(jobs).map( ([departmentName, jobInfo]) => {
-    return  ` 
-      <div class="job-item__section">
-        <p class="job-item__department">${departmentName}</p>
-          ${Object.entries(jobInfo).map( ([jobTitle, {locations}]) => {             
-            return `
-            <div class="job-item__titles-container">
-              <h3 id=${convertToPascalCase(jobTitle)} class="job-item__title">${jobTitle}</h3>
-              <div class="job-list__position-wrapper">
-                ${renderLocations(locations)}
-              </div>
-            </div>`
-            }).join('')
-          }
-      </div>
-      `
-  }).join('')
-
-
-  jobsItemsList.innerHTML = htmlRender;
- 
-}
-
-
-const hide = (element) => {
-  element.classList.add('hidden');
-}
-
-const show = (element) => {
-  element.classList.remove('hidden');
-}
-
-const showDropdown = (container, eventTarget) => {
-  show(container);
-  eventTarget.classList.add('jobs__filter-dropdown-button--active');
-}
-
-const hideDropdown = (container, eventTarget) => {
-  hide(container);
-  eventTarget.classList.remove('jobs__filter-dropdown-button--active');
-}
-
-const closeAllDropdowns = () => {
-  const allContainers = document.querySelectorAll(".jobs__filter-dropdown-container");
-
-  allContainers.forEach( element => {
-      element.children[0].classList.remove('jobs__filter-dropdown-button--active');
-      element.children[1].classList.add('hidden');
-  } )
-}
-
-
-const hideEmptySections = () => {
-  const allSections = document.querySelectorAll('.job-item__section');
-  allSections.forEach( section => {
-    const jobTitles = Array.from(section.querySelectorAll('.job-item__titles-container'));
-    
-    allItemsAreHidden(jobTitles) ? hide(section) : show(section);
-  });
-}
-
-
-const checkEmptyResults = () => {
-  const allSections = Array.from(document.querySelectorAll('.job-item__section'));
-  const notFoundMessage = document.querySelector('.job-item__not-found');
-
-  if(allItemsAreHidden(allSections)){
-    show(notFoundMessage)
-  }else{
-    hide(notFoundMessage);
-  }
-
-}
-
-
-document.addEventListener('click', (event) => {
-  const target = event.target;
-  const buttonToggle = target.dataset.dropdownButton;
-
-  if(!buttonToggle && !event.target.closest('[data-dropdown-container]')) {
-    closeAllDropdowns();
-    return;
-  } 
-  
-  if (buttonToggle) {
-    const dropdownOptions = document.getElementById(buttonToggle);
-    
-    if(dropdownOptions.classList.contains('hidden')){
-      closeAllDropdowns();
-      showDropdown(dropdownOptions, target);
-    }else{
-      hideDropdown(dropdownOptions, target);
-    }
-  };
-
-})
-
-
-const getCheckedEntries = (list, filterTerm) => {
-  return Array.from(list)
-          .filter(el => el.dataset.category === filterTerm)
-          .filter(el => el.checked)
-          .map(el => el.name)
-}
-
-const removeElementFromArray = (arr, name) => arr.filter(el => el !== name);
-
-const addElementToArray = (arr, name) => [...arr, name];
-
-const filterIsEmpty = filter => filter.length === 0;
-
-const filterIncludes = (filter, item) => filter.includes(item);
-
-const allItemsAreHidden = (arr) => arr.every(el => el.classList.contains('hidden'));
-
-const setBaseFilterState = (form) => {
-  const formRoles = getCheckedEntries(form.elements, 'roles');
-  const formLocations = getCheckedEntries(form.elements, 'locations')
-  const formWorkType = form.elements.workType.value;
-
-  return {
-    roles: formRoles,
-    locations: formLocations,
-    workType: formWorkType
-  }
-}
-
-
-const renderFilteredResults = (filterState) => {
-
-  const jobListings = document.querySelectorAll('.job-item__titles-container');
-
-  for(const jobListing of jobListings){
-    const jobTitle = jobListing.querySelector('.job-item__title').innerText;
-    const jobPositions = Array.from(jobListing.querySelectorAll('.job-list__position'))
-
-    if ( filterIncludes(filterState.roles, jobTitle) || filterIsEmpty(filterState.roles) ) {
-      show(jobListing)
-    }  else {
-      hide(jobListing)
-    }
-
-    for (const jobPosition of jobPositions) {
-      const jobLocation = jobPosition.querySelector('.job-item__location').innerText.trim();
-      const jobWorkType = jobPosition.querySelector('[data-workType]').innerText.trim();
-
-
-      if (
-        (filterIncludes(filterState.locations, jobLocation)
-        || filterIsEmpty(filterState.locations))
-        && (filterState.workType === jobWorkType
-        || filterState.workType === 'All')
-      ) {
-        show(jobPosition);
-      } else {
-        hide(jobPosition);
-      }
-    }
-
-    if(allItemsAreHidden(jobPositions)){
-      hide(jobListing);
-    }
-
-  } 
-}
-
-const updateFilterState = async ({target: {type, checked, dataset, name, value}}, filterState) => {
-  switch (type) {
-    case 'checkbox': {
-      if (checked) {
-        filterState[dataset.category] = addElementToArray(filterState[dataset.category], name)
-      } else {
-        filterState[dataset.category] = removeElementFromArray(filterState[dataset.category], name)
-      }
-      break;
-    }
-    case 'radio': {
-      filterState[name] = value;
-      break;
-    }
+let filters = {
+  types: [ 'industry', 'technology', 'service' ],
+  all: {
+    industry: [],
+    technology: [],
+    service: []
+  },
+  applied: {
+    industry: [],
+    technology: [],
+    service: []
   }
 };
 
-const handleFilterFormChange = async (e, filterState) => {
- await updateFilterState(e, filterState);
-  renderFilteredResults(filterState);
-  hideEmptySections();
-  checkEmptyResults();
+const getAll = (entity, type) => {
+  const selectors = {
+    clients: '[data-client-industry]',
+    options: `[data-${type}-option]`,
+    dropdown_containers: '[data-dropdown-container]',
+    remove_filter_buttons: `[data-remove-${type}-filter]`,
+    video_play_buttons: '[data-video-play-button]'
+  }
+
+  return Array.prototype.slice.call(
+    document.querySelectorAll(selectors[entity])
+  )
 }
 
-window.addEventListener('DOMContentLoaded', async () => {
-  await fetchJobs();
+const get = (entity, value, type) => {
+  const selectors = {
+    filter_toggle: '[data-filter-toggle]',
+    filter_toggle_icon: '[data-filter-toggle-icon]',
+    filters_wrapper: '[data-filters-wrapper]',
+    dropdown_container: `[data-dropdown-container="${value}"]`,
+    dropdown_icon: `[data-dropdown-icon=${value}]`,
+    applied_filter: `[data-applied-${type}-filter="${value}"]`,
+    option: `[data-${type}-option="${value}"]`,
+    selected_icon: `[data-${type}-option-selected="${value}"]`,
+    no_clients_message: '[data-no-clients-message]',
+    grid_container: '[data-grid-container]',
+    video_cover_container: `[data-video-cover-container="${value}"]`,
+    video_iframe: `[data-video-iframe="${value}"]`
+  }
 
-  const filterForm = document.forms['filter-form'];
-  let filterState = setBaseFilterState(filterForm);
+  return document.querySelector(selectors[entity]);
+}
 
-  filterForm.addEventListener('change', e => handleFilterFormChange(e, filterState))
-})
+const allClients = getAll('clients');
+
+let clients = {
+  all: allClients,
+  visible: allClients,
+  hidden: []
+}
+
+const filterOptions = type => {
+  return getAll('options', type).map(option => option.dataset[`${type}Option`]).filter( x => x.length > 0);
+}
+
+const setFilterOptions = _ => {
+  filters.types.forEach(type =>
+    filters.all[type] = filterOptions(type));
+}
+
+const hide = element => {
+  element.classList.add('hidden');
+}
+
+const show = element => {
+  element.classList.remove('hidden');
+}
+
+const toggleShowHideFilters = _ => {
+  const filtersWrapper = get('filters_wrapper');
+  if (filtersWrapper.classList.contains('hidden')) {
+    show(filtersWrapper);
+    get('filter_toggle_icon').classList.add('clients__filter-toggle-icon--selected');
+  } else {
+    hide(filtersWrapper);
+    get('filter_toggle_icon').classList.remove('clients__filter-toggle-icon--selected');
+  }
+}
+
+const addFilterToggleListener = _ => {
+  const filterToggleButton = get('filter_toggle');
+  filterToggleButton.addEventListener('click', toggleShowHideFilters)
+}
+
+const showDropdown = container => {
+  const type = container.dataset.dropdownContainer;
+  show(container);
+  get('dropdown_icon', type).classList.add('clients__filter-dropdown-icon--selected');
+}
+
+const hideDropdown = container => {
+  const type = container.dataset.dropdownContainer;
+  hide(container);
+  get('dropdown_icon', type).classList.remove('clients__filter-dropdown-icon--selected');
+}
+
+const closeOtherDropdowns = type => {
+  getAll('dropdown_containers').filter(dropdown =>
+    dropdown.dataset.dropdownContainer !== type).forEach(hideDropdown)
+}
+
+const openDropdown = type => {
+  closeOtherDropdowns(type)
+  const dropdown = get('dropdown_container', type)
+  if (dropdown.classList.contains('hidden')) {
+    showDropdown(dropdown, type)
+  } else {
+    hideDropdown(dropdown, type)
+  }
+}
+
+const isDropdownButton = element => {
+  return !!element.dataset.dropdownButton
+}
+
+const optionTypeFrom = element => {
+  const dataAttributes = Object.keys(element.dataset);
+  const optionMatcher = new RegExp('^(industry|technology|service)(?=Option)');
+  for (let i = 0; i < dataAttributes.length; i++) {
+    const key = dataAttributes[i];
+    const match = key.match(optionMatcher);
+    if (match) {
+      return match[0];
+    }
+  }
+}
+
+const addDropdownListeners = _ => {
+  window.addEventListener('click', ({ target }) => {
+    if (isDropdownButton(target)) {
+      openDropdown(target.dataset.dropdownButton);
+    } else {
+      const optionType = optionTypeFrom(target);
+      closeOtherDropdowns(optionType);
+    }
+  })
+}
+
+const showAppliedFilter = (type, filter) => {
+  const filterPill = get('applied_filter', filter, type)
+  show(filterPill);
+}
+
+const hideUnappliedFilter = (type, filter) => {
+  const filterPill = get('applied_filter', filter, type)
+  hide(filterPill);
+}
+
+const markOptionSelected = (type, filter) => {
+  const selectedIcon = get('selected_icon', filter, type);
+  const option = get('option', filter, type);
+  show(selectedIcon);
+  option.classList.add('clients__filter-dropdown-option--selected')
+}
+
+const markOptionDeselected = (type, filter) => {
+  const selectedIcon = get('selected_icon', filter, type);
+  const option = get('option', filter, type);
+  hide(selectedIcon);
+  option.classList.remove('clients__filter-dropdown-option--selected')
+}
+
+const updateAppliedFilters = _ => {
+  Object.keys(filters.applied).forEach(type => {
+    const all = filters.all[type];
+    const applied = filters.applied[type];
+    const unapplied = arrayDifference(all, applied);
+
+    applied.forEach(filter => {
+      showAppliedFilter(type, filter);
+      markOptionSelected(type, filter);
+    });
+
+    unapplied.forEach(filter => {
+      hideUnappliedFilter(type, filter);
+      markOptionDeselected(type, filter);
+    });
+  });
+}
+
+const onlyUnique = (value, index, self) => {
+  return self.indexOf(value) === index;
+}
+
+const flatten = array => {
+  return Array.prototype.concat.apply([], array);
+}
+
+const arrayDifference = (a, b) => {
+  return a.filter(item => !b.includes(item))
+}
+
+const getClientData = (client, type) => {
+  return client.dataset[type].split(',')
+}
+
+const filtersAvailableFor = type => {
+  const opts = {
+    industry: {
+      client_dataset_name: 'clientIndustry',
+      remaining: clients => clients.filter(byTechnology).filter(byService)
+    },
+    technology: {
+      client_dataset_name: 'clientTechnology',
+      remaining: clients => clients.filter(byIndustry).filter(byService)
+    },
+    service: {
+      client_dataset_name: 'clientService',
+      remaining: clients => clients.filter(byIndustry).filter(byTechnology)
+    }
+  };
+
+
+  const remainingClients = opts[type].remaining(clients.all);
+
+  return remainingClients.map(client =>
+    getClientData(client, opts[type].client_dataset_name));
+}
+
+const disableButton = button => {
+  button.setAttribute('disabled', 'true');
+}
+
+const enableButton = button => {
+  button.removeAttribute('disabled');
+}
+
+const updateAvailableFilters = _ => {
+  filters.types.forEach(type => {
+    const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(element => element.trim().length > 0);
+    const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
+    availableFilters.forEach(filter => enableButton(get('option', filter, type)));
+    unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
+  });
+}
+
+const byIndustry = client => {
+  let industryFilters = filters.applied.industry;
+  let clientIndustry = client.dataset.clientIndustry;
+  return industryFilters.length === 0 ||
+    industryFilters.includes(clientIndustry);
+}
+
+const byTechnology = client => {
+  let technologyFilters = filters.applied.technology;
+  const clientTechnologies = client.dataset.clientTechnology.split(',');
+  return technologyFilters.length === 0 ||
+    technologyFilters.some(filter => clientTechnologies.includes(filter));
+}
+
+
+const byService = client => {
+  let serviceFilters = filters.applied.service;
+  const clientServices = client.dataset.clientService.split(',');
+  return serviceFilters.length === 0 ||
+    serviceFilters.some(filter => clientServices.includes(filter));
+}
+
+const calculateVisibleClients = _ => {
+  return clients.all.filter(byIndustry).filter(byTechnology).filter(byService);
+}
+
+const refilter = _ => {
+  clients.visible = calculateVisibleClients();
+  clients.hidden = arrayDifference(clients.all, clients.visible);
+
+  clients.visible.forEach(show);
+  clients.hidden.forEach(hide);
+  isotope.layout();
+}
+
+const updateNoClientsMessage = _ => {
+  const noClientsMessage = get('no_clients_message');
+
+  if (clients.visible.length > 0) {
+    hide(noClientsMessage);
+  } else {
+    show(noClientsMessage);
+  }
+}
+
+const update = _ => {
+  updateAppliedFilters();
+  refilter();
+  updateAvailableFilters();
+  updateNoClientsMessage();
+}
+
+const applyFilter = (type, value) => {
+  filters.applied[type].push(value);
+  update();
+}
+
+const filterAlreadyApplied = (type, value) => {
+  const appliedFiltersForType = filters.applied[type];
+  return appliedFiltersForType.includes(value);
+}
+
+const filterSelected = (type, value) => {
+  filterAlreadyApplied(type, value) ?
+    removeFilter(type, value) :
+    applyFilter(type, value);
+}
+
+const addFilterListener = (button, type) => {
+  button.addEventListener('click', _ =>
+    filterSelected(type, button.dataset[`${type}Option`]));
+}
+
+const addFilterOptionListeners = _ => {
+  filters.types.forEach(type => {
+    getAll('options', type).forEach(button => {
+      addFilterListener(button, type);
+    });
+  });
+}
+
+const removeItemFromArray = (array, value) => {
+  const removableIndex = array.indexOf(value);
+  if (removableIndex >= 0) {
+    array.splice(removableIndex, 1);
+  }
+}
+
+const removeFilter = (type, value) => {
+  removeItemFromArray(filters.applied[type], value)
+  update();
+}
+
+const capitalise = string => {
+  return string.charAt(0).toUpperCase() + string.substring(1);
+}
+
+const addRemoveFilterListener = (type, button) => {
+  button.addEventListener('click', _ => {
+    const value = button.dataset[`remove${capitalise(type)}Filter`];
+    removeFilter(type, value);
+  });
+}
+
+const addRemoveFilterListeners = _ => {
+  Object.keys(filters.all).forEach(type => {
+    getAll('remove_filter_buttons', type).forEach(button =>
+      addRemoveFilterListener(type, button));
+  });
+}
+
+const addListeners = _ => {
+  addFilterToggleListener();
+  addDropdownListeners();
+  addFilterOptionListeners();
+  addRemoveFilterListeners();
+}
+
+const initialiseFilters = _ => {
+  setFilterOptions();
+  addListeners();
+}
+
+const initialiseIsotopeLayout = _ => {
+  const elem = get('grid_container');
+  const isotopeLayoutOpts = {
+    layoutMode: 'masonry',
+    itemSelector: '.clients-grid__card',
+    percentPosition: true,
+    masonry: {
+      columnWidth: '.clients-grid__sizer',
+      gutter: '.clients-grid__gutter-sizer'
+    }
+  };
+
+  isotope = new Isotope(elem, isotopeLayoutOpts);
+}
+
+const play = video => video.src += '?autoplay=1';
+
+const playVideo = button => {
+  const clientIndex = button.dataset.videoPlayButton;
+  const videoCoverContainer = get('video_cover_container', clientIndex);
+  const video = get('video_iframe', clientIndex)
+  hide(videoCoverContainer)
+  play(video)
+}
+
+const addPlayButtonListener = button =>
+  button.addEventListener('click', _ => playVideo(button))
+
+const initialiseVideoPlayers = _ =>
+  getAll('video_play_buttons').forEach(addPlayButtonListener);
+
+const init = _ => {
+  initialiseIsotopeLayout();
+  initialiseFilters();
+  initialiseVideoPlayers();
+}
+
+window.addEventListener('DOMContentLoaded', init);

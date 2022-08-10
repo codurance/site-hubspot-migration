@@ -1,69 +1,91 @@
-<!-- module html  -->
-{{ require_css(get_asset_url("../../css/modules/filtered-jobs.css")) }}
+{{ require_css(get_asset_url("../../css/modules/filtered-clients.css")) }}
+{% import '../../partials/clients-page-cards.html' as cards %}
 
-{% set infoMessage = { header: "We’re sorry, your search returned no results.",
+{% set difficulties = ["Novice", "Beginner", "Competent", "Expert"] %}
+{% set topics = blog_tags("katalyst", 100) %}
+{% for difficulty in difficulties %}
+  {% do topics.remove(difficulty) %}
+{% endfor %}
+
+{% set filter = { title: "Filter",
+difficulties: "Difficulty",
+topics: "Topics"
+}
+%}
+{% set infoMessage = { header: "We’re sorry, your search returned no results",
 paragraph: "Try adjusting your filters to find what you’re looking for."
 }
 %}
-{% set filterTitle = { difficulty: "Difficulty",
-topic: "Topic"
-}
-%}
 
 
-<h2 class="jobs__filter-title">{{ module.section_title }}</h2>
-
-<div class="jobs__filter-wrapper">
-  <form class="jobs__filter" name="filter-form" autocomplete='off'>
-    <div class="jobs__filter-dropdown-wrapper" data-filters-wrapper>
-      <div class="jobs__filter-dropdown-container">
-        <button class="jobs__filter-dropdown-button" data-dropdown-button="difficulty" type="button">
-          {{filterTitle.difficulty}}
-          <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="difficulty">
+<main class="clients-page__main">
+  <div class="clients__filter">
+    <div class="clients__filter-toggle">
+      <button data-filter-toggle>
+        {{filter.title}}
+        <i class="clients__filter-toggle-icon las la-plus" data-filter-toggle-icon>
+        </i>
+      </button>
+    </div>
+    <div class="clients__filter-dropdown-wrapper hidden" data-filters-wrapper>
+      <div class="clients__filter-dropdown-container">
+        <button class="clients__filter-dropdown-button" data-dropdown-button="difficulties">
+          <i class="clients__filter-icon las la-tag"></i>
+          {{filter.difficulties}}
+          <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="difficulties">
           </i>
-          {% set difficulties = ["Novice", "Beginner", "Competent", "Expert"] %}
-          {% for difficulty in difficulties %}
-          <div>
-            <label for="hybrid" class="c-custom-radio">
-              <input id="hybrid" name="workType" type="checkbox" value="difficulty" />
-              {{difficulty}}
-            </label>
-          </div>
+        </button>
+        <div class="clients__filter-dropdown-options hidden" data-dropdown-container="difficulties">
+          {% for difficulty in difficulties|sort(False,False) %}
+          <button class="clients__filter-dropdown-option" data-industry-option="{{difficulty}}">
+            {{difficulty}}
+            <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
+               data-industry-option-selected="{{difficulty}}"></i>
+          </button>
           {% endfor %}
-        </button>
-        <ul id="difficulties" class="jobs__filter-dropdown-options hidden" data-dropdown-container="difficulty">
-          {# the options are added dynamically here #}
-        </ul>
+        </div>
       </div>
-      <div class="jobs__filter-dropdown-container">
-        <button class="jobs__filter-dropdown-button" data-dropdown-button="topic" type="button">
-          {{filterTitle.topic}}
-          <i class="jobs__filter-dropdown-icon las la-angle-down" data-dropdown-icon="topic">
+      <div class="clients__filter-dropdown-container">
+        <button class="clients__filter-dropdown-button" data-dropdown-button="topics">
+          <i class="clients__filter-icon las la-code"></i>
+          {{filter.topics}}
+          <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="topics">
           </i>
         </button>
-        {% set topics = blog_tags("katalyst", 100) %}
-        {% for topic in topics %}
-          <div>
-            <label for="hybrid" class="c-custom-radio">
-              <input id="hybrid" name="workType" type="checkbox" value="topic" />
-                 {{topic}}
-            </label>
-          </div>
-        {% endfor %}
-        <ul id="topics" class="jobs__filter-dropdown-options hidden" data-dropdown-container="topic">
-          {# the options are added dinamically here #}
-        </ul>
+        <div class="clients__filter-dropdown-options hidden" data-dropdown-container="topics">
+          {% for topic in topics|sort(False,False) %}
+          <button class="clients__filter-dropdown-option" data-technology-option="{{topic}}">
+            {{topic}}
+            <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
+               data-technology-option-selected="{{topic}}"></i>
+          </button>
+          {% endfor %}
+        </div>
       </div>
     </div>
-  </form>
-</div>
+  </div>
 
+  <div class="clients-applied-filters__container">
+    {% for difficulty in difficulties %}
+    <div class="clients-applied-filters__pill hidden" data-applied-industry-filter="{{difficulty}}">
+      {{difficulty}}
+      <i class="clients-applied-filters__remove-button las la-times" data-remove-industry-filter="{{difficulty}}"></i>
+    </div>
+    {% endfor %}
+    {% for topic in topics %}
+    <div class="clients-applied-filters__pill hidden" data-applied-technology-filter="{{topic}}">
+      {{topic}}
+      <i class="clients-applied-filters__remove-button las la-times" data-remove-technology-filter="{{topic}}"></i>
+    </div>
+    {% endfor %}
+  </div>
 
-<div id="katas-container" class="jobs__results">
-  <div class="job-item__not-found hidden">
+  <div class="clients__no-clients-message-container hidden" data-no-clients-message>
     <h4>{{infoMessage.header}}</h4>
     <p>{{infoMessage.paragraph}}</p>
   </div>
-  <div id="katas-list">
-  </div>
-</div>
+</main>
+
+{{ require_js(get_asset_url("../js/imageLoaded.js")) }}
+{{ require_js(get_asset_url("../../js/isotope.js"), "footer") }}
+{{ require_js(get_asset_url("../../js/isotopePackery.js"), "footer") }}
