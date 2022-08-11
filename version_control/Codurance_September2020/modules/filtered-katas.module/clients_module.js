@@ -1,19 +1,23 @@
-//let isotope;
+let isotope;
 
 //get all posts
 //extract tags from property on each post
 //shown_tags = get all tags that do not have 'hidden' class
 //add hidden class to posts that do not have any of shown_tags
 
+
+
 let filters = {
-  types: [ 'difficulty', 'topic' ],
+  types: [ 'industry', 'technology', 'service' ],
   all: {
-    difficulty: [],
-    topic: []
+    industry: [],
+    technology: [],
+    service: []
   },
   applied: {
-    difficulty: [],
-    topic: []
+    industry: [],
+    technology: [],
+    service: []
   }
 };
 
@@ -41,7 +45,9 @@ const get = (entity, value, type) => {
     option: `[data-${type}-option="${value}"]`,
     selected_icon: `[data-${type}-option-selected="${value}"]`,
     no_clients_message: '[data-no-clients-message]',
-    grid_container: '[data-grid-container]'
+    grid_container: '[data-grid-container]',
+    video_cover_container: `[data-video-cover-container="${value}"]`,
+    video_iframe: `[data-video-iframe="${value}"]`
   }
 
   return document.querySelector(selectors[entity]);
@@ -54,7 +60,6 @@ let katas = {
   visible: allBlogPosts,
   hidden: []
 }
-
 
 const filterOptions = type => {
   return getAll('options', type).map(option => option.dataset[`${type}Option`]).filter( x => x.length > 0);
@@ -88,9 +93,6 @@ const addFilterToggleListener = _ => {
   const filterToggleButton = get('filter_toggle');
   filterToggleButton.addEventListener('click', toggleShowHideFilters)
 }
-//allblogposts.attributes.blog-tags.nodeValue to get tags
-
-console.log(allBlogPosts);
 
 const showDropdown = container => {
   const type = container.dataset.dropdownContainer;
@@ -103,7 +105,6 @@ const hideDropdown = container => {
   hide(container);
   get('dropdown_icon', type).classList.remove('clients__filter-dropdown-icon--selected');
 }
-
 
 const closeOtherDropdowns = type => {
   getAll('dropdown_containers').filter(dropdown =>
@@ -126,7 +127,7 @@ const isDropdownButton = element => {
 
 const optionTypeFrom = element => {
   const dataAttributes = Object.keys(element.dataset);
-  const optionMatcher = new RegExp('^(difficulty|topic)(?=Option)');
+  const optionMatcher = new RegExp('^(industry|technology|service)(?=Option)');
   for (let i = 0; i < dataAttributes.length; i++) {
     const key = dataAttributes[i];
     const match = key.match(optionMatcher);
@@ -209,18 +210,125 @@ const filtersAvailableFor = type => {
   const opts = {
     difficulty: {
       kata_dataset_name: 'kataDifficulty',
-      remaining: katas => katas.filter(byTechnology).filter(byService)
+      remaining: katas => katas.filter(byDifficulty)
     },
-    topic: {
-      kata_dataset_name: 'kataTopic',
-      remaining: katas => katas.filter(byIndustry).filter(byService)
-    }   
+    technology: {
+      client_dataset_name: 'clientTechnology',
+      remaining: clients => clients.filter(byIndustry).filter(byService)
+    }
   };
 
-    const remainingKatas = opts[type].remaining(katas.all);
+
+  const remainingKatas = opts[type].remaining(katas.all);
 
   return remainingKatas.map(kata =>
     getKataData(kata, opts[type].kata_dataset_name));
+}
+
+const disableButton = button => {
+  button.setAttribute('disabled', 'true');
+}
+
+const enableButton = button => {
+  button.removeAttribute('disabled');
+}
+
+const updateAvailableFilters = _ => {
+  filters.types.forEach(type => {
+    const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(element => element.trim().length > 0);
+    const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
+    availableFilters.forEach(filter => enableButton(get('option', filter, type)));
+    unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
+  });
+}
+
+const byDifficulty = kata => {
+  let difficultyFilters = filters.applied.difficulty;
+  let kataDifficulty = kata.dataset.kataDifficulty;
+  return difficultyFilters.length === 0 ||
+    difficultyFilters.includes(kataDifficulty);
+}
+
+const byTechnology = client => {
+  let technologyFilters = filters.applied.technology;
+  const clientTechnologies = client.dataset.clientTechnology.split(',');
+  return technologyFilters.length === 0 ||
+    technologyFilters.some(filter => clientTechnologies.includes(filter));
+}
+
+const calculateVisibleClients = _ => {
+  return katas.all.filter(byDifficulty);
+}
+
+const refilter = _ => {
+  katas.visible = calculateVisibleClients();
+  katas.hidden = arrayDifference(katas.all, katas.visible);
+
+  katas.visible.forEach(show);
+  katas.hidden.forEach(hide);
+  isotope.layout();
+}
+
+const updateNoClientsMessage = _ => {
+  const noClientsMessage = get('no_clients_message');
+
+  if (katas.visible.length > 0) {
+    hide(noClientsMessage);
+  } else {
+    show(noClientsMessage);
+  }
+}
+
+const update = _ => {
+  updateAppliedFilters();
+  refilter();
+  updateAvailableFilters();
+  updateNoClientsMessage();
+}
+
+const applyFilter = (type, value) => {
+  filters.applied[type].push(value);
+  update();
+}
+
+const filterAlreadyApplied = (type, value) => {
+  const appliedFiltersForType = filters.applied[type];
+  return appliedFiltersForType.includes(value);
+}
+
+const filterSelected = (type, value) => {
+  filterAlreadyApplied(type, value) ?
+    removeFilter(type, value) :
+    applyFilter(type, value);
+}
+
+const addFilterListener = (button, type) => {
+  button.addEventListener('click', _ =>
+    filterSelected(type, button.dataset[`${type}Option`]));
+}
+
+const addFilterOptionListeners = _ => {
+  filters.types.forEach(type => {
+    getAll('options', type).forEach(button => {
+      addFilterListener(button, type);
+    });
+  });
+}
+
+const removeItemFromArray = (array, value) => {
+  const removableIndex = array.indexOf(value);
+  if (removableIndex >= 0) {
+    array.splice(removableIndex, 1);
+  }
+}
+
+const removeFilter = (type, value) => {
+  removeItemFromArray(filters.applied[type], value)
+  update();
+}
+
+const capitalise = string => {
+  return string.charAt(0).toUpperCase() + string.substring(1);
 }
 
 const addRemoveFilterListener = (type, button) => {
@@ -249,8 +357,25 @@ const initialiseFilters = _ => {
   addListeners();
 }
 
+const initialiseIsotopeLayout = _ => {
+  const elem = get('grid_container');
+  const isotopeLayoutOpts = {
+    layoutMode: 'masonry',
+    itemSelector: '.clients-grid__card',
+    percentPosition: true,
+    masonry: {
+      columnWidth: '.clients-grid__sizer',
+      gutter: '.clients-grid__gutter-sizer'
+    }
+  };
+
+  isotope = new Isotope(elem, isotopeLayoutOpts);
+}
+
 const init = _ => {
+  initialiseIsotopeLayout();
   initialiseFilters();
+  initialiseVideoPlayers();
 }
 
 window.addEventListener('DOMContentLoaded', init);
