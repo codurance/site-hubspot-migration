@@ -223,6 +223,58 @@ const filtersAvailableFor = type => {
     getKataData(kata, opts[type].kata_dataset_name));
 }
 
+const update = _ => {
+  updateAppliedFilters();
+  refilter();
+  updateAvailableFilters();
+  updateNoClientsMessage();
+}
+
+const applyFilter = (type, value) => {
+  filters.applied[type].push(value);
+  update();
+}
+
+const filterAlreadyApplied = (type, value) => {
+  const appliedFiltersForType = filters.applied[type];
+  return appliedFiltersForType.includes(value);
+}
+
+const filterSelected = (type, value) => {
+  filterAlreadyApplied(type, value) ?
+    removeFilter(type, value) :
+    applyFilter(type, value);
+}
+
+const addFilterListener = (button, type) => {
+  button.addEventListener('click', _ =>
+    filterSelected(type, button.dataset[`${type}Option`]));
+}
+
+const addFilterOptionListeners = _ => {
+  filters.types.forEach(type => {
+    getAll('options', type).forEach(button => {
+      addFilterListener(button, type);
+    });
+  });
+}
+
+const removeItemFromArray = (array, value) => {
+  const removableIndex = array.indexOf(value);
+  if (removableIndex >= 0) {
+    array.splice(removableIndex, 1);
+  }
+}
+
+const removeFilter = (type, value) => {
+  removeItemFromArray(filters.applied[type], value)
+  update();
+}
+
+const capitalise = string => {
+  return string.charAt(0).toUpperCase() + string.substring(1);
+}
+
 const addRemoveFilterListener = (type, button) => {
   button.addEventListener('click', _ => {
     const value = button.dataset[`remove${capitalise(type)}Filter`];
