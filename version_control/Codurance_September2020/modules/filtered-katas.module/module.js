@@ -19,7 +19,7 @@ let filters = {
 
 const getAll = (entity, type) => {
   const selectors = {
-    tags: '[blog-tags]',
+    tags: '[blogTags]',
     options: `[data-${type}-option]`,
     dropdown_containers: '[data-dropdown-container]',
     remove_filter_buttons: `[data-remove-${type}-filter]`
@@ -48,6 +48,19 @@ const get = (entity, value, type) => {
 }
 
 const allBlogPosts = getAll('tags');
+
+let difficulties = ["Novice", "Beginner", "Competent", "Expert"]
+allBlogPosts.forEach(kata => {
+    //TODO - blogTags is a string that looks like an array. Sort it out.
+
+    kata.attributes.blogTags.forEach(blogTag => {
+        if (difficulties.contains(blogTag)) {
+            kata.difficulty = blogTag
+            const difficultyTagIndex =  kata.attributes.blogTags.indexOf(blogTag)
+            kata.attributes.blogTags.splice(difficultyTagIndex, 1)
+        }
+    })
+})
 
 let katas = {
   all: allBlogPosts,
@@ -90,7 +103,7 @@ const addFilterToggleListener = _ => {
 }
 //allblogposts.attributes.blog-tags.nodeValue to get tags
 
-console.log(allBlogPosts);
+console.log("blog posts:", allBlogPosts);
 
 const showDropdown = container => {
   const type = container.dataset.dropdownContainer;
@@ -103,7 +116,6 @@ const hideDropdown = container => {
   hide(container);
   get('dropdown_icon', type).classList.remove('clients__filter-dropdown-icon--selected');
 }
-
 
 const closeOtherDropdowns = type => {
   getAll('dropdown_containers').filter(dropdown =>
@@ -209,18 +221,67 @@ const filtersAvailableFor = type => {
   const opts = {
     difficulty: {
       kata_dataset_name: 'kataDifficulty',
-      remaining: katas => katas.filter(byTechnology).filter(byService)
+      remaining: katas => katas.filter(byDifficulty)
     },
     topic: {
       kata_dataset_name: 'kataTopic',
-      remaining: katas => katas.filter(byIndustry).filter(byService)
+      remaining: katas => katas.filter(byTopic)
     }   
   };
 
     const remainingKatas = opts[type].remaining(katas.all);
 
+    console.log(type)
+    console.log(remainingKatas)
   return remainingKatas.map(kata =>
     getKataData(kata, opts[type].kata_dataset_name));
+}
+
+const disableButton = button => {
+  button.setAttribute('disabled', 'true');
+}
+
+const enableButton = button => {
+  button.removeAttribute('disabled');
+}
+
+const updateAvailableFilters = _ => {
+  filters.types.forEach(type => {
+    const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(element => element.trim().length > 0);
+    const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
+    availableFilters.forEach(filter => enableButton(get('option', filter, type)));
+    unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
+  });
+}
+
+const byDifficulty = kata => {
+  let difficultyFilters = filters.applied.difficulty;
+  let kataDifficulty = kata.dataset.kataDifficulty;
+  console.log("LOOK HERE")
+  console.log(kata.dataset)
+  console.log("Kata Attrib.:", kata.attributes)
+  return difficultyFilters.length === 0 ||
+    difficultyFilters.includes(kataDifficulty);
+}
+
+const byTopic = kata => {
+  let topicFilters = filters.applied.topic;
+  let kataTopic = kata.dataset.kataTopic;
+  return topicFilters.length === 0 ||
+    topicFilters.includes(kataTopic);
+}
+
+const calculateVisibleKatas = _ => {
+  return katas.all.filter(byDifficulty).filter(byTopic);
+}
+
+const refilter = _ => {
+  katas.visible = calculateVisibleKatas();
+  katas.hidden = arrayDifference(katas.all, katas.visible);
+
+  katas.visible.forEach(show);
+  katas.hidden.forEach(hide);
+//  isotope.layout();
 }
 
 const update = _ => {
