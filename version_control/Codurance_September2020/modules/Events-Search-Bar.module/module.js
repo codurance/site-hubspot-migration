@@ -4,8 +4,15 @@ const searchBarForm = document.querySelector(".events-search-bar");
 const searchBar = searchBarForm.querySelector(".events-search-bar__input");
 const searchBarResetButton = searchBarForm.querySelector(".events-search-bar__reset-button");
 
+searchBar.addEventListener("keypress", blockEnterKey);
 searchBar.addEventListener("input", filterEventsOnInputValueChange);
 searchBarResetButton.addEventListener("click", filterEventsOnResetButtonClick);
+
+function blockEnterKey(keypressEvent) {
+    // The 13 key code corresponds to the enter key
+    if (keypressEvent.keyCode == 13)
+        keypressEvent.preventDefault();
+}
 
 function filterEventsOnInputValueChange(inputEvent) {
     const searchBarText = inputEvent.target.value;
