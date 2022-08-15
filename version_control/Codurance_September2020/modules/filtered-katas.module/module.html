@@ -4,16 +4,17 @@
 {% set blogPosts = contents %}
 
 {% set difficulties = ["Novice", "Beginner", "Competent", "Expert"] %}
-{% set topics = blog_tags("katalyst", 100) %}
-{% for topic in topics %}
-  {% if difficulties.contains(topic.name) %}
-    {% do topics.remove(topic) %}
+{% set topicObjects = blog_tags("katalyst", 100) %}
+{% set topics = [] %}
+{% for topic in topicObjects %}
+  {% if !difficulties.contains(topic.name) %}
+    {% do topics.append(topic.name) %}
   {% endif %}
 {% endfor %}
 
 {% set filter = { title: "Filter",
-difficulties: "Difficulty",
-topics: "Topics"
+  difficulties: "Difficulty",
+  topics: "Topics"
 }
 %}
 {% set infoMessage = { header: "We’re sorry, your search returned no results",
