@@ -49,19 +49,6 @@ const get = (entity, value, type) => {
 
 const allBlogPosts = getAll('tags');
 
-let difficulties = ["Novice", "Beginner", "Competent", "Expert"]
-allBlogPosts.forEach(kata => {
-    //TODO - blogTags is a string that looks like an array. Sort it out.
-
-    kata.attributes.blogTags.forEach(blogTag => {
-        if (difficulties.contains(blogTag)) {
-            kata.difficulty = blogTag
-            const difficultyTagIndex =  kata.attributes.blogTags.indexOf(blogTag)
-            kata.attributes.blogTags.splice(difficultyTagIndex, 1)
-        }
-    })
-})
-
 let katas = {
   all: allBlogPosts,
   visible: allBlogPosts,
@@ -101,9 +88,6 @@ const addFilterToggleListener = _ => {
   const filterToggleButton = get('filter_toggle');
   filterToggleButton.addEventListener('click', toggleShowHideFilters)
 }
-//allblogposts.attributes.blog-tags.nodeValue to get tags
-
-console.log("blog posts:", allBlogPosts);
 
 const showDropdown = container => {
   const type = container.dataset.dropdownContainer;
@@ -214,6 +198,7 @@ const arrayDifference = (a, b) => {
 }
 
 const getKataData = (kata, type) => {
+//TODO - split error here?
   return kata.dataset[type].split(',')
 }
 
@@ -226,13 +211,11 @@ const filtersAvailableFor = type => {
     topic: {
       kata_dataset_name: 'kataTopic',
       remaining: katas => katas.filter(byTopic)
-    }   
+    }
   };
 
-    const remainingKatas = opts[type].remaining(katas.all);
+  const remainingKatas = opts[type].remaining(katas.all);
 
-    console.log(type)
-    console.log(remainingKatas)
   return remainingKatas.map(kata =>
     getKataData(kata, opts[type].kata_dataset_name));
 }
@@ -256,19 +239,17 @@ const updateAvailableFilters = _ => {
 
 const byDifficulty = kata => {
   let difficultyFilters = filters.applied.difficulty;
-  let kataDifficulty = kata.dataset.kataDifficulty;
-  console.log("LOOK HERE")
-  console.log(kata.dataset)
-  console.log("Kata Attrib.:", kata.attributes)
+  let kataDifficulty = kata.dataset.difficulty;
   return difficultyFilters.length === 0 ||
     difficultyFilters.includes(kataDifficulty);
 }
 
 const byTopic = kata => {
   let topicFilters = filters.applied.topic;
-  let kataTopic = kata.dataset.kataTopic;
+  let kataTopics = kata.dataset.topics.split(',');
+
   return topicFilters.length === 0 ||
-    topicFilters.includes(kataTopic);
+        topicFilters.some(filter => kataTopics.includes(filter));
 }
 
 const calculateVisibleKatas = _ => {
@@ -336,6 +317,10 @@ const capitalise = string => {
   return string.charAt(0).toUpperCase() + string.substring(1);
 }
 
+const regexRemoveSpecialCharacters = string => {
+    return string.replace(/[^a-zA-Z ]/g, "")
+}
+
 const addRemoveFilterListener = (type, button) => {
   button.addEventListener('click', _ => {
     const value = button.dataset[`remove${capitalise(type)}Filter`];
@@ -357,9 +342,37 @@ const addListeners = _ => {
   addRemoveFilterListeners();
 }
 
+const initialiseKataTags = _ => {
+  let difficulties = ["Novice", "Beginner", "Competent", "Expert"]
+  allBlogPosts.forEach(kata => {
+      const tagsArray = kata.attributes.blogTags.value.split(', ')
+      const topicsTagsArray = []
+
+      tagsArray.forEach(blogTag => {
+        blogTag = regexRemoveSpecialCharacters(blogTag)
+
+        //Adds difficulty tags to kata.dataset
+        if (difficulties.includes(blogTag)) {
+          kata.dataset.difficulty = blogTag
+          const difficultyTagIndex =  tagsArray.indexOf(blogTag)
+          tagsArray.splice(difficultyTagIndex, 1)
+        }
+      })
+
+      //Adds topic tags to kata.dataset
+      tagsArray.forEach(blogTag => {
+          topicsTagsArray.push(regexRemoveSpecialCharacters(blogTag))
+      })
+      kata.dataset.topics = topicsTagsArray
+
+      console.log("Kata dataset", kata.dataset)
+  })
+}
+
 const initialiseFilters = _ => {
   setFilterOptions();
   addListeners();
+  initialiseKataTags();
 }
 
 const init = _ => {

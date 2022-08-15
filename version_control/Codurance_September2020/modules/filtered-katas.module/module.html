@@ -95,7 +95,7 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
         <div class="masonry-grid-sizer"></div>
         {% for content in blogPosts %}
           <div class="custom-blog-listing__post-wrapper masonry-grid-item"
-               blogTags={{content.tag_list}}
+               blogTags="{{content.tag_list}}"
                >
             <article class="custom-blog-listing__post">
               {% if content.featured_image %}
