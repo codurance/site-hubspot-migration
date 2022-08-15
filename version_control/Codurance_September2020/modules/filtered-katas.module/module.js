@@ -1,4 +1,4 @@
-//let isotope;
+let isotope;
 
 //get all posts
 //extract tags from property on each post
@@ -231,6 +231,7 @@ const enableButton = button => {
 const updateAvailableFilters = _ => {
   filters.types.forEach(type => {
     const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(element => element.trim().length > 0);
+    console.log("Available filters: ", availableFilters)
     const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
     availableFilters.forEach(filter => enableButton(get('option', filter, type)));
     unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
@@ -262,7 +263,7 @@ const refilter = _ => {
 
   katas.visible.forEach(show);
   katas.hidden.forEach(hide);
-//  isotope.layout();
+  isotope.layout();
 }
 
 const update = _ => {
@@ -369,6 +370,21 @@ const initialiseKataTags = _ => {
   })
 }
 
+const initialiseIsotopeLayout = _ => {
+  const elem = get('grid_container');
+  const isotopeLayoutOpts = {
+    layoutMode: 'masonry',
+    itemSelector: '.masonry-grid-item',
+    percentPosition: true,
+    masonry: {
+      columnWidth: '.clients-grid__sizer',
+      gutter: '.clients-grid__gutter-sizer'
+    }
+  };
+
+  isotope = new Isotope(elem, isotopeLayoutOpts);
+}
+
 const initialiseFilters = _ => {
   setFilterOptions();
   addListeners();
@@ -377,6 +393,7 @@ const initialiseFilters = _ => {
 
 const init = _ => {
   initialiseFilters();
+  initialiseIsotopeLayout();
 }
 
 window.addEventListener('DOMContentLoaded', init);
