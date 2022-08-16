@@ -1,7 +1,7 @@
 <!--
 templateType: blog
 isAvailableForNewContent: true
-label: Blog Listing
+label: Kata Listing
 -->
 {% extends "./layouts/base.html" %}
 
@@ -36,7 +36,7 @@ label: Blog Listing
 {% else %}
 
 <section>
-  {% module "page_hero_slice" path="../modules/Hero Slice.module" label="Hero Slice" no_wrapper=True %}
+  {% include "./partials/header-hero.html" %} 
 </section>
 <section>
   {% module 'Filtered Katas' path='../modules/Filtered-Katas.module' label="Filtered Katas Section" no_wrapper=True %}
