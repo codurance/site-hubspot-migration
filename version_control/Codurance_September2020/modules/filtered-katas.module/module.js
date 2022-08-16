@@ -198,19 +198,18 @@ const arrayDifference = (a, b) => {
 }
 
 const getKataData = (kata, type) => {
-//TODO - split error here?
-  return kata.dataset[type].split(',')
+  return type == 'kataDifficulty' ? kata.dataset.difficulty : kata.dataset.topics.split(',')
 }
 
 const filtersAvailableFor = type => {
   const opts = {
     difficulty: {
       kata_dataset_name: 'kataDifficulty',
-      remaining: katas => katas.filter(byDifficulty)
+      remaining: katas => katas.filter(byDifficulty).filter(byTopic)
     },
     topic: {
       kata_dataset_name: 'kataTopic',
-      remaining: katas => katas.filter(byTopic)
+      remaining: katas => katas.filter(byTopic).filter(byDifficulty)
     }
   };
 
@@ -231,7 +230,6 @@ const enableButton = button => {
 const updateAvailableFilters = _ => {
   filters.types.forEach(type => {
     const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(element => element.trim().length > 0);
-    console.log("Available filters: ", availableFilters)
     const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
     availableFilters.forEach(filter => enableButton(get('option', filter, type)));
     unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
@@ -270,7 +268,6 @@ const update = _ => {
   updateAppliedFilters();
   refilter();
   updateAvailableFilters();
-  updateNoClientsMessage();
 }
 
 const applyFilter = (type, value) => {
@@ -365,8 +362,6 @@ const initialiseKataTags = _ => {
           topicsTagsArray.push(regexRemoveSpecialCharacters(blogTag))
       })
       kata.dataset.topics = topicsTagsArray
-
-      console.log("Kata dataset", kata.dataset)
   })
 }
 
@@ -389,6 +384,7 @@ const initialiseFilters = _ => {
   setFilterOptions();
   addListeners();
   initialiseKataTags();
+  updateAvailableFilters();
 }
 
 const init = _ => {
