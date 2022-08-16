@@ -316,7 +316,7 @@ const capitalise = string => {
 }
 
 const regexRemoveSpecialCharacters = string => {
-    return string.replace(/[^a-zA-Z ]/g, "")
+    return string.replace(/[^a-zA-Z -]/g, "")
 }
 
 const addRemoveFilterListener = (type, button) => {

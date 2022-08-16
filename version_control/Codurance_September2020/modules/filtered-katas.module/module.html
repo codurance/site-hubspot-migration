@@ -122,7 +122,7 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
                     <ul class="list-inline custom-font-size-12 mb-0">
                       {% for tag in content.tag_list %}
                         <li class="list-inline-item custom-mb-10">
-                          <a class="tags custom-blog-listing__tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+                          <a class="tags custom-blog-listing__tag">{{ tag.name }}</a>
                         </li>
                       {% endfor %}
                     </ul>
