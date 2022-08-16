@@ -384,12 +384,13 @@ const initialiseFilters = _ => {
   setFilterOptions();
   addListeners();
   initialiseKataTags();
-  updateAvailableFilters();
 }
 
 const init = _ => {
   initialiseFilters();
   initialiseIsotopeLayout();
+  updateAvailableFilters();
+  isotope.layout();
 }
 
 window.addEventListener('DOMContentLoaded', init);
