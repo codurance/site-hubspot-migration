@@ -1,0 +1,10 @@
+{% import '../utils/utils.css' as utils %}
+
+.faq-header {
+  {{ utils.tango_to_white() }}
+}
+
+main {
+  padding-top: 4.8em;
+  padding-bottom: 4.8em;
+}
