@@ -8,7 +8,7 @@ function toggleOnClick(accordionItem) {
 
 function toggle(clickEvent) {
   const accordionItem = clickEvent.target.closest(".panel");
-  const transitionDuration = 600;
+  const transitionDuration = 300;
 
   slideUpSiblingAccordionItems(accordionItem);
   slideToggle(accordionItem, transitionDuration);
@@ -22,8 +22,7 @@ function slideUpSiblingAccordionItems(accordionItem) {
 
   while(currentAccordionItem) {
     if(currentAccordionItem != accordionItem) {
-      const currentAccordionItemBody = 
-        currentAccordionItem.querySelector(".panel-body");
+      const currentAccordionItemBody = currentAccordionItem.querySelector(".panel-body");
 
       slideUp(currentAccordionItemBody, transitionDuration);
       currentAccordionItem.classList.add('panel--close');
