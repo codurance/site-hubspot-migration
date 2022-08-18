@@ -370,7 +370,7 @@ const initialiseIsotopeLayout = _ => {
     itemSelector: '.masonry-grid-item',
     percentPosition: true,
     masonry: {
-      columnWidth: '.katas-grid__sizer',
+      columnWidth: '.masonry-grid__sizer',
       gutter: '.katas-grid__gutter-sizer'
     }
   };

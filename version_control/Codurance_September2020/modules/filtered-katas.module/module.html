@@ -86,10 +86,9 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
 
   <div class="custom-blog-listing custom-bg-gray-light-v5">
     <div class="page-center container custom-py-50">
-      <div class="masonry-grid row custom-mb-70">
+      <div class="masonry-grid row custom-mb-70" data-grid-container>
         <div class="masonry-grid-sizer" style="max-width: 0;"></div>
-        <div class="katas-grid__container" data-grid-container>
-          <div class="katas-grid__sizer"></div>
+
           <div class="katas-grid__gutter-sizer"></div>
           {% for content in blogPosts %}
             <div class="custom-blog-listing__post-wrapper masonry-grid-item"
@@ -126,7 +125,7 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
             </div>
           {% endfor %}
         </div>
-      </div>
+
     </div>
   </div>
 </main>
