@@ -226,13 +226,12 @@ const enableButton = button => {
   button.removeAttribute('disabled');
 }
 
-const updateAvailableFilters = _ => {
-  filters.types.forEach(type => {
-    const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(element => { return (element != null) ? element.trim().length > 0 : 0 });
-    const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
-    availableFilters.forEach(filter => enableButton(get('option', filter, type)));
-    unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
-  });
+const updateAvailableTopicFilters = _ => {
+  var topic = filters.types.filter(type => type == 'topic');
+  const availableFilters = flatten(filtersAvailableFor(topic)).filter(onlyUnique).filter(element => { return (element != null) ? element.trim().length > 0 : 0 });
+  const unavailableFilters = arrayDifference(filters.all[topic], availableFilters);
+  availableFilters.forEach(filter => enableButton(get('option', filter, topic)));
+  unavailableFilters.forEach(filter => disableButton(get('option', filter, topic)));
 }
 
 const byDifficulty = kata => {
@@ -266,7 +265,7 @@ const refilter = _ => {
 const update = _ => {
   updateAppliedFilters();
   refilter();
-  updateAvailableFilters();
+  updateAvailableTopicFilters();
 }
 
 const applyFilter = (type, value) => {
@@ -388,7 +387,7 @@ const initialiseFilters = _ => {
 const init = _ => {
   initialiseFilters();
   initialiseIsotopeLayout();
-  updateAvailableFilters();
+  updateAvailableTopicFilters
   isotope.layout();
 }
 

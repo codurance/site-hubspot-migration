@@ -3,7 +3,7 @@
 {% set blogPosts = contents %}
 
 {% set difficulties = ["Novice", "Beginner", "Competent", "Expert"] %}
-{% set topicObjects = blog_tags("katalyst", 100) %}
+{% set topicObjects = blog_tags("default", 100) %}
 {% set topics = [] %}
 {% for topic in topicObjects %}
   {% if !difficulties.contains(topic.name) %}
