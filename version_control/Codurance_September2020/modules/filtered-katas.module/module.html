@@ -1,0 +1,134 @@
+{{ require_css(get_asset_url("../../css/modules/filtered-katas.css")) }}
+
+{% set blogPosts = contents %}
+
+{% set difficulties = ["Novice", "Beginner", "Competent", "Expert"] %}
+{% set topicObjects = blog_tags("katalyst", 100) %}
+{% set topics = [] %}
+{% for topic in topicObjects %}
+  {% if !difficulties.contains(topic.name) %}
+    {% do topics.append(topic.name) %}
+  {% endif %}
+{% endfor %}
+
+{% set filter = { title: "Filter",
+  difficulties: "Difficulty",
+  topics: "Topics"
+}
+%}
+{% set infoMessage = { header: "We’re sorry, your search returned no results",
+paragraph: "Try adjusting your filters to find what you’re looking for."
+}
+%}
+
+
+<main class="katas-page__main">
+  <div class="katas__filter">
+    <div class="katas__filter-toggle">
+      <button data-filter-toggle>
+        {{filter.title}}
+        <i class="katas__filter-toggle-icon las la-plus" data-filter-toggle-icon>
+        </i>
+      </button>
+    </div>
+    <div class="katas__filter-dropdown-wrapper hidden" data-filters-wrapper>
+      <div class="katas__filter-dropdown-container">
+        <button class="katas__filter-dropdown-button" data-dropdown-button="difficulties">
+          <i class="katas__filter-icon las la-tachometer-alt"></i>
+          {{filter.difficulties}}
+          <i class="katas__filter-dropdown-icon las la-angle-down" data-dropdown-icon="difficulties">
+          </i>
+        </button>
+        <div class="katas__filter-dropdown-options hidden" data-dropdown-container="difficulties">
+          {% for difficulty in difficulties %}
+          <button class="katas__filter-dropdown-option" data-difficulty-option="{{difficulty}}">
+            {{difficulty}}
+            <i class="katas__filter-dropdown-option-selected-icon las la-check hidden"
+               data-difficulty-option-selected="{{difficulty}}"></i>
+          </button>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="katas__filter-dropdown-container">
+        <button class="katas__filter-dropdown-button" data-dropdown-button="topics">
+          <i class="katas__filter-icon las la-tag"></i>
+          {{filter.topics}}
+          <i class="katas__filter-dropdown-icon las la-angle-down" data-dropdown-icon="topics">
+          </i>
+        </button>
+        <div class="katas__filter-dropdown-options hidden" data-dropdown-container="topics">
+          {% for topic in topics|sort(False,False) %}
+          <button class="katas__filter-dropdown-option" data-topic-option="{{topic}}">
+            {{topic}}
+            <i class="katas__filter-dropdown-option-selected-icon las la-check hidden"
+               data-topic-option-selected="{{topic}}"></i>
+          </button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="katas-applied-filters__container">
+    {% for difficulty in difficulties %}
+    <div class="katas-applied-filters__pill hidden" data-applied-difficulty-filter="{{difficulty}}">
+      {{difficulty}}
+      <i class="katas-applied-filters__remove-button las la-times" data-remove-difficulty-filter="{{difficulty}}"></i>
+    </div>
+    {% endfor %}
+    {% for topic in topics %}
+    <div class="katas-applied-filters__pill hidden" data-applied-topic-filter="{{topic}}">
+      {{topic}}
+      <i class="katas-applied-filters__remove-button las la-times" data-remove-topic-filter="{{topic}}"></i>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="custom-blog-listing custom-bg-gray-light-v5">
+    <div class="page-center container custom-py-50">
+      <div class="masonry-grid row custom-mb-70">
+        <div class="masonry-grid-sizer" style="max-width: 0;"></div>
+        <div class="katas-grid__container" data-grid-container>
+          <div class="katas-grid__sizer"></div>
+          <div class="katas-grid__gutter-sizer"></div>
+          {% for content in blogPosts %}
+            <div class="custom-blog-listing__post-wrapper masonry-grid-item"
+                 blogTags="{{content.tag_list}}"
+                 >
+              <article class="custom-blog-listing__post">
+                {% if content.featured_image %}
+                  <a href="{{ content.absolute_url }}">
+                    <img class="custom-bg-white img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}">
+                  </a>
+                {% endif %}
+                <div class="custom-bg-white custom-pa-30">
+                  <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
+                    <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
+                    <li class="list-inline-item mx-2">·</li>
+                    <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
+                  </ul>
+                  <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
+                    <a class="custom-blog-listing__title-link" href="{{ content.absolute_url }}">
+                      {{ content.name }}</a>
+                  </h5>
+
+                  {% if content.tag_list %}
+                    <ul class="list-inline custom-font-size-12 mb-0">
+                      {% for tag in content.tag_list %}
+                        <li class="list-inline-item custom-mb-10">
+                          <a class="tags custom-blog-listing__tag">{{ tag.name }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
+              </article>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{{ require_js(get_asset_url("../../js/isotope.js"), "footer") }}

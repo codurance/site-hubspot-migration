@@ -1,0 +1,69 @@
+<!--
+templateType: blog
+isAvailableForNewContent: true
+label: Kata Listing
+-->
+{% extends "./layouts/base.html" %}
+
+{% import '../config/config.html' as config %}
+{% set form = config.newsletter_cta.en %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/blog-index.css")) }}
+  {{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+{% if blog_author %}
+
+  {% include "./partials/author-page.html" %}
+
+{% else %}
+
+<section>
+  {% include "./partials/header-hero.html" %} 
+</section>
+<section>
+  {% module 'Filtered Katas' path='../modules/Filtered-Katas.module' label="Filtered Katas Section" no_wrapper=True %}
+</section>
+
+{% endif %}
+{{ require_js(get_asset_url("../js/imageLoaded.js")) }}
+{{ require_js(get_asset_url("../js/masonary.js")) }}
+
+<script>
+  document.onreadystatechange = () => {
+    if (document.readyState === 'complete') {
+      const masonryGrid = document.querySelector('.masonry-grid');
+
+      const masonryOptions = {
+        columnWidth: '.masonry-grid-sizer',
+        itemSelector: '.masonry-grid-item',
+        percentPosition: true
+      };
+
+      const makeMasonry = function() {
+        new Masonry(masonryGrid, masonryOptions);
+      }
+
+      imagesLoaded( masonryGrid, makeMasonry );
+    }
+  };
+</script>
+
+{% endblock body %}
