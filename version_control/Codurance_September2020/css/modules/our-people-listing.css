@@ -29,7 +29,7 @@
   background-color: var(--french-gray);
   border-radius: 12px;
   height: 1.2rem;
-  width: 2.2rem;
+  min-width: 2.2rem;
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -65,56 +65,61 @@
 .custom-our-people {
   margin: 0 auto;
   margin-top: 2em;
-  max-width: 1300px; 
-  padding: 0 20px 40px 20px;
+  max-width: var(--content-max-width); 
+  padding-bottom: 2em;
   width: 100%;
 }
 
-{% call utils.large_and_extra_large() %}
+{% call utils.small_and_medium() %}
   .custom-our-people {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: .8em;
+    padding-right: .8em;
   }
 {% endcall %}
 
-{% set card_margin = '15px' %}
+{% call utils.large() %}
+  .custom-our-people {
+    padding-left: 2.4em;
+    padding-right: 2.4em;
+  }
+{% endcall %}
+
 .custom-our-people__card-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -{{ card_margin }};
-  margin-right: -{{ card_margin }};
+  --columns: 2;
+  --column-gap: .8em;
+  --row-gap: 1.2em;
+  display: grid;
+  grid-template-columns: repeat( var(--columns), 1fr);
+  column-gap: var(--column-gap);
+  row-gap: var(--row-gap);
 }
+
+{% call utils.medium() %}
+  .custom-our-people__card-container {
+    --columns: 3;
+  }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+  .custom-our-people__card-container {
+    --columns: 4;
+  }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+  .custom-our-people__card-container {
+    --column-gap: 1.2em;
+  }
+{% endcall %}
 
 .custom-our-people__card {
   {{ utils.card_shadow() }}
   background-color: white;
-  margin-bottom: 1.5rem;
-  margin-left: {{ card_margin }};
-  margin-right: {{ card_margin }};
   position: relative;
   transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
 }
 .custom-our-people__card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
-}
-{% call utils.large_and_extra_large() %}
-  .custom-our-people__card {
-    width: calc(25% - ({{ card_margin }} * 2));
-  }
-{% endcall %}
-{% call utils.medium() %}
-  .custom-our-people__card {
-    width: calc(33% - ({{ card_margin }} * 2));
-  }
-{% endcall %}
-{% call utils.small() %}
-  .custom-our-people__card {
-    width: calc(50% - ({{ card_margin }} * 2));
-  }
-{% endcall %}
-
-.custom-our-people__card-inner {
-  position: relative;
 }
 
 .custom-our-people__card-inner::after {

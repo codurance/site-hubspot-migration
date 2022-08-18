@@ -4,8 +4,15 @@ const searchBarForm = document.querySelector(".events-search-bar");
 const searchBar = searchBarForm.querySelector(".events-search-bar__input");
 const searchBarResetButton = searchBarForm.querySelector(".events-search-bar__reset-button");
 
+searchBar.addEventListener("keypress", dismissEnterKey);
 searchBar.addEventListener("input", filterEventsOnInputValueChange);
 searchBarResetButton.addEventListener("click", filterEventsOnResetButtonClick);
+
+function dismissEnterKey(keypressEvent) {
+    // The 13 key code corresponds to the enter key
+    if (keypressEvent.keyCode == 13)
+        keypressEvent.preventDefault();
+}
 
 function filterEventsOnInputValueChange(inputEvent) {
     const searchBarText = inputEvent.target.value;
@@ -30,7 +37,7 @@ function filterEventsOnResetButtonClick() {
 }
 
 function togglePromotedEvents(searchBarText) {
-    const promotedEventsCollection = document.querySelector(".promoted-events");
+    const promotedEventsCollection = document.querySelector(".promoted-videos");
 
     if(searchBarText == "" || searchBarText == undefined) {
         showWithAnimation(promotedEventsCollection);
@@ -41,8 +48,8 @@ function togglePromotedEvents(searchBarText) {
 }
 
 function toggleSearchResultsTitle(searchBarText) {
-    const generalTitle = document.querySelector(".past-events .card-collection__title");
-    const searchResultsTitle = document.querySelector(".past-events .card-collection__search-results-title");
+    const generalTitle = document.querySelector(".videos .card-collection__title");
+    const searchResultsTitle = document.querySelector(".videos .card-collection__search-results-title");
 
     if (searchBarText == "" || searchBarText == undefined) {
         setTimeout(
@@ -90,7 +97,7 @@ function applyFilters(searchBarText) {
         searchBarText = "";
     }
 
-    const pastEventsCollection = document.querySelector(".past-events .card-collection-results");
+    const pastEventsCollection = document.querySelector(".videos .card-collection-results");
     const pastEvents = pastEventsCollection.querySelectorAll(".card-item");
 
     pastEvents.forEach(event => filterEvent(event, searchBarText));
@@ -136,7 +143,7 @@ function toggleNoSearchResultsMessage() {
 }
 
 function areSearchResultsDisplayed() {
-    const pastEventsCollection = document.querySelector(".past-events .card-collection-results");
+    const pastEventsCollection = document.querySelector(".videos .card-collection-results");
     const pastEvents = pastEventsCollection.querySelectorAll(".card-item");
     
     let searchResultsDisplayed = false;
