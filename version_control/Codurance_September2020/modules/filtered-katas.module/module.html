@@ -1,5 +1,4 @@
-{{ require_css(get_asset_url("../../css/modules/filtered-clients.css")) }}
-{% import '../../partials/clients-page-cards.html' as cards %}
+{{ require_css(get_asset_url("../../css/modules/filtered-katas.css")) }}
 
 {% set blogPosts = contents %}
 
@@ -23,45 +22,45 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
 %}
 
 
-<main class="clients-page__main">
-  <div class="clients__filter">
-    <div class="clients__filter-toggle">
+<main class="katas-page__main">
+  <div class="katas__filter">
+    <div class="katas__filter-toggle">
       <button data-filter-toggle>
         {{filter.title}}
-        <i class="clients__filter-toggle-icon las la-plus" data-filter-toggle-icon>
+        <i class="katas__filter-toggle-icon las la-plus" data-filter-toggle-icon>
         </i>
       </button>
     </div>
-    <div class="clients__filter-dropdown-wrapper hidden" data-filters-wrapper>
-      <div class="clients__filter-dropdown-container">
-        <button class="clients__filter-dropdown-button" data-dropdown-button="difficulties">
-          <i class="clients__filter-icon las la-tachometer-alt"></i>
+    <div class="katas__filter-dropdown-wrapper hidden" data-filters-wrapper>
+      <div class="katas__filter-dropdown-container">
+        <button class="katas__filter-dropdown-button" data-dropdown-button="difficulties">
+          <i class="katas__filter-icon las la-tachometer-alt"></i>
           {{filter.difficulties}}
-          <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="difficulties">
+          <i class="katas__filter-dropdown-icon las la-angle-down" data-dropdown-icon="difficulties">
           </i>
         </button>
-        <div class="clients__filter-dropdown-options hidden" data-dropdown-container="difficulties">
+        <div class="katas__filter-dropdown-options hidden" data-dropdown-container="difficulties">
           {% for difficulty in difficulties %}
-          <button class="clients__filter-dropdown-option" data-difficulty-option="{{difficulty}}">
+          <button class="katas__filter-dropdown-option" data-difficulty-option="{{difficulty}}">
             {{difficulty}}
-            <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
+            <i class="katas__filter-dropdown-option-selected-icon las la-check hidden"
                data-difficulty-option-selected="{{difficulty}}"></i>
           </button>
           {% endfor %}
         </div>
       </div>
-      <div class="clients__filter-dropdown-container">
-        <button class="clients__filter-dropdown-button" data-dropdown-button="topics">
-          <i class="clients__filter-icon las la-tag"></i>
+      <div class="katas__filter-dropdown-container">
+        <button class="katas__filter-dropdown-button" data-dropdown-button="topics">
+          <i class="katas__filter-icon las la-tag"></i>
           {{filter.topics}}
-          <i class="clients__filter-dropdown-icon las la-angle-down" data-dropdown-icon="topics">
+          <i class="katas__filter-dropdown-icon las la-angle-down" data-dropdown-icon="topics">
           </i>
         </button>
-        <div class="clients__filter-dropdown-options hidden" data-dropdown-container="topics">
+        <div class="katas__filter-dropdown-options hidden" data-dropdown-container="topics">
           {% for topic in topics|sort(False,False) %}
-          <button class="clients__filter-dropdown-option" data-topic-option="{{topic}}">
+          <button class="katas__filter-dropdown-option" data-topic-option="{{topic}}">
             {{topic}}
-            <i class="clients__filter-dropdown-option-selected-icon las la-check hidden"
+            <i class="katas__filter-dropdown-option-selected-icon las la-check hidden"
                data-topic-option-selected="{{topic}}"></i>
           </button>
           {% endfor %}
@@ -70,33 +69,28 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
     </div>
   </div>
 
-  <div class="clients-applied-filters__container">
+  <div class="katas-applied-filters__container">
     {% for difficulty in difficulties %}
-    <div class="clients-applied-filters__pill hidden" data-applied-difficulty-filter="{{difficulty}}">
+    <div class="katas-applied-filters__pill hidden" data-applied-difficulty-filter="{{difficulty}}">
       {{difficulty}}
-      <i class="clients-applied-filters__remove-button las la-times" data-remove-difficulty-filter="{{difficulty}}"></i>
+      <i class="katas-applied-filters__remove-button las la-times" data-remove-difficulty-filter="{{difficulty}}"></i>
     </div>
     {% endfor %}
     {% for topic in topics %}
-    <div class="clients-applied-filters__pill hidden" data-applied-topic-filter="{{topic}}">
+    <div class="katas-applied-filters__pill hidden" data-applied-topic-filter="{{topic}}">
       {{topic}}
-      <i class="clients-applied-filters__remove-button las la-times" data-remove-topic-filter="{{topic}}"></i>
+      <i class="katas-applied-filters__remove-button las la-times" data-remove-topic-filter="{{topic}}"></i>
     </div>
     {% endfor %}
-  </div>
-
-  <div class="clients__no-clients-message-container hidden" data-no-clients-message>
-    <h4>{{infoMessage.header}}</h4>
-    <p>{{infoMessage.paragraph}}</p>
   </div>
 
   <div class="custom-blog-listing custom-bg-gray-light-v5">
     <div class="page-center container custom-py-50">
       <div class="masonry-grid row custom-mb-70">
         <div class="masonry-grid-sizer" style="max-width: 0;"></div>
-        <div class="clients-grid__container" data-grid-container>
-          <div class="clients-grid__sizer"></div>
-          <div class="clients-grid__gutter-sizer"></div>
+        <div class="katas-grid__container" data-grid-container>
+          <div class="katas-grid__sizer"></div>
+          <div class="katas-grid__gutter-sizer"></div>
           {% for content in blogPosts %}
             <div class="custom-blog-listing__post-wrapper masonry-grid-item"
                  blogTags="{{content.tag_list}}"
@@ -137,6 +131,4 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
   </div>
 </main>
 
-{{ require_js(get_asset_url("../js/imageLoaded.js")) }}
 {{ require_js(get_asset_url("../../js/isotope.js"), "footer") }}
-{{ require_js(get_asset_url("../../js/isotopePackery.js"), "footer") }}

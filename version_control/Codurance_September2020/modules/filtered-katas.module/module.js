@@ -40,7 +40,6 @@ const get = (entity, value, type) => {
     applied_filter: `[data-applied-${type}-filter="${value}"]`,
     option: `[data-${type}-option="${value}"]`,
     selected_icon: `[data-${type}-option-selected="${value}"]`,
-    no_clients_message: '[data-no-clients-message]',
     grid_container: '[data-grid-container]'
   }
 
@@ -77,10 +76,10 @@ const toggleShowHideFilters = _ => {
   const filtersWrapper = get('filters_wrapper');
   if (filtersWrapper.classList.contains('hidden')) {
     show(filtersWrapper);
-    get('filter_toggle_icon').classList.add('clients__filter-toggle-icon--selected');
+    get('filter_toggle_icon').classList.add('katas__filter-toggle-icon--selected');
   } else {
     hide(filtersWrapper);
-    get('filter_toggle_icon').classList.remove('clients__filter-toggle-icon--selected');
+    get('filter_toggle_icon').classList.remove('katas__filter-toggle-icon--selected');
   }
 }
 
@@ -92,13 +91,13 @@ const addFilterToggleListener = _ => {
 const showDropdown = container => {
   const type = container.dataset.dropdownContainer;
   show(container);
-  get('dropdown_icon', type).classList.add('clients__filter-dropdown-icon--selected');
+  get('dropdown_icon', type).classList.add('katas__filter-dropdown-icon--selected');
 }
 
 const hideDropdown = container => {
   const type = container.dataset.dropdownContainer;
   hide(container);
-  get('dropdown_icon', type).classList.remove('clients__filter-dropdown-icon--selected');
+  get('dropdown_icon', type).classList.remove('katas__filter-dropdown-icon--selected');
 }
 
 const closeOtherDropdowns = type => {
@@ -157,14 +156,14 @@ const markOptionSelected = (type, filter) => {
   const selectedIcon = get('selected_icon', filter, type);
   const option = get('option', filter, type);
   show(selectedIcon);
-  option.classList.add('clients__filter-dropdown-option--selected')
+  option.classList.add('katas__filter-dropdown-option--selected')
 }
 
 const markOptionDeselected = (type, filter) => {
   const selectedIcon = get('selected_icon', filter, type);
   const option = get('option', filter, type);
   hide(selectedIcon);
-  option.classList.remove('clients__filter-dropdown-option--selected')
+  option.classList.remove('katas__filter-dropdown-option--selected')
 }
 
 const updateAppliedFilters = _ => {
@@ -372,8 +371,8 @@ const initialiseIsotopeLayout = _ => {
     itemSelector: '.masonry-grid-item',
     percentPosition: true,
     masonry: {
-      columnWidth: '.clients-grid__sizer',
-      gutter: '.clients-grid__gutter-sizer'
+      columnWidth: '.katas-grid__sizer',
+      gutter: '.katas-grid__gutter-sizer'
     }
   };
 
