@@ -1,7 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
 .newsletter {
-    height: 8em;
+    padding-top: .8em;
+    padding-bottom: .8em;
+  
 }
 
 .newsletter-wrapper {
@@ -10,7 +12,6 @@
     border-radius: 20px;
     background: white;
     {{ utils.card_shadow_large() }}
-    transform: translateY(-45%);
     max-width: 35em;
 }
 
