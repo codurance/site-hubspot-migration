@@ -20,17 +20,18 @@ label: Academy template
 
   {{ require_js(get_asset_url("../js/main.js")) }}
   {{ standard_header_includes }}
-  {# {{ require_css(get_asset_url("../css/theme-overrides.css")) }} #}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
 </head>
 
 {% block body %}
 
-{% include "./partials/header-hero.html" %}
-<section>
-  {% module 'Video section'
+<section class="academy-hero">
+  {% include "./partials/header-hero.html" %}
+</section>
+  
+{% module 'Video section'
     path='../modules/Embedded Video.module'
     label="Video section" no_wrapper=True %}
-</section>
 
 <main>
 
@@ -44,7 +45,6 @@ label: Academy template
 
 
  <section class="skills">
-  {# TODO create the header #}
   {% module 'Expected skills' path='@hubspot/rich_text' label="Expected Skills list" no_wrapper=True %}
   {% module 'Desirabel skills' path='@hubspot/rich_text' label="Desirable Skills list" no_wrapper=True %}
  </section>
