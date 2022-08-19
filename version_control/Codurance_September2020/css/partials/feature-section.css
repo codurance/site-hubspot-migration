@@ -1,6 +1,5 @@
 {% import '../utils/utils.css' as utils %}
 
-    {{ require_css(get_asset_url("../../css/partials/feature-section.css")) }}
 
 .feature-section {
     --image-background: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Industries/HP_Industries_Background.svg");
