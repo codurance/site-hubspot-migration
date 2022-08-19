@@ -1,7 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 .katas-page__main {
-    background-color: var(--athens-gray);
+    background-color: var(--white);
     padding-bottom: 2.5rem;
 }
 

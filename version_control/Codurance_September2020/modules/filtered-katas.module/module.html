@@ -84,7 +84,7 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
     {% endfor %}
   </div>
 
-  <div class="custom-blog-listing custom-bg-gray-light-v5">
+  <div class="custom-kata-listing">
     <div class="page-center container custom-py-50">
       <div class="masonry-grid row custom-mb-70">
         <div class="masonry-grid-sizer" style="max-width: 0;"></div>
@@ -92,31 +92,29 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
           <div class="katas-grid__sizer"></div>
           <div class="katas-grid__gutter-sizer"></div>
           {% for content in blogPosts %}
-            <div class="custom-blog-listing__post-wrapper masonry-grid-item"
+            <div class="custom-kata-listing__post-wrapper masonry-grid-item"
                  blogTags="{{content.tag_list}}"
                  >
-              <article class="custom-blog-listing__post">
+              <article class="custom-kata-listing__post">
                 {% if content.featured_image %}
                   <a href="{{ content.absolute_url }}">
                     <img class="custom-bg-white img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}">
                   </a>
                 {% endif %}
-                <div class="custom-bg-white custom-pa-30">
-                  <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
-                    <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
-                    <li class="list-inline-item mx-2">·</li>
-                    <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
-                  </ul>
-                  <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
-                    <a class="custom-blog-listing__title-link" href="{{ content.absolute_url }}">
+                <div class="custom-bg-white custom-pa-15">
+                  <div class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12 list-inline-item mr-0">
+                    By {{ content.blog_post_author.display_name }}
+                  </div>
+                  <h5 class="h5 custom-color-black custom-font-weight-600 mb-2">
+                    <a class="custom-kata-listing__title-link" href="{{ content.absolute_url }}">
                       {{ content.name }}</a>
                   </h5>
 
                   {% if content.tag_list %}
                     <ul class="list-inline custom-font-size-12 mb-0">
                       {% for tag in content.tag_list %}
-                        <li class="list-inline-item custom-mb-10">
-                          <a class="tags custom-blog-listing__tag">{{ tag.name }}</a>
+                        <li class="list-inline-item custom-mb-5">
+                          <a class="tags custom-kata-listing__tag">{{ tag.name }}</a>
                         </li>
                       {% endfor %}
                     </ul>

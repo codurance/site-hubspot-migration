@@ -1,0 +1,238 @@
+{% import '../utils/utils.css' as utils %}
+
+{% import '../partials/kata-card.css' %}
+
+.kata-max-width {
+  font-size:  var(--base-font-size);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--base-max-width) !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.kata-post__title {
+  {{ utils.eames() }}
+  color: white;
+}
+
+.kata-meta__inner {
+  {{ utils.card_shadow() }}
+  align-items: center;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -2rem;
+  padding: 1em;
+  position: relative;
+  z-index: 2;
+}
+{% call utils.small() %}
+  .kata-meta__inner {
+    flex-direction: column;
+  }
+{% endcall %}
+
+
+.kata-meta__info {
+  {{ utils.natus() }}
+  white-space: nowrap;
+  display: flex;
+  gap: 0.3em;
+}
+{% call utils.medium_large_and_extra_large() %}
+  .kata-meta__info {
+    flex-direction: column;
+  }
+  
+  .info__dot{
+    display: none;
+  }
+
+{% endcall %}
+
+
+.kata-meta__tag-list {
+  list-style: none;
+  margin-bottom: 0;
+}
+{% call utils.medium_large_and_extra_large() %}
+  .kata-meta__tag-list {
+    margin-left: 3em;
+    margin-top: 0;
+    text-align: right;
+  }
+{% endcall %}
+{% call utils.small() %}
+  .kata-meta__tag-list {
+    margin-top: 0.5em;
+    text-align: center;
+}
+{% endcall %}
+
+{% set tag_margin = '0.3em' %}
+.kata-meta__tag-item {
+  display: inline-block;
+  margin-bottom: {{ tag_margin }};
+}
+
+.kata-meta__tag-item + .kata-meta__tag-item {
+  margin-left: {{ tag_margin }};
+}
+
+.kata-author-info {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+{% call utils.small() %}
+  .kata-author-info {
+    flex-direction: column;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .kata-author-info__text-container {
+    text-align: center;
+  }
+{% endcall %}
+
+.kata-author-info__outer {
+  display: flex;
+  align-items: center;
+}
+{% call utils.small() %}
+  .kata-author-info__outer {
+    flex-direction: column;
+  }
+{% endcall %}
+
+
+{% set author_image_margin = '0.6rem' %}
+.kata-author-info__author-image {
+  max-width: 70px;
+  border-radius: 50%;
+  height: auto;
+}
+{% call utils.medium_large_and_extra_large() %}
+  .kata-author-info__author-image {
+    margin-right: {{ author_image_margin }};
+  }
+{% endcall %}
+{% call utils.small() %}
+  .kata-author-info__author-image {
+    margin-bottom: {{ author_image_margin }};
+  }
+{% endcall %}
+
+.kata-author-info__name {
+  {{ utils.base() }}
+  font-weight: var(--middle-font-weight);
+}
+
+.kata-author-info__author-link {
+  {{ utils.natus() }}
+}
+
+.kata-content p {
+  {{ utils.base() }}
+  {{ utils.base_margin() }}
+}
+
+.kata-content h1,
+.kata-content h2,
+.kata-content h3,
+.kata-content h4,
+.kata-content h5 {
+  {{ utils.freed() }}
+  margin-bottom: var(--freed-margin);
+  margin-top: calc(var(--freed-margin) * 2);
+}
+
+.kata-content h1 > span,
+.kata-content h2 > span,
+.kata-content h3 > span,
+.kata-content h4 > span,
+.kata-content h5 > span,
+.kata-content p > span {
+  font-size: inherit !important;
+  color: inherit !important;
+}
+
+.kata-content blockquote {
+  {{ utils.freed_margin() }}
+}
+
+.kata-content code {
+  {{ utils.natus() }}
+  font-family: monospace;
+}
+
+.related-kata-section {
+  background-color: var(--athens-gray);
+}
+
+.related-kata-section__inner {
+  padding: 2rem 1rem;
+}
+
+.related-kata-section__title {
+  font-size: var(--dudler-font-size);
+  line-height: var(--dudler-line-height);
+  text-align: center;
+}
+
+.related-kata-section__tag-container {
+  margin-bottom: 3rem;
+}
+
+.kata-subscribe-banner {
+  background-color: var(--midnight-blue);
+  color: white;
+  font-size: var(--freed-font-size);
+  padding: 2rem 1rem;
+}
+
+.kata-subscribe-banner__inner.page-center {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+{% call utils.small() %}
+  .kata-subscribe-banner__inner.page-center {
+    flex-direction: column;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .kata-subscribe-banner__text-container {
+    text-align: center;
+    width: 100%;
+  }
+{% endcall %}
+{% call utils.medium_large_and_extra_large() %}
+  .kata-subscribe-banner__text-container {
+    margin-right: 2rem;
+  }
+{% endcall %}
+
+.kata-subscribe-banner__text {
+  {{ utils.freed() }}
+  color: white;
+}
+
+{% call utils.small() %}
+  .kata-subscribe-banner__button-container {
+    margin-top: 2rem;
+    width: 100%;
+  }
+  .kata-subscribe-banner__button-container [class*="button"] {
+    width: 100%;
+    max-width: var(--button-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+{% endcall %}
