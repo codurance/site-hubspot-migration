@@ -1,8 +1,11 @@
-{% import '../../utils/utils.css' as utils %}
+{% import '../utils/utils.css' as utils %}
+
 
 .feature-section {
     --image-background: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Industries/HP_Industries_Background.svg");
-    {{ utils.slate_to_woodsmoke() }}
+    --slate-to-woodsmoke: linear-gradient(200deg, var(--slate) 60%, var(--woodsmoke) 100%);
+
+    background-color: var(--slate);
     background: var(--image-background), var(--slate-to-woodsmoke);
     background-position: top right, bottom left;
     background-repeat: no-repeat, no-repeat;
