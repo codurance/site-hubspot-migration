@@ -113,9 +113,18 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
                   {% if content.tag_list %}
                     <ul class="list-inline custom-font-size-12 mb-0">
                       {% for tag in content.tag_list %}
-                        <li class="list-inline-item custom-mb-5">
-                          <a class="tags custom-kata-listing__tag">{{ tag.name }}</a>
-                        </li>
+                        {% if difficulties.contains(tag.name) %}
+                          <li class="list-inline-item custom-mb-5">
+                            <a class="tags custom-kata-listing__tag" data-difficulty-option="{{tag.name}}">{{ tag.name }}</a>
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                      {% for tag in content.tag_list %}                        
+                        {% if !difficulties.contains(tag.name) %}
+                          <li class="list-inline-item custom-mb-5">
+                            <a class="tags custom-kata-listing__tag" data-topic-option="{{tag.name}}">{{ tag.name }}</a>
+                          </li>  
+                        {% endif %}                        
                       {% endfor %}
                     </ul>
                   {% endif %}
