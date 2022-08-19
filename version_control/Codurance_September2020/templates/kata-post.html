@@ -66,9 +66,7 @@ label: Kata Post
         <ul class="kata-meta__tag-list">
           {% for tag in content.tag_list %}
             <li class="kata-meta__tag-item">
-              <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}"
-                >{{ tag.name }}</a
-              >
+              <a class="tags">{{ tag.name }}</a>
             </li>
           {% endfor %}
         </ul>
