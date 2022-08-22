@@ -35,9 +35,19 @@ label: Academy template
 
 <main>
 
-{% module 'Form card'
-  path='../modules/Newsletter-Form-Card.module'
-  label="Form card" no_wrapper=True %}
+{% boolean "gated_toggle" label='Academy campaign?', value='True', no_wrapper=True, export_to_template_context=True %}
+
+  {% if widget_data.gated_toggle.value == True %}
+    {% module 'cta_block'
+      path='../modules/LP-cta-block.module'
+      label="Cta banner" %}
+  {% else %}
+    {% module 'Form card'
+      path='../modules/Newsletter-Form-Card.module'
+      label="Form card" no_wrapper=True %}
+  {% endif %}
+
+
 
 {% module 'How does it work'
   path='../modules/How does it work.module'
@@ -54,9 +64,11 @@ label: Academy template
   path='../modules/Landing Page Modules/LP-testimonial-slider.module'
   label="Academy Testimonials" no_wrapper=True %}
 
-{% module 'Banner link'
-    path='../modules/Banner-Link.module'
-    label="Banner Link" no_wrapper=True %}
+<section class="banner-cta">
+  {% module 'Banner link'
+      path='../modules/Banner-Link.module'
+      label="Banner Link" no_wrapper=True %}
+</section>
 
     
 </main>
