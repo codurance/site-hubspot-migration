@@ -47,14 +47,17 @@ label: Academy template
       label="Form card" no_wrapper=True %}
   {% endif %}
 
+<section class="how-it-works__wrapper lateral-spacing">
 
-{% include 'Intro How does it work'
-    path='../modules/Text-and-image.module'
+  {% module 'Text and image'
+      path='../modules/Text-Image-Default.module'
+      label="Intro Text and Image" no_wrapper=True %}
+
+  
+  {% module 'How does it work'
+    path='../modules/How does it work.module'
     label="How does it work" no_wrapper=True %}
-
-{% module 'How does it work'
-  path='../modules/How does it work.module'
-  label="How does it work" no_wrapper=True %}
+</section>
 
 
 <section class="skills">
