@@ -26,12 +26,18 @@
         padding-top: 3em;
         padding-bottom: 3em;
     }
+
+    .how-it-works__wrapper .cm-text-img__image {
+        max-width: 100%;
+    }
 {% endcall %}
 
 .how-it-works__wrapper .cm-text-img__container {
     margin-top: 0;
     margin-bottom: 1.6em;
 }
+
+
 
 .skills {
     padding: 2rem;
