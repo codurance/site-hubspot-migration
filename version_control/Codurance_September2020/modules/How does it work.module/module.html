@@ -1,7 +1,6 @@
 {{ require_css(get_asset_url("../../css/modules/how-does-it-work.css")) }}
 
 <div class="custom-how-does-it-work">
-  <div class="custom-how-does-it-work__card-container">
     {% for item in module.how_does_it_work_items %}
       <div class="custom-how-does-it-work__card">
         <h3 class="custom-how-does-it-work__title">{{ item.title }}</h3>
@@ -10,7 +9,6 @@
         </p>
       </div>
     {% endfor %}
-  </div>
 </div>
 
 
