@@ -234,5 +234,10 @@
 
 .header-hero {
   {{ utils.white_to_tango() }}
-  padding-bottom: 0.5rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.header-hero__text p {
+    font-size: var(--base-font-size) !important;
+    line-height: var(--base-line-height) !important;
 }
