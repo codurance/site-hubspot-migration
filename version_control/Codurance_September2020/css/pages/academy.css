@@ -5,6 +5,11 @@
     {{ utils.tango_to_white() }}
 }
 
+.academy-hero .custom-btn {
+    margin-top: 2em;
+    width: fit-content;
+}
+
 .skills {
     padding: 2rem;
 }
