@@ -25,9 +25,9 @@ label: Academy template
 
 {% block body %}
 
-<section class="academy-hero">
+<div class="academy-hero">
   {% include "./partials/header-hero.html" %}
-</section>
+</div>
   
 {% module 'Video section'
     path='../modules/Embedded Video.module'
@@ -57,10 +57,10 @@ label: Academy template
   label="How does it work" no_wrapper=True %}
 
 
- <section class="skills">
+<section class="skills">
   {% module 'Expected skills' path='@hubspot/rich_text' label="Expected Skills list" no_wrapper=True %}
   {% module 'Desirabel skills' path='@hubspot/rich_text' label="Desirable Skills list" no_wrapper=True %}
- </section>
+</section>
 
 
 {% module 'Academy Testimonials'
@@ -73,6 +73,5 @@ label: Academy template
       label="Banner Link" no_wrapper=True %}
 </section>
 
-    
 </main>
 {% endblock body %}
