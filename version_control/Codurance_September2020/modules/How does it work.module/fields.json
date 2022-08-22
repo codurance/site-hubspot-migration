@@ -1,30 +1,11 @@
 [ {
-  "id" : "14a13547-4635-c2b5-ee2f-1c7ce1aefb15",
-  "name" : "left_image",
-  "label" : "left Image",
-  "required" : false,
-  "locked" : false,
-  "responsive" : true,
-  "resizable" : false,
-  "show_loading" : false,
-  "type" : "image",
-  "default" : {
-    "size_type" : "auto",
-    "src" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/images/consultancy-1.jpg",
-    "alt" : "consultancy-1",
-    "width" : 768,
-    "height" : 768,
-    "max_width" : 768,
-    "max_height" : 768
-  }
-}, {
   "id" : "29b052e6-3551-9b6a-df04-13216cc03f33",
   "name" : "how_does_it_work_items",
   "label" : "How does it work items",
   "required" : false,
   "locked" : false,
   "occurrence" : {
-    "min" : null,
+    "min" : 2,
     "max" : null,
     "sorting_label_field" : "60f9a457-d533-da8e-ac98-6ca4b2cb6d89",
     "default" : null

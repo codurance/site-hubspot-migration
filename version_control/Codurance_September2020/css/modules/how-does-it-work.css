@@ -25,14 +25,16 @@
   flex-wrap: wrap;
   flex: 1;
   padding: 1rem;
+  max-width: var(--content-inner-max-width);
+  margin-inline: auto;
 }
 
 {% set card_margin = '0.5rem' %}
 .custom-how-does-it-work__card {
   background-color: white;
-  border-left: 2px solid var(--persimmon);
   margin: {{ card_margin }};
   padding: 1rem;
+  border-radius: 13px;
 }
 {% call utils.medium_large_and_extra_large() %}
   .custom-how-does-it-work__card {
