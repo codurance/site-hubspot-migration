@@ -232,3 +232,7 @@
   text-decoration: none;
 }
 
+.header-hero {
+  {{ utils.white_to_tango() }}
+  padding-bottom: 0.5rem !important;
+}
