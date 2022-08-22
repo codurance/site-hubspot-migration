@@ -1,7 +1,12 @@
 {% import '../utils/utils.css' as utils %}
 
-.academy-hero{
+.academy-hero,
+.banner-cta {
     {{ utils.tango_to_white() }}
+}
+
+.skills {
+    padding: 2rem;
 }
 
 
