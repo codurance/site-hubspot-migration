@@ -271,6 +271,7 @@ const update = _ => {
 const applyFilter = (type, value) => {
   filters.applied[type].push(value);
   update();
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 const filterAlreadyApplied = (type, value) => {
