@@ -21,6 +21,11 @@
     padding-bottom: 6em;
 }
 
+.how-it-works__wrapper > div {
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
+}
+
 {% call utils.small() %}
     .how-it-works__wrapper {
         padding-top: 3em;
@@ -32,11 +37,70 @@
     }
 {% endcall %}
 
-.how-it-works__wrapper .cm-text-img__container {
+.how-it-works__wrapper .cm-text-img__container,
+.skills .cm-text-img__container {
     margin-top: 0;
     margin-bottom: 1.6em;
 }
 
+/* SKILLS DESCRIPTION */
+
+.skills {
+    color: white;
+    {{ utils.slate_to_woodsmoke() }}
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+{% call utils.small() %}
+    .skills .cm-text-img__image {
+        display: none;
+    }
+{% endcall %}
+
+.skills > div {
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
+}
+
+.skills__description h3 {
+    {{ utils.freed() }}
+}
+
+
+{% call utils.small_and_medium() %}
+    .skills__description span:last-child h3 {
+        margin-top: 3em;
+    }
+{% endcall %}
+
+
+.skills__description ul {
+    margin-left: .8em;
+}
+
+.skills__description li {
+    padding-left: .4em;
+    margin-bottom: .8em
+}
+
+.skills__description li::marker {
+    content: "\f058";
+    font-family: line awesome free;
+}
+
+
+/* TESTIMONIALS */
+
+.academy-testimonials {
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+.academy-testimonials__container{
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
+}
 
 
 .skills {

@@ -56,13 +56,19 @@ label: Academy template
   
   {% module 'How does it work'
     path='../modules/How does it work.module'
-    label="How does it work" no_wrapper=True %}
+    label="Explanatory cards" no_wrapper=True %}
 </section>
 
 
-<section class="skills">
-  {% module 'Expected skills' path='@hubspot/rich_text' label="Expected Skills list" no_wrapper=True %}
-  {% module 'Desirabel skills' path='@hubspot/rich_text' label="Desirable Skills list" no_wrapper=True %}
+<section class="skills lateral-spacing">
+  {% module 'Skills Text and image'
+      path='../modules/Text-Image-Default.module'
+      label="Skills Text and Image" no_wrapper=True %}
+
+  <div class="skills__description">
+      {% module 'Expected skills' path='@hubspot/rich_text' label="Expected Skills list" no_wrapper=True %}
+      {% module 'Desirabel skills' path='@hubspot/rich_text' label="Desirable Skills list" no_wrapper=True %}
+  </div>
 </section>
 
 
