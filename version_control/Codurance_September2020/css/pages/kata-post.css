@@ -73,6 +73,7 @@
 .kata-meta__tag-item {
   display: inline-block;
   margin-bottom: {{ tag_margin }};
+  cursor: default;
 }
 
 .kata-meta__tag-item + .kata-meta__tag-item {
