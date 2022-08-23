@@ -73,10 +73,10 @@
 }
 
 .testimonial-slider-item__author-image{
-    border-radius: 50%;
+    max-width: 2.4rem;
     margin-right: 2em;
-    max-width: 5em;
     margin-right: 1em;
+    border-radius: 50%;
 }
 
 .testimonial-slider-item__author-name,
