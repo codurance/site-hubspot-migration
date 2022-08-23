@@ -1,5 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
+/* HEADER HERO SECTION */
+
 .academy-hero,
 .banner-cta {
     {{ utils.tango_to_white() }}
@@ -10,10 +12,8 @@
     width: fit-content;
 }
 
-.how-it-works__wrapper > div {
-    max-width: var(--content-inner-max-width);
-    margin-inline: auto;
-}
+
+/* HOW IT WORKS SECTION */
 
 .how-it-works__wrapper {
     {{ utils.white_to_tango() }}
@@ -102,10 +102,42 @@
     margin-inline: auto;
 }
 
+.academy-testimonials h2 {
+    {{ utils.dudler() }}
+    margin-bottom: 1.4em;
+}
 
-.skills {
-    padding: 2rem;
+{% call utils.small() %}
+    .academy-testimonials h2 {
+        {{ utils.freed() }}
+        margin-bottom: 1.4em;
+    }
+{% endcall %}
+
+.academy-testimonials p {
+    max-width: var(--freed-max-width);
 }
 
 
+.academy-testimonials .testimonial-slider {
+    margin-top: 2.4em;
+}
+
+
+
+/* CTA BANNER */
+
+
+
+{% call utils.large_and_extra_large() %}
+    .skills__description {
+        display: flex;
+        gap: 2em;
+    }
+{% endcall %}
+
+.banner-cta{
+    padding-top: 4.5em;
+    padding-bottom: 4.5em;
+}
 

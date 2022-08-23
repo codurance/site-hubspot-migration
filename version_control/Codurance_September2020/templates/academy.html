@@ -51,7 +51,7 @@ label: Academy template
 
   {% module 'Text and image'
       path='../modules/Text-Image-Default.module'
-      label="Intro Text and Image" no_wrapper=True %}
+      label="How it works Text and Image" no_wrapper=True %}
 
   
   {% module 'How does it work'
@@ -71,12 +71,17 @@ label: Academy template
   </div>
 </section>
 
+<section class="academy-testimonials lateral-spacing">
+  <div class="academy-testimonials__container">
+    {% module 'Testimonials Text Intro' path='@hubspot/rich_text' label="Testimonials Text Intro" no_wrapper=True %}
 
-{% module 'Academy Testimonials'
-  path='../modules/Landing Page Modules/LP-testimonial-slider.module'
-  label="Academy Testimonials" no_wrapper=True %}
+    {% module 'Academy Testimonials'
+      path='../modules/Landing Page Modules/LP-testimonial-slider.module'
+      label="Academy Testimonials" no_wrapper=True %}
+  </div>
+</section>
 
-<section class="banner-cta">
+<section class="banner-cta lateral-spacing">
   {% module 'Banner link'
       path='../modules/Banner-Link.module'
       label="Banner Link" no_wrapper=True %}
