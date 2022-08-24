@@ -1,30 +1,19 @@
 {% import '../utils/utils.css' as utils %}
 
-/* Generic Styles */
-
-{% call utils.small()%}
-    .video .embed-video,
-    .skills,
-    .academy-testimonials,
-    .banner-cta {
-        padding-top: 3.2em;
-        padding-bottom: 3.2em;
-    }
-{% endcall %}
-
-
-.academy-hero,
-.banner-cta {
-    {{ utils.tango_to_white() }}
-}
-
 
 /* HEADER HERO SECTION */
 
 .academy-hero .custom-btn {
     margin-top: 2em;
     width: fit-content;
-}
+    }
+    
+/* VIDEO SECTION */
+{% call utils.large_and_extra_large() %}
+    .video {
+        margin-bottom: 2em;
+    }
+{% endcall %}
 
 
 /* HOW IT WORKS SECTION */
@@ -83,7 +72,7 @@
 
 
 {% call utils.small_and_medium() %}
-    .skills__description span:last-child h3 {
+    .skills__description h3 {
         margin-top: 3em;
     }
 {% endcall %}
@@ -118,13 +107,14 @@
 
 .academy-testimonials h2 {
     {{ utils.dudler() }}
-    margin-bottom: 1.4em;
+    margin-bottom: var(--dudler-margin);
+    font-weight: var(--heavy-font-weight);
 }
 
 {% call utils.small() %}
     .academy-testimonials h2 {
         {{ utils.freed() }}
-        margin-bottom: 1.4em;
+        margin-bottom: var(--freed-margin);
     }
 {% endcall %}
 
@@ -153,5 +143,23 @@
     padding-bottom: 4.5em;
 }
 
+
+/* Generic Styles */
+
+{% call utils.small()%}
+    .video .embed-video,
+    .skills,
+    .academy-testimonials,
+    .banner-cta {
+        padding-top: 3.2em;
+        padding-bottom: 3.2em;
+    }
+{% endcall %}
+
+
+.academy-hero,
+.banner-cta {
+    {{ utils.tango_to_white() }}
+}
 
 

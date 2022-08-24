@@ -22,9 +22,6 @@
     margin-bottom: .5em;
 }
 
-.cm-text-img__rich-text p{
-    {{ utils.natus() }}
-}
     
 .cm-text-img__image {
     max-width: 70%;

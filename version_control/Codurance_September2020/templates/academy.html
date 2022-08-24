@@ -25,16 +25,18 @@ label: Academy template
 
 {% block body %}
 
-<div class="academy-hero">
+<section class="academy-hero">
   {% include "./partials/header-hero.html" %}
-</div>
+</section>
   
-{% module 'Video section'
-    path='../modules/Embedded Video.module'
-    label="Video section" no_wrapper=True %}
+
+<section class="video">
+  {% module 'Video section'
+      path='../modules/Embedded Video.module'
+      label="Video section" no_wrapper=True %}
+</section>
 
 <main>
-
 {% boolean "gated_toggle" label='Academy campaign?', value='True', no_wrapper=True, export_to_template_context=True %}
 
   {% if widget_data.gated_toggle.value == True %}
@@ -56,7 +58,8 @@ label: Academy template
   
   {% module 'How does it work'
     path='../modules/How does it work.module'
-    label="Explanatory cards" no_wrapper=True %}
+    label="How does it work" no_wrapper=True %}
+
 </section>
 
 
