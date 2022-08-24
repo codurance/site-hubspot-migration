@@ -43,27 +43,6 @@ label: Kata Listing
 </section>
 
 {% endif %}
-{{ require_js(get_asset_url("../js/imageLoaded.js")) }}
-{{ require_js(get_asset_url("../js/masonary.js")) }}
 
-<script>
-  document.onreadystatechange = () => {
-    if (document.readyState === 'complete') {
-      const masonryGrid = document.querySelector('.masonry-grid');
-
-      const masonryOptions = {
-        columnWidth: '.masonry-grid-sizer',
-        itemSelector: '.masonry-grid-item',
-        percentPosition: true
-      };
-
-      const makeMasonry = function() {
-        new Masonry(masonryGrid, masonryOptions);
-      }
-
-      imagesLoaded( masonryGrid, makeMasonry );
-    }
-  };
-</script>
 
 {% endblock body %}
