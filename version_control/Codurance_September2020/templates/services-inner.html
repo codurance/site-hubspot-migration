@@ -35,24 +35,30 @@ label: Services Inner Page
     {% end_dnd_area %}
   </div>
   <main class="body-container-wrapper">
-    {% dnd_area "dnd_area1" class='cm-services-inner-section1', label='Section 1' %}
-    {% end_dnd_area %}
+    <section>
+      {% dnd_area "dnd_area1" class='cm-services-inner-section1', label='Section 1' %}
+      {% end_dnd_area %}
+    </section>
 
-    {% dnd_area "dnd_area2" class='cm-services-inner-section2', label='Section 2' %}
-    {% end_dnd_area %}
+    <section>
+      {% dnd_area "dnd_area2" class='cm-services-inner-section2', label='Section 2' %}
+      {% end_dnd_area %}
+    </section>
 
-    {% dnd_area "dnd_area3" class='cm-services-inner-section3', label='Section 3' %}
-    {% end_dnd_area %}
+    <section>
+      {% dnd_area "dnd_area3" class='cm-services-inner-section3', label='Section 3' %}
+      {% end_dnd_area %}
+    </section>
 
-    {% dnd_area "dnd_area4" class='cm-services-inner-section4', label='Section 4' %}
-    {% end_dnd_area %}
+    <section>
+      {% dnd_area "dnd_area4" class='cm-services-inner-section4', label='Section 4' %}
+      {% end_dnd_area %}
+    </section>
 
-    <div class="cm-services-inner-bottom-wrap" id="get-in-touch">
-    
-    {% dnd_area "dnd_area5" class='section-5', label='Section 5' %}
-    {% end_dnd_area %}
-
-    </div>
+    <section class="cm-services-inner-bottom-wrap" id="get-in-touch">
+      {% dnd_area "dnd_area5" class='section-5', label='Section 5' %}
+      {% end_dnd_area %}
+    </section>
   </main>
 </div>
 {% endblock body %}
