@@ -1,11 +1,25 @@
 {% import '../utils/utils.css' as utils %}
 
-/* HEADER HERO SECTION */
+/* Generic Styles */
+
+{% call utils.small()%}
+    .video .embed-video,
+    .skills,
+    .academy-testimonials,
+    .banner-cta {
+        padding-top: 3.2em;
+        padding-bottom: 3.2em;
+    }
+{% endcall %}
+
 
 .academy-hero,
 .banner-cta {
     {{ utils.tango_to_white() }}
 }
+
+
+/* HEADER HERO SECTION */
 
 .academy-hero .custom-btn {
     margin-top: 2em;
@@ -127,8 +141,6 @@
 
 /* CTA BANNER */
 
-
-
 {% call utils.large_and_extra_large() %}
     .skills__description {
         display: flex;
@@ -140,4 +152,6 @@
     padding-top: 4.5em;
     padding-bottom: 4.5em;
 }
+
+
 

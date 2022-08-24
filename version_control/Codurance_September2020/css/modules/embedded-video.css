@@ -17,6 +17,13 @@
   margin-top: 20px;
 }
 
+{% call utils.small()%}
+  .embed-video__heading {
+    {{ utils.freed() }}
+ 
+  }
+{% endcall %}
+
 .embed-video__video {
   margin: 40px auto 0;
   max-width: 800px;
