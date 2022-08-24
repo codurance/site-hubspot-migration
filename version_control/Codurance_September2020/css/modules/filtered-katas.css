@@ -277,16 +277,15 @@
 }
 
 
-{% call utils.large() %}
-    .katas-grid__card--small,
+{% call utils.medium() %}
     .katas-grid__sizer {
         --card-width: 49%;
     }
 {% endcall %}
 
 
-{% call utils.extra_large() %}
-    .katas-grid__card--small,
+{% call utils.large_and_extra_large() %}
+
     .katas-grid__sizer {
         --card-width: 32%;
     }
@@ -299,3 +298,5 @@
     }
 
 {% endcall %}
+
+
