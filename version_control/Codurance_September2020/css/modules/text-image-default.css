@@ -55,6 +55,7 @@
 {% call utils.large_and_extra_large() %}
     .cm-text-img__rich-text h2{
         {{ utils.dudler() }}
+        font-weight: var(--heavy-font-weight);
 
     }
 {% endcall%}
