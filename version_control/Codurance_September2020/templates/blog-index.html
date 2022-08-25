@@ -40,51 +40,8 @@ label: Blog Listing
   <div class="custom-blog-listing custom-bg-gray-light-v5">
     <div class="page-center container custom-py-50">
       <div class="masonry-grid row custom-mb-70">
-        <div class="masonry-grid-item custom-col-sm-12 text-center custom-mb-30">
-
-          <ul class="custom-blog-listing__filter-list">
-            <li class="custom-blog-listing__filter-item">
-              <a
-                class="custom-blog-listing__filter-link"
-                href="/publications"
-                data-target="blog-index-filter-link"
-              >
-                All
-              </a>
-            </li>
-            <li class="custom-blog-listing__filter-item">
-              <a
-                class="custom-blog-listing__filter-link"
-                href="/publications/tag/posts"
-                data-target="blog-index-filter-link"
-              >
-                Posts
-              </a>
-            </li>
-            <li class="custom-blog-listing__filter-item">
-              <a
-                class="custom-blog-listing__filter-link"
-                href="/videos"
-                data-target="blog-index-filter-link"
-              >
-                Videos
-              </a>
-            </li>
-            <li class="custom-blog-listing__filter-item">
-              <a
-                class="custom-blog-listing__filter-link"
-                href="/publications/tag/podcasts"
-                data-target="blog-index-filter-link"
-              >
-                Podcasts
-              </a>
-            </li>
-          </ul>
-
-        </div>
         <div class="masonry-grid-sizer"></div>
         {% for content in contents %}
-
           {% if loop.index == 1 %}
             <div class="custom-blog-listing__post-wrapper custom-blog-listing__post-wrapper--featured masonry-grid-item">
               <article class="custom-blog-listing__post custom-blog-listing__post--featured">
@@ -215,7 +172,6 @@ label: Blog Listing
               <!-- End Static Card -->
             </div>
           {% endif %}
-
         {% endfor %}
       </div>
 
