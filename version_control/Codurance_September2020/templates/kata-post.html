@@ -1,0 +1,282 @@
+<!--
+templateType: blog
+isAvailableForNewContent: true
+label: Kata Post
+-->
+{% import '../snippets/button-snippets.html' as snippets %}
+
+{% extends "./layouts/base.html" %}
+
+{% set path = request.path|truncate(3, true, '') %}
+{% if path is string_containing 'es' %}
+  {% set site_language = 'es'  %}
+{% else %}
+  {% set site_language = 'en' %}
+{% endif %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/kata-post.css")) }}
+  {{ require_css(get_asset_url("../css/partials/kata-card.css")) }}
+  {{ require_css(get_asset_url("../css/partials/social-icons.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+
+  <section
+    class="custom-bg-cover custom-bg-size-cover custom-bg-cover--text-overlay custom-pb-30"
+    {% if content.featured_image %}
+      style="background-image: url('{{ content.featured_image }}');"
+    {% endif %}
+  >
+    <div
+      class="container page-center text-center custom-pos-rel custom-z-index-1 custom-pt-100 custom-pb-100"
+    >
+      <div class="row d-flex justify-content-center align-content-end flex-wrap">
+        <div class="custom-col-lg-7 mt-auto">
+          <div class="mb-5 mt-5">
+            <h1 class="kata-post__title">
+              {{ content.name }}
+            </h1>
+            <p class="lead text-white custom-font-weight-600"></p>
+          </div>
+        </div>
+      </div>
+      <span class="custom-text-800 custom-font-size-10 text-white"></span>
+    </div>
+  </section>
+  <section class="kata-meta kata-max-width">
+    <div class="kata-meta__inner">
+      {% if content.tag_list %}
+        <ul class="kata-meta__tag-list">
+          {% for tag in content.tag_list %}
+            <li class="kata-meta__tag-item">
+              <a class="tags">{{ tag.name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </section>
+  <section class="kata-author-info kata-max-width">
+    <div class="kata-author-info__text-container">
+      {# Where No Author Avatar Exists Enter Name -
+      http://codurance-azurewebsites-net-3042464.hs-sites.com/publications/2020/05/20/promises-and-lies?hs_preview=AUgGVFjm-35494023046
+      -
+      http://codurance-azurewebsites-net-3042464.hs-sites.com/publications/videos/2012-12-01-ugtastic-interviews-sandro-mancuso-2012
+      #}
+      {% if content.blog_post_author.avatar == NULL ||
+      content.blog_post_author.avatar.src == "(unknown)" ||
+      content.blog_post_author.avatar == "" %}
+        <h2 class="kata-author-info__name">
+          {{ content.blog_post_author.display_name }}
+        </h2>
+        <a
+          class="kata-author-info__author-link"
+          href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
+          >See author's bio and posts</a
+        >
+      {% else %}
+        <div class="kata-author-info__outer">
+          <img
+            class="kata-author-info__author-image"
+            src="{{ content.blog_post_author.avatar }}"
+            alt="{{ content.blog_post_author.display_name }}"
+          />
+          <div class="kata-author-info__inner">
+            <h2 class="kata-author-info__name">
+              {{ content.blog_post_author.display_name }}
+            </h2>
+            <a
+              class="kata-author-info__author-link"
+              href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
+              >See author's bio and posts</a
+            >
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    <ul class="blog-social-icons__list">
+      <li class="blog-social-icons__item">
+        <a
+          class="blog-social-icons__icon custom-mx-2"
+          href="http://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url }}&amp;title={{ page_meta.name }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="lab la-facebook-f"></i>
+        </a>
+      </li>
+      <li class="list-inline-item custom-mx-2">
+        <a
+          class="blog-social-icons__icon"
+          href="https://twitter.com/intent/tweet?text={{ page_meta.name }}&amp;url={{ content.absolute_url }}&amp;hashtags=specialist expertise,metrics,automation,Technical Debt,silos"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="lab la-twitter"></i>
+        </a>
+      </li>
+      <li class="list-inline-item custom-mx-2">
+        <a
+          class="blog-social-icons__icon"
+          href="http://www.linkedin.com/shareArticle?mini=true&amp;title={{ page_meta.name }}&amp;summary=&amp;url={{ content.absolute_url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="lab la-linkedin-in"></i>
+        </a>
+      </li>
+      <li class="list-inline-item custom-mx-2">
+        <a
+          class="blog-social-icons__icon"
+          href="http://www.reddit.com/submit?url={{ content.absolute_url }}&amp;title={{ page_meta.name }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="lab la-reddit"></i>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="kata-content kata-max-width">
+    <div class="kata-content__inner">
+      {{ content.post_body }}
+    </div>
+    <div class="kata-comments">
+      {% module "blog_comments" path="@hubspot/blog_comments", label="Blog
+      Comments" %}
+    </div>
+  </section>
+
+  <section class="kata-recruitment-banner kata-max-width">
+    {% module "blog-recruitment-banner" path="../modules/Blog Post Banner Recruitment", label="CTA recruitment banner" no_wrapper=True %}
+  </section>
+
+  <section class="related-kata-section">
+    <div class="related-kata-section__inner page-center">
+      <h2 class="related-kata-section__title">
+        Related Katas
+      </h2>
+      <div class="related-kata-section__tag-container">
+        {% if content.tag_list %}
+          <div class="custom-col text-center">
+            <ul class="list-inline custom-font-size-12 mb-0">
+              {% for tag in content.tag_list %}
+                <li class="list-inline-item custom-mb-10">
+                  <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}"
+                    >{{ tag.name }}</a
+                  >
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+      <div class="row">
+        {% if content.topic_list %} {% set max_posts = 3 %} {% set post_list = []
+        %} {% for topic in content.topic_list %} {% set post_list = post_list +
+        blog_recent_topic_posts(group.id, topic.slug, max_posts + 1 ) %} {% if
+        loop.last %} {% set post_list = post_list|sort(true, false,
+        'publish_date')|unique('name') %} {% set i = 0 %} {% for post in post_list
+        %} {% if content.absolute_url != post.absolute_url and i < max_posts %}
+        <div
+          class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30"
+        >
+          <article class="custom-kata-listing__post">
+            {% if post.featured_image %}
+              <a href="{{ post.absolute_url }}">
+                <img
+                  class="custom-bg-white img-fluid w-100"
+                  src="{{ resize_image_url( post.featured_image,528 ) }}"
+                  alt="{{ post.name }}"
+                />
+              </a>
+            {% endif %}
+            <div class="custom-bg-white custom-pa-30 custom-rounded-bottom-5">
+              <ul
+                class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12"
+              >
+                <li class="list-inline-item mr-0">
+                  By {{ post.blog_post_author.display_name }}
+                </li>
+              </ul>
+              <h5 class="custom-kata-listing__post-title">
+                <a
+                  class="custom-kata-listing__title-link"
+                  href="{{ post.absolute_url }}"
+                >
+                  {{ post.name }}</a
+                >
+              </h5>
+              <p class="custom-kata-listing__post-description">
+                {{ post.post_list_content|safe|truncatehtml(150, '..' ,
+                false)|striptags }}
+              </p>
+              {% if post.tag_list %}
+              <ul class="list-inline custom-font-size-12 mb-0">
+                {% for tag in post.tag_list %}
+                <li class="list-inline-item custom-mb-10">
+                  <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}"
+                    >{{ tag.name }}</a
+                  >
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </div>
+          </article>
+        </div>
+        {% set i = i + 1 %} {% endif %} {% endfor %} {% endif %} {% endfor %} {%
+        endif %}
+      </div>
+    </div>
+  </section>
+    {% module
+      "newsletter_footer_form"
+      path="../modules/Newsletter Footer Form.module"
+      label="Newsletter footer form", language='{{site_language}}', no_wrapper=True
+    %}
+
+    {% module
+      "newsletter_exit_popup"
+      path="../modules/Newsletter Exit Popup.module"
+      label="Newsletter exit popup", language='{{site_language}}', no_wrapper=True
+    %}
+  <script>
+    var cookieIframeContainers = document.getElementsByClassName(
+      'js-iframe-container'
+    );
+    function showConsentDependentIframes() {
+      for (let index = 0; index < cookieIframeContainers.length; index++) {
+        const container = cookieIframeContainers[index];
+
+        var iframeUrl = container.getAttribute('js-iframe-url');
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('src', iframeUrl);
+        iframe.style.width = '100%';
+        iframe.style.height = '400px';
+        iframe.style.border = 'none';
+
+        container.appendChild(iframe);
+      }
+    }
+    showConsentDependentIframes();
+  </script>
+
+  {% endblock body %}
