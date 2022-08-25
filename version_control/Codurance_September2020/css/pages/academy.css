@@ -66,6 +66,10 @@
     margin-inline: auto;
 }
 
+.skills__description > span {
+    max-width: 50%;
+}
+
 .skills__description h3 {
     {{ utils.freed() }}
 }
