@@ -5,7 +5,7 @@
   "required" : false,
   "locked" : false,
   "occurrence" : {
-    "min" : 2,
+    "min" : null,
     "max" : null,
     "sorting_label_field" : "60f9a457-d533-da8e-ac98-6ca4b2cb6d89",
     "default" : null
