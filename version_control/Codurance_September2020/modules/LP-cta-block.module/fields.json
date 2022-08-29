@@ -22,7 +22,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "",
+      "src" : "https://www.codurance.com/hubfs/Careers%20Page/Overview/CTA%20block/cta-bg-dark.svg",
       "alt" : null,
       "loading" : "lazy"
     }
@@ -41,7 +41,7 @@
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "",
+      "src" : "https://www.codurance.com/hubfs/Careers%20Page/Overview/CTA%20block/cta-bg-dark.svg",
       "alt" : null,
       "loading" : "lazy"
     }
