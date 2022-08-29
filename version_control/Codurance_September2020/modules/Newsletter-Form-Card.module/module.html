@@ -1,4 +1,14 @@
-{{ require_css(get_asset_url("../css/modules/newsletter-form-card.css")) }}
+{{ require_css(get_asset_url("../../css/modules/newsletter-form-card.css")) }}
+
+
+{% require_css %}
+  <style>
+    .newsletter{
+        margin-top: {{ module.style.spacing.margin.top.value }}px;
+        margin-bottom: {{ module.style.spacing.margin.bottom.value }}px;
+    }
+  </style>
+{% end_require_css %}
 
 <section class="newsletter">
     <div class="newsletter-wrapper">

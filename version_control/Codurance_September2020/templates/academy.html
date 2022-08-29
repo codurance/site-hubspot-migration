@@ -1,0 +1,94 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Academy template
+-->
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/academy.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+
+<section class="academy-hero">
+  {% include "./partials/header-hero.html" %}
+</section>
+  
+
+<section class="video">
+  {% module 'Video section'
+      path='../modules/Embedded Video.module'
+      label="Video section" no_wrapper=True %}
+</section>
+
+<main>
+{% boolean "gated_toggle" label='Academy campaign?', value='True', no_wrapper=True, export_to_template_context=True %}
+
+  {% if widget_data.gated_toggle.value == True %}
+    {% module 'cta_block'
+      path='../modules/LP-cta-block.module'
+      label="Cta banner" %}
+  {% else %}
+    {% module 'Form card'
+      path='../modules/Newsletter-Form-Card.module'
+      label="Form card" no_wrapper=True %}
+  {% endif %}
+
+<section class="how-it-works__wrapper lateral-spacing">
+
+  {% module 'Text and image'
+      path='../modules/Text-Image-Default.module'
+      label="How it works Text and Image" no_wrapper=True %}
+
+  
+  {% module 'How does it works'
+    path='../modules/How-Does-It-Work.module'
+    label="How does it work" no_wrapper=True %}
+
+</section>
+
+
+<section class="skills lateral-spacing">
+  {% module 'Skills Text and image'
+      path='../modules/Text-Image-Default.module'
+      label="Skills Text and Image" no_wrapper=True %}
+
+  <div class="skills__description">
+      {% module 'Expected skills' path='@hubspot/rich_text' label="Expected Skills list" no_wrapper=True %}
+      {% module 'Desirabel skills' path='@hubspot/rich_text' label="Desirable Skills list" no_wrapper=True %}
+  </div>
+</section>
+
+<section class="academy-testimonials lateral-spacing">
+  <div class="academy-testimonials__container">
+    {% module 'Testimonials Text Intro' path='@hubspot/rich_text' label="Testimonials Text Intro" no_wrapper=True %}
+
+    {% module 'Academy Testimonials'
+      path='../modules/Landing Page Modules/LP-testimonial-slider.module'
+      label="Academy Testimonials" no_wrapper=True %}
+  </div>
+</section>
+
+<section class="banner-cta lateral-spacing">
+  {% module 'Banner link'
+      path='../modules/Banner-Link.module'
+      label="Banner Link" no_wrapper=True %}
+</section>
+
+</main>
+{% endblock body %}

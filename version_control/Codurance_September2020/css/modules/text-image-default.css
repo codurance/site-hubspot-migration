@@ -22,9 +22,6 @@
     margin-bottom: .5em;
 }
 
-.cm-text-img__rich-text p{
-    {{ utils.natus() }}
-}
     
 .cm-text-img__image {
     max-width: 70%;
@@ -55,6 +52,7 @@
 {% call utils.large_and_extra_large() %}
     .cm-text-img__rich-text h2{
         {{ utils.dudler() }}
+        font-weight: var(--heavy-font-weight);
 
     }
 {% endcall%}

@@ -3,7 +3,7 @@
 .embed-video {
   margin: 0 auto;
   padding: 4em 1em;
-  max-width: 1000px;
+  max-width: var(--content-inner-max-width);
 }
 
 
@@ -16,6 +16,13 @@
   {{ utils.base() }}
   margin-top: 20px;
 }
+
+{% call utils.small()%}
+  .embed-video__heading {
+    {{ utils.freed() }}
+ 
+  }
+{% endcall %}
 
 .embed-video__video {
   margin: 40px auto 0;
