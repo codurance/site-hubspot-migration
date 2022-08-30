@@ -1,0 +1,58 @@
+{{ require_css(get_asset_url("../css/modules/selector-filter.css")) }} 
+
+{% set items = hubdb_table_rows("4689612") %}
+
+{% set topics = [] %}
+{% set languages = [] %}
+
+{% for item in items %}
+    {% do topics.append(item.topic.name) %}
+    {% do languages.append(item.language.name) %}
+{% endfor %}
+
+{% set topics = topics|unique %}
+{% set languages = languages|unique %}
+
+<div class="filter">
+    <div class="filter-toggle">
+        <button data-filter-toggle>
+            <i class="filter-toggle-icon las la-plus" data-filter-toggle-icon></i>
+        </button>
+    </div>
+    <div class="filter-dropdown-wrapper hidden" data-filters-wrapper>
+        <div class="filter-dropdown-container">
+            <button class="filter-dropdown-button" data-dropdown-button="topics">
+            <i class="filter-icon las la-layer-group"></i>
+                Topics
+            <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="topics">
+            </i>
+            </button>
+            <div class="filter-dropdown-options hidden" data-dropdown-container="topics">
+            {% for topic in topics %}
+            <button class="filter-dropdown-option" data-topic-option="{{topic}}">
+                {{topic}}
+                <i class="filter-dropdown-option-selected-icon las la-check hidden"
+                data-topic-option-selected="{{topic}}"></i>
+            </button>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="filter-dropdown-container">
+            <button class="filter-dropdown-button" data-dropdown-button="languages">
+            <i class="filter-icon las la-language"></i>
+                Languages
+            <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="languages">
+            </i>
+            </button>
+            <div class="filter-dropdown-options hidden" data-dropdown-container="languages">
+            {% for language in languages|sort(False,False) %}
+            <button class="filter-dropdown-option" data-language-option="{{language}}">
+                {{language}}
+                <i class="filter-dropdown-option-selected-icon las la-check hidden"
+                data-language-option-selected="{{language}}"></i>
+            </button>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
