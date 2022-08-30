@@ -20,7 +20,7 @@
           {% set eventThumb_desktop = resize_image_url(event.thumbnail.url, 0, 0, 375) %}
           {% set eventThumb_mobile = resize_image_url(event.thumbnail.url, 0, 0, 260) %}
 
-          <article class="card-item">
+          <article class="card-item {{ event.language.name|lower }} {{ event.topic.name|lower }}">
             <div class="card-item__content">
               <div class="card-item__image-container">
                 <img class="card-item__image" alt=""
