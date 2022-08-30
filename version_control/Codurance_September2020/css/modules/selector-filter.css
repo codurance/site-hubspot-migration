@@ -1,0 +1,292 @@
+{% import '../utils/utils.css' as utils %}
+
+{% call utils.medium_large_and_extra_large()%}
+    .filter {
+        background-color: white;
+        border-radius: 4.7601rem;
+        box-shadow: 0px 0px 10px var(--woodsmoke--20);
+        height: 2.38rem;
+        left: 50%;
+        max-width: 800px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+{% endcall %}
+{% call utils.small() %}
+    .filter {
+        width: 100%;
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large()%}
+    .filter-toggle {
+        display: none;
+    }
+{% endcall %}
+{% call utils.small() %}
+    .filter-toggle button {
+        background: none;
+        border: none;
+        font-weight: var(--heavy-font-weight);
+        cursor: pointer;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
+    }
+{% endcall %}
+
+
+.filter-toggle-icon {
+    transform: rotate(0deg);
+    transition: var(--cta-transition);
+}
+
+.filter-toggle-icon--selected {
+    transform: rotate(135deg);
+}
+
+.filter-dropdown-container {
+    position: relative;
+    min-width: 200px;
+}
+{% call utils.medium_large_and_extra_large()%}
+    .filter-dropdown-container {
+        height: 100%;
+        width: 0;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .filter-dropdown-wrapper {
+        box-shadow: 0px 0px 6px var(--woodsmoke--20);
+        position: absolute;
+        width: 100%;
+    }
+{% endcall %}
+{% call utils.medium_large_and_extra_large()%}
+    .filter-dropdown-wrapper {
+        align-items: center;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large()%}
+    .filter-dropdown-wrapper.hidden {
+        visibility: visible;
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large()%}
+    .filter-dropdown-container:not(:last-of-type)::after {
+        background-color: var(--french-gray);
+        content: '';
+        height: 50%;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+    }
+{% endcall %}
+
+.filter-dropdown-button {
+    {{ utils.base() }}
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    transition: background-color 0.3s linear;
+    width: 100%;
+}
+{% call utils.small() %}
+    .filter-dropdown-button {
+        border: 1px solid var(--athens-gray);
+        padding: 1rem;
+    }
+{% endcall %}
+.filter-dropdown-button:hover {
+    background-color: var(--athens-gray);
+    transition: background-color 0.2s linear;
+}
+
+.filter-icon {
+    margin-right: 0.2rem;
+    pointer-events: none;
+}
+
+.filter-dropdown-icon {
+    margin-left: 0.5rem;
+    pointer-events: none;
+    transform: rotate(0deg);
+    transition: var(--cta-transition);
+}
+
+.filter-dropdown-icon--selected {
+    transform: rotate(180deg);
+}
+
+.filter-dropdown-options {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+{% call utils.medium_large_and_extra_large()%}
+    .filter-dropdown-options {
+        box-shadow: 0px 4px 14px var(--french-gray);
+        margin-left: 50%;
+        margin-top: -0.2rem;
+        position: relative;
+        transform: translateX(-50%);
+        width: intrinsic;
+        width: -moz-max-content;
+        width: -webkit-max-content;
+        width: max-content;
+        z-index: 1;
+    }
+{% endcall %}
+
+.filter-dropdown-options.hidden {
+    display: none;
+}
+
+.filter-dropdown-option {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 40px;
+    padding-top: 10px;
+    position: relative;
+    text-align: left;
+}
+.filter-dropdown-option:hover {
+    background-color: var(--athens-gray);
+}
+
+.filter-dropdown-option--selected {
+    font-weight: var(--heavy-font-weight);
+}
+
+.filter-dropdown-option-selected-icon {
+    position: absolute;
+    margin-left: 10px;
+    top: 11px;
+}
+
+.katas-applied-filters__container {
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 110px;
+    width: 100%;
+    padding-bottom: 1rem;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+{% call utils.small() %}
+    .katas-applied-filters__container {
+        padding-top: 2.5rem;
+    }
+{% endcall %}
+{% call utils.medium_large_and_extra_large()%}
+    .katas-applied-filters__container {
+        padding-top: 1rem;
+    }
+{% endcall %}
+
+.katas-applied-filters__pill {
+    {{ utils.sejima() }}
+    border: 1px solid var(--mid-gray);
+    border-radius: 50px;
+    color: var(--mid-gray);
+    cursor: default;
+    height: 100%;
+    margin: 20px;
+    padding-bottom: 0.2em;
+    padding-left: 1em;
+    padding-right: 2em;
+    padding-top: 0.2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s ease;
+    user-select: none;
+}
+
+.katas-applied-filters__pill:hover {
+    background-color: var(--mid-gray);
+    color: white;
+}
+
+.katas-applied-filters__remove-button {
+    background: none;
+    color: var(--mid-gray);
+    height: 15px;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+}
+
+.katas-applied-filters__pill:hover
+.katas-applied-filters__remove-button {
+    color: white
+}
+
+.katas-applied-filters__remove-button:hover {
+    cursor: pointer;
+}
+
+.katas-grid__container {
+    margin: 0 auto 50px;
+    max-width: var(--content-max-width);
+    width: 80%;
+}
+
+.katas-grid__gutter-sizer {
+    --grid-gutter-size: 2%;
+    width: var(--grid-gutter-size);
+}
+
+.katas-grid__card {
+    margin-bottom: 30px;
+}
+
+.katas-grid__card--large,
+.katas-grid__card--small,
+.katas-grid__sizer {
+    --card-width: 100%;
+    width: var(--card-width);
+}
+
+
+{% call utils.medium() %}
+    .katas-grid__sizer {
+        --card-width: 49%;
+    }
+{% endcall %}
+
+
+{% call utils.large_and_extra_large() %}
+
+    .katas-grid__sizer {
+        --card-width: 32%;
+    }
+
+    .katas-grid__card--large {
+        width: 100%;
+    }
+    .katas-grid__container {
+        margin: 0 auto;
+    }
+
+{% endcall %}
+    
+    
+    

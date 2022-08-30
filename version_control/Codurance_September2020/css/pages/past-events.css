@@ -76,6 +76,11 @@
   padding-top: 4em;
 }
 
+.filters-wrapper {
+  display: flex;
+  gap: 1em;
+}
+
 .card-collection {
   margin-left: auto;
   margin-right: auto;
