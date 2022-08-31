@@ -19,8 +19,10 @@
         {% for event in event_listing %}
           {% set eventThumb_desktop = resize_image_url(event.thumbnail.url, 0, 0, 375) %}
           {% set eventThumb_mobile = resize_image_url(event.thumbnail.url, 0, 0, 260) %}
-
-          <article class="card-item {{ event.language.name|lower }} {{ event.topic.name|lower }}">
+          {% set event_topic = event.topic.name|lower|replace(" ", "-") %}
+          {% set event_language = event.language.name|lower|replace(" ", "-") %}
+            
+          <article class="card-item" data-video-topic="{{ event_topic }}" data-video-language="{{ event_language }}">
             <div class="card-item__content">
               <div class="card-item__image-container">
                 <img class="card-item__image" alt=""
