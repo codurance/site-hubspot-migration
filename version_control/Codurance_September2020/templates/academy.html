@@ -1,0 +1,118 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Academy template
+-->
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  {{ require_css(get_asset_url("../css/layout.css")) }}
+  {{ require_css(get_asset_url("../css/main.css")) }}
+  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+
+  {{ require_css(get_asset_url("../css/pages/academy.css")) }}
+
+  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ standard_header_includes }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+</head>
+
+{% block body %}
+
+<section class="academy-hero">
+  {% include "./partials/header-hero.html" %}
+</section>
+  
+
+<section class="video">
+  {% module 'Video section'
+      path='../modules/Embedded Video.module'
+      label="Video section" no_wrapper=True %}
+</section>
+
+<main>
+{% boolean "gated_toggle" label='Academy campaign?', value='True', no_wrapper=True, export_to_template_context=True %}
+
+  {% if widget_data.gated_toggle.value == True %}
+    {% set headline = "Want to join the next Academy?" %}
+    {% set cta_field = "10aeb14a-b86c-4abb-bc0e-f7bfd657a074" %}
+    
+    {% if locale == "es" %}
+      {% set headline = "¿Quieres formar parte del próximo Academy Program?" %}
+      {% set cta_field = "427e8052-a509-45ea-84a4-4a057a6de071" %}
+    {% endif %}
+
+    {% module 'cta_block'
+      path='../modules/LP-cta-block.module',
+      label="Cta banner",
+      headline="{{ headline }}",
+      cta_field="{{ cta_field }}"
+    %}
+  {% else %}
+    {% set form_title = "Register your interest for the next Academy" %}
+    {% set form_subtitle = "Sign up and receive an email when The Academy is open for applications" %}
+    {% set form_id = "78b19cd9-fe39-4dd4-a981-7e389e09c3a9" %}
+
+    {% if locale == "es" %}
+      {% set form_title = "¿Te interesa informarte sobre la próxima academia?" %}
+      {% set form_subtitle = "Suscríbete y recibe un correo cuando la academia esté abierta a nuevas inscripciones" %}
+      {% set form_id = "78da2f15-733b-46ec-b34f-c4568a910845" %}
+    {% endif %}
+
+    {% module 'Form card'
+      path='../modules/Newsletter-Form-Card.module',
+      label="Form card", 
+      no_wrapper=True,
+      title="{{ form_title }}",
+      subtitle="{{ form_subtitle }}",
+      newsletter_form={ form_id: "{{ form_id }}" }
+    %}
+  {% endif %}
+
+<section class="how-it-works__wrapper lateral-spacing">
+
+  {% module 'Text and image'
+      path='../modules/Text-Image-Default.module'
+      label="How it works Text and Image" no_wrapper=True %}
+
+  {% module 'How does it works'
+    path='../modules/How-Does-It-Work.module'
+    label="How does it work" no_wrapper=True %}
+
+</section>
+
+<section class="skills lateral-spacing">
+  {% module 'Skills Text and image'
+      path='../modules/Text-Image-Default.module'
+      label="Skills Text and Image" no_wrapper=True %}
+
+  <div class="skills__description">
+      {% module 'Expected skills' path='@hubspot/rich_text' label="Expected Skills list" no_wrapper=True %}
+      {% module 'Desirabel skills' path='@hubspot/rich_text' label="Desirable Skills list" no_wrapper=True %}
+  </div>
+</section>
+
+<section class="academy-testimonials lateral-spacing">
+  <div class="academy-testimonials__container">
+    {% module 'Testimonials Text Intro' path='@hubspot/rich_text' label="Testimonials Text Intro" no_wrapper=True %}
+
+    {% module 'Academy Testimonials'
+      path='../modules/Landing Page Modules/LP-testimonial-slider.module'
+      label="Academy Testimonials" no_wrapper=True %}
+  </div>
+</section>
+
+<section class="banner-cta lateral-spacing">
+  {% module 'Banner link'
+      path='../modules/Banner-Link.module'
+      label="Banner Link" no_wrapper=True %}
+</section>
+
+</main>
+{% endblock body %}

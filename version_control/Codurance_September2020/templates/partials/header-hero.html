@@ -15,6 +15,12 @@
                 ",  
                 path='@hubspot/rich_text' 
             %}
+
+            {% module 'button' 
+                path='../../modules/Button.module',
+                label="Hero CTA",
+                no_wrapper=True
+            %}
         </div>
         <div class="header-hero__image">
             {% module 'linked_image',
