@@ -1,6 +1,6 @@
 {{ require_css(get_asset_url("../css/modules/selector-filter.css")) }} 
 
-{% set items = hubdb_table_rows("4689612") %}
+{% set items = hubdb_table_rows("videos") %}
 
 {% set topics = [] %}
 {% set languages = [] %}
@@ -14,20 +14,21 @@
 {% set languages = languages|unique %}
 
 <div class="filter">
-    <div class="filter-toggle">
-        <button data-filter-toggle>
-            <i class="filter-toggle-icon las la-plus" data-filter-toggle-icon></i>
+    <div class="mobile-filter-toggle">
+        <button class="mobile-filter-toggle__button">
+            Filter
+            <i class="mobile-filter-toggle__icon las la-plus"></i>
         </button>
     </div>
-    <div class="filter-dropdown-wrapper hidden" data-filters-wrapper>
+    <div class="filter-dropdown-wrapper hidden">
         <div class="filter-dropdown-container">
-            <button class="filter-dropdown-button" data-dropdown-button="topics">
+            <button class="filter-dropdown-button" data-dropdown-button="topic">
             <i class="filter-icon las la-layer-group"></i>
                 Topics
-            <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="topics">
+            <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="topic">
             </i>
             </button>
-            <div class="filter-dropdown-options hidden" data-dropdown-container="topics">
+            <div class="filter-dropdown-options hidden" data-dropdown-options="topic">
             {% for topic in topics %}
             <button class="filter-dropdown-option" data-topic-option="{{topic}}">
                 {{topic}}
@@ -38,13 +39,13 @@
             </div>
         </div>
         <div class="filter-dropdown-container">
-            <button class="filter-dropdown-button" data-dropdown-button="languages">
+            <button class="filter-dropdown-button" data-dropdown-button="language">
             <i class="filter-icon las la-language"></i>
                 Languages
-            <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="languages">
+            <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="language">
             </i>
             </button>
-            <div class="filter-dropdown-options hidden" data-dropdown-container="languages">
+            <div class="filter-dropdown-options hidden" data-dropdown-options="language">
             {% for language in languages|sort(False,False) %}
             <button class="filter-dropdown-option" data-language-option="{{language}}">
                 {{language}}
