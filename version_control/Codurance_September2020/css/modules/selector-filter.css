@@ -19,12 +19,12 @@
 {% endcall %}
 
 {% call utils.medium_large_and_extra_large()%}
-    .filter-toggle {
+    .mobile-filter-toggle {
         display: none;
     }
 {% endcall %}
 {% call utils.small() %}
-    .filter-toggle button {
+    .mobile-filter-toggle button {
         background: none;
         border: none;
         font-weight: var(--heavy-font-weight);
@@ -37,12 +37,12 @@
 {% endcall %}
 
 
-.filter-toggle-icon {
+.mobile-filter-toggle__icon {
     transform: rotate(0deg);
     transition: var(--cta-transition);
 }
 
-.filter-toggle-icon--selected {
+.mobile-filter-toggle__icon--selected {
     transform: rotate(135deg);
 }
 
