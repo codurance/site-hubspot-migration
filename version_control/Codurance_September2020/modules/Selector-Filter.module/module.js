@@ -32,8 +32,7 @@ const get = (entity, value, type) => {
         dropdown_icon: `[data-dropdown-icon="${value}"]`,
         option: `[data-${type}-option="${value}"]`,
         selected_icon: `[data-${type}-option-selected="${value}"]`,
-        no_clients_message: '[data-no-clients-message]',
-        grid_container: '[data-grid-container]'
+        no_clients_message: '[data-no-clients-message]'
     }
 
     return document.querySelector(selectors[entity]);
@@ -256,12 +255,12 @@ const byTopic = video => {
         topicFilters.some(filter => videoTopics.includes(filter));
 }
 
-const calculateVisibleClients = _ => {
+const calculateVisibleVideos = _ => {
     return videos.all.filter(byTopic).filter(byLanguage);
 }
 
 const refilter = _ => {
-    videos.visible = calculateVisibleClients();
+    videos.visible = calculateVisibleVideos();
     videos.hidden = arrayDifference(videos.all, videos.visible);
 
     videos.visible.forEach(show);
@@ -271,11 +270,11 @@ const refilter = _ => {
 const updateNoClientsMessage = _ => {
 const noClientsMessage = get('no_clients_message');
 
-if (clients.visible.length > 0) {
-    hide(noClientsMessage);
-} else {
-    show(noClientsMessage);
-}
+    if (clients.visible.length > 0) {
+        hide(noClientsMessage);
+    } else {
+        show(noClientsMessage);
+    }
 }
 
 const update = _ => {
