@@ -66,14 +66,14 @@ element.classList.remove('hidden');
 }
 
 const toggleShowHideFilters = _ => {
-const filtersWrapper = get('filters_wrapper');
-if (filtersWrapper.classList.contains('hidden')) {
-    show(filtersWrapper);
-    get('mobile_filter_toggle_icon').classList.add('mobile-filter-toggle__icon--selected');
-} else {
-    hide(filtersWrapper);
-    get('mobile_filter_toggle_icon').classList.remove('mobile-filter-toggle__icon--selected');
-}
+    const filtersWrapper = get('filters_wrapper');
+    if (filtersWrapper.classList.contains('hidden')) {
+        show(filtersWrapper);
+        get('mobile_filter_toggle_icon').classList.add('mobile-filter-toggle__icon--selected');
+    } else {
+        hide(filtersWrapper);
+        get('mobile_filter_toggle_icon').classList.remove('mobile-filter-toggle__icon--selected');
+    }
 }
 
 const addFilterToggleListener = _ => {
@@ -122,15 +122,15 @@ const isDropdownButton = element => {
 }
 
 const optionTypeFrom = element => {
-const dataAttributes = Object.keys(element.dataset);
-const optionMatcher = new RegExp('^(topic|language)(?=Option)');
-for (let i = 0; i < dataAttributes.length; i++) {
-    const key = dataAttributes[i];
-    const match = key.match(optionMatcher);
-    if (match) {
-    return match[0];
+    const dataAttributes = Object.keys(element.dataset);
+    const optionMatcher = new RegExp('^(topic|language)(?=Option)');
+    for (let i = 0; i < dataAttributes.length; i++) {
+        const key = dataAttributes[i];
+        const match = key.match(optionMatcher);
+        if (match) {
+        return match[0];
+        }
     }
-}
 }
 
 const addDropdownListeners = _ => {
