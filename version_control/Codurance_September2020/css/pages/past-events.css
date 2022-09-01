@@ -373,13 +373,13 @@
   }
 {% endcall %}
 
-.card-collection-results__no-results-message {
+.no-results-message {
   transition: opacity 
     var(--fading-animation-duration) 
     ease-in-out;
 }
 
-.card-collection-results__no-results-message > p {
+.no-results-message > p {
   color: white;
   {{ utils.freed() }}
   max-width: var(--freed-max-width);
