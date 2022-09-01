@@ -53,8 +53,8 @@ const filterOptions = type => {
 }
 
 const setFilterOptions = _ => {
-filters.types.forEach(type =>
-    filters.all[type] = filterOptions(type));
+    filters.types.forEach(type =>
+        filters.all[type] = filterOptions(type));
 }
 
 const hide = element => {
@@ -77,8 +77,8 @@ const toggleShowHideFilters = _ => {
 }
 
 const addFilterToggleListener = _ => {
-const filterToggleButton = get('mobile_filter_toggle');
-filterToggleButton.addEventListener('click', toggleShowHideFilters)
+    const filterToggleButton = get('mobile_filter_toggle');
+    filterToggleButton.addEventListener('click', toggleShowHideFilters)
 }
 
 const showDropdown = container => {
@@ -144,72 +144,73 @@ const addDropdownListeners = _ => {
     });
 }
 
-/*const markOptionSelected = (type, filter) => {
+const markOptionSelected = (type, filter) => {
     const selectedIcon = get('selected_icon', filter, type);
     const option = get('option', filter, type);
     show(selectedIcon);
-    option.classList.add('clients__filter-dropdown-option--selected');
+    option.classList.add('filter-dropdown-option--selected');
 }
 
 const markOptionDeselected = (type, filter) => {
-const selectedIcon = get('selected_icon', filter, type);
-const option = get('option', filter, type);
-hide(selectedIcon);
-option.classList.remove('clients__filter-dropdown-option--selected')
+    const selectedIcon = get('selected_icon', filter, type);
+    const option = get('option', filter, type);
+    hide(selectedIcon);
+    option.classList.remove('filter-dropdown-option--selected')
 }
+
 
 const updateAppliedFilters = _ => {
-Object.keys(filters.applied).forEach(type => {
-    const all = filters.all[type];
-    const applied = filters.applied[type];
-    const unapplied = arrayDifference(all, applied);
+    Object.keys(filters.applied).forEach(type => {
+        const all = filters.all[type];
+        const applied = filters.applied[type];
+        const unapplied = arrayDifference(all, applied);
 
-    applied.forEach(filter => {
-    showAppliedFilter(type, filter);
-    markOptionSelected(type, filter);
+        applied.forEach(filter => {
+            // showAppliedFilter(type, filter);
+            markOptionSelected(type, filter);
+        });
+
+        unapplied.forEach(filter => {
+            // hideUnappliedFilter(type, filter);
+            markOptionDeselected(type, filter);
+        });
     });
-
-    unapplied.forEach(filter => {
-    hideUnappliedFilter(type, filter);
-    markOptionDeselected(type, filter);
-    });
-});
 }
 
-const onlyUnique = (value, index, self) => {
-return self.indexOf(value) === index;
-}
 
-const flatten = array => {
-return Array.prototype.concat.apply([], array);
-}
+// const onlyUnique = (value, index, self) => {
+//     return self.indexOf(value) === index;
+// }
+
+// const flatten = array => {
+//     return Array.prototype.concat.apply([], array);
+// }
 
 const arrayDifference = (a, b) => {
-return a.filter(item => !b.includes(item))
+    return a.filter(item => !b.includes(item))
 }
 
-const getClientData = (client, type) => {
-return client.dataset[type].split(',')
-}
+// const getClientData = (client, type) => {
+//     return client.dataset[type].split(',')
+// }
 
-const filtersAvailableFor = type => {
-const opts = {
-    topic: {
-    client_dataset_name: 'clientIndustry',
-    remaining: clients => clients.filter(byTechnology).filter(byService)
-    },
-    language: {
-    client_dataset_name: 'clientTechnology',
-    remaining: clients => clients.filter(byIndustry).filter(byService)
-    }  
-};
+// const filtersAvailableFor = type => {
+//     const opts = {
+//         topic: {
+//             client_dataset_name: 'clientIndustry',
+//             remaining: videos => videos.filter(byTopic).filter(byLanguage)
+//         },
+//         language: {
+//             client_dataset_name: 'clientTechnology',
+//             remaining: videos => videos.filter(byIndustry).filter(byLanguage)
+//         }  
+//     };
 
+//     const remainingClients = opts[type].remaining(videos.all);
 
-const remainingClients = opts[type].remaining(clients.all);
-
-return remainingClients.map(client =>
-    getClientData(client, opts[type].client_dataset_name));
-}
+//     return remainingClients.map(client =>
+//         getClientData(client, opts[type].client_dataset_name));
+// }
 
 const disableButton = button => {
 button.setAttribute('disabled', 'true');
@@ -219,47 +220,47 @@ const enableButton = button => {
 button.removeAttribute('disabled');
 }
 
-const updateAvailableFilters = _ => {
-filters.types.forEach(type => {
-    const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(element => element.trim().length > 0);
-    const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
-    availableFilters.forEach(filter => enableButton(get('option', filter, type)));
-    unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
-});
+// const updateAvailableFilters = _ => {
+//     filters.types.forEach(type => {
+//         const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(element => element.trim().length > 0);
+//         const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
+//         availableFilters.forEach(filter => enableButton(get('option', filter, type)));
+//         unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
+//     });
+// }
+
+// const byIndustry = client => {
+//     let industryFilters = filters.applied.topic;
+//     let clientIndustry = client.dataset.clientIndustry;
+//     return industryFilters.length === 0 ||
+//         industryFilters.includes(clientIndustry);
+// }
+
+const byTopic = client => {
+    let technologyFilters = filters.applied.language;
+    const clientTechnologies = client.dataset.clientTechnology.split(',');
+    return technologyFilters.length === 0 ||
+        technologyFilters.some(filter => clientTechnologies.includes(filter));
 }
 
-const byIndustry = client => {
-let industryFilters = filters.applied.topic;
-let clientIndustry = client.dataset.clientIndustry;
-return industryFilters.length === 0 ||
-    industryFilters.includes(clientIndustry);
-}
 
-const byTechnology = client => {
-let technologyFilters = filters.applied.language;
-const clientTechnologies = client.dataset.clientTechnology.split(',');
-return technologyFilters.length === 0 ||
-    technologyFilters.some(filter => clientTechnologies.includes(filter));
-}
-
-
-const byService = client => {
-let serviceFilters = filters.applied.service;
-const clientServices = client.dataset.clientService.split(',');
-return serviceFilters.length === 0 ||
-    serviceFilters.some(filter => clientServices.includes(filter));
+const byLanguage = client => {
+    let serviceFilters = filters.applied.service;
+    const clientServices = client.dataset.clientService.split(',');
+    return serviceFilters.length === 0 ||
+        serviceFilters.some(filter => clientServices.includes(filter));
 }
 
 const calculateVisibleClients = _ => {
-return clients.all.filter(byIndustry).filter(byTechnology).filter(byService);
+return clients.all.filter(byIndustry).filter(byTopic).filter(byLanguage);
 }
 
 const refilter = _ => {
-clients.visible = calculateVisibleClients();
-clients.hidden = arrayDifference(clients.all, clients.visible);
+    clients.visible = calculateVisibleClients();
+    clients.hidden = arrayDifference(clients.all, clients.visible);
 
-clients.visible.forEach(show);
-clients.hidden.forEach(hide);
+    clients.visible.forEach(show);
+    clients.hidden.forEach(hide);
 }
 
 const updateNoClientsMessage = _ => {
@@ -273,55 +274,57 @@ if (clients.visible.length > 0) {
 }
 
 const update = _ => {
-updateAppliedFilters();
-refilter();
-updateAvailableFilters();
-updateNoClientsMessage();
+    updateAppliedFilters();
+    // refilter();
+    // updateAvailableFilters();
+    // updateNoClientsMessage();
 }
 
 const applyFilter = (type, value) => {
-filters.applied[type].push(value);
-update();
+    filters.applied[type].push(value);
+    update();
 }
 
-const filterAlreadyApplied = (type, value) => {
-const appliedFiltersForType = filters.applied[type];
-return appliedFiltersForType.includes(value);
+
+const addFilterOptionListeners = _ => {
+    filters.types.forEach(type => {
+        getAll('options', type).forEach( button => {
+            addFilterListener(button, type)
+        });
+    });
 }
 
-const filterSelected = (type, value) => {
-    filterAlreadyApplied(type, value) ?
-        removeFilter(type, value) :
-        applyFilter(type, value);
-}
 
 const addFilterListener = (button, type) => {
     button.addEventListener('click', _ =>
         filterSelected(type, button.dataset[`${type}Option`]));
 }
 
-const addFilterOptionListeners = _ => {
-filters.types.forEach(type => {
-    getAll('options', type).forEach(button => {
-    addFilterListener(button, type);
-    });
-});
+const filterSelected = (type, value) => {
+    filterAlreadyApplied(type, value) ? removeFilter(type, value) 
+                                     : applyFilter(type, value);
 }
 
-const removeItemFromArray = (array, value) => {
-const removableIndex = array.indexOf(value);
-if (removableIndex >= 0) {
-    array.splice(removableIndex, 1);
+const filterAlreadyApplied = (type, value) => {
+    const appliedFiltersForType = filters.applied[type];
+    return appliedFiltersForType.includes(value);
 }
+
+
+const removeItemFromArray = (array, value) => {
+    const removableIndex = array.indexOf(value);
+    if (removableIndex >= 0) {
+        array.splice(removableIndex, 1);
+    }
 }
 
 const removeFilter = (type, value) => {
-removeItemFromArray(filters.applied[type], value)
-update();
+    removeItemFromArray(filters.applied[type], value)
+    update();
 }
 
 const capitalise = string => {
-return string.charAt(0).toUpperCase() + string.substring(1);
+    return string.charAt(0).toUpperCase() + string.substring(1);
 }
 
 const addRemoveFilterListener = (type, button) => {
@@ -329,12 +332,12 @@ const addRemoveFilterListener = (type, button) => {
         const value = button.dataset[`remove${capitalise(type)}Filter`];
         removeFilter(type, value);
     });
-}*/
+}
 
 const addListeners = _ => {
     addFilterToggleListener();
     addDropdownListeners();
-    //addFilterOptionListeners();
+    addFilterOptionListeners();
 }
 
 const initialiseFilters = _ => {
