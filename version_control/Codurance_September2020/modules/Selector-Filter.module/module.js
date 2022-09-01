@@ -58,11 +58,11 @@ const setFilterOptions = _ => {
 }
 
 const hide = element => {
-element.classList.add('hidden');
+    element.classList.add('hidden');
 }
 
 const show = element => {
-element.classList.remove('hidden');
+    element.classList.remove('hidden');
 }
 
 const toggleShowHideFilters = _ => {
@@ -166,101 +166,106 @@ const updateAppliedFilters = _ => {
         const unapplied = arrayDifference(all, applied);
 
         applied.forEach(filter => {
-            // showAppliedFilter(type, filter);
             markOptionSelected(type, filter);
         });
 
         unapplied.forEach(filter => {
-            // hideUnappliedFilter(type, filter);
             markOptionDeselected(type, filter);
         });
     });
 }
 
 
-// const onlyUnique = (value, index, self) => {
-//     return self.indexOf(value) === index;
-// }
+const onlyUnique = (value, index, self) => {
+    // console.log({value, index, self});
 
-// const flatten = array => {
-//     return Array.prototype.concat.apply([], array);
-// }
+    return self.indexOf(value) === index;
+}
 
 const arrayDifference = (a, b) => {
     return a.filter(item => !b.includes(item))
 }
 
-// const getClientData = (client, type) => {
-//     return client.dataset[type].split(',')
-// }
+const flatten = array => {
+    return Array.prototype.concat.apply([], array);
+}
 
-// const filtersAvailableFor = type => {
-//     const opts = {
-//         topic: {
-//             client_dataset_name: 'clientIndustry',
-//             remaining: videos => videos.filter(byTopic).filter(byLanguage)
-//         },
-//         language: {
-//             client_dataset_name: 'clientTechnology',
-//             remaining: videos => videos.filter(byIndustry).filter(byLanguage)
-//         }  
-//     };
+const getClientData = (client, type) => {
+    return client.dataset[type];
+}
 
-//     const remainingClients = opts[type].remaining(videos.all);
+const filtersAvailableFor = type => {
+    const opts = {
+        topic: {
+            video_dataset_name: 'videoTopic',
+            remaining: videos => videos.filter(byLanguage)
+        },
+        language: {
+            video_dataset_name: 'videoLanguage',
+            remaining: videos => videos.filter(byTopic)
+        }  
+    };
 
-//     return remainingClients.map(client =>
-//         getClientData(client, opts[type].client_dataset_name));
-// }
+    const remainingVideos = opts[type].remaining(videos.all);
+
+
+    return remainingVideos.map(video => {    
+        const videoType = opts[type].video_dataset_name;
+        return video.dataset[videoType];
+        }
+    );
+}
 
 const disableButton = button => {
-button.setAttribute('disabled', 'true');
+    button.setAttribute('disabled', 'true');
 }
 
 const enableButton = button => {
-button.removeAttribute('disabled');
+    button.removeAttribute('disabled');
 }
 
-// const updateAvailableFilters = _ => {
-//     filters.types.forEach(type => {
-//         const availableFilters = flatten(filtersAvailableFor(type)).filter(onlyUnique).filter(element => element.trim().length > 0);
-//         const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
-//         availableFilters.forEach(filter => enableButton(get('option', filter, type)));
-//         unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
-//     });
-// }
+const updateAvailableFilters = _ => {
+    filters.types.forEach(type => {
 
-// const byIndustry = client => {
-//     let industryFilters = filters.applied.topic;
-//     let clientIndustry = client.dataset.clientIndustry;
-//     return industryFilters.length === 0 ||
-//         industryFilters.includes(clientIndustry);
-// }
+        const availableFilters = filtersAvailableFor(type)
+                                            .flat(Infinity)
+                                            .filter(onlyUnique) 
+                                            .filter(element => element.trim().length > 0);
 
-const byTopic = client => {
-    let technologyFilters = filters.applied.language;
-    const clientTechnologies = client.dataset.clientTechnology.split(',');
-    return technologyFilters.length === 0 ||
-        technologyFilters.some(filter => clientTechnologies.includes(filter));
+        const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
+
+
+        availableFilters.forEach(filter => enableButton(get('option', filter, type)));
+        unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
+    });
 }
 
 
-const byLanguage = client => {
-    let serviceFilters = filters.applied.service;
-    const clientServices = client.dataset.clientService.split(',');
-    return serviceFilters.length === 0 ||
-        serviceFilters.some(filter => clientServices.includes(filter));
+const byLanguage = video => {
+    let languageFilters = filters.applied.language;
+    const videoLanguages = video.dataset.videoLanguage;
+    return languageFilters.length === 0 ||
+        languageFilters.some(filter => videoLanguages.includes(filter));
+}
+
+
+const byTopic = video => {
+    let topicFilters = filters.applied.topic;
+    const videoTopics = video.dataset.videoTopic;
+    return topicFilters.length === 0 ||
+        topicFilters.some(filter => videoTopics.includes(filter));
 }
 
 const calculateVisibleClients = _ => {
-return clients.all.filter(byIndustry).filter(byTopic).filter(byLanguage);
+    return videos.all.filter(byTopic).filter(byLanguage);
 }
 
 const refilter = _ => {
-    clients.visible = calculateVisibleClients();
-    clients.hidden = arrayDifference(clients.all, clients.visible);
+    videos.visible = calculateVisibleClients();
+    videos.hidden = arrayDifference(videos.all, videos.visible);
 
-    clients.visible.forEach(show);
-    clients.hidden.forEach(hide);
+    videos.visible.forEach(show);
+    videos.hidden.forEach(hide);
 }
 
 const updateNoClientsMessage = _ => {
@@ -275,8 +280,8 @@ if (clients.visible.length > 0) {
 
 const update = _ => {
     updateAppliedFilters();
-    // refilter();
-    // updateAvailableFilters();
+    refilter();
+    updateAvailableFilters();
     // updateNoClientsMessage();
 }
 
