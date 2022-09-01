@@ -81,6 +81,12 @@
   gap: 1em;
 }
 
+{% call utils.small() %}
+  .filters-wrapper {
+    flex-direction: column;
+  }
+{% endcall %}
+
 .card-collection {
   margin-left: auto;
   margin-right: auto;

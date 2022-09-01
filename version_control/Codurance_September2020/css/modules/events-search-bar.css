@@ -20,6 +20,12 @@
   max-width: 100%;
 }
 
+{% call utils.small() %}
+  .events-search-bar {
+    margin-bottom: 1em;
+  }
+{% endcall %}
+
 .events-search-bar::after {
   font-family: 'Line Awesome Free';
   font-weight: 900;

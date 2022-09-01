@@ -1,5 +1,10 @@
 {% import '../utils/utils.css' as utils %}
 
+.filter {
+    z-index: 1;
+}
+
+
 {% call utils.medium_large_and_extra_large()%}
     .filter {
         background-color: white;
@@ -23,8 +28,15 @@
         display: none;
     }
 {% endcall %}
+
+
+.mobile-filter-toggle__button {
+    color: white;
+}
+
 {% call utils.small() %}
-    .mobile-filter-toggle button {
+
+    .mobile-filter-toggle__button {
         background: none;
         border: none;
         font-weight: var(--heavy-font-weight);
@@ -50,6 +62,7 @@
     position: relative;
     min-width: 200px;
 }
+
 {% call utils.medium_large_and_extra_large()%}
     .filter-dropdown-container {
         height: 100%;
