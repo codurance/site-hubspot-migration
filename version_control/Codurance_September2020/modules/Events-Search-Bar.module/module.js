@@ -22,7 +22,7 @@ const get = (entity, value, type) => {
         dropdown_icon: `[data-dropdown-icon="${value}"]`,
         option: `[data-${type}-option="${value}"]`,
         selected_icon: `[data-${type}-option-selected="${value}"]`,
-        no_clients_message: '.no-results-message',
+        no_results_message: '.no-results-message',
         search_bar_form: '.events-search-bar',
         search_bar_input: '.events-search-bar__input',
         search_bar_reset_button: '.events-search-bar__reset-button'
@@ -250,7 +250,6 @@ const byTopic = video => {
 
 const byTextInput = video => {
     const inputText = get("search_bar_input").value;
-    console.log(inputText);
 
     return isSearchTextInEvent(video, inputText);
 }
@@ -268,13 +267,13 @@ const refilter = _ => {
     videos.hidden.forEach(hideWithAnimation);
 }
 
-const updateNoClientsMessage = _ => {
-    const noClientsMessage = get('no_clients_message');
+const updateNoResultsMessage = _ => {
+    const noResultsMessage = get('no_results_message');
 
     if (videos.visible.length > 0) {
-        hideWithAnimation(noClientsMessage);
+        hideWithAnimation(noResultsMessage);
     } else {
-        showWithAnimation(noClientsMessage);
+        showWithAnimation(noResultsMessage);
     }
 }
 
@@ -282,11 +281,15 @@ const update = _ => {
     refilter();
     updateAppliedFilters();
     updateAvailableFilters();
-    updateNoClientsMessage();
+    updateNoResultsMessage();
 }
 
 const applyFilter = (type, value) => {
     filters.applied[type].push(value);
+
+    togglePromotedVideos();
+    toggleSearchResultsTitle();
+    
     update();
 }
 
@@ -324,7 +327,11 @@ const removeItemFromArray = (array, value) => {
 }
 
 const removeFilter = (type, value) => {
-    removeItemFromArray(filters.applied[type], value)
+    removeItemFromArray(filters.applied[type], value);
+
+    togglePromotedVideos();
+    toggleSearchResultsTitle();
+
     update();
 }
 
@@ -371,7 +378,7 @@ function dismissEnterKey(keypressEvent) {
 function filterEventsOnInputValueChange(inputEvent) {
     const searchBarText = inputEvent.target.value;
  
-    togglePromotedEvents(searchBarText);
+    togglePromotedVideos(searchBarText);
     toggleSearchResultsTitle(searchBarText);       
     toggleSearchBarResetButton(searchBarText);
     
@@ -381,21 +388,22 @@ function filterEventsOnInputValueChange(inputEvent) {
 function filterEventsOnResetButtonClick() {
     get("search_bar_input").value = "";
     
-    togglePromotedEvents();
+    togglePromotedVideos();
     toggleSearchResultsTitle();    
     hideSearchBarResetButton();
 
     update();
 }
 
-function togglePromotedEvents(searchBarText) {
-    const promotedEventsCollection = document.querySelector(".promoted-videos");
+function togglePromotedVideos(searchBarText) {
+    const promotedVideos = document.querySelector(".promoted-videos");
+    const isSearchBarEmpty = searchBarText === "" || searchBarText === undefined;
+    const isDropDownEmpty = filters.applied.language.length === 0 && filters.applied.topic.length === 0;
 
-    if(searchBarText == "" || searchBarText == undefined) {
-        showWithAnimation(promotedEventsCollection);
-    }
-    else {
-        hideWithAnimation(promotedEventsCollection);
+    if(isDropDownEmpty && isSearchBarEmpty) {
+        showWithAnimation(promotedVideos);
+    }else {
+        hideWithAnimation(promotedVideos);
     }           
 }
 
@@ -405,7 +413,7 @@ function toggleSearchResultsTitle(searchBarText) {
     const searchResultsTitle = 
         document.querySelector(".videos .card-collection__search-results-title");
 
-    if (searchBarText == "" || searchBarText == undefined) {
+    if (searchBarText === "" || searchBarText === null) {
         setTimeout(
             hideSearchResultsTitle, 
             getFadingAnimationDuration(), 
