@@ -1,0 +1,105 @@
+
+{% import '../utils/utils.css' as utils %}
+
+.header-insights {
+    {{ utils.slate_to_woodsmoke() }}
+    overflow: hidden;
+    color: white;
+}
+
+.header-insights__container {
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    padding-bottom: 4em;
+}
+
+.header-insights__text {
+    padding-left: 1em;
+    margin-top: 3em;
+    max-width: 40ch;
+}
+
+.header-insights__text h1 { 
+    text-transform: uppercase;
+    font-weight: var(--heavy-font-weight);
+}
+
+
+.header-insights__text p {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+    margin-top: .4em;
+}
+
+.header-insights__image {
+    transform: translate(15%, 5%);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .header-insights__container {
+        flex-direction: row;
+    }
+   
+
+    .header-insights__image {
+        transform: scale(1.1) translate(10%, 5%);
+        align-self: start;
+    }
+
+    .header-insights__text {
+        align-self: center;
+    }
+
+    .header-insights__text h1 {
+        {{ utils.freed() }}
+        font-weight: var(--light-font-weight);
+    }
+
+
+    .header-insights__text p {
+        {{ utils.eames() }}
+        font-weight: var(--middle-font-weight);
+    }
+
+{% endcall %}
+
+
+
+{% call utils.large() %}
+    .header-insights__text {
+        padding-left: 2.5em;
+    }
+{% endcall %}
+
+
+{% call utils.extra_large() %}
+    .header-insights__container{
+        overflow: initial;
+    }
+
+    .header-insights__text {
+        padding-left: 0;
+    }
+{% endcall %}
+
+
+
+{% call utils.small() %}
+    .header-insights__container {
+        padding-bottom: 2em;
+    }
+    .header-insights__text {
+        margin-top: -2.4em;
+    }
+
+    .header-insights__text h1 { 
+        font-weight: var(--middle-font-weight);
+    }
+
+    .header-insights__image {
+      transform: scale(1) translate(20%, 0%);   
+    }
+{% endcall %}
+
