@@ -3,7 +3,7 @@
 {{ require_css(get_asset_url("../../css/card-slider.css")) }}
 
 {% if module.hubdb_table %}
-  {% set upcomingEventsFilter = ("&orderBy=datetime" + "&datetime__gt=" + local_dt|unixtimestamp + "&limit=4") %}
+  {% set upcomingEventsFilter = ("&orderBy=datetime" + "&datetime__gt=" + local_dt|unixtimestamp + "&limit=12") %}
   {% set upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
 
   {% if upcomingEvents|length > 0 %}
