@@ -76,6 +76,17 @@
   padding-top: 4em;
 }
 
+.filters-wrapper {
+  display: flex;
+  gap: 1em;
+}
+
+{% call utils.small() %}
+  .filters-wrapper {
+    flex-direction: column;
+  }
+{% endcall %}
+
 .card-collection {
   margin-left: auto;
   margin-right: auto;
@@ -362,13 +373,13 @@
   }
 {% endcall %}
 
-.card-collection-results__no-results-message {
+.no-results-message {
   transition: opacity 
     var(--fading-animation-duration) 
     ease-in-out;
 }
 
-.card-collection-results__no-results-message > p {
+.no-results-message > p {
   color: white;
   {{ utils.freed() }}
   max-width: var(--freed-max-width);

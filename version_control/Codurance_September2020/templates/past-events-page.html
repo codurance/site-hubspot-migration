@@ -39,11 +39,6 @@
           subheader='Have a look at all previous events hosted by Codurance'
           no_wrapper=True
         %}
-
-        {% module 'Events-Search-Bar' 
-          path='../modules/Events-Search-Bar.module',
-          no_wrapper=True
-        %}
       </div>
       
       {% module 'header_image'
@@ -61,6 +56,18 @@
     </header>
     
     <main class="main-container responsive-page-width lateral-spacing">
+      <div class="filters-wrapper">
+        {% module 'Events-Search-Bar' 
+          path='../modules/Events-Search-Bar.module',
+          no_wrapper=True
+        %}
+
+        {#{% module 'Selector-Filter' 
+          path='../modules/Selector-Filter.module',
+          no_wrapper=True
+        %}#}
+      </div>
+      
       {% module 'past_events'
         label="Past Events Sections",
         path='../modules/Past-Events-Listing.module' 

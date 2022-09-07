@@ -1,6 +1,15 @@
-"use strict";
-
-/* BEGIN SELECTOR FILTER MODULE */
+let filters = {
+    types: [ 'topic', 'language' ],
+    all: {
+      topic: [],
+      language: []
+    },
+    applied: {
+      topic: [],
+      language: []
+    }
+};
+  
 const getAll = (entity, type) => {
     const selectors = {
         videos: '.videos .card-item',
@@ -13,6 +22,7 @@ const getAll = (entity, type) => {
     )
 }
 
+
 const get = (entity, value, type) => {
     const selectors = {
         mobile_filter_toggle: '.mobile-filter-toggle__button',
@@ -22,10 +32,7 @@ const get = (entity, value, type) => {
         dropdown_icon: `[data-dropdown-icon="${value}"]`,
         option: `[data-${type}-option="${value}"]`,
         selected_icon: `[data-${type}-option-selected="${value}"]`,
-        no_results_message: '.no-results-message',
-        search_bar_form: '.events-search-bar',
-        search_bar_input: '.events-search-bar__input',
-        search_bar_reset_button: '.events-search-bar__reset-button'
+        no_clients_message: '[data-no-clients-message]'
     }
 
     return document.querySelector(selectors[entity]);
@@ -39,18 +46,7 @@ let videos = {
     hidden: []
 }
 
-let filters = {
-    types: [ 'topic', 'language' ],
-    all: {
-      topic: [],
-      language: []
-    },
-    applied: {
-      topic: [],
-      language: []
-    }
-};
-  
+
 const filterOptions = type => {
     return getAll('options', type).map(option => option.dataset[`${type}Option`]).filter( x => x.length > 0);
 }
@@ -127,12 +123,11 @@ const isDropdownButton = element => {
 const optionTypeFrom = element => {
     const dataAttributes = Object.keys(element.dataset);
     const optionMatcher = new RegExp('^(topic|language)(?=Option)');
-
     for (let i = 0; i < dataAttributes.length; i++) {
         const key = dataAttributes[i];
         const match = key.match(optionMatcher);
         if (match) {
-            return match[0];
+        return match[0];
         }
     }
 }
@@ -179,12 +174,23 @@ const updateAppliedFilters = _ => {
     });
 }
 
+
 const onlyUnique = (value, index, self) => {
+    // console.log({value, index, self});
+
     return self.indexOf(value) === index;
 }
 
 const arrayDifference = (a, b) => {
     return a.filter(item => !b.includes(item))
+}
+
+const flatten = array => {
+    return Array.prototype.concat.apply([], array);
+}
+
+const getClientData = (client, type) => {
+    return client.dataset[type];
 }
 
 const filtersAvailableFor = type => {
@@ -200,6 +206,7 @@ const filtersAvailableFor = type => {
     };
 
     const remainingVideos = opts[type].remaining(videos.all);
+
 
     return remainingVideos.map(video => {    
         const videoType = opts[type].video_dataset_name;
@@ -248,48 +255,37 @@ const byTopic = video => {
         topicFilters.some(filter => videoTopics.includes(filter));
 }
 
-const byTextInput = video => {
-    const inputText = get("search_bar_input").value;
-
-    return isSearchTextInEvent(video, inputText);
-}
-
 const calculateVisibleVideos = _ => {
-    return videos.all.filter(byTopic).filter(byLanguage).filter(byTextInput);
+    return videos.all.filter(byTopic).filter(byLanguage);
 }
 
 const refilter = _ => {
-
     videos.visible = calculateVisibleVideos();
     videos.hidden = arrayDifference(videos.all, videos.visible);
 
-    videos.visible.forEach(showWithAnimation);
-    videos.hidden.forEach(hideWithAnimation);
+    videos.visible.forEach(show);
+    videos.hidden.forEach(hide);
 }
 
-const updateNoResultsMessage = _ => {
-    const noResultsMessage = get('no_results_message');
+const updateNoClientsMessage = _ => {
+const noClientsMessage = get('no_clients_message');
 
-    if (videos.visible.length > 0) {
-        hideWithAnimation(noResultsMessage);
+    if (clients.visible.length > 0) {
+        hide(noClientsMessage);
     } else {
-        showWithAnimation(noResultsMessage);
+        show(noClientsMessage);
     }
 }
 
 const update = _ => {
-    refilter();
     updateAppliedFilters();
+    refilter();
     updateAvailableFilters();
-    updateNoResultsMessage();
+    // updateNoClientsMessage();
 }
 
 const applyFilter = (type, value) => {
     filters.applied[type].push(value);
-
-    togglePromotedVideos();
-    toggleSearchResultsTitle();
-    
     update();
 }
 
@@ -327,11 +323,7 @@ const removeItemFromArray = (array, value) => {
 }
 
 const removeFilter = (type, value) => {
-    removeItemFromArray(filters.applied[type], value);
-
-    togglePromotedVideos();
-    toggleSearchResultsTitle();
-
+    removeItemFromArray(filters.applied[type], value)
     update();
 }
 
@@ -358,155 +350,3 @@ const initialiseFilters = _ => {
 }
   
 window.addEventListener('DOMContentLoaded', initialiseFilters);
-/* END SELECTOR FILTER MODULE */
-
-get("search_bar_input")
-    .addEventListener("keypress", dismissEnterKey);
-
-get("search_bar_input")
-    .addEventListener("input", filterEventsOnInputValueChange);
-
-get("search_bar_reset_button")
-    .addEventListener("click", filterEventsOnResetButtonClick);
-
-function dismissEnterKey(keypressEvent) {
-    // The 13 key code corresponds to the enter key
-    if (keypressEvent.keyCode == 13)
-        keypressEvent.preventDefault();
-}
-
-function filterEventsOnInputValueChange(inputEvent) {
-    const searchBarText = inputEvent.target.value;
- 
-    togglePromotedVideos(searchBarText);
-    toggleSearchResultsTitle(searchBarText);       
-    toggleSearchBarResetButton(searchBarText);
-    
-    update();
-}
-
-function filterEventsOnResetButtonClick() {
-    get("search_bar_input").value = "";
-    
-    togglePromotedVideos();
-    toggleSearchResultsTitle();    
-    hideSearchBarResetButton();
-
-    update();
-}
-
-function togglePromotedVideos(searchBarText) {
-    const promotedVideos = document.querySelector(".promoted-videos");
-    const isSearchBarEmpty = searchBarText === "" || searchBarText === undefined;
-    const isDropDownEmpty = filters.applied.language.length === 0 && filters.applied.topic.length === 0;
-
-    if(isDropDownEmpty && isSearchBarEmpty) {
-        showWithAnimation(promotedVideos);
-    }else {
-        hideWithAnimation(promotedVideos);
-    }           
-}
-
-function toggleSearchResultsTitle(searchBarText) {
-    const generalTitle = 
-        document.querySelector(".videos .card-collection__title");
-    const searchResultsTitle = 
-        document.querySelector(".videos .card-collection__search-results-title");
-
-    if (searchBarText === "" || searchBarText === null) {
-        setTimeout(
-            hideSearchResultsTitle, 
-            getFadingAnimationDuration(), 
-            generalTitle, searchResultsTitle
-        );
-    }
-    else {
-        showSearchResultsTitle(generalTitle, searchResultsTitle);
-    }
-}
-
-function showSearchResultsTitle(generalTitle, searchResultsTitle) {
-    addHiddenModifier(generalTitle);
-    removeHiddenModifier(searchResultsTitle);
-}
-
-function hideSearchResultsTitle(generalTitle, searchResultsTitle) {
-    removeHiddenModifier(generalTitle);
-    addHiddenModifier(searchResultsTitle);
-}
-
-function toggleSearchBarResetButton(searchBarText) {
-    if (searchBarText != "") {
-        showSearchBarResetButton();
-    }
-    else {
-        hideSearchBarResetButton();
-    }
-}
-
-function showSearchBarResetButton() {
-    get("search_bar_form").classList.add("events-search-bar--icon-hidden");
-    removeHiddenModifier(get("search_bar_reset_button"));
-}
-
-function hideSearchBarResetButton() {
-    get("search_bar_form").classList.remove("events-search-bar--icon-hidden");
-    addHiddenModifier(get("search_bar_reset_button"));
-}
-
-function isSearchTextInEvent(event, searchBarText) {
-    const eventItemTitle = event.querySelector(".card-item__title").innerText;
-    const eventItemDescription = event.querySelector(".card-item__description").innerText;
-    const regExp = createRegExpObject(searchBarText);
-
-    if(eventItemTitle.match(regExp) || 
-       eventItemDescription.match(regExp)
-    ) {
-        return true;
-    }
-
-    return false;
-}
-
-function createRegExpObject(text) {
-    const regexpFlags = "i"; // Case Insensitive Flag
-    return new RegExp(text, regexpFlags);
-}
-
-function showWithAnimation(element) {
-    removeHiddenModifier(element);
-
-    // Timeout to show the transition before the display property changes
-    setTimeout(removeFadeAnimationModifier, getFadingAnimationDuration(), element);
-}
-
-function hideWithAnimation(element) {
-    addFadeAnimationModifier(element);
-        
-    // Timeout to show the transition before the display property changes
-    setTimeout(addHiddenModifier, getFadingAnimationDuration(), element); 
-}
-
-function getFadingAnimationDuration() {
-    const rootHtml = document.documentElement;
-    const fadingAnimationDurationInMs = 
-        getComputedStyle(rootHtml).getPropertyValue("--fading-animation-duration");
-    
-    return parseInt(fadingAnimationDurationInMs);
-}
-
-function removeFadeAnimationModifier(element) {
-    element.classList.remove("fade-animation");
-}
-
-function addFadeAnimationModifier(element) {
-    element.classList.add("fade-animation");
-}
-
-function removeHiddenModifier(element) {
-    element.classList.remove("hidden");
-}
-
-function addHiddenModifier(element) {
-    element.classList.add("hidden");
-}
