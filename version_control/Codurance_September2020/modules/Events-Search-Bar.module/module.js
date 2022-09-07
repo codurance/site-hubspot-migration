@@ -1,373 +1,12 @@
 "use strict";
 
-/* BEGIN SELECTOR FILTER MODULE */
-const getAll = (entity, type) => {
-    const selectors = {
-        videos: '.videos .card-item',
-        options: `[data-${type}-option]`,
-        dropdown_containers: '[data-dropdown-options]'
-    }
-
-    return Array.from(
-        document.querySelectorAll(selectors[entity])
-    )
-}
-
-const get = (entity, value, type) => {
-    const selectors = {
-        mobile_filter_toggle: '.mobile-filter-toggle__button',
-        mobile_filter_toggle_icon: '.mobile-filter-toggle__icon',
-        filters_wrapper: '.filter-dropdown-wrapper',
-        dropdown_container: `[data-dropdown-options="${value}"]`,
-        dropdown_icon: `[data-dropdown-icon="${value}"]`,
-        option: `[data-${type}-option="${value}"]`,
-        selected_icon: `[data-${type}-option-selected="${value}"]`,
-        no_results_message: '.no-results-message',
-        search_bar_form: '.events-search-bar',
-        search_bar_input: '.events-search-bar__input',
-        search_bar_reset_button: '.events-search-bar__reset-button'
-    }
-
-    return document.querySelector(selectors[entity]);
-}
-
-const allVideos = getAll('videos');
-
-let videos = {
-    all: allVideos,
-    visible: allVideos,
-    hidden: []
-}
-
-let filters = {
-    types: [ 'topic', 'language' ],
-    all: {
-      topic: [],
-      language: []
-    },
-    applied: {
-      topic: [],
-      language: []
-    }
-};
-  
-const filterOptions = type => {
-    return getAll('options', type).map(option => option.dataset[`${type}Option`]).filter( x => x.length > 0);
-}
-
-const setFilterOptions = _ => {
-    filters.types.forEach(type =>
-        filters.all[type] = filterOptions(type));
-}
-
-const hide = element => {
-    element.classList.add('hidden');
-}
-
-const show = element => {
-    element.classList.remove('hidden');
-}
-
-const toggleShowHideFilters = _ => {
-    const filtersWrapper = get('filters_wrapper');
-    if (filtersWrapper.classList.contains('hidden')) {
-        show(filtersWrapper);
-        get('mobile_filter_toggle_icon').classList.add('mobile-filter-toggle__icon--selected');
-    } else {
-        hide(filtersWrapper);
-        get('mobile_filter_toggle_icon').classList.remove('mobile-filter-toggle__icon--selected');
-    }
-}
-
-const addFilterToggleListener = _ => {
-    const filterToggleButton = get('mobile_filter_toggle');
-    filterToggleButton.addEventListener('click', toggleShowHideFilters)
-}
-
-const showDropdown = container => {
-    show(container);
-
-    const type = container.dataset.dropdownOptions;
-
-    get('dropdown_icon', type).classList.add('filter-dropdown-icon--selected');
-}
-
-const hideDropdown = container => {
-    hide(container);
-
-    const type = container.dataset.dropdownOptions;
-
-    get('dropdown_icon', type).classList.remove('filter-dropdown-icon--selected');
-}
-
-const closeOtherDropdowns = type => {
-    const dropdownContainers = getAll('dropdown_containers');
-
-    dropdownContainers
-        .filter(dropdown => dropdown.dataset.dropdownOptions != type)
-        .forEach(hideDropdown);
-}
-
-const openDropdown = type => {
-    closeOtherDropdowns(type);
-
-    const dropdown = get('dropdown_container', type);
-        
-    if (dropdown.classList.contains('hidden')) {
-        showDropdown(dropdown);
-    } else {
-        hideDropdown(dropdown);
-    }
-}
-
-const isDropdownButton = element => {
-    return !!element.dataset.dropdownButton
-}
-
-const optionTypeFrom = element => {
-    const dataAttributes = Object.keys(element.dataset);
-    const optionMatcher = new RegExp('^(topic|language)(?=Option)');
-
-    for (let i = 0; i < dataAttributes.length; i++) {
-        const key = dataAttributes[i];
-        const match = key.match(optionMatcher);
-        if (match) {
-            return match[0];
-        }
-    }
-}
-
-const addDropdownListeners = _ => {
-    window.addEventListener('click', ({ target }) => {
-        if (isDropdownButton(target)) {
-            openDropdown(target.dataset.dropdownButton);
-        } else {
-            const optionType = optionTypeFrom(target);
-            closeOtherDropdowns(optionType);
-        }
-    });
-}
-
-const markOptionSelected = (type, filter) => {
-    const selectedIcon = get('selected_icon', filter, type);
-    const option = get('option', filter, type);
-    show(selectedIcon);
-    option.classList.add('filter-dropdown-option--selected');
-}
-
-const markOptionDeselected = (type, filter) => {
-    const selectedIcon = get('selected_icon', filter, type);
-    const option = get('option', filter, type);
-    hide(selectedIcon);
-    option.classList.remove('filter-dropdown-option--selected')
-}
-
-
-const updateAppliedFilters = _ => {
-    Object.keys(filters.applied).forEach(type => {
-        const all = filters.all[type];
-        const applied = filters.applied[type];
-        const unapplied = arrayDifference(all, applied);
-
-        applied.forEach(filter => {
-            markOptionSelected(type, filter);
-        });
-
-        unapplied.forEach(filter => {
-            markOptionDeselected(type, filter);
-        });
-    });
-}
-
-const onlyUnique = (value, index, self) => {
-    return self.indexOf(value) === index;
-}
-
-const arrayDifference = (a, b) => {
-    return a.filter(item => !b.includes(item))
-}
-
-const filtersAvailableFor = type => {
-    const opts = {
-        topic: {
-            video_dataset_name: 'videoTopic',
-            remaining: videos => videos.filter(byLanguage)
-        },
-        language: {
-            video_dataset_name: 'videoLanguage',
-            remaining: videos => videos.filter(byTopic)
-        }  
-    };
-
-    const remainingVideos = opts[type].remaining(videos.all);
-
-    return remainingVideos.map(video => {    
-        const videoType = opts[type].video_dataset_name;
-        return video.dataset[videoType];
-        }
-    );
-}
-
-const disableButton = button => {
-    button.setAttribute('disabled', 'true');
-}
-
-const enableButton = button => {
-    button.removeAttribute('disabled');
-}
-
-const updateAvailableFilters = _ => {
-    filters.types.forEach(type => {
-
-        const availableFilters = filtersAvailableFor(type)
-                                            .flat(Infinity)
-                                            .filter(onlyUnique) 
-                                            .filter(element => element.trim().length > 0);
-
-        const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
-
-
-        availableFilters.forEach(filter => enableButton(get('option', filter, type)));
-        unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
-    });
-}
-
-
-const byLanguage = video => {
-    let languageFilters = filters.applied.language;
-    const videoLanguages = video.dataset.videoLanguage;
-    return languageFilters.length === 0 ||
-        languageFilters.some(filter => videoLanguages.includes(filter));
-}
-
-
-const byTopic = video => {
-    let topicFilters = filters.applied.topic;
-    const videoTopics = video.dataset.videoTopic;
-    return topicFilters.length === 0 ||
-        topicFilters.some(filter => videoTopics.includes(filter));
-}
-
-const byTextInput = video => {
-    const inputText = get("search_bar_input").value;
-
-    return isSearchTextInEvent(video, inputText);
-}
-
-const calculateVisibleVideos = _ => {
-    return videos.all.filter(byTopic).filter(byLanguage).filter(byTextInput);
-}
-
-const refilter = _ => {
-
-    videos.visible = calculateVisibleVideos();
-    videos.hidden = arrayDifference(videos.all, videos.visible);
-
-    videos.visible.forEach(showWithAnimation);
-    videos.hidden.forEach(hideWithAnimation);
-}
-
-const updateNoResultsMessage = _ => {
-    const noResultsMessage = get('no_results_message');
-
-    if (videos.visible.length > 0) {
-        hideWithAnimation(noResultsMessage);
-    } else {
-        showWithAnimation(noResultsMessage);
-    }
-}
-
-const update = _ => {
-    refilter();
-    updateAppliedFilters();
-    updateAvailableFilters();
-    updateNoResultsMessage();
-}
-
-const applyFilter = (type, value) => {
-    filters.applied[type].push(value);
-
-    togglePromotedVideos();
-    toggleSearchResultsTitle();
-    
-    update();
-}
-
-
-const addFilterOptionListeners = _ => {
-    filters.types.forEach(type => {
-        getAll('options', type).forEach( button => {
-            addFilterListener(button, type)
-        });
-    });
-}
-
-
-const addFilterListener = (button, type) => {
-    button.addEventListener('click', _ =>
-        filterSelected(type, button.dataset[`${type}Option`]));
-}
-
-const filterSelected = (type, value) => {
-    filterAlreadyApplied(type, value) ? removeFilter(type, value) 
-                                     : applyFilter(type, value);
-}
-
-const filterAlreadyApplied = (type, value) => {
-    const appliedFiltersForType = filters.applied[type];
-    return appliedFiltersForType.includes(value);
-}
-
-
-const removeItemFromArray = (array, value) => {
-    const removableIndex = array.indexOf(value);
-    if (removableIndex >= 0) {
-        array.splice(removableIndex, 1);
-    }
-}
-
-const removeFilter = (type, value) => {
-    removeItemFromArray(filters.applied[type], value);
-
-    togglePromotedVideos();
-    toggleSearchResultsTitle();
-
-    update();
-}
-
-const capitalise = string => {
-    return string.charAt(0).toUpperCase() + string.substring(1);
-}
-
-const addRemoveFilterListener = (type, button) => {
-    button.addEventListener('click', _ => {
-        const value = button.dataset[`remove${capitalise(type)}Filter`];
-        removeFilter(type, value);
-    });
-}
-
-const addListeners = _ => {
-    addFilterToggleListener();
-    addDropdownListeners();
-    addFilterOptionListeners();
-}
-
-const initialiseFilters = _ => {
-    setFilterOptions();
-    addListeners();
-}
-  
-window.addEventListener('DOMContentLoaded', initialiseFilters);
-/* END SELECTOR FILTER MODULE */
-
-get("search_bar_input")
-    .addEventListener("keypress", dismissEnterKey);
-
-get("search_bar_input")
-    .addEventListener("input", filterEventsOnInputValueChange);
-
-get("search_bar_reset_button")
-    .addEventListener("click", filterEventsOnResetButtonClick);
+const searchBarForm = document.querySelector(".events-search-bar");
+const searchBar = searchBarForm.querySelector(".events-search-bar__input");
+const searchBarResetButton = searchBarForm.querySelector(".events-search-bar__reset-button");
+
+searchBar.addEventListener("keypress", dismissEnterKey);
+searchBar.addEventListener("input", filterEventsOnInputValueChange);
+searchBarResetButton.addEventListener("click", filterEventsOnResetButtonClick);
 
 function dismissEnterKey(keypressEvent) {
     // The 13 key code corresponds to the enter key
@@ -377,43 +16,42 @@ function dismissEnterKey(keypressEvent) {
 
 function filterEventsOnInputValueChange(inputEvent) {
     const searchBarText = inputEvent.target.value;
- 
-    togglePromotedVideos(searchBarText);
+    
+    togglePromotedEvents(searchBarText);
     toggleSearchResultsTitle(searchBarText);       
     toggleSearchBarResetButton(searchBarText);
-    
-    update();
+    applyFilters(searchBarText);
+
+    // Timeout to adjust to the event card items animations
+    setTimeout(
+        toggleNoSearchResultsMessage,
+        getFadingAnimationDuration()
+    );
 }
 
 function filterEventsOnResetButtonClick() {
-    get("search_bar_input").value = "";
-    
-    togglePromotedVideos();
+    togglePromotedEvents();
     toggleSearchResultsTitle();    
     hideSearchBarResetButton();
-
-    update();
+    applyFilters();
 }
 
-function togglePromotedVideos(searchBarText) {
-    const promotedVideos = document.querySelector(".promoted-videos");
-    const isSearchBarEmpty = searchBarText === "" || searchBarText === undefined;
-    const isDropDownEmpty = filters.applied.language.length === 0 && filters.applied.topic.length === 0;
+function togglePromotedEvents(searchBarText) {
+    const promotedEventsCollection = document.querySelector(".promoted-videos");
 
-    if(isDropDownEmpty && isSearchBarEmpty) {
-        showWithAnimation(promotedVideos);
-    }else {
-        hideWithAnimation(promotedVideos);
+    if(searchBarText == "" || searchBarText == undefined) {
+        showWithAnimation(promotedEventsCollection);
+    }
+    else {
+        hideWithAnimation(promotedEventsCollection);
     }           
 }
 
 function toggleSearchResultsTitle(searchBarText) {
-    const generalTitle = 
-        document.querySelector(".videos .card-collection__title");
-    const searchResultsTitle = 
-        document.querySelector(".videos .card-collection__search-results-title");
+    const generalTitle = document.querySelector(".videos .card-collection__title");
+    const searchResultsTitle = document.querySelector(".videos .card-collection__search-results-title");
 
-    if (searchBarText === "" || searchBarText === null) {
+    if (searchBarText == "" || searchBarText == undefined) {
         setTimeout(
             hideSearchResultsTitle, 
             getFadingAnimationDuration(), 
@@ -445,13 +83,33 @@ function toggleSearchBarResetButton(searchBarText) {
 }
 
 function showSearchBarResetButton() {
-    get("search_bar_form").classList.add("events-search-bar--icon-hidden");
-    removeHiddenModifier(get("search_bar_reset_button"));
+    searchBarForm.classList.add("events-search-bar--icon-hidden");
+    removeHiddenModifier(searchBarResetButton);
 }
 
 function hideSearchBarResetButton() {
-    get("search_bar_form").classList.remove("events-search-bar--icon-hidden");
-    addHiddenModifier(get("search_bar_reset_button"));
+    searchBarForm.classList.remove("events-search-bar--icon-hidden");
+    addHiddenModifier(searchBarResetButton);
+}
+
+function applyFilters(searchBarText) {
+    if(arguments.length == 0) {
+        searchBarText = "";
+    }
+
+    const pastEventsCollection = document.querySelector(".videos .card-collection-results");
+    const pastEvents = pastEventsCollection.querySelectorAll(".card-item");
+
+    pastEvents.forEach(event => filterEvent(event, searchBarText));
+}
+
+function filterEvent(event, searchBarText) {
+    if(isSearchTextInEvent(event, searchBarText)) {
+        showWithAnimation(event);            
+    }
+    else {
+        hideWithAnimation(event);
+    }
 }
 
 function isSearchTextInEvent(event, searchBarText) {
@@ -473,11 +131,37 @@ function createRegExpObject(text) {
     return new RegExp(text, regexpFlags);
 }
 
+function toggleNoSearchResultsMessage() {
+    const noSearchResultsMessage = document.querySelector(".card-collection-results__no-results-message");
+
+    if(areSearchResultsDisplayed()) {
+        hideWithAnimation(noSearchResultsMessage);
+    }
+    else {
+        showWithAnimation(noSearchResultsMessage);
+    }
+}
+
+function areSearchResultsDisplayed() {
+    const pastEventsCollection = document.querySelector(".videos .card-collection-results");
+    const pastEvents = pastEventsCollection.querySelectorAll(".card-item");
+    
+    let searchResultsDisplayed = false;
+
+    pastEvents.forEach((event) => {
+        if(!event.classList.contains("hidden")) {
+            searchResultsDisplayed = true;
+        }
+    });
+
+    return searchResultsDisplayed;
+}
+
 function showWithAnimation(element) {
     removeHiddenModifier(element);
 
     // Timeout to show the transition before the display property changes
-    setTimeout(removeFadeAnimationModifier, getFadingAnimationDuration(), element);
+    setTimeout(removeFadeAnimationModifier, getFadingAnimationDuration(), element); 
 }
 
 function hideWithAnimation(element) {

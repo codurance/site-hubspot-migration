@@ -19,8 +19,8 @@
         {% for event in event_listing %}
           {% set eventThumb_desktop = resize_image_url(event.thumbnail.url, 0, 0, 375) %}
           {% set eventThumb_mobile = resize_image_url(event.thumbnail.url, 0, 0, 260) %}
-            
-          <article class="card-item" data-video-topic="{{ event.topic.name }}" data-video-language="{{ event.language.name }}">
+
+          <article class="card-item">
             <div class="card-item__content">
               <div class="card-item__image-container">
                 <img class="card-item__image" alt=""
@@ -35,7 +35,7 @@
                 <small
                   class="card-item__label card-item__label--type"
                 >
-                  {{ event.topic.name }}
+                  {{ event.type.name }}
                 </small>
                 <small
                   class="card-item__label card-item__label--duration"
@@ -126,7 +126,7 @@
   
   {{ card_collection(past_videos_listing, copy) }}
 
-  <div class="no-results-message hidden fade-animation">
+  <div class="card-collection-results__no-results-message hidden fade-animation">
     {{ module.no_results_message }}
   </div>
 {% endif %}

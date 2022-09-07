@@ -14,17 +14,10 @@
 
 .events-search-bar {
   --horizontal-padding-search-bar: 1em;
-  margin-bottom: 3em;
+  margin-top: 3em;
   position: relative;
-  width: 30rem;
-  max-width: 100%;
+  max-width: 30rem;
 }
-
-{% call utils.small() %}
-  .events-search-bar {
-    margin-bottom: 1em;
-  }
-{% endcall %}
 
 .events-search-bar::after {
   font-family: 'Line Awesome Free';
