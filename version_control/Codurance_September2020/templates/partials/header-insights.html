@@ -1,0 +1,26 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: false
+-->
+
+{{ require_css(get_asset_url("../../css/partials/header-insights.css")) }}
+
+<section class="header-insights">
+    <div class="header-insights__container">
+        <div class="header-insights__text">
+            <h1>{% module 'title' path='@hubspot/text' label="Header title", no_wrapper=True %}</h1>
+            <p>{% module 'text' path='@hubspot/text' label="Header body", no_wrapper=True %}</p>
+        </div>
+        <div class="header-insights__image">
+            {% module 'linked_image',
+                path="@hubspot/linked_image",
+                img={
+                    "src": "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Insights%20Pages/Articles/Blog-header-insights.svg",
+                    "width": auto,
+                },
+                label="Header Image", 
+                no_wrapper=True        
+            %}
+        </div>
+    </div>
+</section>
