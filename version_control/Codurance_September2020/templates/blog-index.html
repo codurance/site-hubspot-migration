@@ -32,11 +32,13 @@ label: Blog Listing
 
 {% block body %}
 
-  {% include "./partials/header-insights.html" %}
+  
 
 {% if blog_author %}
   {% include "./partials/author-page.html" %}
 {% else %}
+
+  {% include "./partials/header-insights.html" %}
 
   <div class="custom-blog-listing custom-bg-gray-light-v5">
     <div class="page-center container custom-py-50">
