@@ -77,4 +77,19 @@
     </div>
 </div>
 
+<div class="applied-filters__container">
+    {% for topic in topics %}
+      <div class="applied-filters__pill hidden" data-applied-topic-filter="{{ topic }}">
+        {{ topic }}
+        <i class="applied-filters__remove-button las la-times" data-remove-topic-filter="{{ topic }}"></i>
+      </div>
+    {% endfor %}
+    {% for language in languages %}
+      <div class="applied-filters__pill hidden" data-applied-language-filter="{{ language }}">
+        {{ language }}
+        <i class="applied-filters__remove-button las la-times" data-remove-language-filter="{{ language }}"></i>
+      </div>
+    {% endfor %}
+</div>
+
 {# END SELECTOR FILTER MODULE #}

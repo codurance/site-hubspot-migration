@@ -182,6 +182,7 @@
     position: relative;
     text-align: left;
 }
+
 .filter-dropdown-option:hover {
     background-color: var(--athens-gray);
 }
@@ -196,7 +197,7 @@
     top: 11px;
 }
 
-.katas-applied-filters__container {
+.applied-filters__container {
     display: flex;
     height: 100%;
     flex-wrap: wrap;
@@ -209,17 +210,17 @@
 
 }
 {% call utils.small() %}
-    .katas-applied-filters__container {
+    .applied-filters__container {
         padding-top: 2.5rem;
     }
 {% endcall %}
 {% call utils.medium_large_and_extra_large()%}
-    .katas-applied-filters__container {
+    .applied-filters__container {
         padding-top: 1rem;
     }
 {% endcall %}
 
-.katas-applied-filters__pill {
+.applied-filters__pill {
     {{ utils.sejima() }}
     border: 1px solid var(--mid-gray);
     border-radius: 50px;
@@ -238,12 +239,12 @@
     user-select: none;
 }
 
-.katas-applied-filters__pill:hover {
+.applied-filters__pill:hover {
     background-color: var(--mid-gray);
     color: white;
 }
 
-.katas-applied-filters__remove-button {
+.applied-filters__remove-button {
     background: none;
     color: var(--mid-gray);
     height: 15px;
@@ -252,59 +253,11 @@
     top: 6px;
 }
 
-.katas-applied-filters__pill:hover
-.katas-applied-filters__remove-button {
+.applied-filters__pill:hover
+.applied-filters__remove-button {
     color: white
 }
 
-.katas-applied-filters__remove-button:hover {
+.applied-filters__remove-button:hover {
     cursor: pointer;
 }
-
-.katas-grid__container {
-    margin: 0 auto 50px;
-    max-width: var(--content-max-width);
-    width: 80%;
-}
-
-.katas-grid__gutter-sizer {
-    --grid-gutter-size: 2%;
-    width: var(--grid-gutter-size);
-}
-
-.katas-grid__card {
-    margin-bottom: 30px;
-}
-
-.katas-grid__card--large,
-.katas-grid__card--small,
-.katas-grid__sizer {
-    --card-width: 100%;
-    width: var(--card-width);
-}
-
-
-{% call utils.medium() %}
-    .katas-grid__sizer {
-        --card-width: 49%;
-    }
-{% endcall %}
-
-
-{% call utils.large_and_extra_large() %}
-
-    .katas-grid__sizer {
-        --card-width: 32%;
-    }
-
-    .katas-grid__card--large {
-        width: 100%;
-    }
-    .katas-grid__container {
-        margin: 0 auto;
-    }
-
-{% endcall %}
-    
-    
-    

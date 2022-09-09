@@ -5,7 +5,8 @@ const getAll = (entity, type) => {
     const selectors = {
         videos: '.videos .card-item',
         options: `[data-${type}-option]`,
-        dropdown_containers: '[data-dropdown-options]'
+        dropdown_containers: '[data-dropdown-options]',
+        remove_filter_buttons: `[data-remove-${type}-filter]`
     }
 
     return Array.from(
@@ -22,6 +23,7 @@ const get = (entity, value, type) => {
         dropdown_icon: `[data-dropdown-icon="${value}"]`,
         option: `[data-${type}-option="${value}"]`,
         selected_icon: `[data-${type}-option-selected="${value}"]`,
+        applied_filter: `[data-applied-${type}-filter="${value}"]`,
         no_results_message: '.no-results-message',
         search_bar_form: '.events-search-bar',
         search_bar_input: '.events-search-bar__input',
@@ -148,21 +150,6 @@ const addDropdownListeners = _ => {
     });
 }
 
-const markOptionSelected = (type, filter) => {
-    const selectedIcon = get('selected_icon', filter, type);
-    const option = get('option', filter, type);
-    show(selectedIcon);
-    option.classList.add('filter-dropdown-option--selected');
-}
-
-const markOptionDeselected = (type, filter) => {
-    const selectedIcon = get('selected_icon', filter, type);
-    const option = get('option', filter, type);
-    hide(selectedIcon);
-    option.classList.remove('filter-dropdown-option--selected')
-}
-
-
 const updateAppliedFilters = _ => {
     Object.keys(filters.applied).forEach(type => {
         const all = filters.all[type];
@@ -170,13 +157,41 @@ const updateAppliedFilters = _ => {
         const unapplied = arrayDifference(all, applied);
 
         applied.forEach(filter => {
+            showAppliedFilter(type, filter);
             markOptionSelected(type, filter);
         });
 
         unapplied.forEach(filter => {
+            hideUnappliedFilter(type, filter);
             markOptionDeselected(type, filter);
         });
     });
+}
+
+const showAppliedFilter = (type, filter) => {
+    const filterPill = get('applied_filter', filter, type)
+    show(filterPill);
+}
+
+const hideUnappliedFilter = (type, filter) => {
+    const filterPill = get('applied_filter', filter, type)
+    hide(filterPill);
+}
+
+const markOptionSelected = (type, filter) => {
+    const selectedIcon = get('selected_icon', filter, type);
+    const option = get('option', filter, type);
+    
+    show(selectedIcon);
+    option.classList.add('filter-dropdown-option--selected');
+}
+
+const markOptionDeselected = (type, filter) => {
+    const selectedIcon = get('selected_icon', filter, type);
+    const option = get('option', filter, type);
+
+    hide(selectedIcon);
+    option.classList.remove('filter-dropdown-option--selected')
 }
 
 const onlyUnique = (value, index, self) => {
@@ -346,10 +361,18 @@ const addRemoveFilterListener = (type, button) => {
     });
 }
 
+const addRemoveFilterListeners = _ => {
+    Object.keys(filters.all).forEach(type => {
+        getAll('remove_filter_buttons', type).forEach(button =>
+            addRemoveFilterListener(type, button));
+    });
+}
+
 const addListeners = _ => {
     addFilterToggleListener();
     addDropdownListeners();
     addFilterOptionListeners();
+    addRemoveFilterListeners();
 }
 
 const initialiseFilters = _ => {
