@@ -1,4 +1,5 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
+{{ require_css(get_asset_url("../../css/modules/videos-listing.css")) }}
 
 {% macro card_collection(event_listing, copy) %}
   <section class="{{ copy.card_collection_class }} card-collection">
