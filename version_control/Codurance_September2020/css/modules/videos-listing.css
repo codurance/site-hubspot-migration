@@ -286,6 +286,26 @@
   }
 {% endcall %}
 
+/* Card animations when shown/hidden */
+.card-collection,
+.card-collection__heading-wrapper {
+  transition: all 
+    var(--fading-animation-duration) 
+    ease-in-out;
+}
+
+.card-collection.fade-animation,
+.card-collection.fade-animation .card-collection__heading-wrapper {
+  height: 0;
+  margin: 0 !important;
+}
+
+.card-item {
+  transition: opacity 
+    var(--fading-animation-duration) 
+    ease-in-out;
+}
+
 .no-results-message {
   transition: opacity 
     var(--fading-animation-duration) 
