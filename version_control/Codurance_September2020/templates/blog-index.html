@@ -31,11 +31,14 @@ label: Blog Listing
 </head>
 
 {% block body %}
+
+  
+
 {% if blog_author %}
-
   {% include "./partials/author-page.html" %}
-
 {% else %}
+
+  {% include "./partials/header-insights.html" %}
 
   <div class="custom-blog-listing custom-bg-gray-light-v5">
     <div class="page-center container custom-py-50">
@@ -134,7 +137,7 @@ label: Blog Listing
                 <h3 class="blog-cta-card__title">Have you improved your skills today?</h3>
                 {{snippets.text_cta_right_arrow(
                   classnames="blog-cta-card__link",
-                  url="https://katalyst.codurance.com",
+                  url="https://www.codurance.com/katalyst",
                   rel="noopener noreferrer",
                   target="_blank",
                   text="Try Katalyst"
