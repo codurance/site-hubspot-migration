@@ -1,6 +1,4 @@
 {% import '../utils/utils.css' as utils %}
-
-{% set overlap = 200 %}
  
 .body-wrapper {
   overflow-x: hidden;
