@@ -31,48 +31,20 @@
     overrideable=False 
   %}
   
-  <div class="inner-page-wrapper">
-    <header class="header-section responsive-page-width lateral-spacing">
-      <div class="header-section__text-wrapper">
-        {% section_header 'header_section'
-          header='Recent events',
-          subheader='Have a look at all previous events hosted by Codurance'
-          no_wrapper=True
-        %}
-      </div>
-      
-      {% module 'header_image'
-        label="Header Image",
-        path='@hubspot/linked_image',
-        extra_classes="header-section__image",
-        img={
-          "src": "https://www.codurance.com/hubfs/Events%20page/Recent%20Events%20Page/Header-recent-events.png",
-          "alt": " ",
-          "loading": "disabled",
-          "width": 424,
-          "height": 332
-        }
-      %}
-    </header>
+  {% include "./partials/header-insights.html" %} 
     
-    <main class="main-container responsive-page-width lateral-spacing">
-      <div class="filters-wrapper">
-        {% module 'Events-Search-Bar' 
-          path='../modules/Events-Search-Bar.module',
-          no_wrapper=True
-        %}
-
-        {#{% module 'Selector-Filter' 
-          path='../modules/Selector-Filter.module',
-          no_wrapper=True
-        %}#}
-      </div>
-      
-      {% module 'past_events'
-        label="Past Events Sections",
-        path='../modules/Past-Events-Listing.module' 
-        no_wrapper=True
-      %}
-    </main>
+  <div class="filters-wrapper">
+    {% module 'Events-Search-Bar' 
+      path='../modules/Events-Search-Bar.module',
+      no_wrapper=True
+    %}
   </div>
+
+  <main class="main-container responsive-page-width lateral-spacing"> 
+    {% module 'past_events'
+      label="Past Events Sections",
+      path='../modules/Past-Events-Listing.module' 
+      no_wrapper=True
+    %}
+  </main>
 {% endblock body %}
