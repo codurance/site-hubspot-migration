@@ -15,10 +15,15 @@
 .filters-wrapper {
   display: flex;
   gap: 1em;
-  margin-bottom: 1.6em;
   margin-inline: auto;
   margin-top: -1em;
 }
+
+{% call utils.large_and_extra_large() %}
+  .filters-wrapper {
+    gap: 3em;
+  }
+{% endcall %}
 
 {% call utils.small() %}
   .filters-wrapper {
@@ -162,7 +167,6 @@
 
 {% call utils.small() %}
     .filter-dropdown-wrapper {
-      position: absolute;
       width: 100%;
     }
 {% endcall %}
@@ -295,25 +299,13 @@
     flex-wrap: wrap;
     gap: 0.8em;
     justify-content: center;
-    min-height: 110px;
     width: 100%;
-    padding-bottom: 1rem;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 2em 1em;
 }
-{% call utils.small() %}
-    .applied-filters__container {
-        padding-top: 2.5rem;
-    }
-{% endcall %}
-{% call utils.medium_large_and_extra_large()%}
-    .applied-filters__container {
-        padding-top: 1rem;
-    }
-{% endcall %}
 
 .applied-filters__pill {
     {{ utils.sejima() }}
+
     border: 1px solid var(--mid-gray);
     border-radius: 50px;
     color: var(--mid-gray);
