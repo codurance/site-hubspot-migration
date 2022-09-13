@@ -33,12 +33,10 @@
   
   {% include "./partials/header-insights.html" %} 
     
-  <div class="filters-wrapper responsive-page-width lateral-spacing">
-    {% module 'Events-Search-Bar' 
-      path='../modules/Events-Search-Bar.module',
-      no_wrapper=True
-    %}
-  </div>
+  {% module 'Events-Search-Bar' 
+    path='../modules/Events-Search-Bar.module',
+    no_wrapper=True
+  %}
 
   <main class="main-container responsive-page-width lateral-spacing"> 
     {% module 'past_events'

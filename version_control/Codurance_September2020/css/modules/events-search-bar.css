@@ -12,6 +12,21 @@
   display: none;
 }
 
+.filters-wrapper {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1.6em;
+  margin-inline: auto;
+  margin-top: -1em;
+}
+
+{% call utils.small() %}
+  .filters-wrapper {
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+{% endcall %}
+
 .events-search-bar {
   --horizontal-padding-search-bar: 1em;
   {{ utils.card_shadow_large() }}
@@ -89,8 +104,6 @@
   z-index: 1;
 }
 
-
-
 {% call utils.medium_large_and_extra_large() %}
     .filter {
       background-color: white;
@@ -113,7 +126,6 @@
 
 
 {% call utils.small_and_medium() %}
-
     .mobile-filter-toggle__button {
         background: none;
         border: none;

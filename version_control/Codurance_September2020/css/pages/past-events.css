@@ -4,22 +4,6 @@
   overflow-x: hidden;
 }
 
-.filters-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  margin-bottom: 1.6em;
-  margin-inline: auto;
-  margin-top: -1em;
-}
-
-{% call utils.small() %}
-  .filters-wrapper {
-    flex-direction: column;
-    margin-bottom: 1em;
-  }
-{% endcall %}
-
 .main-container {
   margin: auto;
   padding-bottom: 5em;

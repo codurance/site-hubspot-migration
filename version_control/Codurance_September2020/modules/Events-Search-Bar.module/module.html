@@ -1,22 +1,5 @@
 {{ require_css(get_asset_url("../css/modules/events-search-bar.css")) }}
 
-<form role='search' class="events-search-bar">
-    {# Hidden label for accessibility #}
-    <label for='searchbar'>Search Events</label>
-
-    <input class="events-search-bar__input" 
-        id="searchbar"
-        type="search" 
-        placeholder="{{ module.placeholder_text}}" 
-    />
-
-    <button class="events-search-bar__reset-button hidden" type="reset">
-        <i class="reset-button__icon las la-times"></i>
-    </button>
-</form>
-
-{# BEGIN SELECTOR FILTER MODULE #}
-
 {% set items = hubdb_table_rows("videos") %}
 
 {% set topics = [] %}
@@ -30,46 +13,63 @@
 {% set topics = topics|unique %}
 {% set languages = languages|unique %}
 
-<div class="filter">
-    <div class="mobile-filter-toggle">
-        <button class="mobile-filter-toggle__button">
-            Filter
-            <i class="mobile-filter-toggle__icon las la-plus"></i>
+<div class="filters-wrapper responsive-page-width lateral-spacing">
+    <form role='search' class="events-search-bar">
+        {# Hidden label for accessibility #}
+        <label for='searchbar'>Search Events</label>
+
+        <input class="events-search-bar__input" 
+            id="searchbar"
+            type="search" 
+            placeholder="{{ module.placeholder_text}}" 
+        />
+
+        <button class="events-search-bar__reset-button hidden" type="reset">
+            <i class="reset-button__icon las la-times"></i>
         </button>
-    </div>
-    <div class="filter-dropdown-wrapper hidden">
-        <div class="filter-dropdown-container">
-            <button class="filter-dropdown-button" data-dropdown-button="topic">
-            <i class="filter-icon las la-tag"></i>
-                Topics
-            <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="topic">
-            </i>
+    </form>
+
+    <div class="filter">
+        <div class="mobile-filter-toggle">
+            <button class="mobile-filter-toggle__button">
+                Filter
+                <i class="mobile-filter-toggle__icon las la-plus"></i>
             </button>
-            <div class="filter-dropdown-options hidden" data-dropdown-options="topic">
-            {% for topic in topics %}
-            <button class="filter-dropdown-option" data-topic-option="{{topic}}">
-                {{topic}}
-                <i class="filter-dropdown-option-selected-icon las la-check hidden"
-                data-topic-option-selected="{{topic}}"></i>
-            </button>
-            {% endfor %}
-            </div>
         </div>
-        <div class="filter-dropdown-container">
-            <button class="filter-dropdown-button" data-dropdown-button="language">
-            <i class="filter-icon las la-language"></i>
-                Languages
-            <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="language">
-            </i>
-            </button>
-            <div class="filter-dropdown-options hidden" data-dropdown-options="language">
-            {% for language in languages|sort(False,False) %}
-            <button class="filter-dropdown-option" data-language-option="{{language}}">
-                {{language}}
-                <i class="filter-dropdown-option-selected-icon las la-check hidden"
-                data-language-option-selected="{{language}}"></i>
-            </button>
-            {% endfor %}
+        <div class="filter-dropdown-wrapper hidden">
+            <div class="filter-dropdown-container">
+                <button class="filter-dropdown-button" data-dropdown-button="topic">
+                <i class="filter-icon las la-tag"></i>
+                    Topics
+                <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="topic">
+                </i>
+                </button>
+                <div class="filter-dropdown-options hidden" data-dropdown-options="topic">
+                {% for topic in topics %}
+                <button class="filter-dropdown-option" data-topic-option="{{topic}}">
+                    {{topic}}
+                    <i class="filter-dropdown-option-selected-icon las la-check hidden"
+                    data-topic-option-selected="{{topic}}"></i>
+                </button>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="filter-dropdown-container">
+                <button class="filter-dropdown-button" data-dropdown-button="language">
+                <i class="filter-icon las la-language"></i>
+                    Languages
+                <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="language">
+                </i>
+                </button>
+                <div class="filter-dropdown-options hidden" data-dropdown-options="language">
+                {% for language in languages|sort(False,False) %}
+                <button class="filter-dropdown-option" data-language-option="{{language}}">
+                    {{language}}
+                    <i class="filter-dropdown-option-selected-icon las la-check hidden"
+                    data-language-option-selected="{{language}}"></i>
+                </button>
+                {% endfor %}
+                </div>
             </div>
         </div>
     </div>
