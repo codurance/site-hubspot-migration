@@ -23,7 +23,7 @@
 {% endcall %}
 
 .card-collection__heading-wrapper {
-  color: white;
+  color: var(--shark);
   flex-grow: 1;
   font-size: var(--dudler-font-size);
   font-weight: var(--heavy-font-weight);
