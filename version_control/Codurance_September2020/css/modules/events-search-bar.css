@@ -8,10 +8,6 @@
   opacity: 0;
 }
 
-/* .hidden {
-  display: none;
-} */
-
 .filters-wrapper {
   display: flex;
   gap: 1em;
@@ -21,7 +17,7 @@
 
 {% call utils.large_and_extra_large() %}
   .filters-wrapper {
-    gap: 3em;
+    gap: 1.6em;
   }
 {% endcall %}
 
@@ -129,11 +125,7 @@
     }
 {% endcall %}
 
-{% call utils.small_and_medium() %}
-    .filter {
-      width: 100%;
-    }
-{% endcall %}
+
 
 {% call utils.medium_large_and_extra_large() %}
     .mobile-filter-toggle {
