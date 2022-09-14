@@ -1,7 +1,7 @@
 <!--
     templateType: page
     isAvailableForNewContent: true
-    label: Past Events
+    label: Videos Page
 -->
 {% extends "./layouts/base.html" %}
 
@@ -16,12 +16,10 @@
   {{ require_css(get_asset_url("../css/main.css")) }}
   {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
 
-  {{ require_css(get_asset_url("../css/pages/past-events.css")) }}
+  {{ require_css(get_asset_url("../css/pages/videos.css")) }}
 
   {{ require_js(get_asset_url("../js/main.js")) }}
   {{ standard_header_includes }}
-  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
-  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
 </head>
 
 {% block body %}
@@ -33,8 +31,8 @@
   
   {% include "./partials/header-insights.html" %} 
     
-  {% module 'Events-Search-Bar' 
-    path='../modules/Events-Search-Bar.module',
+  {% module 'Videos-Filter' 
+    path='../modules/Videos-Filter.module',
     no_wrapper=True
   %}
 
