@@ -7,5 +7,12 @@
 .main-container {
   margin: auto;
   padding-bottom: 5em;
+}
 
+.promoted-videos {
+  {{ utils.white_to_tango() }}
+}
+
+.videos {
+  padding-top: 4.8em;
 }
