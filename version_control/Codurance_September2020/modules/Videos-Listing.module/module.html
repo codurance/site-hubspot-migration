@@ -1,10 +1,10 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../../css/modules/videos-listing.css")) }}
 
-{% macro card_collection(event_listing, copy) %}
+{% macro card_collection(videos_listing, copy) %}
   <section class="{{ copy.card_collection_class }} card-collection">
     <div
-      class="card-collection__event-inner responsive-page-width lateral-spacing"
+      class="card-collection__inner-wrapper responsive-page-width lateral-spacing"
     >
       <h2 class="card-collection__heading-wrapper">
         <span class="card-collection__title">
@@ -17,37 +17,37 @@
         {% endif %}
       </h2>
       <div class="card-collection-results">
-        {% for event in event_listing %}
-          {% set eventThumb_desktop = resize_image_url(event.thumbnail.url, 0, 0, 375) %}
-          {% set eventThumb_mobile = resize_image_url(event.thumbnail.url, 0, 0, 260) %}
+        {% for video in videos_listing %}
+          {% set video_thumb_desktop = resize_image_url(video.thumbnail.url, 0, 0, 375) %}
+          {% set video_thumb_mobile = resize_image_url(video.thumbnail.url, 0, 0, 260) %}
             
-          <article class="card-item" data-video-topic="{{ event.topic.name }}" data-video-language="{{ event.language.name }}">
+          <article class="card-item" data-video-topic="{{ video.topic.name }}" data-video-language="{{ video.language.name }}">
             <div class="card-item__content">
               <div class="card-item__image-container">
                 <img class="card-item__image" alt=""
-                  {% if event.thumbnail.url %}
-                    srcset="{{eventThumb_mobile}} 260w,
-                            {{eventThumb_desktop}} 375w"
+                  {% if video.thumbnail.url %}
+                    srcset="{{video_thumb_mobile}} 260w,
+                            {{video_thumb_desktop}} 375w"
                     sizes="(max-width: 425px) 260px, 375px"
-                    src="{{eventThumb_desktop}}"
+                    src="{{video_thumb_desktop}}"
                   {% endif %}
                 />
 
                 <small
                   class="card-item__label card-item__label--type"
                 >
-                  {{ event.type.name }}
+                  {{ video.type.name }}
                 </small>
                 <small
                   class="card-item__label card-item__label--duration"
                 >
-                  {{ event.duration }}
+                  {{ video.duration }}
                 </small>
-                {% if event.internal %}
+                {% if video.internal %}
                   <small
                     class="card-item__label card-item__label--internal"
                   >
-                    Internal Event
+                    Internal
                   </small>
                 {% endif %}
               </div>
@@ -56,16 +56,16 @@
                   <header class="card-item__header">
                     <time
                       class="card-item__metadata"
-                      datetime="{{ event.date|datetimeformat('%Y-%m-%d') }}"
+                      datetime="{{ video.date|datetimeformat('%Y-%m-%d') }}"
                     >
-                      {{ event.date|datetimeformat('%a %e %b %Y') }}
+                      {{ video.date|datetimeformat('%a %e %b %Y') }}
                     </time>
                     <h4 class="card-item__title">
-                      {{ event.name }}
+                      {{ video.name }}
                     </h4>
                   </header>
                   <p class="card-item__description">
-                    {{ event.description }}
+                    {{ video.description }}
                   </p>
                 </div>
                 <div class="card-item__button-container">
@@ -75,7 +75,7 @@
                                     }
                     %}
             
-                  {% if event.video is string_containing 'livestorm' %}
+                  {% if video.video is string_containing 'livestorm' %}
                   {% set button = { icon: "icon-gated",
                                     text: "Register for free to watch",
                                     target: "_blank" 
@@ -85,7 +85,7 @@
 
                   {{snippets.button_primary(
                     classnames="card-item__video-button {{button.icon}}",
-                    url=event.video,
+                    url=video.video,
                     target= button.target,
                     text= button.text
                   )}}

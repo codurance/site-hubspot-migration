@@ -9,11 +9,11 @@
   padding-bottom: 4em;
 }
 
-.card-collection__event-inner {
+.card-collection__inner-wrapper {
   margin: 0 auto;
 }
 {% call utils.small_and_medium() %}
-  .card-collection__event-inner {
+  .card-collection__inner-wrapper {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
