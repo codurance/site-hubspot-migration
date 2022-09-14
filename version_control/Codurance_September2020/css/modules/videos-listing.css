@@ -14,7 +14,6 @@
 }
 {% call utils.small_and_medium() %}
   .card-collection__event-inner {
-    overflow: hidden;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
