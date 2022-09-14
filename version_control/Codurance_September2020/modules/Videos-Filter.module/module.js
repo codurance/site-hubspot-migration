@@ -25,9 +25,9 @@ const get = (entity, value, type) => {
         selected_icon: `[data-${type}-option-selected="${value}"]`,
         applied_filter: `[data-applied-${type}-filter="${value}"]`,
         no_results_message: '.no-results-message',
-        search_bar_form: '.events-search-bar',
-        search_bar_input: '.events-search-bar__input',
-        search_bar_reset_button: '.events-search-bar__reset-button'
+        search_bar_form: '.videos-search-bar',
+        search_bar_input: '.videos-search-bar__input',
+        search_bar_reset_button: '.videos-search-bar__reset-button'
     }
 
     return document.querySelector(selectors[entity]);
@@ -266,7 +266,7 @@ const byTopic = video => {
 const byTextInput = video => {
     const inputText = get("search_bar_input").value;
 
-    return isSearchTextInEvent(video, inputText);
+    return isSearchTextInVideo(video, inputText);
 }
 
 const calculateVisibleVideos = _ => {
@@ -387,10 +387,10 @@ get("search_bar_input")
     .addEventListener("keypress", dismissEnterKey);
 
 get("search_bar_input")
-    .addEventListener("input", filterEventsOnInputValueChange);
+    .addEventListener("input", filterVideosOnInputValueChange);
 
 get("search_bar_reset_button")
-    .addEventListener("click", filterEventsOnResetButtonClick);
+    .addEventListener("click", filterVideosOnResetButtonClick);
 
 function dismissEnterKey(keypressEvent) {
     // The 13 key code corresponds to the enter key
@@ -398,7 +398,7 @@ function dismissEnterKey(keypressEvent) {
         keypressEvent.preventDefault();
 }
 
-function filterEventsOnInputValueChange(inputEvent) {
+function filterVideosOnInputValueChange(inputEvent) {
     const searchBarText = inputEvent.target.value;
  
     togglePromotedVideos(searchBarText);
@@ -408,7 +408,7 @@ function filterEventsOnInputValueChange(inputEvent) {
     update();
 }
 
-function filterEventsOnResetButtonClick() {
+function filterVideosOnResetButtonClick() {
     get("search_bar_input").value = "";
     
     togglePromotedVideos();
@@ -468,22 +468,22 @@ function toggleSearchBarResetButton(searchBarText) {
 }
 
 function showSearchBarResetButton() {
-    get("search_bar_form").classList.add("events-search-bar--icon-hidden");
+    get("search_bar_form").classList.add("videos-search-bar--icon-hidden");
     removeHiddenModifier(get("search_bar_reset_button"));
 }
 
 function hideSearchBarResetButton() {
-    get("search_bar_form").classList.remove("events-search-bar--icon-hidden");
+    get("search_bar_form").classList.remove("videos-search-bar--icon-hidden");
     addHiddenModifier(get("search_bar_reset_button"));
 }
 
-function isSearchTextInEvent(event, searchBarText) {
-    const eventItemTitle = event.querySelector(".card-item__title").innerText;
-    const eventItemDescription = event.querySelector(".card-item__description").innerText;
+function isSearchTextInVideo(video, searchBarText) {
+    const videoItemTitle = video.querySelector(".card-item__title").innerText;
+    const videoItemDescription = video.querySelector(".card-item__description").innerText;
     const regExp = createRegExpObject(searchBarText);
 
-    if(eventItemTitle.match(regExp) || 
-       eventItemDescription.match(regExp)
+    if(videoItemTitle.match(regExp) || 
+       videoItemDescription.match(regExp)
     ) {
         return true;
     }

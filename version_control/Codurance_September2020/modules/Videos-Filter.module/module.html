@@ -1,4 +1,4 @@
-{{ require_css(get_asset_url("../css/modules/events-search-bar.css")) }}
+{{ require_css(get_asset_url("../css/modules/videos-filter.css")) }}
 
 {% set items = hubdb_table_rows("videos") %}
 
@@ -14,17 +14,17 @@
 {% set languages = languages|unique %}
 
 <div class="filters-wrapper responsive-page-width lateral-spacing">
-    <form role='search' class="events-search-bar">
+    <form role='search' class="videos-search-bar">
         {# Hidden label for accessibility #}
-        <label for='searchbar'>Search Events</label>
+        <label for='searchbar'>{{ module.placeholder_text}}</label>
 
-        <input class="events-search-bar__input" 
+        <input class="videos-search-bar__input" 
             id="searchbar"
             type="search" 
             placeholder="{{ module.placeholder_text}}" 
         />
 
-        <button class="events-search-bar__reset-button hidden" type="reset">
+        <button class="videos-search-bar__reset-button hidden" type="reset">
             <i class="reset-button__icon las la-times"></i>
         </button>
     </form>
