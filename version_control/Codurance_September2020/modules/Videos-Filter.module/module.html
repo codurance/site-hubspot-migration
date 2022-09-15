@@ -5,6 +5,7 @@
 {% set topics = [] %}
 {% set languages = [] %}
 
+
 {% for item in items %}
     {% do topics.append(item.topic.name) %}
     {% do languages.append(item.language.name) %}
@@ -16,12 +17,12 @@
 <div class="filters-wrapper responsive-page-width lateral-spacing">
     <form role='search' class="videos-search-bar">
         {# Hidden label for accessibility #}
-        <label for='searchbar'>{{ module.placeholder_text}}</label>
+        <label for='searchbar'>{{ module.search_bar_placeholder}}</label>
 
         <input class="videos-search-bar__input" 
             id="searchbar"
             type="search" 
-            placeholder="{{ module.placeholder_text}}" 
+            placeholder="{{ module.search_bar_placeholder}}" 
         />
 
         <button class="videos-search-bar__reset-button hidden" type="reset">
@@ -32,7 +33,7 @@
     <div class="filter">
         <div class="mobile-filter-toggle">
             <button class="mobile-filter-toggle__button">
-                Filter
+                {{module.dropdown_filter.mobile_title}}
                 <i class="mobile-filter-toggle__icon las la-plus"></i>
             </button>
         </div>
@@ -40,7 +41,7 @@
             <div class="filter-dropdown-container">
                 <button class="filter-dropdown-button" data-dropdown-button="topic">
                 <i class="filter-icon las la-tag"></i>
-                    Topics
+                  {{module.dropdown_filter.topics_title}}
                 <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="topic">
                 </i>
                 </button>
@@ -54,23 +55,23 @@
                 {% endfor %}
                 </div>
             </div>
-            <div class="filter-dropdown-container">
-                <button class="filter-dropdown-button" data-dropdown-button="language">
-                <i class="filter-icon las la-language"></i>
-                    Languages
-                <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="language">
-                </i>
-                </button>
-                <div class="filter-dropdown-options hidden" data-dropdown-options="language">
-                {% for language in languages|sort(False,False) %}
-                <button class="filter-dropdown-option" data-language-option="{{language}}">
-                    {{language}}
-                    <i class="filter-dropdown-option-selected-icon las la-check hidden"
-                    data-language-option-selected="{{language}}"></i>
-                </button>
-                {% endfor %}
-                </div>
-            </div>
+              <div class="filter-dropdown-container">
+                  <button class="filter-dropdown-button" data-dropdown-button="language">
+                  <i class="filter-icon las la-language"></i>
+                    {{module.dropdown_filter.languages_title}}
+                  <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="language">
+                  </i>
+                  </button>
+                  <div class="filter-dropdown-options hidden" data-dropdown-options="language">
+                  {% for language in languages|sort(False,False) %}
+                  <button class="filter-dropdown-option" data-language-option="{{language}}">
+                      {{language}}
+                      <i class="filter-dropdown-option-selected-icon las la-check hidden"
+                      data-language-option-selected="{{language}}"></i>
+                  </button>
+                  {% endfor %}
+                  </div>
+              </div>
         </div>
     </div>
 </div>
@@ -91,3 +92,4 @@
 </div>
 
 {# END SELECTOR FILTER MODULE #}
+

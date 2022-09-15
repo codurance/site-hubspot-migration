@@ -1,8 +1,8 @@
 [ {
   "id" : "7fbee615-c2dd-060b-49d8-e23394835761",
-  "name" : "placeholder_text",
+  "name" : "search_bar_placeholder",
   "display_width" : null,
-  "label" : "Placeholder Text",
+  "label" : "Search bar Placeholder Text",
   "required" : true,
   "locked" : false,
   "validation_regex" : "",
@@ -10,4 +10,49 @@
   "show_emoji_picker" : false,
   "type" : "text",
   "default" : "Search Videos"
+}, {
+  "id" : "fd8cffe7-be0d-1ea7-28e3-067fccc0157a",
+  "name" : "dropdown_filter",
+  "display_width" : null,
+  "label" : "Dropdown filter",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "eb353d36-53f0-052e-af26-170b3940f725",
+    "name" : "mobile_title",
+    "display_width" : null,
+    "label" : "Mobile Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "e2d1a3c9-5c16-0a57-9686-55329224f712",
+    "name" : "topics_title",
+    "display_width" : null,
+    "label" : "Topics Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "945101e8-9677-037e-bdda-f760e5785465",
+    "name" : "languages_title",
+    "display_width" : null,
+    "label" : "Languages Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
 } ]
