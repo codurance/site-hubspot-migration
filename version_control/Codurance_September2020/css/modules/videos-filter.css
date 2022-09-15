@@ -262,6 +262,7 @@
 {% call utils.medium_large_and_extra_large() %}
     .filter-dropdown-options {
       margin-top: -0.2rem;
+      padding-top: .8em;
       position: relative;
       width: intrinsic;
       width: -moz-max-content;
