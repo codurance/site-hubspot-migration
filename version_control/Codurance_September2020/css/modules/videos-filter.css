@@ -123,18 +123,13 @@
       border-radius: .3em;
       left: 50%;
     }
-{% endcall %}
 
-
-
-{% call utils.medium_large_and_extra_large() %}
     .mobile-filter-toggle {
         display: none;
     }
 {% endcall %}
 
-
-{% call utils.small_and_medium() %}
+{% call utils.small() %}
     .mobile-filter-toggle__button {
         background: none;
         border: none;
@@ -147,7 +142,6 @@
     }
 {% endcall %}
 
-
 .mobile-filter-toggle__icon {
   transform: rotate(0deg);
   transition: var(--cta-transition);
@@ -159,26 +153,18 @@
 
 .filter-dropdown-container {
   position: relative;
-  min-width: 200px;
 }
 
 {% call utils.medium_large_and_extra_large()%}
     .filter-dropdown-container {
       height: 100%;
-      width: 0;
+      width: 200px;
     }
 {% endcall %}
 
 .filter-dropdown-wrapper {
     {{utils.card_shadow_large()}}
 }
-
-{% call utils.small() %}
-    .filter-dropdown-wrapper {
-      width: 100%;
-      {{utils.card_shadow()}}
-    }
-{% endcall %}
 
 {% call utils.medium_large_and_extra_large()%}
     .filter-dropdown-wrapper {
@@ -188,15 +174,11 @@
       display: flex;
       justify-content: center;
     }
-{% endcall %}
 
-{% call utils.medium_large_and_extra_large()%}
     .filter-dropdown-wrapper.hidden {
       visibility: visible;
     }
-{% endcall %}
 
-{% call utils.medium_large_and_extra_large()%}
     .filter-dropdown-container:not(:last-of-type)::after {
       background-color: var(--french-gray);
       content: '';
@@ -207,6 +189,14 @@
       transform: translateY(-50%);
       width: 1px;
     }
+{% endcall %}
+
+{% call utils.small() %}
+  .filter-dropdown-wrapper {
+    {{ utils.card_shadow() }}
+    
+    width: 100%;
+  }
 {% endcall %}
 
 .filter-dropdown-button {
@@ -272,10 +262,6 @@
       z-index: -1;
     }
 {% endcall %}
-
-.filter-dropdown-options.hidden {
-    display: none;
-}
 
 .filter-dropdown-option {
     background-color: white;
@@ -346,9 +332,8 @@
     top: 6px;
 }
 
-.applied-filters__pill:hover
-.applied-filters__remove-button {
-    color: white
+.applied-filters__pill:hover .applied-filters__remove-button {
+    color: white;
 }
 
 .applied-filters__remove-button:hover {

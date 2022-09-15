@@ -1,6 +1,5 @@
 "use strict";
 
-/* BEGIN SELECTOR FILTER MODULE */
 const getAll = (entity, type) => {
     const selectors = {
         videos: '.videos .card-item',
@@ -11,7 +10,7 @@ const getAll = (entity, type) => {
 
     return Array.from(
         document.querySelectorAll(selectors[entity])
-    )
+    );
 }
 
 const get = (entity, value, type) => {
@@ -54,12 +53,14 @@ let filters = {
 };
   
 const filterOptions = type => {
-    return getAll('options', type).map(option => option.dataset[`${type}Option`]).filter( x => x.length > 0);
+    return getAll('options', type)
+        .map(option => option.dataset[`${type}Option`])
+        .filter( x => x.length > 0);
 }
 
 const setFilterOptions = _ => {
-    filters.types.forEach(type =>
-        filters.all[type] = filterOptions(type));
+    filters.types
+        .forEach(type => filters.all[type] = filterOptions(type));
 }
 
 const hide = element => {
@@ -72,12 +73,17 @@ const show = element => {
 
 const toggleShowHideFilters = _ => {
     const filtersWrapper = get('filters_wrapper');
+
     if (filtersWrapper.classList.contains('hidden')) {
         show(filtersWrapper);
-        get('mobile_filter_toggle_icon').classList.add('mobile-filter-toggle__icon--selected');
+
+        get('mobile_filter_toggle_icon').classList
+            .add('mobile-filter-toggle__icon--selected');
     } else {
         hide(filtersWrapper);
-        get('mobile_filter_toggle_icon').classList.remove('mobile-filter-toggle__icon--selected');
+
+        get('mobile_filter_toggle_icon').classList
+            .remove('mobile-filter-toggle__icon--selected');
     }
 }
 
@@ -99,7 +105,8 @@ const hideDropdown = container => {
 
     const type = container.dataset.dropdownOptions;
 
-    get('dropdown_icon', type).classList.remove('filter-dropdown-icon--selected');
+    get('dropdown_icon', type).classList
+        .remove('filter-dropdown-icon--selected');
 }
 
 const closeOtherDropdowns = type => {
@@ -234,16 +241,19 @@ const enableButton = button => {
 const updateAvailableFilters = _ => {
     filters.types.forEach(type => {
 
-        const availableFilters = filtersAvailableFor(type)
-                                            .flat(Infinity)
-                                            .filter(onlyUnique) 
-                                            .filter(element => element.trim().length > 0);
+        const availableFilters = 
+            filtersAvailableFor(type)
+                .flat(Infinity)
+                .filter(onlyUnique) 
+                .filter(element => element.trim().length > 0);
 
-        const unavailableFilters = arrayDifference(filters.all[type], availableFilters);
+        const unavailableFilters = 
+            arrayDifference(filters.all[type], availableFilters);
 
-
-        availableFilters.forEach(filter => enableButton(get('option', filter, type)));
-        unavailableFilters.forEach(filter => disableButton(get('option', filter, type)));
+        availableFilters
+            .forEach(filter => enableButton(get('option', filter, type)));
+        unavailableFilters
+            .forEach(filter => disableButton(get('option', filter, type)));
     });
 }
 
@@ -381,7 +391,6 @@ const initialiseFilters = _ => {
 }
   
 window.addEventListener('DOMContentLoaded', initialiseFilters);
-/* END SELECTOR FILTER MODULE */
 
 get("search_bar_input")
     .addEventListener("keypress", dismissEnterKey);
