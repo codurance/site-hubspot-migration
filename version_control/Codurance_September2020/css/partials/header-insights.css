@@ -12,30 +12,30 @@
     flex-direction: column-reverse;
     max-width: var(--content-max-width);
     margin-inline: auto;
-    padding-bottom: 4em;
+    padding-bottom: 2em;
 }
 
 .header-insights__text {
     padding-left: 1em;
-    margin-top: 3em;
+    margin-top: 2em;
+    margin-bottom: 2em;
     max-width: 40ch;
 }
 
-.header-insights__text h1 { 
+.header-insights__text p { 
     text-transform: uppercase;
-    font-weight: var(--heavy-font-weight);
+    font-weight: var(--light-font-weight);
+    transition: var(--cta-transition);
 }
 
 
-.header-insights__text p {
+.header-insights__text h1 {
     {{ utils.dudler() }}
     font-weight: var(--heavy-font-weight);
     margin-top: .4em;
+    transition: var(--cta-transition);
 }
 
-.header-insights__image {
-    transform: translate(15%, 5%);
-}
 
 {% call utils.medium_large_and_extra_large() %}
     .header-insights__container {
@@ -44,30 +44,25 @@
    
 
     .header-insights__image {
-        transform: scale(1.1) translate(10%, 4%);
         align-self: start;
     }
 
     .header-insights__text {
         align-self: center;
+
     }
 
-    .header-insights__text h1 {
-        {{ utils.freed() }}
-        font-weight: var(--light-font-weight);
-    }
-
-
-    .header-insights__text p {
-        {{ utils.eames() }}
-        font-weight: var(--middle-font-weight);
-    }
-
+  
 {% endcall %}
 
 
 
 {% call utils.large() %}
+    .header-insights__container img{
+        max-height: 60vh;
+    }
+
+
     .header-insights__text {
         padding-left: 2.5em;
     }
@@ -82,6 +77,17 @@
     .header-insights__text {
         padding-left: 0;
     }
+
+    .header-insights__text p {
+        {{ utils.freed() }}
+        font-weight: var(--light-font-weight);
+    }
+
+    .header-insights__text h1 {
+        {{ utils.eames() }}
+        font-weight: var(--middle-font-weight);
+    }
+
 {% endcall %}
 
 
@@ -92,14 +98,15 @@
     }
     .header-insights__text {
         margin-top: -2.4em;
+        margin-bottom: 1em;
     }
 
-    .header-insights__text h1 { 
+    .header-insights__text p { 
         font-weight: var(--middle-font-weight);
     }
 
     .header-insights__image {
-      transform: scale(1) translate(20%, 0%);   
+      transform: translate(20%, 0%);   
     }
 {% endcall %}
 

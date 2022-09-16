@@ -1,0 +1,344 @@
+{% import '../utils/utils.css' as utils %}
+
+:root {
+    --fading-animation-duration: 250ms;
+}
+
+.fade-animation {
+  opacity: 0;
+}
+
+.filters-wrapper {
+  display: flex;
+  gap: 1em;
+  margin-inline: auto;
+  margin-top: -1em;
+}
+
+{% call utils.large_and_extra_large() %}
+  .filters-wrapper {
+    gap: 1.6em;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .filters-wrapper {
+    flex-direction: column;
+    margin-bottom: 1em;
+    padding: 0;
+  }
+
+{% endcall %}
+
+.videos-search-bar {
+  border-radius: 0.3em;
+  position: relative;
+  width: 24rem;
+  max-width: 100%;
+}
+
+{% call utils.small_and_medium()%}
+  .videos-search-bar {
+    width: 100%;
+  }   
+{% endcall %}
+
+{% call utils.small()%}
+  .videos-search-bar {
+    padding-inline: 1em;
+  }   
+{% endcall %}
+
+.videos-search-bar::after {
+  font-family: 'Line Awesome Free';
+  font-weight: 900;
+  content: "\f002";
+  transform: rotateY(180deg);
+  top: 0.45em;
+}
+
+.videos-search-bar::after, 
+.videos-search-bar__reset-button {
+  position: absolute;
+  right: 1em;
+}
+
+{% call utils.small()%}
+  .videos-search-bar::after, 
+  .videos-search-bar__reset-button {
+    right: 2em;
+  }  
+{% endcall %}
+
+.videos-search-bar::after, 
+.reset-button__icon {
+  color: var(--french-gray);
+  font-size: 1.25rem;
+}
+
+.videos-search-bar--icon-hidden::after {
+  display: none;
+}
+
+.videos-search-bar > label {
+  display: none;
+}
+
+.videos-search-bar__input {
+  {{ utils.card_shadow_large()}}
+  background-color: #fff;
+  padding-left: .8em;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.3rem;
+  border: 0;
+  color: var(--shark);
+  font-weight: var(--middle-font-weight);
+}
+
+.videos-search-bar__input::placeholder {
+  color: var(--french-gray);
+}
+
+.videos-search-bar__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.videos-search-bar__reset-button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  top: 0.6em;
+}
+
+.filter {
+  height: 2.5rem;
+  z-index: 1;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .filter {
+      background-color: white;
+      border-radius: .3em;
+      left: 50%;
+    }
+
+    .mobile-filter-toggle {
+        display: none;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .mobile-filter-toggle__button {
+        background: none;
+        border: none;
+        font-weight: var(--heavy-font-weight);
+        cursor: pointer;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
+    }
+{% endcall %}
+
+.mobile-filter-toggle__icon {
+  transform: rotate(0deg);
+  transition: var(--cta-transition);
+}
+
+.mobile-filter-toggle__icon--selected {
+  transform: rotate(135deg);
+}
+
+.filter-dropdown-container {
+  position: relative;
+}
+
+{% call utils.medium_large_and_extra_large()%}
+    .filter-dropdown-container {
+      height: 100%;
+      width: 200px;
+    }
+{% endcall %}
+
+.filter-dropdown-wrapper {
+    {{utils.card_shadow_large()}}
+}
+
+{% call utils.medium_large_and_extra_large()%}
+    .filter-dropdown-wrapper {
+      border-radius: .3rem;
+      align-items: center;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .filter-dropdown-wrapper.hidden {
+      visibility: visible;
+    }
+
+    .filter-dropdown-container:not(:last-of-type)::after {
+      background-color: var(--french-gray);
+      content: '';
+      height: 50%;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+  .filter-dropdown-wrapper {
+    {{ utils.card_shadow() }}
+    
+    width: 100%;
+  }
+{% endcall %}
+
+.filter-dropdown-button {
+  {{ utils.base() }}
+  background-color: white;
+  border: none;
+  border-radius: 0.3em;
+  cursor: pointer;
+  height: 100%;
+  transition: background-color 0.3s linear;
+  width: 100%;
+}
+{% call utils.small() %}
+  .filter-dropdown-button {
+      border: 1px solid var(--athens-gray);
+      padding: 1rem;
+  }
+{% endcall %}
+.filter-dropdown-button:hover {
+    background-color: var(--athens-gray);
+    transition: background-color 0.2s linear;
+}
+
+.filter-icon {
+    margin-right: 0.2rem;
+    pointer-events: none;
+}
+
+.filter-dropdown-icon {
+    margin-left: 0.5rem;
+    pointer-events: none;
+    transform: rotate(0deg);
+    transition: var(--cta-transition);
+}
+
+.filter-dropdown-icon--selected {
+    transform: rotate(180deg);
+}
+
+.filter-dropdown-options {
+  {{ utils.card_shadow() }}
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+
+.filter-dropdown-option:disabled{
+    color: var(--french-gray);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .filter-dropdown-options {
+      margin-top: -0.2rem;
+      padding-top: .8em;
+      position: relative;
+      width: intrinsic;
+      width: -moz-max-content;
+      width: -webkit-max-content;
+      width: max-content;
+      border-radius: .3rem;
+      z-index: -1;
+    }
+{% endcall %}
+
+.filter-dropdown-option {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 40px;
+    padding-top: 10px;
+    position: relative;
+    text-align: left;
+}
+
+.filter-dropdown-option:hover {
+    background-color: var(--athens-gray);
+}
+
+.filter-dropdown-option--selected {
+    font-weight: var(--heavy-font-weight);
+}
+
+.filter-dropdown-option-selected-icon {
+    position: absolute;
+    margin-left: 10px;
+    top: 11px;
+}
+
+.applied-filters__container {
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    gap: 0.8em;
+    justify-content: center;
+    width: 100%;
+    padding: 1.6em 1em;
+}
+
+.applied-filters__pill {
+    {{ utils.sejima() }}
+
+    border: 1px solid var(--mid-gray);
+    border-radius: 50px;
+    color: var(--mid-gray);
+    cursor: default;
+    height: 100%;
+    padding-bottom: 0.2em;
+    padding-left: 1em;
+    padding-right: 2em;
+    padding-top: 0.2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s ease;
+    user-select: none;
+}
+
+.applied-filters__pill:hover {
+    background-color: var(--mid-gray);
+    color: white;
+}
+
+.applied-filters__remove-button {
+    background: none;
+    color: var(--mid-gray);
+    height: 15px;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+}
+
+.applied-filters__pill:hover .applied-filters__remove-button {
+    color: white;
+}
+
+.applied-filters__remove-button:hover {
+    cursor: pointer;
+}
+
+
+
