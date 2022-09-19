@@ -167,16 +167,7 @@ label: Blog Post
   </section>
   <section class="blog-content blog-max-width">
     <div class="blog-content__inner">
-      {% set sections = content.post_body|split('<!--more-->', 2) %}
-      {{ sections[0] }}
-      {% if site_language == 'en' %}
-        {% module
-          "newsletter_inline_form"
-          path="../modules/Newsletter Inline Form.module"
-          label="Newsletter inline form", language='{{site_language}}', no_wrapper=True
-        %}
-      {% endif %}
-      {{ sections[1] }}
+      {{ content.post_body }}
     </div>
     {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
     <div class="blog-comments">
