@@ -1,12 +1,8 @@
 {{ require_css(get_asset_url("../../css/newsletter-form.css")) }}
 {{ require_css(get_asset_url("../../css/modules/newsletter-footer-form.css")) }}
 
-
-{% set language = module.language %}
-{% set spanish = 'es' %}
-{% set english = 'en' %}
 {% import '../../config/config.html' as config %}
-{% if language == spanish %}
+{% if locale == "es" %}
   {% set copy = config.newsletter_cta.es %}
 {% else %}
   {% set copy = config.newsletter_cta.en %}
