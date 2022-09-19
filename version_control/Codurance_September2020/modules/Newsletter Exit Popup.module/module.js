@@ -27,7 +27,13 @@ const potentiallyLeavingPage = e => {
 }
 
 const setCookie = (key, value) => {
-  const expiry = 60 * 60 * 24 * 7;
+  const 
+    seconds = 60,
+    minutes = 60, 
+    hours = 24,
+    days = 90;
+
+  const expiry = seconds * minutes * hours * days;
   document.cookie = `${key}=${value}; path=/; max-age=${expiry}`;
 }
 
