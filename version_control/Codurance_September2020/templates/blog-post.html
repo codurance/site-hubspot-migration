@@ -4,6 +4,7 @@ isAvailableForNewContent: true
 label: Blog Post
 -->
 {% import '../snippets/button-snippets.html' as snippets %}
+{% import '../config/config.html' as config %}
 
 {% extends "./layouts/base.html" %}
 
@@ -176,10 +177,35 @@ label: Blog Post
     </div>
   </section>
 
-  <section class="blog-recruitment-banner blog-max-width">
-    {% module "blog-recruitment-banner" path="../modules/Blog Post Banner Recruitment", label="CTA recruitment banner" no_wrapper=True %}
-  </section>
+  {% choice "CTA_or_newsletter_form" 
+    label='Choose between CTA banner and Newsletter form', 
+    value='CTA', 
+    choices='CTA, Newsletter-Form', 
+    no_wrapper=True, 
+    export_to_template_context=True 
+  %}
 
+  {% if widget_data.CTA_or_newsletter_form.value == "CTA" %}
+    <section class="blog-recruitment-banner blog-max-width">
+      {% module "blog-recruitment-banner" path="../modules/Blog Post Banner Recruitment", label="CTA recruitment banner" no_wrapper=True %}
+    </section>
+  {% else %}
+    {% set newsletter_copy = config.newsletter_cta.en %}
+
+    {% if locale == "es" %}
+      {% set newsletter_copy = config.newsletter_cta.es %}
+    {% endif %}
+
+    {% module 'newsletter_form_card'
+      path='../modules/Newsletter-Form-Card.module',
+      label="Newsletter Form card", 
+      no_wrapper=True,
+      title="{{ newsletter_copy.pending.header }}",
+      subtitle="{{ newsletter_copy.pending.text }}",
+      newsletter_form={ form_id: "{{ newsletter_copy.form_id }}" }
+    %}
+  {% endif %}
+  
   <section class="related-blog-section">
     <div class="related-blog-section__inner page-center">
       <h2 class="related-blog-section__title">
@@ -200,6 +226,7 @@ label: Blog Post
           </div>
         {% endif %}
       </div>
+
       <div class="row">
         {% if content.topic_list %} {% set max_posts = 3 %} {% set post_list = []
         %} {% for topic in content.topic_list %} {% set post_list = post_list +
@@ -263,11 +290,12 @@ label: Blog Post
       </div>
     </div>
   </section>
-    {% module
-      "newsletter_footer_form"
-      path="../modules/Newsletter Footer Form.module"
-      label="Newsletter footer form", no_wrapper=True
-    %}
+
+  {% module
+    "newsletter_footer_form"
+    path="../modules/Newsletter Footer Form.module"
+    label="Newsletter footer form", no_wrapper=True
+  %}
 
     {% module
       "newsletter_exit_popup"
