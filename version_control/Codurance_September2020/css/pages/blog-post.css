@@ -170,6 +170,25 @@
   font-family: monospace;
 }
 
+{% call utils.extra_large() %}
+  .newsletter > .newsletter-wrapper {
+    max-width: var(--base-max-width);
+  }
+
+  .newsletter-wrapper > .newsletter-inner {
+    flex-flow: column;
+    max-width: 30rem;
+  }
+
+  .newsletter-text-content__title {
+    max-width: 20ch;
+  }
+
+  .newsletter__form {
+    align-self: flex-end;
+  }
+{% endcall %}
+
 .related-blog-section {
   background-color: var(--athens-gray);
 }
