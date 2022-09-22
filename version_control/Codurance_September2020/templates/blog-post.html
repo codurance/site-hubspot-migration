@@ -4,16 +4,16 @@ isAvailableForNewContent: true
 label: Blog Post
 -->
 {% import '../snippets/button-snippets.html' as snippets %}
+
 {% import '../config/config.html' as config %}
 
-{% extends "./layouts/base.html" %}
+{% set newsletter_copy = config.newsletter_cta.en %}
 
-{% set path = request.path|truncate(3, true, '') %}
-{% if path is string_containing 'es' %}
-  {% set site_language = 'es'  %}
-{% else %}
-  {% set site_language = 'en' %}
+{% if locale == "es" %}
+  {% set newsletter_copy = config.newsletter_cta.es %}
 {% endif %}
+
+{% extends "./layouts/base.html" %}
 
 <head>
   <meta charset="utf-8">
@@ -190,12 +190,6 @@ label: Blog Post
       {% module "blog-recruitment-banner" path="../modules/Blog Post Banner Recruitment", label="CTA recruitment banner" no_wrapper=True %}
     </section>
   {% else %}
-    {% set newsletter_copy = config.newsletter_cta.en %}
-
-    {% if locale == "es" %}
-      {% set newsletter_copy = config.newsletter_cta.es %}
-    {% endif %}
-
     {% module 'newsletter_form_card'
       path='../modules/Newsletter-Form-Card.module',
       label="Newsletter Form card", 
@@ -291,17 +285,19 @@ label: Blog Post
     </div>
   </section>
 
-  {% module
-    "newsletter_footer_form"
-    path="../modules/Newsletter Footer Form.module"
-    label="Newsletter footer form", no_wrapper=True
+  {% module "newsletter_footer_form",
+    path="../modules/Newsletter Footer Form.module",
+    label="Newsletter footer form", 
+    no_wrapper=True
   %}
 
-    {% module
-      "newsletter_exit_popup"
-      path="../modules/Newsletter Exit Popup.module"
-      label="Newsletter exit popup", language='{{site_language}}', no_wrapper=True
-    %}
+  {% module "newsletter_exit_popup"
+    path="../modules/Newsletter Exit Popup.module",
+    label="Newsletter exit popup", 
+    language='{{ locale }}', 
+    no_wrapper=True
+  %}
+
   <script>
     var cookieIframeContainers = document.getElementsByClassName(
       'js-iframe-container'
