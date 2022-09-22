@@ -5,14 +5,15 @@ label: Blog Post
 -->
 {% import '../snippets/button-snippets.html' as snippets %}
 
-{% extends "./layouts/base.html" %}
+{% import '../config/config.html' as config %}
 
-{% set path = request.path|truncate(3, true, '') %}
-{% if path is string_containing 'es' %}
-  {% set site_language = 'es'  %}
-{% else %}
-  {% set site_language = 'en' %}
+{% set newsletter_copy = config.newsletter_cta.en %}
+
+{% if locale == "es" %}
+  {% set newsletter_copy = config.newsletter_cta.es %}
 {% endif %}
+
+{% extends "./layouts/base.html" %}
 
 <head>
   <meta charset="utf-8">
@@ -167,16 +168,7 @@ label: Blog Post
   </section>
   <section class="blog-content blog-max-width">
     <div class="blog-content__inner">
-      {% set sections = content.post_body|split('<!--more-->', 2) %}
-      {{ sections[0] }}
-      {% if site_language == 'en' %}
-        {% module
-          "newsletter_inline_form"
-          path="../modules/Newsletter Inline Form.module"
-          label="Newsletter inline form", language='{{site_language}}', no_wrapper=True
-        %}
-      {% endif %}
-      {{ sections[1] }}
+      {{ content.post_body }}
     </div>
     {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
     <div class="blog-comments">
@@ -185,10 +177,29 @@ label: Blog Post
     </div>
   </section>
 
-  <section class="blog-recruitment-banner blog-max-width">
-    {% module "blog-recruitment-banner" path="../modules/Blog Post Banner Recruitment", label="CTA recruitment banner" no_wrapper=True %}
-  </section>
+  {% choice "CTA_or_newsletter_form" 
+    label='Choose between CTA banner and Newsletter form', 
+    value='CTA', 
+    choices='CTA, Newsletter-Form', 
+    no_wrapper=True, 
+    export_to_template_context=True 
+  %}
 
+  {% if widget_data.CTA_or_newsletter_form.value == "CTA" %}
+    <section class="blog-recruitment-banner blog-max-width">
+      {% module "blog-recruitment-banner" path="../modules/Blog Post Banner Recruitment", label="CTA recruitment banner" no_wrapper=True %}
+    </section>
+  {% else %}
+    {% module 'newsletter_form_card'
+      path='../modules/Newsletter-Form-Card.module',
+      label="Newsletter Form card", 
+      no_wrapper=True,
+      title="{{ newsletter_copy.pending.header }}",
+      subtitle="{{ newsletter_copy.pending.text }}",
+      newsletter_form={ form_id: "{{ newsletter_copy.form_id }}" }
+    %}
+  {% endif %}
+  
   <section class="related-blog-section">
     <div class="related-blog-section__inner page-center">
       <h2 class="related-blog-section__title">
@@ -209,6 +220,7 @@ label: Blog Post
           </div>
         {% endif %}
       </div>
+
       <div class="row">
         {% if content.topic_list %} {% set max_posts = 3 %} {% set post_list = []
         %} {% for topic in content.topic_list %} {% set post_list = post_list +
@@ -272,17 +284,20 @@ label: Blog Post
       </div>
     </div>
   </section>
-    {% module
-      "newsletter_footer_form"
-      path="../modules/Newsletter Footer Form.module"
-      label="Newsletter footer form", language='{{site_language}}', no_wrapper=True
-    %}
 
-    {% module
-      "newsletter_exit_popup"
-      path="../modules/Newsletter Exit Popup.module"
-      label="Newsletter exit popup", language='{{site_language}}', no_wrapper=True
-    %}
+  {% module "newsletter_footer_form",
+    path="../modules/Newsletter Footer Form.module",
+    label="Newsletter footer form", 
+    no_wrapper=True
+  %}
+
+  {% module "newsletter_exit_popup"
+    path="../modules/Newsletter Exit Popup.module",
+    label="Newsletter exit popup", 
+    language='{{ locale }}', 
+    no_wrapper=True
+  %}
+
   <script>
     var cookieIframeContainers = document.getElementsByClassName(
       'js-iframe-container'
