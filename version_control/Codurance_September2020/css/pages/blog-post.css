@@ -21,7 +21,6 @@
   align-items: center;
   background-color: white;
   display: flex;
-  justify-content: space-between;
   margin-top: -2rem;
   padding: 1em;
   position: relative;
@@ -58,11 +57,17 @@
 }
 {% call utils.medium_large_and_extra_large() %}
   .blog-meta__tag-list {
-    margin-left: 3em;
+    margin-left: auto;
     margin-top: 0;
     text-align: right;
   }
+
+  .tag-list--left {
+    margin-left: 0;
+  }
+
 {% endcall %}
+
 {% call utils.small() %}
   .blog-meta__tag-list {
     margin-top: 0.5em;
