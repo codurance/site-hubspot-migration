@@ -55,6 +55,7 @@
   list-style: none;
   margin-bottom: 0;
 }
+
 {% call utils.medium_large_and_extra_large() %}
   .blog-meta__tag-list {
     margin-left: auto;
@@ -62,8 +63,9 @@
     text-align: right;
   }
 
-  .tag-list--left {
+  .tag-list--katalyst {
     margin-left: 0;
+    pointer-events: none;
   }
 
 {% endcall %}
