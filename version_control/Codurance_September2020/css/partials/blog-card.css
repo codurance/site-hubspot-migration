@@ -3,7 +3,7 @@
 .custom-blog-listing__post,
 .blog-cta-card {
   transition: var(--cta-transition);
-  box-shadow: {{card_box_shadow}};
+  {{ utils.card_shadow() }};
   display: flex;
 }
 .custom-blog-listing__post:not(.custom-blog-listing__post--featured) {
@@ -21,7 +21,7 @@
 .custom-blog-listing__post:hover,
 .blog-cta-card:hover {
   transform: translateY(-0.3rem);
-  box-shadow: {{card_box_shadow_on_hover}};
+  box-shadow: {{utils.card_shadow_large()}};
 }
 
 .custom-blog-listing__post-title {
