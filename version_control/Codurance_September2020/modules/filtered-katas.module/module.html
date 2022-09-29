@@ -19,8 +19,8 @@
 }
 %}
 {% set infoMessage = { header: "We’re sorry, your search returned no results",
-paragraph: "Try adjusting your filters to find what you’re looking for."
-}
+    paragraph: "Try adjusting your filters to find what you’re looking for."
+  }
 %}
 
 
@@ -89,15 +89,9 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
   <div class="custom-kata-listing">
     <div class="page-center container custom-py-1">
       <div class="masonry-grid row custom-mb-70">
-        <div class="masonry-grid-sizer" style="max-width: 0;"></div>
-        <div class="katas-grid__container" data-grid-container>
-          <div class="katas-grid__sizer"></div>
-          <div class="katas-grid__gutter-sizer"></div>
+        <div class="katas-grid__container" >
           {% for content in blogPosts %}
-            <div class="custom-kata-listing__post-wrapper masonry-grid-item"
-                 blogTags="{{content.tag_list}}"
-                 >
-              <article class="custom-kata-listing__post">
+              <article class="custom-kata-listing__post" blogTags="{{content.tag_list}}">
                 {% if content.featured_image %}
                   <a href="{{ content.absolute_url }}">
                     <img class="custom-bg-white img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}">
@@ -132,7 +126,6 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
                   {% endif %}
                 </div>
               </article>
-            </div>
           {% endfor %}
         </div>
       </div>
@@ -140,6 +133,5 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
   </div>
 </main>
 
-{{ require_js(get_asset_url("../../js/isotope.js"), { position: "footer", defer:true }) }}
 
 
