@@ -1,97 +1,14 @@
 {% import '../utils/utils.css' as utils %}
 
-
-.custom-kata-listing__post-wrapper {
-  margin-bottom: 2rem;
-  width: 100%;
-  padding-right: 8px;
-  padding-left: 8px;
-  margin-right: 0;
-  margin-left: 0;
-}
-{% call utils.large_and_extra_large() %}
-  .custom-kata-listing__post-wrapper--featured {
-    flex: 0 0 66.666667%;
-    max-width: 66.666667%;
-  }
-  .custom-kata-listing__post-wrapper:not(
-    .custom-kata-listing__post-wrapper--featured
-  ) {
-      flex: 0 0 33.333333%;
-      max-width: 33.333333%;
-  }
-{% endcall %}
-{% call utils.small_and_medium() %}
-  .custom-kata-listing__post-wrapper--featured {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-{% endcall %}
-{% call utils.medium() %}
-  .custom-kata-listing__post-wrapper:not(
-    .custom-kata-listing__post-wrapper--featured
-  ) {
-      flex: 0 0 50%;
-      max-width: 50%;
-  }
-{% endcall %}
-{% call utils.small() %}
-  .custom-kata-listing__post-wrapper:not(
-    .custom-kata-listing__post-wrapper--featured
-  ) {
-      flex: 0 0 100%;
-      max-width: 100%;
-  }
-{% endcall %}
-
 .masonry-grid.row.custom-mb-70 {
   margin: 0;
-}
-
-.masonry-grid .widget-module ul {
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-  margin-top: 0;
-}
-.masonry-grid .hs_cos_wrapper_type_post_filter h3 {
-  margin: 0;
-  padding: 0;
-}
-.masonry-grid .widget-module ul li {
-  margin-right: 0.35714rem;
-  display: inline-block;
-}
-.masonry-grid .widget-module ul li a {
-  color: #555 !important;
-}
-.masonry-grid .widget-module ul li span.filter-link-count {
-  display: none;
-}
-
-.masonry-grid .widget-module ul li:after {
-  color: #ccc;
-  content: "/";
-}
-
-.masonry-grid .widget-module ul li:last-child:after {
-  display: none;
 }
 
 .list-inline-item {
   {{ utils.natus() }}
   display: inline-block;
 }
+
 .list-inline-item:not(:last-child) {
   margin-right: 5px;
-}
-
-.header-hero {
-  {{ utils.white_to_tango() }}
-  padding-bottom: 1rem !important;
-}
-
-.header-hero__text p {
-    font-size: var(--base-font-size) !important;
-    line-height: var(--base-line-height) !important;
 }
