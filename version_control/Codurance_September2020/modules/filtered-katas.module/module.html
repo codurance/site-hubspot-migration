@@ -90,20 +90,20 @@
             <article class="custom-kata-listing__post" blogTags="{{content.tag_list}}">
               {% if content.featured_image %}
                 <a href="{{ content.absolute_url }}">
-                  <img class="custom-bg-white img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}">
+                  <img class="img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}">
                 </a>
               {% endif %}
-              <div class="custom-bg-white custom-pa-15">
-                <div class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12 list-inline-item mr-0">
+              <div class="custom-kata-listing__wrapper custom-pa-15">
+                <div class="custom-kata-listing__author-name">
                   By {{ content.blog_post_author.display_name }}
                 </div>
-                <h5 class="h5 custom-color-black custom-font-weight-600 mb-2">
+                <h5 class="custom-kata-listing__kata-name">
                   <a class="custom-kata-listing__title-link" href="{{ content.absolute_url }}">
                     {{ content.name }}</a>
                 </h5>
 
                 {% if content.tag_list %}
-                  <ul class="list-inline custom-font-size-12 mb-0 custom-mt-20">
+                  <ul class="list-inline custom-kata-listing__tags">
                     {% for tag in content.tag_list %}
                       {% if difficulties.contains(tag.name) %}
                         <li class="list-inline-item custom-mb-5">
