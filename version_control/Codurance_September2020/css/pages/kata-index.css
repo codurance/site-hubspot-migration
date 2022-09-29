@@ -1,9 +1,5 @@
 {% import '../utils/utils.css' as utils %}
 
-{% set card_box_shadow = '0 20px 25px -12px var(--woodsmoke--10)' %}
-
-{% set card_box_shadow_on_hover = '0.3rem 20px 30px -12px var(--woodsmoke--10)'%}
-
 .masonry-grid-sizer {
   flex: 0 0 8.333333%;
   max-width: 8.333333%;
