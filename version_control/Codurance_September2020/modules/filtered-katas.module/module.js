@@ -1,4 +1,3 @@
-// let isotope;
 
 
 let filters = {
@@ -360,20 +359,7 @@ const initialiseKataTags = _ => {
   })
 }
 
-// const initialiseIsotopeLayout = _ => {
-//   const elem = get('grid_container');
-//   const isotopeLayoutOpts = {
-//     layoutMode: 'masonry',
-//     itemSelector: '.masonry-grid-item',
-//     percentPosition: true,
-//     masonry: {
-//       columnWidth: '.katas-grid__sizer',
-//       gutter: '.katas-grid__gutter-sizer'
-//     }
-//   };
 
-//   isotope = new Isotope(elem, isotopeLayoutOpts);
-// }
 
 const initialiseFilters = _ => {
   setFilterOptions();
@@ -383,9 +369,6 @@ const initialiseFilters = _ => {
 
 const init = _ => {
   initialiseFilters();
-  // initialiseIsotopeLayout();
-  // updateAvailableTopicFilters
-  // isotope.layout();
 }
 
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('DOMContentLoaded', initialiseFilters);
