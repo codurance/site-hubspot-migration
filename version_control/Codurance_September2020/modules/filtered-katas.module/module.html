@@ -1,5 +1,3 @@
-
-
 {{ require_css(get_asset_url("../../css/modules/filtered-katas.css")) }}
 
 {% set blogPosts = contents %}
@@ -23,8 +21,7 @@
   }
 %}
 
-
-<main class="katas-page__main">
+<main class="katas-page__main lateral-spacing">
   <div class="katas__filter">
     <div class="katas__filter-toggle">
       <button data-filter-toggle>
@@ -87,47 +84,45 @@
   </div>
 
   <div class="custom-kata-listing">
-    <div class="page-center container custom-py-1">
-      <div class="masonry-grid row custom-mb-70">
-        <div class="katas-grid__container" >
-          {% for content in blogPosts %}
-              <article class="custom-kata-listing__post" blogTags="{{content.tag_list}}">
-                {% if content.featured_image %}
-                  <a href="{{ content.absolute_url }}">
-                    <img class="custom-bg-white img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}">
-                  </a>
-                {% endif %}
-                <div class="custom-bg-white custom-pa-15">
-                  <div class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12 list-inline-item mr-0">
-                    By {{ content.blog_post_author.display_name }}
-                  </div>
-                  <h5 class="h5 custom-color-black custom-font-weight-600 mb-2">
-                    <a class="custom-kata-listing__title-link" href="{{ content.absolute_url }}">
-                      {{ content.name }}</a>
-                  </h5>
-
-                  {% if content.tag_list %}
-                    <ul class="list-inline custom-font-size-12 mb-0 custom-mt-20">
-                      {% for tag in content.tag_list %}
-                        {% if difficulties.contains(tag.name) %}
-                          <li class="list-inline-item custom-mb-5">
-                            <a class="tags custom-kata-listing__tag" data-difficulty-option="{{tag.name}}" style="cursor:pointer">{{ tag.name }}</a>
-                          </li>
-                        {% endif %}
-                      {% endfor %}
-                      {% for tag in content.tag_list %}                        
-                        {% if !difficulties.contains(tag.name) %}
-                          <li class="list-inline-item custom-mb-5">
-                            <a class="tags custom-kata-listing__tag" data-topic-option="{{tag.name}}" style="cursor:pointer">{{ tag.name }}</a>
-                          </li>  
-                        {% endif %}                        
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
+    <div class="masonry-grid row custom-mb-70">
+      <div class="katas-grid__container">
+        {% for content in blogPosts %}
+            <article class="custom-kata-listing__post" blogTags="{{content.tag_list}}">
+              {% if content.featured_image %}
+                <a href="{{ content.absolute_url }}">
+                  <img class="custom-bg-white img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}">
+                </a>
+              {% endif %}
+              <div class="custom-bg-white custom-pa-15">
+                <div class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12 list-inline-item mr-0">
+                  By {{ content.blog_post_author.display_name }}
                 </div>
-              </article>
-          {% endfor %}
-        </div>
+                <h5 class="h5 custom-color-black custom-font-weight-600 mb-2">
+                  <a class="custom-kata-listing__title-link" href="{{ content.absolute_url }}">
+                    {{ content.name }}</a>
+                </h5>
+
+                {% if content.tag_list %}
+                  <ul class="list-inline custom-font-size-12 mb-0 custom-mt-20">
+                    {% for tag in content.tag_list %}
+                      {% if difficulties.contains(tag.name) %}
+                        <li class="list-inline-item custom-mb-5">
+                          <a class="tags custom-kata-listing__tag" data-difficulty-option="{{tag.name}}" style="cursor:pointer">{{ tag.name }}</a>
+                        </li>
+                      {% endif %}
+                    {% endfor %}
+                    {% for tag in content.tag_list %}                        
+                      {% if !difficulties.contains(tag.name) %}
+                        <li class="list-inline-item custom-mb-5">
+                          <a class="tags custom-kata-listing__tag" data-topic-option="{{tag.name}}" style="cursor:pointer">{{ tag.name }}</a>
+                        </li>  
+                      {% endif %}                        
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            </article>
+        {% endfor %}
       </div>
     </div>
   </div>
