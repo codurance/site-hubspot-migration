@@ -256,7 +256,7 @@
 
 .katas-grid__container {
     margin: 0 auto 50px;
-    max-width: var(--content-max-width); 
+    max-width: min(var(--content-max-width), 100%); 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     grid-gap: 1.8em;
