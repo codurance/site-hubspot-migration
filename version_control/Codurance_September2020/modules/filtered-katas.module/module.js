@@ -359,16 +359,11 @@ const initialiseKataTags = _ => {
   })
 }
 
-
-
 const initialiseFilters = _ => {
   setFilterOptions();
   addListeners();
   initialiseKataTags();
 }
 
-const init = _ => {
-  initialiseFilters();
-}
 
 window.addEventListener('DOMContentLoaded', initialiseFilters);
