@@ -1,9 +1,5 @@
 {% import '../utils/utils.css' as utils %}
 
-.masonry-grid-sizer {
-  flex: 0 0 8.333333%;
-  max-width: 8.333333%;
-}
 
 .custom-kata-listing__post-wrapper {
   margin-bottom: 2rem;
