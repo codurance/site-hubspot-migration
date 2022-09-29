@@ -4,9 +4,18 @@
   transition: var(--cta-transition);
   {{ utils.card_shadow() }};
   display: flex;
-}
-.custom-kata-listing__post {
   flex-direction: column;
+  background: white;
+  border-radius: 10px;
+}
+.custom-kata-listing__post.hidden {
+  display: none;
+
+}
+
+.custom-kata-listing__post img{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .custom-kata-listing__post:hover {
