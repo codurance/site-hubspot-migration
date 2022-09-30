@@ -18,15 +18,20 @@
   border-top-right-radius: 10px;
 }
 
+
+
 .custom-kata-listing__post:hover {
   transform: translateY(-0.3rem);
   {{ utils.card_shadow_large() }};
 }
 
-.custom-kata-listing__post-title {
-  {{ utils.base() }}
-  margin-bottom: var(--base-margin);
-  font-weight: var(--heavy-font-weight);
+.custom-kata-listing__author-name {
+  {{ utils.natus() }}
+  color: var(--mid-gray);
+}
+
+.custom-kata-listing__kata-name {
+  {{ utils.freed() }}
 }
 
 .custom-kata-listing__title-link {

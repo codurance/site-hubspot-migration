@@ -83,49 +83,45 @@
     {% endfor %}
   </div>
 
-  <div class="custom-kata-listing lateral-spacing">
-    <div class="masonry-grid row custom-mb-70">
-      <div class="katas-grid__container">
-        {% for content in blogPosts %}
-            <article class="custom-kata-listing__post" blogTags="{{content.tag_list}}">
-              {% if content.featured_image %}
-                <a href="{{ content.absolute_url }}">
-                  <img class="img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}">
-                </a>
-              {% endif %}
-              <div class="custom-kata-listing__wrapper custom-pa-15">
-                <div class="custom-kata-listing__author-name">
-                  By {{ content.blog_post_author.display_name }}
-                </div>
-                <h5 class="custom-kata-listing__kata-name">
-                  <a class="custom-kata-listing__title-link" href="{{ content.absolute_url }}">
-                    {{ content.name }}</a>
-                </h5>
-
-                {% if content.tag_list %}
-                  <ul class="list-inline custom-kata-listing__tags">
-                    {% for tag in content.tag_list %}
-                      {% if difficulties.contains(tag.name) %}
-                        <li class="list-inline-item custom-mb-5">
-                          <a class="tags custom-kata-listing__tag" data-difficulty-option="{{tag.name}}" style="cursor:pointer">{{ tag.name }}</a>
-                        </li>
-                      {% endif %}
-                    {% endfor %}
-                    {% for tag in content.tag_list %}                        
-                      {% if !difficulties.contains(tag.name) %}
-                        <li class="list-inline-item custom-mb-5">
-                          <a class="tags custom-kata-listing__tag" data-topic-option="{{tag.name}}" style="cursor:pointer">{{ tag.name }}</a>
-                        </li>  
-                      {% endif %}                        
-                    {% endfor %}
-                  </ul>
-                {% endif %}
+    <div class="katas-grid__container lateral-spacing">
+      {% for content in blogPosts %}
+          <article class="custom-kata-listing__post" blogTags="{{content.tag_list}}">
+            {% if content.featured_image %}
+              <a href="{{ content.absolute_url }}">
+                <img class="img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}">
+              </a>
+            {% endif %}
+            <div class="custom-kata-listing__wrapper custom-pa-15">
+              <div class="custom-kata-listing__author-name">
+                By {{ content.blog_post_author.display_name }}
               </div>
-            </article>
-        {% endfor %}
-      </div>
+              <h5 class="custom-kata-listing__kata-name">
+                <a class="custom-kata-listing__title-link" href="{{ content.absolute_url }}">
+                  {{ content.name }}</a>
+              </h5>
+
+              {% if content.tag_list %}
+                <ul class="list-inline custom-kata-listing__tags">
+                  {% for tag in content.tag_list %}
+                    {% if difficulties.contains(tag.name) %}
+                      <li class="list-inline-item custom-mb-5">
+                        <a class="tags custom-kata-listing__tag" data-difficulty-option="{{tag.name}}" style="cursor:pointer">{{ tag.name }}</a>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                  {% for tag in content.tag_list %}                        
+                    {% if !difficulties.contains(tag.name) %}
+                      <li class="list-inline-item custom-mb-5">
+                        <a class="tags custom-kata-listing__tag" data-topic-option="{{tag.name}}" style="cursor:pointer">{{ tag.name }}</a>
+                      </li>  
+                    {% endif %}                        
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </article>
+      {% endfor %}
     </div>
-  </div>
 </main>
 
 
