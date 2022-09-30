@@ -277,18 +277,10 @@
     margin-block-end: 0;
 }
 
-
-.katas-grid__card {
-    margin-bottom: 30px;
-}
-
-
 {% call utils.large_and_extra_large() %}
-
     .katas-grid__container {
         margin: 0 auto;
     }
-
 {% endcall %}
 
 
