@@ -23,7 +23,7 @@ footer looks when it comes to spacing and other general styles.
 }
 .footer__container {
   margin: 0 auto;
-  max-width: var(--centered-content-max-width);
+  max-width: var(--content-max-width);
   padding-left: var(--centered-content-lateral-spacing);
   padding-right: var(--centered-content-lateral-spacing);
 }

@@ -416,14 +416,10 @@ and how they stack. This is based off of the bootstrap system.
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1299px) {
     .lateral-spacing {
         padding-left: 50px;
         padding-right: 50px;
     }
 }
 
-.page-center {
-  max-width: 1140px;
-  margin: 0 auto;
-}

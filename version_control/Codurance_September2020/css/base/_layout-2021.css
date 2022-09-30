@@ -12,6 +12,6 @@
 }
 
 .page-center {
-  max-width: var(--centered-content-max-width);
+  max-width: var(--content-max-width);
   margin: 0 auto;
 }
