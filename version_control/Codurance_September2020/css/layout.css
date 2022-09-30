@@ -332,7 +332,7 @@ and how they stack. This is based off of the bootstrap system.
 }
 
 .show {
-    display: block;
+    display: block !important;
 }
 
 .invisible {
@@ -340,8 +340,8 @@ and how they stack. This is based off of the bootstrap system.
 }
 
 .hidden {
-    display: none;
-    visibility: hidden;
+    display: none !important;
+    visibility: hidden !important;
 }
 
 /* Responsive Visibilty Classes */

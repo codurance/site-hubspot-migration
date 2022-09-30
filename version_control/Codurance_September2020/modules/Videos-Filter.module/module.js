@@ -74,16 +74,16 @@ const show = element => {
 const toggleShowHideFilters = _ => {
     const filtersWrapper = get('filters_wrapper');
 
-    if (filtersWrapper.classList.contains('hidden')) {
-        show(filtersWrapper);
-
-        get('mobile_filter_toggle_icon').classList
-            .add('mobile-filter-toggle__icon--selected');
-    } else {
-        hide(filtersWrapper);
+    if (filtersWrapper.classList.contains('show')) {
+        filtersWrapper.classList.remove("show");
 
         get('mobile_filter_toggle_icon').classList
             .remove('mobile-filter-toggle__icon--selected');
+    } else {
+        filtersWrapper.classList.add("show");
+
+        get('mobile_filter_toggle_icon').classList
+            .add('mobile-filter-toggle__icon--selected');
     }
 }
 
