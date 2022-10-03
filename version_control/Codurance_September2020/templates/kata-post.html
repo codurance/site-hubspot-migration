@@ -258,25 +258,7 @@ label: Kata Post
       path="../modules/Newsletter Exit Popup.module"
       label="Newsletter exit popup", language='{{site_language}}', no_wrapper=True
     %}
-  <script>
-    var cookieIframeContainers = document.getElementsByClassName(
-      'js-iframe-container'
-    );
-    function showConsentDependentIframes() {
-      for (let index = 0; index < cookieIframeContainers.length; index++) {
-        const container = cookieIframeContainers[index];
 
-        var iframeUrl = container.getAttribute('js-iframe-url');
-        var iframe = document.createElement('iframe');
-        iframe.setAttribute('src', iframeUrl);
-        iframe.style.width = '100%';
-        iframe.style.height = '400px';
-        iframe.style.border = 'none';
 
-        container.appendChild(iframe);
-      }
-    }
-    showConsentDependentIframes();
-  </script>
 
   {% endblock body %}

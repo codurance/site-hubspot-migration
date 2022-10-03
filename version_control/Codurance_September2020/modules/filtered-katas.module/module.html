@@ -1,5 +1,3 @@
-
-
 {{ require_css(get_asset_url("../../css/modules/filtered-katas.css")) }}
 
 {% set blogPosts = contents %}
@@ -19,10 +17,9 @@
 }
 %}
 {% set infoMessage = { header: "We’re sorry, your search returned no results",
-paragraph: "Try adjusting your filters to find what you’re looking for."
-}
+    paragraph: "Try adjusting your filters to find what you’re looking for."
+  }
 %}
-
 
 <main class="katas-page__main">
   <div class="katas__filter">
@@ -33,7 +30,7 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
         </i>
       </button>
     </div>
-    <div class="katas__filter-dropdown-wrapper hidden" data-filters-wrapper>
+    <div class="katas__filter-dropdown-wrapper" data-filters-wrapper>
       <div class="katas__filter-dropdown-container">
         <button class="katas__filter-dropdown-button" data-dropdown-button="difficulties">
           <i class="katas__filter-icon las la-tachometer-alt"></i>
@@ -86,60 +83,46 @@ paragraph: "Try adjusting your filters to find what you’re looking for."
     {% endfor %}
   </div>
 
-  <div class="custom-kata-listing">
-    <div class="page-center container custom-py-1">
-      <div class="masonry-grid row custom-mb-70">
-        <div class="masonry-grid-sizer" style="max-width: 0;"></div>
-        <div class="katas-grid__container" data-grid-container>
-          <div class="katas-grid__sizer"></div>
-          <div class="katas-grid__gutter-sizer"></div>
-          {% for content in blogPosts %}
-            <div class="custom-kata-listing__post-wrapper masonry-grid-item"
-                 blogTags="{{content.tag_list}}"
-                 >
-              <article class="custom-kata-listing__post">
-                {% if content.featured_image %}
-                  <a href="{{ content.absolute_url }}">
-                    <img class="custom-bg-white img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}">
-                  </a>
-                {% endif %}
-                <div class="custom-bg-white custom-pa-15">
-                  <div class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12 list-inline-item mr-0">
-                    By {{ content.blog_post_author.display_name }}
-                  </div>
-                  <h5 class="h5 custom-color-black custom-font-weight-600 mb-2">
-                    <a class="custom-kata-listing__title-link" href="{{ content.absolute_url }}">
-                      {{ content.name }}</a>
-                  </h5>
+    <div class="katas-grid__container lateral-spacing">
+      {% for content in blogPosts %}
+          <article class="custom-kata-listing__post" blogTags="{{content.tag_list}}">
+            {% if content.featured_image %}
+              <a href="{{ content.absolute_url }}">
+                <img class="img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}">
+              </a>
+            {% endif %}
+            <div class="custom-kata-listing__wrapper">
+              <div class="custom-kata-listing__author-name">
+                By {{ content.blog_post_author.display_name }}
+              </div>
+              <h5 class="custom-kata-listing__kata-name">
+                <a class="custom-kata-listing__title-link" href="{{ content.absolute_url }}">
+                  {{ content.name }}</a>
+              </h5>
 
-                  {% if content.tag_list %}
-                    <ul class="list-inline custom-font-size-12 mb-0 custom-mt-20">
-                      {% for tag in content.tag_list %}
-                        {% if difficulties.contains(tag.name) %}
-                          <li class="list-inline-item custom-mb-5">
-                            <a class="tags custom-kata-listing__tag" data-difficulty-option="{{tag.name}}" style="cursor:pointer">{{ tag.name }}</a>
-                          </li>
-                        {% endif %}
-                      {% endfor %}
-                      {% for tag in content.tag_list %}                        
-                        {% if !difficulties.contains(tag.name) %}
-                          <li class="list-inline-item custom-mb-5">
-                            <a class="tags custom-kata-listing__tag" data-topic-option="{{tag.name}}" style="cursor:pointer">{{ tag.name }}</a>
-                          </li>  
-                        {% endif %}                        
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                </div>
-              </article>
+              {% if content.tag_list %}
+                <ul class="list-inline custom-kata-listing__tags">
+                  {% for tag in content.tag_list %}
+                    {% if difficulties.contains(tag.name) %}
+                      <li class="list-inline-item custom-mb-5">
+                        <a class="tags custom-kata-listing__tag" data-difficulty-option="{{tag.name}}" style="cursor:pointer">{{ tag.name }}</a>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                  {% for tag in content.tag_list %}                        
+                    {% if !difficulties.contains(tag.name) %}
+                      <li class="list-inline-item custom-mb-5">
+                        <a class="tags custom-kata-listing__tag" data-topic-option="{{tag.name}}" style="cursor:pointer">{{ tag.name }}</a>
+                      </li>  
+                    {% endif %}                        
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </div>
-          {% endfor %}
-        </div>
-      </div>
+          </article>
+      {% endfor %}
     </div>
-  </div>
 </main>
 
-{{ require_js(get_asset_url("../../js/isotope.js"), { position: "footer", defer:true }) }}
 
 

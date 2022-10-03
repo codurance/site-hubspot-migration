@@ -58,7 +58,6 @@ styleshets into just this one in each of themed templates.
 {% include './_website.css' %}
 {% include './animate.css' %}
 {% include './_header.css' %}
-{% include './_footer.css' %}
 {% include './simple-line-icons.css' %}
 {% include './_blog.css' %}
 {% include './icons.css' %}

@@ -1,9 +1,4 @@
-let isotope;
 
-//get all posts
-//extract tags from property on each post
-//shown_tags = get all tags that do not have 'hidden' class
-//add hidden class to posts that do not have any of shown_tags
 
 let filters = {
   types: [ 'difficulty', 'topic' ],
@@ -73,14 +68,13 @@ const show = element => {
 }
 
 const toggleShowHideFilters = _ => {
+
   const filtersWrapper = get('filters_wrapper');
-  if (filtersWrapper.classList.contains('hidden')) {
-    show(filtersWrapper);
-    get('filter_toggle_icon').classList.add('katas__filter-toggle-icon--selected');
-  } else {
-    hide(filtersWrapper);
-    get('filter_toggle_icon').classList.remove('katas__filter-toggle-icon--selected');
-  }
+  const mobileFilterIcon = get('filter_toggle_icon');
+
+  filtersWrapper.classList.toggle('show');
+  mobileFilterIcon.classList.toggle('katas__filter-toggle-icon--selected')
+
 }
 
 const addFilterToggleListener = _ => {
@@ -259,7 +253,6 @@ const refilter = _ => {
 
   katas.visible.forEach(show);
   katas.hidden.forEach(hide);
-  isotope.layout();
 }
 
 const update = _ => {
@@ -364,32 +357,11 @@ const initialiseKataTags = _ => {
   })
 }
 
-const initialiseIsotopeLayout = _ => {
-  const elem = get('grid_container');
-  const isotopeLayoutOpts = {
-    layoutMode: 'masonry',
-    itemSelector: '.masonry-grid-item',
-    percentPosition: true,
-    masonry: {
-      columnWidth: '.katas-grid__sizer',
-      gutter: '.katas-grid__gutter-sizer'
-    }
-  };
-
-  isotope = new Isotope(elem, isotopeLayoutOpts);
-}
-
 const initialiseFilters = _ => {
   setFilterOptions();
   addListeners();
   initialiseKataTags();
 }
 
-const init = _ => {
-  initialiseFilters();
-  initialiseIsotopeLayout();
-  updateAvailableTopicFilters
-  isotope.layout();
-}
 
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('DOMContentLoaded', initialiseFilters);

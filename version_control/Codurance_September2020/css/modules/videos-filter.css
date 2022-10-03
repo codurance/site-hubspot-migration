@@ -175,10 +175,6 @@
       justify-content: center;
     }
 
-    .filter-dropdown-wrapper.hidden {
-      visibility: visible;
-    }
-
     .filter-dropdown-container:not(:last-of-type)::after {
       background-color: var(--french-gray);
       content: '';
@@ -195,6 +191,7 @@
   .filter-dropdown-wrapper {
     {{ utils.card_shadow() }}
     
+    display: none;
     width: 100%;
   }
 {% endcall %}

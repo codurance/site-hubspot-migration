@@ -5,6 +5,8 @@ and how they stack. This is based off of the bootstrap system.
 *********************************************************************************
 ****************************************************************************** */
 
+{% include "../css/utils/utils.css" as utils %}
+
 /* Responsive Grid */
 
 .row-fluid {
@@ -332,7 +334,7 @@ and how they stack. This is based off of the bootstrap system.
 }
 
 .show {
-    display: block;
+    display: block !important;
 }
 
 .invisible {
@@ -340,8 +342,8 @@ and how they stack. This is based off of the bootstrap system.
 }
 
 .hidden {
-    display: none;
-    visibility: hidden;
+    display: none !important;
+    visibility: hidden !important;
 }
 
 /* Responsive Visibilty Classes */
@@ -394,36 +396,7 @@ and how they stack. This is based off of the bootstrap system.
     }
 }
 
-{% set page_width__XL = 1300 %}
 
-@media (min-width: 1300px) {
-  .responsive-page-width {
-    max-width: {{page_width__XL}}px;
-  }
-}
 
-@media (max-width: 767px) {
-    .lateral-spacing {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
 
-@media (min-width: 768px) and (max-width: 1023px) {
-    .lateral-spacing {
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-}
 
-@media (min-width: 1024px) {
-    .lateral-spacing {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-}
-
-.page-center {
-  max-width: 1140px;
-  margin: 0 auto;
-}

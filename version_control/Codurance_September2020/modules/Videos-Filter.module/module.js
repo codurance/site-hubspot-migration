@@ -1,5 +1,6 @@
 "use strict";
 
+
 const getAll = (entity, type) => {
     const selectors = {
         videos: '.videos .card-item',
@@ -73,18 +74,10 @@ const show = element => {
 
 const toggleShowHideFilters = _ => {
     const filtersWrapper = get('filters_wrapper');
+    const mobileFilterIcon = get('mobile_filter_toggle_icon');
 
-    if (filtersWrapper.classList.contains('hidden')) {
-        show(filtersWrapper);
-
-        get('mobile_filter_toggle_icon').classList
-            .add('mobile-filter-toggle__icon--selected');
-    } else {
-        hide(filtersWrapper);
-
-        get('mobile_filter_toggle_icon').classList
-            .remove('mobile-filter-toggle__icon--selected');
-    }
+    filtersWrapper.classList.toggle('show');
+    mobileFilterIcon.classList.toggle('mobile-filter-toggle__icon--selected')
 }
 
 const addFilterToggleListener = _ => {

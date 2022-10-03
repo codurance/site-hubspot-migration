@@ -13,6 +13,9 @@ label: Blog Post
   {% set newsletter_copy = config.newsletter_cta.es %}
 {% endif %}
 
+{% set isKatalystBlog = blog.name == "Katalyst" %}
+
+
 {% extends "./layouts/base.html" %}
 
 <head>
@@ -64,16 +67,20 @@ label: Blog Post
   <section class="blog-meta blog-max-width">
     <div class="blog-meta__inner">
       <div class="blog-meta__info">
-        <span class="info__publish-date">{{ content.publish_date_localized}}</span>
+      {% if !isKatalystBlog %}
+        <span class="info__publish-date">{{ content.publish_date_localized }}</span>
+
           {% module 'Date Picker' 
                       module_id='date-picker', 
                       path='../modules/Date-Picker.module',
                       label="Updated date",
                       no_wrapper=True
           %}
+      {% endif %}
+
       </div>
       {% if content.tag_list %}
-        <ul class="blog-meta__tag-list">
+      <ul class="blog-meta__tag-list {% if isKatalystBlog %}tag-list--katalyst{% endif %}">
           {% for tag in content.tag_list %}
             <li class="blog-meta__tag-item">
               <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}"
@@ -298,25 +305,6 @@ label: Blog Post
     no_wrapper=True
   %}
 
-  <script>
-    var cookieIframeContainers = document.getElementsByClassName(
-      'js-iframe-container'
-    );
-    function showConsentDependentIframes() {
-      for (let index = 0; index < cookieIframeContainers.length; index++) {
-        const container = cookieIframeContainers[index];
-
-        var iframeUrl = container.getAttribute('js-iframe-url');
-        var iframe = document.createElement('iframe');
-        iframe.setAttribute('src', iframeUrl);
-        iframe.style.width = '100%';
-        iframe.style.height = '400px';
-        iframe.style.border = 'none';
-
-        container.appendChild(iframe);
-      }
-    }
-    showConsentDependentIframes();
-  </script>
+ 
 
   {% endblock body %}
