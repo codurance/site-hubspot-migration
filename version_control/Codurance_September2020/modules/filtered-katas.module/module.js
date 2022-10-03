@@ -254,7 +254,6 @@ const refilter = _ => {
 
   katas.visible.forEach(show);
   katas.hidden.forEach(hide);
-  // isotope.layout();
 }
 
 const update = _ => {
