@@ -1,4 +1,4 @@
-{% include "../utils/utils.css" as utils %}
+{% import '../utils/utils.css' as utils %}
 
 :root {
   --content-max-width: 1200px;
