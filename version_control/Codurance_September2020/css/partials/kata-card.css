@@ -1,16 +1,12 @@
 {% import '../utils/utils.css' as utils %}
 
 .custom-kata-listing__post {
+  {{ utils.card_shadow() }}
   transition: var(--cta-transition);
-  {{ utils.card_shadow() }};
   display: flex;
   flex-direction: column;
   background: white;
   border-radius: 10px;
-}
-.custom-kata-listing__post.hidden {
-  display: none;
-
 }
 
 .custom-kata-listing__post img{
@@ -18,11 +14,9 @@
   border-top-right-radius: 10px;
 }
 
-
-
 .custom-kata-listing__post:hover {
+  {{ utils.card_shadow_large() }}
   transform: translateY(-0.3rem);
-  {{ utils.card_shadow_large() }};
 }
 
 .custom-kata-listing__author-name {

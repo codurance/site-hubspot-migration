@@ -257,6 +257,7 @@
     display: flex;
     flex-direction: column;
     height: 12em;
+    padding: 1em;
 }
 
 .custom-kata-listing__kata-name {   
