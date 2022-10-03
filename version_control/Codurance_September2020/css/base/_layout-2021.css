@@ -1,3 +1,5 @@
+{% include "../utils/utils.css" as utils %}
+
 :root {
   --content-max-width: 1200px;
   --centered-content-max-width: 1140px;
@@ -15,3 +17,32 @@
   max-width: var(--content-max-width);
   margin: 0 auto;
 }
+
+/* Responsive spacing utility classes */
+
+{% call utils.small() %}
+  .lateral-spacing {
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+{% endcall %}
+
+{% call utils.medium() %}
+  .lateral-spacing {
+      padding-left: 25px;
+      padding-right: 25px;
+  }
+{% endcall %}
+
+{% call utils.large() %}
+  .lateral-spacing {
+      padding-left: 50px;
+      padding-right: 50px;
+  }
+{% endcall %}
+
+{% call utils.extra_large() %}
+  .responsive-page-width {
+      max-width: var(--content-max-width);
+  }
+{% endcall %}
