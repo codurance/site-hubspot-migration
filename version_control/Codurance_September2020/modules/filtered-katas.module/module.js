@@ -251,8 +251,8 @@ const refilter = _ => {
   katas.visible = calculateVisibleKatas();
   katas.hidden = arrayDifference(katas.all, katas.visible);
 
-  katas.visible.forEach(show);
-  katas.hidden.forEach(hide);
+  katas.visible.forEach(showWithAnimation);
+  katas.hidden.forEach(hideWithAnimation);
 }
 
 const update = _ => {
@@ -325,11 +325,43 @@ const addRemoveFilterListeners = _ => {
   });
 }
 
-const addListeners = _ => {
-  addFilterToggleListener();
-  addDropdownListeners();
-  addFilterOptionListeners();
-  addRemoveFilterListeners();
+
+function showWithAnimation(element) {
+  removeHiddenModifier(element);
+
+  // Timeout to show the transition before the display property changes
+  setTimeout(removeFadeAnimationModifier, getFadingAnimationDuration(), element);
+}
+
+function hideWithAnimation(element) {
+  addFadeAnimationModifier(element);
+      
+  // Timeout to show the transition before the display property changes
+  setTimeout(addHiddenModifier, getFadingAnimationDuration(), element); 
+}
+
+function getFadingAnimationDuration() {
+  const rootHtml = document.documentElement;
+  const fadingAnimationDurationInMs = 
+      getComputedStyle(rootHtml).getPropertyValue("--fading-animation-duration");
+  
+  return parseInt(fadingAnimationDurationInMs);
+}
+
+function removeFadeAnimationModifier(element) {
+  element.classList.remove("fade-animation");
+}
+
+function addFadeAnimationModifier(element) {
+  element.classList.add("fade-animation");
+}
+
+function removeHiddenModifier(element) {
+  element.classList.remove("hidden");
+}
+
+function addHiddenModifier(element) {
+  element.classList.add("hidden");
 }
 
 const initialiseKataTags = _ => {
@@ -355,6 +387,13 @@ const initialiseKataTags = _ => {
       })
       kata.dataset.topics = topicsTagsArray
   })
+}
+
+const addListeners = _ => {
+  addFilterToggleListener();
+  addDropdownListeners();
+  addFilterOptionListeners();
+  addRemoveFilterListeners();
 }
 
 const initialiseFilters = _ => {
