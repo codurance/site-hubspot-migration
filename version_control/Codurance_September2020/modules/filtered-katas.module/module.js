@@ -68,14 +68,13 @@ const show = element => {
 }
 
 const toggleShowHideFilters = _ => {
+
   const filtersWrapper = get('filters_wrapper');
-  if (filtersWrapper.classList.contains('show')) {
-    filtersWrapper.classList.remove("show");
-    get('filter_toggle_icon').classList.remove('katas__filter-toggle-icon--selected');
-  } else {
-    filtersWrapper.classList.add("show");
-    get('filter_toggle_icon').classList.add('katas__filter-toggle-icon--selected');
-  }
+  const mobileFilterIcon = get('filter_toggle_icon');
+
+  filtersWrapper.classList.toggle('show');
+  mobileFilterIcon.classList.toggle('katas__filter-toggle-icon--selected')
+
 }
 
 const addFilterToggleListener = _ => {
