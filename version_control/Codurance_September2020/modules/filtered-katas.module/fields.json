@@ -1,1 +1,10 @@
-[ ]
+[ {
+  "id" : "24da89bc-f9ce-10c8-fbac-ddb6c43bf64f",
+  "name" : "katalyst_blog",
+  "display_width" : null,
+  "label" : "Katalyst Blog",
+  "required" : false,
+  "locked" : false,
+  "placeholder" : "Select the Katayst blog",
+  "type" : "blog"
+} ]
