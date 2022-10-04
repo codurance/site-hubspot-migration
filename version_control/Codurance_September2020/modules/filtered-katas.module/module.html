@@ -1,9 +1,11 @@
 {{ require_css(get_asset_url("../../css/modules/filtered-katas.css")) }}
 
-{% set blogPosts = contents %}
+{% set katalystBlog = module.katalyst_blog %}
+
+{% set blogPosts = blog_recent_posts(katalystBlog, 200) %}
 
 {% set difficulties = ["Novice", "Beginner", "Competent", "Expert"] %}
-{% set topicObjects = blog_tags("default", 100) %}
+{% set topicObjects = blog_tags(katalystBlog, 100) %}
 {% set topics = [] %}
 {% for topic in topicObjects %}
   {% if !difficulties.contains(topic.name) %}
