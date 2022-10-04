@@ -1,5 +1,13 @@
 {% import '../utils/utils.css' as utils %}
 
+:root {
+    --fading-animation-duration: 250ms;
+}
+
+.fade-animation {
+  opacity: 0;
+}
+
 .katas-page__main {
     background-color: var(--white);
     padding-bottom: 2.5rem;
