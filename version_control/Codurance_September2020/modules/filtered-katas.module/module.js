@@ -327,25 +327,29 @@ const addRemoveFilterListeners = _ => {
 
 
 function showWithAnimation(element) {
+  const animationDuration = 
+    parseInt(
+      getComputedStyle(document.documentElement)
+      .getPropertyValue("--fading-animation-duration")
+    );
+
   removeHiddenModifier(element);
 
   // Timeout to show the transition before the display property changes
-  setTimeout(removeFadeAnimationModifier, getFadingAnimationDuration(), element);
+  setTimeout(removeFadeAnimationModifier, animationDuration, element);
 }
 
 function hideWithAnimation(element) {
+  const animationDuration = 
+    parseInt(
+      getComputedStyle(document.documentElement)
+      .getPropertyValue("--fading-animation-duration")
+    );
+
   addFadeAnimationModifier(element);
       
   // Timeout to show the transition before the display property changes
-  setTimeout(addHiddenModifier, getFadingAnimationDuration(), element); 
-}
-
-function getFadingAnimationDuration() {
-  const rootHtml = document.documentElement;
-  const fadingAnimationDurationInMs = 
-      getComputedStyle(rootHtml).getPropertyValue("--fading-animation-duration");
-  
-  return parseInt(fadingAnimationDurationInMs);
+  setTimeout(addHiddenModifier, animationDuration, element); 
 }
 
 function removeFadeAnimationModifier(element) {
