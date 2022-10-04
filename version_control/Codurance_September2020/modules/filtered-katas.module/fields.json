@@ -7,4 +7,56 @@
   "locked" : false,
   "placeholder" : "Select the Katayst blog",
   "type" : "blog"
+}, {
+  "id" : "dropdown_filter",
+  "name" : "dropdown_filter",
+  "display_width" : null,
+  "label" : "Dropdown filter",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "dropdown_filter.mobile_title",
+    "name" : "mobile_title",
+    "display_width" : null,
+    "label" : "Mobile Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Filter"
+  }, {
+    "id" : "dropdown_filter.difficulty_title",
+    "name" : "difficulty_title",
+    "display_width" : null,
+    "label" : "Difficulty Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Difficulty"
+  }, {
+    "id" : "dropdown_filter.topics_title",
+    "name" : "topics_title",
+    "display_width" : null,
+    "label" : "Topics Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Topics"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "mobile_title" : "Filter",
+    "difficulty_title" : "Difficulty",
+    "topics_title" : "Topics"
+  }
 } ]
