@@ -4,7 +4,14 @@
 
 {% if module.hubdb_table %} 
   {% set previousEventsFilter = "&orderBy=-date&limit=4" %}
-  {% set previousEvents = hubdb_table_rows(module.hubdb_table, previousEventsFilter) %}
+  {% set isEventEnglish = ("&language=English") %}
+
+  {% if locale == "en" %}
+    {% set previousEvents = hubdb_table_rows(module.hubdb_table, previousEventsFilter + isEventEnglish) %}
+  {% else %}
+    {% set previousEvents = hubdb_table_rows(module.hubdb_table, previousEventsFilter) %}
+  {%endif%}
+
 
 <div
   class="card-slider__event-inner responsive-page-width lateral-spacing"
