@@ -13,21 +13,11 @@
   {% endif %}
 {% endfor %}
 
-{% set filter = { title: "Filter",
-  difficulties: "Difficulty",
-  topics: "Topics"
-}
-%}
-{% set infoMessage = { header: "We’re sorry, your search returned no results",
-    paragraph: "Try adjusting your filters to find what you’re looking for."
-  }
-%}
-
 <main class="katas-page__main">
   <div class="katas__filter">
     <div class="katas__filter-toggle">
       <button data-filter-toggle>
-        {{filter.title}}
+        {{ module.dropdown_filter.mobile_title }}
         <i class="katas__filter-toggle-icon las la-plus" data-filter-toggle-icon>
         </i>
       </button>
@@ -36,7 +26,7 @@
       <div class="katas__filter-dropdown-container">
         <button class="katas__filter-dropdown-button" data-dropdown-button="difficulties">
           <i class="katas__filter-icon las la-tachometer-alt"></i>
-          {{filter.difficulties}}
+          {{ module.dropdown_filter.difficulty_title }}
           <i class="katas__filter-dropdown-icon las la-angle-down" data-dropdown-icon="difficulties">
           </i>
         </button>
@@ -53,7 +43,7 @@
       <div class="katas__filter-dropdown-container">
         <button class="katas__filter-dropdown-button" data-dropdown-button="topics">
           <i class="katas__filter-icon las la-tag"></i>
-          {{filter.topics}}
+          {{ module.dropdown_filter.topics_title }}
           <i class="katas__filter-dropdown-icon las la-angle-down" data-dropdown-icon="topics">
           </i>
         </button>
