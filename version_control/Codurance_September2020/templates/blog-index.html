@@ -40,6 +40,9 @@ label: Blog Listing
 
   {% include "./partials/header-insights.html" %}
 
+  {% module 'global_search' 
+    path='../modules/Global-Search-Input' label="Search bar" no_wrapper=True%}
+
   <div class="custom-blog-listing custom-bg-gray-light-v5">
     <div class="page-center container custom-py-50">
       <div class="masonry-grid row custom-mb-70">
