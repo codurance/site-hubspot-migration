@@ -177,6 +177,23 @@
   font-family: monospace;
 }
 
+
+.blog-content li {
+  margin-bottom: .4em;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+}
+
+.blog-content ul, 
+.blog-content ol {
+  list-style-position: inside;
+  text-indent: -1em;
+  padding-left: 1em;
+}
+
+
 .newsletter .newsletter-wrapper {
   margin-top: 2.4em;
   margin-bottom: 2.4em;
