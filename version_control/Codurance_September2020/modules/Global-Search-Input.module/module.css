@@ -1,13 +1,30 @@
+
+{% import '../utils/utils.css' as utils %}
+
 .hs-search-field {
+  {{ utils.card_shadow_large() }}
   position: relative;
   max-width: 500px;
   margin: 0 auto;
+  margin-bottom: 2em;
 }
 
 
 .hs-search-field__input {
   box-sizing: border-box;
   width: 100%;
+  background-color: #fff;
+  padding-left: .8em;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.3rem;
+  border: 0;
+  color: var(--shark);
+  font-weight: var(--middle-font-weight);
+}
+
+.hs-search-field__input::placeholder {
+  color: var(--french-gray);
 }
 
 .hs-search-field__bar button svg {
@@ -19,7 +36,8 @@
   list-style: none;
 }
 .hs-search-field--open .hs-search-field__suggestions {
-  border: 1px solid #000;
+  border: 1px solid var(--mid-gray);
+  border-radius: 0 0 10px 10px;
 }
 .hs-search-field__suggestions li {
   display: block;
@@ -33,7 +51,9 @@
 .hs-search-field__suggestions #results-for {
   display: block;
   line-height: 1.2;
+  margin-bottom: .5em;
 }
+
 .hs-search-field__suggestions a:hover,
 .hs-search-field__suggestions a:focus {
   background-color: rgba(0, 0, 0, 0.1);
