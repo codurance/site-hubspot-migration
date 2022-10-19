@@ -3,13 +3,13 @@
   isAvailableForNewContent: true
   label: Search Results Page
 -->
+{{ require_css(get_asset_url("../../css/pages/search-results.css")) }}
+
 {% extends "../layouts/base.html" %}
 
 {% block body %}
-<div class="content-wrapper">
-  <div class="systems-page">
-    <h1>Results for "{{ request.query_dict.term|escape }}"</h1>
+  <div class="search-results-page page-center lateral-spacing">
+    <h1 class="search-results-page__title">Results for "{{ request.query_dict.term|escape }}"</h1>
     {% module "search_results" path="@hubspot/search_results" %}
   </div>
-</div>
 {% endblock body %}
