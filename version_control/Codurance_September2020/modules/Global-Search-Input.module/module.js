@@ -32,7 +32,7 @@ var hsSearch = function(_instance) {
       return queryString;
     };
 
-  var debounce = function(func, wait, immediate) {
+  var debounce = function (func, wait, immediate) {
       var timeout;
       return function() {
         var context = this,
@@ -176,7 +176,16 @@ var hsSearch = function(_instance) {
         emptySearchResults();
       }
     }, 250),
+    clearResultsOnClick = function () {
+      document.addEventListener("click", (e) => {
+        if (!searchField.contains(e.target) &&
+          !searchResults.contains(e.target)) {
+          emptySearchResults();
+        }
+      })
+    },
     init = (function() {
+      clearResultsOnClick();
       searchField.addEventListener('input', function(e) {
         if (searchTerm != searchField.value) {
           isSearchTermPresent();
@@ -184,6 +193,9 @@ var hsSearch = function(_instance) {
       });
     })();
 };
+
+
+
 
 if (
   document.attachEvent
