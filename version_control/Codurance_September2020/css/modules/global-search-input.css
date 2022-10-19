@@ -3,10 +3,12 @@
 
 .hs-search-field {
     position: relative;
-    margin-top: -1em;
     padding-bottom: 3em;
     z-index: 1;
+}
 
+.hs-search-field__inner-wrapper {
+    transform: translateY(-1em);
 }
 
 .hs-search-field__input {
