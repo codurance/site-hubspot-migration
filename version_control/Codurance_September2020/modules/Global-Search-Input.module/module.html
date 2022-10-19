@@ -1,7 +1,7 @@
 {{ require_css(get_asset_url("../../css/modules/global-search-input.css")) }}
 
-<div class="hs-search-field"> 
-    <div class="hs-search-field__bar"> 
+<div class="hs-search-field custom-bg-gray-light-v5"> 
+    <div class="hs-search-field__bar page-center lateral-spacing"> 
       <form action="/{{ site_settings.content_search_results_page_path }}">
         {% if module.field_label %}
           <label for="term">{{ module.field_label }}</label>
