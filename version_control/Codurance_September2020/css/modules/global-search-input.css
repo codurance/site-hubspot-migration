@@ -24,6 +24,10 @@
     width: 100%;
 }
 
+.hs-search-field__input:focus {
+    outline: 2px solid var(--persimmon--dark);
+}
+
 .hs-search-field__input::placeholder {
     color: var(--french-gray);
 }
