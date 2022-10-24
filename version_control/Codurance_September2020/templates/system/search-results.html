@@ -6,12 +6,20 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../../css/pages/search-results.css")) }}
 
+{% if locale == 'es' %}
+  {% set go_back = ''  %}
+  {% set results_for = '' %}
+{% else %}
+  {% set go_back = 'Go back' %}
+  {% set results_for = 'Results for' %}
+{% endif %}
+
 {% extends "../layouts/base.html" %}
 
 {% block body %}
   <div class="search-results-page page-center lateral-spacing">
-    {{ snippets.text_cta_left_arrow(url="/publications", text="Go back") }}
-    <h1 class="search-results-page__title">Results for "{{ request.query_dict.term|escape }}"</h1>
+    {{ snippets.text_cta_left_arrow(url="/publications", text="{{ go_back }}") }}
+    <h1 class="search-results-page__title">{{ results_for }} "{{ request.query_dict.term|escape }}"</h1>
     {% module "search_results" path="../../modules/Global-Search-Results" %}
   </div>
 {% endblock body %}
