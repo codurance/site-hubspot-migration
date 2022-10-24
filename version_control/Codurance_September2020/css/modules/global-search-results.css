@@ -27,3 +27,7 @@
 .hs-search-results__pagination > a {
     line-height: unset;
 }
+
+.hs-search-results__next-page {
+    margin-left: auto;
+}
