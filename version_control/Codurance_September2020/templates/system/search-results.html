@@ -15,6 +15,6 @@
     Go back
   </a>
     <h1 class="search-results-page__title">Results for "{{ request.query_dict.term|escape }}"</h1>
-    {% module "search_results" path="@hubspot/search_results" %}
+    {% module "search_results" path="../../modules/Global-Search-Results" %}
   </div>
 {% endblock body %}
