@@ -137,8 +137,10 @@
 }
 
 .custom-our-people__profile-image {
+  aspect-ratio: 1/1;
   filter: grayscale(1);
   height: auto;
+  object-fit: cover;
   width: 100%;
 }
 .custom-our-people__card:hover .custom-our-people__profile-image {
