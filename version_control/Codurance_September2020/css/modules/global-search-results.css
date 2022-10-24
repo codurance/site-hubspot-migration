@@ -1,0 +1,29 @@
+{% import '../utils/utils.css' as utils %}
+
+.hs-search-results {
+    margin-top: 3em;
+}
+
+.hs-search-results__listing {
+  list-style: none;
+}
+
+.hs-search-results .hs-search-results__listing > li {
+    {{ utils.card_shadow() }}
+    border-radius: 0.5em;
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+}
+
+.hs-search-highlight {
+  font-weight: bold;
+}
+
+.hs-search-results__pagination {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hs-search-results__pagination > a {
+    line-height: unset;
+}

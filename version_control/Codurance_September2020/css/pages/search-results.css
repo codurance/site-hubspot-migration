@@ -9,23 +9,3 @@
     {{ utils.eames() }}
     font-weight: var(--middle-font-weight);
 }
-
-.hs-search-results {
-    margin-top: 3em;
-}
-
-.hs-search-results .hs-search-results__listing > li {
-    {{ utils.card_shadow() }}
-    border-radius: 0.5em;
-    margin-bottom: 1.5em;
-    padding: 1.5em;
-}
-
-.hs-search-results__pagination {
-    display: flex;
-    justify-content: space-between;
-}
-
-.hs-search-results__pagination > a {
-    line-height: unset;
-}
