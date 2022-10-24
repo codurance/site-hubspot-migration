@@ -52,10 +52,7 @@ var hsResultsPage = function(_resultsClass) {
         );
       });
     }
-    function emptyPagination() {
-      prevLink.innerHTML = '';
-      nextLink.innerHTML = '';
-    }
+
     function emptyResults(searchedTerm) {
       resultsSection.innerHTML =
         '<div class="hs-search__no-results"><p>Sorry. There are no results for "' +
@@ -112,7 +109,6 @@ var hsResultsPage = function(_resultsClass) {
           results.page * updatedLimit - parseInt(updatedLimit)
         );
         prevLink.href = '/' + searchPath + '?' + prevParams;
-        prevLink.innerHTML = '&lt; Previous page';
       } else {
         prevLink.parentNode.removeChild(prevLink);
       }
@@ -124,7 +120,6 @@ var hsResultsPage = function(_resultsClass) {
           results.page * updatedLimit + parseInt(updatedLimit)
         );
         nextLink.href = '/' + searchPath + '?' + nextParams;
-        nextLink.innerHTML = 'Next page &gt;';
       } else {
         nextLink.parentNode.removeChild(nextLink);
       }
