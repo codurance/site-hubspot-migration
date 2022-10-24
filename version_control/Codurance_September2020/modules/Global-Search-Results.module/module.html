@@ -1,3 +1,4 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../../css/modules/global-search-results.css")) }}
 
 <div class="hs-search-results">
@@ -14,11 +15,15 @@
   </template>
   <ul id="hsresults" class="hs-search-results__listing"></ul>
   <div class="hs-search-results__pagination" data-search-path="{{ site_settings.content_search_results_page_path }}">
-    <a href="" class="hs-search-results__prev-page text-cta-primary text-cta--left-arrow">
-      <i class="las la-arrow-left"></i> Previous page
-    </a>
-    <a href="" class="hs-search-results__next-page text-cta-primary text-cta--right-arrow">
-      Next page<i class="las la-arrow-right"></i>
+    {{ snippets.text_cta_left_arrow(
+      classnames="hs-search-results__prev-page", 
+      text="Previous page"
+    ) }}
+
+    {{ snippets.text_cta_right_arrow(
+      classnames="hs-search-results__next-page", 
+      text="Next page"
+    ) }}
     </a>
   </div>
 </div> 

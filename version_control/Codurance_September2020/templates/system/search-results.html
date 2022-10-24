@@ -10,10 +10,7 @@
 
 {% block body %}
   <div class="search-results-page page-center lateral-spacing">
-  <a href="/publications" class="text-cta-primary text-cta--left-arrow">
-    <i class="las la-arrow-left"></i>
-    Go back
-  </a>
+    {{ snippets.text_cta_left_arrow(url="/publications", text="Go back") }}
     <h1 class="search-results-page__title">Results for "{{ request.query_dict.term|escape }}"</h1>
     {% module "search_results" path="../../modules/Global-Search-Results" %}
   </div>
