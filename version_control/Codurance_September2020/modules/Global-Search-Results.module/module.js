@@ -1,3 +1,14 @@
+const noResults = {
+  en: {
+    title: "Sorry. There are no results for",
+    subtitle: "Try rewording your query, or browse through our site."
+  },
+  es: {
+    title: "Disculpa. No encontramos resultados para",
+    subtitle: "Intenta cambiar tu búsqueda, o navega a través de nuestra web"
+  }
+}
+
 var hsResultsPage = function(_resultsClass) {
   function buildResultsPage(_instance) {
     var resultTemplate = _instance.querySelector(
@@ -53,19 +64,29 @@ var hsResultsPage = function(_resultsClass) {
       });
     }
 
-    function emptyResults(searchedTerm) {
-      resultsSection.innerHTML =
-        '<div class="hs-search__no-results"><p>Sorry. There are no results for "' +
-        searchedTerm +
-        '"</p>' +
-        '<p>Try rewording your query, or browse through our site.</p></div>';
+    function emptyPagination() {
+      prevLink.innerHTML = '';
+      nextLink.innerHTML = '';
     }
+
+    function emptyResults(searchedTerm) {
+      const content = navigator.languages.includes('es') ? noResults.es : noResults.en;
+
+      const noResultsHtml = `<div class="hs-search__no-results">
+                                    <p>${content.title} ${searchedTerm} </p>
+                                    <p>${content.subtitle}</p>
+                               </div>`;
+
+      resultsSection.insertAdjacentHTML('afterbegin', noResultsHtml);
+    }
+
     function setSearchBarDefault(searchedTerm) {
       var searchBars = document.querySelectorAll('.hs-search-field__input');
       Array.prototype.forEach.call(searchBars, function(el) {
         el.value = searchedTerm;
       });
     }
+
     function httpRequest(term, offset) {
       var SEARCH_URL = '/_hcms/search?',
         requestUrl = SEARCH_URL + searchParams + '&analytics=true',
@@ -92,6 +113,7 @@ var hsResultsPage = function(_resultsClass) {
       };
       request.send();
     }
+
     function paginate(results) {
       var updatedLimit = getLimit() || results.limit;
 
@@ -124,6 +146,7 @@ var hsResultsPage = function(_resultsClass) {
         nextLink.parentNode.removeChild(nextLink);
       }
     }
+
     var getResults = (function() {
       if (getTerm()) {
         httpRequest(getTerm(), getOffset());
@@ -132,6 +155,7 @@ var hsResultsPage = function(_resultsClass) {
       }
     })();
   }
+
   (function() {
     var searchResults = document.querySelectorAll(_resultsClass);
     Array.prototype.forEach.call(searchResults, function(el) {
