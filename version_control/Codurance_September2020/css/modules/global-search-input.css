@@ -33,7 +33,15 @@
 }
 
 .hs-search-field__bar button svg {
-    height: 10px;
+    width: 20px;
+    fill: white;
+    transform: translateY(10%);
+}
+
+.cm-search-button {
+    position:absolute;
+    transform: translateX(-100%);
+    height: 100%;
 }
 
 .hs-search-field__suggestions {
@@ -61,6 +69,11 @@
     display: block;
     margin: 0;
     padding: 0;
+}
+
+.hs-search-field__suggestions li:focus,
+.hs-search-field__suggestions li:active{
+    outline: 2px solid var(--persimmon--dark);
 }
 
 .hs-search-field__suggestions a,

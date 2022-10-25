@@ -24,7 +24,9 @@
         {% endif %}
 
         {% if module.include_search_button %}
-          <button aria-label="Search">{% icon name="search" style="solid" %}</button>
+          <button class="button-primary cm-search-button" aria-label="Search">
+            {% icon name="search" style="solid" %}
+          </button>
         {% endif %}
       </form>
     </div>
