@@ -32,16 +32,18 @@
     color: var(--french-gray);
 }
 
-.hs-search-field__bar button svg {
+.cm-search-button {
+    border-radius: 0 0.3rem 0.3rem 0;
+    cursor: pointer;
+    position: absolute;
+    transform: translateX(-100%);
+    height: 100%;
+}
+
+.cm-search-button svg {
     width: 20px;
     fill: white;
     transform: translateY(10%);
-}
-
-.cm-search-button {
-    position:absolute;
-    transform: translateX(-100%);
-    height: 100%;
 }
 
 .hs-search-field__suggestions {
