@@ -1,6 +1,6 @@
-var hsSearch = function(_instance) {
-  var TYPEAHEAD_LIMIT = 5;
-  var KEYS = {
+let hsSearch = function (_instance) {
+  const TYPEAHEAD_LIMIT = 5;
+  let KEYS = {
     TAB: 'Tab',
     ESC: 'Esc', // IE11 & Edge 16 value for Escape
     ESCAPE: 'Escape',
@@ -9,41 +9,41 @@ var hsSearch = function(_instance) {
     DOWN: 'Down', // IE11 & Edge 16 value for Arrow Down
     ARROW_DOWN: 'ArrowDown',
   };
-  var searchTerm = '',
+  let searchTerm = '',
     searchForm = _instance,
     searchField = _instance.querySelector('.hs-search-field__input'),
     searchResults = _instance.querySelector('.hs-search-field__suggestions'),
     searchOptions = function() {
-      var formParams = [];
-      var form = _instance.querySelector('form');
+      let formParams = [];
+      let form = _instance.querySelector('form');
       for (
-        var i = 0;
+        let i = 0;
         i < form.querySelectorAll('input[type=hidden]').length;
         i++
       ) {
-        var e = form.querySelectorAll('input[type=hidden]')[i];
+        let e = form.querySelectorAll('input[type=hidden]')[i];
         if (e.name !== 'limit') {
           formParams.push(
             encodeURIComponent(e.name) + '=' + encodeURIComponent(e.value)
           );
         }
       }
-      var queryString = formParams.join('&');
+      let queryString = formParams.join('&');
       return queryString;
     };
 
-  var debounce = function (func, wait, immediate) {
-      var timeout;
+  let debounce = function (func, wait, immediate) {
+    let timeout;
       return function() {
-        var context = this,
+        let context = this,
           args = arguments;
-        var later = function() {
+        let later = function () {
           timeout = null;
           if (!immediate) {
             func.apply(context, args);
           }
         };
-        var callNow = immediate && !timeout;
+        let callNow = immediate && !timeout;
         clearTimeout(timeout);
         timeout = setTimeout(later, wait || 200);
         if (callNow) {
@@ -56,20 +56,19 @@ var hsSearch = function(_instance) {
       searchField.focus();
       searchForm.classList.remove('hs-search-field--open');
     },
+
     fillSearchResults = function(response) {
-      var items = [];
+      let searchMessage = location.pathname.includes('/es/') ? "Resultados para" : "Results for";;
+      let items = [];
       items.push(
-        "<li id='results-for'>Results for \"" + response.searchTerm + '"</li>'
+        `<li id='results-for'>${searchMessage} ${response.searchTerm}</li>`
       );
+
       response.results.forEach(function(val, index) {
         items.push(
-          "<li id='result" +
-            index +
-            "'><a href='" +
-            val.url +
-            "'>" +
-            val.title +
-            '</a></li>'
+          `<li id="result${index}">
+            <a href="${val.url}"> ${val.title}</a>
+          </li>`
         );
       });
 
@@ -78,8 +77,8 @@ var hsSearch = function(_instance) {
       searchForm.classList.add('hs-search-field--open');
     },
     getSearchResults = function() {
-      var request = new XMLHttpRequest();
-      var requestUrl =
+      let request = new XMLHttpRequest();
+      let requestUrl =
         '/_hcms/search?&term=' +
         encodeURIComponent(searchTerm) +
         '&limit=' +
@@ -90,7 +89,7 @@ var hsSearch = function(_instance) {
       request.open('GET', requestUrl, true);
       request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
-          var data = JSON.parse(request.responseText);
+          let data = JSON.parse(request.responseText);
           if (data.total > 0) {
             fillSearchResults(data);
             trapFocus();
@@ -107,15 +106,15 @@ var hsSearch = function(_instance) {
       request.send();
     },
     trapFocus = function() {
-      var tabbable = [];
+      let tabbable = [];
       tabbable.push(searchField);
-      var tabbables = searchResults.getElementsByTagName('A');
-      for (var i = 0; i < tabbables.length; i++) {
+      let tabbables = searchResults.getElementsByTagName('A');
+      for (let i = 0; i < tabbables.length; i++) {
         tabbable.push(tabbables[i]);
       }
-      var firstTabbable = tabbable[0],
+      let firstTabbable = tabbable[0],
         lastTabbable = tabbable[tabbable.length - 1];
-      var tabResult = function(e) {
+      let tabResult = function (e) {
           if (e.target == lastTabbable && !e.shiftKey) {
             e.preventDefault();
             firstTabbable.focus();
@@ -202,15 +201,15 @@ if (
     ? document.readyState === 'complete'
     : document.readyState !== 'loading'
 ) {
-  var searchResults = document.querySelectorAll('.hs-search-field');
+  let searchResults = document.querySelectorAll('.hs-search-field');
   Array.prototype.forEach.call(searchResults, function(el) {
-    var hsSearchModule = hsSearch(el);
+    let hsSearchModule = hsSearch(el);
   });
 } else {
   document.addEventListener('DOMContentLoaded', function() {
-    var searchResults = document.querySelectorAll('.hs-search-field');
+    let searchResults = document.querySelectorAll('.hs-search-field');
     Array.prototype.forEach.call(searchResults, function(el) {
-      var hsSearchModule = hsSearch(el);
+      let hsSearchModule = hsSearch(el);
     });
   });
 }
