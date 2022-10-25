@@ -10,6 +10,7 @@ let hsSearch = function (_instance) {
     ARROW_DOWN: 'ArrowDown',
   };
   let searchTerm = '',
+    htmlLang = document.documentElement.lang,
     searchForm = _instance,
     searchField = _instance.querySelector('.hs-search-field__input'),
     searchResults = _instance.querySelector('.hs-search-field__suggestions'),
@@ -58,7 +59,7 @@ let hsSearch = function (_instance) {
     },
 
     fillSearchResults = function(response) {
-      let searchMessage = location.pathname.includes('/es/') ? "Resultados para" : "Results for";;
+      let searchMessage = htmlLang == 'es' ? "Resultados para" : "Results for";
       let items = [];
       items.push(
         `<li id='results-for'>${searchMessage} ${response.searchTerm}</li>`
