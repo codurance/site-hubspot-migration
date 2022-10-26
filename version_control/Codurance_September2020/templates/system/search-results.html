@@ -6,12 +6,12 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../../css/pages/search-results.css")) }}
 
-{% if html_lang == 'es' %}
+{% set go_back = 'Go back to publications' %}
+{% set results_for = 'Results for' %}
+
+{% if request.query_dict.language  == 'es' %}
   {% set go_back = 'Volver a publicaciones'  %}
   {% set results_for = 'Resultados para' %}
-{% else %}
-  {% set go_back = 'Go back to publications' %}
-  {% set results_for = 'Results for' %}
 {% endif %}
 
 {% extends "../layouts/base.html" %}
