@@ -9,9 +9,9 @@ const noResults = {
   }
 }
 
-var hsResultsPage = function(_resultsClass) {
+let hsResultsPage = function(_resultsClass) {
   function buildResultsPage(_instance) {
-    var resultTemplate = _instance.querySelector(
+    let resultTemplate = _instance.querySelector(
         '.hs-search-results__template'
       ),
       resultsSection = _instance.querySelector('.hs-search-results__listing'),
@@ -21,7 +21,7 @@ var hsResultsPage = function(_resultsClass) {
       prevLink = _instance.querySelector('.hs-search-results__prev-page'),
       nextLink = _instance.querySelector('.hs-search-results__next-page');
 
-    var searchParams = new URLSearchParams(window.location.search.slice(1));
+    let searchParams = new URLSearchParams(window.location.search.slice(1));
 
     function getTerm() {
       return searchParams.get('term') || '';
@@ -33,7 +33,7 @@ var hsResultsPage = function(_resultsClass) {
       return parseInt(searchParams.get('limit'));
     }
     function addResult(title, url, description, featuredImage) {
-      var newResult = document.importNode(resultTemplate.content, true);
+      let newResult = document.importNode(resultTemplate.content, true);
       function isFeaturedImageEnabled() {
         if (
           newResult.querySelector('.hs-search-results__featured-image > img')
@@ -81,21 +81,21 @@ var hsResultsPage = function(_resultsClass) {
     }
 
     function setSearchBarDefault(searchedTerm) {
-      var searchBars = document.querySelectorAll('.hs-search-field__input');
+      let searchBars = document.querySelectorAll('.hs-search-field__input');
       Array.prototype.forEach.call(searchBars, function(el) {
         el.value = searchedTerm;
       });
     }
 
     function httpRequest(term, offset) {
-      var SEARCH_URL = '/_hcms/search?',
+      let SEARCH_URL = '/_hcms/search?',
         requestUrl = SEARCH_URL + searchParams + '&analytics=true',
         request = new XMLHttpRequest();
 
       request.open('GET', requestUrl, true);
       request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
-          var data = JSON.parse(request.responseText);
+          let data = JSON.parse(request.responseText);
           setSearchBarDefault(data.searchTerm);
           if (data.total > 0) {
             fillResults(data);
@@ -115,7 +115,7 @@ var hsResultsPage = function(_resultsClass) {
     }
 
     function paginate(results) {
-      var updatedLimit = getLimit() || results.limit;
+      let updatedLimit = getLimit() || results.limit;
 
       function hasPreviousPage() {
         return results.page > 0;
@@ -125,7 +125,7 @@ var hsResultsPage = function(_resultsClass) {
       }
 
       if (hasPreviousPage()) {
-        var prevParams = new URLSearchParams(searchParams.toString());
+        let prevParams = new URLSearchParams(searchParams.toString());
         prevParams.set(
           'offset',
           results.page * updatedLimit - parseInt(updatedLimit)
@@ -136,7 +136,7 @@ var hsResultsPage = function(_resultsClass) {
       }
 
       if (hasNextPage()) {
-        var nextParams = new URLSearchParams(searchParams.toString());
+        let nextParams = new URLSearchParams(searchParams.toString());
         nextParams.set(
           'offset',
           results.page * updatedLimit + parseInt(updatedLimit)
@@ -147,7 +147,7 @@ var hsResultsPage = function(_resultsClass) {
       }
     }
 
-    var getResults = (function() {
+    let getResults = (function() {
       if (getTerm()) {
         httpRequest(getTerm(), getOffset());
       } else {
@@ -157,7 +157,7 @@ var hsResultsPage = function(_resultsClass) {
   }
 
   (function() {
-    var searchResults = document.querySelectorAll(_resultsClass);
+    let searchResults = document.querySelectorAll(_resultsClass);
     Array.prototype.forEach.call(searchResults, function(el) {
       buildResultsPage(el);
     });
@@ -169,9 +169,9 @@ if (
     ? document.readyState === 'complete'
     : document.readyState !== 'loading'
 ) {
-  var resultsPages = hsResultsPage('div.hs-search-results');
+  let resultsPages = hsResultsPage('div.hs-search-results');
 } else {
   document.addEventListener('DOMContentLoaded', function() {
-    var resultsPages = hsResultsPage('div.hs-search-results');
+    let resultsPages = hsResultsPage('div.hs-search-results');
   });
 }
