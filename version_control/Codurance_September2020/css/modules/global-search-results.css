@@ -15,6 +15,13 @@
     padding: 1.5em;
 }
 
+.hs-search-results__description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
 .hs-search-highlight {
   font-weight: bold;
 }
