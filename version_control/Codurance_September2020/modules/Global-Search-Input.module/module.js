@@ -194,9 +194,6 @@ let hsSearch = function (_instance) {
     })();
 };
 
-
-
-
 if (
   document.attachEvent
     ? document.readyState === 'complete'
