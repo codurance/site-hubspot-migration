@@ -5,7 +5,7 @@
 }
 
 .hs-search-results__listing {
-  list-style: none;
+    list-style: none;
 }
 
 .hs-search-results .hs-search-results__listing > li {
@@ -23,7 +23,7 @@
 }
 
 .hs-search-highlight {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .hs-search-results__pagination {
