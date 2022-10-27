@@ -1,5 +1,12 @@
 {% import '../utils/utils.css' as utils %}
 
+.custom-blog-listing__intro {
+  margin-bottom: 2em;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+
 .masonry-grid-sizer,
 .custom-blog-listing__post-wrapper {
   --gutter: 2rem;
@@ -24,13 +31,15 @@
   .masonry-grid-sizer,
   .custom-blog-listing__post-wrapper {
     --gutter-xl: 4rem;
-    --card-width: calc(100% - var(--gutter-xl));
+    --card-width: calc((100% - var(--gutter-xl)) / 3 );
 
-    width: calc(var(--card-width) / 3 );
+    width: var(--card-width);
   }
 
   .custom-blog-listing__post-wrapper--featured {
-    width: calc(66.666% - var(--gutter));
+    --featured-card-width:calc(var(--card-width) * 2);
+
+    width: calc(var(--featured-card-width) + var(--gutter));
   }
 {% endcall %}
 
