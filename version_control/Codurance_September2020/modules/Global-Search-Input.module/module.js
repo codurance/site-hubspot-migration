@@ -62,7 +62,7 @@ let hsSearch = function (_instance) {
       let searchMessage = htmlLang == 'es' ? "Resultados para" : "Results for";
       let items = [];
       items.push(
-        `<li id='results-for'>${searchMessage} ${response.searchTerm}</li>`
+        `<li id='results-for'>${searchMessage} "${response.searchTerm}"</li>`
       );
 
       response.results.forEach(function(val, index) {
