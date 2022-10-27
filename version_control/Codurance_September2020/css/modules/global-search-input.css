@@ -32,7 +32,7 @@
     height: 100%;
 }
 
-.hs-search-field__input:focus {
+.hs-search-field__bar form:focus {
     outline: 2px solid var(--persimmon--dark);
 }
 
@@ -41,6 +41,7 @@
 }
 
 .cm-search-button {
+    {{ utils.card_shadow_large() }}
     border-radius: 0 0.3rem 0.3rem 0;
     cursor: pointer;
     height: 100%;
