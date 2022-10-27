@@ -1,12 +1,12 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../../css/modules/global-search-results.css")) }}
 
-{% if html_lang == 'es' %}
+{% set previous_page = 'Previous'  %}
+{% set next_page = 'Next' %}
+
+{% if request.query_dict.language == 'es' %}
   {% set previous_page = 'Anterior'  %}
   {% set next_page = 'Siguiente' %}
-{% else %}
-  {% set previous_page = 'Previous'  %}
-  {% set next_page = 'Next' %}
 {% endif %}
 
 <div class="hs-search-results">
