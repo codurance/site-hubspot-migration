@@ -13,15 +13,6 @@
   "icon" : "../../../../mV0_hubspot/img/icon/edited-search.svg",
   "host_template_types" : [ "PAGE" ],
   "module_id" : 73789138992,
-  "js_assets" : [ {
-    "autoload" : true,
-    "path" : "../../../../mV0_hubspot/js/template.js",
-    "name" : "template.js"
-  }, {
-    "autoload" : true,
-    "path" : "../../../../mV0_hubspot/js/url-search-params.js",
-    "name" : "url-search-params.js"
-  } ],
   "label" : "global_search_results",
   "is_available_for_new_content" : true
 }
