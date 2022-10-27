@@ -70,7 +70,8 @@ let hsResultsPage = function(_resultsClass) {
     }
 
     function emptyResults(searchedTerm) {
-      const content = navigator.languages.includes('es') ? noResults.es : noResults.en;
+      const content = searchParams.get('language') === 'es' ? noResults.es : noResults.en;
+
 
       const noResultsHtml = `<div class="hs-search__no-results">
                                     <p>${content.title} ${searchedTerm} </p>
