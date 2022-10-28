@@ -1,0 +1,19 @@
+{% import '../utils/utils.css' as utils %}
+
+.roles {
+    {{ utils.white_to_tango() }}
+    padding-top: 2em;
+    padding-bottom: 4em;
+}
+
+.roles .locations__images {
+    max-width: var(--content-inner-max-width);
+}
+
+
+
+.video-roles {
+    max-width: 1024px;
+    margin: 6em auto;
+
+}
