@@ -40,8 +40,11 @@ label: Blog Listing
 
   {% include "./partials/header-insights.html" %}
 
+  {% module 'global_search' 
+      path='../modules/Global-Search-Input' label="Search bar" no_wrapper=True %}
+
   <div class="custom-blog-listing custom-bg-gray-light-v5">
-    <div class="page-center container custom-py-50">
+    <div class="page-center lateral-spacing container custom-pt-20 custom-pb-50">  
       <div class="masonry-grid row custom-mb-70">
         <div class="masonry-grid-sizer"></div>
         {% for content in contents %}
@@ -236,7 +239,7 @@ label: Blog Listing
 
 {% endif %}
 {{ require_js(get_asset_url("../js/imageLoaded.js")) }}
-{{ require_js(get_asset_url("../js/masonary.js")) }}
+{{ require_js(get_asset_url("../js/masonry.js")) }}
 
 <script>
   document.onreadystatechange = () => {
@@ -246,6 +249,7 @@ label: Blog Listing
       const masonryOptions = {
         columnWidth: '.masonry-grid-sizer',
         itemSelector: '.masonry-grid-item',
+        gutter: 40, {# Gutter expressed in px #}
         percentPosition: true
       };
 

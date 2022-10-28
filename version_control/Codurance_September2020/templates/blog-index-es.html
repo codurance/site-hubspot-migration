@@ -39,18 +39,18 @@ label: Blog Listing ES
 
   {% include "./partials/header-insights.html" %}
 
+  {% module 'global_search' 
+    path='../modules/Global-Search-Input' label="Search bar" no_wrapper=True %}
+
   <div class="custom-blog-listing custom-bg-gray-light-v5">
-    <div class="page-center container custom-py-50">
-      <div class="masonry-grid row custom-mb-70">
-        <div class="masonry-grid-item custom-col-sm-12 text-center custom-mb-30">
-
-          <div class="page-header section-header">
-            En esta sección encontrarás contenido actualizado,
-            pero por el momento tenemos una selección limitada de publicaciones disponibles en español.
-            Puedes consultar el archivo completo de publicaciones en inglés en <a href="https://www.codurance.com/publications">codurance.com/publications</a>
-          </div>
-
+    
+    <div class="page-center lateral-spacing container custom-pt-20 custom-pb-50">
+        <div class="custom-blog-listing__intro">
+          En esta sección encontrarás contenido actualizado,
+          pero por el momento tenemos una selección limitada de publicaciones disponibles en español.
+          Puedes consultar el archivo completo de publicaciones en inglés en <a href="https://www.codurance.com/publications">codurance.com/publications</a>
         </div>
+      <div class="masonry-grid row custom-mb-70">  
         <div class="masonry-grid-sizer"></div>
         {% for content in contents %}
 
@@ -223,7 +223,7 @@ label: Blog Listing ES
 
 {% endif %}
 {{ require_js(get_asset_url("../js/imageLoaded.js")) }}
-{{ require_js(get_asset_url("../js/masonary.js")) }}
+{{ require_js(get_asset_url("../js/masonry.js")) }}
 
 <script>
   document.onreadystatechange = () => {
@@ -233,6 +233,7 @@ label: Blog Listing ES
       const masonryOptions = {
         columnWidth: '.masonry-grid-sizer',
         itemSelector: '.masonry-grid-item',
+        gutter: 40, {# Gutter expressed in px #}
         percentPosition: true
       };
 

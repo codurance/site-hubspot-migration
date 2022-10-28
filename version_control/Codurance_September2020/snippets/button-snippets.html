@@ -42,6 +42,17 @@
   </a>
 {% endmacro %}
 
+{% macro text_cta_left_arrow(url, classnames, text, target, rel) %}
+  <a
+    href="{{ url }}"
+    class="{% for classname in classnames %}{{classname}}&#32{% endfor %}text-cta-primary&#32text-cta--left-arrow"
+    {% if target %}target="{{target}}"{% endif %}
+    {% if rel %}rel="{{rel}}"{% endif %}
+  >
+    <i class="las la-arrow-left"></i>{{ text }}
+  </a>
+{% endmacro %}
+
 {% macro text_cta_right_arrow(url, classnames, text, target, rel) %}
   <a
     href="{{ url }}"

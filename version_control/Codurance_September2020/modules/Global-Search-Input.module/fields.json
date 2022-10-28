@@ -1,0 +1,111 @@
+[ {
+  "id" : "d7644a33-944a-3b21-7faa-133195962602",
+  "name" : "field_label",
+  "display_width" : null,
+  "label" : "Label text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "e75bef76-6568-6550-8840-1d97bfc93c0b",
+  "name" : "placeholder",
+  "display_width" : null,
+  "label" : "Placeholder text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Search"
+}, {
+  "id" : "132b5655-eccf-c251-9ed4-d04901e91987",
+  "name" : "include_search_button",
+  "display_width" : null,
+  "label" : "Include search button",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "346180f5-0d36-e8df-aca9-a74bfa2d79a4",
+  "name" : "content_types",
+  "display_width" : null,
+  "label" : "Search results include",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "71d525ff-37c4-6c64-1f96-d99dbb529816",
+    "name" : "website_pages",
+    "display_width" : null,
+    "label" : "Website pages",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_value_regex" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : {
+        "operator" : "HAS_ALL",
+        "scopes" : [ "sitepages-access" ]
+      },
+      "hidden_subfields" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "d6212113-19b5-c9b9-2f92-12dfc122d00c",
+    "name" : "landing_pages",
+    "display_width" : null,
+    "label" : "Landing pages",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "7535615c-ed26-2e34-87ef-21c5c87ccbcb",
+    "name" : "blog_posts",
+    "display_width" : null,
+    "label" : "Blog posts",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "307d0eed-0cf9-7465-5715-a75c378ec61f",
+    "name" : "knowledge_articles",
+    "display_width" : null,
+    "label" : "Knowledge articles",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_value_regex" : null,
+      "operator" : null,
+      "access" : {
+        "operator" : "HAS_ALL",
+        "scopes" : [ "service-knowledge-access" ]
+      },
+      "hidden_subfields" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "website_pages" : true,
+    "landing_pages" : false,
+    "blog_posts" : true,
+    "knowledge_articles" : false
+  }
+} ]

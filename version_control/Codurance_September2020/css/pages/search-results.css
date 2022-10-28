@@ -1,0 +1,11 @@
+{% import '../utils/utils.css' as utils %}
+
+.search-results-page {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.search-results-page__title {
+    {{ utils.eames() }}
+    font-weight: var(--middle-font-weight);
+}

@@ -132,7 +132,14 @@
 }
 .text-cta--right-arrow:hover i {
   transform: translate(0.35em, 0.047em);
-  }
+}
+.text-cta--left-arrow i {
+  transform: translate(-0.2em, 0.047em);
+  transition: var(--cta-transition);
+}
+.text-cta--left-arrow:hover i {
+  transform: translate(-0.35em, 0.047em);
+}
 
 .text-cta--down-arrow i {
   transform: translateY(0.1em);
