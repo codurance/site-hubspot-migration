@@ -1,541 +1,573 @@
-"use strict";
-
-
-const getAll = (entity, type) => {
-    const selectors = {
-        videos: '.videos .card-item',
-        options: `[data-${type}-option]`,
-        dropdown_containers: '[data-dropdown-options]',
-        remove_filter_buttons: `[data-remove-${type}-filter]`
-    }
-
-    return Array.from(
-        document.querySelectorAll(selectors[entity])
-    );
-}
-
-const get = (entity, value, type) => {
-    const selectors = {
-        mobile_filter_toggle: '.mobile-filter-toggle__button',
-        mobile_filter_toggle_icon: '.mobile-filter-toggle__icon',
-        filters_wrapper: '.filter-dropdown-wrapper',
-        dropdown_container: `[data-dropdown-options="${value}"]`,
-        dropdown_icon: `[data-dropdown-icon="${value}"]`,
-        option: `[data-${type}-option="${value}"]`,
-        selected_icon: `[data-${type}-option-selected="${value}"]`,
-        applied_filter: `[data-applied-${type}-filter="${value}"]`,
-        no_results_message: '.no-results-message',
-        search_bar_form: '.videos-search-bar',
-        search_bar_input: '.videos-search-bar__input',
-        search_bar_reset_button: '.videos-search-bar__reset-button'
-    }
-
-    return document.querySelector(selectors[entity]);
-}
-
-const allVideos = getAll('videos');
-
-let videos = {
-    all: allVideos,
-    visible: allVideos,
-    hidden: []
-}
-
-let filters = {
-    types: [ 'topic', 'language' ],
-    all: {
-      topic: [],
-      language: []
-    },
-    applied: {
-      topic: [],
-      language: []
-    }
-};
-  
-const filterOptions = type => {
-    return getAll('options', type)
-        .map(option => option.dataset[`${type}Option`])
-        .filter( x => x.length > 0);
-}
-
-const setFilterOptions = _ => {
-    filters.types
-        .forEach(type => filters.all[type] = filterOptions(type));
-}
-
-const hide = element => {
-    element.classList.add('hidden');
-}
-
-const show = element => {
-    element.classList.remove('hidden');
-}
-
-const toggleShowHideFilters = _ => {
-    const filtersWrapper = get('filters_wrapper');
-    const mobileFilterIcon = get('mobile_filter_toggle_icon');
-
-    filtersWrapper.classList.toggle('show');
-    mobileFilterIcon.classList.toggle('mobile-filter-toggle__icon--selected')
-}
-
-const addFilterToggleListener = _ => {
-    const filterToggleButton = get('mobile_filter_toggle');
-    filterToggleButton.addEventListener('click', toggleShowHideFilters)
-}
-
-const showDropdown = container => {
-    show(container);
-
-    const type = container.dataset.dropdownOptions;
-
-    get('dropdown_icon', type).classList.add('filter-dropdown-icon--selected');
-}
-
-const hideDropdown = container => {
-    hide(container);
-
-    const type = container.dataset.dropdownOptions;
-
-    get('dropdown_icon', type).classList
-        .remove('filter-dropdown-icon--selected');
-}
-
-const closeOtherDropdowns = type => {
-    const dropdownContainers = getAll('dropdown_containers');
-
-    dropdownContainers
-        .filter(dropdown => dropdown.dataset.dropdownOptions != type)
-        .forEach(hideDropdown);
-}
-
-const openDropdown = type => {
-    closeOtherDropdowns(type);
-
-    const dropdown = get('dropdown_container', type);
+class VideosFilter {
+    constructor() {
+        this.allVideos = this.getAll('videos');
         
-    if (dropdown.classList.contains('hidden')) {
-        showDropdown(dropdown);
-    } else {
-        hideDropdown(dropdown);
-    }
-}
-
-const isDropdownButton = element => {
-    return !!element.dataset.dropdownButton
-}
-
-const optionTypeFrom = element => {
-    const dataAttributes = Object.keys(element.dataset);
-    const optionMatcher = new RegExp('^(topic|language)(?=Option)');
-
-    for (let i = 0; i < dataAttributes.length; i++) {
-        const key = dataAttributes[i];
-        const match = key.match(optionMatcher);
-        if (match) {
-            return match[0];
+        this.videos = {
+            all: this.allVideos,
+            visible: this.allVideos,
+            hidden: []
         }
-    }
-}
-
-const addDropdownListeners = _ => {
-    window.addEventListener('click', ({ target }) => {
-        if (isDropdownButton(target)) {
-            openDropdown(target.dataset.dropdownButton);
-        } else {
-            const optionType = optionTypeFrom(target);
-            closeOtherDropdowns(optionType);
+        
+        this.filters = {
+            types: [ 'topic', 'language' ],
+            all: {
+              topic: [],
+              language: []
+            },
+            applied: {
+              topic: [],
+              language: []
+            }
         }
-    });
-}
 
-const updateAppliedFilters = _ => {
-    Object.keys(filters.applied).forEach(type => {
-        const all = filters.all[type];
-        const applied = filters.applied[type];
-        const unapplied = arrayDifference(all, applied);
+        window.addEventListener(
+            'DOMContentLoaded', this.initialiseFilters
+        );
 
-        applied.forEach(filter => {
-            showAppliedFilter(type, filter);
-            markOptionSelected(type, filter);
-        });
+        this.get("search_bar_input").addEventListener(
+            "keypress", this.dismissEnterKey
+        );
 
-        unapplied.forEach(filter => {
-            hideUnappliedFilter(type, filter);
-            markOptionDeselected(type, filter);
-        });
-    });
-}
+        this.get("search_bar_input").addEventListener(
+            "input", this.filterVideosOnInputValueChange
+        );
 
-const showAppliedFilter = (type, filter) => {
-    const filterPill = get('applied_filter', filter, type)
-    show(filterPill);
-}
-
-const hideUnappliedFilter = (type, filter) => {
-    const filterPill = get('applied_filter', filter, type)
-    hide(filterPill);
-}
-
-const markOptionSelected = (type, filter) => {
-    const selectedIcon = get('selected_icon', filter, type);
-    const option = get('option', filter, type);
-    
-    show(selectedIcon);
-    option.classList.add('filter-dropdown-option--selected');
-}
-
-const markOptionDeselected = (type, filter) => {
-    const selectedIcon = get('selected_icon', filter, type);
-    const option = get('option', filter, type);
-
-    hide(selectedIcon);
-    option.classList.remove('filter-dropdown-option--selected')
-}
-
-const onlyUnique = (value, index, self) => {
-    return self.indexOf(value) === index;
-}
-
-const arrayDifference = (a, b) => {
-    return a.filter(item => !b.includes(item))
-}
-
-const filtersAvailableFor = type => {
-    const opts = {
-        topic: {
-            video_dataset_name: 'videoTopic',
-            remaining: videos => videos.filter(byLanguage)
-        },
-        language: {
-            video_dataset_name: 'videoLanguage',
-            remaining: videos => videos.filter(byTopic)
-        }  
-    };
-
-    const remainingVideos = opts[type].remaining(videos.all);
-
-    return remainingVideos.map(video => {    
-        const videoType = opts[type].video_dataset_name;
-        return video.dataset[videoType];
-        }
-    );
-}
-
-const disableButton = button => {
-    button.setAttribute('disabled', 'true');
-}
-
-const enableButton = button => {
-    button.removeAttribute('disabled');
-}
-
-const updateAvailableFilters = _ => {
-    filters.types.forEach(type => {
-
-        const availableFilters = 
-            filtersAvailableFor(type)
-                .flat(Infinity)
-                .filter(onlyUnique) 
-                .filter(element => element.trim().length > 0);
-
-        const unavailableFilters = 
-            arrayDifference(filters.all[type], availableFilters);
-
-        availableFilters
-            .forEach(filter => enableButton(get('option', filter, type)));
-        unavailableFilters
-            .forEach(filter => disableButton(get('option', filter, type)));
-    });
-}
-
-
-const byLanguage = video => {
-    let languageFilters = filters.applied.language;
-    const videoLanguages = video.dataset.videoLanguage;
-    return languageFilters.length === 0 ||
-        languageFilters.some(filter => videoLanguages.includes(filter));
-}
-
-
-const byTopic = video => {
-    let topicFilters = filters.applied.topic;
-    const videoTopics = video.dataset.videoTopic;
-    return topicFilters.length === 0 ||
-        topicFilters.some(filter => videoTopics.includes(filter));
-}
-
-const byTextInput = video => {
-    const inputText = get("search_bar_input").value;
-
-    return isSearchTextInVideo(video, inputText);
-}
-
-const calculateVisibleVideos = _ => {
-    return videos.all.filter(byTopic).filter(byLanguage).filter(byTextInput);
-}
-
-const refilter = _ => {
-
-    videos.visible = calculateVisibleVideos();
-    videos.hidden = arrayDifference(videos.all, videos.visible);
-
-    videos.visible.forEach(showWithAnimation);
-    videos.hidden.forEach(hideWithAnimation);
-}
-
-const updateNoResultsMessage = _ => {
-    const noResultsMessage = get('no_results_message');
-
-    if (videos.visible.length > 0) {
-        hideWithAnimation(noResultsMessage);
-    } else {
-        showWithAnimation(noResultsMessage);
-    }
-}
-
-const update = _ => {
-    refilter();
-    updateAppliedFilters();
-    updateAvailableFilters();
-    updateNoResultsMessage();
-}
-
-const applyFilter = (type, value) => {
-    filters.applied[type].push(value);
-
-    togglePromotedVideos();
-    toggleSearchResultsTitle();
-    
-    update();
-}
-
-
-const addFilterOptionListeners = _ => {
-    filters.types.forEach(type => {
-        getAll('options', type).forEach( button => {
-            addFilterListener(button, type)
-        });
-    });
-}
-
-
-const addFilterListener = (button, type) => {
-    button.addEventListener('click', _ =>
-        filterSelected(type, button.dataset[`${type}Option`]));
-}
-
-const filterSelected = (type, value) => {
-    filterAlreadyApplied(type, value) ? removeFilter(type, value) 
-                                     : applyFilter(type, value);
-}
-
-const filterAlreadyApplied = (type, value) => {
-    const appliedFiltersForType = filters.applied[type];
-    return appliedFiltersForType.includes(value);
-}
-
-
-const removeItemFromArray = (array, value) => {
-    const removableIndex = array.indexOf(value);
-    if (removableIndex >= 0) {
-        array.splice(removableIndex, 1);
-    }
-}
-
-const removeFilter = (type, value) => {
-    removeItemFromArray(filters.applied[type], value);
-
-    togglePromotedVideos();
-    toggleSearchResultsTitle();
-
-    update();
-}
-
-const capitalise = string => {
-    return string.charAt(0).toUpperCase() + string.substring(1);
-}
-
-const addRemoveFilterListener = (type, button) => {
-    button.addEventListener('click', _ => {
-        const value = button.dataset[`remove${capitalise(type)}Filter`];
-        removeFilter(type, value);
-    });
-}
-
-const addRemoveFilterListeners = _ => {
-    Object.keys(filters.all).forEach(type => {
-        getAll('remove_filter_buttons', type).forEach(button =>
-            addRemoveFilterListener(type, button));
-    });
-}
-
-const addListeners = _ => {
-    addFilterToggleListener();
-    addDropdownListeners();
-    addFilterOptionListeners();
-    addRemoveFilterListeners();
-}
-
-const initialiseFilters = _ => {
-    setFilterOptions();
-    addListeners();
-}
-  
-window.addEventListener('DOMContentLoaded', initialiseFilters);
-
-get("search_bar_input")
-    .addEventListener("keypress", dismissEnterKey);
-
-get("search_bar_input")
-    .addEventListener("input", filterVideosOnInputValueChange);
-
-get("search_bar_reset_button")
-    .addEventListener("click", filterVideosOnResetButtonClick);
-
-function dismissEnterKey(keypressEvent) {
-    // The 13 key code corresponds to the enter key
-    if (keypressEvent.keyCode == 13)
-        keypressEvent.preventDefault();
-}
-
-function filterVideosOnInputValueChange(inputEvent) {
-    const searchBarText = inputEvent.target.value;
- 
-    togglePromotedVideos(searchBarText);
-    toggleSearchResultsTitle(searchBarText);       
-    toggleSearchBarResetButton(searchBarText);
-    
-    update();
-}
-
-function filterVideosOnResetButtonClick() {
-    get("search_bar_input").value = "";
-    
-    togglePromotedVideos();
-    toggleSearchResultsTitle();    
-    hideSearchBarResetButton();
-
-    update();
-}
-
-function togglePromotedVideos(searchBarText) {
-    const promotedVideos = document.querySelector(".promoted-videos");
-    const isSearchBarEmpty = searchBarText === "" || searchBarText === undefined;
-    const isDropDownEmpty = filters.applied.language.length === 0 && filters.applied.topic.length === 0;
-
-    if(isDropDownEmpty && isSearchBarEmpty) {
-        showWithAnimation(promotedVideos);
-    }else {
-        hideWithAnimation(promotedVideos);
-    }           
-}
-
-function toggleSearchResultsTitle(searchBarText) {
-    const generalTitle = 
-        document.querySelector(".videos .card-collection__title");
-    const searchResultsTitle = 
-        document.querySelector(".videos .card-collection__search-results-title");
-
-    if (searchBarText === "" || searchBarText === null) {
-        setTimeout(
-            hideSearchResultsTitle, 
-            getFadingAnimationDuration(), 
-            generalTitle, searchResultsTitle
+        this.get("search_bar_reset_button").addEventListener(
+            "click", this.filterVideosOnResetButtonClick
         );
     }
-    else {
-        showSearchResultsTitle(generalTitle, searchResultsTitle);
+
+    getAll = (entity, type) => {
+        const selectors = {
+            videos: '.videos .card-item',
+            options: `[data-${type}-option]`,
+            dropdown_containers: '[data-dropdown-options]',
+            remove_filter_buttons: `[data-remove-${type}-filter]`
+        }
+    
+        return Array.from(
+            document.querySelectorAll(selectors[entity])
+        );
     }
-}
-
-function showSearchResultsTitle(generalTitle, searchResultsTitle) {
-    addHiddenModifier(generalTitle);
-    removeHiddenModifier(searchResultsTitle);
-}
-
-function hideSearchResultsTitle(generalTitle, searchResultsTitle) {
-    removeHiddenModifier(generalTitle);
-    addHiddenModifier(searchResultsTitle);
-}
-
-function toggleSearchBarResetButton(searchBarText) {
-    if (searchBarText != "") {
-        showSearchBarResetButton();
-    }
-    else {
-        hideSearchBarResetButton();
-    }
-}
-
-function showSearchBarResetButton() {
-    get("search_bar_form").classList.add("videos-search-bar--icon-hidden");
-    removeHiddenModifier(get("search_bar_reset_button"));
-}
-
-function hideSearchBarResetButton() {
-    get("search_bar_form").classList.remove("videos-search-bar--icon-hidden");
-    addHiddenModifier(get("search_bar_reset_button"));
-}
-
-function isSearchTextInVideo(video, searchBarText) {
-    const videoItemTitle = video.querySelector(".card-item__title").innerText;
-    const videoItemDescription = video.querySelector(".card-item__description").innerText;
-    const regExp = createRegExpObject(searchBarText);
-
-    if(videoItemTitle.match(regExp) || 
-       videoItemDescription.match(regExp)
-    ) {
-        return true;
+    
+    get = (entity, value, type) => {
+        const selectors = {
+            mobile_filter_toggle: '.mobile-filter-toggle__button',
+            mobile_filter_toggle_icon: '.mobile-filter-toggle__icon',
+            filters_wrapper: '.filter-dropdown-wrapper',
+            dropdown_container: `[data-dropdown-options="${value}"]`,
+            dropdown_icon: `[data-dropdown-icon="${value}"]`,
+            option: `[data-${type}-option="${value}"]`,
+            selected_icon: `[data-${type}-option-selected="${value}"]`,
+            applied_filter: `[data-applied-${type}-filter="${value}"]`,
+            no_results_message: '.no-results-message',
+            search_bar_form: '.videos-search-bar',
+            search_bar_input: '.videos-search-bar__input',
+            search_bar_reset_button: '.videos-search-bar__reset-button'
+        }
+    
+        return document.querySelector(selectors[entity]);
     }
 
-    return false;
-}
+    filterOptions = type => {
+        return this.getAll('options', type)
+            .map(option => option.dataset[`${type}Option`])
+            .filter( x => x.length > 0);
+    }
 
-function createRegExpObject(text) {
-    const regexpFlags = "i"; // Case Insensitive Flag
-    return new RegExp(text, regexpFlags);
-}
+    setFilterOptions = _ => {
+        this.filters.types
+            .forEach(type => this.filters.all[type] = this.filterOptions(type));
+    }
 
-function showWithAnimation(element) {
-    const animationDuration = 
-    parseInt(
-      getComputedStyle(document.documentElement)
-      .getPropertyValue("--fading-animation-duration")
-    );
+    toggleShowHideFilters = _ => {
+        const filtersWrapper = this.get('filters_wrapper');
+        const mobileFilterIcon = this.get('mobile_filter_toggle_icon');
 
-    removeHiddenModifier(element);
+        filtersWrapper.classList.toggle('show');
+        mobileFilterIcon.classList.toggle('mobile-filter-toggle__icon--selected')
+    }
 
-    // Timeout to show the transition before the display property changes
-    setTimeout(removeFadeAnimationModifier, animationDuration, element);
-}
+    addFilterToggleListener = _ => {
+        const filterToggleButton = this.get('mobile_filter_toggle');
+        filterToggleButton.addEventListener(
+            'click', this.toggleShowHideFilters
+        );
+    }
 
-function hideWithAnimation(element) {
-    const animationDuration = 
-    parseInt(
-      getComputedStyle(document.documentElement)
-      .getPropertyValue("--fading-animation-duration")
-    );
+    showDropdown = container => {
+        this.show(container);
 
-    addFadeAnimationModifier(element);
+        const type = container.dataset.dropdownOptions;
+
+        this.get('dropdown_icon', type).classList.add(
+            'filter-dropdown-icon--selected'
+        );
+    }
+
+    hideDropdown = container => {
+        this.hide(container);
+
+        const type = container.dataset.dropdownOptions;
+
+        this.get('dropdown_icon', type).classList
+            .remove('filter-dropdown-icon--selected');
+    }
+
+    closeOtherDropdowns = type => {
+        const dropdownContainers = this.getAll('dropdown_containers');
+
+        dropdownContainers
+            .filter(dropdown => dropdown.dataset.dropdownOptions != type)
+            .forEach(this.hideDropdown);
+    }
+
+    openDropdown = type => {
+        this.closeOtherDropdowns(type);
+
+        const dropdown = this.get('dropdown_container', type);
+            
+        if (dropdown.classList.contains('hidden')) {
+            this.showDropdown(dropdown);
+        } else {
+            this.hideDropdown(dropdown);
+        }
+    }
+
+    isDropdownButton = element => {
+        return !!element.dataset.dropdownButton
+    }
+
+    optionTypeFrom = element => {
+        const dataAttributes = Object.keys(element.dataset);
+        const optionMatcher = new RegExp('^(topic|language)(?=Option)');
+
+        for (let i = 0; i < dataAttributes.length; i++) {
+            const key = dataAttributes[i];
+            const match = key.match(optionMatcher);
+            if (match) {
+                return match[0];
+            }
+        }
+    }
+
+    addDropdownListeners = () => {
+        window.addEventListener('click', ({ target }) => {
+            if (this.isDropdownButton(target)) {
+                this.openDropdown(target.dataset.dropdownButton);
+            } else {
+                const optionType = this.optionTypeFrom(target);
+                this.closeOtherDropdowns(optionType);
+            }
+        });
+    }
+
+    updateAppliedFilters = () => {
+        Object.keys(this.filters.applied).forEach(type => {
+            const all = this.filters.all[type];
+            const applied = this.filters.applied[type];
+            const unapplied = this.arrayDifference(all, applied);
+
+            applied.forEach(filter => {
+                this.showAppliedFilter(type, filter);
+                this.markOptionSelected(type, filter);
+            });
+
+            unapplied.forEach(filter => {
+                this.hideUnappliedFilter(type, filter);
+                this.markOptionDeselected(type, filter);
+            });
+        });
+    }
+
+    showAppliedFilter = (type, filter) => {
+        const filterPill = this.get('applied_filter', filter, type);
+        this.show(filterPill);
+    }
+
+    hideUnappliedFilter = (type, filter) => {
+        const filterPill = this.get('applied_filter', filter, type);
+        this.hide(filterPill);
+    }
+
+    markOptionSelected = (type, filter) => {
+        const selectedIcon = this.get('selected_icon', filter, type);
+        const option = this.get('option', filter, type);
         
-    // Timeout to show the transition before the display property changes
-    setTimeout(addHiddenModifier, animationDuration, element); 
+        this.show(selectedIcon);
+        option.classList.add('filter-dropdown-option--selected');
+    }
+
+    markOptionDeselected = (type, filter) => {
+        const selectedIcon = this.get('selected_icon', filter, type);
+        const option = this.get('option', filter, type);
+
+        this.hide(selectedIcon);
+        option.classList.remove('filter-dropdown-option--selected');
+    }
+
+    onlyUnique = (value, index, self) => {
+        return self.indexOf(value) === index;
+    }
+
+    arrayDifference = (a, b) => {
+        return a.filter(item => !b.includes(item));
+    }
+
+    filtersAvailableFor = type => {
+        const opts = {
+            topic: {
+                video_dataset_name: 'videoTopic',
+                remaining: videos => videos.filter(this.byLanguage)
+            },
+            language: {
+                video_dataset_name: 'videoLanguage',
+                remaining: videos => videos.filter(this.byTopic)
+            }  
+        };
+
+        const remainingVideos = opts[type].remaining(this.videos.all);
+
+        return remainingVideos.map(video => {    
+            const videoType = opts[type].video_dataset_name;
+            return video.dataset[videoType];
+            }
+        );
+    }
+
+    disableButton = button => {
+        button.setAttribute('disabled', 'true');
+    }
+
+    enableButton = button => {
+        button.removeAttribute('disabled');
+    }
+
+    updateAvailableFilters = () => {
+        this.filters.types.forEach(type => {
+
+            const availableFilters = 
+                this.filtersAvailableFor(type)
+                    .flat(Infinity)
+                    .filter(this.onlyUnique) 
+                    .filter(element => element.trim().length > 0);
+
+            const unavailableFilters = 
+                this.arrayDifference(this.filters.all[type], availableFilters);
+
+            availableFilters.forEach(filter => 
+                this.enableButton(this.get('option', filter, type))
+            );
+            unavailableFilters.forEach(filter => 
+                this.disableButton(this.get('option', filter, type))
+            );
+        });
+    }
+
+    byLanguage = video => {
+        let languageFilters = this.filters.applied.language;
+        const videoLanguages = video.dataset.videoLanguage;
+        return languageFilters.length === 0 ||
+            languageFilters.some(filter => videoLanguages.includes(filter));
+    }
+
+    byTopic = video => {
+        let topicFilters = this.filters.applied.topic;
+        const videoTopics = video.dataset.videoTopic;
+        return topicFilters.length === 0 ||
+            topicFilters.some(filter => videoTopics.includes(filter));
+    }
+
+    byTextInput = video => {
+        const inputText = this.get("search_bar_input").value;
+
+        return this.isSearchTextInVideo(video, inputText);
+    }
+
+    calculateVisibleVideos = () => {
+        return this.videos.all
+            .filter(this.byTopic)
+            .filter(this.byLanguage)
+            .filter(this.byTextInput);
+    }
+
+    refilter = () => {
+        this.videos.visible = this.calculateVisibleVideos();
+        this.videos.hidden = this.arrayDifference(
+            this.videos.all, this.videos.visible
+        );
+
+        this.videos.visible.forEach(this.showWithAnimation);
+        this.videos.hidden.forEach(this.hideWithAnimation);
+    }
+
+    updateNoResultsMessage = () => {
+        const noResultsMessage = this.get('no_results_message');
+
+        if (this.videos.visible.length > 0) {
+            this.hideWithAnimation(noResultsMessage);
+        } else {
+            this.showWithAnimation(noResultsMessage);
+        }
+    }
+
+    update = () => {
+        this.refilter();
+        this.updateAppliedFilters();
+        this.updateAvailableFilters();
+        this.updateNoResultsMessage();
+    }
+
+    applyFilter = (type, value) => {
+        this.filters.applied[type].push(value);
+
+        this.togglePromotedVideos();
+        this.toggleSearchResultsTitle();
+        
+        this.update();
+    }
+
+
+    addFilterOptionListeners = () => {
+        this.filters.types.forEach(type => {
+            this.getAll('options', type).forEach( button => {
+                this.addFilterListener(button, type)
+            });
+        });
+    }
+
+    addFilterListener = (button, type) => {
+        button.addEventListener('click', _ =>
+            this.filterSelected(type, button.dataset[`${type}Option`]));
+    }
+
+    filterSelected = (type, value) => {
+        this.filterAlreadyApplied(type, value) ? this.removeFilter(type, value) 
+            : this.applyFilter(type, value);
+    }
+
+    filterAlreadyApplied = (type, value) => {
+        const appliedFiltersForType = this.filters.applied[type];
+        return appliedFiltersForType.includes(value);
+    }
+
+
+    removeItemFromArray = (array, value) => {
+        const removableIndex = array.indexOf(value);
+        if (removableIndex >= 0) {
+            array.splice(removableIndex, 1);
+        }
+    }
+
+    removeFilter = (type, value) => {
+        this.removeItemFromArray(this.filters.applied[type], value);
+
+        this.togglePromotedVideos();
+        this.toggleSearchResultsTitle();
+
+        this.update();
+    }
+
+    capitalise = string => {
+        return string.charAt(0).toUpperCase() + string.substring(1);
+    }
+
+    addRemoveFilterListener = (type, button) => {
+        button.addEventListener('click', _ => {
+            const value = button.dataset[
+                `remove${this.capitalise(type)}Filter`
+            ];
+            this.removeFilter(type, value);
+        });
+    }
+
+    addRemoveFilterListeners = () => {
+        Object.keys(this.filters.all).forEach(type => {
+            this.getAll('remove_filter_buttons', type).forEach(button =>
+                this.addRemoveFilterListener(type, button));
+        });
+    }
+
+    addListeners = () => {
+        this.addFilterToggleListener();
+        this.addDropdownListeners();
+        this.addFilterOptionListeners();
+        this.addRemoveFilterListeners();
+    }
+
+    initialiseFilters = () => {
+        this.setFilterOptions();
+        this.addListeners();
+    }
+
+    dismissEnterKey = keypressEvent => {
+        // The 13 key code corresponds to the enter key
+        if (keypressEvent.keyCode == 13)
+            keypressEvent.preventDefault();
+    }
+
+    filterVideosOnInputValueChange = inputEvent => {
+        const searchBarText = inputEvent.target.value;
+    
+        this.togglePromotedVideos(searchBarText);
+        this.toggleSearchResultsTitle(searchBarText);       
+        this.toggleSearchBarResetButton(searchBarText);
+        
+        this.update();
+    }
+
+    filterVideosOnResetButtonClick = () => {
+        this.get("search_bar_input").value = "";
+        
+        this.togglePromotedVideos();
+        this.toggleSearchResultsTitle();    
+        this.hideSearchBarResetButton();
+
+        this.update();
+    }
+
+    togglePromotedVideos = searchBarText => {
+        const promotedVideos = document.querySelector(".promoted-videos");
+        const isSearchBarEmpty = searchBarText === "" || 
+            searchBarText === undefined;
+        const isDropDownEmpty = this.filters.applied.language.length === 0 &&
+            this.filters.applied.topic.length === 0;
+
+        if(isDropDownEmpty && isSearchBarEmpty) {
+            this.showWithAnimation(promotedVideos);
+        }else {
+            this.hideWithAnimation(promotedVideos);
+        }           
+    }
+
+    toggleSearchResultsTitle = searchBarText => {
+        const generalTitle = 
+            document.querySelector(".videos .card-collection__title");
+        const searchResultsTitle = document
+            .querySelector(".videos .card-collection__search-results-title");
+
+        if (searchBarText === "" || searchBarText === null) {
+            setTimeout(
+                this.hideSearchResultsTitle, 
+                this.getFadingAnimationDuration(), 
+                generalTitle, searchResultsTitle
+            );
+        }
+        else {
+            this.showSearchResultsTitle(generalTitle, searchResultsTitle);
+        }
+    }
+
+    showSearchResultsTitle = (generalTitle, searchResultsTitle) => {
+        this.addHiddenModifier(generalTitle);
+        this.removeHiddenModifier(searchResultsTitle);
+    }
+
+    hideSearchResultsTitle = (generalTitle, searchResultsTitle) => {
+        this.removeHiddenModifier(generalTitle);
+        this.addHiddenModifier(searchResultsTitle);
+    }
+
+    toggleSearchBarResetButton = searchBarText => {
+        if (searchBarText != "") {
+            this.showSearchBarResetButton();
+        }
+        else {
+            this.hideSearchBarResetButton();
+        }
+    }
+
+    showSearchBarResetButton = () => {
+        this.get("search_bar_form")
+            .classList
+            .add("videos-search-bar--icon-hidden");
+        this.removeHiddenModifier(this.get("search_bar_reset_button"));
+    }
+
+    hideSearchBarResetButton = () => {
+        this.get("search_bar_form")
+            .classList
+            .remove("videos-search-bar--icon-hidden");
+        this.addHiddenModifier(this.get("search_bar_reset_button"));
+    }
+
+    isSearchTextInVideo = (video, searchBarText) => {
+        const videoItemTitle = 
+            video.querySelector(".card-item__title").innerText;
+        const videoItemDescription = 
+            video.querySelector(".card-item__description").innerText;
+        const regExp = this.createRegExpObject(searchBarText);
+
+        if(videoItemTitle.match(regExp) || videoItemDescription.match(regExp)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    createRegExpObject = text => {
+        const regexpFlags = "i"; // Case Insensitive Flag
+        return new RegExp(text, regexpFlags);
+    }
+
+    hide = element => {
+        element.classList.add('hidden');
+    }
+
+    show = element => {
+        element.classList.remove('hidden');
+    }
+
+    showWithAnimation = element => {
+        const animationDuration = 
+            parseInt(
+                getComputedStyle(document.documentElement)
+                .getPropertyValue("--fading-animation-duration")
+            );
+
+        this.removeHiddenModifier(element);
+
+        // Timeout to show the transition before the display property changes
+        setTimeout(
+            this.removeFadeAnimationModifier, 
+            animationDuration, 
+            element
+        );
+    }
+
+    hideWithAnimation = element => {
+        const animationDuration = 
+            parseInt(
+                getComputedStyle(document.documentElement)
+                .getPropertyValue("--fading-animation-duration")
+            );
+
+        this.addFadeAnimationModifier(element);
+            
+        // Timeout to show the transition before the display property changes
+        setTimeout(
+            this.addHiddenModifier, 
+            animationDuration, 
+            element
+        ); 
+    }
+
+    removeFadeAnimationModifier = element => {
+        element.classList.remove("fade-animation");
+    }
+
+    addFadeAnimationModifier = element => {
+        element.classList.add("fade-animation");
+    }
+
+    removeHiddenModifier = element => {
+        element.classList.remove("hidden");
+    }
+
+    addHiddenModifier = element => {
+        element.classList.add("hidden");
+    }
 }
 
-function removeFadeAnimationModifier(element) {
-    element.classList.remove("fade-animation");
-}
+new VideosFilter();
 
-function addFadeAnimationModifier(element) {
-    element.classList.add("fade-animation");
-}
-
-function removeHiddenModifier(element) {
-    element.classList.remove("hidden");
-}
-
-function addHiddenModifier(element) {
-    element.classList.add("hidden");
-}
