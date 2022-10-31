@@ -5,11 +5,17 @@
 {% set topics = [] %}
 {% set languages = [] %}
 
-
 {% for item in items %}
     {% do topics.append(item.topic.name) %}
     {% do languages.append(item.language.name) %}
 {% endfor %}
+
+{% if locale == "en" %}
+    {% set filterOptions = "&language=English" %}    
+    {% set items = hubdb_table_rows("videos", filterOptions) %}    
+    {% set languages = [] %}
+{% endif %}    
+
 
 {% set topics = topics|unique %}
 {% set languages = languages|unique %}
@@ -55,6 +61,7 @@
                 {% endfor %}
                 </div>
             </div>
+            {% if languages|length > 1  %}
               <div class="filter-dropdown-container">
                   <button class="filter-dropdown-button" data-dropdown-button="language">
                   <i class="filter-icon las la-language"></i>
@@ -72,6 +79,7 @@
                   {% endfor %}
                   </div>
               </div>
+            {% endif %}
         </div>
     </div>
 </div>
