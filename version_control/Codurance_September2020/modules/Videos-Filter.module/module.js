@@ -23,18 +23,6 @@ class VideosFilter {
         window.addEventListener(
             'DOMContentLoaded', this.initialiseFilters
         );
-
-        this.get("search_bar_input").addEventListener(
-            "keypress", this.dismissEnterKey
-        );
-
-        this.get("search_bar_input").addEventListener(
-            "input", this.filterVideosOnInputValueChange
-        );
-
-        this.get("search_bar_reset_button").addEventListener(
-            "click", this.filterVideosOnResetButtonClick
-        );
     }
 
     getAll = (entity, type) => {
@@ -69,15 +57,35 @@ class VideosFilter {
         return document.querySelector(selectors[entity]);
     }
 
+    initialiseFilters = () => {
+        this.setFilterOptions();
+        this.addListeners();
+    }
+
+    setFilterOptions = _ => {
+        this.filters.types
+            .forEach(type => this.filters.all[type] = this.filterOptions(type));
+    }
+
     filterOptions = type => {
         return this.getAll('options', type)
             .map(option => option.dataset[`${type}Option`])
             .filter( x => x.length > 0);
     }
 
-    setFilterOptions = _ => {
-        this.filters.types
-            .forEach(type => this.filters.all[type] = this.filterOptions(type));
+    addListeners = () => {
+        this.addFilterToggleListener();
+        this.addDropdownListeners();
+        this.addFilterOptionListeners();
+        this.addRemoveFilterListeners();
+        this.addSearchBarListeners();
+    }
+
+    addFilterToggleListener = _ => {
+        const filterToggleButton = this.get('mobile_filter_toggle');
+        filterToggleButton.addEventListener(
+            'click', this.toggleShowHideFilters
+        );
     }
 
     toggleShowHideFilters = _ => {
@@ -88,10 +96,43 @@ class VideosFilter {
         mobileFilterIcon.classList.toggle('mobile-filter-toggle__icon--selected')
     }
 
-    addFilterToggleListener = _ => {
-        const filterToggleButton = this.get('mobile_filter_toggle');
-        filterToggleButton.addEventListener(
-            'click', this.toggleShowHideFilters
+    addDropdownListeners = () => {
+        window.addEventListener('click', ({ target }) => {
+            if (this.isDropdownButton(target)) {
+                this.openDropdown(target.dataset.dropdownButton);
+            } else {
+                const optionType = this.optionTypeFrom(target);
+                this.closeOtherDropdowns(optionType);
+            }
+        });
+    }
+
+    addFilterOptionListeners = () => {
+        this.filters.types.forEach(type => {
+            this.getAll('options', type).forEach( button => {
+                this.addFilterListener(button, type)
+            });
+        });
+    }
+
+    addRemoveFilterListeners = () => {
+        Object.keys(this.filters.all).forEach(type => {
+            this.getAll('remove_filter_buttons', type).forEach(button =>
+                this.addRemoveFilterListener(type, button));
+        });
+    }
+
+    addSearchBarListeners = () => {
+        this.get("search_bar_input").addEventListener(
+            "keypress", this.dismissEnterKey
+        );
+
+        this.get("search_bar_input").addEventListener(
+            "input", this.filterVideosOnInputValueChange
+        );
+
+        this.get("search_bar_reset_button").addEventListener(
+            "click", this.filterVideosOnResetButtonClick
         );
     }
 
@@ -151,16 +192,7 @@ class VideosFilter {
         }
     }
 
-    addDropdownListeners = () => {
-        window.addEventListener('click', ({ target }) => {
-            if (this.isDropdownButton(target)) {
-                this.openDropdown(target.dataset.dropdownButton);
-            } else {
-                const optionType = this.optionTypeFrom(target);
-                this.closeOtherDropdowns(optionType);
-            }
-        });
-    }
+    
 
     updateAppliedFilters = () => {
         Object.keys(this.filters.applied).forEach(type => {
@@ -328,13 +360,7 @@ class VideosFilter {
     }
 
 
-    addFilterOptionListeners = () => {
-        this.filters.types.forEach(type => {
-            this.getAll('options', type).forEach( button => {
-                this.addFilterListener(button, type)
-            });
-        });
-    }
+    
 
     addFilterListener = (button, type) => {
         button.addEventListener('click', _ =>
@@ -350,7 +376,6 @@ class VideosFilter {
         const appliedFiltersForType = this.filters.applied[type];
         return appliedFiltersForType.includes(value);
     }
-
 
     removeItemFromArray = (array, value) => {
         const removableIndex = array.indexOf(value);
@@ -379,25 +404,6 @@ class VideosFilter {
             ];
             this.removeFilter(type, value);
         });
-    }
-
-    addRemoveFilterListeners = () => {
-        Object.keys(this.filters.all).forEach(type => {
-            this.getAll('remove_filter_buttons', type).forEach(button =>
-                this.addRemoveFilterListener(type, button));
-        });
-    }
-
-    addListeners = () => {
-        this.addFilterToggleListener();
-        this.addDropdownListeners();
-        this.addFilterOptionListeners();
-        this.addRemoveFilterListeners();
-    }
-
-    initialiseFilters = () => {
-        this.setFilterOptions();
-        this.addListeners();
     }
 
     dismissEnterKey = keypressEvent => {
@@ -510,12 +516,12 @@ class VideosFilter {
         return new RegExp(text, regexpFlags);
     }
 
-    hide = element => {
-        element.classList.add('hidden');
-    }
-
     show = element => {
         element.classList.remove('hidden');
+    }
+
+    hide = element => {
+        element.classList.add('hidden');
     }
 
     showWithAnimation = element => {
