@@ -13,6 +13,7 @@ class VideosFilter {
         if( filtersTypes.includes('language') ) {
             this.filters.all['language'] = [];
             this.filters.applied['language'] = [];
+            console.log("Hello");
         }
 
         this.allVideos = this.getAll('videos');
@@ -195,8 +196,6 @@ class VideosFilter {
         }
     }
 
-    
-
     updateAppliedFilters = () => {
         Object.keys(this.filters.applied).forEach(type => {
             const all = this.filters.all[type];
@@ -261,21 +260,19 @@ class VideosFilter {
             }  
         };
 
-        const remainingVideos = opts[type].remaining(this.videos.all);
+        let videos = this.videos.all;
 
-        return remainingVideos.map(video => {    
+        if(this.filters.types.includes('language')) {
+            videos = opts[type].remaining(videos);
+        }
+
+        //console.log(videos);
+
+        return videos.map(video => {    
             const videoType = opts[type].video_dataset_name;
             return video.dataset[videoType];
             }
         );
-    }
-
-    disableButton = button => {
-        button.setAttribute('disabled', 'true');
-    }
-
-    enableButton = button => {
-        button.removeAttribute('disabled');
     }
 
     updateAvailableFilters = () => {
@@ -299,31 +296,12 @@ class VideosFilter {
         });
     }
 
-    byLanguage = video => {
-        let languageFilters = this.filters.applied.language;
-        const videoLanguages = video.dataset.videoLanguage;
-        return languageFilters.length === 0 ||
-            languageFilters.some(filter => videoLanguages.includes(filter));
+    enableButton = button => {
+        button.removeAttribute('disabled');
     }
 
-    byTopic = video => {
-        let topicFilters = this.filters.applied.topic;
-        const videoTopics = video.dataset.videoTopic;
-        return topicFilters.length === 0 ||
-            topicFilters.some(filter => videoTopics.includes(filter));
-    }
-
-    byTextInput = video => {
-        const inputText = this.get("search_bar_input").value;
-
-        return this.isSearchTextInVideo(video, inputText);
-    }
-
-    calculateVisibleVideos = () => {
-        return this.videos.all
-            .filter(this.byTopic)
-            .filter(this.byLanguage)
-            .filter(this.byTextInput);
+    disableButton = button => {
+        button.setAttribute('disabled', 'true');
     }
 
     refilter = () => {
@@ -334,6 +312,41 @@ class VideosFilter {
 
         this.videos.visible.forEach(this.showWithAnimation);
         this.videos.hidden.forEach(this.hideWithAnimation);
+    }
+
+    calculateVisibleVideos = () => {
+        let visibleVideos = this.videos.all;
+
+        this.filters.types.forEach(type => {
+            const capitalisedType = type.charAt(0).toUpperCase() + 
+                type.slice(1);
+
+            visibleVideos = visibleVideos.filter(this['by' + capitalisedType]);
+        });
+
+        visibleVideos = visibleVideos.filter(this.byTextInput);
+
+        return visibleVideos;
+    }
+
+    byTopic = video => {
+        let topicFilters = this.filters.applied.topic;
+        const videoTopics = video.dataset.videoTopic;
+        return topicFilters.length === 0 ||
+            topicFilters.some(filter => videoTopics.includes(filter));
+    }
+
+    byLanguage = video => {
+        let languageFilters = this.filters.applied.language;
+        const videoLanguages = video.dataset.videoLanguage;
+        return languageFilters.length === 0 ||
+            languageFilters.some(filter => videoLanguages.includes(filter));
+    }
+
+    byTextInput = video => {
+        const inputText = this.get("search_bar_input").value;
+
+        return this.isSearchTextInVideo(video, inputText);
     }
 
     updateNoResultsMessage = () => {
@@ -361,9 +374,6 @@ class VideosFilter {
         
         this.update();
     }
-
-
-    
 
     addFilterListener = (button, type) => {
         button.addEventListener('click', _ =>
