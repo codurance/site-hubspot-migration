@@ -1,5 +1,20 @@
 class VideosFilter {
-    constructor() {
+    constructor(filtersTypes) {
+        this.filters = {
+            types: filtersTypes,
+            all: {
+              topic: []
+            },
+            applied: {
+              topic: []
+            }
+        }
+
+        if( filtersTypes.includes('language') ) {
+            this.filters.all['language'] = [];
+            this.filters.applied['language'] = [];
+        }
+
         this.allVideos = this.getAll('videos');
         
         this.videos = {
@@ -8,18 +23,6 @@ class VideosFilter {
             hidden: []
         }
         
-        this.filters = {
-            types: [ 'topic', 'language' ],
-            all: {
-              topic: [],
-              language: []
-            },
-            applied: {
-              topic: [],
-              language: []
-            }
-        }
-
         window.addEventListener(
             'DOMContentLoaded', this.initialiseFilters
         );
@@ -436,14 +439,24 @@ class VideosFilter {
         const promotedVideos = document.querySelector(".promoted-videos");
         const isSearchBarEmpty = searchBarText === "" || 
             searchBarText === undefined;
-        const isDropDownEmpty = this.filters.applied.language.length === 0 &&
-            this.filters.applied.topic.length === 0;
+        const areFiltersEmpty = this.areFiltersEmpty();
 
-        if(isDropDownEmpty && isSearchBarEmpty) {
+        if(areFiltersEmpty && isSearchBarEmpty) {
             this.showWithAnimation(promotedVideos);
         }else {
             this.hideWithAnimation(promotedVideos);
         }           
+    }
+
+    areFiltersEmpty = () => {
+        let areFiltersEmpty = true;
+
+        this.filters.types.forEach( filterType => {
+            if( this.filters.applied[filterType].length !== 0 )
+                areFiltersEmpty = false;
+        });
+
+        return areFiltersEmpty;
     }
 
     toggleSearchResultsTitle = searchBarText => {
@@ -575,5 +588,5 @@ class VideosFilter {
     }
 }
 
-new VideosFilter();
+new VideosFilter(['topic', 'language']);
 
