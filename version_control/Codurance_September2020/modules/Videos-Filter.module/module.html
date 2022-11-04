@@ -16,11 +16,10 @@
     {% set languages = [] %}
 {% endif %}    
 
-
 {% set topics = topics|unique %}
 {% set languages = languages|unique %}
 
-<div class="filters-wrapper responsive-page-width lateral-spacing">
+<div class="filters-wrapper {% if languages|length > 1 %}filters-wrapper--language-enabled{% endif %} responsive-page-width lateral-spacing">
     <form role='search' class="videos-search-bar">
         {# Hidden label for accessibility #}
         <label for='searchbar'>{{ module.search_bar_placeholder}}</label>
@@ -61,7 +60,7 @@
                 {% endfor %}
                 </div>
             </div>
-            {% if languages|length > 1  %}
+            {% if languages|length > 1 %}
               <div class="filter-dropdown-container">
                   <button class="filter-dropdown-button" data-dropdown-button="language">
                   <i class="filter-icon las la-language"></i>

@@ -13,7 +13,6 @@ class VideosFilter {
         if( filtersTypes.includes('language') ) {
             this.filters.all['language'] = [];
             this.filters.applied['language'] = [];
-            console.log("Hello");
         }
 
         this.allVideos = this.getAll('videos');
@@ -24,9 +23,7 @@ class VideosFilter {
             hidden: []
         }
         
-        window.addEventListener(
-            'DOMContentLoaded', this.initialiseFilters
-        );
+        this.initialiseFilters();
     }
 
     getAll = (entity, type) => {
@@ -265,8 +262,6 @@ class VideosFilter {
         if(this.filters.types.includes('language')) {
             videos = opts[type].remaining(videos);
         }
-
-        //console.log(videos);
 
         return videos.map(video => {    
             const videoType = opts[type].video_dataset_name;
@@ -598,5 +593,14 @@ class VideosFilter {
     }
 }
 
-new VideosFilter(['topic', 'language']);
+window.addEventListener('DOMContentLoaded', () => {
+    const filtersWrapper = document.querySelector('.filters-wrapper');
+    let filtersEnabled = ['topic'];
+
+    if(filtersWrapper.classList.contains('filters-wrapper--language-enabled'))
+        filtersEnabled.push('language')
+
+    new VideosFilter(filtersEnabled);
+});
+
 
