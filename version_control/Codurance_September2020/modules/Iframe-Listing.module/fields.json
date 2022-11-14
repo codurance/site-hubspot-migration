@@ -1,0 +1,39 @@
+[ {
+  "id" : "5f54c170-9a2c-808e-eca9-6ce93fdebfee",
+  "name" : "items",
+  "display_width" : null,
+  "label" : "Iframe items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "43f3a19e-b7fa-ff8b-45b2-b5ef0a0e84f4",
+    "name" : "embed_field",
+    "display_width" : null,
+    "label" : "Embed",
+    "required" : false,
+    "locked" : false,
+    "supported_source_types" : [ "html" ],
+    "supported_oembed_types" : [ "video" ],
+    "resizable" : true,
+    "show_preview" : true,
+    "supported_media_bridge_providers" : [ ],
+    "type" : "embed",
+    "default" : {
+      "source_type" : "html"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "embed_field" : {
+      "source_type" : "html"
+    }
+  }
+} ]
