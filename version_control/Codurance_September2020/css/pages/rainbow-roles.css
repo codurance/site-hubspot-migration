@@ -6,11 +6,9 @@
     padding-bottom: 4em;
 }
 
-.roles .locations__images {
+.roles .listing__images {
     max-width: var(--content-inner-max-width);
 }
-
-
 
 .video-roles {
     max-width: 1024px;
