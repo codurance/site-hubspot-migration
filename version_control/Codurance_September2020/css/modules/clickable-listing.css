@@ -1,10 +1,9 @@
 {% import '../utils/utils.css' as utils %}
-
-
     
 .listing__text {
     margin-top: 1em;
     max-width: 60ch;
+    text-align: center;
 }
 
 {% call utils.small()%}
@@ -44,19 +43,19 @@
     align-self: end;
 }
 
-.location__img {
+.listing__img {
     width: 10em;
     clip-path: circle();
     transition: transform ease-in-out 200ms;
     
 }
 
-.location__img:hover {
+.listing__img:hover {
    transform: scale(1.1);
 
 }
 
-.location__text {
+.listing__text {
     margin-top: 1em;
     font-weight: var(--heavy-font-weight);
 

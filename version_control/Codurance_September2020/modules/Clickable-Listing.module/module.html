@@ -16,10 +16,9 @@
 				<img class="listing__img" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
 			{% endif %}
 				<h4 class="listing__text">{{ item.image_title }}</h4>
-        	{{ item.image_anchor_url.href }}
+        	{{ item.image_anchor_tag.href }}
 			</div>
 		{% endfor %}
-
 </div>
 
 
