@@ -1,0 +1,88 @@
+{% import '../utils/utils.css' as utils %}
+
+
+    
+.listing__text {
+    margin-top: 1em;
+    max-width: 60ch;
+}
+
+{% call utils.small()%}
+    .listing__text {
+        {{utils.natus()}}
+    }
+{% endcall %}
+
+
+.listing__images{
+    margin: 2.5em auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 20em;
+   
+}
+
+{% call utils.medium_large_and_extra_large()%}
+    .listing__images{
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1em;
+        height: 15em;
+        max-width: none;
+    }
+{% endcall %}
+
+.listing__item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    align-self: start;
+}
+
+.listing__item:nth-child(even){
+    align-self: end;
+}
+
+.location__img {
+    width: 10em;
+    clip-path: circle();
+    transition: transform ease-in-out 200ms;
+    
+}
+
+.location__img:hover {
+   transform: scale(1.1);
+
+}
+
+.location__text {
+    margin-top: 1em;
+    font-weight: var(--heavy-font-weight);
+
+}
+
+.listing__line-break{
+    border: 0.1em;
+    margin-top: 5em;
+}
+
+.listing__remote-countries{
+    margin-top: .5em;
+}
+
+.listing__remote-countries > p{
+    {{utils.natus()}}
+}
+
+{% call utils.large_and_extra_large()%}
+    .listing__line-break,
+    .listing__remote-countries{
+        max-width: 70%;
+    }
+
+{% endcall %}
+
+
+
+
