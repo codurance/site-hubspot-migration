@@ -3,9 +3,8 @@
 
 {% macro card_collection(videos_listing, copy) %}
   <section class="{{ copy.card_collection_class }} card-collection">
-    <div
-      class="card-collection__inner-wrapper responsive-page-width lateral-spacing"
-    >
+    <div 
+    class="card-collection__inner-wrapper responsive-page-width lateral-spacing">
       <h2 class="card-collection__heading-wrapper">
         <span class="card-collection__title">
           {{ copy.heading }}
@@ -115,16 +114,21 @@
 {% endif %}
 
 {% if module.videos.hubdb_table %}
+  {% if locale == "en" %}
+    {% set isOnlyEnglish = "&language=English" %}
+  {% endif %}
+
   {% set past_videos_filter = "&orderBy=-date" %} 
-  {% set past_videos_listing = hubdb_table_rows(module.videos.hubdb_table, past_videos_filter) %}
+  {% set past_videos_listing = hubdb_table_rows(module.videos.hubdb_table, past_videos_filter + isOnlyEnglish ) %}
   
   {% set copy = { 
-    heading: module.videos.heading,
-    card_collection_class: "videos",
-    search_results_heading: module.search_results_heading
-  } %}
+      heading: module.videos.heading,
+      card_collection_class: "videos",
+      search_results_heading: module.search_results_heading
+    } 
+  %}
   
-  
+
   {{ card_collection(past_videos_listing, copy) }}
 
   <div class="no-results-message hidden fade-animation responsive-page-width lateral-spacing">

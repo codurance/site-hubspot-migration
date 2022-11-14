@@ -5,16 +5,21 @@
 {% set topics = [] %}
 {% set languages = [] %}
 
-
 {% for item in items %}
     {% do topics.append(item.topic.name) %}
     {% do languages.append(item.language.name) %}
 {% endfor %}
 
+{% if locale == "en" %}
+    {% set filterOptions = "&language=English" %}    
+    {% set items = hubdb_table_rows("videos", filterOptions) %}    
+    {% set languages = [] %}
+{% endif %}    
+
 {% set topics = topics|unique %}
 {% set languages = languages|unique %}
 
-<div class="filters-wrapper responsive-page-width lateral-spacing">
+<div class="filters-wrapper {% if languages|length > 1 %}filters-wrapper--language-enabled{% endif %} responsive-page-width lateral-spacing">
     <form role='search' class="videos-search-bar">
         {# Hidden label for accessibility #}
         <label for='searchbar'>{{ module.search_bar_placeholder}}</label>
@@ -55,6 +60,7 @@
                 {% endfor %}
                 </div>
             </div>
+            {% if languages|length > 1 %}
               <div class="filter-dropdown-container">
                   <button class="filter-dropdown-button" data-dropdown-button="language">
                   <i class="filter-icon las la-language"></i>
@@ -72,6 +78,7 @@
                   {% endfor %}
                   </div>
               </div>
+            {% endif %}
         </div>
     </div>
 </div>
