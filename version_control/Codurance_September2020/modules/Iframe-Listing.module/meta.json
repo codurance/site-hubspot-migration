@@ -2,7 +2,7 @@
   "global" : false,
   "icon" : "fontawesome-5.14.0:Photo%20Video:SOLID",
   "host_template_types" : [ "PAGE" ],
-  "module_id" : 91608191160,
-  "label" : "Clickable Listing",
+  "module_id" : 56226161655,
+  "label" : "Iframe Listing",
   "is_available_for_new_content" : true
 }

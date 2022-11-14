@@ -2,7 +2,7 @@
   "global" : false,
   "icon" : "fontawesome-5.14.0:Images",
   "host_template_types" : [ "PAGE" ],
-  "module_id" : 91599478275,
+  "module_id" : 56226161644,
   "label" : "Clickable Listing",
   "is_available_for_new_content" : true
 }
