@@ -24,7 +24,9 @@
   </head>
   {% block body %}
   <main class="insights-overview-container">
-    <section class="insights-overview-header"></section>
+    <section class="insights-overview-hero">
+    {% include "./partials/header-insights.html" %}
+    </section>
     <section class="latest-blog-posts"></section>
     <section class="editors-pick"></section>
     <section class="insights-overview-cta"></section>
