@@ -6,10 +6,10 @@
   "required" : false,
   "locked" : false,
   "occurrence" : {
-    "min" : null,
-    "max" : null,
+    "min" : 1,
+    "max" : 7,
     "sorting_label_field" : null,
-    "default" : null
+    "default" : 1
   },
   "children" : [ {
     "id" : "43f3a19e-b7fa-ff8b-45b2-b5ef0a0e84f4",

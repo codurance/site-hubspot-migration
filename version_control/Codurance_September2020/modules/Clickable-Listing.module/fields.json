@@ -6,10 +6,10 @@
   "required" : false,
   "locked" : false,
   "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : null,
-    "default" : null
+    "min" : 1,
+    "max" : 7,
+    "sorting_label_field" : "1bca742d-63d3-0c2f-740f-3795a9f7f215",
+    "default" : 1
   },
   "children" : [ {
     "id" : "3b1f817b-92f0-b97d-7cf3-58168cdb1375",
@@ -57,7 +57,7 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
-  "default" : {
+  "default" : [ {
     "image_field" : {
       "size_type" : "auto",
       "src" : "",
@@ -69,5 +69,5 @@
       "href" : "",
       "type" : "EXTERNAL"
     }
-  }
+  } ]
 } ]
