@@ -43,7 +43,7 @@
 .listing__img {
     width: 10em;
     border-radius: 50%;
-    transition: transform ease-in-out 200ms;
+    transition: all ease-in-out 200ms;
 }
 
 .listing__text {
@@ -54,6 +54,7 @@
     font-weight: var(--heavy-font-weight);
     line-height: initial;
     text-align: center;
+    transition: all ease-in-out 200ms;
 }
 
 
