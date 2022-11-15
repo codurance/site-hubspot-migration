@@ -28,15 +28,22 @@
     text-decoration: none;
 }
 
+.listing__item:hover .listing__img {
+    box-shadow: 0px 3px 20px var(--tango);
+}
+
+.listing__item:hover .listing__text {
+    color: var(--tango);
+}
+
 .listing__item:nth-child(even){
     align-self: end;
 }
 
 .listing__img {
     width: 10em;
-    clip-path: circle();
+    border-radius: 50%;
     transition: transform ease-in-out 200ms;
-    
 }
 
 .listing__text {
