@@ -2,6 +2,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4em;
 }
 
 .roles {
@@ -12,5 +13,5 @@ html {
 
 .video-roles {
     max-width: var(--content-inner-max-width);
-    margin: 4em auto;
+    margin: 4em auto 0 auto;
 }
