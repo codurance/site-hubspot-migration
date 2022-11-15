@@ -1,12 +1,12 @@
 {% import '../utils/utils.css' as utils %}
 
 .roles {
-    {{ utils.white_to_tango() }}
+    {{ utils.tango_to_white() }}
     padding-top: 2em;
     padding-bottom: 4em;
 }
 
 .video-roles {
-    max-width: 1024px;
-    margin: 6em auto;
+    max-width: var(--content-inner-max-width);
+    margin: 4em auto;
 }
