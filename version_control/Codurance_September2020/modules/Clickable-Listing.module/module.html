@@ -4,15 +4,14 @@
 
 <div class="listing__images">
 		{% for item in module.items %}
-			<div class="listing__item">
+			<a href="{{ item.image_anchor_url.href }}" class="listing__item">
 				{% if item.image_field.src %}
 					{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}		
 				
 					<img class="listing__img" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
 				{% endif %}
 				<h4 class="listing__text">{{ item.image_title }}</h4>
-			</div>
-        	{{ item.image_anchor_tag.href }}
+			</a>
 		{% endfor %}
 </div>
 

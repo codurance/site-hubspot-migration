@@ -1,8 +1,9 @@
 
 
-
 {% for item in module.items %}
-      {{ item.embed_field.embed_html }}
+      <div id="{{ item.anchor_tag }}" class="iframe-wrapper">
+            {{ item.embed_field.embed_html }}
+      </div>
 {% endfor %}
 
 

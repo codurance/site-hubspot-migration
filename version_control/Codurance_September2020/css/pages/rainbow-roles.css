@@ -6,12 +6,7 @@
     padding-bottom: 4em;
 }
 
-.roles .listing__images {
-    max-width: var(--content-inner-max-width);
-}
-
 .video-roles {
     max-width: 1024px;
     margin: 6em auto;
-
 }

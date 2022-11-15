@@ -8,10 +8,23 @@
   "occurrence" : {
     "min" : 1,
     "max" : 7,
-    "sorting_label_field" : null,
+    "sorting_label_field" : "089ee8ff-0223-65b1-68fd-1dc7f18b39bc",
     "default" : 1
   },
   "children" : [ {
+    "id" : "089ee8ff-0223-65b1-68fd-1dc7f18b39bc",
+    "name" : "anchor_tag",
+    "display_width" : null,
+    "label" : "Anchor tag",
+    "inline_help_text" : "Unique anchor tag without #",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
     "id" : "43f3a19e-b7fa-ff8b-45b2-b5ef0a0e84f4",
     "name" : "embed_field",
     "display_width" : null,
@@ -31,9 +44,9 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
-  "default" : {
+  "default" : [ {
     "embed_field" : {
       "source_type" : "html"
     }
-  }
+  } ]
 } ]
