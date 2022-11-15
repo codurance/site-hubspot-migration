@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+html {
+  scroll-behavior: smooth;
+}
+
 .roles {
     {{ utils.tango_to_white() }}
     padding-top: 2em;
