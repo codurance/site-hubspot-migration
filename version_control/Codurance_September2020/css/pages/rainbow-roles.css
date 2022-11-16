@@ -11,13 +11,25 @@ html {
   }
 {% endcall %}
 
-.roles {
-    {{ utils.tango_to_white() }}
-    padding-top: 2em;
+{% call utils.large_and_extra_large() %}
+  .header-hero > .header-hero__container {
+    padding-top: 0;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .header-hero > .header-hero__container {
     padding-bottom: 4em;
+  }
+{% endcall %}
+
+.roles {
+  {{ utils.tango_to_white() }}
+  padding-top: 2em;
+  padding-bottom: 4em;
 }
 
 .video-roles {
-    max-width: 1024px;
-    margin: 4em auto 0 auto;
+  max-width: 1024px;
+  margin: 4em auto 0 auto;
 }
