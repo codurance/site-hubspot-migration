@@ -2,7 +2,7 @@
 {{ require_css(get_asset_url("../../css/modules/clickable-listing.css")) }}
 
 
-<div class="listing__images">
+<div class="listing__images" role="navigation">
 		{% for item in module.items %}
 			<a href="{{ item.image_anchor_url.href }}" class="listing__item">
 				{% if item.image_field.src %}
