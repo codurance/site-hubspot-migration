@@ -2,8 +2,14 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 4em;
+  scroll-padding-top: 8em;
 }
+
+{% call utils.large() %}
+  html {
+    scroll-padding-top: 4em;
+  }
+{% endcall %}
 
 .roles {
     {{ utils.tango_to_white() }}
@@ -12,6 +18,6 @@ html {
 }
 
 .video-roles {
-    max-width: var(--content-inner-max-width);
+    max-width: 1024px;
     margin: 4em auto 0 auto;
 }
