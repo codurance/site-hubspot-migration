@@ -1,0 +1,11 @@
+{% inline_text field="heading" value="{{ module.heading }}" %}
+{{ module.select_blog }}
+
+{% set blogs = [] %}
+
+{% for post in blog_recent_posts('default') %}
+  {% set items = blogs.append(post.name|striptags) %}
+{% endfor %}
+
+{% set currentPosts = blogs|join(',') %}
+{% choice "test" label='Test', value='test0', choices='{{ currentPosts }}' %}
