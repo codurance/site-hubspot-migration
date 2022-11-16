@@ -29,11 +29,7 @@
 }
 
 .listing__item:hover .listing__img {
-    box-shadow: 0 0px 50px 2px var(--tango-400);
-}
-
-.listing__item:hover .listing__text {
-    color: var(--tango);
+    box-shadow: 0px 3px 20px var(--tango-400);
 }
 
 .listing__item:nth-child(even){
