@@ -25,11 +25,13 @@
     height: 10em;
 }
 
-.listing__item:hover {
+.listing__item:hover,
+.listing__item:focus {
     text-decoration: none;
 }
 
-.listing__item:hover .listing__img {
+.listing__item:hover .listing__img,
+.listing__item:focus .listing__img {
     box-shadow: 0px 3px 20px var(--tango-400);
 }
 
