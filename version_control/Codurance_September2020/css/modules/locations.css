@@ -53,8 +53,16 @@
     align-self: end;
 }
 
-.location__img{
+.location__img {
     width: 10em;
+    clip-path: circle();
+    transition: transform ease-in-out 200ms;
+    
+}
+
+.location__img:hover {
+   transform: scale(1.1);
+
 }
 
 .location__text {

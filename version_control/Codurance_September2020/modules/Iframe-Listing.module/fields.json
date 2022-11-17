@@ -1,0 +1,52 @@
+[ {
+  "id" : "5f54c170-9a2c-808e-eca9-6ce93fdebfee",
+  "name" : "items",
+  "display_width" : null,
+  "label" : "Iframe items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 7,
+    "sorting_label_field" : "089ee8ff-0223-65b1-68fd-1dc7f18b39bc",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "089ee8ff-0223-65b1-68fd-1dc7f18b39bc",
+    "name" : "anchor_tag",
+    "display_width" : null,
+    "label" : "Anchor tag",
+    "inline_help_text" : "Unique anchor tag without #",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "43f3a19e-b7fa-ff8b-45b2-b5ef0a0e84f4",
+    "name" : "embed_field",
+    "display_width" : null,
+    "label" : "Embed",
+    "required" : false,
+    "locked" : false,
+    "supported_source_types" : [ "html" ],
+    "supported_oembed_types" : [ "video" ],
+    "resizable" : true,
+    "show_preview" : true,
+    "supported_media_bridge_providers" : [ ],
+    "type" : "embed",
+    "default" : {
+      "source_type" : "html"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "embed_field" : {
+      "source_type" : "html"
+    }
+  } ]
+} ]

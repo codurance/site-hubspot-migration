@@ -15,7 +15,7 @@
 				{% elif item.image_field.size_type == 'auto_custom_max' %}
 					{% set sizeAttrs = 'width="{{ item.image_field.max_width }}" height="{{ item.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
 				{% endif %}
-				{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+				{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}		
 			<div class="locations__item">
 				<img class="location__img" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
 			{% endif %}
@@ -24,8 +24,10 @@
 		{% endfor %}
 
 </div>
-<hr class="locations__line-break">
-<div class="locations__remote-countries">{{ module.disclosure_text.rich_text }}</div>
+{% if module.disclosure_text.rich_text %}
+	<hr class="locations__line-break">
+	<div class="locations__remote-countries">{{ module.disclosure_text.rich_text }}</div>
+{% endif %}
 
 
 

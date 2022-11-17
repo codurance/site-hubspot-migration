@@ -1,0 +1,14 @@
+{{ require_css(get_asset_url("../../css/modules/iframe-listing.css")) }}
+
+{% for item in module.items %}
+      <div id="{{ item.anchor_tag }}" class="iframe-wrapper">
+            {{ item.embed_field.embed_html }}
+      </div>
+{% endfor %}
+
+
+
+
+
+
+
