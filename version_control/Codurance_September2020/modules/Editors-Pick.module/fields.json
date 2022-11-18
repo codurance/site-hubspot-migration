@@ -1,28 +1,26 @@
- [
-  {
-   "allow_new_line": false,
-   "display_width": null,
-   "id": "ff961e7d-ed22-8efc-61c2-238baa68d7ef",
-   "label": "Heading",
-   "locked": false,
-   "name": "heading",
-   "required": false,
-   "show_emoji_picker": false,
-   "type": "text",
-   "validation_regex": ""
+[ {
+  "id" : "ff961e7d-ed22-8efc-61c2-238baa68d7ef",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "46427df1-8dd5-207a-91a6-99651562c780",
+  "name" : "page_field",
+  "display_width" : null,
+  "label" : "Page",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 6,
+    "max" : 6,
+    "sorting_label_field" : null,
+    "default" : 6
   },
-  {
-   "display_width": null,
-   "id": "46427df1-8dd5-207a-91a6-99651562c780",
-   "label": "Page",
-   "locked": false,
-   "name": "page_field",
-   "occurrence": {
-    "max": 6,
-    "min": 6,
-    "default": 6
-   },
-   "required": false,
-   "type": "page"
-  }
- ]
+  "type" : "page"
+} ]

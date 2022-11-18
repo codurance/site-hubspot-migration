@@ -3,7 +3,7 @@
 {{ require_css(get_asset_url("../../css/modules/editors-pick.css")) }}
 
 <div class="cm-editors-pick">
-    
+  <div class="cm-editors-pick__container">
   {% if module.heading %}
     <h2 class="cm-editors-pick__heading">{{ module.heading }}</h2>
   {% endif %}
@@ -50,4 +50,5 @@
       text="Visit our blog"
     )
   }}
+  </div>
 </div>
