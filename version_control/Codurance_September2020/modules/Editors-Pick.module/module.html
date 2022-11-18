@@ -4,45 +4,50 @@
 
 <div class="cm-editors-pick">
   <div class="cm-editors-pick__container">
-  {% if module.heading %}
-    <h2 class="cm-editors-pick__heading">{{ module.heading }}</h2>
-  {% endif %}
+    {% if module.heading %}
+      <h2 class="cm-editors-pick__heading">{{ module.heading }}</h2>
+    {% endif %}
 
-  <div class="cm-editors-pick__items">
-    {% set blog_posts = module.page_field %}
-    {% for content_id in blog_posts %}
-      {% set blog_post = content_by_id(content_id) %}
-      <div class="cm-editors-pick__item">
-        {% if loop.index <= 2 %}
-          <div class="cm-editors-pick__image">
-            {% image "blog_thumbnail" label="thumbnail", alt="{{ blog_post.title }}", src="{{ blog_post.featured_image}}" %}
-          </div>      
-        {% endif %}
-        <div class="cm-editors-pick__title">
-          {{ blog_post.title.replace("| Codurance", "") }}
-        </div>
-        <div class="cm-editors-pick__excerpt">
-         <p> {{ blog_post.postBody|striptags|truncate(200, false) }}
-        {% if loop.index > 2 %}   
-        <span>{{
-          snippets.text_cta_right_arrow(
-            url=blog_post.absolute_url,
-            classnames="cm-editors-pick__link"
-          )
-        }}</span>
-           {% else %}
-           <span>{{
-          snippets.text_cta_right_arrow(
-            url=blog_post.absolute_url,
-            text="Read More",
-            classnames="cm-editors-pick__link"
-          )
-        }}</span>
-           {% endif %} 
-          </p>
-    </div>    
-      </div> 
-    {% endfor %}
+    <div class="cm-editors-pick__items">
+      {% set blog_posts = module.page_field %}
+      {% for content_id in blog_posts %}
+        {% set size = loop.index <= 2 ? "big" : "small" %}
+        {% set blog_post = content_by_id(content_id) %}
+        <div class="cm-editors-pick__item">
+          {% if loop.index <= 2 %}
+            <div class="cm-editors-pick__image">
+              {% image "blog_thumbnail" label="thumbnail", alt="{{ blog_post.title }}", src="{{ blog_post.featured_image}}" %}
+            </div>      
+          {% endif %}
+          <div class="cm-editors-pick__title-{{ size }}">
+            {{ blog_post.title.replace("| Codurance", "") }}
+          </div>
+          <div class="cm-editors-pick__excerpt-{{ size }}">
+            <span>
+              {{ blog_post.postBody|striptags|truncate(200, false) }}
+              {% if loop.index > 2 %}   
+                  {{
+                    snippets.text_cta_right_arrow(
+                      url=blog_post.absolute_url,
+                      classnames="cm-editors-pick__link cm-editors-pick__link-small"
+                    )
+                  }}
+              {% else %}
+                <div>
+                  {{
+                    snippets.text_cta_right_arrow(
+                      url=blog_post.absolute_url,
+                      text="Read More",
+                      classnames="cm-editors-pick__link"
+                    )
+                  }}
+                </div>
+              {% endif %}
+            </span>
+          </div>    
+        </div> 
+      {% endfor %}
+    </div>
   </div>
   {{
     snippets.button_primary(
@@ -50,5 +55,4 @@
       text="Visit our blog"
     )
   }}
-  </div>
 </div>
