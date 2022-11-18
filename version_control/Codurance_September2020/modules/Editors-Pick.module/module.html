@@ -1,11 +1,44 @@
-{% inline_text field="heading" value="{{ module.heading }}" %}
-{{ module.select_blog }}
+{% import '../../snippets/button-snippets.html' as snippets %}
 
-{% set blogs = [] %}
+{{ require_css(get_asset_url("../../css/modules/editors-pick.css")) }}
 
-{% for post in blog_recent_posts('default') %}
-  {% set items = blogs.append(post.name|striptags) %}
-{% endfor %}
+<div class="cm-editors-pick">
+    
+  {% if module.heading %}
+    <h2 class="cm-editors-pick__heading">{{ module.heading }}</h2>
+  {% endif %}
 
-{% set currentPosts = blogs|join(',') %}
-{% choice "test" label='Test', value='test0', choices='{{ currentPosts }}' %}
+  <div class="cm-editors-pick__items">
+
+    {% for content_id in module.page_field %}
+      {% set blog_post = content_by_id(content_id) %}
+      <div class="cm-editors-pick__item">
+        {% if loop.index <= 2 %}
+          <div class="cm-editors-pick__image">
+            {% image "blog_thumbnail" label="thumbnail", alt="{{ blog_post.title }}", src="{{ blog_post.featured_image}}" %}
+          </div>      
+        {% endif %}
+        <div class="cm-editors-pick__title">
+          {{ blog_post.title }}
+        </div>
+        <div class="cm-editors-pick__excerpt">
+          {{ blog_post.postBody|striptags|truncate(200, false) }}
+        </div>
+        {{
+          snippets.text_cta_right_arrow(
+            url=blog_post.absolute_url,
+            text="Learn More",
+            classnames="cm-editors-pick__link"
+          )
+        }}      
+      </div>
+    {% endfor %}
+  </div>
+
+  {{
+    snippets.button_primary(
+      url=blog_url,
+      text="Visit our blog"
+    )
+  }}
+</div>
