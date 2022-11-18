@@ -9,8 +9,8 @@
   {% endif %}
 
   <div class="cm-editors-pick__items">
-
-    {% for content_id in module.page_field %}
+    {% set blog_posts = module.page_field %}
+    {% for content_id in blog_posts %}
       {% set blog_post = content_by_id(content_id) %}
       <div class="cm-editors-pick__item">
         {% if loop.index <= 2 %}
@@ -19,22 +19,31 @@
           </div>      
         {% endif %}
         <div class="cm-editors-pick__title">
-          {{ blog_post.title }}
+          {{ blog_post.title.replace("| Codurance", "") }}
         </div>
         <div class="cm-editors-pick__excerpt">
-          {{ blog_post.postBody|striptags|truncate(200, false) }}
-        </div>
-        {{
+         <p> {{ blog_post.postBody|striptags|truncate(200, false) }}
+        {% if loop.index > 2 %}   
+        <span>{{
           snippets.text_cta_right_arrow(
             url=blog_post.absolute_url,
-            text="Learn More",
             classnames="cm-editors-pick__link"
           )
-        }}      
-      </div>
+        }}</span>
+           {% else %}
+           <span>{{
+          snippets.text_cta_right_arrow(
+            url=blog_post.absolute_url,
+            text="Read More",
+            classnames="cm-editors-pick__link"
+          )
+        }}</span>
+           {% endif %} 
+          </p>
+    </div>    
+      </div> 
     {% endfor %}
   </div>
-
   {{
     snippets.button_primary(
       url=blog_url,
