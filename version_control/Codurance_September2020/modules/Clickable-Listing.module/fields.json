@@ -70,4 +70,25 @@
       "type" : "EXTERNAL"
     }
   } ]
+}, {
+  "id" : "426ea298-3aa6-39ec-22d7-33ce2d4bc5af",
+  "name" : "video_urls",
+  "display_width" : null,
+  "label" : "Video URLs",
+  "help_text" : "Optional field to set up a video and transform the listing into an interactive menu to change it",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 7,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "supported_types" : [ "EXTERNAL" ],
+  "type" : "url",
+  "default" : {
+    "content_id" : null,
+    "href" : "",
+    "type" : "EXTERNAL"
+  }
 } ]
