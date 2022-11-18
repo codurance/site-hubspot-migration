@@ -1,9 +1,18 @@
 {% import '../utils/utils.css' as utils %}
 
+.cm-editors-pick{
+  {{ utils.tango_to_white() }}
+}
+
+.cm-editors-pick__container {
+    max-width: var(--content-max-width);
+    margin: 0px auto;
+}
+
 .cm-editors-pick__items {
     display: grid;
     column-gap: 2em;
-    row-gap: 1ex;
+    row-gap: 1em;
 }
 
 .cm-editors-pick__item {
@@ -50,15 +59,13 @@
 
 .cm-editors-pick__image img {
     width: 100%;
+    height: 66.666%;
     border-radius: 10px;
 }
 
 .cm-editors-pick__title {
     font-size: var(--base-font-size);
     font-weight: var(--heavy-font-weight);
-    line-height: 1.3rem;
-    margin-bottom: calc(var(--base-margin) / 2);
-    margin-top: var(--base-margin);
 }
 
 .cm-editors-pick__excerpt {
