@@ -22,7 +22,7 @@
 {% call utils.small() %}
     .cm-editors-pick__items {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: 1fr auto;
     }
 
     .cm-editors-pick__item {
@@ -30,7 +30,28 @@
     }
 {% endcall %}
 
-{% call utils.medium_large_and_extra_large() %}
+{% call utils.medium() %}
+    .cm-editors-pick__items {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr auto;
+    }
+
+    .cm-editors-pick__item {
+        grid-column: 1 / span 2;
+    }
+    
+    .cm-editors-pick__item:first-child {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .cm-editors-pick__item:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
     .cm-editors-pick__items {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(4, 1fr);
