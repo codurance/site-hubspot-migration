@@ -1,7 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 .cm-editors-pick {
-  {{ utils.tango_to_white() }}
+  {{ utils.color1_to_color2('to top', 'rgba(255,255,255,1)', 'rgba(252,224,206,0.61)') }}
   padding: 1rem;
 }
 
