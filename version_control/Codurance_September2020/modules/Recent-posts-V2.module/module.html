@@ -4,10 +4,6 @@
 
 <div class="cm-recent-post">
 
-  {% if module.heading %}
-    <h2 class="cm-recent-post__heading ">{{ module.heading }}</h2>
-  {% endif %}
-
   {% set postToShow = module.number_of_posts %}
   {% set postToShow = postToShow + 1 %}
   {% set rec_posts = blog_recent_posts( module.select_blog, postToShow) %}
