@@ -74,10 +74,10 @@
   line-height: var(--natus-line-height);
 {% endmacro %}
 
-{% macro natus_small() %}
-  font-size: calc(var(--natus-font-size) * 0.8);
+{% macro natus_reduced() %}
+  font-size: calc(var(--natus-font-size) * var(--reduced-font-size-multiplier));
   font-weight: var(--light-font-weight);
-  line-height: calc(var(--natus-line-height) * 0.8);
+  line-height: calc(var(--natus-line-height) * var(--reduced-font-size-multiplier));
 {% endmacro %}
 
 {% macro sejima() %}

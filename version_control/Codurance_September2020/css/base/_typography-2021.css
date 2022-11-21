@@ -36,6 +36,8 @@
   --base-margin: 1.3809524rem;
   --base-max-width: 65ch;
 
+  --reduced-font-size-multiplier: 0.79;
+
   --ponti-font-size: 1rem;
   --ponti-line-height: 1rem;
   --ponti-max-width: 50ch;

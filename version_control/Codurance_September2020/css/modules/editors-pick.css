@@ -105,7 +105,7 @@
 }
 
 .cm-editors-pick__title-small {
-    font-size: calc(var(--base-font-size) * 0.8);
+    font-size: calc(var(--base-font-size) * var(--reduced-font-size-multiplier));
     font-weight: var(--heavy-font-weight);
 }
 
@@ -114,7 +114,7 @@
 }
 
 .cm-editors-pick__excerpt-small {
-    {{ utils.natus_small() }}
+    {{ utils.natus_reduced() }}
 }
 
 .cm-editors-pick__link::after {
