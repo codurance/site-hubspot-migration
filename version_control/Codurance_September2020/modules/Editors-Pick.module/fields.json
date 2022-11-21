@@ -23,8 +23,8 @@
     "type": "text",
     "id": "bc1f0309-c304-907c-635a-7a43b7c92625",
     "validation_regex": "",
-    "label": "CTA",
-    "name": "cta_text",
+    "label": "Button Text",
+    "name": "button_text",
     "default": "Visit our blog",
     "required": true
   },
@@ -41,5 +41,14 @@
       "default" : 6
     },
     "type" : "page"
+  },
+  {
+   "type": "Text",
+   "id": "8dc2935a-3ce9-5640-6529-116441d1f028",
+   "validation_regex": "",
+   "label": "Item Button Text",
+   "name": "item_button_text",
+   "default": "Read More",
+   "required": true
   }
 ]

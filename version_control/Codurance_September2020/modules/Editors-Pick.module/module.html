@@ -39,7 +39,7 @@
                   {{
                     snippets.text_cta_right_arrow(
                       url=blog_post.absolute_url,
-                      text="Read More",
+                      text="{{ module.item_button_text }}",
                       classnames="cm-editors-pick__link"
                     )
                   }}
@@ -53,7 +53,7 @@
     {{
       snippets.button_primary(
         url=blog_url,
-        text="{{ module.cta_text }}"
+        text="{{ module.button_text }}"
       )
     }}
   </div>
