@@ -82,6 +82,7 @@
 
 .cm-editors-pick__image {
     position: relative;
+    margin-bottom: 1rem;
 }
 
 .cm-editors-pick__image::after {
