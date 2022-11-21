@@ -10,7 +10,8 @@ const personalAccessKey = process.env.HUBSPOT_PERSONAL_ACCESS_KEY;
 const portalConfig = {
     name: 'PROD',
     portalId,
-    personalAccessKey,
+    authType: 'personalaccesskey',
+    personalAccessKey: personalAccessKey,
 };
 
 const config = {
