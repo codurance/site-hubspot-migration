@@ -2,6 +2,8 @@
 
 {{ require_css(get_asset_url("../../css/modules/editors-pick.css")) }}
 
+{% set blog_url = blog_all_posts_url(module.blog_field) %}
+
 <div class="cm-editors-pick">
   <div class="cm-editors-pick__container">
     {% if module.heading %}
@@ -51,7 +53,7 @@
     {{
       snippets.button_primary(
         url=blog_url,
-        text="Visit our blog"
+        text="{{ module.cta_text }}"
       )
     }}
   </div>

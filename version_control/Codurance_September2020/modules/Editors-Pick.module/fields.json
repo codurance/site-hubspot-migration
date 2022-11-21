@@ -1,25 +1,45 @@
-[ {
-  "id" : "ff961e7d-ed22-8efc-61c2-238baa68d7ef",
-  "name" : "heading",
-  "display_width" : null,
-  "label" : "Heading",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
-}, {
-  "id" : "46427df1-8dd5-207a-91a6-99651562c780",
-  "name" : "page_field",
-  "display_width" : null,
-  "label" : "Page",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "max" : 6,
-    "sorting_label_field" : null,
-    "default" : 6
+[
+  {
+    "type": "blog",
+    "id": "c391e50c-b259-ef68-dfe4-6e1d4c86d2c6",
+    "label": "Blog",
+    "name": "blog_field",
+    "default": 56344613869,
+    "required": true
   },
-  "type" : "page"
-} ]
+  {
+    "id" : "ff961e7d-ed22-8efc-61c2-238baa68d7ef",
+    "name" : "heading",
+    "display_width" : null,
+    "label" : "Heading",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  },
+  {
+    "type": "text",
+    "id": "bc1f0309-c304-907c-635a-7a43b7c92625",
+    "validation_regex": "",
+    "label": "Text",
+    "name": "cta_text",
+    "default": "Visit our blog",
+    "required": true
+  },
+  {
+    "id" : "46427df1-8dd5-207a-91a6-99651562c780",
+    "name" : "page_field",
+    "display_width" : null,
+    "label" : "Page",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "max" : 6,
+      "sorting_label_field" : null,
+      "default" : 6
+    },
+    "type" : "page"
+  }
+]
