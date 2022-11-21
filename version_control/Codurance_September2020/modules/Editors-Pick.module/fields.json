@@ -23,7 +23,7 @@
     "type": "text",
     "id": "bc1f0309-c304-907c-635a-7a43b7c92625",
     "validation_regex": "",
-    "label": "Text",
+    "label": "CTA",
     "name": "cta_text",
     "default": "Visit our blog",
     "required": true
@@ -32,7 +32,7 @@
     "id" : "46427df1-8dd5-207a-91a6-99651562c780",
     "name" : "page_field",
     "display_width" : null,
-    "label" : "Page",
+    "label" : "Page(s)",
     "required" : false,
     "locked" : false,
     "occurrence" : {
