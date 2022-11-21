@@ -1,0 +1,70 @@
+[
+  {
+   "allow_new_line": false,
+   "default": "Codurance in motion",
+   "display_width": null,
+   "id": "2f7af7b7-abde-7f04-619c-2f458e4a7b49",
+   "label": "Heading",
+   "locked": false,
+   "name": "heading",
+   "required": true,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
+  },
+  {
+   "allow_new_line": false,
+   "default": "Sit back, relax and browse our catalogue of videos. Our content ranges from the latest in-depth technical best practices, stories from the global tech community, to detailed insights into building quality software and everything in between.",
+   "display_width": null,
+   "id": "a37871a6-3328-2404-d6aa-d04f73211e0f",
+   "label": "Summary",
+   "locked": false,
+   "name": "summary",
+   "required": true,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
+  },
+  {
+   "allow_new_line": false,
+   "default": "Explore our videos",
+   "display_width": null,
+   "id": "e49fadf1-3ae2-e163-09bf-cf2b980ef8cb",
+   "label": "CTA",
+   "locked": false,
+   "name": "cta_text",
+   "required": true,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
+  },
+  {
+   "columns_to_fetch": [
+    "name",
+    "video"
+   ],
+   "default": [
+    {
+     "id": null
+    }
+   ],
+   "display_columns": [
+    "name"
+   ],
+   "display_width": null,
+   "id": "00169229-7d5e-02ab-1713-bdada02cc2d3",
+   "label": "Video(s)",
+   "locked": false,
+   "name": "videos",
+   "occurrence": {
+    "default": 1,
+    "max": 5,
+    "min": 1
+   },
+   "required": true,
+   "table_name_or_id": "4702405",
+   "type": "hubdbrow",
+   "display_format": "%0",
+   "placeholder": "Select a video"
+  }
+ ]
