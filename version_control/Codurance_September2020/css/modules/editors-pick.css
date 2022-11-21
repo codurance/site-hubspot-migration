@@ -118,15 +118,6 @@
     {{ utils.natus_reduced() }}
 }
 
-.cm-editors-pick__link::after {
-    bottom: 0;
-    content: '';
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
 .cm-editors-pick__link-small {
     margin: 0;
     vertical-align: text-top;
