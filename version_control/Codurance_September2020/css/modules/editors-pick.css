@@ -15,6 +15,7 @@
     display: grid;
     column-gap: 1rem;
     row-gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .cm-editors-pick__item {
