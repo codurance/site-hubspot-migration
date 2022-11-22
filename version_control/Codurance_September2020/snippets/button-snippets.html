@@ -1,9 +1,15 @@
-{% macro button_primary(url, classnames, text, target, rel) %}
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{% macro button_primary(url, classnames, text, target, rel, aria_label_text) %}
   <a
     href="{{ url }}"
     class="{% for classname in classnames %}{{classname}}&#32{% endfor %}button-primary"
     {% if target %}target="{{target}}"{% endif %}
     {% if rel %}rel="{{rel}}"{% endif %}
+     role="link"
+     aria-label="{{aria_label_text}}"
   >
     {{ text }}
   </a>
@@ -53,12 +59,13 @@
   </a>
 {% endmacro %}
 
-{% macro text_cta_right_arrow(url, classnames, text, target, rel) %}
+{% macro text_cta_right_arrow(url, classnames, text, target, rel, aria_label_text) %}
   <a
     href="{{ url }}"
     class="{% for classname in classnames %}{{classname}}&#32{% endfor %}text-cta-primary&#32text-cta--right-arrow"
     {% if target %}target="{{target}}"{% endif %}
     {% if rel %}rel="{{rel}}"{% endif %}
+    {% if text|length == 0 %} aria-label="{{aria_label_text}}" {% endif %}
   >
       {{ text }}<i class="las la-arrow-right"></i>
   </a>
