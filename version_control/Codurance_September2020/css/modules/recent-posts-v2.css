@@ -1,11 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
-
 .cm-recent-post {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  transform: translateY(-20%);
-
+  transform: translateY(-5rem);
 }
 
 .cm-recent-post__heading {
@@ -21,18 +19,29 @@
   .cm-recent-post {
     display: flex;
     justify-content: space-between;
-    transform: translateY(-20%);
   }
   .cm-recent-post__heading {
     width: 100%;
   }
 {% endcall%}
-{% call utils.large_and_extra_large() %}
-  .cm-recent-post__heading {
-    marign-left: 0;
+
+{% call utils.medium() %}
+  .cm-recent-post {
+    transform: translateY(-3rem);
   }
 {% endcall %}
 
+{% call utils.small() %}
+  .cm-recent-post {
+    transform: translateY(-2rem);
+  }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+  .cm-recent-post__heading {
+    margin-left: 0;
+  }
+{% endcall %}
 
 .cm-recent-post__group {
   align-items: stretch;
@@ -48,7 +57,6 @@
 .cm-recent-post__group::-webkit-scrollbar{
   display: none;
 }
-
 
 {% set item_margin = 15 %}
 
@@ -72,16 +80,19 @@
     width: 33.333%;
   }
 {% endcall %}
+
 {% call utils.medium() %}
   .cm-recent-post__item {
     width: calc(50% - ({{ item_margin }}px * 2));
   }
 {% endcall %}
+
 {% call utils.small() %}
   .cm-recent-post__item {
     width: 100%;
   }
 {% endcall %}
+
 .cm-recent-post__item:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
 }
