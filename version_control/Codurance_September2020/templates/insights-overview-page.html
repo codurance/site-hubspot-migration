@@ -18,10 +18,17 @@
     {% module 'editors-pick' path='../modules/Editors-Pick.module'
     label="Editors Pick" no_wrapper=True %}
   </section>
-  <section class="insights-overview-cta"></section>
+  <section class="insights-overview-cta">
+    {% module 'banner-link' path='../modules/Banner-Link.module'
+    label="Banner Link" no_wrapper=True %}
+  </section>
   <section class="insights-overview-videos">
     {% module 'codurance-in-motion' path='../modules/Codurance-in-motion.module'
        label="Codurance in motion" no_wrapper=True %}
   </section>
 </main>
 {% endblock body %}
+
+{% block styles %}
+  {{ require_css(get_asset_url("../css/templates/insights-overview.css")) }}
+{% endblock styles %}

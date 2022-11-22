@@ -1,0 +1,11 @@
+{% import '../utils/utils.css' as utils %}
+
+.insights-overview-cta {
+    padding: 1rem;
+    color: #FFF;
+    {{ utils.color1_to_color2('271deg', '#1D233C', '#0C0C0D)') }}
+}
+
+.insights-overview-cta .banner {
+    max-width: var(--content-max-width) !important;
+}
