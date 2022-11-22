@@ -56,6 +56,6 @@
 {% call utils.medium_large_and_extra_large() %}
     .cm-codurance-in-motion__container {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: auto;
     }
 {% endcall %}
