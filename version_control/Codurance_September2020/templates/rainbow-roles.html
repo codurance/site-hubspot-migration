@@ -1,0 +1,43 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Rainbow roles template
+-->
+{% extends "./layouts/base.html" %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page_meta.html_title }}</title>
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+  <meta name="description" content="{{ page_meta.meta_description }}">
+
+  {{ require_css(get_asset_url("../css/pages/rainbow-roles.css")) }}
+
+  {{ standard_header_includes }}
+  
+</head>
+
+
+{% block body %}
+
+<section class="header">
+    {% include "./partials/header-hero.html" %}
+</section>
+
+<main>  
+  <section class="roles lateral-spacing">
+    {% module 'clickable_listing' path='../modules/Clickable-Listing.module' label="Roles listing" no_wrapper=True %}
+  </section>
+
+  <section class="video-roles lateral-spacing">
+    {% module 'iframe_listing' path='../modules/Iframe-Listing.module' label="Iframes listing" no_wrapper=True %}
+  </section>
+
+  <section class="cta lateral-spacing">
+    {% module 'cta_block' path='../modules/LP-cta-block.module' label="CTA block" %}
+  </section>
+</main>
+
+{% endblock body %}

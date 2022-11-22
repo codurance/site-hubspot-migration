@@ -1,0 +1,73 @@
+[ {
+  "id" : "5f54c170-9a2c-808e-eca9-6ce93fdebfee",
+  "name" : "items",
+  "display_width" : null,
+  "label" : "List items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 7,
+    "sorting_label_field" : "1bca742d-63d3-0c2f-740f-3795a9f7f215",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "3b1f817b-92f0-b97d-7cf3-58168cdb1375",
+    "name" : "image_field",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "1bca742d-63d3-0c2f-740f-3795a9f7f215",
+    "name" : "image_title",
+    "display_width" : null,
+    "label" : "Image Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "d7d1e6e5-2c4d-d614-4947-20e104f8709f",
+    "name" : "image_anchor_url",
+    "display_width" : null,
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT" ],
+    "type" : "url",
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "image_anchor_url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ]
+} ]
