@@ -18,7 +18,7 @@
         <div class="cm-editors-pick__item">
           {% if loop.index <= 2 %}
             <div class="cm-editors-pick__image">
-              {% image "blog_thumbnail" label="thumbnail", alt="{{ blog_post.title }}", src="{{ blog_post.featured_image}}" %}
+              <img src='{% image_src src="{{ blog_post.featured_image }}" no_wrapper=True %}' alt="{{ blog_post.title }}">
             </div>      
           {% endif %}
           <div class="cm-editors-pick__title-{{ size }}">
