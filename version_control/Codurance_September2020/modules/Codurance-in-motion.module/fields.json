@@ -66,5 +66,24 @@
    "type": "hubdbrow",
    "display_format": "%0",
    "placeholder": "Select a video"
+  },
+  {
+   "type": "link",
+   "id": "3810700d-990b-2b76-219e-cbaf237c2c7e",
+   "default": {
+    "url": {
+     "content_id": null,
+     "href": "",
+     "type": "CONTENT"
+    },
+    "open_in_new_tab": false,
+    "no_follow": false
+   },
+   "supported_types": [
+    "CONTENT"
+   ],
+   "label": "Videos Link",
+   "name": "videos_link",
+   "required": true
   }
  ]
