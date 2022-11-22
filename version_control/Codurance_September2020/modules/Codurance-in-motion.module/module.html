@@ -27,16 +27,12 @@
             <div class="cm-codurance-in-motion__video">
                 {% set youtube_video_id = video.columns.video|split("/")|last %}
                 {% set youtube_embed_url = "https://www.youtube.com/embed/{{ youtube_video_id }}" %}
-                {% widget_block rich_text "rich_text" overrideable=False %}
-                    {% widget_attribute "html" %}
-                        <div class="cm-codurance-in-motion__video-container">
-                            <iframe src="{{ youtube_embed_url }}" allowfullscreen></iframe>
-                        </div>
-                        <div class="cm-codurance-in-motion__video-title">
-                            {{ video.columns.name }}
-                        </div>
-                    {% end_widget_attribute %}
-                {% end_widget_block %}
+                <div class="cm-codurance-in-motion__video-container">
+                    <iframe src="{{ youtube_embed_url }}" allowfullscreen title="{{ video.columns.name }}"></iframe>
+                </div>
+                <div class="cm-codurance-in-motion__video-title">
+                    {{ video.columns.name }}
+                </div>
             </div>
         {% endfor %}
     </div>
