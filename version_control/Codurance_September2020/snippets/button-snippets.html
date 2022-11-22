@@ -65,6 +65,7 @@
     class="{% for classname in classnames %}{{classname}}&#32{% endfor %}text-cta-primary&#32text-cta--right-arrow"
     {% if target %}target="{{target}}"{% endif %}
     {% if rel %}rel="{{rel}}"{% endif %}
+    aria-label="{{aria_label_text}}"
   >
       {{ text }}<i class="las la-arrow-right"></i>
   </a>
