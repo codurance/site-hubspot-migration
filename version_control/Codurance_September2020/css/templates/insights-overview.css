@@ -9,3 +9,9 @@
 .insights-overview-cta .banner {
     max-width: var(--content-max-width) !important;
 }
+
+{% call utils.small() %}
+    .banner {
+        justify-content: left !important;
+    }
+{% endcall %}
