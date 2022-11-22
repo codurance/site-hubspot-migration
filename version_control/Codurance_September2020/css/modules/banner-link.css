@@ -16,7 +16,7 @@
 .banner__text h2 {
     {{ utils.freed() }}
 
-    border-top: 2px solid black;
+    border-top: 2px solid;
     font-weight: var(--heavy-font-weight);
     max-width: var(--eames-max-width);
     padding-top: 1em;
