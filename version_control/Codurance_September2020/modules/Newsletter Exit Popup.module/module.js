@@ -97,7 +97,5 @@ const disableExitPopup = _ => {
 
 
 window.addEventListener('load', _ => {
-  if (!window.hsInEditor) {
-    addPopupEventListeners();
-  }
+  addPopupEventListeners();
 });
