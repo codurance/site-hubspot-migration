@@ -11,7 +11,6 @@
     {% endif %}
 
     <div class="cm-editors-pick__items">
-      {% set aria_label_prefix_text = "Read more about " %}
       {% set blog_posts = module.page_field %}
       {% for content_id in blog_posts %}
         {% set size = loop.index <= 2 ? "big" : "small" %}
@@ -23,7 +22,8 @@
             </div>      
           {% endif %}
           <div class="cm-editors-pick__title-{{ size }}">
-            {{ blog_post.title.replace("| Codurance", "") }}
+            {% set blog_title = blog_post.title.replace("| Codurance", "") %}
+            {{ blog_post.name }}
           </div>
           <div class="cm-editors-pick__excerpt-{{ size }}">
             <span>
@@ -33,7 +33,7 @@
                     snippets.text_cta_right_arrow(
                       url=blog_post.absolute_url,
                       classnames="cm-editors-pick__link cm-editors-pick__link-small",
-                      aria_label_text="{{ aria_label_prefix_text~blog_post.title 
+                      aria_label_text="{{ module.aria_label_prefix_text~blog_post.name 
                       }}"
                     )
                   }}
@@ -44,7 +44,7 @@
                       url=blog_post.absolute_url,
                       text="{{ module.item_button_text }}",
                       classnames="cm-editors-pick__link",
-                      aria_label_text="{{ aria_label_prefix_text~blog_post.title 
+                      aria_label_text="{{ module.aria_label_prefix_text~blog_post.name 
                       }}"
                     )
                   }}

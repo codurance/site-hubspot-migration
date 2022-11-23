@@ -1,54 +1,71 @@
-[
-  {
-    "type": "blog",
-    "id": "c391e50c-b259-ef68-dfe4-6e1d4c86d2c6",
-    "label": "Blog",
-    "name": "blog_field",
-    "default": 56344613869,
-    "required": true
+[ {
+  "id" : "c391e50c-b259-ef68-dfe4-6e1d4c86d2c6",
+  "name" : "blog_field",
+  "display_width" : null,
+  "label" : "Blog",
+  "required" : true,
+  "locked" : false,
+  "type" : "blog",
+  "default" : 56344613869
+}, {
+  "id" : "ff961e7d-ed22-8efc-61c2-238baa68d7ef",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "bc1f0309-c304-907c-635a-7a43b7c92625",
+  "name" : "button_text",
+  "display_width" : null,
+  "label" : "Button Text",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Visit our blog"
+}, {
+  "id" : "46427df1-8dd5-207a-91a6-99651562c780",
+  "name" : "page_field",
+  "display_width" : null,
+  "label" : "Page(s)",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 6,
+    "sorting_label_field" : null,
+    "default" : 6
   },
-  {
-    "id" : "ff961e7d-ed22-8efc-61c2-238baa68d7ef",
-    "name" : "heading",
-    "display_width" : null,
-    "label" : "Heading",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
-  },
-  {
-    "type": "text",
-    "id": "bc1f0309-c304-907c-635a-7a43b7c92625",
-    "validation_regex": "",
-    "label": "Button Text",
-    "name": "button_text",
-    "default": "Visit our blog",
-    "required": true
-  },
-  {
-    "id" : "46427df1-8dd5-207a-91a6-99651562c780",
-    "name" : "page_field",
-    "display_width" : null,
-    "label" : "Page(s)",
-    "required" : false,
-    "locked" : false,
-    "occurrence" : {
-      "max" : 6,
-      "sorting_label_field" : null,
-      "default" : 6
-    },
-    "type" : "page"
-  },
-  {
-   "type": "Text",
-   "id": "8dc2935a-3ce9-5640-6529-116441d1f028",
-   "validation_regex": "",
-   "label": "Item Button Text",
-   "name": "item_button_text",
-   "default": "Read More",
-   "required": true
-  }
-]
+  "type" : "page"
+}, {
+  "id" : "8dc2935a-3ce9-5640-6529-116441d1f028",
+  "name" : "item_button_text",
+  "display_width" : null,
+  "label" : "Item Button Text",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Read More"
+}, {
+  "id" : "e4745b8a-a506-c2f2-5793-a995da5ad8a7",
+  "name" : "aria_label_prefix_text",
+  "display_width" : null,
+  "label" : "Aria Label Prefix Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Read more about "
+} ]
