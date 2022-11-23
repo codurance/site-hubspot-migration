@@ -59,6 +59,7 @@
 }
 
 {% set item_margin = 15 %}
+{% set item_border_radius = 10 %}
 
 .cm-recent-post__item {
   {{ utils.card_shadow() }}
@@ -68,6 +69,7 @@
   margin-bottom: 1.4rem;
   margin-left: {{ item_margin }}px;
   margin-right: {{ item_margin }}px;
+  border-radius: {{ item_border_radius }}px;
   min-width: 14em;
   overflow: hidden;
   position: relative;
