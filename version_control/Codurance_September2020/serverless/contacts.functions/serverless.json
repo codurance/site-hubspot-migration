@@ -1,7 +1,9 @@
 {
     "runtime": "nodejs12.x",
     "version": "1.0",
-    "secrets": ["hapiKey"],
+    "secrets": [
+      "codurance_web"
+    ],
     "endpoints": {
       "contact_by_token": {
         "method": "GET",
