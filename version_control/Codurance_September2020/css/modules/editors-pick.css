@@ -17,10 +17,6 @@
     margin-bottom: 1rem;
 }
 
-.cm-editors-pick__item {
-    /*font-size: 50%;*/
-}
-
 {% call utils.small() %}
 .cm-editors-pick__items {
     grid-template-columns: 1fr;
