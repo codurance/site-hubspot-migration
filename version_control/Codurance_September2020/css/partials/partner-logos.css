@@ -1,0 +1,34 @@
+{% import '../utils/utils.css' as utils %}
+
+.partners .text-and-image__container {
+   flex-direction: column;
+   align-items: center;
+   
+}
+
+.partners .text-and-image__copy {
+    max-width: 30em;
+}
+
+.partners .text-and-image__image {
+    margin-top: 2em;
+    align-self: initial;
+}
+
+.partners .text-and-image__image img {
+    transform: initial;
+}   
+
+{% call utils.medium_large_and_extra_large() %}
+    .partners .text-and-image__container {
+        flex-direction: initial;
+        padding: 4em 1.5em;
+        align-items: center;
+    }
+    .partners .text-and-image__copy {
+         max-width: 45%;
+    }
+    .partners .text-and-image__image {
+         max-width: 50%;
+    }
+ {% endcall %}
