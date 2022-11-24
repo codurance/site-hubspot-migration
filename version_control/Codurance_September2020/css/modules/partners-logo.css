@@ -19,19 +19,12 @@
   padding-left: 15px;
   padding-right: 15px;
 }
-.cm-partners-logo-group__heading {
-  {{ utils.dudler() }}
-  font-weight: var(--heavy-font-weight);
-  margin-bottom: var(--dudler-margin);
-  padding-bottom: 20px;
-  position: relative;
-  text-align: center;
-}
 
 {% call utils.small() %}
   .cm-partners-logos-item img {
     width: auto;
   }
+  
   .cm-partners-logos-item {
     width: 35%;
   }

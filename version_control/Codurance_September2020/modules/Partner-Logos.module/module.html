@@ -1,26 +1,19 @@
 {{ require_css(get_asset_url("../../css/modules/partners-logo.css")) }}
 
 <div class="cm-partners-logo-group">
-  <h2 class="cm-partners-logo-group__heading">{{ module.heading }}</h2>
   <div class="cm-partners-logos-inner-group">
     {% for item in module.logo_item %}
-    <div class="cm-partners-logos-item">
-      {% set href = item.logo_link.url.href %}
-      {% if item.logo_link.url.type is equalto "EMAIL_ADDRESS" %}
-      {% set href = "mailto:" + href %}
-      {% endif %}
-      {% if item.logo.src %}
-      <a href="{{ href }}" {% if item.logo_link.open_in_new_tab %}target="_blank"{% endif %} {% if item.logo_link.no_follow %}rel="nofollow"{% endif %}>
-        {% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}"' %}
-        {% if item.logo.size_type == 'auto' %}
-        {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-        {% elif item.logo.size_type == 'auto_custom_max' %}
-        {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.logo.max_width }}px; max-height: {{ item.logo.max_height }}px"' %}
+      <div class="cm-partners-logos-item">
+        {% set href = item.logo_link.url.href %}
+          
+        {% if item.logo.src %}
+          <a href="{{ href }}" {% if item.logo_link.open_in_new_tab %}target="_blank"{% endif %} {% if item.logo_link.no_follow %}rel="nofollow"{% endif %}>
+            {% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}"' %}
+
+            <img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ sizeAttrs }}>
+          </a>
         {% endif %}
-        <img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ sizeAttrs }}>
-      </a>
-      {% endif %}
-    </div>
+      </div>
     {% endfor %}
   </div>
 </div>
