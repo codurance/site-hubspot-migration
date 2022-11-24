@@ -25,18 +25,6 @@
   }
 {% endcall%}
 
-{% call utils.medium() %}
-  .cm-recent-post {
-    transform: translateY(-3rem);
-  }
-{% endcall %}
-
-{% call utils.small() %}
-  .cm-recent-post {
-    transform: translateY(-2rem);
-  }
-{% endcall %}
-
 {% call utils.large_and_extra_large() %}
   .cm-recent-post__heading {
     margin-left: 0;
