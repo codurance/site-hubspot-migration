@@ -1,13 +1,19 @@
 const axios = require('axios');
 
 exports.main = (context, sendResponse) => {
-    const { hapiKey } = process.env;
     const { hubspotutk } = context.params;
 
     const getContact = async _ => {
         try {
-            const url = `https://api.hubapi.com/contacts/v1/contact/utk/${hubspotutk}/profile?hapikey=${hapiKey}`
-            const response = await axios.get(url);
+            const url = `https://api.hubapi.com/contacts/v1/contact/utk/${hubspotutk}/profile`
+            const response = await axios.get(url,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${process.env.codurance_web}`,
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
             return response.data;
         } catch (error) {
             return error;
