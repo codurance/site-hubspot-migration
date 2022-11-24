@@ -34,7 +34,7 @@
     "label" : "Logo Link",
     "required" : false,
     "locked" : false,
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "supported_types" : [ "EXTERNAL", "CONTENT" ],
     "show_advanced_rel_options" : false,
     "type" : "link",
     "default" : {
