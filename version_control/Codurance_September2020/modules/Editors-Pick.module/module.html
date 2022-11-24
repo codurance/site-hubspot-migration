@@ -4,63 +4,57 @@
 
 {% set blog_url = blog_all_posts_url(module.blog_field) %}
 
-<div class="cm-editors-pick">
-  <div class="cm-editors-pick__container">
-    {% if module.heading %}
-      <h2 class="cm-editors-pick__heading">{{ module.heading }}</h2>
-    {% endif %}
+<div class="cm-editors-pick__container">
+  {% if module.heading %}
+    <h2 class="cm-editors-pick__heading">{{ module.heading }}</h2>
+  {% endif %}
 
-    <div class="cm-editors-pick__items">
-      {% set blog_posts = module.page_field %}
-      {% for content_id in blog_posts %}
-        {% set size = loop.index <= 2 ? "big" : "small" %}
-        {% set blog_post = content_by_id(content_id) %}
-        <div class="cm-editors-pick__item">
-          {% if loop.index <= 2 %}
-            <div class="cm-editors-pick__image">
-              <img src='{% image_src src="{{ blog_post.featured_image }}" no_wrapper=True %}' alt="{{ blog_post.title }}">
-            </div>      
+  <section class="cm-editors-pick__items">
+    {% set blog_posts = module.page_field %}
+    {% for content_id in blog_posts %}
+      {% set size = loop.index <= 2 ? "big" : "small" %}
+      {% set blog_post = content_by_id(content_id) %}
+      <article class="cm-editors-pick__item">
+        {% if loop.index <= 2 %}
+          <figure class="cm-editors-pick__image">
+            <img src='{% image_src src="{{ blog_post.featured_image }}" no_wrapper=True %}' alt="{{ blog_post.title }}">
+          </figure>      
+        {% endif %}
+        <h3 class="cm-editors-pick__title-{{ size }}">
+          {{ blog_post.name }}
+        </h3>
+        <p class="cm-editors-pick__excerpt-{{ size }}">
+          {{ blog_post.postBody|striptags|truncate(200, false) }}
+          {% if loop.index > 2 %}   
+            {{
+              snippets.text_cta_right_arrow(
+                url=blog_post.absolute_url,
+                classnames="cm-editors-pick__link cm-editors-pick__link-small",
+                aria_label_text="{{ module.aria_label_prefix_text~blog_post.name 
+                }}"
+              )
+            }}
+          {% else %}
+            {{
+              snippets.text_cta_right_arrow(
+                url=blog_post.absolute_url,
+                text="{{ module.item_button_text }}",
+                classnames="cm-editors-pick__link",
+                aria_label_text="{{ module.aria_label_prefix_text~blog_post.name 
+                }}"
+              )
+            }}
           {% endif %}
-          <div class="cm-editors-pick__title-{{ size }}">
-            {% set blog_title = blog_post.title.replace("| Codurance", "") %}
-            {{ blog_post.name }}
-          </div>
-          <div class="cm-editors-pick__excerpt-{{ size }}">
-            <span>
-              {{ blog_post.postBody|striptags|truncate(200, false) }}
-              {% if loop.index > 2 %}   
-                  {{
-                    snippets.text_cta_right_arrow(
-                      url=blog_post.absolute_url,
-                      classnames="cm-editors-pick__link cm-editors-pick__link-small",
-                      aria_label_text="{{ module.aria_label_prefix_text~blog_post.name 
-                      }}"
-                    )
-                  }}
-              {% else %}
-                <div>
-                  {{
-                    snippets.text_cta_right_arrow(
-                      url=blog_post.absolute_url,
-                      text="{{ module.item_button_text }}",
-                      classnames="cm-editors-pick__link",
-                      aria_label_text="{{ module.aria_label_prefix_text~blog_post.name 
-                      }}"
-                    )
-                  }}
-                </div>
-              {% endif %}
-            </span>
-          </div>    
-        </div> 
-      {% endfor %}
-    </div>
-    {{
-      snippets.button_primary(
-        url=blog_url,
-        text="{{ module.button_text }}",
-        aria_label_text="{{ module.button_text }}"
-      )
-    }}
-  </div>
+        </p>    
+      </article> 
+    {% endfor %}
+  </section>
+  {{
+    snippets.button_primary(
+      url=blog_url,
+      text="{{ module.button_text }}",
+      aria_label_text="{{ module.button_text }}"
+    )
+  }}
 </div>
+

@@ -1,10 +1,5 @@
 {% import '../utils/utils.css' as utils %}
 
-.cm-editors-pick {
-  background: linear-gradient(180deg, rgba(252,224,206,0.6) 0%, rgba(255,255,255,1) 45%);
-  padding: 1rem;
-}
-
 .cm-editors-pick__container {
     max-width: var(--content-max-width);
     margin: 0px auto;
@@ -115,7 +110,12 @@
     {{ utils.natus_reduced() }}
 }
 
+.cm-editors-pick__link {
+    display: block;
+
+}
 .cm-editors-pick__link-small {
+    display: inline;
     margin: 0;
     vertical-align: text-top;
 }

@@ -4,6 +4,7 @@
     label: Insights Overview
 -->
 {% extends "./layouts/base.html" %}
+{{ require_css(get_asset_url("../css/templates/insights-overview.css")) }}
 
 {% block body %}
 <main class="insights-overview-container">
@@ -28,7 +29,3 @@
   </section>
 </main>
 {% endblock body %}
-
-{% block styles %}
-  {{ require_css(get_asset_url("../css/templates/insights-overview.css")) }}
-{% endblock styles %}
