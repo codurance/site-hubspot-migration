@@ -1,21 +1,19 @@
 {{ require_css(get_asset_url("../../css/modules/partners-logo.css")) }}
 
 <div class="cm-partners-logo-group">
-  <div class="cm-partners-logos-inner-group">
-    {% for item in module.logo_item %}
-      <div class="cm-partners-logos-item">
-        {% set href = item.logo_link.url.href %}
-          
-        {% if item.logo.src %}
-          <a href="{{ href }}" {% if item.logo_link.open_in_new_tab %}target="_blank"{% endif %} {% if item.logo_link.no_follow %}rel="nofollow"{% endif %}>
-            {% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}"' %}
+  {% for item in module.logo_item %}
+    <div class="cm-partners-logos-item">
+      {% set href = item.logo_link.url.href %}
+        
+      {% if item.logo.src %}
+        <a href="{{ href }}" {% if item.logo_link.open_in_new_tab %}target="_blank"{% endif %} {% if item.logo_link.no_follow %}rel="nofollow"{% endif %}>
+          {% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}"' %}
 
-            <img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ sizeAttrs }}>
-          </a>
-        {% endif %}
-      </div>
-    {% endfor %}
-  </div>
+          <img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ sizeAttrs }}>
+        </a>
+      {% endif %}
+    </div>
+  {% endfor %}
 </div>
 
 
