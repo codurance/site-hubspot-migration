@@ -3,7 +3,7 @@
 .cm-recent-post {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  transform: translateY(-5rem);
+  transform: translateY(-20%);
 }
 
 .cm-recent-post__heading {
