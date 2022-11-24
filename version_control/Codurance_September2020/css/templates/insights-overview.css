@@ -16,7 +16,7 @@
   }
 {% endcall %}
 
-.editors-pick {
+.editors-pick, .insights-overview-videos {
     background: linear-gradient(180deg, rgba(252,224,206,0.6) 0%, rgba(255,255,255,1) 45%);
     padding: 1rem;
 }
@@ -24,15 +24,15 @@
 .insights-overview-cta {
     padding: 1rem;
     color: #FFF;
-    {{ utils.color1_to_color2('271deg', '#1D233C', '#0C0C0D)') }}
+    {{ utils.slate_to_woodsmoke() }}
 }
 
 .insights-overview-cta .banner {
-    max-width: var(--content-max-width) !important;
+    max-width: var(--content-max-width);
 }
 
 {% call utils.small() %}
-    .banner {
-        justify-content: left !important;
+    .insights-overview-cta .banner {
+        justify-content: left;
     }
 {% endcall %}
