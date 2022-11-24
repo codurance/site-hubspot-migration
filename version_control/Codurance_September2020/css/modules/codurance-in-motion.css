@@ -1,9 +1,5 @@
 {% import '../utils/utils.css' as utils %}
 
-.cm-codurance-in-motion {
-    background: linear-gradient(180deg, rgba(252,224,206,0.6) 0%, rgba(255,255,255,1) 45%);
-    padding: 1rem;
-}
 
 .cm-codurance-in-motion__container {
     max-width: var(--content-max-width);
@@ -16,11 +12,11 @@
 
 .cm-codurance-in-motion__heading {
     {{ utils.eames() }}
-    font-size: var(--dudler-font-size);
     {{ utils.eames_margin() }}
+
 }
 
-.cm-codurance-in-motion__cta {
+.cm-codurance-in-motion__button {
     margin-top: 2rem;
 }
 

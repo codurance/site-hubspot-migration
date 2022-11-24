@@ -69,7 +69,6 @@
 
 .cm-editors-pick__heading {
     {{ utils.eames() }}
-    font-size: var(--dudler-font-size);
     {{ utils.eames_margin() }}
 }
 
@@ -103,11 +102,11 @@
 }
 
 .cm-editors-pick__excerpt-big {
-    {{ utils.natus() }}
+    {{ utils.base() }}
 }
 
 .cm-editors-pick__excerpt-small {
-    {{ utils.natus_reduced() }}
+    {{ utils.natus() }}
 }
 
 .cm-editors-pick__link {
