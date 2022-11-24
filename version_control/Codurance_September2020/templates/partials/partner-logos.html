@@ -1,11 +1,20 @@
 <!--
     templateType: global_partial
+    label: Partners Section
     isAvailableForNewContent: false
 -->
 
 {{ require_css(get_asset_url("../../css/partials/partner-logos.css")) }}
 
 <section class="partners">
+    {% section_header 'section_header'
+        header='Our Partners',
+        heading_level="h2"
+        subheader='Codurance is preferred by the world’s leading technology teams. Our deep partnerships extend across cloud providers, data analytics tools, eCommerce platforms, and artificial intelligence & machine learning tools.',
+        label="Case Study Header",
+        no_wrapper=True
+    %}
+
     {% module 'partner_logos'  
         path='../../modules/Partner-Logos.module'
     %}
