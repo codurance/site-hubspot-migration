@@ -62,7 +62,7 @@
     "min": 1
    },
    "required": true,
-   "table_name_or_id": "4702405",
+   "table_name_or_id": "videos",
    "type": "hubdbrow",
    "display_format": "%0",
    "placeholder": "Select a video"
