@@ -1,0 +1,12 @@
+<!--
+    templateType: global_partial
+    isAvailableForNewContent: false
+-->
+
+{{ require_css(get_asset_url("../../css/partials/partner-logos.css")) }}
+
+<section class="partners">
+    {% module 'partner_logos'  
+        path='../../modules/Partner-Logos.module'
+    %}
+</section>
