@@ -2,38 +2,36 @@
 
 {{ require_css(get_asset_url("../../css/modules/codurance-in-motion.css")) }}
 
-<div class="cm-codurance-in-motion">
-    <div class="cm-codurance-in-motion__container">
-        <div class="cm-codurance-in-motion__heading-container">
-            {% if module.heading %}
-                <h2 class="cm-codurance-in-motion__heading">{{ module.heading }}</h2>
-            {% endif %}
+<div class="cm-codurance-in-motion__container">
+    <article class="cm-codurance-in-motion__heading-container">
+        {% if module.heading %}
+            <h2 class="cm-codurance-in-motion__heading">{{ module.heading }}</h2>
+        {% endif %}
 
-            {% if module.summary %}
-                <div class="cm-codurance-in-motion__summary">
-                    {{ module.summary }}
-                </div>
-            {% endif %}
-            <div class="cm-codurance-in-motion__cta">
-                {{
-                    snippets.button_primary(
-                    url="{{ module.videos_link.url.href }}",
-                    text="{{ module.cta_text }}"
-                    )
-                }}
+        {% if module.summary %}
+            <p class="cm-codurance-in-motion__summary">
+                {{ module.summary }}
+            </p>
+        {% endif %}
+        {{
+            snippets.button_primary(
+                url="{{ module.videos_link.url.href }}",
+                text="{{ module.cta_text }}",
+                classnames="cm-codurance-in-motion__button"
+            )
+        }}
+    </article>
+    {% for video in module.videos %}
+        <article class="cm-codurance-in-motion__video">
+            {% set youtube_video_id = video.columns.video|split("/")|last %}
+            {% set youtube_embed_url = "https://www.youtube.com/embed/{{ youtube_video_id }}" %}
+            <div class="cm-codurance-in-motion__video-container">
+                <iframe src="{{ youtube_embed_url }}" allowfullscreen title="{{ video.columns.name }}"></iframe>
             </div>
-        </div>
-        {% for video in module.videos %}
-            <div class="cm-codurance-in-motion__video">
-                {% set youtube_video_id = video.columns.video|split("/")|last %}
-                {% set youtube_embed_url = "https://www.youtube.com/embed/{{ youtube_video_id }}" %}
-                <div class="cm-codurance-in-motion__video-container">
-                    <iframe src="{{ youtube_embed_url }}" allowfullscreen title="{{ video.columns.name }}"></iframe>
-                </div>
-                <div class="cm-codurance-in-motion__video-title">
-                    {{ video.columns.name }}
-                </div>
+            <div class="cm-codurance-in-motion__video-title">
+                {{ video.columns.name }}
             </div>
-        {% endfor %}
-    </div>
+        </article>
+    {% endfor %}
 </div>
+
