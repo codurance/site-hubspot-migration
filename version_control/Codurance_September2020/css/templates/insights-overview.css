@@ -27,7 +27,7 @@
 {% endcall %}
 
 .recent-blog-posts .cm-recent-post {
-    transform: translateY(-5rem);
+    transform: translateY(-2rem);
 }
 
 {% call utils.medium() %}
