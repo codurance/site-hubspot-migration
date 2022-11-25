@@ -1,5 +1,31 @@
 {% import '../utils/utils.css' as utils %}
 
+.insights-overview-hero .header-insights__text  {
+    padding-left: 0.5em;
+}
+
+{% call utils.extra_large() %}
+.insights-overview-hero .header-insights__text  {
+    margin-bottom: 5em;
+    }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+.insights-overview-hero .header-insights__text  {
+    margin-bottom: 3em;
+    }
+{% endcall %}
+
+.insights-overview-hero .header-insights__text h1 {
+    width: var(--habib-max-width);
+}
+
+{% call utils.extra_large() %}
+.insights-overview-hero .header-insights__text h1 {
+    width: var(--gaudi-max-width);
+    }
+{% endcall %}
+
 .recent-blog-posts .cm-recent-post {
     transform: translateY(-5rem);
 }
