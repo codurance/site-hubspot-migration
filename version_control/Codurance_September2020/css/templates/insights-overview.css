@@ -42,6 +42,16 @@
   }
 {% endcall %}
 
+.editors-pick .cm-editors-pick__container {
+    padding: 3rem 0;
+}
+
+{% call utils.small_and_medium() %}
+.editors-pick .cm-editors-pick__container {
+    padding: 2rem 1rem;
+    }
+{% endcall %}
+
 .editors-pick, .insights-overview-videos {
     background: linear-gradient(180deg, rgba(252,224,206,0.6) 0%, rgba(255,255,255,1) 45%);
     padding: 1rem;
