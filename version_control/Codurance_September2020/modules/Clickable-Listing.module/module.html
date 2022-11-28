@@ -4,7 +4,7 @@
 
 <div class="listing__images" role="navigation">
 		{% for item in module.items %}
-			<a href="{{ item.image_anchor_url.href }}" class="listing__item">
+			<a href="{{ item.url.href }}" class="listing__item">
 				{% if item.image_field.src %}
 					{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}		
 				
@@ -14,6 +14,19 @@
 			</a>
 		{% endfor %}
 </div>
+
+{% if module.dynamic_video %}
+	{% set first_video_url = module.items[0].url.href %}
+
+	<iframe 
+		src="{{ first_video_url }}"
+		allow="camera *; microphone *; autoplay *; encrypted-media *; fullscreen *; display-capture *;"
+		width="100%"
+		height="600px"
+		class="dynamic-video"
+	>
+	</iframe>
+{% endif %}
 
 
 

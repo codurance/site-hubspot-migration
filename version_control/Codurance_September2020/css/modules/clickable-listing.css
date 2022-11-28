@@ -56,6 +56,14 @@
     transition: all ease-in-out 200ms;
 }
 
+.dynamic-video {
+    max-width: 1024px;
+    margin: 4em auto 0 auto;
+    display: block;
+    border: none; 
+    border-radius: 24px;
+}
+
 
 
 

@@ -41,7 +41,7 @@
     "type" : "text"
   }, {
     "id" : "d7d1e6e5-2c4d-d614-4947-20e104f8709f",
-    "name" : "image_anchor_url",
+    "name" : "url",
     "display_width" : null,
     "label" : "URL",
     "required" : false,
@@ -64,31 +64,21 @@
       "alt" : null,
       "loading" : "lazy"
     },
-    "image_anchor_url" : {
+    "url" : {
       "content_id" : null,
       "href" : "",
       "type" : "EXTERNAL"
     }
   } ]
 }, {
-  "id" : "426ea298-3aa6-39ec-22d7-33ce2d4bc5af",
-  "name" : "video_urls",
+  "id" : "508b7399-6d2e-4a8b-7dfb-8a0f9e9385dd",
+  "name" : "dynamic_video",
   "display_width" : null,
-  "label" : "Video URLs",
+  "label" : "Dynamic Video",
   "help_text" : "Optional field to set up a video and transform the listing into an interactive menu to change it",
   "required" : false,
   "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : 7,
-    "sorting_label_field" : null,
-    "default" : null
-  },
-  "supported_types" : [ "EXTERNAL" ],
-  "type" : "url",
-  "default" : {
-    "content_id" : null,
-    "href" : "",
-    "type" : "EXTERNAL"
-  }
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
 } ]
