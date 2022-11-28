@@ -6,6 +6,8 @@
     max-width: var(--content-inner-max-width);
     margin-inline: auto;
     gap: 1em;
+    padding-top: 4em;
+    padding-bottom: 4em;
 }
 
 .partners .section-header {
@@ -18,6 +20,7 @@
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
     text-align: left;
+    margin-bottom: var(--freed-margin);
 }
 
 .section-header p {
@@ -31,7 +34,6 @@
 
 {% call utils.medium_large_and_extra_large() %}
     .partners {
-        padding: 4em 0;
         justify-content: space-between;
     }
 
@@ -42,6 +44,7 @@
     .section-header h2 {
         {{ utils.dudler() }}
         font-weight: var(--heavy-font-weight);
+        margin-bottom: var(--dudler-margin);
     }
         
     .section-header p {
@@ -52,4 +55,10 @@
         max-width: 50%;
     }
     
- {% endcall %}
+{% endcall %}
+
+{% call utils.small() %}
+    .partners {
+        flex-direction: column;
+    }
+{% endcall %}

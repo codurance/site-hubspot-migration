@@ -2,11 +2,17 @@
 
 .cm-partners-logo-group {
   display: flex;
-  flex-flow: column;
   align-items: center;
+  justify-content: center;
   margin-top: 2em;
   gap: 0.5em;
 }
+
+{% call utils.medium_large_and_extra_large() %}
+  .cm-partners-logo-group {
+    flex-direction: column;
+  }
+{% endcall %}
 
 {% call utils.small() %}
   .cm-partners-logos-item img {
