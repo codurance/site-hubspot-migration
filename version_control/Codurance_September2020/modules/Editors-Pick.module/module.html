@@ -24,7 +24,7 @@
           {{ blog_post.name }}
         </h3>
         <p class="cm-editors-pick__excerpt-{{ size }}">
-          {{ blog_post.postBody|striptags|truncate(200, false) }}
+          {{ blog_post.postBody|striptags|truncate(130, false) }}
           {% if loop.index > 2 %}   
             {{
               snippets.text_cta_right_arrow(
