@@ -31,7 +31,8 @@
 }
 
 .listing__item:hover .listing__img,
-.listing__item:focus .listing__img {
+.listing__item:focus .listing__img,
+.listing__item--active .listing__img {
     box-shadow: 0px 3px 20px var(--tango-400);
 }
 

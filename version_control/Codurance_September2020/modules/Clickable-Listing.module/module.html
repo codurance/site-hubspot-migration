@@ -4,7 +4,13 @@
 
 <div class="listing__images" role="navigation">
 		{% for item in module.items %}
-			<a href="{{ item.url.href }}" class="listing__item">
+			{% set active_video_class = "" %}
+				
+			{% if loop.index == 1 && module.dynamic_video %}
+				{% set active_video_class = "listing__item--active" %}
+			{% endif %}
+
+			<a href="{{ item.url.href }}" class="listing__item {{ active_video_class }}">
 				{% if item.image_field.src %}
 					{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}		
 				
