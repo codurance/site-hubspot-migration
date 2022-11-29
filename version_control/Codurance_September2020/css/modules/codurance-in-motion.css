@@ -19,6 +19,12 @@
     margin-top: 2rem;
 }
 
+{% call utils.small() %}
+.cm-codurance-in-motion__button {
+    margin-bottom: 2rem;
+}
+{% endcall %}
+
 .cm-codurance-in-motion__video-container {
     position: relative;
     width: 100%;
