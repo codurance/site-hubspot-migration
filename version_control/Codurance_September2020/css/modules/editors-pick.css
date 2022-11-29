@@ -9,7 +9,7 @@
 .cm-editors-pick__items {
     display: grid;
     column-gap: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 {% call utils.small() %}
@@ -74,7 +74,7 @@
 
 .cm-editors-pick__image {
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .cm-editors-pick__image::after {
