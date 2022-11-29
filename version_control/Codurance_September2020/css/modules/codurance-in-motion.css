@@ -3,8 +3,8 @@
 
 .cm-codurance-in-motion__container {
     max-width: var(--content-max-width);
-    margin: 0px auto;
-    padding-bottom: 1rem;
+    margin-inline: auto;
+    margin-top: var(--eames-margin);
     display: grid;
     grid-gap: 2rem;
 }
@@ -12,6 +12,7 @@
 .cm-codurance-in-motion__heading {
     {{ utils.eames() }}
     margin-bottom: 0.5rem;
+    margin-top: -0.4rem;
 }
 
 .cm-codurance-in-motion__button {
