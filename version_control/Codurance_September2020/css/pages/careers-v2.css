@@ -145,11 +145,7 @@
 
     .why-join-us .text-and-image__image img{
         transform: translate(15%, {{ image_offset }} );
-        margin-top: calc( 
-            calc( -1 * {{ image_offset }})
-                + 
-            10%
-        );
+        margin-top: calc( calc( -1 * {{ image_offset }} ) + 10% );
         scale: revert;
     }
 {% endcall %}
