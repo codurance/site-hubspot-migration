@@ -11,12 +11,11 @@
 
 .cm-codurance-in-motion__heading {
     {{ utils.eames() }}
-    {{ utils.eames_margin() }}
-
+    margin-bottom: 0.5rem;
 }
 
 .cm-codurance-in-motion__button {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 {% call utils.small() %}
