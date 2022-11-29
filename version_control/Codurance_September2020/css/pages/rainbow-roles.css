@@ -24,7 +24,10 @@ html {
 {% endcall %}
 
 .roles {
-  {{ utils.tango_to_white() }}
-  padding-top: 2em;
   padding-bottom: 4em;
+}
+
+.roles .listing__wrapper {
+  padding-top: 2em;
+  {{ utils.tango_to_white() }}
 }
