@@ -2,7 +2,7 @@
 
 {% call utils.medium() %}
 .insights-overview-hero .header-insights, .recent-blog-posts .cm-recent-post, .editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
-    padding-inline: 2rem;
+    padding-left: 2rem;
     }
 {% endcall %}
 
