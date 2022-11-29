@@ -2,7 +2,12 @@
 
 {% call utils.medium() %}
 .insights-overview-hero .header-insights, .recent-blog-posts .cm-recent-post, .editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
-    padding-left: 2rem;
+    padding-inline: 2rem;
+    }
+
+.recent-blog-posts .cm-recent-post {
+    padding-right: 0;
+
     }
 {% endcall %}
 
@@ -10,6 +15,10 @@
 .insights-overview-hero .header-insights, .recent-blog-posts .cm-recent-post, .editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
     padding-inline: 1.5rem;
     }
+.recent-blog-posts .cm-recent-post {
+    padding-right: 0;
+
+}
 {% endcall %}
 
 .insights-overview-hero .header-insights__text  {
@@ -56,12 +65,14 @@
 
 .editors-pick, .insights-overview-videos {
     background: linear-gradient(180deg, rgba(252,224,206,0.6) 0%, rgba(255,255,255,1) 45%);
-    padding-block: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
     }
     
 {% call utils.small_and_medium() %}
 .editors-pick, .insights-overview-videos {
-    padding-block: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
     }
 {% endcall %}
 
