@@ -491,8 +491,9 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+
 @media (max-width: 1023px) {
-  .card-slider-newsletter-wrapper{
+  .card-slider-newsletter-wrapper {
     display: none;
   }
 }
@@ -526,7 +527,7 @@ text-align: center;
   background: white;
 }
 
-.events-cta-card{
+.events-cta-card {
   background: url(https://f.hubspotusercontent10.net/hubfs/3042464/Events%20page/newsletter-cta-shape-1.svg) rgba(255,255,255, 0.7);
   background-repeat: no-repeat;
   display: flex;
@@ -537,7 +538,7 @@ text-align: center;
   padding: 20px;
 }
 
-.community-cta-card{
+.community-cta-card {
   background: url(https://f.hubspotusercontent10.net/hubfs/3042464/Events%20page/newsletter-cta-shape-2.svg) rgba(255,255,255, 0.7);
   background-repeat: no-repeat;
   background-size: contain;
@@ -554,7 +555,7 @@ text-align: center;
   margin-top: 1.3em;
 }
 
-.events-cta-card__title{
+.events-cta-card__title {
   text-align: center;
   {{ utils.freed() }}
   font-weight: var(--heavy-font-weight);
@@ -616,7 +617,7 @@ text-align: center;
   margin-bottom: 5px;
 }
 
-.hs_submit .hs-button{
+.hs_submit .hs-button {
   width: 100%;
   background: white;
   border: 1px solid var(--french-gray);
@@ -629,11 +630,11 @@ text-align: center;
   border: solid 1px var(--persimmon--dark);
 }
 
-.hs_error_rollup{
+.hs_error_rollup {
   display: none;
 }
 
-.submitted-message{
+.submitted-message {
   text-align: center;
   margin-bottom: 2.5em;
 }
