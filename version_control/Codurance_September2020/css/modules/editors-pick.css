@@ -74,7 +74,7 @@
 
 .cm-editors-pick__image {
     position: relative;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .cm-editors-pick__image::after {
@@ -97,7 +97,8 @@
 }
 
 .cm-editors-pick__title-small {
-    font-size: calc(var(--base-font-size) * var(--reduced-font-size-multiplier));
+    /* font-size: calc(var(--base-font-size) * var(--reduced-font-size-multiplier)); */
+    {{ utils.natus() }}
     font-weight: var(--heavy-font-weight);
 }
 
