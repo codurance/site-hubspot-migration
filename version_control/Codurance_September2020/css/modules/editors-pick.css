@@ -69,7 +69,7 @@
 
 .cm-editors-pick__heading {
     {{ utils.eames() }}
-    {{ utils.eames_margin() }}
+    margin-bottom: var(--eames-margin);
 }
 
 .cm-editors-pick__image {
