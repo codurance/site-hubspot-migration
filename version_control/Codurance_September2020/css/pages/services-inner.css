@@ -9,3 +9,8 @@ so we remove it at row level */
 .dnd-section > .row-fluid {
     padding: 0;
 }
+
+.section-4 {
+    padding-top: 2em;
+    padding-bottom: 4em;
+}

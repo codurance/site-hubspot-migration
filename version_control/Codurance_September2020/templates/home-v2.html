@@ -73,10 +73,9 @@ label: Home Page version 2
         label="Compass Section" no_wrapper=True%}
   </section>
   <section class="partners">
-    {% module 'tex_and_image' 
-        path='../modules/Text-and-image.module'
-        label="Partners" no_wrapper=True%}
+    {% global_partial path="./partials/partners-section.html" no_wrapper=True %}
   </section>
+
   <section class="craftmanship-ethos">
     {% module 'Ethos' 
       path='../modules/Compass.module'

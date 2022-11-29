@@ -1,0 +1,29 @@
+{% import '../utils/utils.css' as utils %}
+
+.cm-partners-logo-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.cm-partners-logos-item img {
+  filter: drop-shadow(2px 2px 3px var(--athens-gray));
+}
+
+{% call utils.medium_large_and_extra_large() %}
+  .cm-partners-logo-group {
+    flex-direction: column;
+    gap: 1em;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  
+  .cm-partners-logos-item img{
+    width: 170px;
+    height: 90px;
+    object-fit: contain;
+  }
+{% endcall %}
+
