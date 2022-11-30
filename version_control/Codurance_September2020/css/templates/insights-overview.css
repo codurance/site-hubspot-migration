@@ -63,13 +63,7 @@
 .recent-blog-posts .cm-recent-post {
     transform: translateY(-3rem);
 }
-
-{% call utils.medium() %}
-    .recent-blog-posts .cm-recent-post {
-        transform: translateY(-4rem);
-        }
-{% endcall %}
-    
+   
 .recent-blog-posts .cm-recent-post .cm-recent-post__group {
     padding-bottom: 0;
     transform: translateY(-1rem);
