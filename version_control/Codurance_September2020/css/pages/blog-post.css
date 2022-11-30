@@ -190,6 +190,10 @@
   padding-left: 1em;
 }
 
+.blog-content .hs-embed-wrapper[data-service="podbean"] {
+  max-height: 150px;
+}
+
 .newsletter .newsletter-wrapper {
   margin-top: 2.4em;
   margin-bottom: 2.4em;
