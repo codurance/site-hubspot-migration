@@ -91,6 +91,16 @@
     border-radius: 10px;
 }
 
+{% call utils.small() %}
+    .cm-editors-pick__image img {
+        max-height: 60%;
+    }
+
+    .cm-editors-pick__image::after {
+        margin-bottom: -40%;
+    }
+{% endcall %}
+
 .cm-editors-pick__title-big {
     font-size: var(--base-font-size);
     font-weight: var(--heavy-font-weight);
