@@ -1,7 +1,8 @@
 {% import '../utils/utils.css' as utils %}
 
 .cm-recent-post {
-  max-width: var(--content-max-width);
+  max-width: calc(var(--content-max-width) + 4rem);
+  padding-inline: 2rem;
   margin: 0 auto;
   transform: translateY(-20%);
 }

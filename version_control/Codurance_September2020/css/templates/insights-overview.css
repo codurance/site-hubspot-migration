@@ -87,6 +87,7 @@
     {% endcall %}
 
 .insights-overview-cta {
+    padding-inline: 2rem;
     padding-block: 2rem;
     color: #FFF;
     {{ utils.slate_to_woodsmoke() }}

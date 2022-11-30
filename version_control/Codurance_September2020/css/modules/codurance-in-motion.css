@@ -2,7 +2,8 @@
 
 
 .cm-codurance-in-motion__container {
-    max-width: var(--content-max-width);
+    max-width: calc(var(--content-max-width) + 4rem);
+    padding-inline: 2rem;
     margin-inline: auto;
     display: grid;
     grid-gap: 2rem;

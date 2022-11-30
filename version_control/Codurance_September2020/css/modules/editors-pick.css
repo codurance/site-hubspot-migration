@@ -1,9 +1,10 @@
 {% import '../utils/utils.css' as utils %}
 
 .cm-editors-pick__container {
-    max-width: var(--content-max-width);
+    max-width: calc(var(--content-max-width) + 4rem);
     margin: 0px auto;
     padding-bottom: 1rem;
+    padding-inline: 2rem;
 }
 
 .cm-editors-pick__items {
