@@ -1,5 +1,11 @@
 {% import '../utils/utils.css' as utils %}
 
+{% macro small_landscape() %}
+    @media screen and (max-height: 400px) and (orientation: landscape) {
+        {{ caller() }}
+    }
+{% endmacro %}
+
 .cm-editors-pick__container {
     max-width: calc(var(--content-max-width) + 4rem);
     margin: 0px auto;
@@ -78,17 +84,8 @@
     margin-bottom: 1rem;
 }
 
-.cm-editors-pick__image::after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-}
-
 .cm-editors-pick__image img {
-    position: absolute;
     object-fit: cover;
-    width: 100%;
-    height: 100%;
     border-radius: 10px;
 }
 
@@ -96,27 +93,29 @@
     .cm-editors-pick__image img {
         height: 60%;
     }
-
-    .cm-editors-pick__image::after {
-        margin-bottom: -40%;
-    }
 {% endcall %}
-
-{% macro small_landscape() %}
-    @media screen and (max-height: 400px) and (orientation: landscape) {
-        {{ caller() }}
-    }
-{% endmacro %}
 
 {% call small_landscape() %}
     .cm-editors-pick__image img {
-        height: 25%;
+        height: 100px;
+        width: 100%;
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+    .cm-editors-pick__image img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
     }
 
     .cm-editors-pick__image::after {
-        margin-bottom: -75%;
+        content: "";
+        display: block;
+        padding-bottom: 100%;
     }
 {% endcall %}
+
 
 .cm-editors-pick__title-big {
     font-size: var(--base-font-size);
@@ -124,7 +123,6 @@
 }
 
 .cm-editors-pick__title-small {
-    /* font-size: calc(var(--base-font-size) * var(--reduced-font-size-multiplier)); */
     {{ utils.natus() }}
     font-weight: var(--heavy-font-weight);
 }
