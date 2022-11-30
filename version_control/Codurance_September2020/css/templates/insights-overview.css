@@ -1,6 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
-{% call utils.medium() %}
+.recent-blog-posts {
+margin-bottom: -3rem;
+}
+    {% call utils.medium() %}
 .insights-overview-hero .header-insights, .recent-blog-posts .cm-recent-post, .editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
     padding-inline: 2rem;
     }
@@ -17,12 +20,22 @@
     }
 .recent-blog-posts .cm-recent-post {
     padding-right: 0;
+    margin: 0;
 
 }
 {% endcall %}
 
+.recent-blog-posts .cm-recent-post .cm-recent-post__group {
+    padding-bottom: 0;
+     transform: translateY(-1rem);
+}
+
+.recent-blog-posts .cm-recent-post .cm-recent-post__item:first-child {
+    margin-left: 0;
+}
+
 .insights-overview-hero .header-insights__text  {
-    padding-left: 0.5em;
+    padding-left: 0;
 }
 
 {% call utils.extra_large() %}
@@ -31,7 +44,15 @@
     }
 {% endcall %}
 
-{% call utils.small_and_medium() %}
+{% call utils.small() %}
+.insights-overview-hero .header-insights__text  {
+    margin-top: -7rem;    
+    margin-bottom: 2rem;
+    transform: translateY(-4rem);
+    }
+{% endcall %}
+
+{% call utils.medium() %}
 .insights-overview-hero .header-insights__text  {
     margin-bottom: 3em;
     }
@@ -39,7 +60,7 @@
 
 .insights-overview-hero .header-insights__text h1 {
     width: var(--habib-max-width);
-}
+   }
 
 {% call utils.extra_large() %}
 .insights-overview-hero .header-insights__text h1 {
@@ -48,18 +69,18 @@
 {% endcall %}
 
 .recent-blog-posts .cm-recent-post {
-    transform: translateY(-2rem);
+    transform: translateY(-3rem);
 }
 
 {% call utils.medium() %}
   .recent-blog-posts .cm-recent-post {
-    transform: translateY(-3rem);
+    transform: translateY(-4rem);
   }
 {% endcall %}
 
 {% call utils.small() %}
   .recent-blog-posts .cm-recent-post {
-    transform: translateY(-2rem);
+    transform: translateY(-3rem);
   }
 {% endcall %}
 
