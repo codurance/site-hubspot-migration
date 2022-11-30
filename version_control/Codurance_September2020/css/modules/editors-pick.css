@@ -102,6 +102,22 @@
     }
 {% endcall %}
 
+{% macro small_landscape() %}
+    @media screen and (max-height: 400px) and (orientation: landscape) {
+        {{ caller() }}
+    }
+{% endmacro %}
+
+{% call small_landscape() %}
+    .cm-editors-pick__image img {
+        height: 25%;
+    }
+
+    .cm-editors-pick__image::after {
+        margin-bottom: -75%;
+    }
+{% endcall %}
+
 .cm-editors-pick__title-big {
     font-size: var(--base-font-size);
     font-weight: var(--heavy-font-weight);
