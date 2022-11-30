@@ -87,12 +87,19 @@
     {% endcall %}
 
 .insights-overview-cta {
-    padding-inline: 2rem;
+    /*max-width: var(--content-max-width);*/
+    padding-inline: 0;
     padding-block: 2rem;
     color: #FFF;
     {{ utils.slate_to_woodsmoke() }}
 }
-            
+           
+{% call utils.large_and_extra_large() %}
+    .insights-overview-cta {
+        padding-inline: 2rem;
+    }
+{% endcall %}
+
 .insights-overview-cta .banner {
     max-width: var(--content-max-width);
     }
