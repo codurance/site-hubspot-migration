@@ -93,7 +93,7 @@
 
 {% call utils.small() %}
     .cm-editors-pick__image img {
-        max-height: 60%;
+        height: 60%;
     }
 
     .cm-editors-pick__image::after {
