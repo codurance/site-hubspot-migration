@@ -1,67 +1,59 @@
 {% import '../utils/utils.css' as utils %}
 
 .recent-blog-posts {
-margin-bottom: -3rem;
+    margin-bottom: -3rem;
 }
-    {% call utils.medium() %}
-.insights-overview-hero .header-insights, .recent-blog-posts .cm-recent-post, .editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
-    padding-inline: 2rem;
-    }
 
-.recent-blog-posts .cm-recent-post {
-    padding-right: 0;
+{% call utils.medium() %}
+    .insights-overview-hero .header-insights, .recent-blog-posts .cm-recent-post, .editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
+        padding-inline: 2rem;
+        }
 
-    }
+    .recent-blog-posts .cm-recent-post {
+        padding-right: 0;
+
+        }
 {% endcall %}
 
 {% call utils.small() %}
-.insights-overview-hero .header-insights, .recent-blog-posts .cm-recent-post, .editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
-    padding-inline: 1.5rem;
-    }
-.recent-blog-posts .cm-recent-post {
-    padding-right: 0;
-    margin: 0;
-
-}
+    .insights-overview-hero .header-insights, .recent-blog-posts .cm-recent-post, .editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
+        padding-inline: 1.5rem;
+        }
+    .recent-blog-posts .cm-recent-post {
+        padding-right: 0;
+        margin: 0;
+        }
 {% endcall %}
-
-.recent-blog-posts .cm-recent-post .cm-recent-post__group {
-    padding-bottom: 0;
-     transform: translateY(-1rem);
-}
-
-.recent-blog-posts .cm-recent-post .cm-recent-post__item:first-child {
-    margin-left: 0;
-}
 
 .insights-overview-hero .header-insights__text  {
     padding-left: 0;
 }
-
+    
 {% call utils.extra_large() %}
-.insights-overview-hero .header-insights__text  {
-    margin-bottom: 5rem;
-    }
-{% endcall %}
-
-{% call utils.small() %}
-.insights-overview-hero .header-insights__text  {
-    margin-top: -7rem;    
-    margin-bottom: 2rem;
-    transform: translateY(-4rem);
-    }
+    .insights-overview-hero .header-insights__text  {
+        margin-bottom: 5rem;
+        }
 {% endcall %}
 
 {% call utils.medium() %}
-.insights-overview-hero .header-insights__text  {
-    margin-bottom: 3em;
-    }
+    .insights-overview-hero .header-insights__text  {
+        margin-bottom: 4em;
+        padding-top: 2rem;
+        }
 {% endcall %}
 
+{% call utils.small() %}
+    .insights-overview-hero .header-insights__text  {
+        margin-top: -7rem;    
+        margin-bottom: 2rem;
+        transform: translateY(-4rem);
+        }
+{% endcall %}
+    
 .insights-overview-hero .header-insights__text h1 {
     width: var(--habib-max-width);
-   }
-
+}
+        
 {% call utils.extra_large() %}
 .insights-overview-hero .header-insights__text h1 {
     width: var(--gaudi-max-width);
@@ -73,16 +65,19 @@ margin-bottom: -3rem;
 }
 
 {% call utils.medium() %}
-  .recent-blog-posts .cm-recent-post {
-    transform: translateY(-4rem);
-  }
+    .recent-blog-posts .cm-recent-post {
+        transform: translateY(-4rem);
+        }
 {% endcall %}
+    
+.recent-blog-posts .cm-recent-post .cm-recent-post__group {
+    padding-bottom: 0;
+    transform: translateY(-1rem);
+}
 
-{% call utils.small() %}
-  .recent-blog-posts .cm-recent-post {
-    transform: translateY(-3rem);
-  }
-{% endcall %}
+.recent-blog-posts .cm-recent-post .cm-recent-post__item:first-child {
+    margin-left: 0;
+}
 
 .editors-pick, .insights-overview-videos {
     background: linear-gradient(180deg, rgba(252,224,206,0.6) 0%, rgba(255,255,255,1) 45%);
@@ -91,22 +86,22 @@ margin-bottom: -3rem;
 }
     
 {% call utils.small_and_medium() %}
-.editors-pick, .insights-overview-videos {
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-    }
-{% endcall %}
+    .editors-pick, .insights-overview-videos {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        }
+    {% endcall %}
 
 .insights-overview-cta {
     padding-block: 2rem;
     color: #FFF;
     {{ utils.slate_to_woodsmoke() }}
 }
-
+            
 .insights-overview-cta .banner {
     max-width: var(--content-max-width);
-}
-
+    }
+                
 {% call utils.small() %}
     .insights-overview-cta .banner {
         justify-content: left;
