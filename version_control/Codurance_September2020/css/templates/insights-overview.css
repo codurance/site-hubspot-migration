@@ -67,6 +67,8 @@
 .recent-blog-posts .cm-recent-post .cm-recent-post__group {
     padding-bottom: 0.5rem;
     transform: translateY(-1rem);
+    padding-inline: 2rem;
+    margin-inline: -2rem;
 }
 
 .recent-blog-posts .cm-recent-post .cm-recent-post__item:first-child {
