@@ -37,7 +37,9 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding-bottom: 1em;
+  padding-inline: 2rem;
+  margin-inline: -2rem;
+  padding-bottom: 0.5rem;
   overflow: scroll;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
