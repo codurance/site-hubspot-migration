@@ -65,7 +65,7 @@
 }
    
 .recent-blog-posts .cm-recent-post .cm-recent-post__group {
-    padding-bottom: 0;
+    padding-bottom: 0.5rem;
     transform: translateY(-1rem);
 }
 
