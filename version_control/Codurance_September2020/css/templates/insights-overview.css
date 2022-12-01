@@ -5,7 +5,7 @@
 }
 
 {% call utils.medium() %}
-    .insights-overview-hero .header-insights, .editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
+    .insights-overview-hero .header-insights, .recent-blog-posts .cm-recent-post, .editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
         padding-inline: 2rem;
         }
 
@@ -18,12 +18,15 @@
 {% endcall %}
 
 {% call utils.small() %}
-    .insights-overview-hero .header-insights, .editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
+    .insights-overview-hero .header-insights, .recent-blog-posts .cm-recent-post,.editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
         padding-inline: 1.5rem;
         }
     .recent-blog-posts .cm-recent-post {
         padding-right: 0;
         margin: 0;
+        }
+    .recent-blog-posts .cm-recent-post .cm-recent-post__group {
+        margin-right: 0;
         }
 {% endcall %}
 
