@@ -95,6 +95,7 @@
 {% call utils.small() %}
     .cm-editors-pick__image img {
         height: 60%;
+        width: 100%;
     }
 {% endcall %}
 
