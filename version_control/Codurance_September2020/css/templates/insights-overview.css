@@ -49,15 +49,10 @@
 
 {% call utils.small() %}
     .insights-overview-hero .header-insights__text  {
-        margin-top: -7rem;    
         margin-bottom: 2rem;
         transform: translateY(-4rem);
         }
 {% endcall %}
-    
-.insights-overview-hero .header-insights__text h1 {
-    width: var(--habib-max-width);
-}
         
 {% call utils.extra_large() %}
 .insights-overview-hero .header-insights__text h1 {
