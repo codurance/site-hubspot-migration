@@ -19,7 +19,7 @@ html {
 
 {% call utils.small() %}
   .header-hero > .header-hero__container {
-    padding-bottom: 4em;
+    padding-bottom: 2em;
   }
 {% endcall %}
 
