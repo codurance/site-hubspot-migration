@@ -77,13 +77,14 @@
 
 .editors-pick, .insights-overview-videos {
     background: linear-gradient(180deg, rgba(252,224,206,0.6) 0%, rgba(255,255,255,1) 45%);
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
     
 {% call utils.small_and_medium() %}
     .editors-pick, .insights-overview-videos {
-        padding-top: 2rem;
+        padding-top: 3rem;
         padding-bottom: 3rem;
         }
     {% endcall %}

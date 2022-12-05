@@ -11,12 +11,13 @@
 
 .cm-codurance-in-motion__heading {
     {{ utils.eames() }}
+    line-height: var(--dudler-line-height);
     margin-bottom: 0.5rem;
     margin-top: -0.4rem;
 }
 
 .cm-codurance-in-motion__button {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 {% call utils.small() %}
