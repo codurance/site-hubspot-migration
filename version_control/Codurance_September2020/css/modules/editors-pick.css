@@ -15,7 +15,7 @@
 .cm-editors-pick__items {
     display: grid;
     column-gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 {% call utils.small() %}
