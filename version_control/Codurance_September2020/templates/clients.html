@@ -16,10 +16,12 @@ label: Clients
   {{ require_css(get_asset_url("../css/main.css")) }}
   {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
 
-  {{ require_js(get_asset_url("../js/main.js")) }}
+  {{ require_css(get_asset_url("../css/pages/clients.css")) }}
+
+  {# {{ require_js(get_asset_url("../js/main.js")) }}
   {{ standard_header_includes }}
   {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
-  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
+  {{ require_css(get_asset_url("../css/theme-overrides.css")) }} #}
 </head>
 
 {% block body %}
