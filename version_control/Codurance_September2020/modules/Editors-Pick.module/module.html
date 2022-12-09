@@ -9,45 +9,66 @@
     <h2 class="cm-editors-pick__heading">{{ module.heading }}</h2>
   {% endif %}
 
+  {% set blog_posts = module.page_field %}
+
   <section class="cm-editors-pick__items">
-    {% set blog_posts = module.page_field %}
-    {% for content_id in blog_posts %}
-      {% set size = loop.index <= 2 ? "big" : "small" %}
-      {% set blog_post = content_by_id(content_id) %}
-      <article class="cm-editors-pick__item">
+    <div class="cm-editors-pick__big_items">
+      {% for content_id in blog_posts %}
+        {% set blog_post = content_by_id(content_id) %}
         {% if loop.index <= 2 %}
-          <figure class="cm-editors-pick__image">
-            <img src='{% image_src src="{{ blog_post.featured_image }}" no_wrapper=True %}' alt="{{ blog_post.title }}">
-          </figure>      
+          <article class="cm-editors-pick__item">
+            {% if loop.index <= 2 %}
+              <figure class="cm-editors-pick__image">
+                <img src='{% image_src src="{{ blog_post.featured_image }}" no_wrapper=True %}' alt="{{ blog_post.title }}">
+              </figure>      
+            {% endif %}
+            <h3 class="cm-editors-pick__title-big">
+              {{ blog_post.name }}
+            </h3>
+            <p class="cm-editors-pick__excerpt-big">
+              {{ blog_post.postBody|striptags|truncate(130, false) }}
+              {{
+                snippets.text_cta_right_arrow(
+                  url=blog_post.absolute_url,
+                  text="{{ module.item_button_text }}",
+                  classnames="cm-editors-pick__link",
+                  aria_label_text="{{ module.aria_label_prefix_text~blog_post.name 
+                  }}"
+                )
+              }}
+            </p>    
+          </article> 
         {% endif %}
-        <h3 class="cm-editors-pick__title-{{ size }}">
-          {{ blog_post.name }}
-        </h3>
-        <p class="cm-editors-pick__excerpt-{{ size }}">
-          {{ blog_post.postBody|striptags|truncate(130, false) }}
-          {% if loop.index > 2 %}   
-            {{
-              snippets.text_cta_right_arrow(
-                url=blog_post.absolute_url,
-                classnames="cm-editors-pick__link cm-editors-pick__link-small",
-                aria_label_text="{{ module.aria_label_prefix_text~blog_post.name 
-                }}"
-              )
-            }}
-          {% else %}
-            {{
-              snippets.text_cta_right_arrow(
-                url=blog_post.absolute_url,
-                text="{{ module.item_button_text }}",
-                classnames="cm-editors-pick__link",
-                aria_label_text="{{ module.aria_label_prefix_text~blog_post.name 
-                }}"
-              )
-            }}
-          {% endif %}
-        </p>    
-      </article> 
-    {% endfor %}
+      {% endfor %}
+    </div>
+    <div class="cm-editors-pick__small_items">
+      {% for content_id in blog_posts %}
+        {% set blog_post = content_by_id(content_id) %}
+        {% if loop.index > 2 %}
+          <article class="cm-editors-pick__item">
+            {% if loop.index <= 2 %}
+              <figure class="cm-editors-pick__image">
+                <img src='{% image_src src="{{ blog_post.featured_image }}" no_wrapper=True %}' alt="{{ blog_post.title }}">
+              </figure>      
+            {% endif %}
+            <h3 class="cm-editors-pick__title-small">
+              {{ blog_post.name }}
+            </h3>
+            <p class="cm-editors-pick__excerpt-small">
+              {{ blog_post.postBody|striptags|truncate(130, false) }}
+              {{
+                snippets.text_cta_right_arrow(
+                  url=blog_post.absolute_url,
+                  classnames="cm-editors-pick__link cm-editors-pick__link-small",
+                  aria_label_text="{{ module.aria_label_prefix_text~blog_post.name 
+                  }}"
+                )
+              }}
+            </p>    
+          </article> 
+        {% endif %}
+      {% endfor %}
+    </div>
   </section>
   {{
     snippets.button_primary(
