@@ -89,6 +89,7 @@
 {% call utils.medium() %}
     .cm-editors-pick__items {
         flex-direction: column;
+        margin-bottom: 2.5rem;
     }
 
     .cm-editors-pick__big_items {
