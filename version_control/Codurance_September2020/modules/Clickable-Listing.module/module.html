@@ -10,7 +10,7 @@
 					{% set active_video_class = "listing__item--active" %}
 				{% endif %}
 
-				<a href="{{ item.url.href }}" class="listing__item {{ active_video_class }}">
+				<a href="{{ item.url.href }}" class="listing__item {{ active_video_class }}" data-video-subtitle="{{ item.video_subtitle }}">
 					{% if item.image_field.src %}
 						{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}		
 					

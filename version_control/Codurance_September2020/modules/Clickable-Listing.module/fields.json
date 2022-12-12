@@ -53,6 +53,26 @@
       "href" : "",
       "type" : "EXTERNAL"
     }
+  }, {
+    "id" : "732af0da-dae3-86ed-bec5-0bb9b1a890d2",
+    "name" : "video_subtitle",
+    "display_width" : null,
+    "label" : "Video Subtitle",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "508b7399-6d2e-4a8b-7dfb-8a0f9e9385dd",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
