@@ -6,24 +6,7 @@
 
 {% extends "./layouts/base.html" %}
 
-<head>
-  <meta charset="utf-8">
-  <title>{{ page_meta.html_title }}</title>
-  {% if site_settings.favicon_src %}
-  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
-  {% endif %}
-  <meta name="description" content="{{ page_meta.meta_description }}">
-  {{ require_css(get_asset_url("../css/layout.css")) }}
-  {{ require_css(get_asset_url("../css/main.css")) }}
-  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
-
-  {{ require_css(get_asset_url("../css/pages/hub-page-template.css")) }}
-
-  {{ require_js(get_asset_url("../js/main.js")) }}
-  {{ standard_header_includes }}
-  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
-  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
-</head>
+{{ require_css(get_asset_url("../css/pages/hub-page-template.css")) }}
 
 {% block body %}
 
@@ -45,10 +28,6 @@
   </section>
   
   {% include "./partials/feature-section.html" %}
-  
-  <section class="compass-section">
-    {% module "compass_section" path='../modules/Compass.module' label="Compass Section" no_wrapper=True %}
-  </section>
   
   <section id="form-section" class="form-section">
     {% module "form_section" path='../modules/Service-Line-Form.module' label="Form Section" %}
