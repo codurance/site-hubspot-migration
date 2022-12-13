@@ -23,7 +23,9 @@
 </div>
 
 {% if module.dynamic_video %}
-	{% set first_video_url = module.items[0].url.href %}
+	{% set first_video = module.items[0] %}
+	{% set first_video_url = first_video.url.href %}
+	{% set first_video_subtitle = first_video.video_subtitle %}
 
 	<iframe 
 		src="{{ first_video_url }}"
@@ -33,6 +35,10 @@
 		class="dynamic-video lateral-spacing"
 	>
 	</iframe>
+
+	<p class="video-subtitle js-video-subtitle">
+		{{ first_video_subtitle }}
+	</p>
 {% endif %}
 
 
