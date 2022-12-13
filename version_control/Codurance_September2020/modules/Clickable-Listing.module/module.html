@@ -23,12 +23,12 @@
 </div>
 
 {% if module.dynamic_video %}
-	{% set first_video = module.items[0] %}
-	{% set first_video_url = first_video.url.href %}
-	{% set first_video_subtitle = first_video.video_subtitle %}
+	{% set default_video = module.items[0] %}
+	{% set default_video_url = default_video.url.href %}
+	{% set default_video_subtitle = default_video.video_subtitle %}
 
 	<iframe 
-		src="{{ first_video_url }}"
+		src="{{ default_video_url }}"
 		allow="camera *; microphone *; autoplay *; encrypted-media *; fullscreen *; display-capture *;"
 		width="100%"
 		height="600px"
@@ -37,7 +37,7 @@
 	</iframe>
 
 	<p class="video-subtitle js-video-subtitle">
-		{{ first_video_subtitle }}
+		{{ default_video_subtitle }}
 	</p>
 {% endif %}
 
