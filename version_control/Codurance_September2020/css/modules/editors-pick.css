@@ -13,11 +13,21 @@
 }
 
 .cm-editors-pick__items {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
     margin-bottom: 1.5rem;
 }
 
-.cm-editors-pick__items, .cm-editors-pick__big_items, .cm-editors-pick__small_items {
+.cm-editors-pick__big_items {
     display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.cm-editors-pick__small_items {
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
 
@@ -91,20 +101,6 @@
         flex-direction: column;
         margin-bottom: 2.5rem;
     }
-
-    .cm-editors-pick__big_items {
-        flex-direction: row;
-    }
-
-    .cm-editors-pick__small_items {
-        flex-direction: column;
-    }
-{% endcall %}
-
-{% call utils.large_and_extra_large() %}
-    .cm-editors-pick__items {
-        flex-direction: row;
-}
 
     .cm-editors-pick__big_items {
         flex-direction: row;
