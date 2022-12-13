@@ -19,7 +19,16 @@ html {
 
 {% call utils.small() %}
   .header-hero > .header-hero__container {
+    padding-top: 2em;
     padding-bottom: 2em;
+  }
+
+  .header-hero .header-hero__text {
+    margin-top: 0;
+  }
+
+  .header-hero__image {
+    display: none;
   }
 {% endcall %}
 
