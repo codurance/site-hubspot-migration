@@ -3,43 +3,43 @@
 
 <div class="listing__wrapper lateral-spacing">
 	<div class="listing__images" role="navigation">
-			{% for item in module.items %}
-				{% set active_video_class = "" %}
+		{% for item in module.items %}
+			{% set active_video_class = "" %}
+			{% if loop.index == 1 && module.dynamic_video %}
+				{% set active_video_class = "listing__item--active" %}
+			{% endif %}
+			<a href="{{ item.url.href }}" class="listing__item {{ active_video_class }}" data-video-subtitle="{{ item.video_subtitle }}">
+				{% if item.image_field.src %}
+					{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
 
-				{% if loop.index == 1 && module.dynamic_video %}
-					{% set active_video_class = "listing__item--active" %}
+					<img class="listing__img" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
 				{% endif %}
-
-				<a href="{{ item.url.href }}" class="listing__item {{ active_video_class }}" data-video-subtitle="{{ item.video_subtitle }}">
-					{% if item.image_field.src %}
-						{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}		
-					
-						<img class="listing__img" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-					{% endif %}
-					<h4 class="listing__text">{{ item.image_title }}</h4>
-				</a>
-			{% endfor %}
+				<h4 class="listing__text">{{ item.image_title }}</h4>
+			</a>
+		{% endfor %}
 	</div>
 </div>
+<div class="video-wrapper lateral-spacing">
+	{% if module.dynamic_video %}
+		{% set default_video = module.items[0] %}
+		{% set default_video_url = default_video.url.href %}
+		{% set default_video_subtitle = default_video.video_subtitle %}
+	
+		<iframe
+			src="{{ default_video_url }}"
+			allow="camera *; microphone *; autoplay *; encrypted-media *; fullscreen *; display-capture *;"
+			width="100%"
+			height="600px"
+			class="dynamic-video"
+		>
+		</iframe>
+	
+		<p class="video-subtitle js-video-subtitle">
+			{{ default_video_subtitle }}
+		</p>
+	{% endif %}
+</div>
 
-{% if module.dynamic_video %}
-	{% set default_video = module.items[0] %}
-	{% set default_video_url = default_video.url.href %}
-	{% set default_video_subtitle = default_video.video_subtitle %}
-
-	<iframe 
-		src="{{ default_video_url }}"
-		allow="camera *; microphone *; autoplay *; encrypted-media *; fullscreen *; display-capture *;"
-		width="100%"
-		height="600px"
-		class="dynamic-video lateral-spacing"
-	>
-	</iframe>
-
-	<p class="video-subtitle js-video-subtitle">
-		{{ default_video_subtitle }}
-	</p>
-{% endif %}
 
 
 
