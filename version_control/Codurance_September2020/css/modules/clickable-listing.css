@@ -50,6 +50,12 @@
     border-radius: 24px;
 }
 
+.video-subtitle {
+    font-weight: var(--middle-font-weight);
+    margin-top: var(--freed-margin);
+    text-align: center;
+}
+
 {% call utils.medium_large_and_extra_large() %}
     .listing__images {
         flex-direction: row;
@@ -67,6 +73,10 @@
 
     .listing__text {
         margin-top: .6em;
+    }
+
+    .video-subtitle {
+        {{ utils.freed() }}
     }
 {% endcall %}
 
