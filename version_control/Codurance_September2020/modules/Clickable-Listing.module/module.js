@@ -24,7 +24,17 @@ function changeDynamicVideoByLink(event) {
     event.preventDefault();
 
     dynamicVideo.src = clickableLink.href;
+
+    updateVideoSubtitle(clickableLink);
+
     changeActiveClickableLink(clickableLink);
+}
+
+function updateVideoSubtitle(clickableLink) {
+    const videoSubtitleContainer = document.querySelector(".js-video-subtitle");
+    const videoSubtitleText = clickableLink.dataset.videoSubtitle;
+
+    videoSubtitleContainer.textContent = videoSubtitleText;
 }
 
 function changeActiveClickableLink(clickableLink) {
