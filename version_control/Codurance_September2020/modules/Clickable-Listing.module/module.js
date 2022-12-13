@@ -24,9 +24,9 @@ function changeDynamicVideoByLink(event) {
     event.preventDefault();
 
     dynamicVideo.src = clickableLink.href;
+    dynamicVideo.scrollIntoView();
 
     updateVideoSubtitle(clickableLink);
-
     changeActiveClickableLink(clickableLink);
 }
 
