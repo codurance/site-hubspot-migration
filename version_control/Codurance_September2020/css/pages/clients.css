@@ -2,7 +2,8 @@
 
 .public-sector {
   background-color: var(--athens-gray);
-  padding: 1em;
+  {{ utils.color1_to_color2("0deg", "var(--athens-gray)","white") }}
+  padding: 1.5em 1em;
 }
 
 .public-sector .text-and-image__container {
