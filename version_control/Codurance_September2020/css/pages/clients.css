@@ -1,0 +1,18 @@
+{% import '../utils/utils.css' as utils %}
+
+.public-sector {
+  background-color: var(--athens-gray);
+  {{ utils.color1_to_color2("0deg", "var(--athens-gray)","white") }}
+  padding: 1.5em 1em;
+}
+
+.public-sector .text-and-image__container {
+  justify-content: start;
+  gap: 3em;
+}
+
+{% call utils.small()%}
+  .public-sector .text-and-image__image {
+    display: none;
+  }
+{%endcall%}

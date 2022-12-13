@@ -1,7 +1,7 @@
 {{ require_css(get_asset_url("../../css/modules/filtered-clients.css")) }}
 {% import '../../partials/clients-page-cards.html' as cards %}
 
-{% set clients = hubdb_table_rows(module.clients_table, 'orderBy=-testimonial_text&orderBy=-case_study_display_image_large&orderBy=-video') %}
+{% set clients = hubdb_table_rows(module.clients_table) %}
 
 {% set allIndustries = [] %}
 {% set allTechnologies = [] %}
