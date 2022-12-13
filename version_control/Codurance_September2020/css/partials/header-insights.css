@@ -10,8 +10,6 @@
 .header-insights__container {
     display: flex;
     flex-direction: column-reverse;
-    max-width: calc(var(--content-max-width) + 4rem);
-    padding-inline: 2rem;
     margin-inline: auto;
 }
 
