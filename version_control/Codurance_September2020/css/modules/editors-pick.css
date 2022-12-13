@@ -111,7 +111,6 @@
     }
 
     .cm-editors-pick__small_items {
-        display: flex;
         flex-direction: column;
     }
 {% endcall %}
