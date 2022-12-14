@@ -9,18 +9,6 @@
     <h2 class="cm-editors-pick__heading">{{ module.heading }}</h2>
   {% endif %}
 
-  {% require_js %}
-    <script>
-        let js_blog_posts = [
-            {% for post in module.page_field %}
-                {{ post }},
-            {% endfor %}
-        ];
-
-        console.log({js_blog_posts});
-    </script>
-  {% end_require_js %}
-
   {% set featured_posts = module.page_field|slice(2)|first %}
   {% set other_posts = module.page_field|difference(featured_posts) %}
 
