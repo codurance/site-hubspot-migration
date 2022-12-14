@@ -1,11 +1,10 @@
 {% import '../utils/utils.css' as utils %}
 
-
 .cm-recent-post {
-  max-width: var(--content-max-width);
+  max-width: calc(var(--content-max-width) + 4rem);
+  padding-inline: 2rem;
   margin: 0 auto;
   transform: translateY(-20%);
-
 }
 
 .cm-recent-post__heading {
@@ -21,25 +20,26 @@
   .cm-recent-post {
     display: flex;
     justify-content: space-between;
-    transform: translateY(-20%);
   }
   .cm-recent-post__heading {
     width: 100%;
   }
 {% endcall%}
+
 {% call utils.large_and_extra_large() %}
   .cm-recent-post__heading {
-    marign-left: 0;
+    margin-left: 0;
   }
 {% endcall %}
-
 
 .cm-recent-post__group {
   align-items: stretch;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding-bottom: 1em;
+  padding-inline: 2rem;
+  margin-inline: -2rem;
+  padding-bottom: 0.5rem;
   overflow: scroll;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -49,8 +49,8 @@
   display: none;
 }
 
-
 {% set item_margin = 15 %}
+{% set item_border_radius = 10 %}
 
 .cm-recent-post__item {
   {{ utils.card_shadow() }}
@@ -60,6 +60,7 @@
   margin-bottom: 1.4rem;
   margin-left: {{ item_margin }}px;
   margin-right: {{ item_margin }}px;
+  border-radius: {{ item_border_radius }}px;
   min-width: 14em;
   overflow: hidden;
   position: relative;
@@ -72,16 +73,19 @@
     width: 33.333%;
   }
 {% endcall %}
+
 {% call utils.medium() %}
   .cm-recent-post__item {
     width: calc(50% - ({{ item_margin }}px * 2));
   }
 {% endcall %}
+
 {% call utils.small() %}
   .cm-recent-post__item {
     width: 100%;
   }
 {% endcall %}
+
 .cm-recent-post__item:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
 }

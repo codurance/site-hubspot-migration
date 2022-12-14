@@ -1,0 +1,73 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{{ require_css(get_asset_url("../../css/modules/editors-pick.css")) }}
+
+{% set blog_url = blog_all_posts_url(module.blog_field) %}
+
+<div class="cm-editors-pick__container">
+  {% if module.heading %}
+    <h2 class="cm-editors-pick__heading">{{ module.heading }}</h2>
+  {% endif %}
+
+  {% set featured_posts = module.page_field|slice(2)|first %}
+  {% set other_posts = module.page_field|difference(featured_posts) %}
+
+  <section class="cm-editors-pick__items">
+    <div class="cm-editors-pick__big_items">
+      {% for content_id in featured_posts %}
+        {% set featured_post = content_by_id(content_id) %}
+        <article class="cm-editors-pick__item">
+          {% if loop.index <= 2 %}
+            <figure class="cm-editors-pick__image">
+              <img src='{% image_src src="{{ featured_post.featured_image }}" no_wrapper=True %}' alt="{{ featured_post.title }}">
+            </figure>      
+          {% endif %}
+          <h3 class="cm-editors-pick__title-big">
+            {{ featured_post.name }}
+          </h3>
+          <p class="cm-editors-pick__excerpt-big">
+            {{ featured_post.postBody|striptags|truncate(130, false) }}
+            {{
+              snippets.text_cta_right_arrow(
+                url=featured_post.absolute_url,
+                text="{{ module.item_button_text }}",
+                classnames="cm-editors-pick__link",
+                aria_label_text="{{ module.aria_label_prefix_text~featured_post.name 
+                }}"
+              )
+            }}
+          </p>    
+        </article> 
+      {% endfor %}
+    </div>
+    <div class="cm-editors-pick__small_items">
+      {% for content_id in other_posts %}
+        {% set other_post = content_by_id(content_id) %}
+        <article class="cm-editors-pick__item">
+          <h3 class="cm-editors-pick__title-small">
+            {{ other_post.name }}
+          </h3>
+          <p class="cm-editors-pick__excerpt-small">
+            {{ other_post.postBody|striptags|truncate(130, false) }}
+            {{
+              snippets.text_cta_right_arrow(
+                url=other_post.absolute_url,
+                classnames="cm-editors-pick__link cm-editors-pick__link-small",
+                aria_label_text="{{ module.aria_label_prefix_text~other_post.name 
+                }}"
+              )
+            }}
+          </p>    
+        </article> 
+      {% endfor %}
+    </div>
+  </section>
+  {{
+    snippets.button_primary(
+      url=blog_url,
+      text="{{ module.button_text }}",
+      aria_label_text="{{ module.button_text }}"
+    )
+  }}
+</div>
+
