@@ -5,27 +5,18 @@ label: Clients
 -->
 {% extends "./layouts/base.html" %}
 
-<head>
-  <meta charset="utf-8">
-  <title>{{ page_meta.html_title }}</title>
-  {% if site_settings.favicon_src %}
-  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
-  {% endif %}
-  <meta name="description" content="{{ page_meta.meta_description }}">
-  {{ require_css(get_asset_url("../css/layout.css")) }}
-  {{ require_css(get_asset_url("../css/main.css")) }}
-  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
 
-  {{ require_js(get_asset_url("../js/main.js")) }}
-  {{ standard_header_includes }}
-  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
-  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
-</head>
+  {{ require_css(get_asset_url("../css/pages/clients.css")) }}
 
 {% block body %}
     <section>
       {% module "page_hero_slice" path="../modules/Hero Slice.module" label="Hero Slice" no_wrapper=True %}
     </section>
+    {% if locale == 'en' %}
+      <section class="public-sector">
+        {% module "public_service_banner" path="../modules/Text-and-image.module" label="Public Services Banner"    no_wrapper=True %}
+      </section>
+    {% endif %}
     <section>
       {% module "filtered_clients" path="../modules/Filtered Clients.module"
         label="Filtered Clients" no_wrapper=True %}
