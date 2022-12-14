@@ -4,7 +4,7 @@
     margin-bottom: -3rem;
 }
 
-.header-insights__container {
+.insights-overview-hero .header-insights__container {
     max-width: calc(var(--content-max-width) + 4rem);
     padding-inline: 2rem;
 }
