@@ -1,0 +1,57 @@
+{% import '../utils/utils.css' as utils %}
+
+
+.cm-codurance-in-motion__container {
+    max-width: calc(var(--content-max-width) + 4rem);
+    padding-inline: 2rem;
+    margin-inline: auto;
+    display: grid;
+    grid-gap: 2rem;
+}
+
+.cm-codurance-in-motion__heading {
+    {{ utils.eames() }}
+    line-height: var(--dudler-line-height);
+    margin-bottom: 0.5rem;
+    margin-top: -0.4rem;
+}
+
+.cm-codurance-in-motion__button {
+    margin-top: 1.5rem;
+}
+
+{% call utils.small() %}
+.cm-codurance-in-motion__button {
+    margin-bottom: 2rem;
+}
+{% endcall %}
+
+.cm-codurance-in-motion__video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.cm-codurance-in-motion__video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+}
+
+.cm-codurance-in-motion__video-title {
+    padding-block: 1rem;
+    font-size: var(--base-font-size);
+    font-weight: var(--heavy-font-weight);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .cm-codurance-in-motion__container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+{% endcall %}

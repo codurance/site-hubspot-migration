@@ -10,8 +10,8 @@
 .header-insights__container {
     display: flex;
     flex-direction: column-reverse;
-    max-width: var(--content-max-width);
     margin-inline: auto;
+    max-width: var(--content-max-width);
 }
 
 .header-insights__text {
@@ -59,6 +59,7 @@
 {% call utils.small_and_medium() %}
     .header-insights__container {
         padding-bottom: 2em;
+        padding-inline: 0;
     }
 {% endcall %}
 
