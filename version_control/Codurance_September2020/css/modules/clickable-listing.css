@@ -29,7 +29,7 @@
 .listing__img {
     width: 10em;
     border-radius: 50%;
-    transition: all ease-in-out 200ms;
+    transition: box-shadow ease-in-out 200ms;
 }
 
 .listing__text {
@@ -42,12 +42,26 @@
     transition: all ease-in-out 200ms;
 }
 
-.dynamic-video {
+.video-wrapper {
+    margin-top: 2em;
+}
+
+.dynamic-video,
+.video-subtitle  {
     max-width: 1024px;
-    margin: 4em auto 0 auto;
+    margin: 0 auto;
+    
+}
+.dynamic-video {
     display: block;
     border: none; 
     border-radius: 24px;
+}
+
+
+.video-subtitle {
+    font-weight: var(--middle-font-weight);
+    margin-top: var(--base-margin);
 }
 
 {% call utils.medium_large_and_extra_large() %}
@@ -68,6 +82,7 @@
     .listing__text {
         margin-top: .6em;
     }
+
 {% endcall %}
 
 {% call utils.small() %}
