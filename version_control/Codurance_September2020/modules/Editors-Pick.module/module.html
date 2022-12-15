@@ -26,7 +26,7 @@
             {{ featured_post.name }}
           </h3>
           <p class="cm-editors-pick__excerpt-big">
-            {{ featured_post.postBody|striptags|truncate(130, false) }}
+            {{ featured_post.meta_description }}
             {{
               snippets.text_cta_right_arrow(
                 url=featured_post.absolute_url,
@@ -48,7 +48,7 @@
             {{ other_post.name }}
           </h3>
           <p class="cm-editors-pick__excerpt-small">
-            {{ other_post.postBody|striptags|truncate(130, false) }}
+            {{ other_post.meta_description }}
             {{
               snippets.text_cta_right_arrow(
                 url=other_post.absolute_url,
