@@ -1,41 +1,41 @@
 let hsSearch = function (_instance) {
   const TYPEAHEAD_LIMIT = 5;
   let KEYS = {
-    TAB: 'Tab',
-    ESC: 'Esc', // IE11 & Edge 16 value for Escape
-    ESCAPE: 'Escape',
-    UP: 'Up', // IE11 & Edge 16 value for Arrow Up
-    ARROW_UP: 'ArrowUp',
-    DOWN: 'Down', // IE11 & Edge 16 value for Arrow Down
-    ARROW_DOWN: 'ArrowDown',
+    TAB: "Tab",
+    ESC: "Esc", // IE11 & Edge 16 value for Escape
+    ESCAPE: "Escape",
+    UP: "Up", // IE11 & Edge 16 value for Arrow Up
+    ARROW_UP: "ArrowUp",
+    DOWN: "Down", // IE11 & Edge 16 value for Arrow Down
+    ARROW_DOWN: "ArrowDown"
   };
-  let searchTerm = '',
+  let searchTerm = "",
     htmlLang = document.documentElement.lang,
     searchForm = _instance,
-    searchField = _instance.querySelector('.hs-search-field__input'),
-    searchResults = _instance.querySelector('.hs-search-field__suggestions'),
-    searchOptions = function() {
+    searchField = _instance.querySelector(".hs-search-field__input"),
+    searchResults = _instance.querySelector(".hs-search-field__suggestions"),
+    searchOptions = function () {
       let formParams = [];
-      let form = _instance.querySelector('form');
+      let form = _instance.querySelector("form");
       for (
         let i = 0;
-        i < form.querySelectorAll('input[type=hidden]').length;
+        i < form.querySelectorAll("input[type=hidden]").length;
         i++
       ) {
-        let e = form.querySelectorAll('input[type=hidden]')[i];
-        if (e.name !== 'limit') {
+        let e = form.querySelectorAll("input[type=hidden]")[i];
+        if (e.name !== "limit") {
           formParams.push(
-            encodeURIComponent(e.name) + '=' + encodeURIComponent(e.value)
+            encodeURIComponent(e.name) + "=" + encodeURIComponent(e.value)
           );
         }
       }
-      let queryString = formParams.join('&');
+      let queryString = formParams.join("&");
       return queryString;
     };
 
   let debounce = function (func, wait, immediate) {
-    let timeout;
-      return function() {
+      let timeout;
+      return function () {
         let context = this,
           args = arguments;
         let later = function () {
@@ -52,20 +52,19 @@ let hsSearch = function (_instance) {
         }
       };
     },
-    emptySearchResults = function() {
-      searchResults.innerHTML = '';
+    emptySearchResults = function () {
+      searchResults.innerHTML = "";
       searchField.focus();
-      searchForm.classList.remove('hs-search-field--open');
+      searchForm.classList.remove("hs-search-field--open");
     },
-
-    fillSearchResults = function(response) {
-      let searchMessage = htmlLang == 'es' ? "Resultados para" : "Results for";
+    fillSearchResults = function (response) {
+      let searchMessage = htmlLang == "es" ? "Resultados para" : "Results for";
       let items = [];
       items.push(
         `<li id='results-for'>${searchMessage} "${response.searchTerm}"</li>`
       );
 
-      response.results.forEach(function(val, index) {
+      response.results.forEach(function (val, index) {
         items.push(
           `<li id="result${index}">
             <a href="${val.url}"> ${val.title}</a>
@@ -74,21 +73,21 @@ let hsSearch = function (_instance) {
       });
 
       emptySearchResults();
-      searchResults.innerHTML = items.join('');
-      searchForm.classList.add('hs-search-field--open');
+      searchResults.innerHTML = items.join("");
+      searchForm.classList.add("hs-search-field--open");
     },
-    getSearchResults = function() {
+    getSearchResults = function () {
       let request = new XMLHttpRequest();
       let requestUrl =
-        '/_hcms/search?&term=' +
+        "/_hcms/search?&term=" +
         encodeURIComponent(searchTerm) +
-        '&limit=' +
+        "&limit=" +
         encodeURIComponent(TYPEAHEAD_LIMIT) +
-        '&autocomplete=true&analytics=true&' +
+        "&autocomplete=true&analytics=true&" +
         searchOptions();
 
-      request.open('GET', requestUrl, true);
-      request.onload = function() {
+      request.open("GET", requestUrl, true);
+      request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
           let data = JSON.parse(request.responseText);
           if (data.total > 0) {
@@ -98,18 +97,18 @@ let hsSearch = function (_instance) {
             emptySearchResults();
           }
         } else {
-          console.error('Server reached, error retrieving results.');
+          console.error("Server reached, error retrieving results.");
         }
       };
-      request.onerror = function() {
-        console.error('Could not reach the server.');
+      request.onerror = function () {
+        console.error("Could not reach the server.");
       };
       request.send();
     },
-    trapFocus = function() {
+    trapFocus = function () {
       let tabbable = [];
       tabbable.push(searchField);
-      let tabbables = searchResults.getElementsByTagName('A');
+      let tabbables = searchResults.getElementsByTagName("A");
       for (let i = 0; i < tabbables.length; i++) {
         tabbable.push(tabbables[i]);
       }
@@ -124,31 +123,31 @@ let hsSearch = function (_instance) {
             lastTabbable.focus();
           }
         },
-        nextResult = function(e) {
+        nextResult = function (e) {
           e.preventDefault();
           if (e.target == lastTabbable) {
             firstTabbable.focus();
           } else {
-            tabbable.forEach(function(el) {
+            tabbable.forEach(function (el) {
               if (el == e.target) {
                 tabbable[tabbable.indexOf(el) + 1].focus();
               }
             });
           }
         },
-        lastResult = function(e) {
+        lastResult = function (e) {
           e.preventDefault();
           if (e.target == firstTabbable) {
             lastTabbable.focus();
           } else {
-            tabbable.forEach(function(el) {
+            tabbable.forEach(function (el) {
               if (el == e.target) {
                 tabbable[tabbable.indexOf(el) - 1].focus();
               }
             });
           }
         };
-      searchForm.addEventListener('keydown', function(e) {
+      searchForm.addEventListener("keydown", function (e) {
         switch (e.key) {
           case KEYS.TAB:
             tabResult(e);
@@ -168,7 +167,7 @@ let hsSearch = function (_instance) {
         }
       });
     },
-    isSearchTermPresent = debounce(function() {
+    isSearchTermPresent = debounce(function () {
       searchTerm = searchField.value;
       if (searchTerm.length > 2) {
         getSearchResults();
@@ -178,15 +177,17 @@ let hsSearch = function (_instance) {
     }, 250),
     clearResultsOnClick = function () {
       document.addEventListener("click", (e) => {
-        if (!searchField.contains(e.target) &&
-          !searchResults.contains(e.target)) {
+        if (
+          !searchField.contains(e.target) &&
+          !searchResults.contains(e.target)
+        ) {
           emptySearchResults();
         }
-      })
+      });
     },
-    init = (function() {
+    init = (function () {
       clearResultsOnClick();
-      searchField.addEventListener('input', function(e) {
+      searchField.addEventListener("input", function (e) {
         if (searchTerm != searchField.value) {
           isSearchTermPresent();
         }
@@ -196,17 +197,17 @@ let hsSearch = function (_instance) {
 
 if (
   document.attachEvent
-    ? document.readyState === 'complete'
-    : document.readyState !== 'loading'
+    ? document.readyState === "complete"
+    : document.readyState !== "loading"
 ) {
-  let searchResults = document.querySelectorAll('.hs-search-field');
-  Array.prototype.forEach.call(searchResults, function(el) {
+  let searchResults = document.querySelectorAll(".hs-search-field");
+  Array.prototype.forEach.call(searchResults, function (el) {
     let hsSearchModule = hsSearch(el);
   });
 } else {
-  document.addEventListener('DOMContentLoaded', function() {
-    let searchResults = document.querySelectorAll('.hs-search-field');
-    Array.prototype.forEach.call(searchResults, function(el) {
+  document.addEventListener("DOMContentLoaded", function () {
+    let searchResults = document.querySelectorAll(".hs-search-field");
+    Array.prototype.forEach.call(searchResults, function (el) {
       let hsSearchModule = hsSearch(el);
     });
   });

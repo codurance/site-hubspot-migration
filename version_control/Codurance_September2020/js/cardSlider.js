@@ -2,16 +2,16 @@ class CardSlider {
   constructor({
     activationPoint = 1023,
     navigationControl = true,
-    cardWindowSelector = '[data-cardslider-window]',
-    trackSelector = '[data-cardslider-track]',
-    cardsSelector = '[data-cardslider-card]',
-    leftButtonSelector = '[data-cardslider-button-left]',
-    rightButtonSelector = '[data-cardslider-button-right]',
-    filterButtonSelector = '[data-card-filter-button]',
-    cardTypeSelector = '[data-card-type]',
-    cardHeadingSelector = '[data-card-heading]',
-    watchAllCtaSelector = '[data-watch-all-cta]',
-    animatingClass = 'animating',
+    cardWindowSelector = "[data-cardslider-window]",
+    trackSelector = "[data-cardslider-track]",
+    cardsSelector = "[data-cardslider-card]",
+    leftButtonSelector = "[data-cardslider-button-left]",
+    rightButtonSelector = "[data-cardslider-button-right]",
+    filterButtonSelector = "[data-card-filter-button]",
+    cardTypeSelector = "[data-card-type]",
+    cardHeadingSelector = "[data-card-heading]",
+    watchAllCtaSelector = "[data-watch-all-cta]",
+    animatingClass = "animating",
     filters = false,
     ctaContainerSelector = null
   }) {
@@ -27,7 +27,7 @@ class CardSlider {
     this.cardProperties = {
       width: this.cards[0].getBoundingClientRect().width,
       margin: parseFloat(window.getComputedStyle(this.cards[0]).marginRight)
-    }
+    };
 
     if (filters) {
       this.filterButtons = Array.prototype.slice.call(
@@ -48,8 +48,6 @@ class CardSlider {
     if (ctaContainerSelector) {
       this.ctaContainer = document.querySelector(ctaContainerSelector);
     }
-
-
 
     this.trackHasSetWidth = false;
     this.maxLeft = 0;
@@ -90,19 +88,19 @@ class CardSlider {
   }
 
   setUpEventListeners() {
-    window.addEventListener('resize', this.handleResize);
-    this.track.addEventListener('mousedown', this.handleMouseDown);
-    this.cardWindow.addEventListener('mouseup', this.handleMouseUp);
-    this.cardWindow.addEventListener('mouseleave', this.handleMouseUp);
-    this.track.addEventListener('touchstart', this.handleMouseDown);
-    this.cardWindow.addEventListener('touchend', this.handleMouseUp);
+    window.addEventListener("resize", this.handleResize);
+    this.track.addEventListener("mousedown", this.handleMouseDown);
+    this.cardWindow.addEventListener("mouseup", this.handleMouseUp);
+    this.cardWindow.addEventListener("mouseleave", this.handleMouseUp);
+    this.track.addEventListener("touchstart", this.handleMouseDown);
+    this.cardWindow.addEventListener("touchend", this.handleMouseUp);
     if (this.navigationControl) {
-      this.leftButton.addEventListener('click', this.navigateLeft);
-      this.rightButton.addEventListener('click', this.navigateRight);
+      this.leftButton.addEventListener("click", this.navigateLeft);
+      this.rightButton.addEventListener("click", this.navigateRight);
     }
     if (this.filterButtons) {
-      this.filterButtons.forEach(button => {
-        button.addEventListener('click', () => this.handleFilterClick(button));
+      this.filterButtons.forEach((button) => {
+        button.addEventListener("click", () => this.handleFilterClick(button));
       });
     }
   }
@@ -141,10 +139,11 @@ class CardSlider {
 
     const totalMargin = cardMargin * 2 * this.visibleCards.length;
 
-    const totalWidthOfTrack = totalWidthOfVisibleCards + totalMargin + trackPadding;
+    const totalWidthOfTrack =
+      totalWidthOfVisibleCards + totalMargin + trackPadding;
 
     if (totalWidthOfTrack) {
-      this.track.style.width = totalWidthOfTrack + 'px';
+      this.track.style.width = totalWidthOfTrack + "px";
       this.trackHasSetWidth = true;
     }
   }
@@ -159,7 +158,7 @@ class CardSlider {
   resetTrackPosition() {
     this.currentPosition = 0;
     this.onDragStartLeftPosition = 0;
-    this.track.style.left = '0px';
+    this.track.style.left = "0px";
   }
 
   checkButtonState() {
@@ -172,10 +171,10 @@ class CardSlider {
   }
 
   disableNavButton(button) {
-    button.setAttribute('disabled', true);
+    button.setAttribute("disabled", true);
   }
   enableNavButton(button) {
-    button.removeAttribute('disabled');
+    button.removeAttribute("disabled");
   }
 
   atEndOfTrack() {
@@ -187,12 +186,12 @@ class CardSlider {
       return parseFloat(this.track.style.left);
     }
     return parseFloat(
-      window.getComputedStyle(this.track).getPropertyValue('left')
+      window.getComputedStyle(this.track).getPropertyValue("left")
     );
   }
 
   resetTrackWidth() {
-    this.track.style.removeProperty('width');
+    this.track.style.removeProperty("width");
     this.trackHasSetWidth = false;
   }
 
@@ -212,20 +211,20 @@ class CardSlider {
   }
 
   makeCtaContainerVisible() {
-    this.ctaContainer.style.removeProperty('display');
+    this.ctaContainer.style.removeProperty("display");
   }
 
   hideCtaContainer() {
-    this.ctaContainer.style.display = 'none';
+    this.ctaContainer.style.display = "none";
   }
 
   keepTrackLeftWithinMaximum() {
     const currentLeft = parseFloat(this.track.style.left);
-    this.track.style.left = Math.max(currentLeft, this.maxLeft) + 'px';
+    this.track.style.left = Math.max(currentLeft, this.maxLeft) + "px";
   }
   returnToStartPosition() {
     this.addAnimationClass();
-    this.track.style.left = this.onDragStartLeftPosition + 'px';
+    this.track.style.left = this.onDragStartLeftPosition + "px";
   }
 
   handleResize() {
@@ -238,13 +237,13 @@ class CardSlider {
     }
   }
   handleMouseDown(e) {
-    window.addEventListener('touchmove', this.handleDrag);
-    window.addEventListener('mousemove', this.handleDrag);
+    window.addEventListener("touchmove", this.handleDrag);
+    window.addEventListener("mousemove", this.handleDrag);
     this.logMouseDown(this.unify(e).clientX);
   }
   handleMouseUp(e) {
-    window.removeEventListener('touchmove', this.handleDrag);
-    window.removeEventListener('mousemove', this.handleDrag);
+    window.removeEventListener("touchmove", this.handleDrag);
+    window.removeEventListener("mousemove", this.handleDrag);
     if (this.mousePositionDifference >= this.minSwipeThreshold) {
       this.navigateLeft();
     } else if (this.mousePositionDifference <= -this.minSwipeThreshold) {
@@ -259,7 +258,7 @@ class CardSlider {
       this.unify(e).clientX
     );
     let newLeft = this.onDragStartLeftPosition + this.mousePositionDifference;
-    this.track.style.left = newLeft + 'px';
+    this.track.style.left = newLeft + "px";
   }
 
   navigate(leftPos, targetPos) {
@@ -300,7 +299,7 @@ class CardSlider {
 
   addAnimationClass() {
     this.track.classList.add(this.animatingClass);
-    this.track.addEventListener('transitionend', () =>
+    this.track.addEventListener("transitionend", () =>
       this.removeAnimationClass()
     );
   }
@@ -328,7 +327,8 @@ class CardSlider {
   }
 
   handleFilterClick(button) {
-    const type = button.dataset[this.convertDataAttributeToKey(this.filterButtonSelector)]
+    const type =
+      button.dataset[this.convertDataAttributeToKey(this.filterButtonSelector)];
     this.changeHeading(type);
     this.updateCta(type);
     this.filterCards(type);
@@ -338,27 +338,35 @@ class CardSlider {
   }
 
   changeHeading(type) {
-    Array.prototype.slice.call(
-      document.querySelectorAll(this.cardHeadingSelector)
-    ).forEach((heading) => {
-      if (heading.dataset[this.convertDataAttributeToKey(this.cardHeadingSelector)] === type) {
-        heading.classList.remove('hidden');
-      }else {
-        heading.classList.add('hidden');
-      }
-    })
+    Array.prototype.slice
+      .call(document.querySelectorAll(this.cardHeadingSelector))
+      .forEach((heading) => {
+        if (
+          heading.dataset[
+            this.convertDataAttributeToKey(this.cardHeadingSelector)
+          ] === type
+        ) {
+          heading.classList.remove("hidden");
+        } else {
+          heading.classList.add("hidden");
+        }
+      });
   }
 
   updateCta(type) {
-    Array.prototype.slice.call(
-      document.querySelectorAll(this.watchAllCtaSelector)
-    ).forEach((cta) => {
-      if (cta.dataset[this.convertDataAttributeToKey(this.watchAllCtaSelector)] === type) {
-        cta.classList.remove('hidden');
-      }else {
-        cta.classList.add('hidden');
-      }
-    })
+    Array.prototype.slice
+      .call(document.querySelectorAll(this.watchAllCtaSelector))
+      .forEach((cta) => {
+        if (
+          cta.dataset[
+            this.convertDataAttributeToKey(this.watchAllCtaSelector)
+          ] === type
+        ) {
+          cta.classList.remove("hidden");
+        } else {
+          cta.classList.add("hidden");
+        }
+      });
   }
 
   updateTrack() {
@@ -371,35 +379,43 @@ class CardSlider {
   }
 
   filterCards(type) {
-    this.cards.forEach(card => {
-      card.dataset[this.convertDataAttributeToKey(this.cardTypeSelector)] === type || type === 'all'
-         ? this.displayCard(card)
-         : this.hideCard(card);
-    })
+    this.cards.forEach((card) => {
+      card.dataset[this.convertDataAttributeToKey(this.cardTypeSelector)] ===
+        type || type === "all"
+        ? this.displayCard(card)
+        : this.hideCard(card);
+    });
   }
 
   displayCard(card) {
-    card.classList.remove('hidden');
+    card.classList.remove("hidden");
   }
 
   hideCard(card) {
-    card.classList.add('hidden');
+    card.classList.add("hidden");
   }
 
   changeActiveFilterButton(activeButton) {
-    this.filterButtons.forEach(button => {
+    this.filterButtons.forEach((button) => {
       button === activeButton
-        ? button.classList.add('active')
-        : button.classList.remove('active');
-    })
+        ? button.classList.add("active")
+        : button.classList.remove("active");
+    });
   }
 
   updateVisibleCards() {
-    this.visibleCards = this.cards.filter(card => !card.classList.contains('hidden'));
+    this.visibleCards = this.cards.filter(
+      (card) => !card.classList.contains("hidden")
+    );
   }
 
   convertDataAttributeToKey(attribute) {
-    return attribute.slice(6,-1).split('-').map((word, index) =>
-      index > 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word).join('');
+    return attribute
+      .slice(6, -1)
+      .split("-")
+      .map((word, index) =>
+        index > 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word
+      )
+      .join("");
   }
 }
