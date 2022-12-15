@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "upload": "npx hs upload version_control version_control",
-    "watch:dev": "hs watch --portal=sandbox version_control version_control --initial-upload --remove"
+    "watch:dev": "hs watch --portal=sandbox version_control version_control --initial-upload --remove",
+    "prettier": "npx prettier --write --trailing-comma none '**/*.js'"
   },
   "repository": {
     "type": "git",
