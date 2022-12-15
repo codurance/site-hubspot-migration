@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "hubspot.hubl",
+        "maglabs.hubspot-hubl-snippets",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+    ]
+}
