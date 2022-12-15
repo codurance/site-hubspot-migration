@@ -21,7 +21,9 @@
         <article class="cm-editors-pick__item">
           {% if loop.index <= 2 %}
             <figure class="cm-editors-pick__image">
-              <img src='{% image_src src="{{ featured_post.featured_image }}" no_wrapper=True %}' alt="{{ featured_post.title }}">
+              {% if featured_post.featured_image %}
+                <img src='{% image_src src="{{ featured_post.featured_image }}" no_wrapper=True %}' alt="{{ featured_post.title }}">
+              {% endif %}
             </figure>      
           {% endif %}
           <h3 class="cm-editors-pick__title-big">
