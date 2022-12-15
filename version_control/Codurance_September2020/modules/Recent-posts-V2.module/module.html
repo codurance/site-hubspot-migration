@@ -8,7 +8,6 @@
   <div class="cm-recent-post__group">
     {% for post in recent_posts %}
       <div class="cm-recent-post__item">
-        {#% set style = post.featured_image ? "background-image:url({{ post.featured_image }})" : "background-color: {{ theme.global_colors.secondary_color.color }}" %#}
         {% set style = post.featured_image ? "background-image:url({{ post.featured_image }})" : "{{ utils.tango_to_white() }}" %}
         <div class="cm-recent-image-wrapper" style="{{ style }}"></div>
         <div class="cm-recent-post__inner">
