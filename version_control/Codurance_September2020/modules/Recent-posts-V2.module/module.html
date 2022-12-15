@@ -1,4 +1,5 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
+{% import '../../css/utils/utils.css' as utils %}
 
 {{ require_css(get_asset_url("../../css/modules/recent-posts-v2.css")) }}
 
@@ -7,9 +8,9 @@
   <div class="cm-recent-post__group">
     {% for post in recent_posts %}
       <div class="cm-recent-post__item">
-        {% if post.featured_image %}
-          <div class="cm-recent-image-wrapper" style="background-image:url({{ post.featured_image }})"></div>
-        {% endif %}
+        {#% set style = post.featured_image ? "background-image:url({{ post.featured_image }})" : "background-color: {{ theme.global_colors.secondary_color.color }}" %#}
+        {% set style = post.featured_image ? "background-image:url({{ post.featured_image }})" : "{{ utils.tango_to_white() }}" %}
+        <div class="cm-recent-image-wrapper" style="{{ style }}"></div>
         <div class="cm-recent-post__inner">
           <div class="cm-recent-post__info-wrapper">
             <small class="cm-recent-post__meta-info">{{ post.publish_date_local_time|datetimeformat("%d %b %Y") }} - {{ post.blog_post_author.display_name }}</small>
