@@ -18,15 +18,13 @@
       {% for content_id in featured_posts %}
         {% set featured_post = content_by_id(content_id) %}
         {% set contentType = featured_post.CMSContentType.valueDescriptor.name %}
-        {% set title = contentType == "STANDARD_PAGE" ? featured_post.title : featured_post.name %}
+        {% set title = contentType == ("STANDARD_PAGE" or "LANDING_PAGE") ? featured_post.title : featured_post.name %}
         <article class="cm-editors-pick__item">
-          {% if loop.index <= 2 %}
             <figure class="cm-editors-pick__image">
               {% if featured_post.featured_image %}
                 <img src='{% image_src src="{{ featured_post.featured_image }}" no_wrapper=True %}' alt="{{ featured_post.title }}">
               {% endif %}
             </figure>      
-          {% endif %}
           <h3 class="cm-editors-pick__title-big">
             {{ title }}
           </h3>
