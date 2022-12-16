@@ -107,6 +107,15 @@
 {% endcall %}
 
 {% call utils.small() %}
+       .cm-editors-pick__items {
+        margin-bottom: 1.5rem;
+    }
+
+    .cm-editors-pick__big_items, .cm-editors-pick__small_items {
+        display: grid;
+        gap: 1.5rem;
+    }
+
     .cm-editors-pick__image {
         margin-bottom: 0.5rem;
     }
