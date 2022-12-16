@@ -1,0 +1,7 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{% macro truncate_description(text, character_limit) %}
+{{ text|safe|striptags|truncatehtml(character_limit, ' ...' , false) }}
+{% endmacro %}

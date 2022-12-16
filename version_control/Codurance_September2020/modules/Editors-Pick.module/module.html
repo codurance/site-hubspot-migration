@@ -1,4 +1,5 @@
-{% import '../../snippets/button-snippets.html' as snippets %}
+{% import '../../snippets/button-snippets.html' as button_snippets %}
+{% import '../../snippets/insights-overview-snippets.html' as description_snippets %}
 
 {{ require_css(get_asset_url("../../css/modules/editors-pick.css")) }}
 
@@ -30,9 +31,14 @@
             {{ title }}
           </h3>
           <p class="cm-editors-pick__excerpt-big">
-            {{ featured_post.meta_description }}
+            {{ 
+              description_snippets.truncate_description(
+                text=featured_post.meta_description,
+                character_limit=150
+              )
+            }}
             {{
-              snippets.text_cta_right_arrow(
+              button_snippets.text_cta_right_arrow(
                 url=featured_post.absolute_url,
                 text="{{ module.item_button_text }}",
                 classnames="cm-editors-pick__link",
@@ -54,9 +60,14 @@
             {{ title }}
           </h3>
           <p class="cm-editors-pick__excerpt-small">
-            {{ other_post.meta_description }}
+            {{ 
+              description_snippets.truncate_description(
+                text=other_post.meta_description,
+                character_limit=150
+              )
+            }}
             {{
-              snippets.text_cta_right_arrow(
+              button_snippets.text_cta_right_arrow(
                 url=other_post.absolute_url,
                 classnames="cm-editors-pick__link cm-editors-pick__link-small",
                 aria_label_text="{{ module.aria_label_prefix_text~other_post.name 
@@ -69,7 +80,7 @@
     </div>
   </section>
   {{
-    snippets.button_primary(
+    button_snippets.button_primary(
       url=blog_url,
       text="{{ module.button_text }}",
       aria_label_text="{{ module.button_text }}"
