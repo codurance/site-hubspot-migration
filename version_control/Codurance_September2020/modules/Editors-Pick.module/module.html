@@ -17,8 +17,6 @@
     <div class="cm-editors-pick__big_items">
       {% for content_id in featured_posts %}
         {% set featured_post = content_by_id(content_id) %}
-        {% set contentType = featured_post.CMSContentType.valueDescriptor.name %}
-        {% set title = contentType == ("STANDARD_PAGE" or "LANDING_PAGE") ? featured_post.title : featured_post.name %}
         <article class="cm-editors-pick__item">
             <figure class="cm-editors-pick__image">
               {% if featured_post.featured_image %}
@@ -26,7 +24,7 @@
               {% endif %}
             </figure>      
           <h3 class="cm-editors-pick__title-big">
-            {{ title }}
+            {{ description_snippets.title(featured_post) }}
           </h3>
           <p class="cm-editors-pick__excerpt-big">
             {{ 
@@ -51,11 +49,9 @@
     <div class="cm-editors-pick__small_items">
       {% for content_id in other_posts %}
         {% set other_post = content_by_id(content_id) %}
-        {% set contentType = other_post.CMSContentType.valueDescriptor.name %}
-        {% set title = contentType == "STANDARD_PAGE" ? other_post.title : other_post.name %}
         <article class="cm-editors-pick__item">
           <h3 class="cm-editors-pick__title-small">
-            {{ title }}
+            {{ description_snippets.title(other_post) }}
           </h3>
           <p class="cm-editors-pick__excerpt-small">
             {{ 
