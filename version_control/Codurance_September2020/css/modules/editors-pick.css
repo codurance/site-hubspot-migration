@@ -7,7 +7,7 @@
 {% endmacro %}
 
 .cm-editors-pick__container {
-    max-width:var(--content-max-width);
+    max-width: var(--content-max-width);
     margin: 0px auto;
 }
 
