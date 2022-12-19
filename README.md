@@ -5,6 +5,12 @@ The Codurance HubSpot account for managing content is [here](https://app.hubspot
 
 # Getting Started - Dev Environment
 
+## Recommended IDE
+The IDE that we recommend to use with this repository for ease of use is VS Code, since we already have defined on the .vscode folder of the workspace some general settings for this IDE's editor along with the following recommended extensions:
+- Hubspot VS Code Extension: Introduces new file languages to integrate the Hubspot CMS specific language (HubL) with HTML and CSS (HTML + HUBL and CSS + HUBL), enabling syntax highlighting and some format options.
+- ESLint: Linter for the JavaScript files. Helps to debug errors on any JS code.  
+- Prettier: Code formatter. We only have it enabled for the JS files for now, since at this moment it doesn't work well with HubL syntax. The corresponding configuration file is called .prettierrc and can be found at the root of the project.
+
 ## Prerequisites:
 1. Have a [developer sandbox](#👩‍💻-developer-sandbox) account on HubSpot.
 2. Have installed Node.js and `npm`
