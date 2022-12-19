@@ -1,0 +1,29 @@
+[ {
+  "id" : "ac877392-7706-79a3-10d1-c3acbf6277a9",
+  "name" : "hubdbrow_field",
+  "display_width" : null,
+  "label" : "HubDB row",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 2,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "table_name_or_id" : "videos",
+  "columns_to_fetch" : [ "thumbnail", "name", "description", "video" ],
+  "display_columns" : [ "name" ],
+  "type" : "hubdbrow",
+  "default" : {
+    "id" : null
+  }
+}, {
+  "id" : "a1575ee9-8da5-7f17-c87f-2f7108c4902a",
+  "name" : "hubdb_selector",
+  "display_width" : null,
+  "label" : "HubDB selector",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable"
+} ]

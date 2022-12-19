@@ -1,0 +1,9 @@
+
+{% for item in module.hubdbrow_field %}
+	{{ item.table_id }}
+	{{ item.table_name }}
+	{{ item.id }}
+	{{ item.columns }}
+{% endfor %}
+
+{{ module.hubdb_selector }}
