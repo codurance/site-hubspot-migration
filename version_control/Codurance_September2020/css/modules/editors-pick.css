@@ -7,9 +7,8 @@
 {% endmacro %}
 
 .cm-editors-pick__container {
-    max-width: calc(var(--content-max-width) + 4rem);
+    max-width:var(--content-max-width);
     margin: 0px auto;
-    padding-inline: 2rem;
 }
 
 .cm-editors-pick__title-big {

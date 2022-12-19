@@ -4,16 +4,8 @@
     margin-bottom: -3rem;
 }
 
-.insights-overview-hero .header-insights__container {
-    max-width: calc(var(--content-max-width) + 4rem);
-    padding-inline: 2rem;
-}
 
-{% call utils.medium() %}
-    .insights-overview-hero .header-insights, .recent-blog-posts .cm-recent-post, .editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
-        padding-inline: 2rem;
-    }
-
+{% call utils.medium() %} 
     .recent-blog-posts .cm-recent-post {
         padding-right: 0;
     }
@@ -24,9 +16,6 @@
 {% endcall %}
 
 {% call utils.small() %}
-    .insights-overview-hero .header-insights, .recent-blog-posts .cm-recent-post,.editors-pick .cm-editors-pick__container, .insights-overview-cta .banner, .insights-overview-videos .cm-codurance-in-motion__container {
-        padding-inline: 1.5rem;
-        }
     .recent-blog-posts .cm-recent-post {
         padding-right: 0;
         margin: 0;
@@ -36,13 +25,11 @@
         }
 {% endcall %}
 
-.insights-overview-hero .header-insights__text  {
-    padding-left: 0;
-}
     
-{% call utils.extra_large() %}
+{% call utils.small() %}
     .insights-overview-hero .header-insights__text  {
-        margin-bottom: 5rem;
+        margin-bottom: 2rem;
+        transform: translateY(-4rem);
     }
 {% endcall %}
 
@@ -50,21 +37,19 @@
     .insights-overview-hero .header-insights__text  {
         margin-bottom: 4em;
         padding-top: 2rem;
+        }
+    {% endcall %}
+    
+{% call utils.extra_large() %}
+    .insights-overview-hero .header-insights__text  {
+        margin-bottom: 5rem;
+    }
+
+    .insights-overview-hero .header-insights__text h1 {
+        max-width: var(--gaudi-max-width);
     }
 {% endcall %}
 
-{% call utils.small() %}
-    .insights-overview-hero .header-insights__text  {
-        margin-bottom: 2rem;
-        transform: translateY(-4rem);
-    }
-{% endcall %}
-        
-{% call utils.extra_large() %}
-    .insights-overview-hero .header-insights__text h1 {
-        width: var(--gaudi-max-width);
-    }
-{% endcall %}
 
 .recent-blog-posts .cm-recent-post {
     transform: translateY(-3rem);
