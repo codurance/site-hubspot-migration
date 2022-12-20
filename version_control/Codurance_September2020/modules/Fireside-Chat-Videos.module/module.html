@@ -1,9 +1,27 @@
+{% set videos = [] %}
 
-{% for item in module.hubdbrow_field %}
-	{{ item.table_id }}
-	{{ item.table_name }}
-	{{ item.id }}
-	{{ item.columns }}
+{% if module.display_last_videos %}
+	{% set videos_filter = "name__icontains=fireside chat&orderBy=-date&limit=2" %}
+	{% set last_videos = hubdb_table_rows(module.videos_hubdb, videos_filter) %}
+
+	{% for video in last_videos %}
+		{% do videos.append(video) %}
+	{% endfor %}
+{% endif %}
+
+{% for video in videos %}
+	{% set youtube_video_id = video.video|split("/")|last %}
+	{% set youtube_embed_url = "https://www.youtube.com/embed/{{ youtube_video_id }}" %}
+
+	<article class="fireside-chat-video">
+		<div class="fireside-chat-video__iframe-wrapper">
+			<iframe src="{{ youtube_embed_url }}" allowfullscreen title="{{ video.name }}"></iframe>
+		</div>
+		<h2 class="fireside-chat-video__title">
+			{{ video.name }}
+		</h2>
+		<p class="fireside-chat-video__description">
+			{{ video.description }}
+		</p>
+   </article>
 {% endfor %}
-
-{{ module.hubdb_selector }}
