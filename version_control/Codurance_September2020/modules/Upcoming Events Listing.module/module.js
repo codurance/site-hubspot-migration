@@ -1,11 +1,11 @@
 const SELECTORS = {
   navigationControl: true,
-  cardWindowSelector: '[data-upcoming-card-window]',
-  trackSelector: '[data-upcoming-card-track]',
-  cardsSelector: '[data-upcoming-card]',
-  leftButtonSelector: '[data-upcoming-events-button-left]',
-  rightButtonSelector: '[data-upcoming-events-button-right]',
-  ctaContainerSelector: '[data-upcoming-events-newsletter-cta]'
+  cardWindowSelector: "[data-upcoming-card-window]",
+  trackSelector: "[data-upcoming-card-track]",
+  cardsSelector: "[data-upcoming-card]",
+  leftButtonSelector: "[data-upcoming-events-button-left]",
+  rightButtonSelector: "[data-upcoming-events-button-right]",
+  ctaContainerSelector: "[data-upcoming-events-newsletter-cta]"
 };
 
 function init() {
@@ -15,21 +15,36 @@ function init() {
 }
 
 function getLocalTimeDate() {
-  let dateArray = document.querySelectorAll('.upcoming-events')
+  let dateArray = document.querySelectorAll(".upcoming-events");
 
-  Array.from(dateArray).map(item => {
-    let timeToConvers = item.getAttribute('data-time')
+  Array.from(dateArray).map((item) => {
+    let timeToConvers = item.getAttribute("data-time");
 
-    const timeOptions = { hour12: false, hour: '2-digit', minute:'2-digit', timeZoneName: 'long'};
-    let localTime = new Date(parseInt(timeToConvers)).toLocaleTimeString("en-US", timeOptions)
-    
-    const dateOptions = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
-    let localDate = new Date(parseInt(timeToConvers)).toLocaleDateString("en-US", dateOptions )
-    localDate = localDate.replace(/,/g, ' ');
+    const timeOptions = {
+      hour12: false,
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZoneName: "long"
+    };
+    let localTime = new Date(parseInt(timeToConvers)).toLocaleTimeString(
+      "en-US",
+      timeOptions
+    );
+
+    const dateOptions = {
+      weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "numeric"
+    };
+    let localDate = new Date(parseInt(timeToConvers)).toLocaleDateString(
+      "en-US",
+      dateOptions
+    );
+    localDate = localDate.replace(/,/g, " ");
 
     item.innerHTML = `${localDate} | ${localTime} `;
-  })
-
+  });
 }
 
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener("DOMContentLoaded", init);

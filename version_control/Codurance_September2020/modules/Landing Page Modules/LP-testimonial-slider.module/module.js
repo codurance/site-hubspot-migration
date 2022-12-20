@@ -5,22 +5,20 @@ let swiper = new Swiper(".swiper", {
   watchOverflow: true,
   grabCursor: true,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
   },
   pagination: {
     el: ".swiper-pagination",
-    clickable: true,
+    clickable: true
   },
   keyboard: {
-    enabled: true,
-  },
+    enabled: true
+  }
 });
 
 const minimumSlidesAvailable = 3;
 
-if(swiper.slides.length == minimumSlidesAvailable) {
+if (swiper.slides.length == minimumSlidesAvailable) {
   swiper.destroy();
 }
-
-
