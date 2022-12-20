@@ -7,6 +7,10 @@
 	{% for video in last_videos %}
 		{% do videos.append(video) %}
 	{% endfor %}
+{% else %}
+	{% for video in module.videos %}
+		{% do videos.append(video.columns) %}
+	{% endfor %}
 {% endif %}
 
 {% for video in videos %}
