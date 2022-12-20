@@ -1,9 +1,9 @@
 [ {
   "id" : "af3bd281-6a96-eb41-71dd-c21e362ea692",
-  "name" : "display_last_videos",
+  "name" : "display_latest_videos",
   "display_width" : null,
-  "label" : "Display last videos",
-  "help_text" : "If this option is enabled, the last Fireside Chat videos will be displayed from the selected database. If not, you will be able to select the videos manually.",
+  "label" : "Display latest videos",
+  "help_text" : "If this option is enabled, the latest Fireside Chat videos will be displayed from the selected database. If not, you will be able to select the videos manually.",
   "required" : false,
   "locked" : false,
   "display" : "toggle",
