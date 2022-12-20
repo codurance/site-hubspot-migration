@@ -1,8 +1,36 @@
 [ {
-  "id" : "ac877392-7706-79a3-10d1-c3acbf6277a9",
-  "name" : "hubdbrow_field",
+  "id" : "af3bd281-6a96-eb41-71dd-c21e362ea692",
+  "name" : "display_last_videos",
   "display_width" : null,
-  "label" : "HubDB row",
+  "label" : "Display last videos",
+  "help_text" : "If this option is enabled, the last Fireside Chat videos will be displayed from the selected database. If not, you will be able to select the videos manually.",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "a1575ee9-8da5-7f17-c87f-2f7108c4902a",
+  "name" : "videos_hubdb",
+  "display_width" : null,
+  "label" : "Videos HubDB",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "af3bd281-6a96-eb41-71dd-c21e362ea692",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "type" : "hubdbtable"
+}, {
+  "id" : "ac877392-7706-79a3-10d1-c3acbf6277a9",
+  "name" : "videos",
+  "display_width" : null,
+  "label" : "Videos",
   "required" : false,
   "locked" : false,
   "occurrence" : {
@@ -11,6 +39,15 @@
     "sorting_label_field" : null,
     "default" : null
   },
+  "visibility" : {
+    "controlling_field" : "af3bd281-6a96-eb41-71dd-c21e362ea692",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "false",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
   "table_name_or_id" : "videos",
   "columns_to_fetch" : [ "thumbnail", "name", "description", "video" ],
   "display_columns" : [ "name" ],
@@ -18,12 +55,4 @@
   "default" : {
     "id" : null
   }
-}, {
-  "id" : "a1575ee9-8da5-7f17-c87f-2f7108c4902a",
-  "name" : "hubdb_selector",
-  "display_width" : null,
-  "label" : "HubDB selector",
-  "required" : false,
-  "locked" : false,
-  "type" : "hubdbtable"
 } ]
