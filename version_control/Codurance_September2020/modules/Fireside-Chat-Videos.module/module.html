@@ -1,10 +1,12 @@
+{{ require_css(get_asset_url("../../css/modules/fireside-chat-videos.css")) }}
+
 {% set videos = [] %}
 
-{% if module.display_last_videos %}
+{% if module.display_latest_videos %}
 	{% set videos_filter = "name__icontains=fireside chat&orderBy=-date&limit=2" %}
-	{% set last_videos = hubdb_table_rows(module.videos_hubdb, videos_filter) %}
+	{% set latest_videos = hubdb_table_rows(module.videos_hubdb, videos_filter) %}
 
-	{% for video in last_videos %}
+	{% for video in latest_videos %}
 		{% do videos.append(video) %}
 	{% endfor %}
 {% else %}
@@ -13,19 +15,22 @@
 	{% endfor %}
 {% endif %}
 
-{% for video in videos %}
-	{% set youtube_video_id = video.video|split("/")|last %}
-	{% set youtube_embed_url = "https://www.youtube.com/embed/{{ youtube_video_id }}" %}
+<div class="fireside-chat-videos">
+	{% for video in videos %}
+		{% set youtube_video_id = video.video|split("/")|last %}
+		{% set youtube_embed_url = "https://www.youtube.com/embed/{{ youtube_video_id }}" %}
 
-	<article class="fireside-chat-video">
-		<div class="fireside-chat-video__iframe-wrapper">
-			<iframe src="{{ youtube_embed_url }}" allowfullscreen title="{{ video.name }}"></iframe>
-		</div>
-		<h2 class="fireside-chat-video__title">
-			{{ video.name }}
-		</h2>
-		<p class="fireside-chat-video__description">
-			{{ video.description }}
-		</p>
-   </article>
-{% endfor %}
+		<article class="fireside-chat-video">
+			<div class="fireside-chat-video__iframe-wrapper">
+				<iframe src="{{ youtube_embed_url }}" allowfullscreen title="{{ video.name }}" class="fireside-chat-video__iframe"></iframe>
+			
+				<h3 class="fireside-chat-video__title">
+					{{ video.name }}
+				</h3>
+				<p class="fireside-chat-video__description">
+					{{ video.description }}
+				</p>
+			</div>
+	</article>
+	{% endfor %}
+</div>
