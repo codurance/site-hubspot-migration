@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "upload": "npx hs upload version_control version_control",
     "upload:dev": "hs upload --account=sandbox version_control version_control",
-    "watch:dev": "hs watch --account=sandbox version_control version_control -i --remove"
+    "watch:dev": "hs watch --account=sandbox version_control version_control -i --remove",
+    "prettier": "npx prettier --write --trailing-comma none '**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,6 @@
   "homepage": "https://github.com/codurance/site-hubspot-migration#readme",
   "dependencies": {
     "@hubspot/cli": "^4.0.0",
-    "@hubspot/cms-cli": "^2.2.0",
     "js-yaml": "^3.14.0"
   }
 }

@@ -1,7 +1,7 @@
 const accordionItems = document.querySelectorAll(".panel");
-accordionItems.forEach(toggleOnClick); 
+accordionItems.forEach(toggleOnClick);
 
-function toggleOnClick(accordionItem) { 
+function toggleOnClick(accordionItem) {
   const accordionItemLink = accordionItem.querySelector(".panel-title");
   accordionItemLink.addEventListener("click", toggle);
 }
@@ -20,12 +20,13 @@ function slideUpSiblingAccordionItems(accordionItem) {
 
   let currentAccordionItem = firstAccordionItem;
 
-  while(currentAccordionItem) {
-    if(currentAccordionItem != accordionItem) {
-      const currentAccordionItemBody = currentAccordionItem.querySelector(".panel-body");
+  while (currentAccordionItem) {
+    if (currentAccordionItem != accordionItem) {
+      const currentAccordionItemBody =
+        currentAccordionItem.querySelector(".panel-body");
 
       slideUp(currentAccordionItemBody, transitionDuration);
-      currentAccordionItem.classList.add('panel--close');
+      currentAccordionItem.classList.add("panel--close");
     }
 
     currentAccordionItem = currentAccordionItem.nextElementSibling;
@@ -41,17 +42,16 @@ function slideToggle(accordionItem, transitionDuration) {
     slideUp(accordionItemBody, transitionDuration);
   }
 
-  accordionItem.classList.toggle('panel--close');
+  accordionItem.classList.toggle("panel--close");
 }
 
 function slideUp(accordionItemBody, transitionDuration) {
-  accordionItemBody.style.transitionDuration = transitionDuration + 'ms';
-  accordionItemBody.style.removeProperty('max-height');
+  accordionItemBody.style.transitionDuration = transitionDuration + "ms";
+  accordionItemBody.style.removeProperty("max-height");
 }
 
 function slideDown(accordionItemBody, transitionDuration) {
-  accordionItemBody.style.transitionDuration = transitionDuration + 'ms';
+  accordionItemBody.style.transitionDuration = transitionDuration + "ms";
   const accordionItemBodyHeight = accordionItemBody.scrollHeight;
-  accordionItemBody.style.maxHeight = accordionItemBodyHeight + 'px';
+  accordionItemBody.style.maxHeight = accordionItemBodyHeight + "px";
 }
-

@@ -1,1 +1,1 @@
-$('.matchHeight').matchHeight();
+$(".matchHeight").matchHeight();
