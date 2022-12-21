@@ -1,8 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 .cm-recent-post {
-  max-width: calc(var(--content-max-width) + 4rem);
-  padding-inline: 2rem;
+  max-width: calc(var(--content-max-width));
   margin: 0 auto;
   transform: translateY(-20%);
 }
@@ -43,13 +42,13 @@
   overflow: scroll;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  gap: 1.5em;
 }
 
 .cm-recent-post__group::-webkit-scrollbar{
   display: none;
 }
 
-{% set item_margin = 15 %}
 {% set item_border_radius = 10 %}
 
 .cm-recent-post__item {
@@ -58,8 +57,6 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 1.4rem;
-  margin-left: {{ item_margin }}px;
-  margin-right: {{ item_margin }}px;
   border-radius: {{ item_border_radius }}px;
   min-width: 14em;
   overflow: hidden;
@@ -71,12 +68,6 @@
 {% call utils.large_and_extra_large() %}
   .cm-recent-post__item {
     width: 33.333%;
-  }
-{% endcall %}
-
-{% call utils.medium() %}
-  .cm-recent-post__item {
-    width: calc(50% - ({{ item_margin }}px * 2));
   }
 {% endcall %}
 

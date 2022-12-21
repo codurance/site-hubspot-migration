@@ -1,0 +1,45 @@
+{% import '../utils/utils.css' as utils %}
+
+.fireside-chat-videos {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+}
+
+.fireside-chat-video__iframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.fireside-chat-video__title {
+    {{ utils.freed() }}
+    margin-top: var(--freed-margin);
+    margin-bottom: 0.25em;
+}
+
+.fireside-chat-video__description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.fireside-chat-video__date {
+    {{ utils.natus() }}
+    font-weight: var(--heavy-font-weight);
+    text-transform: uppercase;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .fireside-chat-videos {
+        columns: 2;
+        column-gap: 2em;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .fireside-chat-video:first-of-type {
+        margin-bottom: 2em;
+    }
+{% endcall %}
