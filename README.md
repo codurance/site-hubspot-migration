@@ -23,7 +23,6 @@ After cloning this repository, install dependencies and Hubspot CLI using `npm i
 7. Upload Hubspot code to your developer sandbox with `npx hs upload version_control version_control`.
 
 **⚠️ If you see errors or warnings at this stage, don't worry.**
-- Errors relating to the `services_media` table can safely be ignored - this is an unused module.
 - Any errors relating to the `videos` table will be fixed when importing the data in this table from the live version of the site. This step is not mandatory unless you're working with videos specifically. More information can be found in the [Importing the Videos HubDB table](#🎥-importing-the-videos-hubdb-table) section of this README.
 
 For more information on developer setup and the HubSpot CLI, see the HubSpot documentation:
