@@ -1,5 +1,7 @@
 {{ require_css(get_asset_url("../../css/modules/fireside-chat-videos.css")) }}
 
+
+
 {% set videos = [] %}
 
 {% if module.display_latest_videos %}
@@ -30,6 +32,9 @@
 				<p class="fireside-chat-video__description">
 					{{ video.description }}
 				</p>
+				<time datetime="{{ video.date | format_date('short') }}" class="fireside-chat-video__date">
+					{{ video.date|format_date('dd MMM yyyy') }}
+				</time>
 			</div>
 	</article>
 	{% endfor %}
