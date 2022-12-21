@@ -178,10 +178,15 @@ label: Blog Post
       {{ content.post_body }}
     </div>
     {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
-    <div class="blog-comments">
-      {% module "blog_comments" path="@hubspot/blog_comments", label="Blog
-      Comments" %}
-    </div>
+  </section>
+  <section class="blog-recruitment-banner blog-max-width">
+      {% module "blog_banner" 
+                path="../modules/Blog-Post-Banner", 
+                label="BLOG BANNER" 
+                no_wrapper=True
+                export_to_template_context=True  %}
+
+      {{ content.widgets.blog_banner.body.banner_type_choice }}
   </section>
 
   {% choice "CTA_or_newsletter_form" 

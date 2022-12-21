@@ -1,0 +1,13 @@
+[ {
+  "id" : "d1f4b079-660b-0436-3981-9737214fe334",
+  "name" : "banner_type_choice",
+  "display_width" : null,
+  "label" : "Choose Banner Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "newsletter", "Newsletter" ], [ "cta_1", "CTA 1" ], [ "cta_2", "CTA 2" ], [ "cta_3", "CTA 3" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "type" : "choice"
+} ]
