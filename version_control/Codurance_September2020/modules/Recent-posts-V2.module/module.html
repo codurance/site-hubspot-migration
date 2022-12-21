@@ -12,7 +12,7 @@
         <div class="cm-recent-image-wrapper" style="{{ style }}"></div>
         <div class="cm-recent-post__inner">
           <div class="cm-recent-post__info-wrapper">
-            <small class="cm-recent-post__meta-info">{{ post.publish_date_local_time|datetimeformat("%d %b %Y") }} - {{ post.blog_post_author.display_name }}</small>
+            <small class="cm-recent-post__meta-info">{{ post.publish_date_local_time | format_date('d MMM yyyy') }} - {{ post.blog_post_author.display_name }}</small>
             {% if post.name %}
               <h4 class="cm-recent-post__title">{{ post.name }}</h4>
             {% endif %}

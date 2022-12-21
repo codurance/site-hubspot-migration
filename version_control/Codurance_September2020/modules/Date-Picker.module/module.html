@@ -1,6 +1,6 @@
 
 {% if module.date_selector %}
     <span class="info__dot">·</span>
-    <span class="info__updated-date">Last updated: {{ module.date_selector | datetimeformat('%d %b %y') }}</span>
+    <span class="info__updated-date">Last updated: {{ module.date_selector | format_date('d MMM yyyy') }}</span>
 {% endif %}
 

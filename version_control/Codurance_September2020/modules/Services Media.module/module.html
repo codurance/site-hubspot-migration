@@ -74,9 +74,9 @@
                   <header class="card-slider-item__header">
                     <time
                       class="card-slider-item__metadata"
-                      datetime="{{ media.publication_date|datetimeformat('%Y-%m-%d') }}"
+                      datetime="{{ media.publication_date | format_date('d MMM yyyy') }}"
                     >
-                      {{ media.publication_date|datetimeformat('%a %e %b %Y') }}
+                      {{ media.publication_date | format_date('d MMM yyyy') }}
                     </time>
                     {% call is_less_than_one_week_ago(media.publication_date) %}
                       <small

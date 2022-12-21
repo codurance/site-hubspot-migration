@@ -102,9 +102,9 @@
             <header class="card-slider-item__header">
               <time
                 class="card-slider-item__metadata"
-                datetime="{{ event.date|datetimeformat('%Y-%m-%d') }}"
+                datetime="{{ event.date | format_date('d MMM yyyy') }}"
               >
-                {{ event.date|datetimeformat('%a %e %b %Y') }}
+                {{ event.date | format_date('d MMM yyyy') }}
               </time>
               <h4 class="card-slider-item__title">
                 {{ event.name }}

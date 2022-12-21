@@ -93,7 +93,7 @@
                 <header>
                   <time
                     class="card-slider-item__metadata commmuity-events"
-                    datetime="{{ event.datetime|datetimeformat('%Y-%m-%dT%H:%M:%S') }}"
+                    datetime="{{ event.datetime | format_datetime('d MMM yyyy HH:mm ZZZZ') }}"
                     data-time=" {{ event.datetime }}"
                   >
                     

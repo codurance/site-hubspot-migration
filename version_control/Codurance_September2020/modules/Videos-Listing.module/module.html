@@ -55,9 +55,9 @@
                   <header class="card-item__header">
                     <time
                       class="card-item__metadata"
-                      datetime="{{ video.date|datetimeformat('%Y-%m-%d') }}"
+                      datetime="{{ video.date | format_date('d MMM yyyy') }}"
                     >
-                      {{ video.date|datetimeformat('%a %e %b %Y') }}
+                      {{ video.date | format_date('d MMM yyyy') }}
                     </time>
                     <h4 class="card-item__title">
                       {{ video.name }}
