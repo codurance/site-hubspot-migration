@@ -1,0 +1,13 @@
+{{ require_css(get_asset_url("../../css/modules/random-katas.css")) }}
+
+{% set max_retrievable_posts = 200 %}
+{% set kata_posts = blog_popular_posts(module.katalyst_blog, max_retrievable_posts) %}
+{% set random_katas = kata_posts|shuffle|slice(4)|first %}
+
+<div class="kata-posts">
+    {% for kata in random_katas %}
+        <article class="kata-post" style="background-image: url({{ kata.featured_image }});">
+            <span class="kata-post__title">{{ kata.name }}</span>
+        </article>
+    {% endfor %}
+</div>
