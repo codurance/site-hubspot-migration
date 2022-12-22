@@ -33,8 +33,12 @@
 
 {% call utils.medium_large_and_extra_large() %}
     .fireside-chat-videos {
-        columns: 2;
-        column-gap: 2em;
+        display: flex;
+        gap: 2em;
+    }
+
+    .fireside-chat-video {
+        flex-basis: 100%;
     }
 {% endcall %}
 
