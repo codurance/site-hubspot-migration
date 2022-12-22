@@ -81,13 +81,12 @@
     {{ utils.eames() }}
     max-width: var(--content-max-width);
     margin-inline: auto;
-    margin-bottom: var(--eames-margin);
+    margin-bottom: 2rem;
 }
 
 {% call utils.small() %}
     .fireside-chats-title {
         {{ utils.dudler() }}
-        margin-bottom: var(--dudler-margin);
     }
 {% endcall %}
 
