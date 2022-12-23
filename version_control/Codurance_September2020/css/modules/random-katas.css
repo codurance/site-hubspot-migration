@@ -1,0 +1,9 @@
+.kata-posts {
+    display: flex;
+    gap: 1.8em;
+}
+
+.kata-post {
+    height: 7rem;
+    flex-basis: 25%;
+}
