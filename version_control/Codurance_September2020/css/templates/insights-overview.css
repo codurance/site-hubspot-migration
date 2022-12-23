@@ -129,8 +129,19 @@
 {% endcall %}
 
 .katalyst {
-    max-width: var(--content-max-width);
-    margin-inline: auto;
+    {{ utils.slate_to_woodsmoke() }}
     padding-top: 5.8em;
     padding-bottom: 5.8em;
+}
+
+.katalyst div.section-header {
+    padding: 0;
+    text-align: left;
+    color: white;
+    max-width: var(--content-max-width);
+}
+
+.katalyst .section-header h2 {
+    {{ utils.eames() }}
+    margin-bottom: var(--eames-margin);
 }
