@@ -7,7 +7,9 @@
 <div class="kata-posts">
     {% for kata in random_katas %}
         <article class="kata-post" style="background-image: url({{ kata.featured_image }});">
-            <span class="kata-post__title">{{ kata.name }}</span>
+            <a href="{{ kata.url }}" class="kata-post__link">
+                <span class="kata-post__title">{{ kata.name }}</span>
+            </a>
         </article>
     {% endfor %}
 </div>
