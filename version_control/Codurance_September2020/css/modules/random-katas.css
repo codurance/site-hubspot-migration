@@ -4,6 +4,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(13.6rem, 1fr));
     gap: 1.8em;
+    margin-inline: auto;
+    max-width: var(--content-max-width);
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 {% call utils.large() %}
