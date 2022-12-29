@@ -35,7 +35,7 @@
   "locked" : false,
   "occurrence" : {
     "min" : null,
-    "max" : 2,
+    "max" : 3,
     "sorting_label_field" : null,
     "default" : null
   },
