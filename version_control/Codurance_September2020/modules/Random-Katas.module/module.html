@@ -6,7 +6,9 @@
 
 <div class="kata-posts">
     {% for kata in random_katas %}
-        <article class="kata-post" style="background-image: url({{ kata.featured_image }});">
+        {{ set featured_image = resize_image_url(kata.featured_image, 0, 0, 300)}}
+        <article class="kata-post" 
+                style="background-image: url({{ featured_image }});">
             <a href="{{ kata.url }}" class="kata-post__link">
                 <span class="kata-post__title">{{ kata.name }}</span>
             </a>
