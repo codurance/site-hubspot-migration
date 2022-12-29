@@ -138,10 +138,24 @@
     padding: 0;
     text-align: left;
     color: white;
-    max-width: var(--content-max-width);
+    max-width: inherit;
+    width: inherit;
 }
+
+
+{% call utils.extra_large() %}
+    .katalyst div.section-header {
+        max-width: var(--content-max-width);
+    }
+{% endcall %}
 
 .katalyst .section-header h2 {
     {{ utils.eames() }}
     margin-bottom: var(--eames-margin);
+}
+
+
+.katalyst div.custom-btn {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
 }
