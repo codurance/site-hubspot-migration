@@ -132,16 +132,25 @@
     {{ utils.slate_to_woodsmoke() }}
     padding-top: 5.8em;
     padding-bottom: 5.8em;
+    color: white;
+}
+
+.katalyst .fireside-chat-videos {
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .katalyst div.section-header {
     padding: 0;
     text-align: left;
-    color: white;
     max-width: inherit;
     width: inherit;
 }
 
+
+.page-header.section-header:nth-child(n+2) {
+    margin-top: 6.4em; 
+}
 
 {% call utils.extra_large() %}
     .katalyst div.section-header {
@@ -154,8 +163,20 @@
     margin-bottom: var(--eames-margin);
 }
 
-
 .katalyst div.custom-btn {
     max-width: var(--content-max-width);
     margin-inline: auto;
 }
+
+
+.katalyst .fireside-chat-videos {
+    display: grid;
+    column-gap: 2em;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .katalyst .fireside-chat-videos {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+{% endcall %}

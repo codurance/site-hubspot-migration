@@ -39,7 +39,7 @@
 {% endcall %}
 
 {% call utils.small() %}
-    .fireside-chat-video:first-of-type {
+    .fireside-chat-video {
         margin-bottom: 2em;
     }
 {% endcall %}
