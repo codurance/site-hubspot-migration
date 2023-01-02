@@ -155,12 +155,17 @@
 {% call utils.extra_large() %}
     .katalyst div.section-header {
         max-width: var(--content-max-width);
+        margin-inline: auto;
     }
 {% endcall %}
 
 .katalyst .section-header h2 {
     {{ utils.eames() }}
     margin-bottom: var(--eames-margin);
+}
+
+.katalyst .section-header p {
+    max-width: var(--base-max-width);
 }
 
 .katalyst div.custom-btn {

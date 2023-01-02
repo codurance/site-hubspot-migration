@@ -46,19 +46,19 @@ body {
   font-weight: var(--middle-font-weight);
 }
 
-.page-header.section-header{
+.case-study-header__text-block .page-header.section-header {
   text-align: left;
   padding: unset;
   margin: unset;
 }
 
-.case-study-header__text-block .page-header.section-header h1{
+.case-study-header__text-block .page-header.section-header h1 {
   {{ utils.eames() }}
   font-weight: var(--heavy-font-weight);
   margin-top: 0.5em;
 }
 
-.case-study-header__text-block .page-header.section-header p{
+.case-study-header__text-block .page-header.section-header p {
   line-height: var(--base-line-height);
   margin-top: 0.5em;
 }
