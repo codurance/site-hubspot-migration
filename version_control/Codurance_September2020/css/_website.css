@@ -49,23 +49,10 @@ img{
   margin: var(--base-margin) 0px;
 }
 
-.page-header.section-header {
-  text-align: center;
-  padding-left: 50px;
-  padding-right: 50px;
+.hs-site-page .page-header.section-header {
+  margin-bottom: 2em;
 }
-.page-header.section-header h1 {
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 38px;
-  margin-top: 0;
-}
-.page-header.section-header p {
-  font-weight: 400;
-  font-size: 21px;
-  line-height: 33px;
-  margin-top: 0;
-}
+
 .hs-get-in-touch-section .dnd-section > .row-fluid {
   position: relative;
 }
