@@ -18,9 +18,7 @@
   </section>
 
   <section class="fireside-chats lateral-spacing">
-    <h2 class="fireside-chats-title">
-      {% text 'fireside_chats_title' label='Fireside Chats Title' value='Codurance Fireside chats' no_wrapper=True %}
-    </h2>
+    {% section_header 'fireside_chats_title' label='Fireside Chats Title' no_wrapper=True %}
 
     {% module 'fireside-chats' path='../modules/Fireside-Chat-Videos.module'
     label="Fireside Chat Videos" no_wrapper=True %}
