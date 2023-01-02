@@ -15,7 +15,9 @@ img{
   height:auto;
 }
 
-/* ---------------------------------- Services Inner Pages -------------------------------------- */
+/* ---------------------------------- 
+  Services Inner Pages 
+-------------------------------------- */
 
 .hs-get-in-touch-section .dnd-section {
   max-width: 100%;
@@ -49,23 +51,15 @@ img{
   margin: var(--base-margin) 0px;
 }
 
+.hs-site-page .page-header.section-header {
+  margin-bottom: 2em;
+}
+
 .page-header.section-header {
-  text-align: center;
-  padding-left: 50px;
-  padding-right: 50px;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
 }
-.page-header.section-header h1 {
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 38px;
-  margin-top: 0;
-}
-.page-header.section-header p {
-  font-weight: 400;
-  font-size: 21px;
-  line-height: 33px;
-  margin-top: 0;
-}
+
 .hs-get-in-touch-section .dnd-section > .row-fluid {
   position: relative;
 }
@@ -1723,7 +1717,7 @@ i.icon-bg-u {
     max-width: 660px;
     width: calc(100% - (50px * 2));
   }
-  .page-header.section-header {
+  .dnd-section .page-header.section-header {
     max-width: 800px;
     width: calc(100% - (50px * 2));
     margin-left: auto;
@@ -1794,7 +1788,7 @@ i.icon-bg-u {
     padding-left:20px;
     padding-right:20px;
   }
-  .hs-home-section6 .page-header.section-header {
+  .hs-home-section6 .dnd-section .page-header.section-header {
     text-align: center;
   }
   .hs-home-section6 {
@@ -1825,12 +1819,12 @@ i.icon-bg-u {
     margin-left: auto;
     margin-right: auto;
   }
-  .page-header.section-header {
+  .dnd-section .page-header.section-header {
     text-align: left;
     padding-left: 20px;
     padding-right: 20px;
   }
-  .page-header.section-header h1{
+  .dnd-section .page-header.section-header h1{
     margin-bottom:25px;
   }
   .dnd-section.has-author-section {
