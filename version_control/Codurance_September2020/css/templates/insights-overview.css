@@ -1,9 +1,25 @@
 {% import '../utils/utils.css' as utils %}
 
+.insights-overview-container .section-header h2 {
+    {{ utils.eames() }}
+    margin-bottom: var(--eames-margin);
+}
+
+.insights-overview-container .section-header p {
+    max-width: var(--base-max-width);
+}
+
+{% call utils.small_medium_and_large() %}
+    .insights-overview-container .section-header h2 {
+        {{ utils.dudler() }}
+        font-weight: var(--heavy-font-weight);
+        margin-bottom: var(--dudler-margin);
+    }
+{% endcall %}
+
 .recent-blog-posts {
     margin-bottom: -3rem;
 }
-
 
 {% call utils.medium() %} 
     .recent-blog-posts .cm-recent-post {
@@ -74,19 +90,6 @@
     .fireside-chats {
         padding-top: 3em;
         padding-bottom: 3em;
-    }
-{% endcall %}
-
-.fireside-chats-title {
-    {{ utils.eames() }}
-    max-width: var(--content-max-width);
-    margin-inline: auto;
-    margin-bottom: 2rem;
-}
-
-{% call utils.small() %}
-    .fireside-chats-title {
-        {{ utils.dudler() }}
     }
 {% endcall %}
 
