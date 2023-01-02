@@ -124,14 +124,14 @@
     max-width: var(--content-max-width);
 }
                 
-{% call utils.small() %}
+{% call utils.small() %}    
     .insights-overview-cta .banner {
         justify-content: left;
     }
 {% endcall %}
 
 .katalyst {
-    {{ utils.slate_to_woodsmoke() }}
+    {{ utils.color1_to_color2("to right", "var(--woodsmoke)", "var(--slate)" ) }}
     padding-top: 5.8em;
     padding-bottom: 5.8em;
     color: white;
