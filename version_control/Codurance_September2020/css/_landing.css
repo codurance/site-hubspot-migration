@@ -5,3 +5,17 @@ look if there is anything specific to your landing pages.
 *********************************************************************************
 ****************************************************************************** */
 
+.dnd-section .page-header.section-header {
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.dnd-section .page-header.section-header h1 {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+  margin-top: 0;
+}
+.dnd-section .page-header.section-header p {
+  {{ utils.base() }}
+  margin-top: 0;
+}
