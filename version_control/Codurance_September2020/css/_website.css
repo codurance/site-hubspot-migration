@@ -56,6 +56,10 @@ img{
   margin-inline: auto;
 }
 
+.hs-site-page .page-header.section-header {
+  margin-bottom: 2em;
+}
+
 .hs-get-in-touch-section .dnd-section > .row-fluid {
   position: relative;
 }

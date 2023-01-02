@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+.custom-btn {
+  margin-top: 2em;
+}
+
 {% call utils.small() %}
   .custom-btn .button-primary {
     width: 100%;
