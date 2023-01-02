@@ -30,6 +30,7 @@
     height: 100%;
     background-color: rgba(0,0,0,0.3);
     border-radius: 10px;
+    padding: 2em;
 }
 
 .kata-post__link:hover {
@@ -40,6 +41,5 @@
     {{ utils.freed() }}
     color: white;
     font-weight: var(--heavy-font-weight);
-    max-width: 80%;
 }
 
