@@ -15,7 +15,9 @@ img{
   height:auto;
 }
 
-/* ---------------------------------- Services Inner Pages -------------------------------------- */
+/* ---------------------------------- 
+  Services Inner Pages 
+-------------------------------------- */
 
 .hs-get-in-touch-section .dnd-section {
   max-width: 100%;
@@ -49,24 +51,13 @@ img{
   margin: var(--base-margin) 0px;
 }
 
-<<<<<<< HEAD
 .hs-site-page .page-header.section-header {
   margin-bottom: 2em;
-=======
-.dnd-section .page-header.section-header {
-  text-align: center;
-  padding-left: 50px;
-  padding-right: 50px;
 }
-.dnd-section .page-header.section-header h1 {
-  {{ utils.dudler() }}
-  font-weight: var(--heavy-font-weight);
-  margin-top: 0;
-}
-.dnd-section .page-header.section-header p {
-  {{ utils.base() }}
-  margin-top: 0;
->>>>>>> 055a886 (Section header HubL tag adjustments)
+
+.page-header.section-header {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
 }
 
 .hs-get-in-touch-section .dnd-section > .row-fluid {
