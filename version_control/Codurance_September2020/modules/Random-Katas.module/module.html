@@ -2,11 +2,12 @@
 
 {% set max_retrievable_posts = 200 %}
 {% set kata_posts = blog_popular_posts(module.katalyst_blog, max_retrievable_posts) %}
-{% set random_katas = kata_posts|shuffle|slice(4)|first %}
+{% set random_katas = kata_posts | shuffle | slice(4) | first %}
 
 <div class="kata-posts">
     {% for kata in random_katas %}
-        {{ set featured_image = resize_image_url(kata.featured_image, 0, 0, 300)}}
+        {% set featured_image = resize_image_url(kata.featured_image, 0, 0, 600) %}
+
         <article class="kata-post" 
                 style="background-image: url({{ featured_image }});">
             <a href="{{ kata.url }}" class="kata-post__link">
