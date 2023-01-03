@@ -1,11 +1,10 @@
 {{ require_css(get_asset_url("../../css/modules/fireside-chat-videos.css")) }}
 
-
-
 {% set videos = [] %}
 
 {% if module.display_latest_videos %}
-	{% set videos_filter = "name__icontains=fireside chat&orderBy=-date&limit=2" %}
+	{% set videos_filter = "name__icontains=" + module.filter_by + "&orderBy=-date&limit=" + module.videos_to_display %}
+
 	{% set latest_videos = hubdb_table_rows(module.videos_hubdb, videos_filter) %}
 
 	{% for video in latest_videos %}
