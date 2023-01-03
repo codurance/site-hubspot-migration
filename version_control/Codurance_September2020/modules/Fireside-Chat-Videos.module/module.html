@@ -19,7 +19,12 @@
 
 <div class="fireside-chat-videos">
 	{% for video in videos %}
-		{% set youtube_video_id = video.video|split("/")|last %}
+		{% if video.video is string_containing "youtube" %}
+			{% set youtube_video_id = video.video | split("v=") | last | truncate(11, True, "") %}
+		{% else %}
+			{% set youtube_video_id = video.video | split("/") | last %}
+		{% endif %}
+
 		{% set youtube_embed_url = "https://www.youtube.com/embed/{{ youtube_video_id }}" %}
 
 		<article class="fireside-chat-video">
