@@ -1,23 +1,23 @@
 {% import '../utils/utils.css' as utils %}
 
-.fireside-chat-videos {
+.videos-hubdb {
     max-width: var(--content-max-width);
     margin-inline: auto;
 }
 
-.fireside-chat-video__iframe {
+.video-hubdb__iframe {
     aspect-ratio: 16/9;
     width: 100%;
     border-radius: 10px;
 }
 
-.fireside-chat-video__title {
+.video-hubdb__title {
     {{ utils.freed() }}
     margin-top: var(--freed-margin);
     margin-bottom: 0.25em;
 }
 
-.fireside-chat-video__description {
+.video-hubdb__description {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -25,25 +25,25 @@
     -webkit-line-clamp: 2;
 }
 
-.fireside-chat-video__date {
+.video-hubdb__date {
     {{ utils.natus() }}
     font-weight: var(--heavy-font-weight);
     text-transform: uppercase;
 }
 
 {% call utils.medium_large_and_extra_large() %}
-    .fireside-chat-videos {
+    .videos-hubdb {
         display: flex;
         gap: 2em;
     }
 
-    .fireside-chat-video {
+    .video-hubdb {
         flex-basis: 100%;
     }
 {% endcall %}
 
 {% call utils.small() %}
-    .fireside-chat-video {
+    .video-hubdb {
         margin-bottom: 2em;
     }
 {% endcall %}

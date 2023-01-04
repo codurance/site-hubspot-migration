@@ -1,4 +1,4 @@
-{{ require_css(get_asset_url("../../css/modules/fireside-chat-videos.css")) }}
+{{ require_css(get_asset_url("../../css/modules/videos-from-hubdb.css")) }}
 
 {% set videos = [] %}
 
@@ -16,7 +16,7 @@
 	{% endfor %}
 {% endif %}
 
-<div class="fireside-chat-videos">
+<div class="videos-hubdb">
 	{% for video in videos %}
 		{% if video.video is string_containing "youtube" %}
 			{% set youtube_video_id = video.video | split("v=") | last | truncate(11, True, "") %}
@@ -26,17 +26,17 @@
 
 		{% set youtube_embed_url = "https://www.youtube.com/embed/{{ youtube_video_id }}" %}
 
-		<article class="fireside-chat-video">
-			<div class="fireside-chat-video__iframe-wrapper">
-				<iframe src="{{ youtube_embed_url }}" allowfullscreen title="{{ video.name }}" class="fireside-chat-video__iframe"></iframe>
+		<article class="video-hubdb">
+			<div class="video-hubdb__iframe-wrapper">
+				<iframe src="{{ youtube_embed_url }}" allowfullscreen title="{{ video.name }}" class="video-hubdb__iframe"></iframe>
 			
-				<h3 class="fireside-chat-video__title">
+				<h3 class="video-hubdb__title">
 					{{ video.name }}
 				</h3>
-				<p class="fireside-chat-video__description">
+				<p class="video-hubdb__description">
 					{{ video.description }}
 				</p>
-				<time datetime="{{ video.date | format_date('short') }}" class="fireside-chat-video__date">
+				<time datetime="{{ video.date | format_date('short') }}" class="video-hubdb__date">
 					{{ video.date|format_date('dd MMM yyyy') }}
 				</time>
 			</div>

@@ -146,13 +146,13 @@
     margin-inline: auto;
 }
 
-.katalyst .fireside-chat-videos {
+.katalyst .videos-hubdb {
     display: grid;
     column-gap: 2em;
 }
 
 {% call utils.medium_large_and_extra_large() %}
-    .katalyst .fireside-chat-videos {
+    .katalyst .videos-hubdb {
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
     }
