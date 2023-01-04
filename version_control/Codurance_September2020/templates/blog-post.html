@@ -7,6 +7,7 @@ label: Blog Post
 
 {% import '../config/config.html' as config %}
 
+{% set cta_banner = config.blog_banner_cta %}
 {% set newsletter_copy = config.newsletter_cta.en %}
 
 {% if locale == "es" %}
@@ -173,35 +174,43 @@ label: Blog Post
       </li>
     </ul>
   </section>
+
   <section class="blog-content blog-max-width">
     <div class="blog-content__inner">
       {{ content.post_body }}
     </div>
     {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
   </section>
+
   <section class="blog-recruitment-banner blog-max-width">
+    {% choice "CTA_or_newsletter_form" 
+      label='Choose between CTA banner and Newsletter form', 
+      value='Newsletter-Form', 
+      choices='Newsletter-Form, Cloud, Compass', 
+      no_wrapper=True, 
+      export_to_template_context=True 
+    %}
 
-  {{ content.widgets.blog_banner.body }} 
+    {% set cta_or_newsletter = widget_data.CTA_or_newsletter_form.value %}
 
-  
-  {% if !content.widgets.blog_banner.body.banner_type_choice or
-        content.widgets.blog_banner.body.banner_type_choice == "newsletter" %}
-      {% module 'newsletter_form_card'
-      path='../modules/Newsletter-Form-Card.module',
-      label="Newsletter Form card", 
-      no_wrapper=True,
-      title="{{ newsletter_copy.pending.header }}",
-      subtitle="{{ newsletter_copy.pending.text }}",
-      newsletter_form={ form_id: "{{ newsletter_copy.form_id }}" }
+    {% if cta_or_newsletter != "Newsletter-Form" %}
+      {% module "blog_banner" 
+        path="../modules/Blog-Post-Banner", 
+        label="Blog Banner",
+        no_wrapper=True,
+        cta_banner="{{cta_banner[cta_or_newsletter]}}"
       %}
-  {% else %}
-    {% module "blog_banner" 
-      path="../modules/Blog-Post-Banner", 
-      label="BLOG BANNER" 
-      no_wrapper=True
-      export_to_template_context=True  %}
-  {% endif %}
-    </section>
+    {% else %}
+      {% module 'newsletter_form_card'
+        path='../modules/Newsletter-Form-Card.module',
+        label="Newsletter Form card", 
+        no_wrapper=True,
+        title="{{ newsletter_copy.pending.header }}",
+        subtitle="{{ newsletter_copy.pending.text }}",
+        newsletter_form={ form_id: "{{ newsletter_copy.form_id }}" }
+      %}
+    {% endif %}
+  </section>
   
   <section class="related-blog-section">
     <div class="related-blog-section__inner page-center">

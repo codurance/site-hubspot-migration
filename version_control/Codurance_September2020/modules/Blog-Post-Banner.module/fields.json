@@ -1,14 +1,9 @@
 [ {
-  "id" : "d1f4b079-660b-0436-3981-9737214fe334",
-  "name" : "banner_type_choice",
+  "id" : "7c81c5b2-719f-fc1f-866c-607914d729b8",
+  "name" : "cta_banner",
   "display_width" : null,
-  "label" : "Choose Banner Type",
+  "label" : "CTA Banner",
   "required" : false,
   "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "newsletter", "Newsletter" ], [ "5e7052c1-9476-4f05-a454-bd8125a13d78", "CTA 1" ], [ "00c12a9c-1dc4-45e0-a8aa-6d45022d7354", "CTA 2" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "type" : "choice",
-  "default" : "newsletter"
+  "type" : "cta"
 } ]
