@@ -1,10 +1,5 @@
 {{ require_css(get_asset_url("../../css/modules/blog-post-banner-recruitment.css")) }}
 
 <div class="banner-cta-container">
-	{% if locale == 'en' %}
-		{% cta guid="53b93af5-4e36-469a-a09d-d115d369b9e2" no_wrapper=True %}
-	{% else %}
-		{% cta guid="23c250aa-5142-45f0-a881-f2c8acd27127" no_wrapper=True %}
-	{% endif %}
-  
+	{% cta guid="{{module.banner_type_choice}}" no_wrapper=True %}
 </div>

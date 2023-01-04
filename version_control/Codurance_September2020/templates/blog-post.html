@@ -180,37 +180,28 @@ label: Blog Post
     {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
   </section>
   <section class="blog-recruitment-banner blog-max-width">
-      {% module "blog_banner" 
-                path="../modules/Blog-Post-Banner", 
-                label="BLOG BANNER" 
-                no_wrapper=True
-                export_to_template_context=True  %}
 
-      {{ content.widgets.blog_banner.body.banner_type_choice }}
-  </section>
+  {{ content.widgets.blog_banner.body }} 
 
-  {% choice "CTA_or_newsletter_form" 
-    label='Choose between CTA banner and Newsletter form', 
-    value='Newsletter-Form', 
-    choices='CTA, Newsletter-Form', 
-    no_wrapper=True, 
-    export_to_template_context=True 
-  %}
-
-  {% if widget_data.CTA_or_newsletter_form.value == "CTA" %}
-    <section class="blog-recruitment-banner blog-max-width">
-      {% module "blog-recruitment-banner" path="../modules/Blog Post Banner Recruitment", label="CTA recruitment banner" no_wrapper=True %}
-    </section>
-  {% else %}
-    {% module 'newsletter_form_card'
+  
+  {% if !content.widgets.blog_banner.body.banner_type_choice or
+        content.widgets.blog_banner.body.banner_type_choice == "newsletter" %}
+      {% module 'newsletter_form_card'
       path='../modules/Newsletter-Form-Card.module',
       label="Newsletter Form card", 
       no_wrapper=True,
       title="{{ newsletter_copy.pending.header }}",
       subtitle="{{ newsletter_copy.pending.text }}",
       newsletter_form={ form_id: "{{ newsletter_copy.form_id }}" }
-    %}
+      %}
+  {% else %}
+    {% module "blog_banner" 
+      path="../modules/Blog-Post-Banner", 
+      label="BLOG BANNER" 
+      no_wrapper=True
+      export_to_template_context=True  %}
   {% endif %}
+    </section>
   
   <section class="related-blog-section">
     <div class="related-blog-section__inner page-center">
