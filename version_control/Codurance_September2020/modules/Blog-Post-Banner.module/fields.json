@@ -1,9 +1,0 @@
-[ {
-  "id" : "7c81c5b2-719f-fc1f-866c-607914d729b8",
-  "name" : "cta_banner",
-  "display_width" : null,
-  "label" : "CTA Banner",
-  "required" : false,
-  "locked" : false,
-  "type" : "cta"
-} ]

@@ -1,7 +1,0 @@
-{
-  "global" : false,
-  "host_template_types" : [ "BLOG_POST" ],
-  "module_id" : 43753547678,
-  "label" : "Blog Post Banner",
-  "is_available_for_new_content" : true
-}
