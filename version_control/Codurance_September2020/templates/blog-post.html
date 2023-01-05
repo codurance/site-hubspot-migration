@@ -7,6 +7,7 @@ label: Blog Post
 
 {% import '../config/config.html' as config %}
 
+{% set cta_banner = config.blog_banner_cta %}
 {% set newsletter_copy = config.newsletter_cta.en %}
 
 {% if locale == "es" %}
@@ -15,30 +16,11 @@ label: Blog Post
 
 {% set isKatalystBlog = blog.name == "Katalyst" %}
 
-
 {% extends "./layouts/base.html" %}
 
-<head>
-  <meta charset="utf-8">
-  <title>{{ page_meta.html_title }}</title>
-  {% if site_settings.favicon_src %}
-  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
-  {% endif %}
-  <meta name="description" content="{{ page_meta.meta_description }}">
-  {{ require_css(get_asset_url("../css/layout.css")) }}
-  {{ require_css(get_asset_url("../css/main.css")) }}
-
-  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
-
-  {{ require_css(get_asset_url("../css/pages/blog-post.css")) }}
-  {{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
-  {{ require_css(get_asset_url("../css/partials/social-icons.css")) }}
-
-  {{ require_js(get_asset_url("../js/main.js")) }}
-  {{ standard_header_includes }}
-  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
-  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
-</head>
+{{ require_css(get_asset_url("../css/pages/blog-post.css")) }}
+{{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
+{{ require_css(get_asset_url("../css/partials/social-icons.css")) }}
 
 {% block body %}
 
@@ -173,39 +155,38 @@ label: Blog Post
       </li>
     </ul>
   </section>
+
   <section class="blog-content blog-max-width">
     <div class="blog-content__inner">
       {{ content.post_body }}
     </div>
     {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
-    <div class="blog-comments">
-      {% module "blog_comments" path="@hubspot/blog_comments", label="Blog
-      Comments" %}
-    </div>
   </section>
 
-  {% choice "CTA_or_newsletter_form" 
-    label='Choose between CTA banner and Newsletter form', 
-    value='Newsletter-Form', 
-    choices='CTA, Newsletter-Form', 
-    no_wrapper=True, 
-    export_to_template_context=True 
-  %}
-
-  {% if widget_data.CTA_or_newsletter_form.value == "CTA" %}
-    <section class="blog-recruitment-banner blog-max-width">
-      {% module "blog-recruitment-banner" path="../modules/Blog Post Banner Recruitment", label="CTA recruitment banner" no_wrapper=True %}
-    </section>
-  {% else %}
-    {% module 'newsletter_form_card'
-      path='../modules/Newsletter-Form-Card.module',
-      label="Newsletter Form card", 
-      no_wrapper=True,
-      title="{{ newsletter_copy.pending.header }}",
-      subtitle="{{ newsletter_copy.pending.text }}",
-      newsletter_form={ form_id: "{{ newsletter_copy.form_id }}" }
+  <section class="blog-banner blog-max-width">
+    {% choice "CTA_or_newsletter_form" 
+      label='Choose between CTA banner and Newsletter form', 
+      value='Newsletter-Form', 
+      choices='Newsletter-Form, Cloud, Compass, Contact-Us, Software-Modernisation', 
+      no_wrapper=True, 
+      export_to_template_context=True 
     %}
-  {% endif %}
+
+    {% set cta_or_newsletter = widget_data.CTA_or_newsletter_form.value %}
+
+    {% if cta_or_newsletter == "Newsletter-Form" %}
+      {% module 'newsletter_form_card'
+        path='../modules/Newsletter-Form-Card.module',
+        label="Newsletter Form card", 
+        no_wrapper=True,
+        title="{{ newsletter_copy.pending.header }}",
+        subtitle="{{ newsletter_copy.pending.text }}",
+        newsletter_form={ form_id: "{{ newsletter_copy.form_id }}" }
+      %}
+    {% else %}
+      {% cta guid="{{cta_banner[cta_or_newsletter]}}" no_wrapper=True %}
+    {% endif %}
+  </section>
   
   <section class="related-blog-section">
     <div class="related-blog-section__inner page-center">
@@ -304,7 +285,5 @@ label: Blog Post
     language='{{ locale }}', 
     no_wrapper=True
   %}
-
- 
 
   {% endblock body %}
