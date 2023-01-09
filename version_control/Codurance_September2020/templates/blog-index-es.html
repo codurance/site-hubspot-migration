@@ -10,25 +10,10 @@ label: Blog Listing ES
 {% import '../config/config.html' as config %}
 {% set form = config.newsletter_cta.es %}
 
-<head>
-  <meta charset="utf-8">
-  <title>{{ page_meta.html_title }}</title>
-  {% if site_settings.favicon_src %}
-  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
-  {% endif %}
-  <meta name="description" content="{{ page_meta.meta_description }}">
-  {{ require_css(get_asset_url("../css/layout.css")) }}
-  {{ require_css(get_asset_url("../css/main.css")) }}
-  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
 
   {{ require_css(get_asset_url("../css/pages/blog-index.css")) }}
-  {{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
+  {{ require_css(get_asset_url("../css/partials/blog-card.css")) }}  
 
-  {{ require_js(get_asset_url("../js/main.js")) }}
-  {{ standard_header_includes }}
-  {{ require_css(get_asset_url("../css/FontAwesome.css")) }}
-  {{ require_css(get_asset_url("../css/theme-overrides.css")) }}
-</head>
 
 {% block body %}
 {% if blog_author %}
@@ -196,7 +181,7 @@ label: Blog Listing ES
         {% else %}{% set offset = 0 %}{% endif %}
         {% if last_page_num %}
           <a class="u-pagination-v1__item u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 float-left custom-hidden-xs-down {{ "blog-pagination__prev-link--disabled" if !last_page_num }}" href="{{ blog_page_link(last_page_num) }}">
-            <i class="fa fa-angle-left custom-mr-5"></i>
+            <i class="las la-angle-left custom-mr-5"></i>
             Previous
           </a>
         {% endif %}
@@ -213,7 +198,7 @@ label: Blog Listing ES
         {% if next_page_num %}
         <a class="u-pagination-v1__item float-right custom-hidden-xs-down u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 {{ "blog-pagination__next-link--disabled" if !next_page_num }}" href="{{ blog_page_link(current_page_num + 1) }}">
           Next
-          <i class="fa fa-angle-right custom-ml-5"></i>
+          <i class="las la-angle-right custom-ml-5"></i>
         </a>
         {% endif %}
       </div>
