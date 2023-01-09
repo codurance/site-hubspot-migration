@@ -11,7 +11,7 @@
   padding-right: 2rem;
 }
 
-.kata-post__title {
+.kata__title {
   {{ utils.eames() }}
   color: white;
 }
