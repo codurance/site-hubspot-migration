@@ -222,6 +222,15 @@
   }
 {% endcall %}
 
+.blog-banner {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.blog-banner .hs-cta-img  {
+    {{ utils.card_shadow() }}
+}
+
 .related-blog-section {
   background-color: var(--athens-gray);
 }
