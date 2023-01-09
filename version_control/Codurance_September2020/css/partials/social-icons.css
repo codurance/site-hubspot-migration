@@ -27,7 +27,7 @@
   border: 1px solid var(--shark);
   color: var(--shark);
   display: flex;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: var(--light-font-weight);
   height: 2.3rem;
   justify-content: center;
