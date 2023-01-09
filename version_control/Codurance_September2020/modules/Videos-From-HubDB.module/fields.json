@@ -27,6 +27,50 @@
   },
   "type" : "hubdbtable"
 }, {
+  "id" : "b45ca16f-91e0-8bb5-5c34-33c233d5b1b6",
+  "name" : "filter_by",
+  "display_width" : null,
+  "label" : "Filter by...",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "af3bd281-6a96-eb41-71dd-c21e362ea692",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "fireside chat"
+}, {
+  "id" : "f50b9ef4-fe5f-21bf-6ad7-34057e8f691f",
+  "name" : "videos_to_display",
+  "display_width" : null,
+  "label" : "Videos to display",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "af3bd281-6a96-eb41-71dd-c21e362ea692",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "display" : "slider",
+  "min" : 1,
+  "max" : 3,
+  "step" : 1,
+  "type" : "number",
+  "default" : 3
+}, {
   "id" : "ac877392-7706-79a3-10d1-c3acbf6277a9",
   "name" : "videos",
   "display_width" : null,
@@ -35,7 +79,7 @@
   "locked" : false,
   "occurrence" : {
     "min" : null,
-    "max" : 2,
+    "max" : 3,
     "sorting_label_field" : null,
     "default" : null
   },

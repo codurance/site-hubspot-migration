@@ -11,24 +11,43 @@
   <section class="insights-overview-hero">
     {% include "./partials/header-insights.html" %}
   </section>
+
   <section class="recent-blog-posts">
     {% module 'blog-posts' path='../modules/Recent-posts-V2.module'
     label="Recent blog posts" no_wrapper=True %}
   </section>
+
   <section class="fireside-chats lateral-spacing">
     {% section_header 'fireside_chats_title' label='Fireside Chats Title' no_wrapper=True %}
 
-    {% module 'fireside-chats' path='../modules/Fireside-Chat-Videos.module'
+    {% module 'fireside-chat-videos' path='../modules/Videos-From-HubDB.module'
     label="Fireside Chat Videos" no_wrapper=True %}
   </section>
+
   <section class="editors-pick lateral-spacing">
     {% module 'editors-pick' path='../modules/Editors-Pick.module'
     label="Editors Pick" no_wrapper=True %}
   </section>
+
   <section class="insights-overview-cta lateral-spacing">
     {% module 'banner-link' path='../modules/Banner-Link.module'
     label="Banner Link" no_wrapper=True %}
   </section>
+
+  <section class="katalyst lateral-spacing">
+    {% section_header 'random-katas-header' label="Random Katas Header" no_wrapper=True %}
+    {% module 'random-katas' path='../modules/Random-Katas.module'
+      label="Random Katas" no_wrapper=True %}
+    {% module 'random-katas-button' path='../modules/Button.module' 
+      label ="Button Random Katas" no_wrapper=True %}
+
+    {% section_header 'screen-katas-headline' label="Screen Katas Headline" no_wrapper=True %} 
+    {% module 'screen-katas' path='../modules/Videos-From-HubDB.module'
+      label="Screen Kata Videos" no_wrapper=True %}
+    {% module 'screen-katas-button' path='../modules/Button.module' 
+      label ="Button Screen Katas" no_wrapper=True %}
+  </section>
+
   <section class="insights-overview-videos lateral-spacing">
     {% module 'codurance-in-motion' path='../modules/Codurance-in-motion.module'
        label="Codurance in motion" no_wrapper=True %}

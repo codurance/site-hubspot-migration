@@ -51,13 +51,13 @@ img{
   margin: var(--base-margin) 0px;
 }
 
-.hs-site-page .page-header.section-header {
-  margin-bottom: 2em;
-}
-
 .page-header.section-header {
   max-width: var(--content-max-width);
   margin-inline: auto;
+}
+
+.hs-site-page .page-header.section-header {
+  margin-bottom: 2em;
 }
 
 .hs-get-in-touch-section .dnd-section > .row-fluid {
