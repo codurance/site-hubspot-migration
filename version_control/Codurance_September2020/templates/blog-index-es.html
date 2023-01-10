@@ -10,9 +10,8 @@ label: Blog Listing ES
 {% import '../config/config.html' as config %}
 {% set form = config.newsletter_cta.es %}
 
-
-  {{ require_css(get_asset_url("../css/pages/blog-index.css")) }}
-  {{ require_css(get_asset_url("../css/partials/blog-card.css")) }}  
+{{ require_css(get_asset_url("../css/pages/blog-index.css")) }}
+{{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
 
 
 {% block body %}
