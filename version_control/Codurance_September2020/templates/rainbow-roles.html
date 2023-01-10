@@ -5,19 +5,7 @@ label: Rainbow roles template
 -->
 {% extends "./layouts/base.html" %}
 
-<head>
-  <meta charset="utf-8">
-  <title>{{ page_meta.html_title }}</title>
-  {% if site_settings.favicon_src %}
-    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
-  {% endif %}
-  <meta name="description" content="{{ page_meta.meta_description }}">
-
-  {{ require_css(get_asset_url("../css/pages/rainbow-roles.css")) }}
-
-  {{ standard_header_includes }}
-  
-</head>
+{{ require_css(get_asset_url("../css/pages/rainbow-roles.css")) }}
 
 
 {% block body %}

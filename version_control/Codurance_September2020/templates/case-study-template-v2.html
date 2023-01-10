@@ -5,24 +5,9 @@ label: NEW Case Study Template
 -->
 
 {% extends "./layouts/base.html" %}
-<head>
-  <meta charset="utf-8">
-  <title>{{ page_meta.html_title }}</title>
-  {% if site_settings.favicon_src %}
-    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
-  {% endif %}
 
-  <meta name="description" content="{{ page_meta.meta_description }}">
-  {{ require_css(get_asset_url("../css/layout.css")) }}
-  {{ require_css(get_asset_url("../css/main.css")) }}
-  {{ require_css(get_asset_url("../css/base/base-styles.css")) }}
+{{ require_css(get_asset_url("../css/pages/case-study-template-v2.css")) }}
 
-  {{ require_css(get_asset_url("../css/pages/case-study-template-v2.css")) }}
-
-  {{ require_js(get_asset_url("../js/main.js")) }}
-  {{ standard_header_includes }}
-
-</head>
 
 {% block body %}
 
