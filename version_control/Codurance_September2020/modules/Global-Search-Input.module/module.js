@@ -54,7 +54,6 @@ let hsSearch = function (_instance) {
     },
     emptySearchResults = function () {
       searchResults.innerHTML = "";
-      searchField.focus();
       searchForm.classList.remove("hs-search-field--open");
     },
     fillSearchResults = function (response) {
