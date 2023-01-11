@@ -6,6 +6,8 @@
 
 .hs-search-results__listing {
     list-style: none;
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
 }
 
 .hs-search-results .hs-search-results__listing > li {
@@ -13,6 +15,12 @@
     border-radius: 0.5em;
     margin-bottom: 1.5em;
     padding: 1.5em;
+}
+
+.hs-search-results__info-wrapper {  
+    {{ utils.natus() }}
+    color: var(--mid-gray);
+    margin-bottom: 1em;
 }
 
 .hs-search-results__description {

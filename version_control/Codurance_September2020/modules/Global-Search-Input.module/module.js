@@ -1,5 +1,8 @@
-let hsSearch = function (_instance) {
+"use strict";
+
+let hsSearch = function(_instance) {
   const TYPEAHEAD_LIMIT = 5;
+
   let KEYS = {
     TAB: "Tab",
     ESC: "Esc", // IE11 & Edge 16 value for Escape
@@ -9,12 +12,14 @@ let hsSearch = function (_instance) {
     DOWN: "Down", // IE11 & Edge 16 value for Arrow Down
     ARROW_DOWN: "ArrowDown"
   };
+
   let searchTerm = "",
     htmlLang = document.documentElement.lang,
     searchForm = _instance,
     searchField = _instance.querySelector(".hs-search-field__input"),
-    searchResults = _instance.querySelector(".hs-search-field__suggestions"),
-    searchOptions = function () {
+    searchResults = _instance.querySelector(".hs-search-field__suggestions");
+
+  let searchOptions = () => {
       let formParams = [];
       let form = _instance.querySelector("form");
       for (
@@ -31,14 +36,13 @@ let hsSearch = function (_instance) {
       }
       let queryString = formParams.join("&");
       return queryString;
-    };
-
-  let debounce = function (func, wait, immediate) {
+    },
+    debounce = (func, wait, immediate) => {
       let timeout;
-      return function () {
+      return function() {
         let context = this,
           args = arguments;
-        let later = function () {
+        let later = function() {
           timeout = null;
           if (!immediate) {
             func.apply(context, args);
@@ -52,19 +56,18 @@ let hsSearch = function (_instance) {
         }
       };
     },
-    emptySearchResults = function () {
+    emptySearchResults = () => {
       searchResults.innerHTML = "";
-      searchField.focus();
       searchForm.classList.remove("hs-search-field--open");
     },
-    fillSearchResults = function (response) {
+    fillSearchResults = (response) => {
       let searchMessage = htmlLang == "es" ? "Resultados para" : "Results for";
       let items = [];
       items.push(
         `<li id='results-for'>${searchMessage} "${response.searchTerm}"</li>`
       );
 
-      response.results.forEach(function (val, index) {
+      response.results.forEach(function(val, index) {
         items.push(
           `<li id="result${index}">
             <a href="${val.url}"> ${val.title}</a>
@@ -76,7 +79,7 @@ let hsSearch = function (_instance) {
       searchResults.innerHTML = items.join("");
       searchForm.classList.add("hs-search-field--open");
     },
-    getSearchResults = function () {
+    getSearchResults = () => {
       let request = new XMLHttpRequest();
       let requestUrl =
         "/_hcms/search?&term=" +
@@ -87,7 +90,7 @@ let hsSearch = function (_instance) {
         searchOptions();
 
       request.open("GET", requestUrl, true);
-      request.onload = function () {
+      request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
           let data = JSON.parse(request.responseText);
           if (data.total > 0) {
@@ -100,12 +103,12 @@ let hsSearch = function (_instance) {
           console.error("Server reached, error retrieving results.");
         }
       };
-      request.onerror = function () {
+      request.onerror = function() {
         console.error("Could not reach the server.");
       };
       request.send();
     },
-    trapFocus = function () {
+    trapFocus = () => {
       let tabbable = [];
       tabbable.push(searchField);
       let tabbables = searchResults.getElementsByTagName("A");
@@ -114,7 +117,7 @@ let hsSearch = function (_instance) {
       }
       let firstTabbable = tabbable[0],
         lastTabbable = tabbable[tabbable.length - 1];
-      let tabResult = function (e) {
+      let tabResult = function(e) {
           if (e.target == lastTabbable && !e.shiftKey) {
             e.preventDefault();
             firstTabbable.focus();
@@ -123,31 +126,31 @@ let hsSearch = function (_instance) {
             lastTabbable.focus();
           }
         },
-        nextResult = function (e) {
+        nextResult = function(e) {
           e.preventDefault();
           if (e.target == lastTabbable) {
             firstTabbable.focus();
           } else {
-            tabbable.forEach(function (el) {
+            tabbable.forEach(function(el) {
               if (el == e.target) {
                 tabbable[tabbable.indexOf(el) + 1].focus();
               }
             });
           }
         },
-        lastResult = function (e) {
+        lastResult = function(e) {
           e.preventDefault();
           if (e.target == firstTabbable) {
             lastTabbable.focus();
           } else {
-            tabbable.forEach(function (el) {
+            tabbable.forEach(function(el) {
               if (el == e.target) {
                 tabbable[tabbable.indexOf(el) - 1].focus();
               }
             });
           }
         };
-      searchForm.addEventListener("keydown", function (e) {
+      searchForm.addEventListener("keydown", function(e) {
         switch (e.key) {
           case KEYS.TAB:
             tabResult(e);
@@ -167,7 +170,7 @@ let hsSearch = function (_instance) {
         }
       });
     },
-    isSearchTermPresent = debounce(function () {
+    isSearchTermPresent = debounce(() => {
       searchTerm = searchField.value;
       if (searchTerm.length > 2) {
         getSearchResults();
@@ -175,7 +178,7 @@ let hsSearch = function (_instance) {
         emptySearchResults();
       }
     }, 250),
-    clearResultsOnClick = function () {
+    clearResultsOnClick = () => {
       document.addEventListener("click", (e) => {
         if (
           !searchField.contains(e.target) &&
@@ -184,31 +187,22 @@ let hsSearch = function (_instance) {
           emptySearchResults();
         }
       });
-    },
-    init = (function () {
-      clearResultsOnClick();
-      searchField.addEventListener("input", function (e) {
-        if (searchTerm != searchField.value) {
-          isSearchTermPresent();
-        }
-      });
-    })();
+    };
+
+  (init = () => {
+    clearResultsOnClick();
+    searchField.addEventListener("input", function(e) {
+      if (searchTerm != searchField.value) {
+        isSearchTermPresent();
+      }
+    });
+  })();
 };
 
-if (
-  document.attachEvent
-    ? document.readyState === "complete"
-    : document.readyState !== "loading"
-) {
-  let searchResults = document.querySelectorAll(".hs-search-field");
-  Array.prototype.forEach.call(searchResults, function (el) {
+document.addEventListener("DOMContentLoaded", function() {
+  const searchResults = document.querySelectorAll(".hs-search-field");
+
+  Array.prototype.forEach.call(searchResults, function(el) {
     let hsSearchModule = hsSearch(el);
   });
-} else {
-  document.addEventListener("DOMContentLoaded", function () {
-    let searchResults = document.querySelectorAll(".hs-search-field");
-    Array.prototype.forEach.call(searchResults, function (el) {
-      let hsSearchModule = hsSearch(el);
-    });
-  });
-}
+});

@@ -9,7 +9,7 @@ const noResults = {
   }
 };
 
-let hsResultsPage = function (_resultsClass) {
+let hsResultsPage = function(_resultsClass) {
   function buildResultsPage(_instance) {
     let resultTemplate = _instance.querySelector(
         ".hs-search-results__template"
@@ -32,7 +32,14 @@ let hsResultsPage = function (_resultsClass) {
     function getLimit() {
       return parseInt(searchParams.get("limit"));
     }
-    function addResult(title, url, description, featuredImage) {
+    function addResult(
+      title,
+      url,
+      description,
+      featuredImage,
+      publishedDate,
+      authorFullName
+    ) {
       let newResult = document.importNode(resultTemplate.content, true);
       function isFeaturedImageEnabled() {
         if (
@@ -43,8 +50,18 @@ let hsResultsPage = function (_resultsClass) {
       }
       newResult.querySelector(".hs-search-results__title").innerHTML = title;
       newResult.querySelector(".hs-search-results__title").href = url;
-      newResult.querySelector(".hs-search-results__description").innerHTML =
-        description;
+      newResult.querySelector(
+        ".hs-search-results__description"
+      ).innerHTML = description;
+
+      newResult.querySelector(
+        ".hs-search-results__date"
+      ).textContent = getAndFormatDate(publishedDate);
+
+      newResult.querySelector(
+        ".hs-search-results__author"
+      ).textContent = authorFullName;
+
       if (typeof featuredImage !== "undefined" && isFeaturedImageEnabled()) {
         newResult.querySelector(
           ".hs-search-results__featured-image > img"
@@ -52,13 +69,28 @@ let hsResultsPage = function (_resultsClass) {
       }
       resultsSection.appendChild(newResult);
     }
+    function getAndFormatDate(publishedDate) {
+      const dateOptions = {
+        year: "numeric",
+        month: "short",
+        day: "numeric"
+      };
+      let localDate = new Date(parseInt(publishedDate)).toLocaleDateString(
+        "en-GB",
+        dateOptions
+      );
+      return localDate;
+    }
+
     function fillResults(results) {
-      results.results.forEach(function (result, i) {
+      results.results.forEach(function(result, i) {
         addResult(
           result.title,
           result.url,
           result.description,
-          result.featuredImageUrl
+          result.featuredImageUrl,
+          result.publishedDate,
+          result.authorFullName
         );
       });
     }
@@ -82,7 +114,7 @@ let hsResultsPage = function (_resultsClass) {
 
     function setSearchBarDefault(searchedTerm) {
       let searchBars = document.querySelectorAll(".hs-search-field__input");
-      Array.prototype.forEach.call(searchBars, function (el) {
+      Array.prototype.forEach.call(searchBars, function(el) {
         el.value = searchedTerm;
       });
     }
@@ -93,7 +125,7 @@ let hsResultsPage = function (_resultsClass) {
         request = new XMLHttpRequest();
 
       request.open("GET", requestUrl, true);
-      request.onload = function () {
+      request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
           let data = JSON.parse(request.responseText);
           setSearchBarDefault(data.searchTerm);
@@ -108,7 +140,7 @@ let hsResultsPage = function (_resultsClass) {
           console.error("Server reached, error retrieving results.");
         }
       };
-      request.onerror = function () {
+      request.onerror = function() {
         console.error("Could not reach the server.");
       };
       request.send();
@@ -147,7 +179,7 @@ let hsResultsPage = function (_resultsClass) {
       }
     }
 
-    let getResults = (function () {
+    let getResults = (function() {
       if (getTerm()) {
         httpRequest(getTerm(), getOffset());
       } else {
@@ -156,9 +188,9 @@ let hsResultsPage = function (_resultsClass) {
     })();
   }
 
-  (function () {
+  (function() {
     let searchResults = document.querySelectorAll(_resultsClass);
-    Array.prototype.forEach.call(searchResults, function (el) {
+    Array.prototype.forEach.call(searchResults, function(el) {
       buildResultsPage(el);
     });
   })();
@@ -171,7 +203,7 @@ if (
 ) {
   let resultsPages = hsResultsPage("div.hs-search-results");
 } else {
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function() {
     let resultsPages = hsResultsPage("div.hs-search-results");
   });
 }
