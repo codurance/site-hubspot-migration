@@ -4,15 +4,10 @@ isAvailableForNewContent: true
 label: Blog Post
 -->
 {% import '../snippets/button-snippets.html' as snippets %}
-
 {% import '../config/config.html' as config %}
 
-{% set cta_banner = config.blog_banner_cta %}
-{% set newsletter_copy = config.newsletter_cta.en %}
-
-{% if locale == "es" %}
-  {% set newsletter_copy = config.newsletter_cta.es %}
-{% endif %}
+{% set newsletter_copy = config.newsletter_cta[locale] %}
+{% set cta_banner = config.blog_banner_cta[locale] %}
 
 {% set isKatalystBlog = blog.name == "Katalyst" %}
 
