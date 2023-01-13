@@ -1,11 +1,11 @@
 {% import '../utils/utils.css' as utils %}
 
-.custom-btn {
+.hs-site-page .custom-btn {
   margin-top: 2em;
 }
 
 {% call utils.small() %}
-  .custom-btn .button-primary {
+  .hs-site-page .custom-btn .button-primary {
     width: 100%;
     max-width: var(--button-max-width);
   }
