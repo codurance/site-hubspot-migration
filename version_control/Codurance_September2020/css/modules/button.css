@@ -1,6 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
-.custom-btn {
+.hs-site-page .custom-btn {
   margin-top: 2em;
 }
 
