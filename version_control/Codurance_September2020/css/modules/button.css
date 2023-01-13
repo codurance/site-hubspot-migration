@@ -5,7 +5,7 @@
 }
 
 {% call utils.small() %}
-  .hs-site-page .custom-btn .button-primary {
+  .custom-btn .button-primary {
     width: 100%;
     max-width: var(--button-max-width);
   }
