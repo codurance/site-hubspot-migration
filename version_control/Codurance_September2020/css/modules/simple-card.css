@@ -1,6 +1,4 @@
-
 {% import '../utils/utils.css' as utils %}
-
 
 {% call utils.medium_large_and_extra_large() %}
     .card-container {
@@ -12,13 +10,13 @@
     }
 {% endcall %}
 
-
 .card {
+    {{ utils.card_shadow() }}
     background-color: white;
     border-radius: 10px;
-    {{ utils.card_shadow() }}
+    display: flex;
+    flex-direction: column; 
 }
-
 
 .card__img {
     border-radius: 10px 10px 0 0;
@@ -29,6 +27,10 @@
 
 .card__info {
     padding: 1.2em;
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
 }
 
 .card__info h3 {
@@ -37,5 +39,9 @@
 }
 
 .card__info p {
-    margin-bottom: 1.em;
+    margin-bottom: .6em;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;
 }

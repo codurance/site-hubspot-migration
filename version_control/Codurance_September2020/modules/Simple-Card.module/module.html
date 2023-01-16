@@ -11,11 +11,11 @@
             <div class="card__info">
                 <h3>{{ event.name }}</h3>
                 <p>{{ event.description }}</p>
-                {{snippets.text_cta_right_arrow(
+                {{ snippets.text_cta_right_arrow(
                     url=event.link,
                     target="_blank",
                     text="Register Attendance"
-                )}}
+                ) }}
             </div>
         </article>
     {% endfor %}
