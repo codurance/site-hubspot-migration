@@ -1,6 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
-{% call utils.medium_large_and_extra_large() %}
+{% call utils.large_and_extra_large() %}
     .card-container {
         display: grid;
         grid-template-columns: repeat;
@@ -17,6 +17,12 @@
     display: flex;
     flex-direction: column; 
 }
+
+{% call utils.small_and_medium() %}
+    .card:not(:last-child) {
+        margin-bottom: 1.8em;
+    }
+{% endcall %}
 
 .card__img {
     border-radius: 10px 10px 0 0;
