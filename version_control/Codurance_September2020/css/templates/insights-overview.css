@@ -135,7 +135,15 @@
     {{ utils.tango_to_white() }}
     padding-top: 2em;
     padding-bottom: 2em;
+}
+.upcoming-events-container {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+}
 
+.upcoming-events__title {
+  {{ utils.eames() }}
+  margin-bottom: 1.6rem;
 }
 
 
