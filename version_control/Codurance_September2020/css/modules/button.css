@@ -8,5 +8,6 @@
   .custom-btn .button-primary {
     width: 100%;
     max-width: var(--button-max-width);
+    box-sizing: border-box !important;
   }
 {% endcall %}
