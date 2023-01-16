@@ -3,11 +3,10 @@
   isAvailableForNewContent: false
 -->
 {% macro truncate_description(text, character_limit) %}
-{{ text|safe|striptags|truncatehtml(character_limit, ' ...' , false) }}
+  {{ text|safe|striptags|truncatehtml(character_limit, ' ...' , false) }}
 {% endmacro %}
 
-{% macro title(post) %}
-{% set contentType = post.CMSContentType %}
-{% set title = contentType == "BLOG_POST" ? post.name : post.title %}
-{{ title }}
+{% macro title(content) %}
+  {% set contentType = content.CMSContentType %}
+  {{ contentType == "BLOG_POST" ? content.name : content.title }}
 {% endmacro %}
