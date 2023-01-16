@@ -1,5 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
+/* General styles */
 .insights-overview-container .section-header h2 {
     {{ utils.eames() }}
     margin-bottom: var(--eames-margin);
@@ -16,6 +17,27 @@
         margin-bottom: var(--dudler-margin);
     }
 {% endcall %}
+
+/* Header */
+
+{% call utils.medium() %}
+    .insights-overview-hero .header-insights__text  {
+        margin-bottom: 4em;
+        padding-top: 2rem;
+        }
+    {% endcall %}
+    
+{% call utils.extra_large() %}
+    .insights-overview-hero .header-insights__text  {
+        margin-bottom: 5rem;
+    }
+
+    .insights-overview-hero .header-insights__text h1 {
+        max-width: var(--gaudi-max-width);
+    }
+{% endcall %}
+
+/* Recent blog posts */
 
 .recent-blog-posts {
     margin-bottom: -3rem;
@@ -39,33 +61,12 @@
     .recent-blog-posts .cm-recent-post .cm-recent-post__group {
         margin-right: 0;
         }
-{% endcall %}
 
-    
-{% call utils.small() %}
     .insights-overview-hero .header-insights__text  {
         margin-bottom: 2rem;
         transform: translateY(-4rem);
     }
 {% endcall %}
-
-{% call utils.medium() %}
-    .insights-overview-hero .header-insights__text  {
-        margin-bottom: 4em;
-        padding-top: 2rem;
-        }
-    {% endcall %}
-    
-{% call utils.extra_large() %}
-    .insights-overview-hero .header-insights__text  {
-        margin-bottom: 5rem;
-    }
-
-    .insights-overview-hero .header-insights__text h1 {
-        max-width: var(--gaudi-max-width);
-    }
-{% endcall %}
-
 
 .recent-blog-posts .cm-recent-post {
     transform: translateY(-3rem);
@@ -78,6 +79,8 @@
 .recent-blog-posts .cm-recent-post .cm-recent-post__item:first-child {
     margin-left: 0;
 }
+
+/* Fireside chats */
 
 .fireside-chats {
     {{ utils.slate_to_woodsmoke() }}
@@ -93,6 +96,8 @@
     }
 {% endcall %}
 
+/* Editors pick */
+
 .editors-pick, .insights-overview-videos {
     background: linear-gradient(180deg, rgba(252,224,206,0.6) 0%, rgba(255,255,255,1) 45%);
 
@@ -106,6 +111,8 @@
         padding-bottom: 3rem;
     }
 {% endcall %}
+
+/* CTA banner */
 
 .insights-overview-cta {
     padding-inline: 0;
@@ -130,6 +137,7 @@
     }
 {% endcall %}
 
+/* Upcoming events */
 
 .upcoming-events {
     {{ utils.tango_to_white() }}
@@ -146,7 +154,7 @@
   margin-bottom: 1.6rem;
 }
 
-
+/* Katalyst */
 
 .katalyst {
     {{ utils.color1_to_color2("to right", "var(--woodsmoke)", "var(--slate)" ) }}
