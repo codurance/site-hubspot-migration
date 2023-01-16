@@ -1,0 +1,7 @@
+
+{% set latest_events = hubdb_table_rows(module.hubdb, "&orderBy=-date&limit=3") %}
+
+{% for event in latest_events %}
+<p>{{event}}</p>
+{% endfor %}
+
