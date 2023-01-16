@@ -130,6 +130,16 @@
     }
 {% endcall %}
 
+
+.upcoming-events {
+    {{ utils.tango_to_white() }}
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+}
+
+
+
 .katalyst {
     {{ utils.color1_to_color2("to right", "var(--woodsmoke)", "var(--slate)" ) }}
     padding-top: 5.8em;
