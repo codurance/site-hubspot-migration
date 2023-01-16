@@ -1,6 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 /* General styles */
+
 .insights-overview-container .section-header h2 {
     {{ utils.eames() }}
     margin-bottom: var(--eames-margin);
@@ -153,6 +154,13 @@
   {{ utils.eames() }}
   margin-bottom: 1.6rem;
 }
+
+{% call utils.small_medium_and_large() %}
+    .upcoming-events__title {
+        {{ utils.dudler() }}
+        font-weight: var(--heavy-font-weight);
+    }
+{% endcall %}
 
 /* Katalyst */
 
