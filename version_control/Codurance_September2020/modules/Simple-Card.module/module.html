@@ -1,20 +1,22 @@
 
 {% import '../../snippets/button-snippets.html' as snippets %}
+{{ require_css(get_asset_url("../css/modules/simple-card.css")) }}    
 
 {% set latest_events = hubdb_table_rows(module.hubdb, "&orderBy=-datetime&limit=3") %}
 
 <div class="card-container">
     {% for event in latest_events %}
         <article class="card">
-            <h3 class="card__title">Name: {{event.name}}</h3>
-            <img class="card__img" src="{{event.thumbnail.url}}" />
-            <p  class="card__description">Description: {{event.description}}</p>
-    
-            {{snippets.text_cta_right_arrow(
-                      url=event.link,
-                      target="_blank",
-                      text="Register Attendance"
-                    )}}
+            <img class="card__img" src="{{event.thumbnail.url}}" alt="" />
+            <div class="card__info">
+                <h3>{{event.name}}</h3>
+                <p>{{event.name}}</p>
+                {{snippets.text_cta_right_arrow(
+                    url=event.link,
+                    target="_blank",
+                    text="Register Attendance"
+                )}}
+            </div>
         </article>
     {% endfor %}
 </div>

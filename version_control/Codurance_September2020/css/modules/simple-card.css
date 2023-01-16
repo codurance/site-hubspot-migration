@@ -1,0 +1,41 @@
+
+{% import '../utils/utils.css' as utils %}
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        column-gap: 1.8em;
+    }
+{% endcall %}
+
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    {{ utils.card_shadow() }}
+}
+
+
+.card__img {
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    width: 100%;
+}
+
+.card__info {
+    padding: 1.2em;
+}
+
+.card__info h3 {
+    {{ utils.freed() }}
+    margin-bottom: .75em;
+}
+
+.card__info p {
+    margin-bottom: 1.em;
+}
