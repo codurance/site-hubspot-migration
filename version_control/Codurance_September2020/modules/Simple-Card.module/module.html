@@ -8,7 +8,13 @@
 <div class="card-container">
     {% for event in latest_events %}
         <article class="card">
-            <img class="card__img" src="{{event.thumbnail.url}}" alt="" />
+            <img class="card__img" src="{{ resize_image_url(event.thumbnail.url, 400) }}" 
+                alt="" 
+                width="400"
+                height="281"
+                loading="lazy" >
+
+
             <div class="card__info">
                 <time>{{ event.datetime | format_datetime('d MMM yyyy | HH:mm', 'Europe/Madrid') }}</time>
                 <h3>{{ event.name }}</h3>
