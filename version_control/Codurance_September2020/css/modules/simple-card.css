@@ -36,8 +36,14 @@
     height: 100%;
     display: flex;
     flex-direction: column; 
-    justify-content: space-between;
 }
+
+.card__info time {
+    {{ utils.sejima() }}
+    margin-bottom: .5em;
+    text-transform: uppercase;
+}
+
 
 .card__info h3 {
     {{ utils.freed() }}
@@ -50,4 +56,8 @@
     -webkit-line-clamp: 2;
     display: -webkit-box;
     overflow: hidden;
+}
+
+.card__info a {
+    margin-top: auto;
 }
