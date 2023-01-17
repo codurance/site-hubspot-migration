@@ -4,13 +4,14 @@
 
 {% set latest_events = hubdb_table_rows(module.hubdb, "&orderBy=-datetime&limit=3") %}
 
+
 <div class="card-container">
     {% for event in latest_events %}
         <article class="card">
             <img class="card__img" src="{{event.thumbnail.url}}" alt="" />
             <div class="card__info">
+                <time>{{ event.datetime | format_datetime('d MMM yyyy | HH:mm', 'Europe/Madrid') }}</time>
                 <h3>{{ event.name }}</h3>
-                <p>{{ event.description }}</p>
                 {{ snippets.text_cta_right_arrow(
                     url=event.link,
                     target="_blank",
