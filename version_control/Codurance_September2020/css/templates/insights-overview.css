@@ -142,8 +142,8 @@
 
 .upcoming-events {
     {{ utils.tango_to_white() }}
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 4.3em;
+    padding-bottom: 4.3em;
 }
 .upcoming-events-container {
     max-width: var(--content-max-width);
