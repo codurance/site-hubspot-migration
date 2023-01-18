@@ -1,0 +1,21 @@
+[ {
+  "id" : "56895d09-d25c-cb92-23ae-8410ec53a132",
+  "name" : "hubdb",
+  "display_width" : null,
+  "label" : "HubDb",
+  "required" : false,
+  "locked" : false,
+  "placeholder" : "Select from existing Database",
+  "type" : "hubdbtable"
+}, {
+  "id" : "6baa0c65-a902-785f-9131-070694d5d29d",
+  "name" : "card_link_text",
+  "display_width" : null,
+  "label" : "Card Link Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

@@ -1,0 +1,59 @@
+{% import '../utils/utils.css' as utils %}
+
+.card-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+}
+
+{% call utils.large_and_extra_large() %}
+    .card-container {
+        column-gap: 1.8em;
+    }
+{% endcall %}
+
+.card {
+    {{ utils.card_shadow() }}
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.card__img {
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    width: 100%;
+}
+
+.card__info {
+    padding: 1.2em;
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+}
+
+.card__info time {
+    {{ utils.sejima() }}
+    margin-bottom: .5em;
+    text-transform: uppercase;
+}
+
+
+.card__info h3 {
+    {{ utils.freed() }}
+    margin-bottom: .75em;
+}
+
+.card__info p {
+    margin-bottom: .6em;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
+.card__info a {
+    margin-top: auto;
+}

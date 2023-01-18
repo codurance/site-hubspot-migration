@@ -106,7 +106,8 @@
 {% endcall %}
 
 {% call utils.small() %}
-       .cm-editors-pick__items {
+    .cm-editors-pick__items,
+    .cm-editors-pick__big_items {
         margin-bottom: 1.5rem;
     }
 
