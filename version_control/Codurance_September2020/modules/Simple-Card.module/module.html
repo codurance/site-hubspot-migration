@@ -7,6 +7,12 @@
 
 <div class="card-container">
     {% for event in latest_events %}
+
+        {% set formated_date = event.datetime | format_datetime('d MMM yyyy | HH:mm', 'Europe/Madrid') %}
+        {% if locale == 'es' %}
+            {% set formated_date = event.datetime | format_datetime('d MMM yyyy | HH:mm', 'Europe/Madrid') %}
+        {% endif %} 
+
         <article class="card">
             <img class="card__img" src="{{ resize_image_url(event.thumbnail.url, 400) }}" 
                 alt="" 
@@ -14,9 +20,8 @@
                 height="281"
                 loading="lazy" >
 
-
             <div class="card__info">
-                <time>{{ event.datetime | format_datetime('d MMM yyyy | HH:mm', 'Europe/Madrid') }}</time>
+                <time>{{ formated_date }}</time>
                 <h3>{{ event.name }}</h3>
                 {{ snippets.text_cta_right_arrow(
                     url=event.link,
