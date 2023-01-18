@@ -8,7 +8,7 @@
 <div class="card-container">
     {% for event in latest_events %}
 
-        {% set formated_date = event.datetime | format_datetime('d MMM yyyy | HH:mm', 'Europe/Madrid') %}
+        {% set formated_date = event.datetime | format_datetime('d MMM yyyy | HH:mm') %}
         {% if locale == 'es' %}
             {% set formated_date = event.datetime | format_datetime('d MMM yyyy | HH:mm', 'Europe/Madrid') %}
         {% endif %} 
