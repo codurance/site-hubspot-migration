@@ -1,7 +1,7 @@
 {{ require_css(get_asset_url("../../css/modules/header-slim.css")) }}
 
 <style>
-  .simple-hero-slice {
+  .header-slim {
     {% if module.style.choice == "bg_img" %}
       background-image: url({{ module.style.bg_image.src }});
       background-repeat: no-repeat;
@@ -12,13 +12,13 @@
   }
 </style>
 
-<div class="simple-hero-slice">
-	<div class="simple-hero-slice__text-container responsive-page-width lateral-spacing">
-		<h1 class="simple-hero-slice__title">{{ module.title }}</h1>
-    <p class="simple-hero-slice__subtitle">{{ module.subtitle }}</p>
+<div class="header-slim">
+	<div class="header-slim__text-container responsive-page-width lateral-spacing">
+		<h1 class="header-slim__title">{{ module.title }}</h1>
+    <p class="header-slim__subtitle">{{ module.subtitle }}</p>
 
 		{% if module.image %}
-			<img class="simple-hero-slice__image" src="{{ module.image.src }}" alt=""/>
+			<img class="header-slim__image" src="{{ module.image.src }}" alt=""/>
 		{% endif %}
 	</div>
 </div>

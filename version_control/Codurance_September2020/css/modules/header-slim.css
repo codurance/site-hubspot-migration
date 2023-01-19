@@ -1,16 +1,16 @@
 {% import '../utils/utils.css' as utils %}
 
-.simple-hero-slice {
+.header-slim {
   padding-bottom: 5rem;
   padding-top: 5rem;
 }
 
-.simple-hero-slice__text-container {
+.header-slim__text-container {
   margin-left: auto;
   margin-right: auto;
 }
 
-.simple-hero-slice__title {
+.header-slim__title {
     font-size: var(--eames-font-size);
     font-weight: var(--heavy-font-weight);
     max-width: var(--eames-max-width);
