@@ -1,9 +1,11 @@
-{{ require_css(get_asset_url("../../css/modules/simple-hero-slice.css")) }}
+{{ require_css(get_asset_url("../../css/modules/header-slim.css")) }}
 
 <style>
   .simple-hero-slice {
     {% if module.style.choice == "bg_img" %}
       background-image: url({{ module.style.bg_image.src }});
+      background-repeat: no-repeat;
+      background-size: cover;
     {% else %}   
       background: {{ module.style.gradient.css }};  
     {% endif %}
