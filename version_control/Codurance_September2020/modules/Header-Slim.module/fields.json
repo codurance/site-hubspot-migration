@@ -46,7 +46,7 @@
   "locked" : false,
   "children" : [ {
     "id" : "83b4faa0-5627-d0e2-70ab-1d5744cabdc6",
-    "name" : "choice_field",
+    "name" : "choice",
     "display_width" : null,
     "label" : "Choice",
     "inline_help_text" : "Choose the type of background you want to display",
@@ -57,7 +57,8 @@
     "choices" : [ [ "bg_img", "Background image" ], [ "gradient", "Gradient" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
-    "type" : "choice"
+    "type" : "choice",
+    "default" : "bg_img"
   }, {
     "id" : "945dc2a0-ce72-fe3c-0916-87b4ecdf3a09",
     "name" : "bg_image",
@@ -107,6 +108,7 @@
   "expanded" : false,
   "type" : "group",
   "default" : {
+    "choice" : "bg_img",
     "bg_image" : {
       "size_type" : "auto",
       "src" : "",
