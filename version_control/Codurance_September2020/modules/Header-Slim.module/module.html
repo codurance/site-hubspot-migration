@@ -1,0 +1,32 @@
+{{ require_css(get_asset_url("../../css/modules/simple-hero-slice.css")) }}
+
+
+<style>
+  .simple-hero-slice {
+    {% if module.style.gradient %}
+      background: {{module.style.gradient.css}};
+    {% else %}   
+      background-image: "{{module.style.bg_image.src}}";
+    {% endif %}
+  }
+</style>
+
+
+<div class="simple-hero-slice">
+	<div class="simple-hero-slice__text-container responsive-page-width lateral-spacing">
+		<h1 class="simple-hero-slice__title">{{ module.title }}</h1>
+    <p class="simple-hero-slice__subtitle">{{ module.subtitle }}</p>
+
+		{% if module.image %}
+			<img class="simple-hero-slice__image" src={{module.image.src}} alt=""/>
+		{% endif %}
+	</div>
+</div>
+
+
+
+	<img src="{{ module.style.bg_image.src }}" alt="{{ module.style.bg_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+
+{{ module.style.gradient.css[0] }}
+{{ module.style.gradient.css}}
+
