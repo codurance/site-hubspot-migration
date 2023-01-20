@@ -13,6 +13,11 @@
       background: {{ module.style.gradient.css }};  
     {% endif %}
   }
+  
+  
+  .header-slim__text-container {
+    color: {{ module.style.text_color.color }};
+  }
 </style>
 
 <div class="header-slim">
@@ -24,7 +29,6 @@
 			<img class="header-slim__image" src="{{ module.image.src }}" alt=""/>
 		{% endif %}
 
-    {{module.style.gradient}}
 	</div>
 </div>
 

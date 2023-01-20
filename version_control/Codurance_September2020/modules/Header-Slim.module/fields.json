@@ -45,10 +45,24 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
+    "id" : "379bffbb-e9a5-dd62-eb3c-a53ca218c3f7",
+    "name" : "text_color",
+    "display_width" : null,
+    "label" : "Text color",
+    "inline_help_text" : "Choose the color for the text heading",
+    "required" : false,
+    "locked" : false,
+    "show_opacity" : false,
+    "type" : "color",
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }, {
     "id" : "83b4faa0-5627-d0e2-70ab-1d5744cabdc6",
     "name" : "choice",
     "display_width" : null,
-    "label" : "Choice",
+    "label" : "Background type",
     "inline_help_text" : "Choose the type of background you want to display",
     "required" : false,
     "locked" : false,
@@ -108,6 +122,10 @@
   "expanded" : false,
   "type" : "group",
   "default" : {
+    "text_color" : {
+      "color" : null,
+      "opacity" : 100
+    },
     "choice" : "bg_img",
     "bg_image" : {
       "size_type" : "auto",
