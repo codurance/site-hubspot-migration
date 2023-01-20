@@ -2,7 +2,6 @@
 
 .header-slim {
   padding-top: 1.6em;
-
 }
 
 .header-slim-container {
@@ -11,6 +10,11 @@
   justify-content: space-between;
   max-width: var(--content-max-width);
   margin-inline: auto;
+}
+
+.header-slim__text {
+  margin-top: 1.6em;
+  margin-bottom: 3.2em;
 }
 
 .header-slim__text h1 {
