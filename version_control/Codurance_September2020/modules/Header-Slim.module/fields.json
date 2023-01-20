@@ -116,7 +116,27 @@
       "hidden_subfields" : null
     },
     "type" : "gradient",
-    "default" : { }
+    "default" : {
+      "colors" : [ {
+        "color" : {
+          "r" : 29,
+          "g" : 35,
+          "b" : 60,
+          "a" : 1
+        }
+      }, {
+        "color" : {
+          "r" : 12,
+          "g" : 12,
+          "b" : 13,
+          "a" : 1
+        }
+      } ],
+      "side_or_corner" : {
+        "horizontalSide" : "RIGHT",
+        "verticalSide" : null
+      }
+    }
   } ],
   "tab" : "STYLE",
   "expanded" : false,
@@ -133,6 +153,26 @@
       "alt" : null,
       "loading" : "eager"
     },
-    "gradient" : { }
+    "gradient" : {
+      "colors" : [ {
+        "color" : {
+          "r" : 29,
+          "g" : 35,
+          "b" : 60,
+          "a" : 0.6
+        }
+      }, {
+        "color" : {
+          "r" : 12,
+          "g" : 12,
+          "b" : 13,
+          "a" : 1
+        }
+      } ],
+      "side_or_corner" : {
+        "horizontalSide" : "RIGHT",
+        "verticalSide" : null
+      }
+    }
   }
 } ]
