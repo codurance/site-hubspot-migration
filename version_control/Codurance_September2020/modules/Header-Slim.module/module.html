@@ -15,15 +15,17 @@
   }
   
   
-  .header-slim__text-container {
+  .header-slim-container {
     color: {{ module.style.text_color.color }};
   }
 </style>
 
 <div class="header-slim">
-	<div class="header-slim__text-container responsive-page-width lateral-spacing">
-		<h1 class="header-slim__title">{{ module.title }}</h1>
-    <p class="header-slim__subtitle">{{ module.subtitle }}</p>
+	<div class="header-slim-container responsive-page-width lateral-spacing">
+		<div class="header-slim__text">
+      <h1>{{ module.title }}</h1>
+      <p>{{ module.subtitle }}</p>
+    </div>
 
 		{% if module.image %}
 			<img class="header-slim__image" src="{{ module.image.src }}" alt=""/>
