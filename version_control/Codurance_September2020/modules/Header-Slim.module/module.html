@@ -1,12 +1,15 @@
 {{ require_css(get_asset_url("../../css/modules/header-slim.css")) }}
 
 <style>
+  {% set bg_color = module.style.gradient.colors[0].color %}
+
   .header-slim {
     {% if module.style.choice == "bg_img" %}
       background-image: url({{ module.style.bg_image.src }});
       background-repeat: no-repeat;
       background-size: cover;
-    {% else %}   
+    {% else %}
+      background-color: rgb({{ bg_color.r }}, {{ bg_color.g }}, {{ bg_color.b }});     
       background: {{ module.style.gradient.css }};  
     {% endif %}
   }
@@ -20,6 +23,8 @@
 		{% if module.image %}
 			<img class="header-slim__image" src="{{ module.image.src }}" alt=""/>
 		{% endif %}
+
+    {{module.style.gradient}}
 	</div>
 </div>
 
