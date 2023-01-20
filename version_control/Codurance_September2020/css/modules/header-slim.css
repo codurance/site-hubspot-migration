@@ -1,18 +1,27 @@
 {% import '../utils/utils.css' as utils %}
 
 .header-slim {
-  padding-bottom: 5rem;
-  padding-top: 5rem;
+  padding-top: 1.6em;
+
 }
 
-.header-slim__text-container {
-  margin-left: auto;
-  margin-right: auto;
+.header-slim-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.header-slim__title {
+.header-slim__text h1 {
     font-size: var(--eames-font-size);
     font-weight: var(--heavy-font-weight);
     max-width: var(--eames-max-width);
-    color: var(--athens-gray);
+}
+
+.header-slim__text p {
+    margin-top: var(--sejima-margin);
+}
+
+.header-slim__image {
+  align-self: end;
+  width: 80%;
 }
