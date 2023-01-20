@@ -9,16 +9,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
 }
 
 .header-slim__text h1 {
-    font-size: var(--eames-font-size);
-    font-weight: var(--heavy-font-weight);
+    {{ utils.eames() }}
     max-width: var(--eames-max-width);
 }
 
 .header-slim__text p {
+    {{ utils.freed() }}
     margin-top: var(--sejima-margin);
+    font-weight: var(--light-font-weight);
 }
 
 .header-slim__image {
