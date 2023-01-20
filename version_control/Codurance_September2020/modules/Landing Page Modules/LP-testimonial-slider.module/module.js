@@ -17,8 +17,10 @@ let swiper = new Swiper(".swiper", {
   }
 });
 
-const minimumSlidesAvailable = 3;
+(function disableSliderIfSingleSlide() {
+  const minimumSlidesAvailable = 3;
 
-if (swiper.slides.length == minimumSlidesAvailable) {
-  swiper.destroy();
-}
+  if (swiper.slides.length == minimumSlidesAvailable) {
+    swiper.destroy();
+  }
+})();
