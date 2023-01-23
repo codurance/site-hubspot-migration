@@ -35,17 +35,19 @@ label: Topic Pillar Page
 </section>
 
 {# CTA banner link section #}
-<section class="banner-link">
+<section class="banner-link lateral-spacing">
   {% module "banner_link"
     path="../modules/Banner-Link.module" label="Banner Link"
     no_wrapper=True %}
 </section>
 
 {# Simple Cards Section with case studies/downloads/articles. A refactor on the module needed #}
-<section>
-  {% module "promo_cards"
-    path="../modules/Simple-card.module" label="Promotional cards"
-    no_wrapper=True %}
+<section class="promo-cards">
+  <div class="promo-cards__inner page-center lateral-spacing">
+    {% module "promo_cards"
+      path="../modules/Simple-card.module" label="Promotional cards"
+      no_wrapper=True %}
+  </div>
 </section>
 
 {# Newsletter Banner form #}

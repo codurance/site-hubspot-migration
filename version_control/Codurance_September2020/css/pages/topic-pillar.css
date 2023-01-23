@@ -26,3 +26,19 @@
     max-width: 48ch;
     align-self: center;
 }
+
+.demystifying .video-hubdb__title {
+  {{ utils.base() }}
+  color: var(--mid-gray);
+  margin-top: 0.8em;
+}
+
+.promo-cards {
+  {{ utils.slate_to_woodsmoke() }}
+  margin-top: 12em;
+}
+
+.promo-cards__inner {
+  transform: translateY(-7.7em);
+}
+
