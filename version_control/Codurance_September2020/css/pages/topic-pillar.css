@@ -1,0 +1,28 @@
+{% import '../utils/utils.css' as utils %}
+
+.above-the-fold,
+.banner-link{
+  {{ utils.slate_to_woodsmoke() }}
+  color: white;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+
+.above-the-fold .text-and-image__copy {
+  max-width: 70%;
+}
+
+.above-the-fold .text-and-image__image {
+  align-self: center;
+}
+
+.demystifying {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.demystifying .text-and-image__copy{
+    max-width: 48ch;
+    align-self: center;
+}
