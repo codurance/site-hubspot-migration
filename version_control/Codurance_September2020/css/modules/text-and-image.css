@@ -58,14 +58,11 @@
         padding: 2em 0;
     }
     .text-and-image__copy h2{
-        {{utils.dudler()}}
-        font-weight: var(--light-font-weight);
-
-
+        {{ utils.dudler() }}
     }
         
     .text-and-image__copy p{
-        {{utils.base()}}
+        {{ utils.base() }}
     }
 
 {% endcall %}
