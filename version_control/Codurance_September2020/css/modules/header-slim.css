@@ -15,6 +15,7 @@
 .header-slim__text {
   margin-top: 1.6em;
   margin-bottom: 3.2em;
+  width: 70%;
 }
 
 .header-slim__text h1 {
@@ -30,5 +31,16 @@
 
 .header-slim__image {
   align-self: end;
-  width: 80%;
 }
+
+{% call utils.medium() %}
+  .header-slim__image {
+   max-width: 50%
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .header-slim__image {
+    display: none;
+  }
+{% endcall %}
