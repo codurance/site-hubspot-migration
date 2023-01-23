@@ -20,6 +20,10 @@
   {{ button() }}
 }
 
+.hs-site-page .custom-btn {
+  margin-top: 2em;
+}
+
 .button-primary,
 .hs-button.primary {
   {{ button() }}
