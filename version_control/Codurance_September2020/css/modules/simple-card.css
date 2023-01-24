@@ -40,6 +40,11 @@
     text-transform: uppercase;
 }
 
+.card__info span {
+    text-transform: uppercase;
+    {{ utils.natus() }}
+}
+
 
 .card__info h3 {
     {{ utils.freed() }}
