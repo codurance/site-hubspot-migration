@@ -1,7 +1,8 @@
 {% import '../utils/utils.css' as utils %}
 
 .above-the-fold,
-.banner-link{
+.banner-link,
+.contact-form {
   {{ utils.slate_to_woodsmoke() }}
   color: white;
   padding-top: 2em;
@@ -41,4 +42,5 @@
 .promo-cards__inner {
   transform: translateY(-7.7em);
 }
+
 
