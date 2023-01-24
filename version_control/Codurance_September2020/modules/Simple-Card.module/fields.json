@@ -10,7 +10,8 @@
   "choices" : [ [ "hubdb", "HubDB" ], [ "manually", "Manually" ] ],
   "multiple" : false,
   "reordering_enabled" : true,
-  "type" : "choice"
+  "type" : "choice",
+  "default" : "hubdb"
 }, {
   "id" : "56895d09-d25c-cb92-23ae-8410ec53a132",
   "name" : "hubdb",
@@ -88,6 +89,18 @@
       "alt" : null,
       "loading" : "lazy"
     }
+  }, {
+    "id" : "4f8e32c8-11d5-59b8-a35a-f64142d9f4d5",
+    "name" : "content_type",
+    "display_width" : null,
+    "label" : "Content Type",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Download, case study, article... ",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
   }, {
     "id" : "074b3ea9-479f-51f0-862d-78968808fd45",
     "name" : "title",
