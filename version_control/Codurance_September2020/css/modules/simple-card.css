@@ -6,12 +6,6 @@
     gap: 1em;
 }
 
-{% call utils.large_and_extra_large() %}
-    .card-container {
-        column-gap: 1.8em;
-    }
-{% endcall %}
-
 .card {
     {{ utils.card_shadow() }}
     background-color: white;

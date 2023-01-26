@@ -34,7 +34,7 @@
 {% call utils.medium_large_and_extra_large() %}
     .videos-hubdb {
         display: flex;
-        gap: 2em;
+        gap: 1em;
     }
 
     .video-hubdb {
