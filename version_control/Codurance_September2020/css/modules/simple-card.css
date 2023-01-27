@@ -12,6 +12,7 @@
         grid-auto-flow: column;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
+        padding-bottom: 10px;
     }
 {% endcall %}
 
