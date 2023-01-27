@@ -7,10 +7,8 @@ label: Topic Pillar Page
 
 {{ require_css(get_asset_url("../css/pages/topic-pillar.css")) }}
 
-
 {% block body %}
 
-{# This module need refactor to fit our needs #}
 {% module "header_slim" 
   path="../modules/Header-Slim.module" label="Header Slim" 
   no_wrapper=True %}
@@ -41,7 +39,7 @@ label: Topic Pillar Page
     no_wrapper=True %}
 </section>
 
-{# Simple Cards Section with case studies/downloads/articles. A refactor on the module needed #}
+{# Simple Cards Section with case studies/downloads/articles #}
 <section class="promo-cards">
   <div class="promo-cards__inner page-center">
     {% module "promo_cards"
@@ -55,14 +53,12 @@ label: Topic Pillar Page
   path="../modules/Newsletter-Form-Card.module" label="Newsletter form" 
   no_wrapper=True %}
 
-
-{# Simple Cards Section with case studies/downloads/articles. A refactor on the module needed #}
+{# Simple Cards Section with case studies/downloads/articles #}
 <section>
   {% module "promo_cards_2"
     path="../modules/Simple-card.module" label="Promotional cards 2"
     no_wrapper=True %}
 </section>
-
 
 {# Case Study dedicated cards #}
 <section>
@@ -70,7 +66,6 @@ label: Topic Pillar Page
     path="../modules/Case Study Card Collection.module" label="Case Studies"
     no_wrapper=True %}
 </section>
-
 
 {# Form call to action #}
 {# Rename the module to be more flexible everywhere #}
