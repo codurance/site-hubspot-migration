@@ -39,20 +39,12 @@
     {{ utils.natus() }}
 }
 
-
 .card__info h3 {
     {{ utils.freed() }}
-    margin-bottom: .75em;
-}
-
-.card__info p {
-    margin-bottom: .6em;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    overflow: hidden;
+    margin-bottom: 2.8em;
 }
 
 .card__info a {
     margin-top: auto;
+    margin-bottom: 0;
 }
