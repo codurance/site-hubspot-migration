@@ -2,19 +2,13 @@
 
 .card-container {
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1em;
+    grid-auto-columns: minmax(250px,1fr);
+    grid-auto-flow: column;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
 }
-
-{% call utils.small() %}
-    .card-container {
-        grid-auto-columns: minmax(250px,1fr);
-        grid-auto-flow: column;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 10px;
-    }
-{% endcall %}
 
 .card {
     {{ utils.card_shadow() }}
