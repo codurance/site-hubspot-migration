@@ -98,4 +98,21 @@
   transform: translateY(-8em);
 }
 
+.page .newsletter {
+  padding-bottom: 0;
+  padding-top: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.promo-cards-secondary {
+  {{ utils.tango_to_white() }}
+  padding-top: 8em;
+}
+
+{% call utils.small()%}
+  .promo-cards-secondary {
+    padding-top: 11em; 
+  }
+{% endcall %}
 

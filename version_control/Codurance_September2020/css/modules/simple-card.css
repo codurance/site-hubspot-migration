@@ -11,6 +11,12 @@
     padding-bottom: 10px;
 }
 
+{% call utils.large_and_extra_large() %}
+    .card-container {
+        scrollbar-width: none;
+    }
+{% endcall %}
+
 .card {
     {{ utils.card_shadow() }}
     background-color: white;

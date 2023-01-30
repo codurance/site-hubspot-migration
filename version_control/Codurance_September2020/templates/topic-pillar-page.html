@@ -49,15 +49,17 @@ label: Topic Pillar Page
 </section>
 
 {# Newsletter Banner form #}
-{% module "newsletter_form" 
-  path="../modules/Newsletter-Form-Card.module" label="Newsletter form" 
+{% module "newsletter" 
+  path="../modules/Newsletter-Form-Card.module" label="Newsletter Form" 
   no_wrapper=True %}
 
 {# Simple Cards Section with case studies/downloads/articles #}
-<section class="page-center">
-  {% module "promo_cards_2"
-    path="../modules/Simple-card.module" label="Promotional cards 2"
-    no_wrapper=True %}
+<section class="promo-cards-secondary">
+  <div class="page-center">
+    {% module "promo_cards_2"
+      path="../modules/Simple-card.module" label="Promotional cards 2"
+      no_wrapper=True %}
+  </div>
 </section>
 
 {# Case Study dedicated cards #}
