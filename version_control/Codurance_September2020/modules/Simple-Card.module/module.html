@@ -22,7 +22,7 @@
         {% endif %} 
 
         {% set card = {
-            "date" : item.datetime,
+            "date" : item.datetime | format_datetime('short'),
             "formated_date" : formated_date,
             "thumbnail" : resize_image_url(item.thumbnail.url, 400),
             "title" : item.name,
@@ -59,8 +59,9 @@
 
             <div class="card__info">
                 {% if card.date %}
-                    <time datetime={{ card.date }} >{{ card.formated_date }}</time>
-                {% else %}
+                    <time datetime="{{ card.date }}" >{{ card.formated_date }}</time>
+                {% endif %}
+                {% if card.content_type %}
                     <span>{{ card.content_type }}</span>
                 {% endif %}
 
