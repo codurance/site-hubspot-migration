@@ -112,7 +112,7 @@
 
 {% call utils.small()%}
   .promo-cards-secondary {
-    padding-top: 11em; 
+    padding-top: 13em; 
   }
 {% endcall %}
 
