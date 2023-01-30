@@ -7,7 +7,6 @@
 }
 
 .newsletter-wrapper {
-    margin: 1em;
     padding: 2em 1em;
     border-radius: 20px;
     background: white;
@@ -81,7 +80,7 @@
     }
 
     .newsletter-content {
-        justify-content:start;
+        justify-content: start;
         gap: 1.8em;
     }
 
@@ -102,7 +101,7 @@
     }
 {% endcall %}
 
-{% call utils.extra_large() %}
+{% call utils.large_and_extra_large() %}
     .newsletter-wrapper {
         max-width: 60em;
     }
