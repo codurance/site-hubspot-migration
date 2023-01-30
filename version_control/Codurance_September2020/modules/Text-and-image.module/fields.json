@@ -7,6 +7,8 @@
   "locked" : false,
   "display" : "select",
   "choices" : [ [ "img-right", "Image right" ], [ "img-left", "Image Left" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
   "type" : "choice"
 }, {
   "id" : "5257a3c3-b412-24b3-247b-0d08f391e9f7",
@@ -24,15 +26,15 @@
   "label" : "Image",
   "required" : false,
   "locked" : false,
-  "responsive" : true,
+  "responsive" : false,
   "resizable" : false,
-  "show_loading" : false,
+  "show_loading" : true,
   "type" : "image",
   "default" : {
-    "size_type" : "auto",
+    "size_type" : "exact",
     "src" : "",
     "alt" : null,
-    "loading" : "lazy"
+    "loading" : "disabled"
   }
 }, {
   "id" : "b6313458-c454-9679-bb22-f14a0b970af9",
@@ -50,6 +52,8 @@
     "locked" : false,
     "display" : "select",
     "choices" : [ [ "std", "Standard" ], [ "cta", "CTA" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
     "type" : "choice"
   }, {
     "id" : "052e50b3-0160-3bbd-31ff-9286554a34d9",
@@ -60,7 +64,9 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_field_path" : null,
       "controlling_value_regex" : "std",
+      "property" : null,
       "operator" : "EQUAL",
       "access" : null,
       "hidden_subfields" : null
@@ -87,7 +93,9 @@
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_field_path" : null,
       "controlling_value_regex" : "std",
+      "property" : null,
       "operator" : "EQUAL",
       "access" : null,
       "hidden_subfields" : null
@@ -106,7 +114,9 @@
     "validation_regex" : "",
     "visibility" : {
       "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_field_path" : null,
       "controlling_value_regex" : "std",
+      "property" : null,
       "operator" : "EQUAL",
       "access" : null,
       "hidden_subfields" : null
@@ -123,13 +133,17 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_field_path" : null,
       "controlling_value_regex" : "std",
+      "property" : null,
       "operator" : "EQUAL",
       "access" : null,
       "hidden_subfields" : null
     },
     "display" : "select",
     "choices" : [ [ "button-primary", "Primary" ], [ "button-secondary", "Secondary" ], [ "text-cta-primary text-cta--right-arrow", "Arrow Link" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
     "type" : "choice",
     "default" : "button-primary"
   }, {
@@ -141,7 +155,9 @@
     "locked" : false,
     "visibility" : {
       "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_field_path" : null,
       "controlling_value_regex" : "cta",
+      "property" : null,
       "operator" : "EQUAL",
       "access" : null,
       "hidden_subfields" : null
