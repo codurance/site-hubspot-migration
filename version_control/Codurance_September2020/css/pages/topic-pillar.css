@@ -107,10 +107,10 @@
 
 .promo-cards-secondary {
   {{ utils.tango_to_white() }}
-  padding-top: 8em;
+  padding-top: 9em;
 }
 
-{% call utils.small()%}
+{% call utils.small_and_medium()%}
   .promo-cards-secondary {
     padding-top: 13em; 
   }
