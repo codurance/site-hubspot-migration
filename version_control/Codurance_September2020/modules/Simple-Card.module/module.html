@@ -32,7 +32,9 @@
 
         {% do cards.append(card) %}
     {% endfor %}
-{% elif module.fill_in_the_cards_info == "manually" %}
+{% endif %}
+
+{% if module.fill_in_the_cards_info == "manually" %}
     {% set list = module.simple_cards_group %}
     
     {% for item in list %}
