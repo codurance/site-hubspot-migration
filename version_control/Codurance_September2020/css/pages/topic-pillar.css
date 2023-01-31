@@ -6,9 +6,14 @@
 .contact-form {
   {{ utils.slate_to_woodsmoke() }}
   color: white;
+}
+
+.banner-link, 
+.contact-form {
   padding-top: 2em;
   padding-bottom: 2em;
 }
+
 
 .page .text-and-image__container {
     padding-top: 0;
@@ -35,6 +40,11 @@
 {% endcall %}
 
 /* Above the fold section */
+.above-the-fold {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
 {% call utils.large_and_extra_large() %}
   .above-the-fold .text-and-image__image {
     align-self: center;
@@ -61,13 +71,17 @@
   padding-bottom: 4em;
 }
 
+.demystifying .text-and-image__container {
+  margin-bottom: 2.4em;
+  padding-inline: 0;
+}
+
 .demystifying .text-and-image__image > img {
   transform: initial;
 }
 
 .demystifying .video-hubdb__title {
   {{ utils.base() }}
-  color: var(--mid-gray);
   margin-top: 0.8em;
 }
 
@@ -115,4 +129,10 @@
     padding-top: 13em; 
   }
 {% endcall %}
+
+
+.case-study .case-study-card-collection {
+  padding-bottom: 1.6em;
+  background-size: 100% 18em;
+}
 

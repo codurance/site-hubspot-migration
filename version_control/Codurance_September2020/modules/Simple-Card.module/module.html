@@ -3,12 +3,16 @@
 {{ require_css(get_asset_url("../css/modules/simple-card.css")) }}   
 
 {% set cards = [] %}
+{% set cards_type_selected = module.fill_in_the_cards_info %}
 
-{% if module.fill_in_the_cards_info == "hubdb" %}
+
+
+{% if cards_type_selected == "hubdb" %}
     {% set upcomingEventsFilter = ("&orderBy=datetime" + "&datetime__gt=" + local_dt|unixtimestamp + "&limit=3") %}
     {% set isEventEnglish = ("&language=English") %}
 
     {% set list = [] %}
+
     {% if locale == "en" %}
         {% set list = hubdb_table_rows(module.hubdb, upcomingEventsFilter + isEventEnglish) %}
     {% else %}
@@ -34,7 +38,7 @@
     {% endfor %}
 {% endif %}
 
-{% if module.fill_in_the_cards_info == "manually" %}
+{% if cards_type_selected == "manually" %}
     {% set list = module.simple_cards_group %}
     
     {% for item in list %}
@@ -53,13 +57,15 @@
 <div class="card-container lateral-spacing">
     {% for card in cards %}
         <article class="card">
-            <img class="card__img" src="{{ card.thumbnail }}" 
+            <img class="card__img {% if cards_type_selected == 'hubdb' %}card__img--ratio{% endif %}"  
+                src="{{ card.thumbnail }}" 
                 alt="" 
                 width="400"
-                height="281"
+                height="auto"
                 loading="lazy" >
 
             <div class="card__info">
+        
                 {% if card.date %}
                     <time datetime="{{ card.date }}" >{{ card.formated_date }}</time>
                 {% endif %}
