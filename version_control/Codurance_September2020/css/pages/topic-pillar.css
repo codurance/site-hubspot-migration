@@ -109,7 +109,8 @@
 }
 
 .promo-cards__inner {
-  transform: translateY(-8em);
+  --thumbnail-offset: -6.2em;  
+  transform: translateY( var(--thumbnail-offset) );
 }
 
 .page .newsletter {
