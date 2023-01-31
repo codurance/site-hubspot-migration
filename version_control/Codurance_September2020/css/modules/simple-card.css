@@ -6,7 +6,6 @@
     grid-auto-columns: minmax(250px,1fr);
     grid-auto-flow: column;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
     padding-bottom: 10px;
 }
 
@@ -17,6 +16,12 @@
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
+    /* The following property only works on webkit-based browsers */
+    .card-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* The following property only works on Firefox browsers */
     .card-container {
         scrollbar-width: none;
     }
