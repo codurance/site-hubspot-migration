@@ -4,7 +4,7 @@
 
 .insights-overview-container .section-header h2 {
     {{ utils.eames() }}
-    margin-bottom: var(--eames-margin);
+    margin-bottom: 1.2rem;
 }
 
 .insights-overview-container .section-header p {
