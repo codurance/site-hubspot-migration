@@ -7,6 +7,16 @@
   --centered-content-lateral-spacing: 0.75rem;
   --dnd-vertical-spacing: 40px;
   box-sizing: border-box;
+  
+  --space-0: 8px;
+  --space-1: 12px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 128px;
 }
 
 *, *::before, &::after {
