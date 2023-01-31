@@ -81,7 +81,8 @@
 }
 
 .demystifying .video-hubdb__title {
-  {{ utils.base() }}
+  {{ utils.natus() }}
+  font-weight: var(--middle-font-weight);
   margin-top: 0.8em;
 }
 

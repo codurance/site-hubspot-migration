@@ -97,6 +97,14 @@
     }
 {% endcall %}
 
+.fireside-chats .video-hubdb__title {
+    max-width: 45ch;
+}
+
+.fireside-chats .video-hubdb__description {
+    max-width: 55ch;
+}
+
 /* Editors pick */
 
 .editors-pick, .insights-overview-videos {
