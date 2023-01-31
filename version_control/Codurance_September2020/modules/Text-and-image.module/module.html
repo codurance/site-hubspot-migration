@@ -2,6 +2,10 @@
 
 <div class="text-and-image__container container--{{ module.image_order }}">
 	<div class="text-and-image__copy">
+		{% if module.title %}
+			<h2 class="text-and-image__title">{{ module.title }}</h2>
+		{% endif %}
+		
 		{% inline_rich_text field="description_text" value="{{ module.description_text }}" %}
 		
 		<div class="custom-btn">

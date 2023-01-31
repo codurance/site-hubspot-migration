@@ -11,6 +11,17 @@
   "reordering_enabled" : true,
   "type" : "choice"
 }, {
+  "id" : "409d9294-21ee-d095-7f5b-40b0b3fc8b54",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
   "id" : "5257a3c3-b412-24b3-247b-0d08f391e9f7",
   "name" : "description_text",
   "display_width" : null,
