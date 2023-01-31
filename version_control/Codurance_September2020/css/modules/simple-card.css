@@ -37,12 +37,12 @@
 
 .card__img {
     border-radius: 10px 10px 0 0;
-    object-fit: cover;
     width: 100%;
 }
 
 .card__img--ratio {
     aspect-ratio: 16/9;
+    object-fit: cover;
 }
 
 .card__info {
