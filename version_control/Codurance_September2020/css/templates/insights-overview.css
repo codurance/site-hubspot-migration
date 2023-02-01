@@ -19,6 +19,13 @@
     }
 {% endcall %}
 
+.upcoming-events,
+.topics {
+    {{ utils.tango_to_white() }}
+    padding-top: 4.3em;
+    padding-bottom: 4.3em;
+}
+
 /* Header */
 
 {% call utils.medium() %}
@@ -147,16 +154,6 @@
 {% endcall %}
 
 /* Upcoming events */
-
-.upcoming-events {
-    {{ utils.tango_to_white() }}
-    padding-top: 4.3em;
-    padding-bottom: 4.3em;
-}
-.upcoming-events-container {
-    max-width: var(--content-max-width);
-    margin-inline: auto;
-}
 
 .upcoming-events__title {
   {{ utils.eames() }}
