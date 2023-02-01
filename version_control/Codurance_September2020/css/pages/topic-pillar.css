@@ -16,9 +16,9 @@
 
 
 .page .text-and-image__container {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
 .page .text-and-image__copy h2 {
   {{ utils.dudler() }}
@@ -41,8 +41,8 @@
 
 /* Above the fold section */
 .above-the-fold {
-  padding-top: 4em;
-  padding-bottom: 4em;
+  padding-top: 5em;
+  padding-bottom: 5em;
 }
 
 {% call utils.large_and_extra_large() %}
