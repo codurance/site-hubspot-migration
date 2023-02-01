@@ -47,9 +47,11 @@
     </div>
   </section>
 
-  <section class="topics lateral-spacing">
+  <section class="topics">
     <div class="page-center">
-      {% section_header 'topics_header' label="Topics Header" no_wrapper=True %}
+      <div class="lateral-spacing">
+        {% section_header 'topics_header' label="Topics Header" no_wrapper=True %}
+      </div>
       {% module 'topic_cards' path='../modules/Simple-Card.module'
         label="Topic Cards" no_wrapper=True 
       %}
