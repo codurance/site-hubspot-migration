@@ -1,17 +1,17 @@
 {% import '../utils/utils.css' as utils %}
 
 .card-container {
-    display: grid; 
+    display: grid;
     gap: 1em;
     grid-auto-columns: minmax(250px,1fr);
     grid-auto-flow: column;
     scroll-snap-type: x mandatory;
-    padding-bottom: 10px;
 }
 
 {% call utils.small_medium_and_large() %}
     .card-container {
         overflow-x: auto;
+        padding-bottom: 10px;
     }   
 {% endcall %}
 

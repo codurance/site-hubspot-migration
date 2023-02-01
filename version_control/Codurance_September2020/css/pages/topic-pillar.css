@@ -103,16 +103,22 @@
   }
 {% endcall %}
 
-/* Promo cards section */
+/* Promo cards sections */
 .promo-cards {
   {{ utils.slate_to_woodsmoke() }}
   margin-top: 12em;
 }
 
 .promo-cards__inner {
-  --thumbnail-offset: -6.2em;  
+  --thumbnail-offset: -6.3em;  
   transform: translateY( var(--thumbnail-offset) );
 }
+
+{% call utils.medium_large_and_extra_large() %}
+  .promo-cards__inner .card-container {
+    padding-bottom: calc(8.4em + var(--thumbnail-offset));
+  }
+{% endcall %}
 
 .page .newsletter {
   padding-bottom: 0;
@@ -123,7 +129,7 @@
 
 .promo-cards-secondary {
   {{ utils.tango_to_white() }}
-  padding-top: 9em;
+  padding-top: 8.4em;
 }
 
 {% call utils.small_and_medium()%}
@@ -132,7 +138,7 @@
   }
 {% endcall %}
 
-
+/* Case studies section */
 .case-study .case-study-card-collection {
   padding-bottom: 1.6em;
   background-size: 100% 18em;
