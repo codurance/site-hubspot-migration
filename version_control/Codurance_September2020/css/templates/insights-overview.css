@@ -167,6 +167,14 @@
     }
 {% endcall %}
 
+/* Topics */
+
+{% call utils.large_and_extra_large() %}
+    .topics .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+{% endcall %}
+
 /* Katalyst */
 
 .katalyst {
