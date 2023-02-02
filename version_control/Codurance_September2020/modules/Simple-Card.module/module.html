@@ -46,6 +46,7 @@
             "content_type" : item.content_type,
             "thumbnail" : resize_image_url(item.thumbnail.src, 400),
             "title" : item.title,
+            "description" : item.description,
             "link_url" : item.link.url.href,
             "link_text" : item.card_link_text
         } %}
@@ -74,6 +75,10 @@
                 {% endif %}
 
                 <h3>{{ card.title }}</h3>
+
+                {% if card.description %}
+                    <p>{{ card.description }}</p>
+                {% endif %}
 
                 {{ snippets.text_cta_right_arrow(
                     url=card.link_url,
