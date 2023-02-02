@@ -57,7 +57,7 @@
 <div class="card-container lateral-spacing">
     {% for card in cards %}
         <article class="card">
-            <img class="card__img {% if cards_type_selected == 'hubdb' %}card__img--ratio{% endif %}"  
+            <img class="card__img {% if module.fixed_aspect_ratio %}card__img--ratio{% endif %}"  
                 src="{{ card.thumbnail }}" 
                 alt="" 
                 width="400"
