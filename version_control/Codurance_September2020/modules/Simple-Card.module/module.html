@@ -2,10 +2,10 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../css/modules/simple-card.css")) }}   
 
+
+
 {% set cards = [] %}
 {% set cards_type_selected = module.fill_in_the_cards_info %}
-
-
 
 {% if cards_type_selected == "hubdb" %}
     {% set upcomingEventsFilter = ("&orderBy=datetime" + "&datetime__gt=" + local_dt|unixtimestamp + "&limit=3") %}
@@ -66,7 +66,6 @@
                 loading="lazy" >
 
             <div class="card__info">
-        
                 {% if card.date %}
                     <time datetime="{{ card.date }}" >{{ card.formated_date }}</time>
                 {% endif %}
@@ -74,7 +73,7 @@
                     <span>{{ card.content_type }}</span>
                 {% endif %}
 
-                <h3>{{ card.title }}</h3>
+                <h3 {% if !card.description %}style="margin-bottom: 3.6rem;"{% endif %}>{{ card.title }}</h3>
 
                 {% if card.description %}
                     <p>{{ card.description }}</p>

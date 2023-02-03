@@ -66,7 +66,11 @@
 .card__info h3 {
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
-    margin-bottom: 2.8em;
+}
+
+.card__info p {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
 }
 
 .card__info a {
