@@ -204,3 +204,13 @@
         grid-auto-columns: 1fr;
     }
 {% endcall %}
+
+/* CTA Banner */
+
+.cta-banner .cta-block__wrapper {
+    max-width: var(--content-max-width);
+}
+
+.cta-banner .cta-block__title {
+    max-width: var(--eames-max-width);
+}
