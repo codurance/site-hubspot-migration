@@ -51,6 +51,11 @@
     }
 {% endcall %}  
 
+{% call utils.large() %}
+    .cta-block {
+        padding-inline: 2.5rem;
+    }
+{% endcall %}  
 
 {% call utils.small() %}
     .cta-block__title {
