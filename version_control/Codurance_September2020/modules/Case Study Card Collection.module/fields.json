@@ -9,7 +9,7 @@
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
-  "default": "How we’ve helped our clients"
+  "default" : "How we’ve helped our clients"
 }, {
   "id" : "a7f696e4-98e2-ea70-6d3e-7b2346924e67",
   "name" : "subtitle",
@@ -21,7 +21,7 @@
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
-  "default": "Take a look at how we’ve helped some of our clients tackle similar challenges."
+  "default" : "Take a look at how we’ve helped some of our clients tackle similar challenges."
 }, {
   "id" : "6da6934c-6675-9016-fd46-1043fd2f0db4",
   "name" : "case_study_card",
@@ -32,7 +32,7 @@
   "occurrence" : {
     "min" : null,
     "max" : 3,
-    "sorting_label_field" : null,
+    "sorting_label_field" : "d450a564-2817-dcd6-d99d-3aa8b3fc91dc",
     "default" : null
   },
   "children" : [ {
