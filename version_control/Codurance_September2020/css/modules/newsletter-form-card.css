@@ -54,11 +54,7 @@
   width: 100%;
 }
 
-{% call utils.medium_and_large() %}
-    .newsletter-text-content__title {
-        max-width: 20ch;
-    }
-
+{% call utils.medium() %}
     .newsletter__form {
         align-self: flex-end;
     }
