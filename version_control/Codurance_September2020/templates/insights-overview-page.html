@@ -34,13 +34,16 @@
     label="Banner Link" no_wrapper=True %}
   </section>
 
-  <section class="upcoming-events lateral-spacing">
+  <section class="upcoming-events">
     <div class="upcoming-events-container">
-      <h2 class="upcoming-events__title">{% text 'events-title' label="Upcoming Events Title" no_wrapper=True %}</h2>
+      <h2 class="upcoming-events__title lateral-spacing">{% text 'events-title' label="Upcoming Events Title" no_wrapper=True %}</h2>
       {% module 'event-cards' path='../modules/Simple-Card.module'
       label="Upcoming Event Cards" no_wrapper=True %}
-      {% module 'events-button' path='../modules/Button.module'
-      label="Events Button" no_wrapper=True %}
+
+      <div class="lateral-spacing">
+        {% module 'events-button' path='../modules/Button.module'
+        label="Events Button" no_wrapper=True %}
+      </div>
     </div>
   </section>
   

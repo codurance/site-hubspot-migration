@@ -34,11 +34,15 @@
 					{{ video.name }}
 				</h3>
 				<p class="video-hubdb__description">
-					{{ video.description }}
+					{% if module.fields_to_display.description %}
+								{{ video.description }}
+					{% endif %}
 				</p>
-				<time datetime="{{ video.date | format_date('short') }}" class="video-hubdb__date">
-					{{ video.date|format_date('dd MMM yyyy') }}
-				</time>
+				{% if module.fields_to_display.date %}
+					<time datetime="{{ video.date | format_date('short') }}" class="video-hubdb__date">
+						{{ video.date|format_date('dd MMM yyyy') }}
+					</time>
+				{% endif %}
 			</div>
 	</article>
 	{% endfor %}

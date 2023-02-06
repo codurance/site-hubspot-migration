@@ -4,7 +4,7 @@
 
 .insights-overview-container .section-header h2 {
     {{ utils.eames() }}
-    margin-bottom: var(--eames-margin);
+    margin-bottom: 1.2rem;
 }
 
 .insights-overview-container .section-header p {
@@ -96,6 +96,14 @@
         padding-bottom: 3em;
     }
 {% endcall %}
+
+.fireside-chats .video-hubdb__title {
+    max-width: 45ch;
+}
+
+.fireside-chats .video-hubdb__description {
+    max-width: 55ch;
+}
 
 /* Editors pick */
 

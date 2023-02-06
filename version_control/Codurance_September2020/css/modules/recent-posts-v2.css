@@ -58,7 +58,7 @@
   flex-direction: column;
   margin-bottom: 1.4rem;
   border-radius: {{ item_border_radius }}px;
-  min-width: 14em;
+  min-width: 16rem;
   overflow: hidden;
   position: relative;
   scroll-snap-align: center;

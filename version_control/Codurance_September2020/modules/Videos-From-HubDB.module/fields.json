@@ -99,4 +99,39 @@
   "default" : {
     "id" : null
   }
+}, {
+  "id" : "5c15bd05-c55a-b386-8208-2f29f7af044d",
+  "name" : "fields_to_display",
+  "display_width" : null,
+  "label" : "Fields to display",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "5c4b96ea-1e2b-9e96-057e-9ed240450ae1",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "d15e411a-0563-0b29-7ac7-d0f3fb49e8df",
+    "name" : "date",
+    "display_width" : null,
+    "label" : "Date ",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "description" : true,
+    "date" : true
+  }
 } ]

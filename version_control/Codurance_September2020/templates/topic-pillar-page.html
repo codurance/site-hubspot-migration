@@ -1,0 +1,82 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Topic Pillar Page
+-->
+{% extends "./layouts/base.html" %}
+
+{{ require_css(get_asset_url("../css/pages/topic-pillar.css")) }}
+
+{% block body %}
+
+{% module "header_slim" 
+  path="../modules/Header-Slim.module" label="Header Slim" 
+  no_wrapper=True %}
+
+<main>  
+{# Downloadable document section above the fold #}
+<section class="above-the-fold">
+  {% module "above_the_fold"
+    path="../modules/Text-and-image.module" label="Above the fold section"
+    no_wrapper=True %}
+</section>
+
+{# Demistifying series section #}
+<section class="demystifying lateral-spacing">
+  {% module "ds_text_and_image"
+    path="../modules/Text-and-image.module" label="Heading Demistifiying"
+    no_wrapper=True %}
+  
+  {% module "ds_videos"
+    path="../modules/Videos-From-HubDB.module" label="Videos Demistifiying"
+    no_wrapper=True %}
+</section>
+
+{# CTA banner link section #}
+<section class="banner-link lateral-spacing">
+  {% module "banner_link"
+    path="../modules/Banner-Link.module" label="Banner Link"
+    no_wrapper=True %}
+</section>
+
+{# Simple Cards Section with case studies/downloads/articles #}
+<section class="promo-cards">
+  <div class="promo-cards__inner page-center">
+    {% module "promo_cards"
+      path="../modules/Simple-card.module" label="Promotional cards"
+      no_wrapper=True %}
+  </div>
+</section>
+
+{# Newsletter Banner form #}
+{% module "newsletter" 
+  path="../modules/Newsletter-Form-Card.module" label="Newsletter Form" 
+  no_wrapper=True %}
+
+{# Simple Cards Section with case studies/downloads/articles #}
+<section class="promo-cards-secondary">
+  <div class="page-center">
+    {% module "promo_cards_2"
+      path="../modules/Simple-card.module" label="Promotional cards 2"
+      no_wrapper=True %}
+  </div>
+</section>
+
+{# Case Study dedicated cards #}
+<section class="case-study">
+  {% module "case_studies"
+    path="../modules/Case Study Card Collection.module" label="Case Studies"
+    no_wrapper=True %}
+</section>
+
+{# Form call to action #}
+{# Rename the module to be more flexible everywhere #}
+<section class="contact-form">
+  {% module "form"
+    path="../modules/Service-Line-Form.module" label="Form"
+    no_wrapper=True %}
+</section>
+  
+</main>
+
+{% endblock body %}

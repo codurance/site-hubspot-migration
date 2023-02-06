@@ -3,8 +3,8 @@
   "host_template_types" : [ "PAGE" ],
   "module_id" : 51414305937,
   "css_assets" : [ {
-    "path" : "../../css/modules/text-and-image.css",
     "autoload" : true,
+    "path" : "../../css/modules/text-and-image.css",
     "name" : "text-and-image.css"
   } ],
   "is_available_for_new_content" : true
