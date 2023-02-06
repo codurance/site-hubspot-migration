@@ -30,14 +30,15 @@
     }
 {% endcall %}
 
-.swiper{
+.swiper {
     max-width: 40em;
 }
 
-.swiper-wrapper{
+.swiper-wrapper {
     align-items: center;
-
+    box-sizing: border-box;
 }
+
 .testimonial-slider__wrapper {
     {{ utils.natus() }}
     background: white;
