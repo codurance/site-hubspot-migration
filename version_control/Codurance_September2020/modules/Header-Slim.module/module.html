@@ -24,7 +24,9 @@
 	<div class="header-slim-container responsive-page-width lateral-spacing">
 		<div class="header-slim__text">
       <h1>{{ module.title }}</h1>
-      <p>{{ module.subtitle }}</p>
+      {% if module.subtitle %}
+        <p>{{ module.subtitle }}</p>
+      {% endif %}
     </div>
 
 		{% if module.image %}
