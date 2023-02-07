@@ -102,6 +102,7 @@
     }
 
     .newsletter-inner {
+        align-items: baseline;
         flex-flow: row;
         justify-content: space-around;
         max-width: unset;
