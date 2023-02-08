@@ -42,24 +42,15 @@ label: Page Footer
               {% menu "my_menu" flyouts=true, label="Useful Links", id="35217654974" %}
             </div>
             <div class="cm-footer-contact-us span3">
-              {% module_block module "footer_block3" path="@hubspot/rich_text" label="Contact Us" %}
-              {% module_attribute "html" %}
-              <h6><span>Contact Us</span></h6>
-              <address>
-                <a href="https://goo.gl/maps/z9zroLYyG4c2NK4u6" target="_blank" rel="noopener noreferrer">
-                  3 Sutton Lane, 3rd floor <br> London, EC1M 5PU </a> <br> Phone: +44 207 4902967
-                <br>
-                <br>
-                <a href="https://goo.gl/maps/U3s8Jf8gCf4Ny8cK9" target="_blank" rel="noopener noreferrer">
-                  2 Mount Street <br> Manchester, M2 5WQ </a>
-                <br>
-                Phone: +44 161 302 6795 <br> <br>
-                <a href="https://goo.gl/maps/P394WxHC9eviogSq7" target="_blank" rel="noopener noreferrer"> Carrer de Pallars 99, 4th floor, room 41 <br> Barcelona, 08018 </a>
-                <br>
-                Phone: +34 937 82 28 82 <br> <br>
-                Email: <a href="mailto:hello@codurance.com" target="_blank" rel="noopener noreferrer">hello@codurance.com</a> </address>
-              {% end_module_attribute %}
-              {% end_module_block %}
+              <h6>
+                <span>
+                  {% inline_text 'Contact Us Title' value='Contact Us' %}
+                </span>
+              </h6>    
+              
+              {% module 'address_listing' path='../../modules/Address-Listing.module' no_wrapper=True  %}
+
+              {% module "footer_block3" path="@hubspot/rich_text" label="Contact Us" %}
             </div>
           </div>
         </div>
