@@ -1,0 +1,70 @@
+[ {
+  "id" : "5e085223-39da-2eb9-55f8-9effcb6e1c03",
+  "name" : "addresses",
+  "display_width" : null,
+  "label" : "Addresses",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "d87eb6e6-785b-5e9c-ca58-92061e44a15c",
+    "name" : "text",
+    "display_width" : null,
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  }, {
+    "id" : "991e73e9-a2ce-3548-5fce-64a72da054ca",
+    "name" : "map_link",
+    "display_width" : null,
+    "label" : "Map Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+    "type" : "url",
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "9a3a490b-67a6-aa6d-1ba4-75cbba559551",
+    "name" : "phone",
+    "display_width" : null,
+    "label" : "Phone",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "map_link" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
+}, {
+  "id" : "337e1356-c95b-f3f8-cc53-763cab1a62cb",
+  "name" : "phone_text_translation",
+  "display_width" : null,
+  "label" : "Phone Text Translation",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Phone"
+} ]

@@ -1,0 +1,7 @@
+{% for address in module.addresses %}
+    <address>
+        <a href="{{ address.map_link }}">{{ address.text }}</a>
+
+        <span>{{ module.phone_text_translation }}: {{ address.phone }}</span>
+    </address>
+{% endfor %}
