@@ -12,59 +12,39 @@
     "default" : null
   },
   "children" : [ {
-    "id" : "d87eb6e6-785b-5e9c-ca58-92061e44a15c",
-    "name" : "text",
+    "id" : "fc9b9b23-9b40-ce11-1b0d-d6156f0c29fe",
+    "name" : "city",
     "display_width" : null,
-    "label" : "Text",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext"
-  }, {
-    "id" : "991e73e9-a2ce-3548-5fce-64a72da054ca",
-    "name" : "map_link",
-    "display_width" : null,
-    "label" : "Map Link",
-    "required" : false,
-    "locked" : false,
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
-    "type" : "url",
-    "default" : {
-      "content_id" : null,
-      "href" : "",
-      "type" : "EXTERNAL"
-    }
-  }, {
-    "id" : "9a3a490b-67a6-aa6d-1ba4-75cbba559551",
-    "name" : "phone",
-    "display_width" : null,
-    "label" : "Phone",
+    "label" : "City",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text"
+  }, {
+    "id" : "991e73e9-a2ce-3548-5fce-64a72da054ca",
+    "name" : "anchor_link",
+    "display_width" : null,
+    "label" : "Anchor Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL" ],
+    "type" : "url",
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
   "default" : {
-    "map_link" : {
+    "anchor_link" : {
       "content_id" : null,
       "href" : "",
       "type" : "EXTERNAL"
     }
   }
-}, {
-  "id" : "337e1356-c95b-f3f8-cc53-763cab1a62cb",
-  "name" : "phone_text_translation",
-  "display_width" : null,
-  "label" : "Phone Text Translation",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Phone"
 } ]
