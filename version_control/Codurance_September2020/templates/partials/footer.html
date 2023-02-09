@@ -42,15 +42,15 @@ label: Page Footer
               {% menu "my_menu" flyouts=true, label="Useful Links", id="35217654974" %}
             </div>
             <div class="cm-footer-contact-us span3">
+              {% module "footer_block3" path="@hubspot/rich_text" label="Contact Us" %}
+
               <h6>
                 <span>
-                  {% inline_text 'Contact Us Title' value='Contact Us' %}
+                  {% text 'contact_us_title' label='Contact Us Title' value='Contact Us' no_wrapper=True %}
                 </span>
               </h6>    
               
-              {% module 'address_listing' path='../../modules/Address-Listing.module' no_wrapper=True  %}
-
-              {% module "footer_block3" path="@hubspot/rich_text" label="Contact Us" %}
+              {% module 'address_listing' path='../../modules/Address-Listing.module' no_wrapper=True %}
             </div>
           </div>
         </div>
