@@ -42,13 +42,22 @@ label: Page Footer
               {% menu "my_menu" flyouts=true, label="Useful Links", id="35217654974" %}
             </div>
             <div class="cm-footer-contact-us span3">
-              {% module "footer_block3" path="@hubspot/rich_text" label="Contact Us" %}
-
               <h6>
                 <span>
                   {% text 'contact_us_title' label='Contact Us Title' value='Contact Us' no_wrapper=True %}
                 </span>
               </h6>    
+              
+              <span>
+                Email:
+                <a 
+                  class="cm-footer-contact-us__email" 
+                  href="mailto:hello@codurance.com" 
+                  target="_blank" rel="noopener noreferrer" 
+                >
+                  hello@codurance.com
+                </a>       
+              </span>
               
               {% module 'address_listing' path='../../modules/Address-Listing.module' no_wrapper=True %}
             </div>

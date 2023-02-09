@@ -76,8 +76,9 @@ footer looks when it comes to spacing and other general styles.
   margin-bottom: 1rem;
 }
 .cm-footer-useful-links .hs-menu-wrapper > ul{
-  margin:0;
+  margin: 0;
 }
+
 .cm-footer-useful-links .hs-menu-wrapper > ul > li > a {
   border-bottom: 1px dotted var(--mid-gray);
   color: var(--athens-gray);
@@ -91,15 +92,18 @@ footer looks when it comes to spacing and other general styles.
   padding-top: 0.21rem;
   width:100%;
 }
+
 .cm-footer-useful-links .hs-menu-wrapper > ul > li {
   width: 100%;
 }
+
 .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li {
   width: 100%;
   padding-top: 0.71429rem ;
   padding-bottom: 0.71429rem ;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a {
   {{ utils.natus() }}
   color: var(--athens-gray);
@@ -107,9 +111,11 @@ footer looks when it comes to spacing and other general styles.
   padding-top: 0;
   padding-bottom: 0;
 }
+
 .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a:hover {
   text-decoration:underline;
 }
+
 .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a:after {
   right: 5px;
   content: "\f105";
@@ -125,11 +131,16 @@ footer looks when it comes to spacing and other general styles.
   transform: translateY(-50%);
   -webkit-backface-visibility: hidden;
 }
-.cm-footer-contact-us address {
+
+.cm-footer-contact-us {
   {{ utils.natus() }}
   margin-bottom: 1rem;
   margin-top: -0.28571rem;
   color: var(--athens-gray);
+}
+
+.cm-footer-contact-us__email {
+  text-decoration: underline;
 }
 
 .hs-footer-bottom-container .page-center {
