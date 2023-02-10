@@ -1,5 +1,9 @@
 <address>
-    {% for address in module.addresses %}
-        <a href="{{ address.anchor_link.href }}">{{ address.city }}</a>
-    {% endfor %}
+    <ul>
+        {% for address in module.addresses %}
+            <li>
+                <a href="{{ address.anchor_link.href }}">{{ address.city }}</a>
+            </li>
+        {% endfor %}
+    </ul>
 </address>
