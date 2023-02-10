@@ -27,6 +27,14 @@ footer looks when it comes to spacing and other general styles.
   padding-left: var(--centered-content-lateral-spacing);
   padding-right: var(--centered-content-lateral-spacing);
 }
+
+{% call utils.small() %}
+  .footer__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+{% endcall %}
+
 .hs-footer-top-container {
   padding-top: 4.28571rem;
   padding-bottom: 4.28571rem;
@@ -51,6 +59,11 @@ footer looks when it comes to spacing and other general styles.
   position:relative;
   top: 1px;
 }
+
+.cm-footer-logo-group {
+  order: 1;
+}
+
 .cm-footer-logo-group p {
   {{ utils.natus() }}
   margin-bottom: var(--base-margin);
