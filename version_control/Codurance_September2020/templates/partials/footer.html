@@ -20,7 +20,7 @@ label: Page Footer
               {% end_module_block %}
             </div>
             <div class="cm-footer-latest-blog-group span3">
-              <h6><span>Latest Blogs</span></h6>
+              <h2><span>Latest Blogs</span></h2>
                 {% rss_listing "my_rss_listing"
                   feed_source={rss_url='http://codurance-azurewebsites-net-3042464.hs-sites.com/publications/rss.xml', is_external=False, content_group_id='35491076028'},
                   click_through_text='Read more',
@@ -42,13 +42,13 @@ label: Page Footer
               {% menu "my_menu" flyouts=true, label="Useful Links", id="35217654974" %}
             </div>
             <div class="cm-footer-contact-us span3">
-              <h6>
+              <h2>
                 <span>
                   {% text 'contact_us_title' label='Contact Us Title' value='Contact Us' no_wrapper=True %}
                 </span>
-              </h6>    
+              </h2>    
               
-              <span>
+              <p>
                 Email:
                 <a 
                   class="cm-footer-contact-us__email" 
@@ -57,7 +57,7 @@ label: Page Footer
                 >
                   hello@codurance.com
                 </a>       
-              </span>
+              </p>
               
               {% module 'address_listing' path='../../modules/Address-Listing.module' no_wrapper=True %}
             </div>
