@@ -27,11 +27,19 @@ footer looks when it comes to spacing and other general styles.
   padding-left: var(--centered-content-lateral-spacing);
   padding-right: var(--centered-content-lateral-spacing);
 }
+
+{% call utils.small() %}
+  .footer__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+{% endcall %}
+
 .hs-footer-top-container {
   padding-top: 4.28571rem;
   padding-bottom: 4.28571rem;
 }
-.hs-footer-top-container h6 {
+.hs-footer-top-container h2 {
   position: relative;
   margin: 0;
   border-bottom: 1px dotted var(--mid-gray);
@@ -39,7 +47,7 @@ footer looks when it comes to spacing and other general styles.
   display: block;
   margin-bottom: 1.78571rem;
 }
-.hs-footer-top-container h6 span {
+.hs-footer-top-container h2 span {
   border-bottom: 1px solid var(--mid-gray);
   color: var(--athens-gray);
   display: inline-block;
@@ -51,6 +59,11 @@ footer looks when it comes to spacing and other general styles.
   position:relative;
   top: 1px;
 }
+
+.cm-footer-logo-group {
+  order: 1;
+}
+
 .cm-footer-logo-group p {
   {{ utils.natus() }}
   margin-bottom: var(--base-margin);
@@ -69,6 +82,7 @@ footer looks when it comes to spacing and other general styles.
   padding-top:1.42857rem;
 }
 .footer-logo {
+  display: inline-block;
   fill: white;
   padding-bottom: 17px;
   margin-top: 2px;
@@ -76,8 +90,9 @@ footer looks when it comes to spacing and other general styles.
   margin-bottom: 1rem;
 }
 .cm-footer-useful-links .hs-menu-wrapper > ul{
-  margin:0;
+  margin: 0;
 }
+
 .cm-footer-useful-links .hs-menu-wrapper > ul > li > a {
   border-bottom: 1px dotted var(--mid-gray);
   color: var(--athens-gray);
@@ -91,15 +106,19 @@ footer looks when it comes to spacing and other general styles.
   padding-top: 0.21rem;
   width:100%;
 }
+
 .cm-footer-useful-links .hs-menu-wrapper > ul > li {
   width: 100%;
 }
-.cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li {
+
+.cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li,
+.cm-footer-contact-us li {
   width: 100%;
   padding-top: 0.71429rem ;
   padding-bottom: 0.71429rem ;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a {
   {{ utils.natus() }}
   color: var(--athens-gray);
@@ -107,10 +126,14 @@ footer looks when it comes to spacing and other general styles.
   padding-top: 0;
   padding-bottom: 0;
 }
-.cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a:hover {
+
+.cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a:hover,
+.cm-footer-contact-us li a:hover {
   text-decoration:underline;
 }
-.cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a:after {
+
+.cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a:after,
+.cm-footer-contact-us li a:after {
   right: 5px;
   content: "\f105";
   font: normal normal normal 14px/1 FontAwesome;
@@ -125,11 +148,22 @@ footer looks when it comes to spacing and other general styles.
   transform: translateY(-50%);
   -webkit-backface-visibility: hidden;
 }
-.cm-footer-contact-us address {
+
+.cm-footer-contact-us p,
+.cm-footer-contact-us li a {
   {{ utils.natus() }}
-  margin-bottom: 1rem;
-  margin-top: -0.28571rem;
+  margin-top: .21rem;
   color: var(--athens-gray);
+  display: block;
+}
+
+.cm-footer-contact-us__email {
+  text-decoration: underline;
+}
+
+.cm-footer-contact-us li {
+  list-style: none;
+  position: relative;
 }
 
 .hs-footer-bottom-container .page-center {
@@ -300,14 +334,14 @@ footer.footer .hs-rss-item  a.hs-rss-title:hover {
     margin-bottom:45.714px;
   }
   .cm-footer-useful-links .hs-menu-wrapper > ul > li > a,
-  .hs-footer-top-container h6 span {
+  .hs-footer-top-container h2 span {
     {{ utils.ponti() }}
     padding-bottom: 11px;
   }
   .cm-footer-useful-links .hs-menu-wrapper > ul > li > ul > li > a{
     {{ utils.ponti() }}
   }
-  .hs-footer-top-container h6 {
+  .hs-footer-top-container h2 {
     {{ utils.ponti() }}
     margin-bottom: 29px;
   }
