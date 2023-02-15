@@ -10,11 +10,11 @@ ungatedButtons.forEach(openVideoPopupOnClick);
 
 closeModalButton.addEventListener("click", () => hideModal());
 
-document.addEventListener("click", function (event) {
+document.addEventListener("click", function(event) {
   if (event.target.className === "overlay") hideModal();
 });
 
-document.addEventListener("keyup", function (event) {
+document.addEventListener("keyup", function(event) {
   if (event.code === "Escape") hideModal();
 });
 
@@ -33,8 +33,7 @@ function setVideoOnPopup(event) {
 }
 
 function stripYoutubeID(str) {
-  const regExp =
-    /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|live\/)([^#\&\?]*).*/;
   const match = str.match(regExp);
   const idLength = 11;
 
