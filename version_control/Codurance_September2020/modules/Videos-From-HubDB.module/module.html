@@ -2,7 +2,6 @@
 
 {% macro strip_youtube_id(url) %}
 	{% set video_id_length = 11 %}
-	
 	{% if url is string_containing "watch" %}
 		{% set youtube_video_id = url | split("v=") | last %}
 	{% elif url is string_containing "live" %}
@@ -35,8 +34,8 @@
 <div class="videos-hubdb">
 
 {% for video in videos %}
-	{% set youtube_id = strip_youtube_id(video.video)  %}
-	{% set youtube_embed_url = "https://www.youtube.com/embed/{{ youtube_id | trim }}" %}
+	{% set youtube_id = strip_youtube_id(video.video) | trim  %}
+	{% set youtube_embed_url = "https://www.youtube.com/embed/{{ youtube_id }}" %}
 
 	<article class="video-hubdb">
 		<div class="video-hubdb__iframe-wrapper">
