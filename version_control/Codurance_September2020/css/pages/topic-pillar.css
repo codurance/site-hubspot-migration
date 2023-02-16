@@ -134,7 +134,7 @@
   padding-top: 8.4em;
 }
 
-{% call utils.small_and_medium()%}
+{% call utils.small_medium_and_large() %}
   .promo-cards-secondary {
     padding-top: 13em; 
   }
