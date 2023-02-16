@@ -113,6 +113,18 @@
     "show_emoji_picker" : false,
     "type" : "text"
   }, {
+    "id" : "479d4b0b-e4b9-38f7-90ec-e0e6dfbe13e0",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "inline_help_text" : "Optional",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
     "id" : "68f60c8d-d8b9-a9df-fae9-5878c3056d87",
     "name" : "card_link_text",
     "display_width" : null,
@@ -163,4 +175,15 @@
       "no_follow" : false
     }
   }
+}, {
+  "id" : "76c755ee-5b2f-312c-d091-6c1159cb2be5",
+  "name" : "fixed_aspect_ratio",
+  "display_width" : null,
+  "label" : "Fixed aspect ratio",
+  "help_text" : "Fix the aspect ratio of all card thumbnails to 16/9",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
 } ]

@@ -96,7 +96,7 @@
     }
 {% endcall %}
 
-{% call utils.extra_large() %}
+{% call utils.large_and_extra_large() %}
     .newsletter-wrapper {
         max-width: 60em;
     }

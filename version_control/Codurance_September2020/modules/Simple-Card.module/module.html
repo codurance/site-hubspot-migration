@@ -5,8 +5,6 @@
 {% set cards = [] %}
 {% set cards_type_selected = module.fill_in_the_cards_info %}
 
-
-
 {% if cards_type_selected == "hubdb" %}
     {% set upcomingEventsFilter = ("&orderBy=datetime" + "&datetime__gt=" + local_dt|unixtimestamp + "&limit=3") %}
     {% set isEventEnglish = ("&language=English") %}
@@ -46,6 +44,7 @@
             "content_type" : item.content_type,
             "thumbnail" : resize_image_url(item.thumbnail.src, 400),
             "title" : item.title,
+            "description" : item.description,
             "link_url" : item.link.url.href,
             "link_text" : item.card_link_text
         } %}
@@ -57,7 +56,7 @@
 <div class="card-container lateral-spacing">
     {% for card in cards %}
         <article class="card">
-            <img class="card__img {% if cards_type_selected == 'hubdb' %}card__img--ratio{% endif %}"  
+            <img class="card__img {% if module.fixed_aspect_ratio %}card__img--ratio{% endif %}"  
                 src="{{ card.thumbnail }}" 
                 alt="" 
                 width="400"
@@ -65,7 +64,6 @@
                 loading="lazy" >
 
             <div class="card__info">
-        
                 {% if card.date %}
                     <time datetime="{{ card.date }}" >{{ card.formated_date }}</time>
                 {% endif %}
@@ -74,6 +72,10 @@
                 {% endif %}
 
                 <h3>{{ card.title }}</h3>
+
+                {% if card.description %}
+                    <p>{{ card.description }}</p>
+                {% endif %}
 
                 {{ snippets.text_cta_right_arrow(
                     url=card.link_url,
