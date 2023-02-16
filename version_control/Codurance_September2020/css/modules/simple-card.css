@@ -16,6 +16,11 @@
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
+    .card-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* The following property only for Firefox browsers */
     .card-container {
         scrollbar-width: none;
     }
