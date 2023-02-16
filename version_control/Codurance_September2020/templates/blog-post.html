@@ -158,12 +158,11 @@ label: Blog Post
     {% module "continue_in_english_blog_banner" path="../modules/Continue in English Blog Banner", label="Include link to EN version?" %}
   </section>
 
-  <section class="blog-banner blog-max-width">
+  <section class="blog-banner blog-max-width" aria-label="Newsletter" >
     {% choice "CTA_or_newsletter_form" 
       label='Choose between CTA banner and Newsletter form', 
       value='Newsletter-Form', 
-      choices='Newsletter-Form, Cloud, Compass, Contact-Us, Software-Modernisation', 
-      no_wrapper=True, 
+      choices='Newsletter-Form, Cloud, Compass, Contact-Us, Software-Modernisation, Custom', 
       export_to_template_context=True 
     %}
 
@@ -179,11 +178,11 @@ label: Blog Post
         newsletter_form={ form_id: "{{ newsletter_copy.form_id }}" }
       %}
     {% else %}
-      {% cta guid="{{cta_banner[cta_or_newsletter]}}" no_wrapper=True %}
+      {% cta 'cta_banner' label='CTA Banner' guid='{{cta_banner[cta_or_newsletter]}}' no_wrapper=True %}
     {% endif %}
   </section>
   
-  <section class="related-blog-section">
+  <section class="related-blog-section hs-search-hidden">
     <div class="related-blog-section__inner page-center">
       <h2 class="related-blog-section__title">
         Related Blogs

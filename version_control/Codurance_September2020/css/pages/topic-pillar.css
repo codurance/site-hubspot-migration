@@ -14,7 +14,6 @@
   padding-bottom: 2em;
 }
 
-
 .page .text-and-image__container {
   padding-top: 0;
   padding-bottom: 0;
@@ -45,23 +44,25 @@
   padding-bottom: 5em;
 }
 
-{% call utils.large_and_extra_large() %}
-  .above-the-fold .text-and-image__image {
-    align-self: center;
-  }
+.above-the-fold .text-and-image__image {
+  align-self: center;
+}
 
-  .above-the-fold .text-and-image__copy {
-    max-width: 70%;
+{% call utils.small() %}
+  .above-the-fold .text-and-image__image img {
+    transform: initial;
   }
 {% endcall %}
 
-{% call utils.small() %}
+{% call utils.medium() %}
   .above-the-fold .text-and-image__image {
-    align-self: center;
+    align-self: start;
   }
+{% endcall %}
 
-  .above-the-fold .text-and-image__image img {
-    transform: initial;
+{% call utils.large_and_extra_large() %}
+  .above-the-fold .text-and-image__copy {
+    max-width: 70%;
   }
 {% endcall %}
 
@@ -86,6 +87,12 @@
   margin-top: 0.8em;
 }
 
+{% call utils.small() %}
+  .demystifying .text-and-image__image {
+    display: none;
+  }
+{% endcall %}
+
 {% call utils.large_and_extra_large() %}
   .demystifying .text-and-image__copy {
     max-width: var(--freed-max-width);
@@ -97,11 +104,6 @@
   }
 {% endcall %}
 
-{% call utils.small() %}
-  .demystifying .text-and-image__image {
-    display: none;
-  }
-{% endcall %}
 
 /* Promo cards sections */
 .promo-cards {
@@ -132,7 +134,7 @@
   padding-top: 8.4em;
 }
 
-{% call utils.small_and_medium()%}
+{% call utils.small_medium_and_large() %}
   .promo-cards-secondary {
     padding-top: 13em; 
   }

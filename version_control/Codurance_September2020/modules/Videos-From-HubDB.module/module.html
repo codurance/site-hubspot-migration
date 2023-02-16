@@ -1,5 +1,19 @@
 {{ require_css(get_asset_url("../../css/modules/videos-from-hubdb.css")) }}
 
+{% macro strip_youtube_id(url) %}
+	{% set video_id_length = 11 %}
+	{% if url is string_containing "watch" %}
+		{% set youtube_video_id = url | split("v=") | last %}
+	{% elif url is string_containing "live" %}
+		{% set youtube_video_id = url | split("live/") | last %}
+	{% else %}
+		{% set youtube_video_id = url | split("/") | last %}
+	{% endif %}
+
+	{{ youtube_video_id |truncate(video_id_length, True, "")}}
+{% endmacro %}
+
+
 {% set videos = [] %}
 
 {% if module.display_latest_videos %}
@@ -16,34 +30,32 @@
 	{% endfor %}
 {% endif %}
 
+
 <div class="videos-hubdb">
-	{% for video in videos %}
-		{% if video.video is string_containing "youtube" %}
-			{% set youtube_video_id = video.video | split("v=") | last | truncate(11, True, "") %}
-		{% else %}
-			{% set youtube_video_id = video.video | split("/") | last %}
-		{% endif %}
 
-		{% set youtube_embed_url = "https://www.youtube.com/embed/{{ youtube_video_id }}" %}
+{% for video in videos %}
+	{% set youtube_id = strip_youtube_id(video.video) | trim  %}
+	{% set youtube_embed_url = "https://www.youtube.com/embed/{{ youtube_id }}" %}
 
-		<article class="video-hubdb">
-			<div class="video-hubdb__iframe-wrapper">
-				<iframe src="{{ youtube_embed_url }}" allowfullscreen title="{{ video.name }}" class="video-hubdb__iframe"></iframe>
-			
-				<h3 class="video-hubdb__title">
-					{{ video.name }}
-				</h3>
-				<p class="video-hubdb__description">
-					{% if module.fields_to_display.description %}
-								{{ video.description }}
-					{% endif %}
-				</p>
-				{% if module.fields_to_display.date %}
-					<time datetime="{{ video.date | format_date('short') }}" class="video-hubdb__date">
-						{{ video.date|format_date('dd MMM yyyy') }}
-					</time>
+	<article class="video-hubdb">
+		<div class="video-hubdb__iframe-wrapper">
+			<iframe src="{{ youtube_embed_url }}" allowfullscreen title="{{ video.name }}" class="video-hubdb__iframe"></iframe>
+		
+			<h3 class="video-hubdb__title">
+				{{ video.name }}
+			</h3>
+			<p class="video-hubdb__description">
+				{% if module.fields_to_display.description %}
+							{{ video.description }}
 				{% endif %}
-			</div>
+			</p>
+			{% if module.fields_to_display.date %}
+				<time datetime="{{ video.date | format_date('short') }}" class="video-hubdb__date">
+					{{ video.date|format_date('dd MMM yyyy') }}
+				</time>
+			{% endif %}
+		</div>
 	</article>
-	{% endfor %}
+{% endfor %}
 </div>
+

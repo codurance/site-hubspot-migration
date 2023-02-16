@@ -2,7 +2,7 @@
 
 <div class="cm-contact-us-card">
   <div class="cm-contact-us-card__heading-wrapper">
-    <h2 class="cm-contact-us-card__heading">{{ module.heading }}</h2>
+    <h2 id="{{ module.heading | lower }}" class="cm-contact-us-card__heading">{{ module.heading }}</h2>
   </div>
   <div class="cm-contact-content">
     {{ module.address }}

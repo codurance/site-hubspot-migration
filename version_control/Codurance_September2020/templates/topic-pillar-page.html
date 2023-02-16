@@ -49,9 +49,11 @@ label: Topic Pillar Page
 </section>
 
 {# Newsletter Banner form #}
-{% module "newsletter" 
-  path="../modules/Newsletter-Form-Card.module" label="Newsletter Form" 
-  no_wrapper=True %}
+<section aria-label="Newsletter form">
+  {% module "newsletter"
+    path="../modules/Newsletter-Form-Card.module" label="Newsletter Form"
+    no_wrapper=True %}
+</section>
 
 {# Simple Cards Section with case studies/downloads/articles #}
 <section class="promo-cards-secondary">
