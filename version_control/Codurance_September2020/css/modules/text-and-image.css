@@ -22,6 +22,11 @@
     font-weight: var(--light-font-weight);
 }
 
+.text-and-image__copy h3 {
+    {{ utils.freed() }}
+    margin-bottom: var(--space-0);
+}
+
 .text-and-image__copy p {
     {{ utils.natus() }}
 }

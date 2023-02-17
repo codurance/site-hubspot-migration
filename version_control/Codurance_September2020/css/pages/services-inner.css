@@ -10,6 +10,10 @@ so we remove it at row level */
     padding: 0;
 }
 
+.working-with-us h2 {
+    margin-bottom: var(--space-4);
+}
+
 .section-4 {
     padding-top: 2em;
     padding-bottom: 4em;
