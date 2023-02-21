@@ -65,7 +65,7 @@
 }
 
 .blog-cta-card--tango {
-  background-color: var(--tango);
+  {{ utils.tango_to_white() }}
   color: var(--woodsmoke);
   text-align: center;
 }
