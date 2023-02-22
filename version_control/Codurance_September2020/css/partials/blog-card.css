@@ -64,9 +64,8 @@
   text-align: center;
 }
 
-.blog-cta-card--tango {
-  background-color: var(--tango);
-  color: var(--woodsmoke);
+.blog-cta-card--tango-gradient {
+  {{ utils.tango_to_white() }}
   text-align: center;
 }
 
