@@ -61,10 +61,18 @@
    .recent-posts__container{
        margin: 3em 1em;
    }
+
    .recent-posts__container h2 {
        text-align: left;
        margin-left: .5em;
    }
+
+   .recent-posts__container .cm-recent-post {
+    transform: none;
+   }
+
+
+
 
 {% call utils.medium() %} 
    .form-wrapper-class form {
