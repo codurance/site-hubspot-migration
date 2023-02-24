@@ -37,6 +37,7 @@
   flex-direction: row;
   justify-content: flex-start;
   padding-inline: 2rem;
+  padding-top: 1em;
   margin-inline: -2rem;
   padding-bottom: 0.5rem;
   overflow: scroll;
@@ -78,7 +79,7 @@
 {% endcall %}
 
 .cm-recent-post__item:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+  {{ utils.card_shadow_large() }}
 }
 
 .cm-recent-image-wrapper {
