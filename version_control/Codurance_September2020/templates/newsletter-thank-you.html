@@ -7,15 +7,16 @@ label: Newsletter Thank You
 
 {{ require_css(get_asset_url("../css/pages/newsletter-thank-you.css")) }}
 
-
 {% block body %}
 
     <section class="thank-you-message__container">
-      {% module "Thank you message" path="../modules/thank-you-message", label="Thank you message" no_wrapper=True %}
+      {% module "Thank you message" path="../modules/thank-you-message", 
+        label="Thank you message" no_wrapper=True %}
     </section>
 
     <section class="recent-posts__container">
-      {% module "Recent Posts" path="../modules/Recent posts", label="Recent posts" no_wrapper=True %}
+      {% module "Recent Posts" path="../modules/Recent-posts-V2", 
+        label="Recent posts" no_wrapper=True %}
     </section>
   
 {% endblock body %}
