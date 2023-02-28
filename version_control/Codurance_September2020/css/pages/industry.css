@@ -4,7 +4,7 @@
 }
 
 .breadcrumbs {
-    padding-top: 2.5em;
+    margin-top: 2.5em;
     margin-inline: auto;
     width: 100%;
 }
@@ -13,6 +13,12 @@
     padding-left: 0;
 }
 
-.header .header-slim__text {
+.header-title {
+    margin-inline: auto;
+    width: 100%;
+}
+
+.header-title {
+    margin-top: 3.5em;
     margin-bottom: 6em;
 }
