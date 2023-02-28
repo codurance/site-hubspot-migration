@@ -9,19 +9,31 @@ label: Industry Page
 
 {% block body %}
 
+{% image "header_background_image"
+  label="Header Background Image"
+  export_to_template_context=True
+%}
+
+{% require_css %}
+  <style>
+    .header {
+      background: url({{ widget_data.header_background_image.src }});
+    }
+  </style>
+{% end_require_css %}
+
 <section class="header">
   <div class="breadcrumbs responsive-page-width lateral-spacing">
-    {% module "breadcrumbs" 
-      path="@hubspot/menu" 
+    {% menu "breadcrumbs" 
       label="Breadcrumbs"
       root_type="breadcrumb" 
       no_wrapper=True 
     %}
   </div>
 
-  {% module "header_slim" 
-    path="../modules/Header-Slim.module" 
-    label="Header Slim" 
+  <div class="header-title responsive-page-width lateral-spacing">
+  {% header "header_title" 
+    label="Header Title" 
     no_wrapper=True 
   %}
 </section>
