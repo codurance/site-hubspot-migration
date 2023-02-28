@@ -1,0 +1,63 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Industry Page
+-->
+{% extends "./layouts/base.html" %}
+
+{{ require_css(get_asset_url("../css/pages/topic-pillar.css")) }}
+
+{% block body %}
+
+{% module "header_slim" 
+  path="../modules/Header-Slim.module" 
+  label="Header Slim" 
+  no_wrapper=True 
+%}
+
+<main>
+  <section class="above-the-fold">
+    {% module "above_the_fold"
+      path="../modules/Text-and-image.module" 
+      label="Above the fold section"
+      no_wrapper=True 
+    %}
+  </section>
+
+  <section class="case-studies">
+    {% dnd_area "case_studies"
+      label="Case studies"
+    %}
+      {% dnd_section %}
+        {% dnd_column %}
+          {% dnd_row %}
+
+            {% dnd_module path="@hubspot/logo" %}
+            {% end_dnd_module %}
+
+          {% end_dnd_row %}
+          {% dnd_row %}
+
+            {% dnd_module path="@hubspot/rich_text" %}
+            {% end_dnd_module %}
+
+          {% end_dnd_row %}
+        {% end_dnd_column %}
+      {% end_dnd_section %}
+    {% end_dnd_area %}
+  </section>
+
+  <section class="promotion">
+    {% module "promotion"
+      path="../modules/Text-and-image.module" label="Promotional section"
+      no_wrapper=True %}
+  </section>
+
+  <section class="cta-banner">
+    {% module 'cta_banner' label="CTA Banner"
+      path='../modules/LP-cta-block.module'
+    %}
+  </section>
+</main>
+
+{% endblock body %}
