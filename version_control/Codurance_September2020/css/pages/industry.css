@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.breadcrumbs {
+    padding-top: 2.5em;
+    margin-inline: auto;
+    width: 100%;
+}
+
+.breadcrumbs .first-crumb {
+    padding-left: 0;
+}
+
+.header-slim__text {
+    margin-bottom: 6em;
+}

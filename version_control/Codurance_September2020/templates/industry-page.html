@@ -9,11 +9,22 @@ label: Industry Page
 
 {% block body %}
 
-{% module "header_slim" 
-  path="../modules/Header-Slim.module" 
-  label="Header Slim" 
-  no_wrapper=True 
-%}
+<section class="header">
+  <div class="breadcrumbs responsive-page-width lateral-spacing">
+    {% module "breadcrumbs" 
+      path="@hubspot/menu" 
+      label="Breadcrumbs"
+      root_type="breadcrumb" 
+      no_wrapper=True 
+    %}
+  </div>
+
+  {% module "header_slim" 
+    path="../modules/Header-Slim.module" 
+    label="Header Slim" 
+    no_wrapper=True 
+  %}
+</section>
 
 <main>
   <section class="above-the-fold">
