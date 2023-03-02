@@ -7,12 +7,7 @@ class CardSlider {
     cardsSelector = "[data-cardslider-card]",
     leftButtonSelector = "[data-cardslider-button-left]",
     rightButtonSelector = "[data-cardslider-button-right]",
-    filterButtonSelector = "[data-card-filter-button]",
-    cardTypeSelector = "[data-card-type]",
-    cardHeadingSelector = "[data-card-heading]",
-    watchAllCtaSelector = "[data-watch-all-cta]",
     animatingClass = "animating",
-    filters = false,
     ctaContainerSelector = null
   }) {
     this.activationPoint = activationPoint;
@@ -29,16 +24,6 @@ class CardSlider {
       width: this.cards[0].getBoundingClientRect().width,
       margin: parseFloat(window.getComputedStyle(this.cards[0]).marginRight)
     };
-
-    if (filters) {
-      this.filterButtons = Array.prototype.slice.call(
-        this.slider.querySelectorAll(filterButtonSelector)
-      );
-      this.filterButtonSelector = filterButtonSelector;
-      this.cardTypeSelector = cardTypeSelector;
-      this.cardHeadingSelector = cardHeadingSelector;
-      this.watchAllCtaSelector = watchAllCtaSelector;
-    }
 
     if (this.navigationControl) {
       this.leftButton = this.slider.querySelector(leftButtonSelector);
@@ -98,11 +83,6 @@ class CardSlider {
     if (this.navigationControl) {
       this.leftButton.addEventListener("click", this.navigateLeft);
       this.rightButton.addEventListener("click", this.navigateRight);
-    }
-    if (this.filterButtons) {
-      this.filterButtons.forEach((button) => {
-        button.addEventListener("click", () => this.handleFilterClick(button));
-      });
     }
   }
 
@@ -327,17 +307,6 @@ class CardSlider {
     return innerCardWidth + cardMarginWidth * 2;
   }
 
-  handleFilterClick(button) {
-    const type =
-      button.dataset[this.convertDataAttributeToKey(this.filterButtonSelector)];
-    this.changeHeading(type);
-    this.updateCta(type);
-    this.filterCards(type);
-    this.updateVisibleCards();
-    this.changeActiveFilterButton(button);
-    this.updateTrack();
-  }
-
   changeHeading(type) {
     Array.prototype.slice
       .call(this.slider.querySelectorAll(this.cardHeadingSelector))
@@ -377,37 +346,6 @@ class CardSlider {
       this.calculateMaxLeftPosition();
       this.keepTrackLeftWithinMaximum();
     }
-  }
-
-  filterCards(type) {
-    this.cards.forEach((card) => {
-      card.dataset[this.convertDataAttributeToKey(this.cardTypeSelector)] ===
-        type || type === "all"
-        ? this.displayCard(card)
-        : this.hideCard(card);
-    });
-  }
-
-  displayCard(card) {
-    card.classList.remove("hidden");
-  }
-
-  hideCard(card) {
-    card.classList.add("hidden");
-  }
-
-  changeActiveFilterButton(activeButton) {
-    this.filterButtons.forEach((button) => {
-      button === activeButton
-        ? button.classList.add("active")
-        : button.classList.remove("active");
-    });
-  }
-
-  updateVisibleCards() {
-    this.visibleCards = this.cards.filter(
-      (card) => !card.classList.contains("hidden")
-    );
   }
 
   convertDataAttributeToKey(attribute) {
