@@ -9,6 +9,8 @@ const SELECTORS = {
 };
 
 function init() {
+  SELECTORS.slider = document.querySelector(SELECTORS.cardWindowSelector);
+
   const cardSlider = new CardSlider(SELECTORS);
   cardSlider.init();
 }

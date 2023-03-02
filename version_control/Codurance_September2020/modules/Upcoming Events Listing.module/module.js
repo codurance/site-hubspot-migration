@@ -9,7 +9,7 @@ const SELECTORS = {
 };
 
 function init() {
-  const sliders = document.querySelectorAll("[data-upcoming-card-window]");
+  const sliders = document.querySelectorAll(SELECTORS.cardWindowSelector);
 
   sliders.forEach((slider) => {
     SELECTORS.slider = slider;
