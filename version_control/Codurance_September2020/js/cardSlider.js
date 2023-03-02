@@ -2,7 +2,7 @@ class CardSlider {
   constructor({
     activationPoint = 1023,
     navigationControl = true,
-    cardWindowSelector = "[data-cardslider-window]",
+    slider,
     trackSelector = "[data-cardslider-track]",
     cardsSelector = "[data-cardslider-card]",
     leftButtonSelector = "[data-cardslider-button-left]",
@@ -17,11 +17,12 @@ class CardSlider {
   }) {
     this.activationPoint = activationPoint;
     this.navigationControl = navigationControl;
-    this.cardWindow = document.querySelector(cardWindowSelector);
-    this.track = document.querySelector(trackSelector);
+    this.slider = slider;
+
+    this.track = this.slider.querySelector(trackSelector);
 
     this.cards = Array.prototype.slice.call(
-      document.querySelectorAll(cardsSelector)
+      this.slider.querySelectorAll(cardsSelector)
     );
     this.visibleCards = this.cards;
     this.cardProperties = {
@@ -31,7 +32,7 @@ class CardSlider {
 
     if (filters) {
       this.filterButtons = Array.prototype.slice.call(
-        document.querySelectorAll(filterButtonSelector)
+        this.slider.querySelectorAll(filterButtonSelector)
       );
       this.filterButtonSelector = filterButtonSelector;
       this.cardTypeSelector = cardTypeSelector;
@@ -40,13 +41,13 @@ class CardSlider {
     }
 
     if (this.navigationControl) {
-      this.leftButton = document.querySelector(leftButtonSelector);
-      this.rightButton = document.querySelector(rightButtonSelector);
+      this.leftButton = this.slider.querySelector(leftButtonSelector);
+      this.rightButton = this.slider.querySelector(rightButtonSelector);
     }
 
     this.animatingClass = animatingClass;
     if (ctaContainerSelector) {
-      this.ctaContainer = document.querySelector(ctaContainerSelector);
+      this.ctaContainer = this.slider.querySelector(ctaContainerSelector);
     }
 
     this.trackHasSetWidth = false;
@@ -90,10 +91,10 @@ class CardSlider {
   setUpEventListeners() {
     window.addEventListener("resize", this.handleResize);
     this.track.addEventListener("mousedown", this.handleMouseDown);
-    this.cardWindow.addEventListener("mouseup", this.handleMouseUp);
-    this.cardWindow.addEventListener("mouseleave", this.handleMouseUp);
+    this.slider.addEventListener("mouseup", this.handleMouseUp);
+    this.slider.addEventListener("mouseleave", this.handleMouseUp);
     this.track.addEventListener("touchstart", this.handleMouseDown);
-    this.cardWindow.addEventListener("touchend", this.handleMouseUp);
+    this.slider.addEventListener("touchend", this.handleMouseUp);
     if (this.navigationControl) {
       this.leftButton.addEventListener("click", this.navigateLeft);
       this.rightButton.addEventListener("click", this.navigateRight);
@@ -150,7 +151,7 @@ class CardSlider {
 
   calculateMaxLeftPosition() {
     this.maxLeft = Math.min(
-      this.cardWindow.clientWidth - this.track.clientWidth,
+      this.slider.clientWidth - this.track.clientWidth,
       0
     );
   }
@@ -339,7 +340,7 @@ class CardSlider {
 
   changeHeading(type) {
     Array.prototype.slice
-      .call(document.querySelectorAll(this.cardHeadingSelector))
+      .call(this.slider.querySelectorAll(this.cardHeadingSelector))
       .forEach((heading) => {
         if (
           heading.dataset[
@@ -355,7 +356,7 @@ class CardSlider {
 
   updateCta(type) {
     Array.prototype.slice
-      .call(document.querySelectorAll(this.watchAllCtaSelector))
+      .call(this.slider.querySelectorAll(this.watchAllCtaSelector))
       .forEach((cta) => {
         if (
           cta.dataset[
