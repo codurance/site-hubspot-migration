@@ -9,8 +9,15 @@ const SELECTORS = {
 };
 
 function init() {
-  const cardSlider = new CardSlider(SELECTORS);
-  cardSlider.init();
+  const sliders = document.querySelectorAll(SELECTORS.cardWindowSelector);
+
+  sliders.forEach((slider) => {
+    SELECTORS.slider = slider;
+
+    const cardSlider = new CardSlider(SELECTORS);
+    cardSlider.init();
+  });
+
   getLocalTimeDate();
 }
 
