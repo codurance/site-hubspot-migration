@@ -2,7 +2,7 @@ class CardSlider {
   constructor({
     activationPoint = 1023,
     navigationControl = true,
-    slider = document.querySelector("[data-past-card-window]"),
+    slider = document.querySelector("[data-cardslider-window]"),
     trackSelector = "[data-cardslider-track]",
     cardsSelector = "[data-cardslider-card]",
     leftButtonSelector = "[data-cardslider-button-left]",
