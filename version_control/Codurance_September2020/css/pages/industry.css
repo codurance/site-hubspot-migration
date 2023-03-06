@@ -1,6 +1,7 @@
 {% import "../utils/utils.css" as utils %}
 
 .header {
+    {{ utils.slate_to_woodsmoke() }}
     position: relative;
 }
 
@@ -9,6 +10,8 @@
     flex-direction: column;
     margin-inline: auto;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .breadcrumbs {
@@ -37,10 +40,16 @@
     height: 100%;
     right: 0;
     top: 0;
-    z-index: -1;
 }
 
 .header__image-container img {
     object-fit: cover;
     height: 100%;
+}
+
+.header__image-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
 }
