@@ -1,10 +1,12 @@
+{% import "../utils/utils.css" as utils %}
+
 .header {
     display: flex;
     flex-direction: column;
 }
 
 .breadcrumbs {
-    margin-top: 2.5em;
+    margin-top: 3.5em;
     margin-inline: auto;
     width: 100%;
 }
@@ -13,12 +15,17 @@
     padding-left: 0;
 }
 
-.header-title {
-    margin-inline: auto;
-    width: 100%;
+.hs-breadcrumb-label {
+    {{ utils.natus() }}
 }
 
 .header-title {
-    margin-top: 3.5em;
-    margin-bottom: 6em;
+    margin-inline: auto;
+    width: 100%;
+    margin-top: .5em;
+    margin-bottom: 4em;
+}
+
+.header-title h1 {
+    {{ utils.eames() }}
 }
