@@ -1,7 +1,7 @@
 {% import "../utils/utils.css" as utils %}
 
 .header {
-    {{ utils.slate_to_woodsmoke() }}
+    {{ utils.color1_to_color2("to right", "var(--slate)", "var(--woodsmoke)") }}
     position: relative;
 }
 
@@ -52,4 +52,6 @@
     height: 100%;
     position: absolute;
     top: 0;
+
+    background-image: linear-gradient(90deg, var(--slate), transparent 40%);
 }
