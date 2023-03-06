@@ -19,7 +19,7 @@
       <article class="custom-our-people__card  {% if row.leadership_board %}leadership{% endif %}">
         <div class="custom-our-people__card-inner" data-modal-target="#team-{{ loop.index }}">
           {% if row.image.url %}
-            <img class="custom-our-people__profile-image" src="{{ row.image.url }}" alt="{{ row.name }}">
+            <img class="custom-our-people__profile-image" src="{{ resize_image_url(row.image.url, 400) }}" alt="{{ row.name }}">
           {% endif %}
           <div class="custom-our-people__info">
             {% if row.name %}
