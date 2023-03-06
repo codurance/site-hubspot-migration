@@ -1,14 +1,18 @@
 {% import "../utils/utils.css" as utils %}
 
 .header {
+    position: relative;
+}
+
+.header__text-container {
     display: flex;
     flex-direction: column;
+    margin-inline: auto;
+    width: 100%;
 }
 
 .breadcrumbs {
     margin-top: 3.5em;
-    margin-inline: auto;
-    width: 100%;
 }
 
 .breadcrumbs .first-crumb {
@@ -20,12 +24,23 @@
 }
 
 .header-title {
-    margin-inline: auto;
-    width: 100%;
     margin-top: .5em;
     margin-bottom: 4em;
 }
 
 .header-title h1 {
     {{ utils.eames() }}
+}
+
+.header__image-container {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.header__image-container img {
+    object-fit: cover;
+    height: 100%;
 }
