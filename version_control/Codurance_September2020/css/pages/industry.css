@@ -82,6 +82,13 @@
     transform: unset;
 }
 
+{% call utils.small() %}
+    .above-the-fold .text-and-image__image {
+        align-self: center;
+        margin-bottom: 1.5em;
+    } 
+{% endcall %}
+
 {% call utils.large_and_extra_large() %}
     .above-the-fold .text-and-image__copy {
         max-width: 48ch;
