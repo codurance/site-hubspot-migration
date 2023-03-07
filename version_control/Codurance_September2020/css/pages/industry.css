@@ -96,4 +96,5 @@
 
 .promotion {
     {{ utils.slate_to_woodsmoke() }}
+    color: white;
 }
