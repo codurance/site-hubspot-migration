@@ -64,3 +64,26 @@
         transparent 50%
     );
 }
+
+.above-the-fold {
+    padding: 1.6em 0;
+}
+
+.above-the-fold .text-and-image__copy p {
+    {{ utils.freed() }}
+    font-weight: var(--light-font-weight);
+}
+
+.above-the-fold .text-and-image__image {
+    align-self: start;
+} 
+
+.above-the-fold .text-and-image__image img {
+    transform: unset;
+}
+
+{% call utils.large_and_extra_large() %}
+    .above-the-fold .text-and-image__copy {
+        max-width: 48ch;
+    }
+{% endcall %}
