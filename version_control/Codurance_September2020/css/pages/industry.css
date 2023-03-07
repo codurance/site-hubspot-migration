@@ -70,13 +70,8 @@
 }
 
 .above-the-fold .text-and-image__copy p {
-    {{ utils.freed() }}
-    font-weight: var(--light-font-weight);
+    {{ utils.base() }}
 }
-
-.above-the-fold .text-and-image__image {
-    align-self: start;
-} 
 
 .above-the-fold .text-and-image__image img {
     transform: unset;
@@ -84,7 +79,6 @@
 
 {% call utils.small() %}
     .above-the-fold .text-and-image__image {
-        align-self: center;
         margin-bottom: 1.5em;
     } 
 {% endcall %}
@@ -93,4 +87,13 @@
     .above-the-fold .text-and-image__copy {
         max-width: 48ch;
     }
+
+    .above-the-fold .text-and-image__copy p {
+        {{ utils.freed() }}
+        font-weight: var(--light-font-weight);
+    }
 {% endcall %}
+
+.promotion {
+    {{ utils.slate_to_woodsmoke() }}
+}
