@@ -22,14 +22,6 @@
     margin-top: 3.5em;
 }
 
-.breadcrumbs .first-crumb {
-    padding-left: 0;
-}
-
-.hs-breadcrumb-label {
-    {{ utils.natus() }}
-}
-
 .header-title {
     margin-top: .5em;
     margin-bottom: 4em;
