@@ -100,12 +100,6 @@
   }
 {% endcall %}
 
-{% call utils.small() %}
-    .dnd-section .text-and-image__container {
-        flex-direction: column;
-    }
-{% endcall %}
-
 .dnd-section .text-and-image__image > img {
   transform: none;
 }

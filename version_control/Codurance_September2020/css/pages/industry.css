@@ -86,6 +86,19 @@
     }
 {% endcall %}
 
+.case-studies {
+    {{ utils.tango_to_white() }}
+}
+
+.case-studies .dnd-section {
+    padding-top: 3.5em;
+    padding-bottom: 5em;
+}
+
+.case-studies .text-and-image__title {
+    font-weight: var(--heavy-font-weight);
+}
+
 .promotion {
     {{ utils.slate_to_woodsmoke() }}
     color: white;
