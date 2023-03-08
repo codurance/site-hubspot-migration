@@ -20,7 +20,12 @@
         <div class="custom-our-people__card-inner" data-modal-target="#team-{{ loop.index }}">
           {% if row.image.url %}
             <img class="custom-our-people__profile-image" 
-              src="{{ resize_image_url(row.image.url, 300) }}"
+              srcset="
+                {{ resize_image_url(row.image.url, 180) }} 180w,
+                {{ resize_image_url(row.image.url, 300) }} 500w"
+              sizes="
+                (max-width: 400px) 180px,
+                500px"
               width="300" height="300" loading="lazy" 
               alt="{{ row.name }}" >
           {% endif %}
