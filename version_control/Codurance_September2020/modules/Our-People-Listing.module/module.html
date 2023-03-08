@@ -22,10 +22,10 @@
             <img class="custom-our-people__profile-image" 
               srcset="
                 {{ resize_image_url(row.image.url, 180) }} 180w,
-                {{ resize_image_url(row.image.url, 300) }} 500w"
+                {{ resize_image_url(row.image.url, 300) }} 300w"
               sizes="
-                (max-width: 400px) 180px,
-                500px"
+                (max-width: 425px) 180px,
+                300px"
               width="300" height="300" loading="lazy" 
               alt="{{ row.name }}" >
           {% endif %}
