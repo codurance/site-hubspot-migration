@@ -6,7 +6,14 @@
  screenshotPath: ../../images/template-previews/service-lines-listing_section.png
 -->
 
-{% dnd_section max_width=1000 %}
+{% dnd_section
+  max_width=1040,
+  padding={
+    "left": 20,
+    "right": 20
+  }
+%}
+
   {% dnd_module
     path="../../modules/Service-Lines-Listing.module",
     listing=[ {

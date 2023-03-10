@@ -6,7 +6,13 @@
  screenshotPath: ../../images/template-previews/video_section.png
 -->
 
-{% dnd_section max_width=700 %}
+{% dnd_section
+  max_width=740,
+  padding={
+    "left": 20,
+    "right": 20
+  }
+%}
   {% dnd_module path="@hubspot/video_embed_lp"
       url="https://www.youtube.com/watch?v=xdU1b_VpOp4" %}
   {% end_dnd_module %}
