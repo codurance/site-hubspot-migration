@@ -43,21 +43,17 @@ label: Industry Page
     %}
   </section>
 
-  <section class="case-studies lateral-spacing">
+  <section class="case-studies">
     {% dnd_area "case_studies"
       label="Case studies"
     %}
-      {% dnd_section %}
-        {% dnd_column %}
-          {% dnd_row %}
-            {% dnd_module 
-              path="../modules/Text-and-image.module" 
-              label="Featured case study" 
-            %}
-            {% end_dnd_module %}
-          {% end_dnd_row %}
-        {% end_dnd_column %}
-      {% end_dnd_section %}
+      {% include_dnd_partial 
+          path='./sections/text-and-image.html' 
+          context={} %}
+      {% include_dnd_partial 
+          path='./sections/testimonial-section.html' 
+          context={} %}
+     
     {% end_dnd_area %}
   </section>
 
