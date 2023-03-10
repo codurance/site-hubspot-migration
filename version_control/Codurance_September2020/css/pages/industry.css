@@ -96,6 +96,10 @@
     font-weight: var(--heavy-font-weight);
 }
 
+.case-studies .case-study-card-collection {
+    background: unset;
+}
+
 .promotion {
     {{ utils.slate_to_woodsmoke() }}
     color: white;
