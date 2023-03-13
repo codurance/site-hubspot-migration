@@ -57,9 +57,7 @@ label: Industry Page
           context={} 
       %}
 
-      {% dnd_section 
-        full_width=True
-      %}
+      {% dnd_section full_width=True %}
         {% dnd_module 'case_study_cards'
           path='../modules/Case Study Card Collection.module'
         %}
@@ -74,6 +72,21 @@ label: Industry Page
     %}
   </section>
 
+  <section class="recommended-insights">
+    <div class="recommended-insights__wrapper">
+      <h2 class="lateral-spacing">
+        {% text "insights_header"
+          value="Recommended Insights",
+          label="Recommended Insights Header" no_wrapper=True %}
+      </h2>
+      {% module 'recommended_insights'
+        path='../modules/Simple-Card.module'
+        label="Recommended Insights Cards"
+        no_wrapper=True
+      %}
+    </div>
+  </section>
+  
   <section class="cta-banner">
     {% module 'cta_banner' label="CTA Banner"
       path='../modules/LP-cta-block.module'

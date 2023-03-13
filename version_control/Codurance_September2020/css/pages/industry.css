@@ -104,3 +104,25 @@
     {{ utils.slate_to_woodsmoke() }}
     color: white;
 }
+
+.recommended-insights {
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
+    {{ utils.tango_to_white() }}
+}
+
+.recommended-insights__wrapper {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+}
+
+.recommended-insights h2 {
+    {{ utils.dudler()}}
+    margin-bottom: var(--space-4);
+}
+{% call utils.small() %}
+    .recommended-insights h2 {
+        {{ utils.freed() }}
+        font-weight: var(--heavy-font-weight);
+    }
+{% endcall %}
