@@ -54,5 +54,6 @@
 {% call utils.extra_large() %}
   .responsive-page-width {
       max-width: var(--content-max-width);
+      margin-inline: auto;
   }
 {% endcall %}
