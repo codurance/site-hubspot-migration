@@ -1,3 +1,6 @@
+
+{% import '../utils/utils.css' as utils %}
+
 :root {
   --blur: 3px;
   --unblur: 0;
@@ -57,7 +60,7 @@ button.hs-image__grid__list__item__button:focus:not(:focus-visible) {
   box-sizing: border-box;
   height: 100%;
   width: 100%;
-  padding: 1rem;
+  padding: var(--space-3);
   background-color: rgba(255, 255, 255, 0);
   opacity: 0;
   transition: background-color 0.5s, opacity 0.5s;
@@ -70,6 +73,9 @@ button.hs-image__grid__list__item__button:focus:not(:focus-visible) {
 
 .hs-image__grid__item__overlay__content {
   opacity: 1;
+  {{utils.freed()}}
+  font-weight: var(--middle-font-weight);
+  max-width: 14ch;
 }
 
 .hs-image__grid__item__overlay__content * {
@@ -77,9 +83,6 @@ button.hs-image__grid__list__item__button:focus:not(:focus-visible) {
   padding: initial;
 }
 
-.hs-image__grid__item__overlay__content--fit {
-  max-width: fit-content;
-}
 
 
 /** Image hover transitions; **/
