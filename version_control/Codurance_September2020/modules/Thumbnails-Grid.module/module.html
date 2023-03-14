@@ -1,0 +1,199 @@
+
+{% set ratio_calculations = {
+    '3/2': 1.5,
+    '2/3': 0.66666667,
+    '4/3': 1.33333333,
+    '3/4': 0.75,
+    '16/9': 1.77777778
+} %}
+
+{% set css_hover_filters = {
+    'blur': 'blur(var(--blur))',
+    'grayscale': 'grayscale(var(--grayscale))'
+} %}
+
+
+{% set name_class = "hs-image__grid__name__" ~ name %}
+
+{% set navigate_on_click = false %}
+{% if module.grid_settings.group_image_click.image_click_functionality == "navigate" %}
+    {% set navigate_on_click = true %}
+{% endif %}
+
+
+{% set hover_effect_classes = "" %}
+{% if module.grid_settings.group_image_hover.image_hover_functionality %}
+    {% set multiple_filters = module.grid_settings.group_image_hover.image_hover_functionality|length > 1 ? 'hs-image__grid__item__image--multiple ' : '' %}
+    {% set hover_effect_classes = multiple_filters ~ "hs-image__grid__item__image--" ~ module.grid_settings.group_image_hover.image_hover_functionality|join(" hs-image__grid__item__image--")  %}
+{% endif %}
+
+{% macro css_hover_filters( filters ) %}
+    {% set filters_length = filters|length %}
+    {% if filters_length > 1  %}
+        .hs-image__grid__list__item:hover .hs-image__grid__item__image--multiple {
+            filter:
+            {% for effect in filters %}
+                {{ css_hover_filters[effect]  }}
+            {% endfor %}
+            ;
+        }
+    {% endif %}
+{% endmacro %}
+
+{% set calc_column_width = ( 100 / module.grid_settings.group_uniform_display_options.number_of_columns ) %}
+{% set column_width_percent = calc_column_width ~ "%" %}
+{% set column_gap = module.styles.grid_images.group_gap.gap ~ "px" %}
+
+{% require_css %}
+    <style>
+    {% scope_css %}
+        .hs-image__grid__list {
+            {% if module.styles.grid_images.group_gap.gap %}
+                gap: {{ module.styles.grid_images.group_gap.gap ~ "px" }};
+            {% endif %}
+        }
+
+        .hs-image__grid__list__item, .hs-image__grid__list__item__image {
+            {% if module.grid_settings.group_aspect_ratio.aspect_ratio %}
+                aspect-ratio: {{ module.grid_settings.group_aspect_ratio.aspect_ratio }};
+            {% endif %}
+            {% if module.styles.grid_images.group_corner.corner %}
+                border-radius: {{ module.styles.grid_images.group_corner.corner ~ "px" }};
+            {% endif %}
+        }
+
+        .hs-image__grid__item__overlay {
+            {% if module.grid_settings.group_image_hover.overlay_show_on == "always" %}
+                opacity: 1;
+                background-color: rgba(255, 255, 255, 0.6);
+            {% endif %}
+            {% if module.styles.grid_images.group_corner.corner %}
+                border-radius: {{ module.styles.grid_images.group_corner.corner ~ "px" }};
+            {% endif %}
+            {% if module.styles.grid_images.overlay.background.color.color %}
+                background-color: rgba({{ module.styles.grid_images.overlay.background.color.color|convert_rgb }},{{ module.styles.grid_images.overlay.background.color.opacity/100 }});
+            {% endif %}
+        }
+
+        .hs-image__grid__item__overlay__content, .hs-image__grid__item__overlay__content * {
+            {% if module.styles.grid_images.overlay.text.font %}
+                {{ module.styles.grid_images.overlay.text.font.css }}
+            {% endif %}
+        }
+
+        .hs-image__grid__item__overlay:hover {
+            {% if module.grid_settings.group_image_hover.overlay_show_on == "hover" %}
+                {% if module.styles.grid_images.overlay.background.color %}
+                background-color: rgba({{ module.styles.grid_images.overlay.background.color.color|convert_rgb }},{{ module.styles.grid_images.overlay.background.color.opacity/100 }});
+                {% endif %}
+                {% if module.styles.grid_images.overlay.text.font %}
+                    {{ module.styles.grid_images.overlay.text.font.css }}
+                {% endif %}
+            {% endif %}
+            {% if module.grid_settings.group_image_hover.overlay_show_on == "always" %}
+                {% if module.styles.grid_images.overlay.hover.color %}
+                    background-color: rgba({{ module.styles.grid_images.overlay.hover.color.color|convert_rgb }},{{ module.styles.grid_images.overlay.hover.color.opacity/100 }});
+                {% endif %}
+                {% if module.styles.grid_images.overlay.hover.font %}
+                    {{ module.styles.grid_images.overlay.hover.font.css }}
+                {% endif %}
+            {% endif %}
+        }
+
+        .hs-image__grid__item__overlay:hover .hs-image__grid__item__overlay__content, .hs-image__grid__item__overlay:hover .hs-image__grid__item__overlay__content * {
+            {% if module.grid_settings.group_image_hover.overlay_show_on == "hover" %}
+                {% if module.styles.grid_images.overlay.text.font %}
+                    {{ module.styles.grid_images.overlay.text.font.css }}
+                {% endif %}
+            {% endif %}
+            {% if module.grid_settings.group_image_hover.overlay_show_on == "always" %}
+                {% if module.styles.grid_images.overlay.hover.font %}
+                    {{ module.styles.grid_images.overlay.hover.font.css }}
+                {% endif %}
+            {% endif %}
+        }
+
+        .hs-image__grid__list__item {
+            flex-basis: calc({{ column_width_percent }} - {{ column_gap }});
+        }
+
+        {% if module.grid_settings.group_uniform_display_options.mobile_columns %}
+            {% set column_width_percent = ( 100 / module.grid_settings.group_uniform_display_options.mobile_number_of_columns ) ~ "%" %}
+            @media screen and (max-width: 767px) {
+                .hs-image__grid__list__item {
+                    flex-basis: calc({{ column_width_percent }} - {{ column_gap }});
+                }
+            }
+        {% endif %}
+
+        {{ css_hover_filters(module.grid_settings.group_image_hover.image_hover_functionality) }}
+
+    {% end_scope_css %}
+   
+    </style>
+{% end_require_css %}
+
+
+{% set slides = [] %}
+
+{% if module.slides %}
+    {% for slide in module.slides %}
+        {% if ( slide.img.src ) %}
+            {% set slide_image_src = resize_image_url( slide.img.src, 0, 0, 400 ) %}
+        {% endif %}
+        {% do slides.append({
+                "hover_message": slide.hover_message,
+                "alt_text": slide.img.alt,
+                "img_src": slide_image_src,
+                "link_url": slide.link_url,
+                "open_in_new_tab": slide.link_url.open_in_new_tab
+            })
+        %}
+    {% endfor %}
+{% endif %}
+
+{% if slides %}
+
+{% set image_count = slides|length %}
+{% set grid_aria_label = module.default_text.grid_aria_label %}
+
+<div class="hs-image__grid__container">
+    <ul class="hs-image__grid__list" aria-label="{{ grid_aria_label }}" role="list" data-grid_action_type="{{ module.grid_settings.group_image_click.image_click_functionality }}">
+        {% for slide in slides %}
+            <li class="hs-image__grid__list__item"
+                data-lb_image_src="{{ slide.img_src }}"
+                {% if not navigate_on_click %}
+                    data-lb_href='{{ slide.link_url|tojson }}'
+                {% endif %}
+                >
+                {% if navigate_on_click and slide.link_url.url.href %}
+                    <a href="{{ slide.link_url.url.href }}"
+                        {% if slide.link_url.rel %}
+                            rel="{{ slide.link_url.rel }}"
+                        {% endif %}
+                        {% if slide.open_in_new_tab %}
+                            target="_blank"
+                        {% endif %} >
+                {% endif %}
+                <img
+                    class="hs-image__grid__list__item__image {{ hover_effect_classes }} hs-allow-transition"
+                    src="{{ slide.img_src }}" alt="{{ slide.alt_text | escape }}">
+
+                    {% if module.grid_settings.group_image_hover.overlay_show_on != "never" and slide.hover_message %}
+                    <div class="hs-image__grid__item__overlay">
+                        <div class="hs-image__grid__item__overlay__content">
+                            <div class="hs-image__grid__item__overlay__content--fit">
+                                {{ slide.hover_message }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% if navigate_on_click and slide.link_url.url.href %}
+                    </a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+

@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "master_language" : "en",
+  "icon" : "../../../../mV0_d-web-default-modules_hubspot/img/icon/image-grid-icon.svg",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 106427001911,
+  "label" : "Thumbnails Grid",
+  "is_available_for_new_content" : true
+}
