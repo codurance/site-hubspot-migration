@@ -1,11 +1,11 @@
 :root {
   --blur: 3px;
   --unblur: 0;
-  --scale: 1.5;
+  --scale: 1.2;
   --unscale: 1;
   --grayscale: 100%;
   --ungrayscale: 0%;
-  --transition: 0.3s ease-in-out;
+  --transition: 0.2s ease-in-out;
 }
 
 .hs-image__grid__list {
@@ -58,8 +58,6 @@ button.hs-image__grid__list__item__button:focus:not(:focus-visible) {
   height: 100%;
   width: 100%;
   padding: 1rem;
-  align-items: center;
-  justify-content: center;
   background-color: rgba(255, 255, 255, 0);
   opacity: 0;
   transition: background-color 0.5s, opacity 0.5s;
@@ -71,10 +69,7 @@ button.hs-image__grid__list__item__button:focus:not(:focus-visible) {
 }
 
 .hs-image__grid__item__overlay__content {
-  max-height: 100%;
-  width: 100%;
   opacity: 1;
-  text-align: center;
 }
 
 .hs-image__grid__item__overlay__content * {
@@ -83,11 +78,9 @@ button.hs-image__grid__list__item__button:focus:not(:focus-visible) {
 }
 
 .hs-image__grid__item__overlay__content--fit {
-  display: inline-block;
-  /** For supporting fitty responsive text **/
-  width: 100%;
-  white-space: nowrap;
+  max-width: fit-content;
 }
+
 
 /** Image hover transitions; **/
 
