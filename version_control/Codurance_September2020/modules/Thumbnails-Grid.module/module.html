@@ -1,19 +1,11 @@
+{{ require_css(get_asset_url("../../css/modules/thumbnails-grid.css")) }}
 
-{% set ratio_calculations = {
-    '3/2': 1.5,
-    '2/3': 0.66666667,
-    '4/3': 1.33333333,
-    '3/4': 0.75,
-    '16/9': 1.77777778
-} %}
 
 {% set css_hover_filters = {
     'blur': 'blur(var(--blur))',
     'grayscale': 'grayscale(var(--grayscale))'
 } %}
 
-
-{% set name_class = "hs-image__grid__name__" ~ name %}
 
 {% set navigate_on_click = false %}
 {% if module.grid_settings.group_image_click.image_click_functionality == "navigate" %}
@@ -40,9 +32,11 @@
     {% endif %}
 {% endmacro %}
 
-{% set calc_column_width = ( 100 / module.grid_settings.group_uniform_display_options.number_of_columns ) %}
+{% set num_of_columns = module.grid_settings.group_uniform_display_options.number_of_columns %}
+
+{% set calc_column_width = ( 100 / num_of_columns ) %}
 {% set column_width_percent = calc_column_width ~ "%" %}
-{% set column_gap = module.styles.grid_images.group_gap.gap ~ "px" %}
+{% set column_gap = module.styles.grid_images.group_gap.gap %}
 
 {% require_css %}
     <style>
@@ -181,11 +175,9 @@
 
                     {% if module.grid_settings.group_image_hover.overlay_show_on != "never" and slide.hover_message %}
                     <div class="hs-image__grid__item__overlay">
-                        <div class="hs-image__grid__item__overlay__content">
-                            <p class="hs-image__grid__item__overlay__content--fit">
-                                {{ slide.hover_message }}
-                            </p>
-                        </div>
+                        <p class="hs-image__grid__item__overlay__content">
+                            {{ slide.hover_message }}
+                        </p>
                     </div>
                     {% endif %}
                 {% if navigate_on_click and slide.link_url.url.href %}
