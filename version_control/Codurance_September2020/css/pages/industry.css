@@ -106,7 +106,7 @@
 
 .recommended-insights {
     padding-top: var(--space-6);
-    padding-bottom: var(--space-6);
+    padding-bottom: var(--space-7);
     {{ utils.tango_to_white() }}
 }
 
