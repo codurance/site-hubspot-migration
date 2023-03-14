@@ -89,7 +89,6 @@
 .case-studies {
     {{ utils.tango_to_white() }}
     padding-top: 1.5em;
-    padding-bottom: 3em;
 }
 
 .case-studies .text-and-image__title {
