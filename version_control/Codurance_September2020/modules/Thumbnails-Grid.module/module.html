@@ -36,7 +36,7 @@
 
 {% set calc_column_width = ( 100 / num_of_columns ) %}
 {% set column_width_percent = calc_column_width ~ "%" %}
-{% set column_gap = module.styles.grid_images.group_gap.gap %}
+{% set column_gap = module.styles.grid_images.group_gap.gap ~ "px" %}
 
 {% require_css %}
     <style>
