@@ -1,0 +1,352 @@
+{
+  "default_text.default_close_button.default" : {
+    "message" : "Fechar lightbox",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_close_button.label" : {
+    "message" : "Botão Fechar",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_hover_message.default" : {
+    "message" : "<h3>Título da mensagem flutuante</h3><p>Aqui está uma mensagem a ser exibida ao passar o mouse sobre a imagem.</p>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_hover_message.label" : {
+    "message" : "Mensagem flutuante padrão",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_image_alt_text.default" : {
+    "message" : "Texto alternativo da imagem padrão",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_image_alt_text.label" : {
+    "message" : "Texto alternativo da imagem padrão",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_lightbox_message.default" : {
+    "message" : "<h3>Título da mensagem do lightbox</h3><p>Aqui está uma mensagem a ser exibida na exibição do lightbox da imagem.</p>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_lightbox_message.label" : {
+    "message" : "Mensagem do lightbox padrão",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.grid_aria_label.default" : {
+    "message" : "Grade de imagens com {{ image_count }} imagens. ",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.grid_aria_label.label" : {
+    "message" : "Rótulo aria de grade",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.label" : {
+    "message" : "Texto padrão",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.grid_type.choices.uniform" : {
+    "message" : "Grade uniforme",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.grid_type.label" : {
+    "message" : "Tipo de grade",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_click_functionality.choices.lightbox" : {
+    "message" : "Abrir lightbox",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_click_functionality.choices.navigate" : {
+    "message" : "Navegar até URL",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_click_functionality.choices.nothing" : {
+    "message" : "Não faça nada",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_click_functionality.label" : {
+    "message" : "Funcionalidade de clique na imagem",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.choices.blur" : {
+    "message" : "Desfocar",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.choices.grayscale" : {
+    "message" : "Escala de cinza",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.choices.no_effect" : {
+    "message" : "Nenhum efeito",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.choices.zoom_out" : {
+    "message" : "Reduzir o zoom",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.label" : {
+    "message" : "Efeitos de passar o mouse sobre a imagem",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.label" : {
+    "message" : "Configurações",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.overlay_show_on.choices.always" : {
+    "message" : "Sempre ligada",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.overlay_show_on.choices.hover" : {
+    "message" : "Passar o mouse",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.overlay_show_on.choices.never" : {
+    "message" : "Nunca",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.overlay_show_on.label" : {
+    "message" : "Quando exibir sobreposição",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.label" : {
+    "message" : "Exibir opções",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.mobile_columns.inline_help_text" : {
+    "message" : "Exibir um número diferente de colunas em dispositivos móveis",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.mobile_columns.label" : {
+    "message" : "Ajustar colunas em dispositivos móveis",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.mobile_number_of_columns.label" : {
+    "message" : "Número de colunas em dispositivos móveis",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.number_of_columns.label" : {
+    "message" : "Número de colunas",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Grade de imagens",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.hover_message.inline_help_text" : {
+    "message" : "Uma mensagem a ser exibida ao passar o mouse sobre a imagem da grade.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.hover_message.label" : {
+    "message" : "Mensagem flutuante",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.img.inline_help_text" : {
+    "message" : "Para obter resultados melhores, use imagens com taxas de proporção similares.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.img.label" : {
+    "message" : "Imagem",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.label" : {
+    "message" : "Imagens",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.link_url.label" : {
+    "message" : "URL do link",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.container.label" : {
+    "message" : "Contêiner",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.container.spacing.label" : {
+    "message" : "Espaçamento",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.1/1" : {
+    "message" : "1:1",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.16/9" : {
+    "message" : "16:9",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.2/3" : {
+    "message" : "2:3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.3/2" : {
+    "message" : "3:2",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.3/4" : {
+    "message" : "3:4",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.4/3" : {
+    "message" : "4:3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.label" : {
+    "message" : "Proporção da imagem",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.corner.label" : {
+    "message" : "Raio de canto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.gap.inline_help_text" : {
+    "message" : "Personalize o espaço entre as suas imagens.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.gap.label" : {
+    "message" : "Espaço entre imagens",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.label" : {
+    "message" : "Imagens da grade",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.background.color.label" : {
+    "message" : "Cor de fundo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.background.label" : {
+    "message" : "Plano de fundo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.background.spacing.label" : {
+    "message" : "Espaçamento",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.hover.color.label" : {
+    "message" : "Cor de fundo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.hover.font.label" : {
+    "message" : "Cor do texto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.hover.label" : {
+    "message" : "Passar o mouse",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.label" : {
+    "message" : "Sobreposição",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.text.label" : {
+    "message" : "Texto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "Estilos",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.1/1" : {
+    "message" : "1:1",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.16/9" : {
+    "message" : "16:9",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.2/3" : {
+    "message" : "2:3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.3/2" : {
+    "message" : "3:2",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.3/4" : {
+    "message" : "3:4",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.4/3" : {
+    "message" : "4:3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.natural" : {
+    "message" : "Taxa de proporção natural",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.label" : {
+    "message" : "Proporção da imagem",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.corner.label" : {
+    "message" : "Raio de canto",
+    "description" : "",
+    "placeholders" : null
+  }
+}
