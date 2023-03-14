@@ -47,14 +47,11 @@
             {% endif %}
         }
 
-        .hs-image__grid__list__item, .hs-image__grid__list__item__image {
-            {% if module.grid_settings.group_aspect_ratio.aspect_ratio %}
-                aspect-ratio: {{ module.grid_settings.group_aspect_ratio.aspect_ratio }};
-            {% endif %}
-            {% if module.styles.grid_images.group_corner.corner %}
+        {% if module.styles.grid_images.group_corner.corner %}
+            .hs-image__grid__list__item, .hs-image__grid__list__item__image {
                 border-radius: {{ module.styles.grid_images.group_corner.corner ~ "px" }};
-            {% endif %}
-        }
+            }
+        {% endif %}
 
         .hs-image__grid__item__overlay {
             {% if module.grid_settings.group_image_hover.overlay_show_on == "always" %}
