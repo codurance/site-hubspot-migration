@@ -6,7 +6,6 @@
     'grayscale': 'grayscale(var(--grayscale))'
 } %}
 
-
 {% set navigate_on_click = false %}
 {% if module.grid_settings.group_image_click.image_click_functionality == "navigate" %}
     {% set navigate_on_click = true %}
@@ -56,7 +55,6 @@
         .hs-image__grid__item__overlay {
             {% if module.grid_settings.group_image_hover.overlay_show_on == "always" %}
                 opacity: 1;
-                background-color: rgba(255, 255, 255, 0.6);
             {% endif %}
             {% if module.styles.grid_images.group_corner.corner %}
                 border-radius: {{ module.styles.grid_images.group_corner.corner ~ "px" }};
@@ -75,7 +73,7 @@
         .hs-image__grid__item__overlay:hover {
             {% if module.grid_settings.group_image_hover.overlay_show_on == "hover" %}
                 {% if module.styles.grid_images.overlay.background.color %}
-                background-color: rgba({{ module.styles.grid_images.overlay.background.color.color|convert_rgb }},{{ module.styles.grid_images.overlay.background.color.opacity/100 }});
+                    background-color: rgba({{ module.styles.grid_images.overlay.background.color.color|convert_rgb }},{{ module.styles.grid_images.overlay.background.color.opacity/100 }});
                 {% endif %}
                 {% if module.styles.grid_images.overlay.text.font %}
                     {{ module.styles.grid_images.overlay.text.font.css }}
@@ -147,6 +145,8 @@
 
 {% set image_count = slides|length %}
 {% set grid_aria_label = module.default_text.grid_aria_label %}
+
+{# HTML MODULE STARTS #}
 
 <div class="hs-image__grid__container">
     <ul class="hs-image__grid__list" aria-label="{{ grid_aria_label }}" role="list" data-grid_action_type="{{ module.grid_settings.group_image_click.image_click_functionality }}">

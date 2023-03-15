@@ -69,15 +69,10 @@ button.hs-image__grid__list__item__button:focus:not(:focus-visible) {
   height: 100%;
   width: 100%;
   padding: var(--space-3);
-  background-color: rgba(255, 255, 255, 0);
   opacity: 0;
   transition: background-color 0.5s, opacity 0.5s;
 }
 
-.hs-image__grid__item__overlay:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-  opacity: 1;
-}
 
 .hs-image__grid__item__overlay__content {
   {{ utils.freed() }}
