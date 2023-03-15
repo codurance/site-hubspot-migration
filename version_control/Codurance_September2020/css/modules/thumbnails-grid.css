@@ -14,7 +14,6 @@
 .hs-image__grid__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
   list-style-type: none;
 }
@@ -24,7 +23,6 @@
   overflow: hidden;
   margin: 0;
   flex-basis: calc(30% - 10px);
-  flex-grow: 1;
   aspect-ratio: 3/2;
 }
 
