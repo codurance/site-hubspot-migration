@@ -2,7 +2,7 @@
 {% import '../utils/utils.css' as utils %}
 
 .text-and-image__container {
-    padding: 2em 1em;
+    padding: 2rem 1.2rem;
     display: flex;
     flex-flow: column-reverse;
     overflow: hidden;

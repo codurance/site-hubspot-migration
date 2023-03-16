@@ -102,7 +102,7 @@
 
 {% call utils.large_and_extra_large() %}
   .above-the-fold .text-and-image__copy {
-    max-width: 48ch;
+    max-width: 40ch;
   }
 
 {% endcall %}
