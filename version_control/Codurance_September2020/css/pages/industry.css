@@ -1,6 +1,7 @@
 {% import "../utils/utils.css" as utils %}
 
 .header {
+    background: var(--slate);
     background-image: linear-gradient(
         to right, 
         var(--woodsmoke) 0%, 
@@ -43,11 +44,12 @@
     right: 0;
     top: 0;
     max-width: 55%;
+    transition: max-width .2s ease-in-out;
 }
 
 {% call utils.small() %}
   .header__image-container {
-    max-width: 100%
+    max-width: 100%;
   } 
 {% endcall %}
 
@@ -55,11 +57,11 @@
 .header__image-container img {
     object-fit: cover;
     height: 100%;
+    
 }
 
 .header__image-overlay {
-  --spread-color1: 0%;
-  --spread-color2: 50%;
+  --spread-position: 50%;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -67,16 +69,16 @@
 
   background-image: linear-gradient(
       to right, 
-      var(--slate) var(--spread-color1), 
-      transparent var(--spread-color2)
+      var(--slate),
+      var(--spread-position), 
+      transparent 100%
   );
 }
 
 {% call utils.small() %}
   .header__image-overlay {
-    --spread-color1: 50%;
-    --spread-color2: 120%;
-}
+    --spread-position: 80%;
+  }
 {% endcall %}
 
 
