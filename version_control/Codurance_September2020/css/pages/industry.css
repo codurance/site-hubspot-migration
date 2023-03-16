@@ -9,6 +9,12 @@
     position: relative;
 }
 
+{% call utils.small() %}
+  .header {
+    background-image: none;
+  }
+{% endcall %}
+
 .header__text-container {
     display: flex;
     flex-direction: column;
@@ -39,23 +45,40 @@
     max-width: 55%;
 }
 
+{% call utils.small() %}
+  .header__image-container {
+    max-width: 100%
+  } 
+{% endcall %}
+
+
 .header__image-container img {
     object-fit: cover;
     height: 100%;
 }
 
 .header__image-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
+  --spread-color1: 0%;
+  --spread-color2: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
 
-    background-image: linear-gradient(
-        to right, 
-        var(--slate), 
-        transparent 50%
-    );
+  background-image: linear-gradient(
+      to right, 
+      var(--slate) var(--spread-color1), 
+      transparent var(--spread-color2)
+  );
 }
+
+{% call utils.small() %}
+  .header__image-overlay {
+    --spread-color1: 50%;
+    --spread-color2: 120%;
+}
+{% endcall %}
+
 
 .above-the-fold {
     padding: 1.6em 0;
@@ -70,25 +93,21 @@
 }
 
 {% call utils.small() %}
-    .above-the-fold .text-and-image__image {
-        margin-bottom: 1.5em;
-    } 
+  .above-the-fold .text-and-image__image {
+    margin-bottom: 1.5em;
+  } 
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
-    .above-the-fold .text-and-image__copy {
-        max-width: 48ch;
-    }
+  .above-the-fold .text-and-image__copy {
+    max-width: 48ch;
+  }
 
-    .above-the-fold .text-and-image__copy p {
-        {{ utils.freed() }}
-        font-weight: var(--light-font-weight);
-    }
 {% endcall %}
 
 .case-studies {
-    {{ utils.tango_to_white() }}
-    padding-top: 1.5em;
+  {{ utils.tango_to_white() }}
+  padding-top: 1.5em;
 }
 
 .case-studies .text-and-image__title {
