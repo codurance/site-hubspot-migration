@@ -1,9 +1,0 @@
-{{ require_css(get_asset_url("../../css/modules/job-description-header-banner.css")) }}
-
-<div class="jd-header-banner">
-  <div class="jd-header-banner__inner">
-    <img src="https://f.hubspotusercontent10.net/hubfs/3042464/CMS%20Sandbox/Site%20Images/codurance_logo.svg" width="115">
-    <h1 class="jd-header-banner__title">{% inline_text field="job_title" value="{{ module.job_title }}" no_wrapper=True %}</h1>
-    <p class="jd-header-banner__description">{% inline_text field="job_info" value="{{ module.job_info }}" no_wrapper=True %}</p>
-  </div>
-</div>
