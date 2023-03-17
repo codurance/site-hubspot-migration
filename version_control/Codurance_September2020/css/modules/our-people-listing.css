@@ -331,13 +331,16 @@
 }
 
 hr.custom-our-people-modal__rule {
-  margin-top: calc(var(--base-margin) / 2);;
+  margin-top: calc(var(--base-margin) / 2);
   margin-bottom: var(--base-margin);
 }
 
 .custom-our-people-modal__body-copy p {
-  {{ utils.natus() }}
   {{ utils.base_margin() }}
+
+  font-size: var(--natus-font-size) !important;
+  font-weight: var(--light-font-weight) !important;
+  line-height: var(--natus-line-height) !important;
 }
 
 
