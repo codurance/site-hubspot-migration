@@ -1,42 +1,55 @@
 {# CSS included in meta.json to make the module usable in dnd_section #}
 
+{% require_css %}
+	<style>
+		{% scope_css %}
+			.text-and-image__image {
+				align-self: {{ module.style.image_vertical_alignment }};
+			}
+		{% end_scope_css %}
+	</style>
+  {% end_require_css %}
+
 <div class="text-and-image__container container--{{ module.image_order }}">
 	<div class="text-and-image__copy">
+		{% if module.title %}
+			<h2 class="text-and-image__title">{{ module.title }}</h2>
+		{% endif %}
+		
 		{% inline_rich_text field="description_text" value="{{ module.description_text }}" %}
 		
-		<div class="custom-btn">
-			{% if module.button.button_type == "std" %}
-				{% if module.button.bookmark_id %}
-					{% set bookmark_id = module.button.bookmark_id %}
-					{% set href = module.button.link_field.url.href ~ "#" ~ bookmark_id %}
-				{% else %}
-					{% set href = module.button.link_field.url.href %}
-				{% endif %}
-		
-				<a href="{{ href }}"
-					{% if module.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
-					{% if module.button.link_field.rel %}rel="{{ module.button.link_field.rel }}"{% endif %}
-					class="{{ module.button.button_style }}"
-				>
-					{{ module.button.text_field }} 
-					{% if module.button.button_style is string_containing "text-cta-primary" %}
-						<i class="las la-arrow-right"></i>
+		{% if module.button.button_type %}
+			<div class="custom-btn">
+				{% if module.button.button_type == "std" %}
+					{% if module.button.bookmark_id %}
+						{% set bookmark_id = module.button.bookmark_id %}
+						{% set href = module.button.link_field.url.href ~ "#" ~ bookmark_id %}
+					{% else %}
+						{% set href = module.button.link_field.url.href %}
 					{% endif %}
-				</a>
-			{% elif module.button.button_type == "cta" %}
-			  	{% cta guid="{{ module.button.cta_field }}" %}
-			{% endif %}
-		</div>
+			
+					<a href="{{ href }}"
+						{% if module.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
+						{% if module.button.link_field.rel %}rel="{{ module.button.link_field.rel }}"{% endif %}
+						class="{{ module.button.button_style }}"
+					>
+						{{ module.button.text_field }} 
+						{% if module.button.button_style is string_containing "text-cta-primary" %}
+							<i class="las la-arrow-right"></i>
+						{% endif %}
+					</a>
+				{% elif module.button.button_type == "cta" %}
+					{% cta guid="{{ module.button.cta_field }}" %}
+				{% endif %}
+			</div>
+		{% endif %}
 	</div>
 	<div class="text-and-image__image">
 		{% if module.image_field.src %}
 			{% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
-			{% if module.image_field.size_type == 'auto' %}
-				{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-			{% elif module.image_field.size_type == 'auto_custom_max' %}
-				{% set sizeAttrs = 'width="{{ module.image_field.max_width }}" height="{{ module.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
-			{% endif %}
-			 {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
+			 {% set loadingAttr = module.image_field.loading != 'disabled' 
+			 		? 'loading="{{ module.image_field.loading }}"' 
+					: '' %}
 			<img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
 		{% endif %}
 	</div>

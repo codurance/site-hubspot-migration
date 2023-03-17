@@ -12,9 +12,7 @@ Drag and Drop (DND) sections look when editing content in the page editor.
   padding: 0;
 }
 .dnd-section > .row-fluid {
-  max-width: {{ dnd_section_max_width }};
+  max-width: var(--content-max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }

@@ -1,10 +1,33 @@
 [ {
+  "id" : "d27e134c-7ccc-27c8-8484-548eba9c4791",
+  "name" : "fill_in_the_cards_info",
+  "display_width" : null,
+  "label" : "Fill in the cards info",
+  "required" : false,
+  "locked" : false,
+  "display" : "radio",
+  "placeholder" : "Choose how do you want to populate the cards",
+  "choices" : [ [ "hubdb", "HubDB" ], [ "manually", "Manually" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "type" : "choice",
+  "default" : "hubdb"
+}, {
   "id" : "56895d09-d25c-cb92-23ae-8410ec53a132",
   "name" : "hubdb",
   "display_width" : null,
   "label" : "HubDb",
   "required" : false,
   "locked" : false,
+  "visibility" : {
+    "controlling_field" : "d27e134c-7ccc-27c8-8484-548eba9c4791",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "hubdb",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
   "placeholder" : "Select from existing Database",
   "type" : "hubdbtable"
 }, {
@@ -15,7 +38,152 @@
   "required" : false,
   "locked" : false,
   "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "d27e134c-7ccc-27c8-8484-548eba9c4791",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "hubdb",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text"
+}, {
+  "id" : "2bdcb375-a9b5-6d9b-0723-16bcd3ad5b70",
+  "name" : "simple_cards_group",
+  "display_width" : null,
+  "label" : "Simple cards group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 4,
+    "sorting_label_field" : "074b3ea9-479f-51f0-862d-78968808fd45",
+    "default" : null
+  },
+  "visibility" : {
+    "controlling_field" : "d27e134c-7ccc-27c8-8484-548eba9c4791",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "manually",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "children" : [ {
+    "id" : "0738e89c-cb3f-fbec-21fb-caf2376219de",
+    "name" : "thumbnail",
+    "display_width" : null,
+    "label" : "Thumbnail",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "4f8e32c8-11d5-59b8-a35a-f64142d9f4d5",
+    "name" : "content_type",
+    "display_width" : null,
+    "label" : "Content Type",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Download, case study, article... ",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "074b3ea9-479f-51f0-862d-78968808fd45",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "479d4b0b-e4b9-38f7-90ec-e0e6dfbe13e0",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "inline_help_text" : "Optional",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "68f60c8d-d8b9-a9df-fae9-5878c3056d87",
+    "name" : "card_link_text",
+    "display_width" : null,
+    "label" : "Card Link text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "d417a8e1-4d7e-52e1-cb7b-71bc0f0194cb",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "thumbnail" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+}, {
+  "id" : "76c755ee-5b2f-312c-d091-6c1159cb2be5",
+  "name" : "fixed_aspect_ratio",
+  "display_width" : null,
+  "label" : "Fixed aspect ratio",
+  "help_text" : "Fix the aspect ratio of all card thumbnails to 16/9",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
 } ]

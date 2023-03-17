@@ -1,7 +1,7 @@
 {% import './utils/utils.css' as utils %}
 
 .card-slider__event-inner {
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 {% call utils.small_and_medium() %}

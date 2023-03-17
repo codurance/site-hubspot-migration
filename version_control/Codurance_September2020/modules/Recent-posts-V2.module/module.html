@@ -3,8 +3,13 @@
 
 {{ require_css(get_asset_url("../../css/modules/recent-posts-v2.css")) }}
 
-<div class="cm-recent-post lateral-spacing">
-  {% set recent_posts = blog_recent_posts(module.select_blog, module.number_of_posts) %}
+{% set recent_posts = blog_recent_posts(module.select_blog, module.number_of_posts) %}
+
+{% if module.content_tag %}
+  {% set recent_posts = blog_recent_tag_posts(module.select_blog, module.content_tag, module.number_of_posts) %}
+{% endif %}
+
+<div class="cm-recent-post lateral-spacing"> 
   <div class="cm-recent-post__group">
     {% for post in recent_posts %}
       <div class="cm-recent-post__item">

@@ -1,9 +1,5 @@
 {% import '../utils/utils.css' as utils %}
 
-.hs-site-page .custom-btn {
-  margin-top: 2em;
-}
-
 {% call utils.small() %}
   .custom-btn .button-primary {
     width: 100%;

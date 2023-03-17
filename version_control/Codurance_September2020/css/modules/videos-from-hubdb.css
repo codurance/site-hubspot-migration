@@ -12,12 +12,13 @@
 }
 
 .video-hubdb__title {
-    {{ utils.freed() }}
+    font-weight: var(--middle-font-weight);
     margin-top: var(--freed-margin);
     margin-bottom: 0.25em;
 }
 
 .video-hubdb__description {
+    {{ utils.natus() }}
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -27,14 +28,13 @@
 
 .video-hubdb__date {
     {{ utils.natus() }}
-    font-weight: var(--heavy-font-weight);
     text-transform: uppercase;
 }
 
 {% call utils.medium_large_and_extra_large() %}
     .videos-hubdb {
         display: flex;
-        gap: 2em;
+        gap: 1em;
     }
 
     .video-hubdb {

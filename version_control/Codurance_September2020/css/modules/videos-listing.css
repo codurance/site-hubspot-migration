@@ -9,9 +9,6 @@
   padding-bottom: 4em;
 }
 
-.card-collection__inner-wrapper {
-  margin: 0 auto;
-}
 {% call utils.small_and_medium() %}
   .card-collection__inner-wrapper {
     -webkit-user-select: none;
@@ -309,8 +306,6 @@
   transition: opacity 
     var(--fading-animation-duration) 
     ease-in-out;
-
-  margin-inline: auto;
 }
 
 .no-results-message > p {

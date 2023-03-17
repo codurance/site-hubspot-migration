@@ -1,14 +1,28 @@
 {% import '../utils/utils.css' as utils %}
 
 .card-container {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: grid;
     gap: 1em;
+    grid-auto-columns: minmax(250px,1fr);
+    grid-auto-flow: column;
+    scroll-snap-type: x mandatory;
 }
 
-{% call utils.large_and_extra_large() %}
+{% call utils.small_medium_and_large() %}
     .card-container {
-        column-gap: 1.8em;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }   
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .card-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* The following property only for Firefox browsers */
+    .card-container {
+        scrollbar-width: none;
     }
 {% endcall %}
 
@@ -22,9 +36,12 @@
 
 .card__img {
     border-radius: 10px 10px 0 0;
-    object-fit: cover;
-    aspect-ratio: 16/9;
     width: 100%;
+}
+
+.card__img--ratio {
+    aspect-ratio: 16/9;
+    object-fit: cover;
 }
 
 .card__info {
@@ -32,6 +49,7 @@
     height: 100%;
     display: flex;
     flex-direction: column; 
+    min-height: 8.8rem;
 }
 
 .card__info time {
@@ -40,6 +58,10 @@
     text-transform: uppercase;
 }
 
+.card__info span {
+    text-transform: uppercase;
+    {{ utils.natus() }}
+}
 
 .card__info h3 {
     {{ utils.freed() }}
@@ -56,4 +78,5 @@
 
 .card__info a {
     margin-top: auto;
+    margin-bottom: 0;
 }

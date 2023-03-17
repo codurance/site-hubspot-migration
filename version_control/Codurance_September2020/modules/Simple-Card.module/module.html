@@ -1,45 +1,91 @@
 
 {% import '../../snippets/button-snippets.html' as snippets %}
-{{ require_css(get_asset_url("../css/modules/simple-card.css")) }}    
+{{ require_css(get_asset_url("../css/modules/simple-card.css")) }}   
 
-{% if module.hubdb %}
-    
+{% set cards = [] %}
+{% set cards_type_selected = module.fill_in_the_cards_info %}
+
+{% if cards_type_selected == "hubdb" %}
     {% set upcomingEventsFilter = ("&orderBy=datetime" + "&datetime__gt=" + local_dt|unixtimestamp + "&limit=3") %}
     {% set isEventEnglish = ("&language=English") %}
 
+    {% set list = [] %}
+
     {% if locale == "en" %}
-        {% set latest_events = hubdb_table_rows(module.hubdb, upcomingEventsFilter + isEventEnglish) %}
+        {% set list = hubdb_table_rows(module.hubdb, upcomingEventsFilter + isEventEnglish) %}
     {% else %}
-        {% set latest_events = hubdb_table_rows(module.hubdb, upcomingEventsFilter) %}
+        {% set list = hubdb_table_rows(module.hubdb, upcomingEventsFilter) %}
     {% endif %} 
 
+    {% for item in list %}
+        {% set formated_date = item.datetime | format_datetime('d MMM yyyy | HH:mm') %}
+        {% if locale == 'es' %}
+            {% set formated_date = item.datetime | format_datetime('d MMM yyyy | HH:mm', 'Europe/Madrid') %}
+        {% endif %} 
 
-    <div class="card-container">
-        {% for event in latest_events %}
+        {% set card = {
+            "date" : item.datetime | format_datetime('short'),
+            "formated_date" : formated_date,
+            "thumbnail" : resize_image_url(item.thumbnail.url, 400),
+            "title" : item.name,
+            "link_url" : item.link,
+            "link_text" : module.card_link_text
+        } %}
 
-            {% set formated_date = event.datetime | format_datetime('d MMM yyyy | HH:mm') %}
-            {% if locale == 'es' %}
-                {% set formated_date = event.datetime | format_datetime('d MMM yyyy | HH:mm', 'Europe/Madrid') %}
-            {% endif %} 
-
-            <article class="card">
-                <img class="card__img" src="{{ resize_image_url(event.thumbnail.url, 400) }}" 
-                    alt="" 
-                    width="400"
-                    height="281"
-                    loading="lazy" >
-
-                <div class="card__info">
-                    <time datetime={{ event.datetime }} >{{ formated_date }}</time>
-                    <h3>{{ event.name }}</h3>
-                    {{ snippets.text_cta_right_arrow(
-                        url=event.link,
-                        target="_blank",
-                        text="{{ module.card_link_text }}"
-                    ) }}
-                </div>
-            </article>
-        {% endfor %}
-    </div>
+        {% do cards.append(card) %}
+    {% endfor %}
 {% endif %}
+
+{% if cards_type_selected == "manually" %}
+    {% set list = module.simple_cards_group %}
+    
+    {% for item in list %}
+        {% set card = {
+            "content_type" : item.content_type,
+            "thumbnail" : resize_image_url(item.thumbnail.src, 400),
+            "title" : item.title,
+            "description" : item.description,
+            "link_url" : item.link.url.href,
+            "link_text" : item.card_link_text
+        } %}
+
+        {% do cards.append(card) %}
+    {% endfor %}
+{% endif %}
+
+<div class="card-container lateral-spacing">
+    {% for card in cards %}
+        <article class="card">
+            <img class="card__img {% if module.fixed_aspect_ratio %}card__img--ratio{% endif %}"  
+                src="{{ card.thumbnail }}" 
+                alt="" 
+                width="400"
+                height="auto"
+                loading="lazy" >
+
+            <div class="card__info">
+                {% if card.date %}
+                    <time datetime="{{ card.date }}" >{{ card.formated_date }}</time>
+                {% endif %}
+                {% if card.content_type %}
+                    <span>{{ card.content_type }}</span>
+                {% endif %}
+
+                <h3>{{ card.title }}</h3>
+
+                {% if card.description %}
+                    <p>{{ card.description }}</p>
+                {% endif %}
+
+                {{ snippets.text_cta_right_arrow(
+                    url=card.link_url,
+                    target="_blank",
+                    text="{{ card.link_text }}"
+                ) }}
+            </div>
+        </article>
+    {% endfor %}
+</div>
+
+
 

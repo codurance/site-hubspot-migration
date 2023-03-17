@@ -1,0 +1,50 @@
+[ {
+  "id" : "5e085223-39da-2eb9-55f8-9effcb6e1c03",
+  "name" : "addresses",
+  "display_width" : null,
+  "label" : "Addresses",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "fc9b9b23-9b40-ce11-1b0d-d6156f0c29fe",
+    "name" : "city",
+    "display_width" : null,
+    "label" : "City",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "991e73e9-a2ce-3548-5fce-64a72da054ca",
+    "name" : "anchor_link",
+    "display_width" : null,
+    "label" : "Anchor Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL" ],
+    "type" : "url",
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "anchor_link" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
+} ]

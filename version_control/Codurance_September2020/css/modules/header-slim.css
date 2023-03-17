@@ -1,0 +1,40 @@
+{% import '../utils/utils.css' as utils %}
+
+.header-slim {
+  padding-top: 1.6em;
+  overflow-x: hidden;
+}
+
+.header-slim-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--content-max-width);
+}
+
+.header-slim__text {
+  margin-top: 1.6em;
+  margin-bottom: 3.2em;
+  min-width: 50%;
+}
+
+.header-slim__text h1 {
+    {{ utils.eames() }}
+    max-width: var(--eames-max-width);
+}
+
+.header-slim__text p {
+    {{ utils.freed() }}
+    margin-top: var(--sejima-margin);
+    font-weight: var(--light-font-weight);
+}
+
+.header-slim__image {
+  align-self: end;
+}
+
+{% call utils.small() %}
+  .header-slim__image {
+    display: none;
+  }
+{% endcall %}
