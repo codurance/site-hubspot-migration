@@ -142,16 +142,13 @@ body {
   {{ utils.base() }}
 }
 
-
-
 {% call utils.small_and_medium() %}
   .dnd-section {
     padding-inline: var(--space-3);
   }
-{% endcall%}  
+{% endcall%} 
 
 {% call utils.small() %}
-  
   .dnd-section h2 {
     {{utils.freed()}}
     font-weight: var(--heavy-font-weight);
