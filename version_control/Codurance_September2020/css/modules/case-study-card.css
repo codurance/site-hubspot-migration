@@ -42,7 +42,7 @@
 .case-study-card {
     --card-width: 15em;
     {{ utils.card_shadow() }}
-    border-radius: 20px;
+    {{ utils.card_border_radius() }}
     display: flex;
     flex-direction: column;
     min-width: var(--card-width);
