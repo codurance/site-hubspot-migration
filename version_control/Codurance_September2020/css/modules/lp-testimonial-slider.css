@@ -41,18 +41,19 @@
 
 .testimonial-slider__wrapper {
     {{ utils.natus() }}
+    {{ utils.card_shadow() }}
+    {{ utils.card_border_radius() }}
     background: white;
     padding: 1em;
-    border-radius: 7px;
     padding: 2.3em 2.2em 1.5em;
     display: flex;
     gap: 0.5em;
-    {{ utils.card_shadow() }}
+    
 }
 
-.swiper-slide{
+.swiper-slide {
+    {{ utils.card_border_radius() }}
     padding: 1.5em 1.5em 1em;
-    border-radius: 7px;
 }
 
 .testimonial-slider__icon{
@@ -62,18 +63,18 @@
     font-size: 1.5rem;
 }
 
-.swiper-pagination{
+.swiper-pagination {
     position: relative;
     top: 0;
 }
 
-.testimonial-slider-item__author{
+.testimonial-slider-item__author {
     margin-top: 1.5em;
     display: flex;
     align-items: center;
 }
 
-.testimonial-slider-item__author-image{
+.testimonial-slider-item__author-image {
     max-width: 2.4rem;
     margin-right: 2em;
     margin-right: 1em;
@@ -81,12 +82,12 @@
 }
 
 .testimonial-slider-item__author-name,
-.testimonial-slider-item__role{
+.testimonial-slider-item__role {
     {{utils.sejima()}}
 }
 
 
-.testimonial-slider-item__role{
+.testimonial-slider-item__role {
     font-weight: var(--light-font-weight)
 }
 
