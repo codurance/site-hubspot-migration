@@ -115,6 +115,15 @@
     transform: translateX( calc(-1 * {{ arrow_offset }}) );
 } 
 
+{% call utils.small() %}
+    .testimonial-slider {
+        padding-inline: 0;
+    }
+
+    .swiper-slide {
+        padding-inline: var(--space-3);
+    }
+{% endcall%}
 
 {% call utils.small_and_medium() %}
     .swiper-button-prev,

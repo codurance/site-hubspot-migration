@@ -34,7 +34,7 @@
     margin: 0 auto;
     justify-content: start;
     max-width: calc(var(--content-max-width) + 2em);
-    padding: 1em;
+    padding: var(--space-3);
     gap: .5em;
 }
 
