@@ -1,5 +1,5 @@
-
 {{ require_css(get_asset_url("../../css/modules/lp-cta-block.css")) }}
+{% import '../../css/utils/utils.css' as utils %}
 
 {% require_css %}
     <style>
@@ -10,11 +10,11 @@
         }
         
         {% if module.button_mobile_alignment == "left" %}
-            @media(max-width: 768px) {
+            {% call utils.small() %}
                 .cta-block__button {
                     text-align: left;
                 }
-            }
+            {% endcall %}
         {% endif %}
       {% end_scope_css %} 
     </style>
