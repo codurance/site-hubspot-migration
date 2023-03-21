@@ -33,9 +33,9 @@
     display: flex;
     margin: 0 auto;
     justify-content: start;
-    max-width: calc(var(--content-max-width) + 2em);
+    max-width: calc(var(--content-max-width) + var(--space-3));
     padding: var(--space-3);
-    gap: .5em;
+    gap: var(--space-2);
 }
 
 
@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: column;
     min-width: var(--card-width);
-    max-width: 19em;
+    max-width: 20rem;
     overflow: hidden;
     scroll-snap-align: center;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -128,10 +128,7 @@
 
 {% call utils.medium_large_and_extra_large() %}
     .case-study-card {
-        margin-left: 10px;
-        margin-right: 10px;
         margin-bottom: var(--base-margin);
-       
     }
 
     .case-study-card__text-container {
