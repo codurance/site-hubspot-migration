@@ -28,7 +28,7 @@
 		{% inline_rich_text field="description_text" value="{{ module.description_text }}" %}
 		
 		{% if module.button.button_type %}
-			<div class="custom-btn">
+			<div class="custom-btn custom-btn--{{ module.button.button_style }}">
 				{% if module.button.button_type == "std" %}
 					{% if module.button.bookmark_id %}
 						{% set bookmark_id = module.button.bookmark_id %}
