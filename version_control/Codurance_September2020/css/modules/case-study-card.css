@@ -78,9 +78,8 @@
     flex: fit-content;
     flex-direction: column;
     justify-content: space-between;
-    padding: 30px;
+    padding: var(--space-3);
     position: relative;
-
 }
 
 .case-study-card__title {
