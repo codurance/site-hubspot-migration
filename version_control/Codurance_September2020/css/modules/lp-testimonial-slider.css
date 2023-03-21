@@ -44,7 +44,6 @@
     {{ utils.card_shadow() }}
     {{ utils.card_border_radius() }}
     background: white;
-    padding: 1em;
     padding: var(--space-3);
     display: flex;
     gap: 0.5em;
