@@ -81,13 +81,8 @@
   }
 {% endcall %}
 
-
 .above-the-fold {
     padding: 1.6em 0;
-}
-
-.above-the-fold .text-and-image__copy p {
-    {{ utils.base() }}
 }
 
 .above-the-fold .text-and-image__image img {
