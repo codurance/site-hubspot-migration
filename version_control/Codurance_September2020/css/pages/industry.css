@@ -115,6 +115,10 @@
     background: unset;
 }
 
+.case-studies .case-study-card {
+  margin-bottom: 0;
+}
+
 .promotion {
     {{ utils.slate_to_woodsmoke() }}
     color: white;
