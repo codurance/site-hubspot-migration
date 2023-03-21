@@ -41,7 +41,7 @@
 }
 
 .card__info {
-    padding: 1.2em;
+    padding: var(--space-3);
     height: 100%;
     display: flex;
     flex-direction: column; 
