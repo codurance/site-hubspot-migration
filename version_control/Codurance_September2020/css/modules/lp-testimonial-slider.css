@@ -45,10 +45,9 @@
     {{ utils.card_border_radius() }}
     background: white;
     padding: 1em;
-    padding: 2.3em 2.2em 1.5em;
+    padding: var(--space-3);
     display: flex;
     gap: 0.5em;
-    
 }
 
 .swiper-slide {
