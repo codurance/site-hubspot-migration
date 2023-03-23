@@ -10,7 +10,6 @@
   align-items: center;
   justify-content: space-between;
   max-width: var(--content-max-width);
-  margin-inline: auto;
 }
 
 .header-slim__text {

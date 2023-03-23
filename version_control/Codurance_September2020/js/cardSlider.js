@@ -2,26 +2,22 @@ class CardSlider {
   constructor({
     activationPoint = 1023,
     navigationControl = true,
-    cardWindowSelector = "[data-cardslider-window]",
+    slider = document.querySelector("[data-cardslider-window]"),
     trackSelector = "[data-cardslider-track]",
     cardsSelector = "[data-cardslider-card]",
     leftButtonSelector = "[data-cardslider-button-left]",
     rightButtonSelector = "[data-cardslider-button-right]",
-    filterButtonSelector = "[data-card-filter-button]",
-    cardTypeSelector = "[data-card-type]",
-    cardHeadingSelector = "[data-card-heading]",
-    watchAllCtaSelector = "[data-watch-all-cta]",
     animatingClass = "animating",
-    filters = false,
     ctaContainerSelector = null
   }) {
     this.activationPoint = activationPoint;
     this.navigationControl = navigationControl;
-    this.cardWindow = document.querySelector(cardWindowSelector);
-    this.track = document.querySelector(trackSelector);
+    this.slider = slider;
+
+    this.track = this.slider.querySelector(trackSelector);
 
     this.cards = Array.prototype.slice.call(
-      document.querySelectorAll(cardsSelector)
+      this.slider.querySelectorAll(cardsSelector)
     );
     this.visibleCards = this.cards;
     this.cardProperties = {
@@ -29,24 +25,14 @@ class CardSlider {
       margin: parseFloat(window.getComputedStyle(this.cards[0]).marginRight)
     };
 
-    if (filters) {
-      this.filterButtons = Array.prototype.slice.call(
-        document.querySelectorAll(filterButtonSelector)
-      );
-      this.filterButtonSelector = filterButtonSelector;
-      this.cardTypeSelector = cardTypeSelector;
-      this.cardHeadingSelector = cardHeadingSelector;
-      this.watchAllCtaSelector = watchAllCtaSelector;
-    }
-
     if (this.navigationControl) {
-      this.leftButton = document.querySelector(leftButtonSelector);
-      this.rightButton = document.querySelector(rightButtonSelector);
+      this.leftButton = this.slider.querySelector(leftButtonSelector);
+      this.rightButton = this.slider.querySelector(rightButtonSelector);
     }
 
     this.animatingClass = animatingClass;
     if (ctaContainerSelector) {
-      this.ctaContainer = document.querySelector(ctaContainerSelector);
+      this.ctaContainer = this.slider.querySelector(ctaContainerSelector);
     }
 
     this.trackHasSetWidth = false;
@@ -90,18 +76,13 @@ class CardSlider {
   setUpEventListeners() {
     window.addEventListener("resize", this.handleResize);
     this.track.addEventListener("mousedown", this.handleMouseDown);
-    this.cardWindow.addEventListener("mouseup", this.handleMouseUp);
-    this.cardWindow.addEventListener("mouseleave", this.handleMouseUp);
+    this.slider.addEventListener("mouseup", this.handleMouseUp);
+    this.slider.addEventListener("mouseleave", this.handleMouseUp);
     this.track.addEventListener("touchstart", this.handleMouseDown);
-    this.cardWindow.addEventListener("touchend", this.handleMouseUp);
+    this.slider.addEventListener("touchend", this.handleMouseUp);
     if (this.navigationControl) {
       this.leftButton.addEventListener("click", this.navigateLeft);
       this.rightButton.addEventListener("click", this.navigateRight);
-    }
-    if (this.filterButtons) {
-      this.filterButtons.forEach((button) => {
-        button.addEventListener("click", () => this.handleFilterClick(button));
-      });
     }
   }
 
@@ -150,7 +131,7 @@ class CardSlider {
 
   calculateMaxLeftPosition() {
     this.maxLeft = Math.min(
-      this.cardWindow.clientWidth - this.track.clientWidth,
+      this.slider.clientWidth - this.track.clientWidth,
       0
     );
   }
@@ -326,20 +307,9 @@ class CardSlider {
     return innerCardWidth + cardMarginWidth * 2;
   }
 
-  handleFilterClick(button) {
-    const type =
-      button.dataset[this.convertDataAttributeToKey(this.filterButtonSelector)];
-    this.changeHeading(type);
-    this.updateCta(type);
-    this.filterCards(type);
-    this.updateVisibleCards();
-    this.changeActiveFilterButton(button);
-    this.updateTrack();
-  }
-
   changeHeading(type) {
     Array.prototype.slice
-      .call(document.querySelectorAll(this.cardHeadingSelector))
+      .call(this.slider.querySelectorAll(this.cardHeadingSelector))
       .forEach((heading) => {
         if (
           heading.dataset[
@@ -355,7 +325,7 @@ class CardSlider {
 
   updateCta(type) {
     Array.prototype.slice
-      .call(document.querySelectorAll(this.watchAllCtaSelector))
+      .call(this.slider.querySelectorAll(this.watchAllCtaSelector))
       .forEach((cta) => {
         if (
           cta.dataset[
@@ -376,37 +346,6 @@ class CardSlider {
       this.calculateMaxLeftPosition();
       this.keepTrackLeftWithinMaximum();
     }
-  }
-
-  filterCards(type) {
-    this.cards.forEach((card) => {
-      card.dataset[this.convertDataAttributeToKey(this.cardTypeSelector)] ===
-        type || type === "all"
-        ? this.displayCard(card)
-        : this.hideCard(card);
-    });
-  }
-
-  displayCard(card) {
-    card.classList.remove("hidden");
-  }
-
-  hideCard(card) {
-    card.classList.add("hidden");
-  }
-
-  changeActiveFilterButton(activeButton) {
-    this.filterButtons.forEach((button) => {
-      button === activeButton
-        ? button.classList.add("active")
-        : button.classList.remove("active");
-    });
-  }
-
-  updateVisibleCards() {
-    this.visibleCards = this.cards.filter(
-      (card) => !card.classList.contains("hidden")
-    );
   }
 
   convertDataAttributeToKey(attribute) {
