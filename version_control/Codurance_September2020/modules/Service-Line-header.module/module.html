@@ -1,3 +1,4 @@
+{% import '../../css/utils/utils.css' as utils %}
 
 {% require_css %}
   <style>
@@ -12,11 +13,11 @@
 		background-position: right 40em ,center;
     }
 
-	@media (max-width: 767px) {
+	{% call utils.small() %}
 		.module-wrapper{
 			background-size: 0, cover;
 		}
-  	}
+  	{% endcall %}
   {% end_scope_css %}
   </style>
 {% end_require_css %}

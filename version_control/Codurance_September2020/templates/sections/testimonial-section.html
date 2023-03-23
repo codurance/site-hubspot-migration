@@ -6,7 +6,13 @@
  screenshotPath: ../../images/template-previews/testimonial_section.png
 -->
 
-{% dnd_section max_width=800 %}
+{% dnd_section
+  max_width=840,
+  padding={
+    "left": 20,
+    "right": 20
+  }
+%}
   {% dnd_module
     path="../../modules/Landing Page Modules/LP-testimonial-slider.module",
     offset=0,

@@ -36,6 +36,17 @@
     margin-top: 1.2em;
 }
 
+{% call utils.small() %}
+    .cta-block {
+        background-position: left;
+    }
+
+    .cta-block__title {
+        {{ utils.freed() }}
+        font-weight: var(--heavy-font-weight);
+    }
+{% endcall %}
+
 {% call utils.medium_large_and_extra_large() %}
     .cta-block {
         background-image: var(--bg-img-large);
@@ -57,9 +68,3 @@
     }
 {% endcall %}  
 
-{% call utils.small() %}
-    .cta-block__title {
-        {{ utils.freed() }}
-        font-weight: var(--heavy-font-weight);
-    }
-{% endcall %}

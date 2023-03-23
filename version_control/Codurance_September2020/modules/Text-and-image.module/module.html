@@ -1,4 +1,5 @@
 {# CSS included in meta.json to make the module usable in dnd_section #}
+{% import '../../css/utils/utils.css' as utils %}
 
 {% require_css %}
 	<style>
@@ -6,6 +7,14 @@
 			.text-and-image__image {
 				align-self: {{ module.style.image_vertical_alignment }};
 			}
+
+			{% if module.style.hide_image_on_mobile %}
+				{% call utils.small() %}
+					.text-and-image__image {
+						display: none;
+					}
+				{% endcall %}
+			{% endif %}
 		{% end_scope_css %}
 	</style>
   {% end_require_css %}
@@ -19,7 +28,7 @@
 		{% inline_rich_text field="description_text" value="{{ module.description_text }}" %}
 		
 		{% if module.button.button_type %}
-			<div class="custom-btn">
+			<div class="custom-btn custom-btn--{{ module.button.button_style }}">
 				{% if module.button.button_type == "std" %}
 					{% if module.button.bookmark_id %}
 						{% set bookmark_id = module.button.bookmark_id %}

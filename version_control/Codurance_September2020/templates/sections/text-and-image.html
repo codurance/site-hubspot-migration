@@ -6,7 +6,13 @@
  screenshotPath: ../../images/template-previews/text-and-image_section.png
 -->
 
-{% dnd_section max_width=1000 %}
+{% dnd_section
+  max_width=1040,
+  padding={
+    "left": 20,
+    "right": 20
+  }
+%}
   {% dnd_module
     path="../../modules/Text-and-image.module",
     image_order="img-right",

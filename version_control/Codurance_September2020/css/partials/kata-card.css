@@ -2,11 +2,11 @@
 
 .custom-kata-listing__post {
   {{ utils.card_shadow() }}
+  {{ utils.card_border_radius() }}
   transition: var(--cta-transition);
   display: flex;
   flex-direction: column;
   background: white;
-  border-radius: 10px;
 }
 
 .custom-kata-listing__post img{

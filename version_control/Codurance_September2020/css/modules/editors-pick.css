@@ -50,8 +50,8 @@
 }
 
 .cm-editors-pick__image img {
+    {{ utils.card_border_radius() }}
     object-fit: cover;
-    border-radius: 10px;
 }
 
 {% call utils.medium_large_and_extra_large() %}

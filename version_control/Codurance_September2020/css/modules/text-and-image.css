@@ -2,7 +2,7 @@
 {% import '../utils/utils.css' as utils %}
 
 .text-and-image__container {
-    padding: 2em 1em;
+    padding: 2rem 1.2rem;
     display: flex;
     flex-flow: column-reverse;
     overflow: hidden;
@@ -39,6 +39,12 @@
     transform: translate(20%);
 }
 
+{% call utils.medium() %}
+    .text-and-image__copy {
+        max-width: 35ch;
+        align-self: initial;
+    }
+{% endcall %}
 
 {% call utils.medium_large_and_extra_large() %}
     .text-and-image__container{
@@ -53,10 +59,6 @@
         flex-direction: row-reverse;
     }
 
-    .text-and-image__copy{
-        max-width: 50%;
-        align-self: initial;
-    }
     .text-and-image__image img{
         transform: translate(5%, -5%);
     }
@@ -96,12 +98,6 @@
   .dnd-section .text-and-image__copy {
     max-width: var(--freed-max-width);
   }
-{% endcall %}
-
-{% call utils.small() %}
-    .dnd-section .text-and-image__container {
-        flex-direction: column;
-    }
 {% endcall %}
 
 .dnd-section .text-and-image__image > img {

@@ -5,7 +5,13 @@
  isAvailableForNewContent: true
  screenshotPath: ../../images/template-previews/text_section.png
 -->
-{% dnd_section max_width=1000 %}
+{% dnd_section
+  max_width=1040,
+  padding={
+    "left": 20,
+    "right": 20
+  }
+%}
   {% dnd_module
     path="@hubspot/rich_text",
     offset=0,

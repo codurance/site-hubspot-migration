@@ -29,8 +29,17 @@
 }
 
 /* Responsive spacing utility classes */
+.region {
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-7);
+}
 
 {% call utils.small() %}
+  .region {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
+  }
+
   .lateral-spacing {
       padding-left: 20px;
       padding-right: 20px;
@@ -38,6 +47,11 @@
 {% endcall %}
 
 {% call utils.medium() %}
+  .region {
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+
   .lateral-spacing {
       padding-left: 25px;
       padding-right: 25px;

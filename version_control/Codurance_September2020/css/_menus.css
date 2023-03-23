@@ -30,3 +30,21 @@ menu items appear, including the link and hover effects.
 .hs-menu-item.active a {
   color: rgba(0, 0, 0, 0.9);
 }
+
+/* Breadcrumbs */
+.first-crumb {
+  padding-left: 0;
+}
+
+.hs-breadcrumb-label {
+  {{ utils.natus() }}
+}
+
+.hs-breadcrumb-label,
+.hs-breadcrumb-menu-divider:before {
+  color: var(--athens-gray);
+}
+
+.last-crumb .hs-breadcrumb-label {
+  font-weight: var(--heavy-font-weight);
+}

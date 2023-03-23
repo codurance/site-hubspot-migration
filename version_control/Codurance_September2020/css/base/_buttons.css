@@ -21,7 +21,11 @@
 }
 
 .hs-site-page .custom-btn {
-  margin-top: 1.6em;
+  margin-top: var(--space-4);
+}
+
+.hs-site-page .custom-btn--text-cta-primary {
+  margin-top: var(--space-3);
 }
 
 .button-primary,
