@@ -1,0 +1,58 @@
+{% import "../utils/utils.css" as utils %}
+
+.header {
+    background-image: linear-gradient(
+        to right, 
+        var(--woodsmoke) 0%, 
+        var(--slate) 45%
+    );
+    position: relative;
+}
+
+.header__text-container {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.hs-site-page .header__text-container .page-header.section-header {
+    margin-bottom: 0;
+}
+
+.header__text-container h1 {
+    {{ utils.eames() }}
+}
+
+.header__text-container p {
+    max-width: var(--freed-max-width);
+    margin-top: var(--space-2);
+}
+
+.header__image-container {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    max-width: 55%;
+}
+
+.header__image-container img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.header__image-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+
+    background-image: linear-gradient(
+        to right, 
+        var(--slate), 
+        transparent 50%
+    );
+}
