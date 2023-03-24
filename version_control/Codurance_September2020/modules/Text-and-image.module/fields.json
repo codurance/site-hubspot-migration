@@ -9,6 +9,7 @@
   "choices" : [ [ "img-right", "Image right" ], [ "img-left", "Image Left" ] ],
   "multiple" : false,
   "reordering_enabled" : true,
+  "preset" : null,
   "type" : "choice"
 }, {
   "id" : "409d9294-21ee-d095-7f5b-40b0b3fc8b54",
@@ -65,14 +66,26 @@
     "choices" : [ [ "start", "Top" ], [ "end", "Bottom" ], [ "center", "Center" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
+    "preset" : null,
     "type" : "choice",
     "default" : ""
+  }, {
+    "id" : "2bacea72-5f8b-8245-2871-37e1c0c5df0d",
+    "name" : "hide_image_on_mobile",
+    "display_width" : null,
+    "label" : "Hide image on mobile",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
   } ],
   "tab" : "STYLE",
   "expanded" : false,
   "type" : "group",
   "default" : {
-    "image_vertical_alignment" : ""
+    "image_vertical_alignment" : "",
+    "hide_image_on_mobile" : false
   }
 }, {
   "id" : "b6313458-c454-9679-bb22-f14a0b970af9",
@@ -92,6 +105,7 @@
     "choices" : [ [ "std", "Standard" ], [ "cta", "CTA" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
+    "preset" : null,
     "type" : "choice"
   }, {
     "id" : "052e50b3-0160-3bbd-31ff-9286554a34d9",
@@ -182,6 +196,7 @@
     "choices" : [ [ "button-primary", "Primary" ], [ "button-secondary", "Secondary" ], [ "text-cta-primary text-cta--right-arrow", "Arrow Link" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
+    "preset" : null,
     "type" : "choice",
     "default" : "button-primary"
   }, {

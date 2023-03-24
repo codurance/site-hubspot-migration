@@ -36,14 +36,14 @@ label: Industry Page
 </section>
 
 <main>
-  <section class="above-the-fold">
+  <section class="above-the-fold region">
     {% module "above_the_fold"
       path="../modules/Text-and-image.module" 
       label="Above the fold section"
     %}
   </section>
 
-  <section class="case-studies">
+  <section class="case-studies region">
     {% dnd_area "case_studies"
       label="Case studies"
     %}
@@ -66,13 +66,13 @@ label: Industry Page
     {% end_dnd_area %}
   </section>
 
-  <section class="promotion">
+  <section class="promotion region">
     {% module "promotion"
       path="../modules/Text-and-image.module" label="Promotional section"
     %}
   </section>
 
-  <section class="recommended-insights">
+  <section class="recommended-insights region">
     <div class="recommended-insights__wrapper">
       <h2 class="lateral-spacing">
         {% text "insights_header"

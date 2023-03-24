@@ -3,13 +3,3 @@
 .row-fluid [class*="span"] {
     min-height: 0;
 }
-
-.section-area-full .dnd-section > .row-fluid   {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.section-area-full .dnd-section {
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
