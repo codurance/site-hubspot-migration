@@ -1,0 +1,76 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Industries Overview
+-->
+{% extends "./layouts/base.html" %}
+
+{{ require_css(get_asset_url("../css/pages/topic-pillar.css")) }}
+
+{% block body %}
+
+{% module "header_slim" 
+  path="../modules/Header-Slim.module" label="Header Slim" 
+  no_wrapper=True 
+%}
+
+<main>  
+
+<section class="above-the-fold">
+  {% module "above_the_fold"
+    path="../modules/Text-and-image.module" label="Above the fold section"
+    no_wrapper=True 
+  %}
+</section>
+
+<section class="all-industries lateral-spacing">
+  {% module "all_industries"
+    path="../modules/Thumbnails-Grid.module" label="All industries"
+    no_wrapper=True 
+  %}
+</section>
+
+<section class="testimonial">
+  {% module "testimonial"
+    path="../modules/Landing Page Modules/LP-testimonial-slider.module" label="Testimonial"
+    no_wrapper=True 
+  %}
+</section>
+
+<section class="banner-link lateral-spacing">
+  {% module "banner_link"
+    path="../modules/Banner-Link.module" label="Banner"
+    no_wrapper=True 
+  %}
+</section>
+
+<section class="clients-logos lateral-spacing">
+  {% module "clients_logos"
+    path="../modules/Clients-Logos.module" label="Clients logos"
+    no_wrapper=True 
+  %}
+</section>
+
+<section class="lateral-spacing" aria-label="Newsletter form">
+  {% module "newsletter"
+    path="../modules/Newsletter-Form-Card.module" label="Newsletter form"
+    no_wrapper=True 
+  %}
+</section>
+
+<section class="insights">
+  {% module "insights"
+    path="../modules/Recent-posts-V2.module" label="Insights"
+    no_wrapper=True 
+  %}
+</section>
+
+<section class="cta_block">
+  {% module "cta_block"
+    path="../modules/LP-cta-block.module" label="CTA block"
+  %}
+</section>
+  
+</main>
+
+{% endblock body %}
