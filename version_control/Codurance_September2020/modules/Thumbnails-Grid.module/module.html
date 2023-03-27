@@ -121,7 +121,7 @@
         {% set mobile_num_columns = module.grid_settings.group_uniform_display_options.mobile_number_of_columns %}
 
         {% if module.grid_settings.group_uniform_display_options.mobile_columns %}
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 425px) {
                 .hs-image__grid__list {
                     grid-template-columns: repeat({{ mobile_num_columns }}, 1fr);
                 }
@@ -131,7 +131,7 @@
         {{ css_hover_filters(module.grid_settings.group_image_hover.image_hover_functionality) }}
 
     {% end_scope_css %}
-   
+
     </style>
 {% end_require_css %}
 
@@ -179,7 +179,10 @@
                 {% endif %}
                 <img
                     class="hs-image__grid__list__item__image {{ hover_effect_classes }} hs-allow-transition"
-                    src="{{ grid_item.img_src }}" alt="{{ grid_item.alt_text | escape }}">
+                    src="{{ resize_image_url(grid_item.img_src, 0, 0, 400) }}" 
+                    loading="lazy"
+                    width="400" height="300"
+                    alt="{{ grid_item.alt_text | escape }}">
 
                     {% if module.grid_settings.group_image_hover.overlay_show_on != "never" and grid_item.hover_message %}
                     <div class="hs-image__grid__item__overlay">
