@@ -1,6 +1,6 @@
 [ {
-  "id" : "slides",
-  "name" : "slides",
+  "id" : "grid_items",
+  "name" : "grid_items",
   "display_width" : null,
   "label" : "Image",
   "required" : false,
@@ -12,7 +12,7 @@
     "default" : 9
   },
   "children" : [ {
-    "id" : "slides.img",
+    "id" : "grid_items.img",
     "name" : "img",
     "display_width" : null,
     "label" : "Image",
@@ -32,7 +32,7 @@
       "loading" : "disabled"
     }
   }, {
-    "id" : "slides.link_url",
+    "id" : "grid_items.link_url",
     "name" : "link_url",
     "display_width" : null,
     "label" : "Link URL",
@@ -54,7 +54,7 @@
       "user_generated_content" : false
     }
   }, {
-    "id" : "slides.hover_message",
+    "id" : "grid_items.hover_message",
     "name" : "hover_message",
     "display_width" : null,
     "label" : "Hover message",

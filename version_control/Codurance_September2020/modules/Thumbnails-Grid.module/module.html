@@ -32,18 +32,14 @@
 {% endmacro %}
 
 {% set num_of_columns = module.grid_settings.group_uniform_display_options.number_of_columns %}
-
-{% set calc_column_width = ( 100 / num_of_columns ) %}
-{% set column_width_percent = calc_column_width ~ "%" %}
 {% set column_gap = module.styles.grid_images.group_gap.gap ~ "px" %}
 
 {% require_css %}
     <style>
     {% scope_css %}
         .hs-image__grid__list {
-            {% if module.styles.grid_images.group_gap.gap %}
-                gap: {{ module.styles.grid_images.group_gap.gap ~ "px" }};
-            {% endif %}
+            gap: {{ column_gap }};
+            grid-template-columns: repeat({{ num_of_columns }}, 1fr);
         }
 
         {% if module.styles.grid_images.group_corner.corner %}
@@ -102,15 +98,12 @@
             {% endif %}
         }
 
-        .hs-image__grid__list__item {
-            flex-basis: calc({{ column_width_percent }} - {{ column_gap }});
-        }
+        {% set mobile_columns = module.grid_settings.group_uniform_display_options.mobile_columns %}
 
-        {% if module.grid_settings.group_uniform_display_options.mobile_columns %}
-            {% set column_width_percent = ( 100 / module.grid_settings.group_uniform_display_options.mobile_number_of_columns ) ~ "%" %}
+        {% if mobile_columns %}
             @media screen and (max-width: 767px) {
-                .hs-image__grid__list__item {
-                    flex-basis: calc({{ column_width_percent }} - {{ column_gap }});
+                .hs-image__grid__list {
+                    grid-template-columns: repeat({{ mobile_columns }}, 1fr);
                 }
             }
         {% endif %}
@@ -123,60 +116,59 @@
 {% end_require_css %}
 
 
-{% set slides = [] %}
+{% set grid_items = [] %}
 
-{% if module.slides %}
-    {% for slide in module.slides %}
-        {% if ( slide.img.src ) %}
-            {% set slide_image_src = resize_image_url( slide.img.src, 0, 0, 400 ) %}
+{% if module.grid_items %}
+    {% for grid_item in module.grid_items %}
+        {% if ( grid_item.img.src ) %}
+            {% set grid_item_image_src = resize_image_url( grid_item.img.src, 0, 0, 400 ) %}
         {% endif %}
-        {% do slides.append({
-                "hover_message": slide.hover_message,
-                "alt_text": slide.img.alt,
-                "img_src": slide_image_src,
-                "link_url": slide.link_url,
-                "open_in_new_tab": slide.link_url.open_in_new_tab
+        {% do grid_items.append({
+                "hover_message": grid_item.hover_message,
+                "alt_text": grid_item.img.alt,
+                "img_src": grid_item_image_src,
+                "link_url": grid_item.link_url,
+                "open_in_new_tab": grid_item.link_url.open_in_new_tab
             })
         %}
     {% endfor %}
 {% endif %}
 
-{% if slides %}
+{% if grid_items %}
+    {% set image_count = grid_items|length %}
+    {% set grid_aria_label = module.default_text.grid_aria_label %}
 
-{% set image_count = slides|length %}
-{% set grid_aria_label = module.default_text.grid_aria_label %}
-
-{# HTML MODULE STARTS #}
+    {# HTML MODULE STARTS #}
 
     <ul class="hs-image__grid__list" aria-label="{{ grid_aria_label }}" role="list" data-grid_action_type="{{ module.grid_settings.group_image_click.image_click_functionality }}">
-        {% for slide in slides %}
+        {% for grid_item in grid_items %}
             <li class="hs-image__grid__list__item"
-                data-lb_image_src="{{ slide.img_src }}"
+                data-lb_image_src="{{ grid_item.img_src }}"
                 {% if not navigate_on_click %}
-                    data-lb_href='{{ slide.link_url|tojson }}'
+                    data-lb_href='{{ grid_item.link_url|tojson }}'
                 {% endif %}
                 >
-                {% if navigate_on_click and slide.link_url.url.href %}
-                    <a href="{{ slide.link_url.url.href }}"
-                        {% if slide.link_url.rel %}
-                            rel="{{ slide.link_url.rel }}"
+                {% if navigate_on_click and grid_item.link_url.url.href %}
+                    <a href="{{ grid_item.link_url.url.href }}"
+                        {% if grid_item.link_url.rel %}
+                            rel="{{ grid_item.link_url.rel }}"
                         {% endif %}
-                        {% if slide.open_in_new_tab %}
+                        {% if grid_item.open_in_new_tab %}
                             target="_blank"
                         {% endif %} >
                 {% endif %}
                 <img
                     class="hs-image__grid__list__item__image {{ hover_effect_classes }} hs-allow-transition"
-                    src="{{ slide.img_src }}" alt="{{ slide.alt_text | escape }}">
+                    src="{{ grid_item.img_src }}" alt="{{ grid_item.alt_text | escape }}">
 
-                    {% if module.grid_settings.group_image_hover.overlay_show_on != "never" and slide.hover_message %}
+                    {% if module.grid_settings.group_image_hover.overlay_show_on != "never" and grid_item.hover_message %}
                     <div class="hs-image__grid__item__overlay">
                         <p class="hs-image__grid__item__overlay__content">
-                            {{ slide.hover_message }}
+                            {{ grid_item.hover_message }}
                         </p>
                     </div>
                     {% endif %}
-                {% if navigate_on_click and slide.link_url.url.href %}
+                {% if navigate_on_click and grid_item.link_url.url.href %}
                     </a>
                 {% endif %}
             </li>
