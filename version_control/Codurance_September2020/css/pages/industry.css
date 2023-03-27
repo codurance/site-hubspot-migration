@@ -113,10 +113,6 @@
   padding-top: 1.5em;
 }
 
-.case-studies .text-and-image__title {
-    font-weight: var(--heavy-font-weight);
-}
-
 .case-studies .case-study-card-collection {
     background: unset;
 }
