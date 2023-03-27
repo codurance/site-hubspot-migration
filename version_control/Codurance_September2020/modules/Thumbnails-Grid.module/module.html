@@ -31,79 +31,99 @@
     {% endif %}
 {% endmacro %}
 
-{% set num_of_columns = module.grid_settings.group_uniform_display_options.number_of_columns %}
-{% set column_gap = module.styles.grid_images.group_gap.gap ~ "px" %}
+
 
 {% require_css %}
     <style>
     {% scope_css %}
+
+        {% set num_of_columns = module.grid_settings.group_uniform_display_options.number_of_columns %}
+        {% set column_gap = module.styles.grid_images.group_gap.gap ~ "px" %}
+        {% set border_radius = module.styles.grid_images.group_corner.corner ~ "px" %}
+        {% set overlay_text_font = module.styles.grid_images.overlay.text.font %}
+
+        {% set overlay_hover_text_font = module.styles.grid_images.overlay.hover.font %}
+
         .hs-image__grid__list {
             gap: {{ column_gap }};
             grid-template-columns: repeat({{ num_of_columns }}, 1fr);
         }
 
-        {% if module.styles.grid_images.group_corner.corner %}
-            .hs-image__grid__list__item, .hs-image__grid__list__item__image {
-                border-radius: {{ module.styles.grid_images.group_corner.corner ~ "px" }};
-            }
-        {% endif %}
+        .hs-image__grid__list__item, .hs-image__grid__list__item__image {
+            border-radius: {{ border_radius }};
+        }
+
+        {% set overlay_background_color = 
+            "rgba({{ module.styles.grid_images.overlay.background.color.color|convert_rgb }},
+            {{ module.styles.grid_images.overlay.background.color.opacity/100 }});" 
+        %}
 
         .hs-image__grid__item__overlay {
             {% if module.grid_settings.group_image_hover.overlay_show_on == "always" %}
                 opacity: 1;
             {% endif %}
             {% if module.styles.grid_images.group_corner.corner %}
-                border-radius: {{ module.styles.grid_images.group_corner.corner ~ "px" }};
+                border-radius: {{ border_radius }};
             {% endif %}
             {% if module.styles.grid_images.overlay.background.color.color %}
-                background-color: rgba({{ module.styles.grid_images.overlay.background.color.color|convert_rgb }},{{ module.styles.grid_images.overlay.background.color.opacity/100 }});
+                background-color: {{ overlay_background_color }}
             {% endif %}
         }
 
         .hs-image__grid__item__overlay__content, .hs-image__grid__item__overlay__content * {
-            {% if module.styles.grid_images.overlay.text.font %}
-                {{ module.styles.grid_images.overlay.text.font.css }}
+            {% if overlay_text_font %}
+                {{ overlay_text_font.css }}
             {% endif %}
         }
 
         .hs-image__grid__item__overlay:hover {
             {% if module.grid_settings.group_image_hover.overlay_show_on == "hover" %}
                 {% if module.styles.grid_images.overlay.background.color %}
-                    background-color: rgba({{ module.styles.grid_images.overlay.background.color.color|convert_rgb }},{{ module.styles.grid_images.overlay.background.color.opacity/100 }});
+                    background-color: {{ overlay_background_color }}
                 {% endif %}
-                {% if module.styles.grid_images.overlay.text.font %}
-                    {{ module.styles.grid_images.overlay.text.font.css }}
+                {% if overlay_text_font %}
+                    {{ overlay_text_font.css }}
                 {% endif %}
             {% endif %}
+
+            {% set overlay_hover_background_color = 
+                "rgba({{ module.styles.grid_images.overlay.hover.color.color|convert_rgb }},
+                {{ module.styles.grid_images.overlay.hover.color.opacity/100 }})" 
+%}
             {% if module.grid_settings.group_image_hover.overlay_show_on == "always" %}
                 {% if module.styles.grid_images.overlay.hover.color %}
-                    background-color: rgba({{ module.styles.grid_images.overlay.hover.color.color|convert_rgb }},{{ module.styles.grid_images.overlay.hover.color.opacity/100 }});
+                    background-color: {{ overlay_hover_background_color }};
                 {% endif %}
-                {% if module.styles.grid_images.overlay.hover.font %}
-                    {{ module.styles.grid_images.overlay.hover.font.css }}
+                {% if overlay_hover_text_font %}
+                    {{ overlay_hover_text_font.css }}
                 {% endif %}
             {% endif %}
         }
 
         .hs-image__grid__item__overlay:hover .hs-image__grid__item__overlay__content, .hs-image__grid__item__overlay:hover .hs-image__grid__item__overlay__content * {
+            {% set font_color_hover = module.styles.grid_images.overlay.hover.font %}
+
             {% if module.grid_settings.group_image_hover.overlay_show_on == "hover" %}
-                {% if module.styles.grid_images.overlay.text.font %}
-                    {{ module.styles.grid_images.overlay.text.font.css }}
+                {% if overlay_text_font %}
+                    {{ overlay_text_font.css }}
                 {% endif %}
             {% endif %}
+
+            {% set font_color_hover = module.styles.grid_images.overlay.hover.font %}
+
             {% if module.grid_settings.group_image_hover.overlay_show_on == "always" %}
-                {% if module.styles.grid_images.overlay.hover.font %}
-                    {{ module.styles.grid_images.overlay.hover.font.css }}
+                {% if font_color_hover %}
+                    {{ font_color_hover.css }}
                 {% endif %}
             {% endif %}
         }
 
-        {% set mobile_columns = module.grid_settings.group_uniform_display_options.mobile_columns %}
+        {% set mobile_num_columns = module.grid_settings.group_uniform_display_options.mobile_number_of_columns %}
 
-        {% if mobile_columns %}
+        {% if module.grid_settings.group_uniform_display_options.mobile_columns %}
             @media screen and (max-width: 767px) {
                 .hs-image__grid__list {
-                    grid-template-columns: repeat({{ mobile_columns }}, 1fr);
+                    grid-template-columns: repeat({{ mobile_num_columns }}, 1fr);
                 }
             }
         {% endif %}
