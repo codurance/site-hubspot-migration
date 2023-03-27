@@ -1,5 +1,11 @@
 {% import "../utils/utils.css" as utils %}
 
+
+.industries-grid,
+.above-the-fold {
+    {{ utils.tango_to_white() }}
+}
+
 .header {
     background-image: linear-gradient(
         to right, 
@@ -57,7 +63,7 @@
     );
 }
 
-.industries-grid {
+.industries-grid__inner-container {
     max-width: var(--content-inner-max-width);
     margin-inline: auto;
 }

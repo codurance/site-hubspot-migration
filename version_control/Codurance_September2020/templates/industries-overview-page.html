@@ -27,17 +27,18 @@ label: Industries Overview
 
 <main>  
 
-<section class="above-the-fold">
+<section class="above-the-fold region">
   {% module "above_the_fold"
     path="../modules/Text-and-image.module" label="Above the fold section"
-    no_wrapper=True 
   %}
 </section>
 
-<section class="industries-grid lateral-spacing">
-  {% module "industries_grid"
-    path="../modules/Thumbnails-Grid.module" label="Industries grid"
-  %}
+<section class="industries-grid region">
+  <div class="industries-grid__inner-container lateral-spacing">
+    {% module "industries_grid"
+      path="../modules/Thumbnails-Grid.module" label="Industries grid"
+    %}
+  </div>
 </section>
 
 <section class="testimonial">
