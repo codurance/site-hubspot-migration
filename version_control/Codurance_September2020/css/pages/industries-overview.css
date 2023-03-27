@@ -56,3 +56,8 @@
         transparent 50%
     );
 }
+
+.industries-grid {
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
+}
