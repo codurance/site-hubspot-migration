@@ -31,8 +31,6 @@
     {% endif %}
 {% endmacro %}
 
-
-
 {% require_css %}
     <style>
     {% scope_css %}
@@ -67,6 +65,9 @@
             {% endif %}
             {% if module.styles.grid_images.overlay.background.color.color %}
                 background-color: {{ overlay_background_color }}
+            {% endif %}
+            {% if module.styles.grid_images.overlay.background.blend_mode %}
+                mix-blend-mode: hard-light;
             {% endif %}
         }
 
@@ -185,11 +186,10 @@
                     alt="{{ grid_item.alt_text | escape }}">
 
                     {% if module.grid_settings.group_image_hover.overlay_show_on != "never" and grid_item.hover_message %}
-                    <div class="hs-image__grid__item__overlay">
-                        <p class="hs-image__grid__item__overlay__content">
-                            {{ grid_item.hover_message }}
-                        </p>
-                    </div>
+                    <div class="hs-image__grid__item__overlay"></div>
+                    <p class="hs-image__grid__item__overlay__content">
+                        {{ grid_item.hover_message }}
+                    </p>
                     {% endif %}
                 {% if navigate_on_click and grid_item.link_url.url.href %}
                     </a>

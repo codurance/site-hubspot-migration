@@ -425,9 +425,6 @@
       "number_of_columns" : 3,
       "mobile_columns" : false,
       "mobile_number_of_columns" : 1
-    },
-    "group_aspect_ratio" : {
-      "aspect_ratio" : "16/9"
     }
   }
 }, {
@@ -657,6 +654,17 @@
             "color" : null,
             "opacity" : null
           }
+        }, {
+          "id" : "515db3a9-99a9-e012-40a4-91b89b080bd3",
+          "name" : "blend_mode",
+          "display_width" : null,
+          "label" : "Blend mode",
+          "help_text" : "Activating this option will create a blend between the overlay's background and the image",
+          "required" : false,
+          "locked" : false,
+          "display" : "toggle",
+          "type" : "boolean",
+          "default" : false
         } ],
         "tab" : "STYLE",
         "expanded" : false,
@@ -665,7 +673,8 @@
           "color" : {
             "color" : null,
             "opacity" : null
-          }
+          },
+          "blend_mode" : false
         }
       }, {
         "id" : "styles.grid_images.overlay.hover",
@@ -773,7 +782,8 @@
           "color" : {
             "color" : null,
             "opacity" : null
-          }
+          },
+          "blend_mode" : false
         },
         "hover" : {
           "font" : {
@@ -820,7 +830,8 @@
           "color" : {
             "color" : null,
             "opacity" : null
-          }
+          },
+          "blend_mode" : false
         },
         "hover" : {
           "font" : {
@@ -869,7 +880,8 @@
           "color" : {
             "color" : null,
             "opacity" : null
-          }
+          },
+          "blend_mode" : false
         },
         "hover" : {
           "font" : {

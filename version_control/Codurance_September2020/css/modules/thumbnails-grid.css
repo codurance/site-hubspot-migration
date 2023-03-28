@@ -68,17 +68,14 @@ button.hs-image__grid__list__item__button:focus:not(:focus-visible) {
   transition: background-color 0.5s, opacity 0.5s;
 }
 
-
 .hs-image__grid__item__overlay__content {
   {{ utils.freed() }}
   font-weight: var(--middle-font-weight);
   max-width: 14ch;
   opacity: 1;
-}
-
-.hs-image__grid__item__overlay__content * {
-  margin: initial;
-  padding: initial;
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
 }
 
 /** Image hover transitions; **/
