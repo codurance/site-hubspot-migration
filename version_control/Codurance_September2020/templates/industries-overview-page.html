@@ -34,7 +34,7 @@ label: Industries Overview
 </section>
 
 <section class="industries-grid region">
-  <div class="industries-grid__inner-container lateral-spacing">
+  <div class="lateral-spacing">
     {% module "industries_grid"
       path="../modules/Thumbnails-Grid.module" label="Industries grid"
     %}
@@ -48,14 +48,16 @@ label: Industries Overview
   %}
 </section>
 
-<section class="banner-link lateral-spacing">
-  {% module "banner_link"
-    path="../modules/Banner-Link.module" label="Banner"
-    no_wrapper=True 
-  %}
+<section class="banner-link region">
+  <div class="lateral-spacing">
+    {% module "banner_link"
+      path="../modules/Banner-Link.module" label="Banner"
+      no_wrapper=True 
+    %}
+  </div>
 </section>
 
-<section class="clients-logos lateral-spacing">
+<section class="clients-logos region lateral-spacing">
   {% module "clients_logos"
     path="../modules/Clients-Logos.module" label="Clients logos"
     no_wrapper=True 
