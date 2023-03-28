@@ -80,3 +80,15 @@
 .clients-logos.region {
     padding-bottom: var(--space-8);
 }
+
+.insights {
+    {{ utils.tango_to_white() }}
+}
+
+.insights.region {
+    padding-top: var(--space-8);
+}
+   
+.insights .cm-recent-post {
+    transform: none; 
+}
