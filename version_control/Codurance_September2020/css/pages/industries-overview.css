@@ -67,3 +67,7 @@
     max-width: var(--content-inner-max-width);
     margin-inline: auto;
 }
+
+.testimonial {
+    padding-bottom: var(--space-6);
+}
