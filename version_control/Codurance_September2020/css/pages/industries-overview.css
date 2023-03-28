@@ -1,10 +1,27 @@
 {% import "../utils/utils.css" as utils %}
 
+/* General styles */
 
 .industries-grid,
 .above-the-fold {
     {{ utils.tango_to_white() }}
 }
+
+.industries-grid h2,
+.insights h2 {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+{% call utils.large_and_extra_large() %}
+    .industries-grid h2,
+    .insights h2 {
+        {{ utils.dudler() }}
+        font-weight: var(--heavy-font-weight);
+    }
+{% endcall %}
+
+/* End general styles */
 
 .header {
     background-image: linear-gradient(
@@ -63,6 +80,15 @@
     );
 }
 
+.industries-grid__title-container {
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
+}
+
+.industries-grid h2 {
+    margin-bottom: var(--space-4);
+}
+
 .industries-grid .hs-image__grid__list {
     max-width: var(--content-inner-max-width);
     margin-inline: auto;
@@ -87,6 +113,10 @@
 
 .insights.region {
     padding-top: var(--space-8);
+}
+
+.insights h2 {
+    margin-bottom: var(--space-2);
 }
    
 .insights .cm-recent-post {

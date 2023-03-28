@@ -34,6 +34,13 @@ label: Industries Overview
 </section>
 
 <section class="industries-grid region">
+  <div class="industries-grid__title-container lateral-spacing">
+    {% header "industries_grid_title" 
+      label="Industries grid title", 
+      header_tag="h2"
+    %}
+  </div>
+
   <div class="lateral-spacing">
     {% module "industries_grid"
       path="../modules/Thumbnails-Grid.module" label="Industries grid"
@@ -64,14 +71,22 @@ label: Industries Overview
   %}
 </section>
 
-<section class="lateral-spacing" aria-label="Newsletter form">
-  {% module "newsletter"
-    path="../modules/Newsletter-Form-Card.module" label="Newsletter form"
-    no_wrapper=True 
-  %}
-</section>
+<section class="insights region">
+  <div class="lateral-spacing" aria-label="Newsletter form">
+    {% module "newsletter"
+      path="../modules/Newsletter-Form-Card.module" label="Newsletter form"
+      no_wrapper=True 
+    %}
+  </div>
+  
+  <div class="responsive-page-width lateral-spacing">
+    {% header "insights_title" 
+      label="Insights title", 
+      header_tag="h2"
+    %}
+  </div>
+  
 
-<section class="insights">
   {% module "insights"
     path="../modules/Recent-posts-V2.module" label="Insights"
     no_wrapper=True 
