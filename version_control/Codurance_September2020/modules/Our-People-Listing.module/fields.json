@@ -18,4 +18,31 @@
   "required" : false,
   "locked" : false,
   "type" : "hubdbtable"
+}, {
+  "id" : "3a7e1ed4-7903-2dbb-a67d-e390c0782969",
+  "name" : "card_settings",
+  "display_width" : null,
+  "label" : "Card Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "f57794a2-fa0e-fef9-f215-acbf114188d5",
+    "name" : "button_text",
+    "display_width" : null,
+    "label" : "Button text",
+    "inline_help_text" : "Write the text to be displayed on the button that will open a modal ",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Learn more"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "button_text" : "Learn more"
+  }
 } ]

@@ -37,7 +37,7 @@
               <span class="custom-our-people__role">{{ row.designation }}</span>
             {% endif %}
             {{snippets.text_cta_plus(
-              text='Learn More',
+              text='{{ module.card_settings.button_text }}',
               url="#team-{{ loop.index }}",
               rel="gallery3",
               classnames="custom-our-people__learn-more"
