@@ -72,6 +72,10 @@
     padding-bottom: var(--space-6);
 }
 
+.banner-link {
+    {{ utils.slate_to_woodsmoke() }}
+    color: white;
+}
 
 .clients-logos.region {
     padding-bottom: var(--space-8);
