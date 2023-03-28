@@ -1,15 +1,22 @@
 {{ require_css(get_asset_url("../css/partials/clients-page-cards.css")) }} 
 
-{% if locale == 'en' %}
-    {% set promotion_text = "Find out how we helped" %} 
-    {% set case_study_button_text = "Read Case Study" %}  
-    {% set case_study_info_text = "Find out how we helped" %}  
-    {% set proposition_job_title = "at" %}        
-  {% else %}
+  {% set promotion_text = "Find out how we helped" %} 
+  {% set case_study_button_text = "Read Case Study" %}  
+  {% set case_study_info_text = "Find out how we helped" %}  
+  {% set proposition_job_title = "at" %}
+
+  {% if locale == 'es' %}
     {% set promotion_text = "Descubre como ayudamos a" %}
     {% set case_study_button_text = "Descarga el case study" %} 
     {% set case_study_info_text = "Descubre cómo ayudamos a" %}
     {% set proposition_job_title ="en" %}
+  {% endif %}
+
+  {% if locale == 'pt' %}
+    {% set promotion_text = "Descubra como nós ajudamos" %}
+    {% set case_study_button_text = "Ler Estudo de Caso" %} 
+    {% set case_study_info_text = "Descubra como nós ajudamos" %}
+    {% set proposition_job_title ="na" %}
   {% endif %}
 
 {% macro tags_footer(client) %}
