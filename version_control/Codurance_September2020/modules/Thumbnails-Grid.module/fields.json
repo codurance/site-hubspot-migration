@@ -8,7 +8,7 @@
   "occurrence" : {
     "min" : 0,
     "max" : 60,
-    "sorting_label_field" : "slide.hover_message",
+    "sorting_label_field" : "grid_items.hover_message",
     "default" : 9
   },
   "children" : [ {
