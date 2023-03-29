@@ -3,7 +3,7 @@
 /* General styles */
 
 .industries-grid,
-.above-the-fold {
+.featured-case-study {
     {{ utils.tango_to_white() }}
 }
 
