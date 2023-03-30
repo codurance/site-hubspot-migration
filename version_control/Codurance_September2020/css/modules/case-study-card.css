@@ -12,7 +12,7 @@
 }
     
 .case-study-card-collection__header {
-    padding-top: 60px;
+    padding-top: var(--space-3);
 }
 
 .case-study-card-collection__header > h2 {
