@@ -25,10 +25,6 @@ stylesheets or you can add your own custom styles.
 {##############################   _dnd_areas   #############################}
 {###########################################################################}
 
-.dnd-section {
-  padding-bottom: {{ theme.spacing.vertical_spacing }}px;
-  padding-top: {{ theme.spacing.vertical_spacing }}px;
-}
 
 .body-container__homepage .dnd-section:nth-child(odd) {
   background-color: {{ theme.global_colors.secondary_color.color }};
@@ -41,6 +37,16 @@ stylesheets or you can add your own custom styles.
 .region .dnd-section:last-of-type {
   padding-bottom: 0;
 }
+
+.region .dnd-section + .dnd-section {
+  margin-top: var(--space-5);
+}
+
+{% call utils.small() %}
+  .region .dnd-section + .dnd-section {
+    margin-top: var(--space-3);
+  }
+{% endcall %} 
 
 .dnd-section > .row-fluid {
   max-width: {{ theme.spacing.max_width }}px;
