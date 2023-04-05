@@ -1307,8 +1307,17 @@
         "label": "Vertical spacing",
         "display": "slider",
         "default": 48,
+        "min": 24,
+        "max": 96
+      },
+      {
+        "type": "number",
+        "name": "vertical_spacing_mobile",
+        "label": "Vertical spacing mobile",
+        "display": "slider",
+        "default": 24,
         "min": 0,
-        "max": 500
+        "max": 48
       },
       {
         "type": "number",
@@ -1317,7 +1326,7 @@
         "display": "slider",
         "default": 1140,
         "min": 900,
-        "max": 2500
+        "max": 1300
       }
     ]
   },
