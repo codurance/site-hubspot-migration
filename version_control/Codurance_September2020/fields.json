@@ -1312,15 +1312,6 @@
       },
       {
         "type": "number",
-        "name": "vertical_spacing_mobile",
-        "label": "Vertical spacing mobile",
-        "display": "slider",
-        "default": 24,
-        "min": 0,
-        "max": 48
-      },
-      {
-        "type": "number",
         "name": "max_width",
         "label": "Maximum content width",
         "display": "slider",
