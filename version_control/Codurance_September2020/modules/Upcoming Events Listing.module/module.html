@@ -4,13 +4,14 @@
 
 {% if module.hubdb_table %}
   {% set upcomingEventsFilter = ("&orderBy=datetime" + "&datetime__gt=" + local_dt|unixtimestamp + "&limit=12") %}
-  {% set isEventEnglish = ("&language=English") %}
+  {% set eventsInEnglish = ("&language=English") %}
+  {% set eventsInSpanish = ("&language=Spanish") %}
+
+  {% set upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter + eventsInEnglish) %}
   
-   {% if locale == "en" %}
-      {% set upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter + isEventEnglish) %}
-    {% else %}
-       {% set upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter) %}
-   {% endif %} 
+  {% if locale == "es" %}
+    {% set upcomingEvents = hubdb_table_rows(module.hubdb_table, upcomingEventsFilter + eventsInSpanish) %}
+  {% endif %}
 
   {% if upcomingEvents|length > 0 %}
     <div
