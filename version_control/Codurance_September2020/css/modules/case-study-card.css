@@ -11,13 +11,10 @@
 
 }
     
-.case-study-card-collection__header {
-    padding-top: var(--space-3);
-}
 
 .case-study-card-collection__header > h2 {
     {{ utils.freed() }}
-    {{ utils.freed_margin() }}
+    margin-bottom: var(--freed-margin);
     font-weight: var(--heavy-font-weight);
 }
 
