@@ -1,0 +1,32 @@
+[ {
+  "id" : "18575f86-a249-2af9-44ea-2046777ccbec",
+  "name" : "clients_listing",
+  "display_width" : null,
+  "label" : "Clients listing",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 10,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "table_name_or_id" : "3553711",
+  "columns_to_fetch" : [ "case_study", "name", "logo", "promotion" ],
+  "display_columns" : [ "name" ],
+  "type" : "hubdbrow",
+  "default" : {
+    "id" : null
+  }
+}, {
+  "id" : "f8f67f3f-d6c7-2c5b-9a4a-1615f0c15c30",
+  "name" : "button_text",
+  "display_width" : null,
+  "label" : "Button text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

@@ -1,0 +1,14 @@
+
+{% for item in module.clients_listing %}
+  <h2>Name</h2>
+  {{ item.columns.name }}  
+   <img width=100px src="{{ resize_image_url( item.columns.logo.url, 100) }}" alt="{{ post.name }}" />
+  <h2>Promotional text</h2>
+	{{ item.columns.promotion }}
+
+  <h2>Link to case study</h2>
+  <a href="{{ item.columns.case_study }}">{{module.button_text}}</a>
+
+{% endfor %}
+
+
