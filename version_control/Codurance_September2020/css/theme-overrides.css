@@ -42,9 +42,15 @@ stylesheets or you can add your own custom styles.
   margin-top: var(--space-5);
 }
 
-{% call utils.small() %}
+{% call utils.medium() %}
   .region .dnd-section + .dnd-section {
-    margin-top: var(--space-3);
+    margin-top: var(--space-6);
+  }
+{% endcall %} 
+
+{% call utils.large_and_extra_large() %}
+  .region .dnd-section + .dnd-section {
+    margin-top: var(--space-7);
   }
 {% endcall %} 
 
