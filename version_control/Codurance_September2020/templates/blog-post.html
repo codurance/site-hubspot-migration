@@ -82,11 +82,25 @@ label: Blog Post
         <h2 class="blog-author-info__name">
           {{ content.blog_post_author.display_name }}
         </h2>
-        <a
-          class="blog-author-info__author-link"
-          href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
-          >See author's bio and posts</a
-        >
+          {% if locale == 'es' %}
+            <a
+              class="blog-author-info__author-link"
+              href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
+              >Ver biografía y publicaciones del autor</a
+            >
+          {% elif locale == 'pt' %}
+            <a
+              class="blog-author-info__author-link"
+              href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
+              >Veja a biografia e as publicações do autor</a
+            >
+          {% else %}
+            <a
+              class="blog-author-info__author-link"
+              href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
+              >See author's bio and posts</a
+            >
+          {% endif %} 
       {% else %}
         <div class="blog-author-info__outer">
           <img
@@ -98,11 +112,25 @@ label: Blog Post
             <h2 class="blog-author-info__name">
               {{ content.blog_post_author.display_name }}
             </h2>
+            {% if locale == 'es' %}
+            <a
+              class="blog-author-info__author-link"
+              href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
+              >Ver biografía y publicaciones del autor</a
+            >
+          {% elif locale == 'pt' %}
+            <a
+              class="blog-author-info__author-link"
+              href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
+              >Veja a biografia e as publicações do autor</a
+            >
+          {% else %}
             <a
               class="blog-author-info__author-link"
               href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
               >See author's bio and posts</a
             >
+          {% endif %} 
           </div>
         </div>
       {% endif %}
@@ -184,7 +212,13 @@ label: Blog Post
   <section class="related-blog-section hs-search-hidden">
     <div class="related-blog-section__inner page-center">
       <h2 class="related-blog-section__title">
-        Related Blogs
+        {% if locale == 'es' %}
+          Publicaciones relacionadas
+        {% elif locale == 'pt' %}
+          Publicações relacionadas
+        {% else %}
+          Related Blogs
+        {% endif %}
       </h2>
       <div class="related-blog-section__tag-container">
         {% if content.tag_list %}
@@ -228,11 +262,25 @@ label: Blog Post
                       class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12"
                     >
                       <li class="list-inline-item mr-0">
-                        By {{ post.blog_post_author.display_name }}
+                        {% if locale == 'es' %}
+                          Por
+                        {% elif locale == 'pt' %}
+                          Por
+                        {% else %}
+                          By
+                        {% endif %} 
+                        {{ post.blog_post_author.display_name }}
                       </li>
                       <li class="list-inline-item mx-2">·</li>
                       <li class="list-inline-item">
-                        Posted {{ post.publish_date_localized }}
+                        {% if locale == 'es' %}
+                          Publicado
+                        {% elif locale == 'pt' %}
+                          Publicado
+                        {% else %}
+                          Posted
+                        {% endif %} 
+                        {{ post.publish_date_localized }}
                       </li>
                     </ul>
                     <h5 class="custom-blog-listing__post-title">
