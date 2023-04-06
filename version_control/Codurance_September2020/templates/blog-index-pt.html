@@ -1,0 +1,245 @@
+<!--
+templateType: blog
+isAvailableForNewContent: true
+label: Blog Listing PT
+-->
+{% extends "./layouts/base.html" %}
+
+{% import '../snippets/button-snippets.html' as snippets %}
+
+{% import '../config/config.html' as config %}
+{% set form = config.newsletter_cta.pt %}
+
+
+{{ require_css(get_asset_url("../css/pages/blog-index.css")) }}
+{{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
+
+
+{% block body %}
+  {% if blog_author %}
+    {% include "./partials/author-page.html" %}
+  {% else %}
+    {% include "./partials/header-insights.html" %}
+
+    {% module 'global_search' 
+      path='../modules/Global-Search-Input' label="Search bar" no_wrapper=True %}
+
+      <div class="custom-blog-listing custom-bg-gray-light-v5">
+        <div class="page-center lateral-spacing container custom-pt-20 custom-pb-50">  
+          <div class="masonry-grid row custom-mb-70">
+            <div class="masonry-grid-sizer"></div>
+            {% for content in contents %}
+              {% if loop.index == 1 %}
+                <div class="custom-blog-listing__post-wrapper custom-blog-listing__post-wrapper--featured masonry-grid-item">
+                  <article class="custom-blog-listing__post custom-blog-listing__post--featured">
+                    <div class="custom-col-md-6 custom-bg-white">
+                      <div  class="custom-blog-listing__content-wrapper">
+                        <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
+                          <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
+                          <li class="list-inline-item mx-2">·</li>
+                          <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
+                        </ul>
+                        <h5 class="custom-blog-listing__post-title">
+                          <a class="custom-blog-listing__title-link" href="{{ content.absolute_url }}">
+                            {{ content.name }}</a>
+                        </h5>
+                        <p class="custom-blog-listing__post-description">
+                          {{ content.post_list_content|safe|truncatehtml(305, '...' , false)|striptags  }}
+                        </p>
+                        {% if content.tag_list %}
+                        <ul class="list-inline custom-font-size-12 mb-0">
+                          {% for tag in content.tag_list %}
+                          <li class="list-inline-item custom-mb-10">
+                            <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+                          </li>
+                          {% endfor %}
+                        </ul>
+                        {% endif %}
+                      </div>
+                    </div>
+                    <a href="{{ content.absolute_url }}"  class="custom-bg-white custom-col-md-6 custom-bg-size-cover custom-bg-pos-center custom-min-height-300"  style="background-image: url('{{ content.featured_image }}');"></a>
+                  </article>
+                </div>
+              {% endif %}
+
+              {% if loop.index > 1 %}
+                <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
+                  <article class="custom-blog-listing__post">
+                    {% if content.featured_image %}
+                    <a href="{{ content.absolute_url }}">
+                      <img class="custom-bg-white img-fluid w-100" src="{{ resize_image_url( content.featured_image,528 ) }}" alt="{{ content.name }}">
+                    </a>
+                    {% endif %}
+                    <div class="custom-bg-white custom-pa-30">
+                      <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
+                        <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
+                        <li class="list-inline-item mx-2">·</li>
+                        <li class="list-inline-item">Publicado {{ content.publish_date_localized }}</li>
+                      </ul>
+                      <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
+                        <a class="custom-blog-listing__title-link" href="{{ content.absolute_url }}">
+                          {{ content.name }}</a>
+                      </h5>
+
+                      {% if content.tag_list %}
+                      <ul class="list-inline custom-font-size-12 mb-0">
+                        {% for tag in content.tag_list %}
+                        <li class="list-inline-item custom-mb-10">
+                          <a class="tags custom-blog-listing__tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                      {% endif %}
+                    </div>
+                  </article>
+
+                </div>
+              {% endif %}
+
+              {% if loop.index == 1 %}
+                <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
+                  <!-- Static Card -->
+                  <article class="blog-cta-card blog-cta-card--cluster-page">
+                    <h3 class="blog-cta-card__title">Saiba mais sobre o impacto da Modernização de Software no seu negócio</h3>
+                    {{snippets.text_cta_right_arrow(
+                      classnames="blog-cta-card__link",
+                      url="https://info.codurance.com/pt/software-modernisation-insights",
+                      rel="noopener noreferrer",
+                      target="_blank",
+                      text="Learn More"
+                    )}}
+                  </article>
+                  <!-- End Static Card -->
+                </div>
+              {% endif %}
+
+
+              {% if loop.index == 3 %}
+                <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
+                  <!-- Static Card -->
+                  <article class="blog-cta-card blog-cta-card--tango-gradient">
+                    <h3 class="blog-cta-card__title">Já aprimorou suas habilidades hoje?</h3>
+                    {{snippets.text_cta_right_arrow(
+                      classnames="blog-cta-card__link",
+                      url="https://www.codurance.com/katalyst",
+                      rel="noopener noreferrer",
+                      target="_blank",
+                      text="Try Katalyst"
+                    )}}
+                  </article>
+                  <!-- End Static Card -->
+                </div>
+              {% endif %}
+
+              {% if loop.index == 5 %}
+                <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
+                  <!-- Static Card -->
+                  <article class="blog-cta-card blog-cta-card--crimson">
+                    <h3 class="blog-cta-card__title">Interessado em se juntar a nós?</h3>
+                    {{snippets.text_cta_right_arrow(
+                      classnames="blog-cta-card__link",
+                      url="https://www.codurance.com/careers/",
+                      rel="noopener noreferrer",
+                      target="_blank",
+                      text="Learn more"
+                    )}}
+                  </article>
+                  <!-- End Static Card -->
+                </div>
+              {% endif %}
+
+              {% if loop.index == 7 %}
+                <div class="custom-blog-listing__post-wrapper masonry-grid-item" >
+                  <!-- Static Card -->
+                  <article class="blog-cta-card blog-cta-card--newsletter">
+                  <div class="blog-cta-card__bg-image"></div>
+                    <h3 class="blog-cta-card__title">{{form.pending.text}}</h3>
+                    {% form "email_form" form_to_use={{form.form_id}} %}
+                  </article>
+                  <!-- End Static Card -->
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          {% if contents.total_page_count > 1 %}
+          <nav class="blog-pagination text-center" role="navigation" aria-label="Pagination Navigation">
+            <ul>
+            {% set page_list = [-8,-7,-6,-5,-4,-3,-2, -1, 0, 1, 2,3,4,5,6,7,8] %}
+            {% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+            {% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+            {% elif current_page_num == 2 %}{% set offset = 1 %}
+            {% elif current_page_num == 1 %}{% set offset = 2 %}
+            {% else %}{% set offset = 0 %}{% endif %}
+            {% if last_page_num %}
+              <li class="previous-page-button">
+                <a class="u-pagination-v1__item u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 custom-hidden-xs-down {{ "blog-pagination__prev-link--disabled" if !last_page_num }}" href="{{ blog_page_link(last_page_num) }}">
+                  <i class="las la-angle-left custom-mr-5"></i>
+                  Previous
+                </a>
+              </li>
+            {% endif %}
+            <div class="pagination-wrapper">
+              {% for page in page_list %}
+                {% set this_page = current_page_num + page + offset %}
+                {% if this_page > 0 and this_page <= contents.total_page_count %}
+                    <li>
+                    <a  aria-label="Goto Page {{this_page}}"
+                    {% if this_page == current_page_num %} 
+                      aria-label="Current Page, {{this_page}}"
+                      aria-current="true" 
+                    {% endif %}
+                      class="u-pagination-v1__item u-pagination-v1-4 custom-rounded-50 custom-pa-7-14 
+                      {{ "u-pagination-v1-4--active" if this_page == current_page_num }}" 
+                      href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+                    </li>
+                {% endif %}
+              {% endfor %}
+              {% if contents.total_page_count > 4 %}
+                  <li><a class="custom-pa-7-14"  rel="noopener noreferrer">...</a></li>
+                  <li><a aria-label="Goto Last Page" 
+                        class="u-pagination-v1__item u-pagination-v1-4 custom-rounded-50 custom-pa-7-14" 
+                        href="{{ blog_page_link(contents.total_page_count) }}">{{ contents.total_page_count }}</a></li>
+              {% endif %}
+            </div>
+            {% if next_page_num %}
+            <li class="next-page-button">
+              <a class="u-pagination-v1__item custom-hidden-xs-down u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 
+              {{ "blog-pagination__next-link--disabled" if !next_page_num }}" 
+              href="{{ blog_page_link(current_page_num + 1) }}">
+                Next
+                <i class="las la-angle-right custom-ml-5"></i>
+                </a>
+            </li>
+            {% endif %}
+            </ul>
+          </nav> {# end pagination navigation #}
+          {% endif %}
+        </div>
+      </div>
+
+  {% endif %}
+  {{ require_js(get_asset_url("../js/imageLoaded.js")) }}
+  {{ require_js(get_asset_url("../js/masonry.js")) }}
+
+  <script>
+    document.onreadystatechange = () => {
+      if (document.readyState === 'complete') {
+        const masonryGrid = document.querySelector('.masonry-grid');
+
+        const masonryOptions = {
+          columnWidth: '.masonry-grid-sizer',
+          itemSelector: '.masonry-grid-item',
+          gutter: 40, {# Gutter expressed in px #}
+          percentPosition: true
+        };
+
+        const makeMasonry = function() {
+          new Masonry(masonryGrid, masonryOptions);
+        }
+
+        imagesLoaded( masonryGrid, makeMasonry );
+      }
+    };
+  </script>
+{% endblock body %}
