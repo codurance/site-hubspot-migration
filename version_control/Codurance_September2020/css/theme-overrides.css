@@ -58,8 +58,8 @@ stylesheets or you can add your own custom styles.
   max-width: {{ theme.spacing.max_width }}px;
 }
 
-.dnd-section ul {
-  list-style-position: inside;
+.dnd-section .widget-type-rich_text ul {
+  margin-inline-start: 1em;
 }
 
 {###########################################################################}
