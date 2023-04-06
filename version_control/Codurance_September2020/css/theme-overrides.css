@@ -25,10 +25,6 @@ stylesheets or you can add your own custom styles.
 {##############################   _dnd_areas   #############################}
 {###########################################################################}
 
-.dnd-section {
-  padding-bottom: {{ theme.spacing.vertical_spacing }}px;
-  padding-top: {{ theme.spacing.vertical_spacing }}px;
-}
 
 .body-container__homepage .dnd-section:nth-child(odd) {
   background-color: {{ theme.global_colors.secondary_color.color }};
@@ -42,8 +38,28 @@ stylesheets or you can add your own custom styles.
   padding-bottom: 0;
 }
 
+.region .dnd-section + .dnd-section {
+  margin-top: var(--space-5);
+}
+
+{% call utils.medium() %}
+  .region .dnd-section + .dnd-section {
+    margin-top: var(--space-6);
+  }
+{% endcall %} 
+
+{% call utils.large_and_extra_large() %}
+  .region .dnd-section + .dnd-section {
+    margin-top: var(--space-7);
+  }
+{% endcall %} 
+
 .dnd-section > .row-fluid {
   max-width: {{ theme.spacing.max_width }}px;
+}
+
+.dnd-section ul {
+  list-style-position: inside;
 }
 
 {###########################################################################}
@@ -286,9 +302,7 @@ body .custom-menu-primary .submenu.level-2 .menu-item a.menu-link.active-item{
 }
 
 .blog-tag-filter__menu-link,
-{# .blog-post__tag-link, #}
 .blog-card__tag-link,
-{# .blog-post__author-name, #}
 .blog-card__title a {
   color: var(--shark);
 }
@@ -296,8 +310,6 @@ body .custom-menu-primary .submenu.level-2 .menu-item a.menu-link.active-item{
 .blog-card__tag-link:hover,
 .blog-card__title a:hover,
 .blog-tag-filter__menu-link:hover,
-{# .blog-post__tag-link:hover, #}
-{# .blog-post__author-name:hover, #}
 .blog-card__tag-link:focus,
 .blog-card__title a:focus,
 .blog-tag-filter__menu-link:focus,
@@ -328,16 +340,6 @@ body .custom-menu-primary .submenu.level-2 .menu-item a.menu-link.active-item{
   background-color: {{ theme.global_colors.primary_color.color }};
 }
 
-{# .blog-post__title {
-  color: {{ h2_color }};
-  font-family:{{ h2_font }};
-  font-size: {{ h2_size }}px;
-  font-weight: {{ theme.typography.h2_font_weight }};
-} #}
-
-{# .blog-post__author {
-  background-color: {{ theme.global_colors.secondary_color.color }};
-} #}
 
 #comments-listing .comment-reply-to {
   color: rgba({{ theme.typography.color|convert_rgb }}, {{ theme.typography.opacity * 0.01 }});
