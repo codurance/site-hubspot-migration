@@ -334,16 +334,6 @@ body .custom-menu-primary .submenu.level-2 .menu-item a.menu-link.active-item{
   background-color: {{ theme.global_colors.primary_color.color }};
 }
 
-{# .blog-post__title {
-  color: {{ h2_color }};
-  font-family:{{ h2_font }};
-  font-size: {{ h2_size }}px;
-  font-weight: {{ theme.typography.h2_font_weight }};
-} #}
-
-{# .blog-post__author {
-  background-color: {{ theme.global_colors.secondary_color.color }};
-} #}
 
 #comments-listing .comment-reply-to {
   color: rgba({{ theme.typography.color|convert_rgb }}, {{ theme.typography.opacity * 0.01 }});
