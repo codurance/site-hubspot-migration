@@ -302,9 +302,7 @@ body .custom-menu-primary .submenu.level-2 .menu-item a.menu-link.active-item{
 }
 
 .blog-tag-filter__menu-link,
-{# .blog-post__tag-link, #}
 .blog-card__tag-link,
-{# .blog-post__author-name, #}
 .blog-card__title a {
   color: var(--shark);
 }
@@ -312,8 +310,6 @@ body .custom-menu-primary .submenu.level-2 .menu-item a.menu-link.active-item{
 .blog-card__tag-link:hover,
 .blog-card__title a:hover,
 .blog-tag-filter__menu-link:hover,
-{# .blog-post__tag-link:hover, #}
-{# .blog-post__author-name:hover, #}
 .blog-card__tag-link:focus,
 .blog-card__title a:focus,
 .blog-tag-filter__menu-link:focus,
