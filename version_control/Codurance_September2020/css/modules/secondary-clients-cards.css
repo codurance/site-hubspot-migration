@@ -2,7 +2,7 @@
 
 
 .secondary-clients-cards-wrapper {
-    columns: 3 300px;
+    columns: 3 275px;
     column-gap: var(--grid-gap);
 }
 
@@ -28,7 +28,7 @@
 }
 
 .secondary-clients__card a {
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .card__description {
