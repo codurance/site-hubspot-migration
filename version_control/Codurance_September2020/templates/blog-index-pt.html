@@ -35,9 +35,9 @@ label: Blog Listing PT
                     <div class="custom-col-md-6 custom-bg-white">
                       <div  class="custom-blog-listing__content-wrapper">
                         <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
-                          <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
+                          <li class="list-inline-item mr-0">Por {{ content.blog_post_author.display_name }}</li>
                           <li class="list-inline-item mx-2">·</li>
-                          <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
+                          <li class="list-inline-item">Publicado {{ content.publish_date_localized }}</li>
                         </ul>
                         <h5 class="custom-blog-listing__post-title">
                           <a class="custom-blog-listing__title-link" href="{{ content.absolute_url }}">
@@ -72,7 +72,7 @@ label: Blog Listing PT
                     {% endif %}
                     <div class="custom-bg-white custom-pa-30">
                       <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
-                        <li class="list-inline-item mr-0">By {{ content.blog_post_author.display_name }}</li>
+                        <li class="list-inline-item mr-0">Por {{ content.blog_post_author.display_name }}</li>
                         <li class="list-inline-item mx-2">·</li>
                         <li class="list-inline-item">Publicado {{ content.publish_date_localized }}</li>
                       </ul>
@@ -175,7 +175,7 @@ label: Blog Listing PT
               <li class="previous-page-button">
                 <a class="u-pagination-v1__item u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 custom-hidden-xs-down {{ "blog-pagination__prev-link--disabled" if !last_page_num }}" href="{{ blog_page_link(last_page_num) }}">
                   <i class="las la-angle-left custom-mr-5"></i>
-                  Previous
+                  Anterior
                 </a>
               </li>
             {% endif %}
@@ -207,7 +207,7 @@ label: Blog Listing PT
               <a class="u-pagination-v1__item custom-hidden-xs-down u-pagination-v1-4 custom-brd-gray-light-v3 custom-rounded-50 custom-pa-7-16 
               {{ "blog-pagination__next-link--disabled" if !next_page_num }}" 
               href="{{ blog_page_link(current_page_num + 1) }}">
-                Next
+                Seguinte
                 <i class="las la-angle-right custom-ml-5"></i>
                 </a>
             </li>
