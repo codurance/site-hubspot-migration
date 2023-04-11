@@ -5,8 +5,10 @@
 <div class="secondary-clients-cards-wrapper lateral-spacing">
   {% for client in module.clients_listing %}
     <article class="secondary-clients__card">
-      <img width="100" src="{{ resize_image_url( client.columns.logo.url, 100) }}"  alt="{{ client.columns.name }} logo" />
-      <p class="card-description">{{ client.columns.promotion }}</p>
+      <img src="{{ resize_image_url( client.columns.logo.url, 100) }}" 
+            alt="{{ client.columns.name }} logo"
+            heihgt="40" width="100" loading="lazy" />
+      <p class="card__description">{{ client.columns.promotion }}</p>
 
       {% if client.columns.case_study %}
         {{ button_snippets.text_cta_right_arrow(
