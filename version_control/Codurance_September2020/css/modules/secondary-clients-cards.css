@@ -9,6 +9,7 @@
 .secondary-clients__card {
     display: flex;
     flex-direction: column;
+    align-items: start;
     gap: var(--space-3);
     padding: var(--space-3);
     margin-bottom: var(--grid-gap);
@@ -19,4 +20,17 @@
 
     {{ utils.card_shadow() }}
     {{ utils.card_border_radius() }}
+}
+
+.secondary-clients__card img {
+    width: auto;
+    height: 40px;
+}
+
+.secondary-clients__card a {
+    margin-bottom: 0;
+}
+
+.card__description {
+    {{ utils.natus() }}
 }
