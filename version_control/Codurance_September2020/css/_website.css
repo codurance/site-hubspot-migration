@@ -60,6 +60,11 @@ img{
   margin-bottom: 2em;
 }
 
+.dnd-section .page-header.section-header h1 {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+}
+
 .hs-get-in-touch-section .dnd-section > .row-fluid {
   position: relative;
 }
@@ -1717,12 +1722,7 @@ i.icon-bg-u {
     max-width: 660px;
     width: calc(100% - (50px * 2));
   }
-  .dnd-section .page-header.section-header {
-    max-width: 800px;
-    width: calc(100% - (50px * 2));
-    margin-left: auto;
-    margin-right: auto;
-  }
+
   .hs-get-in-touch-section .dnd-section > .row-fluid {
     max-width: 800px;
     width: calc(100% - (50px * 2));
@@ -1788,9 +1788,7 @@ i.icon-bg-u {
     padding-left:20px;
     padding-right:20px;
   }
-  .hs-home-section6 .dnd-section .page-header.section-header {
-    text-align: center;
-  }
+
   .hs-home-section6 {
     padding-top: 49px;
     padding-bottom: 49px;
