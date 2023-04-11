@@ -19,7 +19,7 @@ label: Blog Listing PT
   {% if blog_author %}
     {% include "./partials/author-page.html" %}
   {% else %}
-    {% include "./partials/header-insights.html" %}
+    {% include "./partials/header-insights-blog-pt.html" %}
 
     {% module 'global_search' 
       path='../modules/Global-Search-Input' label="Search bar" no_wrapper=True %}
@@ -138,7 +138,7 @@ label: Blog Listing PT
                     <h3 class="blog-cta-card__title">Interessado em se juntar a nós?</h3>
                     {{snippets.text_cta_right_arrow(
                       classnames="blog-cta-card__link",
-                      url="https://www.codurance.com/careers/",
+                      url="https://www.codurance.com/pt/careers/",
                       rel="noopener noreferrer",
                       target="_blank",
                       text="Learn more"

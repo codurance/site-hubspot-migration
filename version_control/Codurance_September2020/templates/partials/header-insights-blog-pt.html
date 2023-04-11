@@ -1,0 +1,34 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: false
+-->
+
+{{ require_css(get_asset_url("../../css/partials/header-insights.css")) }}
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+<header class="header-insights" role="banner">
+    <div class="header-insights__container">
+        <div class="header-insights__text">
+            <p>{% module 'title' path='@hubspot/text' label="Header title", no_wrapper=True %}</p>
+            <h1>{% module 'text' path='@hubspot/text' label="Header body", no_wrapper=True %}</h1>
+            <p>Veja mais publicações em inglês ({{snippets.text_cta_right_arrow(
+                      classnames="blog-cta-card__link",
+                      url="https://www.codurance.com/publications/",
+                      rel="noopener noreferrer",
+                      target="_blank",
+                      text="aqui"
+                    )}}).</p>
+        </div>
+        <div class="header-insights__image">
+            {% module 'linked_image',
+                path="@hubspot/linked_image",
+                img={
+                    "src": "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Insights%20Pages/Articles/Blog-header-insights.svg",
+                    "width": auto,
+                },
+                label="Header Image", 
+                no_wrapper=True        
+            %}
+        </div>
+    </div>
+</header>
