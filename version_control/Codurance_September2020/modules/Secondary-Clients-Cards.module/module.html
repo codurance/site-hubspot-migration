@@ -5,14 +5,14 @@
 <div class="secondary-clients-cards-wrapper lateral-spacing">
   {% for client in module.clients_listing %}
     <article class="secondary-clients__card">
-      <img width=100px src="{{ resize_image_url( client.columns.logo.url, 100) }}" alt="{{ post.name }}" />
+      <img width="100" src="{{ resize_image_url( client.columns.logo.url, 100) }}"  alt="{{ client.columns.name }} logo" />
       <p class="card-description">{{ client.columns.promotion }}</p>
 
       {% if client.columns.case_study %}
         {{ button_snippets.text_cta_right_arrow(
           url=client.columns.case_study,
           text=module.button_text,
-          aria_label_text="{{ client.columns.name }} logo"
+          aria_label_text="Go to {{ client.columns.name }} case study"
         )
         }}
       {% endif %}
