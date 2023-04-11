@@ -142,7 +142,8 @@
 
 /* Case studies section */
 .case-study .case-study-card-collection {
-  padding-bottom: 1.6em;
+  padding-bottom: var(--space-3);
+  padding-top: var(--space-3);
   background-size: 100% 18em;
 }
 
