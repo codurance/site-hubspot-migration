@@ -1,9 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+
 .secondary-clients-cards-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-3);
+    columns: 3 300px;
+    column-gap: var(--grid-gap);
 }
 
 .secondary-clients__card {
@@ -11,7 +11,11 @@
     flex-direction: column;
     gap: var(--space-3);
     padding: var(--space-3);
+    margin-bottom: var(--grid-gap);
     background: white;
+
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
 
     {{ utils.card_shadow() }}
     {{ utils.card_border_radius() }}
