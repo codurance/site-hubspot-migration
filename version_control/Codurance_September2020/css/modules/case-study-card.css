@@ -30,7 +30,7 @@
     display: flex;
     margin: 0 auto;
     justify-content: start;
-    max-width: calc(var(--content-max-width) + var(--space-3));
+    max-width: calc(var(--content-max-width) + var(--space-5));
     padding: var(--space-3);
     gap: var(--space-2);
 }
