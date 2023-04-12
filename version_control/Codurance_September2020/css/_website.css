@@ -60,7 +60,8 @@ img{
   margin-bottom: 2em;
 }
 
-.dnd-section .page-header.section-header h1 {
+.dnd-section .page-header.section-header h1,
+.dnd-section .page-header.section-header h2 {
     {{ utils.dudler() }}
     font-weight: var(--heavy-font-weight);
     margin-bottom: var(--space-0);
@@ -1789,12 +1790,6 @@ i.icon-bg-u {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .dnd-section .page-header.section-header {
-    text-align: left;
-    padding-left: 20px;
-    padding-right: 20px;
   }
 
   .dnd-section.has-author-section {
