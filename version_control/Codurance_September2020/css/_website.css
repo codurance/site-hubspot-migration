@@ -60,11 +60,6 @@ img{
   margin-bottom: 2em;
 }
 
-.dnd-section .page-header.section-header h1 {
-  {{ utils.dudler() }}
-  font-weight: var(--heavy-font-weight);
-}
-
 .hs-get-in-touch-section .dnd-section > .row-fluid {
   position: relative;
 }
@@ -1822,9 +1817,13 @@ i.icon-bg-u {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .dnd-section .page-header.section-header h1{
-    margin-bottom:25px;
+
+  .dnd-section .page-header.section-header h1 {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--space-3);
   }
+ 
   .dnd-section.has-author-section {
     margin-bottom: 300px;
   }
