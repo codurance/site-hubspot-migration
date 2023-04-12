@@ -33,6 +33,11 @@
     max-width: calc(var(--content-max-width) + var(--space-5));
     padding: var(--space-3);
     gap: var(--space-2);
+    scrollbar-width: none;
+}
+
+.case-study-card-collection__cards::-webkit-scrollbar {
+  display: none;
 }
 
 
