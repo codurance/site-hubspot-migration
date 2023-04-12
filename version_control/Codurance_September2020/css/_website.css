@@ -63,6 +63,7 @@ img{
 .dnd-section .page-header.section-header h1 {
     {{ utils.dudler() }}
     font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--space-0);
 }
 
 .hs-get-in-touch-section .dnd-section > .row-fluid {
@@ -1825,10 +1826,6 @@ i.icon-bg-u {
     padding-right: 20px;
   }
 
-  .dnd-section .page-header.section-header h1 {
-    margin-bottom: var(--space-3);
-  }
- 
   .dnd-section.has-author-section {
     margin-bottom: 300px;
   }
