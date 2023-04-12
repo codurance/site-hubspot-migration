@@ -56,13 +56,13 @@ img{
   margin-inline: auto;
 }
 
+.hs-site-page .page-header.section-header {
+  margin-bottom: 2em;
+}
+
 .dnd-section .page-header.section-header h1 {
     {{ utils.dudler() }}
     font-weight: var(--heavy-font-weight);
-}
-
-.hs-site-page .page-header.section-header {
-  margin-bottom: 2em;
 }
 
 .hs-get-in-touch-section .dnd-section > .row-fluid {
@@ -1810,7 +1810,7 @@ i.icon-bg-u {
   .hs-website-layout main .dnd-section {
     padding-top: 50px;
   }
-  
+
   .service-line__webinar-teaser.right{
     margin-bottom: 40px;
     text-align: center;
