@@ -56,6 +56,11 @@ img{
   margin-inline: auto;
 }
 
+.dnd-section .page-header.section-header h1 {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+}
+
 .hs-site-page .page-header.section-header {
   margin-bottom: 2em;
 }
@@ -1805,6 +1810,7 @@ i.icon-bg-u {
   .hs-website-layout main .dnd-section {
     padding-top: 50px;
   }
+  
   .service-line__webinar-teaser.right{
     margin-bottom: 40px;
     text-align: center;
@@ -1812,6 +1818,7 @@ i.icon-bg-u {
     margin-left: auto;
     margin-right: auto;
   }
+
   .dnd-section .page-header.section-header {
     text-align: left;
     padding-left: 20px;
@@ -1819,8 +1826,6 @@ i.icon-bg-u {
   }
 
   .dnd-section .page-header.section-header h1 {
-    {{ utils.dudler() }}
-    font-weight: var(--heavy-font-weight);
     margin-bottom: var(--space-3);
   }
  
