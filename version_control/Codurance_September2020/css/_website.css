@@ -6,11 +6,11 @@ look if there is anything specific to your landing pages.
 ****************************************************************************** */
 {% import './utils/utils.css' as utils %}
 
-iframe, embed, video{
+iframe, embed, video {
   max-width:100%;
 }
 
-img{
+img {
   max-width:100%;
   height:auto;
 }
@@ -57,7 +57,7 @@ img{
 }
 
 .hs-site-page .page-header.section-header {
-  margin-bottom: 2em;
+  margin-bottom: var(--space-5);
 }
 
 .dnd-section .page-header.section-header h1,
@@ -67,13 +67,19 @@ img{
     margin-bottom: var(--space-2);
 }
 
-{% call utils.small()%}
+{% call utils.small() %}
+  .hs-site-page .page-header.section-header {
+    margin-bottom: var(--space-4);
+  }
+
   .dnd-section .page-header.section-header h1,
   .dnd-section .page-header.section-header h2 {
     {{ utils.freed() }}
+    margin-bottom: var(--space-1);
     font-weight: var(--heavy-font-weight);
   }
 {% endcall %}
+
 .hs-get-in-touch-section .dnd-section > .row-fluid {
   position: relative;
 }
