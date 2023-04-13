@@ -64,7 +64,7 @@ img{
 .dnd-section .page-header.section-header h2 {
     {{ utils.dudler() }}
     font-weight: var(--heavy-font-weight);
-    margin-bottom: var(--space-0);
+    margin-bottom: var(--space-2);
 }
 
 {% call utils.small()%}
