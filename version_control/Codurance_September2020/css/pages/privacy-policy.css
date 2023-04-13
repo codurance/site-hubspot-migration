@@ -8,7 +8,6 @@
 
 .body-container-privacy-policy h2 {
     {{ utils.freed() }}
-    font-weight: var(--middle-font-weight);
     margin-bottom: var(--freed-margin);
     margin-top: calc(var(--freed-margin) * 2);
 }
