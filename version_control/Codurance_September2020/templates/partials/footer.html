@@ -21,7 +21,13 @@ label: Page Footer
               {% end_module_block %}
             </div>
             <div class="cm-footer-latest-blog-group span3">
-              <h2><span>Latest Blogs</span></h2>
+              {% if locale == 'es' %}
+                <h2><span>Últimas publicaciones</span></h2>
+              {% elif locale == 'pt' %}
+                <h2><span>Últimas publicações</span></h2>
+              {% else %}
+                <h2><span>Latest Blogs</span></h2>
+              {% endif %} 
                 {% rss_listing "my_rss_listing"
                   feed_source={rss_url='http://codurance-azurewebsites-net-3042464.hs-sites.com/publications/rss.xml', is_external=False, content_group_id='35491076028'},
                   click_through_text='Read more',
