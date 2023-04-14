@@ -1,0 +1,114 @@
+[ {
+  "id" : "68876293-d325-d7cc-8a00-1860a08d3207",
+  "name" : "select_language",
+  "display_width" : null,
+  "label" : "Select language",
+  "help_text" : "Please select a language to display the correct Hubdb clients table",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "en", "English" ], [ "es", "Spanish" ], [ "pt", "Portuguese" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "en"
+}, {
+  "id" : "18575f86-a249-2af9-44ea-2046777ccbec",
+  "name" : "clients_listing",
+  "display_width" : null,
+  "label" : "Clients listing",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 10,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "select_language",
+    "controlling_value_regex" : "en",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "table_name_or_id" : "clients",
+  "columns_to_fetch" : [ "case_study", "name", "logo", "promotion" ],
+  "display_columns" : [ "name" ],
+  "type" : "hubdbrow",
+  "default" : {
+    "id" : null
+  }
+}, {
+  "id" : "clients_listing_es",
+  "name" : "clients_listing_es",
+  "display_width" : null,
+  "label" : "Clients listing Spanish",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 10,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "select_language",
+    "controlling_value_regex" : "es",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "table_name_or_id" : "clients_es",
+  "columns_to_fetch" : [ "case_study", "name", "logo", "promotion" ],
+  "display_columns" : [ "name" ],
+  "type" : "hubdbrow",
+  "default" : {
+    "id" : null
+  }
+}, {
+  "id" : "e7a31542-b170-a6a8-0cbb-feb4c7b7b5b0",
+  "name" : "clients_listing_pt",
+  "display_width" : null,
+  "label" : "Clients listing Portuguese",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 10,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "select_language",
+    "controlling_value_regex" : "pt",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "table_name_or_id" : "clients_pt",
+  "columns_to_fetch" : [ "case_study", "name", "logo", "promotion" ],
+  "display_columns" : [ "name" ],
+  "type" : "hubdbrow",
+  "default" : {
+    "id" : null
+  }
+}, {
+  "id" : "f8f67f3f-d6c7-2c5b-9a4a-1615f0c15c30",
+  "name" : "button_text",
+  "display_width" : null,
+  "label" : "Button text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

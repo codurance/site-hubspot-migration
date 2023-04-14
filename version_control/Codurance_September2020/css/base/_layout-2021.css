@@ -6,6 +6,8 @@
   --content-inner-max-width: 1000px;
   --centered-content-lateral-spacing: 0.75rem;
   --dnd-vertical-spacing: 40px;
+  --grid-gap: var(--space-2);
+  
   box-sizing: border-box;
   
   --space-0: 8px;
