@@ -82,25 +82,18 @@ label: Blog Post
         <h2 class="blog-author-info__name">
           {{ content.blog_post_author.display_name }}
         </h2>
-          {% if locale == 'es' %}
             <a
               class="blog-author-info__author-link"
               href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
-              >Ver biografía y publicaciones del autor</a
-            >
-          {% elif locale == 'pt' %}
-            <a
-              class="blog-author-info__author-link"
-              href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
-              >Veja a biografia e as publicações do autor</a
-            >
-          {% else %}
-            <a
-              class="blog-author-info__author-link"
-              href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
-              >See author's bio and posts</a
-            >
-          {% endif %} 
+              >
+              {% if locale == 'es' %}
+                Ver biografía y publicaciones del autor
+              {% elif locale == 'pt' %}
+                Veja a biografia e as publicações do autor
+              {% else %}
+                See author's bio and posts
+              {% endif %} 
+            </a>
       {% else %}
         <div class="blog-author-info__outer">
           <img
@@ -112,25 +105,18 @@ label: Blog Post
             <h2 class="blog-author-info__name">
               {{ content.blog_post_author.display_name }}
             </h2>
-            {% if locale == 'es' %}
             <a
               class="blog-author-info__author-link"
               href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
-              >Ver biografía y publicaciones del autor</a
-            >
-          {% elif locale == 'pt' %}
-            <a
-              class="blog-author-info__author-link"
-              href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
-              >Veja a biografia e as publicações do autor</a
-            >
-          {% else %}
-            <a
-              class="blog-author-info__author-link"
-              href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
-              >See author's bio and posts</a
-            >
-          {% endif %} 
+              >
+              {% if locale == 'es' %}
+                Ver biografía y publicaciones del autor
+              {% elif locale == 'pt' %}
+                Veja a biografia e as publicações do autor
+              {% else %}
+                See author's bio and posts
+              {% endif %} 
+            </a>
           </div>
         </div>
       {% endif %}

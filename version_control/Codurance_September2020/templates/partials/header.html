@@ -40,7 +40,7 @@ label: Global main menu
 
             <a
                href="{{primary_lang_page_link}}"
-               {% if absolute_url is not string_containing es_lang_path %}class="active"{% endif %}
+               {% if absolute_url is not string_containing es_lang_path and absolute_url is not string_containing pt_lang_path %}class="active"{% endif %}
                rel="noopener noreferrer">
                 {{primary_lang|upper}}
             </a>
