@@ -6,11 +6,11 @@ look if there is anything specific to your landing pages.
 ****************************************************************************** */
 {% import './utils/utils.css' as utils %}
 
-iframe, embed, video{
+iframe, embed, video {
   max-width:100%;
 }
 
-img{
+img {
   max-width:100%;
   height:auto;
 }
@@ -57,8 +57,28 @@ img{
 }
 
 .hs-site-page .page-header.section-header {
-  margin-bottom: 2em;
+  margin-bottom: var(--space-5);
 }
+
+.dnd-section .page-header.section-header h1,
+.dnd-section .page-header.section-header h2 {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--space-2);
+}
+
+{% call utils.small() %}
+  .hs-site-page .page-header.section-header {
+    margin-bottom: var(--space-4);
+  }
+
+  .dnd-section .page-header.section-header h1,
+  .dnd-section .page-header.section-header h2 {
+    {{ utils.freed() }}
+    margin-bottom: var(--space-1);
+    font-weight: var(--heavy-font-weight);
+  }
+{% endcall %}
 
 .hs-get-in-touch-section .dnd-section > .row-fluid {
   position: relative;
@@ -208,7 +228,6 @@ img{
   padding-left: 27px;
   margin-left: 15px
 }
-
 
 .media .u-icon-v2 {
   border: none
@@ -1717,12 +1736,7 @@ i.icon-bg-u {
     max-width: 660px;
     width: calc(100% - (50px * 2));
   }
-  .dnd-section .page-header.section-header {
-    max-width: 800px;
-    width: calc(100% - (50px * 2));
-    margin-left: auto;
-    margin-right: auto;
-  }
+
   .hs-get-in-touch-section .dnd-section > .row-fluid {
     max-width: 800px;
     width: calc(100% - (50px * 2));
@@ -1740,7 +1754,7 @@ i.icon-bg-u {
     width: 50%;
   }
   .hs-get-in-touch-section form {
-    padding: 34px 10px;
+    padding: var(--space-4);
   }
   .hs-get-in-touch-section .dnd-section > .row-fluid {
     max-width: 770px;
@@ -1753,17 +1767,7 @@ i.icon-bg-u {
     margin-top: 0;
     padding-left: 0;
     padding-right: 0;
-  }
-  .hs-home-section6 .row-fluid .span4 {
-    width: 50%;
-    margin-left: 0;
-    padding-left: 15px;
-    float: left;
-    padding-right: 15px;
-  }
-  .hs-home-section6 .dnd-section > .row-fluid {
-    max-width: 750px;
-  }
+  }  
 }
 
 @media (max-width: 991px) {
@@ -1788,30 +1792,11 @@ i.icon-bg-u {
     padding-left:20px;
     padding-right:20px;
   }
-  .hs-home-section6 .dnd-section .page-header.section-header {
-    text-align: center;
-  }
-  .hs-home-section6 {
-    padding-top: 49px;
-    padding-bottom: 49px;
-  }
-  .hs-home-section4 .dnd-section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .hs-home-section3 .dnd-section {
-    padding-bottom: 80px;
-  }
-  .hs-home-section1 .dnd-section{
-    padding-bottom: 50px;
-    padding-top: 50px;
-  }
-  .hs-home-section2 .dnd-section {
-    padding-top: 0;
-  }
+
   .hs-website-layout main .dnd-section {
     padding-top: 50px;
   }
+
   .service-line__webinar-teaser.right{
     margin-bottom: 40px;
     text-align: center;
@@ -1819,14 +1804,7 @@ i.icon-bg-u {
     margin-left: auto;
     margin-right: auto;
   }
-  .dnd-section .page-header.section-header {
-    text-align: left;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .dnd-section .page-header.section-header h1{
-    margin-bottom:25px;
-  }
+
   .dnd-section.has-author-section {
     margin-bottom: 300px;
   }
@@ -1859,7 +1837,7 @@ i.icon-bg-u {
     padding-right: 20px;
   }
   .hs-get-in-touch-section form {
-    padding: 24px 20px;
+    padding: var(--space-3);
   }
   .hs-get-in-touch-section form .hs-input {
     width:100% !important;
@@ -1884,9 +1862,6 @@ i.icon-bg-u {
     padding-bottom: 50px;
   }
 
-  .hs-home-section6 .dnd-section > .row-fluid {
-    max-width: 570px;
-  }
 }
 
 @media (max-width: 575px) {
@@ -1903,13 +1878,6 @@ i.icon-bg-u {
     padding-left: 0;
   }
 
-  .hs-home-section6 .row-fluid .span4 {
-    width:100%;
-    margin-left: 0;
-    padding-left:0;
-    float:none;
-    padding-right:0;
-  }
 }
 
 
