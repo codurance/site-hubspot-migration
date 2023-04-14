@@ -6,7 +6,7 @@
   {% set previousEventsFilter = "&orderBy=-date&limit=4" %}
   {% set isEventEnglish = ("&language=English") %}
 
-  {% if locale == "en" %}
+  {% if locale == "en" or locale == "pt" %}
     {% set previousEvents = hubdb_table_rows(module.hubdb_table, previousEventsFilter + isEventEnglish) %}
   {% else %}
     {% set previousEvents = hubdb_table_rows(module.hubdb_table, previousEventsFilter) %}

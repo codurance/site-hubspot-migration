@@ -11,7 +11,7 @@
 
     {% set list = [] %}
 
-    {% if locale == "en" %}
+    {% if locale == "en" or locale == "pt" %}
         {% set list = hubdb_table_rows(module.hubdb, upcomingEventsFilter + isEventEnglish) %}
     {% else %}
         {% set list = hubdb_table_rows(module.hubdb, upcomingEventsFilter) %}
