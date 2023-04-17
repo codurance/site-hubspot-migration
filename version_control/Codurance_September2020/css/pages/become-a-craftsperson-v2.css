@@ -36,15 +36,6 @@
   }
 {% endcall %}
 
-.text-and-image__container .text-and-image__copy p {
-  {{ utils.base() }}
-}
-
-.text-and-image__container .text-and-image__copy h2 {
-  {{ utils.dudler() }}
-  font-weight: initial;
-}
-
 /*------------------------------------*\
   #Hero section
 \*------------------------------------*/
@@ -196,16 +187,6 @@
 
 .craftsperson-info .text-and-image__container {
   gap: 3.5em;
-  padding-bottom: 0;
-  padding-top: 1em;
-}
-
-.craftsperson-info .text-and-image__copy {
-  align-self: center;
-}
-
-.craftsperson-info .text-and-image__image > img {
-  transform: none;
 }
 
 {% call utils.large() %}
@@ -214,57 +195,9 @@
   }
 {% endcall %}
 
-{% call utils.medium() %}
-  .craftsperson-info .text-and-image__container {
-    padding-top: 3em;
-  }
-
-  .craftsperson-info .container--img-left {
-    padding-left: 0;
-    padding-right: 2.5em;
-  }
-
-  .craftsperson-info .text-and-image__image {
-    align-self: flex-start;
-  }
-
-  .craftsperson-info .container--img-left .text-and-image__image  {
-    transform: scale(1.5) translateX(-2.5em);
-  }
-
-  .craftsperson-info .container--img-right {
-    padding-left: 2.5em;
-    padding-right: 0;
-    padding-bottom: 3em;
-  }
-{% endcall %}
-
 {% call utils.small() %}
   .craftsperson-info .text-and-image__container {
     gap: 0;
-    padding-top: 0;
-  }
-
-  .craftsperson-info .text-and-image__copy h2 {
-    {{ utils.freed() }}
-    font-weight: initial;
-  }
-
-  .craftsperson-info .text-and-image__copy p {
-    {{ utils.natus() }}
-  }
-
-  .craftsperson-info .text-and-image__image {
-    max-width: 80%;
-  }
-
-  .craftsperson-info .container--img-left .text-and-image__image {
-    align-self: flex-start;
-    transform: translateX(-4.5em);
-  }
-
-  .craftsperson-info .container--img-right .text-and-image__image {
-    transform: translateX(2em);
   }
 {% endcall %}
 
