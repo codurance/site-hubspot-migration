@@ -42,6 +42,7 @@
 
 .header-title h1 {
     {{ utils.eames() }}
+    max-width: var(--eames-max-width);
 }
 
 .header__image-container {
