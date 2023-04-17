@@ -116,7 +116,7 @@
 {% if module.videos.hubdb_table %}
   {% set isOnlyEnglish = "" %}
     
-  {% if locale == "en" %}
+  {% if locale == "en" or locale == "pt" %}
     {% set isOnlyEnglish = "&language=English" %}
   {% endif %}
 

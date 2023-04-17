@@ -4,6 +4,8 @@
 {% import '../../config/config.html' as config %}
 {% if locale == "es" %}
   {% set copy = config.newsletter_cta.es %}
+{% elif locale == "pt" %}
+  {% set copy = config.newsletter_cta.pt %}
 {% else %}
   {% set copy = config.newsletter_cta.en %}
 {% endif %}
