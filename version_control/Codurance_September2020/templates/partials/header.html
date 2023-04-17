@@ -39,9 +39,9 @@ label: Global main menu
             {% endif %}
 
             <a
-               href="{{primary_lang_page_link}}"
-               {% if absolute_url is not string_containing es_lang_path and absolute_url is not string_containing pt_lang_path %}class="active"{% endif %}
-               rel="noopener noreferrer">
+              href="{{primary_lang_page_link}}"
+              {% if absolute_url is not string_containing es_lang_path and absolute_url is not string_containing pt_lang_path %}class="active"{% endif %}
+              rel="noopener noreferrer">
                 {{primary_lang|upper}}
             </a>
 
@@ -61,9 +61,9 @@ label: Global main menu
             {% endif %}
 
             <a
-               href="{{es_lang_page_link}}"
-               {% if absolute_url is string_containing es_lang_path %}class="active"{% endif %}
-               rel="noopener noreferrer">
+              href="{{es_lang_page_link}}"
+              {% if absolute_url is string_containing es_lang_path %}class="active"{% endif %}
+              rel="noopener noreferrer">
                 {{es_lang|upper}}
             </a>
           </li>
@@ -83,10 +83,10 @@ label: Global main menu
             {% endif %}
 
             <a
-               href="{{pt_lang_page_link}}"
-               {% if absolute_url is string_containing pt_lang_path %}class="active"{% endif %}
-               rel="noopener noreferrer">
-                {{pt_lang|upper}}
+              href="{{pt_lang_page_link}}"
+              {% if absolute_url is string_containing pt_lang_path %}class="active"{% endif %}
+              rel="noopener noreferrer">
+              {{pt_lang|upper}}
             </a>
           </li>
         </ul>
