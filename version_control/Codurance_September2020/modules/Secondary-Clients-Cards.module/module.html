@@ -1,0 +1,34 @@
+{% import '../../snippets/button-snippets.html' as button_snippets %}
+
+{{ require_css(get_asset_url("../../css/modules/secondary-clients-cards.css")) }}
+
+{% set clients_listing = module.clients_listing %}
+
+{% if module.select_language == "es" %}
+    {% set clients_listing = module.clients_listing_es %}
+{% elif module.select_language == "pt" %}
+    {% set clients_listing = module.clients_listing_pt %}
+{% endif %}
+
+
+<div class="secondary-clients-cards-wrapper">
+  {% for client in clients_listing %}
+    <article class="secondary-clients__card">
+      <img src="{{ resize_image_url( client.columns.logo.url, 100) }}" 
+            alt="{{ client.columns.name }} logo"
+            height="40" width="100" loading="lazy" />
+      <p class="card__description">{{ client.columns.promotion }}</p>
+
+      {% if client.columns.case_study %}
+        {{ button_snippets.text_cta_right_arrow(
+          url=client.columns.case_study,
+          text=module.button_text,
+          aria_label_text="Go to {{ client.columns.name }} case study"
+        )
+        }}
+      {% endif %}
+    </article>
+  {% endfor %}
+</div>
+
+

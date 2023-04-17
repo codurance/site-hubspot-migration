@@ -14,7 +14,7 @@
 {% set topics = topics|unique %}
 {% set languages = languages|unique %}
 
-{% if locale == "en" %}
+{% if locale == "en" or locale == "pt" %}
     {% set filterOptions = "&language=English" %}    
     {% set items = hubdb_table_rows("videos", filterOptions) %}    
     {% set languages = [] %}

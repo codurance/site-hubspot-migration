@@ -9,6 +9,8 @@ label: Landing Page With Menu
 
 {% if locale == 'es' %}
     {% set url_redirection = "https://www.codurance.com/es" %} 
+{% elif locale == 'pt' %}
+    {% set url_redirection = "https://www.codurance.com/pt" %} 
 {% endif %}
 
 {{ require_css(get_asset_url("../css/pages/landing-page-template.css")) }}

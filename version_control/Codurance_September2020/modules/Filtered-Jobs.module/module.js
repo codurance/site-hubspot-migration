@@ -104,7 +104,13 @@ const hasHybridCity = (city) => {
 };
 
 const renderApplyBtnLang = () => {
-  return location.pathname.includes("/es/") ? "Aplicar" : "Apply";
+  if (location.pathname.includes("/es/")) {
+    return "Aplicar";
+  }
+  if (location.pathname.includes("/pt/")) {
+    return "Aplicar";
+  }
+  return "Apply";
 };
 
 const renderLocations = (locationsArray) => {

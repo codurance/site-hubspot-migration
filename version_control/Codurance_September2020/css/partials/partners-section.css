@@ -8,12 +8,6 @@
     gap: 1em;
 }
 
-.partners-section .section-header {
-    max-width: 30em;
-    padding: 0;
-    margin: 0;
-}
-
 .partners-section .section-header h2 {
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);

@@ -26,29 +26,45 @@
 {% set allTechnologies = allTechnologies|unique %}
 {% set allServices = allServices|unique %}
 
-  {% if locale == 'en' %}
-    {% set filter = { title: "Filter",
-                      industry: "Industry",
-                      technology: "Technology",
-                      services: "Services"
-                    }
-    %}               
-    {% set infoMessage = { header: "We’re sorry, your search returned no results",
-                           paragraph: "Try adjusting your filters to find what you’re looking for."
-                         } 
-    %}
-  {% else %}
-    {% set filter = { title: "Filtro",
-                      industry: "Sector",
-                      technology: "Tecnología",
-                      services: "Servicios"
-                    }
+  {% set filter = { 
+    title: "Filter",
+    industry: "Industry",
+    technology: "Technology",
+    services: "Services"
+  }
+  %}       
+          
+  {% set infoMessage = { header: "We’re sorry, your search returned no results",
+        paragraph: "Try adjusting your filters to find what you’re looking for."
+      } 
+  %}
+
+  {% if locale == 'es' %}
+    {% set filter = { 
+        title: "Filtro",
+        industry: "Sector",
+        technology: "Tecnología",
+        services: "Servicios"
+      }
     %}
     {% set infoMessage = {  header: "Lo sentimos, tu búsqueda no ha obtenido resultados.",
-                            paragraph: "Intenta ajustar tus filtros para encontrar lo que buscas."
-                         } 
+              paragraph: "Intenta ajustar tus filtros para encontrar lo que buscas."
+          } 
     %}
+  {% endif %}
 
+  {% if locale == 'pt' %}
+    {% set filter = { 
+        title: "Filtro",
+        industry: "Indústria",
+        technology: "Tecnologia",
+        services: "Serviços"
+      }
+    %}
+    {% set infoMessage = {  header: "Lamentamos, sua pesquisa não retornou resultados",
+              paragraph: "Tente ajustar seus filtros para encontrar o que procura."
+          } 
+    %}  
   {% endif %}
 
 

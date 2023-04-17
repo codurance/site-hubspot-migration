@@ -3,10 +3,13 @@
 
 {% set language = module.language %}
 {% set spanish = 'es' %}
+{% set portuguese = 'pt' %}
 {% set english = 'en' %}
 {% import '../../config/config.html' as config %}
 {% if language == spanish %}
   {% set newsletter = config.newsletter_cta.es %}
+{% elif language == portuguese %}
+  {% set newsletter = config.newsletter_cta.pt %}
 {% else %}
   {% set newsletter = config.newsletter_cta.en %}
 {% endif %}

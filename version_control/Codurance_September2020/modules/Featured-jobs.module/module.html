@@ -1,6 +1,12 @@
 {{ require_css(get_asset_url("../../css/modules/featured-jobs.css")) }}
 
-{% if locale == 'es'  %}
+  {% if locale == 'es'  %}
+	{% set workType = { remote: "Remoto",
+						hybrid: "Híbrido"
+						  } 
+	%}
+  
+  {% elif locale == 'pt'  %}
 	{% set workType = { remote: "Remoto",
 						hybrid: "Híbrido"
 						  } 

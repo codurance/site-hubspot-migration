@@ -1,6 +1,12 @@
 
 {% if module.date_selector %}
     <span class="info__dot">·</span>
-    <span class="info__updated-date">Last updated: {{ module.date_selector | format_date('d MMM yyyy') }}</span>
+        {% if locale == 'es' %}
+            <span class="info__updated-date">Última actualización: {{ module.date_selector | format_date('d MMM yyyy') }}</span>
+        {% elif locale == 'pt' %}
+            <span class="info__updated-date">Última atualização: {{ module.date_selector | format_date('d MMM yyyy') }}</span>
+        {% else %}
+            <span class="info__updated-date">Last updated: {{ module.date_selector | format_date('d MMM yyyy') }}</span>
+        {% endif %}
 {% endif %}
 

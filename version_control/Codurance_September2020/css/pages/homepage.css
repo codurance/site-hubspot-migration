@@ -51,11 +51,6 @@
   padding: 0;
 }
 
-.hs-home-section6 .page-header.section-header {
-  padding-bottom: 22px;
-  margin-bottom: 48px;
-}
-
 .hs-home-section6 .widget-type-rich_text h2 {
   {{ utils.dudler() }}
   font-weight: var(--heavy-font-weight);

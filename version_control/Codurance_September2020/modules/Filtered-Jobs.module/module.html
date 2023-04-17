@@ -1,39 +1,64 @@
 {{ require_css(get_asset_url("../../css/modules/filtered-jobs.css")) }}
 
+{% set infoMessage = { 
+    header: "We’re sorry, your search returned no results.",
+    paragraph: "Try adjusting your filters to find what you’re looking for."
+  } 
+%}
+{% set filterTitle = {  
+    role: "Role",
+    locations: "Locations"
+  } 
+%}
+{% set workType = {  
+    hybrid: "Hybrid",
+    remote: "Remote",
+    all: "All"
+  } 
+%}
+
 {% if locale == 'es'  %}
-  {% set infoMessage = { header: "Lo sentimos, tu búsqueda no ha obtenido resultados.",
-                         paragraph: "Intenta ajustar tus filtros para encontrar lo que buscas."
-                        } 
+  {% set infoMessage = { 
+      header: "Lo sentimos, tu búsqueda no ha obtenido resultados.",
+      paragraph: "Intenta ajustar tus filtros para encontrar lo que buscas."
+    } 
   %}
 
-  {% set filterTitle = { role: "Puesto",
-                        locations: "Ubicaciones"
-                      } 
+  {% set filterTitle = { 
+      role: "Puesto",
+      locations: "Ubicaciones"
+    } 
   %}
-  {% set workType = { hybrid: "Híbrido",
-                      remote: "Remoto",
-                      all: "Todos"
-                    } 
-  %}
-
-{% else %}
-
-  {% set infoMessage = { header: "We’re sorry, your search returned no results.",
-                         paragraph: "Try adjusting your filters to find what you’re looking for."
-                        } 
-  %}
-  {% set filterTitle = {  role: "Role",
-                         locations: "Locations"
-                        } 
-  %}
-  {% set workType = {  
-                        hybrid: "Hybrid",
-                        remote: "Remote",
-                        all: "All"
-                  } 
+  {% set workType = { 
+      hybrid: "Híbrido",
+      remote: "Remoto",
+      all: "Todos"
+      } 
   %}
 
 {% endif %}
+
+{% if locale == 'pt' %}
+  {% set infoMessage = {
+    header: "Lamentamos, sua pesquisa não retornou resultados.",
+    paragraph: "Tente ajustar seus filtros para encontrar o que procura."
+    }
+  %}
+
+  {% set filterTitle = {  
+      role: "Vaga",
+      locations: "Locais"
+    }
+  %}
+
+  {% set workType = {
+      hybrid: "Híbrida",
+      remote: "Remota",
+      all: "Todas"
+    }
+  %}
+{% endif %}
+
 
 
 <h2 class="jobs__filter-title">{{ module.section_title }}</h2>
