@@ -47,6 +47,7 @@
 
 .header__text-container h1 {
     {{ utils.eames() }}
+    max-width: var(--eames-max-width);
 }
 
 .header__text-container p {
