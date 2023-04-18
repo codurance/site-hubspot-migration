@@ -29,22 +29,6 @@
   }
 {% endcall %}
 
-button.hs-image__grid__list__item__button {
-  all: unset;
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-button.hs-image__grid__list__item__button:focus {
-  outline: 3px solid #0bf;
-  outline-offset: 3px;
-}
-
-button.hs-image__grid__list__item__button:focus:not(:focus-visible) {
-  outline: none;
-}
-
 .hs-image__grid__list__item__image {
   position: relative;
   height: 100%;
