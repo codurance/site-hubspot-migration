@@ -163,12 +163,7 @@
 
     <ul class="hs-image__grid__list" aria-label="{{ grid_aria_label }}" role="list" data-grid_action_type="{{ module.grid_settings.group_image_click.image_click_functionality }}">
         {% for grid_item in grid_items %}
-            <li class="hs-image__grid__list__item"
-                data-lb_image_src="{{ grid_item.img_src }}"
-                {% if not navigate_on_click %}
-                    data-lb_href='{{ grid_item.link_url|tojson }}'
-                {% endif %}
-                >
+            <li class="hs-image__grid__list__item">
                 {% if navigate_on_click and grid_item.link_url.url.href %}
                     <a href="{{ grid_item.link_url.url.href }}"
                         {% if grid_item.link_url.rel %}
