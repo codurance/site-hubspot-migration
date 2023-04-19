@@ -82,10 +82,6 @@
     );
 }
 
-.featured-case-study .text-and-image__image {
-    align-self: center;
-}
-
 .featured-case-study .text-and-image__image img {
     transform: none;
 }
