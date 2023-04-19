@@ -9,7 +9,7 @@
         <a href="{{ href }}" {% if item.logo_link.open_in_new_tab %}target="_blank"{% endif %} {% if item.logo_link.no_follow %}rel="nofollow"{% endif %}>
           {% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}"' %}
 
-          <img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ sizeAttrs }}>
+          <img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ sizeAttrs }} loading="lazy">
         </a>
       {% endif %}
     </div>
