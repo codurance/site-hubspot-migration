@@ -3,6 +3,7 @@
 
 .text-and-image__container {
     padding: 2rem 1.2rem;
+    gap: var(--space-1);
     display: flex;
     flex-flow: column-reverse;
     overflow: hidden;
