@@ -31,6 +31,15 @@
     {{ utils.natus() }}
 }
 
+.text-and-image__copy ol {
+    list-style: auto;
+}
+
+.text-and-image__copy ol li {
+    margin-bottom: var(--space-1);
+    margin-left: var(--space-3);
+}
+
 .text-and-image__image {
     max-width: 70%;
     align-self: end;

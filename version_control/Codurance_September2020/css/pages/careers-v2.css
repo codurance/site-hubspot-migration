@@ -93,26 +93,13 @@
 
 {% set image_offset = "30%"%}
 
-.why-join-us{
+.why-join-us {
     {{ utils.black_to_navy() }}
     color: white;
     padding: 2em 0;
 }
 
-.why-join-us .text-and-image__copy p > a{
-    color: var(--tango-400);
-}
-
-.why-join-us .text-and-image__copy ol{
-    list-style: revert;
-}
-
-.why-join-us ol li{
-    margin-bottom: 0.5em;
-    margin-left: 1em;
-}
-
-.why-join-us .cta-button.button-secondary{
+.why-join-us .button-secondary {
     background: white;
     color: var(--persimmon);
 }
