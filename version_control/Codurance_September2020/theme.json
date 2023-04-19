@@ -7,7 +7,7 @@
       "name": "mobile",
       "mediaQuery": "@media (max-width: 767px)",
       "previewWidth": {
-        "value": 520
+        "value": 425
       }
     }
   ]

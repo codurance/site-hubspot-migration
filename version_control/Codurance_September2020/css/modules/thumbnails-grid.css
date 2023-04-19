@@ -1,0 +1,90 @@
+
+{% import '../utils/utils.css' as utils %}
+
+:root {
+  --blur: 3px;
+  --unblur: 0;
+  --scale: 1.2;
+  --unscale: 1;
+  --grayscale: 100%;
+  --ungrayscale: 0%;
+  --transition: 0.2s ease-in-out;
+}
+
+.hs-image__grid__list {
+  display: grid;
+  list-style-type: none;
+}
+
+.hs-image__grid__list__item {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  aspect-ratio: 3/2;
+}
+
+{% call utils.small() %}
+  .hs-image__grid__list__item {
+    aspect-ratio: 3/1;
+  }
+{% endcall %}
+
+.hs-image__grid__list__item__image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.hs-image__grid__item__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: var(--space-3);
+  opacity: 0;
+  transition: background-color 0.5s, opacity 0.5s;
+}
+
+.hs-image__grid__item__overlay__content {
+  {{ utils.freed() }}
+  font-weight: var(--middle-font-weight);
+  max-width: 14ch;
+  opacity: 1;
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+}
+
+/** Image hover transitions; **/
+.hs-image__grid__item__image--zoom_out {
+  transform: scale(var(--scale));
+  transition: var(--transition);
+}
+
+.hs-image__grid__list__item:hover .hs-image__grid__item__image--zoom_out {
+  transform: scale(var(--unscale));
+}
+
+.hs-image__grid__item__image--blur {
+  filter: blur(var(--unblur));
+  transition: var(--transition);
+}
+
+.hs-image__grid__list__item:hover .hs-image__grid__item__image--blur {
+  filter: blur(var(--blur));
+}
+
+.hs-image__grid__item__image--grayscale {
+  filter: grayscale(var(--ungrayscale));
+  transition: var(--transition);
+}
+
+.hs-image__grid__list__item:hover .hs-image__grid__item__image--grayscale {
+  filter: grayscale(var(--grayscale));
+}

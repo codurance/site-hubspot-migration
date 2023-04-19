@@ -1,10 +1,10 @@
 {% import '../utils/utils.css' as utils %}
 
-{% set max_module_width = "50em" %}
+
 
 .cm-text-img__container {
     margin: 2em auto;
-    max-width: {{ max_module_width }};
+    max-width: var(--content-inner-max-width);
 
     display: flex;
     flex-direction: column-reverse;

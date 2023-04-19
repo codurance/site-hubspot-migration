@@ -42,6 +42,7 @@
 
 .header-title h1 {
     {{ utils.eames() }}
+    max-width: var(--eames-max-width);
 }
 
 .header__image-container {
@@ -111,10 +112,6 @@
 .case-studies {
   {{ utils.tango_to_white() }}
   padding-top: 1.5em;
-}
-
-.case-studies .text-and-image__title {
-    font-weight: var(--heavy-font-weight);
 }
 
 .case-studies .case-study-card-collection {

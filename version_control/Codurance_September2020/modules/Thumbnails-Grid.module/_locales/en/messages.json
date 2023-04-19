@@ -1,0 +1,427 @@
+{
+  "default_text.default_close_button.default" : {
+    "message" : "Close lightbox",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_close_button.label" : {
+    "message" : "Close button",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_hover_message.default" : {
+    "message" : "<h3>Hover message title</h3><p>Here is a message to display on image hover.</p>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_hover_message.label" : {
+    "message" : "Default hover message",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_image_alt_text.default" : {
+    "message" : "Default image alt text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_image_alt_text.label" : {
+    "message" : "Default image alt text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_lightbox_message.default" : {
+    "message" : "<h3>Lightbox message title</h3><p>Here is a message to display on the lightbox display of the image.</p>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_lightbox_message.label" : {
+    "message" : "Default lightbox message",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.grid_aria_label.default" : {
+    "message" : "Image grid with {{ image_count }} images.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.grid_aria_label.label" : {
+    "message" : "Grid aria label",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.label" : {
+    "message" : "Default text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.grid_type.choices.uniform" : {
+    "message" : "Uniform grid",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.grid_type.label" : {
+    "message" : "Grid type",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.group_image_click.image_click_functionality.default" : {
+    "message" : "navigate",
+    "description" : null,
+    "placeholders" : null
+  },
+  "grid_settings.group_image_click.image_click_functionality.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "grid_settings.group_image_click.image_click_functionality.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "grid_settings.group_image_click.image_click_functionality.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "grid_settings.group_image_click.image_click_functionality.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "grid_settings.image_click_functionality.choices.lightbox" : {
+    "message" : "Open lightbox",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_click_functionality.choices.navigate" : {
+    "message" : "Navigate to URL",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_click_functionality.choices.nothing" : {
+    "message" : "Do nothing",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_click_functionality.label" : {
+    "message" : "Image click functionality",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.choices.blur" : {
+    "message" : "Blur",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.choices.grayscale" : {
+    "message" : "Grayscale",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.choices.no_effect" : {
+    "message" : "No effect",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.choices.zoom_out" : {
+    "message" : "Zoom out",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.label" : {
+    "message" : "Image hover effects",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.label" : {
+    "message" : "Settings",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.overlay_show_on.choices.always" : {
+    "message" : "Always on",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.overlay_show_on.choices.hover" : {
+    "message" : "Hover",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.overlay_show_on.choices.never" : {
+    "message" : "Never",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.overlay_show_on.label" : {
+    "message" : "When to show overlay",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.label" : {
+    "message" : "Display options",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.mobile_columns.inline_help_text" : {
+    "message" : "Show a different number of columns on mobile",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.mobile_columns.label" : {
+    "message" : "Adjust mobile columns",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.mobile_number_of_columns.label" : {
+    "message" : "Number of columns on mobile",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.number_of_columns.label" : {
+    "message" : "Number of columns",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Thumbnails-Grid",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.hover_message.inline_help_text" : {
+    "message" : "A message to display on grid image hover.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.hover_message.label" : {
+    "message" : "Hover message",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.img.default.alt" : {
+    "message" : "placeholder",
+    "description" : null,
+    "placeholders" : null
+  },
+  "slides.img.default.loading" : {
+    "message" : "disabled",
+    "description" : null,
+    "placeholders" : null
+  },
+  "slides.img.default.size_type" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "slides.img.default.src" : {
+    "message" : "https://14557846.fs1.hubspotusercontent-na1.net/hubfs/14557846/Imported%20images/placeholder.png",
+    "description" : null,
+    "placeholders" : null
+  },
+  "slides.img.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "slides.img.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.img.label" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.img.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "slides.label" : {
+    "message" : "Images",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.link_url.label" : {
+    "message" : "Link URL",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.container.label" : {
+    "message" : "Container",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.container.spacing.label" : {
+    "message" : "Spacing",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.1/1" : {
+    "message" : "1:1",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.16/9" : {
+    "message" : "16:9",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.2/3" : {
+    "message" : "2:3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.3/2" : {
+    "message" : "3:2",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.3/4" : {
+    "message" : "3:4",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.4/3" : {
+    "message" : "4:3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.label" : {
+    "message" : "Aspect ratio",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.corner.label" : {
+    "message" : "Corner radius",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.gap.inline_help_text" : {
+    "message" : "Customize the space between your images.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.gap.label" : {
+    "message" : "Space between images",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.group_gap.gap.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "styles.grid_images.group_gap.gap.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "styles.grid_images.group_gap.gap.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "styles.grid_images.group_gap.gap.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "styles.grid_images.label" : {
+    "message" : "Grid images",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.background.color.label" : {
+    "message" : "Background color",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.background.label" : {
+    "message" : "Background",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.background.spacing.label" : {
+    "message" : "Spacing",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.hover.color.label" : {
+    "message" : "Background color",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.hover.font.label" : {
+    "message" : "Text color",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.hover.label" : {
+    "message" : "Hover",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.label" : {
+    "message" : "Overlay",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.text.label" : {
+    "message" : "Text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "Styles",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.1/1" : {
+    "message" : "1:1",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.16/9" : {
+    "message" : "16:9",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.2/3" : {
+    "message" : "2:3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.3/2" : {
+    "message" : "3:2",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.3/4" : {
+    "message" : "3:4",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.4/3" : {
+    "message" : "4:3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.natural" : {
+    "message" : "Natural aspect ratio",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.label" : {
+    "message" : "Aspect ratio",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.corner.label" : {
+    "message" : "Corner radius",
+    "description" : "",
+    "placeholders" : null
+  }
+}

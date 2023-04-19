@@ -19,6 +19,7 @@
   --space-6: 64px;
   --space-7: 96px;
   --space-8: 128px;
+  --space-9: 192px;
 }
 
 *, *::before, &::after {

@@ -1,0 +1,352 @@
+{
+  "default_text.default_close_button.default" : {
+    "message" : "Cerrar lightbox",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_close_button.label" : {
+    "message" : "Botón de cierre",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_hover_message.default" : {
+    "message" : "<h3>Título de mensaje al colocar cursor</h3><p>Este es un mensaje para mostrar al colocar el cursor sobre la imagen.</p>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_hover_message.label" : {
+    "message" : "Mensaje predeterminado al colocar cursor",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_image_alt_text.default" : {
+    "message" : "Texto alt predeterminado",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_image_alt_text.label" : {
+    "message" : "Texto alt predeterminado",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_lightbox_message.default" : {
+    "message" : "<h3>Título de mensaje de lightbox</h3><p>Este es un mensaje para mostrar cuando se muestra la imagen en un lightbox.</p>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.default_lightbox_message.label" : {
+    "message" : "Mensaje predeterminado de lightbox",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.grid_aria_label.default" : {
+    "message" : "Cuadrícula de imágenes con {{ image_count }} imágenes.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.grid_aria_label.label" : {
+    "message" : "Etiqueta aria de cudrlícula",
+    "description" : "",
+    "placeholders" : null
+  },
+  "default_text.label" : {
+    "message" : "Texto predeterminado",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.grid_type.choices.uniform" : {
+    "message" : "Cuadrícula uniforme",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.grid_type.label" : {
+    "message" : "Tipo de cuadrícula",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_click_functionality.choices.lightbox" : {
+    "message" : "Abrir lightbox",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_click_functionality.choices.navigate" : {
+    "message" : "Navegar hasta URL",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_click_functionality.choices.nothing" : {
+    "message" : "No hacer nada",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_click_functionality.label" : {
+    "message" : "Función de clic en imagen.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.choices.blur" : {
+    "message" : "Desenfoque",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.choices.grayscale" : {
+    "message" : "Escala de grises",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.choices.no_effect" : {
+    "message" : "Sin efectos",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.choices.zoom_out" : {
+    "message" : "Alejar",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.image_hover_functionality.label" : {
+    "message" : "Efectos de cursor sobre imagen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.label" : {
+    "message" : "Configuración",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.overlay_show_on.choices.always" : {
+    "message" : "Siempre en",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.overlay_show_on.choices.hover" : {
+    "message" : "Colocar cursor",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.overlay_show_on.choices.never" : {
+    "message" : "Nunca",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.overlay_show_on.label" : {
+    "message" : "Cuando mostrar superpuesto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.label" : {
+    "message" : "Mostrar opciones",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.mobile_columns.inline_help_text" : {
+    "message" : "Muestra una cantidad distinta de columnas en dispositivos móviles",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.mobile_columns.label" : {
+    "message" : "Ajustar columnas móviles",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.mobile_number_of_columns.label" : {
+    "message" : "Cantidad de columnas en dispositivos móviles",
+    "description" : "",
+    "placeholders" : null
+  },
+  "grid_settings.uniform_display_options.number_of_columns.label" : {
+    "message" : "Número de columnas",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Cuadrícula de imágenes",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.hover_message.inline_help_text" : {
+    "message" : "Mensaje que se mostrará al colocar el cursor en la cuadrícula de imágenes.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.hover_message.label" : {
+    "message" : "Mensaje al colocar el cursor",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.img.inline_help_text" : {
+    "message" : "Para obtener mejores resultados, usa imágenes con relación de aspecto similar.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.img.label" : {
+    "message" : "Imagen",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.label" : {
+    "message" : "Imágenes",
+    "description" : "",
+    "placeholders" : null
+  },
+  "slides.link_url.label" : {
+    "message" : "URL del enlace",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.container.label" : {
+    "message" : "Contenedor",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.container.spacing.label" : {
+    "message" : "Espaciado",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.1/1" : {
+    "message" : "1:1",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.16/9" : {
+    "message" : "16:9",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.2/3" : {
+    "message" : "2:3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.3/2" : {
+    "message" : "3:2",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.3/4" : {
+    "message" : "3:4",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.choices.4/3" : {
+    "message" : "4:3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.aspect_ratio.label" : {
+    "message" : "Relación de aspecto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.corner.label" : {
+    "message" : "Radio de esquina",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.gap.inline_help_text" : {
+    "message" : "Personaliza el espacio entre las imágenes.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.gap.label" : {
+    "message" : "Espacio entre imágenes",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.label" : {
+    "message" : "Imágenes de cuadrícula",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.background.color.label" : {
+    "message" : "Color de fondo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.background.label" : {
+    "message" : "Fondo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.background.spacing.label" : {
+    "message" : "Espaciado",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.hover.color.label" : {
+    "message" : "Color de fondo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.hover.font.label" : {
+    "message" : "Color del texto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.hover.label" : {
+    "message" : "Colocar cursor",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.label" : {
+    "message" : "Transparencia",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.grid_images.overlay.text.label" : {
+    "message" : "Texto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.label" : {
+    "message" : "Estilos",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.1/1" : {
+    "message" : "1:1",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.16/9" : {
+    "message" : "16:9",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.2/3" : {
+    "message" : "2:3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.3/2" : {
+    "message" : "3:2",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.3/4" : {
+    "message" : "3:4",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.4/3" : {
+    "message" : "4:3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.choices.natural" : {
+    "message" : "Relación de aspecto natural",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.aspect_ratio.label" : {
+    "message" : "Relación de aspecto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "styles.lightbox_images.corner.label" : {
+    "message" : "Radio de esquina",
+    "description" : "",
+    "placeholders" : null
+  }
+}

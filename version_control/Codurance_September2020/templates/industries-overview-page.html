@@ -1,0 +1,110 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Industries Overview
+-->
+{% extends "./layouts/base.html" %}
+
+{{ require_css(get_asset_url("../css/pages/industries-overview.css")) }}
+
+{% block body %}
+
+<section class="header region">
+  <div class="header__text-container responsive-page-width lateral-spacing">
+    {% section_header "section_header" 
+      label="Header text" 
+    %}
+  </div>
+
+  <div class="header__image-container">
+    {% image "header_image"
+      label="Header image"
+      no_wrapper=True
+    %}
+    <div class="header__image-overlay"></div>
+  </div>
+</section>
+
+<main>  
+
+<section class="above-the-fold region">
+  {% module "above_the_fold"
+    path="../modules/Text-and-image.module" label="Above the fold section"
+  %}
+</section>
+
+<section class="featured-case-study region">
+  {% module "featured_case_study"
+    path="../modules/Text-and-image.module" label="Featured case study"
+  %}
+</section>
+
+<section class="industries-grid region">
+  <div class="industries-grid__title-container lateral-spacing">
+    {% header "industries_grid_title" 
+      label="Industries grid title", 
+      header_tag="h2"
+    %}
+  </div>
+
+  <div class="lateral-spacing">
+    {% module "industries_grid"
+      path="../modules/Thumbnails-Grid.module" label="Industries grid"
+    %}
+  </div>
+</section>
+
+<section class="testimonial">
+  {% module "testimonial"
+    path="../modules/Landing Page Modules/LP-testimonial-slider.module" label="Testimonial"
+    no_wrapper=True 
+  %}
+</section>
+
+<section class="banner-link region">
+  <div class="lateral-spacing">
+    {% module "banner_link"
+      path="../modules/Banner-Link.module" label="Banner"
+      no_wrapper=True 
+    %}
+  </div>
+</section>
+
+<section class="clients-logos region lateral-spacing">
+  {% module "clients_logos"
+    path="../modules/Clients-Logos.module" label="Clients logos"
+    no_wrapper=True 
+  %}
+</section>
+
+<section class="insights region">
+  <div class="lateral-spacing" aria-label="Newsletter form">
+    {% module "newsletter"
+      path="../modules/Newsletter-Form-Card.module" label="Newsletter form"
+      no_wrapper=True 
+    %}
+  </div>
+  
+  <div class="insights__title-container responsive-page-width lateral-spacing">
+    {% header "insights_title" 
+      label="Insights title", 
+      header_tag="h2"
+    %}
+  </div>
+  
+
+  {% module "insights"
+    path="../modules/Recent-posts-V2.module" label="Insights"
+    no_wrapper=True 
+  %}
+</section>
+
+<section class="cta_block">
+  {% module "cta_block"
+    path="../modules/LP-cta-block.module" label="CTA block"
+  %}
+</section>
+  
+</main>
+
+{% endblock body %}

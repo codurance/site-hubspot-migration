@@ -1,0 +1,906 @@
+[ {
+  "id" : "grid_items",
+  "name" : "grid_items",
+  "display_width" : null,
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : 60,
+    "sorting_label_field" : "grid_items.hover_message",
+    "default" : 9
+  },
+  "children" : [ {
+    "id" : "grid_items.img",
+    "name" : "img",
+    "display_width" : null,
+    "label" : "Image",
+    "inline_help_text" : "For best results, use images with similar aspect ratios.",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "src" : "https://www.codurance.com/hubfs/placeholder.png",
+      "alt" : "placeholder",
+      "size_type" : null,
+      "width" : 605,
+      "height" : 451,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "grid_items.link_url",
+    "name" : "link_url",
+    "display_width" : null,
+    "label" : "Link URL",
+    "inline_help_text" : "If <strong>Settings &#8594; Click functionality</strong> is set to <strong>&ldquo;Navigate to url&rdquo;</strong> grid images will go to this link.",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    }
+  }, {
+    "id" : "grid_items.hover_message",
+    "name" : "hover_message",
+    "display_width" : null,
+    "label" : "Hover message",
+    "inline_help_text" : "If <strong>Settings &#8594; Hover functionality</strong> is set to <strong>&ldquo;Show overlay&rdquo;</strong> this message will display on hover. Keep text brief for best results.",
+    "required" : false,
+    "locked" : false,
+    "enabled_features" : [ "standard_emphasis", "alignment" ],
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "img" : {
+      "src" : "https://14557846.fs1.hubspotusercontent-na1.net/hubfs/14557846/Imported%20images/placeholder.png",
+      "alt" : "placeholder",
+      "size_type" : null,
+      "width" : 605,
+      "height" : 451,
+      "loading" : "disabled"
+    },
+    "link_url" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    },
+    "hover_message" : "Hover message"
+  }, {
+    "img" : {
+      "src" : "https://14557846.fs1.hubspotusercontent-na1.net/hubfs/14557846/Imported%20images/placeholder.png",
+      "alt" : "placeholder",
+      "size_type" : null,
+      "width" : 605,
+      "height" : 451,
+      "loading" : "disabled"
+    },
+    "link_url" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    },
+    "hover_message" : "Hover message"
+  }, {
+    "img" : {
+      "src" : "https://14557846.fs1.hubspotusercontent-na1.net/hubfs/14557846/Imported%20images/placeholder.png",
+      "alt" : "placeholder",
+      "size_type" : null,
+      "width" : 605,
+      "height" : 451,
+      "loading" : "disabled"
+    },
+    "link_url" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    },
+    "hover_message" : "Hover message"
+  }, {
+    "img" : {
+      "src" : "https://14557846.fs1.hubspotusercontent-na1.net/hubfs/14557846/Imported%20images/placeholder.png",
+      "alt" : "placeholder",
+      "size_type" : null,
+      "width" : 605,
+      "height" : 451,
+      "loading" : "disabled"
+    },
+    "link_url" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    },
+    "hover_message" : "Hover message"
+  }, {
+    "img" : {
+      "src" : "https://14557846.fs1.hubspotusercontent-na1.net/hubfs/14557846/Imported%20images/placeholder.png",
+      "alt" : "placeholder",
+      "size_type" : null,
+      "width" : 605,
+      "height" : 451,
+      "loading" : "disabled"
+    },
+    "link_url" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    },
+    "hover_message" : "Hover message"
+  }, {
+    "img" : {
+      "src" : "https://14557846.fs1.hubspotusercontent-na1.net/hubfs/14557846/Imported%20images/placeholder.png",
+      "alt" : "placeholder",
+      "size_type" : null,
+      "width" : 605,
+      "height" : 451,
+      "loading" : "disabled"
+    },
+    "link_url" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    },
+    "hover_message" : "Hover message"
+  }, {
+    "img" : {
+      "src" : "https://14557846.fs1.hubspotusercontent-na1.net/hubfs/14557846/Imported%20images/placeholder.png",
+      "alt" : "placeholder",
+      "size_type" : null,
+      "width" : 605,
+      "height" : 451,
+      "loading" : "disabled"
+    },
+    "link_url" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    },
+    "hover_message" : "Hover message"
+  }, {
+    "img" : {
+      "src" : "https://14557846.fs1.hubspotusercontent-na1.net/hubfs/14557846/Imported%20images/placeholder.png",
+      "alt" : "placeholder",
+      "size_type" : null,
+      "width" : 605,
+      "height" : 451,
+      "loading" : "disabled"
+    },
+    "link_url" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    },
+    "hover_message" : "Hover message"
+  }, {
+    "img" : {
+      "src" : "https://14557846.fs1.hubspotusercontent-na1.net/hubfs/14557846/Imported%20images/placeholder.png",
+      "alt" : "placeholder",
+      "size_type" : null,
+      "width" : 605,
+      "height" : 451,
+      "loading" : "disabled"
+    },
+    "link_url" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    },
+    "hover_message" : "Hover message"
+  } ]
+}, {
+  "id" : "grid_settings",
+  "name" : "grid_settings",
+  "display_width" : null,
+  "label" : "Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "grid_settings.group_image_hover",
+    "name" : "group_image_hover",
+    "display_width" : null,
+    "label" : "Hover functionality",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "grid_settings.group_image_hover.image_hover_functionality",
+      "name" : "image_hover_functionality",
+      "display_width" : null,
+      "label" : "Image hover effects",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "choices" : [ [ "zoom_out", "Zoom out" ], [ "blur", "Blur" ], [ "grayscale", "Grayscale" ] ],
+      "multiple" : true,
+      "reordering_enabled" : false,
+      "preset" : null,
+      "type" : "choice"
+    }, {
+      "id" : "grid_settings.group_image_hover.overlay_show_on",
+      "name" : "overlay_show_on",
+      "display_width" : null,
+      "label" : "When to show overlay",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "always", "Always on" ], [ "hover", "Hover" ], [ "never", "Never" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "hover"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "overlay_show_on" : "hover"
+    }
+  }, {
+    "id" : "grid_settings.group_image_click",
+    "name" : "group_image_click",
+    "display_width" : null,
+    "label" : "Click functionality",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "grid_settings.group_image_click.image_click_functionality",
+      "name" : "image_click_functionality",
+      "display_width" : null,
+      "label" : "Image click functionality",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "navigate", "Navigate to URL" ], [ "nothing", "Do nothing" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "navigate"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "image_click_functionality" : "navigate"
+    }
+  }, {
+    "id" : "grid_settings.grid_type",
+    "name" : "grid_type",
+    "display_width" : null,
+    "label" : "Grid type",
+    "required" : false,
+    "locked" : true,
+    "display" : "select",
+    "choices" : [ [ "uniform", "Uniform grid" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "uniform"
+  }, {
+    "id" : "grid_settings.group_uniform_display_options",
+    "name" : "group_uniform_display_options",
+    "display_width" : null,
+    "label" : "Columns",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "grid_settings.group_uniform_display_options.number_of_columns",
+      "name" : "number_of_columns",
+      "display_width" : null,
+      "label" : "Number of columns",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 1,
+      "max" : 10,
+      "step" : 1,
+      "type" : "number",
+      "default" : 3
+    }, {
+      "id" : "grid_settings.group_uniform_display_options.mobile_columns",
+      "name" : "mobile_columns",
+      "display_width" : null,
+      "label" : "Adjust mobile columns",
+      "inline_help_text" : "Show a different number of columns on mobile",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "grid_settings.group_uniform_display_options.mobile_number_of_columns",
+      "name" : "mobile_number_of_columns",
+      "display_width" : null,
+      "label" : "Number of columns on mobile",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "grid_settings.group_uniform_display_options.mobile_columns",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "slider",
+      "min" : 1,
+      "max" : 4,
+      "step" : 1,
+      "type" : "number",
+      "default" : 1
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "number_of_columns" : 3,
+      "mobile_columns" : false,
+      "mobile_number_of_columns" : 1
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "group_image_hover" : {
+      "overlay_show_on" : "hover"
+    },
+    "group_image_click" : {
+      "image_click_functionality" : "navigate"
+    },
+    "grid_type" : "uniform",
+    "group_uniform_display_options" : {
+      "number_of_columns" : 3,
+      "mobile_columns" : false,
+      "mobile_number_of_columns" : 1
+    }
+  }
+}, {
+  "id" : "default_text",
+  "name" : "default_text",
+  "display_width" : null,
+  "label" : "Default text",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "default_text.default_hover_message",
+    "name" : "default_hover_message",
+    "display_width" : null,
+    "label" : "Default hover message",
+    "required" : false,
+    "locked" : true,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "<h3>Hover message title</h3><p>Here is a message to display on image hover.</p>"
+  }, {
+    "id" : "default_text.default_lightbox_message",
+    "name" : "default_lightbox_message",
+    "display_width" : null,
+    "label" : "Default lightbox message",
+    "required" : false,
+    "locked" : true,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "<h3>Lightbox message title</h3><p>Here is a message to display on the lightbox display of the image.</p>"
+  }, {
+    "id" : "default_text.default_image_alt_text",
+    "name" : "default_image_alt_text",
+    "display_width" : null,
+    "label" : "Default image alt text",
+    "required" : false,
+    "locked" : true,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Default image alt text"
+  }, {
+    "id" : "default_text.grid_aria_label",
+    "name" : "grid_aria_label",
+    "display_width" : null,
+    "label" : "Grid aria label",
+    "required" : false,
+    "locked" : true,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Image grid with {{ image_count }} images."
+  }, {
+    "id" : "default_text.default_close_button",
+    "name" : "default_close_button",
+    "display_width" : null,
+    "label" : "Close button",
+    "required" : false,
+    "locked" : true,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Close lightbox"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "default_hover_message" : "<h3>Hover message title</h3><p>Here is a message to display on image hover.</p>",
+    "default_lightbox_message" : "<h3>Lightbox message title</h3><p>Here is a message to display on the lightbox display of the image.</p>",
+    "default_image_alt_text" : "Default image alt text",
+    "grid_aria_label" : "Image grid with {{ image_count }} images.",
+    "default_close_button" : "Close lightbox"
+  }
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.grid_images",
+    "name" : "grid_images",
+    "display_width" : null,
+    "label" : "Grid images",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.grid_images.group_corner",
+      "name" : "group_corner",
+      "display_width" : null,
+      "label" : "Corner",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.grid_images.group_corner.corner",
+        "name" : "corner",
+        "display_width" : null,
+        "label" : "Radius",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "max" : 100,
+        "step" : 1,
+        "suffix" : "px",
+        "type" : "number"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : { }
+    }, {
+      "id" : "styles.grid_images.group_gap",
+      "name" : "group_gap",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.grid_images.group_gap.gap",
+        "name" : "gap",
+        "display_width" : null,
+        "label" : "",
+        "inline_help_text" : "Customize the space between your images.",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "max" : 100,
+        "step" : 2,
+        "suffix" : "px",
+        "type" : "number",
+        "default" : 16
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "gap" : 16
+      }
+    }, {
+      "id" : "styles.grid_images.overlay",
+      "name" : "overlay",
+      "display_width" : null,
+      "label" : "Overlay",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.grid_images.overlay.text",
+        "name" : "text",
+        "display_width" : null,
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "styles.grid_images.overlay.text.font",
+          "name" : "font",
+          "display_width" : null,
+          "label" : "",
+          "required" : false,
+          "locked" : false,
+          "visibility" : {
+            "controlling_field" : null,
+            "controlling_field_path" : null,
+            "controlling_value_regex" : null,
+            "property" : null,
+            "operator" : null,
+            "access" : null,
+            "hidden_subfields" : {
+              "bold" : true,
+              "italic" : true,
+              "underline" : true
+            }
+          },
+          "load_external_fonts" : true,
+          "type" : "font",
+          "default" : {
+            "font" : null,
+            "font_set" : "DEFAULT",
+            "styles" : null,
+            "size" : null,
+            "size_unit" : null,
+            "color" : null,
+            "variant" : null,
+            "fallback" : null,
+            "style" : null
+          }
+        } ],
+        "tab" : "STYLE",
+        "expanded" : false,
+        "type" : "group",
+        "default" : {
+          "font" : {
+            "font" : null,
+            "font_set" : "DEFAULT",
+            "styles" : null,
+            "size" : null,
+            "size_unit" : null,
+            "color" : null,
+            "variant" : null,
+            "fallback" : null,
+            "style" : null
+          }
+        }
+      }, {
+        "id" : "styles.grid_images.overlay.background",
+        "name" : "background",
+        "display_width" : null,
+        "label" : "Background",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "styles.grid_images.overlay.background.color",
+          "name" : "color",
+          "display_width" : null,
+          "label" : "Background color",
+          "required" : false,
+          "locked" : false,
+          "type" : "color",
+          "default" : {
+            "color" : null,
+            "opacity" : null
+          }
+        }, {
+          "id" : "515db3a9-99a9-e012-40a4-91b89b080bd3",
+          "name" : "blend_mode",
+          "display_width" : null,
+          "label" : "Blend mode",
+          "help_text" : "Activating this option will create a blend between the overlay's background and the image",
+          "required" : false,
+          "locked" : false,
+          "display" : "toggle",
+          "type" : "boolean",
+          "default" : false
+        } ],
+        "tab" : "STYLE",
+        "expanded" : false,
+        "type" : "group",
+        "default" : {
+          "color" : {
+            "color" : null,
+            "opacity" : null
+          },
+          "blend_mode" : false
+        }
+      }, {
+        "id" : "styles.grid_images.overlay.hover",
+        "name" : "hover",
+        "display_width" : null,
+        "label" : "Hover",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "grid_settings.group_image_hover.overlay_show_on",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "always",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
+        "children" : [ {
+          "id" : "styles.grid_images.overlay.hover.font",
+          "name" : "font",
+          "display_width" : null,
+          "label" : "Text color",
+          "required" : false,
+          "locked" : false,
+          "visibility" : {
+            "controlling_field" : null,
+            "controlling_field_path" : null,
+            "controlling_value_regex" : null,
+            "property" : null,
+            "operator" : null,
+            "access" : null,
+            "hidden_subfields" : {
+              "bold" : true,
+              "font" : true,
+              "italic" : true,
+              "size" : true,
+              "underline" : true
+            }
+          },
+          "load_external_fonts" : true,
+          "type" : "font",
+          "default" : {
+            "font" : null,
+            "font_set" : "DEFAULT",
+            "styles" : null,
+            "size" : null,
+            "size_unit" : null,
+            "color" : null,
+            "variant" : null,
+            "fallback" : null,
+            "style" : null
+          }
+        }, {
+          "id" : "styles.grid_images.overlay.hover.color",
+          "name" : "color",
+          "display_width" : null,
+          "label" : "Background color",
+          "required" : false,
+          "locked" : false,
+          "type" : "color",
+          "default" : {
+            "color" : null,
+            "opacity" : null
+          }
+        } ],
+        "tab" : "STYLE",
+        "expanded" : false,
+        "type" : "group",
+        "default" : {
+          "font" : {
+            "font" : null,
+            "font_set" : "DEFAULT",
+            "styles" : null,
+            "size" : null,
+            "size_unit" : null,
+            "color" : null,
+            "variant" : null,
+            "fallback" : null,
+            "style" : null
+          },
+          "color" : {
+            "color" : null,
+            "opacity" : null
+          }
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "text" : {
+          "font" : {
+            "font" : null,
+            "font_set" : "DEFAULT",
+            "styles" : null,
+            "size" : null,
+            "size_unit" : null,
+            "color" : null,
+            "variant" : null,
+            "fallback" : null,
+            "style" : null
+          }
+        },
+        "background" : {
+          "color" : {
+            "color" : null,
+            "opacity" : null
+          },
+          "blend_mode" : false
+        },
+        "hover" : {
+          "font" : {
+            "font" : null,
+            "font_set" : "DEFAULT",
+            "styles" : null,
+            "size" : null,
+            "size_unit" : null,
+            "color" : null,
+            "variant" : null,
+            "fallback" : null,
+            "style" : null
+          },
+          "color" : {
+            "color" : null,
+            "opacity" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "group_corner" : { },
+      "group_gap" : {
+        "gap" : 16
+      },
+      "overlay" : {
+        "text" : {
+          "font" : {
+            "font" : null,
+            "font_set" : "DEFAULT",
+            "styles" : null,
+            "size" : null,
+            "size_unit" : null,
+            "color" : null,
+            "variant" : null,
+            "fallback" : null,
+            "style" : null
+          }
+        },
+        "background" : {
+          "color" : {
+            "color" : null,
+            "opacity" : null
+          },
+          "blend_mode" : false
+        },
+        "hover" : {
+          "font" : {
+            "font" : null,
+            "font_set" : "DEFAULT",
+            "styles" : null,
+            "size" : null,
+            "size_unit" : null,
+            "color" : null,
+            "variant" : null,
+            "fallback" : null,
+            "style" : null
+          },
+          "color" : {
+            "color" : null,
+            "opacity" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "grid_images" : {
+      "group_corner" : { },
+      "group_gap" : {
+        "gap" : 16
+      },
+      "overlay" : {
+        "text" : {
+          "font" : {
+            "font" : null,
+            "font_set" : "DEFAULT",
+            "styles" : null,
+            "size" : null,
+            "size_unit" : null,
+            "color" : null,
+            "variant" : null,
+            "fallback" : null,
+            "style" : null
+          }
+        },
+        "background" : {
+          "color" : {
+            "color" : null,
+            "opacity" : null
+          },
+          "blend_mode" : false
+        },
+        "hover" : {
+          "font" : {
+            "font" : null,
+            "font_set" : "DEFAULT",
+            "styles" : null,
+            "size" : null,
+            "size_unit" : null,
+            "color" : null,
+            "variant" : null,
+            "fallback" : null,
+            "style" : null
+          },
+          "color" : {
+            "color" : null,
+            "opacity" : null
+          }
+        }
+      }
+    }
+  }
+} ]

@@ -19,7 +19,7 @@
 
 .text-and-image__copy h2 {
     {{ utils.freed() }}
-    font-weight: var(--light-font-weight);
+    font-weight: var(--heavy-font-weight);
 }
 
 .text-and-image__copy h3 {
@@ -68,8 +68,9 @@
     .text-and-image__container {
         padding: 2em 0;
     }
-    .text-and-image__copy h2{
+    .text-and-image__copy h2 {
         {{ utils.dudler() }}
+        font-weight: var(--heavy-font-weight);
     }
         
     .text-and-image__copy p{
