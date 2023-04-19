@@ -99,11 +99,6 @@
     padding: 2em 0;
 }
 
-.why-join-us .button-secondary {
-    background: white;
-    color: var(--persimmon);
-}
-
 .why-join-us .text-and-image__image {
     scale: 1.2;
     align-self: start;
