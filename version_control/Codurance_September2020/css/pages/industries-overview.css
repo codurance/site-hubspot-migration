@@ -45,13 +45,14 @@
     margin-bottom: 0;
 }
 
-.header__text-container h1 {
-    {{ utils.eames() }}
-    max-width: var(--eames-max-width);
+.header__text-container h1 { 
+    font-weight: var(--middle-font-weight);
 }
 
 .header__text-container p {
-    max-width: var(--freed-max-width);
+    {{ utils.dudler() }}
+    font-weight: var(--light-font-weight);
+    max-width: var(--dudler-max-width);
     margin-top: var(--space-2);
 }
 
@@ -79,6 +80,10 @@
         var(--slate), 
         transparent 50%
     );
+}
+
+.featured-case-study .text-and-image__image img {
+    transform: none;
 }
 
 .industries-grid__title-container {
