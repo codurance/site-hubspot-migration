@@ -82,10 +82,6 @@
     );
 }
 
-.featured-case-study .text-and-image__image img {
-    transform: none;
-}
-
 .industries-grid__title-container {
     max-width: var(--content-inner-max-width);
     margin-inline: auto;
