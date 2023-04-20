@@ -235,16 +235,12 @@
 }
 
 .academy-training .text-and-image__container {
-        max-width: var(--content-max-width);
+    max-width: var(--content-max-width);
 }
 
 {% call utils.small()%}
     .academy-training .text-and-image__container {
         flex-flow: column;
-    }
-
-    .academy-training .text-and-image__image {
-        margin-top: 2em;
     }
 {% endcall %}
 

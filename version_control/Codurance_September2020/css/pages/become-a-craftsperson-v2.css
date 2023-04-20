@@ -185,19 +185,9 @@
   padding-bottom: 1.25em;
 }
 
-.craftsperson-info .text-and-image__container {
-  gap: 3.5em;
-}
-
 {% call utils.large() %}
   .craftsperson-info {
     padding: 0 1em 1.25em 1em;
-  }
-{% endcall %}
-
-{% call utils.small() %}
-  .craftsperson-info .text-and-image__container {
-    gap: 0;
   }
 {% endcall %}
 
