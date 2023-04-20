@@ -91,7 +91,7 @@
   #Why join us
 \*------------------------------------*/
 
-{% set image_offset = "30%"%}
+{% set image_offset = "30%" %}
 
 .why-join-us {
     {{ utils.black_to_navy() }}
@@ -99,36 +99,13 @@
     padding: 2em 0;
 }
 
-.why-join-us .text-and-image__image {
-    scale: 1.2;
-    align-self: start;
-}
-
-.why-join-us .container--img-left img {
-    transform:translate(-20%);
-}
-
-
 {% call utils.small() %}
-    .why-join-us{
-        padding-bottom:0;
+    .why-join-us {
+        padding-bottom: 0;
     }
 
     .why-join-us .text-and-image__container{
         flex-direction: column;
-        overflow-x: clip;
-        overflow-y: visible;
-    }
-
-    .why-join-us .text-and-image__image{
-        max-width: none;
-        scale: 1;
-    }
-
-    .why-join-us .text-and-image__image img{
-        transform: translate(15%, {{ image_offset }} );
-        margin-top: calc( calc( -1 * {{ image_offset }} ) + 10% );
-        scale: revert;
     }
 {% endcall %}
 
@@ -261,10 +238,6 @@
         max-width: var(--content-max-width);
 }
 
-.academy-training .text-and-image__image img{
-        transform: initial;
-}
-
 {% call utils.small()%}
     .academy-training .text-and-image__container {
         flex-flow: column;
@@ -272,13 +245,6 @@
 
     .academy-training .text-and-image__image {
         margin-top: 2em;
-        align-self: center
-    }
-{% endcall %}
-
-{% call utils.medium_large_and_extra_large()%}
-    .academy-training .text-and-image__image {
-        align-self: start;
     }
 {% endcall %}
 
