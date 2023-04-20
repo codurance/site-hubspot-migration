@@ -68,7 +68,7 @@
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
-    "default" : ""
+    "default" : "center"
   }, {
     "id" : "2bacea72-5f8b-8245-2871-37e1c0c5df0d",
     "name" : "hide_image_on_mobile",
