@@ -10,9 +10,3 @@
   justify-content: start;
   gap: 3em;
 }
-
-{% call utils.small()%}
-  .public-sector .text-and-image__image {
-    display: none;
-  }
-{%endcall%}
