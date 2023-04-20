@@ -29,12 +29,6 @@
     margin-top: 3.5em;
 }
 
-/* !!!!!!!!!!! TEMPORARY STYLE UNTIL INSIGHTS OVERVIEW IS FINISHED !!!!!!!!!! */
-.first-crumb > a {
-  pointer-events: none;
-}
-/* */
-
 .header-title {
     margin-top: .5em;
     margin-bottom: 4em;
