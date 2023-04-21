@@ -79,18 +79,20 @@
         gap: 1.8em;
     }
 
-    .newsletter__form .hs-form{
+    .newsletter__form .hs-form {
         display: flex;
         align-items: baseline;
     }
 
-    .newsletter__form .hs-input{
-        width: 20em;
-        border-radius: 3px 0 0 3px;
-        height: unset;
+    .newsletter__form .hs-email {
+        width: 16rem;
     }
 
-    .newsletter__form .hs-button{
+    .newsletter__form .hs-input {
+        border-radius: 3px 0 0 3px;
+    }
+
+    .newsletter__form .hs-button {
         padding: 0.5em 3em;
         border-radius: 0 3px 3px 0;
     }
@@ -110,5 +112,9 @@
 
     .newsletter-text-content {
         max-width: 30ch;
+    }
+
+    .newsletter__form {
+        max-width: 50%;
     }
 {% endcall %}
