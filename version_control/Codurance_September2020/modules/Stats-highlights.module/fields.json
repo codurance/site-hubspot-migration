@@ -27,6 +27,7 @@
     "name" : "icon_class",
     "display_width" : null,
     "label" : "Icon Class",
+    "inline_help_text" : "For further information, you should use the naming class provided in <a href=\"https://icons8.com/line-awesome\">Line Awesome library</a> ",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
