@@ -10,7 +10,7 @@
 }
 
 .text-and-image__copy {
-    max-width: 48ch;
+    max-width: var(--freed-max-width);
     align-self: center;
 } 
 
@@ -45,6 +45,7 @@
     max-width: 70%;
     align-self: end;
 }
+
 .text-and-image__image img {
     transform: translate(20%);
 }
@@ -83,7 +84,7 @@
         font-weight: var(--heavy-font-weight);
     }
         
-    .text-and-image__copy p{
+    .text-and-image__copy p {
         {{ utils.base() }}
     }
 
