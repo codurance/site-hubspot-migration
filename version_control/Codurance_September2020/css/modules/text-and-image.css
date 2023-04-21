@@ -46,9 +46,6 @@
     align-self: end;
 }
 
-.text-and-image__image img {
-    transform: translate(20%);
-}
 
 {% call utils.medium() %}
     .text-and-image__copy {
@@ -70,9 +67,6 @@
         flex-direction: row-reverse;
     }
 
-    .text-and-image__image img {
-        transform: translate(5%, -5%);
-    }
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
