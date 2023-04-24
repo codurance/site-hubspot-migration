@@ -107,6 +107,11 @@
     .why-join-us .text-and-image__container{
         flex-direction: column;
     }
+
+    .why-join-us .text-and-image__image {
+        transform: translate(20%);
+        scale: 1.2;
+    }
 {% endcall %}
 
 /*------------------------------------*\
