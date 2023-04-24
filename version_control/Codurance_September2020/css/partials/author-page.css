@@ -1,14 +1,7 @@
-{% import '../../utils/utils.css' as utils %}
+{% import '../utils/utils.css' as utils %}
 
-.content-sm {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.custom-blog-author-listing hr {
-  background-color: rgba(0,0,0,.1);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.custom-blog-listing {
+  margin-top: var(--space-5);
 }
 
 .custom-blog-author-listing .page-center {
