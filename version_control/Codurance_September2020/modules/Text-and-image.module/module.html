@@ -4,9 +4,17 @@
 {% require_css %}
 	<style>
 		{% scope_css %}
-			.text-and-image__image {
-				align-self: {{ module.style.image_vertical_alignment }};
-			}
+			{% call utils.medium_large_and_extra_large() %}
+				.text-and-image__image {
+					align-self: {{ module.style.desktop.image_alignment }};
+				}
+			{% endcall %}
+
+			{% call utils.small() %}
+				.text-and-image__image {
+					align-self: {{ module.style.mobile.image_alignment }};
+				}
+			{% endcall %}
 
 			{% if module.style.hide_image_on_mobile %}
 				{% call utils.small() %}
