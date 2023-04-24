@@ -1,16 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
-.custom-blog-listing {
-  margin-top: var(--space-5);
-}
-
-.custom-blog-author-listing .page-center {
-  padding-left: 0.75em;
-  padding-right: 0.75em;
-}
-
 .blog-author {
-  padding: 0 0.75em 0.75em 0.75em;
+  margin-top: var(--space-5);
 }
 
 .blog-author__title {
@@ -55,8 +46,17 @@
   }
 {% endcall %}
 
+.custom-blog-listing {
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-5);
+}
+
 .author-listing-title {
   {{ utils.freed() }}
-  padding-top: 1em;
-  padding-bottom: 1em;
+  margin-top: var(--space-5);
+}
+
+.masonry-grid {
+  margin-top: var(--space-3);
 }
