@@ -5,8 +5,7 @@ label: Clients
 -->
 {% extends "./layouts/base.html" %}
 
-
-  {{ require_css(get_asset_url("../css/pages/clients.css")) }}
+{{ require_css(get_asset_url("../css/pages/clients.css")) }}
 
 {% block body %}
     <section>
@@ -14,7 +13,7 @@ label: Clients
     </section>
     {% if locale == 'en' %}
       <section class="public-sector">
-        {% module "public_service_banner" path="../modules/Text-and-image.module" label="Public Services Banner"    no_wrapper=True %}
+        {% module "public_service_banner" path="../modules/Text-and-image.module" label="Public Services Banner" %}
       </section>
     {% endif %}
     <section>
