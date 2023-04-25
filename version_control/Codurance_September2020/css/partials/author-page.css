@@ -64,8 +64,9 @@
   aspect-ratio: 16/9;
   object-fit: cover;
   {{ utils.card_border_radius_top() }}
-  }
-  .card__content {
+}
+
+.card__content {
     background-color: white;
     padding: var(--space-3);
     {{ utils.card_border_radius_bottom() }}
