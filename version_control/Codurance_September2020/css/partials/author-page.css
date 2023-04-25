@@ -89,6 +89,12 @@
   {{ utils.card_border_radius() }}
   display: flex;
   flex-direction: column;
+  transition: var(--cta-transition);
+}
+
+.author-blog__card:hover {
+  {{ utils.card_shadow_large() }}
+  transform: translateY(-0.3rem);
 }
 
 .card__img {
