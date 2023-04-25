@@ -65,11 +65,10 @@
 <div class="author-blog-listing custom-bg-gray-light-v5">
     <div class="container page-center lateral-spacing">
         <h2 class="author-listing-title">{{ group.public_title }}</h2>
-        <div class="masonry-grid row custom--mb-70">
-            <div class="masonry-grid-sizer custom-col-sm-1"></div>
+        <div class="masonry-grid">
+            <div class="masonry-grid-sizer"></div>
             {% for content in contents %}
-                <div class="masonry-grid-item custom-col-sm-6               
-                    custom-col-lg-4 custom-mb-30">
+                <div class="masonry-grid-item">
                     <article class="author-blog__card">
                         {% if content.featured_image %}
                         <a href="{{ content.absolute_url }}">
@@ -84,15 +83,15 @@
                                 Posted {{ content.publish_date_localized }}
                             </time>
 
-                            <h5 class="card__title h5 custom-color-black custom-font-weight-600 mb-4">
+                            <h5 class="card__title h5 custom-color-black custom-font-weight-600">
                                 <a class="author-blog-listing__title-link" href="{{ content.absolute_url }}">
                                 {{ content.name }}</a>
                             </h5>
 
                             {% if content.tag_list %}
-                                <ul class="card__tags custom-font-size-12 mb-0">
+                                <ul class="card__tags custom-font-size-12">
                                     {% for tag in content.tag_list %}
-                                        <li class="custom-mb-10">
+                                        <li>
                                             <a class="tags" 
                                                 href="{{ blog_tag_url(group.id, tag.slug) }}"
                                             >
