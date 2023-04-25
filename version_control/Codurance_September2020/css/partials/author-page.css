@@ -46,7 +46,7 @@
   }
 {% endcall %}
 
-.custom-blog-listing {
+.author-blog-listing {
   margin-top: var(--space-5);
   padding-top: var(--space-5);
   padding-bottom: var(--space-5);
