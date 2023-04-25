@@ -54,6 +54,7 @@
   margin-top: var(--space-5);
   padding-top: var(--space-5);
   padding-bottom: var(--space-5);
+  background-color: var(--athens-gray);
 }
 
 .masonry-grid {
@@ -109,7 +110,14 @@
 .card__date {
   {{ utils.natus() }}
   color: var(--mid-gray);
+}
 
+.card__title a {
+  color: black;
+}
+
+.card__title a:hover {
+  color: var(--persimmon--dark);
 }
 
 .card__tags {

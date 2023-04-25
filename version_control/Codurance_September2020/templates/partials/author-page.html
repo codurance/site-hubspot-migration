@@ -62,7 +62,7 @@
     </div>
 </div>
 
-<div class="author-blog-listing custom-bg-gray-light-v5">
+<div class="author-blog-listing">
     <div class="container page-center lateral-spacing">
         <h2 class="author-listing-title">{{ group.public_title }}</h2>
         <div class="masonry-grid">
@@ -83,13 +83,13 @@
                                 Posted {{ content.publish_date_localized }}
                             </time>
 
-                            <h5 class="card__title h5 custom-color-black custom-font-weight-600">
+                            <h3 class="card__title">
                                 <a class="author-blog-listing__title-link" href="{{ content.absolute_url }}">
                                 {{ content.name }}</a>
-                            </h5>
+                            </h3>
 
                             {% if content.tag_list %}
-                                <ul class="card__tags custom-font-size-12">
+                                <ul class="card__tags">
                                     {% for tag in content.tag_list %}
                                         <li>
                                             <a class="tags" 
