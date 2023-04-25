@@ -9,7 +9,7 @@
 
 .masonry-grid-sizer,
 .custom-blog-listing__post-wrapper {
-  --gutter: 2rem;
+  --gutter: var(--space-4);
   width: 100%;
   margin-bottom: var(--gutter);
 }
@@ -30,9 +30,8 @@
 {% call utils.large_and_extra_large() %}
   .masonry-grid-sizer,
   .custom-blog-listing__post-wrapper {
-    --gutter-xl: 4rem;
+    --gutter-xl: var(--space-6);
     --card-width: calc((100% - var(--gutter-xl)) / 3 );
-
     width: var(--card-width);
   }
 
