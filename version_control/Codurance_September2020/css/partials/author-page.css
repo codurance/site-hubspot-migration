@@ -46,10 +46,18 @@
   }
 {% endcall %}
 
+.author-listing-title {
+  {{ utils.freed() }}
+}
+
 .author-blog-listing {
   margin-top: var(--space-5);
   padding-top: var(--space-5);
   padding-bottom: var(--space-5);
+}
+
+.masonry-grid {
+  margin-top: var(--space-3);
 }
 
 .author-blog__card {
@@ -72,10 +80,17 @@
     {{ utils.card_border_radius_bottom() }}
 }
 
-.author-listing-title {
-  {{ utils.freed() }}
+.card__date {
+  {{ utils.natus() }}
+  color: var(--mid-gray);
+
 }
 
-.masonry-grid {
-  margin-top: var(--space-3);
+.card__title {
+  margin-top: var(--space-2);
 }
+
+.card__tags li {
+  display: inline-block;
+}
+

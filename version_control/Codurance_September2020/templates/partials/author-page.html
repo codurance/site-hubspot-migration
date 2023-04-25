@@ -80,18 +80,19 @@
                         </a>
                         {% endif %}
                         <div class="card__content">
-                            <ul class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12">
-                                <li class="list-inline-item">Posted {{ content.publish_date_localized }}</li>
-                            </ul>
-                            <h5 class="h5 custom-color-black custom-font-weight-600 mb-4">
+                            <time class="card__date" datetime="{{ content.publish_date_localized }}">
+                                Posted {{ content.publish_date_localized }}
+                            </time>
+
+                            <h5 class="card__title h5 custom-color-black custom-font-weight-600 mb-4">
                                 <a class="author-blog-listing__title-link" href="{{ content.absolute_url }}">
                                 {{ content.name }}</a>
                             </h5>
 
                             {% if content.tag_list %}
-                                <ul class="list-inline custom-font-size-12 mb-0">
+                                <ul class="card__tags custom-font-size-12 mb-0">
                                     {% for tag in content.tag_list %}
-                                        <li class="list-inline-item custom-mb-10">
+                                        <li class="custom-mb-10">
                                             <a class="tags" 
                                                 href="{{ blog_tag_url(group.id, tag.slug) }}"
                                             >
