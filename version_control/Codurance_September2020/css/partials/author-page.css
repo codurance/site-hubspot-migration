@@ -52,6 +52,25 @@
   padding-bottom: var(--space-5);
 }
 
+.author-blog__card {
+  display: flex;
+  flex-direction: column;
+  {{ utils.card_shadow() }}
+  {{ utils.card_border_radius() }}
+}
+
+.card__img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  {{ utils.card_border_radius_top() }}
+  }
+  .card__content {
+    background-color: white;
+    padding: var(--space-3);
+    {{ utils.card_border_radius_bottom() }}
+}
+
 .author-listing-title {
   {{ utils.freed() }}
   margin-top: var(--space-5);
