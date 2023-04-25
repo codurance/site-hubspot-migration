@@ -73,7 +73,6 @@
 
 .author-listing-title {
   {{ utils.freed() }}
-  margin-top: var(--space-5);
 }
 
 .masonry-grid {
