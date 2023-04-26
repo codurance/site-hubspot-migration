@@ -114,7 +114,4 @@
         max-width: 30ch;
     }
 
-    .newsletter__form {
-        max-width: 50%;
-    }
 {% endcall %}
