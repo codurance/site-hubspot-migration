@@ -1,0 +1,75 @@
+{% import '../utils/utils.css' as utils %}
+
+.blog-cta-card {
+    {{ utils.card_shadow() }}
+    transition: var(--cta-transition);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: var(--space-6) var(--space-4);
+    position: relative;
+}
+    
+.blog-cta-card:hover {
+    {{ utils.card_shadow_large() }}
+    transform: translateY(-0.3rem);
+}
+
+.blog-cta-card--cluster-page {
+    --background-link: url("https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Service%20Line%20Pages/Clusterpages/Insights-SM-Clusterpage-CTA-BG.svg");
+
+    background: var(--slate); /* fallback */
+    background: var(--background-link);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: white;
+    text-align: center;
+}
+
+.blog-cta-card--tango-gradient {
+    {{ utils.tango_to_white() }}
+    text-align: center;
+}
+
+.blog-cta-card--crimson {
+    background-color: var(--crimson);
+    color: white;
+    text-align: center;
+}
+
+.blog-cta-card--newsletter {
+    background: transparent linear-gradient(180deg,rgba(79,67,248,0.1) 0%,rgba(45,147,234,0.1) 100%) 0% 0% no-repeat padding-box;
+}
+
+.hs_cos_wrapper_type_form,
+.blog-cta-card--newsletter .hs-form .hs-button.primary.large {
+    width: 100%;
+}
+
+.blog-cta-card__title {
+    {{ utils.base() }}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--base-margin);
+}
+
+.blog-cta-card__description {
+    {{ utils.natus() }}
+}
+
+.blog-cta-card__link,
+.blog-cta-card__link:hover,
+.blog-cta-card__link:active,
+.blog-cta-card__link:focus {
+    color: inherit;
+}
+
+.blog-cta-card__link::after {
+    background: transparent;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}

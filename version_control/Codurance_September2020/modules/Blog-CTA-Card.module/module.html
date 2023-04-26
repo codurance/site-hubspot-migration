@@ -1,0 +1,14 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+{{ require_css(get_asset_url("../../css/modules/blog-cta-card.css")) }}
+
+<article class="blog-cta-card blog-cta-card--cluster-page">
+    <h3 class="blog-cta-card__title">Learn more about the impact of Software Modernisation on your business</h3>
+    
+    {{ snippets.text_cta_right_arrow(
+        classnames="blog-cta-card__link",
+        url="https://info.codurance.com/en/software-modernisation-insights",
+        rel="noopener noreferrer",
+        target="_blank",
+        text="Learn More"
+    ) }}
+</article>
