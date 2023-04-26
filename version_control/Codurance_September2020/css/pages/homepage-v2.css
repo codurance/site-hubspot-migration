@@ -103,9 +103,14 @@
     .software-consultancy {
         background-size: contain;
     }
-{%endcall%}
+{% endcall %}
 
-
+{% call utils.small() %}
+    .software-consultancy .text-and-image__image {
+        transform: translate(20%);
+        scale: 1.2;
+    }
+{% endcall %}
 
 /* ======================= 
     COMPASS SECTION 

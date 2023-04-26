@@ -3,14 +3,14 @@
 
 .text-and-image__container {
     padding: 2rem 1.2rem;
-    gap: var(--space-1);
+    gap: var(--space-2);
     display: flex;
     flex-flow: column-reverse;
     overflow: hidden;
 }
 
 .text-and-image__copy {
-    max-width: 48ch;
+    max-width: var(--freed-max-width);
     align-self: center;
 } 
 
@@ -32,13 +32,20 @@
     {{ utils.natus() }}
 }
 
+.text-and-image__copy ol {
+    list-style: auto;
+}
+
+.text-and-image__copy ol li {
+    margin-bottom: var(--space-1);
+    margin-left: var(--space-3);
+}
+
 .text-and-image__image {
     max-width: 70%;
     align-self: end;
 }
-.text-and-image__image img {
-    transform: translate(20%);
-}
+
 
 {% call utils.medium() %}
     .text-and-image__copy {
@@ -51,7 +58,7 @@
     .text-and-image__container{
         overflow: initial;
         flex-direction: row;
-        gap: 1em;
+        gap: var(--space-6);
         justify-content: space-between;
         margin: 0 auto;
         max-width: var(--content-inner-max-width);
@@ -60,9 +67,6 @@
         flex-direction: row-reverse;
     }
 
-    .text-and-image__image img{
-        transform: translate(5%, -5%);
-    }
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
@@ -74,7 +78,7 @@
         font-weight: var(--heavy-font-weight);
     }
         
-    .text-and-image__copy p{
+    .text-and-image__copy p {
         {{ utils.base() }}
     }
 

@@ -86,21 +86,10 @@
     padding: 1.6em 0;
 }
 
-.above-the-fold .text-and-image__image img {
-    transform: unset;
-}
-
-{% call utils.small() %}
-  .above-the-fold .text-and-image__image {
-    margin-bottom: 1.5em;
-  } 
-{% endcall %}
-
 {% call utils.large_and_extra_large() %}
   .above-the-fold .text-and-image__copy {
     max-width: 40ch;
   }
-
 {% endcall %}
 
 .case-studies {

@@ -56,36 +56,84 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
-    "id" : "e459841b-d119-2996-6508-e1c13f2e64d8",
-    "name" : "image_vertical_alignment",
+    "id" : "bd4313f2-3531-a5cb-a4e4-7165ca2df0e2",
+    "name" : "mobile",
     "display_width" : null,
-    "label" : "Image vertical alignment",
+    "label" : "Mobile",
     "required" : false,
     "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "start", "Top" ], [ "end", "Bottom" ], [ "center", "Center" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : ""
+    "children" : [ {
+      "id" : "e459841b-d119-2996-6508-e1c13f2e64d8",
+      "name" : "image_alignment",
+      "display_width" : null,
+      "label" : "Image alignment",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "start", "Left" ], [ "center", "Center" ], [ "end", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "center"
+    }, {
+      "id" : "2bacea72-5f8b-8245-2871-37e1c0c5df0d",
+      "name" : "hide_image_on_mobile",
+      "display_width" : null,
+      "label" : "Hide image on mobile",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : false
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "image_alignment" : "center",
+      "hide_image_on_mobile" : false
+    }
   }, {
-    "id" : "2bacea72-5f8b-8245-2871-37e1c0c5df0d",
-    "name" : "hide_image_on_mobile",
+    "id" : "9284e708-6557-6b2f-add9-786c165ca489",
+    "name" : "desktop",
     "display_width" : null,
-    "label" : "Hide image on mobile",
+    "label" : "Desktop",
     "required" : false,
     "locked" : false,
-    "display" : "toggle",
-    "type" : "boolean",
-    "default" : false
+    "children" : [ {
+      "id" : "3a232f98-6ae4-d49c-a9f3-30c768acaecf",
+      "name" : "image_alignment",
+      "display_width" : null,
+      "label" : "Image alignment",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "start", "Top" ], [ "center", "Center" ], [ "end", "Bottom" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "center"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "image_alignment" : "center"
+    }
   } ],
   "tab" : "STYLE",
   "expanded" : false,
   "type" : "group",
   "default" : {
-    "image_vertical_alignment" : "",
-    "hide_image_on_mobile" : false
+    "mobile" : {
+      "image_alignment" : "center",
+      "hide_image_on_mobile" : false
+    },
+    "desktop" : {
+      "image_alignment" : "center"
+    }
   }
 }, {
   "id" : "b6313458-c454-9679-bb22-f14a0b970af9",

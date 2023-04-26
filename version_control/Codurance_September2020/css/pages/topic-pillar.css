@@ -19,52 +19,11 @@
   padding-bottom: 0;
 }
 
-.page .text-and-image__copy h2 {
-  {{ utils.dudler() }}
-  font-weight: var(--heavy-font-weight);
-}
-
-.page .text-and-image__copy p {
-  {{ utils.base() }}
-}
-
-{% call utils.medium() %}
-  .page .text-and-image__copy {
-    max-width: 60%;
-  }
-
-  .page .text-and-image__image {
-    align-self: initial;
-  }
-{% endcall %}
-
 /* Above the fold section */
 .above-the-fold {
   padding-top: 5em;
   padding-bottom: 5em;
 }
-
-.above-the-fold .text-and-image__image {
-  align-self: center;
-}
-
-{% call utils.small() %}
-  .above-the-fold .text-and-image__image img {
-    transform: initial;
-  }
-{% endcall %}
-
-{% call utils.medium() %}
-  .above-the-fold .text-and-image__image {
-    align-self: start;
-  }
-{% endcall %}
-
-{% call utils.large_and_extra_large() %}
-  .above-the-fold .text-and-image__copy {
-    max-width: 70%;
-  }
-{% endcall %}
 
 /* Demystifying series section */
 .demystifying {
@@ -77,33 +36,11 @@
   padding-inline: 0;
 }
 
-.demystifying .text-and-image__image > img {
-  transform: initial;
-}
-
 .demystifying .video-hubdb__title {
   {{ utils.natus() }}
   font-weight: var(--middle-font-weight);
   margin-top: 0.8em;
 }
-
-{% call utils.small() %}
-  .demystifying .text-and-image__image {
-    display: none;
-  }
-{% endcall %}
-
-{% call utils.large_and_extra_large() %}
-  .demystifying .text-and-image__copy {
-    max-width: var(--freed-max-width);
-    align-self: center;
-  }
-
-  .demystifying .text-and-image__image {
-    align-self: center;
-  }
-{% endcall %}
-
 
 /* Promo cards sections */
 .promo-cards {

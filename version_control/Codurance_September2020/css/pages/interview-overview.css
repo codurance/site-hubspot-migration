@@ -45,7 +45,7 @@
 
 {% call utils.medium_large_and_extra_large() %}
     .interview-process-hero__container {
-        flex-direction:row;
+        flex-direction: row;
     }
     .interview-process-hero__image {
         transform: translateX(10%) scale(1.1);
@@ -128,17 +128,6 @@
   padding-top: 2em;
   background: linear-gradient(180deg, white, 80%, var(--tango-100));
 }
-
-.process-interview .text-and-image__copy h2 {
-  margin-bottom: 1em;
-  font-weight: revert;
-}
-
-{% call utils.small() %}
-  .process-interview .text-and-image__image {
-    display: none;
-  }
-{% endcall %}
 
 {% call utils.large_and_extra_large() %}
   .process-interview {
