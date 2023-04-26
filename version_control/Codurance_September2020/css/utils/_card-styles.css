@@ -6,6 +6,16 @@
   box-shadow: 0px 3px 22px rgba(0,0,0,0.16),0 1px 10px rgba(0,0,0,0.12);
 {% endmacro %}
 
+{% set radius = "10px" %}
+
 {% macro card_border_radius() %}
-  border-radius: 10px;
+  border-radius: {{ radius }};
+{% endmacro %}
+
+{% macro card_border_radius_top() %}
+  border-radius: {{ radius }} {{ radius }} 0 0;
+{% endmacro %}
+
+{% macro card_border_radius_bottom() %}
+  border-radius: 0 0 {{ radius }} {{ radius }};
 {% endmacro %}

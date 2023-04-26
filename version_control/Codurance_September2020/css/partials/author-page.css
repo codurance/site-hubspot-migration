@@ -1,23 +1,7 @@
-{% import '../../utils/utils.css' as utils %}
-
-.content-sm {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.custom-blog-author-listing hr {
-  background-color: rgba(0,0,0,.1);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.custom-blog-author-listing .page-center {
-  padding-left: 0.75em;
-  padding-right: 0.75em;
-}
+{% import '../utils/utils.css' as utils %}
 
 .blog-author {
-  padding: 0 0.75em 0.75em 0.75em;
+  margin-top: var(--space-5);
 }
 
 .blog-author__title {
@@ -64,6 +48,94 @@
 
 .author-listing-title {
   {{ utils.freed() }}
-  padding-top: 1em;
-  padding-bottom: 1em;
 }
+
+.author-blog-listing {
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-5);
+  background-color: var(--athens-gray);
+}
+
+.masonry-grid {
+  margin-top: var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.masonry-grid-item {
+  --gutter: var(--space-4);
+  width: 100%;
+  margin-bottom: var(--gutter);
+}
+
+{% call utils.medium() %}
+  .masonry-grid-item {
+    --card-width: calc((100% - var(--gutter)) / 2);
+    width: var(--card-width);
+  }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+  .masonry-grid-item {
+    --gutter-xl: var(--space-6);
+    --card-width: calc((100% - var(--gutter-xl))/3);
+    width: var(--card-width);
+  }
+{% endcall %}
+
+.author-blog__card {
+  {{ utils.card_shadow() }}
+  {{ utils.card_border_radius() }}
+  display: flex;
+  flex-direction: column;
+  transition: var(--cta-transition);
+}
+
+.author-blog__card:hover {
+  {{ utils.card_shadow_large() }}
+  transform: translateY(-0.3rem);
+}
+
+.card__img {
+  {{ utils.card_border_radius_top() }}
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.card__content {
+  {{ utils.card_border_radius_bottom() }}
+  background-color: white;
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.card__date {
+  {{ utils.natus() }}
+  color: var(--mid-gray);
+}
+
+.card__title a {
+  color: black;
+}
+
+.card__title a:hover {
+  color: var(--persimmon--dark);
+}
+
+.card__tags {
+  margin: unset;
+}
+
+.card__tags li {
+  display: inline-block;
+  margin-bottom: var(--space-0);
+}
+
+.card__tags li:not(:last-child) {
+  margin-right: var(--space--1);
+}
+
