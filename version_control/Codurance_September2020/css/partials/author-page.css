@@ -136,6 +136,6 @@
 }
 
 .card__tags li:not(:last-child) {
-  margin-right: var(--space-0);
+  margin-right: var(--space--1);
 }
 
