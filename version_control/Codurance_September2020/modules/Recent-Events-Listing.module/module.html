@@ -115,16 +115,40 @@
             </p>
           </div>
           <div class="card-slider-item__button-container">
-            {% set button = { icon: "icon-ungated",
-                              text: "Watch now" 
-                            }
-            %}
-            {% if event.video is string_containing 'livestorm' %}
-              {% set button = { icon: "icon-gated",
-                                text: "Register for free to watch" 
-                              }
-              %}
-            {% endif %}
+            {% if locale == "es" %}
+                      {% set button = { icon: "icon-ungated",
+                                        text: "Ver ahora",
+                                      }
+                      %}
+                      {% if event.video is string_containing 'livestorm' %}
+                        {% set button = { icon: "icon-gated",
+                                          text: "Regístrese gratis para ver",
+                                        }
+                        %}
+                      {% endif %}
+                    {% elif locale == "pt" %}
+                      {% set button = { icon: "icon-ungated",
+                                        text: "Assista agora",
+                                      }
+                      %}
+                      {% if event.video is string_containing 'livestorm' %}
+                        {% set button = { icon: "icon-gated",
+                                          text: "Cadastre-se grátis para assistir",
+                                        }
+                        %}
+                      {% endif %}
+                    {% else %}
+                      {% set button = { icon: "icon-ungated",
+                                        text: "Watch now",
+                                      }
+                      %}
+                      {% if event.video is string_containing 'livestorm' %}
+                        {% set button = { icon: "icon-gated",
+                                          text: "Register for free to watch",
+                                        }
+                        %}
+                      {% endif %}
+                    {% endif %}    
 
             {{snippets.button_primary(
                 classnames="card-item__video-button {{button.icon}}",
