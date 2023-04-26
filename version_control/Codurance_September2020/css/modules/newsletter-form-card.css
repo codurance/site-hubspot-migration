@@ -114,4 +114,7 @@
         max-width: 30ch;
     }
 
+    .hs-site-page .newsletter__form {
+        max-width: 50%;
+    }
 {% endcall %}
