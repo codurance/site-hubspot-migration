@@ -2,7 +2,6 @@
   list-style: none;
   margin-bottom: 0;
   margin-top: 0;
-  padding-bottom: 0.5rem;
 }
 
 {% call utils.medium_large_and_extra_large() %}
