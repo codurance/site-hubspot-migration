@@ -3,7 +3,6 @@
 .newsletter {
     padding-top: .8em;
     padding-bottom: .8em;
-  
 }
 
 .newsletter-wrapper {
@@ -49,9 +48,14 @@
 }
 
 .newsletter__form .hs-button {
-  margin-top: 0;
-  min-width: 8.5rem;
-  width: 100%;
+    margin-top: 0;
+    min-width: 8.5rem;
+    width: 100%;
+}
+
+.newsletter__form .submitted-message {
+        max-width: 40ch;
+        font-style: italic;
 }
 
 {% call utils.medium_and_large() %}
@@ -114,7 +118,4 @@
         max-width: 30ch;
     }
 
-    .newsletter__form {
-        max-width: 50%;
-    }
 {% endcall %}
