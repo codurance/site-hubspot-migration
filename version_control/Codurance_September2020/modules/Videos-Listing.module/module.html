@@ -68,19 +68,46 @@
                   </p>
                 </div>
                 <div class="card-item__button-container">
-                    {% set button = { icon: "icon-ungated",
-                                      text: "Watch now",
-                                      target: "" 
-                                    }
-                    %}
-            
-                  {% if video.video is string_containing 'livestorm' %}
-                  {% set button = { icon: "icon-gated",
-                                    text: "Register for free to watch",
-                                    target: "_blank" 
-                                  }
-                  %}
-                  {% endif %}
+                    {% if locale == "es" %}
+                      {% set button = { icon: "icon-ungated",
+                                        text: "Ver ahora",
+                                        target: "" 
+                                      }
+                      %}
+                      {% if video.video is string_containing 'livestorm' %}
+                        {% set button = { icon: "icon-gated",
+                                          text: "Regístrate gratis para ver",
+                                          target: "_blank" 
+                                        }
+                        %}
+                      {% endif %}
+                    {% elif locale == "pt" %}
+                      {% set button = { icon: "icon-ungated",
+                                        text: "Assista agora",
+                                        target: "" 
+                                      }
+                      %}
+                      {% if video.video is string_containing 'livestorm' %}
+                        {% set button = { icon: "icon-gated",
+                                          text: "Cadastrar grátis para ver",
+                                          target: "_blank" 
+                                        }
+                        %}
+                      {% endif %}
+                    {% else %}
+                      {% set button = { icon: "icon-ungated",
+                                        text: "Watch now",
+                                        target: "" 
+                                      }
+                      %}
+                      {% if video.video is string_containing 'livestorm' %}
+                        {% set button = { icon: "icon-gated",
+                                          text: "Register for free to watch",
+                                          target: "_blank" 
+                                        }
+                        %}
+                      {% endif %}
+                    {% endif %}            
 
                   {{snippets.button_primary(
                     classnames="card-item__video-button {{button.icon}}",
