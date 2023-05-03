@@ -58,21 +58,22 @@ label: NEW Case Study Template
 {# End Header Section #}
 
 {# Menu Section #}
-  {% module 'secondary_menu' path='../modules/secondary-menu.module' no_wrapper=True %}
+{% module 'secondary_menu' path='../modules/secondary-menu.module' no_wrapper=True %}
 
-{% dnd_area 'main', label="Main Section" %}
-  {# Intro Section #}
+<main class="region">
+  {% dnd_area 'main', label="Main Section" %}
+    {# Intro Section #}
+      {% include_dnd_partial path='./sections/text-module-section.html' context={} %}
+    
+    {# Video Section  #}
+      {% include_dnd_partial path='./sections/video-section.html' context={} %}
+
+    {# Text Section  #}
     {% include_dnd_partial path='./sections/text-module-section.html' context={} %}
-  
-  {# Video Section  #}
-    {% include_dnd_partial path='./sections/video-section.html' context={} %}
 
-  {# Text Section  #}
-  {% include_dnd_partial path='./sections/text-module-section.html' context={} %}
-
-  {# Testimonial Section #}
-    {% include_dnd_partial path='./sections/testimonial-section.html' context={} %}
-{% end_dnd_area %}
-</div>  
+    {# Testimonial Section #}
+      {% include_dnd_partial path='./sections/testimonial-section.html' context={} %}
+  {% end_dnd_area %}
+</main>  
 
 {% endblock body %}
