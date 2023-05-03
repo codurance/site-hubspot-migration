@@ -9,14 +9,12 @@ body {
   max-width: unset;
 }
 
-
 .case-study-header {
   background: url("https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Case%20Study%20Landing%20Pages/case-study-LP-header-bg-img.svg");
   background-position: top right;
   background-size: 70%;
   background-repeat: no-repeat;
-  padding-top: 4em;
-  padding-bottom: 2em;
+  padding-top: var(--space-6);
   max-width: 1300px;
   margin-inline: auto;
 }
@@ -25,8 +23,7 @@ body {
   display: flex;
 }
 
-
-.case-study-header__tag{
+.case-study-header__tag {
   background-image: url("https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Case%20Study%20Landing%20Pages/Case%20Studie%20Label.svg");
   background-position: top center;
   background-repeat: no-repeat;
@@ -40,9 +37,9 @@ body {
   top: -3em;
 }
 
-.case-study-header__industry{
-  margin-top: 2em;
+.case-study-header__industry {
   {{ utils.natus() }}
+  margin-top: var(--space-4);
   font-weight: var(--middle-font-weight);
 }
 
@@ -57,7 +54,7 @@ body {
   margin-top: 0.5em;
 }
 
-.case-study-header__text-block{
+.case-study-header__text-block {
   max-width: 45%;
   position: relative;
   margin-top: 1em;
@@ -73,19 +70,17 @@ body {
   margin-right: 2em;
 }
 
+.secondary-menu {
+  margin-top: var(--space-2);
+}
 
-
-
-{% call utils.medium()%}
-
+{% call utils.medium() %}
   .case-study-header {
     background-position-x: 130%;
   }
-
 {% endcall %}
 
 {% call utils.small() %}
-
   .case-study-header{
     padding-top: 1em;
     background-position-x: 130%;
@@ -113,14 +108,11 @@ body {
     {{ utils.natus() }}
   }
 
-
   .case-study-header__image{
     margin-right: 1em;
     max-width: 50%;
   }
 {% endcall %}
-
-
 
 /* ================================
   General styles for dnd_sections 

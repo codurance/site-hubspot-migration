@@ -1,19 +1,17 @@
 <!--
 templateType: page
 isAvailableForNewContent: true
-label: NEW Case Study Template
+label: Case Study Template
 -->
 
 {% extends "./layouts/base.html" %}
 
 {{ require_css(get_asset_url("../css/pages/case-study-template-v2.css")) }}
 
-
 {% block body %}
 
 <div class="case-study">
 
-{# Header Section #}
 <header class="case-study-header lateral-spacing">
   <div class="case-study-header__wrapper">
     <div class="case-study-header__text-block">
@@ -55,24 +53,19 @@ label: NEW Case Study Template
     </div>
   </div>
 </header>
-{# End Header Section #}
 
-{# Menu Section #}
-  {% module 'secondary_menu' path='../modules/secondary-menu.module' no_wrapper=True %}
+{% module 'secondary_menu' path='../modules/secondary-menu.module' no_wrapper=True %}
 
-{% dnd_area 'main', label="Main Section" %}
-  {# Intro Section #}
+<main class="region">
+  {% dnd_area 'main', label="Main Section" %}
     {% include_dnd_partial path='./sections/text-module-section.html' context={} %}
-  
-  {# Video Section  #}
+    
     {% include_dnd_partial path='./sections/video-section.html' context={} %}
 
-  {# Text Section  #}
-  {% include_dnd_partial path='./sections/text-module-section.html' context={} %}
+    {% include_dnd_partial path='./sections/text-module-section.html' context={} %}
 
-  {# Testimonial Section #}
     {% include_dnd_partial path='./sections/testimonial-section.html' context={} %}
-{% end_dnd_area %}
-</div>  
+  {% end_dnd_area %}
+</main>  
 
 {% endblock body %}
