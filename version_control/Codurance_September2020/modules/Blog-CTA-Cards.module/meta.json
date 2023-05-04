@@ -1,6 +1,6 @@
 {
   "global" : false,
-  "inline_help_text" : "List of CTA cards to show on blog listing pages. If the module is used manually only the first card will be displayed; to display multiple ones it must be programmed on the template.",
+  "inline_help_text" : "List of CTA cards to show on blog listing pages. This module can't be used standalone, it must be rendered using the corresponding snippet.",
   "icon" : "fontawesome-5.14.0:Square%20Full:SOLID",
   "host_template_types" : [ "BLOG_LISTING" ],
   "module_id" : 66973314806,

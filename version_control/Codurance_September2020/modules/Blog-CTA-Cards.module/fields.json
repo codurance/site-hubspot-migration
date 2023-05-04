@@ -127,18 +127,4 @@
       "message" : "Thanks for submitting the form."
     }
   }
-}, {
-  "id" : "56d1315b-45f2-1a2d-961c-83a622845ace",
-  "name" : "card_to_display",
-  "display_width" : null,
-  "label" : "Card to display",
-  "required" : true,
-  "locked" : true,
-  "display" : "select",
-  "choices" : [ [ "0", "Card 1" ], [ "1", "Card 2" ], [ "2", "Card 3" ], [ "3", "Card 4" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "default" : "0"
 } ]

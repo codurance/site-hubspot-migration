@@ -1,14 +1,1 @@
-{% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../../css/modules/blog-cta-card.css")) }}
-
-<article class="blog-cta-card">
-    <h3 class="blog-cta-card__title">{{ module.title }}</h3>
-    
-    {{ snippets.text_cta_right_arrow(
-        classnames="blog-cta-card__link",
-        url="{{ module.cta_link.cta_url.href }}",
-        rel="noopener noreferrer",
-        target="_blank",
-        text="{{ module.cta_link.cta_link_text }}"
-    ) }}
-</article>
