@@ -110,6 +110,19 @@
       "response_type" : "inline",
       "message" : "Thanks for submitting the form."
     }
+  }, {
+    "id" : "01f38ddb-5828-ae03-e487-ee4c2b6506da",
+    "name" : "style",
+    "display_width" : null,
+    "label" : "Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "blog-cta-card--cluster-page", "Software Modernisation" ], [ "blog-cta-card--tango-gradient", "Tango gradient" ], [ "blog-cta-card--crimson", "Crimson" ], [ "blog-cta-card--newsletter", "Newsletter" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
