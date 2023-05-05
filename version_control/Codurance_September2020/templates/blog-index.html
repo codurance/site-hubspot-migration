@@ -6,7 +6,8 @@ label: Blog Listing
 {% extends "./layouts/base.html" %}
 
 {% import '../config/config.html' as config %}
-{% set form = config.newsletter_cta.en %}
+{% set form = config.newsletter_cta[locale] %}
+
 
 {% import '../snippets/blog-cta-cards.html' as snippets %}
 
