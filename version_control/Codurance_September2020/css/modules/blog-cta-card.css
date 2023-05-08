@@ -15,8 +15,6 @@
     transform: translateY(-0.3rem);
 }
 
-/* CARD STYLES */
-
 .blog-cta-card--cluster-page {
     --background-link: url("https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Service%20Line%20Pages/Clusterpages/Insights-SM-Clusterpage-CTA-BG.svg");
 
@@ -43,8 +41,6 @@
 .blog-cta-card--newsletter {
     background: transparent linear-gradient(180deg,rgba(79,67,248,0.1) 0%,rgba(45,147,234,0.1) 100%) 0% 0% no-repeat padding-box;
 }
-
-/* END CARD STYLES */
 
 .hs_cos_wrapper_type_form,
 .blog-cta-card--newsletter .hs-form .hs-button.primary.large {
