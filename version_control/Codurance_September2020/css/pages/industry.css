@@ -96,6 +96,10 @@
   {{ utils.tango_to_white() }}
   padding-top: 1.5em;
 }
+  
+.case-studies .secondary-header {
+  max-width: var(--freed-max-width);
+}
 
 .case-studies .case-study-card-collection {
     background: unset;
@@ -104,6 +108,8 @@
 .case-studies .case-study-card {
   margin-bottom: 0;
 }
+
+
 
 .promotion {
     {{ utils.slate_to_woodsmoke() }}
