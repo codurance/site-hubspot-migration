@@ -1,0 +1,24 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+
+{% import './button-snippets.html' as snippets %}
+
+{% macro blog_cta_card(card) %}
+    <article class="blog-cta-card {{ card.style }}">
+        <h3 class="blog-cta-card__title">{{ card.title }}</h3>
+
+        {% if card.cta_or_newsletter == "cta" %}
+            {{ snippets.text_cta_right_arrow(
+                classnames="blog-cta-card__link",
+                url="{{ card.cta_link.cta_url.href }}",
+                rel="noopener noreferrer",
+                target="_blank",
+                text="{{ card.cta_link.cta_link_text }}"
+            ) }}
+        {% else %}
+            {% form "card_form" form_to_use={{ card.form.form_id }} %}
+        {% endif %}
+    </article>
+{% endmacro %}

@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "inline_help_text" : "List of CTA cards to show on blog listing pages. This module can't be used standalone, it must be rendered using the corresponding snippet.",
+  "icon" : "fontawesome-5.14.0:Square%20Full:SOLID",
+  "host_template_types" : [ "BLOG_LISTING" ],
+  "module_id" : 66973314806,
+  "label" : "Blog CTA Cards",
+  "is_available_for_new_content" : true
+}
