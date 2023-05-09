@@ -32,6 +32,10 @@ menu items appear, including the link and hover effects.
 }
 
 /* Breadcrumbs */
+.hs-breadcrumb-menu-wrapper {
+  min-height: 50px;
+}
+
 .first-crumb {
   padding-left: 0;
 }

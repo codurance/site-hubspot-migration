@@ -34,30 +34,33 @@ body {
   padding: 1.2em;
 
   position: absolute;
-  top: -3em;
+  top: calc(var(--space-5) * -1);
 }
 
-.case-study-header__industry {
-  {{ utils.natus() }}
+.case-study-header__breadcrumbs {
   margin-top: var(--space-4);
-  font-weight: var(--middle-font-weight);
+}
+
+.hs-breadcrumb-label,
+.hs-breadcrumb-menu-divider:before {
+  color: var(--shark);
 }
 
 .case-study-header__text-block .page-header.section-header h1 {
   {{ utils.eames() }}
   font-weight: var(--heavy-font-weight);
-  margin-top: 0.5em;
+  margin-top: var(--space-0);
 }
 
 .case-study-header__text-block .page-header.section-header p {
   line-height: var(--base-line-height);
-  margin-top: 0.5em;
+  margin-top: var(--space-0);
 }
 
 .case-study-header__text-block {
   max-width: 45%;
   position: relative;
-  margin-top: 1em;
+  margin-top: var(--space-0);
 }
 
 .case-study-header__text-block .custom-btn {
