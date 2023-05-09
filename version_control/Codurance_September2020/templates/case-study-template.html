@@ -18,14 +18,15 @@ label: Case Study Template
       <span class="case-study-header__tag">
         Case Study
       </span>
-      <p class="case-study-header__industry">
-        {% module "industry_text"
-          label="Industry Text",
-          path="@hubspot/text",
-          value="Health Sector"
-          no_wrapper=True
+
+      <div class="case-study-header__breadcrumbs">
+        {% menu "breadcrumbs" 
+          label="Breadcrumbs"
+          root_type="breadcrumb" 
+          no_wrapper=True 
         %}
-      </p>
+      </div>
+
       {% section_header 'my_section_header'
         header='ClinicalWorks Transform the Electronic Medical Records Software',
         subheader='Modernising legacy software through innovative techniques',
