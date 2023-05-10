@@ -28,11 +28,11 @@ label: Blog Listing
     {% module 'global_search' 
       path='../modules/Global-Search-Input' label="Search bar" no_wrapper=True %}
 
-      <div class="custom-blog-listing custom-bg-gray-light-v5">
+      <div class="blog-listing custom-bg-gray-light-v5">
         <div class="page-center lateral-spacing container custom-pt-20 custom-pb-50">  
         
           {% if locale == "pt" %}
-            <div class="custom-blog-listing__intro">
+            <div class="blog-listing__intro">
               Aqui pode encontrar conteúdo atualizado em português, mas por enquanto limitado.
               Pode consultar o arquivo completo de publicações em inglês em <a href="https://www.codurance.com/publications">codurance.com/publications</a>
             </div>
@@ -43,21 +43,21 @@ label: Blog Listing
             
             {% for content in contents %}                 
               {% if loop.index == 1 %}
-                <div class="custom-blog-listing__post-wrapper custom-blog-listing__post-wrapper--featured masonry-grid-item">
-                  <article class="custom-blog-listing__post custom-blog-listing__post--featured">
-                    <div class="custom-blog-listing__info">
-                        <p class="author-info">
+                <div class="blog-listing__post-wrapper blog-listing__post-wrapper--featured masonry-grid-item">
+                  <article class="blog-listing__post post--featured">
+                    <div class="blog-listing__info">
+                        <p class="post__author">
                           By {{ content.blog_post_author.display_name }}
                           <span>·</span>
                           <time datetime="{{ content.publish_date_localized }}">
                             {{ content.publish_date_localized }}
                           </time>
                         </p>
-                        <h5 class="custom-blog-listing__post-title">
+                        <h5 class="post__title">
                           <a href="{{ content.absolute_url }}">
                             {{ content.name }}</a>
                         </h5>
-                        <p class="custom-blog-listing__post-description">
+                        <p class="post__description">
                           {{ content.post_list_content|safe|truncatehtml(305, '...' , false)|striptags  }}
                         </p>
 
@@ -65,7 +65,10 @@ label: Blog Listing
                           <ul class="tag-list">
                             {% for tag in content.tag_list %}
                             <li>
-                              <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+                              <a class="tags" 
+                                  href="{{ blog_tag_url(group.id, tag.slug) }}">
+                                    {{ tag.name }}
+                              </a>
                             </li>
                             {% endfor %}
                           </ul>
@@ -73,7 +76,7 @@ label: Blog Listing
 
                     </div>
                     <a href="{{ content.absolute_url }}">
-                        <img class="custom-blog-listing__post-image"
+                        <img class="blog-listing__post-image--featured"
                               src="{{ resize_image_url( content.featured_image, 600 ) }}"
                               alt="{{ content.name }}">
                     </a>
@@ -82,18 +85,18 @@ label: Blog Listing
               {% endif %}
 
               {% if loop.index > 1 %}
-                <div class="custom-blog-listing__post-wrapper masonry-grid-item">
-                  <article class="custom-blog-listing__post">
+                <div class="blog-listing__post-wrapper masonry-grid-item">
+                  <article class="blog-listing__post">
                     {% if content.featured_image %}
                       <a href="{{ content.absolute_url }}">
-                        <img class="custom-blog-listing__post-image" 
+                        <img class="blog-listing__post-image" 
                               src="{{ resize_image_url( content.featured_image,528 ) }}"
                               alt="{{ content.name }}">
                       </a>
                     {% endif %}
-                    
-                    <div class="custom-blog-listing__info">
-                      <p class="author-info">
+
+                    <div class="blog-listing__info">
+                      <p class="post__author">
                         By {{ content.blog_post_author.display_name }}
                         <span>·</span>
                         <time datetime="{{ content.publish_date_localized }}">
@@ -101,7 +104,7 @@ label: Blog Listing
                         </time>
                       </p>
                       
-                      <h5 class="custom-blog-listing__post-title">
+                      <h5 class="post__title">
                         <a href="{{ content.absolute_url }}">
                           {{ content.name }}
                         </a>
@@ -122,7 +125,7 @@ label: Blog Listing
               {% endif %}
 
               {% if loop.index == 1 || loop.index == 3 || loop.index == 5 || loop.index == 7 %}
-                <div class="custom-blog-listing__post-wrapper masonry-grid-item">       
+                <div class="blog-listing__post-wrapper masonry-grid-item">       
                   {{ snippets.blog_cta_card(blog_cta_cards[card_to_show.index]) }}
                   {% do card_to_show.update({"index": card_to_show.index + 1 }) %}
                 </div>

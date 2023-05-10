@@ -1,13 +1,13 @@
 {% import '../utils/utils.css' as utils %}
 
-.custom-blog-listing__intro {
+.blog-listing__intro {
   margin-bottom: 2em;
   max-width: 800px;
   margin-inline: auto;
 }
 
 .masonry-grid-sizer,
-.custom-blog-listing__post-wrapper {
+.blog-listing__post-wrapper {
   --gutter: var(--space-4);
   width: 100%;
   margin-bottom: var(--gutter);
@@ -15,12 +15,12 @@
 
 {% call utils.medium() %}
   .masonry-grid-sizer,
-  .custom-blog-listing__post-wrapper {
+  .blog-listing__post-wrapper {
     --card-width: calc((100% - var(--gutter)) / 2);
     width: var(--card-width);
   }
 
-  .custom-blog-listing__post-wrapper--featured {
+  .blog-listing__post-wrapper--featured {
     width: 100%;
   }
 
@@ -28,13 +28,13 @@
 
 {% call utils.large_and_extra_large() %}
   .masonry-grid-sizer,
-  .custom-blog-listing__post-wrapper {
+  .blog-listing__post-wrapper {
     --gutter-xl: var(--space-6);
     --card-width: calc((100% - var(--gutter-xl)) / 3 );
     width: var(--card-width);
   }
 
-  .custom-blog-listing__post-wrapper--featured {
+  .blog-listing__post-wrapper--featured {
     --featured-card-width:calc(var(--card-width) * 2);
 
     width: calc(var(--featured-card-width) + var(--gutter));
