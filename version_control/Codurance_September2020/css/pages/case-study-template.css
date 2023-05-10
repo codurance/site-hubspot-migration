@@ -1,119 +1,157 @@
 {% import '../utils/utils.css' as utils %}
 
-.form__wrapper{
-    {{utils.black_to_navy()}}
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    padding: 2em 1.5em;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-padding, 100px);
+}  
+
+body {
+  max-width: unset;
 }
 
-.form__text{
-    max-width: 40ch;
-    font-size: 16px;
+.case-study-header {
+  background: url("https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Case%20Study%20Landing%20Pages/case-study-LP-header-bg-img.svg");
+  background-position: top right;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  padding-top: var(--space-6);
+  max-width: 1300px;
+  margin-inline: auto;
 }
 
-.form__wrapper .legal-consent-container p{
-    color: white;
- }
-
-.form__fields .hs-form fieldset.form-columns-2 .hs-input {
-  width: 100% !important;
+.case-study-header__wrapper {
+  display: flex;
 }
 
-.form__fields .hs-input {
-    {{ utils.card_shadow() }}
+.case-study-header__tag {
+  background-image: url("https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Case%20Study%20Landing%20Pages/Case%20Studie%20Label.svg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  color: white;
+  font-weight: var(--middle-font-weight);
+  padding: 1.2em;
+
+  position: absolute;
+  top: calc(var(--space-5) * -1);
 }
 
-.form__fields .hs-fieldtype-text{
-    margin-bottom: 0.5em;
+.case-study-header__breadcrumbs {
+  margin-top: var(--space-4);
 }
 
-.form__fields input[type="checkbox"] {
-  opacity: 0.0001;
-  margin-right: 1em;
+/* Temporary styles for the ES and PT languages until they finish translation */
+.case-study-header__industry {
+  {{ utils.natus() }}
+  font-weight: var(--middle-font-weight);
+}
+/* End temporary styles */
+
+.hs-breadcrumb-label,
+.hs-breadcrumb-menu-divider:before {
+  color: var(--shark);
 }
 
-.form__fields .hs-form-booleancheckbox-display{
-    align-items: start;
-    {{ utils.sejima() }}
-    font-weight: normal;
-    color: var(--shark);
-    margin-bottom: 1em;
-    max-width: 98%;
+.case-study-header__text-block .page-header.section-header h1 {
+  {{ utils.eames() }}
+  font-weight: var(--heavy-font-weight);
+  margin-top: var(--space-0);
 }
 
-.form__fields .hs-form-booleancheckbox-display span {
+.case-study-header__text-block .page-header.section-header p {
+  line-height: var(--base-line-height);
+  margin-top: var(--space-0);
+}
+
+.case-study-header__text-block {
+  max-width: 45%;
   position: relative;
+  margin-top: var(--space-0);
 }
 
-.form__fields .hs-form-booleancheckbox-display span::before {
-  position: absolute;
-  border-radius: 3px;
-  border: 1px solid rgba(0, 0, 0, .25);
-  content: "";
-  height: 1rem;
-  width: 1rem;
-  top: 0.2em;
-  left: -2.1em;
-  background: white;
-  {{ utils.card_shadow() }}
+.case-study-header__text-block .custom-btn {
+  margin-top: 1.8em;
+  max-width: fit-content;
 }
 
-.form__fields input[type=checkbox]:focus + span:before {
-  outline: rgb(0, 0, 0) auto 5px;
+.case-study-header__image {
+  margin-left: auto;
+  margin-right: 2em;
 }
 
-
-.form__fields .hs-form-booleancheckbox-display span::after {
-  position: absolute;
-  border-bottom: 2px solid;
-  border-left: 2px solid;
-  display: inline-block;
-  transform: rotate(-45deg);
-  height: 0.4rem;
-  width: 0.6rem;
-  left: -1.9em;
-  top: 0.5em;
+.secondary-menu {
+  margin-top: var(--space-2);
 }
 
-.form__fields input[type=checkbox]:checked + span::after {
-  content: "";
+{% call utils.medium() %}
+  .case-study-header {
+    background-position-x: 130%;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .case-study-header{
+    padding-top: 1em;
+    background-position-x: 130%;
+    background-size: 80%;
+
+  }
+
+  .case-study-header__wrapper{
+    flex-direction: column-reverse;
+    align-items: start;
+  }
+
+  .case-study-header__text-block{
+    max-width: none;
+    margin-top: unset;
+  }
+
+  .case-study-header__text-block .page-header.section-header h1 {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+    max-width: var(--dudler-max-width);
+  }
+
+  .case-study-header__text-block .page-header.section-header p {
+    {{ utils.natus() }}
+  }
+
+  .case-study-header__image{
+    margin-right: 1em;
+    max-width: 50%;
+  }
+{% endcall %}
+
+/* ================================
+  General styles for dnd_sections 
+=================================== */
+
+.dnd-section h2 {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+
+}
+  
+.dnd-section p {
+  {{ utils.base() }}
 }
 
-.form__fields .hs-button{
-    width: 98%;
-}
+{% call utils.small_and_medium() %}
+  .dnd-section {
+    padding-inline: var(--space-3);
+  }
+{% endcall%} 
 
-.form__fields .legal-consent-container p{
-  {{utils.sejima()}}
-  font-weight:var(--light-font-weight);
-}
+{% call utils.small() %}
+  .dnd-section h2 {
+    {{utils.freed()}}
+    font-weight: var(--heavy-font-weight);
+  }
 
-.form__fields .legal-consent-container .hs-form-booleancheckbox-display > span{
-  margin-left: 0 !important;
-}
+  .dnd-section p {
+    {{utils.natus()}}
+  }
 
-
-.footer{
-    max-width: 1300px;
-    margin: auto;
-}
-
-{% call utils.medium_large_and_extra_large() %}
-    .form__wrapper{
-        flex-direction: row;
-        align-items: start;
-        justify-content: space-between;
-        gap: 2em;
-        margin: 0 auto;
-        max-width: 1300px;
-        padding: 4em;
-    }
-
-    .form__text{
-        max-width: 40%;
-        margin-right: 2em;
-    }
 {% endcall %}

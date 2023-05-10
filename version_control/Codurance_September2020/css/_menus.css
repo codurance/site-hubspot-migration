@@ -32,17 +32,16 @@ menu items appear, including the link and hover effects.
 }
 
 /* Breadcrumbs */
+.hs-breadcrumb-menu-wrapper {
+  min-height: var(--space-5);
+}
+
 .first-crumb {
   padding-left: 0;
 }
 
 .hs-breadcrumb-label {
   {{ utils.natus() }}
-}
-
-.hs-breadcrumb-label,
-.hs-breadcrumb-menu-divider:before {
-  color: var(--athens-gray);
 }
 
 .last-crumb .hs-breadcrumb-label {
