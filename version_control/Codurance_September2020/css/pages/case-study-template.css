@@ -41,6 +41,13 @@ body {
   margin-top: var(--space-4);
 }
 
+/* Temporary styles for the ES and PT languages until they finish translation */
+.case-study-header__industry {
+  {{ utils.natus() }}
+  font-weight: var(--middle-font-weight);
+}
+/* End temporary styles */
+
 .hs-breadcrumb-label,
 .hs-breadcrumb-menu-divider:before {
   color: var(--shark);

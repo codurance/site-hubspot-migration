@@ -20,11 +20,24 @@ label: Case Study Template
       </span>
 
       <div class="case-study-header__breadcrumbs">
-        {% menu "breadcrumbs" 
-          label="Breadcrumbs"
-          root_type="breadcrumb" 
-          no_wrapper=True 
-        %}
+        {# Temporary condition until the ES and PT translations are finished #}
+        {% if locale == "en" %}
+          {% menu "breadcrumbs" 
+            label="Breadcrumbs"
+            root_type="breadcrumb" 
+            no_wrapper=True 
+          %}
+        {% else %}
+          <p class="case-study-header__industry">
+            {% module "industry_text"
+              label="Industry Text",
+              path="@hubspot/text",
+              value="Health Sector"
+              no_wrapper=True
+            %}
+          </p>
+        {% endif %}
+        {# End temporary condition#}
       </div>
 
       {% section_header 'my_section_header'
