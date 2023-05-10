@@ -33,7 +33,7 @@ menu items appear, including the link and hover effects.
 
 /* Breadcrumbs */
 .hs-breadcrumb-menu-wrapper {
-  min-height: 50px;
+  min-height: var(--space-5);
 }
 
 .first-crumb {
