@@ -339,13 +339,15 @@
     color: white;
   }
   
-  .custom-menu-primary .submenu.level-1 > li.active-item > a:hover{
+  .custom-menu-primary .submenu.level-1 > li.active-item > a:hover {
     color: white;
   }
+
   .submenu.level-3 > li {
     background-color: inherit;
     padding: 0;
   }
+
   .submenu.level-2.website-navigation-sub-menu {
     left: 100vw;
     top: 0;
@@ -356,6 +358,7 @@
     padding-left: 23px;
     padding-right: 23px;
   }
+
   .custom-menu-primary nav.website-navigation__menu--showing-sub-menu {
     left: -100vw;
     overflow-y: auto;
@@ -384,12 +387,14 @@
     left: 9px;
     top: 18px;
   }
+
   .submenu.level-2.website-navigation-sub-menu > a,
   .submenu.level-2.website-navigation-sub-menu > .menu-link.trigger {
     position: relative;
     margin-top: 7px;
     margin-left: -3px;
   }
+  
   .submenu.level-2.website-navigation-sub-menu > a:after,
   .custom-menu-primary .navigation-primary > ul > li > a.menu-link.active-item:after {
     left: 25px;
