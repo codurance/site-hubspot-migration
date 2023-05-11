@@ -233,7 +233,7 @@ label: Blog Post
               <div
                 class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30"
               >
-                <article class="custom-blog-listing__post">
+                <article class="blog-listing__post">
                   {% if post.featured_image %}
                     <a href="{{ post.absolute_url }}">
                       <img
@@ -269,15 +269,15 @@ label: Blog Post
                         {{ post.publish_date_localized }}
                       </li>
                     </ul>
-                    <h5 class="custom-blog-listing__post-title">
+                    <h5 class="post__title">
                       <a
-                        class="custom-blog-listing__title-link"
+                        class="blog-listing__title-link"
                         href="{{ post.absolute_url }}"
                       >
                         {{ post.name }}</a
                       >
                     </h5>
-                    <p class="custom-blog-listing__post-description">
+                    <p class="blog-listing__post-description">
                       {{ post.post_list_content|safe|truncatehtml(150, '..' ,
                       false)|striptags }}
                     </p>

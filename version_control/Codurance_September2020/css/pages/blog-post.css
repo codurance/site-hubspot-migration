@@ -249,7 +249,7 @@
   margin-bottom: 3rem;
 }
 
-.custom-blog-listing__post img {
+.blog-listing__post img {
   aspect-ratio: 16/9;
   object-fit: cover;
 }

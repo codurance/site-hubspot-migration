@@ -1,47 +1,99 @@
 {% import '../utils/utils.css' as utils %}
 
-.custom-blog-listing__post {
-  {{ utils.card_shadow() }}
-  transition: var(--cta-transition);
+.blog-listing__post {
   display: flex;
+  transition: var(--cta-transition);
+  {{ utils.card_shadow() }}
+  {{ utils.card_border_radius() }}
+  overflow: hidden;
 }
 
-.custom-blog-listing__post:not(.custom-blog-listing__post--featured) {
+.blog-listing__post:not(.post--featured) {
   flex-direction: column;
 }
 
-.custom-blog-listing__post--featured {
+.post--featured {
   flex-direction: row;
 }
 
 {% call utils.small() %}
-  .custom-blog-listing__post--featured {
+  .post--featured {
     flex-direction: column-reverse;
   }
 {% endcall %}
 
-.custom-blog-listing__post:hover {
+.blog-listing__info {
+  background: white;
+  padding: var(--space-4);
+}
+
+.blog-listing__post-wrapper--featured .blog-listing__info {
+  max-width: 50%;
+}
+
+{% call utils.small() %}
+  .blog-listing__post-wrapper--featured .blog-listing__info {
+    max-width: none;
+  }
+{% endcall %}
+
+.blog-listing__post:hover {
   {{ utils.card_shadow_large() }}
   transform: translateY(-0.3rem);
 }
 
-.custom-blog-listing__post-title {
+.post__author {
+  {{ utils.natus() }}
+  color: var(--mid-gray);
+}
+
+.post__author span {
+  margin-inline: var(--space--1);
+}
+
+.post__title {
   {{ utils.base() }}
-  margin-bottom: var(--base-margin);
   font-weight: var(--heavy-font-weight);
+  margin-top: var(--space-2);
 }
 
-.custom-blog-listing__title-link {
-  color: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
+.post__title a {
+  color: var(--shark);
 }
 
-.custom-blog-listing__title-link:hover {
+.post__title a:hover {
   color: var(--persimmon);
 }
 
-.custom-blog-listing__post-description {
+.post__description {
   {{ utils.natus() }}
+  margin-top: var(--space-2);
 }
+
+.blog-listing__post-image,
+.blog-listing__post-image--featured {
+  object-fit: cover;
+  width: 100%;
+}
+
+.blog-listing__post-image {
+  aspect-ratio: 16/9;
+}
+
+.blog-listing__post-image--featured {
+  height: 100%;
+}
+
+.tag-list {
+  margin: unset;
+  margin-top: var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-0);
+}
+
+.tag-list li {
+  display: inline-block;
+}
+
+
