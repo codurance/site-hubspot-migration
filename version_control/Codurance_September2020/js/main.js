@@ -1,4 +1,4 @@
-(function () {
+(function() {
   var HIDE_FOCUS_STYLES_CLASS = "disable-focus-styles";
   var SHOW_FOCUS_STYLES_CLASS = "enable-focus-styles";
 
@@ -41,18 +41,8 @@
     document.body.classList.remove(SHOW_FOCUS_STYLES_CLASS);
   }
 
-  // adds hover effects to the pseduoelement triangle on the menu
-  // for design continutity
-  function hoverLanguageSwitcher() {
-    languageSwitcherList.classList.add("first-active");
-  }
-
-  function unhoverLanguageSwitcher() {
-    languageSwitcherList.classList.remove("first-active");
-  }
-
   function toggleNav() {
-    allToggles.forEach(function (toggle) {
+    allToggles.forEach(function(toggle) {
       toggle.classList.toggle("hide");
     });
 
@@ -63,7 +53,7 @@
   }
 
   function toggleLang() {
-    allToggles.forEach(function (toggle) {
+    allToggles.forEach(function(toggle) {
       toggle.classList.toggle("hide");
     });
 
@@ -74,7 +64,7 @@
   }
 
   function toggleSearch() {
-    allToggles.forEach(function (toggle) {
+    allToggles.forEach(function(toggle) {
       toggle.classList.toggle("hide");
     });
 
@@ -85,18 +75,20 @@
   }
 
   function closeAll() {
-    allElements.forEach(function (element) {
+    allElements.forEach(function(element) {
       element.classList.remove("hide", "open");
     });
 
     closeToggle.classList.remove("show");
   }
 
-  $(".active-branch").each(function () {
-    $(this).parent("li").addClass("active-branch");
+  $(".active-branch").each(function() {
+    $(this)
+      .parent("li")
+      .addClass("active-branch");
   });
 
-  domReady(function () {
+  domReady(function() {
     if (!document.body) {
       return;
     } else {
@@ -136,19 +128,23 @@
         closeToggle.addEventListener("click", closeAll);
       }
       var ost = 0;
-      $(window).scroll(function () {
+      $(window).scroll(function() {
         var cOst = $(this).scrollTop();
         if (cOst > 200 && cOst > ost) {
-          $("header.header").addClass("fixed").removeClass("default");
+          $("header.header")
+            .addClass("fixed")
+            .removeClass("default");
         } else {
-          $("header.header").addClass("default").removeClass("fixed");
+          $("header.header")
+            .addClass("default")
+            .removeClass("fixed");
         }
         ost = cOst;
       });
     }
   });
 
-  $('input[name="globalunsub"]').change(function () {
+  $('input[name="globalunsub"]').change(function() {
     if ($(this).is(":checked")) {
       $(".item").addClass("disabled");
       $(".item input").attr("disabled", "disabled");
@@ -157,21 +153,24 @@
       $(".item input").removeAttr("disabled");
     }
   });
-  $(function () {
+  $(function() {
     var value1 = window.location.href.substring(
       window.location.href.lastIndexOf("/") + 1
     );
-    $('[data-target="blog-index-filter-link"]').each(function () {
+    $('[data-target="blog-index-filter-link"]').each(function() {
       var url = $(this).attr("href");
       var lastSegment = url.split("/").pop();
       if (lastSegment == value1) {
-        $(this).parent().siblings().removeClass("active");
+        $(this)
+          .parent()
+          .siblings()
+          .removeClass("active");
         $(this).addClass("active");
       }
     });
   });
 
-  var announcementOnDevConsole = function () {
+  var announcementOnDevConsole = function() {
     try {
       var main =
         "display:block;font-family:proxima-nova,'Open Sans',Arial, sans-serif;font-size:14px;font-style:normal;font-variant:normal;font-weight:bold;height:34px;line-height:17px;margin-bottom:10px;margin-top:5px;text-align:center;text-shadow:none;";
@@ -211,7 +210,7 @@
 
 /* ----------------------------- Menus ---------------------------------- */
 
-var websiteNavigation = function () {
+var websiteNavigation = function() {
   var OPEN_MENU_CLASS = "website-navigation__menu--open";
   var OPEN_SUB_MENU_CLASS = "website-navigation-sub-menu--open";
   var OPEN_HEADER_CLASS = "website-header--open";
@@ -240,10 +239,10 @@ var websiteNavigation = function () {
       if (menuToggle) {
         menuToggle.addEventListener("click", toggleMenu);
       }
-      Array.prototype.forEach.call(subMenuToggles, function (t) {
+      Array.prototype.forEach.call(subMenuToggles, function(t) {
         t.addEventListener("click", toggleSubMenu);
       });
-      Array.prototype.forEach.call(subMenuToggleProxies, function (t) {
+      Array.prototype.forEach.call(subMenuToggleProxies, function(t) {
         t.addEventListener("click", clickProxy);
       });
     }
@@ -340,7 +339,7 @@ var websiteNavigation = function () {
     function exposeSharedMethods() {
       window.__CODURANCE = window.__CODURANCE || {};
       window.__CODURANCE.websiteNavigation = {
-        closeOpenSubMenu: function () {
+        closeOpenSubMenu: function() {
           if (currentOpenSubMenu === null) return;
           closeSubMenu(currentOpenSubMenu.menu, currentOpenSubMenu.toggle);
         }

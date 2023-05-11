@@ -13,6 +13,7 @@
   font-weight: var(--middle-font-weight);
   transition: color 0.5s;
 }
+
 {% call utils.large_and_extra_large() %}
   .navigation-primary a,
   .hs-header-language ul a {
@@ -22,6 +23,7 @@
     line-height: var(--natus-line-height);
   }
 {% endcall %}
+
 {% call utils.small_and_medium() %}
   .navigation-primary a,
   .hs-header-language ul a {
@@ -38,14 +40,6 @@
 .navigation-primary .submenu a,
 .navigation-primary .submenu p {
   text-decoration: none;
-}
-
-.triangle {
-  display: none;
-}
-
-.submenu-toggle {
-  display: none;
 }
 
 .submenu.level-1 {
@@ -82,42 +76,6 @@
   visibility: hidden;
   width: auto;
   padding-top: 23px;
-}
-
-.triangle-container.level-2 {
-  display: block;
-  height: 25px;
-  left: 105px;
-  overflow: hidden;
-  position: absolute;
-  top: -25px;
-  width: 60px;
-}
-
-.triangle.level-2 {
-  background-color: white;
-  border: 1.79px solid var(--mid-gray);
-  border-radius: 6px;
-  -webkit-box-shadow: 0 2px 9px 0 var(--woodsmoke--20);
-  box-shadow: 0 2px 9px 0 var(--woodsmoke--20);
-  display: block;
-  height: 30px;
-  margin-left: 20px;
-  margin-top: 12px;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-  width: 30px;
-}
-
-.triangle-container.level-2.hover .triangle {
-  background-color: var(--athens-gray);
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  transition: background-color 0.3s;
 }
 
 .submenu.level-2 > li {
@@ -358,10 +316,6 @@
     transition: transform 0.4s;
     transition: transform 0.4s, -webkit-transform 0.4s;
     width: 20px;
-  }
-
-  .triangle-container.level-2 {
-    display: none;
   }
 
   input[type="checkbox"]:checked ~ .submenu {

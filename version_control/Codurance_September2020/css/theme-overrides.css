@@ -245,14 +245,10 @@ body .cm-header-group.website-header--has-open-submenu:before,
 .language-switcher ul li a{
   background-color: rgba({{ theme.header.child_menu_background_color.color|convert_rgb }}, {{ theme.header.child_menu_background_color.opacity * 0.01 }});
 }
-body .custom-menu-primary .submenu.level-2 .triangle-container .triangle {
-  background-color: rgba({{ theme.header.child_menu_background_color.color|convert_rgb }}, {{ theme.header.child_menu_background_color.opacity * 0.01 }});
-}
 
 body .custom-menu-primary .submenu.level-2 .menu-item .menu-link:hover,
 body .custom-menu-primary .submenu.level-2 .menu-item .menu-link:focus,
 body .header__language-switcher .lang_list_class li:hover,
-body .custom-menu-primary .submenu.level-2 .triangle-container.level-2.hover .triangle,
 .language-switcher ul li a:hover{
   background-color: rgba({{ theme.header.child_menu_link_hover_background_color.color|convert_rgb }}, {{ theme.header.child_menu_link_hover_background_color.opacity * 0.01 }});
   color: rgba({{ theme.header.child_menu_link_hover_color.color|convert_rgb }}, {{ theme.header.child_menu_link_hover_color.opacity * 0.01 }});
