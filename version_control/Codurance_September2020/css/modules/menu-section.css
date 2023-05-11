@@ -346,8 +346,8 @@
   body .custom-menu-primary .submenu.level-2>li>a{
     color: white;
   }
-  .submenu.level-2.website-navigation-sub-menu > a:before,
-  .submenu.level-2.website-navigation-sub-menu > .menu-link.trigger:before {
+  
+  .back-button:before {
     content: "";
     display: inline-block;
     padding: 4.5px;
