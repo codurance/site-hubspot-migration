@@ -36,6 +36,7 @@
   <a 
     href="{{ node.url if node.url else 'javascript:;' }}" 
     class="menu-link trigger"
+    id="sub-menu-toggle{{loop.index}}"
     {{ activeNode() if node.activeNode }} 
     {{ includeAriaControls(loop.index) if level < 2 }} 
     aria-expanded="false"
@@ -43,7 +44,7 @@
       {{ node.label }}
   </a>
   {% if node.children %}
-  {{ renderNavigation(node) }}
+    {{ renderNavigation(node) }}
   {% endif %}
 </li>
 {% endmacro %}
