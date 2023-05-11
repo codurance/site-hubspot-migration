@@ -29,6 +29,11 @@
     margin-top: 3.5em;
 }
 
+.hs-breadcrumb-label,
+.hs-breadcrumb-menu-divider:before {
+  color: var(--athens-gray);
+}
+
 .header-title {
     margin-top: .5em;
     margin-bottom: 4em;

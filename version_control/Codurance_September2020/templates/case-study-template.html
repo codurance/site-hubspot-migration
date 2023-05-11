@@ -1,31 +1,85 @@
-
 <!--
 templateType: page
 isAvailableForNewContent: true
-label: Case study template
+label: Case Study Template
 -->
+
 {% extends "./layouts/base.html" %}
 
 {{ require_css(get_asset_url("../css/pages/case-study-template.css")) }}
 
-
 {% block body %}
 
 <div class="case-study">
-  {% module "Main Banner" path="../modules/LP-cta-block", 
-          label="" %}
-   <section>
-     <div class="form__wrapper">
-       <div class="form__text">
-         {% module "case_study_description" path="@hubspot/rich_text"
-             label="Case Study Description" no_wrapper=True %}
-       </div>
-        <div class="form__fields">
-          {% module "form" path="@hubspot/form" %}
-        </div>
+
+<header class="case-study-header lateral-spacing">
+  <div class="case-study-header__wrapper">
+    <div class="case-study-header__text-block">
+      <span class="case-study-header__tag">
+        Case Study
+      </span>
+
+      <div class="case-study-header__breadcrumbs">
+        {# Temporary condition until the ES and PT translations are finished #}
+        {% if locale == "en" %}
+          {% menu "breadcrumbs" 
+            label="Breadcrumbs"
+            root_type="breadcrumb" 
+            no_wrapper=True 
+          %}
+        {% else %}
+          <p class="case-study-header__industry">
+            {% module "industry_text"
+              label="Industry Text",
+              path="@hubspot/text",
+              value="Health Sector"
+              no_wrapper=True
+            %}
+          </p>
+        {% endif %}
+        {# End temporary condition#}
       </div>
-   </section>
 
-   </div>  
+      {% section_header 'my_section_header'
+        header='ClinicalWorks Transform the Electronic Medical Records Software',
+        subheader='Modernising legacy software through innovative techniques',
+        label="Case Study Header",
+        no_wrapper=True
+      %}
+      
+      {% module 'button_module'
+          path='../modules/button.module',
+          label="Case Study Download",
+          no_wrapper=True
+      %}
+    </div>
+    <div class="case-study-header__image">
+      {% module 'case_study_icon'
+        label="Case Study Icon",
+        path='@hubspot/linked_image',
+        img={
+          "size_type" : "auto",
+          "src" : "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Case%20Study%20Landing%20Pages/case-study-LP-header-icon.svg",
+          "alt" : "Case Study Icon"
+        },
+        no_wrapper=True
+      %}
+    </div>
+  </div>
+</header>
+
+{% module 'secondary_menu' path='../modules/secondary-menu.module' no_wrapper=True %}
+
+<main class="region">
+  {% dnd_area 'main', label="Main Section" %}
+    {% include_dnd_partial path='./sections/text-module-section.html' context={} %}
+    
+    {% include_dnd_partial path='./sections/video-section.html' context={} %}
+
+    {% include_dnd_partial path='./sections/text-module-section.html' context={} %}
+
+    {% include_dnd_partial path='./sections/testimonial-section.html' context={} %}
+  {% end_dnd_area %}
+</main>  
+
 {% endblock body %}
-
