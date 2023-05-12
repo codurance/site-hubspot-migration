@@ -11,7 +11,7 @@
   cursor: pointer;
   display: inline-block;
   font-weight: var(--middle-font-weight);
-  transition: color 0.5s;
+  transition: color 0.2s;
 }
 
 {% call utils.large_and_extra_large() %}
