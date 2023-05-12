@@ -1,34 +1,22 @@
 {{ require_css(get_asset_url("../../css/modules/menu-section.css")) }}
 
 {% macro defaultItemClasses() %}
-{{
- {
-   "class": "no-submenu menu-item"
- }|xmlattr
- }}
+  {{ "class": "no-submenu menu-item" } | xmlattr }}
 {% endmacro %}
 
 {% macro childClasses() %}
-{{
- {
-   "class": "has-submenu menu-item"
- }|xmlattr
-}}
+  {{ { "class": "has-submenu menu-item" } | xmlattr }}
 {% endmacro %}
 
 {% macro activeNode() %}
-{{
- {
-  "class": "menu-link active-item",
-  "aria-current": "page"
-  }|xmlattr
+{{ { "class": "menu-link active-item",
+    "aria-current": "page"
+    } | xmlattr
 }}
 {% endmacro %}
 
 {% macro includeAriaControls(index) %}
-{{
-  {"aria-controls": "sub-menu-services-" + index}|xmlattr
-}}
+{{ {"aria-controls": "sub-menu-services-" + index} | xmlattr }}
 {% endmacro %}
 
 {% macro link(node) %}
