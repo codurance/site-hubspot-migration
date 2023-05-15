@@ -1,11 +1,11 @@
 {{ require_css(get_asset_url("../../css/modules/menu-section.css")) }}
 
 {% macro defaultItemClasses() %}
-  {{ "class": "no-submenu menu-item" } | xmlattr }}
+  {{ "class": "no-submenu" } | xmlattr }}
 {% endmacro %}
 
 {% macro childClasses() %}
-  {{ { "class": "has-submenu menu-item" } | xmlattr }}
+  {{ { "class": "has-submenu" } | xmlattr }}
 {% endmacro %}
 
 {% macro activeNode() %}
