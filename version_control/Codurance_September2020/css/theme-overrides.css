@@ -195,31 +195,6 @@ tbody + tbody {
   max-width: {{ theme.spacing.max_width * 1.140 }}px;
 }
 
-.header__language-switcher-label-current:after {
-  border-top-color: var(--persimmon);
-}
-
-@media(min-width: 1024px) {
-  .custom-menu-primary nav > ul > li.has-submenu>a[aria-expanded="true"] {
-      color: var(--persimmon);
-  }
-
-  .custom-menu-primary li.has-submenu > a[aria-expanded="true"]:after {
-      border-color: var(--persimmon);
-  }
-}
-
-@media(max-width: 767px) {
-  .header__navigation {
-    background-color: var(--shark);
-  }
-
-  .header__navigation-toggle svg,
-  .menu-arrow svg {
-  fill: var(--persimmon);
-  }
-}
-
 {###########################################################################}
 {################################   _blog   ################################}
 {###########################################################################}
