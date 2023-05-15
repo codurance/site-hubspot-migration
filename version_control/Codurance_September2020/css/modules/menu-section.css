@@ -5,7 +5,6 @@
 }
 
 .navigation-primary a {
-  background: none;
   border: 0 none;
   color: var(--shark);
   cursor: pointer;
@@ -86,17 +85,11 @@
 
 .submenu.level-2 .menu-link {
   display: block;
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  transition: background-color 0.3s;
 }
 
 .submenu.level-2 .menu-link:hover,
 .submenu.level-2 .menu-link:focus {
   cursor: pointer;
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  transition: background-color 0.3s;
 }
 
 .submenu.level-3 .menu-link {
@@ -238,8 +231,6 @@
   }
 
   .custom-menu-primary a {
-    {{ utils.base() }}
-    background: none;
     border: 0 none;
     cursor: pointer;
     display: inline-block;
@@ -250,7 +241,6 @@
   }
 
   .submenu.level-2 li a {
-    {{ utils.base() }}
     color: #fff;
     padding: 10px 25px;
   }
@@ -307,14 +297,10 @@
     visibility: visible;
     width: 100%;
   }
-  
-  .submenu.level-2 .menu-link:hover {
-    background-color: inherit;
-  }
+
 
   .submenu.level-2 .menu-link {
     {{ utils.base() }}
-    background: 0;
     border: 0 none;
     cursor: pointer;
     display: inline-block;
@@ -355,7 +341,6 @@
   
   .custom-menu-primary .submenu.level-2 .menu-link:focus,
   .custom-menu-primary .submenu.level-2 .menu-link:hover {
-    background: transparent;
     color: white;
   }
   
@@ -423,7 +408,7 @@
   position: relative;
 }
 
-.active-item::after {
+.active-item:after {
   background-color: var(--persimmon);
   bottom: -2px;
   content: "";
