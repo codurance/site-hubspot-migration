@@ -304,13 +304,6 @@
     background-color: inherit;
   }
 
-  .submenu.level-3 {
-    background-color: inherit;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-
   .submenu.level-2 .menu-link {
     {{ utils.base() }}
     background: 0;
@@ -333,11 +326,6 @@
   
   .custom-menu-primary .submenu.level-1 > li.active-item > a:hover {
     color: white;
-  }
-
-  .submenu.level-3 > li {
-    background-color: inherit;
-    padding: 0;
   }
 
   .submenu.level-2.website-navigation-sub-menu {
