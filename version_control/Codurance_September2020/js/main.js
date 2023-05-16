@@ -5,9 +5,6 @@
   var firstLanguageSwitcherItem = document.querySelector(
     ".header__language-switcher .lang_list_class li:first-child"
   );
-  var languageSwitcherList = document.querySelector(
-    ".header__language-switcher .lang_list_class"
-  );
 
   var Nav = document.querySelector(".header__navigation");
   var LangSwitcher = document.querySelector(".header__language-switcher");
@@ -219,7 +216,7 @@ var websiteNavigation = function() {
   var MENU_SHOWING_SUB_MENU_CLASS =
     "website-navigation__menu--showing-sub-menu";
 
-  var header = window.document.querySelector(".cm-header-group");
+  var header = window.document.querySelector("header.header");
   var menuToggle = window.document.querySelector(".mobile-trigger");
   if (menuToggle) {
     var menu = window.document.querySelector(
@@ -357,7 +354,6 @@ function ea_scroll(hash) {
   var target = $(hash);
   target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
   if (target.length) {
-    var book_offset = $(".cm-header-group").height();
     $("html,body").animate(
       {
         scrollTop: target.offset().top

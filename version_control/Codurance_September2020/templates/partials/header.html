@@ -3,94 +3,92 @@ templateType: global_partial
 label: Global main menu
 -->
 <header class="header">
-  <div class="cm-header-group">
-    <div class="header__container">
-      <div class="custom-logo">
-        {% set logo_file =  get_asset_url('../../images/logo.svg') %}
-        {% module "header_logo" path="@hubspot/logo", label="Header Logo",link="/", img={src="{{logo_file}}", alt="Codurance", override_inherited_src= true} %}
-        <div class="mobile-logo">
-          {% set mobile_logo =  get_asset_url('../../images/white-logo.svg') %}
-          {% module "mobile_header_logo" path="@hubspot/logo", label="Header Mobile Menu Logo", link="/", img={src="{{mobile_logo}}", alt="Codurance", override_inherited_src= true} %}
-        </div>
+  <div class="header__container">
+    <div class="custom-logo">
+      {% set logo_file =  get_asset_url('../../images/logo.svg') %}
+      {% module "header_logo" path="@hubspot/logo", label="Header Logo",link="/", img={src="{{logo_file}}", alt="Codurance", override_inherited_src= true} %}
+      <div class="mobile-logo">
+        {% set mobile_logo =  get_asset_url('../../images/white-logo.svg') %}
+        {% module "mobile_header_logo" path="@hubspot/logo", label="Header Mobile Menu Logo", link="/", img={src="{{mobile_logo}}", alt="Codurance", override_inherited_src= true} %}
       </div>
-      <div class="custom-menu-primary">
-        <div class="mobile-trigger" aria-controls="website-navigation-menu" aria-expanded="true" aria-label="Toggle navigation">
-          <span></span>
-        </div>
-        {% module "navigation-primary" path="../../modules/menu-section", label="Primary Menu" %}
+    </div>
+    <div class="custom-menu-primary">
+      <div class="mobile-trigger" aria-controls="website-navigation-menu" aria-expanded="true" aria-label="Toggle navigation">
+        <span></span>
       </div>
-      <div class="hs-header-language">
-        <ul>
-          <li>
-            {% set primary_lang = 'en' %}
-            {% set es_lang = 'es' %}
-            {% set es_lang_path = '/' + es_lang + '/' %}
-            {% set pt_lang = 'pt' %}
-            {% set pt_lang_path = '/' + pt_lang + '/' %}
+      {% module "navigation-primary" path="../../modules/menu-section", label="Primary Menu" %}
+    </div>
+    <div class="hs-header-language">
+      <ul>
+        <li>
+          {% set primary_lang = 'en' %}
+          {% set es_lang = 'es' %}
+          {% set es_lang_path = '/' + es_lang + '/' %}
+          {% set pt_lang = 'pt' %}
+          {% set pt_lang_path = '/' + pt_lang + '/' %}
 
-            {% if absolute_url is not string_containing es_lang_path and absolute_url is not string_containing pt_lang_path %}
-              {% set primary_lang_page_link = '#0' %}
-            {% elif content.translated_content[primary_lang] %}
-              {% set primary_lang_page_link = '/' + content.translated_content[primary_lang].slug %}
-            {% elif is_listing_view %}
-              {% set primary_lang_page_link = '/publications'%}
-            {% else %}
-              {% set primary_lang_page_link = 'http://codurance.com' %}
-            {% endif %}
+          {% if absolute_url is not string_containing es_lang_path and absolute_url is not string_containing pt_lang_path %}
+            {% set primary_lang_page_link = '#0' %}
+          {% elif content.translated_content[primary_lang] %}
+            {% set primary_lang_page_link = '/' + content.translated_content[primary_lang].slug %}
+          {% elif is_listing_view %}
+            {% set primary_lang_page_link = '/publications'%}
+          {% else %}
+            {% set primary_lang_page_link = 'http://codurance.com' %}
+          {% endif %}
 
-            <a
-              href="{{primary_lang_page_link}}"
-              {% if absolute_url is not string_containing es_lang_path and absolute_url is not string_containing pt_lang_path %}class="active"{% endif %}
-              rel="noopener noreferrer">
-                {{primary_lang|upper}}
-            </a>
+          <a
+            href="{{primary_lang_page_link}}"
+            {% if absolute_url is not string_containing es_lang_path and absolute_url is not string_containing pt_lang_path %}class="active"{% endif %}
+            rel="noopener noreferrer">
+              {{primary_lang|upper}}
+          </a>
 
 
-          <li>
-            {% if absolute_url is string_containing es_lang_path %}
-              {% set es_lang_page_link = '#0' %}
-            {% elif content.translated_content[es_lang] %}
-              {% set es_lang_page_link = '/' + content.translated_content[es_lang].slug %}
-            {% elif is_listing_view %}
-              {% set es_lang_page_link = '/es/publications'%}
-            {% else %}
-              {% set message =
-                "Sorry, no Spanish text version available" + "\\n\\n" + "Disculpa, la versión en español de este texto no está disponible"
-              %}
-              {% set es_lang_page_link = "javascript:onclick=window.alert('" + message + "');" %}
-            {% endif %}
+        <li>
+          {% if absolute_url is string_containing es_lang_path %}
+            {% set es_lang_page_link = '#0' %}
+          {% elif content.translated_content[es_lang] %}
+            {% set es_lang_page_link = '/' + content.translated_content[es_lang].slug %}
+          {% elif is_listing_view %}
+            {% set es_lang_page_link = '/es/publications'%}
+          {% else %}
+            {% set message =
+              "Sorry, no Spanish text version available" + "\\n\\n" + "Disculpa, la versión en español de este texto no está disponible"
+            %}
+            {% set es_lang_page_link = "javascript:onclick=window.alert('" + message + "');" %}
+          {% endif %}
 
-            <a
-              href="{{es_lang_page_link}}"
-              {% if absolute_url is string_containing es_lang_path %}class="active"{% endif %}
-              rel="noopener noreferrer">
-                {{es_lang|upper}}
-            </a>
-          </li>
-          
-          <li>
-            {% if absolute_url is string_containing pt_lang_path %}
-              {% set pt_lang_page_link = '#0' %}
-            {% elif content.translated_content[pt_lang] %}
-              {% set pt_lang_page_link = '/' + content.translated_content[pt_lang].slug %}
-            {% elif is_listing_view %}
-              {% set pt_lang_page_link = '/pt/publications'%}
-            {% else %}
-              {% set message =
-                "Sorry, no Portuguese text version available" + "\\n\\n" + "Lamentamos, a versão em português deste texto não está disponivel"
-              %}
-              {% set pt_lang_page_link = "javascript:onclick=window.alert('" + message + "');" %}
-            {% endif %}
+          <a
+            href="{{es_lang_page_link}}"
+            {% if absolute_url is string_containing es_lang_path %}class="active"{% endif %}
+            rel="noopener noreferrer">
+              {{es_lang|upper}}
+          </a>
+        </li>
+        
+        <li>
+          {% if absolute_url is string_containing pt_lang_path %}
+            {% set pt_lang_page_link = '#0' %}
+          {% elif content.translated_content[pt_lang] %}
+            {% set pt_lang_page_link = '/' + content.translated_content[pt_lang].slug %}
+          {% elif is_listing_view %}
+            {% set pt_lang_page_link = '/pt/publications'%}
+          {% else %}
+            {% set message =
+              "Sorry, no Portuguese text version available" + "\\n\\n" + "Lamentamos, a versão em português deste texto não está disponivel"
+            %}
+            {% set pt_lang_page_link = "javascript:onclick=window.alert('" + message + "');" %}
+          {% endif %}
 
-            <a
-              href="{{pt_lang_page_link}}"
-              {% if absolute_url is string_containing pt_lang_path %}class="active"{% endif %}
-              rel="noopener noreferrer">
-              {{pt_lang|upper}}
-            </a>
-          </li>
-        </ul>
-      </div>
+          <a
+            href="{{pt_lang_page_link}}"
+            {% if absolute_url is string_containing pt_lang_path %}class="active"{% endif %}
+            rel="noopener noreferrer">
+            {{pt_lang|upper}}
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </header>

@@ -1,7 +1,7 @@
 {{ require_css(get_asset_url("../../css/modules/menu-section.css")) }}
 
 {% macro defaultItemClasses() %}
-  {{ "class": "no-submenu" } | xmlattr }}
+  {{ { "class": "no-submenu" } | xmlattr }}
 {% endmacro %}
 
 {% macro childClasses() %}

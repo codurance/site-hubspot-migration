@@ -9,34 +9,32 @@ You will also find the mobile menu styles below.
 {% include "../utils/utils.css" as utils %}
 
 header.header {
-  min-height: 85px;
-}
-.cm-header-group {
-  background-color: white;
-  left: 0;
   position: fixed;
-  top: 0;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s, height 0.5s;
   width: 100%;
   z-index: 100;
-  {{ utils.card_shadow() }}
 }
+
 .custom-logo img {
   max-width: 147px;
   margin-top: -9px;
 }
-header.header.default .cm-header-group {
+
+header.header.default {
   transform: translateY(0);
 }
-header.header.fixed  .cm-header-group {
+
+header.header.fixed {
   transform: translateY(-100%);
 }
+
 .header__container {
   display: flex;
   justify-content: space-between;
   max-width: {{ page_max_width }};
   margin: 0 auto;
 }
+
 .mobile-trigger span:before,
 .mobile-trigger span:after {
   content: "";
@@ -47,14 +45,17 @@ header.header.fixed  .cm-header-group {
   width: 25px;
   transition: transform 0.5s, bottom 0.5s, background-color 0.5s;
 }
+
 .mobile-trigger span {
   display: block;
   position:relative;
 }
-.mobile-trigger span:before{
+
+.mobile-trigger span:before {
   bottom: 15px;
 }
-.mobile-trigger span:after{
+
+.mobile-trigger span:after {
   bottom: 25px;
 }
 
@@ -220,7 +221,7 @@ header.header.fixed  .cm-header-group {
   height: 25px;
 }
 
-header.header .mobile-logo {
+header.header:not(.website-header--open) .mobile-logo {
   display: none;
 }
 
@@ -284,30 +285,20 @@ header.header .mobile-logo {
   color: var(--persimmon);
 }
 
-@media (min-width: 1366px){
+{% call utils.extra_large() %}
+  .header__container {
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+
   header.header.no-navigation .header__container {
     padding-bottom: 30px;
   }
-}
 
-{% call utils.large_and_extra_large() %}
-  .hs-header-language ul .active::after {
-    bottom: -2px;
+  .custom-menu-primary nav {
+    margin: 0 30px 0 45px;
   }
 
-  .hs-header-language ul a,
-  .hs-header-language ul span {
-    padding-bottom: 0;
-    padding-top: 0;
-  }
-
-  .cm-header-group.website-header--has-open-submenu {
-    top: 0;
-  }
-{% endcall %}
-
-
-{% call utils.extra_large() %}
   .hs-header-language ul li {
     margin-left: 15px;
   }
@@ -317,27 +308,41 @@ header.header .mobile-logo {
     font-size: 18px;
     line-height: 23px;
   }
-
-  .header__container {
-    padding-bottom: 30px;
-    padding-top: 30px;
-  }
-  .custom-menu-primary nav {
-    margin: 0 30px 0 45px;
-  }
-  
 {% endcall %}
 
+{% call utils.large_and_extra_large() %}
+  header.header {
+    {{ utils.card_shadow() }}
+    background: white;
+    height: 85px;
+  }
+
+  .hs-header-language ul .active::after {
+    bottom: -2px;
+  }
+
+  .hs-header-language ul a,
+  .hs-header-language ul span {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+{% endcall %}
+
+{% call utils.large() %}
+  .navigation-primary {
+    margin: 0 25px;
+  }
+
+  header.header {
+    height: 70px;
+  }
+{% endcall %}
 
 {% call utils.small_medium_and_large() %}
   .header__container {
     padding-top: 25px;
     padding-bottom: 19.5px;
     padding-inline: 25px;
-  }
-
-  header.header {
-    min-height: 70px;
   }
 
   .hs-header-language ul li {
@@ -349,27 +354,21 @@ header.header .mobile-logo {
   }
 {% endcall %}
 
-
-{% call utils.large() %}
-  .navigation-primary {
-    margin: 0 25px;
-  }
-{% endcall %}
-
-
 {% call utils.small_and_medium() %}
-
-  .cm-header-group.website-header--open .hs-header-language {
+  .website-header--open .hs-header-language {
     opacity: 0;
     visibility: hidden;
   }
+
   .hs-header-language ul:before {
     position: relative;
     top: -1px;
   }
+
   .hs-header-language ul .active::after {
     bottom: -4px;
   }
+
   .hs-header-language ul{
     position: absolute;
     right: 78px;
@@ -385,41 +384,36 @@ header.header .mobile-logo {
     font-size: 18px;
     line-height: 20px;
   }
-  .cm-header-group.website-header--open .mobile-logo {
+
+  .website-header--open .mobile-logo {
     display: block;
   }
-  .cm-header-group.website-header--open .custom-logo img {
+
+  .website-header--open .custom-logo img {
     display: none;
   }
-  .cm-header-group .custom-logo img{
+  
+  .custom-logo img {
     margin-top: -9px;
   }
-  .cm-header-group.website-header--open .mobile-logo img {
-    display: block;
-    margin-top: -1px;
-  }
-  header.header.fixed .cm-header-group.website-header--open {
+
+  header.header.fixed .website-header--open {
     transform: none;
   }
-  .cm-header-group {
-    overflow: hidden;
-    transition: background-color 0.5s, height 0.5s;
-    z-index: 100;
 
-  }
-
-  .cm-header-group.website-header--open {
+  .website-header--open {
     background-color: #2b3342;
     height: 100vh;
     top: 0;
   }
 
-  .cm-header-group:not(.website-header--open ){
+  header.header:not(.website-header--open ){
+    {{ utils.card_shadow() }}
     background-color: white;
     height: 71px;
   }
 
-  .cm-header-group:not(.website-header--open ) .custom-menu-primary nav{
+  header.header:not(.website-header--open ) .custom-menu-primary nav {
     height: 0;
     overflow: hidden;
     padding-top: 0;
@@ -463,30 +457,29 @@ header.header .mobile-logo {
     top: 16px;
     z-index:999;
   }
+
   .mobile-trigger span {
     display: block;
     position: relative;
     top: 42px;
   }
+
   .website-header--open .mobile-trigger span::before {
     transform: rotate(45deg);
     background-color: white;
     bottom: 22px;
   }
+
   .website-header--open .mobile-trigger span::after {
     transform: rotate(-45deg);
     background-color: white;
     bottom: 22px;
   }
 
-{% endcall %} /* End small_and_medium */
-
-
-/* Mobile Styles */
+{% endcall %} 
 
 {% call utils.small() %}
-
-  .cm-header-group.website-header--open .mobile-logo img {
+  .website-header--open .mobile-logo img {
     display: block;
     margin-top: 0px;
   }
@@ -634,9 +627,11 @@ header.header .mobile-logo {
     background-color: inherit;
     font-size: 22px;
   }
+
   .header__language-switcher--label-current {
     display: none;
   }
+
   .header__language-switcher .globe_class {
     background-image: none;
   }
@@ -688,6 +683,5 @@ header.header .mobile-logo {
   .header__close--toggle.show {
     display: block;
   }
-
-{% endcall %}  /* End Mobile Styles */
+{% endcall %} 
 
