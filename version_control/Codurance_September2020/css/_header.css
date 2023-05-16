@@ -36,7 +36,6 @@ header.header.fixed  .cm-header-group {
   justify-content: space-between;
   max-width: {{ page_max_width }};
   margin: 0 auto;
-  padding: 0 10px;
 }
 .mobile-trigger span:before,
 .mobile-trigger span:after {
@@ -211,23 +210,20 @@ header.header.fixed  .cm-header-group {
 /* Tablet Styles */
 
 
-.mobile-trigger{
+.mobile-trigger {
   display:none;
 }
+
 .hs-header-language {
   align-items: center;
   display: flex;
-  list-style-type: none;
-  padding: 0;
   height: 25px;
-  margin: 0;
-  min-width: 1px;
-  width: 90px;
 }
 
-header.header .mobile-logo{
-  display:none;
+header.header .mobile-logo {
+  display: none;
 }
+
 .hs-header-language ul {
   align-items: center;
   display: flex;
@@ -236,6 +232,7 @@ header.header .mobile-logo{
   height: 25px;
   margin: 0;
 }
+
 .hs-header-language ul a{
   background: none;
   border: 0 none;
@@ -246,6 +243,7 @@ header.header .mobile-logo{
   padding-left: 0;
   padding-right: 0;
 }
+
 .hs-header-language ul span {
   background: none;
   border: 0 none;
@@ -258,9 +256,11 @@ header.header .mobile-logo{
   padding-left: 0;
   padding-right: 0;
 }
+
 .hs-header-language ul .active{
   position: relative;
 }
+
 .hs-header-language ul::before {
   content: "\f0ac";
   font-family: 'line awesome free';
@@ -268,6 +268,7 @@ header.header .mobile-logo{
   font-weight: 900;
   top: 0.05em;
 }
+
 .hs-header-language ul .active::after {
   background-color: var(--persimmon);
   left: 0;
@@ -276,6 +277,7 @@ header.header .mobile-logo{
   height: 2px;
   position: absolute;
 }
+
 .hs-header-language ul a:focus,
 .hs-header-language ul a:hover {
   text-decoration:none;
@@ -292,26 +294,21 @@ header.header .mobile-logo{
   .hs-header-language ul .active::after {
     bottom: -2px;
   }
-  .hs-header-language ul a{
-    padding-bottom: 0;
-    padding-top: 0;
-  }
+
+  .hs-header-language ul a,
   .hs-header-language ul span {
     padding-bottom: 0;
     padding-top: 0;
   }
-  .cm-header-group.website-header--has-open-submenu{
+
+  .cm-header-group.website-header--has-open-submenu {
     top: 0;
-  }
-  .header__container {
-    padding-left: 50px;
-    padding-right: 50px;
   }
 {% endcall %}
 
 
 {% call utils.extra_large() %}
-  .hs-header-language ul li{
+  .hs-header-language ul li {
     margin-left: 15px;
   }
 
@@ -336,13 +333,17 @@ header.header .mobile-logo{
   .header__container {
     padding-top: 25px;
     padding-bottom: 19.5px;
+    padding-inline: 25px;
   }
+
   header.header {
     min-height: 70px;
   }
-  .hs-header-language ul li{
+
+  .hs-header-language ul li {
     margin-left: 10px;
   }
+
   .hs-header-language ul .active::after {
     bottom: 0;
   }
@@ -350,11 +351,8 @@ header.header .mobile-logo{
 
 
 {% call utils.large() %}
-  .navigation-primary{
+  .navigation-primary {
     margin: 0 25px;
-  }
-  .hs-header-language {
-    width: 73.5px;
   }
 {% endcall %}
 
@@ -415,18 +413,22 @@ header.header .mobile-logo{
     height: 100vh;
     top: 0;
   }
+
   .cm-header-group:not(.website-header--open ){
     background-color: white;
     height: 71px;
   }
+
   .cm-header-group:not(.website-header--open ) .custom-menu-primary nav{
     height: 0;
     overflow: hidden;
     padding-top: 0;
   }
+
   .header__container {
     flex-direction: column;
   }
+
   .custom-menu-primary nav {
     height: calc(100vh - 70px);
     padding-top: 30px;
@@ -440,9 +442,6 @@ header.header .mobile-logo{
     padding-left: 25px;
     padding-right: 25px;
   }
-  .header__container {
-    padding: 25px 25px 20px;
-  }
 
   .header__logo--main {
     display: none;
@@ -451,6 +450,7 @@ header.header .mobile-logo{
   .header__logo--tablet {
     display: block;
   }
+
   .mobile-trigger {
     display: block;
     background: 0;
