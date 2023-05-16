@@ -103,6 +103,13 @@
   left: 0;
 }
 
+{% call utils.extra_large() %}
+  .navigation-primary li {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+{% endcall %}
+
 {% call utils.large_and_extra_large() %}
   .navigation-primary a,
   .hs-header-language ul a {
@@ -120,11 +127,6 @@
 
   .navigation-primary li.has-submenu > a[aria-expanded="true"]:after {
     border-color: var(--persimmon);
-  }
-
-  .navigation-primary li {
-    margin-left: 10px;
-    margin-right: 10px;
   }
 
   .navigation-primary .submenu.website-navigation-sub-menu > a {
