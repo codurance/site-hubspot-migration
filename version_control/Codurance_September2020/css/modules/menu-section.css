@@ -139,8 +139,8 @@
 
   .submenu.level-2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-1);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
   }
 
   .submenu.level-2.website-navigation-sub-menu > .menu-link.trigger {
