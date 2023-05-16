@@ -31,10 +31,6 @@
   display: inline-block;
 }
 
-.submenu.level-1 > li.has-submenu {
-  position: relative;
-}
-
 .submenu.level-2 {
   opacity: 0;
   position: absolute;
@@ -140,9 +136,15 @@
   }
 
   .submenu.level-2 {
+    {{ utils.card_shadow() }}
+    background: white;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-3);
+    left: 0;
+    top: var(--header-height);
+    padding: var(--space-5);
+    width: 100%;
   }
 
   .submenu.level-2.website-navigation-sub-menu > .menu-link.trigger {
