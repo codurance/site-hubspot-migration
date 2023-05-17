@@ -16,7 +16,8 @@ header.header {
 }
 
 header.header,
-.header__container {
+.header__container,
+.header__wrapper {
   height: var(--header-height);
 }
 
@@ -317,9 +318,12 @@ header.header:not(.website-header--open) .mobile-logo {
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
+  header.header {
+    --header-height: 85px;
+  }
+
   .header__container {
     {{ utils.card_shadow() }}
-    --header-height: 85px;
     background: white;
   }
 
