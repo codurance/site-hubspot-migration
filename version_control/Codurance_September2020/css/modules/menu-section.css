@@ -145,6 +145,7 @@
     top: var(--header-height);
     padding: var(--space-5);
     width: 100%;
+    z-index: -1;
   }
 
   .submenu.level-2.website-navigation-sub-menu > .menu-link.trigger {

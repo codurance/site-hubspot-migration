@@ -4,7 +4,7 @@ label: Page Header
 -->
 <header class="header no-navigation">
   <div class="cm-header-group">
-    <div class="header__container">
+    <div class="header__wrapper">
       <div class="custom-logo">
         {% set logo_file =  get_asset_url('../../images/logo.svg') %}
         {% module "header_logo" path="@hubspot/logo", label="Header Logo",link="/", img={src="{{logo_file}}", alt="Codurance", override_inherited_src= true} %}
