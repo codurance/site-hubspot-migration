@@ -36,7 +36,7 @@
   position: absolute;
   text-transform: none;
   top: 22px;
-  transition: visibility 0s,opacity .3s;
+  transition: visibility .3s, opacity .3s;
   visibility: hidden;
   width: auto;
   padding-top: var(--space-3);
