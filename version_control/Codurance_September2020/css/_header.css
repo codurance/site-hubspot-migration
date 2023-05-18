@@ -16,8 +16,7 @@ header.header {
 }
 
 header.header,
-.header__container,
-.header__wrapper {
+.header__container {
   height: var(--header-height);
 }
 
