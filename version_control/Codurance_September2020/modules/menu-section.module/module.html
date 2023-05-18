@@ -41,7 +41,7 @@
   {% set level = level + 1 %}
 
   <ul 
-    class="submenu level-{{ level }} website-navigation-sub-menu" 
+    class="submenu level-{{ level }} website-navigation-sub-menu{% if menuTree.children|length <= 4 %} two-columns{% endif %}" 
     aria-hidden="{{ level != 1 }}" 
     id="sub-menu-services-{{loop.index}}"
   >

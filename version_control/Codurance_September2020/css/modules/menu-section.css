@@ -145,6 +145,10 @@
     z-index: -1;
   }
 
+  .submenu.level-2.two-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .submenu.level-2.website-navigation-sub-menu > .menu-link.trigger {
     display: none;
   }
