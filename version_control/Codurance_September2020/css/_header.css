@@ -15,6 +15,7 @@ header.header {
   z-index: 100;
 }
 
+.body-wrapper > div:first-child,
 header.header,
 .header__container {
   height: var(--header-height);
@@ -317,7 +318,7 @@ header.header:not(.website-header--open) .mobile-logo {
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
-  header.header {
+  .body-wrapper > div:first-child {
     --header-height: 85px;
   }
 
@@ -342,7 +343,7 @@ header.header:not(.website-header--open) .mobile-logo {
     margin: 0 25px;
   }
 
-  header.header {
+  .body-wrapper > div:first-child {
     --header-height: 70px;
   }
 {% endcall %}
