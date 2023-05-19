@@ -57,7 +57,9 @@
 /* Card Item Styles */
 
 .card-item {
-  box-shadow: 5px 10px 18px var(--woodsmoke--10);
+  {{ utils.card_shadow() }}
+  {{ utils.card_border_radius() }}
+  overflow: hidden;
 }
 
 .card-item__content {
