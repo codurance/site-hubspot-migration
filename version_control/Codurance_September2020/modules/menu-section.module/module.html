@@ -7,8 +7,14 @@
   }}
 {% endmacro %}
 
-{% macro includeAriaControls(index) %}
-  {{ {"aria-controls": "sub-menu-services-" + index} | xmlattr }}
+{% macro isActiveNode(link) %}
+  {% set link_stripped = "/" + link | split('/', 3) | last %}
+  {% if request.path == link_stripped %}
+    {{ { "class": "menu-link active-item",
+      "aria-current": "page"
+      } | xmlattr
+    }}
+  {% endif %}
 {% endmacro %}
 
 {% macro link(node) %}
@@ -18,7 +24,6 @@
       class="menu-link trigger"
       id="sub-menu-toggle-{{loop.index}}"
       {{ activeNode() if node.activeNode }} 
-      {{ includeAriaControls(loop.index) if level < 2 }} 
       aria-expanded="false"
     >
         {{ node.linkLabel }}
@@ -33,13 +38,13 @@
   >
   {% for item in module.menu_items %}
     {% set menuTree = menu(item.submenu.items) %}
-      <li class="menu-item 
-                {% if item.submenu.items %}has-submenu{% endif %}">
+      <li class="menu-item{% if item.submenu.items %} has-submenu{% endif %}">
         <a href="{{ item.link.href if item.link.href else 'javascript:;' }}"
-          class="menu-link trigger back-button"
+          class="menu-link trigger back-button" 
           id="sub-menu-toggle-{{loop.index}}"
           aria-controls="sub-menu-services-{{loop.index}}"
           aria-expanded="false"
+          {{ isActiveNode(item.link.href) if item.link.href }}  
         >
           {{ item.title }}
         </a>
@@ -55,8 +60,6 @@
         </div>
       {% endif %}
 
-
-
         {% for node in item.submenu.items %} 
           {{ link(node) }}
         {% endfor %}
@@ -65,10 +68,7 @@
 
   {# 
     {% set href = item.submenu.button.link_field.url.href %}
-    {% if item.submenu.button.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-      {% set href = "mailto:" + href %}
-    {% endif %}
-
+  
     <a href="{{ href }}"
       {% if item.submenu.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
       {% if item.submenu.button.link_field.rel %}rel="{{ item.submenu.button.link_field.rel }}"{% endif %}
