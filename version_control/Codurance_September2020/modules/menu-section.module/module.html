@@ -37,15 +37,14 @@
 </li>
 {% endmacro %}
 
-{% macro renderNavigation(menuTree) %}
-  {% set level = level + 1 %}
-
+<nav aria-label="Main menu" class="navigation-primary" id="website-navigation-menu">
   <ul 
     class="submenu level-{{ level }} website-navigation-sub-menu{% if menuTree.children|length <= 4 %} two-columns{% endif %}" 
-    aria-hidden="{{ level != 1 }}" 
-    id="sub-menu-services-{{loop.index}}"
+    id="sub-menu-services"
   >
-    {% if level != 1 %}
+    {% for item in module.menu_items %}
+      {% set menuTree = menu(item.submenu.items) %}
+      
       <a 
         href="javascript:;" 
         class="menu-link trigger back-button"
@@ -53,16 +52,33 @@
         aria-controls="sub-menu-services-{{loop.index}}"
         aria-expanded="false"
       >
-        {{ node.label }}
+        {% inline_text field="title" value="{{ item.title }}" %}
       </a>
-    {% endif %}
 
-    {% for node in menuTree.children %}
-      {{ link(node) }}
+      <ul 
+        class="submenu level-2 website-navigation-sub-menu{% if menuTree.children|length <= 4 %} two-columns{% endif %}" 
+        id="sub-menu-services-{{loop.index}}"
+      >
+        {% for node in menuTree.children %}
+          {{ link(node) }}
+        {% endfor %}
+      </ul>
+
+      {#{% inline_text field="submenu.promotional_text" value="{{ item.submenu.promotional_text }}" %}
+      {{ item.submenu.button.button_type }}
+      {% set href = item.submenu.button.link_field.url.href %}
+      {% if item.submenu.button.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}"
+        {% if item.submenu.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
+        {% if item.submenu.button.link_field.rel %}rel="{{ item.submenu.button.link_field.rel }}"{% endif %}
+        >
+        Link text
+      </a>
+      {% inline_text field="submenu.button.text_field" value="{{ item.submenu.button.text_field }}" %}
+      {{ item.submenu.button.button_style }}
+      {% cta guid="{{ item.submenu.button.cta_field }}" %}#}
     {% endfor %}
   </ul>
-{% endmacro %}
-
-<nav aria-label="Main menu" class="navigation-primary" id="website-navigation-menu">
-  {{ renderNavigation(menu(module.primary_menu_field)) }}
 </nav>
