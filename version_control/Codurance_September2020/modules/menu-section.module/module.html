@@ -1,12 +1,5 @@
 {{ require_css(get_asset_url("../../css/modules/menu-section.css")) }}
 
-{% macro activeNode() %}
-  {{ { "class": "menu-link active-item",
-      "aria-current": "page"
-      } | xmlattr
-  }}
-{% endmacro %}
-
 {% macro isActiveNode(link) %}
   {% set link_stripped = "/" + link | split('/', 3) | last %}
   {% if request.path == link_stripped %}
@@ -23,8 +16,8 @@
       href="{{ node.url if node.url else 'javascript:;' }}" 
       class="menu-link trigger"
       id="sub-menu-toggle-{{loop.index}}"
-      {{ activeNode() if node.activeNode }} 
       aria-expanded="false"
+      {{ isActiveNode(node.url) if node.url }}  
     >
         {{ node.linkLabel }}
     </a>
@@ -33,12 +26,13 @@
 
 <nav aria-label="Main menu" class="navigation-primary" id="website-navigation-menu">
   <ul 
-    class="submenu level-{{ level }} website-navigation-sub-menu{% if menuTree.children|length <= 4 %} two-columns{% endif %}" 
+    class="submenu level-1 website-navigation-sub-menu" 
     id="sub-menu-services"
   >
-  {% for item in module.menu_items %}
-    {% set menuTree = menu(item.submenu.items) %}
-      <li class="menu-item{% if item.submenu.items %} has-submenu{% endif %}">
+    {% for item in module.menu_items %}
+      {% set submenu = item.submenu.items %}
+
+      <li class="menu-item{% if submenu %} has-submenu{% endif %}">
         <a href="{{ item.link.href if item.link.href else 'javascript:;' }}"
           class="menu-link trigger back-button" 
           id="sub-menu-toggle-{{loop.index}}"
@@ -49,37 +43,36 @@
           {{ item.title }}
         </a>
       </li>
-      <ul class="submenu level-2 website-navigation-sub-menu
-              {% if menuTree.children|length <= 4 %} two-columns{% endif %}" 
+
+      <ul class="submenu level-2 website-navigation-sub-menu {% if submenu|length <= 4 %} two-columns{% endif %}" 
           id="sub-menu-services-{{loop.index}}"
       >
-      {% if item.submenu.promotional_text %}
-        <div class="promotional-section">
-          {{ item.submenu.promotional_text }}
-          {{ item.submenu.button.button_type }}
-        </div>
-      {% endif %}
+        {% if item.submenu.promotional_text %}
+          <div class="promotional-section">
+            {{ item.submenu.promotional_text }}
+            {{ item.submenu.button.button_type }}
+          </div>
+        {% endif %}
 
-        {% for node in item.submenu.items %} 
+        {% for node in submenu %} 
           {{ link(node) }}
         {% endfor %}
-
       </ul>
 
-  {# 
-    {% set href = item.submenu.button.link_field.url.href %}
-  
-    <a href="{{ href }}"
-      {% if item.submenu.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
-      {% if item.submenu.button.link_field.rel %}rel="{{ item.submenu.button.link_field.rel }}"{% endif %}
-      >
-      Link text
-    </a>
+      {# 
+        {% set href = item.submenu.button.link_field.url.href %}
+      
+        <a href="{{ href }}"
+          {% if item.submenu.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
+          {% if item.submenu.button.link_field.rel %}rel="{{ item.submenu.button.link_field.rel }}"{% endif %}
+          >
+          Link text
+        </a>
 
-    {{ item.submenu.button.text_field }}
-    {{ item.submenu.button.button_style }}
-    {% cta guid="{{ item.submenu.button.cta_field }}" %}
-  #}
-  {% endfor %} 
+        {{ item.submenu.button.text_field }}
+        {{ item.submenu.button.button_style }}
+        {% cta guid="{{ item.submenu.button.cta_field }}" %}
+      #}
+    {% endfor %} 
   </ul>
 </nav>
