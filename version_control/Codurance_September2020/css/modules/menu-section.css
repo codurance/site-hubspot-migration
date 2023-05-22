@@ -13,6 +13,8 @@
 
 .navigation-primary .submenu {
   list-style: none;
+  display: flex;
+  gap: var(--space-3);
   margin: 0;
   padding: 0;
 }
