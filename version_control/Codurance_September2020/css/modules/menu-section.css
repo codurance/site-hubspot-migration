@@ -5,7 +5,6 @@
 }
 
 .navigation-primary a {
-  color: var(--shark);
   display: inline-block;
   font-weight: var(--middle-font-weight);
   transition: color 0.2s;
@@ -40,7 +39,7 @@
   transition: visibility .3s, opacity .3s;
   visibility: hidden;
   width: auto;
-  padding-top: var(--space-3);
+  padding-top: var(--space-2);
 }
 
 .submenu.level-2 > li {
@@ -129,12 +128,12 @@
   .navigation-primary a {
     display: inline-block;
     font-weight: var(--middle-font-weight);
-    color: white;
-    padding: 10px 25px;
+    color: var(--shark);
+    padding: var(--space-0) var(--space-2);
   }
 
   .navigation-primary a:hover {
-    color: white;
+    color: var(--persimmon);
   }
 
   .navigation-primary li.has-submenu > a:after {
@@ -217,10 +216,10 @@
     border-style: solid;
     border-color: var(--persimmon);
     border-width: 0 2px 2px 0;
-    transform: rotate(135deg);
+    transform: translateY(-50%) rotate(135deg);
     position: absolute;
     left: var(--space-0);
-    top: var(--space-2);
+    top: 50%;
   }
 
   .submenu.level-2.website-navigation-sub-menu > a,
