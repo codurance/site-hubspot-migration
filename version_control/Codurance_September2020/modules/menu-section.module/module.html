@@ -42,31 +42,32 @@
         >
           {{ item.title }}
         </a>
-      </li>
 
-      <ul class="submenu level-2 website-navigation-sub-menu {% if submenu|length <= 4 %} two-columns{% endif %}" 
+        <ul class="submenu level-2 website-navigation-sub-menu {% if submenu|length <= 4 %} two-columns{% endif %}" 
           id="sub-menu-services-{{loop.index}}"
-      >
-      <a href='javascript:;'
-        class="menu-link trigger back-button" 
-        id="sub-menu-toggle-{{loop.index}}"
-        aria-controls="sub-menu-services-{{loop.index}}"
-        aria-expanded="false"
-        {{ isActiveNode(item.link.href) if item.link.href }}  
-      >
-        {{ item.title }}
-      </a>
-        {# {% if item.submenu.promotional_text %}
-          <div class="promotional-section">
-            {{ item.submenu.promotional_text }}
-            {{ item.submenu.button.button_type }}
-          </div>
-        {% endif %} #}
+        >
+          <a href='javascript:;'
+            class="menu-link trigger back-button" 
+            id="sub-menu-toggle-{{loop.index}}"
+            aria-controls="sub-menu-services-{{loop.index}}"
+            aria-expanded="false"
+            {{ isActiveNode(item.link.href) if item.link.href }}  
+          >
+            {{ item.title }}
+          </a>
+          
+          {# {% if item.submenu.promotional_text %}
+            <div class="promotional-section">
+              {{ item.submenu.promotional_text }}
+              {{ item.submenu.button.button_type }}
+            </div>
+          {% endif %} #}
 
-        {% for node in submenu %} 
-          {{ link(node) }}
-        {% endfor %}
-      </ul>
+          {% for node in submenu %} 
+            {{ link(node) }}
+          {% endfor %}
+        </ul>
+      </li>
 
       {# 
         {% set href = item.submenu.button.link_field.url.href %}
