@@ -5,6 +5,7 @@
 }
 
 .navigation-primary a {
+  color: var(--shark);
   display: inline-block;
   font-weight: var(--middle-font-weight);
   transition: color 0.2s;
@@ -96,7 +97,6 @@
 }
 
 {% call utils.small_and_medium() %}
- 
   .navigation-primary .submenu.level-2 .menu-link.active-item:after {
     left: 25px;
     right: 25px;
@@ -128,7 +128,6 @@
   .navigation-primary a {
     display: inline-block;
     font-weight: var(--middle-font-weight);
-    color: var(--shark);
     padding: var(--space-1) 0;
   }
 
