@@ -13,11 +13,10 @@
 
 .navigation-primary .submenu {
   list-style: none;
-  display: flex;
-  gap: var(--space-3);
   margin: 0;
   padding: 0;
 }
+
 
 .navigation-primary .submenu a,
 .navigation-primary .submenu p {
@@ -96,80 +95,6 @@
   left: 0;
   right: 0;
 }
-
-{% call utils.extra_large() %}
-  .navigation-primary li {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-{% endcall %}
-
-{% call utils.large_and_extra_large() %}
-  .navigation-primary a,
-  .hs-header-language ul a {
-    font-size: var(--natus-font-size);
-    font-weight: var(--middle-font-weight);
-    letter-spacing: 0.02em;
-    line-height: var(--natus-line-height);
-  }
-
-  .menu-link:hover,
-  .menu-link:focus,
-  .navigation-primary li.has-submenu > a[aria-expanded="true"] {
-    color: var(--persimmon);
-  }
-
-  .navigation-primary li.has-submenu > a[aria-expanded="true"]:after {
-    border-color: var(--persimmon);
-  }
-
-  .navigation-primary .submenu.website-navigation-sub-menu > a {
-    display: none;
-  }
-
-  .navigation-primary li.has-submenu > a[aria-expanded="true"]:after {
-    border-color: var(--persimmon);
-    top: 6px;
-    transform: rotate(225deg);
-  }
-
-  .submenu.level-2 {
-    {{ utils.card_border_radius_bottom() }}
-    {{ utils.card_shadow() }}
-    background: white;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-3);
-    left: 0;
-    top: var(--header-height);
-    padding: var(--space-5);
-    width: 100%;
-    z-index: -1;
-  }
-
-  .submenu.level-2.two-columns {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .submenu.level-2.website-navigation-sub-menu > .menu-link.trigger {
-    display: none;
-  }
-
-  .navigation-primary .submenu.level-1 > li > .menu-link {
-    padding-inline: 10px;
-  }
-
-  .submenu.level-2.website-navigation-sub-menu.website-navigation-sub-menu--open {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  .submenu.level-1 > li.has-submenu > a {
-    margin-bottom: 0;
-    transition: color 0.5s, margin-bottom 0.5s;
-  }
-
-{% endcall %}
 
 {% call utils.small_and_medium() %}
   .navigation-primary a,
@@ -256,7 +181,6 @@
     width: 100%;
   }
 
-
   .submenu.level-2 .menu-link {
     font-weight: var(--middle-font-weight);
     padding: 10px 25px;
@@ -311,4 +235,92 @@
     right: 25px;
     bottom: 5px;
   }
+
+
+  .promotional-section {
+    display: none;
+  }
 {% endcall %}
+
+{% call utils.large_and_extra_large() %}
+  .navigation-primary a,
+  .hs-header-language ul a {
+    font-size: var(--natus-font-size);
+    font-weight: var(--middle-font-weight);
+    letter-spacing: 0.02em;
+    line-height: var(--natus-line-height);
+  }
+
+  .menu-link:hover,
+  .menu-link:focus,
+  .navigation-primary li.has-submenu > a[aria-expanded="true"] {
+    color: var(--persimmon);
+  }
+
+  .navigation-primary li.has-submenu > a[aria-expanded="true"]:after {
+    border-color: var(--persimmon);
+  }
+
+
+  .navigation-primary .submenu.website-navigation-sub-menu > a {
+    display: none;
+  }
+
+  .navigation-primary li.has-submenu > a[aria-expanded="true"]:after {
+    border-color: var(--persimmon);
+    top: 6px;
+    transform: rotate(225deg);
+  }
+
+  .navigation-primary .submenu {
+    display: flex;
+    gap: var(--space-3);
+  }
+
+
+  .submenu.level-2 {
+    {{ utils.card_border_radius_bottom() }}
+    {{ utils.card_shadow() }}
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    left: 0;
+    top: var(--header-height);
+    padding: var(--space-5);
+    width: 100%;
+    z-index: -1;
+  }
+
+  .submenu.level-2.two-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .submenu.level-2.website-navigation-sub-menu > .menu-link.trigger {
+    display: none;
+  }
+
+  .navigation-primary .submenu.level-1 > li > .menu-link {
+    padding-inline: 10px;
+  }
+
+  .submenu.level-2.website-navigation-sub-menu.website-navigation-sub-menu--open {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .submenu.level-1 > li.has-submenu > a {
+    margin-bottom: 0;
+    transition: color 0.5s, margin-bottom 0.5s;
+  }
+{% endcall %}
+
+
+{% call utils.extra_large() %}
+  .navigation-primary li {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+{% endcall %}
+
+
