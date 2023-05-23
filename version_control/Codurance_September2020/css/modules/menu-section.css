@@ -129,7 +129,7 @@
     display: inline-block;
     font-weight: var(--middle-font-weight);
     color: var(--shark);
-    padding: var(--space-0) var(--space-2);
+    padding: var(--space-1) 0;
   }
 
   .navigation-primary a:hover {
@@ -150,6 +150,11 @@
 
   .navigation-primary {
     display: block;
+  }
+
+  .submenu.level-1 > li {
+    border-bottom: 1px solid var(--french-gray);
+    max-width: 47%;
   }
 
   .submenu > li > a {
