@@ -34,7 +34,7 @@
 
       <li class="menu-item{% if submenu %} has-submenu{% endif %}">
         <a href="{{ item.link.href if item.link.href else 'javascript:;' }}"
-          class="menu-link trigger back-button" 
+          class="menu-link trigger" 
           id="sub-menu-toggle-{{loop.index}}"
           aria-controls="sub-menu-services-{{loop.index}}"
           aria-expanded="false"
@@ -47,12 +47,21 @@
       <ul class="submenu level-2 website-navigation-sub-menu {% if submenu|length <= 4 %} two-columns{% endif %}" 
           id="sub-menu-services-{{loop.index}}"
       >
-        {% if item.submenu.promotional_text %}
+      <a href='javascript:;'
+        class="menu-link trigger back-button" 
+        id="sub-menu-toggle-{{loop.index}}"
+        aria-controls="sub-menu-services-{{loop.index}}"
+        aria-expanded="false"
+        {{ isActiveNode(item.link.href) if item.link.href }}  
+      >
+        {{ item.title }}
+      </a>
+        {# {% if item.submenu.promotional_text %}
           <div class="promotional-section">
             {{ item.submenu.promotional_text }}
             {{ item.submenu.button.button_type }}
           </div>
-        {% endif %}
+        {% endif %} #}
 
         {% for node in submenu %} 
           {{ link(node) }}
