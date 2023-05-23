@@ -81,38 +81,9 @@ header.header.fixed {
 .header__menu--flex {
   display: flex;
 }
+
 #nav-toggle {
   display: none;
-}
-
-
-/* Styles for the Logo */
-
-.header__logo {
-  display: flex;
-  align-items: center;
-  max-width: {{ page_logo_max_width }};
-  height: auto;
-  margin-left: 22px;
-  margin-right: auto;
-  overflow: hidden;
-}
-
-.header__logo img {
-  max-width: 100%;
-}
-
-.header__logo .logo-company-name {
-  font-size: 28px;
-  margin-top: 7px;
-}
-
-.header__logo--tablet {
-  display: none;
-}
-
-.header__logo--main {
-  padding-top: 20px;
 }
 
 /* Styles for the Language Switcher Component */
@@ -226,10 +197,6 @@ header.header.fixed {
   align-items: center;
   display: flex;
   height: 25px;
-}
-
-header.header:not(.website-header--open) .mobile-logo {
-  display: none;
 }
 
 .hs-header-language ul {
@@ -414,14 +381,6 @@ header.header:not(.website-header--open) .mobile-logo {
     font-size: 18px;
     line-height: 20px;
   }
-
-  .website-header--open .mobile-logo {
-    display: block;
-  }
-
-  .website-header--open .custom-logo img {
-    display: none;
-  }
   
   .custom-logo img {
     margin-top: -9px;
@@ -449,14 +408,6 @@ header.header:not(.website-header--open) .mobile-logo {
     transition: left .5s,padding-top .5s,border-top-color .5s;
     padding-left: 25px;
     padding-right: 25px;
-  }
-
-  .header__logo--main {
-    display: none;
-  }
-
-  .header__logo--tablet {
-    display: block;
   }
 
   .mobile-trigger {
@@ -491,30 +442,26 @@ header.header:not(.website-header--open) .mobile-logo {
 {% endcall %} 
 
 {% call utils.small() %}
-  .website-header--open .mobile-logo img {
-    display: block;
-    margin-top: 0px;
-  }
   .custom-menu-primary nav {
     padding-left: 20px;
     padding-right: 20px;
   }
+
   .mobile-trigger {
     right: 5px;
   }
+
   .header__wrapper form {
     max-width: 100%;
   }
+
   .header__wrapper {
     padding: 27px 20px 19px;
   }
+
   .custom-logo img {
     max-width: 125px;
     margin-top: 0;
-  }
-  .header__logo {
-    width: 100%;
-    margin: 0 auto;
   }
 
   .header__navigation,
