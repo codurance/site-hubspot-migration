@@ -1,9 +1,5 @@
 {% import '../utils/utils.css' as utils %}
 
-.navigation-primary {
-  display: inline-block;
-}
-
 .navigation-primary a {
   color: var(--shark);
   display: inline-block;
@@ -17,21 +13,6 @@
   padding: 0;
 }
 
-
-.navigation-primary .submenu a,
-.navigation-primary .submenu p {
-  text-decoration: none;
-}
-
-.submenu.level-1 {
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.submenu.level-1 > li {
-  display: inline-block;
-}
-
 .submenu.level-2 {
   opacity: 0;
   position: absolute;
@@ -43,6 +24,11 @@
   padding-top: var(--space-2);
 }
 
+.navigation-primary .submenu a,
+.navigation-primary .submenu p {
+  text-decoration: none;
+}
+
 .submenu.level-2 > li {
   display: flex;
   padding: 0;
@@ -50,10 +36,6 @@
 
 .submenu.level-2 .menu-link {
   display: block;
-}
-
-.submenu.level-3 .menu-link {
-  padding-left: 60px;
 }
 
 /* Hide navigation dropdown in the inline editor */
@@ -114,8 +96,6 @@
   }
 
   .navigation-primary a {
-    display: inline-block;
-    font-weight: var(--middle-font-weight);
     padding: var(--space-1) 0;
   }
 
@@ -139,11 +119,11 @@
     display: block;
   }
 
-  .submenu.level-1 > li {
+  .submenu li:not(:last-child) {
     border-bottom: 1px solid var(--french-gray);
-    max-width: 47%;
   }
 
+  .submenu > li,
   .submenu > li > a {
     display: block;
     width: 100%;
@@ -154,13 +134,7 @@
   }
 
   .submenu.level-1 {
-    width: 100%;
-  }
-
-  .submenu.level-1 > li {
-    display: block;
-    padding: 0;
-    width: 100%;
+    width: 47%;
   }
 
   .submenu.level-2 {
@@ -170,18 +144,15 @@
     -ms-transform: unset;
     transform: unset;
     visibility: visible;
-    width: 100%;
+  }
+
+  .submenu.level-1 > li > a {
+    font-weight: var(--heavy-font-weight);
   }
 
   .submenu.level-2 .menu-link {
-    font-weight: var(--middle-font-weight);
     padding: 10px 25px;
-  }
-
-  .navigation-primary .submenu.level-1 > li > a {
-    display: inline-block;
-    margin-bottom: 0 !important;
-    width: auto;
+    font-weight: var(--light-font-weight);
   }
 
   .navigation-primary .menu-link.active-item {
@@ -244,7 +215,7 @@
   }
 
   .active-item {
-  position: relative;
+    position: relative;
   }
 
   .active-item:after {
@@ -262,9 +233,13 @@
     right: 0;
   }
 
-  .navigation-primary .submenu {
-    display: flex;
-    gap: var(--space-3);
+  .submenu.level-1 {
+    display: inline-block;
+    white-space: nowrap;
+  }
+  
+  .submenu.level-1 > li {
+    display: inline-block;
   }
 
   .submenu.level-2 {
