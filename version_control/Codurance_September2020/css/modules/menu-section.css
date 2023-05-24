@@ -48,14 +48,14 @@
   border-width: 0 2px 2px 0;
   border-color: inherit;
   margin: 3px;
-  transition: border-color .5s,transform .5s,top .5s;
+  transition: border-color .5s, rotate .5s, top .5s;
   position: relative;
   content: "";
   display: inline-block;
   padding: 3px;
   border-style: solid;
   top: 0;
-  transform: rotate(45deg);
+  rotate : 45deg;
   margin-left: 8px;
 }
 
@@ -86,10 +86,6 @@
     visibility: hidden;
   }
 
-  .submenu.level-1 > li.has-submenu {
-    position: static;
-  }
-
   .navigation-primary a,
   .hs-header-language ul a {
     {{ utils.base() }}
@@ -99,14 +95,13 @@
     padding: var(--space-1) 0;
   }
 
-  .navigation-primary a:hover {
-    color: var(--persimmon);
-  }
-
   .navigation-primary li.has-submenu > a:after {
-    border-color: var(--persimmon);
     border-width: 0 2px 2px 0;
-    transform: rotate(-45deg);
+    rotate: -45deg;
+    translate: y -50%;
+    top: 50%;
+    right: 0;
+    position: absolute;
     padding: 3px;
     margin: 0px 6px;
   }
@@ -129,10 +124,6 @@
     width: 100%;
   }
 
-  .submenu > .has-submenu {
-    position: relative;
-  }
-
   .submenu.level-1 {
     width: 47%;
   }
@@ -148,6 +139,7 @@
 
   .submenu.level-1 > li > a {
     font-weight: var(--heavy-font-weight);
+    position: relative;
   }
 
   .submenu.level-2 .menu-link {
@@ -167,7 +159,8 @@
     border-style: solid;
     border-color: var(--persimmon);
     border-width: 0 2px 2px 0;
-    transform: translateY(-50%) rotate(135deg);
+    translate: y -50%; 
+    rotate: 135deg;
     position: absolute;
     left: var(--space-0);
     top: 50%;
@@ -211,7 +204,7 @@
   .navigation-primary li.has-submenu > a[aria-expanded="true"]:after {
     border-color: var(--persimmon);
     top: 3px;
-    transform: rotate(225deg);
+    rotate: 225deg;
   }
 
   .active-item {
