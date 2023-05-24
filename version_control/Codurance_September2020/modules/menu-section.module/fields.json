@@ -72,28 +72,6 @@
       "show_emoji_picker" : false,
       "type" : "text"
     }, {
-      "id" : "307ba1c7-ca55-bb93-0254-49db54a8837f",
-      "name" : "promotional_link",
-      "display_width" : null,
-      "label" : "Promotional link",
-      "required" : false,
-      "locked" : false,
-      "visibility" : {
-        "controlling_field" : null,
-        "controlling_field_path" : "menu_items.submenu.items",
-        "controlling_value_regex" : null,
-        "property" : null,
-        "operator" : "NOT_EMPTY",
-        "access" : null
-      },
-      "supported_types" : [ "CONTENT" ],
-      "type" : "url",
-      "default" : {
-        "content_id" : null,
-        "href" : "",
-        "type" : "CONTENT"
-      }
-    }, {
       "id" : "effdf1bc-1ea1-0dfd-748f-c0cb12e6e66e",
       "name" : "button",
       "display_width" : null,
@@ -227,11 +205,6 @@
     "type" : "group",
     "default" : {
       "items" : [ ],
-      "promotional_link" : {
-        "content_id" : null,
-        "href" : "",
-        "type" : "CONTENT"
-      },
       "button" : {
         "link_field" : {
           "url" : {
@@ -257,11 +230,6 @@
     },
     "submenu" : {
       "items" : [ ],
-      "promotional_link" : {
-        "content_id" : null,
-        "href" : "",
-        "type" : "CONTENT"
-      },
       "button" : {
         "link_field" : {
           "url" : {
