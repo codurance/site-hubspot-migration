@@ -51,6 +51,11 @@
 }
 
 {% call utils.small_and_medium() %}
+  .navigation-primary {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .navigation-primary.website-navigation__menu--open {
     overflow: hidden;
     overflow-y: auto;
@@ -278,6 +283,10 @@
 
 
 {% call utils.extra_large() %}
+  .navigation-primary {
+    margin: 0 30px 0 45px;
+  }
+  
   .navigation-primary li {
     margin-left: 10px;
     margin-right: 10px;

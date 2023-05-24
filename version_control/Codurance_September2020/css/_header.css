@@ -269,10 +269,6 @@ header.header.fixed {
     padding-bottom: 30px;
   }
 
-  .custom-menu-primary nav {
-    margin: 0 30px 0 45px;
-  }
-
   .hs-header-language ul li {
     margin-left: 15px;
   }
@@ -442,11 +438,6 @@ header.header.fixed {
 {% endcall %} 
 
 {% call utils.small() %}
-  .custom-menu-primary nav {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
   .mobile-trigger {
     right: 5px;
   }
