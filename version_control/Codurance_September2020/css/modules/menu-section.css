@@ -1,6 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
-.navigation-primary a {
+.navigation-primary .menu-link {
   color: var(--shark);
   display: inline-block;
   font-weight: var(--middle-font-weight);
@@ -10,18 +10,15 @@
 .navigation-primary .submenu {
   list-style: none;
   margin: 0;
-  padding: 0;
 }
 
 .level-2 {
   opacity: 0;
   position: absolute;
   text-transform: none;
-  top: 22px;
   transition: visibility .3s, opacity .3s;
   visibility: hidden;
   width: auto;
-  padding-top: var(--space-2);
 }
 
 .navigation-primary .submenu a,
@@ -242,20 +239,41 @@
     display: flex;
     left: 0;
     top: var(--header-height);
-    padding: var(--space-5);
     width: 100%;
     z-index: -1;
   }
 
-  .level-2 .promotional-section {
-    max-width: 30%;
+  .promotional-section {
+    {{ utils.slate_to_woodsmoke() }}
+    border-bottom-left-radius: 10px;
+    max-width: 33%;
     white-space: normal;
+    padding: var(--space-5);
+    color: white;
+  }
+
+  .promotional-section > h2,
+  .promotional-section p {
+    {{ utils.natus() }}
+  }
+
+  .promotional-section > h2 {
+    font-weight: var(--heavy-font-weight);
+  }
+
+  .promotional-section > p {
+    margin-top: var(--space-2);
+  }
+
+  .promotional-section > .custom-btn {
+    margin-top: var(--space-3);
   }
 
   .level-2 ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-3);
+    padding: var(--space-7);
   }
 
   .level-2 ul.two-columns {
