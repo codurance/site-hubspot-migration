@@ -13,7 +13,7 @@
   padding: 0;
 }
 
-.submenu.level-2 {
+.level-2 {
   opacity: 0;
   position: absolute;
   text-transform: none;
@@ -29,18 +29,9 @@
   text-decoration: none;
 }
 
-.submenu.level-2 > li {
-  display: flex;
-  padding: 0;
-}
-
-.submenu.level-2 .menu-link {
-  display: block;
-}
-
 /* Hide navigation dropdown in the inline editor */
-.hs-inline-edit .submenu.level-1 > li.has-submenu:hover .submenu.level-2,
-.hs-inline-edit > li.has-submenu.focus .submenu.level-2 {
+.hs-inline-edit .submenu.level-1 > li.has-submenu:hover .level-2,
+.hs-inline-edit > li.has-submenu.focus .level-2 {
   visibility: hidden;
 }
 
@@ -71,7 +62,7 @@
     overflow-x: hidden;
   }
 
-  .submenu.level-2.website-navigation-sub-menu {
+  .level-2.website-navigation-sub-menu {
     left: 100vw;
     top: 0;
     width: 100vw;
@@ -82,7 +73,7 @@
     padding-right: 23px;
   }
 
-  .submenu.level-2.website-navigation-sub-menu:not(.website-navigation-sub-menu--open) {
+  .level-2.website-navigation-sub-menu:not(.website-navigation-sub-menu--open) {
     visibility: hidden;
   }
 
@@ -128,7 +119,7 @@
     width: 47%;
   }
 
-  .submenu.level-2 {
+  .level-2 {
     opacity: 1;
     position: static;
     -webkit-transform: unset;
@@ -142,7 +133,7 @@
     position: relative;
   }
 
-  .submenu.level-2 .menu-link {
+  .level-2 .menu-link {
     padding: 10px 25px;
     font-weight: var(--light-font-weight);
   }
@@ -166,8 +157,8 @@
     top: 50%;
   }
 
-  .submenu.level-2.website-navigation-sub-menu > a,
-  .submenu.level-2.website-navigation-sub-menu > .menu-link.trigger {
+  .level-2.website-navigation-sub-menu > a,
+  .level-2.website-navigation-sub-menu > .menu-link.trigger {
     position: relative;
     margin-top: 7px;
     margin-left: -3px;
@@ -179,6 +170,10 @@
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
+  .level-2 .submenu {
+    flex-grow: 1;
+  }
+
   .navigation-primary a,
   .hs-header-language ul a {
     font-size: var(--natus-font-size);
@@ -221,7 +216,7 @@
     right: 10px;
   }
 
-  .navigation-primary .submenu.level-2 .menu-link.active-item:after{
+  .navigation-primary .level-2 .menu-link.active-item:after{
     left: 0;
     right: 0;
   }
@@ -235,13 +230,11 @@
     display: inline-block;
   }
 
-  .submenu.level-2 {
+  .level-2 { 
     {{ utils.card_border_radius_bottom() }}
     {{ utils.card_shadow() }}
     background: white;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-3);
+    display: flex;
     left: 0;
     top: var(--header-height);
     padding: var(--space-5);
@@ -249,11 +242,22 @@
     z-index: -1;
   }
 
-  .submenu.level-2.two-columns {
+  .level-2 .promotional-section {
+    max-width: 30%;
+    white-space: normal;
+  }
+
+  .level-2 ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+
+  .level-2 ul.two-columns {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .submenu.level-2.website-navigation-sub-menu > .menu-link.trigger {
+  .level-2.website-navigation-sub-menu > .menu-link.trigger {
     display: none;
   }
 
@@ -261,7 +265,7 @@
     padding-inline: 10px;
   }
 
-  .submenu.level-2.website-navigation-sub-menu.website-navigation-sub-menu--open {
+  .website-navigation-sub-menu.website-navigation-sub-menu--open {
     visibility: visible;
     opacity: 1;
   }

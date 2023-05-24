@@ -42,8 +42,8 @@
         >
           {{ item.title }}
         </a>
-
-        <ul class="submenu level-2 website-navigation-sub-menu {% if submenu|length <= 4 %} two-columns{% endif %}" 
+          
+        <nav class="website-navigation-sub-menu level-2" 
           id="sub-menu-services-{{loop.index}}"
         >
           <a href='javascript:;'
@@ -56,33 +56,42 @@
             {{ item.title }}
           </a>
           
-          {# {% if item.submenu.promotional_text %}
+          {% if item.submenu.promotional_text %}
             <div class="promotional-section">
-              {{ item.submenu.promotional_text }}
-              {{ item.submenu.button.button_type }}
+              <p>
+                {{ item.submenu.promotional_text }}
+              </p>
+
+              {% if item.submenu.button.button_type %}
+                <div class="custom-btn custom-btn--{{ item.submenu.button.button_style }}">
+                  {% if item.submenu.button.button_type == "std" %}
+                    {% set href = item.submenu.button.link_field.url.href %}
+                
+                    <a href="{{ href }}"
+                      {% if item.submenu.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                      {% if item.submenu.button.link_field.rel %}rel="{{ item.submenu.button.link_field.rel }}"{% endif %}
+                      class="{{ item.submenu.button.button_style }}"
+                    >
+                      {{ item.submenu.button.text_field }} 
+                      {% if item.submenu.button.button_style is string_containing "text-cta-primary" %}
+                        <i class="las la-arrow-right"></i>
+                      {% endif %}
+                    </a>
+                  {% elif item.submenu.button.button_type == "cta" %}
+                    {% cta guid="{{ item.submenu.button.cta_field }}" %}
+                  {% endif %}
+                </div>
+              {% endif %}
             </div>
-          {% endif %} #}
-
-          {% for node in submenu %} 
-            {{ link(node) }}
-          {% endfor %}
-        </ul>
+          {% endif %}
+          
+          <ul class="submenu{% if submenu|length <= 4 %} two-columns{% endif %}">
+            {% for node in submenu %} 
+              {{ link(node) }}
+            {% endfor %}
+          </ul>
+        </nav>
       </li>
-
-      {# 
-        {% set href = item.submenu.button.link_field.url.href %}
-      
-        <a href="{{ href }}"
-          {% if item.submenu.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
-          {% if item.submenu.button.link_field.rel %}rel="{{ item.submenu.button.link_field.rel }}"{% endif %}
-          >
-          Link text
-        </a>
-
-        {{ item.submenu.button.text_field }}
-        {{ item.submenu.button.button_style }}
-        {% cta guid="{{ item.submenu.button.cta_field }}" %}
-      #}
     {% endfor %} 
   </ul>
 </nav>
