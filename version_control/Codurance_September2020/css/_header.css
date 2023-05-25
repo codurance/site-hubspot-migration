@@ -263,10 +263,7 @@ header.header.fixed {
   .header__wrapper {
     padding-bottom: 30px;
     padding-top: 30px;
-  }
-
-  header.header.no-navigation .header__wrapper {
-    padding-bottom: 30px;
+    padding-inline: var(--space-0);
   }
 
   .hs-header-language ul li {
