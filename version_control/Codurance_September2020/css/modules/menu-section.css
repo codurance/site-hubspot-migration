@@ -152,11 +152,11 @@
     border-style: solid;
     border-color: var(--persimmon);
     border-width: 0 2px 2px 0;
-    translate: y -50%; 
-    rotate: 135deg;
     position: absolute;
     left: var(--space-0);
     top: 50%;
+    rotate: 135deg;
+    translate: 0 -50%; 
   }
 
   .level-2.website-navigation-sub-menu > a,
