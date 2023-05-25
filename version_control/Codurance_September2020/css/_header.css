@@ -389,8 +389,6 @@ header.header.fixed {
     top: 70px;
     width: 200vw;
     transition: left .5s,padding-top .5s,border-top-color .5s;
-    padding-left: 25px;
-    padding-right: 25px;
   }
 
   .mobile-trigger {

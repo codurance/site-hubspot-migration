@@ -108,7 +108,7 @@
   }
 
   .menu-link {
-    padding: var(--space-1) 0;
+    padding: var(--space-2) 0;
   }
 
   .promotional-section {
@@ -151,7 +151,7 @@
   }
 
   .level-2 .menu-link {
-    padding: var(--space-2) var(--space-2);
+    padding: var(--space-2);
     font-weight: var(--light-font-weight);
   }
 
@@ -163,7 +163,7 @@
   .back-button {
     color: white;
     position: relative;
-    margin-left: var(--space-1);
+    margin-left: var(--space-0);
   }
   
   .back-button:before {
