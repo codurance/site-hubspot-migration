@@ -13,9 +13,9 @@
   },
   "children" : [ {
     "id" : "0ff061a2-047f-a946-446f-619817aa21a4",
-    "name" : "title",
+    "name" : "menu_label",
     "display_width" : null,
-    "label" : "Title",
+    "label" : "Menu label",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -29,6 +29,14 @@
     "label" : "Link",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "menu_items.submenu.items",
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "EMPTY",
+      "access" : null
+    },
     "supported_types" : [ "CONTENT", "BLOG" ],
     "type" : "url",
     "default" : {

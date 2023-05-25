@@ -40,7 +40,7 @@
           aria-expanded="false"
           {{ isActiveNode(item.link.href) if item.link.href }}  
         >
-          {{ item.title }}
+          {{ item.menu_label }}
         </a>
           
         <nav class="website-navigation-sub-menu level-2" 
@@ -60,11 +60,11 @@
                 aria-expanded="false"
                 {{ isActiveNode(item.link.href) if item.link.href }}  
                 >
-                {{ item.title }}
+                {{ item.menu_label }}
               </a>
 
-              {% if item.title %}
-                <h2>{{ item.title }}</h2>
+              {% if item.menu_label %}
+                <h2>{{ item.menu_label }}</h2>
               {% endif %}
 
               {% if item.submenu.promotional_text %}
