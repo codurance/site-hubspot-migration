@@ -9,6 +9,8 @@ You will also find the mobile menu styles below.
 {% include "../utils/utils.css" as utils %}
 
 header.header {
+  {{ utils.card_shadow() }}
+  background-color: white;
   position: fixed;
   transition: transform 0.5s, height 0.5s;
   width: 100%;
@@ -16,8 +18,7 @@ header.header {
 }
 
 .body-wrapper > div:first-child,
-header.header,
-.header__container {
+header.header {
   height: var(--header-height);
 }
 
@@ -282,11 +283,6 @@ header.header.fixed {
     --header-height: 85px;
   }
 
-  .header__container {
-    {{ utils.card_shadow() }}
-    background: white;
-  }
-
   .hs-header-language ul .active::after {
     bottom: -2px;
   }
@@ -335,14 +331,8 @@ header.header.fixed {
 
   header.header.website-header--open {
     --header-height: 100vh;
-    background-color: white;
     color: var(--shark);
     top: 0;
-  }
-
-  header.header:not(.website-header--open ){
-    {{ utils.card_shadow() }}
-    background-color: white;
   }
 
   .website-header--open .hs-header-language {

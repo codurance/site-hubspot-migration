@@ -234,13 +234,12 @@
 
   .level-2 { 
     {{ utils.card_border_radius_bottom() }}
-    {{ utils.card_shadow() }}
+    box-shadow: 0 4px 4px #00000029;
     background: white;
     display: flex;
     left: 0;
     top: var(--header-height);
     width: 100%;
-    z-index: -1;
   }
 
   .promotional-section {
