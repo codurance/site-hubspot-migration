@@ -46,24 +46,32 @@
         <nav class="website-navigation-sub-menu level-2" 
           id="sub-menu-services-{{loop.index}}"
         >
-          <a href='javascript:;'
-            class="menu-link trigger back-button" 
-            id="sub-menu-toggle-{{loop.index}}"
-            aria-controls="sub-menu-services-{{loop.index}}"
-            aria-expanded="false"
-            {{ isActiveNode(item.link.href) if item.link.href }}  
-          >
-            {{ item.title }}
-          </a>
-          
+
           {% if item.submenu.promotional_text %}
             <div class="promotional-section">
-              <h2>{{ item.title }}</h2>
-              <p>
-                {{ item.submenu.promotional_text }}
-              </p>
+          {% endif %}
 
-              {% if item.submenu.button.button_type %}
+              <a href='javascript:;'
+                class="trigger back-button" 
+                id="sub-menu-toggle-{{loop.index}}"
+                aria-controls="sub-menu-services-{{loop.index}}"
+                role="button"
+                aria-label="back button"
+                aria-expanded="false"
+                {{ isActiveNode(item.link.href) if item.link.href }}  
+                >
+                {{ item.title }}
+              </a>
+
+              {% if item.title %}
+                <h2>{{ item.title }}</h2>
+              {% endif %}
+
+              {% if item.submenu.promotional_text %}
+                <p>{{ item.submenu.promotional_text }}</p>
+              {% endif %}
+
+              {% if item.submenu.button.text_field %}
                 <div class="custom-btn custom-btn--{{ item.submenu.button.button_style }}">
                   {% if item.submenu.button.button_type == "std" %}
                     {% set href = item.submenu.button.link_field.url.href %}
@@ -83,6 +91,7 @@
                   {% endif %}
                 </div>
               {% endif %}
+          {% if item.submenu.promotional_text %}
             </div>
           {% endif %}
           
