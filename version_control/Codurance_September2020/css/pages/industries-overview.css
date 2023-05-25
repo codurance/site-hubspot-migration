@@ -23,7 +23,7 @@
 
 /* End general styles */
 
-.header {
+.hero {
     background-image: linear-gradient(
         to right, 
         var(--woodsmoke) 0%, 
