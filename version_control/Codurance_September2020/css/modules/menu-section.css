@@ -295,7 +295,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-3);
-    padding: var(--space-7);
+    padding: var(--space-6);
   }
 
   .level-2 ul.two-columns {
