@@ -258,18 +258,20 @@
   }
 
   .level-2 { 
-    {{ utils.card_border_radius_bottom() }}
-    box-shadow: 0 4px 4px #00000029;
-    background: white;
     display: flex;
+    width: 100%;
+    min-width: var(--content-max-width);
     left: 0;
     top: var(--header-height);
-    width: 100%;
+    background: white;
+    {{ utils.card_border_radius_bottom() }}
+    box-shadow: 0 4px 4px #00000029;
   }
 
   .promotional-section {
     border-bottom-left-radius: 10px;
-    max-width: 33%;
+    max-width: 30%;
+    width: 100%;
     white-space: normal;
     padding: var(--space-5);
   }
@@ -307,7 +309,7 @@
   }
 
   .navigation-primary .submenu.level-1 > li > .menu-link {
-    padding-inline: 10px;
+    padding-inline: var(--space-0);
   }
 
   .website-navigation-sub-menu.website-navigation-sub-menu--open {
