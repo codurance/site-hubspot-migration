@@ -47,51 +47,49 @@
           id="sub-menu-services-{{loop.index}}"
         >
 
-          {% if item.submenu.promotional_text %}
+          {% if item.submenu.promotional_section.description %}
             <div class="promotional-section">
           {% endif %}
 
-              <a href='javascript:;'
-                class="trigger back-button" 
-                id="sub-menu-toggle-{{loop.index}}"
-                aria-controls="sub-menu-services-{{loop.index}}"
-                role="button"
-                aria-label="back button"
-                aria-expanded="false"
-                {{ isActiveNode(item.link.href) if item.link.href }}  
+          <a href='javascript:;'
+            class="trigger back-button" 
+            id="sub-menu-toggle-{{loop.index}}"
+            aria-controls="sub-menu-services-{{loop.index}}"
+            role="button"
+            aria-label="back button"
+            aria-expanded="false"
+            {{ isActiveNode(item.link.href) if item.link.href }}  
+            >
+            {{ item.menu_label }}
+          </a>
+
+          {% if item.submenu.promotional_section.description %}
+            <h2>{{ item.menu_label }}</h2>
+            <p>{{ item.submenu.promotional_section.description }}</p>
+          {% endif %}
+
+          {% if item.submenu.promotional_section.button.text_field %}
+            <div class="custom-btn custom-btn--{{ item.submenu.promotional_section.button.button_style }}">
+              {% if item.submenu.promotional_section.button.button_type == "std" %}
+                {% set href = item.submenu.promotional_section.button.link_field.url.href %}
+            
+                <a href="{{ href }}"
+                  {% if item.submenu.promotional_section.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                  {% if item.submenu.promotional_section.button.link_field.rel %}rel="{{ item.submenu.promotional_section.button.link_field.rel }}"{% endif %}
+                  class="{{ item.submenu.promotional_section.button.button_style }}"
                 >
-                {{ item.menu_label }}
-              </a>
-
-              {% if item.menu_label %}
-                <h2>{{ item.menu_label }}</h2>
-              {% endif %}
-
-              {% if item.submenu.promotional_text %}
-                <p>{{ item.submenu.promotional_text }}</p>
-              {% endif %}
-
-              {% if item.submenu.button.text_field %}
-                <div class="custom-btn custom-btn--{{ item.submenu.button.button_style }}">
-                  {% if item.submenu.button.button_type == "std" %}
-                    {% set href = item.submenu.button.link_field.url.href %}
-                
-                    <a href="{{ href }}"
-                      {% if item.submenu.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
-                      {% if item.submenu.button.link_field.rel %}rel="{{ item.submenu.button.link_field.rel }}"{% endif %}
-                      class="{{ item.submenu.button.button_style }}"
-                    >
-                      {{ item.submenu.button.text_field }} 
-                      {% if item.submenu.button.button_style is string_containing "text-cta-primary" %}
-                        <i class="las la-arrow-right"></i>
-                      {% endif %}
-                    </a>
-                  {% elif item.submenu.button.button_type == "cta" %}
-                    {% cta guid="{{ item.submenu.button.cta_field }}" %}
+                  {{ item.submenu.promotional_section.button.text_field }} 
+                  {% if item.submenu.promotional_section.button.button_style is string_containing "text-cta-primary" %}
+                    <i class="las la-arrow-right"></i>
                   {% endif %}
-                </div>
+                </a>
+              {% elif item.submenu.promotional_section.button.button_type == "cta" %}
+                {% cta guid="{{ item.submenu.promotional_section.button.cta_field }}" %}
               {% endif %}
-          {% if item.submenu.promotional_text %}
+            </div>
+          {% endif %}
+
+          {% if item.submenu.promotional_section.description %}
             </div>
           {% endif %}
           
