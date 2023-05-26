@@ -229,7 +229,7 @@ const websiteNavigation = function() {
       "#" + menuToggle.getAttribute("aria-controls")
     );
 
-    const subMenuToggles = menu.querySelectorAll(".has-submenu");
+    const subMenuToggles = menu.querySelectorAll(".has-submenu > .menu-link");
 
     const subMenuToggleProxies = window.document.querySelectorAll(
       ".website-navigation-sub-menu__toggle-proxy"
