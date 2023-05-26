@@ -10,17 +10,17 @@
   
   box-sizing: border-box;
   
-  --space--1: 4px;
-  --space-0: 8px;
-  --space-1: 12px;
-  --space-2: 16px;
-  --space-3: 24px;
-  --space-4: 32px;
-  --space-5: 48px;
-  --space-6: 64px;
-  --space-7: 96px;
-  --space-8: 128px;
-  --space-9: 192px;
+  --space--1: 0.25rem;
+  --space-0: 0.5rem;
+  --space-1: 0.75rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+  --space-8: 8rem;
+  --space-9: 12rem;
 }
 
 *, *::before, &::after {
