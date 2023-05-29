@@ -260,7 +260,7 @@ const websiteNavigation = function() {
     }
 
     function toggleSubMenu(e) {
-      if (e.target.classList.contains("submenu")) return;
+      if (!e.target.classList.contains("trigger")) return;
 
       let subMenuToggle = e.target;
       let subMenu = getSubMenu(subMenuToggle);
