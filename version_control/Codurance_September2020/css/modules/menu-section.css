@@ -164,6 +164,7 @@
     color: white;
     position: relative;
     margin-left: var(--space-0);
+    letter-spacing: 1px;
   }
   
   .back-button:before {
@@ -208,7 +209,6 @@
     line-height: var(--natus-line-height);
   }
 
- 
   .menu-link:hover,
   .menu-link:focus,
   .navigation-primary li.has-submenu > a[aria-expanded="true"] {
@@ -270,15 +270,10 @@
 
   .promotional-section {
     border-bottom-left-radius: 10px;
-    max-width: 30%;
+    max-width: 33%;
     width: 100%;
     white-space: normal;
     padding: var(--space-5);
-  }
-
-  .promotional-section > h2,
-  .promotional-section p {
-    {{ utils.natus() }}
   }
 
   .promotional-section > h2 {
@@ -286,11 +281,16 @@
   }
 
   .promotional-section > p {
+    {{ utils.natus() }}
     margin-top: var(--space-2);
   }
 
   .promotional-section > .custom-btn {
     margin-top: var(--space-3);
+  }
+
+  .promotional-section .button-primary {
+    padding: 0.4em 1em;
   }
 
   .level-2 ul {
@@ -301,7 +301,8 @@
   }
 
   .level-2 ul.two-columns {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,33%);
+    justify-content: center;
   }
 
   .level-2.website-navigation-sub-menu > .menu-link.trigger {
