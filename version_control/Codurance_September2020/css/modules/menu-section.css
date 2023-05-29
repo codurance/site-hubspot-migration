@@ -233,21 +233,6 @@
     position: relative;
   }
 
-  .active-item:after {
-    background-color: var(--persimmon);
-    bottom: -2px;
-    content: "";
-    height: 2px;
-    left: 10px;
-    position: absolute;
-    right: 10px;
-  }
-
-  .navigation-primary .level-2 .menu-link.active-item:after{
-    left: 0;
-    right: 0;
-  }
-
   .submenu.level-1 {
     display: inline-block;
     white-space: nowrap;
@@ -266,6 +251,21 @@
     background: white;
     {{ utils.card_border_radius_bottom() }}
     box-shadow: 0 4px 4px #00000029;
+  }
+
+  .level-2 .active-item:after {
+    background-color: var(--persimmon);
+    bottom: -2px;
+    content: "";
+    height: 2px;
+    left: 10px;
+    position: absolute;
+    right: 10px;
+  }
+
+  .level-2 .active-item:after{
+    left: 0;
+    right: 0;
   }
 
   .promotional-section {
