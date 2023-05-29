@@ -33,7 +33,7 @@
       {% set submenu = item.submenu.items %}
 
       <li class="menu-item{% if submenu %} has-submenu{% endif %}">
-        <a href="{{ item.link.href if item.link.href else 'javascript:;' }}"
+        <a href="{{ item.link.href if item.link.href && !submenu else 'javascript:;' }}"
           class="menu-link trigger" 
           id="sub-menu-toggle-{{loop.index}}"
           aria-controls="sub-menu-services-{{loop.index}}"
