@@ -23,8 +23,8 @@ header.header {
 }
 
 .custom-logo img {
-  max-width: 147px;
-  margin-top: -9px;
+  max-width: 7.5rem;
+  translate: 0 10%;
 }
 
 header.header.default {
@@ -189,27 +189,19 @@ header.header.fixed {
 
 /* Tablet Styles */
 
-
 .mobile-trigger {
   display:none;
-}
-
-.hs-header-language {
-  align-items: center;
-  display: flex;
-  height: 25px;
 }
 
 .hs-header-language ul {
   align-items: center;
   display: flex;
+  gap: var(--space-1);
   list-style-type: none;
-  padding: 0;
-  height: 25px;
   margin: 0;
 }
 
-.hs-header-language ul a{
+.hs-header-language ul a {
   background: none;
   border: 0 none;
   cursor: pointer;
@@ -267,10 +259,6 @@ header.header.fixed {
     padding-inline: var(--space-0);
   }
 
-  .hs-header-language ul li {
-    margin-left: 15px;
-  }
-
   .hs-header-language ul a,
   .hs-header-language ul span {
     font-size: 18px;
@@ -279,6 +267,11 @@ header.header.fixed {
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
+  .header__wrapper {
+    align-items: center;
+  }
+
+
   .body-wrapper > div:first-child {
     --header-height: 85px;
   }
@@ -309,10 +302,6 @@ header.header.fixed {
     padding-top: 25px;
     padding-bottom: 19.5px;
     padding-inline: 25px;
-  }
-
-  .hs-header-language ul li {
-    margin-left: 10px;
   }
 
   .hs-header-language ul .active::after {

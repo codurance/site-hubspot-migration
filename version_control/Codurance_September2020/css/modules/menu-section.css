@@ -301,7 +301,7 @@
   }
 
   .level-2 ul.two-columns {
-    grid-template-columns: repeat(2,33%);
+    grid-template-columns: repeat(2, 33%);
     justify-content: center;
   }
 
@@ -326,9 +326,6 @@
 
 
 {% call utils.extra_large() %}
-  .navigation-primary {
-    margin: 0 30px 0 45px;
-  }
   
   .navigation-primary li {
     margin-left: 10px;
