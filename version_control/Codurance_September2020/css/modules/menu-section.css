@@ -253,6 +253,7 @@
     box-shadow: 0 4px 4px #00000029;
   }
 
+  .level-1 > .menu-item:not(.has-submenu) > .active-item:after,
   .level-2 .active-item:after {
     background-color: var(--persimmon);
     bottom: -2px;
