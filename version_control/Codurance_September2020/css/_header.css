@@ -193,7 +193,7 @@ header.header.fixed {
   display:none;
 }
 
-.hs-header-language ul {
+.hs-header-language {
   align-items: center;
   display: flex;
   gap: var(--space-1);
@@ -201,7 +201,7 @@ header.header.fixed {
   margin: 0;
 }
 
-.hs-header-language ul a {
+.hs-header-language a {
   background: none;
   border: 0 none;
   cursor: pointer;
@@ -212,7 +212,7 @@ header.header.fixed {
   padding-right: 0;
 }
 
-.hs-header-language ul span {
+.hs-header-language span {
   background: none;
   border: 0 none;
   cursor: pointer;
@@ -225,11 +225,11 @@ header.header.fixed {
   padding-right: 0;
 }
 
-.hs-header-language ul .active{
+.hs-header-language .active{
   position: relative;
 }
 
-.hs-header-language ul::before {
+.hs-header-language::before {
   content: "\f0ac";
   font-family: 'line awesome free';
   position: relative;
@@ -237,7 +237,7 @@ header.header.fixed {
   top: 0.05em;
 }
 
-.hs-header-language ul .active::after {
+.hs-header-language .active::after {
   background-color: var(--persimmon);
   left: 0;
   right: 0;
@@ -246,8 +246,8 @@ header.header.fixed {
   position: absolute;
 }
 
-.hs-header-language ul a:focus,
-.hs-header-language ul a:hover {
+.hs-header-language a:focus,
+.hs-header-language a:hover {
   text-decoration:none;
   color: var(--persimmon);
 }
@@ -259,8 +259,8 @@ header.header.fixed {
     padding-inline: var(--space-0);
   }
 
-  .hs-header-language ul a,
-  .hs-header-language ul span {
+  .hs-header-language a,
+  .hs-header-language span {
     font-size: 18px;
     line-height: 23px;
   }
@@ -276,12 +276,12 @@ header.header.fixed {
     --header-height: 85px;
   }
 
-  .hs-header-language ul .active::after {
+  .hs-header-language .active::after {
     bottom: -2px;
   }
 
-  .hs-header-language ul a,
-  .hs-header-language ul span {
+  .hs-header-language a,
+  .hs-header-language span {
     padding-bottom: 0;
     padding-top: 0;
   }
@@ -304,7 +304,7 @@ header.header.fixed {
     padding-inline: 25px;
   }
 
-  .hs-header-language ul .active::after {
+  .hs-header-language .active::after {
     bottom: 0;
   }
 {% endcall %}
@@ -324,21 +324,21 @@ header.header.fixed {
     top: 0;
   }
 
-  .website-header--open .hs-header-language {
+  .website-header--open .header__utilities {
     opacity: 0;
     visibility: hidden;
   }
 
-  .hs-header-language ul:before {
+  .hs-header-language:before {
     position: relative;
     top: -1px;
   }
 
-  .hs-header-language ul .active::after {
+  .hs-header-language .active::after {
     bottom: -4px;
   }
 
-  .hs-header-language ul{
+  .hs-header-language{
     position: absolute;
     right: 78px;
     top: 25px;
@@ -348,8 +348,8 @@ header.header.fixed {
     list-style-type: none;
     padding: 0;
   }
-  .hs-header-language ul span,
-  .hs-header-language ul a{
+  .hs-header-language span,
+  .hs-header-language a{
     font-size: 18px;
     line-height: 20px;
   }

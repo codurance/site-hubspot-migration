@@ -83,7 +83,7 @@
   }
 
   .navigation-primary .menu-link,
-  .hs-header-language ul a {
+  .hs-header-language a {
     {{ utils.base() }}
   }
 
@@ -202,7 +202,7 @@
   }
 
   .navigation-primary a,
-  .hs-header-language ul a {
+  .hs-header-language a {
     font-size: var(--natus-font-size);
     font-weight: var(--middle-font-weight);
     letter-spacing: 0.02em;
