@@ -2,6 +2,7 @@
 
 .blog-cta-card {
     {{ utils.card_shadow() }}
+    {{ utils.card_border_radius() }}
     transition: var(--cta-transition);
     display: flex;
     align-items: center;
