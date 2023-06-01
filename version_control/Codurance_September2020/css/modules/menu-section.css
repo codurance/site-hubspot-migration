@@ -81,8 +81,7 @@
     visibility: hidden;
   }
 
-  .navigation-primary .menu-link,
-  .hs-header-language a {
+  .navigation-primary .menu-link {
     {{ utils.base() }}
   }
 
@@ -200,8 +199,7 @@
     flex-grow: 1;
   }
 
-  .navigation-primary a,
-  .hs-header-language a {
+  .navigation-primary a {
     font-size: var(--natus-font-size);
     font-weight: var(--middle-font-weight);
     letter-spacing: 0.02em;
