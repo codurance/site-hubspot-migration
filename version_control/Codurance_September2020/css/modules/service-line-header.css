@@ -16,55 +16,55 @@
 {% endcall %}
 
 
-.header{
+.hero{
     display: flex;
     flex-direction: column-reverse;
 }
 
-.header,
+.hero,
 .text-and-image{
     max-width: {{content_mobile_max_width}};
     margin: 0 auto;
 }
 
-.header__text h1{
+.hero__text h1{
     {{ utils.dudler() }}
     font-weight: var(--heavy-font-weight);
 }
 
-.header__image{
+.hero__image{
     margin-top: -1em;
     transform: translate(15%);
 }
 
 {% call utils.medium_large_and_extra_large() %}
-    .header{
+    .hero{
         flex-direction: row;
         max-width: var(--content-max-width);
     }
 
-    .header__text {
+    .hero__text {
         min-width: 60%;
         align-self: center;
     }
 
-    .header__text h1{
+    .hero__text h1{
         {{ utils.eames() }}
         margin-bottom: 0.2em;
     }
 
-    .header__text p {
+    .hero__text p {
         {{ utils.freed() }}
         font-weight: var(--light-font-weight);
     }
 
-    .header__image{
+    .hero__image{
         transform: inherit;
     }
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
-    .header__image{
+    .hero__image{
         transform: translateX(-13%);
     }
 {%endcall%}
