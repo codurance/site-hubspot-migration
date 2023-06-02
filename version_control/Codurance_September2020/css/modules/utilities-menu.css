@@ -1,5 +1,49 @@
 {% import '../utils/utils.css' as utils %}
 
+.utilities-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.utilities-menu > a {
+  color: var(--shark);
+  display: inline-block;
+  transition: color 0.2s;
+  text-decoration: none;
+  font-size: var(--natus-font-size);
+  font-weight: var(--middle-font-weight);
+  letter-spacing: 0.02em;
+  line-height: var(--natus-line-height);
+}
+
+.utilities-menu > a:focus,
+.utilities-menu > a:hover {
+  color: var(--persimmon);
+}
+
+.utilities-menu > a.active-item {
+  position: relative;
+}
+
+.utilities-menu > a.active-item:after {
+  background-color: var(--persimmon);
+  bottom: -2px;
+  content: "";
+  height: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+{% call utils.small_and_medium() %}
+  .utilities-menu > a {
+    display: none;
+  }
+{% endcall %}
+
+/* LANGUAGE SELECTOR START */
+
 .hs-header-language {
   align-items: center;
   display: flex;
@@ -9,7 +53,6 @@
 }
 
 .hs-header-language a {
-
   background: none;
   border: 0 none;
   cursor: pointer;
@@ -124,3 +167,5 @@
       bottom: -4px;
     }
 {% endcall %} 
+
+/* LANGUAGE SELECTOR END */
