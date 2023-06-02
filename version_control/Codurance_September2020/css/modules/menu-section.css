@@ -260,14 +260,12 @@
     bottom: -2px;
     content: "";
     height: 2px;
-    left: 10px;
     position: absolute;
-    right: 10px;
   }
 
-  .level-2 .active-item:after{
-    left: 0;
-    right: 0;
+  .level-1 > .menu-item:not(.has-submenu) > .active-item:after {
+    left: var(--space-0);
+    right: var(--space-0);
   }
 
   .promotional-section {
@@ -327,6 +325,12 @@
   .level-1 > li > .menu-link {
     padding-inline: var(--space-2);
   }
+
+  .level-1 > .menu-item:not(.has-submenu) > .active-item:after {
+    left: var(--space-2);
+    right: var(--space-2);
+  }
+
 {% endcall %}
 
 
