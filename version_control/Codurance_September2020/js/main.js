@@ -2,26 +2,6 @@
   const HIDE_FOCUS_STYLES_CLASS = "disable-focus-styles";
   const SHOW_FOCUS_STYLES_CLASS = "enable-focus-styles";
 
-  const firstLanguageSwitcherItem = document.querySelector(
-    ".header__language-switcher .lang_list_class li:first-child"
-  );
-
-  const NAV = document.querySelector(".header__navigation");
-  const LANG_SWITCHER = document.querySelector(".header__language-switcher");
-  const SEARCH = document.querySelector(".header__search");
-
-  const allToggles = document.querySelectorAll(".header--toggle");
-  const navToggle = document.querySelector(".header__navigation--toggle");
-  const langToggle = document.querySelector(
-    ".header__language-switcher--toggle"
-  );
-  const searchToggle = document.querySelector(".header__search--toggle");
-  const closeToggle = document.querySelector(".header__close--toggle");
-
-  const allElements = document.querySelectorAll(
-    ".header--element, .header--toggle"
-  );
-
   function domReady(callback) {
     if (["interactive", "complete"].indexOf(document.readyState) >= 0) {
       callback();
@@ -38,47 +18,6 @@
   function hideFocusOutline() {
     document.body.classList.add(HIDE_FOCUS_STYLES_CLASS);
     document.body.classList.remove(SHOW_FOCUS_STYLES_CLASS);
-  }
-
-  function toggleNav() {
-    allToggles.forEach(function(toggle) {
-      toggle.classList.toggle("hide");
-    });
-
-    NAV.classList.toggle("open");
-    navToggle.classList.toggle("open");
-
-    closeToggle.classList.toggle("show");
-  }
-
-  function toggleLang() {
-    allToggles.forEach(function(toggle) {
-      toggle.classList.toggle("hide");
-    });
-
-    LANG_SWITCHER.classList.toggle("open");
-    langToggle.classList.toggle("open");
-
-    closeToggle.classList.toggle("show");
-  }
-
-  function toggleSearch() {
-    allToggles.forEach(function(toggle) {
-      toggle.classList.toggle("hide");
-    });
-
-    SEARCH.classList.toggle("open");
-    searchToggle.classList.toggle("open");
-
-    closeToggle.classList.toggle("show");
-  }
-
-  function closeAll() {
-    allElements.forEach(function(element) {
-      element.classList.remove("hide", "open");
-    });
-
-    closeToggle.classList.remove("show");
   }
 
   $(".active-branch").each(function() {
@@ -99,33 +38,6 @@
       document.body.addEventListener("mousedown", hideFocusOutline);
       document.body.addEventListener("mouseup", hideFocusOutline);
 
-      // function dependent on the language switcher component
-      if (LANG_SWITCHER) {
-        // Adds a hover style class to the parent element when the cursor hovers
-        // over the first child item
-        firstLanguageSwitcherItem.addEventListener(
-          "mouseover",
-          hoverLanguageSwitcher
-        );
-        firstLanguageSwitcherItem.addEventListener(
-          "mouseout",
-          unhoverLanguageSwitcher
-        );
-
-        // Toggles the language switcher
-        langToggle.addEventListener("click", toggleLang);
-      }
-
-      // Toggles the mobile views for menu, search, and close button
-      if (navToggle) {
-        navToggle.addEventListener("click", toggleNav);
-      }
-      if (searchToggle) {
-        searchToggle.addEventListener("click", toggleSearch);
-      }
-      if (closeToggle) {
-        closeToggle.addEventListener("click", closeAll);
-      }
       var ost = 0;
       $(window).scroll(function() {
         var cOst = $(this).scrollTop();
@@ -152,6 +64,7 @@
       $(".item input").removeAttr("disabled");
     }
   });
+
   $(function() {
     var value1 = window.location.href.substring(
       window.location.href.lastIndexOf("/") + 1
@@ -230,10 +143,6 @@ const websiteNavigation = function() {
 
     const subMenuToggles = menu.querySelectorAll(".has-submenu");
 
-    const subMenuToggleProxies = window.document.querySelectorAll(
-      ".website-navigation-sub-menu__toggle-proxy"
-    );
-
     let currentOpenSubMenu = null;
 
     function setupEventListeners() {
@@ -243,9 +152,6 @@ const websiteNavigation = function() {
       }
       Array.prototype.forEach.call(subMenuToggles, function(t) {
         t.addEventListener("click", toggleSubMenu);
-      });
-      Array.prototype.forEach.call(subMenuToggleProxies, function(t) {
-        t.addEventListener("click", clickProxy);
       });
     }
 
@@ -283,13 +189,6 @@ const websiteNavigation = function() {
         openSubMenu(subMenu, subMenuToggle);
         return;
       }
-    }
-
-    function clickProxy(e) {
-      const real = window.document.getElementById(
-        e.target.dataset.sub_menu_toggle_id
-      );
-      real.click();
     }
 
     function targetIsCurrentlyOpen(subMenu) {
@@ -366,6 +265,7 @@ function ea_scroll(hash) {
     return false;
   }
 }
+
 if (window.location.hash) {
   ea_scroll(window.location.hash);
 }
