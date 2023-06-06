@@ -346,7 +346,7 @@ const websiteNavigation = function() {
       };
     }
 
-    setupEventListeners();
+    // setupEventListeners();
     exposeSharedMethods();
   }
 };
