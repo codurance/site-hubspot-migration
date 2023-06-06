@@ -87,7 +87,6 @@
     {{ utils.base() }}
   }
 
-
   .navigation-primary li.has-submenu > a:after {
     border-width: 0 2px 2px 0;
     rotate: -45deg;
@@ -197,6 +196,13 @@
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
+  .header__wrapper,
+  .navigation-primary,
+  .level-1,
+  .menu-item.has-submenu {
+    height: 100%;
+  }
+
   .level-2 .submenu {
     flex-grow: 1;
   }
@@ -240,7 +246,6 @@
   
   .submenu.level-1 > li {
     display: inline-block;
-    padding-bottom: var(--space-3);
   }
 
   .level-2 { 
