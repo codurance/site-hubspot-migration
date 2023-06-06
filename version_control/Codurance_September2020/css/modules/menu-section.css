@@ -199,8 +199,7 @@
   .header__wrapper,
   .navigation-primary,
   .level-1,
-  .has-submenu,
-  .has-submenu > a {
+  .has-submenu {
     height: 100%;
   }
 
@@ -216,10 +215,14 @@
     line-height: var(--natus-line-height);
   }
 
-  .menu-link:hover,
+  .menu-item:hover > a,
   .menu-link:focus,
   .navigation-primary li.has-submenu > a[aria-expanded="true"] {
     color: var(--persimmon);
+  }
+
+  .has-submenu > a {
+    pointer-events: none;
   }
 
   .navigation-primary li.has-submenu > a[aria-expanded="true"]:after {
