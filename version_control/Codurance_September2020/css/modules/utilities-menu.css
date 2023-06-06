@@ -153,6 +153,10 @@
       top: -1px;
     }
 
+    .website-header--open .hs-header-language {
+      display: none;
+    }
+
     .hs-header-language span,
     .hs-header-language a {
       font-size: 18px;
@@ -160,7 +164,7 @@
     } 
 
     .hs-header-language a {
-        {{ utils.base() }}
+      {{ utils.base() }}
     }
 
     .hs-header-language .active::after {
