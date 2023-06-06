@@ -240,6 +240,7 @@
   
   .submenu.level-1 > li {
     display: inline-block;
+    padding-bottom: var(--space-3);
   }
 
   .level-2 { 
@@ -313,10 +314,15 @@
     padding-inline: var(--space-0);
   }
 
-  .website-navigation-sub-menu.website-navigation-sub-menu--open {
+  .has-submenu:hover .website-navigation-sub-menu {
     visibility: visible;
     opacity: 1;
-  }
+  } 
+
+  /* .website-navigation-sub-menu.website-navigation-sub-menu--open {
+    visibility: visible;
+    opacity: 1;
+  } */
   
   .submenu.level-1 > li.has-submenu > a {
     margin-bottom: 0;

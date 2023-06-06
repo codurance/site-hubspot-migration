@@ -254,7 +254,6 @@ header.header.fixed {
 
 {% call utils.extra_large() %}
   .header__wrapper {
-    padding-bottom: 30px;
     padding-top: 30px;
     padding-inline: var(--space-0);
   }
@@ -267,10 +266,6 @@ header.header.fixed {
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
-  .header__wrapper {
-    align-items: center;
-  }
-
 
   .body-wrapper > div:first-child {
     --header-height: 85px;
@@ -300,7 +295,6 @@ header.header.fixed {
 {% call utils.small_medium_and_large() %}
   .header__wrapper {
     padding-top: 25px;
-    padding-bottom: 19.5px;
     padding-inline: 25px;
   }
 
