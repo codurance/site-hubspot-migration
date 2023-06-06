@@ -62,6 +62,18 @@
   top: 0.05em;
 }
 
+.language-selector__button:after {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  content: "";
+  display: inline-block;
+  margin: 3px;
+  padding: 3px;
+  rotate: 45deg;
+  transition: border-color .5s, rotate .5s;
+}
+
 .language-selector__button:focus,
 .language-selector__button:hover,
 .language-selector a:focus,
@@ -95,6 +107,11 @@
   .language-selector a {
     {{ utils.base() }}
     font-weight: var(--middle-font-weight);
+  }
+
+  .language-selector__button:after {
+    margin: 4px;
+    padding: 4px;
   }
 {% endcall %} 
 
