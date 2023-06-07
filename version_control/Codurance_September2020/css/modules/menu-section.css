@@ -343,8 +343,8 @@
 {% call utils.extra_large() %}
   
   .navigation-primary li {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: var(--space--1);
+    margin-right: var(--space--1);
   }
 {% endcall %}
 
