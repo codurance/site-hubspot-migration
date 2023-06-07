@@ -89,7 +89,7 @@
   transition: .5s;
 }
 
-.language-selector__button[aria-expanded="true"] .language-selector__dropdown { 
+.language-selector__button[aria-expanded="true"] + .language-selector__dropdown { 
   visibility: visible;
   opacity: 1;
 }
