@@ -9,9 +9,9 @@ languageSelector.addEventListener("click", function() {
 function toggleLanguageDropdown(languageSelector) {
   let ariaExpanded = languageSelector.getAttribute("aria-expanded");
 
-  if (ariaExpanded == "false") {
-    languageSelector.setAttribute("aria-expanded", "true");
-  } else {
-    languageSelector.setAttribute("aria-expanded", "false");
+  if (ariaExpanded === "false") {
+    return languageSelector.setAttribute("aria-expanded", "true");
   }
+
+  languageSelector.setAttribute("aria-expanded", "false");
 }
