@@ -82,6 +82,18 @@
   color: var(--persimmon);
 }
 
+.language-selector__dropdown {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+}
+
+.language-selector__button[aria-expanded="true"] .language-selector__dropdown { 
+  visibility: visible;
+  opacity: 1;
+}
+
 {% call utils.large_and_extra_large() %}
   .language-selector__button,
   .language-selector a {
