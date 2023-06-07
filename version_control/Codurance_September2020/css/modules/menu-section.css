@@ -120,15 +120,16 @@
     margin: 0;
   }
 
-  .submenu li:not(:last-child) {
-    border-bottom: 1px solid var(--french-gray);
-  }
-
   .submenu > li,
   .submenu > li > a {
     display: block;
     width: 100%;
   }
+
+  .submenu li:not(:last-child) {
+    border-bottom: 1px solid var(--french-gray);
+  }
+
 
   .submenu.level-1 {
     width: 47%;
@@ -193,6 +194,11 @@
     display: none;
   }
 {% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+
+{% endcall %}
+
 
 {% call utils.large_and_extra_large() %}
   .level-2 .submenu {
@@ -317,6 +323,10 @@
   .submenu.level-1 > li.has-submenu > a {
     margin-bottom: 0;
     transition: color 0.5s, margin-bottom 0.5s;
+  }
+
+  .submenu li:last-child {
+    display: none;
   }
 {% endcall %}
 
