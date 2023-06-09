@@ -1,10 +1,7 @@
 "use strict";
 
 const languageSelector = document.querySelector(".language-selector__button");
-
-languageSelector.addEventListener("click", function() {
-  toggleLanguageDropdown(languageSelector);
-});
+const SCREEN_SIZE = 1023;
 
 function toggleLanguageDropdown(languageSelector) {
   let ariaExpanded = languageSelector.getAttribute("aria-expanded");
@@ -15,3 +12,23 @@ function toggleLanguageDropdown(languageSelector) {
 
   languageSelector.setAttribute("aria-expanded", "false");
 }
+
+function addClickEvent() {
+  languageSelector.addEventListener("click", () =>
+    toggleLanguageDropdown(languageSelector)
+  );
+}
+
+function removeClickEvent() {
+  languageSelector.removeEventListener("click", () =>
+    toggleLanguageDropdown(languageSelector)
+  );
+}
+
+window.addEventListener("resize", () => {
+  window.innerWidth > SCREEN_SIZE ? removeClickEvent() : addClickEvent();
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  if (window.innerWidth < SCREEN_SIZE) addClickEvent();
+});
