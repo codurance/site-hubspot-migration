@@ -112,7 +112,8 @@
 {% call utils.large_and_extra_large() %}
 
   .language-selector__button,
-  .language-selector a {
+  .language-selector a,
+  .not-translated {
     font-size: var(--natus-font-size);
     font-weight: var(--middle-font-weight);
     letter-spacing: 0.02em;
@@ -120,6 +121,11 @@
   }
 
 {% endcall %}
+
+.not-translated {
+  color: var(--french-gray);
+  cursor: not-allowed;
+}
 
 {% call utils.small_and_medium() %}
 
@@ -134,7 +140,8 @@
   }
 
   .language-selector__button,
-  .language-selector a {
+  .language-selector a, 
+  .not-translated{
     {{ utils.base() }}
     font-weight: var(--middle-font-weight);
   }
