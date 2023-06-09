@@ -37,7 +37,7 @@
 }
 
 {% call utils.small_and_medium() %}
-  .utilities-menu a {
+  .utilities-menu .contact-us {
     display: none;
   }
 {% endcall %}

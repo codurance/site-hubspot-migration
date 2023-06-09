@@ -40,6 +40,7 @@
 
 	{% if href %}
 		<a href="{{ href }}"
+			class="{{ module.link.text|split(' ')|join('-')|lower}}"
 			{% if module.link.settings.open_in_new_tab %}target="_blank"{% endif %}
 			{% if module.link.settings.rel %}rel="{{ module.link.settings.rel }}"{% endif %}
 			{{ isActiveNode(href) }}
