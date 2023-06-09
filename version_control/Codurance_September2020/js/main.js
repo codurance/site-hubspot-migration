@@ -135,10 +135,10 @@ const websiteNavigation = function() {
     "website-navigation__menu--showing-sub-menu";
 
   const header = window.document.querySelector("header.header");
-  const menuToggle = window.document.querySelector(".mobile-trigger");
-  if (menuToggle) {
+  const mobileMenuToggle = window.document.querySelector(".mobile-trigger");
+  if (mobileMenuToggle) {
     const menu = window.document.querySelector(
-      "#" + menuToggle.getAttribute("aria-controls")
+      "#" + mobileMenuToggle.getAttribute("aria-controls")
     );
 
     const subMenuToggles = menu.querySelectorAll(".has-submenu");
@@ -147,8 +147,8 @@ const websiteNavigation = function() {
 
     function setupEventListeners() {
       window.addEventListener("click", handleWindowClick);
-      if (menuToggle) {
-        menuToggle.addEventListener("click", toggleMenu);
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener("click", toggleMenu);
       }
       Array.prototype.forEach.call(subMenuToggles, function(t) {
         t.addEventListener("click", toggleSubMenu);
@@ -197,7 +197,7 @@ const websiteNavigation = function() {
 
     function openMenu() {
       header.classList.add(OPEN_HEADER_CLASS, HEADER_REVEALED_CLASS);
-      menuToggle.setAttribute("aria-expanded", "true");
+      mobileMenuToggle.setAttribute("aria-expanded", "true");
       menu.classList.add(OPEN_MENU_CLASS);
 
       if (currentOpenSubMenu) {
@@ -207,7 +207,7 @@ const websiteNavigation = function() {
 
     function closeMenu() {
       header.classList.remove(OPEN_HEADER_CLASS);
-      menuToggle.setAttribute("aria-expanded", "false");
+      mobileMenuToggle.setAttribute("aria-expanded", "false");
       menu.classList.remove(OPEN_MENU_CLASS);
     }
 
