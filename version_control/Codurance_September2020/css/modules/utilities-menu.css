@@ -76,11 +76,13 @@
   transition: border-color .5s, rotate .5s;
 }
 
+
 .language-selector a:focus,
 .language-selector a:hover {
   text-decoration: none;
   color: var(--persimmon);
 }
+
 
 .language-selector__dropdown {
   position: absolute;
@@ -121,6 +123,12 @@
     letter-spacing: 0.02em;
     line-height: var(--natus-line-height);
   }
+
+.language-selector:hover .language-selector__dropdown {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 {% endcall %}
 
