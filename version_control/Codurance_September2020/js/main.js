@@ -64,7 +64,6 @@
       $(".item input").removeAttr("disabled");
     }
   });
-
   $(function() {
     var value1 = window.location.href.substring(
       window.location.href.lastIndexOf("/") + 1

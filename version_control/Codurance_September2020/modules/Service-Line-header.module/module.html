@@ -36,8 +36,8 @@
 		{% set sizeAttrs = 'width="{{ module.header.image.max_width }}" height="{{ module.header.image.max_height }}" style="max-width: 100%; height: auto;"' %}
 	{% endif %}
 
-	<section class="header">
-		<div class="header__text">
+	<section class="hero">
+		<div class="hero__text">
 			{{ module.header.richtext_field }}
 			{{	snippets.button_primary(
 				url=module.header.button_link,
@@ -45,7 +45,7 @@
 				)
       		}}
 		</div>
-		<img class="header__image" src="{{ module.header.image.src }}" alt="{{ module.header.image.alt }}" {{ sizeAttrs }}>
+		<img class="hero__image" src="{{ module.header.image.src }}" alt="{{ module.header.image.alt }}" {{ sizeAttrs }}>
 	</section>
 {% endif %} 
 

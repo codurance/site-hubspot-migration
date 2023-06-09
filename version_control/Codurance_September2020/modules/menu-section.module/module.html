@@ -11,7 +11,7 @@
 {% endmacro %}
 
 {% macro link(node) %}
-  <li>
+  <li class="menu-item">
     <a 
       href="{{ node.url if node.url else 'javascript:;' }}" 
       class="menu-link trigger"
