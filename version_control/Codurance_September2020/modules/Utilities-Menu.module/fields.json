@@ -50,4 +50,49 @@
       "no_follow" : false
     }
   }
+}, {
+  "id" : "711bbe96-bb24-26d2-00e6-3a36830bc760",
+  "name" : "language",
+  "display_width" : null,
+  "label" : "Language",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "241b43c0-32d9-10fb-da98-8d5ccb6fad20",
+    "name" : "choice",
+    "display_width" : null,
+    "label" : "Choice",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "en", "English" ], [ "es", "Spanish" ], [ "pt", "Portuguese" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "en"
+  }, {
+    "id" : "45432ca9-2a5a-2c91-8301-b7967f6167e8",
+    "name" : "path",
+    "display_width" : null,
+    "label" : "Language path",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "choice" : "en"
+  }
 } ]

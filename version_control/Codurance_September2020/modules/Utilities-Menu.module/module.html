@@ -10,6 +10,31 @@
 	{% endif %}
 {% endmacro %}
 
+{% macro generate_language_link(lang_code, translated_content, listing_view) %}
+	{% set lang_translation = content.translations[lang_code] %}
+	{% set lang_page_link = lang_translation.absolute_url %}
+	{% set lang_path = '/'+ lang_code +'/' %}
+
+		
+	{% if content.translated_content[lang.choice].published %}
+		<a href="{{ lang_page_link }}"
+			rel="noopener noreferrer">
+			{{ lang_code|upper }}
+		</a>
+	{% elif lang.choice == locale %}
+		<a href="{{ lang_page_link }}"
+			class="active"
+			rel="noopener noreferrer">
+			{{ lang_code|upper }}
+		</a>
+	{% else %}
+		<span class="not-translated">{{ lang_code|upper }}</span>
+	{% endif %}
+
+	
+{% endmacro %}
+
+
 <nav class="utilities-menu">
 	{% set href = module.link.settings.url.href %}
 
@@ -23,86 +48,23 @@
 		</a>
 	{% endif %}
 
-	<div class="language-selector">
-		<button 
-			class="language-selector__button" 
-			aria-label="Select your language" 
-			aria-expanded="false"
-			aria-controls="language-selector__dropdown"
-		>
+	<div class="language-selector has-submenu">
+		<button class="language-selector__button trigger" 
+				aria-label="Select your language" 
+				aria-expanded="false"
+				aria-controls="language-selector__dropdown" >
 			{{ locale }}
 		</button>
 	
-		<ul class="language-selector__dropdown">
-			<li>
-				{% set primary_lang = 'en' %}
-				{% set es_lang = 'es' %}
-				{% set es_lang_path = '/' + es_lang + '/' %}
-				{% set pt_lang = 'pt' %}
-				{% set pt_lang_path = '/' + pt_lang + '/' %}
-
-				{% if absolute_url is not string_containing es_lang_path and absolute_url is not string_containing pt_lang_path %}
-				{% set primary_lang_page_link = '#0' %}
-				{% elif content.translated_content[primary_lang] %}
-				{% set primary_lang_page_link = '/' + content.translated_content[primary_lang].slug %}
-				{% elif is_listing_view %}
-				{% set primary_lang_page_link = '/publications'%}
-				{% else %}
-				{% set primary_lang_page_link = 'http://codurance.com' %}
-				{% endif %}
-
-				<a
-				href="{{primary_lang_page_link}}"
-				{% if absolute_url is not string_containing es_lang_path and absolute_url is not string_containing pt_lang_path %}class="active"{% endif %}
-				rel="noopener noreferrer">
-					{{primary_lang|upper}}
-				</a>
-
-
-			<li>
-				{% if absolute_url is string_containing es_lang_path %}
-				{% set es_lang_page_link = '#0' %}
-				{% elif content.translated_content[es_lang] %}
-				{% set es_lang_page_link = '/' + content.translated_content[es_lang].slug %}
-				{% elif is_listing_view %}
-				{% set es_lang_page_link = '/es/publications'%}
-				{% else %}
-				{% set message =
-					"Sorry, no Spanish text version available" + "\\n\\n" + "Disculpa, la versión en español de este texto no está disponible"
-				%}
-				{% set es_lang_page_link = "javascript:onclick=window.alert('" + message + "');" %}
-				{% endif %}
-
-				<a
-				href="{{es_lang_page_link}}"
-				{% if absolute_url is string_containing es_lang_path %}class="active"{% endif %}
-				rel="noopener noreferrer">
-					{{es_lang|upper}}
-				</a>
-			</li>
-			
-			<li>
-				{% if absolute_url is string_containing pt_lang_path %}
-				{% set pt_lang_page_link = '#0' %}
-				{% elif content.translated_content[pt_lang] %}
-				{% set pt_lang_page_link = '/' + content.translated_content[pt_lang].slug %}
-				{% elif is_listing_view %}
-				{% set pt_lang_page_link = '/pt/publications'%}
-				{% else %}
-				{% set message =
-					"Sorry, no Portuguese text version available" + "\\n\\n" + "Lamentamos, a versão em português deste texto não está disponivel"
-				%}
-				{% set pt_lang_page_link = "javascript:onclick=window.alert('" + message + "');" %}
-				{% endif %}
-
-				<a
-				href="{{pt_lang_page_link}}"
-				{% if absolute_url is string_containing pt_lang_path %}class="active"{% endif %}
-				rel="noopener noreferrer">
-				{{pt_lang|upper}}
-				</a>
-			</li>
+		<ul class="language-selector__dropdown">			
+			{% for lang in module.language %}
+				<li>
+				{{ generate_language_link(lang.choice, content.translated_content, is_listing_view) }}
+				</li>
+			{% endfor %}
 		</ul>
 	</div>
 </nav>
+
+
 
