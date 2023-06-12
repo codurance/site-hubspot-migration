@@ -1,9 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
 .utilities-menu {
-  display: flex;
-  align-items: start;
-  gap: var(--space-2);
   height: 100%;
 }
 
@@ -116,6 +113,10 @@
 
 
 {% call utils.large_and_extra_large() %}
+  .language-selector {
+    margin-left: var(--space-2);
+    display: inline-block;
+  }
 
   .language-selector__button,
   .language-selector a,
@@ -126,13 +127,11 @@
     line-height: var(--natus-line-height);
   }
 
-.language-selector:hover .language-selector__dropdown,
-.language-selector.focus .language-selector__dropdown  {
-  visibility: visible;
-  opacity: 1;
-}
-
-
+  .language-selector:hover .language-selector__dropdown,
+  .language-selector.focus .language-selector__dropdown  {
+    visibility: visible;
+    opacity: 1;
+  }
 {% endcall %}
 
 .not-translated {
