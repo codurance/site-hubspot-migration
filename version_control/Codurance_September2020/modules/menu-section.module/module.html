@@ -11,11 +11,10 @@
 {% endmacro %}
 
 {% macro link(node) %}
-  <li class="menu-item">
+  <li class="submenu-item">
     <a 
       href="{{ node.url if node.url else 'javascript:;' }}" 
       class="menu-link trigger"
-      id="sub-menu-toggle-{{loop.index}}"
       aria-expanded="false"
       {{ isActiveNode(node.url) if node.url }}  
     >
@@ -53,7 +52,6 @@
 
           <a href='javascript:;'
             class="trigger back-button" 
-            id="sub-menu-toggle-{{loop.index}}"
             aria-controls="sub-menu-services-{{loop.index}}"
             role="button"
             aria-label="back button"
