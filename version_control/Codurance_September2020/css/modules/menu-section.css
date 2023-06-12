@@ -215,6 +215,7 @@
   }
 
   .menu-item:hover > a,
+  .submenu-item:hover > a,
   .menu-link:focus,
   .navigation-primary li.has-submenu > a[aria-expanded="true"] {
     color: var(--persimmon);
