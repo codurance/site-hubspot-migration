@@ -1,37 +1,17 @@
-let menuLinks = document.querySelectorAll(".menu-link");
-let firstSubmenuItems = document.querySelectorAll(
-  ".submenu.level-2 > *:nth-child(2)"
-);
+const menuLinks = document.querySelectorAll(".menu-item > .menu-link");
 
 menuLinks.forEach((link) => {
   link.addEventListener("focus", function() {
+    resetFocus();
     link.parentElement.classList.add("focus");
   });
-
-  if (link.nextElementSibling) {
-    console.log(link.nextElementSibling);
-    const submenu = link.nextElementSibling;
-    const subMenuLinks = submenu.querySelectorAll(".submenu-item");
-    const lastLinkIndex = subMenuLinks.length - 1;
-    const lastLink = subMenuLinks[lastLinkIndex];
-
-    lastLink.addEventListener("blur", function() {
-      lastLink.closest(".menu-item").classList.remove("focus");
-      // link.parentElement.classList.remove("focus");
-    });
-  }
 });
 
-// firstSubmenuItems.forEach(function(item) {
-//   if (window.hsInEditor) {
-//     return;
-//   } else if (item) {
-//     item.addEventListener("mouseover", function() {
-//       item.previousElementSibling.classList.add("hover");
-//     });
+function resetFocus() {
+  const focusedMenuLinks = document.querySelectorAll(".menu-item.focus");
+  focusedMenuLinks.forEach((link) => link.classList.remove("focus"));
+}
 
-//     item.addEventListener("mouseout", function() {
-//       item.previousElementSibling.classList.remove("hover");
-//     });
-//   }
-// });
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" || e.key === "Esc") resetFocus();
+});
