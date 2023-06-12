@@ -333,7 +333,7 @@
     transition: color 0.5s, margin-bottom 0.5s;
   }
 
-  .submenu li:last-child {
+  .website-navigation-sub-menu > li:last-child {
     display: none;
   }
 {% endcall %}
