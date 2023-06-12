@@ -16,12 +16,17 @@
 		
 	{% if content.translated_content[lang.choice].published %}
 		<a href="{{ lang_page_link }}"
+			lang="{{ lang.choice }}" hreflang="{{ lang.choice }}"
+			role="option"
 			rel="noopener noreferrer">
 			{{ lang_code|upper }}
 		</a>
 	{% elif lang.choice == locale %}
 		<a href="{{ lang_page_link }}"
 			class="active"
+			lang="{{ lang.choice }}" hreflang="{{ lang.choice }}"
+			aria-selected="true"
+			role="option"
 			rel="noopener noreferrer">
 			{{ lang_code|upper }}
 		</a>
@@ -53,7 +58,8 @@
 			{{ locale }}
 		</button>
 	
-		<ul class="language-selector__dropdown">			
+		<ul class="language-selector__dropdown"
+			role="listbox" >			
 			{% for lang in module.language %}
 				<li>
 				{{ generate_language_link(lang.choice, content.translated_content) }}
