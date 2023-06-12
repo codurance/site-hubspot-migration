@@ -2,10 +2,9 @@
 
 .utilities-menu {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: var(--space-2);
   height: 100%;
-  align-items: baseline;
 }
 
 .utilities-menu a {
@@ -44,9 +43,12 @@
   }
 {% endcall %}
 
-
+.language-selector {
+  height: 100%;
+}
 
 .language-selector__button {
+  display: block;
   background: none;
   border: none;
   padding: 0;
@@ -124,7 +126,8 @@
     line-height: var(--natus-line-height);
   }
 
-.language-selector:hover .language-selector__dropdown {
+.language-selector:hover .language-selector__dropdown,
+.language-selector.focus .language-selector__dropdown  {
   visibility: visible;
   opacity: 1;
 }
