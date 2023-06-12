@@ -10,7 +10,7 @@
 	{% endif %}
 {% endmacro %}
 
-{% macro generate_language_link(lang_code, translated_content, listing_view) %}
+{% macro generate_language_link(lang_code, translated_content) %}
 	{% set lang_translation = content.translations[lang_code] %}
 	{% set lang_page_link = lang_translation.absolute_url %}
 		
@@ -56,7 +56,7 @@
 		<ul class="language-selector__dropdown">			
 			{% for lang in module.language %}
 				<li>
-				{{ generate_language_link(lang.choice, content.translated_content, is_listing_view) }}
+				{{ generate_language_link(lang.choice, content.translated_content) }}
 				</li>
 			{% endfor %}
 		</ul>
