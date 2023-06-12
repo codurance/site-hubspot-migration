@@ -31,4 +31,10 @@ window.addEventListener("resize", () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth < SCREEN_SIZE) addClickEvent();
+
+  languageSelector.addEventListener("focus", function() {
+    languageSelector.parentElement.classList.add("focus");
+    toggleLanguageDropdown(languageSelector);
+  });
+
 });
