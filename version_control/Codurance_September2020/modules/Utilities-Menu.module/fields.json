@@ -77,17 +77,6 @@
     "preset" : null,
     "type" : "choice",
     "default" : "en"
-  }, {
-    "id" : "45432ca9-2a5a-2c91-8301-b7967f6167e8",
-    "name" : "path",
-    "display_width" : null,
-    "label" : "Language path",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
