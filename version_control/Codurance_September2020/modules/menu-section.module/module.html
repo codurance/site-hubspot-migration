@@ -41,62 +41,64 @@
         >
           {{ item.menu_label }}
         </a>
-          
-        <nav class="website-navigation-sub-menu level-2" 
-          id="sub-menu-services-{{loop.index}}"
-        >
+        
+        {% if submenu %}
+          <nav class="website-navigation-sub-menu level-2" 
+            id="sub-menu-services-{{loop.index}}"
+          >
 
-          {% if item.submenu.promotional_section.description %}
-            <div class="promotional-section">
-          {% endif %}
+            {% if item.submenu.promotional_section.description %}
+              <div class="promotional-section">
+            {% endif %}
 
-          <a href='javascript:;'
-            class="trigger back-button" 
-            aria-controls="sub-menu-services-{{loop.index}}"
-            role="button"
-            aria-label="back button"
-            aria-expanded="false"
-            {{ isActiveNode(item.link.href) if item.link.href }}  
-            >
-            {{ item.menu_label }}
-          </a>
+            <a href='javascript:;'
+              class="trigger back-button" 
+              aria-controls="sub-menu-services-{{loop.index}}"
+              role="button"
+              aria-label="back button"
+              aria-expanded="false"
+              {{ isActiveNode(item.link.href) if item.link.href }}  
+              >
+              {{ item.menu_label }}
+            </a>
 
-          {% if item.submenu.promotional_section.description %}
-            <h2>{{ item.menu_label }}</h2>
-            <p>{{ item.submenu.promotional_section.description }}</p>
-          {% endif %}
+            {% if item.submenu.promotional_section.description %}
+              <h2>{{ item.menu_label }}</h2>
+              <p>{{ item.submenu.promotional_section.description }}</p>
+            {% endif %}
 
-          {% if item.submenu.promotional_section.button.text_field %}
-            <div class="custom-btn custom-btn--{{ item.submenu.promotional_section.button.button_style }}">
-              {% if item.submenu.promotional_section.button.button_type == "std" %}
-                {% set href = item.submenu.promotional_section.button.link_field.url.href %}
+            {% if item.submenu.promotional_section.button.text_field %}
+              <div class="custom-btn custom-btn--{{ item.submenu.promotional_section.button.button_style }}">
+                {% if item.submenu.promotional_section.button.button_type == "std" %}
+                  {% set href = item.submenu.promotional_section.button.link_field.url.href %}
+              
+                  <a href="{{ href }}"
+                    {% if item.submenu.promotional_section.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                    {% if item.submenu.promotional_section.button.link_field.rel %}rel="{{ item.submenu.promotional_section.button.link_field.rel }}"{% endif %}
+                    class="{{ item.submenu.promotional_section.button.button_style }}"
+                  >
+                    {{ item.submenu.promotional_section.button.text_field }} 
+                    {% if item.submenu.promotional_section.button.button_style is string_containing "text-cta-primary" %}
+                      <i class="las la-arrow-right"></i>
+                    {% endif %}
+                  </a>
+                {% elif item.submenu.promotional_section.button.button_type == "cta" %}
+                  {% cta guid="{{ item.submenu.promotional_section.button.cta_field }}" %}
+                {% endif %}
+              </div>
+            {% endif %}
+
+            {% if item.submenu.promotional_section.description %}
+              </div>
+            {% endif %}
             
-                <a href="{{ href }}"
-                  {% if item.submenu.promotional_section.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
-                  {% if item.submenu.promotional_section.button.link_field.rel %}rel="{{ item.submenu.promotional_section.button.link_field.rel }}"{% endif %}
-                  class="{{ item.submenu.promotional_section.button.button_style }}"
-                >
-                  {{ item.submenu.promotional_section.button.text_field }} 
-                  {% if item.submenu.promotional_section.button.button_style is string_containing "text-cta-primary" %}
-                    <i class="las la-arrow-right"></i>
-                  {% endif %}
-                </a>
-              {% elif item.submenu.promotional_section.button.button_type == "cta" %}
-                {% cta guid="{{ item.submenu.promotional_section.button.cta_field }}" %}
-              {% endif %}
-            </div>
-          {% endif %}
-
-          {% if item.submenu.promotional_section.description %}
-            </div>
-          {% endif %}
-          
-          <ul class="submenu{% if submenu|length <= 4 %} two-columns{% endif %}">
-            {% for node in submenu %} 
-              {{ link(node) }}
-            {% endfor %}
-          </ul>
-        </nav>
+            <ul class="submenu{% if submenu|length <= 4 %} two-columns{% endif %}">
+              {% for node in submenu %} 
+                {{ link(node) }}
+              {% endfor %}
+            </ul>
+          </nav>
+        {% endif %}
       </li>
     {% endfor %} 
   </ul>
