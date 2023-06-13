@@ -13,6 +13,10 @@ function toggleLanguageDropdown(languageSelector) {
   languageSelector.setAttribute("aria-expanded", "false");
 }
 
+window.addEventListener("resize", () => {
+  window.innerWidth > SCREEN_SIZE ? removeClickEvent() : addClickEvent();
+});
+
 function addClickEvent() {
   languageSelector.addEventListener("click", () =>
     toggleLanguageDropdown(languageSelector)
@@ -25,16 +29,6 @@ function removeClickEvent() {
   );
 }
 
-window.addEventListener("resize", () => {
-  window.innerWidth > SCREEN_SIZE ? removeClickEvent() : addClickEvent();
-});
-
 window.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth < SCREEN_SIZE) addClickEvent();
-
-  languageSelector.addEventListener("focus", function() {
-    languageSelector.parentElement.classList.add("focus");
-    toggleLanguageDropdown(languageSelector);
-  });
-
 });
