@@ -280,6 +280,15 @@ menuLinks.forEach((link) => {
   });
 });
 
+const langDropdown = document.querySelectorAll(
+  ".language-selector__dropdown a"
+);
+const lastChild = langDropdown.length - 1;
+
+langDropdown[lastChild].addEventListener("blur", () => {
+  resetFocus();
+});
+
 function resetFocus() {
   const focusedMenuLinks = document.querySelectorAll(".menu-item.focus");
   focusedMenuLinks.forEach((link) => link.classList.remove("focus"));
