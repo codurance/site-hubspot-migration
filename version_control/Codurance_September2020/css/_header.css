@@ -19,6 +19,7 @@ header.header {
 
 .body-wrapper > div:first-child,
 header.header {
+  --header-height: 71px;
   height: var(--header-height);
 }
 
@@ -76,6 +77,10 @@ header.header.fixed {
 }
 
 {% call utils.extra_large() %}
+  .no-navigation {
+    padding-bottom: 30px;
+  }
+
   .header__wrapper {
     padding-top: 30px;
     padding-inline: var(--space-0);
@@ -83,7 +88,8 @@ header.header.fixed {
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
-  .body-wrapper > div:first-child {
+  .body-wrapper > div:first-child,
+  header.header {
     --header-height: 85px;
   }
 {% endcall %}
@@ -93,20 +99,26 @@ header.header.fixed {
     margin: 0 25px;
   }
 
-  .body-wrapper > div:first-child {
+  .body-wrapper > div:first-child,
+  header.header {
     --header-height: 70px;
   }
 {% endcall %}
 
 {% call utils.small_medium_and_large() %}
-  .header__wrapper {
+  .no-navigation {
+    padding-bottom: 25px;
+  }
+  
+.header__wrapper {
     padding-top: 25px;
     padding-inline: 25px;
   }
 {% endcall %}
 
 {% call utils.small_and_medium() %}
-  .body-wrapper > div:first-child {
+  .body-wrapper > div:first-child,
+  header.header {
     --header-height: 71px;
   }
 
