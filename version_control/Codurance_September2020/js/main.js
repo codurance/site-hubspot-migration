@@ -133,13 +133,15 @@ const websiteNavigation = function() {
   const MENU_SHOWING_SUB_MENU_CLASS =
     "website-navigation__menu--showing-sub-menu";
 
+  const SCREEN_SIZE = 1023;
+
   const header = window.document.querySelector("header.header");
-  const mobileMenuToggle = window.document.querySelector(".mobile-trigger");
-  if (mobileMenuToggle) {
+
+  if (window.innerWidth < SCREEN_SIZE) {
+    const mobileMenuToggle = window.document.querySelector(".mobile-trigger");
     const menu = window.document.querySelector(
       "#" + mobileMenuToggle.getAttribute("aria-controls")
     );
-
     const subMenuToggles = menu.querySelectorAll(".has-submenu");
 
     let currentOpenSubMenu = null;
@@ -149,6 +151,7 @@ const websiteNavigation = function() {
       if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener("click", toggleMenu);
       }
+
       Array.prototype.forEach.call(subMenuToggles, function(t) {
         t.addEventListener("click", toggleSubMenu);
       });
@@ -234,18 +237,7 @@ const websiteNavigation = function() {
       );
     }
 
-    function exposeSharedMethods() {
-      window.__CODURANCE = window.__CODURANCE || {};
-      window.__CODURANCE.websiteNavigation = {
-        closeOpenSubMenu: function() {
-          if (currentOpenSubMenu === null) return;
-          closeSubMenu(currentOpenSubMenu.menu, currentOpenSubMenu.toggle);
-        }
-      };
-    }
-
     setupEventListeners();
-    exposeSharedMethods();
   }
 };
 
