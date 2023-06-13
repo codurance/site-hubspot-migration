@@ -38,35 +38,38 @@
 
 <nav class="utilities-menu">
 	{% set href = module.link.settings.url.href %}
-
-	{% if href %}
-		<a href="{{ href }}"
-			class="{{ module.link.text|split(' ')|join('-')|lower}}"
-			{% if module.link.settings.open_in_new_tab %}target="_blank"{% endif %}
-			{% if module.link.settings.rel %}rel="{{ module.link.settings.rel }}"{% endif %}
-			{{ isActiveNode(href) }}
-		>
-			{{ module.link.text }}
-		</a>
-	{% endif %}
-
-	<div class="language-selector">
-		<button class="language-selector__button" 
-				aria-label="Select your language" 
-				aria-expanded="false"
-				aria-controls="language-selector__dropdown" >
-			{{ locale }}
-		</button>
+	<ul>
+		{% if href %}
+		<li class="menu-item">
+			<a href="{{ href }}"
+				class="{{ module.link.text|split(' ')|join('-')|lower}} menu-link"
+				{% if module.link.settings.open_in_new_tab %}target="_blank"{% endif %}
+				{% if module.link.settings.rel %}rel="{{ module.link.settings.rel }}"{% endif %}
+				{{ isActiveNode(href) }}
+			>
+				{{ module.link.text }}
+			</a>
+		</li>
+		{% endif %}
 	
-		<ul class="language-selector__dropdown"
-			role="listbox" >			
-			{% for lang in module.language %}
-				<li>
-				{{ generate_language_link(lang.choice, content.translated_content) }}
-				</li>
-			{% endfor %}
-		</ul>
-	</div>
+		<li class="language-selector menu-item">
+			<button class="language-selector__button menu-link"
+					aria-label="Select your language"
+					aria-expanded="false"
+					aria-controls="language-selector__dropdown" >
+				{{ locale }}
+			</button>
+	
+			<ul class="language-selector__dropdown"
+				role="listbox" >
+				{% for lang in module.language %}
+					<li>
+					{{ generate_language_link(lang.choice, content.translated_content) }}
+					</li>
+				{% endfor %}
+			</ul>
+		</li>
+	</ul>
 </nav>
 
 

@@ -248,9 +248,6 @@
     display: flex;
   }
   
-  .level-1 > li {
-    display: inline-block;
-  }
 
   .level-1 > li > .menu-link {
     padding-inline: var(--space-0);

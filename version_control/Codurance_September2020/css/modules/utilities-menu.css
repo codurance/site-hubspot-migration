@@ -4,6 +4,12 @@
   height: 100%;
 }
 
+.utilities-menu ul {
+  list-style:none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .utilities-menu a {
   color: var(--shark);
   display: inline-block;
