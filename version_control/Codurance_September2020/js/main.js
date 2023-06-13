@@ -260,12 +260,10 @@ const websiteNavigation = function() {
         const toggleLink = toggle.querySelector(".menu-link");
 
         toggle.addEventListener("mouseover", () => {
-          console.log("Hola");
           toggleAriaExpanded(toggleLink);
         });
 
         toggle.addEventListener("mouseout", () => {
-          console.log("Adios");
           toggleAriaExpanded(toggleLink);
         });
 
@@ -309,7 +307,6 @@ const websiteNavigation = function() {
     }
 
     menuLink.setAttribute("aria-expanded", "false");
-    console.log("Hello");
   }
 };
 
