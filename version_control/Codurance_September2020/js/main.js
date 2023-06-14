@@ -152,9 +152,13 @@ const websiteNavigation = function() {
   window.addEventListener("resize", setUpEventListeners);
 
   function setUpEventListeners() {
-    window.innerWidth <= MOBILE_SCREEN_SIZE
-      ? setUpMobileEventListeners()
-      : setUpDesktopEventListeners();
+    if (window.innerWidth <= MOBILE_SCREEN_SIZE) {
+      removeDesktopEventListeners();
+      setUpMobileEventListeners();
+    } else {
+      removeMobileEventListeners();
+      setUpDesktopEventListeners();
+    }
   }
 
   function setUpMobileEventListeners() {
@@ -208,6 +212,61 @@ const websiteNavigation = function() {
     });
 
     document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" || e.key === "Esc") resetFocus();
+    });
+  }
+
+  function removeMobileEventListeners() {
+    window.removeEventListener("click", handleWindowClick);
+    mobileMenuToggle.removeEventListener("click", toggleMenu);
+
+    Array.prototype.forEach.call(subMenuToggles, function(t) {
+      t.removeEventListener("click", toggleSubMenu);
+    });
+
+    const languageSelector = document.querySelector(
+      ".language-selector__button"
+    );
+
+    languageSelector.removeEventListener("click", () =>
+      toggleAriaExpanded(languageSelector)
+    );
+  }
+
+  function removeDesktopEventListeners() {
+    menuLinks.forEach((link) => {
+      link.removeEventListener("focus", function() {
+        resetFocus();
+        link.parentElement.classList.add("focus");
+      });
+    });
+
+    subMenuToggles.forEach((toggle) => {
+      const toggleLink = toggle.querySelector(".menu-link");
+
+      toggle.removeEventListener("mouseover", () => {
+        toggleAriaExpanded(toggleLink);
+      });
+
+      toggle.removeEventListener("mouseout", () => {
+        toggleAriaExpanded(toggleLink);
+      });
+
+      toggleLink.removeEventListener("focus", () => {
+        toggleAriaExpanded(toggleLink);
+      });
+    });
+
+    const langDropdown = document.querySelectorAll(
+      ".language-selector__dropdown a"
+    );
+    const lastChild = langDropdown.length - 1;
+
+    langDropdown[lastChild].removeEventListener("blur", () => {
+      resetFocus();
+    });
+
+    document.removeEventListener("keydown", (e) => {
       if (e.key === "Escape" || e.key === "Esc") resetFocus();
     });
   }
@@ -305,11 +364,11 @@ const websiteNavigation = function() {
   function toggleAriaExpanded(menuLink) {
     let ariaExpanded = menuLink.getAttribute("aria-expanded");
 
-    if (ariaExpanded === "false") {
-      return menuLink.setAttribute("aria-expanded", "true");
+    if (ariaExpanded == "false") {
+      menuLink.setAttribute("aria-expanded", "true");
+    } else {
+      menuLink.setAttribute("aria-expanded", "false");
     }
-
-    menuLink.setAttribute("aria-expanded", "false");
   }
 };
 
