@@ -31,6 +31,10 @@ menu items appear, including the link and hover effects.
   color: rgba(0, 0, 0, 0.9);
 }
 
+.menu-item {
+    display: inline-block;
+}
+
 /* Breadcrumbs */
 .hs-breadcrumb-menu-wrapper {
   min-height: var(--space-5);
