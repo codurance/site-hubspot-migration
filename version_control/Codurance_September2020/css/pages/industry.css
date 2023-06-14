@@ -1,6 +1,6 @@
 {% import "../utils/utils.css" as utils %}
 
-.header {
+.hero {
     background: var(--slate);
     background-image: linear-gradient(
         to right, 
@@ -11,7 +11,7 @@
 }
 
 {% call utils.small() %}
-  .header {
+  .hero {
     background-image: none;
   }
 {% endcall %}
