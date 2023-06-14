@@ -126,7 +126,7 @@
 
 /* ----------------------------- Menus ---------------------------------- */
 
-export const websiteNavigation = function() {
+const websiteNavigation = function() {
   const MOBILE_SCREEN_SIZE = 1023;
 
   const OPEN_MENU_CLASS = "website-navigation__menu--open";
