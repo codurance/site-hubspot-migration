@@ -3,7 +3,7 @@
 {% macro isActiveNode(link) %}
 	{% set link_stripped = "/" + link | split('/', 3) | last %}
 	{% if request.path == link_stripped %}
-		{{ { "class": "active-item",
+		{{ { "class": "active-item contact-us menu-link",
 		"aria-current": "page"
 		} | xmlattr
 		}}
