@@ -1,7 +1,7 @@
 {% import '../utils/utils.css' as utils %}
 
 :root {
-    --fading-animation-duration: 250ms;
+  --fading-animation-duration: 250ms;
 }
 
 .fade-animation {

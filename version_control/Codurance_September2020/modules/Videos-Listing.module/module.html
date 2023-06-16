@@ -20,7 +20,7 @@
           {% set video_thumb_desktop = resize_image_url(video.thumbnail.url, 0, 0, 375) %}
           {% set video_thumb_mobile = resize_image_url(video.thumbnail.url, 0, 0, 260) %}
             
-          <article class="card-item" data-video-topic="{{ video.topic.name }}" data-video-language="{{ video.language.name }}">
+          <article class="card-item" data-video-topic="{{ video.topic.name }}">
             <div class="card-item__content">
               <div class="card-item__image-container">
                 <img class="card-item__image" alt=""
@@ -68,53 +68,53 @@
                   </p>
                 </div>
                 <div class="card-item__button-container">
-                    {% if locale == "es" %}
-                      {% set button = { icon: "icon-ungated",
-                                        text: "Ver ahora",
-                                        target: "" 
+                  {% if locale == "es" %}
+                    {% set button = { icon: "icon-ungated",
+                                      text: "Ver ahora",
+                                      target: "" 
+                                    }
+                    %}
+                    {% if video.video is string_containing 'livestorm' %}
+                      {% set button = { icon: "icon-gated",
+                                        text: "Regístrate gratis para ver",
+                                        target: "_blank" 
                                       }
                       %}
-                      {% if video.video is string_containing 'livestorm' %}
-                        {% set button = { icon: "icon-gated",
-                                          text: "Regístrate gratis para ver",
-                                          target: "_blank" 
-                                        }
-                        %}
-                      {% endif %}
-                    {% elif locale == "pt" %}
-                      {% set button = { icon: "icon-ungated",
-                                        text: "Assista agora",
-                                        target: "" 
+                    {% endif %}
+                  {% elif locale == "pt" %}
+                    {% set button = { icon: "icon-ungated",
+                                      text: "Assista agora",
+                                      target: "" 
+                                    }
+                    %}
+                    {% if video.video is string_containing 'livestorm' %}
+                      {% set button = { icon: "icon-gated",
+                                        text: "Cadastrar grátis para ver",
+                                        target: "_blank" 
                                       }
                       %}
-                      {% if video.video is string_containing 'livestorm' %}
-                        {% set button = { icon: "icon-gated",
-                                          text: "Cadastrar grátis para ver",
-                                          target: "_blank" 
-                                        }
-                        %}
-                      {% endif %}
-                    {% else %}
-                      {% set button = { icon: "icon-ungated",
-                                        text: "Watch now",
-                                        target: "" 
+                    {% endif %}
+                  {% else %}
+                    {% set button = { icon: "icon-ungated",
+                                      text: "Watch now",
+                                      target: "" 
+                                    }
+                    %}
+                    {% if video.video is string_containing 'livestorm' %}
+                      {% set button = { icon: "icon-gated",
+                                        text: "Register for free to watch",
+                                        target: "_blank" 
                                       }
                       %}
-                      {% if video.video is string_containing 'livestorm' %}
-                        {% set button = { icon: "icon-gated",
-                                          text: "Register for free to watch",
-                                          target: "_blank" 
-                                        }
-                        %}
-                      {% endif %}
-                    {% endif %}            
+                    {% endif %}
+                  {% endif %}            
 
-                  {{snippets.button_primary(
+                  {{ snippets.button_primary(
                     classnames="card-item__video-button {{button.icon}}",
                     url=video.video,
                     target= button.target,
                     text= button.text
-                  )}}
+                  ) }}
 
                 </div>
               </div>
@@ -141,14 +141,16 @@
 {% endif %}
 
 {% if module.videos.hubdb_table %}
-  {% set isOnlyEnglish = "" %}
+  {% set language_filter = "" %}
     
   {% if locale == "en" or locale == "pt" %}
-    {% set isOnlyEnglish = "&language=English" %}
+    {% set language_filter = "&language=English" %}
+  {% else if locale == "es" %}
+    {% set language_filter = "&language=Spanish" %}
   {% endif %}
 
   {% set past_videos_filter = "&orderBy=-date" %} 
-  {% set past_videos_listing = hubdb_table_rows(module.videos.hubdb_table, past_videos_filter + isOnlyEnglish ) %}
+  {% set past_videos_listing = hubdb_table_rows(module.videos.hubdb_table, past_videos_filter + language_filter ) %}
   
   {% set copy = { 
       heading: module.videos.heading,
@@ -157,7 +159,6 @@
     } 
   %}
   
-
   {{ card_collection(past_videos_listing, copy) }}
 
   <div class="no-results-message hidden fade-animation responsive-page-width lateral-spacing">

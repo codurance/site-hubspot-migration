@@ -3,28 +3,14 @@
 {% set items = hubdb_table_rows("videos") %}
 
 {% set topics = [] %}
-{% set languages = [] %}
-{% set translated_languages = [] %}
 
 {% for item in items %}
     {% do topics.append(item.topic.name) %}
-    {% do languages.append(item.language.name) %}
 {% endfor %}
 
 {% set topics = topics|unique %}
-{% set languages = languages|unique %}
 
-{% if locale == "en" or locale == "pt" %}
-    {% set filterOptions = "&language=English" %}    
-    {% set items = hubdb_table_rows("videos", filterOptions) %}    
-    {% set languages = [] %}
-{% endif %}   
-
-{% for language_option in module.language_options_translations %}
-    {% do translated_languages.append(language_option) %}
-{% endfor %}
-
-<div class="filters-wrapper {% if languages|length > 1 %}filters-wrapper--language-enabled{% endif %} responsive-page-width lateral-spacing">
+<div class="filters-wrapper responsive-page-width lateral-spacing">
     <form role='search' class="videos-search-bar">
         {# Hidden label for accessibility #}
         <label for='searchbar'>{{ module.search_bar_placeholder}}</label>
@@ -65,25 +51,6 @@
                 {% endfor %}
                 </div>
             </div>
-            {% if languages|length > 1 %}
-              <div class="filter-dropdown-container">
-                  <button class="filter-dropdown-button" data-dropdown-button="language">
-                  <i class="filter-icon las la-language"></i>
-                    {{module.dropdown_filter.languages_title}}
-                  <i class="filter-dropdown-icon las la-angle-down" data-dropdown-icon="language">
-                  </i>
-                  </button>
-                  <div class="filter-dropdown-options hidden" data-dropdown-options="language">
-                  {% for language in languages|sort(False,False) %}
-                  <button class="filter-dropdown-option" data-language-option="{{language}}">
-                      {{ translated_languages[loop.index0] }}
-                      <i class="filter-dropdown-option-selected-icon las la-check hidden"
-                      data-language-option-selected="{{language}}"></i>
-                  </button>
-                  {% endfor %}
-                  </div>
-              </div>
-            {% endif %}
         </div>
     </div>
 </div>
@@ -93,12 +60,6 @@
       <div class="applied-filters__pill hidden" data-applied-topic-filter="{{ topic }}">
         {{ topic }}
         <i class="applied-filters__remove-button las la-times" data-remove-topic-filter="{{ topic }}"></i>
-      </div>
-    {% endfor %}
-    {% for language in languages %}
-      <div class="applied-filters__pill hidden" data-applied-language-filter="{{ language }}">
-        {{ translated_languages[loop.index0] }}
-        <i class="applied-filters__remove-button las la-times" data-remove-language-filter="{{ language }}"></i>
       </div>
     {% endfor %}
 </div>
