@@ -10,11 +10,6 @@ class VideosFilter {
       }
     };
 
-    if (filtersTypes.includes("language")) {
-      this.filters.all["language"] = [];
-      this.filters.applied["language"] = [];
-    }
-
     this.allVideos = this.getAll("videos");
 
     this.videos = {
@@ -184,7 +179,7 @@ class VideosFilter {
 
   optionTypeFrom = (element) => {
     const dataAttributes = Object.keys(element.dataset);
-    const optionMatcher = new RegExp("^(topic|language)(?=Option)");
+    const optionMatcher = new RegExp("^(topic)(?=Option)");
 
     for (let i = 0; i < dataAttributes.length; i++) {
       const key = dataAttributes[i];
@@ -250,20 +245,11 @@ class VideosFilter {
   filtersAvailableFor = (type) => {
     const opts = {
       topic: {
-        video_dataset_name: "videoTopic",
-        remaining: (videos) => videos.filter(this.byLanguage)
-      },
-      language: {
-        video_dataset_name: "videoLanguage",
-        remaining: (videos) => videos.filter(this.byTopic)
+        video_dataset_name: "videoTopic"
       }
     };
 
     let videos = this.videos.all;
-
-    if (this.filters.types.includes("language")) {
-      videos = opts[type].remaining(videos);
-    }
 
     return videos.map((video) => {
       const videoType = opts[type].video_dataset_name;
@@ -331,15 +317,6 @@ class VideosFilter {
     return (
       topicFilters.length === 0 ||
       topicFilters.some((filter) => videoTopics.includes(filter))
-    );
-  };
-
-  byLanguage = (video) => {
-    let languageFilters = this.filters.applied.language;
-    const videoLanguages = video.dataset.videoLanguage;
-    return (
-      languageFilters.length === 0 ||
-      languageFilters.some((filter) => videoLanguages.includes(filter))
     );
   };
 
@@ -520,9 +497,8 @@ class VideosFilter {
 
   isSearchTextInVideo = (video, searchBarText) => {
     const videoItemTitle = video.querySelector(".card-item__title").innerText;
-    const videoItemDescription = video.querySelector(
-      ".card-item__description"
-    ).innerText;
+    const videoItemDescription = video.querySelector(".card-item__description")
+      .innerText;
     const regExp = this.createRegExpObject(searchBarText);
 
     if (videoItemTitle.match(regExp) || videoItemDescription.match(regExp)) {
@@ -589,11 +565,7 @@ class VideosFilter {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  const filtersWrapper = document.querySelector(".filters-wrapper");
   let filtersEnabled = ["topic"];
-
-  if (filtersWrapper.classList.contains("filters-wrapper--language-enabled"))
-    filtersEnabled.push("language");
 
   new VideosFilter(filtersEnabled);
 });
