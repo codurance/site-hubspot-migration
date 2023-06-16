@@ -42,7 +42,7 @@
 		{% if href %}
 		<li class="menu-item">
 			<a href="{{ href }}"
-				class="{{ module.link.text|split(' ')|join('-')|lower}} menu-link"
+				class="contact-us menu-link"
 				{% if module.link.settings.open_in_new_tab %}target="_blank"{% endif %}
 				{% if module.link.settings.rel %}rel="{{ module.link.settings.rel }}"{% endif %}
 				{{ isActiveNode(href) }}
