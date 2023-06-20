@@ -30,9 +30,8 @@
 }
 
 {% call utils.large_and_extra_large() %}
-  .language-selector {
+  .utilities-menu li:not(:first-of-type) {
     margin-left: var(--space-2);
-    display: inline-block;
   }
 
   .language-selector:hover .language-selector__dropdown,
