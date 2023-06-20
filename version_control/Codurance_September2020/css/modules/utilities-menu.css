@@ -26,26 +26,6 @@
   color: var(--persimmon);
 }
 
-.utilities-menu a.active-item {
-  position: relative;
-}
-
-.utilities-menu a.active-item:after {
-  background-color: var(--persimmon);
-  bottom: -2px;
-  content: "";
-  height: 2px;
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
-{% call utils.small_and_medium() %}
-  .utilities-menu .contact-us {
-    display: none;
-  }
-{% endcall %}
-
 .language-selector {
   height: 100%;
 }

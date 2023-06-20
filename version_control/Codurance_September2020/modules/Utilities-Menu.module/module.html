@@ -1,15 +1,5 @@
 {{ require_css(get_asset_url("../../css/modules/utilities-menu.css")) }}
 
-{% macro isActiveNode(link) %}
-	{% set link_stripped = "/" + link | split('/', 3) | last %}
-	{% if request.path == link_stripped %}
-		{{ { "class": "active-item contact-us menu-link",
-		"aria-current": "page"
-		} | xmlattr
-		}}
-	{% endif %}
-{% endmacro %}
-
 {% macro generate_language_link(lang_code, translated_content) %}
 	{% set lang_translation = content.translations[lang_code] %}
 	{% set lang_page_link = lang_translation.absolute_url %}
@@ -35,22 +25,12 @@
 	{% endif %}
 {% endmacro %}
 
-
 <nav class="utilities-menu">
-	{% set href = module.link.settings.url.href %}
+	
 	<ul>
-		{% if href %}
 		<li class="menu-item">
-			<a href="{{ href }}"
-				class="contact-us menu-link"
-				{% if module.link.settings.open_in_new_tab %}target="_blank"{% endif %}
-				{% if module.link.settings.rel %}rel="{{ module.link.settings.rel }}"{% endif %}
-				{{ isActiveNode(href) }}
-			>
-				{{ module.link.text }}
-			</a>
+			
 		</li>
-		{% endif %}
 	
 		<li class="language-selector menu-item has-submenu">
 			<button class="language-selector__button menu-link"
