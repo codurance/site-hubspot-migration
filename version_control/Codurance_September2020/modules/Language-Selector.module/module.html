@@ -1,4 +1,4 @@
-{{ require_css(get_asset_url("../../css/modules/utilities-menu.css")) }}
+{{ require_css(get_asset_url("../../css/modules/language-selector.css")) }}
 
 {% macro generate_language_link(lang_code, translated_content) %}
 	{% set lang_translation = content.translations[lang_code] %}
@@ -25,32 +25,21 @@
 	{% endif %}
 {% endmacro %}
 
-<nav class="utilities-menu">
-	
-	<ul>
-		<li class="menu-item">
-			
+<button class="language-selector__button menu-link"
+		aria-label="Select your language"
+		aria-expanded="false"
+		aria-controls="language-selector__dropdown" >
+	{{ locale }}
+</button>
+
+<ul class="language-selector__dropdown"
+	role="listbox" >
+	{% for lang in module.language %}
+		<li>
+		{{ generate_language_link(lang.choice, content.translated_content) }}
 		</li>
-	
-		<li class="language-selector menu-item has-submenu">
-			<button class="language-selector__button menu-link"
-					aria-label="Select your language"
-					aria-expanded="false"
-					aria-controls="language-selector__dropdown" >
-				{{ locale }}
-			</button>
-	
-			<ul class="language-selector__dropdown"
-				role="listbox" >
-				{% for lang in module.language %}
-					<li>
-					{{ generate_language_link(lang.choice, content.translated_content) }}
-					</li>
-				{% endfor %}
-			</ul>
-		</li>
-	</ul>
-</nav>
+	{% endfor %}
+</ul>
 
 
 

@@ -15,7 +15,7 @@
 }
 
 {% call utils.small_and_medium() %}
-.utilities-menu .contact-us {
-    display: none;
-}
+    .utilities-menu .contact-us {
+        display: none;
+    }
 {% endcall %}
