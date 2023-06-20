@@ -1,8 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
 body {
-    background-color: #293341;
-    background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Team%20Skills%20Cheat%20Sheet/bg-lift-and-shift-checklist-mobile.png);
     background-position: top right;
     background-repeat: no-repeat;
     background-size: auto 100%;
@@ -71,13 +69,6 @@ body {
 }
 
 {% call utils.large_and_extra_large() %}
-    body {
-        background-image: url(https://f.hubspotusercontent10.net/hubfs/3042464/Team%20Skills%20Cheat%20Sheet/Team-Skills-Cheat-Sheet.png);
-        background-position: top right;
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-    }
-
     .landing-two-col h1 {
         {{ utils.gaudi() }}
     }
