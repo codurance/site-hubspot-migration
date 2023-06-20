@@ -1,0 +1,55 @@
+{% import '../utils/utils.css' as utils %}
+
+.utilities-menu,
+.language-selector {
+  height: 100%;
+}
+
+.utilities-menu ul {
+  list-style:none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.utilities-menu a {
+  color: var(--shark);
+  display: inline-block;
+  transition: color 0.2s;
+  text-decoration: none;
+  font-size: var(--natus-font-size);
+  font-weight: var(--middle-font-weight);
+  letter-spacing: 0.02em;
+  line-height: var(--natus-line-height);
+}
+
+.utilities-menu a:focus,
+.utilities-menu a:hover,
+.language-selector:hover .language-selector__button,
+.language-selector.focus {
+  color: var(--persimmon);
+}
+
+{% call utils.large_and_extra_large() %}
+  .language-selector {
+    margin-left: var(--space-2);
+    display: inline-block;
+  }
+
+  .language-selector:hover .language-selector__dropdown,
+  .language-selector.focus .language-selector__dropdown  {
+    visibility: visible;
+    opacity: 1;
+  }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+  .website-header--open .language-selector {
+    display: none;
+  }
+
+  .language-selector {
+    position: absolute;
+    right: 78px;
+    top: 25px;
+  }
+{% endcall %} 

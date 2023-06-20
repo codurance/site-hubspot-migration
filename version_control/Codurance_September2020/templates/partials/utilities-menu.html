@@ -1,0 +1,21 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: false
+-->
+
+{{ require_css(get_asset_url("../../css/partials/utilities-menu.css")) }}
+
+<nav class="utilities-menu">
+	<ul>
+		<li class="menu-item">
+			{% module 'navigation_link', path='../../modules/Navigation-Link', no_wrapper=True %}
+		</li>
+	
+		<li class="language-selector menu-item has-submenu">
+            {% module 'language_selector', path='../../modules/Language-Selector', no_wrapper=True %}
+		</li>
+	</ul>
+</nav>
+
+
+
