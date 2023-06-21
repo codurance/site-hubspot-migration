@@ -1,9 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
 body {
-    background-position: top right;
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: auto 100%;
 }
 
 .body-wrapper > div:first-child,
