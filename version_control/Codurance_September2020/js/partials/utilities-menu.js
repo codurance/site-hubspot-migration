@@ -7,6 +7,9 @@ const searchBar = document.querySelector(".utilities-menu .hs-search-field");
 const searchBarInput = document.querySelector(
   ".utilities-menu .hs-search-field__input"
 );
+const searchSuggestions = document.querySelector(
+  ".utilities-menu .hs-search-field__suggestions"
+);
 
 searchBarButton.addEventListener("mouseenter", () => {
   searchBarButton.setAttribute("aria-expanded", "true");
@@ -21,6 +24,15 @@ searchBar.addEventListener("mouseleave", () => {
   searchBarButton.setAttribute("aria-expanded", "false");
 });
 
+searchBarButton.addEventListener("mouseenter", () => {
+  searchBarButton.setAttribute("aria-expanded", "true");
+});
+
 searchBarInput.addEventListener("blur", () => {
   searchBarButton.setAttribute("aria-expanded", "false");
+});
+
+// This is required to stop the blur event when clicking on suggestions
+searchSuggestions.addEventListener("mousedown", (event) => {
+  event.preventDefault();
 });
