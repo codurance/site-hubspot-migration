@@ -75,7 +75,7 @@
   }
 
   .utilities-menu .hs-search-field {
-    transition: .3s;
+    transition: width .3s;
     width: 0;
     overflow: hidden;
   }
