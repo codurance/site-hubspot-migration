@@ -63,6 +63,12 @@
   {{ utils.card_shadow() }}
 }
 
+.search-bar input,
+.search-bar .hs-search-field__suggestions #results-for {
+  {{ utils.natus() }}
+  font-weight: var(--heavy-font-weight);
+}
+
 {% call utils.large_and_extra_large() %}
   .utilities-menu .menu-item:not(:first-child) {
     margin-left: var(--space-2);
