@@ -29,6 +29,7 @@ searchBarButton.addEventListener("mouseenter", () => {
 });
 
 searchBarInput.addEventListener("blur", () => {
+  if (searchBar.classList.contains("hs-search-field--open")) return;
   searchBarButton.setAttribute("aria-expanded", "false");
 });
 
