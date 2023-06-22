@@ -10,9 +10,16 @@
 }
 
 .utilities-menu ul {
-  list-style:none;
+  list-style: none;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.utilities-menu > ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  height: 100%;
 }
 
 .utilities-menu a {

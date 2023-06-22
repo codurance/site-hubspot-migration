@@ -44,6 +44,10 @@ header.header.fixed {
   position: relative;
 }
 
+.header__wrapper > * {
+  flex-grow: 1;
+}
+
 .mobile-trigger span:before,
 .mobile-trigger span:after {
   content: "";

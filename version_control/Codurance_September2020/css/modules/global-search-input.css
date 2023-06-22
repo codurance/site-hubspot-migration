@@ -32,7 +32,8 @@
     height: 100%;
 }
 
-.hs-search-field__input:focus {
+.hs-search-field__input:focus,
+.cm-search-button:focus {
     outline: 2px solid var(--persimmon--dark);
     outline-offset: -2px;
 }
@@ -45,17 +46,15 @@
     border-radius: 0 0.3rem 0.3rem 0;
     cursor: pointer;
     height: 100%;
+    background: white;
+    border: none;
+    padding: var(--space-1);
 }
 
-.cm-search-button:focus  {
-    outline: 2px solid white;
-    outline-offset: -2px;
-}
-
-.cm-search-button svg {
-    width: 20px;
-    fill: white;
-    transform: translateY(10%);
+.cm-search-button i {
+    rotate: 270deg;
+    vertical-align: middle;
+    color: var(--persimmon--dark);
 }
 
 .hs-search-field__suggestions {
