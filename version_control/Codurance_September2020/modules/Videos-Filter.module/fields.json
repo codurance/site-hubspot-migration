@@ -39,59 +39,9 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text"
-  }, {
-    "id" : "945101e8-9677-037e-bdda-f760e5785465",
-    "name" : "languages_title",
-    "display_width" : null,
-    "label" : "Languages Title",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
   "default" : { }
-}, {
-  "id" : "d15ad801-7f38-b583-fa4c-9ac71a322617",
-  "name" : "language_options_translations",
-  "display_width" : null,
-  "label" : "Language options translations",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "921c771d-a7a3-7658-4a2f-8a736508201b",
-    "name" : "english",
-    "display_width" : null,
-    "label" : "English",
-    "required" : true,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "English"
-  }, {
-    "id" : "4868d2ee-dbc4-646c-36df-85cf14592d77",
-    "name" : "spanish",
-    "display_width" : null,
-    "label" : "Spanish",
-    "required" : true,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Spanish"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : {
-    "english" : "English",
-    "spanish" : "Spanish"
-  }
 } ]

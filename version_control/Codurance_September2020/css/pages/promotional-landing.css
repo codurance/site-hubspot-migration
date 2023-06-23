@@ -1,0 +1,105 @@
+{% import '../utils/utils.css' as utils %}
+
+body {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.body-wrapper > div:first-child,
+.footer {
+    display: none;
+}
+
+.brand-mark {
+    position: absolute;
+    top: var(--space-5);
+    width: 150px;
+    fill: white;
+}
+
+.landing-two-col {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: flex;
+    gap: 50px;
+}
+
+.landing-two-col h1 {
+    color: #ffffff;
+}
+
+.landing-two-col h1:after {
+    content: '';
+    background-color: #FA7268;
+    display: block;
+    width: 50px;
+    height: 2px;
+    margin-top: 25px;
+}
+
+.landing-two-col .hs_cos_wrapper_widget_container > div:last-of-type {
+    margin-top: var(--space-4);
+}
+
+.form-wrapper {
+    background-color: #FFFFFF;
+    padding: 20px 15px 40px 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0 rgba(154,160,185,.05), 0 5px 30px 0 rgba(166,173,201,.22);
+}
+
+.form-wrapper h3 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 33px;
+    margin-bottom: var(--space-5);
+}
+
+.form-wrapper form > fieldset {
+    max-width: 100%;
+}
+
+.form-wrapper .form-columns-2 input {
+    width: 100% !important;
+}
+
+{% call utils.large_and_extra_large() %}
+    .landing-two-col h1 {
+        {{ utils.gaudi() }}
+    }
+
+    .form-wrapper {
+        background-color: #FFFFFF;
+        padding: 20px 30px 40px 30px;
+    }
+
+    .landing-two-col__col {
+        width: calc(50% - 25px);
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .landing-two-col__col h1 {
+        {{ utils.gaudi() }}
+    }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+    .landing-two-col {
+        padding-top: var(--space-8);
+        padding-bottom: var(--space-2);
+        flex-direction: column;
+    }
+
+    .landing-two-col h1 {
+        {{ utils.eames() }}
+    }
+{% endcall %}
