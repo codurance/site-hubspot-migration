@@ -68,6 +68,14 @@
   font-weight: var(--heavy-font-weight);
 }
 
+{% call utils.small() %}
+  .search-bar input {
+    {{ utils.base() }}
+    font-weight: var(--middle-font-weight);
+  }
+{% endcall %} 
+
+
 {% call utils.large_and_extra_large() %}
   .utilities-menu {
     position: relative;
@@ -108,7 +116,7 @@
   .language-selector {
     position: absolute;
     right: 78px;
-    top: 25px;
+    top: 26px;
   }
 
   header.header:not(.website-header--open) .hs-search-field,
