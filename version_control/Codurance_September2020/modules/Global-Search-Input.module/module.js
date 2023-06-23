@@ -81,9 +81,12 @@ let hsSearch = function(_instance) {
     },
     getSearchResults = () => {
       let request = new XMLHttpRequest();
+      const portalId = "3042464";
       let requestUrl =
         "https://api.hubapi.com/contentsearch/v2/search" +
-        "?portalId=25556651&term=" +
+        "?portalId=" +
+        portalId +
+        "&term=" +
         encodeURIComponent(searchTerm) +
         "&limit=" +
         encodeURIComponent(TYPEAHEAD_LIMIT) +
