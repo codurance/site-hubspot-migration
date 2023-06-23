@@ -58,10 +58,6 @@
   background: transparent;
 }
 
-.search-bar .hs-search-field__inner-wrapper {
-  transform: translateY(-25%);
-}
-
 .search-bar .hs-search-field form {
   {{ utils.card_shadow() }}
 }
@@ -95,6 +91,7 @@
 
   .utilities-menu .hs-search-field__inner-wrapper {
     padding: 0;
+    transform: translateY(-25%);
   }
 
   .search-bar__button[aria-expanded="true"] + .hs-search-field {
@@ -115,8 +112,13 @@
   }
 
   header.header:not(.website-header--open) .hs-search-field,
-  .search-bar__button {
+  .search-bar__button,
+  .search-bar .hs-search-field__suggestions {
     display: none;
+  }
+
+  .search-bar .hs-search-field {
+    top: var(--space-7);
   }
 {% endcall %} 
 

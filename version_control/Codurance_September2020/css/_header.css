@@ -161,7 +161,7 @@ header.header.fixed {
     left: 0;
     margin: 0;
     position: absolute;
-    top: 70px;
+    top: var(--space-8);
     width: 200vw;
     transition: left .5s,padding-top .5s,border-top-color .5s;
   }
