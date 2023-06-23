@@ -202,10 +202,6 @@ header.header.fixed {
 {% endcall %} 
 
 {% call utils.small() %}
-  .mobile-trigger {
-    right: 5px;
-  }
-
   .header__wrapper form {
     max-width: 100%;
   }
