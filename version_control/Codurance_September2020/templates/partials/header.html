@@ -9,7 +9,7 @@ label: Global main menu
       {% module "header_logo" path="@hubspot/logo", label="Header Logo",link="/", img={src="{{logo_file}}", alt="Codurance", override_inherited_src= true} %}
     </div>
     <div class="custom-menu-primary">
-      <div class="mobile-trigger" aria-controls="website-navigation-menu" aria-expanded="true" aria-label="Toggle navigation">
+      <div class="mobile-trigger" aria-controls="website-navigation-menu" aria-expanded="true" aria-label="Toggle navigation" tabindex="0">
         <span></span>
       </div>
       {% module "navigation-primary" path="../../modules/menu-section", label="Primary Menu" no_wrapper=True %}
