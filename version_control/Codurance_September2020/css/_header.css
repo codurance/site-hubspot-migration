@@ -163,7 +163,11 @@ header.header.fixed {
     position: absolute;
     top: var(--space-8);
     width: 200vw;
-    transition: left .5s,padding-top .5s,border-top-color .5s;
+    transition: top .5s, left .5s,padding-top .5s,border-top-color .5s;
+  }
+
+  .website-header--has-open-submenu .custom-menu-primary nav {
+    top: var(--space-4);
   }
 
   .mobile-trigger {

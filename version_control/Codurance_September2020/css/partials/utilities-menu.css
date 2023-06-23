@@ -112,6 +112,7 @@
   }
 
   header.header:not(.website-header--open) .hs-search-field,
+  .website-header--has-open-submenu .hs-search-field,
   .search-bar__button,
   .search-bar .hs-search-field__suggestions {
     display: none;
