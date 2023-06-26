@@ -117,9 +117,12 @@ let hsResultsPage = function(_resultsClass) {
         searchParams.get("language") === "es" ? noResults.es : noResults.en;
 
       const noResultsHtml = `<div class="hs-search__no-results">
-                                    <p>${content.title} ${searchedTerm} </p>
+                                    <p>
+                                      ${content.title} 
+                                      “${searchedTerm ? searchedTerm : ""}”
+                                    </p>
                                     <p>${content.subtitle}</p>
-                               </div>`;
+                              </div>`;
 
       resultsSection.insertAdjacentHTML("afterbegin", noResultsHtml);
     }
@@ -192,9 +195,12 @@ let hsResultsPage = function(_resultsClass) {
     }
 
     let getResults = (function() {
+      console.log(getTerm() === true);
+
       if (getTerm()) {
         httpRequest(getTerm(), getOffset());
       } else {
+        emptyResults(getTerm());
         emptyPagination();
       }
     })();
