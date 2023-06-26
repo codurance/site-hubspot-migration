@@ -207,6 +207,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const searchResults = document.querySelectorAll(".hs-search-field");
 
   Array.prototype.forEach.call(searchResults, function(el) {
-    let hsSearchModule = hsSearch(el);
+    hsSearch(el);
   });
 });
