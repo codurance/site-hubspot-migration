@@ -74,6 +74,7 @@
     font-weight: var(--middle-font-weight);
   }
 {% endcall %}
+
 {% call utils.large_and_extra_large() %}
   .utilities-menu {
     position: relative;
@@ -90,7 +91,7 @@
   }
 
   .utilities-menu .hs-search-field {
-    transition: width .3s;
+    transition: width .4s ease-in-out .2s;
     width: 0;
     overflow: hidden;
   }
@@ -103,6 +104,16 @@
   .search-bar__button[aria-expanded="true"] + .hs-search-field {
     width: 100%;
     overflow: visible;
+  }
+
+  .utilities-menu .cm-search-button i {
+    transition: opacity .3s ease-out .3s;
+    opacity: 0;
+  }
+
+  .search-bar__button[aria-expanded="true"] + .hs-search-field .cm-search-button i {
+    transition: opacity .3s ease-in-out .3s;
+    opacity: 1;
   }
 {% endcall %}
 
