@@ -73,9 +73,7 @@
     {{ utils.base() }}
     font-weight: var(--middle-font-weight);
   }
-{% endcall %} 
-
-
+{% endcall %}
 {% call utils.large_and_extra_large() %}
   .utilities-menu {
     position: relative;
@@ -116,7 +114,7 @@
   .language-selector {
     position: absolute;
     right: 78px;
-    top: 26px;
+    top: 25px;
   }
 
   header.header:not(.website-header--open) .hs-search-field,
@@ -130,4 +128,6 @@
     top: var(--space-7);
   }
 {% endcall %} 
+
+
 
