@@ -29,9 +29,11 @@ let hsResultsPage = function(_resultsClass) {
     function getOffset() {
       return parseInt(searchParams.get("offset")) || 0;
     }
+
     function getLimit() {
       return parseInt(searchParams.get("limit"));
     }
+
     function addResult(
       title,
       url,
@@ -41,6 +43,16 @@ let hsResultsPage = function(_resultsClass) {
       authorFullName
     ) {
       let newResult = document.importNode(resultTemplate.content, true);
+
+      const author = newResult.querySelector(".hs-search-results__author");
+      const image = newResult.querySelector(
+        ".hs-search-results__featured-image > img"
+      );
+      const titleTag = newResult.querySelector(".hs-search-results__title");
+      const descriptionTag = newResult.querySelector(
+        ".hs-search-results__description"
+      );
+
       function isFeaturedImageEnabled() {
         if (
           newResult.querySelector(".hs-search-results__featured-image > img")
@@ -48,27 +60,27 @@ let hsResultsPage = function(_resultsClass) {
           return true;
         }
       }
-      newResult.querySelector(".hs-search-results__title").innerHTML = title;
-      newResult.querySelector(".hs-search-results__title").href = url;
-      newResult.querySelector(
-        ".hs-search-results__description"
-      ).innerHTML = description;
 
-      newResult.querySelector(
-        ".hs-search-results__date"
-      ).textContent = getAndFormatDate(publishedDate);
+      titleTag.innerHTML = title;
+      titleTag.href = url;
+      descriptionTag.innerHTML = description;
 
-      newResult.querySelector(
-        ".hs-search-results__author"
-      ).textContent = authorFullName;
+      if (typeof publishedDate !== "undefined") {
+        newResult.querySelector(
+          ".hs-search-results__date"
+        ).textContent = `· Posted ${getAndFormatDate(publishedDate)}`;
+      }
+
+      if (typeof authorFullName !== "undefined") {
+        author.textContent = `By ${authorFullName}`;
+      }
 
       if (typeof featuredImage !== "undefined" && isFeaturedImageEnabled()) {
-        newResult.querySelector(
-          ".hs-search-results__featured-image > img"
-        ).src = featuredImage;
+        image.src = featuredImage;
       }
       resultsSection.appendChild(newResult);
     }
+
     function getAndFormatDate(publishedDate) {
       const dateOptions = {
         year: "numeric",
@@ -105,9 +117,12 @@ let hsResultsPage = function(_resultsClass) {
         searchParams.get("language") === "es" ? noResults.es : noResults.en;
 
       const noResultsHtml = `<div class="hs-search__no-results">
-                                    <p>${content.title} ${searchedTerm} </p>
+                                    <p>
+                                      ${content.title} 
+                                      “${searchedTerm ? searchedTerm : ""}”
+                                    </p>
                                     <p>${content.subtitle}</p>
-                               </div>`;
+                              </div>`;
 
       resultsSection.insertAdjacentHTML("afterbegin", noResultsHtml);
     }
@@ -183,6 +198,7 @@ let hsResultsPage = function(_resultsClass) {
       if (getTerm()) {
         httpRequest(getTerm(), getOffset());
       } else {
+        emptyResults(getTerm());
         emptyPagination();
       }
     })();

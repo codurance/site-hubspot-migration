@@ -1,0 +1,35 @@
+[ {
+  "id" : "711bbe96-bb24-26d2-00e6-3a36830bc760",
+  "name" : "language",
+  "display_width" : null,
+  "label" : "Language",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "241b43c0-32d9-10fb-da98-8d5ccb6fad20",
+    "name" : "choice",
+    "display_width" : null,
+    "label" : "Choice",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "en", "English" ], [ "es", "Spanish" ], [ "pt", "Portuguese" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "en"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "choice" : "en"
+  }
+} ]

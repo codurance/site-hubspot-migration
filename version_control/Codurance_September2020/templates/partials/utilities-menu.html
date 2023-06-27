@@ -1,0 +1,29 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: false
+-->
+
+{{ require_css(get_asset_url("../../css/partials/utilities-menu.css")) }}
+{{ require_js(get_asset_url("../../js/partials/utilities-menu.js"), "footer") }}
+
+<nav class="utilities-menu">
+	<ul>
+		<li class="menu-item">
+			{% module 'navigation_link', path='../../modules/Navigation-Link', no_wrapper=True %}
+		</li>
+	
+		<li class="language-selector menu-item has-submenu">
+            {% module 'language_selector', path='../../modules/Language-Selector', no_wrapper=True %}
+		</li>
+
+        <li class="search-bar menu-item">
+            <button class="search-bar__button" aria-expanded="false" aria-controls="hs-search-field">
+				<i class="las la-search"></i>
+			</button>
+			{% module 'search-bar-input' path='../../modules/Global-Search-Input' label="Search bar" no_wrapper=True %}
+        </li>
+	</ul>
+</nav>
+
+
+

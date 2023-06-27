@@ -44,6 +44,10 @@ header.header.fixed {
   position: relative;
 }
 
+.header__wrapper > * {
+  flex-grow: 1;
+}
+
 .mobile-trigger span:before,
 .mobile-trigger span:after {
   content: "";
@@ -157,9 +161,13 @@ header.header.fixed {
     left: 0;
     margin: 0;
     position: absolute;
-    top: 70px;
+    top: var(--space-8);
     width: 200vw;
-    transition: left .5s,padding-top .5s,border-top-color .5s;
+    transition: top .5s, left .5s,padding-top .5s,border-top-color .5s;
+  }
+
+  .website-header--has-open-submenu .custom-menu-primary nav {
+    top: var(--space-4);
   }
 
   .mobile-trigger {
@@ -194,10 +202,6 @@ header.header.fixed {
 {% endcall %} 
 
 {% call utils.small() %}
-  .mobile-trigger {
-    right: 5px;
-  }
-
   .header__wrapper form {
     max-width: 100%;
   }
