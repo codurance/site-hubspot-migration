@@ -195,8 +195,6 @@ let hsResultsPage = function(_resultsClass) {
     }
 
     let getResults = (function() {
-      console.log(getTerm() === true);
-
       if (getTerm()) {
         httpRequest(getTerm(), getOffset());
       } else {
