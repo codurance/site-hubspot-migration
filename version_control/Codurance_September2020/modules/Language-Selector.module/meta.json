@@ -1,0 +1,8 @@
+{
+  "label": "Language Selector",
+  "global" : false,
+  "icon" : "fontawesome-5.14.0:Bars:SOLID",
+  "host_template_types" : [],
+  "module_id" : 119195133724,
+  "is_available_for_new_content" : false
+}

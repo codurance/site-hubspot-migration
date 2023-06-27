@@ -1,0 +1,45 @@
+{{ require_css(get_asset_url("../../css/modules/language-selector.css")) }}
+
+{% macro generate_language_link(lang_code, translated_content) %}
+	{% set lang_translation = content.translations[lang_code] %}
+	{% set lang_page_link = lang_translation.absolute_url %}
+		
+	{% if content.translated_content[lang.choice].published %}
+		<a href="{{ lang_page_link }}"
+			lang="{{ lang.choice }}" hreflang="{{ lang.choice }}"
+			role="option"
+			rel="noopener noreferrer">
+			{{ lang_code|upper }}
+		</a>
+	{% elif lang.choice == locale %}
+		<a href="{{ lang_page_link }}"
+			class="active"
+			lang="{{ lang.choice }}" hreflang="{{ lang.choice }}"
+			aria-selected="true"
+			role="option"
+			rel="noopener noreferrer">
+			{{ lang_code|upper }}
+		</a>
+	{% else %}
+		<span class="not-translated">{{ lang_code|upper }}</span>
+	{% endif %}
+{% endmacro %}
+
+<button class="language-selector__button menu-link"
+		aria-label="Select your language"
+		aria-expanded="false"
+		aria-controls="language-selector__dropdown" >
+	{{ locale }}
+</button>
+
+<ul class="language-selector__dropdown"
+	role="listbox" >
+	{% for lang in module.language %}
+		<li>
+		{{ generate_language_link(lang.choice, content.translated_content) }}
+		</li>
+	{% endfor %}
+</ul>
+
+
+

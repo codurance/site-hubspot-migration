@@ -1,0 +1,23 @@
+{{ require_css(get_asset_url("../../css/modules/navigation-link.css")) }}
+
+{% macro isActiveNode(link) %}
+	{% set link_stripped = "/" + link | split('/', 3) | last %}
+	{% if request.path == link_stripped %}
+		{{ { "class": "active-item contact-us menu-link",
+		"aria-current": "page"
+		} | xmlattr
+		}}
+	{% endif %}
+{% endmacro %}
+
+{% set href = module.link.settings.url.href %}
+
+<a
+    href="{{ href }}"
+    class="contact-us menu-link"
+    {% if module.link.settings.open_in_new_tab %}target="_blank"{% endif %}
+    {% if module.link.settings.rel %}rel="{{ module.link.settings.rel }}"{% endif %}
+    {{ isActiveNode(href) }}
+>
+    {{ module.link.text }}
+</a>

@@ -246,6 +246,7 @@
   .level-1 {
     white-space: nowrap;
     display: flex;
+    justify-content: center;
   }
   
 

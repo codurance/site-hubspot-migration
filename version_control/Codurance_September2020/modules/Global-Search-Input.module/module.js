@@ -81,8 +81,12 @@ let hsSearch = function(_instance) {
     },
     getSearchResults = () => {
       let request = new XMLHttpRequest();
+      const portalId = "3042464";
       let requestUrl =
-        "/_hcms/search?&term=" +
+        "https://api.hubapi.com/contentsearch/v2/search" +
+        "?portalId=" +
+        portalId +
+        "&term=" +
         encodeURIComponent(searchTerm) +
         "&limit=" +
         encodeURIComponent(TYPEAHEAD_LIMIT) +
@@ -203,6 +207,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const searchResults = document.querySelectorAll(".hs-search-field");
 
   Array.prototype.forEach.call(searchResults, function(el) {
-    let hsSearchModule = hsSearch(el);
+    hsSearch(el);
   });
 });
