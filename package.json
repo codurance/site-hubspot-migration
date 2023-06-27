@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "upload": "npx hs upload version_control version_control",
-    "upload:dev": "hs upload --account=sandbox version_control version_control",
-    "watch:dev": "hs watch --account=sandbox version_control version_control -i --remove",
+    "upload:dev": "hs upload --account=sandbox version_control/Codurance_September2020 version_control/Codurance_September2020",
+    "watch:dev": "hs watch --account=sandbox version_control/Codurance_September2020 version_control/Codurance_September2020 -i --remove",
     "prettier": "npx prettier --write --trailing-comma none '**/*.js'"
   },
   "repository": {
