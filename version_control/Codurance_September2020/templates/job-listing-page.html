@@ -39,10 +39,13 @@
       {% module 'locations' path='../modules/locations.module' label="Locations Section" no_wrapper=True%}
     </div>
   </section>
-            
-  <section class="featured-job">
-    {% module 'featured jobs' path='../modules/Featured-Jobs.module' label="Featured Jobs Section" no_wrapper=True%}
-  </section>
+          
+
+  {% if content.widgets.featured_jobs.body.featured_role.hide_module %}
+    <section class="featured-job">
+      {% module 'featured jobs' path='../modules/Featured-Jobs.module' label="Featured Jobs Section" no_wrapper=True%}
+    </section>
+  {% endif %}
       
   <section class="job-listing-page-filter ">    
     {% module 'Filtered Jobs' path='../modules/Filtered-Jobs.module' label="Filtered Jobs Section" no_wrapper=True%}
