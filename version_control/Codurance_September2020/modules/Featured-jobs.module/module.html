@@ -24,6 +24,7 @@
 
 {% if !module.hide_module %}
 
+<section class="featured-job">
 	<h2 class="featured__title">{{ module.module_title }}</h2>
 	<div class="featured__cards-container">
 		{% for item in module.featured_role %}
@@ -80,5 +81,6 @@
 		</div> {# end featured job card #}
 		{% endfor %}
 	</div>  {# end featured cards container #}
+</section>
 
 {% endif %}
