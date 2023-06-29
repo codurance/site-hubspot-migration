@@ -160,7 +160,7 @@
       "label" : "Link",
       "required" : false,
       "locked" : false,
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "BLOG" ],
       "show_advanced_rel_options" : false,
       "type" : "link",
       "default" : {
@@ -177,7 +177,7 @@
     "expanded" : false,
     "type" : "group",
     "default" : {
-      "url" : {
+      "link" : {
         "url" : {
           "content_id" : null,
           "type" : "EXTERNAL",
@@ -200,8 +200,8 @@
     },
     "tooltip" : { },
     "hybrid_position_location" : "",
-    "link" : {
-      "url" : {
+    "button" : {
+      "link" : {
         "url" : {
           "content_id" : null,
           "type" : "EXTERNAL",
@@ -212,4 +212,14 @@
       }
     }
   }
+}, {
+  "id" : "829a0173-8777-58b2-0841-557b4c3c750c",
+  "name" : "hide_module",
+  "display_width" : null,
+  "label" : "Hide module",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : false
 } ]
