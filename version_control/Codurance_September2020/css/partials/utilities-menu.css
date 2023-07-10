@@ -44,6 +44,11 @@
   transition: color .5s;
 }
 
+.search-bar__button:hover {
+  color: var(--persimmon);
+  cursor: pointer;
+} 
+
 .search-bar__button i {
   rotate: 270deg;
   vertical-align: middle;
@@ -91,7 +96,7 @@
   }
 
   .utilities-menu .hs-search-field {
-    transition: width .4s ease-in-out .2s;
+    transition: width .3s ease-in-out .2s;
     width: 0;
     overflow: hidden;
   }
@@ -107,7 +112,7 @@
   }
 
   .utilities-menu .cm-search-button i {
-    transition: opacity .3s ease-out .3s;
+    transition: opacity .2s ease-out .2s;
     opacity: 0;
   }
 
