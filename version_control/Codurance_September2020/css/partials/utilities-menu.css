@@ -96,7 +96,7 @@
   }
 
   .utilities-menu .hs-search-field {
-    transition: width .3s ease-in-out .2s;
+    transition: width .3s ease-in-out;
     width: 0;
     overflow: hidden;
   }
@@ -117,7 +117,7 @@
   }
 
   .search-bar__button[aria-expanded="true"] + .hs-search-field .cm-search-button i {
-    transition: opacity .3s ease-in-out .3s;
+    transition: opacity .3s ease-in-out .2s;
     opacity: 1;
   }
 {% endcall %}

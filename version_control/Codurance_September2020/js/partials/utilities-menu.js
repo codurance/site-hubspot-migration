@@ -13,12 +13,12 @@ const searchSuggestions = document.querySelector(
 
 searchBarButton.addEventListener("click", () => {
   searchBarButton.setAttribute("aria-expanded", "true");
-  setTimeout(() => searchBarInput.focus(), 500);
+  setTimeout(() => searchBarInput.focus(), 300);
 });
 
 searchBarButton.addEventListener("focus", () => {
   searchBarButton.setAttribute("aria-expanded", "true");
-  setTimeout(() => searchBarInput.focus(), 500);
+  setTimeout(() => searchBarInput.focus(), 300);
 });
 
 searchBar.addEventListener("click", () => {
