@@ -1,0 +1,39 @@
+{% import "../utils/utils.css" as utils %}
+
+  .related-services {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+  }
+
+  .related-services h2 {
+    {{ utils.dudler() }}
+    {{ utils.dudler_margin() }}
+    max-width: var(--dudler-max-width);
+  }
+
+  .partners {
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
+    padding-bottom: var(--space-7);
+  }
+
+  .partners h2 {
+    {{ utils.freed() }}
+    {{ utils.freed_margin() }}
+    max-width: var(--freed-max-width);
+  }
+
+  .partners h3 {
+    {{ utils.base() }}
+    {{ utils.base_margin() }}
+    font-weight: var(--heavy-font-weight);
+    max-width: var(--base-max-width);
+    margin-top: var(--space-5);
+  }
+
+
+  
+
+  .partners p:not(:first-child) {
+      margin-top: var(--space-4);
+  }
