@@ -43,10 +43,56 @@ label: Industry Public Sector page
     %}
   </section>
 
+{# ✅  CTA banner section pointing to public sector newsletter #} 
+
+  <section class="cta-banner">
+    {% module 'cta_banner' label="CTA Banner"
+      path='../modules/LP-cta-block.module'
+    %}
+  </section>
+
+{# ✅  New Simple cards section with services related to the PS  #} 
+
+<section class="region">
+  {% header 'related_services_header' header_tag="h2", label="Related Services Header"  %}
+  
+    {% module 'related_services_cards'
+      path='../modules/Simple-Card.module'
+      label="Related Services Cards"
+      no_wrapper=True
+    %}
+</section>
+
+  {# ✅ Rich text with text intro to Partners #}
+  {# ✅ Partner logos module. Probably 6 logos max. #}
+<section class="region">
+    {% rich_text 'rich_text_partners' label="Rich text partners" %}
+  
+    {% header 'partners_title'
+      header_tag='h3',
+      value='Our Partners'
+      label="Partner logos Title" %}
+  
+    {% module 'partner_logos'
+    path='../modules/Partner-Logos.module'
+    label="Related Services Cards"
+    no_wrapper=True
+    %}
+</section>
+
+
   <section class="case-studies region">
     {% dnd_area "case_studies"
       label="Case studies"
     %}
+
+    {# ----------------- ✅ DnD Intro Case studies ----------------- #}
+
+    {% include_dnd_partial 
+      path='@hubspot/section_header' 
+      context={} 
+    %}
+
       {% include_dnd_partial 
           path='./sections/text-and-image.html' 
           context={} 
@@ -66,18 +112,24 @@ label: Industry Public Sector page
     {% end_dnd_area %}
   </section>
 
-  <section class="promotion region">
-    {% module "promotion"
-      path="../modules/Text-and-image.module" label="Promotional section"
+
+  {# ✅ Add Banner link module to contact us #}
+
+  <section class="region">
+    {% module 'contact_us_banner'
+      path='../modules/Banner-Link.module'
+      label="Contact Us Banner"
+      no_wrapper=True
     %}
   </section>
 
+  
   <section class="recommended-insights region">
     <div class="recommended-insights__wrapper">
       <h2 class="lateral-spacing">
-        {% text "insights_header"
+        {% section_header "section_header_insights"
           value="Recommended Insights",
-          label="Recommended Insights Header" no_wrapper=True %}
+          label="Recommended Insights Section Header" no_wrapper=True %}
       </h2>
       {% module 'recommended_insights'
         path='../modules/Simple-Card.module'
@@ -86,12 +138,13 @@ label: Industry Public Sector page
       %}
     </div>
   </section>
-  
-  <section class="cta-banner">
-    {% module 'cta_banner' label="CTA Banner"
-      path='../modules/LP-cta-block.module'
+
+  <section class="promotion region">
+    {% module "promotion"
+      path="../modules/Text-and-image.module" label="Promotional section"
     %}
   </section>
+  
 </main>
 
 {% endblock body %}
