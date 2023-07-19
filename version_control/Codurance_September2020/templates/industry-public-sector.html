@@ -1,0 +1,97 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Industry Public Sector page
+-->
+{% extends "./layouts/base.html" %}
+
+{{ require_css(get_asset_url("../css/pages/industry.css")) }}
+
+{% block body %}
+
+<section class="hero">
+  <div class="header__text-container responsive-page-width lateral-spacing">
+    <div class="breadcrumbs">
+      {% menu "breadcrumbs" 
+        label="Breadcrumbs"
+        root_type="breadcrumb" 
+        no_wrapper=True 
+      %}
+    </div>
+
+    <div class="header-title">
+      {% header "header_title" 
+        label="Header Title" 
+      %}
+    </div>
+  </div>
+
+  <div class="header__image-container">
+    {% image "header_image"
+      label="Header Image"
+      no_wrapper=True
+    %}
+    <div class="header__image-overlay"></div>
+  </div>
+</section>
+
+<main>
+  <section class="above-the-fold region">
+    {% module "above_the_fold"
+      path="../modules/Text-and-image.module" 
+      label="Above the fold section"
+    %}
+  </section>
+
+  <section class="case-studies region">
+    {% dnd_area "case_studies"
+      label="Case studies"
+    %}
+      {% include_dnd_partial 
+          path='./sections/text-and-image.html' 
+          context={} 
+      %}
+
+      {% include_dnd_partial 
+          path='./sections/testimonial-section.html' 
+          context={} 
+      %}
+
+      {% dnd_section full_width=True %}
+        {% dnd_module 'case_study_cards'
+          path='../modules/Case Study Card Collection.module'
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+    {% end_dnd_area %}
+  </section>
+
+  <section class="promotion region">
+    {% module "promotion"
+      path="../modules/Text-and-image.module" label="Promotional section"
+    %}
+  </section>
+
+  <section class="recommended-insights region">
+    <div class="recommended-insights__wrapper">
+      <h2 class="lateral-spacing">
+        {% text "insights_header"
+          value="Recommended Insights",
+          label="Recommended Insights Header" no_wrapper=True %}
+      </h2>
+      {% module 'recommended_insights'
+        path='../modules/Simple-Card.module'
+        label="Recommended Insights Cards"
+        no_wrapper=True
+      %}
+    </div>
+  </section>
+  
+  <section class="cta-banner">
+    {% module 'cta_banner' label="CTA Banner"
+      path='../modules/LP-cta-block.module'
+    %}
+  </section>
+</main>
+
+{% endblock body %}
