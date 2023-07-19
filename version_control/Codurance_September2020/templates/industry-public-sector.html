@@ -6,6 +6,7 @@ label: Industry Public Sector page
 {% extends "./layouts/base.html" %}
 
 {{ require_css(get_asset_url("../css/pages/industry.css")) }}
+{{ require_css(get_asset_url("../css/pages/public-sector.css")) }}
 
 {% block body %}
 
@@ -43,8 +44,6 @@ label: Industry Public Sector page
     %}
   </section>
 
-
-
   <section class="cta-banner">
     {% module 'cta_banner' label="CTA Banner"
       path='../modules/LP-cta-block.module'
@@ -52,7 +51,7 @@ label: Industry Public Sector page
   </section>
 
 
-<section class="region">
+<section class="related-services region">
   {% header 'related_services_header' header_tag="h2", label="Related Services Header"  %}
   
     {% module 'related_services_cards'
@@ -63,19 +62,23 @@ label: Industry Public Sector page
 </section>
 
  
-<section class="region">
-    {% rich_text 'rich_text_partners' label="Rich text partners" %}
-  
-    {% header 'partners_title'
-      header_tag='h3',
-      value='Our Partners'
-      label="Partner logos Title" %}
-  
-    {% module 'partner_logos'
-    path='../modules/Partner-Logos.module'
-    label="Partner logos listing"
-    no_wrapper=True
-    %}
+<section class="partners">
+    {% rich_text 'rich_text_partners' label="Rich text partners" no_wrapper=True %}
+
+  <div class="partners__logos-wrapper">
+      {% header 'partners_title'
+        header_tag='h3',
+        value='Our Partners'
+        label="Partner logos Title"
+        no_wrapper=True
+      %}
+    
+      {% module 'partner_logos'
+        path='../modules/Partner-Logos.module'
+        label="Partner logos listing"
+        no_wrapper=True
+      %}
+  </div>
 </section>
 
 
@@ -83,12 +86,12 @@ label: Industry Public Sector page
     {% dnd_area "case_studies"
       label="Case studies"
     %}
-
-    {% include_dnd_partial 
-      path='@hubspot/section_header' 
-      context={} 
-    %}
-
+    {% dnd_section %}
+      {% dnd_module 'section_header'
+        path='@hubspot/section_header' 
+      %}
+      {% end_dnd_module %}
+    {%end_dnd_section %}
       {% include_dnd_partial 
           path='./sections/text-and-image.html' 
           context={} 
