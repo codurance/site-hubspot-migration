@@ -4,6 +4,11 @@
   {{ utils.slate_to_woodsmoke() }}
 }
 
+.cta-banner .cta-block {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
 .cta-banner .cta-block__wrapper {
   max-width: var(--content-max-width);
 }
