@@ -1,5 +1,17 @@
 {% import "../utils/utils.css" as utils %}
 
+.cta-banner {
+  {{ utils.slate_to_woodsmoke() }}
+}
+
+.cta-banner .cta-block__wrapper {
+  max-width: var(--content-max-width);
+}
+
+.cta-banner .cta-block__title {
+  max-width: none;
+}
+
 .related-services {
   max-width: var(--content-max-width);
   margin-inline: auto;
