@@ -25,6 +25,7 @@
 .related-services h2 {
   {{ utils.dudler() }}
   {{ utils.dudler_margin() }}
+  font-weight: bold;
   max-width: var(--dudler-max-width);
 }
 

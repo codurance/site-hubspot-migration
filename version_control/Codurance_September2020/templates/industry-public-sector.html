@@ -51,13 +51,13 @@ label: Industry Public Sector page
   </section>
 
   <section class="related-services region">
-    {% header 'related_services_header' header_tag="h2", label="Related Services Header"  %}
+    <h2 class="lateral-spacing">{% text 'related_services_title' label="Related Services Title" no_wrapper=True %}</h2>
     
-      {% module 'related_services_cards'
-        path='../modules/Simple-Card.module'
-        label="Related Services Cards"
-        no_wrapper=True
-      %}
+    {% module 'related_services_cards'
+      path='../modules/Simple-Card.module'
+      label="Related Services Cards"
+      no_wrapper=True
+    %}
   </section>
 
   <section class="partners">
