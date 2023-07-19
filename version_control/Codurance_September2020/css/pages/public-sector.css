@@ -38,6 +38,7 @@
 .partners h2 {
   {{ utils.freed() }}
   {{ utils.freed_margin() }}
+  font-weight: bold;
   max-width: var(--freed-max-width);
 }
 
@@ -46,12 +47,23 @@
   {{ utils.base_margin() }}
   font-weight: var(--heavy-font-weight);
   max-width: var(--base-max-width);
-  margin-top: var(--space-5);
+  margin-top: var(--space-7);
 }
 
 .partners p:not(:first-child) {
   margin-top: var(--space-4);
 }
+
+.partners .cm-partners-logo-group {
+  justify-content: flex-start;
+}
+
+{% call utils.large_and_extra_large() %}
+  .partners .cm-partners-logo-group {
+    gap: var(--space-4);
+    flex-wrap: nowrap;
+  }
+{% endcall%}
 
 .promotion .text-and-image__copy {
   align-self: center;

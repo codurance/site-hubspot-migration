@@ -60,22 +60,22 @@ label: Industry Public Sector page
     %}
   </section>
 
-  <section class="partners">
-      {% rich_text 'rich_text_partners' label="Rich text partners" no_wrapper=True %}
+  <section class="partners lateral-spacing">
+    {% rich_text 'rich_text_partners' label="Rich text partners" no_wrapper=True %}
 
     <div class="partners__logos-wrapper">
-        {% header 'partners_title'
-          header_tag='h3',
-          value='Our Partners'
-          label="Partner logos Title"
-          no_wrapper=True
-        %}
-      
-        {% module 'partner_logos'
-          path='../modules/Partner-Logos.module'
-          label="Partner logos listing"
-          no_wrapper=True
-        %}
+      {% header 'partners_title'
+        header_tag='h3',
+        value='Our Partners'
+        label="Partner logos Title"
+        no_wrapper=True
+      %}
+    
+      {% module 'partner_logos'
+        path='../modules/Partner-Logos.module'
+        label="Partner logos listing"
+        no_wrapper=True
+      %}
     </div>
   </section>
 
