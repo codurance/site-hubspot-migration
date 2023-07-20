@@ -84,7 +84,7 @@
   {{ utils.freed() }}
 }
 
-.contact-us {
+.contact-us-banner {
   {{ utils.slate_to_woodsmoke() }}
   color: white;
 }
