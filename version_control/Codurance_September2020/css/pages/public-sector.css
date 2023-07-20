@@ -84,6 +84,24 @@
   {{ utils.freed() }}
 }
 
+.contact-us {
+  {{ utils.slate_to_woodsmoke() }}
+  color: white;
+}
+
+.recommended-insights {
+  background: white;
+}
+
+.recommended-insights__header {
+  max-width: var(--freed-max-width);
+}
+
+.recommended-insights__header h2 {
+  margin-bottom: var(--dudler-margin);
+  font-weight: var(--heavy-font-weight);
+}
+
 .promotion .text-and-image__copy {
   align-self: center;
 }

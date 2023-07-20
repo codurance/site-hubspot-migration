@@ -115,7 +115,7 @@ label: Industry Public Sector page
     {% end_dnd_area %}
   </section>
 
-  <section class="region">
+  <section class="region contact-us">
     {% module 'contact_us_banner'
       path='../modules/Banner-Link.module'
       label="Contact Us Banner"
@@ -125,11 +125,11 @@ label: Industry Public Sector page
 
   <section class="recommended-insights region">
     <div class="recommended-insights__wrapper">
-      <h2 class="lateral-spacing">
+      <div class="lateral-spacing recommended-insights__header">
         {% section_header "section_header_insights"
           value="Recommended Insights",
           label="Recommended Insights Section Header" no_wrapper=True %}
-      </h2>
+      </div>
       {% module 'recommended_insights'
         path='../modules/Simple-Card.module'
         label="Recommended Insights Cards"
