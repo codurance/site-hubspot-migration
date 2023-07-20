@@ -71,6 +71,19 @@
   }
 {% endcall %}
 
+.case-studies .section-header h2 {
+  {{ utils.dudler() }}
+}
+
+.case-studies .section-header p {
+  {{ utils.freed() }}
+  font-weight: var(--light-font-weight);
+}
+
+.case-studies .text-and-image__copy h2 {
+  {{ utils.freed() }}
+}
+
 .promotion .text-and-image__copy {
   align-self: center;
 }
