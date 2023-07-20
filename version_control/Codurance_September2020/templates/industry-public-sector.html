@@ -83,12 +83,19 @@ label: Industry Public Sector page
     {% dnd_area "case_studies"
       label="Case studies"
     %}
-    {% dnd_section %}
-      {% dnd_module 'section_header'
-        path='@hubspot/section_header' 
+      {% dnd_section
+        max_width=1000,
+        padding={
+          "left": 20,
+          "right": 20
+        }
       %}
-      {% end_dnd_module %}
-    {% end_dnd_section %}
+        {% dnd_module 'section_header'
+          path='@hubspot/section_header' 
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+
       {% include_dnd_partial 
           path='./sections/text-and-image.html' 
           context={} 
