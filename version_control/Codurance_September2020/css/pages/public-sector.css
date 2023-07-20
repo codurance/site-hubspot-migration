@@ -56,14 +56,20 @@
 
 .partners .cm-partners-logo-group {
   justify-content: flex-start;
+  gap: var(--space-4);
 }
 
 {% call utils.large_and_extra_large() %}
   .partners .cm-partners-logo-group {
-    gap: var(--space-4);
     flex-wrap: nowrap;
   }
-{% endcall%}
+{% endcall %}
+
+{% call utils.small() %}
+  .partners .cm-partners-logos-item {
+    flex: 1 1 45%;
+  }
+{% endcall %}
 
 .promotion .text-and-image__copy {
   align-self: center;
