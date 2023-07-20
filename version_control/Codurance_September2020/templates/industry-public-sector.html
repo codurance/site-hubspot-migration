@@ -1,0 +1,148 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Industry Public Sector page
+-->
+{% extends "./layouts/base.html" %}
+
+{{ require_css(get_asset_url("../css/pages/industry.css")) }}
+{{ require_css(get_asset_url("../css/pages/public-sector.css")) }}
+
+{% block body %}
+
+<section class="hero">
+  <div class="header__text-container responsive-page-width lateral-spacing">
+    <div class="breadcrumbs">
+      {% menu "breadcrumbs" 
+        label="Breadcrumbs"
+        root_type="breadcrumb" 
+        no_wrapper=True 
+      %}
+    </div>
+
+    <div class="header-title">
+      {% header "header_title" 
+        label="Header Title" 
+      %}
+    </div>
+  </div>
+
+  <div class="header__image-container">
+    {% image "header_image"
+      label="Header Image"
+      no_wrapper=True
+    %}
+    <div class="header__image-overlay"></div>
+  </div>
+</section>
+
+<main>
+  <section class="above-the-fold region">
+    {% module "above_the_fold"
+      path="../modules/Text-and-image.module" 
+      label="Above the fold section"
+    %}
+  </section>
+
+  <section class="cta-banner">
+    {% module 'cta_banner' label="CTA Banner"
+      path='../modules/LP-cta-block.module'
+    %}
+  </section>
+
+  <section class="related-services region">
+    <h2 class="lateral-spacing">{% text 'related_services_title' label="Related Services Title" no_wrapper=True %}</h2>
+    
+    {% module 'related_services_cards'
+      path='../modules/Simple-Card.module'
+      label="Related Services Cards"
+      no_wrapper=True
+    %}
+  </section>
+
+  <section class="partners lateral-spacing">
+    {% rich_text 'rich_text_partners' label="Rich text partners" no_wrapper=True %}
+
+    <div class="partners__logos-wrapper">
+      {% header 'partners_title'
+        header_tag='h3',
+        value='Our Partners'
+        label="Partner logos Title"
+        no_wrapper=True
+      %}
+    
+      {% module 'partner_logos'
+        path='../modules/Partner-Logos.module'
+        label="Partner logos listing"
+        no_wrapper=True
+      %}
+    </div>
+  </section>
+
+  <section class="case-studies region">
+    {% dnd_area "case_studies"
+      label="Case studies"
+    %}
+      {% dnd_section
+        max_width=1000,
+        padding={
+          "left": 20,
+          "right": 20
+        }
+      %}
+        {% dnd_module 'section_header'
+          path='@hubspot/section_header' 
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+
+      {% include_dnd_partial 
+          path='./sections/text-and-image.html' 
+          context={} 
+      %}
+
+      {% include_dnd_partial 
+          path='./sections/testimonial-section.html' 
+          context={} 
+      %}
+
+      {% dnd_section full_width=True %}
+        {% dnd_module 'case_study_cards'
+          path='../modules/Case Study Card Collection.module'
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_section %}
+    {% end_dnd_area %}
+  </section>
+
+  <section class="contact-us region">
+    {% module 'contact_us_banner'
+      path='../modules/Banner-Link.module'
+      label="Contact Us Banner"
+      no_wrapper=True
+    %}
+  </section>
+
+  <section class="recommended-insights region">
+    <div class="recommended-insights__wrapper">
+      <div class="recommended-insights__header lateral-spacing">
+        {% section_header "section_header_insights"
+          value="Recommended Insights",
+          label="Recommended Insights Section Header" no_wrapper=True %}
+      </div>
+      {% module 'recommended_insights'
+        path='../modules/Simple-Card.module'
+        label="Recommended Insights Cards"
+        no_wrapper=True
+      %}
+    </div>
+  </section>
+
+  <section class="promotion">
+    {% module "promotion"
+      path="../modules/Text-and-image.module" label="Promotional section"
+    %}
+  </section>
+</main>
+
+{% endblock body %}
