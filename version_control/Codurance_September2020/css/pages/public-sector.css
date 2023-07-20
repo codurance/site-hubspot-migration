@@ -25,7 +25,7 @@
 .related-services h2 {
   {{ utils.dudler() }}
   {{ utils.dudler_margin() }}
-  font-weight: bold;
+  font-weight: var(--heavy-font-weight);
   max-width: var(--dudler-max-width);
 }
 
@@ -38,7 +38,7 @@
 .partners h2 {
   {{ utils.freed() }}
   {{ utils.freed_margin() }}
-  font-weight: bold;
+  font-weight: var(--heavy-font-weight);
   max-width: var(--freed-max-width);
 }
 
