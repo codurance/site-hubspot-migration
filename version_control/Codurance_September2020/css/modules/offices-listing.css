@@ -1,0 +1,6 @@
+{% import '../utils/utils.css' as utils %}
+
+.office__text p,
+.office__text a {
+    {{ utils.natus() }}
+}

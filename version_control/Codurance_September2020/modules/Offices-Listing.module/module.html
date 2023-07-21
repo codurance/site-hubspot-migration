@@ -1,0 +1,21 @@
+{{ require_css(get_asset_url("../../css/modules/offices-listing.css")) }}
+
+<ul>
+    {% for office in module.office %}
+        <li>
+            {% if office.image.src %}
+                {% set sizeAttrs = 'width="{{ office.image.width }}" height="{{ office.image.height }}" style="max-width: 100%; height: auto;"' %}
+                <img src="{{ office.image.src }}" alt="{{ office.image.alt }}" {{ sizeAttrs }}>
+            {% endif %}
+            
+            <div class="office__text">
+                {{ office.title }}
+                {{ office.address }}
+                {{ office.sales_contact.phone.href }}
+                {{ office.sales_contact.copy }}
+                {{ office.sales_contact.contact_name }}
+                {{ office.sales_contact.email.href }}
+            </div>
+        </li>
+    {% endfor %}
+</ul>
