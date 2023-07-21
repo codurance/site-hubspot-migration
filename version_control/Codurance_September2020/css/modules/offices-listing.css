@@ -1,6 +1,16 @@
 {% import '../utils/utils.css' as utils %}
 
-.office__text p,
-.office__text a {
+.office {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+        
+.office img {
+    max-width: 6rem;
+}
+
+
+.office__content {
     {{ utils.natus() }}
 }
