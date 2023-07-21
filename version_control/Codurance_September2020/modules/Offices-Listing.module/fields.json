@@ -1,80 +1,38 @@
 [ {
-  "id" : "4ef2dfd9-aacd-1560-9797-6368466124af",
-  "name" : "image",
+  "id" : "f30fd14c-1a4b-e95f-4147-1a452d465023",
+  "name" : "office",
   "display_width" : null,
-  "label" : "Image",
+  "label" : "Office",
   "required" : false,
   "locked" : false,
-  "responsive" : true,
-  "resizable" : true,
-  "show_loading" : false,
-  "type" : "image",
-  "default" : {
-    "size_type" : "auto",
-    "src" : "",
-    "alt" : null,
-    "loading" : "lazy"
-  }
-}, {
-  "id" : "e01774a0-74c1-c318-5aad-83d1af7c18da",
-  "name" : "title",
-  "display_width" : null,
-  "label" : "Title",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
-}, {
-  "id" : "f77dbf5d-3c8f-7d4b-af23-600b7f16f18c",
-  "name" : "address",
-  "display_width" : null,
-  "label" : "Address",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
-}, {
-  "id" : "3c03060f-35db-27c7-c8ad-6d96f997a840",
-  "name" : "sales_contact",
-  "display_width" : null,
-  "label" : "Sales contact",
-  "required" : false,
-  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "e01774a0-74c1-c318-5aad-83d1af7c18da",
+    "default" : null
+  },
   "children" : [ {
-    "id" : "f432ed8d-7af2-b45d-cdb4-e378dc3eac14",
-    "name" : "phone",
+    "id" : "4ef2dfd9-aacd-1560-9797-6368466124af",
+    "name" : "image",
     "display_width" : null,
-    "label" : "Phone",
+    "label" : "Image",
     "required" : false,
     "locked" : false,
-    "supported_types" : [ "PHONE_NUMBER" ],
-    "type" : "url",
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
     "default" : {
-      "content_id" : null,
-      "href" : "",
-      "type" : "PHONE_NUMBER"
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
     }
   }, {
-    "id" : "82091ef4-93a7-a0c8-55a2-beba16df0a57",
-    "name" : "copy",
+    "id" : "e01774a0-74c1-c318-5aad-83d1af7c18da",
+    "name" : "title",
     "display_width" : null,
-    "label" : "Copy",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Sales contact:"
-  }, {
-    "id" : "e4c10812-5d6d-330d-58a6-a90c7bff143c",
-    "name" : "contact_name",
-    "display_width" : null,
-    "label" : "Name",
+    "label" : "Title",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -82,34 +40,114 @@
     "show_emoji_picker" : false,
     "type" : "text"
   }, {
-    "id" : "79957a6f-2f8b-198a-3b90-949f91cae152",
-    "name" : "email",
+    "id" : "f77dbf5d-3c8f-7d4b-af23-600b7f16f18c",
+    "name" : "address",
     "display_width" : null,
-    "label" : "Email",
+    "label" : "Address",
     "required" : false,
     "locked" : false,
-    "supported_types" : [ "EMAIL_ADDRESS" ],
-    "type" : "url",
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "3c03060f-35db-27c7-c8ad-6d96f997a840",
+    "name" : "sales_contact",
+    "display_width" : null,
+    "label" : "Sales contact",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "f432ed8d-7af2-b45d-cdb4-e378dc3eac14",
+      "name" : "phone",
+      "display_width" : null,
+      "label" : "Phone",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "PHONE_NUMBER" ],
+      "type" : "url",
+      "default" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "PHONE_NUMBER"
+      }
+    }, {
+      "id" : "82091ef4-93a7-a0c8-55a2-beba16df0a57",
+      "name" : "copy",
+      "display_width" : null,
+      "label" : "Copy",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Sales contact:"
+    }, {
+      "id" : "e4c10812-5d6d-330d-58a6-a90c7bff143c",
+      "name" : "contact_name",
+      "display_width" : null,
+      "label" : "Name",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "79957a6f-2f8b-198a-3b90-949f91cae152",
+      "name" : "email",
+      "display_width" : null,
+      "label" : "Email",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EMAIL_ADDRESS" ],
+      "type" : "url",
+      "default" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EMAIL_ADDRESS"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
     "default" : {
-      "content_id" : null,
-      "href" : "",
-      "type" : "EMAIL_ADDRESS"
+      "phone" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "PHONE_NUMBER"
+      },
+      "copy" : "Sales contact:",
+      "email" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EMAIL_ADDRESS"
+      }
     }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
   "default" : {
-    "phone" : {
-      "content_id" : null,
-      "href" : "",
-      "type" : "PHONE_NUMBER"
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
     },
-    "copy" : "Sales contact:",
-    "email" : {
-      "content_id" : null,
-      "href" : "",
-      "type" : "EMAIL_ADDRESS"
+    "sales_contact" : {
+      "phone" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "PHONE_NUMBER"
+      },
+      "copy" : "Sales contact:",
+      "email" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EMAIL_ADDRESS"
+      }
     }
   }
 } ]
