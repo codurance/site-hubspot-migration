@@ -40,16 +40,14 @@
     "show_emoji_picker" : false,
     "type" : "text"
   }, {
-    "id" : "f77dbf5d-3c8f-7d4b-af23-600b7f16f18c",
+    "id" : "436eac58-fbce-4938-df51-fdf79252db2d",
     "name" : "address",
     "display_width" : null,
     "label" : "Address",
     "required" : false,
     "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
+    "type" : "richtext",
+    "enabled_features" : ["bold"]
   }, {
     "id" : "3c03060f-35db-27c7-c8ad-6d96f997a840",
     "name" : "sales_contact",
