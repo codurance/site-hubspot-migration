@@ -61,7 +61,9 @@ label: Industry Public Sector page
   </section>
 
   <section class="partners lateral-spacing">
-    {% rich_text 'rich_text_partners' label="Rich text partners" no_wrapper=True %}
+    <div class="partners__header">
+      {% rich_text 'rich_text_partners' label="Rich text partners" no_wrapper=True %}
+    </div>
 
     <div class="partners__logos-wrapper">
       {% header 'partners_title'

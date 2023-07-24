@@ -31,23 +31,25 @@
   padding-bottom: var(--space-7);
 }
 
+.partners__header {
+  max-width: 55ch;
+}
+
 .partners h2 {
   {{ utils.freed() }}
   {{ utils.freed_margin() }}
   font-weight: var(--heavy-font-weight);
-  max-width: var(--freed-max-width);
 }
 
 .partners h3 {
   {{ utils.base() }}
   {{ utils.base_margin() }}
   font-weight: var(--heavy-font-weight);
-  max-width: var(--base-max-width);
   margin-top: var(--space-7);
 }
 
 .partners p:not(:first-child) {
-  margin-top: var(--space-4);
+  margin-top: var(--base-margin);
 }
 
 .partners .cm-partners-logo-group {
@@ -58,6 +60,12 @@
 {% call utils.large_and_extra_large() %}
   .partners .cm-partners-logo-group {
     flex-wrap: nowrap;
+  }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+  .partners p {
+    {{ utils.natus() }}
   }
 {% endcall %}
 
