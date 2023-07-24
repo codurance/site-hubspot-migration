@@ -1,9 +1,5 @@
 {% import "../utils/utils.css" as utils %}
 
-.cta-banner {
-  {{ utils.slate_to_woodsmoke() }}
-}
-
 .cta-banner .cta-block {
   padding-top: var(--space-6);
   padding-bottom: var(--space-6);
