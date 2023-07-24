@@ -75,18 +75,20 @@
   }
 {% endcall %}
 
-.case-studies .section-header h2 {
-  {{ utils.dudler() }}
-}
-
-.case-studies .section-header p {
-  {{ utils.freed() }}
-  font-weight: var(--light-font-weight);
+.case-studies .section-header {
+  margin-bottom: 0 !important;
 }
 
 .case-studies .text-and-image__copy h2 {
   {{ utils.freed() }}
 }
+
+{% call utils.large_and_extra_large() %}
+  .case-studies .section-header p {
+    {{ utils.freed() }}
+    font-weight: var(--light-font-weight);
+  }
+{% endcall %}
 
 .contact-us-banner {
   {{ utils.slate_to_woodsmoke() }}
