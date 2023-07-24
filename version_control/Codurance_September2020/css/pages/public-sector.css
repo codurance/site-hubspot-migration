@@ -112,3 +112,7 @@
 .promotion .text-and-image__copy {
   align-self: center;
 }
+
+.promotion p {
+  font-style: italic;
+}
