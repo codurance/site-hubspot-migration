@@ -19,10 +19,10 @@
 }
 
 .related-services h2 {
-  {{ utils.dudler() }}
-  {{ utils.dudler_margin() }}
+  {{ utils.freed() }}
+  margin-bottom: var(--freed-margin);
   font-weight: var(--heavy-font-weight);
-  max-width: var(--dudler-max-width);
+  max-width: var(--freed-max-width);
 }
 
 .partners {
@@ -94,7 +94,8 @@
 }
 
 .recommended-insights__header h2 {
-  margin-bottom: var(--dudler-margin);
+  {{ utils.freed() }}
+  margin-bottom: var(--freed-margin);
   font-weight: var(--heavy-font-weight);
 }
 
