@@ -5,12 +5,31 @@
     align-items: center;
     gap: var(--space-3);
 }
+
+.office:not(:first-child) {
+    margin-top: var(--space-2);
+}
         
-.office img {
+.office__image {
     max-width: 6rem;
 }
 
+.office__content h3,
+.sales-contact__copy,
+.sales-contact__email {
+    font-weight: var(--heavy-font-weight);
+}
 
-.office__content {
+.office__content, 
+.office__content p {
     {{ utils.natus() }}
+}
+
+.office__content a {
+    color: var(--shark);
+}
+
+.office__content a:hover,
+.office__content a:focus {
+    color: var(--persimmon);
 }

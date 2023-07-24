@@ -5,7 +5,7 @@
         <li class="office">
             {% if office.image.src %}
                 {% set sizeAttrs = 'width="{{ office.image.width }}" height="{{ office.image.height }}" style="max-width: 100%; height: auto;"' %}
-                <img src="{{ office.image.src }}" alt="{{ office.image.alt }}" {{ sizeAttrs }}>
+                <img class="office__image" src="{{ office.image.src }}" alt="{{ office.image.alt }}" {{ sizeAttrs }}>
             {% endif %}
             
             <div class="office__content">
@@ -13,10 +13,10 @@
                 <address>{{ office.address }}</address>
                 <a href="tel:{{office.sales_contact.phone.href}}">{{ office.sales_contact.phone.href }}</a>
                 <p>
-                    {{ office.sales_contact.copy }}
+                    <span class="sales-contact__copy">{{ office.sales_contact.copy }}</span>
                     {{ office.sales_contact.contact_name }}
                 </p>
-                <a href="mailto:{{office.sales_contact.email.href}}">{{ office.sales_contact.email.href }}</a>
+                <a class="sales-contact__email" href="mailto:{{office.sales_contact.email.href}}">{{ office.sales_contact.email.href }}</a>
             </div>
         </li>
     {% endfor %}
