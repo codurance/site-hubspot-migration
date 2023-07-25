@@ -32,7 +32,7 @@
 }
 
 .partners__header {
-  max-width: 55ch;
+  max-width: var(--freed-max-width);
 }
 
 .partners h2 {
