@@ -6,7 +6,7 @@ label: Industry Public Sector page
 {% extends "./layouts/base.html" %}
 
 {{ require_css(get_asset_url("../css/pages/industry.css")) }}
-{{ require_css(get_asset_url("../css/pages/public-sector.css")) }}
+{{ require_css(get_asset_url("../css/pages/industry-public-sector.css")) }}
 
 {% block body %}
 
@@ -61,7 +61,9 @@ label: Industry Public Sector page
   </section>
 
   <section class="partners lateral-spacing">
-    {% rich_text 'rich_text_partners' label="Rich text partners" no_wrapper=True %}
+    <div class="partners__header">
+      {% rich_text 'rich_text_partners' label="Rich text partners" no_wrapper=True %}
+    </div>
 
     <div class="partners__logos-wrapper">
       {% header 'partners_title'
@@ -115,7 +117,7 @@ label: Industry Public Sector page
     {% end_dnd_area %}
   </section>
 
-  <section class="contact-us-banner region">
+  <section class="contact-us-banner region lateral-spacing">
     {% module 'contact_us_banner'
       path='../modules/Banner-Link.module'
       label="Contact Us Banner"
