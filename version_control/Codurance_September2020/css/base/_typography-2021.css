@@ -130,7 +130,7 @@ a:active {
   text-decoration: underline;
 }
 
-i {
+i, em {
   font-style: italic;
 }
 
