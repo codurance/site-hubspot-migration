@@ -6,6 +6,11 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../../css/pages/search-results.css")) }}
 
+  {% set results_for = 'Results for' %}
+  
+  {% if request.query_dict.language  == 'es' %}
+    {% set results_for = 'Resultados para' %}
+  {% endif %}
 
 {% extends "../layouts/base.html" %}
 
