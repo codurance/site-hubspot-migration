@@ -17,10 +17,15 @@
     padding: 1.5em;
 }
 
+.hs-search-results__title {
+    display: block;
+}
+
 .hs-search-results__info-wrapper {  
     {{ utils.natus() }}
     color: var(--mid-gray);
     margin-bottom: 1em;
+    margin-top: 1em;
 }
 
 .hs-search-results__description {
