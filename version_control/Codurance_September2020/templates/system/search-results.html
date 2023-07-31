@@ -6,21 +6,11 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../../css/pages/search-results.css")) }}
 
-{% set go_back = 'Go back to publications' %}
-{% set results_for = 'Results for' %}
-{% set url_redirection = '/publications' %}
-
-{% if request.query_dict.language  == 'es' %}
-  {% set go_back = 'Volver a publicaciones'  %}
-  {% set results_for = 'Resultados para' %}
-  {% set url_redirection = '/es/publications' %}
-{% endif %}
 
 {% extends "../layouts/base.html" %}
 
 {% block body %}
   <div class="search-results-page page-center lateral-spacing">
-    {{ snippets.text_cta_left_arrow(url="{{ url_redirection }}", text="{{ go_back }}") }}
     <h1 class="search-results-page__title">{{ results_for }} “{{ request.query_dict.term|escape }} ”</h1>
     {% module "search_results" path="../../modules/Global-Search-Results" %}
   </div>
