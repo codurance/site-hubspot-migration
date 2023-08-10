@@ -44,12 +44,14 @@ label: Industry Public Sector page
     %}
   </section>
 
-  <section class="cta-banner">
-    {% module 'cta_banner' label="CTA Banner"
-      path='../modules/LP-cta-block.module'
+  <section class="contact-us-banner region lateral-spacing">
+    {% module 'contact_us_banner'
+      path='../modules/Banner-Link.module'
+      label="Contact Us Banner"
+      no_wrapper=True
     %}
   </section>
-
+  
   <section class="related-services region">
     <h2 class="lateral-spacing">{% text 'related_services_title' label="Related Services Title" no_wrapper=True %}</h2>
     
@@ -117,12 +119,10 @@ label: Industry Public Sector page
     {% end_dnd_area %}
   </section>
 
-  <section class="contact-us-banner region lateral-spacing">
-    {% module 'contact_us_banner'
-      path='../modules/Banner-Link.module'
-      label="Contact Us Banner"
-      no_wrapper=True
-    %}
+  <section class="cta-banner">
+      {% module 'cta_banner' label="CTA Banner"
+        path='../modules/LP-cta-block.module'
+      %}
   </section>
 
   <section class="recommended-insights region">
@@ -145,6 +145,7 @@ label: Industry Public Sector page
       path="../modules/Text-and-image.module" label="Promotional section"
     %}
   </section>
+  
 </main>
 
 {% endblock body %}
