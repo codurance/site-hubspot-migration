@@ -1,4 +1,30 @@
 [ {
+  "id" : "96925506-ea3a-7832-ad00-c3e0ec1fca97",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Join our newsletter for more insights"
+}, 
+{
+  "id" : "a9c18856-ebbb-95f8-9817-5c503ef7ed5a",
+  "name" : "subtitle",
+  "display_width" : null,
+  "label" : "Subtitle",
+  "inline_help_text" : "Optional",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+},
+{
   "id" : "a9c6b44d-9c3b-cc19-e74e-d359e9ceb8cd",
   "name" : "sign_up_form",
   "display_width" : null,
