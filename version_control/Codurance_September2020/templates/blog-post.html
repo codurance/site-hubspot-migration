@@ -305,6 +305,9 @@ label: Blog Post
   {% module "newsletter_footer_form",
     path="../modules/Newsletter Footer Form.module",
     label="Newsletter footer form", 
+    title="{{ newsletter_copy.pending.header }}",
+    subtitle="{{ newsletter_copy.pending.text }}",
+    sign_up_form={ form_id: "{{ newsletter_copy.form_id }}", message: "{{ newsletter_copy.success_text }}" },
     no_wrapper=True
   %}
 
