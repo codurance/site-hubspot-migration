@@ -1,1 +1,36 @@
-[ ]
+[ {
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Join our newsletter for more insights"
+  }, 
+  {
+    "name" : "subtitle",
+    "display_width" : null,
+    "label" : "Subtitle",
+    "inline_help_text" : "Optional",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  },
+  {
+    "name" : "sign_up_form",
+    "display_width" : null,
+    "label" : "Sign Up Form",
+    "required" : true,
+    "locked" : false,
+    "type" : "form",
+    "default" : {
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form."
+    }
+  } ]
