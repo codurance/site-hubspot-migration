@@ -1,19 +1,6 @@
 {{ require_css(get_asset_url("../../css/newsletter-form.css")) }}
 {{ require_css(get_asset_url("../../css/modules/newsletter-exit-popup.css")) }}
 
-{% set language = module.language %}
-{% set spanish = 'es' %}
-{% set portuguese = 'pt' %}
-{% set english = 'en' %}
-{% import '../../config/config.html' as config %}
-{% if language == spanish %}
-  {% set newsletter = config.newsletter_cta.es %}
-{% elif language == portuguese %}
-  {% set newsletter = config.newsletter_cta.pt %}
-{% else %}
-  {% set newsletter = config.newsletter_cta.en %}
-{% endif %}
-
 <div class="newsletter-exit-popup__container hidden" data-exit-popup-modal>
   <button class="newsletter-exit-popup__close-button" data-exit-popup-close-button>
     <svg id="icon_-_plus" class="newsletter-exit-popup__close-icon" data-name="icon - plus" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
