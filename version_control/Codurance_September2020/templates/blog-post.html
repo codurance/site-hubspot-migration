@@ -188,7 +188,7 @@ label: Blog Post
         no_wrapper=True,
         title="{{ newsletter_copy.pending.header }}",
         subtitle="{{ newsletter_copy.pending.text }}",
-        newsletter_form={ form_id: "{{ newsletter_copy.form_id }}" }
+        newsletter_form={ form_id: "{{ newsletter_copy.form_id }}", message: "{{ newsletter_copy.success_text }}" }
       %}
     {% else %}
       {% cta 'cta_banner' label='CTA Banner' guid='{{cta_banner[cta_or_newsletter]}}' no_wrapper=True %}
