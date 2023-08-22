@@ -29,41 +29,36 @@
   });
 
   domReady(function() {
-    if (!document.body) {
-      return;
-    } else {
-      // Show the focus outline when keyboard activity occurs
-      document.body.addEventListener("keydown", showFocusOutline);
+    if (!document.body) return;
 
-      // Hide the focus outline when mouse activity occurs
-      document.body.addEventListener("mousemove", hideFocusOutline);
-      document.body.addEventListener("mousedown", hideFocusOutline);
-      document.body.addEventListener("mouseup", hideFocusOutline);
+    // Show the focus outline when keyboard activity occurs
+    document.body.addEventListener("keydown", showFocusOutline);
 
-      let scrollTop = 0;
-      const header = document.querySelector("header.header");
+    // Hide the focus outline when mouse activity occurs
+    document.body.addEventListener("mousemove", hideFocusOutline);
+    document.body.addEventListener("mousedown", hideFocusOutline);
+    document.body.addEventListener("mouseup", hideFocusOutline);
 
-      window.addEventListener("scroll", () => {
-        const currentScrollTop = window.scrollY;
-        const heightThreshold = 200;
+    let scrollTop = 0;
+    const header = document.querySelector("header.header");
 
-        if (
-          currentScrollTop > heightThreshold &&
-          currentScrollTop > scrollTop
-        ) {
-          header.classList.add("fixed");
-          header.classList.remove("default");
-        } else {
-          header.classList.add("default");
-          header.classList.remove("fixed");
-        }
+    window.addEventListener("scroll", () => {
+      const currentScrollTop = window.scrollY;
+      const heightThreshold = 200;
 
-        scrollTop = currentScrollTop;
-      });
-    }
+      if (currentScrollTop > heightThreshold && currentScrollTop > scrollTop) {
+        header.classList.add("fixed");
+        header.classList.remove("default");
+      } else {
+        header.classList.add("default");
+        header.classList.remove("fixed");
+      }
+
+      scrollTop = currentScrollTop;
+    });
   });
 
-  $('input[name="globalunsub"]').change(function() {
+  $('input[name="globalunsub"]').on("change", function() {
     if ($(this).is(":checked")) {
       $(".item").addClass("disabled");
       $(".item input").attr("disabled", "disabled");
@@ -72,6 +67,7 @@
       $(".item input").removeAttr("disabled");
     }
   });
+
   $(function() {
     var value1 = window.location.href.substring(
       window.location.href.lastIndexOf("/") + 1
@@ -89,7 +85,7 @@
     });
   });
 
-  var announcementOnDevConsole = function() {
+  const announcementOnDevConsole = (_) => {
     try {
       const main = `
       display:block;
