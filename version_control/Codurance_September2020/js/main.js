@@ -40,19 +40,25 @@
       document.body.addEventListener("mousedown", hideFocusOutline);
       document.body.addEventListener("mouseup", hideFocusOutline);
 
-      var ost = 0;
-      $(window).scroll(function() {
-        var cOst = $(this).scrollTop();
-        if (cOst > 200 && cOst > ost) {
-          $("header.header")
-            .addClass("fixed")
-            .removeClass("default");
+      let scrollTop = 0;
+      const header = document.querySelector("header.header");
+
+      window.addEventListener("scroll", () => {
+        const currentScrollTop = window.scrollY;
+        const heightThreshold = 200;
+
+        if (
+          currentScrollTop > heightThreshold &&
+          currentScrollTop > scrollTop
+        ) {
+          header.classList.add("fixed");
+          header.classList.remove("default");
         } else {
-          $("header.header")
-            .addClass("default")
-            .removeClass("fixed");
+          header.classList.add("default");
+          header.classList.remove("fixed");
         }
-        ost = cOst;
+
+        scrollTop = currentScrollTop;
       });
     }
   });
