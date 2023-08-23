@@ -1,19 +1,6 @@
 {{ require_css(get_asset_url("../../css/newsletter-form.css")) }}
 {{ require_css(get_asset_url("../../css/modules/newsletter-exit-popup.css")) }}
 
-{% set language = module.language %}
-{% set spanish = 'es' %}
-{% set portuguese = 'pt' %}
-{% set english = 'en' %}
-{% import '../../config/config.html' as config %}
-{% if language == spanish %}
-  {% set newsletter = config.newsletter_cta.es %}
-{% elif language == portuguese %}
-  {% set newsletter = config.newsletter_cta.pt %}
-{% else %}
-  {% set newsletter = config.newsletter_cta.en %}
-{% endif %}
-
 <div class="newsletter-exit-popup__container hidden" data-exit-popup-modal>
   <button class="newsletter-exit-popup__close-button" data-exit-popup-close-button>
     <svg id="icon_-_plus" class="newsletter-exit-popup__close-icon" data-name="icon - plus" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
@@ -24,15 +11,18 @@
     </svg>
   </button>
   <div class="newsletter-exit-popup__inner-modal">
-    <div class="newsletter-exit-form_wrapper {{ newsletter.css_class }}">
-      <h3 class="newsletter-exit-popup__heading" data-newsletter-sign-up-pending>{{ newsletter.pending.header }}</h3>
-      <h3 class="newsletter-exit-popup__heading hidden" data-newsletter-sign-up-success>{{ newsletter.success.header }}</h3>
-      <p class="newsletter-exit-popup__info" data-newsletter-sign-up-pending>{{ newsletter.pending.text }}</p>
-      <p class="newsletter-exit-popup__info hidden" data-newsletter-sign-up-success>{{ newsletter.success.text }}</p>
-      <span data-newsletter-sign-up-pending>{% form "email_form" form_to_use={{ newsletter.form_id }} %}</span>
+    <div class="newsletter-exit-form_wrapper">
+      <h3 class="newsletter-exit-popup__heading" data-newsletter-sign-up-pending>{{ module.title }}</h3>
+      <p class="newsletter-exit-popup__info" data-newsletter-sign-up-pending>{{ module.subtitle }}</p>
+      <span data-newsletter-sign-up-pending>
+        {% form "email_form"
+          form_to_use="{{ module.sign_up_form.form_id }}"
+          response_response_type="{{ module.sign_up_form.response_type }}"
+          response_message="{{ module.sign_up_form.message }}"
+        %}
+      </span>
     </div>
     <div class="newsletter-exit-popup__header-image newsletter-exit-popup__header-image--pending" data-newsletter-sign-up-pending></div>
-    <div class="newsletter-exit-popup__header-image newsletter-exit-popup__header-image--success hidden" data-newsletter-sign-up-success></div>
     <div class="newsletter-exit-popup__footer-image"></div>
   </div>
 </div>
