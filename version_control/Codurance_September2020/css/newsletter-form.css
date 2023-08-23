@@ -76,12 +76,6 @@
     }
 }
 
-@media (max-width: 875px) {
-    .newsletter-exit-popup__container .cta_newsletter_spanish input[type="email"] {
-        {{ utils.base() }}
-    }
-}
-
 .newsletter-footer-form__section .hs-email input,
 .newsletter-exit-popup__container .hs-email input {
     {{ utils.base() }}
@@ -96,100 +90,6 @@
 @media (max-width: 480px) {
     .hs-email input {
         margin-bottom: 1.4rem;
-    }
-}
-
-
-.cta_newsletter_spanish .hs-form .hs-fieldtype-booleancheckbox {
-    position: absolute;
-    top: 80px;
-}
-
-.cta_newsletter_spanish .hs_submit {
-    width: 15em;
-}
-
-.cta_newsletter_spanish, ul.inputs-list label {
-    {{ utils.natus() }}
-}
-
-.cta_newsletter_spanish .hs-input[type=checkbox] {
-    opacity: 0;
-    margin: 0.3em;
-}
-
-.cta_newsletter_spanish .hs-form-booleancheckbox-display span {
-    font-weight: var(--middle-font-weight);
-}
-
-.cta_newsletter_spanish .hs-form-booleancheckbox-display span::before {
-    content: "";
-    display: inline-block;
-    height: 25px;
-    width: 25px;
-    border: 1px solid rgba(0, 0, 0, .25);
-}
-
-.cta_newsletter_spanish .hs-form-booleancheckbox-display span::after {
-    content: "";
-    display: inline-block;
-    height: 8px;
-    width: 14px;
-    border-left: 2px solid;
-    border-bottom: 2px solid;
-    transform: rotate(-45deg);
-}
-
-.cta_newsletter_spanish .hs-form-booleancheckbox-display {
-    position: relative;
-}
-
-.cta_newsletter_spanish .hs-form-booleancheckbox-display span::before,
-.cta_newsletter_spanish .hs-form-booleancheckbox-display span::after {
-    position: absolute;
-}
-
-.cta_newsletter_spanish .hs-form-booleancheckbox-display span::before {
-    border-radius: 3px;
-}
-
-.cta_newsletter_spanish .hs-form-booleancheckbox-display span {
-    margin-left: 10px;
-}
-
-.cta_newsletter_spanish .hs-form-booleancheckbox-display .hs-input[type=checkbox] + span::after {
-    content: none;
-}
-
-.cta_newsletter_spanish .hs-form-booleancheckbox-display .hs-input[type=checkbox]:checked + span::after {
-    content: "";
-    top: 0.3em;
-}
-
-.cta_newsletter_spanish .hs-form-booleancheckbox-display .hs-input[type=checkbox]:focus + span:before {
-    outline: rgb(0, 0, 0) auto 5px;
-}
-
-@media(max-width: 480px) {
-    .cta_newsletter_spanish .hs_submit {
-        width: 100%;
-    }
-    
-    .cta_newsletter_spanish .hs-form-booleancheckbox-display span::before {
-        top: 6px;
-    }
-
-    .cta_newsletter_spanish .hs-form .hs-fieldtype-booleancheckbox {
-        position: static;
-    }
-
-    .cta_newsletter_spanish .hs-form-booleancheckbox-display .hs-input[type=checkbox]:checked + span::after {
-        top: 0;
-    }
-}
-@media(min-width: 481px) {
-    .newsletter-exit-popup__inner-modal .cta_newsletter_spanish {
-        margin-bottom: 70px;
     }
 }
 

@@ -188,7 +188,7 @@ label: Blog Post
         no_wrapper=True,
         title="{{ newsletter_copy.pending.header }}",
         subtitle="{{ newsletter_copy.pending.text }}",
-        newsletter_form={ form_id: "{{ newsletter_copy.form_id }}" }
+        newsletter_form={ form_id: "{{ newsletter_copy.form_id }}", message: "{{ newsletter_copy.success_text }}" }
       %}
     {% else %}
       {% cta 'cta_banner' label='CTA Banner' guid='{{cta_banner[cta_or_newsletter]}}' no_wrapper=True %}
@@ -305,13 +305,18 @@ label: Blog Post
   {% module "newsletter_footer_form",
     path="../modules/Newsletter Footer Form.module",
     label="Newsletter footer form", 
+    title="{{ newsletter_copy.pending.header }}",
+    subtitle="{{ newsletter_copy.pending.text }}",
+    sign_up_form={ form_id: "{{ newsletter_copy.form_id }}", message: "{{ newsletter_copy.success_text }}" },
     no_wrapper=True
   %}
 
   {% module "newsletter_exit_popup"
     path="../modules/Newsletter Exit Popup.module",
     label="Newsletter exit popup", 
-    language='{{ locale }}', 
+    title="{{ newsletter_copy.pending.header }}",
+    subtitle="{{ newsletter_copy.pending.text }}",
+    sign_up_form={ form_id: "{{ newsletter_copy.form_id }}", message: "{{ newsletter_copy.success_text }}" },
     no_wrapper=True
   %}
 
