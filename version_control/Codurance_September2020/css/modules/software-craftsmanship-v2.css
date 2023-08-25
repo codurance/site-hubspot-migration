@@ -49,13 +49,16 @@
 
 
 {% set item_margin = 15 %}
+
 .software-craft__item {
   {{ utils.card_shadow() }}
+  {{ utils.card_border_radius() }}
   display: flex;
   flex-direction: column;
   margin-bottom: 1.4rem;
   margin-left: {{ item_margin }}px;
   margin-right: {{ item_margin }}px;
+
   overflow: hidden;
   position: relative;
   transition: all .3s cubic-bezier(0.25,0.8,0.25,1);
