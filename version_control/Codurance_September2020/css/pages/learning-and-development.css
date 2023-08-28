@@ -1,0 +1,29 @@
+{% import '../utils/utils.css' as utils %}
+
+{% call utils.small() %}
+  .banner-area .dnd-row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+{% endcall %}
+
+{% call utils.medium() %}
+  .banner-area .dnd-row {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+{% endcall %}
+
+{% call utils.large() %}
+    .banner-area .dnd-row {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+{% endcall %}
+
+{% call utils.extra_large() %}
+  .banner-area .dnd-row {
+      max-width: var(--content-max-width);
+      margin-inline: auto;
+  }
+{% endcall %}
