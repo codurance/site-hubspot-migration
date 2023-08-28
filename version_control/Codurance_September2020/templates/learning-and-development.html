@@ -21,7 +21,13 @@ label: Learning and Development Page
 <div class="cm-services-inner-layout type1">
   <div class="banner-section">
     {% dnd_area "dnd_banner" class='banner-area', label='Banner Section' %}
-    	{% dnd_section %}
+    	{% dnd_section 
+			max_width=1240,
+			padding={
+				"left": 20,
+				"right": 20
+			}
+		%}
 			{% dnd_column %}
 				{% dnd_row %}
 					{% dnd_module
