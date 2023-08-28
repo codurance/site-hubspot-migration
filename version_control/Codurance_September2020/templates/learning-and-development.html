@@ -11,10 +11,10 @@ label: Learning and Development Page
 {% require_css %}
   <style>
     .banner-area .dnd-section > .row-fluid {
-			background: url({% image_src "banner_background_image" label="Background Image" no_wrapper=True %});
-				background-position: right 40%, center;
-				background-repeat: no-repeat;
-				background-size: 40%;
+		background: url({% image_src "banner_background_image" src="https://www.codurance.com/hubfs/Service%20Line%20Pages/06_Learning%20and%20development/LDD_shape_BG.svg" label="Background Image" no_wrapper=True %});
+		background-position: right 40%, center;
+		background-repeat: no-repeat;
+		background-size: 40%;
     }
   </style>
 {% end_require_css %}
@@ -23,12 +23,20 @@ label: Learning and Development Page
 <div class="cm-services-inner-layout type1">
   <div class="banner-section">
     {% dnd_area "dnd_banner" class='banner-area', label='Banner Section' %}
-    	{% dnd_section 
+		{% dnd_section 
 			padding={
 			"top": 100,
 			"bottom": 100
-			}
-		full_width=true %}
+			},
+			background_linear_gradient={
+				"direction": "to bottom",
+				"colors": [
+					"#0F0F0F",
+					"#59BCCC"
+				]
+			},
+			full_width=true 
+		%}
 			{% dnd_column %}
 				{% dnd_row %}
 					{% dnd_module
@@ -38,7 +46,7 @@ label: Learning and Development Page
 						title="Learning & Development"
 					%}
 						{% module_attribute "description_text" %}
-							<h1>Improve the skills of your teams and promote their technical excellence, to achieve better results in your business.</h1>
+							<p>Improve the skills of your teams and promote their technical excellence, to achieve better results in your business.</p>
 						{% end_module_attribute %}
 					{% end_dnd_module %}
 				{% end_dnd_row %}
@@ -48,7 +56,10 @@ label: Learning and Development Page
 						path="/version_control/Codurance_September2020/modules/Text-and-image",
 						offset=0,
 						width=12,
-						image_order="img-left"
+						image_order="img-left",
+						image_field={ 
+							src:"https://www.codurance.com/hubfs/Service%20Line%20Pages/06_Learning%20and%20development/LD-illu-2.png"
+						}
 					%}
 						{% module_attribute "description_text" %}
 							We assess your highest priorities to create your bespoke training program and offer practical and theoretical programs, tailored to your precise needs, which guarantees your teams increased performance.
@@ -58,14 +69,13 @@ label: Learning and Development Page
 
 				{% dnd_row %}
 					{% dnd_module
-						path="@hubspot/rich_text",
+						path="@hubspot/section_header",
 						offset=0,
-						width=12
+						width=12,
+						header="Empower your technology teams with focused training from our world class experts",
+						heading_level="h2",
+						subheader="Enhance your team’s skillset with our industry leading training courses. We create bespoke training plans adapted to your business needs."
 					%}
-						{% module_attribute "html" %}
-							<h2>Empower your technology teams with focused training from our world class experts</h2>
-							<p>Enhance your team’s skillset with our industry leading training courses. We create bespoke training plans adapted to your business needs.</p>
-						{% end_module_attribute %}
 					{% end_dnd_module %}
 				{% end_dnd_row %}
 
@@ -91,11 +101,22 @@ label: Learning and Development Page
 				{% end_dnd_row %}
 
 				{% dnd_row %}
+					{% dnd_module  
+						path="@hubspot/header", 
+						value="Programas prácticos y teóricos que garantizan la aceleración de la excelencia de tus equipos porque:",
+						header_tag="h2"
+					%}
+					{% end_dnd_module %}
+				{% end_dnd_row %}
+
+				{% dnd_row %}
 					{% dnd_module
 						path="/version_control/Codurance_September2020/modules/Text-and-image",
-						offset=0,
-						width=12,
-						title="Accelerate excellence"
+						title="Accelerate excellence",
+						image_order="img-left",
+						image_field={ 
+							src:"https://www.codurance.com/hubfs/Service%20Line%20Pages/06_Learning%20and%20development/LD-illu-1.png"
+						}
 					%}
 						{% module_attribute "description_text" %}
 							Training your in-house team is usually more cost effective than hiring new talent with the required skills. You’ll discover that our programs generate an organisation-wide transformation, creating a lasting positive impact that goes beyond the software development teams.
@@ -124,7 +145,7 @@ label: Learning and Development Page
 					max_width=1200,
 					vertical_alignment='TOP'
 				%}
-						{% dnd_module 'sl_form'
+					{% dnd_module 'sl_form'
 						path='../modules/Service-Line-Form.module'
 					%}
 					{% end_dnd_module %}
