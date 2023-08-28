@@ -7,15 +7,98 @@ label: Learning and Development Page
 
 {{ require_css(get_asset_url("../css/pages/services-inner.css")) }}
 
+{% require_css %}
+  <style>
+    .banner-area .dnd-section > .row-fluid {
+			background: url({% image_src "banner_background_image" label="Background Image" no_wrapper=True %});
+			background-position: right, center;
+			background-repeat: no-repeat;
+    }
+  </style>
+{% end_require_css %}
+
 {% block body %}
 <div class="cm-services-inner-layout type1">
   <div class="banner-section">
     {% dnd_area "dnd_banner" class='banner-area', label='Banner Section' %}
-      {% dnd_section full_width=true %}
-        
-      {% end_dnd_section %}
+      {% dnd_section%}
+
+				{% dnd_row %}
+					{% dnd_module
+						path="/version_control/Codurance_September2020/modules/Text-and-image",
+						offset=0,
+						width=12,
+						title="Learning & Development"
+					%}
+						{% module_attribute "description_text" %}
+							<h1>Improve the skills of your teams and promote their technical excellence, to achieve better results in your business.</h1>
+						{% end_module_attribute %}
+					{% end_dnd_module %}
+				{% end_dnd_row %}
+
+				{% dnd_row %}
+					{% dnd_module
+						path="/version_control/Codurance_September2020/modules/Text-and-image",
+						offset=0,
+						width=12,
+						image_order="img-left"
+					%}
+						{% module_attribute "description_text" %}
+							We assess your highest priorities to create your bespoke training program and offer practical and theoretical programs, tailored to your precise needs, which guarantees your teams increased performance.
+						{% end_module_attribute %}
+					{% end_dnd_module %}
+				{% end_dnd_row %}
+				{% dnd_row %}
+					{% dnd_module
+						path="@hubspot/rich_text",
+						offset=0,
+						width=12
+					%}
+						{% module_attribute "html" %}
+							<h2>Empower your technology teams with focused training from our world class experts</h2>
+							<p>Enhance your team’s skillset with our industry leading training courses. We create bespoke training plans adapted to your business needs.</p>
+						{% end_module_attribute %}
+					{% end_dnd_module %}
+				{% end_dnd_row %}
+
+				{% dnd_row %}
+					{% dnd_module
+						path="/version_control/Codurance_September2020/modules/Clients-Logos",
+						offset=0,
+						width=12,
+						logos_group=[ {
+							"logo" : {
+								"alt" : "Envoy-logo",
+								"height" : 190,
+								"loading" : "lazy",
+								"max_height" : 190,
+								"max_width" : 579,
+								"size_type" : "auto",
+								"src" : "https://14557846.fs1.hubspotusercontent-na1.net/hubfs/14557846/Imported%20sitepage%20images/Envoy-logo.png",
+								"width" : 579
+							}
+						} ]
+					%}
+					{% end_dnd_module %}
+				{% end_dnd_row %}
+
+				{% dnd_row %}
+					{% dnd_module
+						path="/version_control/Codurance_September2020/modules/Text-and-image",
+						offset=0,
+						width=12,
+						title="Accelerate excellence"
+					%}
+						{% module_attribute "description_text" %}
+							Training your in-house team is usually more cost effective than hiring new talent with the required skills. You’ll discover that our programs generate an organisation-wide transformation, creating a lasting positive impact that goes beyond the software development teams.
+						{% end_module_attribute %}
+					{% end_dnd_module %}
+				{% end_dnd_row %}
+		
+			{% end_dnd_section %}
     {% end_dnd_area %}
   </div>
+
   <main class="body-container-wrapper">
 
     <section class="katalyst">
