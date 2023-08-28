@@ -12,8 +12,9 @@ label: Learning and Development Page
   <style>
     .banner-area .dnd-section > .row-fluid {
 			background: url({% image_src "banner_background_image" label="Background Image" no_wrapper=True %});
-			background-position: right, center;
-			background-repeat: no-repeat;
+				background-position: right 40%, center;
+				background-repeat: no-repeat;
+				background-size: 40%;
     }
   </style>
 {% end_require_css %}
@@ -22,7 +23,12 @@ label: Learning and Development Page
 <div class="cm-services-inner-layout type1">
   <div class="banner-section">
     {% dnd_area "dnd_banner" class='banner-area', label='Banner Section' %}
-    	{% dnd_section full_width=true %}
+    	{% dnd_section 
+			padding={
+			"top": 100,
+			"bottom": 100
+			}
+		full_width=true %}
 			{% dnd_column %}
 				{% dnd_row %}
 					{% dnd_module

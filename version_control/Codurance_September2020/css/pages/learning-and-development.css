@@ -1,5 +1,19 @@
 {% import '../utils/utils.css' as utils %}
 
+  .banner-area {
+    color: white;
+  } 
+
+  /* Overrides the default padding 0 */
+  .dnd-section {
+    padding-top: var(--space-7) !important;
+    padding-bottom: var(--space-7) !important;
+  }
+
+  .dnd-row:not(:first-child) {
+    margin-top: var(--space-7);
+  }
+
 {% call utils.small() %}
   .banner-area .dnd-row {
     padding-left: 20px;
