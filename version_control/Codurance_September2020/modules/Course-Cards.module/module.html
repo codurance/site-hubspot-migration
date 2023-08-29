@@ -1,31 +1,38 @@
 
+<div class="course-card-group" >
+	{% for course in module.course_cards %}
 
-
-{% for course in module.course_cards %}
-	{% if course.image.src %}
-		{% set sizeAttrs = 'width="{{ course.image.width }}" height="{{ course.image.height }}"' %}
-		{% if course.image.size_type == 'auto' %}
-			{% set sizeAttrs = 'width="{{ course.image.width }}" height="{{ course.image.height }}" style="max-width: 100%; height: auto;"' %}
-		{% elif course.image.size_type == 'auto_custom_max' %}
-			{% set sizeAttrs = 'width="{{ course.image.max_width }}" height="{{ course.image.max_height }}" style="max-width: 100%; height: auto;"' %}
-		{% endif %}
-		{% set loadingAttr = course.image.loading != 'disabled' ? 'loading="{{ course.image.loading }}"' : '' %}
-		<img src="{{ course.image.src }}" alt="{{ course.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-	{% endif %}
-
-
-	{{ module.instructor.columns.image.url }}
-	{{ module.instructor.columns.name }}
-
-	{{ course.duration }}
-	{{ course.text_field }}
-	<p>{{ course.description }}</p>
-
-	{% set href = course.button.link.url.href %}
-	<a class="button-primary" href="{{ href }}"
-		{% if course.button.link.open_in_new_tab %}target="_blank"{% endif %}
-		{% if course.button.link.rel %}rel="{{ course.button.link.rel }}"{% endif %}
-		>
-    	{{ course.button.text }}
-	</a>
-{% endfor %}
+		<article class="course-card">
+			{% if course.image.src %}
+				{% set sizeAttrs = 'width="{{ course.image.width }}" height="{{ course.image.height }}"' %}
+				{% if course.image.size_type == 'auto' %}
+					{% set sizeAttrs = 'width="{{ course.image.width }}" height="{{ course.image.height }}" style="max-width: 100%; height: auto;"' %}
+				{% elif course.image.size_type == 'auto_custom_max' %}
+					{% set sizeAttrs = 'width="{{ course.image.max_width }}" height="{{ course.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+				{% endif %}
+				{% set loadingAttr = course.image.loading != 'disabled' ? 'loading="{{ course.image.loading }}"' : '' %}
+				<img src="{{ course.image.src }}" alt="{{ course.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+			{% endif %}
+			<div class="course-info">
+				<h3>{{ course.title }}</h3>
+				<div class="course-info__instructor">
+					<img src="{{course.instructor.columns.image.url}}" alt="{{ course.instructor.columns.image.name }} profile picture" />
+			
+					<p>
+						{{ course.instructor.columns.name }} | <span>{{ course.duration }}days</span>
+					</p>
+				</div>
+				<p>{{ course.description }}</p>
+			</div>
+			{% set href = course.button.link.url.href %}
+			{% if course.button.text %}
+				<a class="button-primary" href="{{ href }}"
+					{% if course.button.link.open_in_new_tab %}target="_blank"{% endif %}
+					{% if course.button.link.rel %}rel="{{ course.button.link.rel }}"{% endif %}
+					>
+					{{ course.button.text }}
+				</a>
+			{% endif %}
+		</article>
+	{% endfor %}
+</div>
