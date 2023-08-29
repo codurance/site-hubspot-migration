@@ -1,18 +1,39 @@
 {% import '../utils/utils.css' as utils %}
 
-  .banner-area {
-    color: white;
-  } 
+.banner-area {
+  color: white;
+} 
 
-  /* Overrides the default padding 0 */
-  .dnd-section {
-    padding-top: var(--space-7) !important;
-    padding-bottom: var(--space-7) !important;
-  }
+/* Overrides the default padding 0 */
+.dnd-section {
+  padding-top: var(--space-7) !important;
+  padding-bottom: var(--space-7) !important;
+}
 
-  .dnd-row:not(:first-child) {
-    margin-top: var(--space-7);
-  }
+.dnd-row:not(:first-child) {
+  margin-top: var(--space-7);
+}
+
+.banner-area .dnd-column > .dnd-row:first-child .text-and-image__container {
+  max-width: var(--content-max-width);
+}
+
+.banner-area .page-header.section-header {
+  max-width: var(--content-inner-max-width);
+}
+
+.banner-area .page-header.section-header h2 {
+  max-width: var(--eames-max-width);
+}
+
+.banner-area .page-header.section-header p {
+  max-width: var(--freed-max-width);
+}
+
+.banner-area .widget-type-header h2 {
+  max-width: var(--content-inner-max-width);
+  margin-inline: auto;
+}
 
 {% call utils.small() %}
   .banner-area .dnd-row {
