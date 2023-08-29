@@ -10,8 +10,12 @@
   padding-bottom: var(--space-7) !important;
 }
 
-.dnd-row:not(:first-child) {
+.dnd-row:not(:first-child):not(:last-child):not(:nth-child(2)) {
   margin-top: var(--space-7);
+}
+
+.dnd-row:last-child {
+  margin-top: var(--space-5);
 }
 
 .banner-area .dnd-column > .dnd-row:first-child .text-and-image__container {
