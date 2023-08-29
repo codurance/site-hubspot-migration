@@ -48,15 +48,33 @@
   max-width: var(--freed-max-width);
 }
 
-.banner-area .widget-type-header h2 {
+.banner-area .widget-type-header {
   max-width: var(--content-inner-max-width);
   margin-inline: auto;
 }
 
-{% call utils.small() %}
+.banner-area .widget-type-header h2 {
+  {{ utils.dudler() }}
+  max-width: var(--dudler-max-width);
+}
+
+{% call utils.extra_large() %}
   .banner-area .dnd-row {
-    padding-left: 20px;
-    padding-right: 20px;
+      max-width: var(--content-max-width);
+      margin-inline: auto;
+  }
+{% endcall %}
+
+{% call utils.large() %}
+  .banner-area .dnd-row {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+  .dnd-row:nth-child(2) {
+    margin-top: var(--space-7);
   }
 {% endcall %}
 
@@ -67,16 +85,14 @@
   }
 {% endcall %}
 
-{% call utils.large() %}
-    .banner-area .dnd-row {
-      padding-left: 50px;
-      padding-right: 50px;
-    }
-{% endcall %}
-
-{% call utils.extra_large() %}
+{% call utils.small() %}
   .banner-area .dnd-row {
-      max-width: var(--content-max-width);
-      margin-inline: auto;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 {% endcall %}
+
+
+
+
+
