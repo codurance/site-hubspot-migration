@@ -48,6 +48,14 @@
   max-width: var(--freed-max-width);
 }
 
+.banner-area .client-logos__content h2 {
+  color: white;
+}
+
+.banner-area .client-logos__logos-group {
+  filter: brightness(0) invert(1);
+}
+
 .banner-area .widget-type-header {
   max-width: var(--content-inner-max-width);
   margin-inline: auto;
