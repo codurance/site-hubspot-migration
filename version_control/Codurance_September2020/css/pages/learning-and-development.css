@@ -5,8 +5,8 @@
 } 
 
 /* Overrides the default padding 0 */
-.dnd-section {
-  padding-top: var(--space-7) !important;
+.banner-area .dnd-section {
+  padding-top: var(--space-4) !important;
   padding-bottom: var(--space-7) !important;
 }
 
@@ -16,6 +16,20 @@
 
 .banner-area .dnd-column > .dnd-row:first-child .text-and-image__container {
   max-width: var(--content-max-width);
+}
+
+.banner-area .dnd-column > .dnd-row:first-child .text-and-image__copy {
+  max-width: unset;
+  flex: 1 1;
+}
+
+.banner-area .dnd-column > .dnd-row:first-child h2 {
+  {{ utils.eames() }}
+}
+
+.banner-area .dnd-column > .dnd-row:first-child p {
+  {{ utils.freed() }}
+  font-weight: var(--light-font-weight);
 }
 
 .banner-area .page-header.section-header {
