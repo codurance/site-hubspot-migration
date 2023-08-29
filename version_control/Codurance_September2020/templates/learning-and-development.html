@@ -128,10 +128,14 @@ label: Learning and Development Page
   </div>
 
   <main class="body-container-wrapper">
-
-    <section class="katalyst">
-      {% dnd_area "dnd_area_katalyst" label='Katalyst section' %}
-      {% end_dnd_area %}
+    <section class="katalyst region lateral-spacing responsive-page-width">
+		{% section_header "katalyst_header" 
+			heading_level="h2",
+			label="Katalyst header", 
+			header="Katalyst by Codurance",
+			subheader="Discover Katalyst by Codurance, the ultimate service to empower your team, boost productivity and streamline onboarding processes. Dive into our all-encompassing suite of resources tailored to elevate your team's performance: engaging training and e-learning courses, expert technical coaching for teams, customised technical coaching programs, bespoke internal academies, and much more."
+		%}
+		{% module "katalyst_cta" path="../modules/Button.module" label="Katalyst CTA" button_type="std" %}
     </section>
 
     <section class="section-4">
