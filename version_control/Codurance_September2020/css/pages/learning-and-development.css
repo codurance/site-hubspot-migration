@@ -1,5 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
+/* Hero banner section (DND) */
 .banner-area {
   color: white;
 } 
@@ -99,6 +100,12 @@
     padding-right: 20px;
   }
 {% endcall %}
+
+/* Katalyst section */
+.katalyst .section-header h2 {
+  {{ utils.dudler() }}
+  margin-bottom: var(--space-4);
+}
 
 
 
