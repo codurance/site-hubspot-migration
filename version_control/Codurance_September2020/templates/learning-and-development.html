@@ -52,22 +52,6 @@ label: Learning and Development Page
 
 				{% dnd_row %}
 					{% dnd_module
-						path="/version_control/Codurance_September2020/modules/Text-and-image",
-						offset=0,
-						width=12,
-						image_order="img-left",
-						image_field={ 
-							src:"https://www.codurance.com/hubfs/Service%20Line%20Pages/06_Learning%20and%20development/LD-illu-2.png"
-						}
-					%}
-						{% module_attribute "description_text" %}
-							We assess your highest priorities to create your bespoke training program and offer practical and theoretical programs, tailored to your precise needs, which guarantees your teams increased performance.
-						{% end_module_attribute %}
-					{% end_dnd_module %}
-				{% end_dnd_row %}
-
-				{% dnd_row %}
-					{% dnd_module
 						path="/version_control/Codurance_September2020/modules/Course-Cards",
 						offset=0,
 						width=12
@@ -107,30 +91,6 @@ label: Learning and Development Page
 					%}
 					{% end_dnd_module %}
 				{% end_dnd_row %}
-
-				{% dnd_row %}
-					{% dnd_module  
-						path="@hubspot/header", 
-						value="Programas prácticos y teóricos que garantizan la aceleración de la excelencia de tus equipos porque:",
-						header_tag="h2"
-					%}
-					{% end_dnd_module %}
-				{% end_dnd_row %}
-
-				{% dnd_row %}
-					{% dnd_module
-						path="/version_control/Codurance_September2020/modules/Text-and-image",
-						title="Accelerate excellence",
-						image_order="img-left",
-						image_field={ 
-							src:"https://www.codurance.com/hubfs/Service%20Line%20Pages/06_Learning%20and%20development/LD-illu-1.png"
-						}
-					%}
-						{% module_attribute "description_text" %}
-							Training your in-house team is usually more cost effective than hiring new talent with the required skills. You’ll discover that our programs generate an organisation-wide transformation, creating a lasting positive impact that goes beyond the software development teams.
-						{% end_module_attribute %}
-					{% end_dnd_module %}
-				{% end_dnd_row %}
 			{% end_dnd_column %}
 		{% end_dnd_section %}
     {% end_dnd_area %}
@@ -149,10 +109,6 @@ label: Learning and Development Page
 		</div>
 
 		{% module "katalyst_video" path="@hubspot/video" label="Katalyst video" extra_classes="katalyst__video" %}
-    </section>
-
-    <section class="partners region">
-      {% global_partial path="./partials/partners-section.html" %}
     </section>
 
     <section class="cm-services-inner-bottom-wrap" id="get-in-touch">
