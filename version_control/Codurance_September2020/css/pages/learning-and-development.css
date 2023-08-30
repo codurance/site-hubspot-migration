@@ -107,6 +107,34 @@
   margin-bottom: var(--space-4);
 }
 
+.katalyst {
+  display: flex;
+  --gap: var(--space-6);
+  gap: var(--gap);
+  background: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/06_Learning%20and%20development/LD_katalyst_banner_BG.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.katalyst > * {
+  flex: 1 1 calc(50% - var(--gap));
+}
+
+.katalyst__video .oembed_container,
+.katalyst__video iframe {
+  /* Overriding the default sizing styles */
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+{% call utils.small_and_medium() %}
+  .katalyst {
+    background-size: cover;
+    flex-direction: column;
+  }
+{% endcall %}
+
 
 
 
