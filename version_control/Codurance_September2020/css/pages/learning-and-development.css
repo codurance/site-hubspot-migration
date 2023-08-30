@@ -115,6 +115,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  max-width: var(--content-inner-max-width);
+  margin-inline: auto;
 }
 
 .katalyst > * {
