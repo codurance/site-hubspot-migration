@@ -68,6 +68,15 @@ label: Learning and Development Page
 
 				{% dnd_row %}
 					{% dnd_module
+						path="/version_control/Codurance_September2020/modules/Course-Cards",
+						offset=0,
+						width=12
+					%}
+					{% end_dnd_module %}
+				{% end_dnd_row %}
+
+				{% dnd_row %}
+					{% dnd_module
 						path="@hubspot/section_header",
 						offset=0,
 						width=12,
@@ -148,16 +157,15 @@ label: Learning and Development Page
 
     <section class="cm-services-inner-bottom-wrap" id="get-in-touch">
       {% dnd_area "dnd_area_contact" label='Contact section' %}
-				{% dnd_section 
-					max_width=1200,
-					vertical_alignment='TOP'
-				%}
-					{% dnd_module 'sl_form'
-						path='../modules/Service-Line-Form.module'
-					%}
-					{% end_dnd_module %}
-				{% end_dnd_section %}
-				
+		{% dnd_section 
+			max_width=1200,
+			vertical_alignment='TOP'
+		%}
+			{% dnd_module 'sl_form'
+				path='../modules/Service-Line-Form.module'
+			%}
+			{% end_dnd_module %}
+		{% end_dnd_section %}
       {% end_dnd_area %}
     </section>
   </main>
