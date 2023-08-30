@@ -1,7 +1,15 @@
 {% import '../utils/utils.css' as utils %}
 
+.course-card-group {
+    --columns: auto-fit;
+    --gap: var(--space-2);
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(var(--columns), minmax(270px, 1fr))
+}
+
+
 .course-card {
-    max-width: 500px;
     margin-inline: auto;
     background-color: hsla(205, 39%, 17%, .8);
     {{ utils.card_border_radius() }}
@@ -9,7 +17,7 @@
     overflow: hidden;
 }
 
-.course-card img {
+.course-card__image {
   aspect-ratio: 16/9;
   object-fit: cover;
   object-position: center;
@@ -50,3 +58,37 @@
 .course-content .button-primary {
     margin-top: var(--space-2);
 }
+
+
+{% call utils.medium_large_and_extra_large() %}
+    .course-card-group {
+        --columns: 2;
+        --gap: var(--space-4);
+    }
+
+    .featured-card {
+        grid-column: 1 / span 2;
+        display: flex;
+    }
+
+    .featured-card img {
+        width: 45%
+    }
+
+    .featured-card .course-content {
+        max-width: 40%;
+        margin-inline: auto;
+        padding-top: var(--space-5);
+        padding-bottom: var(--space-5);
+    }
+
+    .featured-card .course-content h3 {
+        {{ utils.dudler() }}
+    }
+
+
+    .course-card:not(:first-child) .course-card__image {
+        /* cinemascope ratio */
+        aspect-ratio: 21 / 9;
+    }
+{% endcall %}
