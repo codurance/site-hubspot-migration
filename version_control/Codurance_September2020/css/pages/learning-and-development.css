@@ -135,6 +135,11 @@
   }
 {% endcall %}
 
+/* Partners section */
+.partners {
+  {{ utils.tango_to_white() }}
+}
+
 
 
 
