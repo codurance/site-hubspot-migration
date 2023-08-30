@@ -1,0 +1,52 @@
+{% import '../utils/utils.css' as utils %}
+
+.course-card {
+    max-width: 500px;
+    margin-inline: auto;
+    background-color: hsla(205, 39%, 17%, .8);
+    {{ utils.card_border_radius() }}
+    {{ utils.card_shadow() }}
+    overflow: hidden;
+}
+
+.course-card img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
+}
+    
+.course-content {
+    padding: var(--space-4);
+}
+
+.course-content h3 {
+    {{ utils.freed() }}
+}
+
+.course-content p {
+    {{ utils.natus() }}
+}
+
+.course-content > p {
+    margin-top: var(--space-4);
+}
+.course-info__instructor {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+.course-info__instructor img {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    max-width: 50px;
+}
+
+.course-info__instructor p {
+    font-weight: var(--middle-font-weight);
+}
+
+.course-content .button-primary {
+    margin-top: var(--space-2);
+}
