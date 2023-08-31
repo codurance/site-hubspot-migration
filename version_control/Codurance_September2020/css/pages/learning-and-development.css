@@ -11,10 +11,6 @@
   padding-bottom: var(--space-7) !important;
 }
 
-.banner-area .dnd-row {
-  margin-top: var(--space-7);
-}
-
 .banner-area .text-and-image__container {
   max-width: var(--content-max-width);
 }
@@ -43,6 +39,10 @@
 
 .banner-area .page-header.section-header p {
   max-width: var(--freed-max-width);
+}
+
+.banner-area .client-logos__content {
+  margin-top: var(--space-7);
 }
 
 .banner-area .client-logos__content h2 {
@@ -78,6 +78,10 @@
   .banner-area .dnd-row {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .banner-area .page-header.section-header {
+    margin-top: var(--space-7);
   }
 {% endcall %}
 
