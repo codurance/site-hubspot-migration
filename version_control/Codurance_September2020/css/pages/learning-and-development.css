@@ -88,6 +88,7 @@
 /* Katalyst section */
 .katalyst .section-header h2 {
   {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
   margin-bottom: var(--space-4);
 }
 
