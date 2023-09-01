@@ -21,7 +21,7 @@
 				<h3>{{ course.title }}</h3>
 				<div class="course-info__instructor">
 					<img src="{{ avatar_image }}" alt="{{ course.instructor.columns.image.name }} profile picture" />
-					<p>Hosted by {{ course.instructor.columns.name }} | <span>{{ course.duration }} days</span></p>
+					<p>{{ course.instructor.columns.name }} | <span>{{ course.duration }}</span></p>
 				</div>
 				<p>{{ course.description }}</p>
 

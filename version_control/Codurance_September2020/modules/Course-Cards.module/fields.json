@@ -45,17 +45,18 @@
       },
       {
         "name": "duration",
-        "label": "duration",
+        "label": "Duration",
         "required": false,
         "locked": false,
-        "display": "text",
-        "step": 1,
-        "type": "number",
-        "min": null,
-        "max": null,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
         "inline_help_text": "",
         "help_text": "",
-        "default": 1
+        "default": "2 days"
       },
       {
         "id": "625fc537-664c-9bbf-753e-6f46874f6f8b",
