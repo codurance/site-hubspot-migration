@@ -34,7 +34,7 @@
 }
 
 .banner-area .page-header.section-header h2 {
-  max-width: var(--eames-max-width);
+  max-width: var(--dudler-max-width);
 }
 
 .banner-area .page-header.section-header p {
@@ -86,15 +86,23 @@
 {% endcall %}
 
 /* Katalyst section */
+
+.katalyst .page-header.section-header {
+   /* Overrides default margin bottom */
+  margin-bottom: revert !important;
+}
+
+
 .katalyst .section-header h2 {
   {{ utils.dudler() }}
   font-weight: var(--heavy-font-weight);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-2);
 }
 
 .katalyst {
-  display: flex;
   --gap: var(--space-6);
+  display: flex;
+  align-items: center;
   gap: var(--gap);
   background: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/06_Learning%20and%20development/LD_katalyst_banner_BG.svg");
   background-repeat: no-repeat;

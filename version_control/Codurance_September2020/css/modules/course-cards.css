@@ -20,11 +20,12 @@
 .course-card__image {
   aspect-ratio: 16/9;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
 }
     
 .course-content {
     padding: var(--space-4);
+    padding-top: var(--space-3);
 }
 
 .course-content h3 {
@@ -36,7 +37,7 @@
 }
 
 .course-content > p {
-    margin-top: var(--space-4);
+    margin-top: var(--space-2);
 }
 .course-info__instructor {
     display: flex;
@@ -56,7 +57,7 @@
 }
 
 .course-content .button-primary {
-    margin-top: var(--space-2);
+    margin-top: var(--space-3);
 }
 
 
