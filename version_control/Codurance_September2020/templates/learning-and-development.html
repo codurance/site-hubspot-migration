@@ -9,90 +9,21 @@ label: Learning and Development Page
 {{ require_css(get_asset_url("../css/pages/learning-and-development.css")) }}
 
 {% require_css %}
-  <style>
-    .banner-area .dnd-section > .row-fluid {
-		background: url({% image_src "banner_background_image" src="https://www.codurance.com/hubfs/Service%20Line%20Pages/06_Learning%20and%20development/LDD_shape_BG.svg" label="Background Image" no_wrapper=True %});
-		background-position: right 60%, center;
-		background-repeat: no-repeat;
-		background-size: 30%;
-    }
-  </style>
+    <style>
+        .banner-area .dnd-section > .row-fluid {
+            background: url({% image_src "banner_background_image" src="https://www.codurance.com/hubfs/Service%20Line%20Pages/06_Learning%20and%20development/LDD_shape_BG.svg" label="Background Image" no_wrapper=True %});
+            background-position: right 60%, center;
+            background-repeat: no-repeat;
+            background-size: 30%;
+        }
+    </style>
 {% end_require_css %}
 
 {% block body %}
 <div class="cm-services-inner-layout type1">
   <div class="banner-section">
     {% dnd_area "dnd_banner" class='banner-area', label='Banner Section' %}
-		{% dnd_section 
-			background_linear_gradient={
-				"direction": "to bottom",
-				"colors": [
-					"#0F0F0F",
-					"#59BCCC"
-				]
-			},
-			full_width=true 
-		%}
-			{% dnd_column %}
-				{% dnd_row %}
-					{% dnd_module
-						path="/version_control/Codurance_September2020/modules/Text-and-image",
-						offset=0,
-						width=12,
-						title="Learning & Development",
-						image_field={ 
-							src:"https://www.codurance.com/hubfs/Service%20Line%20Pages/06_Learning%20and%20development/LD-illu-hero.png"
-						}
-					%}
-						{% module_attribute "description_text" %}
-							<p>Improve the skills of your teams and promote their technical excellence, to achieve better results in your business.</p>
-						{% end_module_attribute %}
-					{% end_dnd_module %}
-				{% end_dnd_row %}
-
-				{% dnd_row %}
-					{% dnd_module
-						path="@hubspot/section_header",
-						offset=0,
-						width=12,
-						header="Empower your technology teams with focused training from our world class experts",
-						heading_level="h2",
-						subheader="Enhance your team’s skillset with our industry leading training courses. We create bespoke training plans adapted to your business needs."
-					%}
-					{% end_dnd_module %}
-				{% end_dnd_row %}
-
-				{% dnd_row %}
-					{% dnd_module
-						path="/version_control/Codurance_September2020/modules/Course-Cards",
-						offset=0,
-						width=12
-					%}
-					{% end_dnd_module %}
-				{% end_dnd_row %}
-
-				{% dnd_row %}
-					{% dnd_module
-						path="/version_control/Codurance_September2020/modules/Clients-Logos",
-						offset=0,
-						width=12,
-						logos_group=[ {
-							"logo" : {
-								"alt" : "Envoy-logo",
-								"height" : 190,
-								"loading" : "lazy",
-								"max_height" : 190,
-								"max_width" : 579,
-								"size_type" : "auto",
-								"src" : "https://14557846.fs1.hubspotusercontent-na1.net/hubfs/14557846/Imported%20sitepage%20images/Envoy-logo.png",
-								"width" : 579
-							}
-						} ]
-					%}
-					{% end_dnd_module %}
-				{% end_dnd_row %}
-			{% end_dnd_column %}
-		{% end_dnd_section %}
+		{% include_dnd_partial path='./sections/service-line-hero.html' context={} %}
     {% end_dnd_area %}
   </div>
 
