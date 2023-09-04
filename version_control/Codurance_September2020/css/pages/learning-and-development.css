@@ -102,6 +102,7 @@
 
 .katalyst > * {
   flex: 1 1 calc(50% - var(--gap));
+  width: 100%;
 }
 
 .katalyst .page-header.section-header {
