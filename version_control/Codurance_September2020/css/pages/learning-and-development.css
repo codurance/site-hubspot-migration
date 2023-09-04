@@ -31,6 +31,7 @@
 
 .banner-area .page-header.section-header {
   max-width: var(--content-inner-max-width);
+  margin-top: var(--space-3);
 }
 
 .banner-area .page-header.section-header h2 {
