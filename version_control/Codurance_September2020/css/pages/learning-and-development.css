@@ -87,18 +87,6 @@
 
 /* Katalyst section */
 
-.katalyst .page-header.section-header {
-   /* Overrides default margin bottom */
-  margin-bottom: revert !important;
-}
-
-
-.katalyst .section-header h2 {
-  {{ utils.dudler() }}
-  font-weight: var(--heavy-font-weight);
-  margin-bottom: var(--space-2);
-}
-
 .katalyst {
   --gap: var(--space-6);
   display: flex;
@@ -114,6 +102,21 @@
 
 .katalyst > * {
   flex: 1 1 calc(50% - var(--gap));
+}
+
+.katalyst .page-header.section-header {
+   /* Overrides default margin bottom */
+  margin-bottom: revert !important;
+}
+
+.katalyst .section-header h2 {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+  margin-bottom: var(--space-2);
+}
+
+.katalyst div.custom-btn {
+  margin-top: var(--space-3);
 }
 
 .katalyst__video .oembed_container,
