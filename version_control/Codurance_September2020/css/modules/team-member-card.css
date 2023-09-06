@@ -37,6 +37,7 @@
     height: 180px;
     margin: 15px;
     width: 164px;
+    {{ utils.card_border_radius() }}
 }
 
 .cm-team-member-instructor-title {

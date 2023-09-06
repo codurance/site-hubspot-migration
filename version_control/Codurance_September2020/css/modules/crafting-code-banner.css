@@ -56,6 +56,7 @@
     height: 110px;
     width: 100px;
     display: inline-block;
+    {{ utils.card_border_radius() }}
 }
 
 .cm-crafting-instructor-wrapper-inner {
