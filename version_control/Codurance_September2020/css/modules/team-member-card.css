@@ -8,6 +8,8 @@
     box-shadow: rgba(0,0,0,0.16) 0 0 8px;
     display: flex;
     transition: max-height 0.5s ease;
+    overflow: hidden;
+    {{ utils.card_border_radius() }}
 }
 
 .cm-team-member-card-group.active .cm-team-member-inner {
