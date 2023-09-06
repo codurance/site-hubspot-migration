@@ -74,6 +74,7 @@
     margin-right: auto;
     background-color: white;
     padding-bottom: 100px;
+    {{ utils.card_border_radius() }}
 }
 
 .form-section h2 {
