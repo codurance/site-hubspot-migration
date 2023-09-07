@@ -7,30 +7,27 @@ label: Training Inner Page
 
 {{ require_css(get_asset_url("../css/pages/training-inner.css")) }}
 
-
-{% block header %}
-{% endblock header %}
 {% block body %}
-<div class="container">
-  <div class="banner-section">
-    {% dnd_area "DND_banner" class='', label='Banner Section' %}
-    {% dnd_section full_width=true %}
-    {% dnd_module path='../modules/Crafting code banner', width=12, offset=0, label="" %}
-    {% end_dnd_module %}
-    {% end_dnd_section %}
-    {% end_dnd_area %}
-  </div>
-  <main class="body-container-wrapper">
-    {% dnd_area "dnd_area1" class='course-details-section', label='Section 1' %}
-    {% end_dnd_area %}
-    {% dnd_area "dnd_area2" class='course-instructor-bio-section', label='Section 2' %}
-    {% end_dnd_area %}
-    {% dnd_area "dnd_area3" class='client-logo-section', label='Section 2' %}
-    {% end_dnd_area %}
-    <div class="bottom-container" id="get-in-touch">
-      {% dnd_area "dnd_area4" class='form-section', label='Section 4' %}
+  <div class="container">
+    <div class="banner-section">
+      {% dnd_area "DND_banner" class='', label='Banner Section' %}
+      {% dnd_section full_width=true %}
+      {% dnd_module path='../modules/Crafting code banner', width=12, offset=0, label="" %}
+      {% end_dnd_module %}
+      {% end_dnd_section %}
       {% end_dnd_area %}
     </div>
-  </main>
-</div>
+    <main class="body-container-wrapper">
+      {% dnd_area "dnd_area1" class='course-details-section', label='Section 1' %}
+      {% end_dnd_area %}
+      {% dnd_area "dnd_area2" class='course-instructor-bio-section', label='Section 2' %}
+      {% end_dnd_area %}
+      {% dnd_area "dnd_area3" class='client-logo-section', label='Section 3' %}
+      {% end_dnd_area %}
+      <div class="bottom-container" id="get-in-touch">
+        {% dnd_area "dnd_area4" class='form-section', label='Section 4' %}
+        {% end_dnd_area %}
+      </div>
+    </main>
+  </div>
 {% endblock body %}
