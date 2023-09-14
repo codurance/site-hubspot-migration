@@ -19,12 +19,6 @@
     }
 {% endcall %}
 
-.upcoming-events {
-    {{ utils.tango_to_white() }}
-    padding-top: 4.3em;
-    padding-bottom: 4.3em;
-}
-
 /* Header */
 
 {% call utils.medium() %}
@@ -89,8 +83,15 @@
 
 /* Upcoming events */
 
+.upcoming-events {
+    {{ utils.slate_to_woodsmoke() }}
+    padding-top: 4.3em;
+    padding-bottom: 4.3em;
+}
+
 .upcoming-events__title {
   {{ utils.eames() }}
+  color: white;
   margin-bottom: 1.6rem;
 }
 
@@ -130,10 +131,9 @@
 /* Katas */
 
 .katas {
-    {{ utils.color1_to_color2("to right", "var(--woodsmoke)", "var(--slate)" ) }}
+    {{ utils.tango_to_white() }}
     padding-top: 5.8em;
     padding-bottom: 5.8em;
-    color: white;
 }
 
 .page-header.section-header:nth-child(n+2) {
