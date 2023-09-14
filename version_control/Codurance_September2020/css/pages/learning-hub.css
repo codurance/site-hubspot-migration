@@ -19,8 +19,7 @@
     }
 {% endcall %}
 
-.upcoming-events,
-.topics {
+.upcoming-events {
     {{ utils.tango_to_white() }}
     padding-top: 4.3em;
     padding-bottom: 4.3em;
@@ -88,71 +87,6 @@
     margin-left: 0;
 }
 
-/* Fireside chats */
-
-.fireside-chats {
-    {{ utils.slate_to_woodsmoke() }}
-    color: white;
-    padding-top: 4em;
-    padding-bottom: 4em;
-}
-
-{% call utils.small_and_medium() %}
-    .fireside-chats {
-        padding-top: 3em;
-        padding-bottom: 3em;
-    }
-{% endcall %}
-
-.fireside-chats .video-hubdb__title {
-    max-width: 45ch;
-}
-
-.fireside-chats .video-hubdb__description {
-    max-width: 55ch;
-}
-
-/* Editors pick */
-
-.editors-pick, .learning-hub-videos {
-    background: linear-gradient(180deg, rgba(252,224,206,0.6) 0%, rgba(255,255,255,1) 45%);
-
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-}
-    
-{% call utils.small_and_medium() %}
-    .editors-pick, .learning-hub-videos {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-    }
-{% endcall %}
-
-/* CTA banner */
-
-.learning-hub-cta {
-    padding-inline: 0;
-    padding-block: 2rem;
-    color: #FFF;
-    {{ utils.slate_to_woodsmoke() }}
-}
-           
-{% call utils.large_and_extra_large() %}
-    .learning-hub-cta {
-        padding-inline: 2rem;
-    }
-{% endcall %}
-
-.learning-hub-cta .banner {
-    max-width: var(--content-max-width);
-}
-                
-{% call utils.small() %}    
-    .learning-hub-cta .banner {
-        justify-content: left;
-    }
-{% endcall %}
-
 /* Upcoming events */
 
 .upcoming-events__title {
@@ -167,13 +101,31 @@
     }
 {% endcall %}
 
-/* Topics */
+/* Videos */
 
-{% call utils.large_and_extra_large() %}
-    .topics .card-container {
-        grid-template-columns: repeat(3, 1fr);
+.learning-hub-videos {
+    background: linear-gradient(180deg, rgba(252,224,206,0.6) 0%, rgba(255,255,255,1) 45%);
+
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+    
+{% call utils.small_and_medium() %}
+    .learning-hub-videos {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
     }
 {% endcall %}
+
+/* CTA Banner */
+
+.cta-banner .cta-block__wrapper {
+    max-width: var(--content-max-width);
+}
+
+.cta-banner .cta-block__title {
+    max-width: var(--eames-max-width);
+}
 
 /* Katas */
 
@@ -205,12 +157,27 @@
     }
 {% endcall %}
 
-/* CTA Banner */
+/* Banner link */
 
-.cta-banner .cta-block__wrapper {
+.learning-hub-cta {
+    padding-inline: 0;
+    padding-block: 2rem;
+    color: #FFF;
+    {{ utils.slate_to_woodsmoke() }}
+}
+           
+{% call utils.large_and_extra_large() %}
+    .learning-hub-cta {
+        padding-inline: 2rem;
+    }
+{% endcall %}
+
+.learning-hub-cta .banner {
     max-width: var(--content-max-width);
 }
-
-.cta-banner .cta-block__title {
-    max-width: var(--eames-max-width);
-}
+                
+{% call utils.small() %}    
+    .learning-hub-cta .banner {
+        justify-content: left;
+    }
+{% endcall %}
