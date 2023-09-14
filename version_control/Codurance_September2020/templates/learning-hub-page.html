@@ -1,0 +1,57 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Learning Hub Page
+-->
+{% extends "./layouts/base.html" %}
+{{ require_css(get_asset_url("../css/pages/learning-hub.css")) }}
+
+{% block body %}
+<main class="learning-hub-container">
+  <section class="learning-hub-hero">
+    {% include "./partials/header-insights.html" %}
+  </section>
+
+  <section class="recent-blog-posts">
+    {% module 'blog-posts' path='../modules/Recent-posts-V2.module'
+    label="Recent blog posts" no_wrapper=True %}
+  </section>
+
+  <section class="upcoming-events">
+    <div class="page-center">
+      <h2 class="upcoming-events__title lateral-spacing">{% text 'events-title' label="Upcoming Events Title" no_wrapper=True %}</h2>
+      {% module 'event-cards' path='../modules/Simple-Card.module'
+      label="Upcoming Event Cards" no_wrapper=True %}
+
+      <div class="lateral-spacing">
+        {% module 'events-button' path='../modules/Button.module'
+        label="Events Button" no_wrapper=True %}
+      </div>
+    </div>
+  </section>
+
+  <section class="learning-hub-videos lateral-spacing">
+    {% module 'codurance-in-motion' path='../modules/Codurance-in-motion.module'
+       label="Codurance in motion" no_wrapper=True %}
+  </section>
+
+  <section class="cta-banner">
+    {% module 'cta_banner' label="CTA Banner"
+      path='../modules/LP-cta-block.module'
+    %}
+  </section>
+
+  <section class="katas lateral-spacing">
+    {% section_header 'random-katas-header' label="Random Katas Header" no_wrapper=True %}
+    {% module 'random-katas' path='../modules/Random-Katas.module'
+      label="Random Katas" no_wrapper=True %}
+    {% module 'random-katas-button' path='../modules/Button.module' 
+      label ="Button Random Katas" no_wrapper=True %}
+  </section>
+
+  <section class="learning-hub-cta lateral-spacing">
+    {% module 'banner-link' path='../modules/Banner-Link.module'
+    label="Banner Link" no_wrapper=True %}
+  </section>
+</main>
+{% endblock body %}
