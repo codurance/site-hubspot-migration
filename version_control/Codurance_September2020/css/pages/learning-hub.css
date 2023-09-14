@@ -175,9 +175,9 @@
     }
 {% endcall %}
 
-/* Katalyst */
+/* Katas */
 
-.katalyst {
+.katas {
     {{ utils.color1_to_color2("to right", "var(--woodsmoke)", "var(--slate)" ) }}
     padding-top: 5.8em;
     padding-bottom: 5.8em;
@@ -188,18 +188,18 @@
     margin-top: 6.4em; 
 }
 
-.katalyst div.custom-btn {
+.katas div.custom-btn {
     max-width: var(--content-max-width);
     margin-inline: auto;
 }
 
-.katalyst .videos-hubdb {
+.katas .videos-hubdb {
     display: grid;
     column-gap: 2em;
 }
 
 {% call utils.medium_large_and_extra_large() %}
-    .katalyst .videos-hubdb {
+    .katas .videos-hubdb {
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
     }
