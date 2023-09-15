@@ -10,7 +10,7 @@ label: Learning and Development Page
 
 {% require_css %}
     <style>
-        .banner-area .dnd-section > .row-fluid {
+        .contact-area .dnd-section > .row-fluid {
             background: url({% image_src "banner_background_image" src="https://www.codurance.com/hubfs/Service%20Line%20Pages/06_Learning%20and%20development/LDD_shape_BG.svg" label="Background Image" no_wrapper=True %});
             background-position: right 60%, center;
             background-repeat: no-repeat;
@@ -43,16 +43,16 @@ label: Learning and Development Page
     </section>
 
     <section class="cm-services-inner-bottom-wrap" id="get-in-touch">
-      {% dnd_area "dnd_area_contact" label='Contact section' %}
-		{% dnd_section 
-			vertical_alignment='TOP',
-			full_width=true 
-		%}
-			{% dnd_module 'sl_form'
-				path='../modules/Service-Line-Form'
-			%}
-			{% end_dnd_module %}
-		{% end_dnd_section %}
+      {% dnd_area "dnd_area_contact" label='Contact section' class="contact-area" %}
+        {% dnd_section 
+          vertical_alignment='TOP',
+          full_width=true 
+        %}
+          {% dnd_module 'sl_form'
+            path='../modules/Service-Line-Form'
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_section %}
       {% end_dnd_area %}
     </section>
   </main>
