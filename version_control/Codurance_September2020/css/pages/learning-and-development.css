@@ -1,7 +1,8 @@
 {% import '../utils/utils.css' as utils %}
 
-/* Hero banner section (DND) */
-.banner-area {
+/* DND areas */
+.banner-area,
+.contact-area {
   color: white;
 } 
 
@@ -27,19 +28,6 @@
 .banner-area .text-and-image__copy p {
   {{ utils.freed() }}
   font-weight: var(--light-font-weight);
-}
-
-.banner-area .page-header.section-header {
-  max-width: var(--content-inner-max-width);
-  margin-top: var(--space-3);
-}
-
-.banner-area .page-header.section-header h2 {
-  max-width: var(--dudler-max-width);
-}
-
-.banner-area .page-header.section-header p {
-  max-width: var(--freed-max-width);
 }
 
 .banner-area .client-logos__content {
@@ -79,10 +67,6 @@
   .banner-area .dnd-row {
     padding-left: 20px;
     padding-right: 20px;
-  }
-
-  .banner-area .page-header.section-header {
-    margin-top: var(--space-7);
   }
 {% endcall %}
 
@@ -135,6 +119,24 @@
   }
 {% endcall %}
 
+/* Contact area */
+
+.contact-area .page-header.section-header {
+  max-width: var(--content-inner-max-width);
+}
+
+.contact-area .page-header.section-header h2 {
+  max-width: var(--dudler-max-width);
+}
+
+.contact-area .page-header.section-header p {
+  max-width: var(--freed-max-width);
+}
+
+.contact-area .course-card-group {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+}
 
 
 
