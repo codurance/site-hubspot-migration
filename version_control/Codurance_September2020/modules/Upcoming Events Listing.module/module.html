@@ -87,6 +87,13 @@
                 >
                   {{ event.type.name }}
                 </small>
+                {% if event.city && event.type.name == "In person" %}
+                  <small
+                    class="card-slider-item__label card-slider-item__label--city"
+                  >
+                    {{ event.city }}
+                  </small>
+                {% endif %}
               {% endif %}
             </div>
             <div class="card-slider-item__text-container">

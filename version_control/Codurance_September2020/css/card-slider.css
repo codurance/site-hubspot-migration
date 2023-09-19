@@ -344,6 +344,12 @@
   left: {{label_position}};
 }
 
+.card-slider-item__label--city {
+  right: {{label_position}};
+  background-color: var(--mid-gray);
+  color: white;
+}
+
 .card-slider-item__label--duration {
   right: {{label_position}};
 }
