@@ -72,12 +72,6 @@
             </svg>
           </button>
         </div>
-        {% if module.translation_information_text %}
-          <div class="card-slider__translation-info">
-            <i class="las la-info-circle"></i>
-            <small>Nuestros eventos son, en su mayoría, en inglés. Por eso estás viendo sus títulos y descripciones en este idioma.</small>
-          </div>
-        {% endif %}
       </div>
       <div class="card-slider-results" data-upcoming-card-track>
         {% for event in upcomingEvents %}
@@ -92,7 +86,14 @@
                   class="card-slider-item__label card-slider-item__label--type"
                 >
                   {{ event.type.name }}
-              </small>
+                </small>
+                {% if event.city && event.type.name == "In person" %}
+                  <small
+                    class="card-slider-item__label card-slider-item__label--city"
+                  >
+                    {{ event.city }}
+                  </small>
+                {% endif %}
               {% endif %}
             </div>
             <div class="card-slider-item__text-container">
