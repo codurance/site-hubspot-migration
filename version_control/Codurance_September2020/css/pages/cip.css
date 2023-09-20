@@ -1,0 +1,24 @@
+{% import '../utils/utils.css' as utils %}
+
+figure {
+    position: relative;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+}
+
+figure div {
+    border-radius: 50%;
+    border: 2px solid var(--persimmon);
+    position: absolute;
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+    color: var(--persimmon);
+    text-align: center;
+    height: 37px;
+    width: 37px;
+    top: 10.5%;
+    left: 46%;
+}
