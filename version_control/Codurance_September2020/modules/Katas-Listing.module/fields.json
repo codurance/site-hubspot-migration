@@ -1,9 +1,50 @@
 [ {
-  "id" : "e03f8cf1-d511-a047-8321-0bb970550473",
-  "name" : "katalyst_blog",
+  "id" : "a160e95a-ccf7-4cc5-f901-a05cd9286c55",
+  "name" : "display_random_katas",
   "display_width" : null,
-  "label" : "Katalyst Blog",
-  "required" : true,
+  "label" : "Display random katas",
+  "help_text" : "If this option is enabled four katas will be chosen randomly each time a user loads the page.",
+  "required" : false,
   "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "e03f8cf1-d511-a047-8321-0bb970550473",
+  "name" : "katas_blog",
+  "display_width" : null,
+  "label" : "Katas Blog",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "display_random_katas",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
   "type" : "blog"
+}, {
+  "id" : "4f6c8e65-2ff1-124f-9fed-f1f941375b0c",
+  "name" : "kata_posts",
+  "display_width" : null,
+  "label" : "Kata posts",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "display_random_katas",
+    "controlling_value_regex" : "false",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "page"
 } ]
