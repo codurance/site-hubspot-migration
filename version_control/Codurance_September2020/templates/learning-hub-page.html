@@ -17,15 +17,16 @@
     label="Recent blog posts" no_wrapper=True %}
   </section>
 
-  <section class="upcoming-events">
+  <section class="content-cards">
     <div class="page-center">
-      <h2 class="upcoming-events__title lateral-spacing">{% text 'events-title' label="Upcoming Events Title" no_wrapper=True %}</h2>
-      {% module 'event-cards' path='../modules/Simple-Card.module'
-      label="Upcoming Event Cards" no_wrapper=True %}
+      <h2 class="content-cards__title lateral-spacing">
+        {% text 'content_cards_title' label="Content Cards Title" %}
+      </h2>
+
+      {% module 'content_cards' path='../modules/Simple-Card.module' label="Content Cards" %}
 
       <div class="lateral-spacing">
-        {% module 'events-button' path='../modules/Button.module'
-        label="Events Button" no_wrapper=True %}
+        {% module 'content_cards_button' path='../modules/Button.module' label="Content Cards Button" %}
       </div>
     </div>
   </section>

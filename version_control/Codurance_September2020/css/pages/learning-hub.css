@@ -83,20 +83,20 @@
 
 /* Upcoming events */
 
-.upcoming-events {
+.content-cards {
     {{ utils.slate_to_woodsmoke() }}
     padding-top: 4.3em;
     padding-bottom: 4.3em;
 }
 
-.upcoming-events__title {
+.content-cards__title {
   {{ utils.eames() }}
   color: white;
   margin-bottom: 1.6rem;
 }
 
 {% call utils.small_medium_and_large() %}
-    .upcoming-events__title {
+    .content-cards__title {
         {{ utils.dudler() }}
         font-weight: var(--heavy-font-weight);
     }
