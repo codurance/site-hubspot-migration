@@ -1,5 +1,19 @@
 {% import '../utils/utils.css' as utils %}
 
+.hero {
+    {{ utils.color1_to_color2(
+        "94deg", 
+        "var(--woodsmoke)", 
+        "var(--purple)"
+    ) }}
+
+    color: white;
+}
+
+.hero .text-and-image__container {
+    max-width: var(--content-max-width);
+}
+
 figure {
     position: relative;
 }
