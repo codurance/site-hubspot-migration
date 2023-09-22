@@ -1,9 +1,0 @@
-[ {
-  "id" : "e03f8cf1-d511-a047-8321-0bb970550473",
-  "name" : "katalyst_blog",
-  "display_width" : null,
-  "label" : "Katalyst Blog",
-  "required" : true,
-  "locked" : false,
-  "type" : "blog"
-} ]
