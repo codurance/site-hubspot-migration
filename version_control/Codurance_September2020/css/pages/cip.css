@@ -1,5 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
+/* Hero section */
 .hero {
     {{ utils.color1_to_color2(
         "94deg", 
@@ -14,6 +15,19 @@
     max-width: var(--content-max-width);
 }
 
+.hero .text-and-image__copy h2 {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+{% call utils.large() %}
+    .hero .text-and-image__container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+{% endcall %}
+
+/* Infographic section */
 figure {
     position: relative;
 }
