@@ -3,9 +3,9 @@
 {% set max_retrievable_posts = 200 %}
 {% set blog_posts = blog_popular_posts(module.katas_blog, max_retrievable_posts) %}
 {% set kata_posts = blog_posts | shuffle | slice(4) | first %}
-
+    
 {% if !module.display_random_katas %}
-    {% set kata_posts = module.kata_posts %}
+    {% set kata_posts = content_by_ids(module.kata_posts) %}
 {% endif %}
 
 <div class="kata-listing">
