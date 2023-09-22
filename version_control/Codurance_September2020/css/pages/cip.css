@@ -20,6 +20,18 @@
     font-weight: var(--heavy-font-weight);
 }
 
+{% call utils.large_and_extra_large() %}
+    .hero .text-and-image__copy {
+        flex: 1 1;
+        max-width: unset;
+    }
+
+    .hero .hs_cos_wrapper_type_inline_rich_text {
+        margin-left: auto;
+        max-width: var(--freed-max-width);
+    }
+{% endcall %}
+
 {% call utils.large() %}
     .hero .text-and-image__container {
         padding-left: 50px;
