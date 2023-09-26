@@ -1,0 +1,35 @@
+[ {
+  "id" : "57934164-0ada-8a1a-ff8e-68f430bdf0fa",
+  "name" : "infographic_image",
+  "display_width" : null,
+  "label" : "Infographic image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "eager"
+  }
+}, {
+  "id" : "370b42fc-027f-7d68-ab57-bed4bab39067",
+  "name" : "tooltips",
+  "display_width" : null,
+  "label" : "Tooltips",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]
