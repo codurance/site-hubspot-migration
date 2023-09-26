@@ -12,13 +12,10 @@
 }
 
 .infographic .tooltip {
-    border-radius: 50%;
-    border: 2px solid var(--persimmon);
+    width: 190px;
     position: absolute;
-    font-weight: var(--heavy-font-weight);
-    color: var(--persimmon);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -28,46 +25,97 @@
     }
 {% endcall %}
 
+.infographic .tooltip__number {
+    border-radius: 50%;
+    border: 2px solid var(--persimmon);
+    font-weight: var(--heavy-font-weight);
+    color: var(--persimmon);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: help;
+}
+
 /* The tooltips are sized in relation to the container */
 @container infographic (min-width: 718px) {
     .infographic .tooltip {
+        max-width: 15.83cqw;
+    }
+
+    .infographic .tooltip__number {
         font-size: 2cqw;
         width: 3cqw;
         height: 3cqw;
     }
 }
 
+/* Tooltips positioning */
+.infographic .tooltip:nth-child(1) {
+    left: 23%;
+    top: 8%;
+}
+
 .infographic .tooltip:nth-child(2) {
-    left: 30%;
-    top: 9%;
+    left: 8%;
+    top: 20%;
 }
 
 .infographic .tooltip:nth-child(3) {
-    left: 13%;
-    top: 21%;
+    left: 19%;
+    top: 31%;
 }
 
 .infographic .tooltip:nth-child(4) {
-    left: 25%;
-    top: 32%;
+    left: 42%;
+    top: 38%;
 }
 
 .infographic .tooltip:nth-child(5) {
-    left: 49%;
+    left: 53%;
     top: 38%;
 }
 
 .infographic .tooltip:nth-child(6) {
-    left: 59%;
+    left: 62%;
     top: 38%;
 }
 
 .infographic .tooltip:nth-child(7) {
-    left: 69%;
+    left: 73%;
     top: 38%;
+}
+/* End tooltips positioning */
+
+.infographic .tooltip__text {
+    {{ utils.natus() }}
+    {{ utils.card_shadow() }}
+    {{ utils.card_border_radius() }}
+    color: var(--mid-gray);
+    background: white;
+    padding: var(--space-2);
+    position: relative;
+    top: var(--space--1);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    width: 190px;
+    transition: all 0.3s;
 }
 
-.infographic .tooltip:nth-child(8) {
-    left: 79%;
-    top: 38%;
+.infographic .tooltip__number:hover + .tooltip__text {
+    opacity: 1;
+    visibility: visible;
 }
+
+.infographic .tooltip__text:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: -15px;
+    left: 50%;
+    transform: translate(-50%,50%) rotate(45deg);
+    background: white;
+}
+
+

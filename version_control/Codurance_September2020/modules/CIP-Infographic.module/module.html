@@ -6,7 +6,12 @@
     <img src="{{ module.infographic_image.src }}" alt="{{ module.infographic_image.alt }}" {{ loadingAttr }} />
   {% endif %}
   
-  {% for tooltip in module.tooltips %}
-    <span class="tooltip">{{ loop.index }}</span>
-  {% endfor %}
+  <ol>
+    {% for tooltip in module.tooltips %}
+      <li class="tooltip">
+        <span class="tooltip__number">{{ loop.index }}</span>
+        <div class="tooltip__text">{{ tooltip }}</div>
+      </li>
+    {% endfor %}
+  </ol>
 </figure>
