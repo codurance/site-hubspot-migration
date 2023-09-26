@@ -1,3 +1,5 @@
+{% import '../utils/utils.css' as utils %}
+
 .infographic figure {
     position: relative;
     container-type: inline-size;
@@ -19,6 +21,12 @@
     justify-content: center;
     align-items: center;
 }
+
+{% call utils.small() %}
+    .infographic .tooltip {
+        display: none;
+    }
+{% endcall %}
 
 /* The tooltips are sized in relation to the container */
 @container infographic (min-width: 718px) {
