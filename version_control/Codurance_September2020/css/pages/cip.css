@@ -40,4 +40,8 @@
 {% endcall %}
 
 /* Infographic section */
-
+.infographic h2 {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--space-4);
+}
