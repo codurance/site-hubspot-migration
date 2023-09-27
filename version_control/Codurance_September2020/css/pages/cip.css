@@ -53,3 +53,31 @@
     max-width: var(--content-max-width);
     padding: 0;
 }
+
+.infographic .custom-benefits-we-offer__text-container h3 {
+    {{ utils.natus() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .infographic .benefits-container {
+        display: block;
+    }
+
+    .infographic .benefits-container article {
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+    }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .infographic .benefits-container {
+        columns: 3;
+    }
+{% endcall %}
+
+{% call utils.medium() %}
+    .infographic .benefits-container {
+        columns: 2;
+    }
+{% endcall %}
