@@ -48,3 +48,8 @@
 #hs_cos_wrapper_infographic {
     margin-top: var(--space-4);
 }
+
+.infographic .benefits-wrapper {
+    max-width: var(--content-max-width);
+    padding: 0;
+}
