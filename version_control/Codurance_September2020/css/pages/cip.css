@@ -43,5 +43,8 @@
 .infographic h2 {
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
-    margin-bottom: var(--space-4);
+}
+
+#hs_cos_wrapper_infographic {
+    margin-top: var(--space-4);
 }
