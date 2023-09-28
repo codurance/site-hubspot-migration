@@ -41,7 +41,7 @@
 
 /* Infographic section */
 .infographic {
-    {{ utils.white_to_tango()}}
+    padding-top: var(--space-7);
 }
 
 .infographic h2 {
@@ -51,6 +51,11 @@
 
 #hs_cos_wrapper_infographic {
     margin-top: var(--space-4);
+}
+
+.infographic__features {
+    {{ utils.white_to_tango() }}
+    padding-bottom: var(--space-7);
 }
 
 .infographic .benefits-wrapper {
