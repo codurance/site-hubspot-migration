@@ -40,6 +40,10 @@
 {% endcall %}
 
 /* Infographic section */
+.infographic {
+    {{ utils.white_to_tango()}}
+}
+
 .infographic h2 {
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
@@ -52,6 +56,10 @@
 .infographic .benefits-wrapper {
     max-width: var(--content-max-width);
     padding: 0;
+}
+
+.infographic .benefits-container {
+    margin-bottom: 0;
 }
 
 .infographic .custom-benefits-we-offer__icon {
