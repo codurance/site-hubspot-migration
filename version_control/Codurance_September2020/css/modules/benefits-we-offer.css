@@ -51,7 +51,7 @@
     .benefits-container{
       display: grid;
       grid-template: auto / 1fr 1fr;
-      gap: 1em;
+      gap: var(--space-4);
     }
 
     .custom-benefits-we-offer__text-container h3 {
