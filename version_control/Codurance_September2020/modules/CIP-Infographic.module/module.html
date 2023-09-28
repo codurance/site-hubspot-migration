@@ -1,12 +1,12 @@
 {{ require_css(get_asset_url("../../css/modules/cip-infographic.css")) }}
 
-<figure>
+<figure class="infographic__figure">
   {% if module.infographic_image.src %}
     {% set loadingAttr = module.infographic_image.loading != 'disabled' ? 'loading="{{ module.infographic_image.loading }}"' : '' %}
     <img src="{{ module.infographic_image.src }}" alt="{{ module.infographic_image.alt }}" {{ loadingAttr }} />
   {% endif %}
   
-  <ol>
+  <ol>  
     {% for tooltip in module.tooltips %}
       <li class="tooltip">
         <span class="tooltip__number">{{ loop.index }}</span>
