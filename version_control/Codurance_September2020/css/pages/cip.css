@@ -54,6 +54,10 @@
     padding: 0;
 }
 
+.infographic .custom-benefits-we-offer__icon {
+    filter: drop-shadow(0px 3px 10px #00000029);
+}
+
 .infographic .custom-benefits-we-offer__text-container h3 {
     {{ utils.natus() }}
     font-weight: var(--heavy-font-weight);
