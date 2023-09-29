@@ -98,3 +98,8 @@
         columns: 2;
     }
 {% endcall %}
+
+/* Strategic initiatives section */
+.strategic-initiatives {
+    {{ utils.white_to_tango() }}
+}
