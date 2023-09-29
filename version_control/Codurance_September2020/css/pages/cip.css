@@ -162,3 +162,12 @@ main ul {
     margin-inline: auto;
     padding-bottom: var(--space-6);
 }
+
+.article-cards {
+    {{ utils.black_to_navy() }}
+    margin-top: var(--space-7);
+}
+
+.article-cards .card-container {
+    transform: translateY(-100px);
+}

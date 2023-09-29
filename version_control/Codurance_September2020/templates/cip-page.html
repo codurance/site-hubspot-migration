@@ -78,10 +78,13 @@ label: CIP (Continuous Improvement Program) Page
     extra_classes="testimonials-slider"
   %}
 
-  {% module "article_cards" 
-    label="Article cards listing" 
-    path="../modules/Simple-Card.module"
-  %}
+  <section class="article-cards">
+    {% module "article_cards"
+      label="Article cards listing"
+      path="../modules/Simple-Card.module"
+      extra_classes="responsive-page-width"
+    %}
+  </section>
       
 </main>
 
