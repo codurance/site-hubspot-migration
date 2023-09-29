@@ -33,18 +33,6 @@ label: CIP (Continuous Improvement Program) Page
     %}
   </section>
 
-  <section class="strategic-initiatives region">
-    {% module "strategic_initiatives_header" 
-      label="Strategic Initiatives Header" 
-      path="@hubspot/section_header" 
-      header_tag="h2" 
-      extra_classes="lateral-spacing"
-    %}
-    {% module "strategic_initiatives_listing" 
-      label="Strategic Initiatives Listing" 
-      path="@hubspot/rich_text"
-    %}
-      
   <section class="benefits">  
     {% module "benefits_intro_text" 
       label="Benefits intro text" 
@@ -62,6 +50,20 @@ label: CIP (Continuous Improvement Program) Page
       extra_classes="lateral-spacing responsive-page-width"
     %}
   </section>
+
+  <section class="strategic-initiatives region">
+    {% module "strategic_initiatives_header" 
+      label="Strategic Initiatives Header" 
+      path="@hubspot/section_header" 
+      header_tag="h2" 
+      extra_classes="lateral-spacing"
+    %}
+    {% module "strategic_initiatives_listing" 
+      label="Strategic Initiatives Listing" 
+      path="@hubspot/rich_text"
+    %}
+
+
 </main>
 
 {% endblock body %}
