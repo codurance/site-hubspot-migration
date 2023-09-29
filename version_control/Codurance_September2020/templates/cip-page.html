@@ -42,7 +42,23 @@ label: CIP (Continuous Improvement Program) Page
     %}
     {% module "strategic_initiatives_listing" 
       label="Strategic Initiatives Listing" 
-      path="@hubspot/rich_text" 
+      path="@hubspot/rich_text"
+    %}
+      
+  <section class="benefits">  
+    {% module "benefits_intro_text" 
+      label="Benefits intro text" 
+      path="../modules/Text-and-image.module" 
+      extra_classes="lateral-spacing responsive-page-width"
+    %}
+    {% module "benefits_cards" 
+      label="Benefits cards" 
+      path="../modules/How-Does-It-Work.module" 
+      extra_classes="lateral-spacing responsive-page-width"
+    %}
+    {% module "benefits_button" 
+      label="Benefits button" 
+      path="../modules/Button.module" 
       extra_classes="lateral-spacing responsive-page-width"
     %}
   </section>
