@@ -65,7 +65,7 @@ label: CIP (Continuous Improvement Program) Page
     %}
   </section>
 
-  <section class="case-studies">
+  <section class="case-studies region">
     {% module "case_studies" 
       label="Case Studies List" 
       path="../modules/Case Study Card Collection.module"
@@ -75,7 +75,12 @@ label: CIP (Continuous Improvement Program) Page
   {% module "testimonials" 
     label="Testimonials listing" 
     path="../modules/Landing Page Modules/LP-testimonial-slider.module"
-    extra_classes="testimonials-slider region"
+    extra_classes="testimonials-slider"
+  %}
+
+  {% module "article_cards" 
+    label="Article cards listing" 
+    path="../modules/Simple-Card.module"
   %}
       
 </main>
