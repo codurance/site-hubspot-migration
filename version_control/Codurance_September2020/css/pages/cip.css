@@ -160,4 +160,5 @@ main ul {
 .testimonials-slider {
     max-width: 30rem; /* overrides default max width */
     margin-inline: auto;
+    padding-bottom: var(--space-6);
 }
