@@ -99,6 +99,24 @@
     }
 {% endcall %}
 
+/* Benefits section */
+
+.benefits {
+    {{ utils.color1_to_color2(
+        "94deg", 
+        "var(--woodsmoke)", 
+        "var(--purple)"
+        ) 
+    }}
+    
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-8);
+}
+
+.benefits .text-and-image__container {
+    color: white;
+}
+
 /* Strategic initiatives section */
 .strategic-initiatives {
     {{ utils.white_to_tango() }}
