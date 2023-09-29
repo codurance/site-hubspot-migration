@@ -1,5 +1,10 @@
 {% import '../utils/utils.css' as utils %}
 
+/* General styles */
+main ul {
+    list-style-position: inside;
+}
+
 /* Hero section */
 .hero {
     {{ utils.color1_to_color2(
@@ -103,3 +108,30 @@
 .strategic-initiatives {
     {{ utils.white_to_tango() }}
 }
+
+.strategic-initiatives h2 {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--dudler-margin);
+}
+
+.strategic-initiatives .secondary-header {
+    max-width: var(--base-max-width);
+}
+
+.strategic-initiatives__listing h3 {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.strategic-initiatives__listing ul {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: var(--space-5);
+}
+
+{% call utils.large_and_extra_large() %}
+    .strategic-initiatives__listing {
+        columns: 3;
+    }
+{% endcall %}
