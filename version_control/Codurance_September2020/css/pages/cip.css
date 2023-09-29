@@ -153,3 +153,11 @@ main ul {
         columns: 3;
     }
 {% endcall %}
+
+
+/* Testimonials section */
+
+.testimonials-slider {
+    max-width: 30rem; /* overrides default max width */
+    margin-inline: auto;
+}
