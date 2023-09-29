@@ -32,6 +32,20 @@ label: CIP (Continuous Improvement Program) Page
       extra_classes="infographic__features lateral-spacing"    
     %}
   </section>
+
+  <section class="strategic-initiatives region">
+    {% module "strategic_initiatives_header" 
+      label="Strategic Initiatives Header" 
+      path="@hubspot/section_header" 
+      header_tag="h2" 
+      extra_classes="lateral-spacing"
+    %}
+    {% module "strategic_initiatives_listing" 
+      label="Strategic Initiatives Listing" 
+      path="@hubspot/rich_text" 
+      extra_classes="lateral-spacing responsive-page-width"
+    %}
+  </section>
 </main>
 
 {% endblock body %}
