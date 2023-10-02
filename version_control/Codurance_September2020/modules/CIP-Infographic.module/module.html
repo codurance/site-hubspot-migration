@@ -1,9 +1,19 @@
 {{ require_css(get_asset_url("../../css/modules/cip-infographic.css")) }}
 
+<div class="infographic__mobile-notice">
+  {% if module.mobile_notice.rotation_image.src %}
+    {% set sizeAttrs = 'width="{{ module.mobile_notice.rotation_image.width }}" height="{{ module.mobile_notice.rotation_image.height }}"' %}
+    <img src="{{ module.mobile_notice.rotation_image.src }}" alt="{{ module.mobile_notice.rotation_image.alt }}" {{ sizeAttrs }}>
+  {% endif %}
+
+  <p>
+    {{ module.mobile_notice.text }}
+  </p>
+</div>
+
 <figure class="infographic__figure">
   {% if module.infographic_image.src %}
-    {% set loadingAttr = module.infographic_image.loading != 'disabled' ? 'loading="{{ module.infographic_image.loading }}"' : '' %}
-    <img src="{{ module.infographic_image.src }}" alt="{{ module.infographic_image.alt }}" {{ loadingAttr }} />
+    <img src="{{ module.infographic_image.src }}" alt="{{ module.infographic_image.alt }}" />
   {% endif %}
   
   <ol>  

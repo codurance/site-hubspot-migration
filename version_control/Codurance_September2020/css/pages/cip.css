@@ -45,8 +45,8 @@ main ul {
 {% endcall %}
 
 /* Infographic section */
-.infographic {
-    padding-top: var(--space-7);
+section.infographic {
+    padding-bottom: unset;
 }
 
 .infographic h2 {

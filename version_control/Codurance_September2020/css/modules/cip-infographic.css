@@ -1,17 +1,36 @@
 {% import '../utils/utils.css' as utils %}
 
-.infographic figure {
+/* Mobile notice */
+.infographic__mobile-notice {
+    display: none;
+}
+
+.infographic__mobile-notice p {
+    {{ utils.natus() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+{% call utils.small() %}
+    .infographic__mobile-notice {
+        display: flex;
+        gap: var(--space-2);
+        margin-bottom: var(--space-3);
+    }
+{% endcall %}
+
+/* Infographic */
+.infographic__figure {
     position: relative;
     container-type: inline-size;
     container-name: infographic;
 }
 
-.infographic figure img {
+.infographic__figure img {
     width: 100%;
     height: auto;
 }
 
-.infographic .tooltip {
+.infographic__figure .tooltip {
     width: 190px;
     position: absolute;
     display: flex;
@@ -20,12 +39,12 @@
 }
 
 {% call utils.small() %}
-    .infographic .tooltip {
+    .infographic__figure .tooltip {
         display: none;
     }
 {% endcall %}
 
-.infographic .tooltip__number {
+.infographic__figure .tooltip__number {
     border-radius: 50%;
     border: 2px solid var(--persimmon);
     font-weight: var(--heavy-font-weight);
@@ -38,11 +57,11 @@
 
 /* The tooltips are sized in relation to the container */
 @container infographic (min-width: 718px) {
-    .infographic .tooltip {
+    .infographic__figure .tooltip {
         max-width: 15.83cqw;
     }
 
-    .infographic .tooltip__number {
+    .infographic__figure .tooltip__number {
         font-size: 2cqw;
         width: 3cqw;
         height: 3cqw;
@@ -50,43 +69,43 @@
 }
 
 /* Tooltips positioning */
-.infographic .tooltip:nth-child(1) {
+.infographic__figure .tooltip:nth-child(1) {
     left: 23%;
     top: 8%;
 }
 
-.infographic .tooltip:nth-child(2) {
+.infographic__figure .tooltip:nth-child(2) {
     left: 8%;
     top: 20%;
 }
 
-.infographic .tooltip:nth-child(3) {
+.infographic__figure .tooltip:nth-child(3) {
     left: 19%;
     top: 31%;
 }
 
-.infographic .tooltip:nth-child(4) {
+.infographic__figure .tooltip:nth-child(4) {
     left: 42%;
     top: 38%;
 }
 
-.infographic .tooltip:nth-child(5) {
+.infographic__figure .tooltip:nth-child(5) {
     left: 53%;
     top: 38%;
 }
 
-.infographic .tooltip:nth-child(6) {
+.infographic__figure .tooltip:nth-child(6) {
     left: 62%;
     top: 38%;
 }
 
-.infographic .tooltip:nth-child(7) {
+.infographic__figure .tooltip:nth-child(7) {
     left: 73%;
     top: 38%;
 }
 /* End tooltips positioning */
 
-.infographic .tooltip__text {
+.infographic__figure .tooltip__text {
     {{ utils.natus() }}
     {{ utils.card_shadow() }}
     {{ utils.card_border_radius() }}
@@ -102,12 +121,12 @@
     transition: all 0.3s;
 }
 
-.infographic .tooltip__number:hover + .tooltip__text {
+.infographic__figure .tooltip__number:hover + .tooltip__text {
     opacity: 1;
     visibility: visible;
 }
 
-.infographic .tooltip__text:before {
+.infographic__figure .tooltip__text:before {
     content: '';
     position: absolute;
     width: 15px;
