@@ -31,7 +31,8 @@ main ul {
         max-width: unset;
     }
 
-    .hero .hs_cos_wrapper_type_inline_rich_text {
+    .hero .hs_cos_wrapper_type_inline_rich_text,
+    .hero .custom-btn {
         margin-left: auto;
         max-width: var(--freed-max-width);
     }
