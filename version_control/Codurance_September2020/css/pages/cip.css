@@ -2,7 +2,7 @@
 
 /* General styles */
 main ul {
-    list-style-position: inside;
+    padding-left: 1rem;
 }
 
 /* Hero section */
