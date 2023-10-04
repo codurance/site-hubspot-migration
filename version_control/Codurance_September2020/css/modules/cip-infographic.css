@@ -60,6 +60,11 @@
     }
 {% endcall %}
 
+.tooltip__number:hover {
+    color: white;
+    background-color: var(--persimmon;
+}
+
 .infographic__figure .tooltip__number {
     border-radius: 50%;
     border: 2px solid var(--persimmon);
@@ -70,6 +75,8 @@
     align-items: center;
     cursor: help;
 }
+
+
 
 /* The tooltips are sized in relation to the container */
 @container infographic (min-width: 718px) {
