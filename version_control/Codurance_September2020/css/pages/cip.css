@@ -139,20 +139,14 @@ section.infographic {
     max-width: var(--base-max-width);
 }
 
-.strategic-initiatives__listing h3 {
+.strategic-initiatives h3 {
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
 }
 
-.strategic-initiatives__listing ul {
-    -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    margin-bottom: var(--space-5);
-}
-
 {% call utils.large_and_extra_large() %}
-    .strategic-initiatives__listing {
-        columns: 3;
+    .strategic-initiatives .custom-how-does-it-work {
+        grid-template-columns: repeat(3, 1fr);
     }
 {% endcall %}
 

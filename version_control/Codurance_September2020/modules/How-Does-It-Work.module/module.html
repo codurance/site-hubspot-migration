@@ -2,11 +2,11 @@
 
 <div class="custom-how-does-it-work">
     {% for item in module.how_does_it_work_items %}
-      <div class="custom-how-does-it-work__card">
+      <div {% if module.apply_card_styling_to_items %}class="custom-how-does-it-work__card"{% endif %}>
         <h3 class="custom-how-does-it-work__title">{{ item.title }}</h3>
-        <p class="custom-how-does-it-work__description">
+        <div class="custom-how-does-it-work__description">
           {{ item.content }}
-        </p>
+        </div>
       </div>
     {% endfor %}
 </div>

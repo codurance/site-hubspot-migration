@@ -1,43 +1,48 @@
-[
-  {
-    "id": "29b052e6-3551-9b6a-df04-13216cc03f33",
-    "name": "how_does_it_work_items",
-    "label": "How does it work items",
-    "required": false,
-    "locked": false,
-    "occurrence": {
-      "min": null,
-      "max": null,
-      "sorting_label_field": "60f9a457-d533-da8e-ac98-6ca4b2cb6d89",
-      "default": null
-    },
-    "children": [
-      {
-        "id": "60f9a457-d533-da8e-ac98-6ca4b2cb6d89",
-        "name": "title",
-        "label": "Title",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "text"
-      },
-      {
-        "id": "bfb18da9-da37-5ef9-d541-83b51d8848ba",
-        "name": "content",
-        "label": "Content",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "richtext"
-      }
-    ],
-    "tab": "CONTENT",
-    "expanded": false,
-    "type": "group",
-    "default": {}
-  }
-]
+[ {
+  "id" : "29b052e6-3551-9b6a-df04-13216cc03f33",
+  "name" : "how_does_it_work_items",
+  "display_width" : null,
+  "label" : "How does it work items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "60f9a457-d533-da8e-ac98-6ca4b2cb6d89",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "60f9a457-d533-da8e-ac98-6ca4b2cb6d89",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "bfb18da9-da37-5ef9-d541-83b51d8848ba",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ ]
+}, {
+  "id" : "aa020be6-476b-13a2-2c05-0ce7bdd75e4f",
+  "name" : "apply_card_styling_to_items",
+  "display_width" : null,
+  "label" : "Apply card styling to items",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+} ]
