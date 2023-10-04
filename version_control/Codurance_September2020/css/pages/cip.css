@@ -75,6 +75,7 @@ section.infographic {
 
 .infographic .custom-benefits-we-offer__icon {
     filter: drop-shadow(0px 3px 10px #00000029);
+    margin-top: calc(-1 * var(--space--1));
 }
 
 .infographic .custom-benefits-we-offer__text-container h3 {
