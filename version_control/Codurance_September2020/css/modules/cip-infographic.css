@@ -5,6 +5,22 @@
     display: none;
 }
 
+.infographic__mobile-notice img {
+    animation: rotate 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes rotate {
+    0% {
+		transform: rotate(0deg)
+    }
+    50% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(90deg)
+    }
+}
+
 .infographic__mobile-notice p {
     {{ utils.natus() }}
     font-weight: var(--heavy-font-weight);
