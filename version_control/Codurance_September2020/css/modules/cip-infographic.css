@@ -60,9 +60,9 @@
     }
 {% endcall %}
 
-.tooltip__number:hover {
+.infographic__figure .tooltip__number:hover {
     color: white;
-    background-color: var(--persimmon;
+    background-color: var(--persimmon);
 }
 
 .infographic__figure .tooltip__number {
