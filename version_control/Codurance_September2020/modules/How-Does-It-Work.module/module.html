@@ -1,10 +1,10 @@
 {{ require_css(get_asset_url("../../css/modules/how-does-it-work.css")) }}
 
-<div class="custom-how-does-it-work">
+<div class="rich-texts-listing">
     {% for item in module.how_does_it_work_items %}
-      <div {% if module.apply_card_styling_to_items %}class="custom-how-does-it-work__card"{% endif %}>
-        <h3 class="custom-how-does-it-work__title">{{ item.title }}</h3>
-        <div class="custom-how-does-it-work__description">
+      <div class="rich-text {% if module.apply_card_styling_to_items %}rich-text--card{% endif %}">
+        <h3 class="rich-text__title">{{ item.title }}</h3>
+        <div class="rich-text__description">
           {{ item.content }}
         </div>
       </div>

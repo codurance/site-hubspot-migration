@@ -1,20 +1,18 @@
 {% import '../utils/utils.css' as utils %}
 
-.custom-how-does-it-work {
+.rich-texts-listing {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.2em;
 }
 
 {% call utils.medium_large_and_extra_large() %}
-
-  .custom-how-does-it-work {
-    grid-template-columns: 1fr 1fr; 
+  .rich-texts-listing {
+    grid-template-columns: repeat(2, 1fr); 
   }
-
 {% endcall %}
 
-.custom-how-does-it-work__card {
+.rich-text--card {
   {{ utils.card_shadow() }}
   background-color: white;
   padding: 2em;
@@ -22,14 +20,14 @@
 }
 
 
-.custom-how-does-it-work__title {
+.rich-text__title {
   {{ utils.base() }}
   font-weight: var(--middle-font-weight);
 }
 
 
 {% call utils.small() %}
-  .custom-how-does-it-work__description {
+  .rich-text__description {
     {{ utils.natus() }}
   }
 {% endcall %}

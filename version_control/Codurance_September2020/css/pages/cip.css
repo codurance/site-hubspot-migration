@@ -145,7 +145,7 @@ section.infographic {
 }
 
 {% call utils.large_and_extra_large() %}
-    .strategic-initiatives .custom-how-does-it-work {
+    .strategic-initiatives .rich-texts-listing {
         grid-template-columns: repeat(3, 1fr);
     }
 {% endcall %}
