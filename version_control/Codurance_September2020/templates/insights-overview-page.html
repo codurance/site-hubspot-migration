@@ -58,12 +58,10 @@
     </div>
   </section>
   
-  <section class="katalyst lateral-spacing">
-    {% section_header 'random-katas-header' label="Random Katas Header" no_wrapper=True %}
-    {% module 'random-katas' path='../modules/Random-Katas.module'
-      label="Random Katas" no_wrapper=True %}
-    {% module 'random-katas-button' path='../modules/Button.module' 
-      label ="Button Random Katas" no_wrapper=True %}
+  <section class="katas lateral-spacing">
+    {% section_header 'katas_header' label="Katas Header" %}
+    {% module 'katas_listing' path='../modules/Katas-Listing.module' label="Katas Listing" %}
+    {% module 'katas_button' path='../modules/Button.module' label ="Katas Button" %}
 
     {% section_header 'screen-katas-headline' label="Screen Katas Headline" no_wrapper=True %} 
     {% module 'screen-katas' path='../modules/Videos-From-HubDB.module'
