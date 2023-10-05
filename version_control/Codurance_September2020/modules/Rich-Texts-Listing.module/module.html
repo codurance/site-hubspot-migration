@@ -1,0 +1,14 @@
+{{ require_css(get_asset_url("../../css/modules/rich-texts-listing.css")) }}
+
+<div class="rich-texts-listing">
+    {% for item in module.how_does_it_work_items %}
+      <div class="rich-text {% if module.apply_card_styling_to_items %}rich-text--card{% endif %}">
+        <h3 class="rich-text__title">{{ item.title }}</h3>
+        <div class="rich-text__description">
+          {{ item.content }}
+        </div>
+      </div>
+    {% endfor %}
+</div>
+
+

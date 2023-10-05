@@ -1,0 +1,83 @@
+[ {
+  "id" : "a8487ea1-081e-767d-8cca-17c28a6b7461",
+  "name" : "mobile_notice",
+  "display_width" : null,
+  "label" : "Mobile notice",
+  "help_text" : "Message shown on mobile devices recommending the user to rotate the mobile in order to have the best experience",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "923ad143-56bd-303e-c776-c1a498c2dc2b",
+    "name" : "rotation_image",
+    "display_width" : null,
+    "label" : "Rotation image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "7f430789-062b-f786-1ac2-64bae13691d9",
+    "name" : "text",
+    "display_width" : null,
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "rotation_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "disabled"
+    }
+  }
+}, {
+  "id" : "57934164-0ada-8a1a-ff8e-68f430bdf0fa",
+  "name" : "infographic_image",
+  "display_width" : null,
+  "label" : "Infographic image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "eager"
+  }
+}, {
+  "id" : "370b42fc-027f-7d68-ab57-bed4bab39067",
+  "name" : "tooltips",
+  "display_width" : null,
+  "label" : "Tooltips",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

@@ -1,284 +1,348 @@
-[ {
-  "id" : "79d9defb-1c7b-32d0-256b-bdb6c48d9a5e",
-  "name" : "image_order",
-  "display_width" : null,
-  "label" : "Image order",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "img-right", "Image right" ], [ "img-left", "Image Left" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice"
-}, {
-  "id" : "409d9294-21ee-d095-7f5b-40b0b3fc8b54",
-  "name" : "title",
-  "display_width" : null,
-  "label" : "Title",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
-}, {
-  "id" : "5257a3c3-b412-24b3-247b-0d08f391e9f7",
-  "name" : "description_text",
-  "display_width" : null,
-  "label" : "Description text",
-  "required" : false,
-  "locked" : false,
-  "type" : "richtext",
-  "default" : "<h2>Codurance is a <strong>global software consultancy</strong> that helps businesses build a better sustainable technical capability to support growth</h2>\n<p></p><p>We understand that no two organisations are the same. Our adaptable approach enables us to focus support on where you need it most. We take the time to understand your business needs – technical, operational, cultural and functional. Then we work alongside your team, augmenting your current capacity and capabilities, to help you create solutions that are sustainable, flexible and scalable.</p>"
-}, {
-  "id" : "2d46a554-1910-5c42-c62f-a43077b3926f",
-  "name" : "image_field",
-  "display_width" : null,
-  "label" : "Image",
-  "required" : false,
-  "locked" : false,
-  "responsive" : false,
-  "resizable" : false,
-  "show_loading" : true,
-  "type" : "image",
-  "default" : {
-    "size_type" : "exact",
-    "src" : "",
-    "alt" : null,
-    "loading" : "disabled"
-  }
-}, {
-  "id" : "fbef4bd4-a91e-088a-7a16-0819680fd9ca",
-  "name" : "style",
-  "display_width" : null,
-  "label" : "Style",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "bd4313f2-3531-a5cb-a4e4-7165ca2df0e2",
-    "name" : "mobile",
+[
+  {
+   "choices": [
+    [
+     "img-right",
+     "Image right"
+    ],
+    [
+     "img-left",
+     "Image Left"
+    ]
+   ],
+   "display": "select",
+   "display_width": null,
+   "id": "79d9defb-1c7b-32d0-256b-bdb6c48d9a5e",
+   "label": "Image order",
+   "locked": false,
+   "multiple": false,
+   "name": "image_order",
+   "preset": null,
+   "reordering_enabled": true,
+   "required": false,
+   "type": "choice"
+  },
+  {
+   "allow_new_line": false,
+   "display_width": null,
+   "id": "409d9294-21ee-d095-7f5b-40b0b3fc8b54",
+   "label": "Title",
+   "locked": false,
+   "name": "title",
+   "required": false,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
+  },
+  {
+   "type": "choice",
+   "id": "a2a93f51-59f5-3f71-d66f-23cc281da282",
+   "display": "select",
+   "choices": [
+    [
+     "h1",
+     "H1"
+    ],
+    [
+     "h2",
+     "H2"
+    ],
+    [
+     "h3",
+     "H3"
+    ],
+    [
+     "h4",
+     "H4"
+    ],
+    [
+     "h5",
+     "H5"
+    ],
+    [
+     "h6",
+     "H6"
+    ]
+   ],
+   "label": "Title tag",
+   "name": "title_tag",
+   "default": "h2",
+   "required": true
+  },
+  {
+   "default": "<h2>Codurance is a <strong>global software consultancy</strong> that helps businesses build a better sustainable technical capability to support growth</h2>\n<p></p><p>We understand that no two organisations are the same. Our adaptable approach enables us to focus support on where you need it most. We take the time to understand your business needs – technical, operational, cultural and functional. Then we work alongside your team, augmenting your current capacity and capabilities, to help you create solutions that are sustainable, flexible and scalable.</p>",
+   "display_width": null,
+   "id": "5257a3c3-b412-24b3-247b-0d08f391e9f7",
+   "label": "Description text",
+   "locked": false,
+   "name": "description_text",
+   "required": false,
+   "type": "richtext"
+  },
+  {
+   "default": {
+    "size_type": "exact",
+    "src": "",
+    "alt": null,
+    "loading": "disabled"
+   },
+   "display_width": null,
+   "id": "2d46a554-1910-5c42-c62f-a43077b3926f",
+   "label": "Image",
+   "locked": false,
+   "name": "image_field",
+   "required": false,
+   "resizable": false,
+   "responsive": false,
+   "show_loading": true,
+   "type": "image"
+  },
+  {
+    "id" : "fbef4bd4-a91e-088a-7a16-0819680fd9ca",
+    "name" : "style",
     "display_width" : null,
-    "label" : "Mobile",
+    "label" : "Style",
     "required" : false,
     "locked" : false,
     "children" : [ {
-      "id" : "e459841b-d119-2996-6508-e1c13f2e64d8",
-      "name" : "image_alignment",
+      "id" : "bd4313f2-3531-a5cb-a4e4-7165ca2df0e2",
+      "name" : "mobile",
       "display_width" : null,
-      "label" : "Image alignment",
+      "label" : "Mobile",
       "required" : false,
       "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "start", "Left" ], [ "center", "Center" ], [ "end", "Right" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "center"
+      "children" : [ {
+        "id" : "e459841b-d119-2996-6508-e1c13f2e64d8",
+        "name" : "image_alignment",
+        "display_width" : null,
+        "label" : "Image alignment",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "start", "Left" ], [ "center", "Center" ], [ "end", "Right" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "center"
+      }, {
+        "id" : "2bacea72-5f8b-8245-2871-37e1c0c5df0d",
+        "name" : "hide_image_on_mobile",
+        "display_width" : null,
+        "label" : "Hide image on mobile",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : false
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "image_alignment" : "center",
+        "hide_image_on_mobile" : false
+      }
     }, {
-      "id" : "2bacea72-5f8b-8245-2871-37e1c0c5df0d",
-      "name" : "hide_image_on_mobile",
+      "id" : "9284e708-6557-6b2f-add9-786c165ca489",
+      "name" : "desktop",
       "display_width" : null,
-      "label" : "Hide image on mobile",
+      "label" : "Desktop",
       "required" : false,
       "locked" : false,
-      "display" : "toggle",
-      "type" : "boolean",
-      "default" : false
+      "children" : [ {
+        "id" : "3a232f98-6ae4-d49c-a9f3-30c768acaecf",
+        "name" : "image_alignment",
+        "display_width" : null,
+        "label" : "Image alignment",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "start", "Top" ], [ "center", "Center" ], [ "end", "Bottom" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "center"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "image_alignment" : "center"
+      }
     } ],
     "tab" : "STYLE",
     "expanded" : false,
     "type" : "group",
     "default" : {
-      "image_alignment" : "center",
-      "hide_image_on_mobile" : false
-    }
-  }, {
-    "id" : "9284e708-6557-6b2f-add9-786c165ca489",
-    "name" : "desktop",
-    "display_width" : null,
-    "label" : "Desktop",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "3a232f98-6ae4-d49c-a9f3-30c768acaecf",
-      "name" : "image_alignment",
-      "display_width" : null,
-      "label" : "Image alignment",
-      "required" : false,
-      "locked" : false,
-      "display" : "select",
-      "choices" : [ [ "start", "Top" ], [ "center", "Center" ], [ "end", "Bottom" ] ],
-      "multiple" : false,
-      "reordering_enabled" : true,
-      "preset" : null,
-      "type" : "choice",
-      "default" : "center"
-    } ],
-    "tab" : "STYLE",
-    "expanded" : false,
-    "type" : "group",
-    "default" : {
-      "image_alignment" : "center"
-    }
-  } ],
-  "tab" : "STYLE",
-  "expanded" : false,
-  "type" : "group",
-  "default" : {
-    "mobile" : {
-      "image_alignment" : "center",
-      "hide_image_on_mobile" : false
-    },
-    "desktop" : {
-      "image_alignment" : "center"
-    }
-  }
-}, {
-  "id" : "b6313458-c454-9679-bb22-f14a0b970af9",
-  "name" : "button",
-  "display_width" : null,
-  "label" : "Button",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
-    "name" : "button_type",
-    "display_width" : null,
-    "label" : "Button Type",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "std", "Standard" ], [ "cta", "CTA" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice"
-  }, {
-    "id" : "052e50b3-0160-3bbd-31ff-9286554a34d9",
-    "name" : "link_field",
-    "display_width" : null,
-    "label" : "Link",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
-      "controlling_field_path" : null,
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null,
-      "hidden_subfields" : null
-    },
-    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
-    "show_advanced_rel_options" : false,
-    "type" : "link",
-    "default" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
+      "mobile" : {
+        "image_alignment" : "center",
+        "hide_image_on_mobile" : false
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
+      "desktop" : {
+        "image_alignment" : "center"
+      }
     }
-  }, {
-    "id" : "efeb4688-d3d0-43fe-6970-387048bfbbab",
-    "name" : "text_field",
-    "display_width" : null,
-    "label" : "Text",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
-      "controlling_field_path" : null,
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null,
-      "hidden_subfields" : null
+  },
+  {
+   "children": [
+    {
+     "choices": [
+      [
+       "std",
+       "Standard"
+      ],
+      [
+       "cta",
+       "CTA"
+      ]
+     ],
+     "display": "select",
+     "display_width": null,
+     "id": "024cc72f-9beb-eae5-3d52-5cb94868332e",
+     "label": "Button Type",
+     "locked": false,
+     "multiple": false,
+     "name": "button_type",
+     "preset": null,
+     "reordering_enabled": true,
+     "required": false,
+     "type": "choice"
     },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Button"
-  }, {
-    "id" : "80208117-bd12-c83a-270d-486291308c62",
-    "name" : "bookmark_id",
-    "display_width" : null,
-    "label" : "Bookmark id",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "visibility" : {
-      "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
-      "controlling_field_path" : null,
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null,
-      "hidden_subfields" : null
-    },
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
-  }, {
-    "id" : "ba2e1cdf-82e7-170a-3430-df70b5a05121",
-    "name" : "button_style",
-    "display_width" : null,
-    "label" : "Button Style",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
-      "controlling_field_path" : null,
-      "controlling_value_regex" : "std",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null,
-      "hidden_subfields" : null
-    },
-    "display" : "select",
-    "choices" : [ [ "button-primary", "Primary" ], [ "button-secondary", "Secondary" ], [ "text-cta-primary text-cta--right-arrow", "Arrow Link" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "default" : "button-primary"
-  }, {
-    "id" : "309ecca5-6ddb-05cd-32b4-b504686180bf",
-    "name" : "cta_field",
-    "display_width" : null,
-    "label" : "CTA",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : "024cc72f-9beb-eae5-3d52-5cb94868332e",
-      "controlling_field_path" : null,
-      "controlling_value_regex" : "cta",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null,
-      "hidden_subfields" : null
-    },
-    "type" : "cta"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : {
-    "link_field" : {
-      "url" : {
-        "content_id" : null,
-        "type" : "EXTERNAL",
-        "href" : ""
+    {
+     "default": {
+      "url": {
+       "content_id": null,
+       "type": "EXTERNAL",
+       "href": ""
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
+      "open_in_new_tab": false,
+      "no_follow": false
+     },
+     "display_width": null,
+     "id": "052e50b3-0160-3bbd-31ff-9286554a34d9",
+     "label": "Link",
+     "locked": false,
+     "name": "link_field",
+     "required": false,
+     "show_advanced_rel_options": false,
+     "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "BLOG"
+     ],
+     "type": "link",
+     "visibility": {
+      "controlling_field": "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_value_regex": "std",
+      "operator": "EQUAL"
+     }
     },
-    "text_field" : "Button",
-    "button_style" : "button-primary"
+    {
+     "allow_new_line": false,
+     "default": "Button",
+     "display_width": null,
+     "id": "efeb4688-d3d0-43fe-6970-387048bfbbab",
+     "label": "Text",
+     "locked": false,
+     "name": "text_field",
+     "required": false,
+     "show_emoji_picker": false,
+     "type": "text",
+     "validation_regex": "",
+     "visibility": {
+      "controlling_field": "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_value_regex": "std",
+      "operator": "EQUAL"
+     }
+    },
+    {
+     "allow_new_line": false,
+     "display_width": null,
+     "id": "80208117-bd12-c83a-270d-486291308c62",
+     "label": "Bookmark id",
+     "locked": false,
+     "name": "bookmark_id",
+     "required": false,
+     "show_emoji_picker": false,
+     "type": "text",
+     "validation_regex": "",
+     "visibility": {
+      "controlling_field": "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_value_regex": "std",
+      "operator": "EQUAL"
+     }
+    },
+    {
+     "choices": [
+      [
+       "button-primary",
+       "Primary"
+      ],
+      [
+       "button-secondary",
+       "Secondary"
+      ],
+      [
+       "text-cta-primary text-cta--right-arrow",
+       "Arrow Link"
+      ]
+     ],
+     "default": "button-primary",
+     "display": "select",
+     "display_width": null,
+     "id": "ba2e1cdf-82e7-170a-3430-df70b5a05121",
+     "label": "Button Style",
+     "locked": false,
+     "multiple": false,
+     "name": "button_style",
+     "preset": null,
+     "reordering_enabled": true,
+     "required": false,
+     "type": "choice",
+     "visibility": {
+      "controlling_field": "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_value_regex": "std",
+      "operator": "EQUAL"
+     }
+    },
+    {
+     "display_width": null,
+     "id": "309ecca5-6ddb-05cd-32b4-b504686180bf",
+     "label": "CTA",
+     "locked": false,
+     "name": "cta_field",
+     "required": false,
+     "type": "cta",
+     "visibility": {
+      "controlling_field": "024cc72f-9beb-eae5-3d52-5cb94868332e",
+      "controlling_value_regex": "cta",
+      "operator": "EQUAL"
+     }
+    }
+   ],
+   "default": {
+    "link_field": {
+     "url": {
+      "content_id": null,
+      "type": "EXTERNAL",
+      "href": ""
+     },
+     "open_in_new_tab": false,
+     "no_follow": false
+    },
+    "text_field": "Button",
+    "button_style": "button-primary"
+   },
+   "display_width": null,
+   "expanded": false,
+   "id": "b6313458-c454-9679-bb22-f14a0b970af9",
+   "label": "Button",
+   "locked": false,
+   "name": "button",
+   "required": false,
+   "tab": "CONTENT",
+   "type": "group"
   }
-} ]
+ ]
