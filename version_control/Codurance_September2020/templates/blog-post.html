@@ -312,13 +312,14 @@ label: Blog Post
     no_wrapper=True
   %}
 
-  {% module "newsletter_exit_popup"
-    path="../modules/Newsletter Exit Popup.module",
-    label="Newsletter exit popup", 
-    title="{{ newsletter_copy.pending.header }}",
-    subtitle="{{ newsletter_copy.pending.text }}",
-    sign_up_form={ form_id: "{{ newsletter_copy.form_id }}", message: "{{ newsletter_copy.success_text }}" },
-    no_wrapper=True
-  %}
-
-  {% endblock body %}
+  {% if locale == 'en' || locale == 'pt' %}
+    {% module "newsletter_exit_popup"
+      path="../modules/Newsletter Exit Popup.module",
+      label="Newsletter exit popup", 
+      title="{{ newsletter_copy.pending.header }}",
+      subtitle="{{ newsletter_copy.pending.text }}",
+      sign_up_form={ form_id: "{{ newsletter_copy.form_id }}", message: "{{ newsletter_copy.success_text }}" },
+      no_wrapper=True
+    %}
+  {% endif %}
+{% endblock body %}
