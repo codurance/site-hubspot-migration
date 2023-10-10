@@ -136,6 +136,7 @@
   }
 {% endcall %}
 
+
 .blog-author-info__name {
   {{ utils.base() }}
   font-weight: var(--middle-font-weight);
