@@ -69,14 +69,18 @@
 
 .contact-us__wrapper {
   display: flex;
-  justify-content: center;
   gap: var(--space-6);
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-5);
+  max-width: var(--content-max-width);
+  margin-inline: auto;
 }
 
 
 .hs-get-in-touch-section {
+  position: sticky;
+  top: var(--space-5);
   max-width: 700px !important;
-  translate: 0 calc(-1 * var(--space-5));
   height: 100%;
   background-color: white;
   {{ utils.card_shadow() }}
