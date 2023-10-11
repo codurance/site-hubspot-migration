@@ -1,6 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
-.hs-contact-us-section1 .dnd-section {
+/* .hs-contact-us-section1 .dnd-section {
   padding-top: 50px;
 }
 
@@ -64,4 +64,27 @@
   .hs-contact-us-section1 .dnd-section {
     padding-bottom: 70px;
   }
-{% endcall %}
+{% endcall %} */
+
+
+.contact-us__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+}
+
+
+.hs-get-in-touch-section {
+  max-width: 700px !important;
+  translate: 0 calc(-1 * var(--space-5));
+  height: 100%;
+  background-color: white;
+  {{ utils.card_shadow() }}
+  {{ utils.card_border_radius() }}
+
+}
+
+.hs-get-in-touch-section form {
+  padding: var(--space-5);
+}
+
