@@ -1,17 +1,25 @@
 {% import '../utils/utils.css' as utils %}
 
+.offices-country-group:not(:first-child) {
+    margin-top: var(--space-5);
+}
+
+.offices-country-group h2 {
+    font-weight: var(--heavy-font-weight);
+}
+
 .office {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    gap: var(--space-4);
 }
 
 .office:not(:first-child) {
-    margin-top: var(--space-2);
+    margin-top: var(--space-3);
 }
         
 .office__image {
-    max-width: 6rem;
+    max-width: 5rem;
 }
 
 .office__content h3,
