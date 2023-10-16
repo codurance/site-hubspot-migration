@@ -13,6 +13,17 @@
     "default" : null
   },
   "children" : [ {
+    "id" : "e644e994-bc82-2c3e-34f4-5290031b4080",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
     "id" : "f30fd14c-1a4b-e95f-4147-1a452d465023",
     "name" : "office",
     "display_width" : null,
