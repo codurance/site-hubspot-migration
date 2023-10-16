@@ -18,7 +18,6 @@
   background-color: white;
   {{ utils.card_shadow() }}
   {{ utils.card_border_radius() }}
-
 }
 
 .hs-get-in-touch-section h3 {
@@ -35,3 +34,14 @@
   padding: var(--space-5);
 }
 
+
+{% call utils.small_and_medium() %}
+  .contact-us__wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .hs-get-in-touch-section {
+    position: static;
+  }
+{% endcall %}
