@@ -22,6 +22,12 @@
 
 }
 
+.hs-get-in-touch-section h3 {
+  {{ utils.freed() }}
+  padding-inline: var(--space-4);
+  padding-top: var(--space-5);
+}
+
 .hs-get-in-touch-section form {
   padding: var(--space-5);
 }
