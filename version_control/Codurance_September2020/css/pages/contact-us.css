@@ -1,67 +1,42 @@
 {% import '../utils/utils.css' as utils %}
 
-.hs-contact-us-section1 .dnd-section {
-  padding-top: 50px;
+
+.contact-us__wrapper {
+  display: flex;
+  gap: var(--space-6);
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-5);
+  max-width: var(--content-max-width);
+  margin-inline: auto;
 }
 
-.hs-contact-us-section1 .dnd-section > .row-fluid {
-  flex-direction: row;
-  max-width: 1340px;
-  padding-left: 50px;
-  padding-right: 50px;
+.hs-get-in-touch-section {
+  margin-top: var(--space-5);
+  max-width: 600px;
+  height: 100%;
+  background-color: white;
+  {{ utils.card_shadow() }}
+  {{ utils.card_border_radius() }}
 }
 
-.hs-contact-us-section1 .dnd-section > .row-fluid > .span4 {
-  flex-grow: 1;
-  flex-shrink: 1;
-  margin: 0;
-  max-width: 33.3333%;
-  padding-left: 20px;
-  padding-right: 20px;
+.hs-get-in-touch-section h3 {
+  {{ utils.freed() }}
+  padding-inline: var(--space-4);
+  padding-top: var(--space-5);
+}
+
+.hs-get-in-touch-section .hs-button.primary {
   width: 100%;
 }
 
-{% call utils.medium_large_and_extra_large() %}
-  .hs-contact-us-section1 .dnd-section {
-    padding-bottom: 200px;
-  }
-{% endcall %}
+.hs-get-in-touch-section form {
+  padding: var(--space-5);
+}
 
-{% call utils.large() %}
-  .hs-contact-us-section1 .dnd-section > .row-fluid {
-    padding-left: 30px;
-    padding-right: 50px;
-  }
-{% endcall %}
 
 {% call utils.small_and_medium() %}
-  .hs-contact-us-section1 .dnd-section > .row-fluid {
-    flex-wrap: wrap;
-  }
-  .hs-contact-us-section1 .dnd-section>.row-fluid > .span4 {
-    margin-bottom: 19px;
-    max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-{% endcall %}
-
-{% call utils.medium() %}
-  .hs-contact-us-section1 .dnd-section > .row-fluid {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-  .hs-contact-us-section1 .dnd-section {
-    padding-bottom: 180px;
-  }
-{% endcall %}
-
-{% call utils.small() %}
-  .hs-contact-us-section1 .dnd-section > .row-fluid {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .hs-contact-us-section1 .dnd-section {
-    padding-bottom: 70px;
+  .contact-us__wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
   }
 {% endcall %}
