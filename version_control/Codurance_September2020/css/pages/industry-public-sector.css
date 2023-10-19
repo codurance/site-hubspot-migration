@@ -1,9 +1,5 @@
 {% import "../utils/utils.css" as utils %}
 
-.cta-banner {
-  {{ utils.slate_to_woodsmoke() }}
-}
-
 .cta-banner .cta-block {
   padding-top: var(--space-6);
   padding-bottom: var(--space-6);
@@ -23,10 +19,10 @@
 }
 
 .related-services h2 {
-  {{ utils.dudler() }}
-  {{ utils.dudler_margin() }}
+  {{ utils.freed() }}
+  margin-bottom: var(--freed-margin);
   font-weight: var(--heavy-font-weight);
-  max-width: var(--dudler-max-width);
+  max-width: var(--freed-max-width);
 }
 
 .partners {
@@ -35,23 +31,25 @@
   padding-bottom: var(--space-7);
 }
 
+.partners__header {
+  max-width: var(--freed-max-width);
+}
+
 .partners h2 {
   {{ utils.freed() }}
   {{ utils.freed_margin() }}
   font-weight: var(--heavy-font-weight);
-  max-width: var(--freed-max-width);
 }
 
 .partners h3 {
   {{ utils.base() }}
   {{ utils.base_margin() }}
   font-weight: var(--heavy-font-weight);
-  max-width: var(--base-max-width);
   margin-top: var(--space-7);
 }
 
 .partners p:not(:first-child) {
-  margin-top: var(--space-4);
+  margin-top: var(--base-margin);
 }
 
 .partners .cm-partners-logo-group {
@@ -65,24 +63,32 @@
   }
 {% endcall %}
 
+{% call utils.small_and_medium() %}
+  .partners p {
+    {{ utils.natus() }}
+  }
+{% endcall %}
+
 {% call utils.small() %}
   .partners .cm-partners-logos-item {
     flex: 1 1 45%;
   }
 {% endcall %}
 
-.case-studies .section-header h2 {
-  {{ utils.dudler() }}
-}
-
-.case-studies .section-header p {
-  {{ utils.freed() }}
-  font-weight: var(--light-font-weight);
+.case-studies .section-header {
+  margin-bottom: 0 !important;
 }
 
 .case-studies .text-and-image__copy h2 {
   {{ utils.freed() }}
 }
+
+{% call utils.large_and_extra_large() %}
+  .case-studies .section-header p {
+    {{ utils.freed() }}
+    font-weight: var(--light-font-weight);
+  }
+{% endcall %}
 
 .contact-us-banner {
   {{ utils.slate_to_woodsmoke() }}
@@ -98,7 +104,8 @@
 }
 
 .recommended-insights__header h2 {
-  margin-bottom: var(--dudler-margin);
+  {{ utils.freed() }}
+  margin-bottom: var(--freed-margin);
   font-weight: var(--heavy-font-weight);
 }
 

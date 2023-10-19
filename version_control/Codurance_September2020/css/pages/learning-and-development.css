@@ -1,0 +1,143 @@
+{% import '../utils/utils.css' as utils %}
+
+/* DND areas */
+.banner-area,
+.contact-area {
+  color: white;
+} 
+
+/* Overrides the default padding 0 */
+.banner-area .dnd-section {
+  padding-top: var(--space-4) !important;
+  padding-bottom: var(--space-7) !important;
+}
+
+.banner-area .text-and-image__container {
+  max-width: var(--content-max-width);
+}
+
+.banner-area .text-and-image__copy {
+  max-width: unset;
+  flex: 1 1;
+}
+
+.banner-area .text-and-image__copy h2 {
+  {{ utils.eames() }}
+}
+
+.banner-area .text-and-image__copy p {
+  {{ utils.freed() }}
+  font-weight: var(--light-font-weight);
+}
+
+.banner-area .client-logos__content {
+  margin-top: var(--space-5);
+}
+
+.banner-area .client-logos__content h2 {
+  color: white;
+}
+
+.banner-area .client-logos__logos-group {
+  filter: brightness(0) invert(1);
+}
+
+{% call utils.extra_large() %}
+  .banner-area .dnd-row {
+      max-width: var(--content-max-width);
+      margin-inline: auto;
+  }
+{% endcall %}
+
+{% call utils.large() %}
+  .banner-area .dnd-row {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+{% endcall %}
+
+{% call utils.medium() %}
+  .banner-area .dnd-row {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .banner-area .dnd-row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+{% endcall %}
+
+/* Katalyst section */
+
+.katalyst {
+  --gap: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  background: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/06_Learning%20and%20development/LD_katalyst_banner_BG.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  max-width: var(--content-inner-max-width);
+  margin-inline: auto;
+}
+
+.katalyst > * {
+  flex: 1 1 calc(50% - var(--gap));
+  width: 100%;
+}
+
+.katalyst .page-header.section-header {
+   /* Overrides default margin bottom */
+  margin-bottom: revert !important;
+}
+
+.katalyst .section-header h2 {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+  margin-bottom: var(--space-2);
+}
+
+.katalyst div.custom-btn {
+  margin-top: var(--space-3);
+}
+
+.katalyst__video .oembed_container,
+.katalyst__video iframe {
+  /* Overriding the default sizing styles */
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+{% call utils.small_and_medium() %}
+  .katalyst {
+    background-size: cover;
+    flex-direction: column;
+  }
+{% endcall %}
+
+/* Contact area */
+
+.contact-area .page-header.section-header {
+  max-width: var(--content-inner-max-width);
+}
+
+.contact-area .page-header.section-header h2 {
+  max-width: var(--dudler-max-width);
+}
+
+.contact-area .page-header.section-header p {
+  max-width: var(--freed-max-width);
+}
+
+.contact-area .course-card-group {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+}
+
+
+
+

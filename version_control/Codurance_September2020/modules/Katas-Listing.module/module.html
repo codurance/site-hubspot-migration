@@ -1,11 +1,15 @@
-{{ require_css(get_asset_url("../../css/modules/random-katas.css")) }}
+{{ require_css(get_asset_url("../../css/modules/katas-listing.css")) }}
 
 {% set max_retrievable_posts = 200 %}
-{% set kata_posts = blog_popular_posts(module.katalyst_blog, max_retrievable_posts) %}
-{% set random_katas = kata_posts | shuffle | slice(4) | first %}
+{% set blog_posts = blog_popular_posts(module.katas_blog, max_retrievable_posts) %}
+{% set kata_posts = blog_posts | shuffle | slice(4) | first %}
+    
+{% if !module.display_random_katas %}
+    {% set kata_posts = content_by_ids(module.kata_posts) %}
+{% endif %}
 
 <div class="kata-listing">
-    {% for kata in random_katas %}
+    {% for kata in kata_posts %}
         {% set featured_image = resize_image_url(kata.featured_image, 0, 0, 600) %}
 
         <article class="kata" 

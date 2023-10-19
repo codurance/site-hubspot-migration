@@ -1,0 +1,61 @@
+{% import '../utils/utils.css' as utils %}
+
+{% set lateral_page_padding = '1em' %}
+{% set text_max_width = '50ch' %}
+
+.benefits-wrapper{
+  margin: 0 auto;
+  padding: 0 {{lateral_page_padding}};
+  max-width: 1000px;
+
+}
+
+.benefits__heading {
+  {{ utils.dudler() }}
+  font-weight: var(--heavy-font-weight);
+  max-width: {{ text_max_width }} ;
+}
+
+.benefits-container {
+  margin: 1em auto 2em;
+}
+
+.custom-benefits-we-offer {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 1em;
+  padding-top: 2em;
+  max-width: {{ text_max_width }};
+}
+
+.custom-benefits-we-offer__text-container h3 {
+  {{ utils.base() }}
+  font-weight: var(--heavy-font-weight);
+  
+}
+
+.custom-benefits-we-offer__text-container p {
+  {{ utils.natus() }}
+  margin-top: 0.5em;
+}
+
+
+.custom-benefits-we-offer__icon {
+  filter: drop-shadow(5px 5px 7px var(--tango));
+  width: 3.5em;
+  
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .benefits-container{
+      display: grid;
+      grid-template: auto / 1fr 1fr;
+      gap: var(--space-4);
+    }
+
+    .custom-benefits-we-offer__text-container h3 {
+      {{ utils.freed() }}
+    }
+
+{% endcall %}

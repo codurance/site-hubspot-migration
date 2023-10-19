@@ -1,0 +1,169 @@
+{% import '../utils/utils.css' as utils %}
+
+/* General styles */
+main ul {
+    padding-left: 1rem;
+}
+
+/* Hero section */
+.hero {
+    {{ utils.color1_to_color2(
+        "94deg", 
+        "var(--woodsmoke)", 
+        "var(--purple)"
+    ) }}
+
+    color: white;
+}
+
+.hero .text-and-image__container {
+    max-width: var(--content-max-width);
+}
+
+.hero .text-and-image__copy h2 {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+{% call utils.large_and_extra_large() %}
+    .hero .text-and-image__copy {
+        flex: 1 1;
+        max-width: unset;
+    }
+
+    .hero .hs_cos_wrapper_type_inline_rich_text,
+    .hero .custom-btn {
+        margin-left: auto;
+        max-width: var(--freed-max-width);
+    }
+{% endcall %}
+
+{% call utils.large() %}
+    .hero .text-and-image__container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+{% endcall %}
+
+/* Infographic section */
+section.infographic {
+    padding-bottom: unset;
+}
+
+.infographic h2 {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+#hs_cos_wrapper_infographic {
+    margin-top: var(--space-4);
+}
+
+.infographic__features {
+    {{ utils.white_to_tango() }}
+    padding-bottom: var(--space-7);
+}
+
+.infographic .benefits-wrapper {
+    max-width: var(--content-max-width);
+    padding: 0;
+}
+
+.infographic .benefits-container {
+    margin-bottom: 0;
+}
+
+.infographic .custom-benefits-we-offer__icon {
+    filter: drop-shadow(0px 3px 10px #00000029);
+    margin-top: calc(-1 * var(--space--1));
+}
+
+.infographic .custom-benefits-we-offer__text-container h3 {
+    {{ utils.natus() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .infographic .benefits-container {
+        display: block;
+    }
+
+    .infographic .benefits-container article {
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+    }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+    .infographic .benefits-container {
+        columns: 3;
+    }
+{% endcall %}
+
+{% call utils.medium() %}
+    .infographic .benefits-container {
+        columns: 2;
+    }
+{% endcall %}
+
+/* Benefits section */
+
+.benefits {
+    {{ utils.color1_to_color2(
+        "94deg", 
+        "var(--woodsmoke)", 
+        "var(--purple)"
+        ) 
+    }}
+    
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-8);
+}
+
+.benefits .text-and-image__container {
+    color: white;
+}
+
+/* Strategic initiatives section */
+.strategic-initiatives {
+    {{ utils.white_to_tango() }}
+}
+
+.strategic-initiatives h2 {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+    margin-bottom: var(--dudler-margin);
+}
+
+.strategic-initiatives .secondary-header {
+    max-width: var(--base-max-width);
+}
+
+.strategic-initiatives h3 {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+{% call utils.large_and_extra_large() %}
+    .strategic-initiatives .rich-texts-listing {
+        grid-template-columns: repeat(3, 1fr);
+    }
+{% endcall %}
+
+
+/* Testimonials section */
+
+.testimonials-slider {
+    max-width: 30rem; /* overrides default max width */
+    margin-inline: auto;
+    padding-bottom: var(--space-6);
+}
+
+.article-cards {
+    {{ utils.black_to_navy() }}
+    margin-top: var(--space-7);
+}
+
+.article-cards .card-container {
+    transform: translateY(-100px);
+}

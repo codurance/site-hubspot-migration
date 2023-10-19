@@ -1,0 +1,157 @@
+{% import '../utils/utils.css' as utils %}
+
+/* General styles */
+
+.learning-hub-container .section-header h2 {
+    {{ utils.eames() }}
+    margin-bottom: 1.2rem;
+}
+
+.learning-hub-container .section-header p {
+    max-width: var(--base-max-width);
+}
+
+{% call utils.small_medium_and_large() %}
+    .learning-hub-container .section-header h2 {
+        {{ utils.dudler() }}
+        font-weight: var(--heavy-font-weight);
+        margin-bottom: var(--dudler-margin);
+    }
+{% endcall %}
+
+/* Header */
+
+{% call utils.medium() %}
+    .learning-hub-hero .header-insights__text  {
+        margin-bottom: 4em;
+        padding-top: 2rem;
+        }
+    {% endcall %}
+    
+{% call utils.extra_large() %}
+    .learning-hub-hero .header-insights__text  {
+        margin-bottom: 5rem;
+    }
+
+    .learning-hub-hero .header-insights__text h1 {
+        max-width: var(--gaudi-max-width);
+    }
+{% endcall %}
+
+/* Recent blog posts */
+
+.recent-blog-posts {
+    margin-bottom: -3rem;
+}
+
+{% call utils.medium() %} 
+    .recent-blog-posts .cm-recent-post {
+        padding-right: 0;
+    }
+
+    .recent-blog-posts .cm-recent-post .cm-recent-post__group {
+        margin-right: 0;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .recent-blog-posts .cm-recent-post {
+        padding-right: 0;
+        margin: 0;
+        }
+    .recent-blog-posts .cm-recent-post .cm-recent-post__group {
+        margin-right: 0;
+        }
+
+    .learning-hub-hero .header-insights__text  {
+        margin-bottom: 2rem;
+        transform: translateY(-4rem);
+    }
+{% endcall %}
+
+.recent-blog-posts .cm-recent-post {
+    transform: translateY(-3rem);
+}
+   
+.recent-blog-posts .cm-recent-post .cm-recent-post__group {
+    transform: translateY(-1rem);
+}
+
+.recent-blog-posts .cm-recent-post .cm-recent-post__item:first-child {
+    margin-left: 0;
+}
+
+/* Content cards */
+
+.content-cards {
+    {{ utils.slate_to_woodsmoke() }}
+    padding-top: 4.3em;
+    padding-bottom: 4.3em;
+}
+
+.content-cards__title {
+  {{ utils.eames() }}
+  color: white;
+  margin-bottom: 1.6rem;
+}
+
+{% call utils.small_medium_and_large() %}
+    .content-cards__title {
+        {{ utils.dudler() }}
+        font-weight: var(--heavy-font-weight);
+    }
+{% endcall %}
+
+/* Videos and katas */
+
+.learning-hub-videos {
+    background: linear-gradient(180deg, rgba(252,224,206,0.6) 0%, rgba(255,255,255,1) 45%);
+
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.kata-listing {
+    margin-top: var(--space-5);
+}
+    
+{% call utils.small_and_medium() %}
+    .learning-hub-videos {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+{% endcall %}
+
+/* CTA Banner */
+
+.cta-banner .cta-block__wrapper {
+    max-width: var(--content-max-width);
+}
+
+.cta-banner .cta-block__title {
+    max-width: var(--eames-max-width);
+}
+
+/* Banner link */
+
+.learning-hub-cta {
+    {{ utils.tango_to_white() }}
+    padding-inline: 0;
+    padding-block: 2rem;
+}
+           
+{% call utils.large_and_extra_large() %}
+    .learning-hub-cta {
+        padding-inline: 2rem;
+    }
+{% endcall %}
+
+.learning-hub-cta .banner {
+    max-width: var(--content-max-width);
+}
+                
+{% call utils.small() %}    
+    .learning-hub-cta .banner {
+        justify-content: left;
+    }
+{% endcall %}

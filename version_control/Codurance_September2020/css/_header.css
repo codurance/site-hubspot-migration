@@ -17,7 +17,7 @@ header.header {
   z-index: 100;
 }
 
-.body-wrapper > div:first-child,
+.body-wrapper > div:first-child[data-global-resource-path],
 header.header {
   --header-height: 71px;
   height: var(--header-height);

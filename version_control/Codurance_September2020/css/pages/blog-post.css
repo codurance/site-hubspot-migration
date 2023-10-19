@@ -122,6 +122,8 @@
   max-width: 70px;
   border-radius: 50%;
   height: auto;
+  object-fit: cover;
+  aspect-ratio: 1/1;
 }
 {% call utils.medium_large_and_extra_large() %}
   .blog-author-info__author-image {
@@ -133,6 +135,7 @@
     margin-bottom: {{ author_image_margin }};
   }
 {% endcall %}
+
 
 .blog-author-info__name {
   {{ utils.base() }}

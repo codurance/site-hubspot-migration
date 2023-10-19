@@ -88,15 +88,6 @@
     .newsletter-exit-popup__container .hs-form {
         width: 85%;
     }
-
-    .newsletter-exit-popup__container .cta_newsletter_spanish .hs-form {
-        width: 100%;
-        margin: 50px 0;
-    }
-
-    .newsletter-exit-popup__container .cta_newsletter_spanish .hs_submit {
-        width: 23em;
-    }
 {% endcall %}
 
 .newsletter-exit-popup__container .hs-email {

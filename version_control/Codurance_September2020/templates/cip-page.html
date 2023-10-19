@@ -1,0 +1,95 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: CIP (Continuous Improvement Program) Page
+-->
+
+{% extends "./layouts/base.html" %}
+
+{{ require_css(get_asset_url("../css/pages/cip.css")) }}
+
+{% block body %}
+
+<main>
+  <section class="hero region">
+    {% module "hero_content" path="../modules/Text-and-image.module" %}
+  </section>
+  
+  <section class="infographic region">
+    {% module "infographic_header" 
+      label="Infographic Header" 
+      path="@hubspot/header" 
+      header_tag="h2" 
+      extra_classes="lateral-spacing responsive-page-width"
+    %}
+    {% module "infographic" 
+      path="../modules/CIP-Infographic.module" 
+      extra_classes="lateral-spacing responsive-page-width"  
+    %}
+    {% module "infographic_features" 
+      label="CIP Infographic Features" 
+      path="../modules/Benefits.module" 
+      extra_classes="infographic__features lateral-spacing"    
+    %}
+  </section>
+
+  <section class="benefits">  
+    {% module "benefits_intro_text" 
+      label="Benefits intro text" 
+      path="../modules/Text-and-image.module" 
+      extra_classes="lateral-spacing responsive-page-width"
+    %}
+    {% module "benefits_cards" 
+      label="Benefits cards" 
+      path="../modules/Rich-Texts-Listing.module" 
+      extra_classes="lateral-spacing responsive-page-width"
+    %}
+    {% module "benefits_button" 
+      label="Benefits button" 
+      path="../modules/Button.module" 
+      extra_classes="lateral-spacing responsive-page-width"
+    %}
+  </section>
+
+  <section class="strategic-initiatives region">
+    {% module "strategic_initiatives_header" 
+      label="Strategic Initiatives Header" 
+      path="@hubspot/section_header" 
+      header_tag="h2" 
+      extra_classes="lateral-spacing"
+    %}
+    {% module "strategic_initiatives_listing" 
+      label="Strategic Initiatives Listing" 
+      path="../modules/Rich-Texts-Listing.module" 
+      extra_classes="lateral-spacing responsive-page-width"
+    %}
+  </section>
+
+  <section class="case-studies region">
+    {% module "case_studies" 
+      label="Case Studies List" 
+      path="../modules/Case Study Card Collection.module"
+    %}
+  </section>
+
+  {% module "testimonials" 
+    label="Testimonials listing" 
+    path="../modules/Landing Page Modules/LP-testimonial-slider.module"
+    extra_classes="testimonials-slider"
+  %}
+
+  <section class="article-cards">
+    {% module "article_cards"
+      label="Article cards listing"
+      path="../modules/Simple-Card.module"
+      extra_classes="responsive-page-width"
+    %}
+  </section>
+      
+  {% module "contact_form"
+    label="Contact form"
+    path="../modules/Service-Line-Form.module"
+  %}
+</main>
+
+{% endblock body %}
