@@ -11,8 +11,7 @@
 }
 
 .hs-get-in-touch-section {
-  position: sticky;
-  top: var(--space-5);
+  margin-top: var(--space-5);
   max-width: 600px;
   height: 100%;
   background-color: white;
@@ -39,9 +38,5 @@
   .contact-us__wrapper {
     flex-direction: column-reverse;
     align-items: center;
-  }
-
-  .hs-get-in-touch-section {
-    position: static;
   }
 {% endcall %}
