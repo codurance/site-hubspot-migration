@@ -13,7 +13,7 @@
                     
                     <div class="office__content">
                         <h3>{{ office.title }}</h3>
-                        <address>{{ office.address }}</address>
+                        <a href="{{ office.address.map_link.href }}">{{ office.address.text }}</address>
                         <a href="tel:{{office.sales_contact.phone.href}}">{{ office.sales_contact.phone.href }}</a>
                         <p>
                             <span class="sales-contact__copy">{{ office.sales_contact.copy }}</span>
