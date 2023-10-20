@@ -33,6 +33,10 @@
     {{ utils.natus() }}
 }
 
+.office__address {
+    font-weight: var(--light-font-weight);
+}
+
 .office__content a {
     color: var(--shark);
 }
