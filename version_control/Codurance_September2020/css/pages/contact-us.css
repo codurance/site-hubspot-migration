@@ -32,6 +32,11 @@
   padding: var(--space-5);
 }
 
+{% call utils.extra_large() %}
+  .contact-us__wrapper {
+    gap: var(--space-8);
+  }
+{% endcall %}
 
 {% call utils.small_and_medium() %}
   .contact-us__wrapper {
