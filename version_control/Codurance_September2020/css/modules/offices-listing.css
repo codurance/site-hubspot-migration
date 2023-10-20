@@ -33,7 +33,7 @@
     {{ utils.natus() }}
 }
 
-.office__address {
+.office__address a {
     font-weight: var(--light-font-weight);
 }
 
