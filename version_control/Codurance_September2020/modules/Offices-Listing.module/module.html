@@ -16,7 +16,11 @@
                         <div class="office__address">
                             <a href="{{ office.address.map_link.href }}">{{ office.address.text }}</a>
                         </div>
-                        <a href="tel:{{office.sales_contact.phone.href}}">{{ office.sales_contact.phone.href }}</a>
+                        {% if office.sales_contact.phone.href %}
+                            <a href="tel:{{ office.sales_contact.phone.href }}">
+                                {{ office.sales_contact.phone.href }}
+                            </a>
+                        {% endif %}
                         <p>
                             <span class="sales-contact__copy">{{ office.sales_contact.copy }}</span>
                             {{ office.sales_contact.contact_name }}

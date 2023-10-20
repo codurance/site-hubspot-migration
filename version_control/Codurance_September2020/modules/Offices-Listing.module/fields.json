@@ -117,9 +117,10 @@
         "name" : "phone",
         "display_width" : null,
         "label" : "Phone",
+        "help_text" : "If you want to remove the phone number, you can use the \"Link to: External\" option and leave it empty",
         "required" : false,
         "locked" : false,
-        "supported_types" : [ "PHONE_NUMBER" ],
+        "supported_types" : [ "PHONE_NUMBER", "EXTERNAL" ],
         "type" : "url",
         "default" : {
           "content_id" : null,
