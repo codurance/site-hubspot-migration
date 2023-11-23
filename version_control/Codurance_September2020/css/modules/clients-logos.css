@@ -13,7 +13,6 @@
 }
 
 .client-logos__logos-group{
-    filter: contrast(0%);
     margin: 1.5em 0;
     display: grid;
     gap: 1em;
