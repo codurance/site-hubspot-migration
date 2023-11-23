@@ -52,8 +52,8 @@
         }
 
         {% set overlay_background_color = 
-            "rgba({{ module.styles.grid_images.overlay.background.color.color|convert_rgb }},
-            {{ module.styles.grid_images.overlay.background.color.opacity/100 }});" 
+            "linear-gradient(120deg, rgba({{ module.styles.grid_images.overlay.background.color.color|convert_rgb }},
+            {{ module.styles.grid_images.overlay.background.color.opacity/100 }}) 30% , transparent );" 
         %}
 
         .hs-image__grid__item__overlay {
@@ -64,7 +64,7 @@
                 border-radius: {{ border_radius }};
             {% endif %}
             {% if module.styles.grid_images.overlay.background.color.color %}
-                background-color: {{ overlay_background_color }}
+                background: {{ overlay_background_color }}
             {% endif %}
             {% if module.styles.grid_images.overlay.background.blend_mode %}
                 mix-blend-mode: hard-light;
