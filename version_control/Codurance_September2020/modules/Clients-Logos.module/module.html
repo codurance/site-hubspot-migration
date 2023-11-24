@@ -3,13 +3,17 @@
 {{ require_css(get_asset_url("../../css/modules/clients-logos.css")) }}
 
 
+{% require_css }
   <style>
+    {% scope_css }
       .client-logos__logos-group{
         {% if module.style.logo_color == "grey" %}
         	filter: contrast(0);
         {% endif %}    
       }
+    {% end_scope_css }
   </style>
+{% require_css }
 
 
 <div class="client-logos__content">
