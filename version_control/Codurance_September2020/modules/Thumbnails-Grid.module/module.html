@@ -181,10 +181,10 @@
                     alt="{{ grid_item.alt_text | escape }}">
 
                     {% if module.grid_settings.group_image_hover.overlay_show_on != "never" and grid_item.hover_message %}
-                    <div class="hs-image__grid__item__overlay"></div>
-                    <p class="hs-image__grid__item__overlay__content">
-                        {{ grid_item.hover_message }}
-                    </p>
+                        <div class="hs-image__grid__item__overlay"></div>
+                        <div class="hs-image__grid__item__overlay__content">
+                            {{ grid_item.hover_message }}
+                        </div>
                     {% endif %}
                 {% if navigate_on_click and grid_item.link_url.url.href %}
                     </a>
