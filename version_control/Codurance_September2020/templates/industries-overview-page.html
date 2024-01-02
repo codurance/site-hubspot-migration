@@ -26,9 +26,10 @@ label: Industries Overview
 </section>
 
 <main>  
-<section class="featured-case-study region">
-  {% module "featured_case_study"
-    path="../modules/Text-and-image.module" label="Featured case study"
+
+<section class="clients-logos region lateral-spacing">
+  {% module "clients_logos"
+    path="../modules/Clients-Logos.module" label="Clients logos"
   %}
 </section>
 
@@ -47,6 +48,12 @@ label: Industries Overview
   </div>
 </section>
 
+<section class="featured-case-study region">
+  {% module "featured_case_study"
+    path="../modules/Text-and-image.module" label="Featured case study"
+  %}
+</section>
+
 <section class="testimonial">
   {% module "testimonial"
     path="../modules/Landing Page Modules/LP-testimonial-slider.module" label="Testimonial"
@@ -54,20 +61,6 @@ label: Industries Overview
   %}
 </section>
 
-<section class="banner-link region">
-  <div class="lateral-spacing">
-    {% module "banner_link"
-      path="../modules/Banner-Link.module" label="Banner"
-      no_wrapper=True 
-    %}
-  </div>
-</section>
-
-<section class="clients-logos region lateral-spacing">
-  {% module "clients_logos"
-    path="../modules/Clients-Logos.module" label="Clients logos"
-  %}
-</section>
 
 <section class="insights region">
   <div class="lateral-spacing" aria-label="Newsletter form">

@@ -97,7 +97,7 @@
 }
 
 .testimonial {
-    padding-bottom: var(--space-6);
+    padding-bottom: var(--space-8);
 }
 
 .banner-link {
@@ -105,27 +105,10 @@
     color: white;
 }
 
-.clients-logos.region {
-    padding-bottom: var(--space-8);
-}
-
 .insights {
     {{ utils.tango_to_white() }}
 }
 
-.insights.region {
-    padding-top: var(--space-9);
-}
-
-{% call utils.extra_large() %}
-    .insights.region {
-        padding-top: var(--space-8);
-    }
-
-    .insights .newsletter-wrapper {
-        margin-top: -224px;
-    }
-{% endcall %}
 
 .insights__title-container h2 {
     margin-bottom: var(--space-2);
