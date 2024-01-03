@@ -10,8 +10,8 @@
 
 .banner-link, 
 .contact-form {
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
 }
 
 .page .text-and-image__container {
@@ -21,14 +21,14 @@
 
 /* Above the fold section */
 .above-the-fold {
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
 }
 
 /* Demystifying series section */
 .demystifying {
-  padding-top: 4em;
-  padding-bottom: 4em;
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-5);
 }
 
 .demystifying .text-and-image__container {
@@ -45,7 +45,7 @@
 /* Promo cards sections */
 .promo-cards {
   {{ utils.slate_to_woodsmoke() }}
-  margin-top: 12em;
+  margin-top: var(--space-8);
 }
 
 .promo-cards__inner {
@@ -79,8 +79,21 @@
 
 /* Case studies section */
 .case-study .case-study-card-collection {
-  padding-bottom: var(--space-5);
   padding-top: var(--space-7);
+  padding-bottom: var(--space-5);
   background-size: 100% 18em;
+}
+
+
+/* AI and ML page */
+.page-center.testimonials-ai {
+  margin-top: var(--space-6);
+}
+
+.above-the-fold-ai {
+  background-color: {{ utils.white_to_tango() }}
+  color: var(--woodsmoke);
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-5);
 }
 
