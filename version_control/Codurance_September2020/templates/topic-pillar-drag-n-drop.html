@@ -23,14 +23,14 @@ label: AI and ML Page
     %}
   </section>
 
-  <section class="demystifying lateral-spacing">
+  <section class="demystifying-ai lateral-spacing">
     {% module "ds_text_and_image"
       path="../modules/Text-and-image.module" label="Heading Demistifiying"
     %}
     
     {% module "ds_videos"
-      path="../modules/Videos-From-HubDB.module" label="Videos Demistifiying"
-      no_wrapper=True %}
+      path="../modules/Videos-From-HubDB.module" label="Videos Area"
+    %}
   </section>
 
 
@@ -42,11 +42,12 @@ label: AI and ML Page
     </div>
   </section>
 
-  <section class="lateral-spacing" aria-label="Newsletter form">
-    {% module "newsletter"
-      path="../modules/Newsletter-Form-Card.module" label="Newsletter Form"
-      no_wrapper=True %}
-  </section>
+  {% module "newsletter"
+    path="../modules/Newsletter-Form-Card.module" 
+    label="Newsletter Form"
+    extra_classes="lateral-spacing"
+  %}
+
 
   <section class="promo-cards-secondary">
     <div class="page-center">
