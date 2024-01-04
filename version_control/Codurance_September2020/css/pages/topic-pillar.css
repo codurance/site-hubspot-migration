@@ -108,3 +108,8 @@
   padding-bottom: var(--space-5);
 }
 
+.newsletter-ai .newsletter {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+

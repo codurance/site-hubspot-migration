@@ -42,11 +42,13 @@ label: AI and ML Page
     </div>
   </section>
 
-  {% module "newsletter"
-    path="../modules/Newsletter-Form-Card.module" 
-    label="Newsletter Form"
-    extra_classes="lateral-spacing"
-  %}
+  <div class="newsletter-ai">
+    {% module "newsletter"
+      path="../modules/Newsletter-Form-Card.module"
+      label="Newsletter Form"
+      no_wrapper=True
+    %}
+  </div>
 
 
   <section class="promo-cards-secondary">
