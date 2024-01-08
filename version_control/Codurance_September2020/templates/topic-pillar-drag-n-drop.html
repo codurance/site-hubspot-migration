@@ -1,0 +1,76 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: AI and ML Page
+-->
+{% extends "./layouts/base.html" %}
+
+{{ require_css(get_asset_url("../css/pages/topic-pillar.css")) }}
+
+{% block body %}
+
+
+{% module "header_slim" 
+  path="../modules/Header-Slim.module" label="Header Slim" 
+  no_wrapper=True %}
+  
+
+<main>  
+
+  <section class="above-the-fold-ai">
+    {% module "above_the_fold"
+      path="../modules/Text-and-image.module" label="Above the fold section"
+    %}
+  </section>
+
+  <section class="demystifying-ai lateral-spacing">
+    {% module "ds_text_and_image"
+      path="../modules/Text-and-image.module" label="Heading Demistifiying"
+    %}
+    
+    {% module "ds_videos"
+      path="../modules/Videos-From-HubDB.module" label="Videos Area"
+    %}
+  </section>
+
+
+  <section class="promo-cards">
+    <div class="promo-cards__inner page-center">
+      {% module "promo_cards"
+        path="../modules/Simple-card.module" label="Promotional cards"
+        no_wrapper=True %}
+    </div>
+  </section>
+
+  <div class="newsletter-ai">
+    {% module "newsletter"
+      path="../modules/Newsletter-Form-Card.module"
+      label="Newsletter Form"
+      no_wrapper=True
+    %}
+  </div>
+
+
+  <section class="promo-cards-secondary">
+    <div class="page-center">
+      {% module "promo_cards_2"
+        path="../modules/Simple-card.module" label="Promotional cards 2"
+        no_wrapper=True %}
+    </div>
+    <div class="page-center testimonials-ai">
+      {% module "testimonials"
+        path="../modules/Landing Page Modules/LP-testimonial-slider.module" label="Testimonials Slider"
+        no_wrapper=True %}
+    </div>
+  </section>
+
+
+  <section class="contact-form">
+    {% module "form"
+      path="../modules/Service-Line-Form.module" label="Form"
+      no_wrapper=True %}
+  </section>
+  
+</main>
+
+{% endblock body %}
