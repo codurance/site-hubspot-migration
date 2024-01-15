@@ -1,4 +1,8 @@
 {% import '../utils/utils.css' as utils %}
+
+:root {
+    --image-width: 250px;
+}
     
 .listing__images {
     margin: 0 auto;
@@ -12,7 +16,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    height: 10em;
+    height: 10rem;
 }
 
 .listing__item:hover,
@@ -27,7 +31,7 @@
 }
 
 .listing__img {
-    width: 10em;
+    width: var(--image-width);
     border-radius: 50%;
     transition: box-shadow ease-in-out 200ms;
 }
@@ -92,11 +96,12 @@
     }
 
     .listing__item {
-        height: 2.5em;
+        height: 100%;
     }
 
     .listing__img {
-        width: 2.5em;
+        --image-width: 50px;  
+        width: var(--image-width);
     }
 {% endcall %}
 
