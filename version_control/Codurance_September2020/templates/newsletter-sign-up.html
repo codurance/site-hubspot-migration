@@ -24,11 +24,15 @@ label: Newsletter Sign Up
 
 <div class="body-container-sign-up">
     <section class="newsletter-sign-up__container">
-          <h1 class="newsletter-sign-up-container__title"><span class="bolded-text">{{title}}</span> <br>{{subtitle}}</h1>
-            <div class="form-wrapper-class"> 
-              {% form "email_form" form_to_use="78f833ae-cc13-4e66-b887-6d9e08899522" no_title %} 
-            </div>
-            <i class="newsletter-sign-up_container__icon las la-envelope"></i>
+      <h1 class="newsletter-sign-up-container__title">
+        {% module "title" label="Title" path="@hubspot/text" value="{{ title }}" extra_classes="bolded-text" %}
+        {% module "subtitle" label="Subtitle" path="@hubspot/text" value="{{ subtitle }}" %}
+      </h1>
+
+      <div class="form-wrapper-class"> 
+        {% form "email_form" form_to_use="78f833ae-cc13-4e66-b887-6d9e08899522" no_title %} 
+      </div>
+      <i class="newsletter-sign-up_container__icon las la-envelope"></i>
     </section>
 </div>
 
