@@ -12,8 +12,8 @@
 .newsletter-sign-up__container {
     background: white;
     margin: 0 auto;
-    padding: 4rem 2rem 2rem 2rem;
-    max-width: 25em;
+    padding: 4em 2em 2em 2em;
+    max-width: 30rem;
     position: relative;
     {{ utils.card_shadow() }};
 }
