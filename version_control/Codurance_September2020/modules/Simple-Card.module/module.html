@@ -7,14 +7,15 @@
 
 {% if cards_type_selected == "hubdb" %}
     {% set upcomingEventsFilter = ("&orderBy=datetime" + "&datetime__gt=" + local_dt|unixtimestamp + "&limit=3") %}
-    {% set isEventEnglish = ("&language=English") %}
+    {% set setEnglishEvents = ("&language=English") %}
+    {% set setSpanishEvents = ("&language=Spanish") %}
 
     {% set list = [] %}
 
-    {% if locale == "en" or locale == "pt" %}
-        {% set list = hubdb_table_rows(module.hubdb, upcomingEventsFilter + isEventEnglish) %}
+    {% if locale == "es" %}
+        {% set list = hubdb_table_rows(module.hubdb, upcomingEventsFilter + setSpanishEvents) %}
     {% else %}
-        {% set list = hubdb_table_rows(module.hubdb, upcomingEventsFilter) %}
+        {% set list = hubdb_table_rows(module.hubdb, upcomingEventsFilter + setEnglishEvents) %}
     {% endif %} 
 
     {% for item in list %}
