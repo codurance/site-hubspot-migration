@@ -36,7 +36,9 @@
 
   <section class="upcoming-events">
     <div class="page-center">
-      <h2 class="upcoming-events__title lateral-spacing">{% text 'events-title' label="Upcoming Events Title" no_wrapper=True %}</h2>
+      <h2 class="upcoming-events__title lateral-spacing">
+        {% text 'events-title' label="Upcoming Events Title" no_wrapper=True %}
+      </h2>
       {% module 'event-cards' path='../modules/Simple-Card.module'
       label="Upcoming Event Cards" no_wrapper=True %}
 
