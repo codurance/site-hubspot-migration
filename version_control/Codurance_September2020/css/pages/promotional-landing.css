@@ -6,16 +6,20 @@ body {
     background-repeat: no-repeat;
 }
 
-.body-wrapper > div:first-child,
-.footer {
-    display: none;
-}
+{% call utils.large_and_extra_large() %}
+    .body-wrapper {
+      --header-height: 85px;
+    }
+{% endcall %}
+  
+{% call utils.small_and_medium() %}
+    .body-wrapper {
+      --header-height: 71px;
+    }
+{% endcall %}
 
-.brand-mark {
-    position: absolute;
-    top: var(--space-5);
-    width: 150px;
-    fill: white;
+.header-container {
+    height: var(--header-height);
 }
 
 .landing-two-col {
@@ -50,6 +54,8 @@ body {
     padding: 20px 15px 40px 15px;
     border-radius: 5px;
     box-shadow: 0 5px 5px 0 rgba(154,160,185,.05), 0 5px 30px 0 rgba(166,173,201,.22);
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-5);
 }
 
 .form-wrapper h3 {
@@ -84,7 +90,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        min-height: calc(100vh - var(--header-height));
     }
 
     .landing-two-col__col h1 {
@@ -94,7 +100,7 @@ body {
 
 {% call utils.small_and_medium() %}
     .landing-two-col {
-        padding-top: var(--space-8);
+        padding-top: var(--space-5);
         padding-bottom: var(--space-2);
         flex-direction: column;
     }
