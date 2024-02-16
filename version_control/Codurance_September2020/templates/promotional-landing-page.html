@@ -10,7 +10,7 @@ label: Promotional Landing Page
 
 {% require_css %}
 	<style>
-    body {
+    main {
       background-color: {% color "background_color" label="Background color", color="#293341", no_wrapper=True %};
       background-image: url({% image_src "background_image" label="Background image", no_wrapper=True %});
     }
@@ -34,20 +34,18 @@ label: Promotional Landing Page
 {% endblock header %}
 
 {% block body %}
-  <div class="landing-two-col lateral-spacing">
-    <div class="landing-two-col__col">   
-      {% widget_container "module_1585129544422283" overrideable='True', per_widget_wrapper_html='', wrapping_html='', label='Flexible column' no_wrapper="True" %}
-
-      {% end_widget_container %}
+  <main>
+    <div class="landing-two-col lateral-spacing">
+      <div class="landing-two-col__col">
+        {% widget_container "module_1585129544422283" overrideable='True', per_widget_wrapper_html='', wrapping_html='', label='Flexible column' no_wrapper="True" %}
+        {% end_widget_container %}
+      </div>
+      <div class="landing-two-col__col">
+        <div class="form-wrapper">
+          {% widget_container "module_1585129566593286" overrideable=False, per_widget_wrapper_html='', wrapping_html='', label='Flexible column' no_wrapper="True" %}
+          {% end_widget_container %}
+        </div>
+      </div>
     </div>
-
-    <div class="landing-two-col__col">
-      <div class="form-wrapper">
-        {% widget_container "module_1585129566593286" overrideable=False, per_widget_wrapper_html='', wrapping_html='', label='Flexible column' no_wrapper="True" %}
-
-        {% end_widget_container %}    
-      </div>      
-    </div>
-  </div>
-
+  </main>
 {% endblock body %}
