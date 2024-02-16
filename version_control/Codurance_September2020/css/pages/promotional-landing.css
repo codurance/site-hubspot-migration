@@ -90,7 +90,7 @@ main {
         align-items: center;
         justify-content: center;
         flex-basis: 50%;
-        height: calc(100vh - var(--header-height) - var(--space-5) * 2);
+        min-height: calc(100vh - var(--header-height) - var(--space-5) * 2);
         margin-top: var(--space-5);
         margin-bottom: var(--space-5);
     }
