@@ -11,14 +11,14 @@
     justify-content: flex-start;
 }
 
-.hero .text-and-image__copy p {
-    {{ utils.freed() }}
-    font-weight: var(--light-font-weight);
-}
-
 {% call utils.large_and_extra_large() %}
     .hero .text-and-image__copy {
         max-width: 35rem;
+    }
+
+    .hero .text-and-image__copy p {
+        {{ utils.freed() }}
+        font-weight: var(--light-font-weight);
     }
 {% endcall %}
 
