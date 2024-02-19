@@ -1,0 +1,49 @@
+{% import '../utils/utils.css' as utils %}
+
+/* Hero section */
+.hero {
+    {{ utils.color1_to_color2(
+        "94deg", 
+        "var(--woodsmoke)", 
+        "var(--purple)"
+    ) }}
+
+    color: white;
+}
+
+.hero .text-and-image__container {
+    max-width: var(--content-max-width);
+}
+
+.hero .text-and-image__copy h2 {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+{% call utils.large_and_extra_large() %}
+    .hero .text-and-image__copy {
+        flex: 1 1;
+        max-width: unset;
+    }
+
+    .hero .hs_cos_wrapper_type_inline_rich_text,
+    .hero .custom-btn {
+        margin-left: auto;
+        max-width: var(--freed-max-width);
+    }
+{% endcall %}
+
+{% call utils.large() %}
+    .hero .text-and-image__container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+{% endcall %}
+
+/* Testimonials section */
+
+.testimonials-slider {
+    max-width: 30rem; /* overrides default max width */
+    margin-inline: auto;
+    padding-bottom: var(--space-6);
+}

@@ -1,0 +1,30 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Software Quality Assessment Packaged Solution Page
+-->
+
+{% extends "./layouts/base.html" %}
+
+{{ require_css(get_asset_url("../css/pages/sqa.css")) }}
+
+{% block body %}
+
+<main>
+  <section class="hero region">
+    {% module "hero_content" path="../modules/Text-and-image.module" %}
+  </section>
+
+  {% module "testimonials" 
+    label="Testimonials listing" 
+    path="../modules/Landing Page Modules/LP-testimonial-slider.module"
+    extra_classes="testimonials-slider"
+  %}
+      
+  {% module "contact_form"
+    label="Contact form"
+    path="../modules/Service-Line-Form.module"
+  %}
+</main>
+
+{% endblock body %}
