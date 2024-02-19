@@ -2,34 +2,23 @@
 
 /* Hero section */
 .hero {
-    {{ utils.color1_to_color2(
-        "94deg", 
-        "var(--woodsmoke)", 
-        "var(--purple)"
-    ) }}
-
+    {{ utils.slate_to_woodsmoke() }}
     color: white;
 }
 
 .hero .text-and-image__container {
     max-width: var(--content-max-width);
+    justify-content: flex-start;
 }
 
-.hero .text-and-image__copy h2 {
+.hero .text-and-image__copy p {
     {{ utils.freed() }}
-    font-weight: var(--heavy-font-weight);
+    font-weight: var(--light-font-weight);
 }
 
 {% call utils.large_and_extra_large() %}
     .hero .text-and-image__copy {
-        flex: 1 1;
-        max-width: unset;
-    }
-
-    .hero .hs_cos_wrapper_type_inline_rich_text,
-    .hero .custom-btn {
-        margin-left: auto;
-        max-width: var(--freed-max-width);
+        max-width: 35rem;
     }
 {% endcall %}
 
