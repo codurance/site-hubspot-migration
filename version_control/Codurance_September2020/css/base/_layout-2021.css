@@ -27,11 +27,6 @@
   box-sizing: inherit;
 }
 
-.responsive-page-width {
-  max-width: var(--content-max-width);
-  margin: 0 auto;
-}
-
 /* Responsive spacing utility classes */
 .region {
   padding-top: var(--space-7);
