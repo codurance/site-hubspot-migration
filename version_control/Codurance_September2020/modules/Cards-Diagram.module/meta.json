@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_POST" ],
+  "icon" : "fontawesome-5.14.0:Grip%20Vertical:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 93914636016,
+  "label" : "Cards Diagram",
+  "is_available_for_new_content" : true
+}
