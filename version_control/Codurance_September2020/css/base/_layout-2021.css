@@ -27,7 +27,7 @@
   box-sizing: inherit;
 }
 
-.page-center {
+.responsive-page-width {
   max-width: var(--content-max-width);
   margin: 0 auto;
 }

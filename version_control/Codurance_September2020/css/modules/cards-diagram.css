@@ -1,0 +1,17 @@
+{% import '../utils/utils.css' as utils %}
+
+.cards-diagram__card {
+	{{ utils.card_border_radius() }}
+	{{ utils.card_shadow() }}
+	background: white;
+	padding: var(--space-3) var(--space-4);
+}
+
+.cards-diagram__card-text {
+	font-weight: var(--heavy-font-weight);
+}
+
+.central-title__text {
+	{{ utils.freed() }}
+	font-weight: var(--heavy-font-weight);
+}

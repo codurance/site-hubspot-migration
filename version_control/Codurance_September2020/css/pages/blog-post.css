@@ -264,13 +264,13 @@
   padding: 2rem 1rem;
 }
 
-.blog-subscribe-banner__inner.page-center {
+.blog-subscribe-banner__inner.responsive-page-width {
   display: flex;
   align-items: baseline;
   justify-content: center;
 }
 {% call utils.small() %}
-  .blog-subscribe-banner__inner.page-center {
+  .blog-subscribe-banner__inner.responsive-page-width {
     flex-direction: column;
   }
 {% endcall %}

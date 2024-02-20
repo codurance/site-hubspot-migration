@@ -166,12 +166,12 @@ footer looks when it comes to spacing and other general styles.
   position: relative;
 }
 
-.hs-footer-bottom-container .page-center {
+.hs-footer-bottom-container .responsive-page-width {
   display: -ms-flexbox;
   display: flex;
 }
 {% call utils.small_and_medium() %}
-  .hs-footer-bottom-container .page-center {
+  .hs-footer-bottom-container .responsive-page-width {
     align-items: center;
     flex-direction: column;
   }

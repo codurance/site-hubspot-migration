@@ -195,13 +195,13 @@
   padding: 2rem 1rem;
 }
 
-.kata-subscribe-banner__inner.page-center {
+.kata-subscribe-banner__inner.responsive-page-width {
   display: flex;
   align-items: baseline;
   justify-content: center;
 }
 {% call utils.small() %}
-  .kata-subscribe-banner__inner.page-center {
+  .kata-subscribe-banner__inner.responsive-page-width {
     flex-direction: column;
   }
 {% endcall %}

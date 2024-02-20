@@ -934,8 +934,8 @@ small {
   padding-bottom: 0;
   padding-top: 0;
 }
-.custom-body-container .page-center,
-.custom-banner-section .page-center{
+.custom-body-container .responsive-page-width,
+.custom-banner-section .responsive-page-width{
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
