@@ -29,6 +29,11 @@
     }
 {% endcall %}
 
+/* Solution section (floating cards) */
+.solution {
+    {{ utils.white_to_tango() }}
+}
+
 /* Testimonials section */
 
 .testimonials-slider {
