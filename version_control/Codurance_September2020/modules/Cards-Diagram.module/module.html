@@ -1,0 +1,36 @@
+{{ require_css(get_asset_url("../../css/modules/cards-diagram.css")) }}
+
+{% macro cards_listing(list) %}
+	<ul class="cards-diagram__listing">
+		{% for card in list %}
+			<li class="cards-diagram__card">
+				<p class="cards-diagram__card-text">{{ card }}</p>
+			</li>
+		{% endfor %}
+	</ul>
+{% endmacro %}
+
+{% set card_columns = module.card|slice(3, " ") %}
+{% set first_cards_column = card_columns[0] %}
+{% set second_cards_column = card_columns[1] %}
+
+<div class="cards-diagram">
+	<div class="cards-diagram__grid">
+		{{ cards_listing(first_cards_column) }}
+
+		<div class="central-title">
+			{% set sizeAttrs = 'width="{{ module.central_title.image.width }}" height="{{ module.central_title.image.height }}"' %}
+			<img 
+				class="central-title__image"
+				src="{{ module.central_title.image.src }}" 
+				alt="{{ module.central_title.image.alt }}" 
+				loading="lazy" 
+				{{ sizeAttrs }} 
+			/>
+
+			<h2 class="central-title__text">{{ module.central_title.text }}</h2>
+		</div>
+
+		{{ cards_listing(second_cards_column) }}
+	</div>
+</div>

@@ -1,10 +1,21 @@
 {% import '../utils/utils.css' as utils %}
 
+.cards-diagram__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+}
+
+.cards-diagram__listing {
+	list-style-type: none;
+}
+
 .cards-diagram__card {
 	{{ utils.card_border_radius() }}
-	{{ utils.card_shadow() }}
+	{{ utils.card_shadow_large() }}
 	background: white;
 	padding: var(--space-3) var(--space-4);
+	max-width: 15rem;
 }
 
 .cards-diagram__card-text {
