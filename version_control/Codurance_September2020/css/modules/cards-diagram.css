@@ -2,17 +2,23 @@
 
 .cards-diagram__grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	--image-column-width: 12.5rem;
+	grid-template-columns: 1fr var(--image-column-width) 1fr; 
 	justify-items: center;
 	align-items: center;
+}
+
+.cards-diagram__grid > * {
+	height: 100%;
 }
 
 .cards-diagram__listing {
 	list-style-type: none;
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-6);
+	gap: var(--space-4);
 	width: 100%;
+	justify-content: space-between;
 }
 
 .cards-diagram__card {
@@ -39,7 +45,16 @@
 	font-weight: var(--heavy-font-weight);
 }
 
+.central-title {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
 .central-title__text {
 	{{ utils.freed() }}
 	font-weight: var(--heavy-font-weight);
+	position: absolute;
+	word-spacing: 9999rem;
+	text-align: center;
 }
