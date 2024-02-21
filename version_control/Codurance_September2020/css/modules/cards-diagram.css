@@ -4,10 +4,15 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	justify-items: center;
+	align-items: center;
 }
 
 .cards-diagram__listing {
 	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-6);
+	width: 100%;
 }
 
 .cards-diagram__card {
@@ -16,6 +21,18 @@
 	background: white;
 	padding: var(--space-3) var(--space-4);
 	max-width: 15rem;
+}
+
+.cards-diagram__listing:first-of-type > .cards-diagram__card {
+	align-self: flex-end;
+}
+
+.cards-diagram__listing:first-of-type > .cards-diagram__card:nth-child(2) {
+	align-self: flex-start;
+}
+
+.cards-diagram__listing:last-of-type > .cards-diagram__card:nth-child(2) {
+	align-self: flex-end;
 }
 
 .cards-diagram__card-text {
