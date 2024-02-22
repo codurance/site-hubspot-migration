@@ -34,6 +34,11 @@
     {{ utils.white_to_tango() }}
 }
 
+.solution__text {
+    font-weight: var(--heavy-font-weight);
+    margin-top: var(--space-4);
+}
+
 /* Testimonials section */
 
 .testimonials-slider {
