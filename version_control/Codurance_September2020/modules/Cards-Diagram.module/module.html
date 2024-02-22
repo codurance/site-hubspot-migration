@@ -1,5 +1,18 @@
 {{ require_css(get_asset_url("../../css/modules/cards-diagram.css")) }}
 
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .cards-diagram {
+        background-image: url({{ module.background_image.src }});
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center center;
+      }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
 {% macro cards_listing(list) %}
 	<ul class="cards-diagram__listing">
 		{% for card in list %}
