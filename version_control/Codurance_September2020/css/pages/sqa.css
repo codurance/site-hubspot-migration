@@ -1,5 +1,15 @@
 {% import '../utils/utils.css' as utils %}
 
+/* General styles */
+.section-header h2 {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.section-header p {
+    margin-top: var(--space-3);
+}
+
 /* Hero section */
 .hero {
     {{ utils.slate_to_woodsmoke() }}
@@ -39,8 +49,10 @@
     margin-top: var(--space-4);
 }
 
-/* Testimonials section */
+/* Modules section */
 
+
+/* Testimonials section */
 .testimonials-slider {
     max-width: 30rem; /* overrides default max width */
     margin-inline: auto;
