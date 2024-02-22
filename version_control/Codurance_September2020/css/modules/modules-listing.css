@@ -1,0 +1,40 @@
+{% import '../utils/utils.css' as utils %}
+
+.modules-listing,
+.modules-listing__menus {
+  {{ utils.card_border_radius() }}
+}
+
+.modules-listing {
+	{{ utils.card_shadow_large() }}
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.modules-listing__list {
+  padding: var(--space-4);
+}
+
+.modules-listing__menus {
+  {{ utils.slate_to_woodsmoke() }}
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.modules-listing__list-title {
+  {{ utils.freed() }}
+  font-weight: var(--heavy-font-weight);
+  color: white;
+}
+
+.modules-listing__menu {
+  list-style-type: none;
+  margin-top: var(--space-3);
+  color: var(--french-gray);
+  font-weight: var(--heavy-font-weight);
+}
+
+.modules-listing__item:not(:first-of-type) {
+  margin-top: var(--space-2);
+}
+
