@@ -1,0 +1,26 @@
+{% macro modules_list(list, list_title) %}
+  <h3>{{ list_title }}</h3>
+
+  <menu class="modules-listing__menu">
+    {% for module in list %}
+      <li>{{ module.title }}</li>
+    {% endfor %}
+  </menu>
+{% endmacro %}
+
+<div class="modules-listing">
+  <div class="modules-listing__menus">
+    {{ modules_list(module.core_modules, "Core Modules") }}
+    {{ modules_list(module.core_modules, "Strategic Modules") }}
+  </div>
+
+  {# All the information on this block is injected via a JS function from the module #}
+  <div class="module-description">
+    <img class="module-description__image" src="" alt="" />
+
+    <div class="module-description__text-block">
+      <h4 class="module-description__title"></h4>
+      <p class="module-description__text"></p>
+    </div>
+  </div>
+</div>
