@@ -29,12 +29,37 @@
 
 .modules-listing__menu {
   list-style-type: none;
-  margin-top: var(--space-3);
-  color: var(--french-gray);
-  font-weight: var(--heavy-font-weight);
+  margin-top: var(--space-2);
 }
 
 .modules-listing__item:not(:first-of-type) {
   margin-top: var(--space-2);
+}
+
+.modules-listing__button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--french-gray);
+  font-weight: var(--heavy-font-weight);
+  position: relative;
+}
+
+.modules-listing__button:after {
+  content: "";
+  border: 1px solid var(--french-gray);
+  position: absolute;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+
+.modules-listing__button:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.modules-listing__button:hover:after {
+  border-color: white;
 }
 
