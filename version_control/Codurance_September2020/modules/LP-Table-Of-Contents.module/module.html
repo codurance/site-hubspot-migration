@@ -1,1 +1,7 @@
-{% simple_menu menu_tree="{{ module.menu_tree }}", orientation="vertical" %}
+{{ require_css(get_asset_url("../../css/modules/lp-table-of-contents.css")) }}
+
+<nav class="table-of-contents">
+  <h2 class="table-of-contents__title">{{ module.title }}</h2>
+  {% simple_menu menu_tree="{{ module.contents_menu }}", orientation="vertical" %}
+</nav>
+
