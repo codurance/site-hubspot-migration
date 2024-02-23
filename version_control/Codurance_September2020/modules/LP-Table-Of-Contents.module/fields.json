@@ -1,0 +1,23 @@
+[ {
+  "id" : "6b748b4f-7c65-96f9-8f59-66861507d50d",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Table of contents"
+}, {
+  "id" : "de863304-d116-95df-701d-946282fb63fc",
+  "name" : "contents_menu",
+  "display_width" : null,
+  "label" : "Contents menu",
+  "required" : false,
+  "locked" : false,
+  "type" : "simplemenu",
+  "default" : [ ]
+} ]
