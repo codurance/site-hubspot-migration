@@ -8,6 +8,10 @@ You will also find the mobile menu styles below.
 
 {% include "../utils/utils.css" as utils %}
 
+:root {
+  --header-height: 71px;
+}
+
 header.header {
   {{ utils.card_shadow() }}
   background-color: white;
@@ -19,7 +23,6 @@ header.header {
 
 .body-wrapper > div:first-child[data-global-resource-path],
 header.header {
-  --header-height: 71px;
   height: var(--header-height);
 }
 
@@ -92,20 +95,18 @@ header.header.fixed {
 {% endcall %}
 
 {% call utils.large_and_extra_large() %}
-  .body-wrapper > div:first-child,
-  header.header {
+  :root {
     --header-height: 85px;
   }
 {% endcall %}
 
 {% call utils.large() %}
-  .navigation-primary {
-    margin: 0 25px;
+  :root {
+    --header-height: 70px;
   }
 
-  .body-wrapper > div:first-child,
-  header.header {
-    --header-height: 70px;
+  .navigation-primary {
+    margin: 0 25px;
   }
 {% endcall %}
 
@@ -121,8 +122,7 @@ header.header.fixed {
 {% endcall %}
 
 {% call utils.small_and_medium() %}
-  .body-wrapper > div:first-child,
-  header.header {
+  :root {
     --header-height: 71px;
   }
 
