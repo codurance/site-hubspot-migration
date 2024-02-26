@@ -7,7 +7,12 @@
     <menu class="modules-listing__menu">
       {% for module in list %}
         <li class="modules-listing__item">
-          <button class="modules-listing__button">{{ module.title }}</button>
+          <button 
+            class="modules-listing__button"
+            data-image="{{ module.image.src }}"
+            data-title="{{ module.title }}"
+            data-description="{{ module.description }}"
+          >{{ module.title }}</button>
         </li>
       {% endfor %}
     </menu>
