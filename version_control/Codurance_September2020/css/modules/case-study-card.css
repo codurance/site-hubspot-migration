@@ -75,6 +75,7 @@
     top: 0;
     right: 0;
     margin-top: -{{ padding_top_card }};
+    max-width: 70%;
 }
 
 .case-study-card__text-container {
@@ -91,7 +92,6 @@
 .case-study-card__title {
     font-weight: var(--heavy-font-weight);
     margin-bottom: var(--space-2);
-    margin-top: var(--space-5);
 }
 
 .case-study-card__description {
@@ -140,7 +140,6 @@
     }
 
     .case-study-card__title {
-        margin-top: 0;
         max-width: 50%;
     }
 
