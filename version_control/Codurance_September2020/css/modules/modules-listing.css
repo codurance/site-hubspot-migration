@@ -63,3 +63,18 @@
   border-color: white;
 }
 
+.module-description {
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+}
+
+.module-description__title {
+  font-weight: var(--heavy-font-weight);
+}
+
+.module-description__text {
+  {{ utils.natus() }}
+}
+
