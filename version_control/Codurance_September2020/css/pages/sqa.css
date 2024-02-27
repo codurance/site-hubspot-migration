@@ -1,6 +1,18 @@
 {% import '../utils/utils.css' as utils %}
 
 /* General styles */
+{% call utils.large_and_extra_large() %}
+    .mobile {
+        display: none;
+    }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+    .desktop {
+        display: none;
+    }
+{% endcall %}
+
 .section-header h2 {
     {{ utils.dudler() }}
     font-weight: var(--heavy-font-weight);

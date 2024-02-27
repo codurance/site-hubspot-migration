@@ -34,6 +34,7 @@ label: Software Quality Assessment Packaged Solution Page
     %}   
     {% module "modules_listing" 
       path="../modules/Modules-Listing.module" 
+      extra_classes="desktop"
     %}  
 
     {% set core_modules = widget_data.modules_listing.core_modules %}
@@ -49,10 +50,11 @@ label: Software Quality Assessment Packaged Solution Page
       {% do modules_data_to_accordion.append(accordion_item_data) %}
     {% endfor %}
 
-    {% module "modules_listing_mobile" 
+    {% module "modules_listing_mobiles" 
       path="../modules/Accordion.module" 
       label="Accordion" 
       accordion_item={{modules_data_to_accordion}}
+      extra_classes="mobile"
     %}        
   </section>
 
