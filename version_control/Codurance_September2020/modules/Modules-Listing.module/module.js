@@ -1,16 +1,41 @@
 "use strict";
 
 const listOfModules = document.querySelectorAll(".modules-listing__button");
+const firstModuleOfList = listOfModules[0];
 
-listOfModules.forEach((button) =>
-  button.addEventListener("click", loadModuleInfo)
+loadModule(firstModuleOfList);
+
+function loadModule(module) {
+  setActiveModule(module);
+  loadModuleInfo(module);
+}
+
+listOfModules.forEach((module) =>
+  module.addEventListener("click", buttonHandler)
 );
 
-function loadModuleInfo(event) {
-  const button = event.target;
-  const moduleImage = button.dataset.image;
-  const moduleTitle = button.dataset.title;
-  const moduleDescription = button.dataset.description;
+function buttonHandler(event) {
+  const module = event.target;
+  unsetCurrentActiveModule();
+  loadModule(module);
+}
+
+function unsetCurrentActiveModule() {
+  const currentActiveModule = document.querySelector(
+    ".modules-listing__button--active"
+  );
+
+  currentActiveModule.classList.remove("modules-listing__button--active");
+}
+
+function setActiveModule(module) {
+  module.classList.add("modules-listing__button--active");
+}
+
+function loadModuleInfo(module) {
+  const moduleImage = module.dataset.image;
+  const moduleTitle = module.dataset.title;
+  const moduleDescription = module.dataset.description;
 
   hideDescriptionContainer();
 

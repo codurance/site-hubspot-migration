@@ -63,14 +63,19 @@
   border-color: white;
 }
 
+.modules-listing__button--active {
+  color: var(--persimmon--dark);
+}
+
+.modules-listing__button--active:after {
+  border-color: var(--persimmon--dark);
+}
+
 .module-description {
   padding: var(--space-4);
   display: flex;
   align-items: center;
   gap: var(--space-7);
-}
-
-.module-description {
 	transition: opacity 100ms ease-in-out;
   visibility: visible;
   opacity: 1;
