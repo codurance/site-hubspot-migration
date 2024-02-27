@@ -38,22 +38,36 @@ label: Software Quality Assessment Packaged Solution Page
     %}  
 
     {% set core_modules = widget_data.modules_listing.core_modules %}
-    {% set strategic_modules = widget_data.modules_listing.strategic_modules %}
-    {% set all_modules = (core_modules + strategic_modules) %}
-    {% set modules_data_to_accordion = [] %}
-
-    {% for module in all_modules %}
+    {% set core_modules_to_accordion = [] %}
+    {% for module in core_modules %}
       {% set accordion_item_data = {
         "accordion_title": module.title,
         "accordion_content": module.description
       } %}
-      {% do modules_data_to_accordion.append(accordion_item_data) %}
+      {% do core_modules_to_accordion.append(accordion_item_data) %}
     {% endfor %}
 
-    {% module "modules_listing_mobiles" 
+    {% module "core_modules_listing_mobile" 
       path="../modules/Accordion.module" 
       label="Accordion" 
-      accordion_item={{modules_data_to_accordion}}
+      accordion_item={{core_modules_to_accordion}}
+      extra_classes="mobile"
+    %}
+
+    {% set strategic_modules = widget_data.modules_listing.strategic_modules %}
+    {% set strategic_modules_to_accordion = [] %}
+    {% for module in strategic_modules %}
+      {% set accordion_item_data = {
+        "accordion_title": module.title,
+        "accordion_content": module.description
+      } %}
+      {% do strategic_modules_to_accordion.append(accordion_item_data) %}
+    {% endfor %}
+
+    {% module "strategic_modules_listing_mobile" 
+      path="../modules/Accordion.module" 
+      label="Accordion" 
+      accordion_item={{strategic_modules_to_accordion}}
       extra_classes="mobile"
     %}        
   </section>

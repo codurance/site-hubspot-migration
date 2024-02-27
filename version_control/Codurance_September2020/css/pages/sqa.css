@@ -62,7 +62,9 @@
 }
 
 /* Modules section */
-
+.modules .accordion {
+    padding: unset;
+}
 
 /* Testimonials section */
 .testimonials-slider {
