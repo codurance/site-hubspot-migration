@@ -24,7 +24,36 @@ label: Software Quality Assessment Packaged Solution Page
 
   <section class="modules region responsive-page-width lateral-spacing">
     {% module "modules_header" path="@hubspot/section_header" label="Modules header" %} 
-    {% module "modules_listing" path="../modules/Modules-Listing.module" label="Modules listing" %}           
+
+    {# This module is repeated because the first one is to set up the content and the second one to display it.
+      The objective is to be able to copy the content on the following accordion module #}
+    {% module "modules_listing" 
+      path="../modules/Modules-Listing.module" 
+      label="Modules listing" 
+      export_to_template_context=True 
+    %}   
+    {% module "modules_listing" 
+      path="../modules/Modules-Listing.module" 
+    %}  
+
+    {% set core_modules = widget_data.modules_listing.core_modules %}
+    {% set strategic_modules = widget_data.modules_listing.strategic_modules %}
+    {% set all_modules = (core_modules + strategic_modules) %}
+    {% set modules_data_to_accordion = [] %}
+
+    {% for module in all_modules %}
+      {% set accordion_item_data = {
+        "accordion_title": module.title,
+        "accordion_content": module.description
+      } %}
+      {% do modules_data_to_accordion.append(accordion_item_data) %}
+    {% endfor %}
+
+    {% module "modules_listing_mobile" 
+      path="../modules/Accordion.module" 
+      label="Accordion" 
+      accordion_item={{modules_data_to_accordion}}
+    %}        
   </section>
 
   <section class="benefits region"></section>
