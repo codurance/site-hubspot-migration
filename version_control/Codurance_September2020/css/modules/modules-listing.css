@@ -70,6 +70,17 @@
   gap: var(--space-7);
 }
 
+.module-description {
+	transition: opacity 100ms ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+
+.module-description--hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
 .module-description__title {
   font-weight: var(--heavy-font-weight);
 }
@@ -77,4 +88,6 @@
 .module-description__text {
   {{ utils.natus() }}
 }
+
+
 
