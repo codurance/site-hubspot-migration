@@ -8,6 +8,7 @@
       {% for module in list %}
         <li class="modules-listing__item">
           <button 
+            aria-describedby="module-description"
             class="modules-listing__button"
             data-image="{{ module.image.src }}"
             data-title="{{ module.title }}"
@@ -31,7 +32,7 @@
 
     <div class="module-description__text-block">
       <h4 class="module-description__title"></h4>
-      <p class="module-description__text"></p>
+      <p class="module-description__text" id="module-description"></p>
     </div>
   </div>
 </div>
