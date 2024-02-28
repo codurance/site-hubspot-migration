@@ -98,7 +98,38 @@ section.responsive-page-width {
 }
 
 /* Benefits section */
+.benefits {
+    {{ utils.tango_to_white() }}
+}
 
+.benefits .benefits-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.custom-benefits-we-offer {
+    flex-direction: column;
+}
+
+.benefits .custom-benefits-we-offer__text-container > * {
+    {{ utils.natus() }}
+}
+
+.benefits .custom-benefits-we-offer__text-container > h3 {
+    font-weight: var(--heavy-font-weight);
+}
+
+.benefits .custom-benefits-we-offer__text-container > p {
+    margin-top: unset;
+}
+
+{% call utils.small() %}
+    .benefits .benefits-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-1);
+    }
+{% endcall %}
 
 /* Testimonials section */
 .testimonials-slider {
