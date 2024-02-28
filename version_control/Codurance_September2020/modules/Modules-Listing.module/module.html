@@ -22,8 +22,8 @@
 
 <div class="modules-listing">
   <div class="modules-listing__menus">
-    {{ modules_list(module.core_modules, "Core Modules") }}
-    {{ modules_list(module.strategic_modules, "Strategic Modules") }}
+    {{ modules_list(module.core_modules, module.core_modules_title) }}
+    {{ modules_list(module.strategic_modules, module.strategic_modules_title) }}
   </div>
 
   {# All the information on this block is injected via a JS function from the module #}
