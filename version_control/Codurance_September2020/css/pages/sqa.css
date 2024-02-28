@@ -10,6 +10,11 @@
     margin-top: var(--space-3);
 }
 
+div.responsive-page-width,
+section.responsive-page-width {
+    max-width: var(--content-inner-max-width);
+}
+
 /* Hero section */
 .hero {
     {{ utils.slate_to_woodsmoke() }}
@@ -50,6 +55,7 @@
 }
 
 /* Modules section */
+
 {% call utils.large_and_extra_large() %}
     .modules-listing-mobile {
         display: none;
@@ -57,6 +63,10 @@
 {% endcall %}
 
 {% call utils.small_and_medium() %}
+    section.modules {
+        padding-bottom: unset;
+    }
+
     .modules-listing-desktop {
         display: none;
     }
@@ -86,6 +96,9 @@
     font-weight: var(--light-font-weight);
     color: white;
 }
+
+/* Benefits section */
+
 
 /* Testimonials section */
 .testimonials-slider {
