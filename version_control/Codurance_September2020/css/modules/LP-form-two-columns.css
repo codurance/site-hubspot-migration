@@ -12,7 +12,7 @@
 }
 
 .form__wrapper--background-dark{
-    {{utils.black_to_navy()}} 
+    {{utils.slate_to_woodsmoke()}} 
     color: white;   
 }
 .form__wrapper--background-dark .legal-consent-container p{

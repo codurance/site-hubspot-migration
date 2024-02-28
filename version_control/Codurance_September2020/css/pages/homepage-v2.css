@@ -133,7 +133,7 @@
 ================================= */
 
 .craftmanship-ethos{
-    {{ utils.black_to_navy() }}
+    {{ utils.slate_to_woodsmoke() }}
     color: white;
 }
 
