@@ -51,8 +51,9 @@ label: Software Quality Assessment Packaged Solution Page
       {% endfor %}
       {% module "core_modules_listing_mobile"
         path="../modules/Accordion.module"
-        label="Accordion"
+        label="Core Modules Listing Mobile"
         accordion_item={{core_modules_to_accordion}}
+        overrideable=false
       %}
 
       <h3 class="modules-listing-mobile__title">{{ widget_data.modules_listing.strategic_modules_title }}</h3>
@@ -67,8 +68,9 @@ label: Software Quality Assessment Packaged Solution Page
       {% endfor %}
       {% module "strategic_modules_listing_mobile"
         path="../modules/Accordion.module"
-        label="Accordion"
+        label="Strategic Modules Listing Mobile"
         accordion_item={{strategic_modules_to_accordion}}
+        overrideable=false
       %}
     </div>
   </section>
@@ -77,7 +79,7 @@ label: Software Quality Assessment Packaged Solution Page
     {% module "benefits" path="../modules/Benefits.module" %}
   </section>
 
-  {# CTA #}
+  {% module "hero_content" path="../modules/LP-cta-block.module" label="CTA" %}
 
   <section class="how-it-works region"></section>
 
