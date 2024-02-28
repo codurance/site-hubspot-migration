@@ -105,6 +105,7 @@ section.responsive-page-width {
 .benefits .benefits-container {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
+    margin-bottom: unset;
 }
 
 .custom-benefits-we-offer {
@@ -128,6 +129,18 @@ section.responsive-page-width {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-1);
+    }
+{% endcall %}
+
+/* CTAs */
+div.cta-block {
+    background-position-x: left;
+}
+
+{% call utils.small() %}
+    .cta-block {
+        background-color: var(--slate);
+        background-blend-mode: soft-light;
     }
 {% endcall %}
 
