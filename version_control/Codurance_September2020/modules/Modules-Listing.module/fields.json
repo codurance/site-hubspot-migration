@@ -8,7 +8,7 @@
     "default": "",
     "placeholder": "Core Modules"
   },
-  ({
+  {
     "children": [
       {
         "allow_new_line": false,
@@ -135,5 +135,5 @@
     "required": false,
     "tab": "CONTENT",
     "type": "group"
-  })
+  }
 ]
