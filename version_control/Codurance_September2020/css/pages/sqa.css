@@ -1,18 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
 /* General styles */
-{% call utils.large_and_extra_large() %}
-    .mobile {
-        display: none;
-    }
-{% endcall %}
-
-{% call utils.small_and_medium() %}
-    .desktop {
-        display: none;
-    }
-{% endcall %}
-
 .section-header h2 {
     {{ utils.dudler() }}
     font-weight: var(--heavy-font-weight);
@@ -62,8 +50,41 @@
 }
 
 /* Modules section */
+{% call utils.large_and_extra_large() %}
+    .modules-listing-mobile {
+        display: none;
+    }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+    .modules-listing-desktop {
+        display: none;
+    }
+{% endcall %}
+
+.modules-listing-mobile {
+    {{ utils.slate_to_woodsmoke() }}
+    color: white;
+    padding-bottom: var(--space-6);
+}
+
+.modules-listing-mobile__title {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+    padding-top: var(--space-5);
+}
+
 .modules .accordion {
     padding: unset;
+}
+
+.modules .panel-title {
+    margin-bottom: 0;
+}
+
+.modules .panel-title__heading {
+    font-weight: var(--light-font-weight);
+    color: white;
 }
 
 /* Testimonials section */
