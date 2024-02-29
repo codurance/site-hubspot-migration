@@ -165,8 +165,7 @@ div.cta-block {
 }
 
 /* Testimonials section */
-.testimonials-slider {
-    max-width: 30rem; /* overrides default max width */
-    margin-inline: auto;
-    padding-bottom: var(--space-6);
+.testimonials {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
 }
