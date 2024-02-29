@@ -144,6 +144,16 @@ div.cta-block {
     }
 {% endcall %}
 
+/* How it works section */
+.how-it-works {
+    {{ utils.white_to_tango() }}
+}
+
+.how-it-works__header {
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
+}
+
 /* Testimonials section */
 .testimonials-slider {
     max-width: 30rem; /* overrides default max width */

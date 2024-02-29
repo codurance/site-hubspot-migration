@@ -81,7 +81,14 @@ label: Software Quality Assessment Packaged Solution Page
 
   {% module "cta" path="../modules/LP-cta-block.module" label="CTA" %}
 
-  <section class="how-it-works region"></section>
+  <section class="how-it-works region">
+    {% module "how_it_works_header" 
+      path="@hubspot/section_header" 
+      label="How it works header" 
+      extra_classes="how-it-works__header lateral-spacing" 
+    %}
+    {% module "how_it_works" path="../modules/Interview Process.module" label="How it works steps" %}
+  </section>
 
   {% module "testimonials" 
     label="Testimonials listing" 
