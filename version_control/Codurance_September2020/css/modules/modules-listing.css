@@ -32,6 +32,10 @@
   margin-top: var(--space-2);
 }
 
+.modules-listing__item {
+  position: relative;
+}
+
 .modules-listing__item:not(:first-of-type) {
   margin-top: var(--space-2);
 }
@@ -42,7 +46,6 @@
   background: none;
   color: var(--french-gray);
   font-weight: var(--heavy-font-weight);
-  position: relative;
 }
 
 .modules-listing__button:after {
