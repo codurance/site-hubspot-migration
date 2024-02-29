@@ -154,6 +154,16 @@ div.cta-block {
     margin-inline: auto;
 }
 
+.how-it-works .text-and-image__title {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.how-it-works .text-and-image__copy p {
+    {{ utils.freed() }}
+    font-weight: var(--light-font-weight);
+}
+
 /* Testimonials section */
 .testimonials-slider {
     max-width: 30rem; /* overrides default max width */
