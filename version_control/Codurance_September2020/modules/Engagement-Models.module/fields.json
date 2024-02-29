@@ -1,0 +1,68 @@
+[ {
+  "id" : "b2ce0da6-f20c-6c49-1ee5-0e6ef6820690",
+  "name" : "models",
+  "display_width" : null,
+  "label" : "Models",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "6229736a-613f-63f6-6263-af5ab9542a2d",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "6229736a-613f-63f6-6263-af5ab9542a2d",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "5ecd4cf6-b7ca-a1ad-2f5f-b2aeed309a6c",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "c30178ec-6539-09e2-83c7-96d1fe47579d",
+    "name" : "features",
+    "display_width" : null,
+    "label" : "Features",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "cfc66c24-3543-ab2c-ee30-f45f4c4198d5",
+    "name" : "featured",
+    "display_width" : null,
+    "label" : "Featured",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ ]
+} ]
