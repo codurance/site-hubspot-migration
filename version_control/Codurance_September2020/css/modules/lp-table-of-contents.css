@@ -10,8 +10,7 @@
 }
 
 .table-of-contents {
-  {{ utils.card_shadow_large() }}
-  {{ utils.card_border_radius() }}
+  background-color: var(--athens-gray);
   padding: var(--space-3);
   margin-bottom: var(--space-3);
   margin-top: var(--space-3);
@@ -21,26 +20,28 @@
   }
 
   .hs-menu-depth-1 {
-    margin-top: var(--space-1);
+    margin-top: var(--space-4);
   }
 
   .hs-menu-depth-2 {
-    margin-top: var(--space-0);
+    margin-top: var(--space-2);
+    margin-left: var(--space-2);
   }
 
   .hs-menu-depth-1 > a {
-    {{ utils.natus() }}
-    font-weight: var(--middle-font-weight);
+    {{ utils.base() }}
+    font-weight: var(--heavy-font-weight);
+    color: var(--shark);
   }
 
   .hs-menu-depth-2 > a {
-    {{ utils.sejima() }}
+    {{ utils.natus() }}
   }
 
   .hs-menu-item a,
   .hs-menu-item:focus a, 
   .hs-menu-item:hover a {
-    color: var(--mid-gray);
+    color: var(--shark);
   }
 
   .hs-menu-item:hover > a {
@@ -50,5 +51,6 @@
 
 .table-of-contents__title {
   font-weight: var(--heavy-font-weight);
+  color: var(--mid-gray);
 }
 
