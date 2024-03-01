@@ -177,6 +177,10 @@ div.cta-block {
     margin-inline: auto;
 }
 
+.models div.page-header.section-header {
+    margin-bottom: unset;
+}
+
 .models__text {
     {{ utils.card_border_radius() }}
     {{ utils.card_shadow_large() }}
