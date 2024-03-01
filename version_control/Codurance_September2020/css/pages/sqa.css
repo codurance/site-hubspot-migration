@@ -2,17 +2,18 @@
 
 /* General styles */
 .section-header h2 {
-    {{ utils.dudler() }}
+    {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
 }
 
 .section-header p {
-    margin-top: var(--space-3);
+    margin-top: var(--space-2);
 }
 
 div.responsive-page-width,
 section.responsive-page-width {
     max-width: var(--content-inner-max-width);
+    margin-inline: auto;
 }
 
 /* Hero section */

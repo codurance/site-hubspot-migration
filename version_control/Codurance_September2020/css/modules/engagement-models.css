@@ -8,6 +8,12 @@
   gap: var(--space-4);
 }
 
+{% call utils.large() %}
+  .engagement-models {
+    padding-inline: unset;
+  }
+{% endcall %}
+
 {% call utils.small_and_medium() %}
   .engagement-models {
     overflow-x: scroll;
