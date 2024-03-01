@@ -44,13 +44,14 @@
   padding: 0;
   border: none;
   background: none;
-  color: var(--french-gray);
+  color: white;
   font-weight: var(--heavy-font-weight);
 }
 
 .modules-listing__button:after {
   content: "";
-  border: 1px solid var(--french-gray);
+  height: 1px;
+  background: white;
   position: absolute;
   width: 100%;
   bottom: -5px;
@@ -58,12 +59,12 @@
 }
 
 .modules-listing__button:hover {
-  color: white;
+  color: var(--persimmon);
   cursor: pointer;
 }
 
 .modules-listing__button:hover:after {
-  border-color: white;
+  background: var(--persimmon);
 }
 
 .modules-listing__button--active {
@@ -71,7 +72,7 @@
 }
 
 .modules-listing__button--active:after {
-  border-color: var(--persimmon--dark);
+  background: var(--persimmon--dark);
 }
 
 .module-description {
