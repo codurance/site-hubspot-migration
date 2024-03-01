@@ -1,1 +1,90 @@
 {% import '../utils/utils.css' as utils %}
+
+.engagement-models {
+  --featured-title-height: 2.5rem;
+  padding-top: var(--featured-title-height);
+  padding-bottom: var(--space-3);
+  display: flex;
+  gap: var(--space-4);
+}
+
+{% call utils.small_and_medium() %}
+  .engagement-models {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+{% endcall %}
+
+.engagement-models__item {
+  {{ utils.card_shadow_large() }}
+  {{ utils.card_border_radius() }}
+  display: flex;
+  flex-basis: 33%;
+  flex-direction: column;
+  position: relative;
+  min-width: 15.5rem;
+}
+
+.engagement-models__item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-4);
+}
+
+.engagement-models__item:not(.engagement-models__item--featured) .engagement-models__featured-title {
+  display: none;
+}
+
+.engagement-models__item--featured {
+  --border-width: 3px;
+  border: solid var(--border-width) var(--java);
+}
+
+.engagement-models__featured-title {
+  height: var(--featured-title-height);
+  padding: 0.75rem;
+  position: absolute;
+  top: calc(var(--featured-title-height) * -1 + var(--border-width) * 2);
+  left: calc(var(--border-width) * -1);
+  color: white;
+  background: var(--java);
+  {{ utils.natus() }}
+  font-weight: var(--heavy-font-weight);
+  width: calc(100% + var(--border-width) * 2);
+  {{ utils.card_border_radius_top() }}
+  text-align: center;
+}
+
+.engagement-models__title {
+  font-weight: var(--heavy-font-weight);
+}
+
+.engagement-models__item hr {
+  height: unset;
+  width: 100%;
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.engagement-models__description,
+.engagement-models__feature {
+  {{ utils.natus() }}
+}
+
+.engagement-models__features {
+  list-style-type: none;
+  margin-left: var(--space-4);
+}
+
+.engagement-models__feature {
+  margin-top: var(--space-2);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+
+  .la-check {
+    color: var(--java);
+    -webkit-text-stroke: 1px;
+  }
+}
