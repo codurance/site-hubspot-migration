@@ -6,7 +6,7 @@ label: Page Footer
 {{ require_css(get_asset_url("../../css/partials/footer-v2.css")) }}
 
 <footer class="footer-v2">
-  <div class="page-center">
+  <div class="responsive-page-width">
     <div class="footer-v2__rss-container">
         <h6 class="footer-v2__rss-title">Latest Blogs</h6>
         {% module "rss_listing" path="@hubspot/rss_listing", label="" show_date="false" show_detail="false" attribution_text=""  max_links="5"%}

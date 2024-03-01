@@ -28,7 +28,7 @@ password protected content and search listing results.
 .hs-404-error-layout .error-image {
   width: 100%;
 }
-.hs-404-error-layout .page-center {
+.hs-404-error-layout .responsive-page-width {
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom:15px;
@@ -66,7 +66,7 @@ ul.no-list.hs-error-msgs {
 .email-prefs .item.disabled input:disabled {
   cursor: not-allowed;
 }
-.hs-404-error-layout .page-center p {
+.hs-404-error-layout .responsive-page-width p {
   margin-bottom: 31px;
 }
 input.email-edit.hs-input {
@@ -74,7 +74,7 @@ input.email-edit.hs-input {
 }
 
 @media(min-width:768px){
-  .hs-404-error-layout .page-center p {
+  .hs-404-error-layout .responsive-page-width p {
     max-width: 66.666667%;
     margin-bottom: 31px;
   }

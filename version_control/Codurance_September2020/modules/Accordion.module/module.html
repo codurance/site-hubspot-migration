@@ -6,7 +6,7 @@
       {% for item in module.accordion_item %}
         <div class="panel panel--close">
           <a class="panel-title">
-            <h2 class="panel-title__heading">{{ item.accordion_title }}</h2>
+            <div class="panel-title__heading">{{ item.accordion_title }}</div>
           </a>
           {% if item.accordion_content %}
             <div class="panel-body" role="tabpanel">

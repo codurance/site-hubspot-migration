@@ -1,0 +1,80 @@
+[
+  {
+    "children": [
+      {
+        "allow_new_line": false,
+        "display_width": null,
+        "id": "6229736a-613f-63f6-6263-af5ab9542a2d",
+        "label": "Title",
+        "locked": false,
+        "name": "title",
+        "required": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "validation_regex": ""
+      },
+      {
+        "allow_new_line": false,
+        "display_width": null,
+        "id": "5ecd4cf6-b7ca-a1ad-2f5f-b2aeed309a6c",
+        "label": "Description",
+        "locked": false,
+        "name": "description",
+        "required": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "validation_regex": ""
+      },
+      {
+        "allow_new_line": false,
+        "display_width": null,
+        "id": "c30178ec-6539-09e2-83c7-96d1fe47579d",
+        "label": "Features",
+        "locked": false,
+        "name": "features",
+        "occurrence": {},
+        "required": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "validation_regex": ""
+      },
+      {
+        "default": false,
+        "display": "toggle",
+        "display_width": null,
+        "id": "cfc66c24-3543-ab2c-ee30-f45f4c4198d5",
+        "label": "Featured",
+        "locked": false,
+        "name": "featured",
+        "required": false,
+        "type": "boolean"
+      }
+    ],
+    "default": [],
+    "display_width": null,
+    "expanded": false,
+    "id": "b2ce0da6-f20c-6c49-1ee5-0e6ef6820690",
+    "label": "Models",
+    "locked": false,
+    "name": "models",
+    "occurrence": {
+      "sorting_label_field": "6229736a-613f-63f6-6263-af5ab9542a2d"
+    },
+    "required": false,
+    "tab": "CONTENT",
+    "type": "group"
+  },
+  {
+    "allow_new_line": false,
+    "display_width": null,
+    "id": "1c510383-5b24-86d3-2e41-7566b0c001b5",
+    "label": "Featured Model Title",
+    "locked": false,
+    "name": "featured_model_title",
+    "placeholder": "Most popular!",
+    "required": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "validation_regex": ""
+  }
+]

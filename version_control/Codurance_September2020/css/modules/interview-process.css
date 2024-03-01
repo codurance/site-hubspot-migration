@@ -121,6 +121,7 @@
 
 .custom-interview-process__step {
   {{ utils.natus() }}
+  font-weight: var(--heavy-font-weight);
   text-transform: uppercase;
   color: var(--mid-gray);
   margin-bottom: 0;
@@ -171,17 +172,32 @@
 
 
 .custom-interview-process__title {
-  {{ utils.base() }}
-  margin-bottom: var(--freed-margin);
+  {{ utils.freed() }}
+  
   font-weight: var(--heavy-font-weight);
 }
 
+{% call utils.large_and_extra_large() %}
+  .custom-interview-process__title {
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-1);
+  }
+{% endcall %}
 
+{% call utils.small_and_medium() %}
+  .custom-interview-process__title {
+    margin-top: var(--space-0);
+    margin-bottom: var(--space-0);
+  }
+{% endcall %}
+
+.custom-interview-process__description,
 .custom-interview-process__description > p {
   {{ utils.natus() }}
 }
 
 {% call utils.small_and_medium() %}
+  .custom-interview-process__description,
   .custom-interview-process__description > p {
     margin-left: auto;
     margin-right: auto;

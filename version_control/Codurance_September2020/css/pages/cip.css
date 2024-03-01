@@ -160,7 +160,7 @@ section.infographic {
 }
 
 .article-cards {
-    {{ utils.black_to_navy() }}
+    {{ utils.slate_to_woodsmoke() }}
     margin-top: var(--space-7);
 }
 

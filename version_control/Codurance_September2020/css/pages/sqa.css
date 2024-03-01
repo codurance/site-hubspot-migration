@@ -1,0 +1,189 @@
+{% import '../utils/utils.css' as utils %}
+
+/* General styles */
+.section-header h2 {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.section-header p {
+    margin-top: var(--space-2);
+}
+
+div.responsive-page-width,
+section.responsive-page-width {
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
+}
+
+/* Hero section */
+.hero {
+    {{ utils.slate_to_woodsmoke() }}
+    color: white;
+}
+
+.hero .text-and-image__container {
+    max-width: var(--content-max-width);
+    justify-content: flex-start;
+}
+
+{% call utils.large_and_extra_large() %}
+    .hero .text-and-image__copy {
+        max-width: 35rem;
+    }
+
+    .hero .text-and-image__copy p {
+        {{ utils.freed() }}
+        font-weight: var(--light-font-weight);
+    }
+{% endcall %}
+
+{% call utils.large() %}
+    .hero .text-and-image__container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+{% endcall %}
+
+/* Solution section (floating cards) */
+.solution {
+    {{ utils.white_to_tango() }}
+}
+
+.solution__text {
+    font-weight: var(--heavy-font-weight);
+    margin-top: var(--space-4);
+}
+
+/* Modules section */
+
+{% call utils.large_and_extra_large() %}
+    .modules-listing-mobile {
+        display: none;
+    }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+    section.modules {
+        padding-bottom: unset;
+    }
+
+    .modules-listing-desktop {
+        display: none;
+    }
+{% endcall %}
+
+.modules-listing-mobile {
+    {{ utils.slate_to_woodsmoke() }}
+    color: white;
+    padding-bottom: var(--space-6);
+}
+
+.modules-listing-mobile__title {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+    padding-top: var(--space-5);
+}
+
+.modules .accordion {
+    padding: unset;
+}
+
+.modules .panel-title {
+    margin-bottom: 0;
+}
+
+.modules .panel-title__heading {
+    font-weight: var(--light-font-weight);
+    color: white;
+}
+
+/* Benefits section */
+.benefits {
+    {{ utils.tango_to_white() }}
+}
+
+.benefits .benefits-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: unset;
+}
+
+.custom-benefits-we-offer {
+    flex-direction: column;
+}
+
+.benefits .custom-benefits-we-offer__text-container > * {
+    {{ utils.natus() }}
+}
+
+.benefits .custom-benefits-we-offer__text-container > h3 {
+    font-weight: var(--heavy-font-weight);
+}
+
+.benefits .custom-benefits-we-offer__text-container > p {
+    margin-top: unset;
+}
+
+{% call utils.small() %}
+    .benefits .benefits-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-1);
+    }
+{% endcall %}
+
+/* CTAs */
+div.cta-block {
+    background-position-x: left;
+}
+
+{% call utils.small() %}
+    .cta-block {
+        background-color: var(--slate);
+        background-blend-mode: soft-light;
+    }
+{% endcall %}
+
+/* How it works section */
+.how-it-works {
+    {{ utils.white_to_tango() }}
+}
+
+.how-it-works__header {
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
+}
+
+.how-it-works .text-and-image__title {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.how-it-works .text-and-image__copy p {
+    {{ utils.freed() }}
+    font-weight: var(--light-font-weight);
+}
+
+/* Testimonials section */
+.testimonials {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
+}
+
+/* Models section */
+.models {
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
+}
+
+.models div.page-header.section-header {
+    margin-bottom: unset;
+}
+
+.models__text {
+    {{ utils.card_border_radius() }}
+    {{ utils.card_shadow_large() }}
+    font-weight: var(--heavy-font-weight);
+    padding: var(--space-3) var(--space-5);
+}

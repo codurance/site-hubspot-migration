@@ -1,0 +1,102 @@
+{% import '../utils/utils.css' as utils %}
+
+.modules-listing,
+.modules-listing__menus {
+  {{ utils.card_border_radius() }}
+}
+
+.modules-listing {
+	{{ utils.card_shadow_large() }}
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.modules-listing__list {
+  padding: var(--space-4);
+}
+
+.modules-listing__menus {
+  {{ utils.slate_to_woodsmoke() }}
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.modules-listing__list-title {
+  {{ utils.freed() }}
+  font-weight: var(--heavy-font-weight);
+  color: white;
+}
+
+.modules-listing__menu {
+  list-style-type: none;
+  margin-top: var(--space-2);
+}
+
+.modules-listing__item {
+  position: relative;
+}
+
+.modules-listing__item:not(:first-of-type) {
+  margin-top: var(--space-2);
+}
+
+.modules-listing__button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: white;
+  font-weight: var(--heavy-font-weight);
+}
+
+.modules-listing__button:after {
+  content: "";
+  height: 1px;
+  background: white;
+  position: absolute;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+
+.modules-listing__button:hover {
+  color: var(--persimmon);
+  cursor: pointer;
+}
+
+.modules-listing__button:hover:after {
+  background: var(--persimmon);
+}
+
+.modules-listing__button--active {
+  color: var(--persimmon--dark);
+}
+
+.modules-listing__button--active:after {
+  background: var(--persimmon--dark);
+}
+
+.module-description {
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+	transition: opacity 100ms ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+
+.module-description--hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.module-description__title {
+  font-weight: var(--heavy-font-weight);
+}
+
+.module-description__text {
+  {{ utils.natus() }}
+}
+
+
+

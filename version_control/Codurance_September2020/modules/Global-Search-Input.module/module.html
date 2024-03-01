@@ -1,7 +1,7 @@
 {{ require_css(get_asset_url("../../css/modules/global-search-input.css")) }}
 
 <div class="hs-search-field" id="hs-search-field"> 
-  <div class="hs-search-field__inner-wrapper page-center lateral-spacing">
+  <div class="hs-search-field__inner-wrapper responsive-page-width lateral-spacing">
     <div class="hs-search-field__bar"> 
       <form action="/{{ site_settings.content_search_results_page_path }}">
         {% if module.field_label %}

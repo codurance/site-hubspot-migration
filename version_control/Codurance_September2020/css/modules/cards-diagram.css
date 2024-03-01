@@ -1,0 +1,102 @@
+{% import '../utils/utils.css' as utils %}
+
+.cards-diagram__listing {
+	list-style-type: none;
+}
+
+.cards-diagram__card {
+	{{ utils.card_border_radius() }}
+	{{ utils.card_shadow_large() }}
+	background: white;
+	padding: var(--space-3) var(--space-4);
+}
+
+.cards-diagram__card-text {
+	font-weight: var(--heavy-font-weight);
+}
+
+.central-title {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.central-title__text {
+	{{ utils.freed() }}
+	font-weight: var(--heavy-font-weight);
+	position: absolute;
+	word-spacing: 9999rem;
+	text-align: center;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+	.cards-diagram {
+		padding-top: var(--space-4);
+		padding-bottom: var(--space-4);
+	}
+
+	.cards-diagram__grid {
+		display: grid;
+		--image-column-width: 12.5rem;
+		grid-template-columns: 1fr var(--image-column-width) 1fr; 
+		justify-items: center;
+		align-items: center;
+	}
+
+	.cards-diagram__grid > * {
+		height: 100%;
+	}
+
+	.cards-diagram__listing {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.cards-diagram__card {
+		max-width: 15rem;
+	}
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
+	.cards-diagram__grid {
+		--image-column-width: 12.5rem;
+		grid-template-columns: 1fr var(--image-column-width) 1fr; 
+	}
+
+	.cards-diagram__listing:first-of-type > .cards-diagram__card {
+		align-self: flex-end;
+	}
+
+	.cards-diagram__listing:first-of-type > .cards-diagram__card:nth-child(2) {
+		align-self: flex-start;
+	}
+
+	.cards-diagram__listing:last-of-type > .cards-diagram__card:nth-child(2) {
+		align-self: flex-end;
+	}
+{% endcall %}
+
+{% call utils.medium() %}
+	.cards-diagram__grid {
+		grid-template-columns: 1fr 1fr; 
+	}
+
+	.cards-diagram__listing {
+		align-items: center;
+	}
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+	.central-title {
+		display: none;
+	}
+{% endcall %}
+
+{% call utils.small() %}
+	.cards-diagram__card:not(:first-of-type) {
+    margin-top: var(--space-2);
+	}
+{% endcall %}

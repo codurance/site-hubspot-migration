@@ -1,0 +1,83 @@
+[
+  {
+    "allow_new_line": false,
+    "display_width": null,
+    "id": "96c12d0f-17fb-340e-4510-aa23af49241b",
+    "label": "Card",
+    "locked": false,
+    "name": "card",
+    "occurrence": {
+      "max": 6
+    },
+    "required": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "validation_regex": ""
+  },
+  {
+    "children": [
+      {
+        "default": {
+          "size_type": "auto",
+          "src": "",
+          "alt": null,
+          "loading": "lazy"
+        },
+        "display_width": null,
+        "id": "c10cd8fb-6b7b-bd65-1481-88054ab4a263",
+        "label": "Image",
+        "locked": false,
+        "name": "image",
+        "required": false,
+        "resizable": true,
+        "responsive": true,
+        "show_loading": false,
+        "type": "image"
+      },
+      {
+        "allow_new_line": false,
+        "display_width": null,
+        "id": "43ec7184-ea03-e040-08f1-0245c60f823f",
+        "label": "Text",
+        "locked": false,
+        "name": "text",
+        "required": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "validation_regex": ""
+      }
+    ],
+    "default": {
+      "image": {
+        "size_type": "auto",
+        "src": "",
+        "alt": null,
+        "loading": "lazy"
+      }
+    },
+    "display_width": null,
+    "expanded": false,
+    "id": "eaaa2559-5f8f-5d23-eb51-a28cf9006844",
+    "label": "Central title",
+    "locked": false,
+    "name": "central_title",
+    "required": false,
+    "tab": "CONTENT",
+    "type": "group"
+  },
+  {
+    "type": "image",
+    "id": "f94c7d0f-2b15-9c99-afcb-353c7664f85d",
+    "default": {
+      "size_type": "auto",
+      "src": "",
+      "alt": null,
+      "loading": "lazy"
+    },
+    "resizable": true,
+    "responsive": true,
+    "show_loading": false,
+    "label": "Background image",
+    "name": "background_image"
+  }
+]

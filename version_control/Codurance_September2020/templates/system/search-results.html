@@ -15,7 +15,7 @@
 {% extends "../layouts/base.html" %}
 
 {% block body %}
-  <div class="search-results-page page-center lateral-spacing">
+  <div class="search-results-page responsive-page-width lateral-spacing">
     <h1 class="search-results-page__title">{{ results_for }} “{{ request.query_dict.term|escape }} ”</h1>
     {% module "search_results" path="../../modules/Global-Search-Results" %}
   </div>

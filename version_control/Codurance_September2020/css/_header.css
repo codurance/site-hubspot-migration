@@ -105,8 +105,9 @@ header.header.fixed {
     --header-height: 70px;
   }
 
-  .navigation-primary {
-    margin: 0 25px;
+  .body-wrapper > div:first-child[data-global-resource-path],
+  header.header {
+    --header-height: 70px;
   }
 {% endcall %}
 

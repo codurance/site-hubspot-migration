@@ -6,7 +6,7 @@
 {{ require_css(get_asset_url("../../css/partials/social-icons.css")) }}
 {{ require_css(get_asset_url("../../css/partials/author-page.css")) }}
 
-<div class="blog-author page-center lateral-spacing">
+<div class="blog-author responsive-page-width lateral-spacing">
     <div class="blog-author__intro">
         {% if blog_author.avatar != NULL && 
         blog_author.avatar.src != "(unknown)" && 
@@ -63,7 +63,7 @@
 </div>
 
 <div class="author-blog-listing">
-    <div class="container page-center lateral-spacing">
+    <div class="container responsive-page-width lateral-spacing">
         <h2 class="author-listing-title">{{ group.public_title }}</h2>
         <div class="masonry-grid">
             <div class="masonry-grid-sizer"></div>

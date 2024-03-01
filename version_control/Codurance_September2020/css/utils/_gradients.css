@@ -13,11 +13,6 @@
   background: linear-gradient(180deg, rgba(252,224,206,1) 0%, rgba(255,255,255,1) 100%);
 {% endmacro %}
 
-{% macro black_to_navy() %} 
-  background: rgb(12,12,13);
-  background: linear-gradient(30deg, rgba(12,12,13,1) 0%, rgba(29,35,60,1) 55%);
-{% endmacro %}
-
 {% macro slate_to_woodsmoke() %} 
   --slate-to-woodsmoke: linear-gradient(200deg, var(--slate) 60%, var(--woodsmoke) 100%);
   background: var(--slate-to-woodsmoke, var(--slate));

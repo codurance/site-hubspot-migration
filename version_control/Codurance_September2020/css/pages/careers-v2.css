@@ -94,7 +94,7 @@
 {% set image_offset = "30%" %}
 
 .why-join-us {
-    {{ utils.black_to_navy() }}
+    {{ utils.slate_to_woodsmoke() }}
     color: white;
     padding: 2em 0;
 }
@@ -148,7 +148,7 @@
 \*------------------------------------*/
 
 .video{
-    {{ utils.black_to_navy() }}
+    {{ utils.slate_to_woodsmoke() }}
     color: white;
     
 }

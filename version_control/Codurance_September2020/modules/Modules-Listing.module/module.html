@@ -1,0 +1,38 @@
+{{ require_css(get_asset_url("../../css/modules/modules-listing.css")) }}
+
+{% macro modules_list(list, list_title) %}
+  <div class="modules-listing__list">
+    <h3 class="modules-listing__list-title">{{ list_title }}</h3>
+
+    <menu class="modules-listing__menu">
+      {% for module in list %}
+        <li class="modules-listing__item">
+          <button 
+            aria-describedby="module-description"
+            class="modules-listing__button"
+            data-image="{{ module.image.src }}"
+            data-title="{{ module.title }}"
+            data-description="{{ module.description }}"
+          >{{ module.title }}</button>
+        </li>
+      {% endfor %}
+    </menu>
+  </div>
+{% endmacro %}
+
+<div class="modules-listing">
+  <div class="modules-listing__menus">
+    {{ modules_list(module.core_modules, module.core_modules_title) }}
+    {{ modules_list(module.strategic_modules, module.strategic_modules_title) }}
+  </div>
+
+  {# All the information on this block is injected via a JS function from the module #}
+  <div class="module-description">
+    <img class="module-description__image" src="" alt="" />
+
+    <div class="module-description__text-block">
+      <h4 class="module-description__title"></h4>
+      <p class="module-description__text" id="module-description"></p>
+    </div>
+  </div>
+</div>

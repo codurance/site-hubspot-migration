@@ -1,0 +1,20 @@
+{{ require_css(get_asset_url("../../css/modules/engagement-models.css")) }}
+
+<ul class="engagement-models lateral-spacing">
+  {% for model in module.models %}
+    <li class="engagement-models__item{% if model.featured %} engagement-models__item--featured{% endif %}">
+      <p class="engagement-models__featured-title">{{ module.featured_model_title }}</p>
+      <div class="engagement-models__item-wrapper">
+        <h3 class="engagement-models__title">{{ model.title }}</h3>
+        <hr>
+        <p class="engagement-models__description">{{ model.description }}</p>
+        <ul class="engagement-models__features">
+          {% for feature in model.features %}
+            <li class="engagement-models__feature">{{ feature }} <i class="las la-check"></i></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+

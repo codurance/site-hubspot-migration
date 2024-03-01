@@ -185,7 +185,7 @@
     .cm-testimonials-slider-wrapper {
         background-position: center 370px;
     }
-    .cm-testimonials-slider-wrapper .page-center {
+    .cm-testimonials-slider-wrapper .responsive-page-width {
         max-width: 770px;
         {% set side_margin = '1rem' %}
         width: calc(100% - ({{ side_margin }} * 2));

@@ -11,7 +11,7 @@
 }
 
 .benefits__heading {
-  {{ utils.dudler() }}
+  {{ utils.freed() }}
   font-weight: var(--heavy-font-weight);
   max-width: {{ text_max_width }} ;
 }
