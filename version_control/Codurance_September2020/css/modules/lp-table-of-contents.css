@@ -14,6 +14,9 @@
   padding: var(--space-3);
   margin-bottom: var(--space-3);
   margin-top: var(--space-3);
+  overflow-y: scroll;
+  max-height: calc(100vh - var(--header-height) - var(--space-5));
+  scrollbar-width: thin;
 
   .hs-menu-wrapper ul {
     margin-top: 0;
@@ -47,6 +50,17 @@
   .hs-menu-item:hover > a {
     color: var(--persimmon);
   }
+}
+
+.table-of-contents::-webkit-scrollbar {
+  width: 5px;
+  background-color: var(--french-gray); 
+}
+
+.table-of-contents::-webkit-scrollbar-thumb {
+  width: 5px;
+  height: 8px;
+  background-color: var(--shark);
 }
 
 .table-of-contents__title {
