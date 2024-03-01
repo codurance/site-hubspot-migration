@@ -91,16 +91,36 @@ label: Software Quality Assessment Packaged Solution Page
     {% module "how_it_works_cta" path="../modules/Text-and-image.module" label="How it works CTA" %} 
   </section>
 
-  <section class="testimonials">
-    {% module "testimonials"
-      label="Testimonials listing"
-      path="../modules/Landing Page Modules/LP-testimonial-slider.module"
-      extra_classes="testimonials-slider"
-    %}
-  </section>
+  {% boolean "show_testimonials" 
+    label='Show testimonials?' 
+    value='False'
+    export_to_template_context=True 
+  %}
+
+  {% if widget_data.show_testimonials.value == True %}
+    <section class="testimonials">
+      {% module "testimonials"
+        label="Testimonials listing"
+        path="../modules/Landing Page Modules/LP-testimonial-slider.module"
+        extra_classes="testimonials-slider"
+      %}
+    </section>
+  {% endif %}
 
   <section class="models region">
-    {% module "engagement_models" path="../modules/Engagement-Models.module" label="Engagement Models" %}
+    {% module "models_header" 
+      path="@hubspot/section_header" 
+      label="Engagement models header" 
+      extra_classes="lateral-spacing" 
+    %}
+    {% module "engagement_models" path="../modules/Engagement-Models.module" %}
+    <div class="lateral-spacing">
+      {% module "models_text"
+        path="@hubspot/text"
+        label="Engagement models text"
+        extra_classes="models__text"
+      %}
+    </div>
   </section>
 
   <section>{% module "cta" path="../modules/LP-cta-block.module" label="CTA" %}</section>

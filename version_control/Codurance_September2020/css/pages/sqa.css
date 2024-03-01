@@ -175,3 +175,10 @@ div.cta-block {
     max-width: var(--content-inner-max-width);
     margin-inline: auto;
 }
+
+.models__text {
+    {{ utils.card_border_radius() }}
+    {{ utils.card_shadow_large() }}
+    font-weight: var(--heavy-font-weight);
+    padding: var(--space-3) var(--space-5);
+}
