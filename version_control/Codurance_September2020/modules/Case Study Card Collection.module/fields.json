@@ -31,7 +31,7 @@
   "locked" : false,
   "occurrence" : {
     "min" : null,
-    "max" : 3,
+    "max" : 4,
     "sorting_label_field" : "d450a564-2817-dcd6-d99d-3aa8b3fc91dc",
     "default" : null
   },

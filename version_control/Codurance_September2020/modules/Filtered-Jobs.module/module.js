@@ -98,7 +98,9 @@ const displayDropdownButtons = (filteredItems, idSelector) => {
 };
 
 const hasHybridCity = (city) => {
-  if (city === "London" || city === "Manchester" || city === "Barcelona") {
+  const listOfHybridCities = ["London", "Manchester", "Leeds", "Barcelona"];
+
+  if (listOfHybridCities.includes(city)) {
     return true;
   }
 };
