@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+:root {
+  scroll-behavior: smooth;
+}
+
 /* General styles */
 .section-header h2 {
     {{ utils.freed() }}
