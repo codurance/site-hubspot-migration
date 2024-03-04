@@ -18,11 +18,13 @@
       {% for content_id in featured_posts %}
         {% set featured_post = content_by_id(content_id) %}
         <article class="cm-editors-pick__item">
-            <figure class="cm-editors-pick__image">
-              {% if featured_post.featured_image %}
-                <img src='{% image_src src="{{ featured_post.featured_image }}" no_wrapper=True %}' alt="{{ featured_post.title }}">
-              {% endif %}
-            </figure>      
+          {% if featured_post.featured_image %}
+            <img 
+              class="cm-editors-pick__image" 
+              src="{{ featured_post.featured_image }}" 
+              alt="{{ featured_post.title }}"
+            />
+          {% endif %}    
           <h3 class="cm-editors-pick__title-big">
             {{ description_snippets.title(featured_post) }}
           </h3>
@@ -45,6 +47,14 @@
           </p>    
         </article> 
       {% endfor %}
+
+      {{
+        button_snippets.button_primary(
+          url=blog_url,
+          text="{{ module.button_text }}",
+          aria_label_text="{{ module.button_text }}"
+        )
+      }}
     </div>
     <div class="cm-editors-pick__small_items">
       {% for content_id in other_posts %}
@@ -73,12 +83,5 @@
       {% endfor %}
     </div>
   </section>
-  {{
-    button_snippets.button_primary(
-      url=blog_url,
-      text="{{ module.button_text }}",
-      aria_label_text="{{ module.button_text }}"
-    )
-  }}
 </div>
 

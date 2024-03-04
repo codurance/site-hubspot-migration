@@ -9,6 +9,7 @@
 .cm-editors-pick__container {
     max-width: var(--content-max-width);
     margin: 0px auto;
+    position: relative;
 }
 
 .cm-editors-pick__title-big {
@@ -45,13 +46,14 @@
 }
 
 .cm-editors-pick__image {
-    position: relative;
     margin-bottom: 1rem;
+    {{ utils.card_border_radius() }}
+    aspect-ratio: 1.91/1;
 }
 
-.cm-editors-pick__image img {
-    {{ utils.card_border_radius() }}
-    object-fit: cover;
+.cm-editors-pick__big_items .button-primary {
+    height: fit-content;
+    width: fit-content;
 }
 
 {% call utils.medium_large_and_extra_large() %}
@@ -60,7 +62,7 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 1.5rem;
         margin-bottom: 1.5rem;
-        }
+    }
     
     .cm-editors-pick__big_items {
         display: grid;
@@ -74,24 +76,24 @@
         flex-direction: column;
         gap: 1.5rem;
         grid-column: 3;
-        }
-    .cm-editors-pick__image img {
+    }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+    .cm-editors-pick__items {
+        grid-template-columns: 1fr;
+        margin-bottom: 4.5rem;
+    }
+
+    .cm-editors-pick__big_items .button-primary {
         position: absolute;
-        width: 100%;
-        height: 100%;
-        }
-                
-    .cm-editors-pick__image::after {
-        content: "";
-        display: block;
-        padding-bottom: 100%;
-        }
+        bottom: -3.5rem;
+    }
 {% endcall %}
                     
 {% call utils.medium() %}
     .cm-editors-pick__items {
         grid-template-columns: 1fr;
-        margin-bottom: 2.5rem;
     }
 
     .cm-editors-pick__big_items {
@@ -106,7 +108,6 @@
 {% endcall %}
 
 {% call utils.small() %}
-    .cm-editors-pick__items,
     .cm-editors-pick__big_items {
         margin-bottom: 1.5rem;
     }
@@ -118,17 +119,5 @@
 
     .cm-editors-pick__image {
         margin-bottom: 0.5rem;
-    }
-
-    .cm-editors-pick__image img {
-        height: 60%;
-        width: 100%;
-    }
-{% endcall %}
-
-{% call small_landscape() %}
-    .cm-editors-pick__image img {
-        height: 100px;
-        width: 100%;
     }
 {% endcall %}
