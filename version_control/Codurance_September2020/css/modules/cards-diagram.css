@@ -19,6 +19,7 @@
 	position: relative;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 .central-title__text {
@@ -26,8 +27,7 @@
 	font-weight: var(--heavy-font-weight);
 	position: absolute;
 	text-align: center;
-	width: 70%;
-  left: 16%;
+	width: 55%;
 }
 
 {% call utils.medium_large_and_extra_large() %}
