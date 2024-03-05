@@ -342,6 +342,9 @@
     width: 100%;
     white-space: normal;
     padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .promotional-section > h2 {
