@@ -239,15 +239,11 @@
     > ul {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
     }
   }
 
-  .level-2:not(.has-secondary-submenu) .main-submenu > ul {
-    gap: var(--space-4);
-  }
-
   .level-2.has-secondary-submenu .main-submenu > ul {
-    gap: var(--space-3);
     margin-top: var(--space-3);
   }
 
@@ -258,6 +254,10 @@
 
   .level-2.has-secondary-submenu ul.two-columns {
     grid-template-columns: repeat(2, 50%);
+  }
+
+  .level-2:not(.has-secondary-submenu) ul.two-columns {
+    height: 100%;
   }
 
   .level-2.has-secondary-submenu .main-submenu > ul {
