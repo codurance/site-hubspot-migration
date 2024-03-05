@@ -30,6 +30,7 @@
   >
     {% for item in module.menu_items %}
       {% set submenu = item.submenu.items %}
+      {% set secondary_submenu = item.secondary_submenu.items %}
 
       <li class="menu-item{% if submenu %} has-submenu{% endif %}">
         <a href="{{ item.link.href if item.link.href && !submenu else 'javascript:;' }}"
@@ -43,7 +44,8 @@
         </a>
         
         {% if submenu %}
-          <nav class="website-navigation-sub-menu level-2" 
+          <nav 
+            class="website-navigation-sub-menu level-2 {% if secondary_submenu %} has-secondary-submenu{% endif %}" 
             id="sub-menu-services-{{loop.index}}"
           >
 
@@ -92,11 +94,25 @@
               </div>
             {% endif %}
             
-            <ul class="submenu{% if submenu|length <= 4 %} two-columns{% endif %}">
-              {% for node in submenu %} 
-                {{ link(node) }}
-              {% endfor %}
-            </ul>
+            <div class="main-submenu">
+              {% if secondary_submenu %}<h3 class="submenu-title">{{ item.menu_label }}</h3>{% endif %}
+              <ul class="submenu{% if submenu|length <= 4 || secondary_submenu %} two-columns{% endif %}">
+                {% for node in submenu %}
+                  {{ link(node) }}
+                {% endfor %}
+              </ul>
+            </div>
+
+            {% if secondary_submenu %}
+              <div class="secondary-submenu">
+                <h3 class="submenu-title">{{ item.secondary_submenu.title }}</h3>
+                <ul class="submenu">
+                  {% for node in secondary_submenu %}
+                    {{ link(node) }}
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
           </nav>
         {% endif %}
       </li>
