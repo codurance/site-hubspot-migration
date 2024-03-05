@@ -281,7 +281,7 @@
     line-height: var(--natus-line-height);
   }
 
-  .level-2.has-secondary-submenu a {
+  .level-2.has-secondary-submenu a.menu-link {
     font-weight: var(--light-font-weight);
   }
 
