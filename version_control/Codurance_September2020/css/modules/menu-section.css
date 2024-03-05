@@ -247,6 +247,10 @@
     margin-top: var(--space-3);
   }
 
+  .level-2:not(.has-secondary-submenu) ul {
+    height: 100%;
+  }
+
   .main-submenu > ul.two-columns {
     grid-template-columns: repeat(2, 33%);
     justify-content: center;
@@ -254,10 +258,6 @@
 
   .level-2.has-secondary-submenu ul.two-columns {
     grid-template-columns: repeat(2, 50%);
-  }
-
-  .level-2:not(.has-secondary-submenu) ul.two-columns {
-    height: 100%;
   }
 
   .level-2.has-secondary-submenu .main-submenu > ul {
