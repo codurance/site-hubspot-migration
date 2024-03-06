@@ -68,7 +68,11 @@
   color: var(--mid-gray);
 }
 
-.table-of-contents .hs-menu-children-wrapper:not(.table-of-contents__menu--shown) {
+.table-of-contents .hs-menu-depth-1:not(.table-of-contents__menu--shown) .hs-menu-children-wrapper {
   display: none;
+}
+
+.hs-menu-depth-1.table-of-contents__menu--shown > a {
+  color: var(--persimmon);
 }
 
