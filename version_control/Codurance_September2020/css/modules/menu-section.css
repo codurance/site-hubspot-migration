@@ -267,6 +267,10 @@
     justify-content: flex-start;
   }
 
+  .submenu > .submenu-item {
+    white-space: normal;
+  }
+
   .secondary-submenu {
     flex-basis: 15.5rem;
     background-color: var(--athens-gray);
