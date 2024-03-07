@@ -98,7 +98,7 @@
 {% endcall %}
 
 .case-studies {
-  {{ utils.tango_to_white() }}
+  {{ utils.white_to_tango() }}
   padding-top: 1.5em;
 }
   
