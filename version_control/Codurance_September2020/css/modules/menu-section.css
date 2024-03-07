@@ -209,9 +209,12 @@
   }
 
   .level-1 {
-    white-space: nowrap;
     display: flex;
     justify-content: center;
+  }
+
+  .level-1 > .menu-item {
+    white-space: nowrap;
   }
 
   .level-2 { 
