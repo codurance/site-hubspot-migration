@@ -7,11 +7,7 @@ main ul {
 
 /* Hero section */
 .hero {
-    {{ utils.color1_to_color2(
-        "94deg", 
-        "var(--woodsmoke)", 
-        "var(--purple)"
-    ) }}
+    {{ utils.slate_to_woodsmoke() }}
 
     color: white;
 }
@@ -109,12 +105,7 @@ section.infographic {
 /* Benefits section */
 
 .benefits {
-    {{ utils.color1_to_color2(
-        "94deg", 
-        "var(--woodsmoke)", 
-        "var(--purple)"
-        ) 
-    }}
+    {{ utils.slate_to_woodsmoke() }}
     
     padding-top: var(--space-2);
     padding-bottom: var(--space-8);
