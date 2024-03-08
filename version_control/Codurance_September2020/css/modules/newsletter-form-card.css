@@ -88,10 +88,6 @@
         flex-direction: column;
     }
 
-    .dnd-column:not(.span12) .newsletter-text-content {
-        max-width: unset;
-    }
-
     .dnd-column:not(.span12) .newsletter-text-content__title {
         {{ utils.freed() }}
     }
@@ -133,6 +129,6 @@
     }
 
     .newsletter-text-content {
-        max-width: 30ch;
+        max-width: var(--dudler-max-width);
     }
 {% endcall %}
