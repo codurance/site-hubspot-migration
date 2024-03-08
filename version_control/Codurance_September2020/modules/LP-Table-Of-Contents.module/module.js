@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (tableLink && !textSection.isIntersecting) {
-      console.log("adios");
       menu.classList.remove("table-of-contents__menu--shown");
     }
   }
