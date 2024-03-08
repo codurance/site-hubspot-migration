@@ -96,7 +96,7 @@
         {{ utils.freed() }}
     }
 
-    .dnd-column:not(.span12) .hs-form {
+    .dnd-column:not(.span12) .newsletter .hs-form {
         margin-left: 92px;
     }
     /* End dnd columns styles */
