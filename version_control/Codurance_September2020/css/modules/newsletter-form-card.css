@@ -82,6 +82,7 @@
     .dnd-column:not(.span12) .newsletter-wrapper {
         padding: 2rem;
         width: fit-content;
+        margin-inline: unset;
     }
 
     .dnd-column:not(.span12) .newsletter-inner {
