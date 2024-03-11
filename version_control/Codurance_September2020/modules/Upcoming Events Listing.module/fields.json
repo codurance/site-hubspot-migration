@@ -1,40 +1,57 @@
-[ {
-  "id" : "hubdb_table",
-  "name" : "hubdb_table",
-  "label" : "HubDB table",
-  "required" : false,
-  "locked" : false,
-  "type" : "hubdbtable"
-}, {
-  "id" : "8504fc47-dc9e-e6bd-7dc3-84f1a69e325b",
-  "name" : "heading",
-  "label" : "Heading",
-  "required" : true,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Upcoming Events"
-}, {
-  "id" : "35683103-66da-e088-217c-68482b20fa30",
-  "name" : "newsletter_text_field",
-  "label" : "Newsletter title",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text"
-}, {
-  "id" : "fc04eed3-2315-61e0-8f79-7ac82e912e98",
-  "name" : "newsletter_form",
-  "label" : "Newsletter Form",
-  "required" : false,
-  "locked" : false,
-  "type" : "form",
-  "default" : {
-    "response_type" : "inline",
-    "message" : "Thanks for submitting the form."
+[
+  {
+   "display_width": null,
+   "id": "hubdb_table",
+   "label": "HubDB table",
+   "locked": false,
+   "name": "hubdb_table",
+   "required": false,
+   "type": "hubdbtable"
+  },
+  {
+   "allow_new_line": false,
+   "default": "Upcoming Events",
+   "display_width": null,
+   "id": "8504fc47-dc9e-e6bd-7dc3-84f1a69e325b",
+   "label": "Heading",
+   "locked": false,
+   "name": "heading",
+   "required": true,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
+  },
+  {
+   "type": "text",
+   "id": "7b37ac2b-af2f-a761-d362-542ff9ddce84",
+   "validation_regex": "",
+   "label": "Card Button Copy",
+   "name": "card_button_copy",
+   "default": "Register Attendance"
+  },
+  {
+   "allow_new_line": false,
+   "display_width": null,
+   "id": "35683103-66da-e088-217c-68482b20fa30",
+   "label": "Newsletter title",
+   "locked": false,
+   "name": "newsletter_text_field",
+   "required": false,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
+  },
+  {
+   "default": {
+    "response_type": "inline",
+    "message": "Thanks for submitting the form."
+   },
+   "display_width": null,
+   "id": "fc04eed3-2315-61e0-8f79-7ac82e912e98",
+   "label": "Newsletter Form",
+   "locked": false,
+   "name": "newsletter_form",
+   "required": false,
+   "type": "form"
   }
-}  ]
+ ]
