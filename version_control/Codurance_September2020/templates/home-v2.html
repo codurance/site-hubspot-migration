@@ -38,17 +38,24 @@ label: Home Page version 2
       </div>
     </div>
   </section>
+
   <section class="client-logos">
     {% module 'clients logos' 
         path='../modules/Clients-Logos.module'
         label="Clients logos Section"%}
   </section>
+
+  <section class="stats">
+    {% module "stats" path="../modules/Stats-highlights.module" label="Codurance stats" %}
+  </section>
+
   <section class="software-consultancy">
     {% module 'Text and image' 
       path='../modules/Text-and-image.module'
       label="Software Consultancy Section" 
     %}
   </section>
+
   <section class="partners">
     {% global_partial path="./partials/partners-section.html" no_wrapper=True %}
   </section>

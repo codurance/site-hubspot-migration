@@ -85,18 +85,31 @@
 /* ======================= 
     CLIENTS LOGOS SECTION 
 ========================== */
-.client-logos{
-    padding: 2em 1em 4em;
+.client-logos {
+    padding: 2rem 1rem 4rem;
+}
+
+/* ======================= 
+    STATS SECTION 
+========================== */
+.stats {
+    {{ utils.slate_to_woodsmoke() }}
+}
+
+.highlight__container {
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
 }
 
 /* =============================== 
     SOFTWARE CONSULTANCY SECTION 
 ================================= */
 .software-consultancy {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     background: url(https://f.hubspotusercontent40.net/hubfs/14557846/who-we-are-bg-x-large-homepage.svg) 
                 no-repeat 
-                top right/cover;
-       
+                top right/cover; 
 }
 
 {% call utils.medium_large_and_extra_large() %}

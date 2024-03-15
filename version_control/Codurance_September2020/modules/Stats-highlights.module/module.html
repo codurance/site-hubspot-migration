@@ -1,11 +1,11 @@
 {# CSS included in meta.json to make the module usable in dnd_section #}
 
-<section class="highlight__container">
+<div class="highlight__container">
   {% for highlight in module.highlights_group %}
     <div class="highlight__wrapper">
       <i class="las {{ highlight.icon_class }}"></i>
       <p>{{ highlight.copy }}</p>
     </div>
   {% endfor %}
-</section>
+</div>
 
