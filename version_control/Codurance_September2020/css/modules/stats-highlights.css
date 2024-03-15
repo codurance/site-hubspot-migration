@@ -1,11 +1,9 @@
 {% import '../utils/utils.css' as utils %}
   
 .highlight__container {
-  color: var(--purple-navy);
-  padding: 2em 0;
+  padding: 2rem 0;
 }
     
-
 .highlight__wrapper {
   text-align: center;
   max-width: var(--habib-max-width);
@@ -19,14 +17,12 @@
 .highlight__wrapper p {
   {{ utils.natus() }}
   font-weight: var(--middle-font-weight);
-  margin-top: 1.8em;
+  margin-top: 1.8rem;
 }
-
-
 
 {% call utils.small() %}
   .highlight__wrapper:not(:first-child) {
-    margin-top: 3em;
+    margin-top: 3rem;
   } 
 {% endcall %}
 

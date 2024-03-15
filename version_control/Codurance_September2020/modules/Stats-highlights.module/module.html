@@ -1,5 +1,15 @@
 {# CSS included in meta.json to make the module usable in dnd_section #}
 
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .highlight__container {
+        color: {{ module.style.text_color.color }};
+      }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
 <div class="highlight__container">
   {% for highlight in module.highlights_group %}
     <div class="highlight__wrapper">

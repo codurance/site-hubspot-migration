@@ -1,42 +1,71 @@
-[ {
-  "id" : "bc8b4a23-854a-b455-fe1d-729b7463600a",
-  "name" : "highlights_group",
-  "display_width" : null,
-  "label" : "Highlights group",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : 3,
-    "sorting_label_field" : null,
-    "default" : null
+[
+  {
+   "children": [
+    {
+     "allow_new_line": false,
+     "display_width": null,
+     "id": "77a1c62f-755d-f91a-d118-d08daad7c005",
+     "label": "Copy",
+     "locked": false,
+     "name": "copy",
+     "required": false,
+     "show_emoji_picker": false,
+     "type": "text",
+     "validation_regex": ""
+    },
+    {
+     "allow_new_line": false,
+     "display_width": null,
+     "id": "4f6a6afb-50fb-d9fd-65d9-fa3be986d327",
+     "inline_help_text": "For further information, you should use the naming class provided in <a href=\"https://icons8.com/line-awesome\">Line Awesome library</a> ",
+     "label": "Icon Class",
+     "locked": false,
+     "name": "icon_class",
+     "required": false,
+     "show_emoji_picker": false,
+     "type": "text",
+     "validation_regex": ""
+    }
+   ],
+   "default": [],
+   "display_width": null,
+   "expanded": false,
+   "id": "bc8b4a23-854a-b455-fe1d-729b7463600a",
+   "label": "Highlights group",
+   "locked": false,
+   "name": "highlights_group",
+   "occurrence": {
+    "max": 3
+   },
+   "required": false,
+   "tab": "CONTENT",
+   "type": "group"
   },
-  "children" : [ {
-    "id" : "77a1c62f-755d-f91a-d118-d08daad7c005",
-    "name" : "copy",
-    "display_width" : null,
-    "label" : "Copy",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
-  }, {
-    "id" : "4f6a6afb-50fb-d9fd-65d9-fa3be986d327",
-    "name" : "icon_class",
-    "display_width" : null,
-    "label" : "Icon Class",
-    "inline_help_text" : "For further information, you should use the naming class provided in <a href=\"https://icons8.com/line-awesome\">Line Awesome library</a> ",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : { }
-} ]
+  {
+    "type": "group",
+    "isNew": false,
+    "name": "style",
+    "label": "Style",
+    "tab": "STYLE",
+    "id": "67fa567f-f077-9c2d-2f3f-c6cc02b493e9",
+    "children": [
+     {
+      "type": "color",
+      "id": "86963ce0-254a-49bc-1c73-000c0e061256",
+      "default": {
+       "color": "#4a5790",
+       "opacity": 100
+      },
+      "label": "Text color",
+      "name": "text_color",
+      "required": true
+     }
+    ],
+    "default": {
+     "text_color": {
+      "color": "#4a5790",
+      "opacity": 100
+     }
+    }
+   }
+ ]
