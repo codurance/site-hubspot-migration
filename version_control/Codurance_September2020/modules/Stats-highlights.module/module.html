@@ -13,7 +13,12 @@
 <div class="highlight__container">
   {% for highlight in module.highlights_group %}
     <div class="highlight__wrapper">
-      <i class="las {{ highlight.icon_class }}"></i>
+      {% if highlight.stat_type == "text" %}
+        <div class="highlight__big-text">{{ highlight.text }}</div>
+      {% else %}
+        <i class="las {{ highlight.icon_class }}"></i>
+      {% endif %}
+
       <p>{{ highlight.copy }}</p>
     </div>
   {% endfor %}

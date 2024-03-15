@@ -1,7 +1,7 @@
 {% import '../utils/utils.css' as utils %}
   
 .highlight__container {
-  padding: 2rem 0;
+  padding: var(--space-4) 0;
 }
     
 .highlight__wrapper {
@@ -14,10 +14,14 @@
   font-size: 100px;
 }
 
+.highlight__big-text {
+  {{ utils.gaudi() }}
+}
+
 .highlight__wrapper p {
-  {{ utils.natus() }}
-  font-weight: var(--middle-font-weight);
-  margin-top: 1.8rem;
+  font-weight: var(--heavy-font-weight);
+  margin-top: var(--space-1);
+  text-wrap: balance;
 }
 
 {% call utils.small() %}

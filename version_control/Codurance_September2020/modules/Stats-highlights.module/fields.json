@@ -1,71 +1,107 @@
-[
-  {
-   "children": [
+
+  [
     {
-     "allow_new_line": false,
+     "children": [
+      {
+       "allow_new_line": false,
+       "display_width": null,
+       "id": "77a1c62f-755d-f91a-d118-d08daad7c005",
+       "label": "Copy",
+       "locked": false,
+       "name": "copy",
+       "required": false,
+       "show_emoji_picker": false,
+       "type": "text",
+       "validation_regex": ""
+      },
+      {
+       "type": "choice",
+       "id": "1df33149-d53d-2f75-f51f-23f265df651a",
+       "display": "select",
+       "choices": [
+        [
+         "icon",
+         "Icon"
+        ],
+        [
+         "text",
+         "Text"
+        ]
+       ],
+       "label": "Stat type",
+       "name": "stat_type",
+       "default": "icon"
+      },
+      {
+       "allow_new_line": false,
+       "display_width": null,
+       "id": "4f6a6afb-50fb-d9fd-65d9-fa3be986d327",
+       "inline_help_text": "For further information, you should use the naming class provided in <a href=\"https://icons8.com/line-awesome\">Line Awesome library</a> ",
+       "label": "Icon Class",
+       "locked": false,
+       "name": "icon_class",
+       "required": false,
+       "show_emoji_picker": false,
+       "type": "text",
+       "validation_regex": "",
+       "visibility": {
+        "operator": "EQUAL",
+        "controlling_field_path": "highlights_group.stat_type",
+        "controlling_value_regex": "icon"
+       }
+      },
+      {
+       "type": "text",
+       "id": "af2b2b46-86b7-a2ef-2882-11867ecd30b8",
+       "validation_regex": "",
+       "label": "Text",
+       "name": "text",
+       "visibility": {
+        "operator": "EQUAL",
+        "controlling_field_path": "highlights_group.stat_type",
+        "controlling_value_regex": "text"
+       }
+      }
+     ],
+     "default": [],
      "display_width": null,
-     "id": "77a1c62f-755d-f91a-d118-d08daad7c005",
-     "label": "Copy",
+     "expanded": false,
+     "id": "bc8b4a23-854a-b455-fe1d-729b7463600a",
+     "label": "Highlights group",
      "locked": false,
-     "name": "copy",
+     "name": "highlights_group",
+     "occurrence": {
+      "max": 3
+     },
      "required": false,
-     "show_emoji_picker": false,
-     "type": "text",
-     "validation_regex": ""
+     "tab": "CONTENT",
+     "type": "group"
     },
     {
-     "allow_new_line": false,
-     "display_width": null,
-     "id": "4f6a6afb-50fb-d9fd-65d9-fa3be986d327",
-     "inline_help_text": "For further information, you should use the naming class provided in <a href=\"https://icons8.com/line-awesome\">Line Awesome library</a> ",
-     "label": "Icon Class",
-     "locked": false,
-     "name": "icon_class",
-     "required": false,
-     "show_emoji_picker": false,
-     "type": "text",
-     "validation_regex": ""
-    }
-   ],
-   "default": [],
-   "display_width": null,
-   "expanded": false,
-   "id": "bc8b4a23-854a-b455-fe1d-729b7463600a",
-   "label": "Highlights group",
-   "locked": false,
-   "name": "highlights_group",
-   "occurrence": {
-    "max": 3
-   },
-   "required": false,
-   "tab": "CONTENT",
-   "type": "group"
-  },
-  {
-    "type": "group",
-    "isNew": false,
-    "name": "style",
-    "label": "Style",
-    "tab": "STYLE",
-    "id": "67fa567f-f077-9c2d-2f3f-c6cc02b493e9",
-    "children": [
-     {
-      "type": "color",
-      "id": "86963ce0-254a-49bc-1c73-000c0e061256",
+      "type": "group",
+      "isNew": false,
+      "name": "style",
+      "label": "Style",
+      "tab": "STYLE",
+      "id": "67fa567f-f077-9c2d-2f3f-c6cc02b493e9",
+      "children": [
+       {
+        "type": "color",
+        "id": "86963ce0-254a-49bc-1c73-000c0e061256",
+        "default": {
+         "color": "#4a5790",
+         "opacity": 100
+        },
+        "label": "Text color",
+        "name": "text_color",
+        "required": true
+       }
+      ],
       "default": {
-       "color": "#4a5790",
-       "opacity": 100
-      },
-      "label": "Text color",
-      "name": "text_color",
-      "required": true
-     }
-    ],
-    "default": {
-     "text_color": {
-      "color": "#4a5790",
-      "opacity": 100
-     }
+       "text_color": {
+        "color": "#4a5790",
+        "opacity": 100
+       }
+      }
     }
-   }
- ]
+   ]
