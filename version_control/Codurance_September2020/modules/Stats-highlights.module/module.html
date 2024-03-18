@@ -12,8 +12,10 @@
 
 <div class="highlight__container">
   {% for highlight in module.highlights_group %}
+    {% set isThereBackSide = highlight.back_side_text %}
+
     <div class="highlight__wrapper">
-      <div class="highlight__card-front-side card-side">
+      <div class="highlight__card-front-side {% if isThereBackSide %}card-side{% endif %}">
         {% if highlight.stat_type == "text" %}
           <div class="highlight__big-text">{{ highlight.text }}</div>
         {% else %}
@@ -23,9 +25,11 @@
         <p class="highlight__copy">{{ highlight.copy }}</p>
       </div>
 
-      <div class="highlight__card-back-side card-side">
-        <p class="highlight__back-side-text">{{ highlight.back_side_text }}</p>
-      </div>
+      {% if isThereBackSide %}
+        <div class="highlight__card-back-side card-side">
+          <p class="highlight__back-side-text">{{ highlight.back_side_text }}</p>
+        </div>
+      {% endif %}
     </div>
   {% endfor %}
 </div>
