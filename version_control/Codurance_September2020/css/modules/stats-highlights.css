@@ -41,7 +41,6 @@
   text-align: left;
 }
 
-.highlight__wrapper i,
 .highlight__big-text,
 .highlight__copy {
   max-width: var(--habib-max-width);
