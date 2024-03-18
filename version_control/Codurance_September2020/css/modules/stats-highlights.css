@@ -3,7 +3,6 @@
 .highlight__wrapper {
   text-align: center;
   position: relative;
-  padding: var(--space-4) 0;
 }
 
 .card-side {
@@ -16,6 +15,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: var(--space-4) 0;
 }
 
 .highlight__wrapper:hover > .card-side.highlight__card-front-side {
@@ -46,7 +46,7 @@
   max-width: var(--habib-max-width);
 }
 
-.highlight__wrapper i {
+.hightlight__icon {
   font-size: 100px;
 }
 
@@ -60,7 +60,24 @@
   text-wrap: balance;
 }
 
+.highlight__toggle-icon {
+  color: var(--persimmon);
+  background-color: white;
+  padding: var(--space-0);
+  border-radius: 50%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--persimmon);
+  border: 1px solid var(--french-gray);
+  position: absolute;
+  bottom: var(--space-2);
+  right: var(--space-2);
+}
+
 {% call utils.small() %}
+  .highlight__wrapper {
+    {{ utils.card_shadow_large() }}
+  }
+
   .highlight__wrapper:not(:first-child) {
     margin-top: var(--space-4);
   } 
@@ -73,5 +90,9 @@
 
   .highlight__wrapper {
     flex-grow: 1;
+  }
+
+  .highlight__toggle-icon {
+    display: none !important;
   }
 {% endcall %}

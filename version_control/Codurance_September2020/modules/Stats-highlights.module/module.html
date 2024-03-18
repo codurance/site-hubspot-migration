@@ -19,15 +19,20 @@
         {% if highlight.stat_type == "text" %}
           <div class="highlight__big-text">{{ highlight.text }}</div>
         {% else %}
-          <i class="las {{ highlight.icon_class }}"></i>
+          <i class="hightlight__icon las {{ highlight.icon_class }}"></i>
         {% endif %}
 
         <p class="highlight__copy">{{ highlight.copy }}</p>
+
+        {% if isThereBackSide %}
+          <i class="highlight__toggle-icon las la-plus"></i>
+        {% endif %}
       </div>
 
       {% if isThereBackSide %}
         <div class="highlight__card-back-side card-side">
           <p class="highlight__back-side-text">{{ highlight.back_side_text }}</p>
+          <i class="highlight__toggle-icon las la-minus"></i>
         </div>
       {% endif %}
     </div>
