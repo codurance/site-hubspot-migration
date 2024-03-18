@@ -1,13 +1,50 @@
 {% import '../utils/utils.css' as utils %}
-  
-.highlight__container {
-  padding: var(--space-4) 0;
-}
     
 .highlight__wrapper {
   text-align: center;
+  position: relative;
+  padding: var(--space-4) 0;
+  cursor: help;
+}
+
+.card-side {
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+}
+
+.highlight__card-front-side {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.highlight__wrapper:hover > .card-side.highlight__card-front-side {
+  transform: rotateY(180deg);
+}
+
+.highlight__wrapper:hover > .card-side.highlight__card-back-side {
+  transform: rotateY(0deg);
+}
+
+.highlight__card-back-side {
+  transform: rotateY(-180deg);
+  background: white;
+  color: var(--shark);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--space-3);
+  text-align: left;
+}
+
+.highlight__wrapper i,
+.highlight__big-text,
+.highlight__copy {
   max-width: var(--habib-max-width);
-  margin-inline: auto;
 }
 
 .highlight__wrapper i {
@@ -18,7 +55,7 @@
   {{ utils.gaudi() }}
 }
 
-.highlight__wrapper p {
+.highlight__copy {
   font-weight: var(--heavy-font-weight);
   margin-top: var(--space-1);
   text-wrap: balance;
@@ -26,12 +63,16 @@
 
 {% call utils.small() %}
   .highlight__wrapper:not(:first-child) {
-    margin-top: 3rem;
+    margin-top: var(--space-4);
   } 
 {% endcall %}
 
 {% call utils.medium_large_and_extra_large() %}
   .highlight__container {
     display: flex;
+  }
+
+  .highlight__wrapper {
+    flex-grow: 1;
   }
 {% endcall %}

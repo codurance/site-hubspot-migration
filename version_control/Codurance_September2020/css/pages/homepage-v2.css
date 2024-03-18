@@ -92,7 +92,7 @@
 /* ======================= 
     STATS SECTION 
 ========================== */
-.stats {
+.highlight__wrapper {
     {{ utils.slate_to_woodsmoke() }}
 }
 
@@ -100,6 +100,16 @@
     max-width: var(--content-inner-max-width);
     margin-inline: auto;
 }
+
+{% call utils.medium_large_and_extra_large() %}
+    .stats {
+        {{ utils.slate_to_woodsmoke() }}
+    }
+
+    .highlight__wrapper {
+        background: unset;
+    }
+{% endcall %}
 
 /* =============================== 
     SOFTWARE CONSULTANCY SECTION 

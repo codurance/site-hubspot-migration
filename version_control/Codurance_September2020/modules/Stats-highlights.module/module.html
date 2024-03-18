@@ -13,13 +13,19 @@
 <div class="highlight__container">
   {% for highlight in module.highlights_group %}
     <div class="highlight__wrapper">
-      {% if highlight.stat_type == "text" %}
-        <div class="highlight__big-text">{{ highlight.text }}</div>
-      {% else %}
-        <i class="las {{ highlight.icon_class }}"></i>
-      {% endif %}
+      <div class="highlight__card-front-side card-side">
+        {% if highlight.stat_type == "text" %}
+          <div class="highlight__big-text">{{ highlight.text }}</div>
+        {% else %}
+          <i class="las {{ highlight.icon_class }}"></i>
+        {% endif %}
 
-      <p>{{ highlight.copy }}</p>
+        <p class="highlight__copy">{{ highlight.copy }}</p>
+      </div>
+
+      <div class="highlight__card-back-side card-side">
+        <p class="highlight__back-side-text">{{ highlight.back_side_text }}</p>
+      </div>
     </div>
   {% endfor %}
 </div>

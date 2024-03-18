@@ -1,82 +1,108 @@
 
-  [
+[
+  {
+   "children": [
     {
-     "children": [
-      {
-       "allow_new_line": false,
-       "display_width": null,
-       "id": "77a1c62f-755d-f91a-d118-d08daad7c005",
-       "label": "Copy",
-       "locked": false,
-       "name": "copy",
-       "required": false,
-       "show_emoji_picker": false,
-       "type": "text",
-       "validation_regex": ""
-      },
-      {
-       "type": "choice",
-       "id": "1df33149-d53d-2f75-f51f-23f265df651a",
-       "display": "select",
-       "choices": [
-        [
-         "icon",
-         "Icon"
-        ],
-        [
-         "text",
-         "Text"
-        ]
-       ],
-       "label": "Stat type",
-       "name": "stat_type",
-       "default": "icon"
-      },
-      {
-       "allow_new_line": false,
-       "display_width": null,
-       "id": "4f6a6afb-50fb-d9fd-65d9-fa3be986d327",
-       "inline_help_text": "For further information, you should use the naming class provided in <a href=\"https://icons8.com/line-awesome\">Line Awesome library</a> ",
-       "label": "Icon Class",
-       "locked": false,
-       "name": "icon_class",
-       "required": false,
-       "show_emoji_picker": false,
-       "type": "text",
-       "validation_regex": "",
-       "visibility": {
-        "operator": "EQUAL",
-        "controlling_field_path": "highlights_group.stat_type",
-        "controlling_value_regex": "icon"
-       }
-      },
-      {
-       "type": "text",
-       "id": "af2b2b46-86b7-a2ef-2882-11867ecd30b8",
-       "validation_regex": "",
-       "label": "Text",
-       "name": "text",
-       "visibility": {
-        "operator": "EQUAL",
-        "controlling_field_path": "highlights_group.stat_type",
-        "controlling_value_regex": "text"
-       }
-      }
-     ],
-     "default": [],
+     "allow_new_line": false,
      "display_width": null,
-     "expanded": false,
-     "id": "bc8b4a23-854a-b455-fe1d-729b7463600a",
-     "label": "Highlights group",
+     "id": "77a1c62f-755d-f91a-d118-d08daad7c005",
+     "label": "Copy",
      "locked": false,
-     "name": "highlights_group",
-     "occurrence": {
-      "max": 3
-     },
+     "name": "copy",
      "required": false,
-     "tab": "CONTENT",
-     "type": "group"
+     "show_emoji_picker": false,
+     "type": "text",
+     "validation_regex": ""
     },
+    {
+     "choices": [
+      [
+       "icon",
+       "Icon"
+      ],
+      [
+       "text",
+       "Text"
+      ]
+     ],
+     "default": "icon",
+     "display": "select",
+     "display_width": null,
+     "id": "1df33149-d53d-2f75-f51f-23f265df651a",
+     "label": "Stat type",
+     "locked": false,
+     "multiple": false,
+     "name": "stat_type",
+     "preset": null,
+     "reordering_enabled": true,
+     "required": false,
+     "type": "choice"
+    },
+    {
+     "allow_new_line": false,
+     "display_width": null,
+     "id": "4f6a6afb-50fb-d9fd-65d9-fa3be986d327",
+     "inline_help_text": "For further information, you should use the naming class provided in <a href=\"https://icons8.com/line-awesome\">Line Awesome library</a> ",
+     "label": "Icon Class",
+     "locked": false,
+     "name": "icon_class",
+     "required": false,
+     "show_emoji_picker": false,
+     "type": "text",
+     "validation_regex": "",
+     "visibility": {
+      "controlling_field_path": "highlights_group.stat_type",
+      "controlling_value_regex": "icon",
+      "operator": "EQUAL"
+     }
+    },
+    {
+     "allow_new_line": false,
+     "display_width": null,
+     "id": "af2b2b46-86b7-a2ef-2882-11867ecd30b8",
+     "label": "Text",
+     "locked": false,
+     "name": "text",
+     "required": false,
+     "show_emoji_picker": false,
+     "type": "text",
+     "validation_regex": "",
+     "visibility": {
+      "controlling_field_path": "highlights_group.stat_type",
+      "controlling_value_regex": "text",
+      "operator": "EQUAL"
+     }
+    },
+    {
+     "allow_new_line": false,
+     "display_width": null,
+     "label": "Back side text",
+     "locked": false,
+     "name": "back_side_text",
+     "required": false,
+     "show_emoji_picker": false,
+     "type": "text",
+     "validation_regex": "",
+     "visibility": null,
+     "oldId": "af2b2b46-86b7-a2ef-2882-11867ecd30b8",
+     "id": "17b5f9fe-2214-b64b-ce33-9ff80e0f71c5",
+     "help_text": "If you set this field this item will turn into a flippable card showing this text on the back"
+    }
+   ],
+   "default": [],
+   "display_width": null,
+   "expanded": false,
+   "id": "bc8b4a23-854a-b455-fe1d-729b7463600a",
+   "label": "Highlights group",
+   "locked": false,
+   "name": "highlights_group",
+   "occurrence": {
+    "max": 3
+   },
+   "required": false,
+   "tab": "CONTENT",
+   "type": "group"
+  },
     {
       "type": "group",
       "isNew": false,
