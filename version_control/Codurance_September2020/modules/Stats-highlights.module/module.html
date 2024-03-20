@@ -1,11 +1,41 @@
 {# CSS included in meta.json to make the module usable in dnd_section #}
 
-<section class="highlight__container">
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .highlight__container {
+        color: {{ module.style.text_color.color }};
+      }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+<div class="highlight__container">
   {% for highlight in module.highlights_group %}
+    {% set isThereBackSide = highlight.back_side_text %}
+
     <div class="highlight__wrapper">
-      <i class="las {{ highlight.icon_class }}"></i>
-      <p>{{ highlight.copy }}</p>
+      <div class="highlight__card-front-side {% if isThereBackSide %}card-side{% endif %}">
+        {% if highlight.stat_type == "text" %}
+          <div class="highlight__big-text">{{ highlight.text }}</div>
+        {% else %}
+          <i class="hightlight__icon las {{ highlight.icon_class }}"></i>
+        {% endif %}
+
+        <p class="highlight__copy">{{ highlight.copy }}</p>
+
+        {% if isThereBackSide %}
+          <i class="highlight__toggle-icon las la-plus"></i>
+        {% endif %}
+      </div>
+
+      {% if isThereBackSide %}
+        <div class="highlight__card-back-side card-side">
+          <p class="highlight__back-side-text">{{ highlight.back_side_text }}</p>
+          <i class="highlight__toggle-icon las la-minus"></i>
+        </div>
+      {% endif %}
     </div>
   {% endfor %}
-</section>
+</div>
 

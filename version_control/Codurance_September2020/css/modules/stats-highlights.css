@@ -1,37 +1,106 @@
 {% import '../utils/utils.css' as utils %}
-  
-.highlight__container {
-  color: var(--purple-navy);
-  padding: 2em 0;
-}
     
-
 .highlight__wrapper {
   text-align: center;
-  max-width: var(--habib-max-width);
-  margin-inline: auto;
+  position: relative;
 }
 
-.highlight__wrapper i {
+.card-side {
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+  cursor: help;
+}
+
+.highlight__card-front-side {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: var(--space-4) 0;
+}
+
+.highlight__card-back-side {
+  transform: rotateY(-180deg);
+  background: white;
+  color: var(--shark);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--space-3);
+  text-align: left;
+}
+
+.highlight__big-text,
+.highlight__copy {
+  max-width: var(--habib-max-width);
+}
+
+.hightlight__icon {
   font-size: 100px;
 }
 
-.highlight__wrapper p {
-  {{ utils.natus() }}
-  font-weight: var(--middle-font-weight);
-  margin-top: 1.8em;
+.highlight__big-text {
+  {{ utils.gaudi() }}
 }
 
+.highlight__copy {
+  font-weight: var(--heavy-font-weight);
+  margin-top: var(--space-1);
+  text-wrap: balance;
+}
 
+.highlight__toggle-icon {
+  color: var(--persimmon);
+  background-color: white;
+  padding: var(--space-0);
+  border-radius: 50%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--persimmon);
+  border: 1px solid var(--french-gray);
+  position: absolute;
+  bottom: var(--space-2);
+  right: var(--space-2);
+}
 
 {% call utils.small() %}
+  .highlight__wrapper {
+    {{ utils.card_shadow_large() }}
+  }
+
   .highlight__wrapper:not(:first-child) {
-    margin-top: 3em;
-  } 
+    margin-top: var(--space-4);
+  }
+  
+  .highlight__wrapper.hover > .card-side.highlight__card-front-side {
+    transform: rotateY(180deg);
+  }
+
+  .highlight__wrapper.hover > .card-side.highlight__card-back-side {
+    transform: rotateY(0deg);
+  }
 {% endcall %}
 
 {% call utils.medium_large_and_extra_large() %}
   .highlight__container {
     display: flex;
+  }
+
+  .highlight__wrapper {
+    flex-grow: 1;
+  }
+
+  .highlight__wrapper:hover > .card-side.highlight__card-front-side {
+    transform: rotateY(180deg);
+  }
+
+  .highlight__wrapper:hover > .card-side.highlight__card-back-side {
+    transform: rotateY(0deg);
+  }
+
+  .highlight__toggle-icon {
+    display: none !important;
   }
 {% endcall %}
