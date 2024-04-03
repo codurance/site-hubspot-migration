@@ -214,11 +214,8 @@
   }
 
   .level-2 { 
-    --margin-inline: 50px;
     display: flex;
     width: var(--content-max-width);
-    margin-inline: var(--margin-inline);
-    max-width: calc(100vw - var(--margin-inline) * 2);
     left: 0;
     top: var(--header-height);
     background: white;
@@ -394,7 +391,6 @@
   }
 {% endcall %}
 
-
 {% call utils.extra_large() %}
   .level-1 > li > .menu-link {
     padding-inline: var(--space-1);
@@ -403,6 +399,14 @@
   .level-1 > .menu-item:not(.has-submenu) > .active-item:after {
     left: var(--space-1);
     right: var(--space-1);
+  }
+{% endcall %}
+
+{% call utils.large() %}
+  .level-2 { 
+    --margin-inline: 50px;
+    margin-inline: var(--margin-inline);
+    max-width: calc(100vw - var(--margin-inline) * 2);
   }
 {% endcall %}
 
