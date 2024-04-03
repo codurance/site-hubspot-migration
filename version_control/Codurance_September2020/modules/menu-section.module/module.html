@@ -45,7 +45,7 @@
         
         {% if submenu %}
           <nav 
-            class="website-navigation-sub-menu level-2 {% if secondary_submenu %} has-secondary-submenu{% endif %}" 
+            class="website-navigation-sub-menu level-2{% if secondary_submenu %} has-secondary-submenu{% endif %}{% if secondary_submenu|length > 3 %} has-secondary-submenu-with-two-columns{% endif %}" 
             id="sub-menu-services-{{loop.index}}"
           >
 
@@ -106,7 +106,7 @@
             {% if secondary_submenu %}
               <div class="secondary-submenu">
                 <h3 class="submenu-title">{{ item.secondary_submenu.title }}</h3>
-                <ul class="submenu">
+                <ul class="submenu{% if secondary_submenu|length > 3 %} two-columns{% endif %}">
                   {% for node in secondary_submenu %}
                     {{ link(node) }}
                   {% endfor %}

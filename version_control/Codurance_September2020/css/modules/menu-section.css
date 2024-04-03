@@ -213,14 +213,12 @@
     justify-content: center;
   }
 
-  .level-1 > .menu-item {
-    white-space: nowrap;
-  }
-
   .level-2 { 
+    --margin-inline: 50px;
     display: flex;
-    width: 100%;
-    min-width: var(--content-max-width);
+    width: var(--content-max-width);
+    margin-inline: var(--margin-inline);
+    max-width: calc(100vw - var(--margin-inline) * 2);
     left: 0;
     top: var(--header-height);
     background: white;
@@ -228,6 +226,7 @@
     box-shadow: 0 4px 4px #00000029;
   }
 
+  .level-2.has-secondary-submenu .promotional-section,
   .level-2.has-secondary-submenu .main-submenu,
   .level-2.has-secondary-submenu .secondary-submenu {
     padding-inline: var(--space-4);
@@ -235,18 +234,23 @@
     padding-bottom: var(--space-6);
   }
 
+  .main-submenu,
+  .has-secondary-submenu-with-two-columns .secondary-submenu {
+    flex: 1;
+  }
+
   .main-submenu {
     padding: var(--space-6);
-    flex-grow: 1;
 
     > ul {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-3);
+      row-gap: var(--space-3);
+      column-gap: var(--space-4);
     }
   }
 
-  .level-2.has-secondary-submenu .main-submenu > ul {
+  .level-2.has-secondary-submenu .submenu {
     margin-top: var(--space-3);
   }
 
@@ -259,20 +263,15 @@
     justify-content: center;
   }
 
-  .level-2.has-secondary-submenu ul.two-columns {
-    grid-template-columns: repeat(2, 50%);
+  .level-2.has-secondary-submenu .submenu.two-columns {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .level-2.has-secondary-submenu .main-submenu > ul {
     justify-content: flex-start;
   }
 
-  .submenu > .submenu-item {
-    white-space: normal;
-  }
-
   .secondary-submenu {
-    flex-basis: 15.5rem;
     background-color: var(--athens-gray);
     border-bottom-right-radius: 10px;
   }
@@ -280,6 +279,16 @@
   .submenu-title {
     {{ utils.natus() }}
     font-weight: var(--heavy-font-weight);
+  }
+
+  .secondary-submenu .submenu {
+    display: grid;
+    row-gap: var(--space-3);
+    column-gap: var(--space-4);
+  }
+
+  .level-2.has-secondary-submenu-with-two-columns .submenu {
+    column-gap: var(--space-3);
   }
 
   .navigation-primary a {
@@ -321,10 +330,6 @@
     position: relative;
   }
 
-  .secondary-submenu .submenu-item {
-    margin-top: var(--space-3);
-  }
-
   .level-1 > li > .menu-link {
     padding-inline: var(--space-0);
   }
@@ -344,11 +349,9 @@
   }
 
   .promotional-section {
+    padding: var(--space-6);
+    flex-basis: 30%;
     border-bottom-left-radius: 10px;
-    max-width: 33%;
-    width: 100%;
-    white-space: normal;
-    padding: var(--space-5);
     display: flex;
     flex-direction: column;
     justify-content: center;
