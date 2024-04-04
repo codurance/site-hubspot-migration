@@ -14,8 +14,16 @@
   <div class="custom-our-people__card-container">
     {% set table_info = hubdb_table_rows( module.hubdbtable_field ) %}
 
+    {% if module.list_select_method == "specific_rows" %}
+      {% set rows_info = [] %}
+      {% for row in module.hubdb_rows %}
+        {% do rows_info.append(row.columns) %}
+      {% endfor %}
+
+      {% set table_info = rows_info %}
+    {% endif %}
+
     {% for row in table_info %}
-      
       <article class="custom-our-people__card  {% if row.leadership_board %}leadership{% endif %}">
         <div class="custom-our-people__card-inner" data-modal-target="#team-{{ loop.index }}">
           {% if row.image.url %}

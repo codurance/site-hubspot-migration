@@ -1,48 +1,97 @@
-[ {
-  "id" : "dae9a006-a992-a3c8-dd4a-c485830efad6",
-  "name" : "filter_label",
-  "display_width" : null,
-  "label" : "Filter Label",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : ""
-}, {
-  "id" : "a9a780c2-b18f-97df-96b2-263889e79fca",
-  "name" : "hubdbtable_field",
-  "display_width" : null,
-  "label" : "HubDB table",
-  "required" : false,
-  "locked" : false,
-  "type" : "hubdbtable"
-}, {
-  "id" : "3a7e1ed4-7903-2dbb-a67d-e390c0782969",
-  "name" : "card_settings",
-  "display_width" : null,
-  "label" : "Card Settings",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "f57794a2-fa0e-fef9-f215-acbf114188d5",
-    "name" : "button_text",
-    "display_width" : null,
-    "label" : "Button text",
-    "inline_help_text" : "Write the text to be displayed on the button that will open a modal ",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Learn more"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : {
-    "button_text" : "Learn more"
+[
+  {
+   "allow_new_line": false,
+   "default": "",
+   "display_width": null,
+   "id": "dae9a006-a992-a3c8-dd4a-c485830efad6",
+   "label": "Filter Label",
+   "locked": false,
+   "name": "filter_label",
+   "required": false,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
+  },
+  {
+   "type": "choice",
+   "id": "d710cdb3-f625-8f0d-95ce-963dea688836",
+   "display": "select",
+   "choices": [
+    [
+     "hubdb_table",
+     "HubDB table"
+    ],
+    [
+     "specific_rows",
+     "Specific rows from Our People HubDB table"
+    ]
+   ],
+   "label": "List select method",
+   "name": "list_select_method",
+   "default": "hubdb_table",
+   "required": false
+  },
+  {
+   "display_width": null,
+   "id": "a9a780c2-b18f-97df-96b2-263889e79fca",
+   "label": "HubDB table",
+   "locked": false,
+   "name": "hubdbtable_field",
+   "required": false,
+   "type": "hubdbtable",
+   "visibility": {
+    "operator": "EQUAL",
+    "controlling_field_path": "list_select_method",
+    "controlling_value_regex": "hubdb_table"
+   }
+  },
+  {
+   "type": "hubdbrow",
+   "id": "fb5f4b7e-ac3b-6064-8380-cf535f8a37eb",
+   "label": "HubDB rows",
+   "name": "hubdb_rows",
+   "table_name_or_id": 4686563,
+   "default": {
+    "id": null
+   },
+   "display_columns": [
+    "name"
+   ],
+   "visibility": {
+    "controlling_field_path": "list_select_method",
+    "operator": "EQUAL",
+    "controlling_value_regex": "specific_rows"
+   },
+   "occurrence": {}
+  },
+  {
+   "children": [
+    {
+     "allow_new_line": false,
+     "default": "Learn more",
+     "display_width": null,
+     "id": "f57794a2-fa0e-fef9-f215-acbf114188d5",
+     "inline_help_text": "Write the text to be displayed on the button that will open a modal ",
+     "label": "Button text",
+     "locked": false,
+     "name": "button_text",
+     "required": false,
+     "show_emoji_picker": false,
+     "type": "text",
+     "validation_regex": ""
+    }
+   ],
+   "default": {
+    "button_text": "Learn more"
+   },
+   "display_width": null,
+   "expanded": false,
+   "id": "3a7e1ed4-7903-2dbb-a67d-e390c0782969",
+   "label": "Card Settings",
+   "locked": false,
+   "name": "card_settings",
+   "required": false,
+   "tab": "CONTENT",
+   "type": "group"
   }
-} ]
+ ]
