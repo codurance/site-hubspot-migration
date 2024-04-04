@@ -54,7 +54,7 @@
     {% endfor %}
 {% endif %}
 
-<div class="card-container lateral-spacing">
+<div class="card-container lateral-spacing{% if cards_type_selected == "hubdb" %} card-container--hubdb{% endif %}">
     {% for card in cards %}
         <article class="card">
             <img class="card__img {% if module.fixed_aspect_ratio %}card__img--ratio{% endif %}"  

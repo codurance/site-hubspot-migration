@@ -10,6 +10,12 @@
     scrollbar-width: none;
 }
 
+{% call utils.medium_large_and_extra_large() %}
+    .card-container--hubdb {
+        grid-template-columns: repeat(3, 1fr);
+    }
+{% endcall %}
+
 .card-container::-webkit-scrollbar {
     display: none;
 }
