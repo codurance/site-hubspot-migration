@@ -85,24 +85,23 @@
 {% endcall %}
 
 .custom-our-people__card-container {
-  --columns: 2;
   --column-gap: .8em;
   --row-gap: 1.2em;
   display: grid;
-  grid-template-columns: repeat( var(--columns), 1fr);
+  grid-template-columns: repeat( var(--our-people-columns), 1fr);
   column-gap: var(--column-gap);
   row-gap: var(--row-gap);
 }
 
-{% call utils.medium() %}
+{% call utils.small() %}
   .custom-our-people__card-container {
-    --columns: 3;
+    --our-people-columns: 2;
   }
 {% endcall %}
 
-{% call utils.large_and_extra_large() %}
+{% call utils.medium() %}
   .custom-our-people__card-container {
-    --columns: 4;
+    --our-people-columns: 3;
   }
 {% endcall %}
 

@@ -13,9 +13,6 @@
    "validation_regex": ""
   },
   {
-   "type": "choice",
-   "id": "d710cdb3-f625-8f0d-95ce-963dea688836",
-   "display": "select",
    "choices": [
     [
      "hubdb_table",
@@ -26,10 +23,18 @@
      "Specific rows from Our People HubDB table"
     ]
    ],
-   "label": "List select method",
-   "name": "list_select_method",
    "default": "hubdb_table",
-   "required": false
+   "display": "select",
+   "display_width": null,
+   "id": "d710cdb3-f625-8f0d-95ce-963dea688836",
+   "label": "List select method",
+   "locked": false,
+   "multiple": false,
+   "name": "list_select_method",
+   "preset": null,
+   "reordering_enabled": true,
+   "required": false,
+   "type": "choice"
   },
   {
    "display_width": null,
@@ -40,29 +45,32 @@
    "required": false,
    "type": "hubdbtable",
    "visibility": {
-    "operator": "EQUAL",
     "controlling_field_path": "list_select_method",
-    "controlling_value_regex": "hubdb_table"
+    "controlling_value_regex": "hubdb_table",
+    "operator": "EQUAL"
    }
   },
   {
-   "type": "hubdbrow",
-   "id": "fb5f4b7e-ac3b-6064-8380-cf535f8a37eb",
-   "label": "HubDB rows",
-   "name": "hubdb_rows",
-   "table_name_or_id": 2691020,
    "default": {
     "id": null
    },
    "display_columns": [
     "name"
    ],
+   "display_width": null,
+   "id": "fb5f4b7e-ac3b-6064-8380-cf535f8a37eb",
+   "label": "HubDB rows",
+   "locked": false,
+   "name": "hubdb_rows",
+   "occurrence": {},
+   "required": false,
+   "table_name_or_id": "4686563",
+   "type": "hubdbrow",
    "visibility": {
     "controlling_field_path": "list_select_method",
-    "operator": "EQUAL",
-    "controlling_value_regex": "specific_rows"
-   },
-   "occurrence": {}
+    "controlling_value_regex": "specific_rows",
+    "operator": "EQUAL"
+   }
   },
   {
    "children": [
@@ -79,17 +87,30 @@
      "show_emoji_picker": false,
      "type": "text",
      "validation_regex": ""
+    },
+    {
+     "type": "number",
+     "id": "d2517a52-30ee-3c58-e813-4dfc0711aecc",
+     "display": "text",
+     "step": 1,
+     "label": "Max cards per row",
+     "name": "max_cards_per_row",
+     "min": 1,
+     "max": 4,
+     "default": 4,
+     "required": true
     }
    ],
    "default": {
-    "button_text": "Learn more"
+    "button_text": "Learn more",
+    "max_cards_per_row": 4
    },
    "display_width": null,
    "expanded": false,
    "id": "3a7e1ed4-7903-2dbb-a67d-e390c0782969",
-   "label": "Card Settings",
+   "label": "Settings",
    "locked": false,
-   "name": "card_settings",
+   "name": "settings",
    "required": false,
    "tab": "CONTENT",
    "type": "group"
