@@ -11,12 +11,17 @@
     </label>
   {% endif %}
 
+  {% set cards_per_row = 4 %}
+  {% if module.settings.max_cards_per_row %}
+    {% set cards_per_row = module.settings.max_cards_per_row %}
+  {% endif %}
+
   {% require_css %}
     <style>
     {% scope_css %}
       {% call utils.large_and_extra_large() %}
         .custom-our-people__card-container {
-          --our-people-columns: {{ module.settings.max_cards_per_row }};
+          --our-people-columns: {{ cards_per_row }};
         }
       {% endcall %}
     {% end_scope_css %}
