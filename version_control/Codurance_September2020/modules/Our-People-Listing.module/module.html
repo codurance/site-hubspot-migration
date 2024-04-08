@@ -17,6 +17,7 @@
       {% call utils.large_and_extra_large() %}
         .custom-our-people__card-container {
           --our-people-columns: {{ module.settings.max_cards_per_row }};
+          max-width: calc(var(--our-people-columns) * 25%));
         }
       {% endcall %}
     {% end_scope_css %}

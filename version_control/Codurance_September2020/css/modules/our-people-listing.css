@@ -91,6 +91,7 @@
   grid-template-columns: repeat( var(--our-people-columns), 1fr);
   column-gap: var(--column-gap);
   row-gap: var(--row-gap);
+  margin-inline: auto;
 }
 
 {% call utils.small() %}
