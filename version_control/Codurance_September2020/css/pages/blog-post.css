@@ -146,6 +146,10 @@
   {{ utils.natus() }}
 }
 
+.blog-content__post-audio {
+  margin-bottom: var(--space-3);
+}
+
 .blog-content p {
   {{ utils.base() }}
   {{ utils.base_margin() }}

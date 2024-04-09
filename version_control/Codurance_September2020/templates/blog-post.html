@@ -168,6 +168,7 @@ label: Blog Post
 
   <section class="blog-content blog-max-width">
     <div class="blog-content__inner">
+      {% module "blog_post_audio" path="@hubspot/blog_audio", overrideable=False, extra_classes="blog-content__post-audio" %}
       {{ content.post_body }}
     </div>
   </section>
