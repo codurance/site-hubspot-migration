@@ -193,14 +193,16 @@ let hsSearch = function(_instance) {
       });
     };
 
-  (init = () => {
-    clearResultsOnClick();
-    searchField.addEventListener("input", function(e) {
-      if (searchTerm != searchField.value) {
-        isSearchTermPresent();
-      }
-    });
-  })();
+    init();
+
+    function init() {
+      clearResultsOnClick();
+      searchField.addEventListener("input", function(e) {
+        if (searchTerm != searchField.value) {
+          isSearchTermPresent();
+        }
+      });
+    }
 };
 
 document.addEventListener("DOMContentLoaded", function() {
