@@ -22,12 +22,6 @@
     document.body.classList.remove(SHOW_FOCUS_STYLES_CLASS);
   }
 
-  $(".active-branch").each(function() {
-    $(this)
-      .parent("li")
-      .addClass("active-branch");
-  });
-
   domReady(function() {
     if (!document.body) return;
 
