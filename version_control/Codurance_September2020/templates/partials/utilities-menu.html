@@ -4,7 +4,7 @@
 -->
 
 {{ require_css(get_asset_url("../../css/partials/utilities-menu.css")) }}
-{{ require_js(get_asset_url("../../js/partials/utilities-menu.js"), "footer") }}
+{{ require_js(get_asset_url("../../js/partials/utilities-menu.js"), { position: "footer", defer:true }) }}
 
 <nav class="utilities-menu">
 	<ul>

@@ -18,7 +18,7 @@
       https://developers.google.com/fonts/docs/getting_started
     #}
     {# Include Theme Overrides #}
-    {{ require_js(get_asset_url("../../js/main.js")) }}
+    {{ require_js(get_asset_url("../../js/main.js"), { position: "footer", defer:true }) }}
     {{ standard_header_includes }}
     {{ require_css(get_asset_url("../../css/theme-overrides.css")) }}
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">

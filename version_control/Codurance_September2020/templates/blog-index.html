@@ -190,8 +190,8 @@ label: Blog Listing
       </div>
 
   {% endif %}
-  {{ require_js(get_asset_url("../js/imageLoaded.js")) }}
-  {{ require_js(get_asset_url("../js/masonry.js")) }}
+  {{ require_js(get_asset_url("../js/imageLoaded.js"), { position: "footer", defer:true }) }}
+  {{ require_js(get_asset_url("../js/masonry.js"), { position: "footer", defer:true }) }}
 
   <script>
     document.onreadystatechange = () => {
