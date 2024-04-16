@@ -208,6 +208,6 @@
   </div>
 </main>
 
-{{ require_js(get_asset_url("../js/imageLoaded.js")) }}
-{{ require_js(get_asset_url("../../js/isotope.js"), "footer") }}
-{{ require_js(get_asset_url("../../js/isotopePackery.js"), "footer") }}
+{{ require_js("https://code.jquery.com/jquery-3.7.1.slim.min.js", { position: "footer", defer:true }) }}
+{{ require_js(get_asset_url("../../js/isotope.js"), { position: "footer", defer:true }) }}
+{{ require_js(get_asset_url("../../js/isotopePackery.js"), { position: "footer", defer:true }) }}
