@@ -52,33 +52,6 @@
     });
   });
 
-  $('input[name="globalunsub"]').on("change", function() {
-    if ($(this).is(":checked")) {
-      $(".item").addClass("disabled");
-      $(".item input").attr("disabled", "disabled");
-    } else {
-      $(".item").removeClass("disabled");
-      $(".item input").removeAttr("disabled");
-    }
-  });
-
-  $(function() {
-    var value1 = window.location.href.substring(
-      window.location.href.lastIndexOf("/") + 1
-    );
-    $('[data-target="blog-index-filter-link"]').each(function() {
-      var url = $(this).attr("href");
-      var lastSegment = url.split("/").pop();
-      if (lastSegment == value1) {
-        $(this)
-          .parent()
-          .siblings()
-          .removeClass("active");
-        $(this).addClass("active");
-      }
-    });
-  });
-
   const announcementOnDevConsole = (_) => {
     try {
       const main = `
