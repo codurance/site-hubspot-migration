@@ -1,5 +1,6 @@
 let previousViewpoint = 0;
-const navigationHeight = document.querySelector(".secondary-menu").offsetHeight;
+const secondaryMenu = document.querySelector(".secondary-menu");
+const navigationHeight = secondaryMenu.offsetHeight;
 const mainMenuHeight = document.querySelector(".header").offsetHeight;
 
 document.documentElement.style.setProperty(
@@ -7,22 +8,22 @@ document.documentElement.style.setProperty(
   navigationHeight + mainMenuHeight + "px"
 );
 
-$(window).scroll(function (event) {
-  let currentViewpoint = $(this).scrollTop();
+window.addEventListener("scroll", () => {
+  let currentViewpoint = window.scrollY;
 
   if (currentViewpoint > previousViewpoint) {
-    fixMenu($(".secondary-menu"));
+    fixMenu(secondaryMenu);
   } else {
-    dropMenu($(".secondary-menu"));
+    dropMenu(secondaryMenu);
   }
 
   previousViewpoint = currentViewpoint;
 });
 
-function fixMenu($menu) {
-  $menu.addClass("secondary-menu--fixed");
+function fixMenu(menu) {
+  menu.classList.add("secondary-menu--fixed");
 }
 
-function dropMenu($menu) {
-  $menu.removeClass("secondary-menu--fixed");
+function dropMenu(menu) {
+  menu.classList.remove("secondary-menu--fixed");
 }
