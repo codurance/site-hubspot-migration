@@ -167,8 +167,21 @@ label: Blog Post
   </section>
 
   <section class="blog-content blog-max-width">
+    {% if content.text_to_audio_file_id != null %}
+      {% module "blog_post_intro" 
+        path="@hubspot/rich_text" 
+        label="Blog post intro" 
+        html="<p>Si en vez de leer prefieres escuchar, dale al play.</p>" 
+        extra_classes="blog-content__post-intro" 
+      %}
+    {% endif %}
+    {% module "blog_post_audio" 
+      path="@hubspot/blog_audio", 
+      overrideable=False,
+      extra_classes="blog-content__post-audio" 
+    %}
+    
     <div class="blog-content__inner">
-      {% module "blog_post_audio" path="@hubspot/blog_audio", overrideable=False, extra_classes="blog-content__post-audio" %}
       {{ content.post_body }}
     </div>
   </section>

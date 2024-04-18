@@ -146,11 +146,23 @@
   {{ utils.natus() }}
 }
 
-.blog-content__post-audio {
-  margin-bottom: var(--space-3);
+.blog-content__post-intro {
+  margin-bottom: var(--space-2);
+} 
+
+.blog-content__post-intro :last-child {
+  margin-bottom: unset;
+} 
+
+.blog-content__post-intro p {
+  {{ utils.natus() }}
 }
 
-.blog-content p {
+.blog-content__post-audio {
+  margin-bottom: var(--space-5);
+}
+
+.blog-content__inner p {
   {{ utils.base() }}
   {{ utils.base_margin() }}
 }
