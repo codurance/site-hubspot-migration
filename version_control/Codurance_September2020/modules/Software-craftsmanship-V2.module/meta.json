@@ -8,6 +8,10 @@
     "autoload" : true,
     "name" : "jquery.matchHeight-min.js"
   } ],
+  "js_render_options" : {
+    "position": "footer",
+    "defer": true
+  },
   "label" : "item",
   "is_available_for_new_content" : true
 }
