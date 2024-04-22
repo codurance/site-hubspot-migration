@@ -2,14 +2,5 @@
   "global" : false,
   "host_template_types" : [ "PAGE" ],
   "module_id" : 48385130079,
-  "js_assets" : [ {
-    "url" : "https://f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/js/jquery.matchHeight-min.js",
-    "autoload" : true,
-    "name" : "jquery.matchHeight-min.js"
-  } ],
-  "js_render_options" : {
-    "position": "footer",
-    "defer": true
-  },
   "is_available_for_new_content" : true
 }
