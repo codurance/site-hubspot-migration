@@ -100,6 +100,7 @@ label: Blog Post
             class="blog-author-info__author-image"
             src="{{ content.blog_post_author.avatar }}"
             alt="{{ content.blog_post_author.display_name }}"
+            loading="lazy"
           />
           <div class="blog-author-info__inner">
             <h2 class="blog-author-info__name">
@@ -140,7 +141,9 @@ label: Blog Post
           rel="noopener noreferrer"
         >
         <img class="custom-our-people-modal__social-icon twitter-x-logo" 
-        src="https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Logos/Social%20icons_logo_X_shark.svg"  width="auto" alt="Twitter X logo" />
+          src="https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Logos/Social%20icons_logo_X_shark.svg"  width="auto" alt="Twitter X logo" 
+          loading="lazy"
+        />
         </a>
       </li>
       <li class="list-inline-item custom-mx-2">
@@ -255,6 +258,7 @@ label: Blog Post
                         class="custom-bg-white img-fluid w-100"
                         src="{{ resize_image_url( post.featured_image,528 ) }}"
                         alt="{{ post.name }}"
+                        loading="lazy"
                       />
                     </a>
                   {% endif %}

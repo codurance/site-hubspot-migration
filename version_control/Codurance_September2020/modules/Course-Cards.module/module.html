@@ -9,18 +9,13 @@
 		<article class="course-card{{is_featured_card}}">
 			{% if course.image.src %}
 				{% set sizeAttrs = 'width="{{ course.image.width }}" height="{{ course.image.height }}"' %}
-				{% if course.image.size_type == 'auto' %}
-					{% set sizeAttrs = 'width="{{ course.image.width }}" height="{{ course.image.height }}" style="max-width: 100%; height: auto;"' %}
-				{% elif course.image.size_type == 'auto_custom_max' %}
-					{% set sizeAttrs = 'width="{{ course.image.max_width }}" height="{{ course.image.max_height }}" style="max-width: 100%; height: auto;"' %}
-				{% endif %}
-				{% set loadingAttr = course.image.loading != 'disabled' ? 'loading="{{ course.image.loading }}"' : '' %}
-				<img class="course-card__image" src="{{ course.image.src }}" alt="{{ course.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+
+				<img class="course-card__image" src="{{ course.image.src }}" alt="{{ course.image.alt }}" loading="lazy" {{ sizeAttrs }}>
 			{% endif %}
 			<div class="course-content">
 				<h3>{{ course.title }}</h3>
 				<div class="course-info__instructor">
-					<img src="{{ avatar_image }}" alt="{{ course.instructor.columns.image.name }} profile picture" />
+					<img src="{{ avatar_image }}" alt="{{ course.instructor.columns.image.name }} profile picture" loading="lazy" />
 					<p>{{ course.instructor.columns.name }} | <span>{{ course.duration }}</span></p>
 				</div>
 				<p>{{ course.description }}</p>

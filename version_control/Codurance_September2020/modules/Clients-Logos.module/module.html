@@ -24,7 +24,7 @@
 		{% for item in module.logos_group %}
 			{% if item.logo.src %}
 				 {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading }}"' : '' %}
-				<img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ loadingAttr }}">
+				<img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ loadingAttr }}>
 			{% endif %}
 		{% endfor %}
 	</div>

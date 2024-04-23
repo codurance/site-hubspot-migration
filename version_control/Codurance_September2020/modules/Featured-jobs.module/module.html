@@ -30,14 +30,8 @@
 		{% for item in module.featured_role %}
 			{% if item.position_icon.src %}
 				{% set sizeAttrs = 'width="{{ item.position_icon.width }}" height="{{ item.position_icon.height }}"' %}
-			{% if item.position_icon.size_type == 'auto' %}
-				{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-			{% elif item.position_icon.size_type == 'auto_custom_max' %}
-				{% set sizeAttrs = 'width="{{ item.position_icon.max_width }}" height="{{ item.position_icon.max_height }}" style="max-width: 100%; height: auto;"' %}
-			{% endif %}
-			{% set loadingAttr = item.position_icon.loading != 'disabled' ? 'loading="{{ item.position_icon.loading }}"' : '' %}
-		<div class="featured__job-card">	
-				<img class="featured__icon" src="{{ item.position_icon.src }}" alt="{{ item.position_icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+				<div class="featured__job-card">	
+					<img class="featured__icon" src="{{ item.position_icon.src }}" alt="{{ item.position_icon.alt }}" loading="lazy" {{ sizeAttrs }}>
 			{% endif %}
 			
 				<div class="featured__main-info">

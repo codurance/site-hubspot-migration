@@ -76,9 +76,11 @@ label: Blog Listing
 
                     </div>
                     <a href="{{ content.absolute_url }}">
-                        <img class="blog-listing__post-image--featured"
-                              src="{{ resize_image_url( content.featured_image, 600 ) }}"
-                              alt="{{ content.name }}">
+                      <img class="blog-listing__post-image--featured"
+                        src="{{ resize_image_url( content.featured_image, 600 ) }}"
+                        alt="{{ content.name }}"
+                        loading="lazy"
+                      />
                     </a>
                   </article>
                 </div>
@@ -90,8 +92,10 @@ label: Blog Listing
                     {% if content.featured_image %}
                       <a href="{{ content.absolute_url }}">
                         <img class="blog-listing__post-image" 
-                              src="{{ resize_image_url( content.featured_image,528 ) }}"
-                              alt="{{ content.name }}">
+                          src="{{ resize_image_url( content.featured_image,528 ) }}"
+                          alt="{{ content.name }}"
+                          loading="lazy"
+                        />
                       </a>
                     {% endif %}
 

@@ -80,7 +80,7 @@
           <article class="custom-kata-listing__post" blogTags="{{content.tag_list}}">
             {% if content.featured_image %}
               <a href="{{ content.absolute_url }}">
-                <img class="img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}">
+                <img class="img-fluid w-100" src="{{ content.featured_image }}" alt="{{ content.name }}" loading="lazy">
               </a>
             {% endif %}
             <div class="custom-kata-listing__wrapper">

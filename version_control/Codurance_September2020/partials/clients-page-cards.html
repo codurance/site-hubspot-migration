@@ -62,6 +62,7 @@
         height="20"
         src="https://f.hubspotusercontent10.net/hubfs/3042464/Services%20Logos/icon-{{service.name|lower|split(' ')|join('-')}}.svg"
         alt=""
+        loading="lazy"
       />
       {% endfor %}
  
@@ -73,6 +74,7 @@
               class="client-card__partner-icon"
               src="https://f.hubspotusercontent10.net/hubfs/3042464/CMS%20Sandbox/Partner%20Logos/{{client.partner.name|lower}}.svg"
               alt="{{client.patner.name}}-logo"
+              loading="lazy"
             />
       </p>
     </div>  
@@ -109,12 +111,14 @@
         class="clients__large-card__img"
         src="{{client.hero_image.url}}"
         url=""
+        loading="lazy"
       />
       <div class="clients__large-card__body">
         <img
           class="clients__large-card__logo"
           src="{{client.logo.url}}"
           url="{{client.name}}-logo"
+          loading="lazy"
         />
 
         {% if client.testimonial_text %}
@@ -164,8 +168,10 @@
         {% if client.case_study %}
           <div class="clients__large-card__secondary__case-study">
             <img class="clients__large-card__secondary__case-study-image" 
-                 src="{{client.case_study_display_image.url}}"
-                 alt=""/>
+              src="{{client.case_study_display_image.url}}"
+              alt=""
+              loading="lazy"
+            />
             <p class="clients__large-card__secondary__case-study-text">
               {{case_study_info_text}} {{client.name}}
             </p>
@@ -206,7 +212,7 @@
         >
         <article class="clients__secondary-card">
           
-          <img class="clients__secondary-card__logo"  src={{client.logo.url}} alt="">
+          <img class="clients__secondary-card__logo"  src={{client.logo.url}} alt="" loading="lazy">
           <p class="clients__secondary-card__description-text"> {{client.promotion}} </p>
           
           <div class="clients__secondary-card__extra-info">{{ tags_footer(client) }}</div>

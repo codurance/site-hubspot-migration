@@ -16,7 +16,7 @@
             {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.trainer_image.max_width }}px; max-height: {{ module.trainer_image.max_height }}px"' %}
           {% endif %}
 
-          <img class="training-teaser__avatar" src="{{ module.trainer_image.src }}" alt="{{ module.trainer_image.alt }}" {{ sizeAttrs }}>
+          <img class="training-teaser__avatar" src="{{ module.trainer_image.src }}" alt="{{ module.trainer_image.alt }}" {{ sizeAttrs }} loading="lazy">
         {% endif %}
         {{ module.member_name }} 
         <span class="training-teaser__course-length">{{ module.training_duration }}</span>

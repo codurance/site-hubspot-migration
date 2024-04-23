@@ -12,7 +12,7 @@
 				{% if item.image_field.src %}
 					{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
 
-					<img class="listing__img" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+					<img class="listing__img" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ sizeAttrs }}>
 				{% endif %}
 				<h4 class="listing__text">{{ item.image_title }}</h4>
 			</a>

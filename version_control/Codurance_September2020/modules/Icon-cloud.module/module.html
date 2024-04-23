@@ -1,11 +1,10 @@
 <div class="icons-group">
 	{% for icon in module.icon_group %}
 		{% if icon.image.src %}	
-			{% set loadingAttr = icon.image.loading != 'disabled' ? 'loading="{{ icon.image.loading }}"' : '' %}
 			<div class="icon">
 				<img class="icon__image"
 					 src="{{ icon.image.src }}" 
-					 alt="{{ icon.image.alt }}" {{ loadingAttr }}>
+					 alt="{{ icon.image.alt }}" loading="lazy">
 				<p class="icon__title">{{ icon.title }}</p>
 			</div>
 		{% endif %}	

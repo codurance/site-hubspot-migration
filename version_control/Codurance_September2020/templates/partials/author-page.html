@@ -75,7 +75,8 @@
                             <img class="card__img" 
                                 src="{{ resize_image_url( content.featured_image,528 ) }}" 
                                 alt="{{ content.name }}"
-                            >
+                                loading="lazy"
+                            />
                         </a>
                         {% endif %}
                         <div class="card__content">

@@ -17,7 +17,7 @@
       <div class="case-study-card__text-container">
         {% if card.card_thumbnail.src %}
           {% set sizeAttrs = 'width="{{ card.card_thumbnail.width }}" height="{{ card.card_thumbnail.height }}"' %}
-          <img src="{{ card.card_thumbnail.src }}" alt="{{ card.card_thumbnail.alt }}" {{ sizeAttrs }} class="case-study-card__card-thumbnail">
+          <img src="{{ card.card_thumbnail.src }}" alt="{{ card.card_thumbnail.alt }}" {{ sizeAttrs }} class="case-study-card__card-thumbnail" loading="lazy">
         {% endif %}
   
         <h3 class="case-study-card__title">{{ card.card_title }}</h3>
