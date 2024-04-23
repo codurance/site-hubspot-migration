@@ -4,8 +4,8 @@
 {% require_css %}
   <style>
     .newsletter-wrapper {
-        margin-top: {{ module.style.spacing.margin.top.value }}px;
-        margin-bottom: {{ module.style.spacing.margin.bottom.value }}px;
+      margin-top: {{ module.style.spacing.margin.top.value }}px;
+      margin-bottom: {{ module.style.spacing.margin.bottom.value }}px;
     }
   </style>
 {% end_require_css %}
@@ -32,6 +32,12 @@
           response_response_type="{{ module.newsletter_form.response_type }}"
           response_message="{{ module.newsletter_form.message }}"
         %}
+
+        <div class="newsletter__grecaptcha-notice">
+          This site is protected by reCAPTCHA and the Google
+          <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+          <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+        </div>
       </div>
     </div>
   </div>

@@ -53,6 +53,16 @@
     width: 100%;
 }
 
+.hs-recaptcha {
+    visibility: hidden;
+    position: absolute;
+}
+
+.newsletter__grecaptcha-notice {
+    {{ utils.sejima() }}
+    margin-top: var(--space-0);
+}
+
 .newsletter__form .submitted-message {
         max-width: 40ch;
         font-style: italic;
@@ -61,6 +71,7 @@
 {% call utils.medium_and_large() %}
     .newsletter__form {
         align-self: flex-end;
+        margin-top: var(--space-0);
     }
 
     .newsletter-inner {
@@ -93,7 +104,7 @@
         {{ utils.freed() }}
     }
 
-    .dnd-column:not(.span12) .newsletter .hs-form {
+    .dnd-column:not(.span12) .newsletter__form {
         margin-left: 92px;
     }
     /* End dnd columns styles */
@@ -123,7 +134,7 @@
     }
 
     .newsletter-inner {
-        align-items: baseline;
+        align-items: center;
         flex-flow: row;
         justify-content: space-around;
         max-width: unset;
