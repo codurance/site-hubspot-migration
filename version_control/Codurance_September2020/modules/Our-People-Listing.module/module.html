@@ -82,7 +82,7 @@
                 {{ resize_image_url(row.image.url, 300) }} 300w"
               sizes="
                 (max-width: 425px) 180px,
-                300px" alt="{{ row.name }}">
+                300px" loading="lazy" alt="{{ row.name }}">
               </figure>
             </div>
           {% endif %}
