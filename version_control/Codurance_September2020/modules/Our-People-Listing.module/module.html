@@ -77,7 +77,12 @@
           {% if row.image.url %}
             <div class="custom-our-people-modal__left-column">
               <figure class="custom-our-people-modal__image-container">
-                <img class="custom-our-people-modal__image" src="{{ row.image.url }}" alt="{{ row.name }}">
+                <img class="custom-our-people-modal__image" srcset="
+                {{ resize_image_url(row.image.url, 180) }} 180w,
+                {{ resize_image_url(row.image.url, 300) }} 300w"
+              sizes="
+                (max-width: 425px) 180px,
+                300px" alt="{{ row.name }}">
               </figure>
             </div>
           {% endif %}
