@@ -13,7 +13,8 @@
 
 <figure class="infographic__figure">
   {% if module.infographic_image.src %}
-    <img src="{{ module.infographic_image.src }}" alt="{{ module.infographic_image.alt }}" loading="lazy" />
+    {% set sizeAttrs = 'width="{{ module.infographic_image.width }}" height="{{ module.infographic_image.height }}"' %}
+    <img src="{{ module.infographic_image.src }}" alt="{{ module.infographic_image.alt }}" loading="lazy" {{ sizeAttrs }}/>
   {% endif %}
   
   <ol>  

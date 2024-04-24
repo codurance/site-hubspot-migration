@@ -24,10 +24,14 @@
               </div>
               <div class="testimonial-slider-item__author">
                 {% if item.testimonial_image.src %}
+                  
                   <img class="testimonial-slider-item__author-image"
                     alt="{{ item.testimonial_image.alt }}"
                     src={{ resize_image_url(item.testimonial_image.src, 0, 0, 90 ) }}
-                    loading="lazy" />
+                    loading="lazy" 
+                    width="90"
+                    height="90"
+                    />
                 {% endif %}
                 
                 <div class="author-details-wrapper">

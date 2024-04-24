@@ -30,7 +30,8 @@
     </div>
 
 		{% if module.image.src %}
-			<img class="header-slim__image" src="{{ module.image.src }}" alt=""/>
+      {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+			<img class="header-slim__image" src="{{ module.image.src }}" alt="" {{ sizeAttrs }} />
 		{% endif %}
 
 	</div>

@@ -12,10 +12,11 @@
           </li>
           <li data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"> 
             <a target="_blank" aria-label="Open codurance twitter link in another window" href="{{ module.twitter_url }}" rel="noopener noreferrer"> 
+              {% set resized_image = resize_image_url("https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Logos/Twitter-X_social_icon_white.svg", 0, 0, 12) %}
               <img
                 class="twitter-x-logo" 
-                src="https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Logos/Twitter-X_social_icon_white.svg" 
-                width=12 height=auto
+                src="{{ resized_image }}" 
+                width="12" height="12"
                 alt="Twitter X logo" 
                 loading="lazy" />
             </a> 

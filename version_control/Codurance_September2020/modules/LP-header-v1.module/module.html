@@ -36,11 +36,6 @@
 		<div class="lp-header-v1__image">
 			{% if module.header_image.src %}
 				{% set sizeAttrs = 'width="{{ module.header_image.width }}" height="{{ module.header_image.height }}"' %}
-				{% if module.header_image.size_type == 'auto' %}
-					{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-				{% elif module.header_image.size_type == 'auto_custom_max' %}
-					{% set sizeAttrs = 'width="{{ module.header_image.max_width }}" height="{{ module.header_image.max_height }}" style="max-width: 100%; height: auto;"' %}
-				{% endif %}
 				<img src="{{ module.header_image.src }}" alt="{{ module.header_image.alt }}" {{ sizeAttrs }}>
 			{% endif %}
 		</div>

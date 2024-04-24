@@ -10,9 +10,8 @@
 			{% endif %}
 			<a href="{{ item.url.href }}" class="listing__item {{ active_video_class }}" data-video-subtitle="{{ item.video_subtitle }}">
 				{% if item.image_field.src %}
-					{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-
-					<img class="listing__img" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ sizeAttrs }}>
+					{% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
+					<img class="listing__img" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ sizeAttrs }} />
 				{% endif %}
 				<h4 class="listing__text">{{ item.image_title }}</h4>
 			</a>

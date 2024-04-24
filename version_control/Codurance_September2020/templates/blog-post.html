@@ -96,11 +96,14 @@ label: Blog Post
             </a>
       {% else %}
         <div class="blog-author-info__outer">
+          {% set avatar_image = resize_image_url(content.blog_post_author.avatar, 70, 70) %}
           <img
             class="blog-author-info__author-image"
-            src="{{ content.blog_post_author.avatar }}"
+            src="{{ avatar_image }}"
             alt="{{ content.blog_post_author.display_name }}"
             loading="lazy"
+            width="70"
+            height="70"
           />
           <div class="blog-author-info__inner">
             <h2 class="blog-author-info__name">
@@ -143,6 +146,8 @@ label: Blog Post
         <img class="custom-our-people-modal__social-icon twitter-x-logo" 
           src="https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Logos/Social%20icons_logo_X_shark.svg"  width="auto" alt="Twitter X logo" 
           loading="lazy"
+          height="20"
+          width="20"
         />
         </a>
       </li>
@@ -255,10 +260,12 @@ label: Blog Post
                   {% if post.featured_image %}
                     <a href="{{ post.absolute_url }}">
                       <img
-                        class="custom-bg-white img-fluid w-100"
-                        src="{{ resize_image_url( post.featured_image,528 ) }}"
+                        class="custom-bg-white"
+                        src="{{ resize_image_url( post.featured_image, 528 ) }}"
                         alt="{{ post.name }}"
                         loading="lazy"
+                        width="528"
+                        height="528"
                       />
                     </a>
                   {% endif %}

@@ -23,8 +23,8 @@
 	<div class="client-logos__logos-group">
 		{% for item in module.logos_group %}
 			{% if item.logo.src %}
-				 {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading }}"' : '' %}
-				<img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ loadingAttr }}>
+				{% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}"' %}
+				<img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" loading="lazy" {{ sizeAttrs }} />
 			{% endif %}
 		{% endfor %}
 	</div>

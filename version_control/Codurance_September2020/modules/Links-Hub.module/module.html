@@ -31,25 +31,21 @@
 					{% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
 				>
 					{% if item.icon.src %}
-						{% set sizeAttrs = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}"' %}
-						{% if item.icon.size_type == 'auto' %}
-							{% set sizeAttrs = 'style="max-width: 100%; height: 100%;"' %}
-						{% elif item.icon.size_type == 'auto_custom_max' %}
-							{% set sizeAttrs = 'width="{{ item.icon.max_width }}" height="{{ item.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
-						{% endif %}
-						{% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
-					<div class="hub-menu__link-wrapper">
-						<img class="hub-menu__icon-img" src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-						<img class="hub-menu__icon-background" src="{{ item.icon_background.src }}" alt="{{ item.icon_background.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+						<div class="hub-menu__link-wrapper">
+							{% set sizeAttrsIcon = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}"' %}
+							<img class="hub-menu__icon-img" src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ sizeAttrsIcon }} />
 
-						<div class="hub-menu__link-info">
-							<h2 class="link-info__title">{{ item.title }}</h2>
-							<p class="link-info__subtitle">
-								{{ item.subtitle }}
-								<i class="las la-arrow-right link-info__icon"></i>
-							</p>
+							{% set sizeAttrsBackground = 'width="{{ item.icon_background.width }}" height="{{ item.icon_background.height }}"' %}
+							<img class="hub-menu__icon-background" src="{{ item.icon_background.src }}" alt="{{ item.icon_background.alt }}" {{ sizeAttrsBackground }} />
+
+							<div class="hub-menu__link-info">
+								<h2 class="link-info__title">{{ item.title }}</h2>
+								<p class="link-info__subtitle">
+									{{ item.subtitle }}
+									<i class="las la-arrow-right link-info__icon"></i>
+								</p>
+							</div>
 						</div>
-					</div>
 					{% endif %}
 										
 				</a>

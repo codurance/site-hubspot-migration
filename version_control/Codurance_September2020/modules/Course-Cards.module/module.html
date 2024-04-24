@@ -15,7 +15,8 @@
 			<div class="course-content">
 				<h3>{{ course.title }}</h3>
 				<div class="course-info__instructor">
-					<img src="{{ avatar_image }}" alt="{{ course.instructor.columns.image.name }} profile picture" loading="lazy" />
+					{% set sizeAttrs = 'width="{{ course.instructor.columns.image.width }}" height="{{ course.instructor.columns.image.height }}"' %}
+					<img src="{{ avatar_image }}" alt="{{ course.instructor.columns.image.name }} profile picture" loading="lazy" {{ sizeAttrs }} />
 					<p>{{ course.instructor.columns.name }} | <span>{{ course.duration }}</span></p>
 				</div>
 				<p>{{ course.description }}</p>

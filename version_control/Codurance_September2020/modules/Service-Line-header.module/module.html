@@ -30,11 +30,6 @@
 <div class="module-wrapper">
 {% if module.header.image.src %}
 	{% set sizeAttrs = 'width="{{ module.header.image.width }}" height="{{ module.header.image.height }}"' %}
-	{% if module.header.image.size_type == 'auto' %}
-		{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-	{% elif module.header.image.size_type == 'auto_custom_max' %}
-		{% set sizeAttrs = 'width="{{ module.header.image.max_width }}" height="{{ module.header.image.max_height }}" style="max-width: 100%; height: auto;"' %}
-	{% endif %}
 
 	<section class="hero">
 		<div class="hero__text">
@@ -53,16 +48,10 @@
 <!-- START Text and image section -->
 {% if module.image_text_section.image.src %}
 	{% set sizeAttrs = 'width="{{ module.image_text_section.image.width }}" height="{{ module.image_text_section.image.height }}"' %}
-	{% if module.image_text_section.image.size_type == 'auto' %}
-		{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-	{% elif module.image_text_section.image.size_type == 'auto_custom_max' %}
-		{% set sizeAttrs = 'width="{{ module.image_text_section.image.max_width }}" height="{{ module.image_text_section.image.max_height }}" style="max-width: 100%; height: auto;"' %}
-	{% endif %}
-	 {% set loadingAttr = module.image_text_section.image.loading != 'disabled' ? 'loading="{{ module.image_text_section.image.loading }}"' : '' %}
 	<section class="text-and-image">
 		<div class="text-and-image__text">{{ module.image_text_section.richtext }}</div>
 		<div class="text-and-image__image">
-			<img src="{{ module.image_text_section.image.src }}" alt="{{ module.image_text_section.image.alt }}"{{ loadingAttr }} {{ sizeAttrs }}>
+			<img src="{{ module.image_text_section.image.src }}" alt="{{ module.image_text_section.image.alt }}" {{ sizeAttrs }} />
 		</div>
 	</section>
 {% endif %}<!-- END text and image section -->
@@ -81,12 +70,7 @@
 
 	{% if module.banner_fields.image.src %}
 	  {% set sizeAttrs = 'width="{{ module.banner_fields.image.width }}" height="{{ module.banner_fields.image.height }}"' %}
-	  {% if module.banner_fields.image.size_type == 'auto' %}
-		{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-	  {% elif module.banner_fields.image.size_type == 'auto_custom_max' %}
-		{% set sizeAttrs = 'width="{{ module.banner_fields.image.max_width }}" height="{{ module.banner_fields.image.max_height }}" style="max-width: 100%; height: auto;"' %}
-	  {% endif %}
-	  <img src="{{ module.banner_fields.image.src }}" alt="{{ module.banner_fields.image.alt }}" loading="lazy" {{ sizeAttrs }}>
+	  <img src="{{ module.banner_fields.image.src }}" alt="{{ module.banner_fields.image.alt }}" loading="lazy" {{ sizeAttrs }} />
 	{% endif %}
 	</section>
   {% endif %}<!-- END Banner section -->	  

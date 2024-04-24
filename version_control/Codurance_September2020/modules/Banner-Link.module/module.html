@@ -11,6 +11,7 @@
   </div>
 
   {% if module.image.src %}
-    <img class="banner__image" src="{{ module.image.src }}" alt="{{ module.image.alt }}" loading="lazy">
+    {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+    <img class="banner__image" src="{{ module.image.src }}" alt="{{ module.image.alt }}" loading="lazy" {{ sizeAttrs }}/>
   {% endif %}
 </div>

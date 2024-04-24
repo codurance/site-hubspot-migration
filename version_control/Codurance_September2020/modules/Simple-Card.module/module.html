@@ -57,12 +57,14 @@
 <div class="card-container lateral-spacing{% if cards_type_selected == "hubdb" %} card-container--hubdb{% endif %}">
     {% for card in cards %}
         <article class="card">
+            {% set card_thumbnail = resize_image_url(card.thumbnail, 0, 0, 400) %}
             <img class="card__img {% if module.fixed_aspect_ratio %}card__img--ratio{% endif %}"  
-                src="{{ card.thumbnail }}" 
+                src="{{ card_thumbnail }}" 
                 alt="" 
                 width="400"
-                height="auto"
-                loading="lazy" >
+                height="400"
+                loading="lazy" 
+            />
 
             <div class="card__info">
                 {% if card.date %}

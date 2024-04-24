@@ -29,8 +29,8 @@
 	<div class="featured__cards-container">
 		{% for item in module.featured_role %}
 			{% if item.position_icon.src %}
-				{% set sizeAttrs = 'width="{{ item.position_icon.width }}" height="{{ item.position_icon.height }}"' %}
 				<div class="featured__job-card">	
+					{% set sizeAttrs = 'width="{{ item.position_icon.width }}" height="{{ item.position_icon.height }}"' %}
 					<img class="featured__icon" src="{{ item.position_icon.src }}" alt="{{ item.position_icon.alt }}" loading="lazy" {{ sizeAttrs }}>
 			{% endif %}
 			

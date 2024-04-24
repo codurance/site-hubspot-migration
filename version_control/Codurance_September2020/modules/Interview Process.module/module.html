@@ -13,7 +13,8 @@
     {% for item in module.interview_process_items %}
       <li class="custom-interview-process__item">
         <div class="custom-interview-process__icon-container">
-          <img src="{{ item.icon_image.src }}" alt="" loading="lazy" width="60" height="60">
+          {% set resized_image = resize_image_url(item.icon_image.src, 60, 60) %}
+          <img src="{{ resized_image }}" alt="" loading="lazy" width="60" height="60" />
         </div>
         <div class="custom-interview-process__text-container">
           <div class="custom-interview-process__step">

@@ -3,15 +3,8 @@
 
 <div class="announcement-bar" style="background-image:url('{{ module.background_image.src }}');">
   <div class="announcement-bar__inner">
-    {% if module.image_field.src %}
     {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
-    {% if module.image_field.size_type == 'auto' %}
-    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-    {% elif module.image_field.size_type == 'auto_custom_max' %}
-    {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image_field.max_width }}px; max-height: {{ module.image_field.max_height }}px"' %}
-    {% endif %}
     <img class="announcement-bar__icon" src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ sizeAttrs }}>
-    {% endif %}
 
     <span class="announcement-bar__text-dark">{{ module.title }}</span>
 

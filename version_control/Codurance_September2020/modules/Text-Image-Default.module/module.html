@@ -6,8 +6,8 @@
 		{% inline_rich_text field="description" value="{{ module.description }}" no_wrapper=True %}
 	</div>
 	{% if module.image_field.src %}
-		{% set sizeAttrs = 'max-width="100%" height="auto"' %}
-	<img class="cm-text-img__image" src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" loading="lazy" {{ sizeAttrs }} >
+		{% set sizeAttrs = 'width="{{  module.image_field.width }}" height="{{  module.image_field.height }}"' %}
+		<img class="cm-text-img__image" src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" loading="lazy" {{ sizeAttrs }} />
 	{% endif %}
 </div>
 

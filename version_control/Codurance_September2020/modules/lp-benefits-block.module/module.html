@@ -6,7 +6,7 @@
 		{% for item in module.field_group %}
 			<div class="lp-benefits-block-card">
 				{% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}	
-				<img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" loading="lazy" {{ sizeAttrs }}>       
+				<img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" loading="lazy" {{ sizeAttrs }} />       
 				<p class="lp-benefits-block-text">{{item.content}}</p>
 				{% if item.link %}
 					<a class="lp-benefits-block__cta" href="{{ item.link }}">{{ item.link_text }} <i class="las la-arrow-right"></i></a>

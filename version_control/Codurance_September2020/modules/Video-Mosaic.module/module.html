@@ -45,7 +45,7 @@
       {% else %}
         {% if mosaic_item.image.src %}
           {% set sizeAttrs = 'width="{{ mosaic_item.image.width }}" height="{{ mosaic_item.image.height }}"' %}
-          <img class="mosaic-collection__img" src="{{ mosaic_item.image.src }}" alt="{{ mosaic_item.image.alt }}" loading="lazy" {{ sizeAttrs }}>
+          <img class="mosaic-collection__img" src="{{ mosaic_item.image.src }}" alt="{{ mosaic_item.image.alt }}" loading="lazy" {{ sizeAttrs }} />
         {% endif %}
       {% endif %}
     </div>

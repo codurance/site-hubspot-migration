@@ -2,9 +2,13 @@
 	{% for icon in module.icon_group %}
 		{% if icon.image.src %}	
 			<div class="icon">
+				{% set sizeAttrs = 'width="{{ icon.image.width }}" height="{{ icon.image.height }}"' %}
 				<img class="icon__image"
-					 src="{{ icon.image.src }}" 
-					 alt="{{ icon.image.alt }}" loading="lazy">
+					src="{{ icon.image.src }}" 
+					alt="{{ icon.image.alt }}" 
+					loading="lazy" 
+					{{ sizeAttrs }}
+				/>
 				<p class="icon__title">{{ icon.title }}</p>
 			</div>
 		{% endif %}	

@@ -5,7 +5,9 @@
   <div class="benefits-container">
       {% for benefit in module.benefit_item %}
           <article class="custom-benefits-we-offer">
-              <img class="custom-benefits-we-offer__icon" src="{{ benefit.icon_image.src }}" alt="{{ module.icon_image.alt }}" loading="lazy" width="100" height="auto" >
+            {% set sizeAttrs = 'width="{{ benefit.icon_image.width }}" height="{{ benefit.icon_image.height }}"' %}
+            <img class="custom-benefits-we-offer__icon" src="{{ benefit.icon_image.src }}" alt="{{ benefit.icon_image.alt }}" loading="lazy" {{ sizeAttrs }} />
+
             <div class="custom-benefits-we-offer__text-container">
               <h3>{{ benefit.heading }}</h3>
               <p>{{ benefit.text }}</p>

@@ -57,25 +57,28 @@
 
   <div class="client-card__footer-icons">
       {% for service in client.services %}
-      <img
-        class="client-card__service-icon"
-        height="20"
-        src="https://f.hubspotusercontent10.net/hubfs/3042464/Services%20Logos/icon-{{service.name|lower|split(' ')|join('-')}}.svg"
-        alt=""
-        loading="lazy"
-      />
+        {% set service_icon = resize_image_url("https://f.hubspotusercontent10.net/hubfs/3042464/Services%20Logos/icon-{{service.name|lower|split(' ')|join('-')}}.svg", 0, 0, 20) %}
+        <img
+          class="client-card__service-icon"
+          height="20"
+          width="20"
+          src="{{ service_icon }}"
+          alt=""
+          loading="lazy"
+        />
       {% endfor %}
  
   </div>
   {% if client.partner.name %}
     <div class="client-card__partners"> 
       <p> 
-            <img
-              class="client-card__partner-icon"
-              src="https://f.hubspotusercontent10.net/hubfs/3042464/CMS%20Sandbox/Partner%20Logos/{{client.partner.name|lower}}.svg"
-              alt="{{client.patner.name}}-logo"
-              loading="lazy"
-            />
+
+        <img
+          class="client-card__partner-icon"
+          src="https://f.hubspotusercontent10.net/hubfs/3042464/CMS%20Sandbox/Partner%20Logos/{{client.partner.name|lower}}.svg"
+          alt="{{client.patner.name}}-logo"
+          loading="lazy"
+        />
       </p>
     </div>  
   {% endif %}
@@ -107,18 +110,22 @@
 >
   <article class="clients__large-card">
     <div class="clients__large-card__primary">
+      {% set sizeAttrsHero = 'width="{{ client.hero_image.width }}" height="{{ client.hero_image.height }}"' %}
       <img
         class="clients__large-card__img"
         src="{{client.hero_image.url}}"
         url=""
         loading="lazy"
+        {{ sizeAttrsHero }}
       />
       <div class="clients__large-card__body">
+        {% set sizeAttrsLogo = 'width="{{ client.logo.width }}" height="{{ client.logo.height }}"' %}
         <img
           class="clients__large-card__logo"
           src="{{client.logo.url}}"
           url="{{client.name}}-logo"
           loading="lazy"
+          {{ sizeAttrsLogo }}
         />
 
         {% if client.testimonial_text %}
@@ -167,10 +174,12 @@
 
         {% if client.case_study %}
           <div class="clients__large-card__secondary__case-study">
+            {% set sizeAttrsCaseStudy = 'width="{{ client.case_study_display_image.width }}" height="{{ client.case_study_display_image.height }}"' %}
             <img class="clients__large-card__secondary__case-study-image" 
               src="{{client.case_study_display_image.url}}"
               alt=""
               loading="lazy"
+              {{ sizeAttrsCaseStudy }}
             />
             <p class="clients__large-card__secondary__case-study-text">
               {{case_study_info_text}} {{client.name}}
@@ -211,8 +220,8 @@
         data-client-service="{{services|join(',')}}"
         >
         <article class="clients__secondary-card">
-          
-          <img class="clients__secondary-card__logo"  src={{client.logo.url}} alt="" loading="lazy">
+          {% set sizeAttrsSecondaryLogo = 'width="{{ client.logo.width }}" height="{{ client.logo.height }}"' %}
+          <img class="clients__secondary-card__logo"  src={{client.logo.url}} alt="" loading="lazy" {{ sizeAttrsSecondaryLogo }} />
           <p class="clients__secondary-card__description-text"> {{client.promotion}} </p>
           
           <div class="clients__secondary-card__extra-info">{{ tags_footer(client) }}</div>
