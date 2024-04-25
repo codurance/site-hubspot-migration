@@ -1,0 +1,47 @@
+[ {
+  "id" : "b2ff678f-751f-ae81-7a46-28ebebd73bb2",
+  "name" : "icons",
+  "display_width" : null,
+  "label" : "Icons",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "13786d24-ba65-a921-f073-b144185a5036",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "13786d24-ba65-a921-f073-b144185a5036",
+    "name" : "class",
+    "display_width" : null,
+    "label" : "Class",
+    "help_text" : "Please, go to the <a href=\"https://icons8.com/line-awesome\">Line Awesome</a> website and input the corresponding class name here (the ones that start with la-)",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "la-***",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "71ed1525-1f30-7ca8-b8e6-4924f13c204e",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "inline_help_text" : "Optional",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+    "type" : "url",
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "CONTENT"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ ]
+} ]
