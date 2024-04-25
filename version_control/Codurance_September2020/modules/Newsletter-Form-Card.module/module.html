@@ -34,9 +34,15 @@
         %}
 
         <div class="newsletter__grecaptcha-notice">
-          This site is protected by reCAPTCHA and the Google
-          <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-          <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+          {% if locale == "es" %}
+            Esta web está protegida por reCAPTCHA y se aplican la
+            <a href="https://policies.google.com/privacy?hl=es">Política de privacidad</a> y los
+            <a href="https://policies.google.com/terms?hl=es">Términos de uso</a> de Google.
+          {% else %}
+            This site is protected by reCAPTCHA and the Google
+            <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+            <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+          {% endif %}
         </div>
       </div>
     </div>
