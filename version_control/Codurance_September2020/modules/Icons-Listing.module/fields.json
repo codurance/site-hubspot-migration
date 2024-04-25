@@ -12,6 +12,45 @@
     "default" : null
   },
   "children" : [ {
+    "id" : "8a12ae73-0d79-0055-23f6-256bf95551e6",
+    "name" : "icon_type",
+    "display_width" : null,
+    "label" : "Icon type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "line-awesome-icon", "Line Awesome Icon" ], [ "image", "Image" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "line-awesome-icon"
+  }, {
+    "id" : "0bea5aae-f810-eb55-8fd4-50a1da2e3774",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "icons.icon_type",
+      "controlling_value_regex" : "image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "exact",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
     "id" : "13786d24-ba65-a921-f073-b144185a5036",
     "name" : "class",
     "display_width" : null,
@@ -20,6 +59,14 @@
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "icons.icon_type",
+      "controlling_value_regex" : "line-awesome-icon",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "placeholder" : "la-***",
     "allow_new_line" : false,
     "show_emoji_picker" : false,

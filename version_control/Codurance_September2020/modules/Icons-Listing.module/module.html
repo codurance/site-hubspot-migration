@@ -1,0 +1,9 @@
+{% for item in module.icons %}
+	{{ item.icon_type }}
+	{% if item.image.src %}
+		{% set sizeAttrs = 'width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}"' %}
+		<img src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" loading="lazy" {{ sizeAttrs }} />
+	{% endif %}
+	{% inline_text field="class" value="{{ item.class }}" %}
+	{{ item.link.href|escape_url }}
+{% endfor %}
