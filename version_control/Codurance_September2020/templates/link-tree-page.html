@@ -7,9 +7,29 @@ label: Link Tree page
 
 {{ require_css(get_asset_url("../css/pages/link-tree.css")) }}
 
+{% block header %}{% endblock header %}
+
 {% block body %}
+{% module "background_image" path="@hubspot/image" label='Background image' export_to_template_context=True %}
+{% require_css %}
+  <style>
+    body {
+      background-image: url({{ widget_data.background_image.img.src }});
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+  </style>
+{% end_require_css %}
 
-<header class="link-tree-header"></header>
-<main class="link-tree-listing"></main>
+<header class="link-tree-header">
+  {% module "header_image" path="@hubspot/linked_image" label="Header image" extra_classes="link-tree-header__image" %}
+  {# {% module "header_social_icons" path="@hubspot/image_grid", label="Header social icons" %} #}
+</header>
 
+<main class="link-tree-listing">
+
+</main>
 {% endblock body %}
+
+{% block footer %}{% endblock footer %}

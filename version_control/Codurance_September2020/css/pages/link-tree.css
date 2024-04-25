@@ -1,0 +1,10 @@
+.body-wrapper {
+  max-width: 43.35rem;
+  margin-inline: auto;
+  min-height: 100vh;
+}
+
+.link-tree-header {
+  max-width: 25.55rem;
+  margin-inline: auto;
+}
