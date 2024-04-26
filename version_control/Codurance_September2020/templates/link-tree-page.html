@@ -24,8 +24,14 @@ label: Link Tree page
 
 <header class="link-tree-header lateral-spacing">
   {% module "header_image" path="@hubspot/linked_image" label="Header image" extra_classes="link-tree-header__image" %}
-  {# {% module "header_social_icons" path="@hubspot/image_grid", label="Header social icons" %} #}
+  {% module "header_social_icons" 
+    path="../modules/Icons-Listing" 
+    label="Header social icons" 
+    extra_classes="link-tree-header__icons" 
+  %}
 </header>
+
+<hr class="link-tree-divider" />
 
 <main class="link-tree-listing lateral-spacing">
 

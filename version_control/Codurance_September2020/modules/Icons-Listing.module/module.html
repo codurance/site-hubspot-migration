@@ -1,11 +1,16 @@
 {{ require_css(get_asset_url("../../css/modules/icons-listing.css")) }}
 
-{% for item in module.icons %}
-	{{ item.icon_type }}
-	{% if item.image.src %}
-		{% set sizeAttrs = 'width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}"' %}
-		<img class="icons-listing__img" src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" loading="lazy" {{ sizeAttrs }} />
-	{% endif %}
-	{% inline_text field="class" value="{{ item.class }}" %}
-	{{ item.link.href|escape_url }}
-{% endfor %}
+<ul class="icons-listing">
+	{% for item in module.icons %}
+		<li class="icons-listing__item">
+			<a href="{{ item.link.href }}" class="icons-listing__link">
+				{% if item.icon_type == "image" %}
+					{% set sizeAttrs = 'width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}"' %}
+					<img class="icons-listing__img" src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" loading="lazy" {{ sizeAttrs }} />
+				{% else %}
+					<i class="icons-listing__icon lab {{ item.class}}"></i>
+				{% endif %}
+			</a>
+		</li>
+	{% endfor %}
+</ul>
