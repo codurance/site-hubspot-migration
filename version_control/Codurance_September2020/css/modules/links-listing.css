@@ -1,0 +1,21 @@
+{% import '../utils/utils.css' as utils %}
+
+.links-listing {
+  margin: unset;
+  list-style-type: none;
+}
+
+.links-listing__item:not(:first-of-type) {
+  margin-top: var(--space-3);
+}
+
+.links-listing__link {
+  color: var(--slate);
+  font-weight: var(--light-font-weight);
+  background-color: white;
+  {{ utils.card_border_radius() }}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.3rem;
+}

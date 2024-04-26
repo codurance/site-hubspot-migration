@@ -1,0 +1,50 @@
+{% import '../utils/utils.css' as utils %}
+
+.icons-listing {
+  list-style-type: none;
+  display: flex;
+  gap: var(--space-5);
+  justify-content: center;
+}
+
+.icons-listing__item {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0.5rem;
+  height: fit-content;
+}
+
+.icons-listing__img {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0.5rem;
+}
+
+.icons-listing__icon {
+  font-size: 2.5rem;
+  color: var(--slate);
+}
+
+{% call utils.small() %}
+  .icons-listing {
+    gap: var(--space-2);
+  }
+
+  .icons-listing__item {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  .icons-listing__icon {
+    font-size: 1.75rem;
+  }
+
+  .icons-listing__img {
+    min-width: 1.25rem;
+    min-height: 1.25rem;
+    padding: unset;
+  }
+{% endcall %}

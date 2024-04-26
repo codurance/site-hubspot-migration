@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "icon" : "fontawesome-5.14.0:Horizontal%20Ellipsis:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 100920213984,
+  "label" : "Icons Listing",
+  "is_available_for_new_content" : true
+}

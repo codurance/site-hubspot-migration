@@ -1,0 +1,9 @@
+{{ require_css(get_asset_url("../../css/modules/links-listing.css")) }}
+
+<ul class="links-listing">
+  {% for link in module.links %}
+    <li class="links-listing__item">
+      <a href="{{ link.url.href }}" class="links-listing__link">{{ link.text }}</a>
+    </li>
+  {% endfor %}
+</ul>

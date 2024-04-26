@@ -1,0 +1,27 @@
+.body-wrapper {
+  max-width: 43.35rem;
+  margin-inline: auto;
+  min-height: 100vh;
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-6);
+}
+
+.link-tree-header {
+  max-width: 28.8rem;
+  margin-inline: auto;
+}
+
+.link-tree-divider {
+  background-color: white;
+  width: 7rem;
+  margin-top: var(--space-5);
+  margin-inline: auto;
+}
+
+.link-tree-header__icons {
+  margin-top: var(--space-6);
+}
+
+.link-tree-listing {
+  margin-top: var(--space-5);
+}

@@ -1,0 +1,45 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Link Tree page
+-->
+{% extends "./layouts/base.html" %}
+
+{{ require_css(get_asset_url("../css/pages/link-tree.css")) }}
+
+{% block header %}{% endblock header %}
+
+{% block body %}
+{% module "background_image" path="@hubspot/image" label='Background image' export_to_template_context=True %}
+{% require_css %}
+  <style>
+    body {
+      background-image: url({{ widget_data.background_image.img.src }});
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+  </style>
+{% end_require_css %}
+
+<header class="link-tree-header lateral-spacing">
+  {% module "header_image" path="@hubspot/linked_image" label="Header image" extra_classes="link-tree-header__image" %}
+  {% module "header_social_icons" 
+    path="../modules/Icons-Listing" 
+    label="Header social icons" 
+    extra_classes="link-tree-header__icons" 
+  %}
+</header>
+
+<hr class="link-tree-divider" />
+
+<main class="link-tree-listing lateral-spacing">
+  {% module "listing_links" 
+    path="../modules/Links-Listing" 
+    label="Links" 
+    extra_classes="link-tree-listing__links" 
+  %}
+</main>
+{% endblock body %}
+
+{% block footer %}{% endblock footer %}
