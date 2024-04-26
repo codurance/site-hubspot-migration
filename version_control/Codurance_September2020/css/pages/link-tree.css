@@ -2,10 +2,11 @@
   max-width: 43.35rem;
   margin-inline: auto;
   min-height: 100vh;
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-6);
 }
 
 .link-tree-header {
-  padding-top: var(--space-7);
   max-width: 28.8rem;
   margin-inline: auto;
 }

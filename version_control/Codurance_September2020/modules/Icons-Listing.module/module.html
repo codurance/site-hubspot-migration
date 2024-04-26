@@ -8,7 +8,7 @@
 					{% set sizeAttrs = 'width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}"' %}
 					<img class="icons-listing__img" src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" loading="lazy" {{ sizeAttrs }} />
 				{% else %}
-					<i class="icons-listing__icon lab {{ item.class}}"></i>
+					<i class="icons-listing__icon lab {{ item.class }}"></i>
 				{% endif %}
 			</a>
 		</li>
