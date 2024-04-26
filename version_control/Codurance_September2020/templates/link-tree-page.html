@@ -34,7 +34,11 @@ label: Link Tree page
 <hr class="link-tree-divider" />
 
 <main class="link-tree-listing lateral-spacing">
-
+  {% module "listing_links" 
+    path="../modules/Links-Listing" 
+    label="Links" 
+    extra_classes="link-tree-listing__links" 
+  %}
 </main>
 {% endblock body %}
 
