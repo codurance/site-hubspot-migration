@@ -20,8 +20,9 @@
     justify-items: center;
 }
 
-.client-logos__logos-group img{
+.client-logos__logos-group img {
     max-height: 40px;
+    width: auto;
 }
 
 {% call utils.large_and_extra_large() %}
