@@ -3,6 +3,14 @@
     isAvailableForNewContent: false
 -->
 
+{% macro remove_redundant_tags() %}
+  {% for tag in content.tag_list %}
+    {% if tag.slug == "posts" || tag.slug == "blog" %}
+      {% do content.tag_list.pop(loop.index0) %}
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
 <section class="related-blog-section hs-search-hidden">
   <div class="related-blog-section__inner responsive-page-width">
     <h2 class="related-blog-section__title">
@@ -16,6 +24,8 @@
     </h2>
     <div class="related-blog-section__tag-container">
       {% if content.tag_list %}
+        {% do remove_redundant_tags() %}
+
         <div class="custom-col text-center">
           <ul class="list-inline custom-font-size-12 mb-0">
             {% for tag in content.tag_list %}
