@@ -9,19 +9,19 @@
 <nav class="utilities-menu">
 	<ul>
 		<li class="menu-item">
-			{% module 'navigation_link', path='../../modules/Navigation-Link', no_wrapper=True %}
+			{% module 'navigation_link', path='../../modules/Navigation-Link' %}
 		</li>
 	
 		<li class="language-selector menu-item has-submenu">
-            {% module 'language_selector', path='../../modules/Language-Selector', no_wrapper=True %}
+			{% module 'language_selector', path='../../modules/Language-Selector' %}
 		</li>
 
-        <li class="search-bar menu-item">
-            <button class="search-bar__button" aria-label="Search button" aria-expanded="false" aria-controls="hs-search-field">
+		<li class="search-bar menu-item">
+			<button class="search-bar__button" aria-label="Search button" aria-expanded="false" aria-controls="hs-search-field">
 				<i class="las la-search"></i>
 			</button>
-			{% module 'search-bar-input' path='../../modules/Global-Search-Input' label="Search bar" no_wrapper=True %}
-        </li>
+			{% module 'search-input' path='../../modules/Blog-Search-Input' label="Search bar" no_wrapper=True %}
+		</li>
 	</ul>
 </nav>
 
