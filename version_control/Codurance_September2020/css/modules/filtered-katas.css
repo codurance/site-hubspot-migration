@@ -228,6 +228,7 @@
     text-decoration: none;
     transition: all .3s ease;
     user-select: none;
+    text-transform: capitalize;
 }
 
 .katas-applied-filters__pill:hover {
