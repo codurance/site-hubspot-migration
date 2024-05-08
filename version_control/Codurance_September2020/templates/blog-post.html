@@ -247,12 +247,15 @@ label: Blog Post
 
       <div class="row">
         {% if content.tag_list %} 
-          {% set max_posts = 3 %} 
-          {% set post_list = blog_recent_tag_posts(group.id, content.tag_list, max_posts ) %} 
-          {% set post_list = post_list|sort(true, false, 'publish_date')|unique('name') %} 
-              
-          {% for post in post_list %} 
-            {% if content.absolute_url != post.absolute_url %}
+          {# We retrieve 4 posts in case the current post is among the most recent ones #}
+          {% set max_posts = 4 %} 
+          {% set recent_related_posts = blog_recent_tag_posts(group.id, content.tag_list, max_posts ) %} 
+          {% set same_post_found = {value: false} %}
+
+          {% for post in recent_related_posts %}
+            {% if content.absolute_url == post.absolute_url %}
+              {% do same_post_found.update({value: true}) %}
+            {% elif !loop.last || (same_post_found.value && loop.last) %}
               <div
                 class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30"
               >
@@ -321,7 +324,7 @@ label: Blog Post
                   </div>
                 </article>
               </div>
-            {% endif %} 
+            {% endif %}
           {% endfor %}
         {% endif %}
       </div>
