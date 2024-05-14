@@ -1,43 +1,55 @@
 "use strict";
 
-const searchBarButton = document.querySelector(
-  ".utilities-menu .search-bar__button"
-);
-const searchBar = document.querySelector(".utilities-menu .hs-search-field");
-const searchBarInput = document.querySelector(
-  ".utilities-menu .hs-search-field__input"
-);
-const searchSuggestions = document.querySelector(
-  ".utilities-menu .hs-search-field__suggestions"
-);
+window.addEventListener("load", () => {
+  const utilitiesMenu = document.querySelector(".utilities-menu");
+  const searchBarButton = utilitiesMenu.querySelector(".search-bar__button");
+  const searchBarInput = utilitiesMenu.querySelector("#___gcse_0");
+  const searchBarInputControlContainer = utilitiesMenu.querySelector(
+    ".gsc-control-cse"
+  );
 
-searchBarButton.addEventListener("click", () => {
-  searchBarButton.setAttribute("aria-expanded", "true");
-  setTimeout(() => searchBarInput.focus(), 300);
-});
+  if (searchBarInputControlContainer.classList.contains("gsc-control-cse-en")) {
+    const searchBarInputElement = utilitiesMenu.querySelector(
+      "input.gsc-input"
+    );
 
-searchBarButton.addEventListener("focus", () => {
-  searchBarButton.setAttribute("aria-expanded", "true");
-  setTimeout(() => searchBarInput.focus(), 300);
-});
+    searchBarInputElement.placeholder = "Search";
+  } else if (
+    searchBarInputControlContainer.classList.contains("gsc-control-cse-es")
+  ) {
+    const searchBarInputElement = utilitiesMenu.querySelector(
+      "input.gsc-input"
+    );
 
-searchBar.addEventListener("click", () => {
-  if (searchBarInput === document.activeElement) return;
-  searchBarButton.setAttribute("aria-expanded", "false");
-});
+    searchBarInputElement.placeholder = "Buscar";
+  } else if (
+    searchBarInputControlContainer.classList.contains("gsc-control-cse-pt-PT")
+  ) {
+    const searchBarInputElement = utilitiesMenu.querySelector(
+      "input.gsc-input"
+    );
 
-searchBarInput.addEventListener("blur", () => {
-  if (searchBar.classList.contains("hs-search-field--open")) return;
-  searchBarButton.setAttribute("aria-expanded", "false");
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" || e.key === "Esc") {
-    searchBarButton.setAttribute("aria-expanded", "false");
+    searchBarInputElement.placeholder = "Buscar";
   }
-});
 
-// This is required to stop the blur event when clicking on suggestions
-searchSuggestions.addEventListener("mousedown", (event) => {
-  event.preventDefault();
+  searchBarButton.addEventListener("click", () => {
+    searchBarButton.setAttribute("aria-expanded", "true");
+    setTimeout(() => searchBarInput.focus(), 300);
+  });
+
+  searchBarButton.addEventListener("focus", () => {
+    searchBarButton.setAttribute("aria-expanded", "true");
+    setTimeout(() => searchBarInput.focus(), 300);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (utilitiesMenu.contains(e.target)) return;
+    searchBarButton.setAttribute("aria-expanded", "false");
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" || e.key === "Esc") {
+      searchBarButton.setAttribute("aria-expanded", "false");
+    }
+  });
 });

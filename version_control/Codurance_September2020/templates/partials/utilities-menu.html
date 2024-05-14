@@ -6,6 +6,16 @@
 {{ require_css(get_asset_url("../../css/partials/utilities-menu.css")) }}
 {{ require_js(get_asset_url("../../js/partials/utilities-menu.js"), { position: "footer", defer:true }) }}
 
+{% if locale == "en" %}
+	{{ require_js("https://cse.google.com/cse.js?cx=7103f00e61d1a4bcb", { position:"footer", defer:true }) }}
+{% endif %}
+{% if locale == "es" %}
+	{{ require_js("https://cse.google.com/cse.js?cx=440fdad7635b1473c", { position:"footer", defer:true }) }}
+{% endif %}
+{% if locale == "pt" %}
+	{{ require_js("https://cse.google.com/cse.js?cx=930cfbc83359b42ef", { position:"footer", defer:true }) }}
+{% endif %}
+
 <nav class="utilities-menu">
 	<ul>
 		<li class="menu-item">
@@ -17,10 +27,10 @@
 		</li>
 
 		<li class="search-bar menu-item">
-			<button class="search-bar__button" aria-label="Search button" aria-expanded="false" aria-controls="hs-search-field">
+			<button class="search-bar__button" aria-label="Search button" aria-expanded="false" aria-controls="___gcse_0">
 				<i class="las la-search"></i>
 			</button>
-			{% module 'search-input' path='../../modules/Blog-Search-Input' label="Search bar" no_wrapper=True %}
+			<div class="gcse-search"></div>
 		</li>
 	</ul>
 </nav>
