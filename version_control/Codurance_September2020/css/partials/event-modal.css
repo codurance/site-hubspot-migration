@@ -1,0 +1,10 @@
+{% import '../utils/utils.css' as utils %}
+
+.event-modal {
+  {{ utils.white_to_tango() }}
+  {{ utils.card_border_radius() }}
+  max-width: var(--content-inner-max-width);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-8);
+  max-height: calc(100vh - var(--space-8) * 2);
+}
