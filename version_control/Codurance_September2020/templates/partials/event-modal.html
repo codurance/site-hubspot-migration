@@ -7,7 +7,14 @@
 {{ require_js(get_asset_url("../../js/partials/event-modal.js"), { position: "footer", defer: true }) }}
 
 <dialog id="event-modal" class="event-modal" aria-modal="true">
-  <form method="dialog">
-    <button>X</button>
-  </form>
+  <div class="event-modal__header">
+    <form method="dialog">
+      <button><i class="las la-times"></i></button>
+    </form>
+  </div>
+
+  <div class="event-modal__main">
+    <div class="event-modal__description"></div>
+    <div class="event-modal__details"></div>
+  </div>
 </dialog>

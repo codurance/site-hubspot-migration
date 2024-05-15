@@ -3,8 +3,43 @@
 .event-modal {
   {{ utils.white_to_tango() }}
   {{ utils.card_border_radius() }}
-  max-width: var(--content-inner-max-width);
+  width: var(--content-inner-max-width);
   margin-top: var(--space-8);
   margin-bottom: var(--space-8);
   max-height: calc(100vh - var(--space-8) * 2);
+  padding: var(--space-4);
+  border: unset;
+}
+
+.event-modal[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-modal::backdrop {
+  background: rgba(1, 1, 1, 0.5);
+}
+
+.event-modal__header {
+  {{ utils.card_border_radius() }}
+  width: 100%;
+  height: 12.6rem;
+}
+
+.event-modal__main {
+  display: flex;
+  gap: var(--space-3);
+  height: 25.05rem;
+}
+
+.event-modal__description {
+  flex: 1 1 65%;
+  background: white;
+  {{ utils.card_border_radius() }}
+}
+
+.event-modal__details {
+  flex: 1 1 35%;
+  background: white;
+  {{ utils.card_border_radius() }}
 }
