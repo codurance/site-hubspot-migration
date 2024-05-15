@@ -225,12 +225,16 @@
   {{ utils.card_border_radius() }}
 }
 
-.search-bar .gsc-results-wrapper-overlay .gs-title {
+.search-bar .gsc-results-wrapper-overlay a.gs-title {
   font-weight: bold;
 }
 
-.search-bar .gsc-results-wrapper-overlay .gs-title:hover,
-.search-bar .gsc-results-wrapper-overlay .gs-title:hover b {
+.search-bar .gsc-results-wrapper-overlay a.gs-title b {
+  transition: color 0.2s;
+}
+
+.search-bar .gsc-results-wrapper-overlay a.gs-title:hover,
+.search-bar .gsc-results-wrapper-overlay a.gs-title:hover b {
   color: var(--persimmon) !important;
 }
 
