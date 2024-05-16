@@ -8,10 +8,6 @@
   gap: var(--space-1);
 }
 
-.cm-partners-logos-item img {
-  filter: drop-shadow(2px 2px 3px var(--athens-gray));
-}
-
 {% call utils.medium_large_and_extra_large() %}
   .cm-partners-logo-group {
     gap: var(--space-3);
