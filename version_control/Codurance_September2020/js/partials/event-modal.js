@@ -14,16 +14,32 @@ eventCardButtons.forEach((button) =>
 );
 
 function loadEventToModal(eventCard) {
-  const eventName = eventCard.dataset.eventName;
-  const eventNameColorTheme = eventCard.dataset.eventNameColorTheme;
   const eventDescription = eventCard.dataset.eventDescription;
   const eventLink = eventCard.dataset.eventLink;
   const eventType = eventCard.dataset.eventType;
   const eventDate = eventCard.dataset.eventDate;
-  const eventBackgroundImage = eventCard.dataset.eventBackgroundImage;
 
+  loadHeaderBackgroundImage(eventCard);
+  loadName(eventCard);
+}
+
+function loadHeaderBackgroundImage(eventCard) {
+  const eventBackgroundImage = eventCard.dataset.eventBackgroundImage;
+  const modalHeader = eventModal.querySelector(".event-modal__header");
+
+  if (eventBackgroundImage) {
+    modalHeader.style.backgroundImage = `url(${eventBackgroundImage})`;
+  } else {
+    modalHeader.style.backgroundImage = "";
+  }
+}
+
+function loadName(eventCard) {
+  const eventName = eventCard.dataset.eventName;
   const modalName = eventModal.querySelector(".event-modal__name");
   modalName.textContent = eventName;
+
+  const eventNameColorTheme = eventCard.dataset.eventNameColorTheme;
   if (eventNameColorTheme === "Dark") {
     modalName.classList.add("event-modal__name--dark");
   } else {
