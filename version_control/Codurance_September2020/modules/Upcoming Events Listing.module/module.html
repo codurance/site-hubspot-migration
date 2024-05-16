@@ -75,7 +75,15 @@
       </div>
       <div class="card-slider-results" data-upcoming-card-track>
         {% for event in upcomingEvents %}
-        <article class="card-slider-item" data-upcoming-card>
+        <article 
+          class="card-slider-item"
+          data-event-title="{{ event.name }}"
+          data-event-description="{{ event.description }}"
+          data-event-link="{{ event.link }}"
+          data-event-type="{{ event.type.name }}"
+          data-event-date="{{ event.datetime }}"
+          {% if event.background_image %}data-event-background-image="{{ event.background_image.url }}"{% endif %}
+        >
           <div class="card-slider-item__content">
             <div
               class="card-slider-item__image-container"

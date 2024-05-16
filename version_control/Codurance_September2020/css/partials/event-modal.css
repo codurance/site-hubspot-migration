@@ -33,13 +33,13 @@
 }
 
 .event-modal__description {
-  flex: 1 1 65%;
+  flex: 1 1 67.5%;
   background: white;
   {{ utils.card_border_radius() }}
 }
 
 .event-modal__details {
-  flex: 1 1 35%;
+  flex: 1 1 32.5%;
   background: white;
   {{ utils.card_border_radius() }}
 }
