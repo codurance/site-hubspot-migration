@@ -37,12 +37,16 @@
   position: relative;
 }
 
-.event-modal__title {
+.event-modal__name {
   {{ utils.eames() }}
   color: white;
   max-width: 62.5%;
   margin-left: var(--space-3);
   text-wrap: balance;
+}
+
+.event-modal__name--dark {
+  color: var(--shark);
 }
 
 .event-modal__close-form {
