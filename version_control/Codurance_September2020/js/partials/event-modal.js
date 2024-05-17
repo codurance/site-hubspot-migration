@@ -14,17 +14,13 @@ eventCardButtons.forEach((button) =>
 );
 
 function loadEventToModal(eventCard) {
-  const eventLink = eventCard.dataset.eventLink;
   const eventType = eventCard.dataset.eventType;
   const eventDate = eventCard.dataset.eventDate;
 
   loadHeaderBackgroundImage(eventCard);
   loadName(eventCard);
-
-  const eventDescription = eventCard.dataset.eventDescription;
-  const modalText = eventModal.querySelector(".event-modal__text");
-
-  modalText.innerHTML = eventDescription;
+  loadDescription(eventCard);
+  loadLink(eventCard);
 }
 
 function loadHeaderBackgroundImage(eventCard) {
@@ -39,14 +35,35 @@ function loadHeaderBackgroundImage(eventCard) {
 }
 
 function loadName(eventCard) {
-  const eventName = eventCard.dataset.eventName;
-  const modalName = eventModal.querySelector(".event-modal__name");
-  modalName.textContent = eventName;
+                               const eventName = eventCard.dataset.eventName;
+                               const modalName = eventModal.querySelector(
+                                 ".event-modal__name"
+                               );
+                               modalName.textContent = eventName;
 
-  const eventNameColorTheme = eventCard.dataset.eventNameColorTheme;
-  if (eventNameColorTheme === "Dark") {
-    modalName.classList.add("event-modal__name--dark");
-  } else {
-    modalName.classList.remove("event-modal__name--dark");
-  }
+                               const eventNameColorTheme =
+                                 eventCard.dataset.eventNameColorTheme;
+                               if (eventNameColorTheme === "Dark") {
+                                 modalName.classList.add(
+                                   "event-modal__name--dark"
+                                 );
+                               } else {
+                                 modalName.classList.remove(
+                                   "event-modal__name--dark"
+                                 );
+                               }
+                             }
+
+function loadDescription(eventCard) {
+  const eventDescription = eventCard.dataset.eventDescription;
+  const modalText = eventModal.querySelector(".event-modal__text");
+
+  modalText.innerHTML = eventDescription;
+}
+
+function loadLink(eventCard) {
+  const eventLink = eventCard.dataset.eventLink;
+  const modalLink = eventModal.querySelector(".event-modal__link");
+
+  modalLink.href = eventLink;
 }
