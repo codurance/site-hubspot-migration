@@ -88,8 +88,31 @@
   color: var(--shark);
   max-height: calc(100% - var(--space-7));
   overflow-y: auto;
-  scrollbar-width: thin;
   padding-right: var(--space-4);
+}
+
+/* For browsers that support `scrollbar-*` properties */
+@supports (scrollbar-color: auto) {
+  .event-modal__text {
+    scrollbar-color: var(--french-gray) white;
+    scrollbar-width: thin;
+  }
+}
+
+/* Otherwise, use `::-webkit-scrollbar-*` pseudo-elements */
+@supports selector(::-webkit-scrollbar) {
+  .event-modal__text::-webkit-scrollbar {
+    background: white;
+    width: 0.5rem;
+  }
+  .event-modal__text::-webkit-scrollbar-thumb {
+    background: var(--french-gray);
+  }
+}
+
+.event-modal__text::-webkit-scrollbar-thumb {
+  color: var(--french-gray);
+  width: 10px;
 }
 
 .event-modal__link {
