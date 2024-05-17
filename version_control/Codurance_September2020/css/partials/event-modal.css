@@ -132,3 +132,28 @@
   background: white;
   {{ utils.card_border_radius() }}
 }
+
+.event-modal__details-listing {
+  margin: unset;
+  padding: var(--space-4);
+  list-style-type: none;
+}
+
+.event-modal__detail {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.event-modal__detail:not(:first-of-type) {
+  margin-top: var(--space-4);
+}
+
+.event-modal__detail-icon {
+  font-size: 1.25rem;
+} 
+
+.event-modal__detail-text {
+  {{ utils.natus() }}
+  color: var(--shark);
+}
