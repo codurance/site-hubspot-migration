@@ -8,9 +8,10 @@
   {{ utils.white_to_tango() }}
   {{ utils.card_border_radius() }}
   width: var(--content-inner-max-width);
-  margin-top: var(--space-8);
-  margin-bottom: var(--space-8);
-  max-height: calc(100vh - var(--space-8) * 2);
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-7);
+  height: calc(100vh - var(--space-7) * 2);
+  max-height: 42.1rem;
   padding: var(--space-4);
   border: unset;
 }
@@ -28,13 +29,15 @@
 .event-modal__header {
   {{ utils.card_border_radius() }}
   width: 100%;
-  height: 12.6rem;
+  height: 32.5%;
   background-image: url("https://www.codurance.com/hubfs/Events%20page/Events%20Page%20Pop%20up_img.png");
   background-size: cover;
   background-position: center center;
   display: flex;
   align-items: center;
   position: relative;
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
 }
 
 .event-modal__name {
@@ -69,13 +72,30 @@
 .event-modal__main {
   display: flex;
   gap: var(--space-3);
-  height: 25.05rem;
+  flex-grow: 1;
+  height: 65%;
 }
 
 .event-modal__description {
   flex: 1 1 67.5%;
   background: white;
   {{ utils.card_border_radius() }}
+  padding: var(--space-4) var(--space-2) var(--space-4) var(--space-4);
+  position: relative;
+}
+
+.event-modal__text {
+  color: var(--shark);
+  max-height: calc(100% - var(--space-7));
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding-right: var(--space-4);
+}
+
+.event-modal__link {
+  margin-top: auto;
+  position: absolute;
+  bottom: var(--space-4);
 }
 
 .event-modal__details {

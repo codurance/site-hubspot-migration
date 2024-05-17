@@ -14,13 +14,17 @@ eventCardButtons.forEach((button) =>
 );
 
 function loadEventToModal(eventCard) {
-  const eventDescription = eventCard.dataset.eventDescription;
   const eventLink = eventCard.dataset.eventLink;
   const eventType = eventCard.dataset.eventType;
   const eventDate = eventCard.dataset.eventDate;
 
   loadHeaderBackgroundImage(eventCard);
   loadName(eventCard);
+
+  const eventDescription = eventCard.dataset.eventDescription;
+  const modalText = eventModal.querySelector(".event-modal__text");
+
+  modalText.innerHTML = eventDescription;
 }
 
 function loadHeaderBackgroundImage(eventCard) {
