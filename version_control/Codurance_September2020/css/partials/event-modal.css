@@ -84,11 +84,22 @@
   position: relative;
 }
 
+.event-modal__description::after {
+  content: "";
+  background: linear-gradient(180deg, hsla(0,0%,100%,0), #fff);
+  height: 6rem;
+  width: calc(100% - var(--space-4)* 2);
+  position: absolute;
+  bottom: 4rem;
+  left: var(--space-4);
+}
+
 .event-modal__text {
   color: var(--shark);
-  max-height: calc(100% - var(--space-7));
+  max-height: 77%;
   overflow-y: auto;
   padding-right: var(--space-4);
+  padding-bottom: 3rem;
 }
 
 /* For browsers that support `scrollbar-*` properties */
@@ -108,11 +119,6 @@
   .event-modal__text::-webkit-scrollbar-thumb {
     background: var(--french-gray);
   }
-}
-
-.event-modal__text::-webkit-scrollbar-thumb {
-  color: var(--french-gray);
-  width: 10px;
 }
 
 .event-modal__link {
