@@ -161,17 +161,9 @@
   overflow: hidden;
 }
 
-{% call utils.extra_large() %}
-  .card-slider-item {
-    max-width: calc(25% - 30px);
-  }
-{% endcall %}
-
-{% call utils.small_medium_and_large() %}
-  .card-slider-item {
-    max-width: calc(33% - 30px);
-  }
-{% endcall %}
+.card-slider-item {
+  max-width: calc(25% - 30px);
+}
 
 {% call utils.small_and_medium() %}
   .card-slider-item:last-of-type {
