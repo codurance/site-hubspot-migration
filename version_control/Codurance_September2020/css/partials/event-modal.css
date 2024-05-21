@@ -157,3 +157,7 @@
   {{ utils.natus() }}
   color: var(--shark);
 }
+
+.event-modal__detail-text:first-letter {
+  text-transform: uppercase;
+}
