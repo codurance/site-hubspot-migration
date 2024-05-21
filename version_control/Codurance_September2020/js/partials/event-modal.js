@@ -92,7 +92,11 @@ function loadAddress(eventCard) {
 
   if (eventAddress) {
     modalAddress.textContent = eventAddress;
-    modalDetails.append(googleMap);
+
+    const encodedAddress = encodeURIComponent(eventAddress);
+    const googleMapElement = googleMap.querySelector("iframe");
+    googleMapElement.src = `https://maps.google.com/maps?q=${encodedAddress}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+    modalDetails.append(googleMapElement);
   } else {
     modalAddress.textContent = "Zoom";
   }
