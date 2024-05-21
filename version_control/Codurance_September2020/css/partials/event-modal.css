@@ -26,14 +26,16 @@
 
 .event-modal {
   {{ utils.white_to_tango() }}
-  {{ utils.card_border_radius() }}
-  width: var(--content-inner-max-width);
-  margin-top: var(--space-7);
-  margin-bottom: var(--space-7);
-  height: calc(100vh - var(--space-7) * 2);
-  max-height: 42.1rem;
-  padding: var(--space-4);
+  height: 100vh;
+  width: 100vw;
   border: unset;
+  max-width: unset;
+  max-height: unset;
+  padding: var(--space-3);
+}
+
+.event-modal::backdrop {
+  background: rgba(1, 1, 1, 0.5);
 }
 
 .event-modal[open] {
@@ -42,14 +44,9 @@
   gap: var(--space-3);
 }
 
-.event-modal::backdrop {
-  background: rgba(1, 1, 1, 0.5);
-}
-
 .event-modal__header {
   {{ utils.card_border_radius() }}
   width: 100%;
-  height: 32.5%;
   background-image: url("https://www.codurance.com/hubfs/Events%20page/Events%20Page%20Pop%20up_img.png");
   background-size: cover;
   background-position: center center;
@@ -61,7 +58,7 @@
 }
 
 .event-modal__name {
-  {{ utils.eames() }}
+  {{ utils.freed() }}
   color: white;
   max-width: 62.5%;
   margin-left: var(--space-3);
@@ -92,7 +89,6 @@
 .event-modal__main {
   display: flex;
   gap: var(--space-3);
-  height: 63%;
 }
 
 .event-modal__description {
@@ -122,9 +118,9 @@
 }
 
 .event-modal__link {
-  margin-top: auto;
-  position: absolute;
-  bottom: var(--space-4);
+  margin-top: var(--space-3);
+  position: relative;
+  z-index: 50;
 }
 
 .event-modal__details {
@@ -147,7 +143,7 @@
 }
 
 .event-modal__detail:not(:first-of-type) {
-  margin-top: var(--space-3);
+  margin-top: var(--space-0);
 }
 
 .event-modal__detail-icon {
@@ -163,6 +159,44 @@
   text-transform: uppercase;
 }
 
+{% call utils.large_and_extra_large() %}
+  .event-modal {
+    {{ utils.card_border_radius() }}
+    width: var(--content-inner-max-width);
+    height: calc(100vh - var(--space-7) * 2);
+    margin-top: var(--space-7);
+    margin-bottom: var(--space-7);
+    max-height: 42.1rem;
+    padding: var(--space-4);
+  }
+
+  .event-modal::backdrop {
+    background: rgba(1, 1, 1, 0.5);
+  }
+
+  .event-modal__header {
+    height: 32.5%;
+  }
+
+  .event-modal__name {
+    {{ utils.eames() }}
+  }
+
+  .event-modal__main {
+    height: 63%;
+  }
+
+  .event-modal__link {
+    margin-top: auto;
+    position: absolute;
+    bottom: var(--space-4);
+  }
+
+  .event-modal__detail:not(:first-of-type) {
+    margin-top: var(--space-3);
+  }
+{% endcall %}
+
 {% call utils.extra_large() %}
   .event-modal__map {
     height: 48.5%;
@@ -172,17 +206,32 @@
 {% endcall %}
 
 {% call utils.large() %}
-  .event-modal__details {
-    overflow-y: auto;
+  .event-modal {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-6);
+    height: calc(100vh - var(--space-6) * 2);
   }
 
   .event-modal__text {
     padding-bottom: 3rem;
   }
 
-  .event-modal {
-    margin-top: var(--space-6);
-    margin-bottom: var(--space-6);
-    height: calc(100vh - var(--space-6) * 2);
+  .event-modal__details {
+    overflow-y: auto;
+  }
+{% endcall %}
+
+{% call utils.small_and_medium() %}
+  .event-modal__main {
+    flex-direction: column-reverse;
+  }
+
+  .event-modal__text {
+    {{ utils.natus() }}
+    max-height: 10rem;
+  }
+
+  .event-modal__map {
+    width: 100%;
   }
 {% endcall %}
