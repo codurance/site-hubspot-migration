@@ -83,10 +83,23 @@ function loadDatetime(eventCard) {
 function loadAddress(eventCard) {
   const eventAddress = eventCard.dataset.eventAddress;
   const modalAddress = eventModal.querySelector(".event-modal__address");
+  const modalDetails = eventModal.querySelector(".event-modal__details");
+  const googleMap = document
+    .querySelector(".event-map-template")
+    .content.cloneNode(true);
+
+  removeModalMapIfExists();
 
   if (eventAddress) {
     modalAddress.textContent = eventAddress;
+    modalDetails.append(googleMap);
   } else {
     modalAddress.textContent = "Zoom";
   }
+}
+
+function removeModalMapIfExists() {
+  const modalMap = eventModal.querySelector(".event-modal__map");
+
+  if (modalMap) modalMap.remove();
 }

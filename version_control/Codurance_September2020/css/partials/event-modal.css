@@ -1,8 +1,28 @@
 {% import '../utils/utils.css' as utils %}
 
-:root {
-  --left-column-width: 67.5%;
+/* General styles */
+/* For browsers that support `scrollbar-*` properties */
+@supports (scrollbar-color: auto) {
+  .event-modal__text,
+  .event-modal__details {
+    scrollbar-color: var(--french-gray) white;
+    scrollbar-width: thin;
+  }
 }
+
+/* Otherwise, use `::-webkit-scrollbar-*` pseudo-elements */
+@supports selector(::-webkit-scrollbar) {
+  .event-modal__text::-webkit-scrollbar,
+  .event-modal__details::-webkit-scrollbar {
+    background: white;
+    width: 0.5rem;
+  }
+  .event-modal__text::-webkit-scrollbar-thumb,
+  .event-modal__details::-webkit-scrollbar-thumb {
+    background: var(--french-gray);
+  }
+}
+/* End general styles */
 
 .event-modal {
   {{ utils.white_to_tango() }}
@@ -72,8 +92,7 @@
 .event-modal__main {
   display: flex;
   gap: var(--space-3);
-  flex-grow: 1;
-  height: 65%;
+  height: 63%;
 }
 
 .event-modal__description {
@@ -87,7 +106,7 @@
 .event-modal__description::after {
   content: "";
   background: linear-gradient(180deg, hsla(0,0%,100%,0), #fff);
-  height: 6rem;
+  height: 5rem;
   width: calc(100% - var(--space-4)* 2);
   position: absolute;
   bottom: 4rem;
@@ -99,26 +118,7 @@
   max-height: 77%;
   overflow-y: auto;
   padding-right: var(--space-4);
-  padding-bottom: 3rem;
-}
-
-/* For browsers that support `scrollbar-*` properties */
-@supports (scrollbar-color: auto) {
-  .event-modal__text {
-    scrollbar-color: var(--french-gray) white;
-    scrollbar-width: thin;
-  }
-}
-
-/* Otherwise, use `::-webkit-scrollbar-*` pseudo-elements */
-@supports selector(::-webkit-scrollbar) {
-  .event-modal__text::-webkit-scrollbar {
-    background: white;
-    width: 0.5rem;
-  }
-  .event-modal__text::-webkit-scrollbar-thumb {
-    background: var(--french-gray);
-  }
+  padding-bottom: 2rem;
 }
 
 .event-modal__link {
@@ -131,6 +131,7 @@
   flex: 1 1 32.5%;
   background: white;
   {{ utils.card_border_radius() }}
+  position: relative;
 }
 
 .event-modal__details-listing {
@@ -146,7 +147,7 @@
 }
 
 .event-modal__detail:not(:first-of-type) {
-  margin-top: var(--space-4);
+  margin-top: var(--space-3);
 }
 
 .event-modal__detail-icon {
@@ -161,3 +162,27 @@
 .event-modal__detail-text:first-letter {
   text-transform: uppercase;
 }
+
+{% call utils.extra_large() %}
+  .event-modal__map {
+    height: 48.5%;
+    position: absolute;
+    bottom: 0;
+  }
+{% endcall %}
+
+{% call utils.large() %}
+  .event-modal__details {
+    overflow-y: auto;
+  }
+
+  .event-modal__text {
+    padding-bottom: 3rem;
+  }
+
+  .event-modal {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-6);
+    height: calc(100vh - var(--space-6) * 2);
+  }
+{% endcall %}

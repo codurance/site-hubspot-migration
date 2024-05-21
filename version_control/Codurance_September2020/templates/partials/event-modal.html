@@ -6,6 +6,10 @@
 {{ require_css(get_asset_url("../../css/partials/event-modal.css")) }}
 {{ require_js(get_asset_url("../../js/partials/event-modal.js"), { position: "footer", defer: true }) }}
 
+<template class="event-map-template">
+  <iframe class="event-modal__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.9870038728504!2d2.1907156999999997!3d41.3960886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a28e9bc26acb%3A0x366a95b98e89fe6e!2sCodurance!5e0!3m2!1sen!2ses!4v1716293177471!5m2!1sen!2ses" width="298" height="237" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</template>
+
 <dialog id="event-modal" class="event-modal" aria-modal="true">
   <div class="event-modal__header">
     <form method="dialog" class="event-modal__close-form">
