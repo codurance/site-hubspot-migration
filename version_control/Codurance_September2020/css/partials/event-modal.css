@@ -193,31 +193,27 @@
   }
 
   .event-modal__detail:not(:first-of-type) {
-    margin-top: var(--space-3);
+    margin-top: var(--space-2);
   }
-{% endcall %}
 
-{% call utils.extra_large() %}
   .event-modal__map {
-    height: 48.5%;
+    max-height: 48%;
     position: absolute;
     bottom: 0;
   }
 {% endcall %}
 
-{% call utils.large() %}
+@media (height >= 768px) and (height < 1300px) and (width >= 768px) {
   .event-modal {
     margin-top: var(--space-6);
     margin-bottom: var(--space-6);
     height: calc(100vh - var(--space-6) * 2);
   }
+}
 
+{% call utils.large() %}
   .event-modal__text {
     padding-bottom: 3rem;
-  }
-
-  .event-modal__details {
-    overflow-y: auto;
   }
 {% endcall %}
 
