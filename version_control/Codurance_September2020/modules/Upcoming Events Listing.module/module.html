@@ -114,7 +114,7 @@
                     datetime="{{ event.datetime | format_datetime('d MMM yyyy HH:mm ZZZZ') }}"
                     data-time="{{ event.datetime }}"
                   >
-                  
+            
                   </time>              
                   <h3 class="card-slider-item__title">
                     {{ event.name }}
@@ -141,9 +141,20 @@
           <h3 class="events-cta-card__title">{{ module.newsletter_text_field }}</h3>
           <div class="events-cta-card__form">
             {% form "email_form" form_to_use={{ module.newsletter_form.form_id }} %}
+            
+            <div class="card-slider-item__grecaptcha-notice">
+            {% if locale == "es" %}
+              Esta web está protegida por reCAPTCHA y se aplican la
+              <a href="https://policies.google.com/privacy?hl=es">Política de privacidad</a> y los
+              <a href="https://policies.google.com/terms?hl=es">Términos de uso</a> de Google.
+            {% else %}
+              This site is protected by reCAPTCHA and the Google
+              <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+              <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+            {% endif %}
+          </div>
           </div>
         </div>
-
       </div>
     </div>
   {% endif %}
