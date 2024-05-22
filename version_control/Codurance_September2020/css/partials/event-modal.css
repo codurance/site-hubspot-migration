@@ -159,13 +159,18 @@
   text-transform: uppercase;
 }
 
+{% call utils.extra_large() %}
+  .event-modal {
+    height: calc(100vh - var(--space-7) * 2);
+    margin-top: var(--space-7);
+    margin-bottom: var(--space-7);
+  }
+{% endcall %}
+  
 {% call utils.large_and_extra_large() %}
   .event-modal {
     {{ utils.card_border_radius() }}
     width: var(--content-inner-max-width);
-    height: calc(100vh - var(--space-7) * 2);
-    margin-top: var(--space-7);
-    margin-bottom: var(--space-7);
     max-height: 42.1rem;
     padding: var(--space-4);
   }
@@ -231,15 +236,13 @@
   }
 {% endcall %}
 
-@media (height >= 720px) and (height < 1300px) and (width >= 768px) {
+{% call utils.large() %}
   .event-modal {
     margin-top: var(--space-6);
     margin-bottom: var(--space-6);
     height: calc(100vh - var(--space-6) * 2);
   }
-}
-
-{% call utils.large() %}
+  
   .event-modal__text {
     padding-bottom: 3rem;
   }
