@@ -238,9 +238,9 @@
 
 {% call utils.large() %}
   .event-modal {
-    margin-top: var(--space-6);
-    margin-bottom: var(--space-6);
-    height: calc(100vh - var(--space-6) * 2);
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-4);
+    height: calc(100vh - var(--space-4) * 2);
   }
   
   .event-modal__text {
