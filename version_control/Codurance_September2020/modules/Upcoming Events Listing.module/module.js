@@ -2,7 +2,7 @@ const SELECTORS = {
   navigationControl: true,
   cardWindowSelector: "[data-upcoming-card-window]",
   trackSelector: "[data-upcoming-card-track]",
-  cardsSelector: "[data-upcoming-card]",
+  cardsSelector: ".card-slider-item",
   leftButtonSelector: "[data-upcoming-events-button-left]",
   rightButtonSelector: "[data-upcoming-events-button-right]",
   ctaContainerSelector: "[data-upcoming-events-newsletter-cta]"

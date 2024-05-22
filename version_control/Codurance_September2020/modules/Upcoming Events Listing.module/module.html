@@ -75,7 +75,17 @@
       </div>
       <div class="card-slider-results" data-upcoming-card-track>
         {% for event in upcomingEvents %}
-        <article class="card-slider-item" data-upcoming-card>
+        <article 
+          class="card-slider-item"
+          {% if event.background_image %}data-event-background-image="{{ event.background_image.url }}"{% endif %}
+          data-event-name="{{ event.name }}"
+          {% if event.name_color_theme %}data-event-name-color-theme="{{ event.name_color_theme.name }}"{% endif %}
+          data-event-description="{{ event.description }}"
+          data-event-link="{{ event.link }}"
+          data-event-type="{{ event.type.name }}"
+          data-event-datetime="{{ event.datetime | format_datetime('full') }}"
+        {% if event.address %}data-event-address="{{ event.address }}"{% endif %}
+        >
           <div class="card-slider-item__content">
             <div
               class="card-slider-item__image-container"
@@ -116,9 +126,10 @@
               </div>
               <div class="card-slider-item__button-container">
                 {{snippets.button_primary(
-                  url=event.link,
-                  target="_blank",
-                  text="{{ module.card_button_copy }}"
+                  url="javascript:;",
+                  classnames="card-slider-item__event-button",
+                  text="{{ module.card_button_copy }}",
+                  aria_controls="event-modal"
                 )}}
               </div>
             </div>

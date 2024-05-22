@@ -2,14 +2,15 @@
   templateType: "none"
   isAvailableForNewContent: false
 -->
-{% macro button_primary(url, classnames, text, target, rel, aria_label_text) %}
+{% macro button_primary(url, classnames, text, target, rel, aria_label_text, aria_controls) %}
   <a
     href="{{ url }}"
     class="{% for classname in classnames %}{{classname}}&#32{% endfor %}button-primary"
     {% if target %}target="{{target}}"{% endif %}
     {% if rel %}rel="{{rel}}"{% endif %}
      role="link"
-     aria-label="{{aria_label_text}}"
+    {% if aria_label_text %}aria-label="{{aria_label_text}}"{% endif %}
+    {% if aria_controls %}aria-controls="{{aria_controls}}"{% endif %}
   >
     {{ text }}
   </a>

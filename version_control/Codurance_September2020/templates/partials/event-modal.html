@@ -1,0 +1,45 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: false
+-->
+
+{{ require_css(get_asset_url("../../css/partials/event-modal.css")) }}
+{{ require_js(get_asset_url("../../js/partials/event-modal.js"), { position: "footer", defer: true }) }}
+
+<template class="event-map-template">
+  <iframe class="event-modal__map" src="" width="298" height="237" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</template>
+
+<dialog id="event-modal" class="event-modal lateral-spacing" aria-modal="true">
+  <div class="event-modal__header">
+    <form method="dialog" class="event-modal__close-form">
+      <button class="event-modal__close-button"><i class="las la-times"></i></button>
+    </form>
+    <h2 class="event-modal__name"></h2>
+  </div>
+
+  <div class="event-modal__main">
+    <div class="event-modal__description">
+      <div class="event-modal__text"></div>
+      <a href="" class="button-primary event-modal__link">
+        {{ content.widgets.events.body.card_button_copy }}
+      </a>
+    </div>
+    <div class="event-modal__details">
+      <ul class="event-modal__details-listing">
+        <li class="event-modal__detail">
+          <i class="event-modal__detail-icon las la-chalkboard-teacher"></i>
+          <p class="event-modal__detail-text event-modal__type">Type</p>
+        </li>
+        <li class="event-modal__detail">
+          <i class="event-modal__detail-icon las la-calendar-alt"></i>
+          <p class="event-modal__detail-text event-modal__datetime">Datetime</p>
+        </li>
+        <li class="event-modal__detail">
+          <i class="event-modal__detail-icon las la-map-marker"></i>
+          <p class="event-modal__detail-text event-modal__address">Address</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</dialog>
