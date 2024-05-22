@@ -41,7 +41,7 @@
 .event-modal[open] {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .event-modal__header {
@@ -53,8 +53,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding-top: var(--space-4);
-  padding-bottom: var(--space-4);
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
 }
 
 .event-modal__name {
@@ -88,14 +88,14 @@
 
 .event-modal__main {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .event-modal__description {
   flex: 1 1 67.5%;
   background: white;
   {{ utils.card_border_radius() }}
-  padding: var(--space-4) var(--space-2) var(--space-4) var(--space-4);
+  padding: var(--space-3) var(--space-2) var(--space-3) var(--space-3);
   position: relative;
 }
 
@@ -103,17 +103,17 @@
   content: "";
   background: linear-gradient(180deg, hsla(0,0%,100%,0), #fff);
   height: 5rem;
-  width: calc(100% - var(--space-4)* 2);
+  width: calc(100% - var(--space-3)* 2);
   position: absolute;
-  bottom: 4rem;
-  left: var(--space-4);
+  bottom: 3rem;
+  left: var(--space-3);
 }
 
 .event-modal__text {
   color: var(--shark);
   max-height: 77%;
   overflow-y: auto;
-  padding-right: var(--space-4);
+  padding-right: var(--space-3);
   padding-bottom: 2rem;
 }
 
@@ -132,14 +132,13 @@
 
 .event-modal__details-listing {
   margin: unset;
-  padding: var(--space-4);
+  padding: var(--space-3);
   list-style-type: none;
 }
 
 .event-modal__detail {
   display: flex;
   gap: var(--space-2);
-  align-items: center;
 }
 
 .event-modal__detail:not(:first-of-type) {
@@ -153,6 +152,7 @@
 .event-modal__detail-text {
   {{ utils.natus() }}
   color: var(--shark);
+  align-self: flex-end;
 }
 
 .event-modal__detail-text:first-letter {
@@ -170,26 +170,56 @@
     padding: var(--space-4);
   }
 
+  .event-modal[open] {
+    gap: var(--space-3);
+  }
+
   .event-modal::backdrop {
     background: rgba(1, 1, 1, 0.5);
   }
 
   .event-modal__header {
     height: 32.5%;
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-4);
   }
 
   .event-modal__name {
     {{ utils.eames() }}
+    margin-left: var(--space-4);
   }
 
   .event-modal__main {
     height: 63%;
+    gap: var(--space-3);
+  }
+
+  .event-modal__description {
+    padding: var(--space-4) var(--space-2) var(--space-3) var(--space-4);
+  }
+
+  .event-modal__description::after {
+    width: calc(100% - var(--space-4)* 2);
+    left: var(--space-4);
+  }
+
+  .event-modal__text {
+    padding-right: var(--space-4);
   }
 
   .event-modal__link {
     margin-top: auto;
     position: absolute;
-    bottom: var(--space-4);
+    bottom: var(--space-3);
+  }
+
+  .event-modal__details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-modal__details-listing {
+    padding: var(--space-4);
   }
 
   .event-modal__detail:not(:first-of-type) {
@@ -197,9 +227,7 @@
   }
 
   .event-modal__map {
-    max-height: 48%;
-    position: absolute;
-    bottom: 0;
+    flex: 1;
   }
 {% endcall %}
 
