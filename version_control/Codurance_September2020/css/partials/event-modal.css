@@ -231,7 +231,7 @@
   }
 {% endcall %}
 
-@media (height >= 768px) and (height < 1300px) and (width >= 768px) {
+@media (height >= 720px) and (height < 1300px) and (width >= 768px) {
   .event-modal {
     margin-top: var(--space-6);
     margin-bottom: var(--space-6);
