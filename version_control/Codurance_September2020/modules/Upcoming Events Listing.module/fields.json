@@ -30,6 +30,13 @@
    "default": "Register Attendance"
   },
   {
+    "type": "text",
+    "validation_regex": "",
+    "label": "Popup Button Copy",
+    "name": "popup_button_copy",
+    "default": "Register Attendance"
+  },
+  {
    "allow_new_line": false,
    "display_width": null,
    "id": "35683103-66da-e088-217c-68482b20fa30",
