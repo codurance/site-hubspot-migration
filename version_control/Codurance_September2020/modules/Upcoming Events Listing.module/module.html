@@ -75,66 +75,76 @@
       </div>
       <div class="card-slider-results" data-upcoming-card-track>
         {% for event in upcomingEvents %}
-        <article 
-          class="card-slider-item"
-          {% if event.background_image %}data-event-background-image="{{ event.background_image.url }}"{% endif %}
-          data-event-name="{{ event.name }}"
-          {% if event.name_color_theme %}data-event-name-color-theme="{{ event.name_color_theme.name }}"{% endif %}
-          data-event-description="{{ event.description }}"
-          data-event-link="{{ event.link }}"
-          data-event-type="{{ event.type.name }}"
-          data-event-datetime="{{ event.datetime | format_datetime('full') }}"
-        {% if event.address %}data-event-address="{{ event.address }}"{% endif %}
-        >
-          <div class="card-slider-item__content">
-            <div
-              class="card-slider-item__image-container"
-              style="background-image: url({{event.thumbnail.url}})"
-            >
-              {% if event.type.name %}
-                <small
-                  class="card-slider-item__label card-slider-item__label--type"
-                >
-                  {{ event.type.name }}
-                </small>
-                {% if event.city && event.type.name == "In person" %}
+          {% if locale == "en" %}
+            {% set timezone = "Europe/London" %}
+          {% elif locale == "es" %}
+            {% set timezone = "Europe/Madrid" %}
+          {% elif locale == "pt" %}
+            {% set timezone = "Europe/Lisbon" %}
+          {% endif %}
+  
+          {% set formatted_date = format_datetime(event.datetime, "EEEE, MMMM d yyyy HH:mm a ZZZZ", timezone, locale) %}
+  
+          <article 
+            class="card-slider-item"
+            {% if event.background_image %}data-event-background-image="{{ event.background_image.url }}"{% endif %}
+            data-event-name="{{ event.name }}"
+            {% if event.name_color_theme %}data-event-name-color-theme="{{ event.name_color_theme.name }}"{% endif %}
+            data-event-description="{{ event.description }}"
+            data-event-link="{{ event.link }}"
+            data-event-type="{{ event.type.name }}"
+            data-event-datetime="{{ formatted_date }}"
+            {% if event.address %}data-event-address="{{ event.address }}"{% endif %}
+          >
+            <div class="card-slider-item__content">
+              <div
+                class="card-slider-item__image-container"
+                style="background-image: url({{event.thumbnail.url}})"
+              >
+                {% if event.type.name %}
                   <small
-                    class="card-slider-item__label card-slider-item__label--city"
+                    class="card-slider-item__label card-slider-item__label--type"
                   >
-                    {{ event.city }}
+                    {{ event.type.name }}
                   </small>
+                  {% if event.city && event.type.name == "In person" %}
+                    <small
+                      class="card-slider-item__label card-slider-item__label--city"
+                    >
+                      {{ event.city }}
+                    </small>
+                  {% endif %}
                 {% endif %}
-              {% endif %}
-            </div>
-            <div class="card-slider-item__text-container">
-              <div class="card-slider-item__text-container-inner truncated">
-                <header>
-                  <time
-                    class="card-slider-item__metadata upcoming-events"
-                    datetime="{{ event.datetime | format_datetime('d MMM yyyy HH:mm ZZZZ') }}"
-                    data-time="{{ event.datetime }}"
-                  >
-            
-                  </time>              
-                  <h3 class="card-slider-item__title">
-                    {{ event.name }}
-                  </h3>
-                </header>
-                <p class="card-slider-item__description">
-                  {{ event.description }}
-                </p>
               </div>
-              <div class="card-slider-item__button-container">
-                {{snippets.button_primary(
-                  url="javascript:;",
-                  classnames="card-slider-item__event-button",
-                  text="{{ module.card_button_copy }}",
-                  aria_controls="event-modal"
-                )}}
+              <div class="card-slider-item__text-container">
+                <div class="card-slider-item__text-container-inner truncated">
+                  <header>
+                    <time
+                      class="card-slider-item__metadata upcoming-events"
+                      datetime="{{ event.datetime | format_datetime('d MMM yyyy HH:mm ZZZZ') }}"
+                      data-time="{{ event.datetime }}"
+                    >
+              
+                    </time>              
+                    <h3 class="card-slider-item__title">
+                      {{ event.name }}
+                    </h3>
+                  </header>
+                  <p class="card-slider-item__description">
+                    {{ event.description }}
+                  </p>
+                </div>
+                <div class="card-slider-item__button-container">
+                  {{snippets.button_primary(
+                    url="javascript:;",
+                    classnames="card-slider-item__event-button",
+                    text="{{ module.card_button_copy }}",
+                    aria_controls="event-modal"
+                  )}}
+                </div>
               </div>
             </div>
-          </div>
-        </article>
+          </article>
         {% endfor %}
         <div class="card-slider-item events-cta-card" style="display: none;" data-upcoming-events-newsletter-cta>
           <i class="events-cta-card__icon las la-envelope"></i>
