@@ -117,6 +117,14 @@
   padding-bottom: 2rem;
 }
 
+.event-modal__text ul {
+  list-style-position: inside;
+}
+
+.event-modal__text li:not(:first-of-type) {
+  margin-top: var(--space-0);
+}
+
 .event-modal__link {
   margin-top: var(--space-3);
   position: relative;

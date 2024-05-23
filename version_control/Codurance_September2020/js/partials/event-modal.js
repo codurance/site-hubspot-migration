@@ -48,23 +48,21 @@ function loadName(eventCard) {
 }
 
 function loadDescription(eventCard) {
-                                      const eventDescription =
-                                        eventCard.dataset.eventDescription;
-                                      const modalText = eventModal.querySelector(
-                                        ".event-modal__text"
-                                      );
+  const eventDescription = eventCard
+    .querySelector(".card-slider-item__description")
+    .content.cloneNode(true);
+  const modalText = eventModal.querySelector(".event-modal__text");
 
-                                      modalText.innerHTML = eventDescription;
-                                    }
+  modalText.innerHTML = "";
+  modalText.append(eventDescription);
+}
 
 function loadLink(eventCard) {
-                               const eventLink = eventCard.dataset.eventLink;
-                               const modalLink = eventModal.querySelector(
-                                 ".event-modal__link"
-                               );
+  const eventLink = eventCard.dataset.eventLink;
+  const modalLink = eventModal.querySelector(".event-modal__link");
 
-                               modalLink.href = eventLink;
-                             }
+  modalLink.href = eventLink;
+}
 
 function loadType(eventCard) {
   const eventType = eventCard.dataset.eventType;

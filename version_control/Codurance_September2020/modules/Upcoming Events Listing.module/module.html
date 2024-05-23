@@ -90,12 +90,15 @@
             {% if event.background_image %}data-event-background-image="{{ event.background_image.url }}"{% endif %}
             data-event-name="{{ event.name }}"
             {% if event.name_color_theme %}data-event-name-color-theme="{{ event.name_color_theme.name }}"{% endif %}
-            data-event-description='{{ event.description }}'
             data-event-link="{{ event.link }}"
             data-event-type="{{ event.type.name }}"
             data-event-datetime="{{ formatted_date }}"
             {% if event.address %}data-event-address="{{ event.address }}"{% endif %}
           >
+            <template class="card-slider-item__description">
+              {{ event.description }}
+            </template>
+
             <div class="card-slider-item__content">
               <div
                 class="card-slider-item__image-container"
