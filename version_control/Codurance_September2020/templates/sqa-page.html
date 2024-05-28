@@ -33,57 +33,9 @@ label: Software Quality Assessment Packaged Solution Page
 		</div>	
   </section>
 
-  <section class="modules region responsive-page-width">
-    <div class="lateral-spacing">
-      {% module "modules_header" path="@hubspot/section_header" label="Modules header" %}
-      {# This module is repeated because the first one is to set up the content and the second one to display it.
-        The objective is to be able to copy the content on the following accordion module #}
-      {% module "modules_listing"
-        path="../modules/Modules-Listing.module"
-        label="Modules listing"
-        export_to_template_context=True
-      %}
-      {% module "modules_listing"
-        path="../modules/Modules-Listing.module"
-        extra_classes="modules-listing-desktop"
-      %}
-    </div>
-
-    <div class="modules-listing-mobile lateral-spacing">
-      <h3 class="modules-listing-mobile__title">{{ widget_data.modules_listing.core_modules_title }}</h3>
-      {% set core_modules = widget_data.modules_listing.core_modules %}
-      {% set core_modules_to_accordion = [] %}
-      {% for module in core_modules %}
-        {% set accordion_item_data = {
-          "accordion_title": module.title,
-          "accordion_content": module.description
-        } %}
-        {% do core_modules_to_accordion.append(accordion_item_data) %}
-      {% endfor %}
-      {% module "core_modules_listing_mobile"
-        path="../modules/Accordion.module"
-        label="Core Modules Listing Mobile"
-        accordion_item={{core_modules_to_accordion}}
-        overrideable=false
-      %}
-
-      <h3 class="modules-listing-mobile__title">{{ widget_data.modules_listing.strategic_modules_title }}</h3>
-      {% set strategic_modules = widget_data.modules_listing.strategic_modules %}
-      {% set strategic_modules_to_accordion = [] %}
-      {% for module in strategic_modules %}
-        {% set accordion_item_data = {
-          "accordion_title": module.title,
-          "accordion_content": module.description
-        } %}
-        {% do strategic_modules_to_accordion.append(accordion_item_data) %}
-      {% endfor %}
-      {% module "strategic_modules_listing_mobile"
-        path="../modules/Accordion.module"
-        label="Strategic Modules Listing Mobile"
-        accordion_item={{strategic_modules_to_accordion}}
-        overrideable=false
-      %}
-    </div>
+  <section class="modules region">
+    {% module "modules_header" path="@hubspot/section_header" label="Modules header" %}
+    {% module "module_cards" path="../modules/Simple-Card.module" label="Modules listing" %}  
   </section>
 
   <section class="benefits region">

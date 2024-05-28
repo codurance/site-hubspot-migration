@@ -49,7 +49,7 @@ section.responsive-page-width {
     }
 {% endcall %}
 
-/* Solution section (floating cards) */
+/* Solution section */
 .solution {
     {{ utils.white_to_tango() }}
 }
@@ -112,47 +112,11 @@ section.responsive-page-width {
 {% endcall %}
 
 /* Modules section */
-
-{% call utils.large_and_extra_large() %}
-    .modules-listing-mobile {
-        display: none;
-    }
-{% endcall %}
-
 {% call utils.small_and_medium() %}
     section.modules {
         padding-bottom: unset;
     }
-
-    .modules-listing-desktop {
-        display: none;
-    }
 {% endcall %}
-
-.modules-listing-mobile {
-    {{ utils.slate_to_woodsmoke() }}
-    color: white;
-    padding-bottom: var(--space-6);
-}
-
-.modules-listing-mobile__title {
-    {{ utils.freed() }}
-    font-weight: var(--heavy-font-weight);
-    padding-top: var(--space-5);
-}
-
-.modules .accordion {
-    padding: unset;
-}
-
-.modules .panel-title {
-    margin-bottom: 0;
-}
-
-.modules .panel-title__heading {
-    font-weight: var(--light-font-weight);
-    color: white;
-}
 
 /* Benefits section */
 .benefits {
