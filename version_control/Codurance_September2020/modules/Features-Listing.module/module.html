@@ -1,0 +1,9 @@
+{{ require_css(get_asset_url("../../css/modules/features-listing.css")) }}
+
+<ul class="features-listing">
+  {% for feature in module.features %}
+    <li class="features-listing__item">
+      {{ feature }}
+    </li>
+  {% endfor %}
+</ul>

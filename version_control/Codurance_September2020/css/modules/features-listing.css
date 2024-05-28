@@ -1,0 +1,13 @@
+.features-listing {
+  list-style-type: none;
+  columns: 2;
+  gap: var(--space-4);
+}
+
+.features-listing__item {
+  margin-top: var(--space-4);
+  text-wrap: balance;
+  padding-left: var(--space-2);
+  border-left: 2px solid #4B5790;
+}
+
