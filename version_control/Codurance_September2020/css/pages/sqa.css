@@ -55,6 +55,10 @@ section.responsive-page-width {
 }
 
 .solution__text {
+    {{ utils.card_shadow_large() }}
+    {{ utils.card_border_radius() }}
+    background: white;
+    padding: var(--space-3) var(--space-5);
     font-weight: var(--heavy-font-weight);
     margin-top: var(--space-4);
 }
