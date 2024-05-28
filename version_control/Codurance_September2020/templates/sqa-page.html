@@ -17,7 +17,18 @@ label: Software Quality Assessment Packaged Solution Page
 
   <section class="solution region">
 		<div class="responsive-page-width lateral-spacing">
-      {% module "solution_questions" path="../modules/Features-Listing.module" label="Solution questions" %}		
+      <div class="solution__text-and-image">
+        <div class="solution__questions">
+          {% module "solution_header" path="@hubspot/header" label="Solution header" extra_classes="solution__header" %}
+          {% module "solution_questions" path="../modules/Features-Listing.module" label="Solution questions" %}
+        </div>
+        {% module "solution_image" 
+          path="@hubspot/linked_image" 
+          label="Solution image" 
+          extra_classes="solution__image" 
+        %}
+      </div>
+
       {% module "solution_text" path="@hubspot/text" label="Solution text" extra_classes="solution__text" %}			
 		</div>	
   </section>
