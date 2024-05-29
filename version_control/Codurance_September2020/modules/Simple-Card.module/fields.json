@@ -166,7 +166,6 @@
    "locked": false,
    "name": "simple_cards_group",
    "occurrence": {
-    "max": 4,
     "sorting_label_field": "074b3ea9-479f-51f0-862d-78968808fd45"
    },
    "required": false,
@@ -189,5 +188,17 @@
    "name": "fixed_aspect_ratio",
    "required": false,
    "type": "boolean"
+  },
+  {
+   "type": "number",
+   "id": "62961d6e-b1ec-d712-d815-80203aa76f15",
+   "display": "text",
+   "step": 1,
+   "label": "Cards per row",
+   "name": "cards_per_row",
+   "default": 4,
+   "suffix": " cards per row",
+   "required": true,
+   "inline_help_text": "(desktop-only)"
   }
  ]

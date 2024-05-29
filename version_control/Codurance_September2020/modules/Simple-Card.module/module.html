@@ -1,6 +1,15 @@
-
 {% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../css/modules/simple-card.css")) }}   
+
+{% require_css %}
+    <style>
+        @media only screen and (width >= 1024px) {
+            .card-container {
+                grid-template-columns: repeat({{ module.cards_per_row }}, 1fr);
+            }
+        }
+    </style>
+{% end_require_css %}
 
 {% set cards = [] %}
 {% set cards_type_selected = module.fill_in_the_cards_info %}
