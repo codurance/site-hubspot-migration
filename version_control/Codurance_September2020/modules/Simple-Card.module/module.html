@@ -80,11 +80,13 @@
                     <p>{{ card.description }}</p>
                 {% endif %}
 
-                {{ snippets.text_cta_right_arrow(
-                    url=card.link_url,
-                    target="_blank",
-                    text="{{ card.link_text }}"
-                ) }}
+                {% if card.link_text %}
+                    {{ snippets.text_cta_right_arrow(
+                        url=card.link_url,
+                        target="_blank",
+                        text="{{ card.link_text }}"
+                    ) }}
+                {% endif %}
             </div>
         </article>
     {% endfor %}
