@@ -25,7 +25,7 @@
     .card-container {
         overflow-x: auto;
         padding-bottom: 10px;
-        grid-auto-columns: minmax(250px,1fr);
+        grid-auto-columns: minmax(300px,1fr);
         grid-auto-flow: column;
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
@@ -74,12 +74,29 @@
     margin-bottom: .75em;
 }
 
-.card__info p {
+.card__description {
     margin-bottom: .6em;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     display: -webkit-box;
     overflow: hidden;
+}
+
+.card__feature {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.card__feature:not(:first-of-type) {
+    margin-top: var(--space-3);
+}
+
+.card__feature-icon {
+    font-size: 1.25rem;
+}
+
+.card__feature-text {
+    {{ utils.natus() }}
 }
 
 .card__info a {

@@ -115,6 +115,35 @@
      "validation_regex": ""
     },
     {
+     "type": "group",
+     "id": "4f7c258c-1d02-93ce-8776-67a752d57ef3",
+     "label": "Features listing",
+     "children": [
+      {
+       "type": "text",
+       "id": "58449969-fbb4-00a5-11a9-948d232351d9",
+       "validation_regex": "",
+       "label": "Text",
+       "name": "text"
+      },
+      {
+       "type": "text",
+       "id": "4becc67a-bdc9-c04d-4a5a-32b6a6c6eb65",
+       "validation_regex": "",
+       "label": "Icon class",
+       "name": "icon_class",
+       "placeholder": "la-*",
+       "inline_help_text": "",
+       "help_text": "Input the class for the corresponding icon of <a href=\"https://icons8.com/line-awesome\">Line Awesome</a>"
+      }
+     ],
+     "name": "features_listing",
+     "default": [],
+     "occurrence": {
+      "sorting_label_field": "58449969-fbb4-00a5-11a9-948d232351d9"
+     }
+    },
+    {
      "allow_new_line": false,
      "display_width": null,
      "id": "68f60c8d-d8b9-a9df-fae9-5878c3056d87",
@@ -152,8 +181,8 @@
      ],
      "type": "link",
      "visibility": {
-      "operator": "NOT_EMPTY",
-      "controlling_field_path": "simple_cards_group.card_link_text"
+      "controlling_field_path": "simple_cards_group.card_link_text",
+      "operator": "NOT_EMPTY"
      }
     }
    ],
@@ -190,15 +219,17 @@
    "type": "boolean"
   },
   {
-   "type": "number",
-   "id": "62961d6e-b1ec-d712-d815-80203aa76f15",
-   "display": "text",
-   "step": 1,
-   "label": "Cards per row",
-   "name": "cards_per_row",
    "default": 4,
-   "suffix": " cards per row",
+   "display": "text",
+   "display_width": null,
+   "id": "62961d6e-b1ec-d712-d815-80203aa76f15",
+   "inline_help_text": "(desktop-only)",
+   "label": "Cards per row",
+   "locked": false,
+   "name": "cards_per_row",
    "required": true,
-   "inline_help_text": "(desktop-only)"
+   "step": 1,
+   "suffix": " cards per row",
+   "type": "number"
   }
  ]

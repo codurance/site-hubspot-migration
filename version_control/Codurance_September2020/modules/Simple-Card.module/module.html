@@ -36,7 +36,7 @@
         {% set card = {
             "date" : item.datetime | format_datetime('short'),
             "formated_date" : formated_date,
-            "thumbnail" : resize_image_url(item.thumbnail.url, 400),
+            "thumbnail" : item.thumbnail.url,
             "title" : item.name,
             "link_url" : item.link,
             "link_text" : module.card_link_text
@@ -52,9 +52,10 @@
     {% for item in list %}
         {% set card = {
             "content_type" : item.content_type,
-            "thumbnail" : resize_image_url(item.thumbnail.src, 400),
+            "thumbnail" : item.thumbnail.src,
             "title" : item.title,
             "description" : item.description,
+            "features_listing" : item.features_listing,
             "link_url" : item.link.url.href,
             "link_text" : item.card_link_text
         } %}
@@ -86,7 +87,16 @@
                 <h3>{{ card.title }}</h3>
 
                 {% if card.description %}
-                    <p>{{ card.description }}</p>
+                    <p class="card__description">{{ card.description }}</p>
+                {% endif %}
+
+                {% if card.features_listing %}
+                    {% for feature in card.features_listing %}
+                        <div class="card__feature">
+                            <i class="card__feature-icon las {{ feature.icon_class }}"></i>
+                            <p class="card__feature-text">{{ feature.text }}</p>
+                        </div>
+                    {% endfor %}
                 {% endif %}
 
                 {% if card.link_text %}
