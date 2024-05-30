@@ -47,7 +47,25 @@ label: Software Quality Assessment Packaged Solution Page
   </section>
 
   <section class="benefits region">
-    {% module "benefits" path="../modules/Benefits.module" %}
+    <div class="benefits__wrapper lateral-spacing">
+      <div class="benefits__text">
+        {% module "benefits_header"
+          path="@hubspot/header"
+          label="Benefits header"
+          extra_classes="benefits__header"
+        %}
+        {% module "benefits_listing" 
+          path="../modules/Features-Listing.module" 
+          label="Benefits listing" 
+          extra_classes="benefits__listing" 
+        %}
+      </div>
+      {% module "benefits_image"
+        path="@hubspot/linked_image"
+        label="Benefits image"
+        extra_classes="benefits__image"
+      %}
+    </div>
   </section>
 
   <section>{% module "cta" path="../modules/LP-cta-block.module" label="CTA" %}</section>
