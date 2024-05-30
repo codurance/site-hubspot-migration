@@ -112,6 +112,25 @@ section.responsive-page-width {
 {% endcall %}
 
 /* Modules section */
+.modules .page-header.section-header {
+    max-width: var(--content-inner-max-width);
+}
+
+.modules__cards {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+}
+
+.modules .card__img {
+    object-fit: cover;
+    max-height: 6rem;
+}
+
+.modules .card__info h3 {
+    {{ utils.base() }}
+    font-weight: var(--heavy-font-weight);
+}
+
 {% call utils.small_and_medium() %}
     section.modules {
         padding-bottom: unset;
