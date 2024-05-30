@@ -68,6 +68,20 @@ label: Software Quality Assessment Packaged Solution Page
     </div>
   </section>
 
+  {% module "testimonials_listing"
+    label="Testimonials"
+    path="../modules/Landing Page Modules/LP-testimonial-slider.module"
+    export_to_template_context=True
+  %}
+
+  {% if widget_data.testimonials_listing.body.testimonial_items %}
+    <section class="testimonials">
+      {% module "testimonials_listing"
+        path="../modules/Landing Page Modules/LP-testimonial-slider.module"
+      %}
+    </section>
+  {% endif %}
+
   <section>{% module "cta" path="../modules/LP-cta-block.module" label="CTA" %}</section>
 
   <section class="how-it-works region">
@@ -79,22 +93,6 @@ label: Software Quality Assessment Packaged Solution Page
     {% module "how_it_works" path="../modules/Interview Process.module" label="How it works steps" %}
     {% module "how_it_works_cta" path="../modules/Text-and-image.module" label="How it works CTA" %} 
   </section>
-
-  {% boolean "show_testimonials" 
-    label='Show testimonials?' 
-    value='False'
-    export_to_template_context=True 
-  %}
-
-  {% if widget_data.show_testimonials.value == True %}
-    <section class="testimonials">
-      {% module "testimonials"
-        label="Testimonials listing"
-        path="../modules/Landing Page Modules/LP-testimonial-slider.module"
-        extra_classes="testimonials-slider"
-      %}
-    </section>
-  {% endif %}
 
   <section class="models region">
     {% module "models_header" 
