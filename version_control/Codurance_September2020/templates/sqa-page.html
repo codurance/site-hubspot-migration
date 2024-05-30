@@ -34,12 +34,16 @@ label: Software Quality Assessment Packaged Solution Page
   </section>
 
   <section class="modules region">
-    {% module "modules_header" path="@hubspot/section_header" label="Modules header" %}
-    {% module "module_cards" 
-      path="../modules/Simple-Card.module" 
-      label="Modules listing" 
-      extra_classes="modules__cards"
-    %}  
+    {% module "modules_header" path="@hubspot/section_header" label="Modules header" extra_classes="lateral-spacing" %}
+    
+    <div class="modules__cards-wrapper">
+      <div class="modules__cards-background"></div>
+      {% module "module_cards"
+        path="../modules/Simple-Card.module"
+        label="Modules listing"
+        extra_classes="modules__cards"
+      %}
+    </div>
   </section>
 
   <section class="benefits region">
