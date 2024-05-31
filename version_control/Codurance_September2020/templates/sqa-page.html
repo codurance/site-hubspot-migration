@@ -84,12 +84,12 @@ label: Software Quality Assessment Packaged Solution Page
 
   <section>{% module "cta" path="../modules/LP-cta-block.module" label="CTA" %}</section>
 
-  <section class="how-it-works region">
-    <div class="how-it-works__wrapper">
+  <section class="how-it-works-section region">
+    <div class="how-it-works-section__wrapper">
       {% module "how_it_works_header"
         path="@hubspot/section_header"
         label="How it works header"
-        extra_classes="how-it-works__header lateral-spacing"
+        extra_classes="how-it-works-section__header lateral-spacing"
       %}
       {% module "how_it_works" path="../modules/How-It-Works.module" label="How it works steps" %}
       {% module "how_it_works_cta" path="../modules/Text-and-image.module" label="How it works CTA" %}
@@ -139,6 +139,19 @@ label: Software Quality Assessment Packaged Solution Page
       path="../modules/How-It-Works.module" 
       label="Assessments listing" 
       extra_classes="assessments__listing"
+    %}
+  </section>
+
+  <section class="related-posts region">
+    {% module "related_posts_header"
+      path="@hubspot/header"
+      label="Related posts header"
+      extra_classes="related-posts__header lateral-spacing"
+    %}
+    {% module "related_posts"
+      path="../modules/Recent-posts-V2.module"
+      label="Related posts"
+      extra_classes="related-posts__listing"
     %}
   </section>
       

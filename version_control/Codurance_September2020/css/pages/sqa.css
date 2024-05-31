@@ -208,47 +208,47 @@ div.cta-block {
 {% endcall %}
 
 /* How it works section */
-section.how-it-works {
+.how-it-works-section {
     {{ utils.white_to_tango() }}
 }
 
-.how-it-works__header {
+.how-it-works-section__header {
     max-width: var(--content-inner-max-width);
     margin-inline: auto;
 }
 
-.how-it-works .text-and-image__container {
+.how-it-works-section .text-and-image__container {
     max-width: var(--content-max-width);
     justify-content: center;
 }
 
-.how-it-works .text-and-image__title {
+.how-it-works-section .text-and-image__title {
     font-weight: var(--heavy-font-weight);
     text-wrap: balance;
 }
 
-.how-it-works .text-and-image__copy p {
+.how-it-works-section .text-and-image__copy p {
     {{ utils.base() }}
 }
 
 {% call utils.medium_large_and_extra_large() %}
-    .how-it-works__wrapper {
+    .how-it-works-section__wrapper {
         background-image: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/Packaged%20Solutions/SQA%20Page/Assets%20new/SQA%20page_steps_bg.svg");
         background-position: center center;
         background-repeat: no-repeat;
     }
 
-    .how-it-works .text-and-image__copy {
+    .how-it-works-section .text-and-image__copy {
         align-self: end;
         max-width: 60%;
     }
 
-    .how-it-works .text-and-image__title {
+    .how-it-works-section .text-and-image__title {
         {{ utils.dudler() }}
         font-weight: var(--heavy-font-weight);
     }
 
-    .how-it-works .text-and-image__copy p {
+    .how-it-works-section .text-and-image__copy p {
         {{ utils.freed() }}
         font-weight: var(--light-font-weight);
     }
@@ -346,5 +346,39 @@ section.how-it-works {
     .assessments .how-it-works__description {
         margin-left: -70px;
         margin-top: var(--space-1);
+    }
+{% endcall %}
+
+/* Related posts section */
+.related-posts {
+    {{ utils.tango_to_white() }}
+}
+
+.related-posts__header,
+.related-posts__listing {
+    max-width: var(--content-inner-max-width);
+    margin-inline: auto;
+}
+
+.related-posts__header {
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.related-posts__listing {
+    margin-top: var(--space-0);
+}
+
+.related-posts .cm-recent-post {
+    transform: unset;
+}
+
+{% call utils.large() %}
+    .related-posts__header.lateral-spacing {
+        padding: unset;
+    }
+
+    .related-posts .cm-recent-post {
+        padding: unset;
     }
 {% endcall %}
