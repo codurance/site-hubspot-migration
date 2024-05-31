@@ -2,7 +2,7 @@
   "id" : "fb1dab42-60e2-52a6-e9a3-569873af3959",
   "name" : "interview_process_items",
   "display_width" : null,
-  "label" : "Interview Process Items",
+  "label" : "Process items",
   "required" : false,
   "locked" : false,
   "occurrence" : {
