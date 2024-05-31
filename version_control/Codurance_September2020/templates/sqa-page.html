@@ -128,6 +128,19 @@ label: Software Quality Assessment Packaged Solution Page
   </section>
 
   <section>{% module "cta" path="../modules/LP-cta-block.module" label="CTA" %}</section>
+
+  <section class="assessments region">
+    {% module "assessments_header" 
+      path="@hubspot/header" 
+      label="Assessments header" 
+      extra_classes="assessments__header lateral-spacing"
+    %}
+    {% module "assessments_listing" 
+      path="../modules/How-It-Works.module" 
+      label="Assessments listing" 
+      extra_classes="assessments__listing"
+    %}
+  </section>
       
   <section id="contact-form">
     {% module "contact_form"

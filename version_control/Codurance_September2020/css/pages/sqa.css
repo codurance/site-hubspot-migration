@@ -208,7 +208,7 @@ div.cta-block {
 {% endcall %}
 
 /* How it works section */
-.how-it-works {
+section.how-it-works {
     {{ utils.white_to_tango() }}
 }
 
@@ -292,5 +292,59 @@ div.cta-block {
     .models__text-container.lateral-spacing {
         padding-left: unset;
         padding-right: unset;
+    }
+{% endcall %}
+
+/* Assessments section */
+.assessments {
+    {{ utils.slate_to_woodsmoke() }}
+    color: white;
+}
+
+.assessments__header,
+.assessments__listing {
+    margin-inline: auto;
+}
+
+.assessments__header {
+    max-width: 54ch;
+    text-wrap: pretty;
+    {{ utils.dudler() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.assessments__listing {
+    max-width: var(--content-max-width);
+}
+
+.assessments .how-it-works {
+    padding-bottom: unset;
+}
+
+.assessments .how-it-works__icon-container img {
+    filter: unset;
+}
+
+.assessments .how-it-works__step {
+    display: none;
+}
+
+.assessments .how-it-works__icon-container::before,
+.assessments .how-it-works__icon-container::after {
+    display: none;
+}
+
+.assessments .how-it-works__description {
+    {{ utils.base() }}
+}
+
+{% call utils.small() %}
+    .assessments .how-it-works__title {
+        max-width: 17ch;
+    }
+
+    .assessments .how-it-works__description {
+        margin-left: -70px;
+        margin-top: var(--space-1);
     }
 {% endcall %}
