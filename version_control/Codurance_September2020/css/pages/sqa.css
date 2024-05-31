@@ -6,13 +6,10 @@
 }
 
 /* General styles */
-.section-header h2 {
+.section-header h2,
+.section-header p {
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
-}
-
-.section-header p {
-    margin-top: var(--space-2);
 }
 
 div.responsive-page-width,
@@ -220,15 +217,59 @@ div.cta-block {
     margin-inline: auto;
 }
 
+.how-it-works .text-and-image__container {
+    max-width: var(--content-max-width);
+    justify-content: center;
+}
+
 .how-it-works .text-and-image__title {
-    {{ utils.dudler() }}
     font-weight: var(--heavy-font-weight);
+    text-wrap: balance;
 }
 
 .how-it-works .text-and-image__copy p {
-    {{ utils.freed() }}
-    font-weight: var(--light-font-weight);
+    {{ utils.base() }}
 }
+
+{% call utils.medium_large_and_extra_large() %}
+    .how-it-works__wrapper {
+        background-image: url("https://www.codurance.com/hubfs/Service%20Line%20Pages/Packaged%20Solutions/SQA%20Page/Assets%20new/SQA%20page_steps_bg.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .how-it-works .text-and-image__copy {
+        align-self: end;
+        max-width: 60%;
+    }
+
+    .how-it-works .text-and-image__title {
+        {{ utils.dudler() }}
+        font-weight: var(--heavy-font-weight);
+    }
+
+    .how-it-works .text-and-image__copy p {
+        {{ utils.freed() }}
+        font-weight: var(--light-font-weight);
+    }
+{% endcall %}
+
+/* Case studies section */
+.case-studies.region {
+    padding-bottom: unset;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .case-studies .case-study-card-collection__cards {
+        padding-bottom: var(--space-6);
+    }
+
+    .case-studies .case-study-card-collection__header > p {
+        {{ utils.freed() }}
+        font-weight: normal;
+        max-width: 42ch;
+    }
+{% endcall %}
 
 /* Models section */
 .models {
@@ -246,3 +287,10 @@ div.cta-block {
     font-weight: var(--heavy-font-weight);
     padding: var(--space-3) var(--space-5);
 }
+
+{% call utils.large() %}
+    .models__text-container.lateral-spacing {
+        padding-left: unset;
+        padding-right: unset;
+    }
+{% endcall %}

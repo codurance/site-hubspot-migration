@@ -85,14 +85,30 @@ label: Software Quality Assessment Packaged Solution Page
   <section>{% module "cta" path="../modules/LP-cta-block.module" label="CTA" %}</section>
 
   <section class="how-it-works region">
-    {% module "how_it_works_header" 
-      path="@hubspot/section_header" 
-      label="How it works header" 
-      extra_classes="how-it-works__header lateral-spacing" 
-    %}
-    {% module "how_it_works" path="../modules/Interview Process.module" label="How it works steps" %}
-    {% module "how_it_works_cta" path="../modules/Text-and-image.module" label="How it works CTA" %} 
+    <div class="how-it-works__wrapper">
+      {% module "how_it_works_header"
+        path="@hubspot/section_header"
+        label="How it works header"
+        extra_classes="how-it-works__header lateral-spacing"
+      %}
+      {% module "how_it_works" path="../modules/Interview Process.module" label="How it works steps" %}
+      {% module "how_it_works_cta" path="../modules/Text-and-image.module" label="How it works CTA" %}
+    </div>
   </section>
+
+  {% module "case_studies" 
+    label="Case studies list" 
+    path="../modules/Case Study Card Collection.module"
+    export_to_template_context=True
+  %}
+
+  {% if widget_data.case_studies.body.case_study_card %}
+    <section class="case-studies region">
+      {% module "case_studies"  
+        path="../modules/Case Study Card Collection.module"
+      %}
+    </section>
+  {% endif %}
 
   <section class="models region">
     {% module "models_header" 
@@ -101,11 +117,12 @@ label: Software Quality Assessment Packaged Solution Page
       extra_classes="lateral-spacing" 
     %}
     {% module "engagement_models" path="../modules/Engagement-Models.module" %}
-    <div class="lateral-spacing">
+    
+    <div class="models__text-container lateral-spacing">
       {% module "models_text"
         path="@hubspot/text"
         label="Engagement models text"
-        extra_classes="models__text"
+        extra_classes="models__text lateral-spacing"
       %}
     </div>
   </section>
