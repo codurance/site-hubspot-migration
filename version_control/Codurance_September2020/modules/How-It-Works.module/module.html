@@ -1,0 +1,48 @@
+{{ require_css(get_asset_url("../../css/modules/how-it-works.css")) }}
+
+{% set step_lang = "Step" %}
+{% if locale == "es" %}
+  {% set step_lang = "Paso" %}
+{% elif locale == "pt" %}
+  {% set step_lang = "Passo" %}
+{% endif %}
+
+<div class="how-it-works">
+  <ul class="how-it-works__item-list">
+
+    {% for item in module.interview_process_items %}
+      <li class="how-it-works__item">
+        <div class="how-it-works__icon-container">
+          {% set resized_image = resize_image_url(item.icon_image.src, 60, 60) %}
+          <img src="{{ resized_image }}" alt="" loading="lazy" width="60" height="60" />
+        </div>
+        <div class="how-it-works__text-container">
+          <div class="how-it-works__step">
+            <span>{{step_lang}} {{ loop.index }}</span>
+          </div>
+
+          <h3 class="how-it-works__title">
+            {{ item.title }}
+          </h3>
+
+          <div class="how-it-works__description">
+            {{ item.content }}
+
+            <ul class="how-it-works__features-listing">
+              {% if item.features_listing %}
+                {% for feature in item.features_listing %}
+                    <li class="how-it-works__feature">
+                        <i class="how-it-works__feature-icon las {{ feature.icon_class }}"></i>
+                        <p class="how-it-works__feature-text">{{ feature.text }}</p>
+                    </li>
+                {% endfor %}
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+
+  </ul>
+</div>
+

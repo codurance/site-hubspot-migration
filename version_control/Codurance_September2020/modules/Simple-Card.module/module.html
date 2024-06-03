@@ -1,6 +1,15 @@
-
 {% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../css/modules/simple-card.css")) }}   
+
+{% require_css %}
+    <style>
+        @media only screen and (width >= 1024px) {
+            .card-container {
+                grid-template-columns: repeat({{ module.cards_per_row }}, 1fr);
+            }
+        }
+    </style>
+{% end_require_css %}
 
 {% set cards = [] %}
 {% set cards_type_selected = module.fill_in_the_cards_info %}
@@ -27,7 +36,7 @@
         {% set card = {
             "date" : item.datetime | format_datetime('short'),
             "formated_date" : formated_date,
-            "thumbnail" : resize_image_url(item.thumbnail.url, 400),
+            "thumbnail" : item.thumbnail.url,
             "title" : item.name,
             "link_url" : item.link,
             "link_text" : module.card_link_text
@@ -43,9 +52,10 @@
     {% for item in list %}
         {% set card = {
             "content_type" : item.content_type,
-            "thumbnail" : resize_image_url(item.thumbnail.src, 400),
+            "thumbnail" : item.thumbnail.src,
             "title" : item.title,
             "description" : item.description,
+            "features_listing" : item.features_listing,
             "link_url" : item.link.url.href,
             "link_text" : item.card_link_text
         } %}
@@ -77,14 +87,25 @@
                 <h3>{{ card.title }}</h3>
 
                 {% if card.description %}
-                    <p>{{ card.description }}</p>
+                    <p class="card__description">{{ card.description }}</p>
                 {% endif %}
 
-                {{ snippets.text_cta_right_arrow(
-                    url=card.link_url,
-                    target="_blank",
-                    text="{{ card.link_text }}"
-                ) }}
+                {% if card.features_listing %}
+                    {% for feature in card.features_listing %}
+                        <div class="card__feature">
+                            <i class="card__feature-icon las {{ feature.icon_class }}"></i>
+                            <p class="card__feature-text">{{ feature.text }}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                {% if card.link_text %}
+                    {{ snippets.text_cta_right_arrow(
+                        url=card.link_url,
+                        target="_blank",
+                        text="{{ card.link_text }}"
+                    ) }}
+                {% endif %}
             </div>
         </article>
     {% endfor %}

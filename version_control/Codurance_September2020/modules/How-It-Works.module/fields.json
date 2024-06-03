@@ -2,7 +2,7 @@
   "id" : "fb1dab42-60e2-52a6-e9a3-569873af3959",
   "name" : "interview_process_items",
   "display_width" : null,
-  "label" : "Interview Process Items",
+  "label" : "Process items",
   "required" : false,
   "locked" : false,
   "occurrence" : {
@@ -46,7 +46,37 @@
     "required" : false,
     "locked" : false,
     "type" : "richtext"
-  } ],
+  },
+  {
+    "type": "group",
+    "id": "4f7c258c-1d02-93ce-8776-67a752d57ef3",
+    "label": "Features listing",
+    "children": [
+     {
+      "type": "text",
+      "id": "58449969-fbb4-00a5-11a9-948d232351d9",
+      "validation_regex": "",
+      "label": "Text",
+      "name": "text"
+     },
+     {
+      "type": "text",
+      "id": "4becc67a-bdc9-c04d-4a5a-32b6a6c6eb65",
+      "validation_regex": "",
+      "label": "Icon class",
+      "name": "icon_class",
+      "placeholder": "la-*",
+      "inline_help_text": "",
+      "help_text": "Input the class for the corresponding icon of <a href=\"https://icons8.com/line-awesome\">Line Awesome</a>"
+     }
+    ],
+    "name": "features_listing",
+    "default": [],
+    "occurrence": {
+     "sorting_label_field": "58449969-fbb4-00a5-11a9-948d232351d9"
+    }
+  }
+],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",

@@ -1,0 +1,17 @@
+[ {
+  "id" : "244d132c-f6a5-88a8-1546-394e450da3df",
+  "name" : "features",
+  "display_width" : null,
+  "label" : "Features",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "type" : "richtext",
+  "default" : "",
+  "enabled_features" : ["bold"]
+} ]
