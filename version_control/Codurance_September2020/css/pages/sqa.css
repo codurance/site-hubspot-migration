@@ -6,8 +6,7 @@
 }
 
 /* General styles */
-.section-header h2,
-.section-header p {
+.section-header h2 {
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
 }
@@ -27,6 +26,11 @@ section.responsive-page-width {
 .hero .text-and-image__container {
     max-width: var(--content-max-width);
     justify-content: flex-start;
+}
+
+.hero .text-and-image__copy p {
+    {{ utils.base() }}
+    font-weight: var(--light-font-weight);
 }
 
 {% call utils.large_and_extra_large() %}
@@ -60,7 +64,6 @@ section.responsive-page-width {
 
 .solution__text-and-image {
     display: flex;
-    gap: var(--space-4);
 }
 
 .solution .features-listing {
@@ -82,10 +85,6 @@ section.responsive-page-width {
 {% endcall %}
 
 {% call utils.medium_large_and_extra_large() %}
-    .solution__text-and-image {
-        gap: var(--space-1);
-    }
-
     .solution__image {
         display: flex;
         flex: 1 0 38%;
@@ -112,6 +111,10 @@ section.responsive-page-width {
 /* Modules section */
 .modules .page-header.section-header {
     max-width: var(--content-inner-max-width);
+}
+
+.modules .section-header p {
+    margin-top: var(--space-3);
 }
 
 .modules__cards-wrapper {
@@ -215,6 +218,15 @@ div.cta-block {
 .how-it-works-section__header {
     max-width: var(--content-inner-max-width);
     margin-inline: auto;
+}
+
+.how-it-works-section .section-header p {
+    {{ utils.freed() }}
+    font-weight: var(--heavy-font-weight);
+}
+
+.how-it-works-section .how-it-works {
+    padding-top: unset;
 }
 
 .how-it-works-section .text-and-image__container {
@@ -338,7 +350,18 @@ div.cta-block {
     {{ utils.base() }}
 }
 
+{% call utils.medium_large_and_extra_large() %}
+    .assessments .how-it-works__item {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+{% endcall %}
+
 {% call utils.small() %}
+    .assessments .how-it-works__item-list {
+        gap: var(--space-0);
+    }
+    
     .assessments .how-it-works__title {
         max-width: 17ch;
     }
