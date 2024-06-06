@@ -44,7 +44,6 @@ styleshets into just this one in each of themed templates.
 
 {% set blog_default_featured_image = './images/grayscale-mountain.png' %}
 
-{% include './_reset.css' %}
 {% include './_normalize.css' %}
 {% include './_dnd_areas.css' %}
 {% include './_typography.css' %}
@@ -68,7 +67,7 @@ html, body {
 }
 
 h3 {
-    font-family: proxima-nova;
-    font-size: 1.75rem;
-    font-weight: 400;
+  font-family: proxima-nova;
+  font-size: 1.75rem;
+  font-weight: 400;
 }
