@@ -5,31 +5,11 @@ fonts apppear throughout your site.
 *********************************************************************************
 ****************************************************************************** */
 
-@font-face{
-  font-family:"FontAwesome";
-  font-style:normal;
-  font-weight:normal;
-  src:url(//f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/fonts/fontawesome-webfont.eot);
-  src:url(//f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/fonts/fontawesome-webfont.eot?#iefix) format("embedded-opentype"),
-    url("{{ get_asset_url('../fonts/fontawesome-webfont.woff2' ) }}") format("woff2"),
-      url("{{ get_asset_url('../fonts/fontawesome-webfont.woff' ) }}") format("woff"),
-        url("{{ get_asset_url('../fonts/fontawesome-webfont.ttf' ) }}") format("ttf");
-          }
-
 @font-face {
   font-family: "education-48";
   src: url("//f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/fonts/education-48.eot") format("embedded-opentype"),
     url({{ get_asset_url('../fonts/education-48.woff' ) }}) format("woff"),
     url({{ get_asset_url('../fonts/education-48.ttf' ) }}) format("ttf");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "flexslider-icon";
-  src: url("//f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/fonts/flexslider-icon.eot") format("embedded-opentype"),
-    url({{ get_asset_url('../fonts/flexslider-icon.woff' ) }}) format("woff"),
-    url({{ get_asset_url('../fonts/flexslider-icon.ttf' ) }}) format("ttf");
   font-style: normal;
   font-weight: normal;
 }

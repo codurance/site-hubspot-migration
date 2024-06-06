@@ -136,8 +136,9 @@ footer looks when it comes to spacing and other general styles.
 .cm-footer-contact-us li a:after {
   right: 5px;
   content: "\f105";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
+  font-family:"Line Awesome Free";
+  font-weight: 900;
+  font-size: 14px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
