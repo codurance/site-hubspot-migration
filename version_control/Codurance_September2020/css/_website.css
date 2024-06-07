@@ -930,11 +930,6 @@ small {
   padding-right:0px;
 }
 
-.custom-body-container .dnd-section[class*="full-width"]{
-  padding-bottom: 0;
-  padding-top: 0;
-}
-.custom-body-container .responsive-page-width,
 .custom-banner-section .responsive-page-width{
   width: 100%;
   padding-right: 15px;
@@ -945,11 +940,6 @@ small {
 .body-container-two-col .dnd-section{
   padding-bottom: 0;
   padding-top: 0;
-}
-.custom-body-container .dnd-section[class*="full-width"]>.row-fluid {
-  max-width: 100%;
-  padding-left: 0px;
-  padding-right:0px;
 }
 
 .body-container-two-col .dnd-section>.row-fluid {
@@ -970,14 +960,6 @@ small {
   margin-bottom: .5rem;
 }
 
-.custom-body-container .custom-two-col-main-content h6 {
-  margin-bottom: 3rem;
-  font-weight: 600;
-  line-height: 1.8;
-  color: #fb7268;
-  font-family: proxima-nova, sans-serif;
-  font-size: 15px;
-}
 img {
   vertical-align: middle;
   border-style: none;
@@ -998,25 +980,6 @@ img {
   font-size: 1.3em;
   max-width: 750px;
   margin: auto;
-}
-.custom-body-container .right-sidebar ul {
-  padding-left: 0;
-  list-style: none;
-  margin: 0 0 3px;
-}
-.custom-body-container dl, .custom-body-container ol, .custom-body-container ul {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-.custom-body-container .right-sidebar ul li:last-child {
-  margin-bottom: 0;
-}
-.custom-body-container .right-sidebar ul li {
-  margin-bottom: 20px;
-  vertical-align: middle;
-  display: flex;
-  align-items: center;
-  color: #777
 }
 
 .custom-events-main-row .dnd-section {
@@ -1058,23 +1021,6 @@ img {
 
 .container-fluid.custom-events-row2 {
   padding-bottom: 66px;
-}
-.custom-body-container .right-sidebar ul li:before {
-  vertical-align: middle;
-  font-size: 1.07143rem;
-  margin-right: 12px;
-  stroke: white;
-  color: #fb7268;
-  font-family: "education-48" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "y";
 }
 .right-sidebar img.hs-image-widget {
   width: 100%;
@@ -1132,9 +1078,6 @@ img {
   position: absolute;
   background: #72c02c;
 }
-.custom-body-container strong {
-  font-weight: bolder;
-}
 .title-v1 p {
   font-size: 17px;
   font-weight: 200;
@@ -1172,9 +1115,6 @@ img {
   margin-left: -35px;
   position: absolute;
   background: #72c02c;
-}
-.custom-body-container strong {
-  font-weight: bolder;
 }
 .custom-title-v1 .hs_cos_wrapper_type_rich_text p {
   font-size: 17px;
