@@ -74,17 +74,6 @@ fonts apppear throughout your site.
 }
 
 @font-face {
-  font-family: 'simple-line-icons';
-  src: url('//f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/fonts/Simple-Line-Icons.eot');
-  src: url('//f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/fonts/Simple-Line-Icons.eot#iefix') format('embedded-opentype'),
-    url({{ get_asset_url('../fonts/Simple-Line-Icons.woff2' ) }}) format("woff2"),
-    url({{ get_asset_url('../fonts/Simple-Line-Icons.ttf' ) }}) format("ttf"),
-    url({{ get_asset_url('../fonts/Simple-Line-Icons.woff' ) }}) format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "cristmas";
   src: url("//f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/fonts/cristmas.eot");
   src: url("//f.hubspotusercontent10.net/hubfs/3042464/Codurance_September2020/fonts/cristmas.eot?#iefix") format("embedded-opentype"),
