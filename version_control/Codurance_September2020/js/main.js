@@ -1,57 +1,6 @@
 "use strict";
 
 (function() {
-  const HIDE_FOCUS_STYLES_CLASS = "disable-focus-styles";
-  const SHOW_FOCUS_STYLES_CLASS = "enable-focus-styles";
-
-  function domReady(callback) {
-    if (["interactive", "complete"].indexOf(document.readyState) >= 0) {
-      callback();
-    } else {
-      document.addEventListener("DOMContentLoaded", callback);
-    }
-  }
-
-  function showFocusOutline() {
-    document.body.classList.add(SHOW_FOCUS_STYLES_CLASS);
-    document.body.classList.remove(HIDE_FOCUS_STYLES_CLASS);
-  }
-
-  function hideFocusOutline() {
-    document.body.classList.add(HIDE_FOCUS_STYLES_CLASS);
-    document.body.classList.remove(SHOW_FOCUS_STYLES_CLASS);
-  }
-
-  domReady(function() {
-    if (!document.body) return;
-
-    // Show the focus outline when keyboard activity occurs
-    document.body.addEventListener("keydown", showFocusOutline);
-
-    // Hide the focus outline when mouse activity occurs
-    document.body.addEventListener("mousemove", hideFocusOutline);
-    document.body.addEventListener("mousedown", hideFocusOutline);
-    document.body.addEventListener("mouseup", hideFocusOutline);
-
-    let scrollTop = 0;
-    const header = document.querySelector("header.header");
-
-    window.addEventListener("scroll", () => {
-      const currentScrollTop = window.scrollY;
-      const heightThreshold = 200;
-
-      if (currentScrollTop > heightThreshold && currentScrollTop > scrollTop) {
-        header.classList.add("fixed");
-        header.classList.remove("default");
-      } else {
-        header.classList.add("default");
-        header.classList.remove("fixed");
-      }
-
-      scrollTop = currentScrollTop;
-    });
-  });
-
   const announcementOnDevConsole = (_) => {
     try {
       const main = `
