@@ -1,24 +1,16 @@
+{% import '../utils/utils.css' as utils %}
+
 .blog-social-icons__list {
   list-style: none;
-  margin-bottom: 0;
-  margin-top: 0;
+  display: flex;
+  gap: var(--space-0);
 }
-
-{% call utils.medium_large_and_extra_large() %}
-  .blog-social-icons__list {
-    margin-top: 0;
-  }
-{% endcall %}
 
 {% call utils.small() %}
   .blog-social-icons__list {
-    margin-top: 1rem;
+    margin-bottom: unset;
   }
 {% endcall %}
-
-.blog-social-icons__item {
-  display: inline-block;
-}
 
 .blog-social-icons__icon {
   align-items: center;

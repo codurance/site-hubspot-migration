@@ -20,26 +20,14 @@ label: Blog Post
 {% block body %}
 
   <section
-    class="custom-bg-cover custom-bg-size-cover custom-bg-cover--text-overlay custom-pb-30"
+    class="blog-header"
     {% if content.featured_image %}
       style="background-image: url('{{ content.featured_image }}');"
     {% endif %}
   >
-    <div
-      class="container responsive-page-width text-center custom-pos-rel custom-z-index-1 custom-pt-100 custom-pb-100"
-    >
-      <div class="row d-flex justify-content-center align-content-end flex-wrap">
-        <div class="custom-col-lg-7 mt-auto">
-          <div class="mb-5 mt-5">
-            <h1 class="blog-post__title">
-              {{ content.name }}
-            </h1>
-            <p class="lead text-white custom-font-weight-600"></p>
-          </div>
-        </div>
-      </div>
-      <span class="custom-text-800 custom-font-size-10 text-white"></span>
-    </div>
+    <h1 class="blog-header__title blog-max-width lateral-spacing">
+      {{ content.name }}
+    </h1>
   </section>
   <section class="blog-meta blog-max-width">
     <div class="blog-meta__inner">
@@ -126,9 +114,9 @@ label: Blog Post
       {% endif %}
     </div>
     <ul class="blog-social-icons__list">
-      <li class="blog-social-icons__item">
+      <li>
         <a
-          class="blog-social-icons__icon custom-mx-2"
+          class="blog-social-icons__icon"
           href="http://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url }}&amp;title={{ page_meta.name }}"
           target="_blank"
           rel="noopener noreferrer"
@@ -136,7 +124,7 @@ label: Blog Post
           <i class="lab la-facebook-f"></i>
         </a>
       </li>
-      <li class="list-inline-item custom-mx-2">
+      <li>
         <a
           class="blog-social-icons__icon"
           href="https://twitter.com/intent/tweet?text={{ page_meta.name }}&amp;url={{ content.absolute_url }}&amp;hashtags=specialist expertise,metrics,automation,Technical Debt,silos"
@@ -151,7 +139,7 @@ label: Blog Post
         />
         </a>
       </li>
-      <li class="list-inline-item custom-mx-2">
+      <li>
         <a
           class="blog-social-icons__icon"
           href="http://www.linkedin.com/shareArticle?mini=true&amp;title={{ page_meta.name }}&amp;summary=&amp;url={{ content.absolute_url }}"
@@ -161,7 +149,7 @@ label: Blog Post
           <i class="lab la-linkedin-in"></i>
         </a>
       </li>
-      <li class="list-inline-item custom-mx-2">
+      <li>
         <a
           class="blog-social-icons__icon"
           href="http://www.reddit.com/submit?url={{ content.absolute_url }}&amp;title={{ page_meta.name }}"

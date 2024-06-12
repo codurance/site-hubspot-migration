@@ -6,15 +6,45 @@
   font-size:  var(--base-font-size);
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--base-max-width) !important;
+  max-width: 800px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.blog-post__title {
+.blog-header {
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+  padding-bottom: var(--space-5);
+}
+
+.blog-header::after {
+  background-color: rgba(0, 0, 0, .5);
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.blog-header__title {
   {{ utils.eames() }}
   color: white;
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
+{% call utils.medium_large_and_extra_large() %}
+  .blog-header__title {
+    padding-top: var(--space-9);
+    padding-bottom: var(--space-9);
+  }
+{% endcall %}
 
 .blog-meta__inner {
   {{ utils.card_shadow() }}
@@ -255,7 +285,8 @@
 }
 
 .related-blog-section__inner {
-  padding: 2rem 1rem;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
 }
 
 .related-blog-section__title {
@@ -268,9 +299,71 @@
   margin-bottom: 3rem;
 }
 
-.blog-listing__post img {
+.related-blog-section__tags {
+  text-align: center;
+}
+
+.related-blog-section__tag {
+  margin-bottom: var(--space-2);
+  display: inline-block;
+}
+
+.related-blog-section__tag:not(:last-of-type) {
+  margin-right: var(--space--1);
+}
+
+.related-blog-section__posts {
+  --cards-gap: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cards-gap);
+}
+
+.related-blog-section__post {
+  background: white;
+}
+
+{% call utils.large_and_extra_large() %}
+  .related-blog-section__post {
+    flex: 1 1 calc(33% - var(--cards-gap) * 2 / 3);
+  }
+{% endcall %}
+
+{% call utils.medium() %}
+  .related-blog-section__post {
+    flex: 0 1 calc(50% - var(--cards-gap) / 2);
+  }
+{% endcall %}
+
+.related-blog-section__post img {
   aspect-ratio: 16/9;
   object-fit: cover;
+}
+
+.related-blog-section__post-text {
+  padding: var(--space-4);
+}
+
+.related-blog-section__post-meta-info {
+  color: var(--mid-gray);
+  {{ utils.natus() }}
+  font-weight: var(--middle-font-weight);
+  margin-top: unset;
+}
+
+.related-blog-section__post-meta-info li {
+  display: inline-block;
+  margin-right: var(--space--1);
+}
+
+.blog-listing__post-tags {
+  margin-bottom: unset;
+}
+
+.blog-listing__post-tag {
+  margin-right: var(--space--1);
+  margin-bottom: var(--space-1);
+  display: inline-block;
 }
 
 .blog-subscribe-banner {

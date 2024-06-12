@@ -12,7 +12,7 @@
 {% endmacro %}
 
 <section class="related-blog-section hs-search-hidden">
-  <div class="related-blog-section__inner responsive-page-width">
+  <div class="related-blog-section__inner lateral-spacing responsive-page-width">
     <h2 class="related-blog-section__title">
       {% if locale == 'es' %}
         Publicaciones relacionadas
@@ -26,21 +26,19 @@
       {% if content.tag_list %}
         {% do remove_redundant_tags() %}
 
-        <div class="custom-col text-center">
-          <ul class="list-inline custom-font-size-12 mb-0">
-            {% for tag in content.tag_list %}
-              <li class="list-inline-item custom-mb-10">
-                <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}"
-                  >{{ tag.name }}</a
-                >
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
+        <ul class="related-blog-section__tags">
+          {% for tag in content.tag_list %}
+            <li class="related-blog-section__tag">
+              <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}"
+                >{{ tag.name }}</a
+              >
+            </li>
+          {% endfor %}
+        </ul>
       {% endif %}
     </div>
 
-    <div class="row">
+    <div class="related-blog-section__posts">
       {% if content.tag_list %} 
         {# We retrieve 4 posts in case the current post is among the most recent ones #}
         {% set max_posts = 4 %} 
@@ -51,74 +49,71 @@
           {% if content.absolute_url == post.absolute_url %}
             {% do same_post_found.update({value: true}) %}
           {% elif !loop.last || (same_post_found.value && loop.last) %}
-            <div
-              class="masonry-grid-item custom-col-sm-6 custom-col-lg-4 custom-mb-30"
-            >
-              <article class="blog-listing__post">
-                {% if post.featured_image %}
-                  <a href="{{ post.absolute_url }}">
-                    <img
-                      class="custom-bg-white"
-                      src="{{ resize_image_url( post.featured_image, 528 ) }}"
-                      alt="{{ post.name }}"
-                      loading="lazy"
-                      width="528"
-                      height="528"
-                    />
-                  </a>
-                {% endif %}
-                <div class="custom-bg-white custom-pa-30 custom-rounded-bottom-5">
-                  <ul
-                    class="list-inline custom-color-gray-dark-v4 custom-font-weight-600 custom-font-size-12"
+            <article class="related-blog-section__post blog-listing__post">
+              {% if post.featured_image %}
+                <a href="{{ post.absolute_url }}">
+                  <img
+                    class="custom-bg-white"
+                    src="{{ resize_image_url( post.featured_image, 528 ) }}"
+                    alt="{{ post.name }}"
+                    loading="lazy"
+                    width="528"
+                    height="528"
+                  />
+                </a>
+              {% endif %}
+              <div class="related-blog-section__post-text">
+                <ul
+                  class="related-blog-section__post-meta-info"
+                >
+                  <li>
+                    {% if locale == 'es' %}
+                      Por
+                    {% elif locale == 'pt' %}
+                      Por
+                    {% else %}
+                      By
+                    {% endif %} 
+                    {{ post.blog_post_author.display_name }}
+                  </li>
+                  <li>·</li>
+                  <li>
+                    {% if locale == 'es' %}
+                      Publicado
+                    {% elif locale == 'pt' %}
+                      Publicado
+                    {% else %}
+                      Posted
+                    {% endif %} 
+                    {{ post.publish_date_localized }}
+                  </li>
+                </ul>
+                <h5 class="post__title">
+                  <a
+                    class="blog-listing__title-link"
+                    href="{{ post.absolute_url }}"
                   >
-                    <li class="list-inline-item mr-0">
-                      {% if locale == 'es' %}
-                        Por
-                      {% elif locale == 'pt' %}
-                        Por
-                      {% else %}
-                        By
-                      {% endif %} 
-                      {{ post.blog_post_author.display_name }}
-                    </li>
-                    <li class="list-inline-item mx-2">·</li>
-                    <li class="list-inline-item">
-                      {% if locale == 'es' %}
-                        Publicado
-                      {% elif locale == 'pt' %}
-                        Publicado
-                      {% else %}
-                        Posted
-                      {% endif %} 
-                      {{ post.publish_date_localized }}
-                    </li>
-                  </ul>
-                  <h5 class="post__title">
-                    <a
-                      class="blog-listing__title-link"
-                      href="{{ post.absolute_url }}"
-                    >
-                      {{ post.name }}</a
-                    >
-                  </h5>
-                  <p class="blog-listing__post-description">
-                    {{ post.post_list_content|safe|truncatehtml(150, '..' ,
-                    false)|striptags }}
-                  </p>
-                  {% if post.tag_list %}
-                  <ul class="list-inline custom-font-size-12 mb-0">
+                    {{ post.name }}</a
+                  >
+                </h5>
+                <p class="blog-listing__post-description">
+                  {{ post.post_list_content|safe|truncatehtml(150, '..' ,
+                  false)|striptags }}
+                </p>
+
+                {% if post.tag_list %}
+                  <ul class="blog-listing__post-tags">
                     {% for tag in post.tag_list %}
-                    <li class="list-inline-item custom-mb-10">
-                      <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}"
-                        >{{ tag.name }}</a
-                      >
-                    </li>
+                      <li class="blog-listing__post-tag">
+                        <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}"
+                          >{{ tag.name }}</a
+                        >
+                      </li>
                     {% endfor %}
                   </ul>
-                  {% endif %}
-                </div>
-              </article>
-            </div>
+                {% endif %}
+              </div>
+            </article>
           {% endif %}
         {% endfor %}
       {% endif %}
