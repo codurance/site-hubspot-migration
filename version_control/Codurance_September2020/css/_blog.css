@@ -155,10 +155,6 @@ a.tags:hover {
   display: flex!important;
 }
 
-.custom-color-reddit {
-  color: #ff4301;
-}
-
 figure {
   margin: 0;
 }
@@ -319,20 +315,12 @@ section.container.blog blockquote {
   margin: 0 0 1rem;
 }
 
-section.container.blog  .custom-col-lg-9.custom-overflow-y-hidden .row {
-  margin: 0;
-}
 .u-icon__elem-regular, .u-icon__elem-hover {
   position: relative;
   top: 0;
   left: 0;
   display: block;
   transition: all .3s ease-in-out;
-}
-@media (min-width: 768px) {
-  section.container.blog .custom-col-lg-9.custom-overflow-y-hidden {
-    padding:0;
-  }
 }
 
 .text-right {
