@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+.blog-listing {
+  background: var(--athens-gray);
+}
+
 .blog-listing__intro {
   margin-bottom: 2em;
   max-width: 800px;

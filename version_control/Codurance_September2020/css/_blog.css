@@ -7,59 +7,6 @@ Also for the post meta infromation like tags, author and published date
 ****************************************************************************** */
 {% import './utils/utils.css' as utils %}
 
-.custom-transition-0_3 {
-  transition-duration: .3s;
-}
-[class*="custom-transition"] {
-  transition-property: all;
-  transition-timing-function: ease;
-  transition-delay: 0s;
-}
-.u-shadow-v21 {
-  box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.09);
-  transition-property: all;
-  transition-timing-function: ease;
-  transition-delay: 0s;
-  transition-duration: .3s;
-}
-
-.blog-comments {
-  max-width: 680px;
-  margin: 0 auto;
-}
-.blog-comments form {
-  max-width: 100%;
-}
-.blog-comments .hs-submit {
-  text-align: center;
-}
-.blog-comments .hs-button {
-  background-color: transparent;
-  border: 2px solid {{ form_button_color }};
-  color: {{ form_button_color }};
-}
-.blog-comments .hs-button:hover {
-  background-color: {{ form_button_color }};
-  color: {{ form_button_text_color }};
-}
-.blog-comments .comment-reply-to {
-  border: 0 none;
-}
-.blog-comments .comment-reply-to:hover {
-  background-color: transparent;
-  text-decoration: underline;
-  color: {{ form_button_color }};
-}
-
-/*             Blog Listing with Sidebar            */
-.u-link-v5 {
-  text-decoration: none;
-  transition: all .2s;
-}
-
-.u-link-v5:hover, .u-link-v5:focus {
-  text-decoration: none;
-}
 
 .u-pagination-v1__item {
   display: inline-block;
@@ -67,34 +14,6 @@ Also for the post meta infromation like tags, author and published date
   text-decoration: none;
   border: solid 1px transparent;
   transition: all .3s ease;
-}
-.float-left{
-  float:left;
-}
-
-.float-right{
-  float:right;
-}
-
-.no-gutters>[class*=col-] {
-  padding-right: 0;
-  padding-left: 0;
-}
-.list-inline {
-  padding-left: 0;
-  list-style: none;
-}
-
-.list-inline-item {
-  display: inline-block;
-}
-.list-inline-item:not(:last-child) {
-  margin-right: 5px;
-}
-
-.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
 }
 
 a.tags {
@@ -111,33 +30,13 @@ a.tags {
   text-align: center;
   transition: all .3s ease;
 }
+
 a.tags:hover {
   background-color: var(--mid-gray);
   color: white;
   text-decoration: underline;
 }
-.custom-bg-cover--text-overlay {
-  position: relative;
-  background-position: center;
-}
 
-.custom-bg-cover--text-overlay::after {
-  content: "";
-  background-color: rgba(0,0,0,0.5);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.mt-auto {
-  margin-top: auto!important;
-}
-.mb-5 {
-  margin-bottom: 3rem!important;
-}
-.mt-5 {
-  margin-top: 3rem!important;
-}
 .align-content-end {
   -ms-flex-line-pack: end!important;
   align-content: flex-end!important;
@@ -193,10 +92,6 @@ figure {
   border-radius: 50%!important;
 }
 
-.list-inline {
-  padding-left: 0;
-  list-style: none;
-}
 .u-icon-slide-up--hover {
   overflow: hidden;
 }
@@ -237,20 +132,6 @@ figure {
 }
 .overflow-h {
   overflow: hidden;
-}
-.blog-comments .section.post-footer {
-  padding: 0;
-}
-.blog-comments .section.post-footer form {
-  padding-top: 60px;
-}
-.row.container.responsive-page-width--blog-meta {
-  background-color: #ffffff;
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.09);
-  border-radius: 3px;
-  margin-bottom: 20px;
-  margin-top: -45px;
-
 }
 
 .hs-blog-post {
@@ -373,9 +254,6 @@ a.u-icon-v2 {
 @media (max-width: 767px) {
   .blog-author .blog-author-desc {
     margin: 10px 0 10px;
-  }
-  .row.container.responsive-page-width--blog-meta {
-    min-height: 62px;
   }
 }
 

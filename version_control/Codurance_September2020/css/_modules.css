@@ -6860,35 +6860,6 @@ Images Grid
 }
 
 /*------------------------------------
-Covers
-------------------------------------*/
-.custom-bg-cover {
-  position: relative;
-}
-
-.custom-bg-cover::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.custom-bg-cover-v1::after {
-  position: absolute;
-  top: 0.35714rem;
-  right: 0.35714rem;
-  bottom: 0.35714rem;
-  left: 0.35714rem;
-}
-
-.custom-bg-cover__inner {
-  z-index: 1;
-  position: relative;
-}
-
-/*------------------------------------
 Background Image Style
 ------------------------------------*/
 .custom-bg-img-hero {
@@ -11083,167 +11054,6 @@ Overflows
 }
 
 /*------------------------------------
-Transitions
-------------------------------------*/
-/*.custom-transition {
-&-0_2 {
-transition: .2s ease-out;
-}
-&-0_3 {
-transition: .3s ease-out;
-}
-&-0_6 {
-transition: .6s ease-out;
-&-ease {
-transition: .6s ease;
-}
-}
-}
-
-[class*="g-color-"][class*="--hover"] {
-transition: color .2s ease-out;
-}
-[class*="g-bg-"][class*="--hover"] {
-transition: background-color .3s ease-out;
-}
-[class*="g-color-"][class*="--hover"][class*="g-bg-"][class*="--hover"] {
-transition: .3s ease-out;
-}*/
-[class*="g-transition"] {
-  transition-property: all;
-  transition-timing-function: ease;
-  transition-delay: 0s;
-}
-
-[class*="g-transition"]::before, [class*="g-transition"]::after,
-[class*="g-transition"] path,
-[class*="g-transition"] polygon {
-  transition-property: all;
-  transition-timing-function: ease;
-  transition-delay: 0s;
-}
-
-.custom-transition-0 {
-  transition-duration: 0s;
-}
-
-.custom-transition-0::before, .custom-transition-0::after,
-.custom-transition-0 path,
-.custom-transition-0 polygon {
-  transition-duration: 0s;
-}
-
-.custom-transition-0_2 {
-  transition-duration: .2s;
-}
-
-.custom-transition-0_2::before, .custom-transition-0_2::after,
-.custom-transition-0_2 path,
-.custom-transition-0_2 polygon {
-  transition-duration: .2s;
-}
-
-.custom-transition-0_3 {
-  transition-duration: .3s;
-}
-
-.custom-transition-0_3::before, .custom-transition-0_3::after,
-.custom-transition-0_3 path,
-.custom-transition-0_3 polygon {
-  transition-duration: .3s;
-}
-
-.custom-transition-0_5 {
-  transition-duration: .5s;
-}
-
-.custom-transition-0_5::before, .custom-transition-0_5::after,
-.custom-transition-0_5 path,
-.custom-transition-0_5 polygon {
-  transition-duration: .5s;
-}
-
-.custom-transition-0_6 {
-  transition-duration: .6s;
-}
-
-.custom-transition-0_6::before, .custom-transition-0_6::after,
-.custom-transition-0_6 path,
-.custom-transition-0_6 polygon {
-  transition-duration: .6s;
-}
-
-.custom-transition-delay-0_11 {
-  transition-delay: .11s;
-}
-
-.custom-transition-delay-0_11::before, .custom-transition-delay-0_11::after,
-.custom-transition-delay-0_11 path,
-.custom-transition-delay-0_11 polygon {
-  transition-delay: .11s;
-}
-
-.custom-transition-delay-0_2 {
-  transition-delay: .2s;
-}
-
-.custom-transition-delay-0_2::before, .custom-transition-delay-0_2::after,
-.custom-transition-delay-0_2 path,
-.custom-transition-delay-0_2 polygon {
-  transition-delay: .2s;
-}
-
-.custom-transition-delay-0_45 {
-  transition-delay: .45s;
-}
-
-.custom-transition-delay-0_45::before, .custom-transition-delay-0_45::after,
-.custom-transition-delay-0_45 path,
-.custom-transition-delay-0_45 polygon {
-  transition-delay: .45s;
-}
-
-.custom-transition--ease-out {
-  transition-timing-function: ease-out;
-}
-
-.custom-transition--ease-out::before, .custom-transition--ease-out::after,
-.custom-transition--ease-out path,
-.custom-transition--ease-out polygon {
-  transition-timing-function: ease-out;
-}
-
-.custom-transition--ease-in {
-  transition-timing-function: ease-in;
-}
-
-.custom-transition--ease-in::before, .custom-transition--ease-in::after,
-.custom-transition--ease-in path,
-.custom-transition--ease-in polygon {
-  transition-timing-function: ease-in;
-}
-
-.custom-transition--ease-in-out {
-  transition-timing-function: ease-in-out;
-}
-
-.custom-transition--ease-in-out::before, .custom-transition--ease-in-out::after,
-.custom-transition--ease-in-out path,
-.custom-transition--ease-in-out polygon {
-  transition-timing-function: ease-in-out;
-}
-
-.custom-transition--linear {
-  transition-timing-function: linear;
-}
-
-.custom-transition--linear::before, .custom-transition--linear::after,
-.custom-transition--linear path,
-.custom-transition--linear polygon {
-  transition-timing-function: linear;
-}
-
-/*------------------------------------
 Transforms
 ------------------------------------*/
 .custom-transform-scale-0_5 {
@@ -13546,9 +13356,6 @@ Margin Spaces
   .custom-mt-minus-4 {
     margin-top: -0.28571rem !important;
   }
-  .custom-mt-5 {
-    margin-top: 0.35714rem !important;
-  }
   .custom-mt-minus-5 {
     margin-top: -0.35714rem !important;
   }
@@ -13690,14 +13497,8 @@ Margin Spaces
   .custom-mt-minus-45 {
     margin-top: -3.21429rem !important;
   }
-  .custom-mt-50 {
-    margin-top: 3.57143rem !important;
-  }
   .custom-mt-minus-50 {
     margin-top: -3.57143rem !important;
-  }
-  .custom-mt-55 {
-    margin-top: 3.92857rem !important;
   }
   .custom-mt-minus-55 {
     margin-top: -3.92857rem !important;
@@ -13864,9 +13665,6 @@ Margin Spaces
   .custom-mb-minus-4 {
     margin-bottom: -0.28571rem !important;
   }
-  .custom-mb-5 {
-    margin-bottom: 0.35714rem !important;
-  }
   .custom-mb-minus-5 {
     margin-bottom: -0.35714rem !important;
   }
@@ -13983,9 +13781,6 @@ Margin Spaces
   }
   .custom-mb-45 {
     margin-bottom: 3.21429rem !important;
-  }
-  .custom-mb-55 {
-    margin-bottom: 3.92857rem !important;
   }
   .custom-mb-60 {
     margin-bottom: 4.28571rem !important;
@@ -14538,9 +14333,6 @@ Margin Spaces
   .custom-mt-minus-4--sm {
     margin-top: -0.28571rem !important;
   }
-  .custom-mt-5--sm {
-    margin-top: 0.35714rem !important;
-  }
   .custom-mt-minus-5--sm {
     margin-top: -0.35714rem !important;
   }
@@ -14682,14 +14474,8 @@ Margin Spaces
   .custom-mt-minus-45--sm {
     margin-top: -3.21429rem !important;
   }
-  .custom-mt-50--sm {
-    margin-top: 3.57143rem !important;
-  }
   .custom-mt-minus-50--sm {
     margin-top: -3.57143rem !important;
-  }
-  .custom-mt-55--sm {
-    margin-top: 3.92857rem !important;
   }
   .custom-mt-minus-55--sm {
     margin-top: -3.92857rem !important;
@@ -14856,9 +14642,6 @@ Margin Spaces
   .custom-mb-minus-4--sm {
     margin-bottom: -0.28571rem !important;
   }
-  .custom-mb-5--sm {
-    margin-bottom: 0.35714rem !important;
-  }
   .custom-mb-minus-5--sm {
     margin-bottom: -0.35714rem !important;
   }
@@ -14975,9 +14758,6 @@ Margin Spaces
   }
   .custom-mb-45--sm {
     margin-bottom: 3.21429rem !important;
-  }
-  .custom-mb-55--sm {
-    margin-bottom: 3.92857rem !important;
   }
   .custom-mb-60--sm {
     margin-bottom: 4.28571rem !important;
@@ -15542,9 +15322,6 @@ Margin Spaces
   .custom-mt-minus-4--md {
     margin-top: -0.28571rem !important;
   }
-  .custom-mt-5--md {
-    margin-top: 0.35714rem !important;
-  }
   .custom-mt-minus-5--md {
     margin-top: -0.35714rem !important;
   }
@@ -15686,14 +15463,8 @@ Margin Spaces
   .custom-mt-minus-45--md {
     margin-top: -3.21429rem !important;
   }
-  .custom-mt-50--md {
-    margin-top: 3.57143rem !important;
-  }
   .custom-mt-minus-50--md {
     margin-top: -3.57143rem !important;
-  }
-  .custom-mt-55--md {
-    margin-top: 3.92857rem !important;
   }
   .custom-mt-minus-55--md {
     margin-top: -3.92857rem !important;
@@ -15860,9 +15631,6 @@ Margin Spaces
   .custom-mb-minus-4--md {
     margin-bottom: -0.28571rem !important;
   }
-  .custom-mb-5--md {
-    margin-bottom: 0.35714rem !important;
-  }
   .custom-mb-minus-5--md {
     margin-bottom: -0.35714rem !important;
   }
@@ -15979,9 +15747,6 @@ Margin Spaces
   }
   .custom-mb-45--md {
     margin-bottom: 3.21429rem !important;
-  }
-  .custom-mb-55--md {
-    margin-bottom: 3.92857rem !important;
   }
   .custom-mb-60--md {
     margin-bottom: 4.28571rem !important;
@@ -16546,9 +16311,6 @@ Margin Spaces
   .custom-mt-minus-4--lg {
     margin-top: -0.28571rem !important;
   }
-  .custom-mt-5--lg {
-    margin-top: 0.35714rem !important;
-  }
   .custom-mt-minus-5--lg {
     margin-top: -0.35714rem !important;
   }
@@ -16690,14 +16452,8 @@ Margin Spaces
   .custom-mt-minus-45--lg {
     margin-top: -3.21429rem !important;
   }
-  .custom-mt-50--lg {
-    margin-top: 3.57143rem !important;
-  }
   .custom-mt-minus-50--lg {
     margin-top: -3.57143rem !important;
-  }
-  .custom-mt-55--lg {
-    margin-top: 3.92857rem !important;
   }
   .custom-mt-minus-55--lg {
     margin-top: -3.92857rem !important;
@@ -16864,9 +16620,6 @@ Margin Spaces
   .custom-mb-minus-4--lg {
     margin-bottom: -0.28571rem !important;
   }
-  .custom-mb-5--lg {
-    margin-bottom: 0.35714rem !important;
-  }
   .custom-mb-minus-5--lg {
     margin-bottom: -0.35714rem !important;
   }
@@ -16983,9 +16736,6 @@ Margin Spaces
   }
   .custom-mb-45--lg {
     margin-bottom: 3.21429rem !important;
-  }
-  .custom-mb-55--lg {
-    margin-bottom: 3.92857rem !important;
   }
   .custom-mb-60--lg {
     margin-bottom: 4.28571rem !important;
@@ -17551,9 +17301,6 @@ Margin Spaces
   .custom-mt-minus-4--xl {
     margin-top: -0.28571rem !important;
   }
-  .custom-mt-5--xl {
-    margin-top: 0.35714rem !important;
-  }
   .custom-mt-minus-5--xl {
     margin-top: -0.35714rem !important;
   }
@@ -17695,14 +17442,8 @@ Margin Spaces
   .custom-mt-minus-45--xl {
     margin-top: -3.21429rem !important;
   }
-  .custom-mt-50--xl {
-    margin-top: 3.57143rem !important;
-  }
   .custom-mt-minus-50--xl {
     margin-top: -3.57143rem !important;
-  }
-  .custom-mt-55--xl {
-    margin-top: 3.92857rem !important;
   }
   .custom-mt-minus-55--xl {
     margin-top: -3.92857rem !important;
@@ -17869,9 +17610,6 @@ Margin Spaces
   .custom-mb-minus-4--xl {
     margin-bottom: -0.28571rem !important;
   }
-  .custom-mb-5--xl {
-    margin-bottom: 0.35714rem !important;
-  }
   .custom-mb-minus-5--xl {
     margin-bottom: -0.35714rem !important;
   }
@@ -17988,9 +17726,6 @@ Margin Spaces
   }
   .custom-mb-45--xl {
     margin-bottom: 3.21429rem !important;
-  }
-  .custom-mb-55--xl {
-    margin-bottom: 3.92857rem !important;
   }
   .custom-mb-60--xl {
     margin-bottom: 4.28571rem !important;
@@ -18455,14 +18190,6 @@ Margin Spaces
 
 .custom-mt-32 {
   margin-top: 2.28571rem !important;
-}
-
-.custom-mt-57 {
-  margin-top: 4.07143rem !important;
-}
-
-.custom-mt-500 {
-  margin-top: 35.71429rem;
 }
 
 /* Margin Bottom */

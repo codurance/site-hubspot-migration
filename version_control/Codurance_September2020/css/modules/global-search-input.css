@@ -4,7 +4,7 @@
 .hs-search-field {
     position: relative;
     z-index: 1;
-    background: #f7f7f7;
+    background: var(--athens-gray);
 }
 
 .hs-search-field__inner-wrapper {

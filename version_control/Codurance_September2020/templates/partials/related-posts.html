@@ -53,7 +53,6 @@
               {% if post.featured_image %}
                 <a href="{{ post.absolute_url }}">
                   <img
-                    class="custom-bg-white"
                     src="{{ resize_image_url( post.featured_image, 528 ) }}"
                     alt="{{ post.name }}"
                     loading="lazy"
