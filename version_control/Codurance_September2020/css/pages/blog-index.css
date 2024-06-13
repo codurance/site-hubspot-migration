@@ -94,9 +94,9 @@
 
 .blog-pagination ul {
   display: flex;
-  justify-content: center;
   align-items: center;
   list-style-type: none;
+  justify-content: space-evenly;
 }
 
 .pagination-wrapper {
