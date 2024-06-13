@@ -322,12 +322,6 @@ img {
   height: 100% !important
 }
 
-.btn-codurance-color {
-  color: white;
-  background-color: #fb7268;
-  border-color: #fb7268
-}
-
 .codurance-green-background {
   background-color: #185466
 }
@@ -481,11 +475,6 @@ img {
 .introduction .service-header {
   color: #e67e22 !important;
   font-size: 40px !important
-}
-
-.training-link-btn {
-  width: 150px;
-  color: #e67e22 !important
 }
 
 .training-description {
@@ -1196,9 +1185,6 @@ i.icon-bg-u {
   float: left;
   position: relative;
 }
-.custom-max-width-600 {
-  max-width: 600px !important;
-}
 .content-boxes-v3 .content-boxes-in-v3 {
   padding: 0 20px;
   overflow: hidden;
@@ -1207,39 +1193,7 @@ i.icon-bg-u {
 .rounded-x {
   border-radius: 50% !important;
 }
-.btn-u {
-  border: 0;
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-  font-weight: 400;
-  padding: 6px 13px;
-  position: relative;
-  background: #72c02c;
-  white-space: nowrap;
-  display: inline-block;
-  text-decoration: none;
-}
 
-.btn-u {
-  background: #e67e22;
-}
-.btn-u-lg, a.btn-u-lg {
-  font-size: 18px;
-  padding: 10px 25px;
-}
-
-.btn-u:hover {
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-
-
-.btn-u:hover, .btn-u:focus, .btn-u:active, .btn-u.active, .open .dropdown-toggle.btn-u {
-  background: #d35400;
-  color: #fff;
-}
 .custom-container-row .dnd-section>.row-fluid {
   padding: 0;
 }
@@ -1311,9 +1265,6 @@ i.icon-bg-u {
   margin: 0 0 .5rem;
 }
 
-.custom-bg-black-opacity-0_1--after::after {
-  background-color: rgba(0, 0, 0, 0.1) !important;
-}
 .u-bg-overlay::before, .u-bg-overlay::after {
   content: "";
   position: absolute;
@@ -1356,27 +1307,11 @@ i.icon-bg-u {
   overflow: hidden;
   position: relative;
 }
-.custom-bcustom-orange {
-  background-color: #ef7726 !important;
-}
-.custom-height-1 {
-  height: 1px;
-}
-.custom-width-60 {
-  width: 60px !important;
-}
-.custom-bcustom-orange {
-  background-color: #e57d20 !important;
-}
 
 .mb-2, .my-2 {
   margin-bottom: .5rem!important;
 }
-.u-block-hover:hover .u-block-hover__main--zoom-v1 {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
+
 .d-inline-block {
   display: inline-block!important;
 }
@@ -1395,23 +1330,9 @@ i.icon-bg-u {
   margin: auto;
   font-weight: 300;
 }
-.custom-pos-rel {
-  position: relative !important;
-  height: auto !important;
-}
+
 .d-block {
   display: block!important;
-}
-
-.custom-flex-middle-item {
-  margin-top: auto;
-  margin-bottom: auto;
-  height: auto !important;
-}
-.custom-brd-gray-light-v4 {
-  border-top: 1px solid rgba(0,0,0,.1);
-  border-color: #eee !important;
-  background: transparent;
 }
 
 .custom-section {
@@ -1522,10 +1443,6 @@ i.icon-bg-u {
 
 .media p {
   margin: 0;
-}
-
-.u-shadow-v19.custom-bg-white.rounded.custom-pa-20.h-100 {
-  height: 100%;
 }
 
 .rounded {
@@ -1643,9 +1560,6 @@ i.icon-bg-u {
 }
 
 @media (max-width: 991px) {
-  .w-100 {
-    width: 100%!important;
-  }
   .md-margin-bottom-40 {
     margin-bottom: 40px;
   }

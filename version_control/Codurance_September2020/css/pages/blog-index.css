@@ -65,14 +65,6 @@
 }
 
 /* PAGINATION STYLES OVERRIDES */
-
-.custom-ml-5 {
-  margin-left: 0.35714rem !important;
-}
-.custom-mr-5 {
-  margin-right: 0.35714rem !important;
-}
-
 .u-pagination-v1-4 {
   color: var(--shark);
 }
