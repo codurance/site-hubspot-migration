@@ -29,23 +29,25 @@ img {
   background-color: white;
   padding-bottom: 100px;
 }
+
 .hs-get-in-touch-section h2 {
   {{ utils.dudler() }}
 }
+
 .hs-get-in-touch-section fieldset {
   max-width: none !important;
 }
+
 .hs-get-in-touch-section form {
   padding: 35px 35px 8px;
 }
+
 .hs-get-in-touch-section .actions {
   text-align: right;
   margin-top: 18px;
   padding: 7px 0px 0;
 }
-.cm-tabber-panel__main ul li:before{
-  background-image: url({{ get_asset_url('../images/icon-tick.svg' ) }});
-}
+
 .hs-get-in-touch-section .hs-richtext p {
   {{ utils.natus() }}
   margin: var(--base-margin) 0px;
@@ -107,16 +109,7 @@ img {
 .banner-section .row-fluid [class*="span"] {
   min-height: auto;
 }
-.cm-tabber__panel.active::before {
-  background-color: #0e4072;
-  background-image: url({{ get_asset_url('../images/icon-minus.svg' ) }});
-  color: #ffffff;
-}
-.cm-tabber__panel:not(.active)::before {
-  background-image: url({{ get_asset_url('../images/icon-plus.svg' ) }});
-  border-bottom: 1px solid #b7b7b7;
-  color: #555555;
-}
+
 
 .hs-get-in-touch-section form {
   -webkit-font-smoothing: subpixel-antialiased;
@@ -1519,13 +1512,7 @@ i.icon-bg-u {
   }
 }
 
-
 @media (min-width: 1024px){
-  .cm-tabber-section .section-intro{
-    max-width: 660px;
-    width: calc(100% - (50px * 2));
-  }
-
   .hs-get-in-touch-section .dnd-section > .row-fluid {
     max-width: 800px;
     width: calc(100% - (50px * 2));
