@@ -7420,14 +7420,6 @@ Border Radius (Rounded Styles)
   border-bottom-left-radius: 50px !important;
 }
 
-.custom-rounded-circle--before::before {
-  border-radius: 50% !important;
-}
-
-.custom-rounded-circle--after::after {
-  border-radius: 50% !important;
-}
-
 @media (min-width: 768px) {
   .custom-rounded-0--md {
     border-radius: 0 !important;
@@ -11013,10 +11005,6 @@ Cursors
 /*------------------------------------
 Overflows
 ------------------------------------*/
-.custom-overflow-hidden {
-  overflow: hidden;
-}
-
 .custom-overflow-visible {
   overflow: visible;
 }

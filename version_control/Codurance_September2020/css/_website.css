@@ -226,10 +226,6 @@ img {
   margin-left: 15px
 }
 
-.media .u-icon-v2 {
-  border: none
-}
-
 .img-hover-v1 span {
   min-height: 50px;
   text-align: center
@@ -1335,42 +1331,14 @@ i.icon-bg-u {
   padding-bottom: 40px;
 }
 
-.u-icon-v1, .u-icon-v2, .u-icon-v3, .u-icon-v4 {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  transition: all .2s ease-in-out;
-}
-
-.content-md {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-.rounded-circle {
-  border-radius: 50%!important;
-}
-
-.u-icon-v1 > i, .u-icon-v2 > i, .u-icon-v3 > i, .u-icon-v4 > span > i {
-  position: relative;
-  top: 50%;
-  display: block;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 2;
-}
-.u-icon-v2, .u-icon-v2 .u-icon__elem-regular, .u-icon-v2 .u-icon__elem-hover, .u-icon-v3, .u-icon-v3 .u-icon__elem-regular, .u-icon-v3 .u-icon__elem-hover, .u-icon-v4 .u-icon-v4-inner, .u-icon-v4 .u-icon__elem-regular, .u-icon-v4 .u-icon__elem-hover, .u-icon-v5 {
+.u-icon-v3, 
+.u-icon-v4 .u-icon-v4-inner, 
+.u-icon-v5 {
   width: 3.92857rem;
   height: 3.92857rem;
   font-size: 1.57143rem;
 }
-.u-icon-v1, .u-icon-v2, .u-icon-v3, .u-icon-v4 {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  transition: all .2s ease-in-out;
-}
+
 .u-shadow-v22 {
   box-shadow: 0 2px 5px #eee;
 }
@@ -1531,10 +1499,6 @@ i.icon-bg-u {
   -ms-flex-item-align: baseline!important;
   align-self: baseline!important;
 }
-.d-flex {
-  display: -ms-flexbox!important;
-  display: flex!important;
-}
 .mr-3, .mx-3 {
   margin-right: 1rem!important;
 }
@@ -1609,19 +1573,12 @@ i.icon-bg-u {
   .casestudy-header-path {
     padding-right:20px
   }
-  .d-md-flex {
-    display: -ms-flexbox!important;
-    display: flex!important;
-  }
 
   .align-self-md-center {
     -ms-flex-item-align: center!important;
     align-self: center!important;
   }
-  .justify-content-md-center {
-    -ms-flex-pack: center!important;
-    justify-content: center!important;
-  }
+  
   .align-self-md-center {
     -ms-flex-item-align: center!important;
     align-self: center!important;
