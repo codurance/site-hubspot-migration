@@ -7,15 +7,6 @@ Also for the post meta infromation like tags, author and published date
 ****************************************************************************** */
 {% import './utils/utils.css' as utils %}
 
-
-.u-pagination-v1__item {
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  border: solid 1px transparent;
-  transition: all .3s ease;
-}
-
 a.tags {
   {{ utils.sejima() }}
   border-radius: 50px;
