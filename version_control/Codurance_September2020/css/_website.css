@@ -89,23 +89,7 @@ img {
 .dnd-section.has-author-section {
   margin-bottom: 150px;
 }
-.cta--primary-coral {
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 28px;
-  text-align: center;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-  background-color: #fb7268;
-  color: #ffffff;
-  text-decoration: none;
-}
-.cta--primary-coral:hover,
-.cta--primary-coral:focus {
-  background-color: #fb8e86;
-  color: #ffffff;
-  text-decoration:none;
-}
+
 .banner-section .row-fluid [class*="span"] {
   min-height: auto;
 }
@@ -1462,10 +1446,7 @@ i.icon-bg-u {
     display: inline-block;
     padding: 10px 25px;
   }
-  .cta--primary-coral{
-    display: inline-block;
-    padding: 10px 25px;
-  }
+  
   .hs-get-in-touch-section .dnd-section > .row-fluid {
     box-shadow: rgba(0,0,0,0.16) 0 0 8px;
     margin-top: -140px;
@@ -1613,7 +1594,7 @@ i.icon-bg-u {
     padding: var(--space-3);
   }
   .hs-get-in-touch-section form .hs-input {
-    width:100% !important;
+    width: 100% !important;
   }
   .hs-get-in-touch-section .form-columns-3 .hs-form-field,
   .hs-get-in-touch-section .form-columns-2 .hs-form-field {
@@ -1621,20 +1602,18 @@ i.icon-bg-u {
     float: none !important;
   }
   .hs-get-in-touch-section form .inputs-list .hs-input {
-    width:auto !important;
+    width: auto !important;
   }
 
-  .custom-button,
-  .cta--primary-coral{
-    padding:10px;
-    display:block;
+  .custom-button {
+    padding: 10px;
+    display: block;
   }
 
   .custom-section {
     padding-top: 50px;
     padding-bottom: 50px;
   }
-
 }
 
 @media (max-width: 575px) {

@@ -18,7 +18,7 @@
     {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
       {% set href = "mailto:" + href %}
     {% endif %}
-      <a href="{{ href }}" class="cta--primary-coral" {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if module.link_field.no_follow %}rel="nofollow"{% endif %} {% if !module.description%}style="margin-top: 50px;"{% endif %}>
+      <a href="{{ href }}" class="embed-video__cta" {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %} {% if module.link_field.no_follow %}rel="nofollow"{% endif %} {% if !module.description%}style="margin-top: 50px;"{% endif %}>
         {{ module.button_text }}
       </a>
   {% else %}

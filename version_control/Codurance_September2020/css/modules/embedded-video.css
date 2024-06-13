@@ -6,7 +6,6 @@
   max-width: var(--content-inner-max-width);
 }
 
-
 .embed-video__heading {
   {{utils.dudler()}}
   font-weight: var(--heavy-font-weight);
@@ -52,7 +51,32 @@
   max-width: 800px;
 }
 
+.embed-video__cta {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  background-color: #fb7268;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
 
-/* from temp-softmod-page-overrides */
+.embed-video__cta:hover,
+.embed-video__cta:focus {
+  background-color: #fb8e86;
+  color: #ffffff;
+  text-decoration:none;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+  .embed-video__cta {
+    display: inline-block;
+    padding: 10px 25px;
+  }
+{% endcall %}
 
 
