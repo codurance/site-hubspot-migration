@@ -187,8 +187,12 @@
   text-decoration: none;
 }
 
-
 {% set modal_padding = '1rem' %}
+
+.custombox-content, 
+.custombox-overlay {
+  left: 0;
+}
 
 .custom-our-people__modal {
   background-color: white;
@@ -339,10 +343,12 @@
   padding: {{ social_link_padding }};
 }
 
-
 hr.custom-our-people-modal__rule {
   margin-top: calc(var(--base-margin) / 2);
   margin-bottom: var(--base-margin);
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,.1);
+  background:transparent
 }
 
 .custom-our-people-modal__body-copy p {
@@ -351,10 +357,4 @@ hr.custom-our-people-modal__rule {
   font-size: var(--natus-font-size) !important;
   font-weight: var(--light-font-weight) !important;
   line-height: var(--natus-line-height) !important;
-}
-
-
-.custombox-content, 
-.custombox-overlay{
-  left: 0;
 }
