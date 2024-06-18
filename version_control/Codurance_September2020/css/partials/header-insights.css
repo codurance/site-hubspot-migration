@@ -34,6 +34,10 @@
     transition: var(--cta-transition);
 }
 
+.header-insights__image {
+    flex-grow: 1;
+}
+
 {% call utils.medium_large_and_extra_large() %}
     .header-insights__container {
         flex-direction: row;
@@ -94,7 +98,7 @@
         margin-top: -2.4em;
         margin-bottom: 1em;
     }
-    
+
     .header-insights__image {
       transform: translate(20%, 0%);   
     }
