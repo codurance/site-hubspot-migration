@@ -1,0 +1,17 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Insights Podcasts
+-->
+
+{% extends "./layouts/base.html" %}
+{{ require_css(get_asset_url("../css/pages/insights-podcasts.css")) }}
+
+{% block body %}
+<main>
+  <section class="hero">
+    {% include "./partials/header-insights.html" %}
+  </section>
+  {% module "codurance_talks_listing" path="../modules/PodBean-Episodes-Listing" label="Codurance Talks Listing" %}
+</main>
+{% endblock body %}

@@ -1,4 +1,3 @@
-
 {% import '../utils/utils.css' as utils %}
 
 .header-insights {
@@ -9,13 +8,13 @@
 
 .header-insights__container {
     display: flex;
+    justify-content: center;
     flex-direction: column-reverse;
     margin-inline: auto;
     max-width: var(--content-max-width);
 }
 
 .header-insights__text {
-    padding-left: 1em;
     margin-top: 2em;
     margin-bottom: 2em;
     max-width: 40ch;
@@ -86,6 +85,7 @@
 {% call utils.large() %}
     .header-insights__text {
         padding-left: 2.5em;
+        padding-right: unset;
     }
 {% endcall %}
 
@@ -94,11 +94,7 @@
         margin-top: -2.4em;
         margin-bottom: 1em;
     }
-
-    .header-insights__text p { 
-        font-weight: var(--middle-font-weight);
-    }
-
+    
     .header-insights__image {
       transform: translate(20%, 0%);   
     }
