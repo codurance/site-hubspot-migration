@@ -1,5 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
+/* Hero section */
 .hero .header-insights__text h1 {
   font-weight: bold;
 }
@@ -22,3 +23,22 @@
     max-height: 17rem;
   }
 {% endcall %}
+
+/* Latest episode section */
+.latest-episode {
+  {{ utils.white_to_tango() }}
+}
+
+.latest-episode__wrapper {
+  max-width: var(--content-inner-max-width);
+  margin-inline: auto;
+}
+
+.latest-episode__header {
+  {{ utils.dudler() }}
+  font-weight: bold;
+}
+
+.latest-podbean-episode {
+  margin-top: var(--space-3);
+}

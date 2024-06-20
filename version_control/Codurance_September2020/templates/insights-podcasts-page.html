@@ -12,6 +12,20 @@
   <section class="hero">
     {% include "./partials/header-insights.html" %}
   </section>
+
+  <section class="latest-episode region">
+    <div class="latest-episode__wrapper lateral-spacing">
+      {% module "latest_episode_header" 
+        path="@hubspot/header" 
+        label="Latest Episode Header" 
+        extra_classes="latest-episode__header" 
+      %}
+      {% module "latest_episode" 
+        path="../modules/Latest-PodBean-Episode" 
+        label="Latest Podcast Episode" 
+      %}
+    </div>
+  </section>
   {% module "codurance_talks_listing" path="../modules/PodBean-Episodes-Listing" label="Codurance Talks Listing" %}
 </main>
 {% endblock body %}
