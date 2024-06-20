@@ -4,6 +4,11 @@
   {{ utils.card_shadow() }}
   {{ utils.card_border_radius() }}
   background: white;
+  transition: 0.3s opacity;
+}
+
+.latest-podbean-episode--hidden {
+  opacity: 0;
 }
 
 .latest-podbean-episode__image {

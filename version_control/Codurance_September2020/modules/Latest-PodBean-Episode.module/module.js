@@ -4,6 +4,7 @@
   const podcastEpisodes = await fetchPodcastEpisodes();
   const latestEpisode = getLatestEpisode(podcastEpisodes);
   setLatestEpisodeOnModule(latestEpisode);
+  displayModule();
 
   async function fetchPodcastEpisodes() {
     const urlEndpoint = "/_hcms/api/fetch_podcast_episodes";
@@ -39,11 +40,15 @@
       ""
     );
     moduleSubtitle.textContent = latestEpisodeContentSanitized;
-    setTimeout(() => console.log(latestEpisodeContentSanitized), 5000);
 
     const moduleLink = document.querySelector(
       ".latest-podbean-episode .text-cta-primary"
     );
     moduleLink.href = latestEpisode.permalink_url;
+  }
+
+  function displayModule() {
+    const moduleWrapper = document.querySelector(".latest-podbean-episode");
+    moduleWrapper.classList.remove("latest-podbean-episode--hidden");
   }
 })();
