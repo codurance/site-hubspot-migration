@@ -26,6 +26,25 @@
       %}
     </div>
   </section>
+
+  <section class="podcasts-listing region">
+    <div class="podcasts-listing__wrapper lateral-spacing">
+      {% module 'codurance_talks_header'
+        path='../modules/Text-and-image.module'
+        label="Codurance Talks Header"
+      %}
+    </div>
+  </section>
+
+  <section class="fireside-chats podcasts-listing region">
+  <div class="podcasts-listing__wrapper lateral-spacing">
+    {% module 'fireside_chats_header'
+      path='../modules/Text-and-image.module'
+      label="Fireside Chats Header"
+    %}
+  </div>
+</section>
+
   {% module "codurance_talks_listing" path="../modules/PodBean-Episodes-Listing" label="Codurance Talks Listing" %}
 </main>
 {% endblock body %}

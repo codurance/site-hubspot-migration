@@ -42,3 +42,38 @@
 .latest-podbean-episode {
   margin-top: var(--space-3);
 }
+
+/* Podcast listing sections */
+.podcasts-listing__wrapper {
+  max-width: var(--content-inner-max-width);
+  margin-inline: auto;
+}
+
+.podcasts-listing .text-and-image__container {
+  gap: var(--space-3);
+}
+
+.podcasts-listing .text-and-image__copy p {
+  {{ utils.base() }}
+}
+
+{% call utils.medium_large_and_extra_large() %}
+  .podcasts-listing .text-and-image__copy {
+    max-width: 32ch;
+    align-self: flex-start;
+    margin-top: var(--space-3);
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .podcasts-listing .text-and-image__image {
+    height: 156px;
+    width: 156px;
+  }
+{% endcall %}
+
+/* Fireside Chats section */
+.fireside-chats {
+  background: url("https://www.codurance.com/hubfs/Insights%20Pages/Podcasts/Podcast%20page_fireside%20chats_bg.png") center;
+  color: white;
+}
