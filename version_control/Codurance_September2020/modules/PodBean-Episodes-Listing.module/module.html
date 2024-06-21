@@ -12,7 +12,7 @@
   <hr>
 {% endmacro %}
 
-<ul class="podbean-episodes-listing">
+<ul class="podbean-episodes-listing podbean-episodes-listing--{{ module.podcast}}">
   {% for i in range(0,5) %}
     {{ podbean_listing_item() }}
   {% endfor %}

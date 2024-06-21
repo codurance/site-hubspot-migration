@@ -1,13 +1,35 @@
-[ {
-  "id" : "ebd43659-0206-0e4a-8f55-e40e8c349087",
-  "name" : "button_text",
-  "display_width" : null,
-  "label" : "Button Text",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Listen now"
-} ]
+[
+  {
+   "type": "choice",
+   "id": "ad874f34-3c06-122f-74c2-d82b9926c153",
+   "display": "select",
+   "choices": [
+    [
+     "codurance-talks",
+     "Codurance Talks"
+    ],
+    [
+     "fireside-chats",
+     "Fireside Chats"
+    ]
+   ],
+   "label": "Podcast",
+   "name": "podcast",
+   "inline_help_text": "Please select the podcast to retrieve episodes from",
+   "default": "codurance-talks",
+   "required": true
+  },
+  {
+   "allow_new_line": false,
+   "default": "Listen now",
+   "display_width": null,
+   "id": "ebd43659-0206-0e4a-8f55-e40e8c349087",
+   "label": "Button Text",
+   "locked": false,
+   "name": "button_text",
+   "required": false,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
+  }
+ ]
