@@ -41,11 +41,7 @@
         const moduleDate = moduleItem.querySelector(
           ".podbean-episodes-listing__date"
         );
-        const date = new Date(episode.publish_time * 1000);
-        const formattedMonth = date.toLocaleString("default", {
-          month: "short"
-        });
-        const formattedDate = `${date.getDate()} ${formattedMonth} ${date.getFullYear()}`;
+        const formattedDate = formatDate(episode);
         moduleDate.textContent = formattedDate;
 
         const moduleLink = moduleItem.querySelector(".text-cta-primary");
@@ -64,5 +60,14 @@
       (podcastId === firesideChatsPodcastId && podcast === "fireside-chats") ||
       (podcastId === coduranceTalksPodcastId && podcast === "codurance-talks")
     );
+  }
+
+  function formatDate(episode) {
+    const date = new Date(episode.publish_time * 1000);
+    const formattedMonth = date.toLocaleString("default", {
+      month: "short"
+    });
+    const formattedDate = `${date.getDate()} ${formattedMonth} ${date.getFullYear()}`;
+    return formattedDate;
   }
 })();
