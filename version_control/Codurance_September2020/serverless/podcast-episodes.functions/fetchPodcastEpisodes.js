@@ -4,13 +4,12 @@ exports.main = async (context, sendResponse) => {
   sendResponse({ body: podcastEpisodes, statusCode: 200 });
 
   async function requestPodcastTokens() {
-    const headers = new Headers();
-    const clientID = "ca0274ec38b8f9fa95ea1";
-    const clientSecret = "af4c0704b41e5953ce1ef";
+    const { clientID, clientSecret } = context.params;
     const authorizationString = Buffer.from(
       `${clientID}:${clientSecret}`
     ).toString("base64");
 
+    const headers = new Headers();
     headers.append("Authorization", `Basic ${authorizationString}`);
     headers.append("Content-Type", "application/x-www-form-urlencoded");
 
