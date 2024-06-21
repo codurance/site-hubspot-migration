@@ -61,6 +61,10 @@
   margin-top: var(--space-6);
 }
 
+.hs-site-page .podcasts-listing .custom-btn {
+  margin-top: var(--space-5);
+}
+
 {% call utils.medium_large_and_extra_large() %}
   .podcasts-listing .text-and-image__copy {
     max-width: 32ch;
@@ -79,5 +83,7 @@
 /* Fireside Chats section */
 .fireside-chats {
   background: url("https://www.codurance.com/hubfs/Insights%20Pages/Podcasts/Podcast%20page_fireside%20chats_bg.png") center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
 }
