@@ -57,6 +57,10 @@
   {{ utils.base() }}
 }
 
+.podcasts-listing .podbean-episodes-listing {
+  margin-top: var(--space-6);
+}
+
 {% call utils.medium_large_and_extra_large() %}
   .podcasts-listing .text-and-image__copy {
     max-width: 32ch;

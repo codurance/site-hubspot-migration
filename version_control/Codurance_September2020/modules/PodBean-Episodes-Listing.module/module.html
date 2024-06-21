@@ -1,0 +1,19 @@
+{{ require_css(get_asset_url("../../css/modules/podbean-episodes-listing.css")) }}
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{% macro podbean_listing_item() %}
+  <li class="podbean-episodes-listing__item">
+    <p class="podbean-episodes-listing__title">Codurance Talks: Agile Rituals</p>
+    <div class="podbean-episodes-listing__date-and-link">
+      <p class="podbean-episodes-listing__date">20 OCT 2021</p>
+      {{ snippets.text_cta_right_arrow(text=module.button_text) }}
+    </div>
+  </li>
+  <hr>
+{% endmacro %}
+
+<ul class="podbean-episodes-listing">
+  {% for i in range(0,5) %}
+    {{ podbean_listing_item() }}
+  {% endfor %}
+</ul>
