@@ -23,6 +23,7 @@
 .podbean-episodes-listing__date {
   {{ utils.natus() }}
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .podbean-episodes-listing hr {

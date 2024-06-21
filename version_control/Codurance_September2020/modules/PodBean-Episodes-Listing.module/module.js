@@ -41,7 +41,12 @@
         const moduleDate = moduleItem.querySelector(
           ".podbean-episodes-listing__date"
         );
-        moduleDate.textContent = episode.publish_time;
+        const date = new Date(episode.publish_time * 1000);
+        const formattedMonth = date.toLocaleString("default", {
+          month: "short"
+        });
+        const formattedDate = `${date.getDate()} ${formattedMonth} ${date.getFullYear()}`;
+        moduleDate.textContent = formattedDate;
 
         const moduleLink = moduleItem.querySelector(".text-cta-primary");
         moduleLink.href = episode.permalink_url;
