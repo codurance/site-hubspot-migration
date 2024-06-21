@@ -24,7 +24,10 @@
 		{% for item in module.logos_group %}
 			{% if item.logo.src %}
 				{% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}"' %}
+
+				{% if item.link %}<a href="{{ item.link.url.href }}">{% endif %}
 				<img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" loading="lazy" {{ sizeAttrs }} />
+				{% if item.link %}</a>{% endif %}
 			{% endif %}
 		{% endfor %}
 	</div>
