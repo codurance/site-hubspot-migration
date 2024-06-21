@@ -87,3 +87,8 @@
   background-size: cover;
   color: white;
 }
+
+/* Podcasts platforms section */
+.podcasts-platforms .client-logos__logos-group {
+  justify-items: left;
+}
