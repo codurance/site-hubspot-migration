@@ -42,13 +42,20 @@
     moduleSubtitle.textContent = latestEpisodeContentSanitized;
 
     const moduleLink = document.querySelector(
-      ".latest-podbean-episode .text-cta-primary"
+      ".latest-podbean-episode__wrapper .text-cta-primary"
     );
     moduleLink.href = latestEpisode.permalink_url;
   }
 
   function displayModule() {
-    const moduleWrapper = document.querySelector(".latest-podbean-episode");
-    moduleWrapper.classList.remove("latest-podbean-episode--hidden");
+    const loadingSpinner = document.querySelector(
+      ".latest-podbean-episode__loading"
+    );
+    loadingSpinner.classList.add("latest-podbean-episode__loading--hidden");
+
+    const moduleWrapper = document.querySelector(
+      ".latest-podbean-episode__wrapper"
+    );
+    moduleWrapper.classList.remove("latest-podbean-episode__wrapper--hidden");
   }
 })();

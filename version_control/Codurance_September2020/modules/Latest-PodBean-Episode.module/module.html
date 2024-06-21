@@ -1,14 +1,17 @@
 {{ require_css(get_asset_url("../../css/modules/latest-podbean-episode.css")) }}
 {% import '../../snippets/button-snippets.html' as snippets %}
 
-<div class="latest-podbean-episode latest-podbean-episode--hidden">
-  <img src="" alt="" class="latest-podbean-episode__image" height="314" width="314">
-  <div class="latest-podbean-episode__text">
-    <h3 class="latest-podbean-episode__title">Title Episode</h3>
-    <div class="latest-podbean-episode__subtitle">
-      <p>Let yourself be inspired by our versatile video content. Explore how Codurance can help you modernise your business. Explore how Codurance can help you modernise your business.</p>
+<div class="latest-podbean-episode">
+  <div class="latest-podbean-episode__loading"><div></div><div></div><div></div><div></div></div>
+  <div class="latest-podbean-episode__wrapper latest-podbean-episode__wrapper--hidden">
+    <img src="" alt="" class="latest-podbean-episode__image" height="314" width="314">
+    <div class="latest-podbean-episode__text">
+      <h3 class="latest-podbean-episode__title">Title Episode</h3>
+      <div class="latest-podbean-episode__subtitle">
+        <p>Let yourself be inspired by our versatile video content. Explore how Codurance can help you modernise your business. Explore how Codurance can help you modernise your business.</p>
+      </div>
+      {{ snippets.text_cta_right_arrow(text=module.button_text) }}
     </div>
-    {{ snippets.text_cta_right_arrow(text=module.button_text) }}
   </div>
 </div>
 
