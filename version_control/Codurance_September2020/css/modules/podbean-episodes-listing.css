@@ -11,6 +11,7 @@
 .podbean-episodes-listing__title {
   {{ utils.freed() }}
   font-weight: bold;
+  max-width: 30ch;
 }
 
 .podbean-episodes-listing__date-and-link {
@@ -36,9 +37,13 @@
     justify-content: space-between;
   }
 
+  .podbean-episodes-listing__title {
+    flex: 1 1;
+  }
+
   .podbean-episodes-listing__date-and-link {
     flex: 1 1;
     justify-content: flex-end;
-    gap: 30%;
+    gap: 35%;
   }
 {% endcall %}
