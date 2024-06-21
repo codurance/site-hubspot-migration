@@ -1,0 +1,14 @@
+{
+  "runtime": "nodejs20.x",
+  "version": "1.0",
+  "secrets": [
+    "clientID",
+    "clientSecret"
+  ],
+  "endpoints": {
+    "fetch_podcast_episodes": {
+     "method": "GET",
+     "file": "fetchPodcastEpisodes.js"
+   }
+  }
+}

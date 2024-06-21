@@ -1,0 +1,50 @@
+{% import '../utils/utils.css' as utils %}
+
+.podbean-episodes-listing {
+  list-style-type: none;
+}
+
+.podbean-episodes-listing__item {
+  margin-top: var(--space-3);
+}
+
+.podbean-episodes-listing__title {
+  {{ utils.freed() }}
+  font-weight: bold;
+  max-width: 30ch;
+}
+
+.podbean-episodes-listing__date-and-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.podbean-episodes-listing__date {
+  {{ utils.natus() }}
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.podbean-episodes-listing hr {
+  height: 0;
+  margin-top: var(--space-2);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+  .podbean-episodes-listing__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .podbean-episodes-listing__title {
+    flex: 1 1;
+  }
+
+  .podbean-episodes-listing__date-and-link {
+    flex: 1 1;
+    justify-content: flex-end;
+    gap: 35%;
+  }
+{% endcall %}

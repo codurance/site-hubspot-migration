@@ -1,0 +1,94 @@
+{% import '../utils/utils.css' as utils %}
+
+/* Hero section */
+.hero .header-insights__text h1 {
+  font-weight: bold;
+}
+
+{% call utils.large_and_extra_large() %}
+  .hero .header-insights__text {
+    max-width: 52.5ch;
+    text-wrap: pretty;
+  }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+  .header-insights__container {
+    gap: var(--space-5);
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .hero .hs-image-widget {
+    max-height: 17rem;
+  }
+{% endcall %}
+
+/* Latest episode section */
+.latest-episode {
+  {{ utils.white_to_tango() }}
+}
+
+.latest-episode__wrapper {
+  max-width: var(--content-inner-max-width);
+  margin-inline: auto;
+}
+
+.latest-episode__header {
+  {{ utils.dudler() }}
+  font-weight: bold;
+}
+
+.latest-podbean-episode {
+  margin-top: var(--space-3);
+}
+
+/* Podcast listing sections */
+.podcasts-listing__wrapper {
+  max-width: var(--content-inner-max-width);
+  margin-inline: auto;
+}
+
+.podcasts-listing .text-and-image__container {
+  gap: var(--space-3);
+}
+
+.podcasts-listing .text-and-image__copy p {
+  {{ utils.base() }}
+}
+
+.podcasts-listing .podbean-episodes-listing {
+  margin-top: var(--space-6);
+}
+
+.hs-site-page .podcasts-listing .custom-btn {
+  margin-top: var(--space-5);
+}
+
+{% call utils.medium_large_and_extra_large() %}
+  .podcasts-listing .text-and-image__copy {
+    max-width: 32ch;
+    align-self: flex-start;
+    margin-top: var(--space-3);
+  }
+{% endcall %}
+
+{% call utils.small() %}
+  .podcasts-listing .text-and-image__image {
+    height: 156px;
+    width: 156px;
+  }
+{% endcall %}
+
+/* Fireside Chats section */
+.fireside-chats {
+  background: url("https://www.codurance.com/hubfs/Insights%20Pages/Podcasts/Podcast%20page_fireside%20chats_bg.png") center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+/* Podcasts platforms section */
+.podcasts-platforms .client-logos__logos-group {
+  justify-items: left;
+}

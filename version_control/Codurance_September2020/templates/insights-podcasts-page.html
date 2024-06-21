@@ -1,0 +1,82 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Insights Podcasts
+-->
+
+{% extends "./layouts/base.html" %}
+{{ require_css(get_asset_url("../css/pages/insights-podcasts.css")) }}
+
+{% block body %}
+<main>
+  <section class="hero">
+    {% include "./partials/header-insights.html" %}
+  </section>
+
+  <section class="latest-episode region">
+    <div class="latest-episode__wrapper lateral-spacing">
+      {% module "latest_episode_header" 
+        path="@hubspot/header" 
+        label="Latest Episode Header" 
+        extra_classes="latest-episode__header" 
+      %}
+      {% module "latest_episode" 
+        path="../modules/Latest-PodBean-Episode" 
+        label="Latest Podcast Episode" 
+      %}
+    </div>
+  </section>
+
+  <section class="podcasts-listing region">
+    <div class="podcasts-listing__wrapper">
+      {% module 'codurance_talks_header'
+        path='../modules/Text-and-image.module'
+        label="Codurance Talks Header"
+      %}
+      {% module "codurance_talks_listing" 
+        path="../modules/PodBean-Episodes-Listing" 
+        label="Codurance Talks Listing" 
+        extra_classes="lateral-spacing" 
+      %}
+      {% module "codurance_talks_button" 
+        path="../modules/Button" 
+        label="Codurance Talks button" 
+        extra_classes="lateral-spacing" 
+      %}
+    </div>
+  </section>
+
+  <section class="fireside-chats podcasts-listing region">
+    <div class="podcasts-listing__wrapper">
+      {% module 'fireside_chats_header'
+        path='../modules/Text-and-image.module'
+        label="Fireside Chats Header"
+      %}
+      {% module "fireside_chats_listing" 
+        path="../modules/PodBean-Episodes-Listing" 
+        label="Fireside Chats Listing" 
+        extra_classes="lateral-spacing" 
+      %}
+      {% module "fireside_chats_button" 
+        path="../modules/Button" 
+        label="Fireside Chats button" 
+        extra_classes="lateral-spacing" 
+      %}
+    </div>
+  </section>
+
+  <section class="podcasts-platforms region lateral-spacing">
+    {% module "podcast_platforms" 
+      path="../modules/Clients-Logos" 
+      label="Podcast platforms" 
+    %}
+  </section>
+
+  <section id="contact-form">
+    {% module "contact_form"
+      label="Contact form"
+      path="../modules/Service-Line-Form.module"
+    %}
+  </section>
+</main>
+{% endblock body %}
