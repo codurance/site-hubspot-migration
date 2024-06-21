@@ -2,7 +2,7 @@
   "runtime": "nodejs20.x",
   "version": "1.0",
   "secrets": [
-    "clientId",
+    "clientID",
     "clientSecret"
   ],
   "endpoints": {

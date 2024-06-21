@@ -1,10 +1,13 @@
 exports.main = async (context, sendResponse) => {
   const podcastTokens = await requestPodcastTokens();
   const podcastEpisodes = await fetchPodcastsEpisodesByTokens(podcastTokens);
-  sendResponse({ body: podcastEpisodes, statusCode: 200 });
+  sendResponse({
+    body: podcastEpisodes,
+    statusCode: 200
+  });
 
   async function requestPodcastTokens() {
-    const { clientID, clientSecret } = context.params;
+    const { clientID, clientSecret } = context.secrets;
     const authorizationString = Buffer.from(
       `${clientID}:${clientSecret}`
     ).toString("base64");
