@@ -164,10 +164,16 @@ label: Blog Post
 
   <section class="blog-content blog-max-width">
     {% if content.text_to_audio_file_id != null %}
+      {% if locale == "es" %}
+        {% set default_intro = "<p>Si en vez de leer prefieres escuchar, dale al play.</p>" %}
+      {% else %}
+        {% set default_intro = "<p>Prefer listening over reading? Press play and enjoy</p>" %}
+      {% endif %}
+
       {% module "blog_post_intro" 
         path="@hubspot/rich_text" 
         label="Blog post intro" 
-        html="<p>Si en vez de leer prefieres escuchar, dale al play.</p>" 
+        html={{default_intro}} 
         extra_classes="blog-content__post-intro" 
       %}
     {% endif %}
