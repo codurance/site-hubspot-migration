@@ -79,7 +79,7 @@
 
 .latest-podbean-episode__image {
   aspect-ratio: 1 / 1;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
 
@@ -96,7 +96,7 @@
   margin-top: var(--space--1);
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
