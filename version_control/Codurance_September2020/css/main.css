@@ -51,7 +51,6 @@ styleshets into just this one in each of themed templates.
 {% include './_menus.css' %}
 {% include './_tables.css' %}
 {% include './_website.css' %}
-{% include './animate.css' %}
 {% include './_header.css' %}
 {% include './_blog.css' %}
 {% include './_system_pages.css' %}
