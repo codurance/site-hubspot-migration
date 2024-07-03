@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+.dnd-section.has-author-section {
+    margin-bottom: 150px;
+}
+
 .cm-team-member-card-group {
     margin-top: -50px;
 }
@@ -172,6 +176,10 @@
 {% endcall %}
 
 {% call utils.small_and_medium() %}
+    .dnd-section.has-author-section {
+        margin-bottom: 0;
+    }
+
     .accordion .panel {
         margin-bottom:10px;
     }
@@ -186,6 +194,10 @@
 {% endcall %}
 
 {% call utils.small() %}
+    .dnd-section.has-author-section {
+        margin-bottom: 300px;
+    }
+    
     .cm-team-member-card-group.active .cm-team-member-inner {
         max-height: 1825px;
     }

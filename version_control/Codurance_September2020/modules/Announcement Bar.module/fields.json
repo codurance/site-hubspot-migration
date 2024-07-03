@@ -133,15 +133,11 @@
     },
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"
+    "type" : "text"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
-  "type" : "group",
-  "default" : {
-    "custom_class" : "btn  btn-md u-btn-primary text-uppercase w-100 g-width-auto--lg btn-codurance-color"
-  }
+  "type" : "group"
 }, {
   "id" : "309ecca5-6ddb-05cd-32b4-b504686180bf",
   "name" : "cta_field",
