@@ -9,18 +9,16 @@
     <title>{{ page_meta.html_title }}</title>
     {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
     <meta name="description" content="{{ page_meta.meta_description }}">
-    {{ require_css(get_asset_url("../../css/layout.css")) }}
+
+    <link rel="preload" href="{{ get_asset_url("../../css/main.css") }}" as="style" />
+    <link rel="preload" href="{{ get_asset_url("../../css/base/base-styles.css") }}" as="style" />
+
+    {{ standard_header_includes }}
     {{ require_css(get_asset_url("../../css/main.css")) }}
     {{ require_css(get_asset_url("../../css/base/base-styles.css")) }}
-
-    {# where possible, improve page performance and speed by combining external http requests to reduce your
-      overall number of calls -- here, you can use a single call to the gFonts api to get all the fonts you need
-      https://developers.google.com/fonts/docs/getting_started
-    #}
-    {# Include Theme Overrides #}
-    {{ standard_header_includes }}
+    {{ require_css(get_asset_url("../../css/layout.css")) }}
     {{ require_css(get_asset_url("../../css/theme-overrides.css")) }}
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    {{ require_css("https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css") }}
   </head>
   <body>
     <div class="body-wrapper {{ builtin_body_classes }}">
