@@ -25,11 +25,6 @@ stylesheets or you can add your own custom styles.
 {##############################   _dnd_areas   #############################}
 {###########################################################################}
 
-
-.body-container__homepage .dnd-section:nth-child(odd) {
-  background-color: {{ theme.global_colors.secondary_color.color }};
-}
-
 .region .dnd-section:first-of-type {
   padding-top: 0;
 }
@@ -127,10 +122,6 @@ form textarea:focus,
   border-color: rgba({{ theme.forms.field_focus_border_color.color|convert_rgb }}, {{ theme.forms.field_focus_border_color.opacity * 0.01 }});
 }
 
-.fn-date-picker .pika-table thead th {
-  color: rgba({{ theme.tables.header_text_color.color|convert_rgb }}, {{ theme.buttons.secondary.secondary.text_hover_color.opacity * 0.01 }});
-}
-
 .hs-input:-moz-placeholder,
 .hs-input::-webkit-input-placeholder,
 .hs-field-desc,
@@ -146,18 +137,6 @@ form textarea:focus,
 .hs-default-font-element,
 .hs-main-font-element {
   font-family: {{ body_font }};
-}
-
-.fn-date-picker td.is-today .pika-button {
-  color: {{ theme.global_colors.primary_color.color }};
-}
-
-.fn-date-picker td.is-selected .pika-button {
-  background: {{ theme.global_colors.primary_color.color }};
-}
-
-.fn-date-picker td .pika-button:hover {
-  background-color: {{ theme.global_colors.secondary_color.color }} !important;
 }
 
 {###########################################################################}
@@ -195,68 +174,6 @@ tbody + tbody {
   max-width: {{ theme.spacing.max_width }}px;
 }
 
-.blog-post__date {
-  border-color: var(--shark);
-}
-
-.blog-tag-filter__menu-link,
-.blog-card__tag-link,
-.blog-card__title a {
-  color: var(--shark);
-}
-
-.blog-card__tag-link:hover,
-.blog-card__title a:hover,
-.blog-tag-filter__menu-link:hover,
-.blog-card__tag-link:focus,
-.blog-card__title a:focus,
-.blog-tag-filter__menu-link:focus,
-.blog-post__tag-link:focus,
-.blog-post__author-name:focus {
-  color: var(--woodsmoke);
-}
-
-.blog-card__tag-link:active,
-.blog-card__title a:active,
-.blog-tag-filter__menu-link:active,
-.blog-post__tag-link:active,
-.blog-post__author-name:active {
-  color: var(--mid-gray);
-}
-
-.blog-tag-filter__menu-link--active-item:after {
-  background-color: {{ theme.global_colors.primary_color.color }};
-}
-
-.blog-pagination__link {
-  color: var(--shark);
-}
-
-.blog-pagination__link--active:after,
-.blog-pagination__prev-link:after,
-.blog-pagination__next-link:after {
-  background-color: {{ theme.global_colors.primary_color.color }};
-}
-
-
-#comments-listing .comment-reply-to {
-  color: rgba({{ theme.typography.color|convert_rgb }}, {{ theme.typography.opacity * 0.01 }});
-}
-
-#comments-listing .comment-reply-to:hover,
-#comments-listing .comment-reply-to:focus {
-  color: rgba({{ color_variant(theme.typography.color, -40)|convert_rgb }}, {{ theme.typography.opacity * 0.01 }});
-}
-
-#comments-listing .comment-reply-to:active {
-  color: rgba({{ color_variant(theme.typography.color, 40)|convert_rgb }}, {{ theme.typography.opacity * 0.01 }});
-}
-
-{###########################################################################}
-{###########################   _system_pages   #############################}
-{###########################################################################}
-
-
 {###########################################################################}
 {##############################   _modules   ###############################}
 {###########################################################################}
@@ -265,68 +182,7 @@ body .icon svg {
   fill: {{ theme.global_colors.primary_color.color }};
 }
 
-body .tns-nav button.tns-nav-active {
-  background-color: {{ theme.global_colors.primary_color.color }};
-}
-
-body .tns-nav button:hover,
-body .tns-nav button:focus {
-  background-color: {{ theme.global_colors.primary_color.color }};
-}
-
-body .social-links__icon {
-  background-color: {{ theme.global_colors.primary_color.color }};
-}
-
-body .social-links__icon:hover svg,
-body .social-links__icon:focus svg {
-  fill: rgba({{ color_variant(theme.typography.color, -40)|convert_rgb }}, {{ theme.typography.opacity * 0.01 }});
-}
-
-body .social-links__icon:active svg {
-  fill: rgba({{ color_variant(theme.typography.color, 40)|convert_rgb }}, {{ theme.typography.opacity * 0.01 }});
-}
-
-body .team-member__descripxion {
-  background-color: {{ theme.global_colors.secondary_color.color }};
-}
-
 .region .text-and-image__container {
   padding-top: 0;
   padding-bottom: 0;
-}
-
-{###########################################################################}
-{##############################   _overrides  ###############################}
-{###########################################################################}
-
-.hide {
-    display: none;
-}
-
-.cm-training-card__secondary-content {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
-    padding: 20px 25px 40px;
-    margin-bottom: 25px;
-}
-
-
-.cm-training-card:not(.cm-training-card--featured) .cm-training-card__primary-content {
-    padding-bottom: 16px;
-    padding-top: 25px;
-}
-
-@media (max-width: 767px) {
-  .cm-training-card-group.mobile-slider .cm-training-inner-card {
-      display: flex;
-      flex-direction: column;
-      box-shadow: rgba(0,0,0,0.16) 0 0 8px;
-      width: 100%;
-      margin-left: 0;
-      height: calc(75vh - 60px);
-  }
 }
