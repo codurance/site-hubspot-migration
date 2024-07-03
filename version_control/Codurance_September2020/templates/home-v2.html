@@ -8,6 +8,10 @@ label: Home Page version 2
 
 {{ require_css(get_asset_url("../css/pages/homepage-v2.css")) }}
 
+{% require_head %}
+  <link rel="preload" href="https://f.hubspotusercontent10.net/hubfs/3042464/Homepage/Header%20Section/header-x-large-homepage.png" as="image" />
+{% end_require_head %}
+
 {% block body %}
   <section class="homepage-hero">
   {% module "Announcement Bar" 
