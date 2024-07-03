@@ -198,10 +198,6 @@ select.hs-input.error:focus {
   vertical-align: middle;
 }
 
-ul.no-list {
-  list-style: none;
-}
-
 .hs-form-field,
 .field {
   margin-bottom: 18px;

@@ -41,9 +41,7 @@ password protected content and search listing results.
 .error-page_heading {
   margin-bottom: 1rem;
 }
-ul.no-list.hs-error-msgs {
-  padding: 0;
-}
+
 .systems-page {
   padding: 3rem 20px;
 }
@@ -59,18 +57,8 @@ ul.no-list.hs-error-msgs {
   padding: .1rem .75rem;
 }
 
-.email-prefs .item.disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-.email-prefs .item.disabled input:disabled {
-  cursor: not-allowed;
-}
 .hs-404-error-layout .responsive-page-width p {
   margin-bottom: 31px;
-}
-input.email-edit.hs-input {
-  width: 100% !important;
 }
 
 @media(min-width:768px){
