@@ -5,6 +5,21 @@
 
 {{ require_css(get_asset_url("../../css/partials/header-insights.css")) }}
 
+{# The linked_image module is repeated and exported to the template context in order to preload the image #}
+{% module 'linked_image',
+    path="@hubspot/linked_image",
+    img={
+        "src": "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Insights%20Pages/Articles/Blog-header-insights.svg",
+        "width": auto
+    },
+    label="Header Image", 
+    export_to_template_context=True  
+%}
+
+{% require_head %}
+    <link rel="preload" href="{{ widget_data.linked_image.img.src }}" as="image" />
+{% end_require_head %}
+
 <header class="header-insights" role="banner">
     <div class="header-insights__container">
         <div class="header-insights__text lateral-spacing">
@@ -16,9 +31,8 @@
                 path="@hubspot/linked_image",
                 img={
                     "src": "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Insights%20Pages/Articles/Blog-header-insights.svg",
-                    "width": auto,
+                    "width": auto
                 },
-                label="Header Image", 
                 no_wrapper=True        
             %}
         </div>
