@@ -13,6 +13,13 @@
 	</style>
 {% end_require_css %}
 
+{# Preload background images set on the stylesheet for the module #}
+{% require_head %}
+	<link rel="preload" href="https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Header/Line_test.svg" as="image" />
+	<link rel="preload" href="https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Header/Line_test%20%E2%80%93%202.svg" as="image" />
+{% end_require_head %}
+
+
 <nav role="navigation" aria-label="Secondary Menu">
 	<ul class="hub-menu">
 		{% for item in module.links_hub %}
@@ -31,6 +38,11 @@
 					{% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
 				>
 					{% if item.icon.src %}
+						{% require_head %}
+							<link rel="preload" href="{{ item.icon.src }}" as="image" />
+							<link rel="preload" href="{{ item.icon_background.src }}" as="image" />
+						{% end_require_head %}
+
 						<div class="hub-menu__link-wrapper">
 							{% set sizeAttrsIcon = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}"' %}
 							<img class="hub-menu__icon-img" src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ sizeAttrsIcon }} />
