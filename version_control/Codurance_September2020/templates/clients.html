@@ -11,11 +11,7 @@ label: Clients
     <section>
       {% module "page_hero_slice" path="../modules/Hero Slice.module" label="Hero Slice" no_wrapper=True %}
     </section>
-    {% if locale == 'en' %}
-      <section class="public-sector">
-        {% module "public_service_banner" path="../modules/Text-and-image.module" label="Public Services Banner" %}
-      </section>
-    {% endif %}
+    
     <section>
       {% module "filtered_clients" path="../modules/Filtered Clients.module"
         label="Filtered Clients" no_wrapper=True %}

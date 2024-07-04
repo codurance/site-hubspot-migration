@@ -1,5 +1,10 @@
 {{ require_css(get_asset_url("../../css/modules/hero-slice.css")) }}
 
+{% require_head %}
+  <link rel="preload" href="{{ module.large_background_image.src }}" as="image" />
+	<link rel="preload" href="{{ module.small_background_image.src }}" as="image" />
+{% end_require_head %}
+
 <style>
 	.hero-slice {
 		--large-bg-image: url("{{ module.large_background_image.src }}");
