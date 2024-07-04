@@ -35,6 +35,10 @@
 		</div>
 		<div class="lp-header-v1__image">
 			{% if module.header_image.src %}
+				{% require_head %}
+					<link rel="preload" href="{{ module.header_image.src }}" as="image" />
+				{% end_require_head %}
+
 				{% set sizeAttrs = 'width="{{ module.header_image.width }}" height="{{ module.header_image.height }}"' %}
 				<img src="{{ module.header_image.src }}" alt="{{ module.header_image.alt }}" {{ sizeAttrs }}>
 			{% endif %}
