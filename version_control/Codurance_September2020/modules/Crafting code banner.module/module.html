@@ -1,6 +1,11 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
-
 {{ require_css(get_asset_url("../../css/modules/crafting-code-banner.css")) }}
+
+{% require_head %}
+  <link rel="preload" href="{{ module.banner_image.src }}" as="image" />
+  <link rel="preload" href="{{ module.image.src }}" as="image" />
+  <link rel="preload" href="{{ module.bottom_section_banner_image.src }}" as="image" />
+{% end_require_head %}
 
 <div class="cm-crafting-banner-group {% if not module.image.src %} no-author-section {% endif %}">
   <div class="cm-crafting-intro-container" style="background-image: url({{ module.banner_image.src }})">
