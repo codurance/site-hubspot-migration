@@ -3,6 +3,22 @@
     isAvailableForNewContent: false
 -->
 
+{# The linked_image module is repeated and exported to the template context in order to preload the image #}
+{% module 'linked_image',
+    path="@hubspot/linked_image",
+    img={
+        "src": "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Our%20People%20Page/Our%20People%20%E2%80%93%20Header%20Image.png",
+        "width": auto,
+    },
+    label="Hero Image", 
+    export_to_template_context=True       
+%}
+
+{% require_head %}
+    <link rel="preload" href="{{ widget_data.linked_image.img.src }}" as="image" />
+	<link rel="preload" href="{{ get_asset_url("../../css/partials/header-hero.css") }}" as="style" />
+{% end_require_head %}
+
 {{ require_css(get_asset_url("../../css/partials/header-hero.css")) }}
 
 <section class="header-hero">
@@ -28,9 +44,7 @@
                 img={
                     "src": "https://3042464.fs1.hubspotusercontent-na1.net/hubfs/3042464/Our%20People%20Page/Our%20People%20%E2%80%93%20Header%20Image.png",
                     "width": auto,
-                },
-                label="Hero Image", 
-                no_wrapper=True        
+                }      
             %}
         </div>
     </div>

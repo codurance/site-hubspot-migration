@@ -1,12 +1,13 @@
-{{ require_css(get_asset_url("../../css/modules/header-slim.css")) }}
-
 {% require_head %}
   {% if module.style.choice == "bg_img" %}
     <link rel="preload" href="https://f.hubspotusercontent10.net/hubfs/3042464/Homepage/Header%20Section/header-x-large-homepage.png" as="image" />
   {% endif %}
 
   <link rel="preload" href="{{ module.image.src }}" as="image" />
+  <link rel="preload" href="{{ get_asset_url("../../css/modules/header-slim.css") }}" as="style" />
 {% end_require_head %}
+
+{{ require_css(get_asset_url("../../css/modules/header-slim.css")) }}
 
 <style>
   {% set bg_color = module.style.gradient.colors[0].color %}

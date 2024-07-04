@@ -1,5 +1,10 @@
-{{ require_css(get_asset_url("../../css/modules/latest-podbean-episode.css")) }}
 {% import '../../snippets/button-snippets.html' as snippets %}
+
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../../css/modules/latest-podbean-episode.css") }}" as="style" />
+{% end_require_head %}
+
+{{ require_css(get_asset_url("../../css/modules/latest-podbean-episode.css")) }}
 
 <div class="latest-podbean-episode">
   <div class="latest-podbean-episode__loading"><div></div><div></div><div></div><div></div></div>

@@ -2,10 +2,16 @@
 templateType: global_partial
 label: Global main menu
 -->
+
+{% set logo_file =  get_asset_url('../../images/logo.svg') %}
+
+{% require_head %}
+  <link rel="preload" href="{{ logo_file }}" as="image" />
+{% end_require_head %}
+
 <header class="header">
   <div class="header__wrapper">
     <div class="custom-logo">
-      {% set logo_file =  get_asset_url('../../images/logo.svg') %}
       {% module "header_logo" path="@hubspot/logo", label="Header Logo",link="/", img={src="{{logo_file}}", alt="Codurance", override_inherited_src= true} %}
     </div>
     <div class="custom-menu-primary">

@@ -1,3 +1,7 @@
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../../css/modules/video-mosaic.css") }}" as="style" />
+{% end_require_head %}
+
 {{ require_css(get_asset_url("../../css/modules/video-mosaic.css")) }}
 
 <div class="mosaic-collection">
@@ -44,6 +48,10 @@
         {% endif %}
       {% else %}
         {% if mosaic_item.image.src %}
+          {% require_head %}
+            <link rel="preload" href="{{ mosaic_item.image.src }}" as="image" />
+          {% end_require_head %}
+
           {% set sizeAttrs = 'width="{{ mosaic_item.image.width }}" height="{{ mosaic_item.image.height }}"' %}
           <img class="mosaic-collection__img" src="{{ mosaic_item.image.src }}" alt="{{ mosaic_item.image.alt }}" loading="lazy" {{ sizeAttrs }} />
         {% endif %}

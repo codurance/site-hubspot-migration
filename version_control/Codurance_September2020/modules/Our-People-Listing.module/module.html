@@ -1,6 +1,11 @@
-{{ require_css(get_asset_url("../../css/modules/our-people-listing.css")) }}
 {% import "../../snippets/button-snippets.html" as snippets %}
 {% import '../../css/utils/utils.css' as utils %}
+
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../../css/modules/our-people-listing.css") }}" as="style" />
+{% end_require_head %}
+
+{{ require_css(get_asset_url("../../css/modules/our-people-listing.css")) }}
 
 <div class="custom-our-people">
   {% if module.filter_label %}

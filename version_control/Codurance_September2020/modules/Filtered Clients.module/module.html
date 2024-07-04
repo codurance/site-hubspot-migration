@@ -1,5 +1,10 @@
-{{ require_css(get_asset_url("../../css/modules/filtered-clients.css")) }}
 {% import '../../partials/clients-page-cards.html' as cards %}
+
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../../css/modules/filtered-clients.css") }}" as="style" />
+{% end_require_head %}
+
+{{ require_css(get_asset_url("../../css/modules/filtered-clients.css")) }}
 
 {% set clients = hubdb_table_rows(module.clients_table) %}
 

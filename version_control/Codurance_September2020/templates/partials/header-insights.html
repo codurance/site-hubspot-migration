@@ -3,8 +3,6 @@
     isAvailableForNewContent: false
 -->
 
-{{ require_css(get_asset_url("../../css/partials/header-insights.css")) }}
-
 {# The linked_image module is repeated and exported to the template context in order to preload the image #}
 {% module 'linked_image',
     path="@hubspot/linked_image",
@@ -18,7 +16,10 @@
 
 {% require_head %}
     <link rel="preload" href="{{ widget_data.linked_image.img.src }}" as="image" />
+    <link rel="preload" href="{{ get_asset_url("../../css/partials/header-insights.css") }}" as="style" />
 {% end_require_head %}
+
+{{ require_css(get_asset_url("../../css/partials/header-insights.css")) }}
 
 <header class="header-insights" role="banner">
     <div class="header-insights__container">

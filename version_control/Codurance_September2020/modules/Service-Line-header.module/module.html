@@ -1,4 +1,12 @@
 {% import '../../css/utils/utils.css' as utils %}
+{% import '../../snippets/button-snippets.html' as snippets %}
+
+{% require_head %}
+	<link rel="preload" href="{{ module.style.backgroundimage_field.src }}" as="image" />
+	<link rel="preload" href="{{ module.header.image.src }}" as="image" />
+	<link rel="preload" href="{{ module.banner_fields.image.src }}" as="image" />
+	<link rel="preload" href="{{ get_asset_url("../../css/modules/service-line-header.css") }}" as="style" />
+{% end_require_head %}
 
 {% require_css %}
   <style>
@@ -22,10 +30,7 @@
   </style>
 {% end_require_css %}
 
-
-{% import '../../snippets/button-snippets.html' as snippets %}
 {{ require_css(get_asset_url("../../css/modules/service-line-header.css")) }}
-
 
 <div class="module-wrapper">
 {% if module.header.image.src %}
@@ -68,14 +73,12 @@
 			}}
 		</div>
 
-	{% if module.banner_fields.image.src %}
-	  {% set sizeAttrs = 'width="{{ module.banner_fields.image.width }}" height="{{ module.banner_fields.image.height }}"' %}
-	  <img src="{{ module.banner_fields.image.src }}" alt="{{ module.banner_fields.image.alt }}" loading="lazy" {{ sizeAttrs }} />
-	{% endif %}
+		{% if module.banner_fields.image.src %}
+			{% set sizeAttrs = 'width="{{ module.banner_fields.image.width }}" height="{{ module.banner_fields.image.height }}"' %}
+			<img src="{{ module.banner_fields.image.src }}" alt="{{ module.banner_fields.image.alt }}" loading="lazy" {{ sizeAttrs }} />
+		{% endif %}
 	</section>
-  {% endif %}<!-- END Banner section -->	  
-
-
+{% endif %}<!-- END Banner section -->	  
 
 <!-- START Clients section -->
 <section class="clients">

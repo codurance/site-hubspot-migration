@@ -5,10 +5,13 @@ label: Our People
 -->
 {% extends "./layouts/base.html" %}
 
+{% require_head %}
+	<link rel="preload" href="{{ get_asset_url("../css/pages/our-people.css") }}" as="style" />
+{% end_require_head %}
+
 {{ require_css(get_asset_url("../css/pages/our-people.css")) }}
 
 {% block body %}
-
   {% include "./partials/header-hero.html" %}
 
   <main>

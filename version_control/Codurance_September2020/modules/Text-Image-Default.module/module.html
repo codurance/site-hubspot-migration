@@ -1,3 +1,7 @@
+{% require_head %}
+	<link rel="preload" href="{{ module.image_field.src }}" as="image" />
+	<link rel="preload" href="{{ get_asset_url("../../css/modules/text-image-default.css") }}" as="style" />
+{% end_require_head %}
 
 {{ require_css(get_asset_url("../../css/modules/text-image-default.css")) }}
 

@@ -1,3 +1,7 @@
+{% require_head %}
+	<link rel="preload" href="{{ get_asset_url("../../css/modules/navigation-link.css") }}" as="style" />
+{% end_require_head %}
+
 {{ require_css(get_asset_url("../../css/modules/navigation-link.css")) }}
 
 {% macro isActiveNode(link) %}

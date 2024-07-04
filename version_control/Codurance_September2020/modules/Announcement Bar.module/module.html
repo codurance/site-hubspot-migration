@@ -1,5 +1,8 @@
-{{ require_css(get_asset_url("../../css/modules/announcement-bar.css")) }}
+{% require_head %}
+  <link rel="preload" href='{{ get_asset_url("../../css/modules/announcement-bar.css") }}' as="style" />
+{% end_require_head %}
 
+{{ require_css(get_asset_url("../../css/modules/announcement-bar.css")) }}
 
 <div class="announcement-bar" style="background-image:url('{{ module.background_image.src }}');">
   <div class="announcement-bar__inner">

@@ -13,16 +13,17 @@ label: Blog Post
 
 {% extends "./layouts/base.html" %}
 
-{{ require_css(get_asset_url("../css/pages/blog-post.css")) }}
-{{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
-{{ require_css(get_asset_url("../css/partials/social-icons.css")) }}
-
 {% set avatar_image = resize_image_url(content.blog_post_author.avatar, 70, 70) %}
 
 {% require_head %}
   <link rel="preload" href="{{ content.featured_image }}" as="image" />
   <link rel="preload" href="{{ avatar_image }}" as="image" />
+  <link rel="preload" href="{{ get_asset_url("../css/pages/blog-post.css") }}" as="style" />
 {% end_require_head %}
+
+{{ require_css(get_asset_url("../css/pages/blog-post.css")) }}
+{{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
+{{ require_css(get_asset_url("../css/partials/social-icons.css")) }}
 
 {% block body %}
 

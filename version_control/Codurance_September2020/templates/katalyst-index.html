@@ -8,23 +8,20 @@ label: Kata Listing
 {% import '../config/config.html' as config %}
 {% set form = config.newsletter_cta.en %}
 
-{{ require_css(get_asset_url("../css/main.css")) }}
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/partials/kata-card.css") }}" as="style" />
+{% end_require_head %}
+
 {{ require_css(get_asset_url("../css/partials/kata-card.css")) }}
 
 {% block body %}
-{% if blog_author %}
-
-  {% include "./partials/author-page.html" %}
-
-{% else %}
-
-  {% include "./partials/header-insights.html" %} 
-
-<section>
-  {% module 'Filtered Katas' path='../modules/Filtered-Katas.module' label="Filtered Katas Section" no_wrapper=True %}
-</section>
-
-{% endif %}
-
-
+  {% if blog_author %}
+    {% include "./partials/author-page.html" %}
+  {% else %}
+    {% include "./partials/header-insights.html" %}
+      
+    <section>
+      {% module 'Filtered Katas' path='../modules/Filtered-Katas.module' label="Filtered Katas Section" %}
+    </section>
+  {% endif %}
 {% endblock body %}

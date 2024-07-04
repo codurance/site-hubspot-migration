@@ -1,4 +1,9 @@
 {% import '../../snippets/button-snippets.html' as snippets %}
+
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../../css/modules/videos-listing.css") }}" as="style" />
+{% end_require_head %} 
+  
 {{ require_css(get_asset_url("../../css/modules/videos-listing.css")) }}
 
 {% macro card_collection(videos_listing, copy) %}

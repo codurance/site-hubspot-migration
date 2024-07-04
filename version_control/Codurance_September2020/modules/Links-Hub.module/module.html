@@ -1,4 +1,3 @@
-{{ require_css(get_asset_url("../../css/modules/links-hub.css")) }}
 {% import '../../css/modules/links-hub.css' as link_hub %}
 
 {% require_css %}
@@ -17,8 +16,10 @@
 {% require_head %}
 	<link rel="preload" href="https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Header/Line_test.svg" as="image" />
 	<link rel="preload" href="https://www.codurance.com/hubfs/Service%20Line%20Pages/00_Hubpage/Header/Line_test%20%E2%80%93%202.svg" as="image" />
+	<link rel="preload" href="{{ get_asset_url("../../css/modules/links-hub.css") }}" as="style" />
 {% end_require_head %}
 
+{{ require_css(get_asset_url("../../css/modules/links-hub.css")) }}
 
 <nav role="navigation" aria-label="Secondary Menu">
 	<ul class="hub-menu">
