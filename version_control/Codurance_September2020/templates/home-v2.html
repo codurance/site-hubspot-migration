@@ -6,18 +6,21 @@ label: Home Page version 2
 
 {% extends "./layouts/base.html" %}
 
-{{ require_css(get_asset_url("../css/pages/homepage-v2.css")) }}
-
 {% require_head %}
   <link rel="preload" href="https://f.hubspotusercontent10.net/hubfs/3042464/Homepage/Header%20Section/header-x-large-homepage.png" as="image" />
+  <link rel="preload" href="{{ get_asset_url("../css/pages/homepage-v2.css") }}" as="style" />
 {% end_require_head %}
+
+{{ require_css(get_asset_url("../css/pages/homepage-v2.css")) }}
 
 {% block body %}
   <section class="homepage-hero">
-  {% module "Announcement Bar" 
+    {% module "Announcement Bar" 
       path="../modules/Announcement Bar.module"
       label="Announcement Bar" 
-      no_wrapper=True %}
+      no_wrapper=True 
+    %}
+
     <div class="homepage-hero__container">
       <div class="homepage-hero__text">
       {% module_block module "rich_text" 
@@ -32,21 +35,24 @@ label: Home Page version 2
         {% end_module_attribute %} 
       {% end_module_block %}
       </div>
-        <div class="homepage-hero__image">
-      {% module 'linked_image',
-           path="@hubspot/linked_image", 
-           img={ "src": 
-                  "https://f.hubspotusercontent10.net/hubfs/3042464/Homepage/Header%20Section/header-x-large-homepage.png"
-                }, 
-           label="Hero Image", no_wrapper=True %}
+
+      <div class="homepage-hero__image">
+        {% module 'linked_image',
+          path="@hubspot/linked_image", 
+          img={ "src": 
+                "https://f.hubspotusercontent10.net/hubfs/3042464/Homepage/Header%20Section/header-x-large-homepage.png"
+              }, 
+          label="Hero Image", no_wrapper=True 
+        %}
       </div>
     </div>
   </section>
 
   <section class="client-logos">
     {% module 'clients logos' 
-        path='../modules/Clients-Logos.module'
-        label="Clients logos Section"%}
+      path='../modules/Clients-Logos.module'
+      label="Clients logos Section" 
+    %}
   </section>
 
   <section class="stats">
