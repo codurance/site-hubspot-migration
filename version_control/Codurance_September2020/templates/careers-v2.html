@@ -6,8 +6,11 @@ label: Careers v2
 -->
 {% extends "./layouts/base.html" %}
 
-{{ require_css(get_asset_url("../css/pages/careers-v2.css")) }}
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/careers-v2.css") }}" as="style" />
+{% end_require_head %}
 
+{{ require_css(get_asset_url("../css/pages/careers-v2.css")) }}
 
 {% block body %}
 

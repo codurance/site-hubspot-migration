@@ -5,8 +5,11 @@ label: Our Story
 -->
 {% extends "./layouts/base.html" %}
 
-{{ require_css(get_asset_url("../css/pages/our-story.css")) }}
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/our-story.css") }}" as="style" />
+{% end_require_head %}
 
+{{ require_css(get_asset_url("../css/pages/our-story.css")) }}
 
 {% block body %}
   <div class="our-story-page">
@@ -15,10 +18,8 @@ label: Our Story
   </section>
 
   <div class="our-story-container">
-      {% module "our_story_body" path="@hubspot/rich_text" label="Our Story"  %}
+    {% module "our_story_body" path="@hubspot/rich_text" label="Our Story"  %}
   </div>
-
 </div>
-
 
 {% endblock body %}

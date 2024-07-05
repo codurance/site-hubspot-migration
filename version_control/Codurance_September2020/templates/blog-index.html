@@ -7,6 +7,11 @@ label: Blog Listing
 
 {% import '../snippets/blog-cta-cards.html' as snippets %}
 
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/blog-index.css") }}" as="style" />
+  <link rel="preload" href="{{ get_asset_url("../css/partials/blog-card.css") }}" as="style" />
+{% end_require_head %}
+
 {{ require_css(get_asset_url("../css/pages/blog-index.css")) }}
 {{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
 

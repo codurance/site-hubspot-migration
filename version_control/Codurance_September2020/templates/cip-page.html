@@ -6,6 +6,10 @@ label: CIP (Continuous Improvement Program) Page
 
 {% extends "./layouts/base.html" %}
 
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/cip.css") }}" as="style" />
+{% end_require_head %}
+
 {{ require_css(get_asset_url("../css/pages/cip.css")) }}
 
 {% block body %}

@@ -2,6 +2,13 @@
     templateType: page
     isAvailableForNewContent: false
 -->
+{% set avatar_image = resize_image_url(blog_author.avatar, 80, 80) %}
+
+{% require_head %}
+    <link rel="preload" href="{{ avatar_image }}" as="image" />
+    <link rel="preload" href="{{ get_asset_url("../../css/partials/social-icons.css") }}" as="style" />
+    <link rel="preload" href="{{ get_asset_url("../../css/partials/author-page.css") }}" as="style" />
+{% end_require_head %}
 
 {{ require_css(get_asset_url("../../css/partials/social-icons.css")) }}
 {{ require_css(get_asset_url("../../css/partials/author-page.css")) }}
@@ -12,7 +19,6 @@
         blog_author.avatar.src != "(unknown)" && 
         blog_author.avatar != "" 
         %}
-            {% set avatar_image = resize_image_url(blog_author.avatar, 80, 80) %}
             <img class="blog-author__img" 
                 src="{{ avatar_image }}" 
                 alt="{{ blog_author.display_name }}"

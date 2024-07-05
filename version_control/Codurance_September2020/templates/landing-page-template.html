@@ -13,12 +13,14 @@ label: Landing Page Template
     {% set url_redirection = "https://www.codurance.com/pt" %} 
 {% endif %}
 
-{{ require_css(get_asset_url("../css/pages/landing-page-template.css")) }}
+{% require_head %}
+    <link rel="preload" href="{{ get_asset_url("../css/pages/landing-page-template.css") }}" as="style" />
+{% end_require_head %}
 
+{{ require_css(get_asset_url("../css/pages/landing-page-template.css")) }}
 
 {% block header %}
 {% endblock header %}
-
 
 {% block body %}
     <div class="header-container">

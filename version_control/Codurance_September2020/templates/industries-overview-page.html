@@ -5,6 +5,10 @@ label: Industries Overview
 -->
 {% extends "./layouts/base.html" %}
 
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/industries-overview.css") }}" as="style" />
+{% end_require_head %}
+
 {{ require_css(get_asset_url("../css/pages/industries-overview.css")) }}
 
 {% block body %}

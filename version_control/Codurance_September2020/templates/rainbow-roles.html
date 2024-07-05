@@ -5,8 +5,11 @@ label: Rainbow roles template
 -->
 {% extends "./layouts/base.html" %}
 
-{{ require_css(get_asset_url("../css/pages/rainbow-roles.css")) }}
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/rainbow-roles.css") }}" as="style" />
+{% end_require_head %}
 
+{{ require_css(get_asset_url("../css/pages/rainbow-roles.css")) }}
 
 {% block body %}
 

@@ -5,18 +5,20 @@ label: AI and ML Page
 -->
 {% extends "./layouts/base.html" %}
 
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/topic-pillar.css") }}" as="style" />
+{% end_require_head %}
+
 {{ require_css(get_asset_url("../css/pages/topic-pillar.css")) }}
 
 {% block body %}
 
-
 {% module "header_slim" 
   path="../modules/Header-Slim.module" label="Header Slim" 
-  no_wrapper=True %}
+  no_wrapper=True 
+%}
   
-
 <main>  
-
   <section class="above-the-fold-ai">
     {% module "above_the_fold"
       path="../modules/Text-and-image.module" label="Above the fold section"

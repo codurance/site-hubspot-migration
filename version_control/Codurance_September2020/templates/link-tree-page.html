@@ -5,6 +5,10 @@ label: Link Tree page
 -->
 {% extends "./layouts/base.html" %}
 
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/link-tree.css") }}" as="style" />
+{% end_require_head %}
+
 {{ require_css(get_asset_url("../css/pages/link-tree.css")) }}
 
 {% block header %}{% endblock header %}

@@ -19,6 +19,7 @@ label: Blog Post
   <link rel="preload" href="{{ content.featured_image }}" as="image" />
   <link rel="preload" href="{{ avatar_image }}" as="image" />
   <link rel="preload" href="{{ get_asset_url("../css/pages/blog-post.css") }}" as="style" />
+  <link rel="preload" href="{{ get_asset_url("../css/partials/social-icons.css") }}" as="style" />
 {% end_require_head %}
 
 {{ require_css(get_asset_url("../css/pages/blog-post.css")) }}

@@ -5,22 +5,24 @@ label: Newsletter Sign Up
 -->
 {% extends "./layouts/base.html" %}
 
-
 {% if locale == 'es' %}
-    {% set title = "Únete a nuestra newsletter "  %}
-    {% set subtitle = "para que podamos hacerte llegar consejos y casos prácticos inspiradores" %}
+  {% set title = "Únete a nuestra newsletter "  %}
+  {% set subtitle = "para que podamos hacerte llegar consejos y casos prácticos inspiradores" %}
 {% elif locale == 'pt' %}
-    {% set title = "Junte-se à nossa newsletter "  %}
-    {% set subtitle = "para dicas de especialistas e estudos de caso inspiradores" %}
+  {% set title = "Junte-se à nossa newsletter "  %}
+  {% set subtitle = "para dicas de especialistas e estudos de caso inspiradores" %}
 {% else %}
-      {% set title = "Join our newsletter "  %}
-      {% set subtitle = "for expert tips and inspirational case studies"%}
-    {% endif %}
+  {% set title = "Join our newsletter "  %}
+  {% set subtitle = "for expert tips and inspirational case studies"%}
+{% endif %}
+
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/newsletter-sign-up.css") }}" as="style" />
+{% end_require_head %}
 
 {{ require_css(get_asset_url("../css/pages/newsletter-sign-up.css")) }}
 
 {% block body %}
-
 
 <div class="body-container-sign-up">
     <section class="newsletter-sign-up__container">

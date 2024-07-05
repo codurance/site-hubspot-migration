@@ -5,8 +5,11 @@ label: FAQ template
 -->
 {% extends "./layouts/base.html" %}
 
-{{ require_css(get_asset_url("../css/pages/faq.css")) }}
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/faq.css") }}" as="style" />
+{% end_require_head %}
 
+{{ require_css(get_asset_url("../css/pages/faq.css")) }}
 
 {% block body %}
 

@@ -5,8 +5,11 @@
 -->
 {% extends "./layouts/base.html" %}
 
-{{ require_css(get_asset_url("../css/pages/videos.css")) }}
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/videos.css") }}" as="style" />
+{% end_require_head %}
 
+{{ require_css(get_asset_url("../css/pages/videos.css")) }}
 
 {% block body %}
   {% module 'youtube_popup'

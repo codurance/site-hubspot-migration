@@ -5,6 +5,11 @@ label: Learning and Development Page
 -->
 {% extends "./layouts/base.html" %}
 
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/services-inner.css") }}" as="style" />
+  <link rel="preload" href="{{ get_asset_url("../css/pages/learning-and-development.css") }}" as="style" />
+{% end_require_head %}
+
 {{ require_css(get_asset_url("../css/pages/services-inner.css")) }}
 {{ require_css(get_asset_url("../css/pages/learning-and-development.css")) }}
 

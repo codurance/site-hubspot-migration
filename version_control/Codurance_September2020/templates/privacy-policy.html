@@ -5,6 +5,10 @@ label: Privacy Policy
 -->
 {% extends "./layouts/base.html" %}
 
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/privacy-policy.css") }}" as="style" />
+{% end_require_head %}
+
 {{ require_css(get_asset_url("../css/pages/privacy-policy.css")) }}
 
 {% block body %}
