@@ -16,6 +16,9 @@
     "autoload" : true,
     "name" : "swiper-bundle.min.js"
   } ],
+  "css_render_options" : {
+    "async": true
+  },
   "js_render_options" : {
     "position": "footer",
     "defer": true
