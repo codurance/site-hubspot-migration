@@ -1,0 +1,54 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+{{ require_css(get_asset_url("../css/modules/downloadable-assets-listing.css")) }}   
+
+{% set list = module.downloadable_assets %}
+
+{% for item in list %}
+    {% set card = {
+        "content_type" : item.content_type,
+        "thumbnail" : item.thumbnail.src,
+        "title" : item.title,
+        "description" : item.description,
+        "link_url" : item.link.url.href,
+        "link_text" : item.card_link_text
+    } %}
+
+    {% do cards.append(card) %}
+{% endfor %}
+
+<div class="card-container lateral-spacing">
+    {% for card in cards %}
+        <article class="card">
+            {% set card_thumbnail = resize_image_url(card.thumbnail, 0, 0, 400) %}
+            <img class="card__img"  
+                src="{{ card_thumbnail }}" 
+                alt="" 
+                width="201"
+                height="265"
+            />
+
+            <div class="card__info">
+                {% if card.content_type %}
+                    <span>{{ card.content_type }}</span>
+                {% endif %}
+
+                <h3>{{ card.title }}</h3>
+
+                {% if card.description %}
+                    <p class="card__description">{{ card.description }}</p>
+                {% endif %}
+
+                {% if card.link_text %}
+                    {{ snippets.text_cta_right_arrow(
+                        url=card.link_url,
+                        target="_blank",
+                        text="{{ card.link_text }}"
+                    ) }}
+                {% endif %}
+            </div>
+        </article>
+    {% endfor %}
+</div>
+
+
+
