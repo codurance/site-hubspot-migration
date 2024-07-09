@@ -2,6 +2,11 @@
 
 .hero .header-insights__container {
   gap: var(--space-5);
+  min-height: 23rem;
+}
+
+.downloadable-assets.region {
+  padding-top: unset;
 }
 
 .downloadable-assets__wrapper {
@@ -9,9 +14,13 @@
   margin-inline: auto;
 }
 
+.downloadable-assets__listing {
+  margin-top: -50px;
+}
+
 {% call utils.medium_large_and_extra_large() %}
-  .hero .header-insights {
-    min-height: 23rem;
+  .downloadable-assets__listing {
+    margin-top: -75px;
   }
 {% endcall %}
 
