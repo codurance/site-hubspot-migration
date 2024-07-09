@@ -82,7 +82,6 @@
 
     .header-insights__text h1 {
         {{ utils.eames() }}
-        font-weight: var(--middle-font-weight);
     }
 {% endcall %}
 

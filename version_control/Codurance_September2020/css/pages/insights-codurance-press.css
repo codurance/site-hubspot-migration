@@ -1,0 +1,18 @@
+{% import '../utils/utils.css' as utils %}
+
+.hero .header-insights__container {
+  gap: var(--space-5);
+}
+
+
+{% call utils.medium_large_and_extra_large() %}
+  .hero .header-insights {
+    min-height: 23rem;
+  }
+{% endcall %}
+
+{% call utils.small() %}  
+  .hero .header-insights {
+    min-height: 30rem;
+  }
+{% endcall %}
