@@ -4,6 +4,10 @@
   gap: var(--space-5);
 }
 
+.downloadable-assets__wrapper {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+}
 
 {% call utils.medium_large_and_extra_large() %}
   .hero .header-insights {

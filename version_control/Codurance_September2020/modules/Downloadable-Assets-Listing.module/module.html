@@ -2,6 +2,7 @@
 {{ require_css(get_asset_url("../css/modules/downloadable-assets-listing.css")) }}   
 
 {% set list = module.downloadable_assets %}
+{% set cards = [] %}
 
 {% for item in list %}
     {% set card = {
@@ -19,13 +20,17 @@
 <div class="card-container lateral-spacing">
     {% for card in cards %}
         <article class="card">
-            {% set card_thumbnail = resize_image_url(card.thumbnail, 0, 0, 400) %}
-            <img class="card__img"  
-                src="{{ card_thumbnail }}" 
-                alt="" 
-                width="201"
-                height="265"
-            />
+            <div class="card__img-wrapper">
+                <div class="card__background"></div>
+
+                {% set card_thumbnail = resize_image_url(card.thumbnail, 0, 0, 262) %}
+                <img class="card__img"
+                    src="{{ card_thumbnail }}"
+                    alt=""
+                    width="184"
+                    height="262"
+                />
+            </div>
 
             <div class="card__info">
                 {% if card.content_type %}
