@@ -2,6 +2,47 @@
   {
    "children": [
     {
+     "type": "group",
+     "id": "7f5039ea-4867-e7bd-f24f-6ee17fdc1187",
+     "label": "Gradient background",
+     "children": [
+      {
+       "type": "color",
+       "id": "c51721dc-9ecf-166f-70f3-48b4232c96b9",
+       "default": {
+        "color": "#1D233C",
+        "opacity": 100
+       },
+       "label": "Top color",
+       "name": "top_color",
+       "show_opacity": false
+      },
+      {
+       "type": "color",
+       "default": {
+        "color": "#0C0C0D",
+        "opacity": 100
+       },
+       "label": "Bottom color",
+       "name": "bottom_color",
+       "show_opacity": false,
+       "oldId": "c51721dc-9ecf-166f-70f3-48b4232c96b9",
+       "id": "1c1f8209-1a26-2537-8c4c-9519dc4bab8f"
+      }
+     ],
+     "name": "gradient_background",
+     "default": {
+      "top_color": {
+       "color": "#1D233C",
+       "opacity": 100
+      },
+      "bottom_color": {
+       "color": "#0C0C0D",
+       "opacity": 100
+      }
+     }
+    },
+    {
      "default": {
       "size_type": "auto",
       "src": "",
