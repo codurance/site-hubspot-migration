@@ -1,0 +1,55 @@
+{% import '../../snippets/button-snippets.html' as snippets %}
+{{ require_css(get_asset_url("../css/modules/downloadable-assets-listing.css")) }}   
+
+<div class="card-container lateral-spacing">
+    {% for card in module.downloadable_assets %}
+        {% set current_card_class = "card--{{ loop.index }}" %}
+        {% require_css %}
+            <style>
+              {% scope_css %}
+                .{{ current_card_class }} .card__background {
+                background: transparent linear-gradient(180deg, {{ card.gradient_background.top_color.color }} 0%, {{ card.gradient_background.bottom_color.color }} 100%) 0% 0% no-repeat padding-box;
+                }
+              {% end_scope_css %}
+            </style>
+        {% end_require_css %}
+
+        <article class="card {{ current_card_class }}">
+            <div class="card__header-wrapper">
+                <div class="card__background"></div>
+
+                <div class="card__img-container">
+                    <img class="card__img"
+                        src="{{ card.thumbnail.src }}?noresize"
+                        alt=""
+                        width="170"
+                        height="241"
+                    />
+                </div>
+            </div>
+
+            <div class="card__info">
+                {% if card.content_type %}
+                    <span>{{ card.content_type }}</span>
+                {% endif %}
+
+                <h3>{{ card.title }}</h3>
+
+                {% if card.description %}
+                    <p class="card__description">{{ card.description }}</p>
+                {% endif %}
+
+                {% if card.card_link_text %}
+                    {{ snippets.text_cta_right_arrow(
+                        url=card.link.url.href,
+                        target="_blank",
+                        text="{{ card.card_link_text }}"
+                    ) }}
+                {% endif %}
+            </div>
+        </article>
+    {% endfor %}
+</div>
+
+
+

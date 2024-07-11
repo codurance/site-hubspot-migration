@@ -1,0 +1,31 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Insights Codurance Press
+-->
+
+{% extends "./layouts/base.html" %}
+
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/insights-codurance-press.css") }}" as="style" />
+{% end_require_head %}
+
+{{ require_css(get_asset_url("../css/pages/insights-codurance-press.css")) }}
+
+{% block body %}
+<main>
+  <section class="hero">
+    {% include "./partials/header-insights.html" %}
+  </section>
+
+  <section class="downloadable-assets region">
+    <div class="downloadable-assets__wrapper">
+      {% module "downloadable_assets" 
+        path="../modules/Downloadable-Assets-Listing" 
+        label="Downloadable assets"
+        extra_classes="downloadable-assets__listing"
+      %}
+    </div>
+  </section>
+</main>
+{% endblock body %}

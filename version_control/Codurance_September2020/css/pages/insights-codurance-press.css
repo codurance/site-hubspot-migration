@@ -1,0 +1,49 @@
+{% import '../utils/utils.css' as utils %}
+
+.hero .header-insights__container {
+  gap: var(--space-5);
+  min-height: 23rem;
+}
+
+.hero .header-insights__text {
+  max-width: 45ch;
+}
+
+.downloadable-assets.region {
+  padding-top: unset;
+}
+
+.downloadable-assets__wrapper {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+}
+
+.downloadable-assets__listing {
+  margin-top: -50px;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+  .hero .header-insights__container {
+    padding-bottom: 3em;
+  }
+
+  .downloadable-assets__listing {
+    margin-top: -75px;
+  }
+{% endcall %}
+
+{% call utils.medium() %}  
+  .hero .header-insights__text {
+    gap: unset;
+  }
+
+  .hero .header-insights__image {
+    align-self: center;
+  }
+{% endcall %}
+
+{% call utils.small() %}  
+  .hero .header-insights__container {
+    padding-bottom: 6em;
+  }
+{% endcall %}
