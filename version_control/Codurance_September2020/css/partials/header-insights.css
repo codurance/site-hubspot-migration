@@ -29,7 +29,6 @@
 
 .header-insights__text h1 {
     {{ utils.dudler() }}
-    font-weight: var(--heavy-font-weight);
     margin-top: .4em;
     transition: var(--cta-transition);
 }
@@ -82,6 +81,7 @@
 
     .header-insights__text h1 {
         {{ utils.eames() }}
+        font-weight: var(--middle-font-weight);
     }
 {% endcall %}
 

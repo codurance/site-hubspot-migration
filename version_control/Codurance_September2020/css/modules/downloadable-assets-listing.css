@@ -18,7 +18,7 @@
 }
 
 .card__background {
-    height: 13.7rem;
+    height: 13rem;
     {{ utils.card_border_radius_top() }}
     background: transparent linear-gradient(180deg, var(--slate) 0%, var(--woodsmoke) 100%) 0% 0% no-repeat padding-box; /* Fallback gradient */
 }
@@ -39,7 +39,7 @@
 }
 
 .card__info {
-    padding: var(--space-4) var(--space-3);
+    padding: var(--space-5) var(--space-3);
     height: 100%;
     display: flex;
     flex-direction: column; 
@@ -52,16 +52,16 @@
 }
 
 .card__info h3 {
+    margin-top: var(--space-0);
     {{ utils.freed() }}
-    margin-bottom: .75em;
+    line-height: var(--base-line-height);
+    font-weight: bold;
 }
 
 .card__description {
-    margin-bottom: .6em;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    overflow: hidden;
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-2);
+    {{ utils.natus() }}
 }
 
 .card__info a {
@@ -72,11 +72,22 @@
 {% call utils.large_and_extra_large() %}
     .card-container {
         grid-template-columns: repeat(3, 1fr);
+    }
+{% endcall %}
+
+{% call utils.medium_large_and_extra_large() %}
+    .card-container {
         column-gap: var(--space-3);
         row-gap: var(--space-5);
     }
 
     .card__background {
         height: 11.7rem;
+    }
+{% endcall %}
+
+{% call utils.medium() %}
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 {% endcall %}
