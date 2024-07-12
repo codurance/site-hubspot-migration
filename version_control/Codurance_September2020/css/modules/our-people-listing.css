@@ -76,6 +76,20 @@
   animation-name: fadeIn;
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
 .custom-our-people {
   margin: 0 auto;
   margin-top: 2em;
