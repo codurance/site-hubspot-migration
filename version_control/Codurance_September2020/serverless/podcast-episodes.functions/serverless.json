@@ -6,9 +6,13 @@
     "clientSecret"
   ],
   "endpoints": {
+    "fetch_latest_codurance_talks_episode": {
+      "method": "GET",
+      "file": "fetchLatestCoduranceTalksEpisode.js"
+    },
     "fetch_podcast_episodes": {
      "method": "GET",
      "file": "fetchPodcastEpisodes.js"
-   }
+    }
   }
 }

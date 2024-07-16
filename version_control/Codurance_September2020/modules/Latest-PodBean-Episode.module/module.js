@@ -1,24 +1,15 @@
 "use strict";
 
 (async () => {
-  const podcastEpisodes = await fetchPodcastEpisodes();
-  const latestEpisode = getLatestEpisode(podcastEpisodes);
-  setLatestEpisodeOnModule(latestEpisode);
+  const latestPodcastEpisode = await fetchLatestPodcastEpisode();
+  setLatestEpisodeOnModule(latestPodcastEpisode);
   displayModule();
 
-  async function fetchPodcastEpisodes() {
-    const urlEndpoint = "/_hcms/api/fetch_podcast_episodes";
+  async function fetchLatestPodcastEpisode() {
+    const urlEndpoint = "/_hcms/api/fetch_latest_codurance_talks_episode";
     const response = await fetch(urlEndpoint);
-    const podcastEpisodes = await response.json();
-    return podcastEpisodes;
-  }
-
-  function getLatestEpisode(podcastEpisodes) {
-    podcastEpisodes.sort(
-      (episodeA, episodeB) => episodeB.publish_time - episodeA.publish_time
-    );
-
-    return podcastEpisodes[0];
+    const podcastEpisode = await response.json();
+    return podcastEpisode;
   }
 
   function setLatestEpisodeOnModule(latestEpisode) {

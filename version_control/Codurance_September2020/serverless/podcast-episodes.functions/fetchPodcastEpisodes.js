@@ -1,8 +1,13 @@
 exports.main = async (context, sendResponse) => {
   const podcastTokens = await requestPodcastTokens();
   const podcastEpisodes = await fetchPodcastsEpisodesByTokens(podcastTokens);
+  const OneDaySeconds = 86400;
+
   sendResponse({
     body: podcastEpisodes,
+    headers: {
+      "Cache-Control": `max-age=${OneDaySeconds}`
+    },
     statusCode: 200
   });
 
