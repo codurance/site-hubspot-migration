@@ -6,9 +6,8 @@ exports.main = async (context, sendResponse) => {
   sendResponse({
     body: podcastEpisode,
     headers: {
-      "Cache-Control": `max-age=${OneDaySeconds}`
-    },
-    statusCode: 200
+      "Cache-Control": `max-age=${OneDaySeconds}, public, immutable`
+    }
   });
 
   async function requestPodcastToken() {
