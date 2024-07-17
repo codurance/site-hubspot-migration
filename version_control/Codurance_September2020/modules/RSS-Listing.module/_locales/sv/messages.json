@@ -1,0 +1,167 @@
+{
+  "attribution_text.default" : {
+    "message" : "efter",
+    "description" : "",
+    "placeholders" : null
+  },
+  "attribution_text.help_text" : {
+    "message" : "Texten som tillskrivs en upphovsman till ett inlägg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "attribution_text.label" : {
+    "message" : "Tillskriven text till upphovsman",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.default" : {
+    "message" : "Läs mer",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.help_text" : {
+    "message" : "Texten som ska visas för klicklänken på slutet av ett inläggs sammanfattning",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.label" : {
+    "message" : "Sammanfattande klicktext",
+    "description" : "",
+    "placeholders" : null
+  },
+  "content_group_id.label" : {
+    "message" : "Blogg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "include_featured_image.label" : {
+    "message" : "Ha med bild",
+    "description" : "",
+    "placeholders" : null
+  },
+  "limit_to_chars.label" : {
+    "message" : "Begränsa sammanfattningslängd (antal tecken)",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "RSS-lista",
+    "description" : "",
+    "placeholders" : null
+  },
+  "number_of_items.label" : {
+    "message" : "Maximalt antal inlägg att visa",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.MMMM d, yyyy 'at' h:mm a" : {
+    "message" : "6 juni, 2006 kl. 12:00",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.h:mm a 'on' MMMM d, yyyy" : {
+    "message" : "12:00 den 6 juni, 2006",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.long" : {
+    "message" : "6 juni 2017, kl 18:00",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.medium" : {
+    "message" : "6 juni, 2006, 12:00:00",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.short" : {
+    "message" : "06/11/06 12:00",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.help_text" : {
+    "message" : "Format på publiceringsdatum",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.label" : {
+    "message" : "Format för publiceringsdatum",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.placeholder" : {
+    "message" : "Välj datumformat",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.default" : {
+    "message" : "publicerat",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.help_text" : {
+    "message" : "Texten som indikerar när ett inlägg publicerades",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.label" : {
+    "message" : "Publicera text för datumvisare",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.choices.blog" : {
+    "message" : "Använd en blogg som har HubSpot som värd",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.choices.external" : {
+    "message" : "Använd ett externt RSS-flöde",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.label" : {
+    "message" : "Lägg till ett RSS-flöde",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.placeholder" : {
+    "message" : "Sök",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_url.label" : {
+    "message" : "RSS-URL",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_author.label" : {
+    "message" : "Visa upphovsmans namn",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_date.label" : {
+    "message" : "Visa publiceringsdatum",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_detail.label" : {
+    "message" : "Visa sammanfattning",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "Titel",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "RSS-titel",
+    "description" : "",
+    "placeholders" : null
+  },
+  "topic_id.label" : {
+    "message" : "Filtrera efter tagg",
+    "description" : "",
+    "placeholders" : null
+  }
+}

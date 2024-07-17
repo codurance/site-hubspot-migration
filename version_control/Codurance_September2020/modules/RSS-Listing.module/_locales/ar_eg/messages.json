@@ -1,0 +1,167 @@
+{
+  "attribution_text.default" : {
+    "message" : "بواسطة",
+    "description" : "",
+    "placeholders" : null
+  },
+  "attribution_text.help_text" : {
+    "message" : "النص الذي ينسب المؤلف إلى منشور ما",
+    "description" : "",
+    "placeholders" : null
+  },
+  "attribution_text.label" : {
+    "message" : "نص إسناد المؤلف",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.default" : {
+    "message" : "قراءة المزيد",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.help_text" : {
+    "message" : "النص الذي سيتم عرضه لرابط النقر في نهاية ملخص النشر",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.label" : {
+    "message" : "نص النقر فوق الملخص",
+    "description" : "",
+    "placeholders" : null
+  },
+  "content_group_id.label" : {
+    "message" : "المدونة",
+    "description" : "",
+    "placeholders" : null
+  },
+  "include_featured_image.label" : {
+    "message" : "تضمين الصورة المميزة",
+    "description" : "",
+    "placeholders" : null
+  },
+  "limit_to_chars.label" : {
+    "message" : "حد طول الملخص (عدد الأحرف)",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "قائمة RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "number_of_items.label" : {
+    "message" : "الحد الأقصى لعدد المنشورات المُراد عرضها",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.MMMM d, yyyy 'at' h:mm a" : {
+    "message" : "6 يونيو 2006 الساعة 12:00 م",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.h:mm a 'on' MMMM d, yyyy" : {
+    "message" : "الساعة 12:00 م يوم 6 يونيو 2006",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.long" : {
+    "message" : "6 يونيو 2017 الساعة 12:00 م بتوقيت شرق الولايات المتحدة",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.medium" : {
+    "message" : "6 يونيو 2006 الساعة 12:00:00 م",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.short" : {
+    "message" : "06/11/06 الساعة 12:00 م",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.help_text" : {
+    "message" : "تنسيق تاريخ النشر",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.label" : {
+    "message" : "تنسيق تاريخ النشر",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.placeholder" : {
+    "message" : "تحديد تنسيق التاريخ",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.default" : {
+    "message" : "تم النشر في",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.help_text" : {
+    "message" : "النص الذي يشير إلى وقت نشر المنشور",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.label" : {
+    "message" : "نشر نص مؤشر التاريخ",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.choices.blog" : {
+    "message" : "استخدام مدونة تستضيفها HubSpot",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.choices.external" : {
+    "message" : "استخدام موجز RSS خارجي",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.label" : {
+    "message" : "إضافة موجز RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.placeholder" : {
+    "message" : "بحث",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_url.label" : {
+    "message" : "عنوان URL لـ RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_author.label" : {
+    "message" : "عرض اسم المؤلف",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_date.label" : {
+    "message" : "عرض تاريخ النشر",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_detail.label" : {
+    "message" : "عرض الملخص",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "العنوان",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "عنوان RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "topic_id.label" : {
+    "message" : "تصفية حسب العلامة",
+    "description" : "",
+    "placeholders" : null
+  }
+}

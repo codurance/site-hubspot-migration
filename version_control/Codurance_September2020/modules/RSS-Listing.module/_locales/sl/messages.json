@@ -1,0 +1,167 @@
+{
+  "attribution_text.default" : {
+    "message" : "od",
+    "description" : "",
+    "placeholders" : null
+  },
+  "attribution_text.help_text" : {
+    "message" : "Besedilo, ki objavi pripiše avtorja",
+    "description" : "",
+    "placeholders" : null
+  },
+  "attribution_text.label" : {
+    "message" : "Besedilo z navedbo avtorja",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.default" : {
+    "message" : "Preberi več",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.help_text" : {
+    "message" : "Besedilo, ki bo prikazano za povezavo za klik na koncu povzetka objave",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.label" : {
+    "message" : "Povzetek klikanega besedila",
+    "description" : "",
+    "placeholders" : null
+  },
+  "content_group_id.label" : {
+    "message" : "Spletni dnevnik",
+    "description" : "",
+    "placeholders" : null
+  },
+  "include_featured_image.label" : {
+    "message" : "Vključi prikazano sliko",
+    "description" : "",
+    "placeholders" : null
+  },
+  "limit_to_chars.label" : {
+    "message" : "Omejitev dolžine povzetka (število znakov)",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Seznam RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "number_of_items.label" : {
+    "message" : "Največje število objav za prikaz",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.MMMM d, yyyy 'at' h:mm a" : {
+    "message" : "6. junij 2006 ob 12.00 uri",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.h:mm a 'on' MMMM d, yyyy" : {
+    "message" : "6. junij 2006 ob 12.00 uri",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.long" : {
+    "message" : "6. junij 2017 12:00:00 EDT",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.medium" : {
+    "message" : "6. junij 2006 12:00:00",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.short" : {
+    "message" : "06/11/06 12:00 PM",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.help_text" : {
+    "message" : "Oblika za datum objave",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.label" : {
+    "message" : "Oblika datuma objave",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.placeholder" : {
+    "message" : "Izberite obliko datuma",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.default" : {
+    "message" : "objavljeno ob",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.help_text" : {
+    "message" : "Besedilo, ki označuje, kdaj je bila objava objavljena",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.label" : {
+    "message" : "Besedilo indikatorja datuma objave",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.choices.blog" : {
+    "message" : "Uporabite blog, ki gostuje pri HubSpotu",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.choices.external" : {
+    "message" : "Uporabite zunanji vir RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.label" : {
+    "message" : "Dodaj RSS vir",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.placeholder" : {
+    "message" : "Išči",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_url.label" : {
+    "message" : "URL za RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_author.label" : {
+    "message" : "Pokaži ime avtorja",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_date.label" : {
+    "message" : "Prikaži datum objave",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_detail.label" : {
+    "message" : "Pokaži povzetek",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "Naslov",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "Naslov RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "topic_id.label" : {
+    "message" : "Filtriraj po oznaki",
+    "description" : "",
+    "placeholders" : null
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "attribution_text.default" : {
+    "message" : "依",
+    "description" : "",
+    "placeholders" : null
+  },
+  "attribution_text.help_text" : {
+    "message" : "將作者歸屬於文章的文字",
+    "description" : "",
+    "placeholders" : null
+  },
+  "attribution_text.label" : {
+    "message" : "作者歸屬文字",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.default" : {
+    "message" : "閱讀更多",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.help_text" : {
+    "message" : "文章摘要末尾的點閱連結將顯示的文字",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.label" : {
+    "message" : "摘要點閱文字",
+    "description" : "",
+    "placeholders" : null
+  },
+  "content_group_id.label" : {
+    "message" : "部落格",
+    "description" : "",
+    "placeholders" : null
+  },
+  "include_featured_image.label" : {
+    "message" : "包含精選圖片",
+    "description" : "",
+    "placeholders" : null
+  },
+  "limit_to_chars.label" : {
+    "message" : "限制摘要長度 (字元數)",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "RSS 清單",
+    "description" : "",
+    "placeholders" : null
+  },
+  "number_of_items.label" : {
+    "message" : "可顯示文章數目上限",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.MMMM d, yyyy 'at' h:mm a" : {
+    "message" : "June 6, 2006 at 12:00 pm",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.h:mm a 'on' MMMM d, yyyy" : {
+    "message" : "12:00 pm on June 6, 2006",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.long" : {
+    "message" : "June 6, 2017 12:00:00 pm EDT",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.medium" : {
+    "message" : "Jun 6, 2006 12:00:00 pm",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.short" : {
+    "message" : "06/11/06 12:00PM",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.help_text" : {
+    "message" : "發佈日期的格式",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.label" : {
+    "message" : "發佈日期格式",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.placeholder" : {
+    "message" : "選擇日期格式",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.default" : {
+    "message" : "發佈時間",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.help_text" : {
+    "message" : "指出文章發佈時間的文字",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.label" : {
+    "message" : "發佈日期指示器文字",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.choices.blog" : {
+    "message" : "使用 HubSpot 託管的部落格",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.choices.external" : {
+    "message" : "使用外部 RSS 摘要",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.label" : {
+    "message" : "新增 RSS 摘要",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.placeholder" : {
+    "message" : "搜尋",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_url.label" : {
+    "message" : "RSS URL",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_author.label" : {
+    "message" : "顯示作者姓名",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_date.label" : {
+    "message" : "顯示發佈日期",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_detail.label" : {
+    "message" : "顯示摘要",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "標題",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "RSS 標題",
+    "description" : "",
+    "placeholders" : null
+  },
+  "topic_id.label" : {
+    "message" : "以標記篩選",
+    "description" : "",
+    "placeholders" : null
+  }
+}

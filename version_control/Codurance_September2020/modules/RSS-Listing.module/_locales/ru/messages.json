@@ -1,0 +1,167 @@
+{
+  "attribution_text.default" : {
+    "message" : "автор",
+    "description" : "",
+    "placeholders" : null
+  },
+  "attribution_text.help_text" : {
+    "message" : "Текст, указывающий автора публикации",
+    "description" : "",
+    "placeholders" : null
+  },
+  "attribution_text.label" : {
+    "message" : "Указание автора текста",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.default" : {
+    "message" : "Читать еще",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.help_text" : {
+    "message" : "Текст, который будет отображаться для ссылки с возможностью перехода в конце сводки публикации",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.label" : {
+    "message" : "Текст перехода по ссылке для сводки",
+    "description" : "",
+    "placeholders" : null
+  },
+  "content_group_id.label" : {
+    "message" : "Блог",
+    "description" : "",
+    "placeholders" : null
+  },
+  "include_featured_image.label" : {
+    "message" : "Включить избранное изображение",
+    "description" : "",
+    "placeholders" : null
+  },
+  "limit_to_chars.label" : {
+    "message" : "Ограничить длину сводки (количество символов)",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Построение списка RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "number_of_items.label" : {
+    "message" : "Максимальное количество отображаемых сообщений",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.MMMM d, yyyy 'at' h:mm a" : {
+    "message" : "6 июня 2006 г., 00:00",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.h:mm a 'on' MMMM d, yyyy" : {
+    "message" : "00:00, 6 июня 2006 г.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.long" : {
+    "message" : "6 июня 2017 г., 00:00:00 по восточному поясному времени",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.medium" : {
+    "message" : "6 июня 2006 г., 00:00:00",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.short" : {
+    "message" : "06.06.11, 00:00",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.help_text" : {
+    "message" : "Формат даты публикации",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.label" : {
+    "message" : "Формат даты публикации",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.placeholder" : {
+    "message" : "Выбрать формат даты",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.default" : {
+    "message" : "опубликовано",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.help_text" : {
+    "message" : "Текст, указывающий время и дату публикации сообщения",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.label" : {
+    "message" : "Текст индикатора даты публикации",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.choices.blog" : {
+    "message" : "Использовать размещенный на HubSpot блог",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.choices.external" : {
+    "message" : "Использовать внешний RSS-канал",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.label" : {
+    "message" : "Добавить RSS-канал",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.placeholder" : {
+    "message" : "Поиск",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_url.label" : {
+    "message" : "URL-адрес RSS-канала",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_author.label" : {
+    "message" : "Показать имя автора",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_date.label" : {
+    "message" : "Показать дату публикации",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_detail.label" : {
+    "message" : "Показать сводку",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "Заголовок",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "Заголовок RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "topic_id.label" : {
+    "message" : "Фильтровать по тегу",
+    "description" : "",
+    "placeholders" : null
+  }
+}

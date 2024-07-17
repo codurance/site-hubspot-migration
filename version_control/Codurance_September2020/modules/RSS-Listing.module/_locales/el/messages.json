@@ -1,0 +1,167 @@
+{
+  "attribution_text.default" : {
+    "message" : "από",
+    "description" : "",
+    "placeholders" : null
+  },
+  "attribution_text.help_text" : {
+    "message" : "Το κείμενο που προσδιορίζει τον συντάκτη μιας ανάρτησης",
+    "description" : "",
+    "placeholders" : null
+  },
+  "attribution_text.label" : {
+    "message" : "Κείμενο προσδιορισμού συντάκτη",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.default" : {
+    "message" : "Διαβάστε περισσότερα",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.help_text" : {
+    "message" : "Το κείμενο που θα εμφανιστεί για τον σύνδεσμο εμφάνισης με κλικ στο τέλος μιας σύνοψης ανάρτησης",
+    "description" : "",
+    "placeholders" : null
+  },
+  "click_through_text.label" : {
+    "message" : "Σύνοψη κειμένου εμφάνισης με κλικ",
+    "description" : "",
+    "placeholders" : null
+  },
+  "content_group_id.label" : {
+    "message" : "Ιστολόγιο",
+    "description" : "",
+    "placeholders" : null
+  },
+  "include_featured_image.label" : {
+    "message" : "Συμπερίληψη προβεβλημένης εικόνας",
+    "description" : "",
+    "placeholders" : null
+  },
+  "limit_to_chars.label" : {
+    "message" : "Περιορισμός μήκους σύνοψης (αριθμός χαρακτήρων)",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Καταχώρηση RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "number_of_items.label" : {
+    "message" : "Μέγιστος αριθμός αναρτήσεων για προβολή",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.MMMM d, yyyy 'at' h:mm a" : {
+    "message" : "6 Ιουνίου 2006, στις 12:00 μμ",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.h:mm a 'on' MMMM d, yyyy" : {
+    "message" : "12:00 μ.μ. στις 6 Ιουνίου 2006",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.long" : {
+    "message" : "6 Ιουνίου 2017 12:00:00 μμ EDT",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.medium" : {
+    "message" : "6 Ιουνίου 2006 12:00:00 μμ",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.choices.short" : {
+    "message" : "11/06/06 12:00MM",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.help_text" : {
+    "message" : "Μορφή ημερομηνίας δημοσίευσης",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.label" : {
+    "message" : "Μορφή ημερομηνίας δημοσίευσης",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_format.placeholder" : {
+    "message" : "Επιλέξτε μορφή ημερομηνίας",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.default" : {
+    "message" : "αναρτήθηκε στις",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.help_text" : {
+    "message" : "Το κείμενο που προσδιορίζει πότε δημοσιεύθηκε μια ανάρτηση",
+    "description" : "",
+    "placeholders" : null
+  },
+  "publish_date_text.label" : {
+    "message" : "Κείμενο ένδειξης ημερομηνίας δημοσίευσης",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.choices.blog" : {
+    "message" : "Χρήση ιστολογίου που φιλοξενείται από την HubSpot",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.choices.external" : {
+    "message" : "Χρήση εξωτερικής τροφοδοσίας RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.label" : {
+    "message" : "Προσθήκη τροφοδοσίας RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_feed_type.placeholder" : {
+    "message" : "Αναζήτηση",
+    "description" : "",
+    "placeholders" : null
+  },
+  "rss_url.label" : {
+    "message" : "RSS URL",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_author.label" : {
+    "message" : "Εμφάνιση ονόματος συντάκτη",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_date.label" : {
+    "message" : "Εμφάνιση ημερομηνίας δημοσίευσης",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_detail.label" : {
+    "message" : "Εμφάνιση περίληψης",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "Tίτλος",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "Τίτλος RSS",
+    "description" : "",
+    "placeholders" : null
+  },
+  "topic_id.label" : {
+    "message" : "Φιλτράρισμα ανά ετικέτα",
+    "description" : "",
+    "placeholders" : null
+  }
+}
