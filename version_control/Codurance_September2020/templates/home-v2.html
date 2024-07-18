@@ -75,6 +75,17 @@ label: Home Page version 2
       path='../modules/Compass.module'
       label="Craftmanship Ethos Section" no_wrapper=True %}
   </section>  
+  
+  {% if locale == "es" %}
+    <section class="resources">
+      {% module 'resources' 
+        path='../modules/Text-and-image.module'
+        label="Resources Section" 
+        extra_classes="lateral-spacing"
+      %}
+    </section>
+  {% endif %}
+
   <section class="testimonial">
       <div class="testimonial-wrapper">
         <div class="testimonial-content">

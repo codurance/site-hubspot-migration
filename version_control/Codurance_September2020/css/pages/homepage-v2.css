@@ -212,6 +212,49 @@
     }
 {% endcall %}
 
+/* ======================= 
+   RESOURCES SECTION
+========================== */
+.resources {
+    {{ utils.white_to_tango() }}
+}
+
+.resources .text-and-image__copy .custom-btn {
+    margin-top: var(--space-3);
+}
+
+.resources #hs_cos_wrapper_resources .text-and-image__image {
+    max-width: unset;
+}
+
+{% call utils.medium_large_and_extra_large() %}
+    .resources .text-and-image__container {
+        max-width: var(--content-max-width);
+        padding: unset;
+        gap: unset;
+        overflow: hidden;
+    }
+
+    .resources .text-and-image__copy,
+    .resources .text-and-image__image {
+        flex: 1 1 50%;
+    }
+
+    .resources .text-and-image__copy {
+        align-self: center;
+    }
+
+    .resources #hs_cos_wrapper_resources .text-and-image__image {
+        display: flex;
+        max-height: 16.8rem;
+    }
+
+    .resources #hs_cos_wrapper_resources .text-and-image__image img {
+        align-self: center;
+    }
+{% endcall %}
+
+
 
 /* ======================= 
    TESTIMONIALS SECTION
