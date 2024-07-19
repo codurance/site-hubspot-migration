@@ -28,22 +28,22 @@ label: Page Footer
               {% else %}
                 <h2><span>Latest Blogs</span></h2>
               {% endif %} 
-                {% rss_listing "my_rss_listing"
-                  feed_source={rss_url='http://codurance-azurewebsites-net-3042464.hs-sites.com/publications/rss.xml', is_external=False, content_group_id='35491076028'},
-                  click_through_text='Read more',
-                  show_date=False,
-                  include_featured_image=False,
-                  overrideable=True,
-                  publish_date_format='none',
-                  show_detail=False,
-                  show_author=False,
-                  number_of_items='5',
-                  is_external=False,
-                  rss_url='{{ request.domain }}',
-                  content_group_id='35491076028',
-                  limit_to_chars='0'
-
-                %}
+              {% rss_listing "my_rss_listing"
+                feed_source={rss_url='http://codurance-azurewebsites-net-3042464.hs-sites.com/publications/rss.xml', is_external=False, content_group_id='35491076028'},
+                click_through_text='Read more',
+                show_date=False,
+                include_featured_image=False,
+                overrideable=True,
+                publish_date_format='none',
+                show_detail=False,
+                show_author=False,
+                number_of_items='5',
+                is_external=False,
+                rss_url='{{ request.domain }}',
+                content_group_id='35491076028',
+                limit_to_chars='0',
+                show_title=False
+              %}
             </div>
             <div class="cm-footer-useful-links span3">
               {% menu "my_menu" flyouts=true, label="Useful Links", id="35217654974" %}
