@@ -5,8 +5,6 @@ label: Blog Listing
 -->
 {% extends "./layouts/base.html" %}
 
-{% import '../snippets/blog-cta-cards.html' as snippets %}
-
 {% require_head %}
   <link rel="preload" href="{{ get_asset_url("../css/pages/blog-index.css") }}" as="style" />
   <link rel="preload" href="{{ get_asset_url("../css/partials/blog-card.css") }}" as="style" />
@@ -16,15 +14,6 @@ label: Blog Listing
 {{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
 
 {% block body %}
-  {% module "blog_cta_cards" 
-    path="../modules/Blog-CTA-Cards.module" 
-    label="Blog CTA Cards" 
-    export_to_template_context=True
-  %}
-
-  {% set blog_cta_cards = widget_data.blog_cta_cards.cards %}
-  {% set card_to_show = { "index": 0 } %}
-
   {% if blog_author %}
     {% include "./partials/author-page.html" %}
   {% else %}
@@ -93,9 +82,7 @@ label: Blog Listing
                   </a>
                 </article>
               </div>
-            {% endif %}
-
-            {% if loop.index > 1 %}
+            {% else %}
               <div class="blog-listing__post-wrapper masonry-grid-item">
                 <article class="blog-listing__post">
                   {% if content.featured_image %}
@@ -136,13 +123,6 @@ label: Blog Listing
                     {% endif %}
                   </div>
                 </article>
-              </div>
-            {% endif %}
-
-            {% if loop.index == 1 || loop.index == 3 || loop.index == 5 || loop.index == 7 %}
-              <div class="blog-listing__post-wrapper masonry-grid-item">       
-                {{ snippets.blog_cta_card(blog_cta_cards[card_to_show.index]) }}
-                {% do card_to_show.update({"index": card_to_show.index + 1 }) %}
               </div>
             {% endif %}
           {% endfor %}
