@@ -5,8 +5,6 @@ label: Blog Listing
 -->
 {% extends "./layouts/base.html" %}
 
-{% import '../snippets/blog-cta-cards.html' as snippets %}
-
 {% require_head %}
   <link rel="preload" href="{{ get_asset_url("../css/pages/blog-index.css") }}" as="style" />
   <link rel="preload" href="{{ get_asset_url("../css/partials/blog-card.css") }}" as="style" />
@@ -16,15 +14,6 @@ label: Blog Listing
 {{ require_css(get_asset_url("../css/partials/blog-card.css")) }}
 
 {% block body %}
-  {% module "blog_cta_cards" 
-    path="../modules/Blog-CTA-Cards.module" 
-    label="Blog CTA Cards" 
-    export_to_template_context=True
-  %}
-
-  {% set blog_cta_cards = widget_data.blog_cta_cards.cards %}
-  {% set card_to_show = { "index": 0 } %}
-
   {% if blog_author %}
     {% include "./partials/author-page.html" %}
   {% else %}
@@ -45,72 +34,11 @@ label: Blog Listing
           </div>
         {% endif %}
       
-        <div class="masonry-grid">
-          <div class="masonry-grid-sizer"></div>
-          
+        <div class="blog-listing__posts">
           {% for content in contents %}                 
             {% if loop.index == 1 %}
-              <div class="blog-listing__post-wrapper blog-listing__post-wrapper--featured masonry-grid-item">
-                <article class="blog-listing__post post--featured">
-                  <div class="blog-listing__info">
-                      <p class="post__author">
-                        By {{ content.blog_post_author.display_name }}
-                        <span>·</span>
-                        <time datetime="{{ content.publish_date_localized }}">
-                          {{ content.publish_date_localized }}
-                        </time>
-                      </p>
-                      <h5 class="post__title">
-                        <a href="{{ content.absolute_url }}">
-                          {{ content.name }}</a>
-                      </h5>
-                      <p class="post__description">
-                        {{ content.post_list_content|safe|truncatehtml(305, '...' , false)|striptags  }}
-                      </p>
-
-                      {% if content.tag_list %}
-                        <ul class="tag-list">
-                          {% for tag in content.tag_list %}
-                          <li>
-                            <a class="tags" 
-                                href="{{ blog_tag_url(group.id, tag.slug) }}">
-                                  {{ tag.name }}
-                            </a>
-                          </li>
-                          {% endfor %}
-                        </ul>
-                      {% endif %}
-
-                  </div>
-                  <a href="{{ content.absolute_url }}">
-                    <img class="blog-listing__post-image--featured"
-                      src="{{ resize_image_url( content.featured_image, 600 ) }}"
-                      alt="{{ content.name }}"
-                      loading="lazy"
-                      width="600"
-                      height="600"
-                    />
-                  </a>
-                </article>
-              </div>
-            {% endif %}
-
-            {% if loop.index > 1 %}
-              <div class="blog-listing__post-wrapper masonry-grid-item">
-                <article class="blog-listing__post">
-                  {% if content.featured_image %}
-                    <a href="{{ content.absolute_url }}">
-                      <img class="blog-listing__post-image" 
-                        src="{{ resize_image_url( content.featured_image, 528 ) }}"
-                        alt="{{ content.name }}"
-                        loading="lazy"
-                        width="528"
-                        height="528"
-                      />
-                    </a>
-                  {% endif %}
-
-                  <div class="blog-listing__info">
+              <article class="blog-listing__post blog-listing__post--featured">
+                <div class="blog-listing__info">
                     <p class="post__author">
                       By {{ content.blog_post_author.display_name }}
                       <span>·</span>
@@ -118,32 +46,78 @@ label: Blog Listing
                         {{ content.publish_date_localized }}
                       </time>
                     </p>
-                    
                     <h5 class="post__title">
                       <a href="{{ content.absolute_url }}">
-                        {{ content.name }}
-                      </a>
+                        {{ content.name }}</a>
                     </h5>
+                    <p class="post__description">
+                      {{ content.post_list_content|safe|truncatehtml(305, '...' , false)|striptags  }}
+                    </p>
 
                     {% if content.tag_list %}
                       <ul class="tag-list">
                         {% for tag in content.tag_list %}
-                          <li>
-                            <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
-                          </li>
+                        <li>
+                          <a class="tags" 
+                              href="{{ blog_tag_url(group.id, tag.slug) }}">
+                                {{ tag.name }}
+                          </a>
+                        </li>
                         {% endfor %}
                       </ul>
                     {% endif %}
-                  </div>
-                </article>
-              </div>
-            {% endif %}
 
-            {% if loop.index == 1 || loop.index == 3 || loop.index == 5 || loop.index == 7 %}
-              <div class="blog-listing__post-wrapper masonry-grid-item">       
-                {{ snippets.blog_cta_card(blog_cta_cards[card_to_show.index]) }}
-                {% do card_to_show.update({"index": card_to_show.index + 1 }) %}
-              </div>
+                </div>
+                <a href="{{ content.absolute_url }}">
+                  <img class="blog-listing__post-image--featured"
+                    src="{{ resize_image_url( content.featured_image, 600 ) }}"
+                    alt="{{ content.name }}"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                  />
+                </a>
+              </article>
+            {% else %}
+              <article class="blog-listing__post">
+                {% if content.featured_image %}
+                  <a href="{{ content.absolute_url }}">
+                    <img class="blog-listing__post-image" 
+                      src="{{ resize_image_url( content.featured_image, 528 ) }}"
+                      alt="{{ content.name }}"
+                      loading="lazy"
+                      width="528"
+                      height="528"
+                    />
+                  </a>
+                {% endif %}
+
+                <div class="blog-listing__info">
+                  <p class="post__author">
+                    By {{ content.blog_post_author.display_name }}
+                    <span>·</span>
+                    <time datetime="{{ content.publish_date_localized }}">
+                      {{ content.publish_date_localized }}
+                    </time>
+                  </p>
+                  
+                  <h5 class="post__title">
+                    <a href="{{ content.absolute_url }}">
+                      {{ content.name }}
+                    </a>
+                  </h5>
+
+                  {% if content.tag_list %}
+                    <ul class="tag-list">
+                      {% for tag in content.tag_list %}
+                        <li>
+                          <a class="tags" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
+              </article>
             {% endif %}
           {% endfor %}
         </div>
@@ -210,28 +184,4 @@ label: Blog Listing
       </div>
     </div>
   {% endif %}
-  
-  {{ require_js(get_asset_url("../js/imageLoaded.js"), { position: "footer", defer:true }) }}
-  {{ require_js(get_asset_url("../js/masonry.js"), { position: "footer", defer:true }) }}
-
-  <script>
-    document.onreadystatechange = () => {
-      if (document.readyState === 'complete') {
-        const masonryGrid = document.querySelector('.masonry-grid');
-
-        const masonryOptions = {
-          columnWidth: '.masonry-grid-sizer',
-          itemSelector: '.masonry-grid-item',
-          gutter: 32, {# Gutter expressed in px #}
-          percentPosition: true
-        };
-
-        const makeMasonry = function() {
-          new Masonry(masonryGrid, masonryOptions);
-        }
-
-        imagesLoaded( masonryGrid, makeMasonry );
-      }
-    };
-  </script>
 {% endblock body %}
