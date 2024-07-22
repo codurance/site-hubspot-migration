@@ -74,12 +74,10 @@
 <div class="author-blog-listing">
     <div class="container responsive-page-width lateral-spacing">
         <h2 class="author-listing-title">{{ group.public_title }}</h2>
-        <div class="masonry-grid">
-            <div class="masonry-grid-sizer"></div>
+        <div class="author-blog-listing__posts">
             {% for content in contents %}
-                <div class="masonry-grid-item">
-                    <article class="author-blog__card">
-                        {% if content.featured_image %}
+                <article class="author-blog__card">
+                    {% if content.featured_image %}
                         <a href="{{ content.absolute_url }}">
                             <img class="card__img" 
                                 src="{{ resize_image_url( content.featured_image, 528 ) }}" 
@@ -89,33 +87,32 @@
                                 height="528"
                             />
                         </a>
+                    {% endif %}
+                    <div class="card__content">
+                        <time class="card__date" datetime="{{ content.publish_date_localized }}">
+                            Posted {{ content.publish_date_localized }}
+                        </time>
+
+                        <h3 class="card__title">
+                            <a class="author-blog-listing__title-link" href="{{ content.absolute_url }}">
+                            {{ content.name }}</a>
+                        </h3>
+
+                        {% if content.tag_list %}
+                            <ul class="card__tags">
+                                {% for tag in content.tag_list %}
+                                    <li>
+                                        <a class="tags" 
+                                            href="{{ blog_tag_url(group.id, tag.slug) }}"
+                                        >
+                                            {{ tag.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
                         {% endif %}
-                        <div class="card__content">
-                            <time class="card__date" datetime="{{ content.publish_date_localized }}">
-                                Posted {{ content.publish_date_localized }}
-                            </time>
-
-                            <h3 class="card__title">
-                                <a class="author-blog-listing__title-link" href="{{ content.absolute_url }}">
-                                {{ content.name }}</a>
-                            </h3>
-
-                            {% if content.tag_list %}
-                                <ul class="card__tags">
-                                    {% for tag in content.tag_list %}
-                                        <li>
-                                            <a class="tags" 
-                                                href="{{ blog_tag_url(group.id, tag.slug) }}"
-                                            >
-                                                {{ tag.name }}
-                                            </a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            {% endif %}
-                        </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
             {% endfor %}
         </div>
     </div>
