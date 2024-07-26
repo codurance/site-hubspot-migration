@@ -6,8 +6,9 @@ label: Home Page version 2
 
 {% extends "./layouts/base.html" %}
 
+{% set hero_image = content.widgets.linked_image.body.img.src %}
 {% require_head %}
-  <link rel="preload" href="https://f.hubspotusercontent10.net/hubfs/3042464/Homepage/Header%20Section/header-x-large-homepage.png" as="image" />
+  <link rel="preload" href="{{ hero_image }}" as="image" />
   <link rel="preload" href="{{ get_asset_url("../css/pages/homepage-v2.css") }}" as="style" />
 {% end_require_head %}
 
