@@ -26,7 +26,12 @@
 				{% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}"' %}
 
 				{% if item.link %}<a href="{{ item.link.url.href }}">{% endif %}
-				<img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" loading="lazy" {{ sizeAttrs }} />
+					<img 
+						src="{{ item.logo.src }}" 
+						alt="{{ item.logo.alt }}" 
+						{% if item.logo.loading != "disabled" %}loading="{{ item.logo.loading }}"{% endif %} 
+						{{ sizeAttrs }} 
+					/>
 				{% if item.link %}</a>{% endif %}
 			{% endif %}
 		{% endfor %}

@@ -16,10 +16,10 @@
    "children": [
     {
      "default": {
-      "size_type": "auto",
+      "size_type": "exact",
       "src": "",
       "alt": null,
-      "loading": "lazy"
+      "loading": "disabled"
      },
      "display_width": null,
      "id": "e5a985f1-c410-73ca-fca4-933dd3b7d4c6",
@@ -28,13 +28,11 @@
      "name": "logo",
      "required": false,
      "resizable": true,
-     "responsive": true,
-     "show_loading": false,
+     "responsive": false,
+     "show_loading": true,
      "type": "image"
     },
     {
-     "type": "link",
-     "id": "e226e673-564b-8831-3cf1-cc676cd27005",
      "default": {
       "url": {
        "content_id": null,
@@ -44,6 +42,13 @@
       "open_in_new_tab": false,
       "no_follow": false
      },
+     "display_width": null,
+     "id": "e226e673-564b-8831-3cf1-cc676cd27005",
+     "label": "Link",
+     "locked": false,
+     "name": "link",
+     "required": false,
+     "show_advanced_rel_options": false,
      "supported_types": [
       "EXTERNAL",
       "CONTENT",
@@ -54,19 +59,18 @@
       "PHONE_NUMBER",
       "PAYMENT"
      ],
-     "label": "Link",
-     "name": "link"
+     "type": "link"
     }
    ],
    "default": [
     {
      "logo": {
-      "size_type": "auto",
+      "size_type": "exact",
       "src": "",
       "alt": null,
-      "loading": "lazy"
+      "loading": "disabled"
      },
-     "link_field_1": {
+     "link": {
       "url": {
        "content_id": null,
        "type": "EXTERNAL",
