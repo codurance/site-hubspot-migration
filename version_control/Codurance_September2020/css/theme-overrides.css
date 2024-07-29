@@ -49,7 +49,8 @@ stylesheets or you can add your own custom styles.
   max-width: {{ theme.spacing.max_width }}px;
 }
 
-.dnd-section .widget-type-rich_text ul {
+.dnd-section .widget-type-rich_text ul,
+.dnd-section .widget-type-rich_text ol {
   margin-inline-start: 1em;
 }
 
