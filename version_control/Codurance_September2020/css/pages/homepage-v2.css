@@ -202,6 +202,7 @@
     .craftmanship-ethos .compass-image img {
         transform: translate(-29%,-25.7%);
         max-width: initial;
+        width: auto;
     }
 {% endcall %}
 
@@ -209,12 +210,6 @@
     .craftmanship-ethos .compass-image img {
         max-height: 25rem;
         transform: translate(-29%,-21.7%);
-    }
-{% endcall %}
-
-{% call utils.medium() %}
-    .craftmanship-ethos .compass-image img {
-        width: auto;
     }
 {% endcall %}
 
