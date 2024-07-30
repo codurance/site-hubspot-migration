@@ -15,7 +15,15 @@
 					<h3 class="expertise-areas__title">{{ item.title }}</h3>
 					{% if item.icon.src %}
 						{% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
-					<img class="expertise-areas__image" src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }}>
+						{% set sizeAttrs = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}"' %}
+
+						<img 
+							class="expertise-areas__image" 
+							src="{{ item.icon.src }}" 
+							alt="{{ item.icon.alt }}" 
+							{{ loadingAttr }} 
+							{{ sizeAttrs }}
+						/>
 					{% endif %}
 				</div>
 			{% endfor %}
@@ -45,8 +53,10 @@
 	</div>
 	<div class="compass-image">
 		{% if module.image_field.src %}
-			 {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
-			<img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }}>
+			{% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
+			{% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+
+			<img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }} />
 		{% endif %}
 	</div>
 </div>

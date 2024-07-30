@@ -162,12 +162,12 @@
 
 .craftmanship-ethos .compass-image {
     transform: translate(-29%,-20.7%);
-    width: 21em;
+    width: 21rem;
     max-width: initial;
 }
 
 .craftmanship-ethos .compass-content {
-    margin:0 auto;
+    margin: 0 auto;
     max-width: 90%;
     margin-top: -3em;
 }
@@ -180,35 +180,41 @@
 .craftmanship-ethos .expertise-areas__title {
     max-width: initial;
 }
+
 .craftmanship-ethos .expertise-areas__image {
     filter: brightness(100);
 }
 
-
 {% call utils.medium_large_and_extra_large() %}
     .craftmanship-ethos .compass-content {
-        margin:0 auto;
+        margin: 0 auto;
         max-width: 100%;
     }
+
     .craftmanship-ethos .compass-content__text{
         max-width: 100%;
     }
 
     .craftmanship-ethos .compass-image {
-        width: 50%;
         transform: initial;
     }
 
     .craftmanship-ethos .compass-image img {
-        height: 18em;
         transform: translate(-29%,-25.7%);
         max-width: initial;
     }
 {% endcall %}
+
 {% call utils.large_and_extra_large() %}
     .craftmanship-ethos .compass-image img {
-        height: 25em;
+        max-height: 25rem;
         transform: translate(-29%,-21.7%);
+    }
+{% endcall %}
+
+{% call utils.medium() %}
+    .craftmanship-ethos .compass-image img {
+        width: auto;
     }
 {% endcall %}
 
