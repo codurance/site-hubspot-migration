@@ -7,6 +7,7 @@ label: Industries Overview
 
 {% require_head %}
   <link rel="preload" href="{{ get_asset_url("../css/pages/industries-overview.css") }}" as="style" />
+  <link rel="preload" href="{{ content.widgets.header_image.body.src }}" as="image" />
 {% end_require_head %}
 
 {{ require_css(get_asset_url("../css/pages/industries-overview.css")) }}
