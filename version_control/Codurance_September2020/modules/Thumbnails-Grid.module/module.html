@@ -136,56 +136,43 @@
     </style>
 {% end_require_css %}
 
-
-{% set grid_items = [] %}
-
 {% if module.grid_items %}
-    {% for grid_item in module.grid_items %}
-        {% if ( grid_item.img.src ) %}
-            {% set grid_item_image_src = resize_image_url( grid_item.img.src, 0, 0, 400 ) %}
-        {% endif %}
-        {% do grid_items.append({
-                "hover_message": grid_item.hover_message,
-                "alt_text": grid_item.img.alt,
-                "img_src": grid_item_image_src,
-                "link_url": grid_item.link_url,
-                "open_in_new_tab": grid_item.link_url.open_in_new_tab
-            })
-        %}
-    {% endfor %}
-{% endif %}
-
-{% if grid_items %}
     {% set image_count = grid_items|length %}
     {% set grid_aria_label = module.default_text.grid_aria_label %}
 
     {# HTML MODULE STARTS #}
 
     <ul class="hs-image__grid__list" aria-label="{{ grid_aria_label }}" role="list" data-grid_action_type="{{ module.grid_settings.group_image_click.image_click_functionality }}">
-        {% for grid_item in grid_items %}
+        {% for grid_item in module.grid_items %}
             <li class="hs-image__grid__list__item">
                 {% if navigate_on_click and grid_item.link_url.url.href %}
                     <a href="{{ grid_item.link_url.url.href }}"
                         {% if grid_item.link_url.rel %}
                             rel="{{ grid_item.link_url.rel }}"
                         {% endif %}
-                        {% if grid_item.open_in_new_tab %}
+                        {% if grid_item.link_url.open_in_new_tab %}
                             target="_blank"
                         {% endif %} >
                 {% endif %}
+
+                {% set sizeAttrs = 'width="{{ grid_item.img.width|escape_attr }}" height="{{ grid_item.img.height|escape_attr }}"' %}
+                {% set loadingAttr = grid_item.img.loading != 'disabled' ? 'loading="{{ grid_item.img.loading|escape_attr }}"' : '' %}
                 <img
                     class="hs-image__grid__list__item__image {{ hover_effect_classes }} hs-allow-transition"
-                    src="{{ resize_image_url(grid_item.img_src, 0, 0, 400) }}" 
+                    src="{{ grid_item.img.src }}" 
                     loading="lazy"
-                    width="400" height="300"
-                    alt="{{ grid_item.alt_text | escape }}">
+                    alt="{{ grid_item.img.alt }}"
+                    {{ sizeAttrs }}
+                    {{ loadingAttr}}
+                />
 
-                    {% if module.grid_settings.group_image_hover.overlay_show_on != "never" and grid_item.hover_message %}
-                        <div class="hs-image__grid__item__overlay"></div>
-                        <div class="hs-image__grid__item__overlay__content">
-                            {{ grid_item.hover_message }}
-                        </div>
-                    {% endif %}
+                {% if module.grid_settings.group_image_hover.overlay_show_on != "never" and grid_item.hover_message %}
+                    <div class="hs-image__grid__item__overlay"></div>
+                    <div class="hs-image__grid__item__overlay__content">
+                        {{ grid_item.hover_message }}
+                    </div>
+                {% endif %}
+
                 {% if navigate_on_click and grid_item.link_url.url.href %}
                     </a>
                 {% endif %}
