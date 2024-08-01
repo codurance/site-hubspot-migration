@@ -146,3 +146,13 @@
     }
 {% endcall %}
 
+.newsletter-footer-form__container .hs-recaptcha {
+    visibility: hidden;
+    position: absolute;
+}
+
+.newsletter-footer-form__container .newsletter__grecaptcha-notice {
+    {{ utils.sejima() }}
+    margin-top: var(--space-5);
+}
+
