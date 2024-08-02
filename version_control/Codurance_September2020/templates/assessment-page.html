@@ -12,6 +12,20 @@ label: Assessment Page
 
 {{ require_css(get_asset_url("../css/pages/assessment.css")) }}
 
+{% color "assessment_color" 
+  label="Choose the color for the assessment" 
+  export_to_template_context=True
+%}
+{% set assessment_color_code = content.widgets.assessment_color.body.color %}
+
+{% require_css %}
+  <style>
+    .solution .features-listing__item {
+      border-left-color: {{ assessment_color_code }};
+    }
+  </style>
+{% end_require_css %}
+
 {% block body %}
 
 <main>
