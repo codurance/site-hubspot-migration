@@ -13,12 +13,26 @@
   {% set recent_posts = content_by_ids(module.posts) %}
 {% endif %}
 
-<div class="cm-recent-post lateral-spacing"> 
+<div class="cm-recent-post {% if module.lazy_load_images %}js-lazy-load-images{% endif %} lateral-spacing"> 
   <div class="cm-recent-post__group">
     {% for post in recent_posts %}
+      {% set post_thumbnail_style = post.featured_image ? "background-image:url({{ post.featured_image }})" : "{{ utils.tango_to_white() }}" %}
+      {% set image_wrapper_class = "cm-recent-image-wrapper--{{ loop.index }}" %}
+      {% require_css %}
+        <style>
+          {% scope_css %}
+            .{{ image_wrapper_class }} {
+              {{ post_thumbnail_style }}
+            }
+          {% end_scope_css %}
+        </style>
+      {% end_require_css %}
+
       <div class="cm-recent-post__item">
-        {% set style = post.featured_image ? "background-image:url({{ post.featured_image }})" : "{{ utils.tango_to_white() }}" %}
-        <div class="cm-recent-image-wrapper" style="{{ style }}"></div>
+        <div 
+          class="cm-recent-image-wrapper {% if !module.lazy_load_images %}{{ image_wrapper_class }}{% endif %}" 
+          data-background-class="{{ image_wrapper_class }}"
+        ></div>
         <div class="cm-recent-post__inner">
           <div class="cm-recent-post__info-wrapper">
             <small class="cm-recent-post__meta-info">{{ post.publish_date_local_time | format_date('d MMM yyyy') }} - {{ post.blog_post_author.display_name }}</small>

@@ -1,8 +1,5 @@
 [
   {
-   "type": "choice",
-   "id": "08b0abab-5286-9d33-2784-88e9eb9c95aa",
-   "display": "select",
    "choices": [
     [
      "blog",
@@ -13,10 +10,19 @@
      "Select posts from blog"
     ]
    ],
-   "label": "Load posts method",
-   "name": "load_posts_method",
+   "default": "blog",
+   "display": "select",
+   "display_width": null,
+   "id": "08b0abab-5286-9d33-2784-88e9eb9c95aa",
    "inline_help_text": "Please choose the method to load the posts",
-   "default": "blog"
+   "label": "Load posts method",
+   "locked": false,
+   "multiple": false,
+   "name": "load_posts_method",
+   "preset": null,
+   "reordering_enabled": true,
+   "required": false,
+   "type": "choice"
   },
   {
    "display_width": null,
@@ -27,9 +33,9 @@
    "required": false,
    "type": "blog",
    "visibility": {
-    "operator": "EQUAL",
     "controlling_field_path": "load_posts_method",
-    "controlling_value_regex": "blog"
+    "controlling_value_regex": "blog",
+    "operator": "EQUAL"
    }
   },
   {
@@ -43,9 +49,9 @@
    "tag_value": "SLUG",
    "type": "tag",
    "visibility": {
-    "operator": "EQUAL",
     "controlling_field_path": "load_posts_method",
-    "controlling_value_regex": "blog"
+    "controlling_value_regex": "blog",
+    "operator": "EQUAL"
    }
   },
   {
@@ -60,22 +66,33 @@
    "step": 1,
    "type": "number",
    "visibility": {
-    "operator": "EQUAL",
     "controlling_field_path": "load_posts_method",
-    "controlling_value_regex": "blog"
+    "controlling_value_regex": "blog",
+    "operator": "EQUAL"
    }
   },
   {
-   "type": "page",
+   "display_width": null,
    "id": "977abac6-041f-d376-b6fa-121e323730b2",
    "label": "Posts",
+   "locked": false,
    "name": "posts",
+   "occurrence": {},
+   "required": false,
+   "type": "page",
    "visibility": {
-    "operator": "EQUAL",
     "controlling_field_path": "load_posts_method",
-    "controlling_value_regex": "posts"
-   },
-   "occurrence": {}
+    "controlling_value_regex": "posts",
+    "operator": "EQUAL"
+   }
+  },
+  {
+   "type": "boolean",
+   "id": "ccae3892-afbc-73a8-5e29-f76a129eec53",
+   "default": false,
+   "display": "toggle",
+   "label": "Lazy load post thumbnails",
+   "name": "lazy_load_images"
   },
   {
    "allow_new_line": false,
