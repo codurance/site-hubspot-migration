@@ -20,6 +20,10 @@ label: Assessment Page
 
 {% require_css %}
   <style>
+    .gradient-container {
+      background: transparent linear-gradient(0deg, {{ assessment_color_code }} 0%, #FF585100 100%) 0% 0% no-repeat padding-box;
+    }
+    
     .solution .features-listing__item,
     .benefits .features-listing__item {
       border-left-color: {{ assessment_color_code }};
@@ -32,6 +36,8 @@ label: Assessment Page
 <main>
   <section class="hero">
     {% module "hero_content" path="../modules/Text-and-image.module" label="Hero section" %}
+
+    <div class="gradient-container"></div>
   </section>
 
   <section class="solution region">
@@ -56,7 +62,10 @@ label: Assessment Page
     {% module "modules_header" path="@hubspot/section_header" label="Modules header" extra_classes="lateral-spacing" %}
     
     <div class="modules__cards-wrapper">
-      <div class="modules__cards-background"></div>
+      <div class="modules__cards-background">
+        <div class="gradient-container"></div>
+      </div>
+
       {% module "module_cards"
         path="../modules/Simple-Card.module"
         label="Modules listing"
@@ -154,11 +163,14 @@ label: Assessment Page
       label="Assessments header" 
       extra_classes="assessments__header lateral-spacing"
     %}
+
     {% module "assessments_listing" 
       path="../modules/How-It-Works.module" 
       label="Assessments listing" 
       extra_classes="assessments__listing"
     %}
+
+    <div class="gradient-container"></div>
   </section>
 
   <section class="related-posts region">
@@ -179,6 +191,8 @@ label: Assessment Page
       label="Contact form"
       path="../modules/Service-Line-Form.module"
     %}
+
+    <div class="gradient-container"></div>
   </section>
 </main>
 

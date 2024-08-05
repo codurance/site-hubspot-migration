@@ -1,11 +1,11 @@
 {% import '../utils/utils.css' as utils %}
 
+/* General styles */
 :root {
   scroll-behavior: smooth;
   --card-img-height: 6rem;
 }
 
-/* General styles */
 .section-header h2 {
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
@@ -17,20 +17,34 @@ section.responsive-page-width {
     margin-inline: auto;
 }
 
+.gradient-container {
+    height: 19rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
 /* Hero section */
 .hero {
     {{ utils.slate_to_woodsmoke() }}
     color: white;
+    position: relative;
 }
 
 .hero .text-and-image__container {
     max-width: var(--content-max-width);
     justify-content: flex-start;
+    z-index: 1;
+    position: relative;
 }
 
 .hero .text-and-image__copy p {
     {{ utils.base() }}
     font-weight: var(--light-font-weight);
+}
+
+.hero .gradient-container {
+    height: 8.5rem;
 }
 
 {% call utils.large_and_extra_large() %}
@@ -311,6 +325,7 @@ div.cta-block {
 .assessments {
     {{ utils.slate_to_woodsmoke() }}
     color: white;
+    position: relative;
 }
 
 .assessments__header,
@@ -405,3 +420,13 @@ div.cta-block {
         padding: unset;
     }
 {% endcall %}
+
+/* Contact form section */
+#contact-form {
+    position: relative;
+}
+
+#contact-form .cm-form-wrapper {
+    z-index: 1;
+    position: relative;
+}
