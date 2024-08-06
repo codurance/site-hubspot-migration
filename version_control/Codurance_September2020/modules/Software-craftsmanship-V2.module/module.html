@@ -2,11 +2,12 @@
 
 {{ require_css(get_asset_url("../../css/modules/software-craftsmanship-v2.css")) }}
 
-<div class="software-craft-group">
+<ul class="software-craft-group">
   {% for item in module.item %}
+    <li class="software-craft__item">
+      {% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
+      <img src="{{ item.image_field.src }}" loading="lazy" {{ sizeAttrs }} />
 
-    <div class="software-craft__item">
-      <div class="software-craft__image-wrapper" style="background-image:url({{ item.image_field.src }})"></div>
       <div class="software-craft__inner">
         <div class="software-craft__info-wrapper">
           <h3 class="software-craft__title">{{ item.heading }}</h3>
@@ -37,7 +38,6 @@
         )}}
 
       </div>
-    </div>
-
+    </li>
   {% endfor %}
-</div>
+</ul>
