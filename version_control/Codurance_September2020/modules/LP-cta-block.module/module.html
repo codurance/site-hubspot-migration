@@ -4,7 +4,8 @@
 {% require_css %}
     <style>
       {% scope_css %}
-        .cta-block {
+        /* The js-display-background class is added via JS dynamically on scroll */
+        .cta-block.js-display-background { 
             --bg-img-small: url({{module.background_image.small.src}});
             --bg-img-large: url({{module.background_image.large.src}});
         }
