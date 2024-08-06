@@ -262,5 +262,93 @@
    "required": false,
    "tab": "CONTENT",
    "type": "group"
+  },
+  {
+    "id" : "fbef4bd4-a91e-088a-7a16-0819680fd9ca",
+    "name" : "style",
+    "display_width" : null,
+    "label" : "Style",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "bd4313f2-3531-a5cb-a4e4-7165ca2df0e2",
+      "name" : "mobile",
+      "display_width" : null,
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "e459841b-d119-2996-6508-e1c13f2e64d8",
+        "name" : "image_alignment",
+        "display_width" : null,
+        "label" : "Image alignment",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "start", "Left" ], [ "center", "Center" ], [ "end", "Right" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "center"
+      }, {
+        "id" : "2bacea72-5f8b-8245-2871-37e1c0c5df0d",
+        "name" : "hide_image_on_mobile",
+        "display_width" : null,
+        "label" : "Hide image on mobile",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : false
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "image_alignment" : "center",
+        "hide_image_on_mobile" : false
+      }
+    }, {
+      "id" : "9284e708-6557-6b2f-add9-786c165ca489",
+      "name" : "desktop",
+      "display_width" : null,
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "3a232f98-6ae4-d49c-a9f3-30c768acaecf",
+        "name" : "image_alignment",
+        "display_width" : null,
+        "label" : "Image alignment",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "start", "Top" ], [ "center", "Center" ], [ "end", "Bottom" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "center"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "image_alignment" : "center"
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "mobile" : {
+        "image_alignment" : "center",
+        "hide_image_on_mobile" : false
+      },
+      "desktop" : {
+        "image_alignment" : "center"
+      }
+    }
   }
  ]
