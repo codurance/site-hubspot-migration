@@ -72,7 +72,6 @@
      "name": "thumbnail",
      "required": false,
      "resizable": true,
-     "responsive": true,
      "show_loading": false,
      "type": "image"
     },
