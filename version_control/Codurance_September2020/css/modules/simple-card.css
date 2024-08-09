@@ -46,6 +46,11 @@
     width: 100%;
 }
 
+.card-container--hubdb .card__img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
 .card__info {
     padding: var(--space-4) var(--space-3);
     height: 100%;
