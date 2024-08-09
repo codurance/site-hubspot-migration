@@ -207,18 +207,6 @@
    }
   },
   {
-   "default": false,
-   "display": "toggle",
-   "display_width": null,
-   "help_text": "Fix the aspect ratio of all card thumbnails to 16/9",
-   "id": "76c755ee-5b2f-312c-d091-6c1159cb2be5",
-   "label": "Fixed aspect ratio",
-   "locked": false,
-   "name": "fixed_aspect_ratio",
-   "required": false,
-   "type": "boolean"
-  },
-  {
    "default": 4,
    "display": "text",
    "display_width": null,

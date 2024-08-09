@@ -52,7 +52,11 @@
     {% for item in list %}
         {% set card = {
             "content_type" : item.content_type,
-            "thumbnail" : item.thumbnail.src,
+            "thumbnail" : {
+                "src": item.thumbnail.src,
+                "width": item.thumbnail.width,
+                "height": item.thumbnail.height
+            },
             "title" : item.title,
             "description" : item.description,
             "features_listing" : item.features_listing,
@@ -67,12 +71,11 @@
 <div class="card-container lateral-spacing{% if cards_type_selected == "hubdb" %} card-container--hubdb{% endif %}">
     {% for card in cards %}
         <article class="card">
-            {% set card_thumbnail = resize_image_url(card.thumbnail, 0, 0, 400) %}
-            <img class="card__img {% if module.fixed_aspect_ratio %}card__img--ratio{% endif %}"  
-                src="{{ card_thumbnail }}" 
+            <img class="card__img"  
+                src="{{ card.thumbnail.src }}" 
                 alt="" 
-                width="400"
-                height="400"
+                width="{{ card.thumbnail.width }}"
+                height="{{ card.thumbnail.height }}"
                 loading="lazy" 
             />
 

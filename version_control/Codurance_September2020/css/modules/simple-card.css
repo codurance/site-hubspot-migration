@@ -46,11 +46,6 @@
     width: 100%;
 }
 
-.card__img--ratio {
-    aspect-ratio: 16/9;
-    object-fit: cover;
-}
-
 .card__info {
     padding: var(--space-4) var(--space-3);
     height: 100%;
