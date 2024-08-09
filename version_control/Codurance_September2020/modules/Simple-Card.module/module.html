@@ -36,7 +36,11 @@
         {% set card = {
             "date" : item.datetime | format_datetime('short'),
             "formated_date" : formated_date,
-            "thumbnail" : item.thumbnail.url,
+            "thumbnail" : {
+                "src": item.thumbnail.src,
+                "width": item.thumbnail.width,
+                "height": item.thumbnail.height
+            },
             "title" : item.name,
             "link_url" : item.link,
             "link_text" : module.card_link_text
