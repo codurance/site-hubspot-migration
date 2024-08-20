@@ -229,6 +229,7 @@
     padding-inline: var(--space-4);
     padding-top: var(--space-6);
     padding-bottom: var(--space-6);
+    min-width: 30%;
   }
 
   .main-submenu,
