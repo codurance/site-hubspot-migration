@@ -33,6 +33,11 @@ label: Assessment Page
 
 {% block body %}
 
+{% boolean "show_testimonials" label='Show testimonials?' value='True' export_to_template_context=True %}
+{% boolean "show_case_studies" label='Show case studies?' value='True' export_to_template_context=True %}
+{% boolean "show_modules" label='Show modules?' value='True' export_to_template_context=True %}
+{% boolean "show_engagement_models" label='Show engagement models?' value='True' export_to_template_context=True %}
+
 <main>
   <section class="hero">
     {% module "hero_content" path="../modules/Text-and-image.module" label="Hero section" %}
@@ -57,22 +62,24 @@ label: Assessment Page
       {% module "solution_text" path="@hubspot/text" label="Solution text" extra_classes="solution__text" %}			
 		</div>	
   </section>
+  
+  {% if widget_data.show_modules.value %}
+    <section class="modules region">
+      {% module "modules_header" path="@hubspot/section_header" label="Modules header" extra_classes="lateral-spacing" %}
+      
+      <div class="modules__cards-wrapper">
+        <div class="modules__cards-background">
+          <div class="gradient-container"></div>
+        </div>
 
-  <section class="modules region">
-    {% module "modules_header" path="@hubspot/section_header" label="Modules header" extra_classes="lateral-spacing" %}
-    
-    <div class="modules__cards-wrapper">
-      <div class="modules__cards-background">
-        <div class="gradient-container"></div>
+        {% module "module_cards"
+          path="../modules/Simple-Card.module"
+          label="Modules listing"
+          extra_classes="modules__cards"
+        %}
       </div>
-
-      {% module "module_cards"
-        path="../modules/Simple-Card.module"
-        label="Modules listing"
-        extra_classes="modules__cards"
-      %}
-    </div>
-  </section>
+    </section>
+  {% endif %}
 
   <section class="benefits region">
     <div class="benefits__wrapper lateral-spacing">
@@ -96,15 +103,10 @@ label: Assessment Page
     </div>
   </section>
 
-  {% module "testimonials_listing"
-    label="Testimonials"
-    path="../modules/Landing Page Modules/LP-testimonial-slider.module"
-    export_to_template_context=True
-  %}
-
-  {% if widget_data.testimonials_listing.body.testimonial_items %}
+  {% if widget_data.show_testimonials.value %}
     <section class="testimonials">
       {% module "testimonials_listing"
+        label="Testimonials"
         path="../modules/Landing Page Modules/LP-testimonial-slider.module"
       %}
     </section>
@@ -124,36 +126,33 @@ label: Assessment Page
     </div>
   </section>
 
-  {% module "case_studies" 
-    label="Case studies list" 
-    path="../modules/Case Study Card Collection.module"
-    export_to_template_context=True
-  %}
-
-  {% if widget_data.case_studies.body.case_study_card %}
+  {% if widget_data.show_case_studies.value %}
     <section class="case-studies region">
-      {% module "case_studies"  
+      {% module "case_studies" 
+        label="Case studies list" 
         path="../modules/Case Study Card Collection.module"
       %}
     </section>
   {% endif %}
 
-  <section class="models region">
-    {% module "models_header" 
-      path="@hubspot/section_header" 
-      label="Engagement models header" 
-      extra_classes="lateral-spacing" 
-    %}
-    {% module "engagement_models" path="../modules/Engagement-Models.module" %}
-    
-    <div class="models__text-container lateral-spacing">
-      {% module "models_text"
-        path="@hubspot/text"
-        label="Engagement models text"
-        extra_classes="models__text lateral-spacing"
+  {% if widget_data.show_engagement_models.value %}
+    <section class="models region">
+      {% module "models_header" 
+        path="@hubspot/section_header" 
+        label="Engagement models header" 
+        extra_classes="lateral-spacing" 
       %}
-    </div>
-  </section>
+      {% module "engagement_models" path="../modules/Engagement-Models.module" %}
+      
+      <div class="models__text-container lateral-spacing">
+        {% module "models_text"
+          path="@hubspot/text"
+          label="Engagement models text"
+          extra_classes="models__text lateral-spacing"
+        %}
+      </div>
+    </section>
+  {% endif %}
 
   <section>{% module "cta" path="../modules/LP-cta-block.module" label="CTA" %}</section>
 
