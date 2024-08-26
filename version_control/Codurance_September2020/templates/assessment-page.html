@@ -18,11 +18,24 @@ label: Assessment Page
 %}
 {% set assessment_color_code = content.widgets.assessment_color.body.color %}
 
+{% image_src "hero_background_image" 
+  label="Choose background image for the hero section" 
+  export_to_template_context=True 
+%}
+
 {% require_css %}
   <style>
     .gradient-container {
       background: transparent linear-gradient(0deg, {{ assessment_color_code }} 0%, #FF585100 100%) 0% 0% no-repeat padding-box;
     }
+
+    {% if widget_data.hero_background_image.src %}
+      .hero {
+        background: url({{ widget_data.hero_background_image.src }});
+        background-position: center;
+        background-size: cover;
+      }
+    {% endif %}
     
     .solution .features-listing__item,
     .benefits .features-listing__item {
