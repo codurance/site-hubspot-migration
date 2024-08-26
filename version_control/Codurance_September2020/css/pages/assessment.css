@@ -47,11 +47,23 @@ section.responsive-page-width {
     height: 8.5rem;
 }
 
-{% call utils.large_and_extra_large() %}
+{% call utils.medium_large_and_extra_large() %}
     .hero .text-and-image__copy {
-        max-width: 35rem;
+        max-width: 57.5%;
+        text-wrap: balance;    
     }
 
+    .hero .text-and-image__image > img {
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        max-width: 42.5%;
+    }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
     .hero .text-and-image__copy p {
         {{ utils.freed() }}
         font-weight: var(--light-font-weight);
