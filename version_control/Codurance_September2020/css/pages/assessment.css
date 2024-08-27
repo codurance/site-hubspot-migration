@@ -77,6 +77,12 @@ section.responsive-page-width {
     }
 {% endcall %}
 
+{% call utils.small() %}
+    .hero .text-and-image__container {
+        padding-top: unset;
+    }
+{% endcall %}
+
 /* Solution section */
 .solution {
     {{ utils.white_to_tango() }}
