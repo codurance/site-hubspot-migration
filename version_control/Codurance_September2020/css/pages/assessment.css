@@ -80,6 +80,11 @@ section.responsive-page-width {
 {% call utils.small() %}
     .hero .text-and-image__container {
         padding-top: unset;
+        margin-top: -2.5rem;
+    }
+
+    .hero .text-and-image__container img {
+        transform: translate(10%);
     }
 {% endcall %}
 
