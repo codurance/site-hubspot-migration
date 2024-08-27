@@ -1,11 +1,11 @@
 {% import '../utils/utils.css' as utils %}
 
+/* General styles */
 :root {
   scroll-behavior: smooth;
   --card-img-height: 6rem;
 }
 
-/* General styles */
 .section-header h2 {
     {{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
@@ -17,15 +17,25 @@ section.responsive-page-width {
     margin-inline: auto;
 }
 
+.gradient-container {
+    height: 19rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
 /* Hero section */
 .hero {
     {{ utils.slate_to_woodsmoke() }}
     color: white;
+    position: relative;
 }
 
 .hero .text-and-image__container {
     max-width: var(--content-max-width);
     justify-content: flex-start;
+    z-index: 1;
+    position: relative;
 }
 
 .hero .text-and-image__copy p {
@@ -33,11 +43,27 @@ section.responsive-page-width {
     font-weight: var(--light-font-weight);
 }
 
-{% call utils.large_and_extra_large() %}
+.hero .gradient-container {
+    height: 8.5rem;
+}
+
+{% call utils.medium_large_and_extra_large() %}
     .hero .text-and-image__copy {
-        max-width: 35rem;
+        max-width: 57.5%;
+        text-wrap: balance;    
     }
 
+    .hero .text-and-image__image > img {
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        max-width: 42.5%;
+    }
+{% endcall %}
+
+{% call utils.large_and_extra_large() %}
     .hero .text-and-image__copy p {
         {{ utils.freed() }}
         font-weight: var(--light-font-weight);
@@ -48,6 +74,17 @@ section.responsive-page-width {
     .hero .text-and-image__container {
         padding-left: 50px;
         padding-right: 50px;
+    }
+{% endcall %}
+
+{% call utils.small() %}
+    .hero .text-and-image__container {
+        padding-top: unset;
+        margin-top: -2.5rem;
+    }
+
+    .hero .text-and-image__container img {
+        transform: translate(10%);
     }
 {% endcall %}
 
@@ -311,6 +348,7 @@ div.cta-block {
 .assessments {
     {{ utils.slate_to_woodsmoke() }}
     color: white;
+    position: relative;
 }
 
 .assessments__header,
@@ -405,3 +443,13 @@ div.cta-block {
         padding: unset;
     }
 {% endcall %}
+
+/* Contact form section */
+#contact-form {
+    position: relative;
+}
+
+#contact-form .cm-form-wrapper {
+    z-index: 1;
+    position: relative;
+}

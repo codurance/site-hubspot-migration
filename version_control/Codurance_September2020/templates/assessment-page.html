@@ -12,11 +12,50 @@ label: Assessment Page
 
 {{ require_css(get_asset_url("../css/pages/assessment.css")) }}
 
+{% color "assessment_color" 
+  label="Choose the color for the assessment" 
+  export_to_template_context=True
+%}
+{% set assessment_color_code = content.widgets.assessment_color.body.color %}
+
+{% image_src "hero_background_image" 
+  label="Choose background image for the hero section" 
+  export_to_template_context=True 
+%}
+
+{% require_css %}
+  <style>
+    .gradient-container {
+      background: transparent linear-gradient(0deg, {{ assessment_color_code }} 0%, #FF585100 100%) 0% 0% no-repeat padding-box;
+    }
+
+    {% if widget_data.hero_background_image.src %}
+      .hero {
+        background: url({{ widget_data.hero_background_image.src }});
+        background-position: center;
+        background-size: cover;
+      }
+    {% endif %}
+    
+    .solution .features-listing__item,
+    .benefits .features-listing__item {
+      border-left-color: {{ assessment_color_code }};
+    }
+  </style>
+{% end_require_css %}
+
 {% block body %}
+
+{% boolean "show_testimonials" label='Show testimonials?' value='True' export_to_template_context=True %}
+{% boolean "show_case_studies" label='Show case studies?' value='True' export_to_template_context=True %}
+{% boolean "show_modules" label='Show modules?' value='True' export_to_template_context=True %}
+{% boolean "show_engagement_models" label='Show engagement models?' value='True' export_to_template_context=True %}
 
 <main>
   <section class="hero">
     {% module "hero_content" path="../modules/Text-and-image.module" label="Hero section" %}
+
+    <div class="gradient-container"></div>
   </section>
 
   <section class="solution region">
@@ -36,19 +75,24 @@ label: Assessment Page
       {% module "solution_text" path="@hubspot/text" label="Solution text" extra_classes="solution__text" %}			
 		</div>	
   </section>
+  
+  {% if widget_data.show_modules.value %}
+    <section class="modules region">
+      {% module "modules_header" path="@hubspot/section_header" label="Modules header" extra_classes="lateral-spacing" %}
+      
+      <div class="modules__cards-wrapper">
+        <div class="modules__cards-background">
+          <div class="gradient-container"></div>
+        </div>
 
-  <section class="modules region">
-    {% module "modules_header" path="@hubspot/section_header" label="Modules header" extra_classes="lateral-spacing" %}
-    
-    <div class="modules__cards-wrapper">
-      <div class="modules__cards-background"></div>
-      {% module "module_cards"
-        path="../modules/Simple-Card.module"
-        label="Modules listing"
-        extra_classes="modules__cards"
-      %}
-    </div>
-  </section>
+        {% module "module_cards"
+          path="../modules/Simple-Card.module"
+          label="Modules listing"
+          extra_classes="modules__cards"
+        %}
+      </div>
+    </section>
+  {% endif %}
 
   <section class="benefits region">
     <div class="benefits__wrapper lateral-spacing">
@@ -72,15 +116,10 @@ label: Assessment Page
     </div>
   </section>
 
-  {% module "testimonials_listing"
-    label="Testimonials"
-    path="../modules/Landing Page Modules/LP-testimonial-slider.module"
-    export_to_template_context=True
-  %}
-
-  {% if widget_data.testimonials_listing.body.testimonial_items %}
+  {% if widget_data.show_testimonials.value %}
     <section class="testimonials">
       {% module "testimonials_listing"
+        label="Testimonials"
         path="../modules/Landing Page Modules/LP-testimonial-slider.module"
       %}
     </section>
@@ -100,36 +139,33 @@ label: Assessment Page
     </div>
   </section>
 
-  {% module "case_studies" 
-    label="Case studies list" 
-    path="../modules/Case Study Card Collection.module"
-    export_to_template_context=True
-  %}
-
-  {% if widget_data.case_studies.body.case_study_card %}
+  {% if widget_data.show_case_studies.value %}
     <section class="case-studies region">
-      {% module "case_studies"  
+      {% module "case_studies" 
+        label="Case studies list" 
         path="../modules/Case Study Card Collection.module"
       %}
     </section>
   {% endif %}
 
-  <section class="models region">
-    {% module "models_header" 
-      path="@hubspot/section_header" 
-      label="Engagement models header" 
-      extra_classes="lateral-spacing" 
-    %}
-    {% module "engagement_models" path="../modules/Engagement-Models.module" %}
-    
-    <div class="models__text-container lateral-spacing">
-      {% module "models_text"
-        path="@hubspot/text"
-        label="Engagement models text"
-        extra_classes="models__text lateral-spacing"
+  {% if widget_data.show_engagement_models.value %}
+    <section class="models region">
+      {% module "models_header" 
+        path="@hubspot/section_header" 
+        label="Engagement models header" 
+        extra_classes="lateral-spacing" 
       %}
-    </div>
-  </section>
+      {% module "engagement_models" path="../modules/Engagement-Models.module" %}
+      
+      <div class="models__text-container lateral-spacing">
+        {% module "models_text"
+          path="@hubspot/text"
+          label="Engagement models text"
+          extra_classes="models__text lateral-spacing"
+        %}
+      </div>
+    </section>
+  {% endif %}
 
   <section>{% module "cta" path="../modules/LP-cta-block.module" label="CTA" %}</section>
 
@@ -139,11 +175,14 @@ label: Assessment Page
       label="Assessments header" 
       extra_classes="assessments__header lateral-spacing"
     %}
+
     {% module "assessments_listing" 
       path="../modules/How-It-Works.module" 
       label="Assessments listing" 
       extra_classes="assessments__listing"
     %}
+
+    <div class="gradient-container"></div>
   </section>
 
   <section class="related-posts region">
@@ -164,6 +203,8 @@ label: Assessment Page
       label="Contact form"
       path="../modules/Service-Line-Form.module"
     %}
+
+    <div class="gradient-container"></div>
   </section>
 </main>
 
