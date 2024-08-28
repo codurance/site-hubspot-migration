@@ -1,48 +1,63 @@
-[ {
-  "id" : "29b052e6-3551-9b6a-df04-13216cc03f33",
-  "name" : "how_does_it_work_items",
-  "display_width" : null,
-  "label" : "How does it work items",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : null,
-    "sorting_label_field" : "60f9a457-d533-da8e-ac98-6ca4b2cb6d89",
-    "default" : null
+[
+  {
+   "children": [
+    {
+     "allow_new_line": false,
+     "display_width": null,
+     "id": "60f9a457-d533-da8e-ac98-6ca4b2cb6d89",
+     "label": "Title",
+     "locked": false,
+     "name": "title",
+     "required": false,
+     "show_emoji_picker": false,
+     "type": "text",
+     "validation_regex": ""
+    },
+    {
+     "display_width": null,
+     "id": "bfb18da9-da37-5ef9-d541-83b51d8848ba",
+     "label": "Content",
+     "locked": false,
+     "name": "content",
+     "required": false,
+     "type": "richtext"
+    }
+   ],
+   "default": [],
+   "display_width": null,
+   "expanded": false,
+   "group_occurrence_meta": null,
+   "id": "29b052e6-3551-9b6a-df04-13216cc03f33",
+   "label": "How does it work items",
+   "locked": false,
+   "name": "how_does_it_work_items",
+   "occurrence": {
+    "sorting_label_field": "60f9a457-d533-da8e-ac98-6ca4b2cb6d89"
+   },
+   "required": false,
+   "tab": "CONTENT",
+   "type": "group"
   },
-  "children" : [ {
-    "id" : "60f9a457-d533-da8e-ac98-6ca4b2cb6d89",
-    "name" : "title",
-    "display_width" : null,
-    "label" : "Title",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
-  }, {
-    "id" : "bfb18da9-da37-5ef9-d541-83b51d8848ba",
-    "name" : "content",
-    "display_width" : null,
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : [ ]
-}, {
-  "id" : "aa020be6-476b-13a2-2c05-0ce7bdd75e4f",
-  "name" : "apply_card_styling_to_items",
-  "display_width" : null,
-  "label" : "Apply card styling to items",
-  "required" : false,
-  "locked" : false,
-  "display" : "toggle",
-  "type" : "boolean",
-  "default" : true
-} ]
+  {
+   "default": true,
+   "display": "toggle",
+   "display_width": null,
+   "id": "aa020be6-476b-13a2-2c05-0ce7bdd75e4f",
+   "label": "Apply card styling to items",
+   "locked": false,
+   "name": "apply_card_styling_to_items",
+   "required": false,
+   "type": "boolean"
+  },
+  {
+   "type": "number",
+   "id": "462d0c5c-e0ba-a3e0-374a-1df7fc7f211f",
+   "display": "slider",
+   "step": 1,
+   "label": "Number of columns on desktop",
+   "name": "number_of_columns_on_desktop",
+   "min": 2,
+   "max": 3,
+   "default": 2
+  }
+ ]

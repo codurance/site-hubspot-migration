@@ -1,4 +1,16 @@
 {{ require_css(get_asset_url("../../css/modules/rich-texts-listing.css")) }}
+  
+{% require_css %}
+  <style>
+    {% scope_css %}
+      @media screen and (min-width: 1023px) {
+        .rich-texts-listing {
+          grid-template-columns: repeat({{ module.number_of_columns_on_desktop}}, 1fr); 
+        }
+      }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
 
 <div class="rich-texts-listing">
     {% for item in module.how_does_it_work_items %}
