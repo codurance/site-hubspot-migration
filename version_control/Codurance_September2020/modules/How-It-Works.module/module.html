@@ -18,7 +18,7 @@
         </div>
         <div class="how-it-works__text-container">
           <div class="how-it-works__step">
-            <span>{{step_lang}} {{ loop.index }}</span>
+            {% if module.show_steps_copy %}<span>{{step_lang}} {{ loop.index }}</span>{% endif %}
           </div>
 
           <h3 class="how-it-works__title">

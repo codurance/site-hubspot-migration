@@ -1,84 +1,115 @@
-[ {
-  "id" : "fb1dab42-60e2-52a6-e9a3-569873af3959",
-  "name" : "interview_process_items",
-  "display_width" : null,
-  "label" : "Process items",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : 4,
-    "sorting_label_field" : "38281e9a-f8f1-3dbd-d7f2-61abece84d90",
-    "default" : null
-  },
-  "children" : [{
-    "name": "icon_image",
-    "label": "Icon image",
-    "required": false,
-    "locked": false,
-    "inline_help_text": "",
-    "help_text": "",
-    "responsive": true,
-    "resizable": true,
-    "show_loading" : false,
-    "type": "image",
-    "default": {
-      "size_type" : "auto",
+[
+  {
+   "children": [
+    {
+     "default": {
+      "size_type": "auto",
       "src": "",
       "alt": null,
-      "loading": "lazy"}
-    },{
-    "id" : "38281e9a-f8f1-3dbd-d7f2-61abece84d90",
-    "name" : "title",
-    "display_width" : null,
-    "label" : "Title",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text"
-  }, {
-    "id" : "b1cab328-c9c9-c8c8-1edb-d7b0fa8bbd20",
-    "name" : "content",
-    "display_width" : null,
-    "label" : "Content",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext"
+      "loading": "lazy"
+     },
+     "display_width": null,
+     "help_text": "",
+     "id": "interview_process_items.icon_image",
+     "inline_help_text": "",
+     "label": "Icon image",
+     "locked": false,
+     "name": "icon_image",
+     "required": false,
+     "resizable": true,
+     "responsive": true,
+     "show_loading": false,
+     "type": "image"
+    },
+    {
+     "allow_new_line": false,
+     "display_width": null,
+     "id": "38281e9a-f8f1-3dbd-d7f2-61abece84d90",
+     "label": "Title",
+     "locked": false,
+     "name": "title",
+     "required": false,
+     "show_emoji_picker": false,
+     "type": "text",
+     "validation_regex": ""
+    },
+    {
+     "display_width": null,
+     "id": "b1cab328-c9c9-c8c8-1edb-d7b0fa8bbd20",
+     "label": "Content",
+     "locked": false,
+     "name": "content",
+     "required": false,
+     "type": "richtext"
+    },
+    {
+     "children": [
+      {
+       "allow_new_line": false,
+       "display_width": null,
+       "id": "58449969-fbb4-00a5-11a9-948d232351d9",
+       "label": "Text",
+       "locked": false,
+       "name": "text",
+       "required": false,
+       "show_emoji_picker": false,
+       "type": "text",
+       "validation_regex": ""
+      },
+      {
+       "allow_new_line": false,
+       "display_width": null,
+       "help_text": "Input the class for the corresponding icon of <a href=\"https://icons8.com/line-awesome\">Line Awesome</a>",
+       "id": "4becc67a-bdc9-c04d-4a5a-32b6a6c6eb65",
+       "inline_help_text": "",
+       "label": "Icon class",
+       "locked": false,
+       "name": "icon_class",
+       "placeholder": "la-*",
+       "required": false,
+       "show_emoji_picker": false,
+       "type": "text",
+       "validation_regex": ""
+      }
+     ],
+     "default": [],
+     "display_width": null,
+     "expanded": false,
+     "group_occurrence_meta": null,
+     "id": "4f7c258c-1d02-93ce-8776-67a752d57ef3",
+     "label": "Features listing",
+     "locked": false,
+     "name": "features_listing",
+     "occurrence": {
+      "sorting_label_field": "58449969-fbb4-00a5-11a9-948d232351d9"
+     },
+     "required": false,
+     "tab": "CONTENT",
+     "type": "group"
+    }
+   ],
+   "default": [],
+   "display_width": null,
+   "expanded": false,
+   "group_occurrence_meta": null,
+   "id": "fb1dab42-60e2-52a6-e9a3-569873af3959",
+   "label": "Process items",
+   "locked": false,
+   "name": "interview_process_items",
+   "occurrence": {
+    "max": 4,
+    "sorting_label_field": "38281e9a-f8f1-3dbd-d7f2-61abece84d90"
+   },
+   "required": false,
+   "tab": "CONTENT",
+   "type": "group"
   },
   {
-    "type": "group",
-    "id": "4f7c258c-1d02-93ce-8776-67a752d57ef3",
-    "label": "Features listing",
-    "children": [
-     {
-      "type": "text",
-      "id": "58449969-fbb4-00a5-11a9-948d232351d9",
-      "validation_regex": "",
-      "label": "Text",
-      "name": "text"
-     },
-     {
-      "type": "text",
-      "id": "4becc67a-bdc9-c04d-4a5a-32b6a6c6eb65",
-      "validation_regex": "",
-      "label": "Icon class",
-      "name": "icon_class",
-      "placeholder": "la-*",
-      "inline_help_text": "",
-      "help_text": "Input the class for the corresponding icon of <a href=\"https://icons8.com/line-awesome\">Line Awesome</a>"
-     }
-    ],
-    "name": "features_listing",
-    "default": [],
-    "occurrence": {
-     "sorting_label_field": "58449969-fbb4-00a5-11a9-948d232351d9"
-    }
+   "type": "boolean",
+   "id": "0e372550-bae9-f070-bd60-fa9323c1d4dc",
+   "default": true,
+   "display": "toggle",
+   "label": "Show steps copy ",
+   "name": "show_steps_copy"
   }
-],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : { }
-} ]
+ ]
