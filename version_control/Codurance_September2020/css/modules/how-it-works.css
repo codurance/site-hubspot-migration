@@ -44,7 +44,7 @@
 
 {% call utils.large_and_extra_large() %}
   .how-it-works__item {
-    width: 25%;
+    flex: 1;
   }
 {% endcall %}
 
