@@ -444,6 +444,11 @@ div.cta-block {
     }
 {% endcall %}
 
+/* Partners section */
+.partners.region {
+    padding-top: unset;
+}
+
 /* Contact form section */
 #contact-form {
     position: relative;

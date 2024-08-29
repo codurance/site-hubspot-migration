@@ -50,6 +50,7 @@ label: Assessment Page
 {% boolean "show_case_studies" label='Show case studies?' value='True' export_to_template_context=True %}
 {% boolean "show_modules" label='Show modules?' value='True' export_to_template_context=True %}
 {% boolean "show_engagement_models" label='Show engagement models?' value='True' export_to_template_context=True %}
+{% boolean "show_partners" label='Show partners?' value='True' export_to_template_context=True %}
 
 <main>
   <section class="hero">
@@ -195,6 +196,15 @@ label: Assessment Page
       extra_classes="related-posts__listing"
     %}
   </section>
+
+  {% if widget_data.show_partners.value %}
+    <section class="region partners lateral-spacing">
+      {% module "partner_logos"
+        label="Partner logos"
+        path="../modules/Clients-Logos.module"
+      %}
+    </section>
+  {% endif %}
       
   <section id="contact-form">
     {% module "contact_form"
