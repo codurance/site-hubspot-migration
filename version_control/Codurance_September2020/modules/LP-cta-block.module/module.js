@@ -3,17 +3,14 @@
 const moduleContainers = document.querySelectorAll(".cta-block");
 
 moduleContainers.forEach((container) => {
-  const closestSection = container.closest("section");
   const moduleObserver = new IntersectionObserver(displayBackground);
-  moduleObserver.observe(closestSection);
+  moduleObserver.observe(container);
 });
 
 function displayBackground(entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      const moduleContainer = entry.target.querySelector(".cta-block");
-
-      moduleContainer.classList.add("js-display-background");
+      entry.target.classList.add("js-display-background");
     }
   });
 }
