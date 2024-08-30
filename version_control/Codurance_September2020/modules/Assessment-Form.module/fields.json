@@ -1,0 +1,46 @@
+[ {
+  "id" : "8b0c2aa1-121b-6484-f398-d1ad22862b9f",
+  "name" : "survey_table",
+  "display_width" : null,
+  "label" : "Survey Table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable"
+}, {
+  "id" : "faed783d-b8ba-a3e1-41e8-cf298ddc5a28",
+  "name" : "observability_compass_form",
+  "display_width" : null,
+  "label" : "Observability Compass Form",
+  "required" : true,
+  "locked" : false,
+  "type" : "form",
+  "default" : {
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form.",
+    "gotowebinar_webinar_key" : null
+  }
+}, {
+  "id" : "247fb542-4d04-9a12-93fe-1f4c061eb089",
+  "name" : "portal_id",
+  "display_width" : null,
+  "label" : "Portal Id",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "145220791"
+}, {
+  "id" : "3c13fc98-ecfa-6b2e-866f-7fb7204c0459",
+  "name" : "contact_score_property_name",
+  "display_width" : null,
+  "label" : "Contact Score Property Name",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "observability_score"
+} ]
