@@ -1,0 +1,63 @@
+{% set survey_data = hubdb_table_rows(module.survey_table, "limit=100") %} 
+{% set categories = survey_data|groupby("category") %}
+
+<!-- Load the HubSpot Forms API -->
+<script src="https://js.hsforms.net/forms/v2.js" async defer></script>
+
+<div class="survey">
+  <div class="survey__wrapper"
+       data-form-id="{{ module.observability_compass_form.form_id }}"
+       data-portal-id="{{ module.portal_id }}"
+       data-score-property="{{ module.contact_score_property_name }}">
+    
+    <!-- Survey Container with Categories -->
+    <div class="survey__container" data-total-categories="{{ categories|length }}">
+        {% for category_group in categories %}
+        <div class="survey__category" 
+             id="category-{{ loop.index }}" 
+             {% if loop.index != 1 %} style="display: none;" {% endif %}>
+          <h2 class="survey__category-title">{{ category_group.grouper }}</h2>
+  
+          {% for row in category_group.list %}
+          <div class="survey__question-container">
+            <div class="survey__question">
+              <h3 class="survey__question-title">{{ row.topic }}</h3>
+              <p class="survey__question-text">{{ row.question }}</p>
+            </div>
+            <div class="survey__options">
+              {% set answers = row.answers_with_score|fromjson %}
+              {% for item in answers %}
+              <label class="survey__answer">
+                <input class="survey__answer-input" 
+                       type="radio" 
+                       name="{{ row.topic }}" 
+                       value="{{ item.score }}" />
+                {{ item.answer }}
+              </label>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+  
+    <!-- HubSpot Form Container (Initially Hidden) -->
+    <div id="hubspotFormContainer" class="survey__form-container">
+        <!-- HubSpot form will be loaded here -->
+    </div>
+  
+    <!-- Navigation Buttons -->
+    <div class="survey__button-container">
+      <div class="survey__button-wrapper">
+        <button id="prevCategory" class="survey__button survey__button--prev">Previous Category</button>
+      </div>
+      <div class="survey__button-wrapper">
+        <button id="nextCategory" class="survey__button survey__button--next">Next Category</button>
+      </div>
+      <div class="survey__button-wrapper">
+        <button id="submitSurvey" class="survey__button survey__button--submit">Submit Survey</button>
+      </div>
+    </div>
+  </div>
+</div>
