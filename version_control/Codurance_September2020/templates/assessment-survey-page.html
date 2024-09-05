@@ -1,0 +1,27 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Assessment Survey Page
+-->
+
+{% extends "./layouts/base.html" %}
+
+{% require_head %}
+  <link rel="preload" href="{{ get_asset_url("../css/pages/assessment.css") }}" as="style" />
+{% end_require_head %}
+
+{{ require_css(get_asset_url("../css/pages/assessment-survey.css")) }}
+
+{% block body %}
+
+<main>
+  <section class="hero">
+    {% module "hero_content" path="../modules/Text-and-image.module" label="Hero section" %}
+  </section>
+
+  <section class="solution region">
+    {% module "solution_questions" path="../modules/Assessment-Form.module" label="Assessment form" %}
+  </section>
+</main>
+
+{% endblock body %}

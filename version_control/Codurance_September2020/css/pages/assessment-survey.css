@@ -1,0 +1,6 @@
+{% import '../utils/utils.css' as utils %}
+
+/* General styles */
+:root {
+  scroll-behavior: smooth;
+}
