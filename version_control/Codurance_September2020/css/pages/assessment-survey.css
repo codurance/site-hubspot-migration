@@ -4,3 +4,32 @@
 :root {
   scroll-behavior: smooth;
 }
+
+main {
+  {{ utils.white_to_tango() }}
+}
+
+.hero h1.text-and-image__title {
+  {{ utils.base() }}
+  text-transform: uppercase;
+}
+
+.assessment-form {
+  max-width: var(--content-inner-max-width);
+  margin-inline: auto;
+  padding-bottom: var(--space-9);
+}
+
+{% call utils.large_and_extra_large() %}
+  .hero .text-and-image__container {
+    margin-top: -2rem;
+    padding-top: unset;
+    padding-bottom: unset;
+  }
+{% endcall %}
+
+{% call utils.large() %}
+  .assessment-form.lateral-spacing {
+    padding-inline: unset;
+  }
+{% endcall %}
