@@ -64,7 +64,7 @@
    "name": "hubdb_rows",
    "occurrence": {},
    "required": false,
-   "table_name_or_id": "2691020",
+   "table_name_or_id": "our_people",
    "type": "hubdbrow",
    "visibility": {
     "controlling_field_path": "list_select_method",
