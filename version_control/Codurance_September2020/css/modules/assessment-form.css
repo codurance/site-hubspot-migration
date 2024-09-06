@@ -1,3 +1,5 @@
+{% import '../utils/utils.css' as utils %}
+
 .survey {
     max-width: 1200px;
     margin: 0 auto;

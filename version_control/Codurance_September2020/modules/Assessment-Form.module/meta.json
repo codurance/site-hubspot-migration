@@ -3,5 +3,14 @@
   "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "module_id" : 176917352289,
+  "js_assets" : [ {
+    "url" : "https://js.hsforms.net/forms/v2.js",
+    "autoload" : true,
+    "name" : "v2.js"
+  } ],
+  "js_render_options" : {
+    "position": "footer",
+    "defer": true
+  },
   "is_available_for_new_content" : true
 }

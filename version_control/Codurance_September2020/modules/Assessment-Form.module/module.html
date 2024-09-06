@@ -1,8 +1,10 @@
+{% require_head %}
+  <link rel="preload" href='{{ get_asset_url("../../css/modules/assessment-form.css") }}' as="style" />
+{% end_require_head %}
+{{ require_css(get_asset_url("../../css/modules/assessment-form.css")) }}
+
 {% set survey_data = hubdb_table_rows(module.survey_table, "limit=100") %} 
 {% set categories = survey_data|groupby("category") %}
-
-<!-- Load the HubSpot Forms API -->
-<script src="https://js.hsforms.net/forms/v2.js" async defer></script>
 
 <div class="survey">
   <div class="survey__wrapper"
