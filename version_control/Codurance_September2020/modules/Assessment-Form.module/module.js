@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var portalId = surveyWrapper.getAttribute('data-portal-id');
     var scoreProperty = surveyWrapper.getAttribute('data-score-property');
     var submitButton = document.getElementById("submitSurvey");
+    const completedSurveyCategory = totalCategories + 1;
 
     initializeSurvey();
 
@@ -100,11 +101,15 @@ document.addEventListener("DOMContentLoaded", function() {
             surveyData.averages[category] = surveyData.categoryTotals[category] / surveyData.categoryCounts[category];
         }
     }
+    function setFinishedCategory() {
+        currentCategoryIndex = completedSurveyCategory;
+    }
 
     function submitSurvey() {
         if (submitButton.disabled) return;
 
         collectSurveyData();
+        setFinishedCategory();
         hideSurvey();
         loadHubSpotForm();
     }
