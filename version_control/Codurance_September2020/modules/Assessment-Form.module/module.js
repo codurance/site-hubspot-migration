@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         collectSurveyData();
         setFinishedCategory();
+        changeProgressBar();
         hideSurvey();
         loadHubSpotForm();
     }
