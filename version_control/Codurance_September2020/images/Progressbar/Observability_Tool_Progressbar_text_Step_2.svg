@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="75" viewBox="0 0 1000 75">
+  <defs>
+    <clipPath id="clip-Observability_Tool_Progressbar__text_Step_2">
+      <rect width="1000" height="75"/>
+    </clipPath>
+  </defs>
+  <g id="Observability_Tool_Progressbar__text_Step_2" data-name="Observability Tool_Progressbar__text_Step 2" clip-path="url(#clip-Observability_Tool_Progressbar__text_Step_2)">
+    <rect width="1000" height="75" fill="#fff"/>
+    <text id="Instrumentation_and_Data_Collection" data-name="Instrumentation 
+and Data Collection" transform="translate(47 39)" fill="#ef7726" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="22.312" y="10">Instrumentation </tspan><tspan x="12.912" y="23">and Data Collection</tspan></text>
+    <text id="Full-Scale_Utilization_of_Observability" data-name="Full-Scale Utilization of Observability" transform="translate(371 39)" fill="#bdbdc2" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="5.119" y="10">Full-Scale Utilization </tspan><tspan x="16.675" y="23">of Observability</tspan></text>
+    <text id="Business_Alignment_and_Usage" data-name="Business Alignment and Usage" transform="translate(535 39)" fill="#bdbdc2" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="0.555" y="10">Business Alignment </tspan><tspan x="23.325" y="23">and Usage</tspan></text>
+    <text id="Continuous_Improvement_and_Innovation" data-name="Continuous Improvement and Innovation" transform="translate(672 39)" fill="#bdbdc2" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="7.706" y="10">Continuous Improvement </tspan><tspan x="33.765" y="23">and Innovation</tspan></text>
+    <text id="Done_" data-name="Done!" transform="translate(878 39)" fill="#bdbdc2" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="9.26" y="10">Done!</tspan></text>
+    <line id="Line_1" data-name="Line 1" x2="800" transform="translate(101 22.5)" fill="none" stroke="#bdbdc2" stroke-width="1"/>
+    <circle id="Ellipse_9" data-name="Ellipse 9" cx="10" cy="10" r="10" transform="translate(417 12)" fill="#bdbdc2"/>
+    <circle id="Ellipse_10" data-name="Ellipse 10" cx="10" cy="10" r="10" transform="translate(575 12)" fill="#bdbdc2"/>
+    <circle id="Ellipse_11" data-name="Ellipse 11" cx="10" cy="10" r="10" transform="translate(891 12)" fill="#bdbdc2"/>
+    <circle id="Ellipse_12" data-name="Ellipse 12" cx="10" cy="10" r="10" transform="translate(733 12)" fill="#bdbdc2"/>
+    <text id="_3" data-name="3" transform="translate(412 15)" fill="#fff" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="12.272" y="10">3</tspan></text>
+    <text id="_4" data-name="4" transform="translate(569 15)" fill="#fff" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="12.217" y="10">4</tspan></text>
+    <text id="_5" data-name="5" transform="translate(728 15)" fill="#fff" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="12.156" y="10">5</tspan></text>
+    <text id="_6" data-name="6" transform="translate(886 15)" fill="#fff" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="12.156" y="10">6</tspan></text>
+    <text id="Data_Management_and_Optimization" data-name="Data Management and Optimization" transform="translate(219 39)" fill="#ef7726" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="3.921" y="10">Data Management </tspan><tspan x="7.232" y="23">and Optimization</tspan></text>
+    <circle id="Ellipse_8" data-name="Ellipse 8" cx="10" cy="10" r="10" transform="translate(259 12)" fill="#ef7726"/>
+    <line id="Line_2" data-name="Line 2" x2="235.5" transform="translate(115 22.5)" fill="none" stroke="#ef7725" stroke-width="5"/>
+    <text id="_2" data-name="2" transform="translate(254 14.999)" fill="#fff" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="12.2" y="10">2</tspan></text>
+    <g id="Group_6395" data-name="Group 6395" transform="translate(-5889 -20)">
+      <circle id="Ellipse_26" data-name="Ellipse 26" cx="10" cy="10" r="10" transform="translate(5990 32)" fill="#ef7726"/>
+      <g id="Icon-tick" transform="translate(5995 38.66)">
+        <path id="Path_443" data-name="Path 443" d="M846.681-5362.776l3.142,2.915,6.858-6.661" transform="translate(-846.681 5366.522)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>
