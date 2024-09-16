@@ -1,5 +1,5 @@
 // Global object to store survey results
-var surveyData = {
+const surveyData = {
     responses: {},
     categoryTotals: {},
     categoryCounts: {},
@@ -7,14 +7,14 @@ var surveyData = {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    var currentCategoryIndex = 1;
-    var surveyContainer = document.querySelector('.survey__container');
-    var surveyWrapper = document.querySelector('.survey__wrapper');
-    var totalCategories = parseInt(surveyContainer.getAttribute('data-total-categories'), 10);
-    var formId = surveyWrapper.getAttribute('data-form-id');
-    var portalId = surveyWrapper.getAttribute('data-portal-id');
-    var scoreProperty = surveyWrapper.getAttribute('data-score-property');
-    var submitButton = document.getElementById("submitSurvey");
+    let currentCategoryIndex = 1;
+    const surveyContainer = document.querySelector('.survey__container');
+    const surveyWrapper = document.querySelector('.survey__wrapper');
+    const totalCategories = parseInt(surveyContainer.getAttribute('data-total-categories'), 10);
+    const formId = surveyWrapper.getAttribute('data-form-id');
+    const portalId = surveyWrapper.getAttribute('data-portal-id');
+    const scoreProperty = surveyWrapper.getAttribute('data-score-property');
+    const submitButton = document.getElementById("submitSurvey");
     const completedSurveyCategory = totalCategories + 1;
 
     initializeSurvey();
@@ -41,17 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
         changeProgressBar();
     }
 
-    function showOrHideButtons() {
-        toggleButtonVisibility("prevCategory", currentCategoryIndex > 1);
-        toggleButtonVisibility("nextCategory", currentCategoryIndex < totalCategories);
-        toggleButtonVisibility("submitSurvey", currentCategoryIndex === totalCategories);
-    }
-
-    function toggleButtonVisibility(buttonId, shouldShow) {
-        var button = document.getElementById(buttonId);
-        button.classList.toggle('survey__button--hidden', !shouldShow);
-    }
-
     function switchCategory(direction) {
         changeCategoryVisibility(currentCategoryIndex, false);
         currentCategoryIndex = Math.min(Math.max(currentCategoryIndex + direction, 1), totalCategories);
@@ -62,34 +51,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function changeCategoryVisibility(index, shouldShow) {
-        var category = document.getElementById("category-" + index);
+        const category = document.getElementById("category-" + index);
         category.style.display = shouldShow ? "block" : "none";
     }
 
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
+    function submitSurvey() {
+        if (submitButton.disabled) return;
 
-    function checkCompletion() {
-        var allAnswered = Array.from(document.querySelectorAll('.survey__question-container'))
-            .every(function(container) {
-                return container.querySelector('input[type="radio"]:checked') !== null;
-            });
-
-        submitButton.disabled = !allAnswered;
-        submitButton.classList.toggle("survey__button--disabled", !allAnswered);
+        collectSurveyData();
+        setFinishedCategory();
+        changeProgressBar();
+        hideSurvey();
+        loadHubSpotForm();
     }
 
     function collectSurveyData() {
-        var options = document.querySelectorAll('.survey__answer-input:checked');
+        const options = document.querySelectorAll('.survey__answer-input:checked');
 
         options.forEach(function(option) {
-            var category = option.closest('.survey__category').querySelector('.survey__category-title').innerText;
-            var score = parseFloat(option.value);
-            var question = option.closest('.survey__question-container').querySelector('.survey__question-text').innerText;
+            const category = option.closest('.survey__category').querySelector('.survey__category-title').innerText;
+            const score = parseFloat(option.value);
+            const question = option.closest('.survey__question-container').querySelector('.survey__question-text').innerText;
 
             if (!surveyData.categoryTotals[category]) {
                 surveyData.categoryTotals[category] = 0;
@@ -105,22 +87,44 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function calculateAverages() {
-        for (var category in surveyData.categoryTotals) {
+        for (const category in surveyData.categoryTotals) {
             surveyData.averages[category] = surveyData.categoryTotals[category] / surveyData.categoryCounts[category];
         }
     }
+
     function setFinishedCategory() {
         currentCategoryIndex = completedSurveyCategory;
     }
 
-    function submitSurvey() {
-        if (submitButton.disabled) return;
+    function changeProgressBar() {
+        const imageContainer = document.getElementById('image-container');
 
-        collectSurveyData();
-        setFinishedCategory();
-        changeProgressBar();
-        hideSurvey();
-        loadHubSpotForm();
+        switch(currentCategoryIndex) {
+            case 1:
+                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_1.svg">';
+                break;
+            case 2:
+                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_2.svg">';
+                break;
+            case 3:
+                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_3.svg">';
+                break;
+            case 4:
+                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_4.svg">';
+                break;
+            case 5:
+                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_5.svg">';
+                break;
+            default:
+                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_6.svg">';
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 
     function hideSurvey() {
@@ -153,17 +157,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function populateHiddenFieldsWithScores(formElement) {
-        var hiddenInputs = formElement.querySelectorAll('input[type="hidden"]');
-        var surveyScores = {};
+        const hiddenInputs = formElement.querySelectorAll('input[type="hidden"]');
+        const surveyScores = {};
 
         Object.keys(surveyData.averages).forEach(function(category) {
             surveyScores[category] = surveyData.averages[category].toFixed(2);
         });
 
-        var surveyScoresJson = JSON.stringify(surveyScores);
+        const surveyScoresJson = JSON.stringify(surveyScores);
 
         hiddenInputs.forEach(function(input) {
-            var inputName = input.name;
+            const inputName = input.name;
 
             if (inputName === 'hs_context') return;
 
@@ -173,27 +177,24 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    function changeProgressBar() {
-        const imageContainer = document.getElementById('image-container');
+    function showOrHideButtons() {
+        toggleButtonVisibility("prevCategory", currentCategoryIndex > 1);
+        toggleButtonVisibility("nextCategory", currentCategoryIndex < totalCategories);
+        toggleButtonVisibility("submitSurvey", currentCategoryIndex === totalCategories);
+    }
 
-        switch(currentCategoryIndex) {
-            case 1:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_1.svg">';
-                break;
-            case 2:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_2.svg">';
-                break;
-            case 3:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_3.svg">';
-                break;
-            case 4:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_4.svg">';
-                break;
-            case 5:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_5.svg">';
-                break;
-            default:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_6.svg">';
-        }
+    function toggleButtonVisibility(buttonId, shouldShow) {
+        const button = document.getElementById(buttonId);
+        button.classList.toggle('survey__button--hidden', !shouldShow);
+    }
+
+    function checkCompletion() {
+        const allAnswered = Array.from(document.querySelectorAll('.survey__question-container'))
+          .every(function (container) {
+              return container.querySelector('input[type="radio"]:checked') !== null;
+          });
+
+        submitButton.disabled = !allAnswered;
+        submitButton.classList.toggle("survey__button--disabled", !allAnswered);
     }
 });
