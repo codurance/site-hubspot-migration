@@ -58,11 +58,19 @@ document.addEventListener("DOMContentLoaded", function() {
         changeCategoryVisibility(currentCategoryIndex, true);
         showOrHideButtons();
         changeProgressBar();
+        scrollToTop();
     }
 
     function changeCategoryVisibility(index, shouldShow) {
         var category = document.getElementById("category-" + index);
         category.style.display = shouldShow ? "block" : "none";
+    }
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 
     function checkCompletion() {
