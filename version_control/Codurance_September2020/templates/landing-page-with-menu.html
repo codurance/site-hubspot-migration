@@ -5,14 +5,6 @@ label: Landing Page With Menu
 -->
 {% extends "./layouts/base.html" %}
 
-{% set url_redirection = "https://www.codurance.com/" %}               
-
-{% if locale == 'es' %}
-    {% set url_redirection = "https://www.codurance.com/es" %} 
-{% elif locale == 'pt' %}
-    {% set url_redirection = "https://www.codurance.com/pt" %} 
-{% endif %}
-
 {% require_head %}
     <link rel="preload" href="{{ get_asset_url("../css/pages/landing-page-template.css") }}" as="style" />
 {% end_require_head %}
