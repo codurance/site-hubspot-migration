@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
             input.addEventListener("change", checkCompletion);
         });
 
+        scrollToNextQuestion();
         showOrHideButtons();
         checkCompletion();
         changeProgressBar();
@@ -174,6 +175,27 @@ document.addEventListener("DOMContentLoaded", function() {
             if (inputName.includes(scoreProperty)) {
                 input.value = surveyScoresJson;
             }
+        });
+    }
+
+    function scrollToNextQuestion() {
+        const questions = document.querySelectorAll(".survey__question-container");
+
+        questions.forEach((question, index) => {
+            const inputs = question.querySelectorAll("input[type=\"radio\"]");
+            inputs.forEach(input => {
+                input.addEventListener("change", function() {
+                    if (index < questions.length - 1) {
+                        const nextQuestion = questions[index + 1];
+                        nextQuestion
+                          .closest("div.survey__question-container")
+                          .scrollIntoView(
+                            { behavior: "smooth",
+                                block: "center"}
+                          );
+                    }
+                });
+            });
         });
     }
 
