@@ -12,7 +12,6 @@ and Data Collection" transform="translate(47 39)" fill="#ef7726" font-size="11" 
     <text id="Full-Scale_Utilization_of_Observability" data-name="Full-Scale Utilization of Observability" transform="translate(371 39)" fill="#bdbdc2" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="5.119" y="10">Full-Scale Utilization </tspan><tspan x="16.675" y="23">of Observability</tspan></text>
     <text id="Business_Alignment_and_Usage" data-name="Business Alignment and Usage" transform="translate(535 39)" fill="#bdbdc2" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="0.555" y="10">Business Alignment </tspan><tspan x="23.325" y="23">and Usage</tspan></text>
     <text id="Continuous_Improvement_and_Innovation" data-name="Continuous Improvement and Innovation" transform="translate(672 39)" fill="#bdbdc2" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="7.706" y="10">Continuous Improvement </tspan><tspan x="33.765" y="23">and Innovation</tspan></text>
-    <text id="Done_" data-name="Done!" transform="translate(878 39)" fill="#bdbdc2" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="9.26" y="10">Done!</tspan></text>
     <line id="Line_1" data-name="Line 1" x2="800" transform="translate(101 22.5)" fill="none" stroke="#bdbdc2" stroke-width="1"/>
     <circle id="Ellipse_7" data-name="Ellipse 7" cx="10" cy="10" r="10" transform="translate(101 12)" fill="#ef7726"/>
     <circle id="Ellipse_8" data-name="Ellipse 8" cx="10" cy="10" r="10" transform="translate(259 12)" fill="#bdbdc2"/>
@@ -27,5 +26,7 @@ and Data Collection" transform="translate(47 39)" fill="#ef7726" font-size="11" 
     <text id="_4" data-name="4" transform="translate(569 15)" fill="#fff" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="12.217" y="10">4</tspan></text>
     <text id="_5" data-name="5" transform="translate(728 15)" fill="#fff" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="12.156" y="10">5</tspan></text>
     <text id="_6" data-name="6" transform="translate(886 15)" fill="#fff" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="12.156" y="10">6</tspan></text>
+    <text id="Contact_Details_" data-name="Contact 
+Details " transform="translate(862 39)" fill="#bdbdc2" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="20.431" y="10">Contact </tspan><tspan x="22.757" y="23">Details </tspan></text>
   </g>
 </svg>

@@ -101,22 +101,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
         switch(currentCategoryIndex) {
             case 1:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_1.svg">';
+                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_1.svg">';
                 break;
             case 2:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_2.svg">';
+                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_2.svg">';
                 break;
             case 3:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_3.svg">';
+                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_3.svg">';
                 break;
             case 4:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_4.svg">';
+                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_4.svg">';
                 break;
             case 5:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_5.svg">';
+                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_5.svg">';
                 break;
             default:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/Progressbar/Observability_Tool_Progressbar_text_Step_6.svg">';
+                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_6.svg">';
         }
     }
 
