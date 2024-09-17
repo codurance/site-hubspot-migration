@@ -7,12 +7,14 @@
 {% set categories = survey_data|groupby("category") %}
 
 <div class="survey">
-  <div id="image-container" class="survey__progress"></div>
   <div class="survey__wrapper"
        data-form-id="{{ module.observability_compass_form.form_id }}"
        data-portal-id="{{ module.portal_id }}"
        data-score-property="{{ module.contact_score_property_name }}">
-    
+
+    <div class="survey__progress-container">
+      <div id="image-container" class="survey__progress"></div>
+    </div>
     <!-- Survey Container with Categories -->
     <div class="survey__container" data-total-categories="{{ categories|length }}">
         {% for category_group in categories %}

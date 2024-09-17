@@ -4,6 +4,13 @@
   position: relative;
 }
 
+.survey__progress-container {
+  {{ utils.card_border_radius() }}
+  {{ utils.card_shadow() }}
+  margin-bottom: var(--space-6);
+  margin-top: var(--space-1);
+}
+
 .survey__category-title {
   {{ utils.dudler() }}
   font-weight: bold;
