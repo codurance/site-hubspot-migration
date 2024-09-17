@@ -5,7 +5,6 @@
     </clipPath>
   </defs>
   <g id="Observability_Tool_Progressbar_text_Step_5" data-name="Observability Tool_Progressbar_text_Step 5" clip-path="url(#clip-Observability_Tool_Progressbar_text_Step_5)">
-    <rect width="1000" height="75" fill="#fff"/>
     <text id="Instrumentation_and_Data_Collection" data-name="Instrumentation 
 and Data Collection" transform="translate(47 39)" fill="#ef7726" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="22.312" y="10">Instrumentation </tspan><tspan x="12.912" y="23">and Data Collection</tspan></text>
     <text id="Full-Scale_Utilization_of_Observability" data-name="Full-Scale Utilization of Observability" transform="translate(371 39)" fill="#ef7726" font-size="11" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="5.119" y="10">Full-Scale Utilization </tspan><tspan x="16.675" y="23">of Observability</tspan></text>
