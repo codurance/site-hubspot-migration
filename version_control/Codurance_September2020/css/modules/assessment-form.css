@@ -40,11 +40,21 @@
 
 .survey__options {
   margin-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.survey__answers {
+  display: flex;
+  gap: 4px;
+  height: fit-content;
 }
 
 .survey__answer {
   {{ utils.natus() }}
   display: block;
+  margin-top: 0 !important;
 }
 
 .survey__answer:not(:first-child) {
@@ -57,10 +67,13 @@
   position: relative;
   width: 0.6rem;
   height: 0.6rem;
+  min-height: 12px;
+  min-width: 12px;
   background: white;
   border: 1px solid var(--mid-gray);
   border-radius: 50%;
   display: inline-block;
+  margin-top: 4px;
 }
 
 .survey__answer-input:checked:before {

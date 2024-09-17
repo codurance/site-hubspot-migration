@@ -32,13 +32,15 @@
             <div class="survey__options">
               {% set answers = row.answers_with_score|fromjson %}
               {% for item in answers %}
-              <label class="survey__answer">
-                <input class="survey__answer-input" 
-                       type="radio" 
-                       name="{{ row.topic }}" 
+              <div class="survey__answers">
+                <input id="{{ row.topic }}{{ item.score }}" class="survey__answer-input"
+                       type="radio"
+                       name="{{ row.topic }}"
                        value="{{ item.score }}" />
-                {{ item.answer }}
-              </label>
+                <label class="survey__answer">
+                  {{ item.answer }}
+                </label>
+              </div>
               {% endfor %}
             </div>
           </div>
