@@ -13,55 +13,62 @@ label: Services Overview Page
 
 {% block body %}
     <main>
-        {% dnd_area "dnd_main_area", label="Main area", class="dnd-main-area" %}
-            {% dnd_section max_width=1200, padding={"left": "25px", "right": "25px"}  %}
-                {% dnd_module path='../modules/Text-and-image.module' %}
-                {% end_dnd_module %}
-            {% end_dnd_section %}   
-            {% dnd_section max_width=1000, padding={"left": "25px", "right": "25px"}  %}
-                {% dnd_column %}
-                    {% dnd_row %}
-                        {% dnd_module path='@hubspot/header' %}
-                        {% end_dnd_module %}
-                    {% end_dnd_row %}
-                    {% dnd_row %}
-                        {% dnd_module path='../modules/Icon-Cloud.module' %}
-                        {% end_dnd_module %}
-                    {% end_dnd_row %}
-                    {% dnd_row padding={"top": "87px"} %}
-                        {% dnd_module path='@hubspot/header' %}
-                        {% end_dnd_module %}
-                    {% end_dnd_row %}
-                {% end_dnd_column %}
-            {% end_dnd_section %}  
-            {% dnd_section max_width=1200, padding={"left": "25px", "right": "25px"}  %}
-                {% dnd_module path='../modules/Simple-Card.module' %}
-                {% end_dnd_module %}
-            {% end_dnd_section %}
-            {% dnd_section max_width=1000, padding={"left": "25px", "right": "25px", "top": "145px"} %}
-                {% dnd_module path="@hubspot/section_header" %}
-                {% end_dnd_module %}
-            {% end_dnd_section %}
-            {% dnd_section max_width=1200, padding={"left": "25px", "right": "25px"} %}
-                {% dnd_module path='../modules/Simple-Card.module' %}
-                {% end_dnd_module %}
-            {% end_dnd_section %}
-            {% dnd_section max_width=1000, padding={"left": "25px", "right": "25px", "top": "165px"} %}
-                {% dnd_column %}
-                    {% dnd_row %}
-                        {% dnd_module path='../modules/Clients-Logos.module' %}
-                        {% end_dnd_module %}
-                    {% end_dnd_row %}
-                    {% dnd_row padding={"top": "165px"} %}
-                        {% dnd_module path='../modules/Text-and-image.module' %}
-                        {% end_dnd_module %}
-                    {% end_dnd_row %}
-                    {% dnd_row padding={"top": "152px"} %}
-                        {% dnd_module path='../modules/Service-Line-Form.module' %}
-                        {% end_dnd_module %}
-                    {% end_dnd_row %}
-                {% end_dnd_column %}
-            {% end_dnd_section %}
-        {% end_dnd_area %}
+        <section class="hero lateral-spacing">
+            {% dnd_area "hero", label="Hero section" %}
+                {% dnd_section %}
+                    {% dnd_module path='../modules/Text-and-image.module' %}
+                    {% end_dnd_module %}
+                {% end_dnd_section %}
+            {% end_dnd_area %}
+        </section>
+
+        <section class="main-content lateral-spacing">
+            {% dnd_area "main_content", label="Main content" %}
+                {% dnd_section max_width=1000 %}
+                    {% dnd_column %}
+                        {% dnd_row %}
+                            {% dnd_module path='@hubspot/header' %}
+                            {% end_dnd_module %}
+                        {% end_dnd_row %}
+                        {% dnd_row %}
+                            {% dnd_module path='../modules/Icon-Cloud.module' %}
+                            {% end_dnd_module %}
+                        {% end_dnd_row %}
+                        {% dnd_row padding={"top": "87px"} %}
+                            {% dnd_module path='@hubspot/header' %}
+                            {% end_dnd_module %}
+                        {% end_dnd_row %}
+                    {% end_dnd_column %}
+                {% end_dnd_section %}
+                {% dnd_section max_width=1200  %}
+                    {% dnd_module path='../modules/Simple-Card.module' %}
+                    {% end_dnd_module %}
+                {% end_dnd_section %}
+                {% dnd_section max_width=1000, padding={"top": "145px"} %}
+                    {% dnd_module path="@hubspot/section_header" %}
+                    {% end_dnd_module %}
+                {% end_dnd_section %}
+                {% dnd_section max_width=1200 %}
+                    {% dnd_module path='../modules/Simple-Card.module' %}
+                    {% end_dnd_module %}
+                {% end_dnd_section %}
+                {% dnd_section max_width=1000, padding={"top": "165px"} %}
+                    {% dnd_column %}
+                        {% dnd_row %}
+                            {% dnd_module path='../modules/Clients-Logos.module' %}
+                            {% end_dnd_module %}
+                        {% end_dnd_row %}
+                        {% dnd_row padding={"top": "165px"} %}
+                            {% dnd_module path='../modules/Text-and-image.module' %}
+                            {% end_dnd_module %}
+                        {% end_dnd_row %}
+                        {% dnd_row padding={"top": "152px"} %}
+                            {% dnd_module path='../modules/Service-Line-Form.module' %}
+                            {% end_dnd_module %}
+                        {% end_dnd_row %}
+                    {% end_dnd_column %}
+                {% end_dnd_section %}
+            {% end_dnd_area %}
+        </section>
     </main>
 {% endblock body %}

@@ -4,3 +4,8 @@ main {
   {{ utils.slate_to_woodsmoke() }}
   color: white;
 }
+
+.hero {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+}
