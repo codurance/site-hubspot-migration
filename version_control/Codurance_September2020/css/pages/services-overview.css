@@ -1,30 +1,34 @@
 {% import '../utils/utils.css' as utils %}
 
-:root {
-  scroll-behavior: smooth;
-}
-
-main {
-  {{ utils.slate_to_woodsmoke() }}
-  color: white;
-}
-
-.hero {
-  max-width: var(--content-max-width);
-  margin-inline: auto;
-}
-
-/* Simple-Card module of solutions row */
-#hs_cos_wrapper_main_content-module-5 .card__info {
-  padding-top: unset;
-}
-
-.client-logos__headline > h2 {
-  color: white;
-}
-
-{% call utils.medium_large_and_extra_large() %}
-  .hero .text-and-image__title {
-    {{ utils.eames() }}
+  :root {
+    scroll-behavior: smooth;
   }
-{% endcall %}
+  
+  main {
+    {{ utils.slate_to_woodsmoke() }}
+    color: white;
+  }
+  
+  .hero {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+  }
+  
+  /* Simple-Card module of solutions row */
+  #hs_cos_wrapper_main_content-module-5 .card__info {
+    padding-top: unset;
+  }
+  
+  .client-logos__headline > h2 {
+    color: white;
+  }
+  
+  .client-logos__logos-group {
+    filter: brightness(0) invert(1);
+  }
+  
+  {% call utils.medium_large_and_extra_large() %}
+    .hero .text-and-image__title {
+      {{ utils.eames() }}
+    }
+  {% endcall %}
