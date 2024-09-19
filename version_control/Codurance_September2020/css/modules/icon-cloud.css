@@ -23,13 +23,9 @@
     font-weight: bold;
 }
 
-{% call utils.small()%}
-    .icons-group{
+{% call utils.small() %}
+    .icons-group {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .icon__image {
-        width: 70%;
     }
 
     .icon__title {
