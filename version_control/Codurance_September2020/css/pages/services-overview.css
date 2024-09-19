@@ -1,5 +1,9 @@
 {% import '../utils/utils.css' as utils %}
 
+:root {
+  scroll-behavior: smooth;
+}
+
 main {
   {{ utils.slate_to_woodsmoke() }}
   color: white;
@@ -9,3 +13,9 @@ main {
   max-width: var(--content-max-width);
   margin-inline: auto;
 }
+
+{% call utils.medium_large_and_extra_large() %}
+  .hero .text-and-image__title {
+    {{ utils.eames() }}
+  }
+{% endcall %}
