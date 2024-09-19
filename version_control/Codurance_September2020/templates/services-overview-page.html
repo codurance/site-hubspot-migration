@@ -22,29 +22,29 @@ label: Services Overview Page
             {% end_dnd_area %}
         </section>
 
-        <section class="main-content lateral-spacing">
+        <section class="main-content">
             {% dnd_area "main_content", label="Main content" %}
                 {% dnd_section max_width=1000 %}
                     {% dnd_column %}
-                        {% dnd_row %}
+                        {% dnd_row padding={"top": "87px", "left": "25px", "right": "25px"} %}
                             {% dnd_module path='@hubspot/header' %}
                             {% end_dnd_module %}
                         {% end_dnd_row %}
-                        {% dnd_row %}
+                        {% dnd_row padding={"left": "25px", "right": "25px"} %}
                             {% dnd_module path='../modules/Icon-Cloud.module' %}
                             {% end_dnd_module %}
                         {% end_dnd_row %}
-                        {% dnd_row padding={"top": "87px"} %}
+                        {% dnd_row padding={"top": "87px", "left": "25px", "right": "25px"} %}
                             {% dnd_module path='@hubspot/header' %}
                             {% end_dnd_module %}
                         {% end_dnd_row %}
                     {% end_dnd_column %}
                 {% end_dnd_section %}
-                {% dnd_section max_width=1200  %}
+                {% dnd_section max_width=1200 %}
                     {% dnd_module path='../modules/Simple-Card.module' %}
                     {% end_dnd_module %}
                 {% end_dnd_section %}
-                {% dnd_section max_width=1000, padding={"top": "145px"} %}
+                {% dnd_section max_width=1000, padding={"top": "145px", "left": "25px", "right": "25px"} %}
                     {% dnd_module path="@hubspot/section_header" %}
                     {% end_dnd_module %}
                 {% end_dnd_section %}
@@ -52,7 +52,7 @@ label: Services Overview Page
                     {% dnd_module path='../modules/Simple-Card.module' %}
                     {% end_dnd_module %}
                 {% end_dnd_section %}
-                {% dnd_section max_width=1000, padding={"top": "165px"} %}
+                {% dnd_section max_width=1000, padding={"top": "165px", "left": "25px", "right": "25px"} %}
                     {% dnd_column %}
                         {% dnd_row %}
                             {% dnd_module path='../modules/Clients-Logos.module' %}
