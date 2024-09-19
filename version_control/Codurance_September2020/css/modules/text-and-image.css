@@ -1,4 +1,3 @@
-
 {% import '../utils/utils.css' as utils %}
 
 .text-and-image__container {
@@ -35,6 +34,10 @@ h1.text-and-image__title {
 
 .text-and-image__copy p {
     {{ utils.natus() }}
+}
+
+.text-and-image__copy ul {
+    margin-left: 1em;
 }
 
 .text-and-image__copy ol {
@@ -107,7 +110,7 @@ h1.text-and-image__title {
 
 {% call utils.large_and_extra_large() %}
   .dnd-section .text-and-image__copy {
-    max-width: var(--freed-max-width);
+    max-width: var(--dudler-max-width);
   }
 {% endcall %}
 
