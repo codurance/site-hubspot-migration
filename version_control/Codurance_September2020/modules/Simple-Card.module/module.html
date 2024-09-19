@@ -3,11 +3,13 @@
 
 {% require_css %}
     <style>
-        @media only screen and (width >= 1024px) {
+    @media only screen and (width >= 1024px) {
+        {% scope_css %} 
             .card-container {
                 grid-template-columns: repeat({{ module.cards_per_row }}, 1fr);
             }
-        }
+        {% end_scope_css%}
+    }
     </style>
 {% end_require_css %}
 
