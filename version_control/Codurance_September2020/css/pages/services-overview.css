@@ -14,6 +14,15 @@ main {
   margin-inline: auto;
 }
 
+/* Simple-Card module of solutions row */
+#hs_cos_wrapper_main_content-module-5 .card__info {
+  padding-top: unset;
+}
+
+.client-logos__headline > h2 {
+  color: white;
+}
+
 {% call utils.medium_large_and_extra_large() %}
   .hero .text-and-image__title {
     {{ utils.eames() }}
