@@ -40,3 +40,9 @@ main {
     {{ utils.eames() }}
   }
 {% endcall %}
+
+{% call utils.small() %}
+  .main-content .text-and-image__container {
+    flex-flow: column;
+  }
+{% endcall %}
