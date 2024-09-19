@@ -68,7 +68,7 @@
 .button-secondary {
   {{ button() }}
   background: white;
-  border: 1px solid var(--french-gray);
+  border: 2px solid var(--french-gray);
   color: var(--persimmon);
 }
 
@@ -76,7 +76,7 @@
 .button-secondary:active,
 .button-secondary:focus {
   background: var(--persimmon--dark);
-  border: 1px solid var(--persimmon--dark);
+  border: 2px solid var(--persimmon--dark);
   color: white;
   text-decoration: none;
 }
@@ -84,7 +84,7 @@
 .button-secondary-alternate {
   {{ button() }}
   background: white;
-  border: 1px solid white;
+  border: 2px solid white;
   color: var(--persimmon);
 }
 
@@ -92,7 +92,7 @@
 .button-secondary-alternate:active,
 .button-secondary-alternate:focus {
   background: var(--persimmon--dark);
-  border: 1px solid var(--persimmon--dark);
+  border: 2px solid var(--persimmon--dark);
   color: white;
   text-decoration: none;
 }

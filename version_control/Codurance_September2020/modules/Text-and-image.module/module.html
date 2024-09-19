@@ -25,7 +25,33 @@
 			{% endif %}
 		{% end_scope_css %}
 	</style>
-  {% end_require_css %}
+{% end_require_css %}
+
+{% macro button(button) %}
+	<div class="custom-btn custom-btn--{{ button.button_style }}">
+		{% if button.button_type == "std" %}
+			{% if button.bookmark_id %}
+				{% set bookmark_id = button.bookmark_id %}
+				{% set href = button.link_field.url.href ~ "#" ~ bookmark_id %}
+			{% else %}
+				{% set href = button.link_field.url.href %}
+			{% endif %}
+
+			<a href="{{ href }}"
+				{% if button.link_field.open_in_new_tab %}target="_blank"{% endif %}
+				{% if button.link_field.rel %}rel="{{ button.link_field.rel }}"{% endif %}
+				class="{{ button.button_style }}"
+			>
+				{{ button.text_field }} 
+				{% if button.button_style is string_containing "text-cta-primary" %}
+					<i class="las la-arrow-right"></i>
+				{% endif %}
+			</a>
+		{% elif button.button_type == "cta" %}
+			{% cta guid="{{ button.cta_field }}" %}
+		{% endif %}
+	</div>
+{% endmacro %}
 
 <div class="text-and-image__container container--{{ module.image_order }}">
 	<div class="text-and-image__copy">
@@ -35,31 +61,15 @@
 		
 		{% inline_rich_text field="description_text" value="{{ module.description_text }}" %}
 		
-		{% if module.button.button_type %}
-			<div class="custom-btn custom-btn--{{ module.button.button_style }}">
-				{% if module.button.button_type == "std" %}
-					{% if module.button.bookmark_id %}
-						{% set bookmark_id = module.button.bookmark_id %}
-						{% set href = module.button.link_field.url.href ~ "#" ~ bookmark_id %}
-					{% else %}
-						{% set href = module.button.link_field.url.href %}
-					{% endif %}
-			
-					<a href="{{ href }}"
-						{% if module.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
-						{% if module.button.link_field.rel %}rel="{{ module.button.link_field.rel }}"{% endif %}
-						class="{{ module.button.button_style }}"
-					>
-						{{ module.button.text_field }} 
-						{% if module.button.button_style is string_containing "text-cta-primary" %}
-							<i class="las la-arrow-right"></i>
-						{% endif %}
-					</a>
-				{% elif module.button.button_type == "cta" %}
-					{% cta guid="{{ module.button.cta_field }}" %}
-				{% endif %}
-			</div>
-		{% endif %}
+		<ul class="text-and-image__buttons">
+			{% if module.button.button_type %}
+				<li>{{ button(module.button) }}</li>
+			{% endif %}
+
+			{% if module.extra_button.button_type %}
+				<li>{{ button(module.extra_button) }}</li>
+			{% endif %}
+		</ul>
 	</div>
 	<div class="text-and-image__image">
 		{% if module.image_field.src %}
