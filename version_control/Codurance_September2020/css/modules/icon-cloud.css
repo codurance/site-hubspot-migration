@@ -25,9 +25,7 @@
 
 {% call utils.small()%}
     .icons-group{
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: 0.5em;
-        row-gap: 1em;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .icon__image {
@@ -36,7 +34,6 @@
 
     .icon__title {
         {{ utils.natus() }}
-        line-height: var(--sejima-line-height);
     }   
 {% endcall %}
 
