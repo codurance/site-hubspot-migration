@@ -57,6 +57,7 @@
     display: flex;
     flex-direction: column; 
     min-height: 8.8rem;
+    color: var(--shark);
 }
 
 .card__info time {
