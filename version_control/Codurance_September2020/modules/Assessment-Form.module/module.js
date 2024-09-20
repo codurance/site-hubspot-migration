@@ -99,25 +99,50 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function changeProgressBar() {
         const imageContainer = document.getElementById('image-container');
+        const english = "en";
+        const spanish = "es"
 
-        switch(currentCategoryIndex) {
-            case 1:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_1.png">';
-                break;
-            case 2:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_2.png">';
-                break;
-            case 3:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_3.png">';
-                break;
-            case 4:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_4.png">';
-                break;
-            case 5:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_5.png">';
-                break;
-            default:
-                imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_6.png">';
+        if(document.querySelector(".survey").dataset.lang == english) {
+            switch(currentCategoryIndex) {
+                case 1:
+                    imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_1.png">';
+                    break;
+                case 2:
+                    imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_2.png">';
+                    break;
+                case 3:
+                    imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_3.png">';
+                    break;
+                case 4:
+                    imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_4.png">';
+                    break;
+                case 5:
+                    imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_5.png">';
+                    break;
+                default:
+                    imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBar/Observability_Tool_Progressbar_text_Step_6.png">';
+            }
+        }
+        if(document.querySelector(".survey").dataset.lang == spanish){
+            switch(currentCategoryIndex) {
+                case 1:
+                    imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBarES/Observability_Tool_Progressbar_text_Step_1_ES.png">';
+                    break;
+                case 2:
+                    imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBarES/Observability_Tool_Progressbar_text_Step_2_ES.png">';
+                    break;
+                case 3:
+                    imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBarES/Observability_Tool_Progressbar_text_Step_3_ES.png">';
+                    break;
+                case 4:
+                    imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBarES/Observability_Tool_Progressbar_text_Step_4_ES.png">';
+                    break;
+                case 5:
+                    imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBarES/Observability_Tool_Progressbar_text_Step_5_ES.png">';
+                    break;
+                default:
+                    imageContainer.innerHTML = '<img src="https://www.codurance.com/hubfs/raw_assets/public/Codurance_September2020/images/ObservabilityProgressBarES/Observability_Tool_Progressbar_text_Step_6_ES.png">';
+            }
         }
     }
 

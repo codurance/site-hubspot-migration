@@ -6,7 +6,7 @@
 {% set survey_data = hubdb_table_rows(module.survey_table, "limit=100") %} 
 {% set categories = survey_data|groupby("category") %}
 
-<div class="survey">
+<div class="survey" data-lang="{{ locale }}">
   <div class="survey__wrapper"
        data-form-id="{{ module.observability_compass_form.form_id }}"
        data-portal-id="{{ module.portal_id }}"
