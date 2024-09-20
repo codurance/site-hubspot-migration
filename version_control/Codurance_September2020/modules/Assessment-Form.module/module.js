@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         showOrHideButtons();
         checkCompletion();
         changeProgressBar();
+        updateProgressBar(currentCategoryIndex);
     }
 
     function switchCategory(direction) {
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
         changeCategoryVisibility(currentCategoryIndex, true);
         showOrHideButtons();
         changeProgressBar();
+        updateProgressBar(currentCategoryIndex);
         scrollToTop();
     }
 
@@ -62,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
         collectSurveyData();
         setFinishedCategory();
         changeProgressBar();
+        updateProgressBar(currentCategoryIndex);
         hideSurvey();
         loadHubSpotForm();
     }
@@ -244,4 +247,34 @@ document.addEventListener("DOMContentLoaded", function() {
         submitButton.disabled = !allAnswered;
         submitButton.classList.toggle("survey__button--disabled", !allAnswered);
     }
+
+    function updateProgressBar(step) {
+        const steps = document.querySelectorAll('.step');
+        const progressLine = document.querySelector('.progress-bar-line');
+        const totalSteps = steps.length;
+
+        steps.forEach((stepElement, index) => {
+            if (index < step) {
+                stepElement.classList.add('active');
+            } else {
+                stepElement.classList.remove('active');
+            }
+        });
+
+        // Calcular el porcentaje de progreso
+        let progressPercentage;
+        if (step === totalSteps) {
+            progressPercentage = 100; // Si es el último paso, llenar completamente
+        } else {
+            // Calcular hasta la mitad entre el paso actual y el siguiente
+            progressPercentage = ((step - 0.5) / (totalSteps - 1)) * 100;
+        }
+
+        // Asegurarse de que el progreso no exceda el 100%
+        progressPercentage = Math.min(progressPercentage, 100);
+
+        // Actualizar el ancho de la línea de progreso
+        progressLine.style.width = `${progressPercentage}%`;
+    }
+
 });
