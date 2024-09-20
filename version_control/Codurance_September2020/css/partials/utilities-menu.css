@@ -303,6 +303,7 @@
   }
 
   header.header:not(.website-header--open) #___gcse_0,
+  .website-header--has-open-submenu #___gcse_0,
   .search-bar__button {
     display: none;
   }
