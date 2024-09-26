@@ -50,6 +50,10 @@
   color: white;
 }
 
+.secondary-submenu {
+  background-color: var(--athens-gray);
+}
+
 {% call utils.small_and_medium() %}
   .navigation-primary {
     padding-left: 20px;
@@ -268,7 +272,6 @@
   }
 
   .secondary-submenu {
-    background-color: var(--athens-gray);
     border-bottom-right-radius: 10px;
   }
 
