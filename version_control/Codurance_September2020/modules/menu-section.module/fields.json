@@ -237,6 +237,16 @@
        "type": "simplemenu"
       },
       {
+       "type": "text",
+       "id": "cd232643-2148-017f-db7b-dfdfa267edfc",
+       "validation_regex": "",
+       "label": "Copies for menu links",
+       "name": "copies_for_menu_links",
+       "help_text": "This copies will be shown underneath each corresponding menu item (following the same order)",
+       "inline_help_text": "Optional",
+       "occurrence": {}
+      },
+      {
        "type": "number",
        "id": "d8b39d22-9f46-fe97-443b-37353a7e3660",
        "display": "slider",

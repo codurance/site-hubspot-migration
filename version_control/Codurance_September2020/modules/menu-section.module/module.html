@@ -102,7 +102,7 @@
             
             <div class="main-submenu">
               {% if secondary_submenu %}<h3 class="submenu-title">{{ item.menu_label }}</h3>{% endif %}
-              <ul class="submenu{% if submenu_columns == 2 %} two-columns{% endif %}">
+              <ul class="submenu{% if submenu_columns == 2 %} two-columns{% endif %}{% if item.submenu.copies_for_menu_links %} submenu--copy{% endif %}">
                 {% for node in submenu %}
                   {{ link(node) }}
                 {% endfor %}

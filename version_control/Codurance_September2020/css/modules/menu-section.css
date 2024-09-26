@@ -278,6 +278,7 @@
   .submenu-title {
     {{ utils.natus() }}
     font-weight: var(--heavy-font-weight);
+    text-transform: uppercase;
   }
 
   .secondary-submenu .submenu {
@@ -288,6 +289,10 @@
 
   .level-2.has-secondary-submenu-with-two-columns .submenu {
     column-gap: var(--space-3);
+  }
+
+  .submenu--copy .menu-link {
+    font-weight: bold !important;
   }
 
   .navigation-primary a {
