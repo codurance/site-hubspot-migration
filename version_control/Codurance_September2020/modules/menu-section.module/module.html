@@ -14,19 +14,6 @@
   {% endif %}
 {% endmacro %}
 
-{% macro link(node) %}
-  <li class="submenu-item">
-    <a 
-      href="{{ node.url if node.url else 'javascript:;' }}" 
-      class="menu-link trigger"
-      aria-expanded="false"
-      {{ isActiveNode(node.url) if node.url }}  
-    >
-        {{ node.linkLabel }}
-    </a>
-  </li>
-{% endmacro %}
-
 <nav aria-label="Main menu" class="navigation-primary" id="website-navigation-menu">
   <ul 
     class="submenu level-1 website-navigation-sub-menu" 
@@ -104,7 +91,20 @@
               {% if secondary_submenu %}<h3 class="submenu-title">{{ item.menu_label }}</h3>{% endif %}
               <ul class="submenu{% if submenu_columns == 2 %} two-columns{% endif %}{% if item.submenu.copies_for_menu_links %} submenu--copy{% endif %}">
                 {% for node in submenu %}
-                  {{ link(node) }}
+                  <li class="submenu-item">
+                    <a 
+                      href="{{ node.url if node.url else 'javascript:;' }}" 
+                      class="menu-link trigger"
+                      aria-expanded="false"
+                      {{ isActiveNode(node.url) if node.url }}  
+                    >
+                      <span>{{ node.linkLabel }}</span>
+
+                      {% if item.submenu.copies_for_menu_links %} 
+                        <p class="submenu__copy">{{ item.submenu.copies_for_menu_links[loop.index0] }}</p>
+                      {% endif %}
+                    </a>
+                  </li>
                 {% endfor %}
               </ul>
             </div>
@@ -114,7 +114,16 @@
                 <h3 class="submenu-title">{{ item.secondary_submenu.title }}</h3>
                 <ul class="submenu{% if secondary_submenu_columns == 2 %} two-columns{% endif %}">
                   {% for node in secondary_submenu %}
-                    {{ link(node) }}
+                    <li class="submenu-item">
+                      <a 
+                        href="{{ node.url if node.url else 'javascript:;' }}" 
+                        class="menu-link trigger"
+                        aria-expanded="false"
+                        {{ isActiveNode(node.url) if node.url }}  
+                      >
+                          {{ node.linkLabel }}
+                      </a>
+                    </li>
                   {% endfor %}
                 </ul>
               </div>
