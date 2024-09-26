@@ -58,7 +58,7 @@
             </a>
 
             {% if item.submenu.promotional_section.description %}
-              <h2>{{ item.menu_label }}</h2>
+              <h2>{{ item.submenu.promotional_section.title }}</h2>
               <p>{{ item.submenu.promotional_section.description }}</p>
             {% endif %}
 
@@ -88,7 +88,10 @@
             {% endif %}
             
             <div class="main-submenu">
-              {% if secondary_submenu %}<h3 class="submenu-title">{{ item.menu_label }}</h3>{% endif %}
+              {% if item.submenu.title %}
+                <h3 class="submenu-title">{{ item.submenu.title }}</h3>
+              {% endif %}
+              
               <ul class="submenu{% if submenu_columns == 2 %} two-columns{% endif %}{% if item.submenu.copies_for_menu_links %} submenu--copy{% endif %}">
                 {% for node in submenu %}
                   <li class="submenu-item">

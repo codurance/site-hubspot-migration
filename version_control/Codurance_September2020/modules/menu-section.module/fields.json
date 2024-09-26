@@ -40,6 +40,13 @@
       {
        "children": [
         {
+         "type": "text",
+         "id": "5e2f6a57-201a-0245-d9ba-5d2b1ed24780",
+         "validation_regex": "",
+         "label": "Title",
+         "name": "title"
+        },
+        {
          "allow_new_line": false,
          "display_width": null,
          "id": "c497c84f-8e2c-9a13-1ae7-be631ac42202",
@@ -227,6 +234,13 @@
        "type": "group"
       },
       {
+       "type": "text",
+       "id": "e6d1cfdd-ebf9-95c0-5adc-f64f16dcc388",
+       "validation_regex": "",
+       "label": "Title",
+       "name": "title"
+      },
+      {
        "default": [],
        "display_width": null,
        "id": "2cd6d725-6a9b-f132-cb32-36702aae26ea",
@@ -237,25 +251,33 @@
        "type": "simplemenu"
       },
       {
-       "type": "text",
-       "id": "cd232643-2148-017f-db7b-dfdfa267edfc",
-       "validation_regex": "",
-       "label": "Copies for menu links",
-       "name": "copies_for_menu_links",
+       "allow_new_line": false,
+       "display_width": null,
        "help_text": "This copies will be shown underneath each corresponding menu item (following the same order)",
+       "id": "cd232643-2148-017f-db7b-dfdfa267edfc",
        "inline_help_text": "Optional",
-       "occurrence": {}
+       "label": "Copies for menu links",
+       "locked": false,
+       "name": "copies_for_menu_links",
+       "occurrence": {},
+       "required": false,
+       "show_emoji_picker": false,
+       "type": "text",
+       "validation_regex": ""
       },
       {
-       "type": "number",
-       "id": "d8b39d22-9f46-fe97-443b-37353a7e3660",
-       "display": "slider",
-       "step": 1,
-       "label": "Number of columns",
-       "name": "number_of_columns",
        "default": 3,
+       "display": "slider",
+       "display_width": null,
+       "id": "d8b39d22-9f46-fe97-443b-37353a7e3660",
+       "label": "Number of columns",
+       "locked": false,
+       "max": 3,
        "min": 2,
-       "max": 3
+       "name": "number_of_columns",
+       "required": false,
+       "step": 1,
+       "type": "number"
       }
      ],
      "default": {
@@ -312,14 +334,17 @@
        "type": "simplemenu"
       },
       {
-       "type": "number",
-       "id": "d009e50e-d2da-f7e5-217e-bf84496cfa1c",
        "display": "slider",
-       "step": 1,
+       "display_width": null,
+       "id": "d009e50e-d2da-f7e5-217e-bf84496cfa1c",
        "label": "Number of columns",
-       "name": "number_of_columns",
+       "locked": false,
+       "max": 2,
        "min": 1,
-       "max": 2
+       "name": "number_of_columns",
+       "required": false,
+       "step": 1,
+       "type": "number"
       }
      ],
      "default": {
