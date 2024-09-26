@@ -11,13 +11,15 @@ label: Global main menu
 
 <header class="header">
   <div class="header__wrapper">
-    <div class="custom-logo">
-      {% module "header_logo" path="@hubspot/logo", label="Header Logo",link="/", img={src="{{logo_file}}", alt="Codurance", override_inherited_src= true} %}
+    <div class="header__mobile-wrapper">
+      <div class="custom-logo">
+        {% module "header_logo" path="@hubspot/logo", label="Header Logo",link="/", img={src="{{logo_file}}", alt="Codurance", override_inherited_src= true} %}
+      </div>
+      <div class="mobile-trigger" aria-controls="website-navigation-menu" aria-expanded="true" aria-label="Toggle navigation" tabindex="0">
+          <span></span>
+      </div>
     </div>
     <div class="custom-menu-primary">
-      <div class="mobile-trigger" aria-controls="website-navigation-menu" aria-expanded="true" aria-label="Toggle navigation" tabindex="0">
-        <span></span>
-      </div>
       {% module "navigation-primary" path="../../modules/menu-section", label="Primary Menu" %}
     </div>
     {% include "./utilities-menu.html" %}

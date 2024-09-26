@@ -14,19 +14,6 @@
   {% endif %}
 {% endmacro %}
 
-{% macro link(node) %}
-  <li class="submenu-item">
-    <a 
-      href="{{ node.url if node.url else 'javascript:;' }}" 
-      class="menu-link trigger"
-      aria-expanded="false"
-      {{ isActiveNode(node.url) if node.url }}  
-    >
-        {{ node.linkLabel }}
-    </a>
-  </li>
-{% endmacro %}
-
 <nav aria-label="Main menu" class="navigation-primary" id="website-navigation-menu">
   <ul 
     class="submenu level-1 website-navigation-sub-menu" 
@@ -34,7 +21,9 @@
   >
     {% for item in module.menu_items %}
       {% set submenu = item.submenu.items %}
+      {% set submenu_columns = item.submenu.number_of_columns %}
       {% set secondary_submenu = item.secondary_submenu.items %}
+      {% set secondary_submenu_columns = item.secondary_submenu.number_of_columns %}
 
       <li class="menu-item{% if submenu %} has-submenu{% endif %}">
         <a href="{{ item.link.href if item.link.href && !submenu else 'javascript:;' }}"
@@ -49,7 +38,7 @@
         
         {% if submenu %}
           <nav 
-            class="website-navigation-sub-menu level-2{% if secondary_submenu %} has-secondary-submenu{% endif %}{% if secondary_submenu|length > 3 %} has-secondary-submenu-with-two-columns{% endif %}" 
+            class="website-navigation-sub-menu level-2{% if secondary_submenu %} has-secondary-submenu{% endif %}{% if secondary_submenu_columns == 2 %} has-secondary-submenu-with-two-columns{% endif %}" 
             id="sub-menu-services-{{loop.index}}"
           >
 
@@ -100,9 +89,22 @@
             
             <div class="main-submenu">
               {% if secondary_submenu %}<h3 class="submenu-title">{{ item.menu_label }}</h3>{% endif %}
-              <ul class="submenu{% if submenu|length <= 4 || secondary_submenu %} two-columns{% endif %}">
+              <ul class="submenu{% if submenu_columns == 2 %} two-columns{% endif %}{% if item.submenu.copies_for_menu_links %} submenu--copy{% endif %}">
                 {% for node in submenu %}
-                  {{ link(node) }}
+                  <li class="submenu-item">
+                    <a 
+                      href="{{ node.url if node.url else 'javascript:;' }}" 
+                      class="menu-link trigger"
+                      aria-expanded="false"
+                      {{ isActiveNode(node.url) if node.url }}  
+                    >
+                      <span>{{ node.linkLabel }}</span>
+
+                      {% if item.submenu.copies_for_menu_links %} 
+                        <p class="submenu__copy">{{ item.submenu.copies_for_menu_links[loop.index0] }}</p>
+                      {% endif %}
+                    </a>
+                  </li>
                 {% endfor %}
               </ul>
             </div>
@@ -110,9 +112,18 @@
             {% if secondary_submenu %}
               <div class="secondary-submenu">
                 <h3 class="submenu-title">{{ item.secondary_submenu.title }}</h3>
-                <ul class="submenu{% if secondary_submenu|length > 3 %} two-columns{% endif %}">
+                <ul class="submenu{% if secondary_submenu_columns == 2 %} two-columns{% endif %}">
                   {% for node in secondary_submenu %}
-                    {{ link(node) }}
+                    <li class="submenu-item">
+                      <a 
+                        href="{{ node.url if node.url else 'javascript:;' }}" 
+                        class="menu-link trigger"
+                        aria-expanded="false"
+                        {{ isActiveNode(node.url) if node.url }}  
+                      >
+                          {{ node.linkLabel }}
+                      </a>
+                    </li>
                   {% endfor %}
                 </ul>
               </div>

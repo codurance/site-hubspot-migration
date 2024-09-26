@@ -50,6 +50,10 @@
   color: white;
 }
 
+.secondary-submenu {
+  background-color: var(--athens-gray);
+}
+
 {% call utils.small_and_medium() %}
   .navigation-primary {
     padding-left: 20px;
@@ -78,10 +82,6 @@
 
   .level-2.website-navigation-sub-menu:not(.website-navigation-sub-menu--open) {
     visibility: hidden;
-  }
-
-  .submenu-title {
-    display: none;
   }
 
   .navigation-primary .menu-link {
@@ -132,10 +132,6 @@
     border-bottom: 1px solid var(--french-gray);
   }
 
-  .secondary-submenu li:first-of-type {
-    border-top: 1px solid var(--french-gray);
-  }
-
   .submenu.level-1 {
     width: 47%;
   }
@@ -154,6 +150,12 @@
     position: relative;
   }
 
+  .submenu-title {
+    font-weight: bold;
+    padding: var(--space-2) var(--space-4);
+    border-bottom: 1px solid var(--french-gray);
+  }
+
   .level-2 .menu-link {
     padding: var(--space-2);
     font-weight: var(--light-font-weight);
@@ -162,6 +164,10 @@
   .navigation-primary .menu-link.active-item {
     font-weight: var(--heavy-font-weight);
     color: var(--persimmon);
+  }
+
+  .submenu__copy {
+    display: none;
   }
 
   .back-button {
@@ -224,12 +230,11 @@
   }
 
   .level-2.has-secondary-submenu .promotional-section,
-  .level-2.has-secondary-submenu .main-submenu,
   .level-2.has-secondary-submenu .secondary-submenu {
     padding-inline: var(--space-4);
     padding-top: var(--space-6);
     padding-bottom: var(--space-6);
-    min-width: 30%;
+    min-width: 25%;
   }
 
   .main-submenu,
@@ -243,8 +248,7 @@
     > ul {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      row-gap: var(--space-3);
-      column-gap: var(--space-4);
+      gap: var(--space-4);
     }
   }
 
@@ -270,7 +274,6 @@
   }
 
   .secondary-submenu {
-    background-color: var(--athens-gray);
     border-bottom-right-radius: 10px;
   }
 
@@ -287,6 +290,14 @@
 
   .level-2.has-secondary-submenu-with-two-columns .submenu {
     column-gap: var(--space-3);
+  }
+
+  .submenu--copy .menu-link > span {
+    font-weight: bold;
+  }
+
+  .submenu__copy {
+    {{ utils.natus() }}
   }
 
   .navigation-primary a {
@@ -352,7 +363,10 @@
     border-bottom-left-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+  }
+
+  .has-secondary-submenu .promotional-section {
+    flex-basis: 25%;
   }
 
   .promotional-section > h2 {
