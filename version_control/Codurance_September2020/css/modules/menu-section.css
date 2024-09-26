@@ -166,6 +166,10 @@
     color: var(--persimmon);
   }
 
+  .submenu__copy {
+    display: none;
+  }
+
   .back-button {
     color: white;
     position: relative;
@@ -226,12 +230,11 @@
   }
 
   .level-2.has-secondary-submenu .promotional-section,
-  .level-2.has-secondary-submenu .main-submenu,
   .level-2.has-secondary-submenu .secondary-submenu {
     padding-inline: var(--space-4);
     padding-top: var(--space-6);
     padding-bottom: var(--space-6);
-    min-width: 30%;
+    min-width: 25%;
   }
 
   .main-submenu,
@@ -245,8 +248,7 @@
     > ul {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      row-gap: var(--space-3);
-      column-gap: var(--space-4);
+      gap: var(--space-4);
     }
   }
 
@@ -278,7 +280,6 @@
   .submenu-title {
     {{ utils.natus() }}
     font-weight: var(--heavy-font-weight);
-    text-transform: uppercase;
   }
 
   .secondary-submenu .submenu {
@@ -291,8 +292,12 @@
     column-gap: var(--space-3);
   }
 
-  .submenu--copy .menu-link {
-    font-weight: bold !important;
+  .submenu--copy .menu-link > span {
+    font-weight: bold;
+  }
+
+  .submenu__copy {
+    {{ utils.natus() }}
   }
 
   .navigation-primary a {
@@ -358,7 +363,10 @@
     border-bottom-left-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+  }
+
+  .has-secondary-submenu .promotional-section {
+    flex-basis: 25%;
   }
 
   .promotional-section > h2 {
