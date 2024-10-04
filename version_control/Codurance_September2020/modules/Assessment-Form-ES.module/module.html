@@ -1,0 +1,70 @@
+{% require_head %}
+  <link rel="preload" href='{{ get_asset_url("../../css/modules/assessment-form.css") }}' as="style" />
+{% end_require_head %}
+{{ require_css(get_asset_url("../../css/modules/assessment-form.css")) }}
+
+{% set survey_data = hubdb_table_rows(module.survey_table, "limit=100") %} 
+{% set categories = survey_data|groupby("category") %}
+
+<div class="survey" data-lang="{{ locale }}">
+  <div class="survey__wrapper"
+       data-form-id="{{ module.observability_compass_form.form_id }}"
+       data-portal-id="{{ module.portal_id }}"
+       data-score-property="{{ module.contact_score_property_name }}">
+
+    <div class="survey__progress-container">
+      <div id="image-container" class="survey__progress"></div>
+    </div>
+    <!-- Survey Container with Categories -->
+    <div class="survey__container" data-total-categories="{{ categories|length }}">
+        {% for category_group in categories %}
+        <div class="survey__category" 
+             id="category-{{ loop.index }}" 
+             {% if loop.index != 1 %} style="display: none;" {% endif %}>
+          <h2 class="survey__category-title">{{ category_group.grouper }}</h2>
+  
+          {% for row in category_group.list %}
+          <div class="survey__question-container">
+            <div class="survey__question">
+              <h3 class="survey__question-title">{{ row.topic }}</h3>
+              <p class="survey__question-text">{{ row.question }}</p>
+            </div>
+            <div class="survey__options">
+              {% set answers = row.answers_with_score|fromjson %}
+              {% for item in answers %}
+              <div class="survey__answers">
+                <input id="{{ row.topic }}{{ item.score }}" class="survey__answer-input"
+                       type="radio"
+                       name="{{ row.topic }}"
+                       value="{{ item.score }}" />
+                <label class="survey__answer">
+                  {{ item.answer }}
+                </label>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+  
+    <!-- HubSpot Form Container (Initially Hidden) -->
+    <div id="hubspotFormContainer" class="survey__form-container">
+        <!-- HubSpot form will be loaded here -->
+    </div>
+  
+    <!-- Navigation Buttons -->
+    <div class="survey__button-container">
+      <div class="survey__button-wrapper">
+        <button id="prevCategory" class="survey__button button-secondary survey__button--prev">Previous Category</button>
+      </div>
+      <div class="survey__button-wrapper">
+        <button id="nextCategory" class="survey__button button-secondary survey__button--next">Next Category</button>
+      </div>
+      <div class="survey__button-wrapper">
+        <button id="submitSurvey" class="survey__button button-primary survey__button--submit">Submit Survey</button>
+      </div>
+    </div>
+  </div>
+</div>
