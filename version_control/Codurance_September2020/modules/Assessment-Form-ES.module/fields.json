@@ -1,6 +1,6 @@
 [ {
   "id" : "8b0c2aa1-121b-6484-f398-d1ad22862b9f",
-  "name" : "survey_table",
+  "name" : "survey_table_es",
   "display_width" : null,
   "label" : "Survey Table",
   "required" : false,
@@ -8,9 +8,9 @@
   "type" : "hubdbtable"
 }, {
   "id" : "faed783d-b8ba-a3e1-41e8-cf298ddc5a28",
-  "name" : "observability_compass_form",
+  "name" : "observability_compass_form_es",
   "display_width" : null,
-  "label" : "Observability Compass Form",
+  "label" : "Observability Compass Form ES",
   "required" : true,
   "locked" : false,
   "type" : "form",
@@ -33,7 +33,7 @@
   "default" : "145220791"
 }, {
   "id" : "3c13fc98-ecfa-6b2e-866f-7fb7204c0459",
-  "name" : "contact_score_property_name",
+  "name" : "contact_score_property_name_es",
   "display_width" : null,
   "label" : "Contact Score Property Name ES",
   "required" : false,
