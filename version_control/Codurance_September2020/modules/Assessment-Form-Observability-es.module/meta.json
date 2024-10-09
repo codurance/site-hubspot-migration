@@ -1,16 +1,16 @@
 {
   "global" : false,
   "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "js_render_options" : {
+    "position" : "footer",
+    "defer" : true
+  },
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
-  "module_id" : 176917352289,
+  "module_id" : 180424719212,
   "js_assets" : [ {
     "url" : "https://js.hsforms.net/forms/v2.js",
     "autoload" : true,
     "name" : "v2.js"
   } ],
-  "js_render_options" : {
-    "position": "footer",
-    "defer": true
-  },
   "is_available_for_new_content" : true
 }
