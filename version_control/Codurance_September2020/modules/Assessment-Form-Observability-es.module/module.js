@@ -176,7 +176,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 input.value = surveyScoresJson;
             }
         });
-        console.log(hiddenInputs);
     }
 
     function scrollToNextQuestion() {
