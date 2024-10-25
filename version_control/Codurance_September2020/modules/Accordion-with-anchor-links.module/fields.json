@@ -1,0 +1,38 @@
+[ {
+  "id" : "eb91c1af-6e03-6637-3eb4-99ab6c419cf4",
+  "name" : "accordion_group",
+  "display_width" : null,
+  "label" : "Accordion Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "eaef33db-1655-8e27-f025-de048474562f",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  },{
+    "id" : "97e6c11d-f5f2-4ec9-e1db-0a772fc367e7",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ ]
+} ]
