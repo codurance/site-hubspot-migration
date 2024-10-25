@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
           openPanel(panel);
           addAnchorToUrl(panel);
         } else {
-          // Si estaba abierto, lo dejamos cerrado y limpiamos el hash de la URL
+          //if the panel was open, closeAllPanels() has already closed it and only the url hashtag needs to be removed
           history.pushState(null, null, window.location.pathname);
         }
       }
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     panelTitle.setAttribute('aria-expanded', 'true');
     const panelBody = panel.querySelector('.panel-body');
     panelBody.style.display = 'block';
-    // Usar setTimeout para asegurar que la transición se aplique después de que el display cambie a 'block'
+    //Using setTimeout to be sure that transition happens after the display value is set to 'block'
     setTimeout(() => {
       panelBody.style.maxHeight = panelBody.scrollHeight + 'px';
     }, 0);
