@@ -1,6 +1,6 @@
 {% import '../utils/utils.css' as utils %}
 
-.accordion {
+.custom-accordion {
     margin-left: auto;
     margin-right: auto;
     max-width: var(--content-inner-max-width);
@@ -8,15 +8,15 @@
     padding-right: 50px;
 }
 
-.panel {
+.custom-panel {
     border-bottom: 1px solid var(--french-gray);
 }
 
-.panel:last-child {
+.custom-panel:last-child {
     border-bottom: 0;
 }
 
-.panel-title {
+.custom-panel-title {
     --icon-width: 1.25em;
 
     color: var(--shark);
@@ -29,14 +29,14 @@
     position: relative;
 }
 
-.panel-title:focus,
-.panel-title:hover{
+.custom-panel-title:focus,
+.custom-panel-title:hover{
     color: var(--shark);
     text-decoration: none;
 }
 
-.panel-title::before,
-.panel-title::after {
+.custom-panel-title::before,
+.custom-panel-title::after {
     content: "";
     background-color: var(--persimmon);
     height: 2px;
@@ -49,27 +49,27 @@
     transform: rotate(-180deg);
 }
 
-.panel-title::after {
+.custom-panel-title::after {
     content: "";
     transform: rotate(-90deg);
 }
 
-.panel:not(.panel--close) .panel-title:after,
-.panel:not(.panel--close) .panel-title:before  {
+.custom-panel:not(.custom-panel--close) .custom-panel-title:after,
+.custom-panel:not(.custom-panel--close) .custom-panel-title:before  {
     transform: rotate(0);
 }
-.panel:not(.panel--close) .panel-body {
+.custom-panel:not(.custom-panel--close) .custom-panel-body {
     display: block;
 }
 
-.panel-title__heading {
-    {{ utils.freed() }}
+.custom-panel-title__heading {
+{{ utils.freed() }}
     font-weight: var(--heavy-font-weight);
     max-width: calc(100% - var(--icon-width));
 }
 
-.panel-body {
-    {{ utils.base() }}
+.custom-panel-body {
+{{ utils.base() }}
     transition-property: max-height;
     overflow: hidden;
     max-height: 0;
@@ -78,56 +78,56 @@
     transition: max-height 0.3s ease-out;
 }
 
-.panel-body > .frame {
+.custom-panel-body > .custom-frame {
     padding-bottom: 2em;
 }
 
-.panel-body p, ul, li {
-    {{ utils.base() }}
+.custom-panel-body p, ul, li {
+{{ utils.base() }}
 }
 
-.panel-body ul {
+.custom-panel-body ul {
     padding-left: 1rem;
 }
 
-.panel-body li {
+.custom-panel-body li {
     margin-bottom: calc(var(--base-margin) / 3);
 }
 
-.panel-body h3 {
+.custom-panel-body h3 {
     font-weight: var(--middle-font-weight);
     margin-top: calc(var(--freed-margin) * 2);
     margin-bottom: var(--freed-margin);
 }
 
 {% call utils.small_and_medium() %}
-    .accordion {
-        padding-left: 25px;
-        padding-right: 25px;
-    }
+.custom-accordion {
+    padding-left: 25px;
+    padding-right: 25px;
+}
 
-    .accordion .panel {
-        margin-bottom: 10px;
-    }
+.custom-accordion .custom-panel {
+    margin-bottom: 10px;
+}
 
-    .accordion .panel:last-child {
-        margin-bottom: 0;
-    }
+.custom-accordion .custom-panel:last-child {
+    margin-bottom: 0;
+}
 {% endcall %}
 
 {% call utils.small() %}
-    .accordion {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+.custom-accordion {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
-    .panel-title {
-        {{ utils.natus() }}
-        font-weight: var(--heavy-font-weight);
-    }
+.custom-panel-title {
+{{ utils.natus() }}
+    font-weight: var(--heavy-font-weight);
+}
 
-    .panel-body,
-    .panel-body p {
-        {{ utils.natus() }}
-    }
+.custom-panel-body,
+.custom-panel-body p {
+{{ utils.natus() }}
+}
 {% endcall %}

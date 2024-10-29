@@ -1,16 +1,16 @@
 {{ require_css(get_asset_url("../../css/modules/accordion-with-anchor-links.css")) }}
 
-<div class="accordion">
-  <div class="container">
-    <div class="panel-group" id="accordion-section">
+<div class="custom-accordion">
+  <div class="custom-container">
+    <div class="custom-panel-group" id="custom-accordion-section">
       {% for item in module.accordion_group %}
       {% set item_id = item.title|lower|replace(' ', '-')|replace(',', '')|replace('.', '')|replace(':', '')|trim %}
-      <div class="panel panel--close" id="accordion-item-{{ item_id }}">
-        <a class="panel-title" role="button" aria-expanded="false">
-          <div class="panel-title__heading">{{ item.title }}</div>
+      <div class="custom-panel custom-panel--close" id="custom-accordion-item-{{ item_id }}">
+        <a class="custom-panel-title" role="button" aria-expanded="false">
+          <div class="custom-panel-title__heading">{{ item.title }}</div>
         </a>
-        <div class="panel-body" role="tabpanel">
-          <div class="frame frame-default frame-type-text frame-layout-0">
+        <div class="custom-panel-body" role="tabpanel">
+          <div class="custom-frame custom-frame-default custom-frame-type-text custom-frame-layout-0">
             {{ item.content }}
           </div>
         </div>

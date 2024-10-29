@@ -10,22 +10,22 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function initAccordion() {
-    const accordionGroup = document.querySelector('.panel-group');
+    const accordionGroup = document.querySelector('.custom-panel-group');
     if (accordionGroup) {
       accordionGroup.addEventListener('click', handleAccordionToggle);
     } else {
-      console.error('Accordion group not found');
+      console.error('Custom accordion group not found');
     }
 
     openAccordionFromHash();
   }
 
   function handleAccordionToggle(event) {
-    const panelTitle = event.target.closest('.panel-title');
+    const panelTitle = event.target.closest('.custom-panel-title');
     if (panelTitle) {
-      const panel = panelTitle.closest('.panel');
+      const panel = panelTitle.closest('.custom-panel');
       if (panel) {
-        const isClosed = panel.classList.contains('panel--close');
+        const isClosed = panel.classList.contains('custom-panel--close');
 
         closeAllPanels();
 
@@ -41,22 +41,22 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function closeAllPanels() {
-    const panels = document.querySelectorAll('.panel');
+    const panels = document.querySelectorAll('.custom-panel');
     panels.forEach(panel => {
-      panel.classList.add('panel--close');
-      const panelTitle = panel.querySelector('.panel-title');
+      panel.classList.add('custom-panel--close');
+      const panelTitle = panel.querySelector('.custom-panel-title');
       panelTitle.setAttribute('aria-expanded', 'false');
-      const panelBody = panel.querySelector('.panel-body');
+      const panelBody = panel.querySelector('.custom-panel-body');
       panelBody.style.display = 'none';
       panelBody.style.maxHeight = '0';
     });
   }
 
   function openPanel(panel) {
-    panel.classList.remove('panel--close');
-    const panelTitle = panel.querySelector('.panel-title');
+    panel.classList.remove('custom-panel--close');
+    const panelTitle = panel.querySelector('.custom-panel-title');
     panelTitle.setAttribute('aria-expanded', 'true');
-    const panelBody = panel.querySelector('.panel-body');
+    const panelBody = panel.querySelector('.custom-panel-body');
     panelBody.style.display = 'block';
     //Using setTimeout to be sure that transition happens after the display value is set to 'block'
     setTimeout(() => {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function addAnchorToUrl(panel) {
-    const itemId = panel.id.replace("accordion-item-", "");
+    const itemId = panel.id.replace("custom-accordion-item-", "");
     setTimeout(() => {
       scrollToElement(panel);
     }, 0);
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     closeAllPanels();
     const hash = decodeURIComponent(window.location.hash.slice(1));
     if (hash) {
-      const targetAccordion = document.getElementById('accordion-item-' + hash);
+      const targetAccordion = document.getElementById('custom-accordion-item-' + hash);
       if (targetAccordion) {
         openPanel(targetAccordion);
         setTimeout(() => {
